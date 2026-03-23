@@ -37,7 +37,9 @@ interface MenuIconProps {
 
 const MenuIcon = (props: MenuIconProps) => {
   const { isChildrenVisible } = props;
-  return <Icon className="mx-4" name={isChildrenVisible ? 'keyboard_arrow_up' : 'keyboard_arrow_down'} />;
+  return (
+    <Icon className="mx-4" name={isChildrenVisible ? 'keyboard_arrow_up' : 'keyboard_arrow_down'} aria-hidden={true} />
+  );
 };
 
 const MenuPills = (props: MenuPillsProps) => {
@@ -190,6 +192,7 @@ export const MenuItem = (props: MenuItemProps) => {
                   className={expanded ? 'mr-4' : ''}
                   name={menu.icon}
                   type={menu.iconType}
+                  aria-hidden={true}
                 />
               )}
               {expanded && <MenuLabel label={menu.label} labelColor={itemColor} />}

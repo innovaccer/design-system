@@ -41,13 +41,13 @@
   padding-right: var(--spacing-15);
 }
 
-.Switch-input:focus ~ .Switch-wrapper {
+.Switch-input:focus-visible ~ .Switch-wrapper {
   outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: var(--spacing-05);
   background-color: var(--secondary-light);
 }
 
-.Switch-input:focus ~ .Switch-wrapper--checked {
+.Switch-input:focus-visible ~ .Switch-wrapper--checked {
   outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: var(--spacing-05);
   background-color: var(--primary);

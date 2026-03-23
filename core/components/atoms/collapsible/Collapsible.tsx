@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { Icon } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import useComponentId from '@/utils/useComponentId';
 import { isEnterKey, isSpaceKey } from '@/accessibility/utils';
 import styles from '@css/components/collapsible.module.css';
 
@@ -38,6 +39,10 @@ export interface CollapsibleProps extends BaseProps {
    * Accessible name for the trigger button
    */
   'aria-label'?: string;
+  /**
+   * Associates the trigger with an external label element
+   */
+  'aria-labelledby'?: string;
 }
 
 export const Collapsible = (props: CollapsibleProps) => {
@@ -48,6 +53,13 @@ export const Collapsible = (props: CollapsibleProps) => {
 
   const ref = React.createRef<HTMLDivElement>();
   const baseProps = extractBaseProps(props);
+  const baseId = useComponentId('design-system-collapsible', props.id);
+  const contentId = `${baseId}-content`;
+  const triggerId = `${baseId}-trigger`;
+  const triggerAriaLabel = props['aria-labelledby']
+    ? undefined
+    : props['aria-label'] || (expanded ? 'Collapse' : 'Expand');
+  const contentAriaLabel = props['aria-labelledby'] ? undefined : triggerAriaLabel;
 
   React.useEffect(() => {
     if (ref.current) {
@@ -100,20 +112,27 @@ export const Collapsible = (props: CollapsibleProps) => {
     <div data-test="DesignSystem-CollapsibleWrapper" className={WrapperClass} style={{ height }}>
       <div data-test="DesignSystem-Collapsible" {...baseProps} data-layer={true} className={classes} style={{ width }}>
         <div
+          id={contentId}
           className={BodyClass}
           data-test="DesignSystem-CollapsibleBody"
           onMouseEnter={onToggleHandler(true, 'mouseenter')}
           onMouseLeave={onToggleHandler(false, 'mouseleave')}
           ref={ref}
+          role={withTrigger ? 'region' : undefined}
+          aria-labelledby={withTrigger ? props['aria-labelledby'] : undefined}
+          aria-label={withTrigger ? contentAriaLabel : undefined}
         >
           {children}
         </div>
         {withTrigger && (
           <div
+            id={triggerId}
             role="button"
             tabIndex={0}
             aria-expanded={expanded}
-            aria-label={props['aria-label'] || (expanded ? 'Collapse' : 'Expand')}
+            aria-controls={contentId}
+            aria-label={triggerAriaLabel}
+            aria-labelledby={props['aria-labelledby']}
             className={FooterClass}
             data-test="DesignSystem-Collapsible--Footer"
             onClick={onToggleHandler(!expanded, 'click')}
@@ -129,6 +148,7 @@ export const Collapsible = (props: CollapsibleProps) => {
               data-test="DesignSystem-Collapsible--FooterIcon"
               className="px-6 py-4 my-2 cursor-pointer"
               size={16}
+              aria-hidden={true}
             />
           </div>
         )}

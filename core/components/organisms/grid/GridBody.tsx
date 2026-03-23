@@ -35,6 +35,7 @@ export const GridBody = (props: GridBodyProps) => {
     sortingList,
     isSortingListUpdated,
     updateIsSortingListUpdated,
+    announceStatus,
   } = context;
   const listRef = React.useRef<HTMLDivElement | null>(null);
 
@@ -60,6 +61,18 @@ export const GridBody = (props: GridBodyProps) => {
   const [retryDataFetch, setRetryDataFetch] = React.useState(false);
   const endReached = React.useRef(false);
   const { fetchRowsCount, fetchThreshold, fetchErrorRenderer, retryFetchRenderer } = infiniteScrollOptions;
+
+  const announceRowsLoaded = React.useCallback(
+    (loadedCount: number) => {
+      if (loadedCount === 0) {
+        announceStatus('No more rows to load.');
+        return;
+      }
+
+      announceStatus(`Loaded ${loadedCount} more row${loadedCount > 1 ? 's' : ''}.`);
+    },
+    [announceStatus]
+  );
 
   React.useEffect(() => {
     const gridBodyEl = ref!.querySelector('.Grid-body');
@@ -138,15 +151,17 @@ export const GridBody = (props: GridBodyProps) => {
         if (dataList?.length === 0 || (dataList?.length && dataList?.length < fetchRowsCount)) {
           setHasMoreData(false);
         }
+        announceRowsLoaded(dataList?.length || 0);
         setCurrentPage((prevPage) => prevPage + 1);
         setError(false);
       } catch (error) {
         setError(true);
+        announceStatus('Failed to load more rows. Please try again.');
       } finally {
         setIsLoadingMore(false);
       }
     }
-  }, [isLoadingMore, hasMoreData, currentPage, fetchRowsCount, error]);
+  }, [announceRowsLoaded, announceStatus, isLoadingMore, hasMoreData, currentPage, fetchRowsCount, error]);
 
   const thresholdMapper: Record<typeof fetchThreshold, number> = {
     early: 0.5,
@@ -226,10 +241,12 @@ export const GridBody = (props: GridBodyProps) => {
       if (dataList?.length === 0 || (dataList?.length && dataList?.length < fetchRowsCount)) {
         setHasMoreData(false);
       }
+      announceRowsLoaded(dataList?.length || 0);
       setCurrentPage((prevPage) => prevPage + 1);
       setError(false);
     } catch (error) {
       setError(true);
+      announceStatus('Failed to load more rows. Please try again.');
     } finally {
       setIsLoadingMore(false);
       setRetryDataFetch(false);

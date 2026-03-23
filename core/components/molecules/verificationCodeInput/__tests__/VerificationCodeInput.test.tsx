@@ -285,3 +285,17 @@ describe('VerificationCodeInput component types', () => {
     expect(input1).toHaveValue('1');
   });
 });
+
+describe('VerificationCodeInput accessibility attributes', () => {
+  it('adds field names and validation attributes to each input', () => {
+    const { getByTestId } = render(<VerificationCodeInput name="verification" required={true} error={true} />);
+
+    const inputs = [...(getByTestId('DesignSystem-VerificationCodeInput').querySelectorAll('div > input') as any)];
+
+    inputs.forEach((input, index) => {
+      expect(input).toHaveAttribute('name', `verification-${index + 1}`);
+      expect(input).toHaveAttribute('aria-required', 'true');
+      expect(input).toHaveAttribute('aria-invalid', 'true');
+    });
+  });
+});

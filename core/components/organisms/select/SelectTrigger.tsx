@@ -5,11 +5,30 @@ import { IconType } from '@/common.type';
 import { SelectContext } from './SelectContext';
 import { handleKeyDownTrigger, computeValue } from './utils';
 import { BaseProps } from '@/utils/types';
+import useComponentId from '@/utils/useComponentId';
 import selectStyles from '@css/components/select.module.css';
 import buttonStyles from '@css/components/button.module.css';
 import textStyles from '@css/components/text.module.css';
 
 export type SelectTriggerSize = 'small' | 'regular';
+
+const visuallyHiddenStyles: React.CSSProperties = {
+  position: 'absolute',
+  width: '1px',
+  height: '1px',
+  padding: 0,
+  margin: '-1px',
+  overflow: 'hidden',
+  clip: 'rect(0, 0, 0, 0)',
+  whiteSpace: 'nowrap',
+  border: 0,
+};
+
+const joinAriaIds = (...ids: Array<string | undefined>) => {
+  const validIds = ids.filter((id): id is string => Boolean(id && id.trim()));
+
+  return validIds.length > 0 ? validIds.join(' ') : undefined;
+};
 
 export interface SelectTriggerProps extends BaseProps {
   /**
@@ -118,9 +137,21 @@ const SelectTrigger = (props: SelectTriggerProps) => {
 
   const displayValue = computeValue(multiSelect, selectValue, setLabel);
   const hasVisibleValue = isOptionSelected && displayValue.length > 0;
-  const valueId = React.useId?.() ?? `select-trigger-value-${Math.random().toString(36).slice(2)}`;
-  // Use aria-labelledby when we have visible selected value so screen readers announce it; otherwise use aria-label
-  const resolvedAriaLabel = !hasVisibleValue ? ariaLabel || inlineLabel || placeholder || 'Select trigger' : undefined;
+  const valueId = useComponentId('select-trigger-value');
+  const inlineLabelId = useComponentId('select-trigger-inline-label');
+  const assistiveLabelId = useComponentId('select-trigger-label');
+  const trimmedInlineLabel = inlineLabel?.trim();
+  const resolvedAccessibleLabel = ariaLabel?.trim() || trimmedInlineLabel || placeholder?.trim() || 'Select trigger';
+  const shouldUseAssistiveLabel = hasVisibleValue && !ariaLabelledby && !trimmedInlineLabel;
+  const resolvedAriaLabel = !hasVisibleValue && !ariaLabelledby ? resolvedAccessibleLabel : undefined;
+  const resolvedAriaLabelledBy = hasVisibleValue
+    ? joinAriaIds(
+        ariaLabelledby,
+        !ariaLabelledby && trimmedInlineLabel ? inlineLabelId : undefined,
+        shouldUseAssistiveLabel ? assistiveLabelId : undefined,
+        valueId
+      )
+    : ariaLabelledby;
 
   const buttonDisabled = disabled ? 'disabled' : 'default';
   const trimmedPlaceholder = placeholder?.trim();
@@ -206,13 +237,23 @@ const SelectTrigger = (props: SelectTriggerProps) => {
         aria-haspopup="listbox"
         aria-expanded={openPopover}
         aria-label={resolvedAriaLabel}
-        aria-labelledby={hasVisibleValue ? valueId : ariaLabelledby}
+        aria-labelledby={resolvedAriaLabelledBy}
         aria-controls={rest['aria-controls']}
       >
         {
           <div className={triggerClass}>
+            {shouldUseAssistiveLabel && (
+              <span id={assistiveLabelId} style={visuallyHiddenStyles}>
+                {resolvedAccessibleLabel}
+              </span>
+            )}
             {inlineLabel && (
-              <Text appearance="subtle" className={`${inlineLabelClass} mr-4`} size={triggerTextSize}>
+              <Text
+                id={!ariaLabelledby && hasVisibleValue ? inlineLabelId : undefined}
+                appearance="subtle"
+                className={`${inlineLabelClass} mr-4`}
+                size={triggerTextSize}
+              >
                 {`${inlineLabel.trim().charAt(0).toUpperCase()}${inlineLabel.trim().slice(1)}`}
               </Text>
             )}

@@ -7,12 +7,14 @@ type ContextProps = GridProps & {
   ref: GridRef;
   isSortingListUpdated: boolean;
   updateIsSortingListUpdated: () => void;
+  announceStatus: (message: string) => void;
 };
 const context = React.createContext<ContextProps>({
   ...defaultProps,
   ref: null,
   isSortingListUpdated: false,
   updateIsSortingListUpdated: () => {},
+  announceStatus: () => {},
 });
 
 export const GridProvider = context.Provider;

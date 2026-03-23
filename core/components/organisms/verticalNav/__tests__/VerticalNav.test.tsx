@@ -515,3 +515,12 @@ describe('Vertical Navigation component WAI-ARIA tree semantics', () => {
     expect(careManagement?.getAttribute('aria-expanded')).toBe('false');
   });
 });
+
+describe('Vertical Navigation accessibility', () => {
+  it('hides decorative icons from assistive technologies', () => {
+    const { getByText, getAllByTestId } = render(<VerticalNav menus={menus} active={active} />);
+
+    expect(getAllByTestId('DesignSystem-VerticalNav--Icon')[0]).toHaveAttribute('aria-hidden', 'true');
+    expect(getByText('keyboard_arrow_up')).toHaveAttribute('aria-hidden', 'true');
+  });
+});

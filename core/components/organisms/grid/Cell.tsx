@@ -3,7 +3,13 @@ import classNames from 'classnames';
 import { RowData, ColumnSchema, SortType } from './Grid';
 import { Dropdown, Placeholder, PlaceholderParagraph, Text, Icon, Button, Tooltip, GridCell } from '@/index';
 import { DropdownProps, GridCellProps } from '@/index.type';
-import { resizeCol, hasSchema } from './utility';
+import {
+  resizeCol,
+  hasSchema,
+  getNextResizableWidth,
+  getResizableColumnMetrics,
+  getResizeHandleLabel,
+} from './utility';
 import { getCellSize, getWidth } from './columnUtility';
 import { GridHeadProps } from './GridHead';
 import GridContext from './GridContext';
@@ -134,17 +140,52 @@ const HeaderCell = (props: HeaderCellProps) => {
         <div className={styles['Grid-sortingIcons']}>
           {sorted ? (
             sorted === 'asc' ? (
-              <Icon name="arrow_upward" />
+              <Icon name="arrow_upward" aria-hidden={true} />
             ) : (
-              <Icon name="arrow_downward" />
+              <Icon name="arrow_downward" aria-hidden={true} />
             )
           ) : (
-            <Icon name="unfold_more" />
+            <Icon name="unfold_more" aria-hidden={true} />
           )}
         </div>
       )}
     </>
   );
+
+  const resizeMetrics = getResizableColumnMetrics(schema, el.current?.clientWidth);
+  /* eslint-disable jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/no-noninteractive-tabindex */
+  const resizeHandle = (
+    <span
+      className={styles['Grid-cellResize']}
+      onMouseDown={() => {
+        resizeCol({ updateColumnSchema }, schema, el.current);
+        setIsDragged(false);
+      }}
+      onKeyDown={(event: React.KeyboardEvent<HTMLSpanElement>) => {
+        if (event.key === 'ArrowLeft') {
+          event.preventDefault();
+          updateColumnSchema(name, { width: getNextResizableWidth(schema, el.current?.clientWidth, -10) });
+        } else if (event.key === 'ArrowRight') {
+          event.preventDefault();
+          updateColumnSchema(name, { width: getNextResizableWidth(schema, el.current?.clientWidth, 10) });
+        } else if (event.key === 'Home') {
+          event.preventDefault();
+          updateColumnSchema(name, { width: resizeMetrics.minWidth });
+        } else if (event.key === 'End') {
+          event.preventDefault();
+          updateColumnSchema(name, { width: resizeMetrics.maxWidth });
+        }
+      }}
+      role="separator"
+      tabIndex={0}
+      aria-orientation="vertical"
+      aria-label={getResizeHandleLabel(schema)}
+      aria-valuemin={resizeMetrics.minWidth}
+      aria-valuemax={resizeMetrics.maxWidth}
+      aria-valuenow={resizeMetrics.currentWidth}
+    />
+  );
+  /* eslint-enable jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/no-noninteractive-tabindex */
 
   const isSortable = !loading && sorting;
   const handleSortToggle = () => {
@@ -249,33 +290,7 @@ const HeaderCell = (props: HeaderCellProps) => {
           )}
         </>
       )}
-      {schema.resizable && (
-        <span
-          className={styles['Grid-cellResize']}
-          onMouseDown={() => {
-            resizeCol({ updateColumnSchema }, name, el.current);
-            setIsDragged(false);
-          }}
-          onKeyDown={(event: React.KeyboardEvent<HTMLSpanElement>) => {
-            if (event.key === 'Enter' || event.key === ' ') {
-              event.preventDefault();
-              resizeCol({ updateColumnSchema }, name, el.current);
-              setIsDragged(false);
-            } else if (event.key === 'ArrowLeft') {
-              event.preventDefault();
-              const currentWidth = schema.width || el.current?.clientWidth || 100;
-              updateColumnSchema(name, { width: Math.max(currentWidth - 10, schema.minWidth || 96) });
-            } else if (event.key === 'ArrowRight') {
-              event.preventDefault();
-              const currentWidth = schema.width || el.current?.clientWidth || 100;
-              updateColumnSchema(name, { width: Math.min(currentWidth + 10, schema.maxWidth || 800) });
-            }
-          }}
-          role="button"
-          tabIndex={0}
-          aria-label={`Resize ${name} column`}
-        />
-      )}
+      {schema.resizable && resizeHandle}
     </div>
   );
 };

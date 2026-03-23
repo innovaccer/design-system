@@ -25,7 +25,7 @@
   display: none;
 }
 
-.Textarea:focus-within {
+.Textarea:focus-visible {
   border-color: var(--secondary);
   outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: var(--spacing-2-5);
@@ -47,7 +47,7 @@
   border: var(--border-width-2-5) solid var(--alert);
 }
 
-.Textarea--error:focus-within {
+.Textarea--error:focus-visible {
   border-color: var(--alert);
   outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: var(--spacing-2-5);

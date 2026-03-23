@@ -42,9 +42,23 @@ export interface LabelProps extends BaseProps, BaseHtmlProps<HTMLLabelElement> {
  * *NOTE: Extends props with HTMLProps<HTMLLabelElement>*
  */
 export const Label = (props: LabelProps) => {
-  const { required, optional, withInput, disabled, children, className, info, size = 'regular', ...rest } = props;
+  const {
+    required,
+    optional,
+    withInput,
+    disabled,
+    children,
+    className,
+    info,
+    size = 'regular',
+    role,
+    'aria-live': ariaLive,
+    ...rest
+  } = props;
 
   const baseProps = extractBaseProps(props);
+  const isLiveRegion = role === 'status' || role === 'alert' || ariaLive !== undefined;
+  const resolvedAriaLive = ariaLive ?? (role === 'alert' ? 'assertive' : role === 'status' ? 'polite' : undefined);
 
   const LabelClass = classNames(
     {
@@ -104,7 +118,14 @@ export const Label = (props: LabelProps) => {
 
   return (
     <div data-test="DesignSystem-Label" {...baseProps} className={LabelClass}>
-      <GenericText data-test="DesignSystem-Label--Text" className={classes} componentType="label" {...rest}>
+      <GenericText
+        data-test="DesignSystem-Label--Text"
+        className={classes}
+        componentType={isLiveRegion ? 'div' : 'label'}
+        role={role}
+        aria-live={resolvedAriaLive}
+        {...rest}
+      >
         {children}
         {renderInfo(required, optional)}
         {info && renderIndicator(info)}

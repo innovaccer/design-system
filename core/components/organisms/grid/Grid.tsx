@@ -3,7 +3,7 @@ import { DropdownProps, CheckboxProps, GridCellProps } from '@/index.type';
 import { GridHead } from './GridHead';
 import { GridBody } from './GridBody';
 import { HeaderCellRendererProps } from './Cell';
-import { sortColumn, pinColumn, hideColumn, moveToIndex, getSchema, isScrollAtTop } from './utility';
+import { sortColumn, pinColumn, hideColumn, moveToIndex, getSchema, isScrollAtTop, getTotalPages } from './utility';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { NestedRowProps } from './GridNestedRow';
 import classNames from 'classnames';
@@ -415,7 +415,20 @@ export interface GridState {
   init: boolean;
   prevPageInfo: PageInfo;
   isSortingListUpdated: boolean;
+  statusMessage: string;
 }
+
+const visuallyHiddenStyles: React.CSSProperties = {
+  position: 'absolute',
+  width: 1,
+  height: 1,
+  padding: 0,
+  margin: -1,
+  overflow: 'hidden',
+  clip: 'rect(0, 0, 0, 0)',
+  whiteSpace: 'nowrap',
+  border: 0,
+};
 
 export class Grid extends React.Component<GridProps, GridState> {
   static defaultProps: GridProps;
@@ -432,6 +445,7 @@ export class Grid extends React.Component<GridProps, GridState> {
       init: false,
       prevPageInfo: pageInfo,
       isSortingListUpdated: false,
+      statusMessage: '',
     };
   }
 
@@ -471,7 +485,46 @@ export class Grid extends React.Component<GridProps, GridState> {
     if (prevProps.data !== this.props.data) {
       this.adjustPaddingRight();
     }
+
+    if (prevProps.page !== this.props.page && this.props.withPagination) {
+      this.announceStatus(this.getPageAnnouncement());
+    }
   }
+
+  announceStatus = (message: string) => {
+    if (!message) return;
+
+    this.setState({ statusMessage: '' }, () => {
+      this.setState({ statusMessage: message });
+    });
+  };
+
+  getColumnLabel = (name: ColumnSchema['name']) => {
+    return this.props.schema.find((column) => column.name === name)?.displayName || name;
+  };
+
+  getPageAnnouncement = () => {
+    const totalPages = getTotalPages(this.props.totalRecords, this.props.pageSize);
+    return `Page ${this.props.page} of ${totalPages}.`;
+  };
+
+  getFilterAnnouncement = (name: ColumnSchema['name'], selected: any) => {
+    const columnLabel = this.getColumnLabel(name);
+
+    if (Array.isArray(selected)) {
+      if (!selected.length) {
+        return `Cleared filter for ${columnLabel}.`;
+      }
+
+      return `Applied ${selected.length} filter${selected.length > 1 ? 's' : ''} to ${columnLabel}.`;
+    }
+
+    if (selected === undefined || selected === null || selected === '') {
+      return `Cleared filter for ${columnLabel}.`;
+    }
+
+    return `Applied filter to ${columnLabel}.`;
+  };
 
   addScrollListeners() {
     const gridHeadEl = this.gridRef!.querySelector(`.${styles['Grid-head']}`);
@@ -603,27 +656,36 @@ export class Grid extends React.Component<GridProps, GridState> {
 
   onMenuChange: onMenuChangeFn = (name, selected) => {
     const { sortingList } = this.props;
+    const columnLabel = this.getColumnLabel(name);
+
     switch (selected) {
       case 'sortAsc':
         sortColumn({ sortingList, updateSortingList: this.updateSortingList }, name, 'asc');
+        this.announceStatus(`Sorted by ${columnLabel} ascending.`);
         break;
       case 'sortDesc':
         sortColumn({ sortingList, updateSortingList: this.updateSortingList }, name, 'desc');
+        this.announceStatus(`Sorted by ${columnLabel} descending.`);
         break;
       case 'unsort':
         sortColumn({ sortingList, updateSortingList: this.updateSortingList }, name, 'unsort');
+        this.announceStatus(`Cleared sorting for ${columnLabel}.`);
         break;
       case 'pinLeft':
         pinColumn({ updateColumnSchema: this.updateColumnSchema }, name, 'left');
+        this.announceStatus(`Pinned ${columnLabel} to the left.`);
         break;
       case 'pinRight':
         pinColumn({ updateColumnSchema: this.updateColumnSchema }, name, 'right');
+        this.announceStatus(`Pinned ${columnLabel} to the right.`);
         break;
       case 'unpin':
         pinColumn({ updateColumnSchema: this.updateColumnSchema }, name, 'unpin');
+        this.announceStatus(`Unpinned ${columnLabel}.`);
         break;
       case 'hide':
         hideColumn({ updateColumnSchema: this.updateColumnSchema }, name, true);
+        this.announceStatus(`Hid ${columnLabel} column.`);
         break;
     }
   };
@@ -637,6 +699,7 @@ export class Grid extends React.Component<GridProps, GridState> {
     };
 
     this.updateFilterList(newFilterList);
+    this.announceStatus(this.getFilterAnnouncement(name, selected));
   };
 
   onSelect: onSelectFn = (rowIndex, selected) => {
@@ -664,7 +727,7 @@ export class Grid extends React.Component<GridProps, GridState> {
   render() {
     const baseProps = extractBaseProps(this.props);
 
-    const { init, prevPageInfo } = this.state;
+    const { init, prevPageInfo, statusMessage } = this.state;
 
     const {
       type,
@@ -709,6 +772,9 @@ export class Grid extends React.Component<GridProps, GridState> {
           this.gridRef = el;
         }}
       >
+        <span role="status" aria-live="polite" aria-atomic={true} style={visuallyHiddenStyles}>
+          {statusMessage}
+        </span>
         {init && (
           <GridProvider
             value={{
@@ -716,6 +782,7 @@ export class Grid extends React.Component<GridProps, GridState> {
               ref: this.gridRef,
               isSortingListUpdated: this.state.isSortingListUpdated,
               updateIsSortingListUpdated: this.updateIsSortingListUpdated.bind(this),
+              announceStatus: this.announceStatus,
             }}
           >
             {showHead && (

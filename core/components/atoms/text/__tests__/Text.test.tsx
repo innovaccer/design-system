@@ -92,6 +92,11 @@ describe('Text component', () => {
     expect(getByTestId('DesignSystem-Text').tagName).toEqual('SPAN');
   });
 
+  it('should default status messages to a polite live region', () => {
+    const { getByRole } = render(<Text role="status">{'Saved successfully'}</Text>);
+    expect(getByRole('status')).toHaveAttribute('aria-live', 'polite');
+  });
+
   describe('Text Component with overwrite class', () => {
     it('overwrite Text class', () => {
       const { getByTestId } = render(<Text className="TextClass">{'Text'}</Text>);

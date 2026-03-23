@@ -13692,43 +13692,41 @@ exports[`Calendar component
         >
           <div
             class="Calendar-valueRow"
+            role="row"
           >
             <div
-              class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
-              data-test="DesignSystem-Calendar--monthValue"
-              role="button"
-              tabindex="-1"
+              role="gridcell"
             >
               <span
-                class="Text Text--regular color-inverse Calendar-text"
-                data-test="DesignSystem-Text"
+                class="Text Text--regular color-inverse Calendar-value Calendar-monthValue Calendar-monthValue--large Calendar-text"
+                data-test="DesignSystem-Calendar--monthValue"
+                role="button"
+                tabindex="-1"
               >
                 Jan
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
-              data-test="DesignSystem-Calendar--monthValue"
-              role="button"
-              tabindex="-1"
+              role="gridcell"
             >
               <span
-                class="Text Text--regular color-inverse Calendar-text"
-                data-test="DesignSystem-Text"
+                class="Text Text--regular color-inverse Calendar-value Calendar-monthValue Calendar-monthValue--large Calendar-text"
+                data-test="DesignSystem-Calendar--monthValue"
+                role="button"
+                tabindex="-1"
               >
                 Feb
               </span>
             </div>
             <div
-              aria-current="true"
-              class="Calendar-value Calendar-value--active Calendar-monthValue Calendar-monthValue--large"
-              data-test="DesignSystem-Calendar--monthValue"
-              role="button"
-              tabindex="0"
+              aria-selected="true"
+              role="gridcell"
             >
               <span
-                class="Text Text--regular color-white Calendar-text"
-                data-test="DesignSystem-Text"
+                class="Text Text--regular color-white Calendar-value Calendar-value--active Calendar-monthValue Calendar-monthValue--large Calendar-text"
+                data-test="DesignSystem-Calendar--monthValue"
+                role="button"
+                tabindex="0"
               >
                 Mar
               </span>
@@ -13736,42 +13734,40 @@ exports[`Calendar component
           </div>
           <div
             class="Calendar-valueRow"
+            role="row"
           >
             <div
-              class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
-              data-test="DesignSystem-Calendar--monthValue"
-              role="button"
-              tabindex="-1"
+              role="gridcell"
             >
               <span
-                class="Text Text--regular color-inverse Calendar-text"
-                data-test="DesignSystem-Text"
+                class="Text Text--regular color-inverse Calendar-value Calendar-monthValue Calendar-monthValue--large Calendar-text"
+                data-test="DesignSystem-Calendar--monthValue"
+                role="button"
+                tabindex="-1"
               >
                 Apr
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
-              data-test="DesignSystem-Calendar--monthValue"
-              role="button"
-              tabindex="-1"
+              role="gridcell"
             >
               <span
-                class="Text Text--regular color-inverse Calendar-text"
-                data-test="DesignSystem-Text"
+                class="Text Text--regular color-inverse Calendar-value Calendar-monthValue Calendar-monthValue--large Calendar-text"
+                data-test="DesignSystem-Calendar--monthValue"
+                role="button"
+                tabindex="-1"
               >
                 May
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
-              data-test="DesignSystem-Calendar--monthValue"
-              role="button"
-              tabindex="-1"
+              role="gridcell"
             >
               <span
-                class="Text Text--regular color-inverse Calendar-text"
-                data-test="DesignSystem-Text"
+                class="Text Text--regular color-inverse Calendar-value Calendar-monthValue Calendar-monthValue--large Calendar-text"
+                data-test="DesignSystem-Calendar--monthValue"
+                role="button"
+                tabindex="-1"
               >
                 Jun
               </span>
@@ -13779,42 +13775,40 @@ exports[`Calendar component
           </div>
           <div
             class="Calendar-valueRow"
+            role="row"
           >
             <div
-              class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
-              data-test="DesignSystem-Calendar--monthValue"
-              role="button"
-              tabindex="-1"
+              role="gridcell"
             >
               <span
-                class="Text Text--regular color-inverse Calendar-text"
-                data-test="DesignSystem-Text"
+                class="Text Text--regular color-inverse Calendar-value Calendar-monthValue Calendar-monthValue--large Calendar-text"
+                data-test="DesignSystem-Calendar--monthValue"
+                role="button"
+                tabindex="-1"
               >
                 Jul
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
-              data-test="DesignSystem-Calendar--monthValue"
-              role="button"
-              tabindex="-1"
+              role="gridcell"
             >
               <span
-                class="Text Text--regular color-inverse Calendar-text"
-                data-test="DesignSystem-Text"
+                class="Text Text--regular color-inverse Calendar-value Calendar-monthValue Calendar-monthValue--large Calendar-text"
+                data-test="DesignSystem-Calendar--monthValue"
+                role="button"
+                tabindex="-1"
               >
                 Aug
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
-              data-test="DesignSystem-Calendar--monthValue"
-              role="button"
-              tabindex="-1"
+              role="gridcell"
             >
               <span
-                class="Text Text--regular color-inverse Calendar-text"
-                data-test="DesignSystem-Text"
+                class="Text Text--regular color-inverse Calendar-value Calendar-monthValue Calendar-monthValue--large Calendar-text"
+                data-test="DesignSystem-Calendar--monthValue"
+                role="button"
+                tabindex="-1"
               >
                 Sep
               </span>
@@ -13822,42 +13816,40 @@ exports[`Calendar component
           </div>
           <div
             class="Calendar-valueRow"
+            role="row"
           >
             <div
-              class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
-              data-test="DesignSystem-Calendar--monthValue"
-              role="button"
-              tabindex="-1"
+              role="gridcell"
             >
               <span
-                class="Text Text--regular color-inverse Calendar-text"
-                data-test="DesignSystem-Text"
+                class="Text Text--regular color-inverse Calendar-value Calendar-monthValue Calendar-monthValue--large Calendar-text"
+                data-test="DesignSystem-Calendar--monthValue"
+                role="button"
+                tabindex="-1"
               >
                 Oct
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
-              data-test="DesignSystem-Calendar--monthValue"
-              role="button"
-              tabindex="-1"
+              role="gridcell"
             >
               <span
-                class="Text Text--regular color-inverse Calendar-text"
-                data-test="DesignSystem-Text"
+                class="Text Text--regular color-inverse Calendar-value Calendar-monthValue Calendar-monthValue--large Calendar-text"
+                data-test="DesignSystem-Calendar--monthValue"
+                role="button"
+                tabindex="-1"
               >
                 Nov
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
-              data-test="DesignSystem-Calendar--monthValue"
-              role="button"
-              tabindex="-1"
+              role="gridcell"
             >
               <span
-                class="Text Text--regular color-inverse Calendar-text"
-                data-test="DesignSystem-Text"
+                class="Text Text--regular color-inverse Calendar-value Calendar-monthValue Calendar-monthValue--large Calendar-text"
+                data-test="DesignSystem-Calendar--monthValue"
+                role="button"
+                tabindex="-1"
               >
                 Dec
               </span>
@@ -13953,42 +13945,40 @@ exports[`Calendar component
         >
           <div
             class="Calendar-valueRow"
+            role="row"
           >
             <div
-              class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
-              data-test="DesignSystem-Calendar--yearValue"
-              role="button"
-              tabindex="-1"
+              role="gridcell"
             >
               <span
-                class="Text Text--regular color-inverse Calendar-text"
-                data-test="DesignSystem-Text"
+                class="Text Text--regular color-inverse Calendar-value Calendar-yearValue Calendar-yearValue--large Calendar-text"
+                data-test="DesignSystem-Calendar--yearValue"
+                role="button"
+                tabindex="-1"
               >
                 2016
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
-              data-test="DesignSystem-Calendar--yearValue"
-              role="button"
-              tabindex="-1"
+              role="gridcell"
             >
               <span
-                class="Text Text--regular color-inverse Calendar-text"
-                data-test="DesignSystem-Text"
+                class="Text Text--regular color-inverse Calendar-value Calendar-yearValue Calendar-yearValue--large Calendar-text"
+                data-test="DesignSystem-Calendar--yearValue"
+                role="button"
+                tabindex="-1"
               >
                 2017
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
-              data-test="DesignSystem-Calendar--yearValue"
-              role="button"
-              tabindex="-1"
+              role="gridcell"
             >
               <span
-                class="Text Text--regular color-inverse Calendar-text"
-                data-test="DesignSystem-Text"
+                class="Text Text--regular color-inverse Calendar-value Calendar-yearValue Calendar-yearValue--large Calendar-text"
+                data-test="DesignSystem-Calendar--yearValue"
+                role="button"
+                tabindex="-1"
               >
                 2018
               </span>
@@ -13996,43 +13986,41 @@ exports[`Calendar component
           </div>
           <div
             class="Calendar-valueRow"
+            role="row"
           >
             <div
-              class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
-              data-test="DesignSystem-Calendar--yearValue"
-              role="button"
-              tabindex="-1"
+              role="gridcell"
             >
               <span
-                class="Text Text--regular color-inverse Calendar-text"
-                data-test="DesignSystem-Text"
+                class="Text Text--regular color-inverse Calendar-value Calendar-yearValue Calendar-yearValue--large Calendar-text"
+                data-test="DesignSystem-Calendar--yearValue"
+                role="button"
+                tabindex="-1"
               >
                 2019
               </span>
             </div>
             <div
-              aria-current="true"
-              class="Calendar-value Calendar-value--active Calendar-yearValue Calendar-yearValue--large"
-              data-test="DesignSystem-Calendar--yearValue"
-              role="button"
-              tabindex="0"
+              aria-selected="true"
+              role="gridcell"
             >
               <span
-                class="Text Text--regular color-white Calendar-text"
-                data-test="DesignSystem-Text"
+                class="Text Text--regular color-white Calendar-value Calendar-value--active Calendar-yearValue Calendar-yearValue--large Calendar-text"
+                data-test="DesignSystem-Calendar--yearValue"
+                role="button"
+                tabindex="0"
               >
                 2020
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-yearValue Calendar-yearValue--large Calendar-value--currDateMonthYear"
-              data-test="DesignSystem-Calendar--yearValue"
-              role="button"
-              tabindex="-1"
+              role="gridcell"
             >
               <span
-                class="Text Text--regular color-primary-dark Calendar-value--currDate Calendar-text"
-                data-test="DesignSystem-Text"
+                class="Text Text--regular color-primary-dark Calendar-value Calendar-yearValue Calendar-yearValue--large Calendar-value--currDateMonthYear Calendar-value--currDate Calendar-text"
+                data-test="DesignSystem-Calendar--yearValue"
+                role="button"
+                tabindex="-1"
               >
                 2021
               </span>
@@ -14040,42 +14028,40 @@ exports[`Calendar component
           </div>
           <div
             class="Calendar-valueRow"
+            role="row"
           >
             <div
-              class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
-              data-test="DesignSystem-Calendar--yearValue"
-              role="button"
-              tabindex="-1"
+              role="gridcell"
             >
               <span
-                class="Text Text--regular color-inverse Calendar-text"
-                data-test="DesignSystem-Text"
+                class="Text Text--regular color-inverse Calendar-value Calendar-yearValue Calendar-yearValue--large Calendar-text"
+                data-test="DesignSystem-Calendar--yearValue"
+                role="button"
+                tabindex="-1"
               >
                 2022
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
-              data-test="DesignSystem-Calendar--yearValue"
-              role="button"
-              tabindex="-1"
+              role="gridcell"
             >
               <span
-                class="Text Text--regular color-inverse Calendar-text"
-                data-test="DesignSystem-Text"
+                class="Text Text--regular color-inverse Calendar-value Calendar-yearValue Calendar-yearValue--large Calendar-text"
+                data-test="DesignSystem-Calendar--yearValue"
+                role="button"
+                tabindex="-1"
               >
                 2023
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
-              data-test="DesignSystem-Calendar--yearValue"
-              role="button"
-              tabindex="-1"
+              role="gridcell"
             >
               <span
-                class="Text Text--regular color-inverse Calendar-text"
-                data-test="DesignSystem-Text"
+                class="Text Text--regular color-inverse Calendar-value Calendar-yearValue Calendar-yearValue--large Calendar-text"
+                data-test="DesignSystem-Calendar--yearValue"
+                role="button"
+                tabindex="-1"
               >
                 2024
               </span>
@@ -14083,42 +14069,40 @@ exports[`Calendar component
           </div>
           <div
             class="Calendar-valueRow"
+            role="row"
           >
             <div
-              class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
-              data-test="DesignSystem-Calendar--yearValue"
-              role="button"
-              tabindex="-1"
+              role="gridcell"
             >
               <span
-                class="Text Text--regular color-inverse Calendar-text"
-                data-test="DesignSystem-Text"
+                class="Text Text--regular color-inverse Calendar-value Calendar-yearValue Calendar-yearValue--large Calendar-text"
+                data-test="DesignSystem-Calendar--yearValue"
+                role="button"
+                tabindex="-1"
               >
                 2025
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
-              data-test="DesignSystem-Calendar--yearValue"
-              role="button"
-              tabindex="-1"
+              role="gridcell"
             >
               <span
-                class="Text Text--regular color-inverse Calendar-text"
-                data-test="DesignSystem-Text"
+                class="Text Text--regular color-inverse Calendar-value Calendar-yearValue Calendar-yearValue--large Calendar-text"
+                data-test="DesignSystem-Calendar--yearValue"
+                role="button"
+                tabindex="-1"
               >
                 2026
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
-              data-test="DesignSystem-Calendar--yearValue"
-              role="button"
-              tabindex="-1"
+              role="gridcell"
             >
               <span
-                class="Text Text--regular color-inverse Calendar-text"
-                data-test="DesignSystem-Text"
+                class="Text Text--regular color-inverse Calendar-value Calendar-yearValue Calendar-yearValue--large Calendar-text"
+                data-test="DesignSystem-Calendar--yearValue"
+                role="button"
+                tabindex="-1"
               >
                 2027
               </span>
@@ -19012,43 +18996,41 @@ exports[`Calendar component
         >
           <div
             class="Calendar-valueRow"
+            role="row"
           >
             <div
-              class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
-              data-test="DesignSystem-Calendar--monthValue"
-              role="button"
-              tabindex="-1"
+              role="gridcell"
             >
               <span
-                class="Text Text--small color-inverse Calendar-text"
-                data-test="DesignSystem-Text"
+                class="Text Text--small color-inverse Calendar-value Calendar-monthValue Calendar-monthValue--small Calendar-text"
+                data-test="DesignSystem-Calendar--monthValue"
+                role="button"
+                tabindex="-1"
               >
                 Jan
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
-              data-test="DesignSystem-Calendar--monthValue"
-              role="button"
-              tabindex="-1"
+              role="gridcell"
             >
               <span
-                class="Text Text--small color-inverse Calendar-text"
-                data-test="DesignSystem-Text"
+                class="Text Text--small color-inverse Calendar-value Calendar-monthValue Calendar-monthValue--small Calendar-text"
+                data-test="DesignSystem-Calendar--monthValue"
+                role="button"
+                tabindex="-1"
               >
                 Feb
               </span>
             </div>
             <div
-              aria-current="true"
-              class="Calendar-value Calendar-value--active Calendar-monthValue Calendar-monthValue--small"
-              data-test="DesignSystem-Calendar--monthValue"
-              role="button"
-              tabindex="0"
+              aria-selected="true"
+              role="gridcell"
             >
               <span
-                class="Text Text--small color-white Calendar-text"
-                data-test="DesignSystem-Text"
+                class="Text Text--small color-white Calendar-value Calendar-value--active Calendar-monthValue Calendar-monthValue--small Calendar-text"
+                data-test="DesignSystem-Calendar--monthValue"
+                role="button"
+                tabindex="0"
               >
                 Mar
               </span>
@@ -19056,42 +19038,40 @@ exports[`Calendar component
           </div>
           <div
             class="Calendar-valueRow"
+            role="row"
           >
             <div
-              class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
-              data-test="DesignSystem-Calendar--monthValue"
-              role="button"
-              tabindex="-1"
+              role="gridcell"
             >
               <span
-                class="Text Text--small color-inverse Calendar-text"
-                data-test="DesignSystem-Text"
+                class="Text Text--small color-inverse Calendar-value Calendar-monthValue Calendar-monthValue--small Calendar-text"
+                data-test="DesignSystem-Calendar--monthValue"
+                role="button"
+                tabindex="-1"
               >
                 Apr
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
-              data-test="DesignSystem-Calendar--monthValue"
-              role="button"
-              tabindex="-1"
+              role="gridcell"
             >
               <span
-                class="Text Text--small color-inverse Calendar-text"
-                data-test="DesignSystem-Text"
+                class="Text Text--small color-inverse Calendar-value Calendar-monthValue Calendar-monthValue--small Calendar-text"
+                data-test="DesignSystem-Calendar--monthValue"
+                role="button"
+                tabindex="-1"
               >
                 May
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
-              data-test="DesignSystem-Calendar--monthValue"
-              role="button"
-              tabindex="-1"
+              role="gridcell"
             >
               <span
-                class="Text Text--small color-inverse Calendar-text"
-                data-test="DesignSystem-Text"
+                class="Text Text--small color-inverse Calendar-value Calendar-monthValue Calendar-monthValue--small Calendar-text"
+                data-test="DesignSystem-Calendar--monthValue"
+                role="button"
+                tabindex="-1"
               >
                 Jun
               </span>
@@ -19099,42 +19079,40 @@ exports[`Calendar component
           </div>
           <div
             class="Calendar-valueRow"
+            role="row"
           >
             <div
-              class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
-              data-test="DesignSystem-Calendar--monthValue"
-              role="button"
-              tabindex="-1"
+              role="gridcell"
             >
               <span
-                class="Text Text--small color-inverse Calendar-text"
-                data-test="DesignSystem-Text"
+                class="Text Text--small color-inverse Calendar-value Calendar-monthValue Calendar-monthValue--small Calendar-text"
+                data-test="DesignSystem-Calendar--monthValue"
+                role="button"
+                tabindex="-1"
               >
                 Jul
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
-              data-test="DesignSystem-Calendar--monthValue"
-              role="button"
-              tabindex="-1"
+              role="gridcell"
             >
               <span
-                class="Text Text--small color-inverse Calendar-text"
-                data-test="DesignSystem-Text"
+                class="Text Text--small color-inverse Calendar-value Calendar-monthValue Calendar-monthValue--small Calendar-text"
+                data-test="DesignSystem-Calendar--monthValue"
+                role="button"
+                tabindex="-1"
               >
                 Aug
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
-              data-test="DesignSystem-Calendar--monthValue"
-              role="button"
-              tabindex="-1"
+              role="gridcell"
             >
               <span
-                class="Text Text--small color-inverse Calendar-text"
-                data-test="DesignSystem-Text"
+                class="Text Text--small color-inverse Calendar-value Calendar-monthValue Calendar-monthValue--small Calendar-text"
+                data-test="DesignSystem-Calendar--monthValue"
+                role="button"
+                tabindex="-1"
               >
                 Sep
               </span>
@@ -19142,42 +19120,40 @@ exports[`Calendar component
           </div>
           <div
             class="Calendar-valueRow"
+            role="row"
           >
             <div
-              class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
-              data-test="DesignSystem-Calendar--monthValue"
-              role="button"
-              tabindex="-1"
+              role="gridcell"
             >
               <span
-                class="Text Text--small color-inverse Calendar-text"
-                data-test="DesignSystem-Text"
+                class="Text Text--small color-inverse Calendar-value Calendar-monthValue Calendar-monthValue--small Calendar-text"
+                data-test="DesignSystem-Calendar--monthValue"
+                role="button"
+                tabindex="-1"
               >
                 Oct
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
-              data-test="DesignSystem-Calendar--monthValue"
-              role="button"
-              tabindex="-1"
+              role="gridcell"
             >
               <span
-                class="Text Text--small color-inverse Calendar-text"
-                data-test="DesignSystem-Text"
+                class="Text Text--small color-inverse Calendar-value Calendar-monthValue Calendar-monthValue--small Calendar-text"
+                data-test="DesignSystem-Calendar--monthValue"
+                role="button"
+                tabindex="-1"
               >
                 Nov
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
-              data-test="DesignSystem-Calendar--monthValue"
-              role="button"
-              tabindex="-1"
+              role="gridcell"
             >
               <span
-                class="Text Text--small color-inverse Calendar-text"
-                data-test="DesignSystem-Text"
+                class="Text Text--small color-inverse Calendar-value Calendar-monthValue Calendar-monthValue--small Calendar-text"
+                data-test="DesignSystem-Calendar--monthValue"
+                role="button"
+                tabindex="-1"
               >
                 Dec
               </span>
@@ -19273,42 +19249,40 @@ exports[`Calendar component
         >
           <div
             class="Calendar-valueRow"
+            role="row"
           >
             <div
-              class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
-              data-test="DesignSystem-Calendar--yearValue"
-              role="button"
-              tabindex="-1"
+              role="gridcell"
             >
               <span
-                class="Text Text--small color-inverse Calendar-text"
-                data-test="DesignSystem-Text"
+                class="Text Text--small color-inverse Calendar-value Calendar-yearValue Calendar-yearValue--small Calendar-text"
+                data-test="DesignSystem-Calendar--yearValue"
+                role="button"
+                tabindex="-1"
               >
                 2016
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
-              data-test="DesignSystem-Calendar--yearValue"
-              role="button"
-              tabindex="-1"
+              role="gridcell"
             >
               <span
-                class="Text Text--small color-inverse Calendar-text"
-                data-test="DesignSystem-Text"
+                class="Text Text--small color-inverse Calendar-value Calendar-yearValue Calendar-yearValue--small Calendar-text"
+                data-test="DesignSystem-Calendar--yearValue"
+                role="button"
+                tabindex="-1"
               >
                 2017
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
-              data-test="DesignSystem-Calendar--yearValue"
-              role="button"
-              tabindex="-1"
+              role="gridcell"
             >
               <span
-                class="Text Text--small color-inverse Calendar-text"
-                data-test="DesignSystem-Text"
+                class="Text Text--small color-inverse Calendar-value Calendar-yearValue Calendar-yearValue--small Calendar-text"
+                data-test="DesignSystem-Calendar--yearValue"
+                role="button"
+                tabindex="-1"
               >
                 2018
               </span>
@@ -19316,43 +19290,41 @@ exports[`Calendar component
           </div>
           <div
             class="Calendar-valueRow"
+            role="row"
           >
             <div
-              class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
-              data-test="DesignSystem-Calendar--yearValue"
-              role="button"
-              tabindex="-1"
+              role="gridcell"
             >
               <span
-                class="Text Text--small color-inverse Calendar-text"
-                data-test="DesignSystem-Text"
+                class="Text Text--small color-inverse Calendar-value Calendar-yearValue Calendar-yearValue--small Calendar-text"
+                data-test="DesignSystem-Calendar--yearValue"
+                role="button"
+                tabindex="-1"
               >
                 2019
               </span>
             </div>
             <div
-              aria-current="true"
-              class="Calendar-value Calendar-value--active Calendar-yearValue Calendar-yearValue--small"
-              data-test="DesignSystem-Calendar--yearValue"
-              role="button"
-              tabindex="0"
+              aria-selected="true"
+              role="gridcell"
             >
               <span
-                class="Text Text--small color-white Calendar-text"
-                data-test="DesignSystem-Text"
+                class="Text Text--small color-white Calendar-value Calendar-value--active Calendar-yearValue Calendar-yearValue--small Calendar-text"
+                data-test="DesignSystem-Calendar--yearValue"
+                role="button"
+                tabindex="0"
               >
                 2020
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-yearValue Calendar-yearValue--small Calendar-value--currDateMonthYear"
-              data-test="DesignSystem-Calendar--yearValue"
-              role="button"
-              tabindex="-1"
+              role="gridcell"
             >
               <span
-                class="Text Text--small color-primary-dark Calendar-value--currDate Calendar-text"
-                data-test="DesignSystem-Text"
+                class="Text Text--small color-primary-dark Calendar-value Calendar-yearValue Calendar-yearValue--small Calendar-value--currDateMonthYear Calendar-value--currDate Calendar-text"
+                data-test="DesignSystem-Calendar--yearValue"
+                role="button"
+                tabindex="-1"
               >
                 2021
               </span>
@@ -19360,42 +19332,40 @@ exports[`Calendar component
           </div>
           <div
             class="Calendar-valueRow"
+            role="row"
           >
             <div
-              class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
-              data-test="DesignSystem-Calendar--yearValue"
-              role="button"
-              tabindex="-1"
+              role="gridcell"
             >
               <span
-                class="Text Text--small color-inverse Calendar-text"
-                data-test="DesignSystem-Text"
+                class="Text Text--small color-inverse Calendar-value Calendar-yearValue Calendar-yearValue--small Calendar-text"
+                data-test="DesignSystem-Calendar--yearValue"
+                role="button"
+                tabindex="-1"
               >
                 2022
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
-              data-test="DesignSystem-Calendar--yearValue"
-              role="button"
-              tabindex="-1"
+              role="gridcell"
             >
               <span
-                class="Text Text--small color-inverse Calendar-text"
-                data-test="DesignSystem-Text"
+                class="Text Text--small color-inverse Calendar-value Calendar-yearValue Calendar-yearValue--small Calendar-text"
+                data-test="DesignSystem-Calendar--yearValue"
+                role="button"
+                tabindex="-1"
               >
                 2023
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
-              data-test="DesignSystem-Calendar--yearValue"
-              role="button"
-              tabindex="-1"
+              role="gridcell"
             >
               <span
-                class="Text Text--small color-inverse Calendar-text"
-                data-test="DesignSystem-Text"
+                class="Text Text--small color-inverse Calendar-value Calendar-yearValue Calendar-yearValue--small Calendar-text"
+                data-test="DesignSystem-Calendar--yearValue"
+                role="button"
+                tabindex="-1"
               >
                 2024
               </span>
@@ -19403,42 +19373,40 @@ exports[`Calendar component
           </div>
           <div
             class="Calendar-valueRow"
+            role="row"
           >
             <div
-              class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
-              data-test="DesignSystem-Calendar--yearValue"
-              role="button"
-              tabindex="-1"
+              role="gridcell"
             >
               <span
-                class="Text Text--small color-inverse Calendar-text"
-                data-test="DesignSystem-Text"
+                class="Text Text--small color-inverse Calendar-value Calendar-yearValue Calendar-yearValue--small Calendar-text"
+                data-test="DesignSystem-Calendar--yearValue"
+                role="button"
+                tabindex="-1"
               >
                 2025
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
-              data-test="DesignSystem-Calendar--yearValue"
-              role="button"
-              tabindex="-1"
+              role="gridcell"
             >
               <span
-                class="Text Text--small color-inverse Calendar-text"
-                data-test="DesignSystem-Text"
+                class="Text Text--small color-inverse Calendar-value Calendar-yearValue Calendar-yearValue--small Calendar-text"
+                data-test="DesignSystem-Calendar--yearValue"
+                role="button"
+                tabindex="-1"
               >
                 2026
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
-              data-test="DesignSystem-Calendar--yearValue"
-              role="button"
-              tabindex="-1"
+              role="gridcell"
             >
               <span
-                class="Text Text--small color-inverse Calendar-text"
-                data-test="DesignSystem-Text"
+                class="Text Text--small color-inverse Calendar-value Calendar-yearValue Calendar-yearValue--small Calendar-text"
+                data-test="DesignSystem-Calendar--yearValue"
+                role="button"
+                tabindex="-1"
               >
                 2027
               </span>

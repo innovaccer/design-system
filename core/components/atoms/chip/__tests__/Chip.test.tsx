@@ -207,6 +207,14 @@ describe('Chip component', () => {
     expect(handleOnClose.mock.calls[0][0]).toBe(nameObject);
   });
 
+  it('uses a safe close button label when the chip label is a React element', () => {
+    const { getByLabelText } = render(
+      <Chip label={<Text>Custom Label</Text>} name="Custom Label" clearButton={true} />
+    );
+
+    expect(getByLabelText('Remove Custom Label')).toBeInTheDocument();
+  });
+
   it('renders chip component with label of type string', () => {
     const { getByTestId } = render(<Chip label="ChipLabel" name="Chip" />);
     const stringLabel = getByTestId('DesignSystem-GenericChip--Text');

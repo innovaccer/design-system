@@ -65,6 +65,14 @@ describe('Label component', () => {
     const { getByTestId } = render(<Label>Label</Label>);
     expect(getByTestId('DesignSystem-Label--Text').tagName).toMatch('LABEL');
   });
+
+  it('renders a live region when used as a status message', () => {
+    const { getByRole, getByTestId } = render(<Label role="status">Saved</Label>);
+    const status = getByRole('status');
+
+    expect(status).toHaveAttribute('aria-live', 'polite');
+    expect(getByTestId('DesignSystem-Label--Text').tagName).toMatch('DIV');
+  });
 });
 
 describe('Label Component with overwrite class', () => {

@@ -478,9 +478,9 @@
   background: var(--secondary-lighter);
 }
 
-.Grid--resource .Grid-row--body:focus {
-  box-shadow: var(--shadow-spread) color-mod(var(--secondary) a(var(--opacity-4)));
-  outline: none;
+.Grid--resource .Grid-row--body:focus-visible {
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: calc(-1 * var(--border-width-05));
 }
 
 /* Selected States */
@@ -497,9 +497,9 @@
   background: var(--primary-lighter) !important;
 }
 
-.Grid-row--selected:focus {
-  outline: none;
-  box-shadow: var(--shadow-spread) color-mod(var(--primary) a(var(--opacity-4)));
+.Grid-row--selected:focus-visible {
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: calc(-1 * var(--border-width-05));
 }
 
 /* Activated States */
@@ -519,9 +519,8 @@
   background: var(--secondary-lighter);
 }
 
-.Grid--resource .Grid-row--body:focus .Grid-cellWrapper--pinned {
-  box-shadow: var(--shadow-spread) color-mod(var(--secondary) a(var(--opacity-4)));
-  outline: none;
+.Grid--resource .Grid-row--body:focus-visible .Grid-cellWrapper--pinned {
+  box-shadow: inset 0 0 0 var(--border-width-05) var(--primary-focus);
 }
 
 /* Pinned Columns Selected State */
@@ -538,9 +537,8 @@
   background: var(--primary-lighter) !important;
 }
 
-.Grid-row--selected:focus .Grid-cellWrapper--pinned {
-  outline: none;
-  box-shadow: var(--shadow-spread) color-mod(var(--primary) a(var(--opacity-4)));
+.Grid-row--selected:focus-visible .Grid-cellWrapper--pinned {
+  box-shadow: inset 0 0 0 var(--border-width-05) var(--primary-focus);
 }
 
 /* Grid header */

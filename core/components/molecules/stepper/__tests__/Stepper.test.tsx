@@ -336,3 +336,15 @@ describe('Stepper component keyboard accessibility', () => {
     expect(eventRight.preventDefault).toHaveBeenCalledTimes(1);
   });
 });
+
+describe('Stepper accessibility metadata', () => {
+  it('describes completed steps for screen readers', () => {
+    const { getAllByTestId } = render(<Stepper steps={steps} completed={1} active={2} />);
+
+    const completedStep = getAllByTestId('DesignSystem-Step')[0];
+    const descriptionId = completedStep.getAttribute('aria-describedby');
+
+    expect(descriptionId).toBeTruthy();
+    expect(document.getElementById(descriptionId as string)).toHaveTextContent('Completed');
+  });
+});

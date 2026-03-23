@@ -16,18 +16,23 @@ exports[`Collapsible component
         data-test="DesignSystem-Collapsible"
       >
         <div
+          aria-label="Expand"
           class="Collapsible-body"
           data-test="DesignSystem-CollapsibleBody"
+          id="design-system-collapsible-content"
+          role="region"
         >
           <div>
             Panel
           </div>
         </div>
         <div
+          aria-controls="design-system-collapsible-content"
           aria-expanded="false"
           aria-label="Expand"
           class="Collapsible-footer"
           data-test="DesignSystem-Collapsible--Footer"
+          id="design-system-collapsible-trigger"
           role="button"
           tabindex="0"
         >
@@ -62,18 +67,23 @@ exports[`Collapsible component
         data-test="DesignSystem-Collapsible"
       >
         <div
+          aria-label="Expand"
           class="Collapsible-body overflow-hidden"
           data-test="DesignSystem-CollapsibleBody"
+          id="design-system-collapsible-content"
+          role="region"
         >
           <div>
             Panel
           </div>
         </div>
         <div
+          aria-controls="design-system-collapsible-content"
           aria-expanded="false"
           aria-label="Expand"
           class="Collapsible-footer"
           data-test="DesignSystem-Collapsible--Footer"
+          id="design-system-collapsible-trigger"
           role="button"
           tabindex="0"
         >
@@ -109,18 +119,23 @@ exports[`Collapsible component
         style="width: 240px;"
       >
         <div
+          aria-label="Collapse"
           class="Collapsible-body"
           data-test="DesignSystem-CollapsibleBody"
+          id="design-system-collapsible-content"
+          role="region"
         >
           <div>
             Panel
           </div>
         </div>
         <div
+          aria-controls="design-system-collapsible-content"
           aria-expanded="true"
           aria-label="Collapse"
           class="Collapsible-footer"
           data-test="DesignSystem-Collapsible--Footer"
+          id="design-system-collapsible-trigger"
           role="button"
           tabindex="0"
         >
@@ -156,18 +171,23 @@ exports[`Collapsible component
         style="width: 250px;"
       >
         <div
+          aria-label="Collapse"
           class="Collapsible-body"
           data-test="DesignSystem-CollapsibleBody"
+          id="design-system-collapsible-content"
+          role="region"
         >
           <div>
             Panel
           </div>
         </div>
         <div
+          aria-controls="design-system-collapsible-content"
           aria-expanded="true"
           aria-label="Collapse"
           class="Collapsible-footer"
           data-test="DesignSystem-Collapsible--Footer"
+          id="design-system-collapsible-trigger"
           role="button"
           tabindex="0"
         >

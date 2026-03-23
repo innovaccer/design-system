@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { Icon, Text } from '@/index';
 import { isSpaceKey } from '@/accessibility/utils';
+import useComponentId from '@/utils/useComponentId';
 import styles from '@css/components/stepper.module.css';
 
 export interface StepProps {
@@ -19,6 +20,7 @@ export interface StepProps {
 
 export const Step = React.forwardRef<HTMLDivElement, StepProps>((props, ref) => {
   const { label, value, disabled, active, completed, onChange, onKeyDown, isTabStop = false } = props;
+  const completedStateId = useComponentId(`step-${label.toLowerCase().replace(/\s+/g, '-')}-completed`);
 
   const StepClass = classNames({
     [styles['Step']]: true,
@@ -57,6 +59,7 @@ export const Step = React.forwardRef<HTMLDivElement, StepProps>((props, ref) => 
   };
 
   const textColor = active ? 'primary-dark' : disabled ? 'inverse-lightest' : 'inverse';
+  const defaultAriaLabel = props['aria-label'] || (!props['aria-labelledby'] ? label || 'Step' : undefined);
 
   return (
     <div
@@ -69,8 +72,9 @@ export const Step = React.forwardRef<HTMLDivElement, StepProps>((props, ref) => 
       role="button"
       aria-current={active ? 'step' : undefined}
       aria-disabled={disabled || undefined}
-      aria-label={props['aria-label'] || label || 'Step'}
+      aria-label={defaultAriaLabel}
       aria-labelledby={props['aria-labelledby']}
+      aria-describedby={completed ? completedStateId : undefined}
     >
       <Icon
         data-test="DesignSystem-Step--Icon"
@@ -83,6 +87,24 @@ export const Step = React.forwardRef<HTMLDivElement, StepProps>((props, ref) => 
         <Text weight="medium" color={textColor} className={TextClass}>
           {label}
         </Text>
+      )}
+      {completed && (
+        <span
+          id={completedStateId}
+          style={{
+            position: 'absolute',
+            width: 1,
+            height: 1,
+            padding: 0,
+            margin: -1,
+            overflow: 'hidden',
+            clip: 'rect(0, 0, 0, 0)',
+            whiteSpace: 'nowrap',
+            border: 0,
+          }}
+        >
+          Completed
+        </span>
       )}
     </div>
   );

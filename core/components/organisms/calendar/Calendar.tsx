@@ -779,7 +779,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     const focusYear = this.state.year ?? currYear;
 
     return Array.from({ length: noOfRows }, (_y, row) => (
-      <div key={row} className={styles['Calendar-valueRow']}>
+      <div key={row} className={styles['Calendar-valueRow']} role="row">
         {Array.from({ length: yearsInRow }, (_x, col) => {
           const offset = yearsInRow * row + col;
           if (offset === yearBlockNav) return undefined;
@@ -814,27 +814,27 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
           }) as TextColor;
 
           return (
-            <div
-              key={`${row}-${col}`}
-              data-test="DesignSystem-Calendar--yearValue"
-              className={valueClass}
-              onClick={this.selectYear(year)}
-              onMouseOver={this.yearMouseOverHandler.bind(this, year, isCurrentYear(), disabled)}
-              onFocus={this.yearMouseOverHandler.bind(this, year, isCurrentYear(), disabled)}
-              role="button"
-              tabIndex={disabled ? -1 : year === focusYear ? 0 : -1}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  e.preventDefault();
-                  this.selectYear(year)();
-                } else {
-                  this.handleGridKeyDown(e, yearsInRow, '[class*="Calendar-body"]');
-                }
-              }}
-              aria-disabled={disabled || undefined}
-              aria-current={active ? 'true' : undefined}
-            >
-              <Text size={size === 'small' ? 'small' : 'regular'} color={getTextColor} className={textClass}>
+            <div key={`${row}-${col}`} role="gridcell" aria-selected={active || undefined}>
+              <Text
+                data-test="DesignSystem-Calendar--yearValue"
+                className={classNames(valueClass, textClass)}
+                onClick={this.selectYear(year)}
+                onMouseOver={this.yearMouseOverHandler.bind(this, year, isCurrentYear(), disabled)}
+                onFocus={this.yearMouseOverHandler.bind(this, year, isCurrentYear(), disabled)}
+                role="button"
+                tabIndex={disabled ? -1 : year === focusYear ? 0 : -1}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.selectYear(year)();
+                  } else {
+                    this.handleGridKeyDown(e, yearsInRow, '[class*="Calendar-body"]');
+                  }
+                }}
+                aria-disabled={disabled || undefined}
+                size={size === 'small' ? 'small' : 'regular'}
+                color={getTextColor}
+              >
                 {year}
               </Text>
             </div>
@@ -858,7 +858,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
       year === yearNav && this.state.month != null ? this.state.month : currYear === yearNav ? currMonth : 0;
 
     return Array.from({ length: noOfRows }, (_y, row) => (
-      <div key={row} className={styles['Calendar-valueRow']}>
+      <div key={row} className={styles['Calendar-valueRow']} role="row">
         {Array.from({ length: monthsInRow }, (_x, col) => {
           const month = monthsInRow * row + col;
           const disabled =
@@ -876,6 +876,11 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             [styles['Calendar-value--currDateMonthYear']]: isCurrentMonth(),
           });
 
+          const textClass = classNames({
+            [styles['Calendar-value--currDate']]: isCurrentMonth() && !active,
+            [styles['Calendar-text']]: true,
+          });
+
           const getTextColor = classNames({
             inverse: !active && !isCurrentMonth() && !disabled,
             white: active,
@@ -884,33 +889,28 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             'inverse-lightest': disabled,
           }) as TextColor;
 
-          const textClass = classNames({
-            [styles['Calendar-value--currDate']]: isCurrentMonth() && !active,
-            [styles['Calendar-text']]: true,
-          });
-
           return (
-            <div
-              key={`${row}-${col}`}
-              data-test="DesignSystem-Calendar--monthValue"
-              className={valueClass}
-              onClick={this.selectMonth(month)}
-              onMouseOver={this.monthMouseOverHandler.bind(this, month, isCurrentMonth(), disabled)}
-              onFocus={this.monthMouseOverHandler.bind(this, month, isCurrentMonth(), disabled)}
-              role="button"
-              tabIndex={disabled ? -1 : month === focusMonth ? 0 : -1}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  e.preventDefault();
-                  this.selectMonth(month)();
-                } else {
-                  this.handleGridKeyDown(e, monthsInRow, '[class*="Calendar-body"]');
-                }
-              }}
-              aria-disabled={disabled || undefined}
-              aria-current={active ? 'true' : undefined}
-            >
-              <Text size={size === 'small' ? 'small' : 'regular'} color={getTextColor} className={textClass}>
+            <div key={`${row}-${col}`} role="gridcell" aria-selected={active || undefined}>
+              <Text
+                data-test="DesignSystem-Calendar--monthValue"
+                className={classNames(valueClass, textClass)}
+                onClick={this.selectMonth(month)}
+                onMouseOver={this.monthMouseOverHandler.bind(this, month, isCurrentMonth(), disabled)}
+                onFocus={this.monthMouseOverHandler.bind(this, month, isCurrentMonth(), disabled)}
+                role="button"
+                tabIndex={disabled ? -1 : month === focusMonth ? 0 : -1}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.selectMonth(month)();
+                  } else {
+                    this.handleGridKeyDown(e, monthsInRow, '[class*="Calendar-body"]');
+                  }
+                }}
+                aria-disabled={disabled || undefined}
+                size={size === 'small' ? 'small' : 'regular'}
+                color={getTextColor}
+              >
                 {months[month]}
               </Text>
             </div>

@@ -48,7 +48,19 @@ export interface TextProps extends BaseProps, BaseHtmlProps<HTMLSpanElement> {
 }
 
 export const Text = React.forwardRef<HTMLSpanElement, TextProps>((props, ref) => {
-  const { appearance = 'default', size = 'regular', children, weight, small, className, color, ...rest } = props;
+  const {
+    appearance = 'default',
+    size = 'regular',
+    children,
+    weight,
+    small,
+    className,
+    color,
+    role,
+    'aria-live': ariaLive,
+    ...rest
+  } = props;
+  const resolvedAriaLive = ariaLive ?? (role === 'alert' ? 'assertive' : role === 'status' ? 'polite' : undefined);
 
   const classes = classNames(
     {
@@ -65,7 +77,7 @@ export const Text = React.forwardRef<HTMLSpanElement, TextProps>((props, ref) =>
 
   const interactiveProps = rest.onClick
     ? {
-        role: rest.role || 'button',
+        role: role || 'button',
         tabIndex: rest.tabIndex !== undefined ? rest.tabIndex : 0,
         onKeyDown: (e: React.KeyboardEvent<HTMLSpanElement>) => {
           if (rest.onKeyDown) {
@@ -84,6 +96,8 @@ export const Text = React.forwardRef<HTMLSpanElement, TextProps>((props, ref) =>
       data-test="DesignSystem-Text"
       {...rest}
       {...interactiveProps}
+      role={interactiveProps.role || role}
+      aria-live={resolvedAriaLive}
       className={classes}
       componentType="span"
     >

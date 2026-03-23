@@ -204,6 +204,21 @@ describe('Select component single input trigger tests', () => {
     expect(onSelectMock).toHaveBeenCalled();
   });
 
+  it('retains the accessible label when a selected value is shown', () => {
+    const onSelectMock = jest.fn();
+    const { getByTestId } = render(
+      <Select onSelect={onSelectMock} triggerOptions={{ 'aria-label': 'Country' }}>
+        {children}
+      </Select>
+    );
+    const inputTrigger = getByTestId('DesignSystem-Select-trigger');
+
+    fireEvent.click(inputTrigger);
+    fireEvent.click(getByTestId('DesignSystem-Select-Option'));
+
+    expect(inputTrigger).toHaveAccessibleName('Country Option 1');
+  });
+
   it('check for onClear event handler in single input trigger', () => {
     const { getByTestId } = render(
       <Select triggerOptions={{ placeholder: placeholder }} onSelect={FunctionValue}>

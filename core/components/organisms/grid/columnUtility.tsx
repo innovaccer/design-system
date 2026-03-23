@@ -12,7 +12,7 @@ import styles from '@css/components/grid.module.css';
 
 type resizeColFn = (
   gridInfo: { updateColumnSchema: updateColumnSchemaFunction },
-  name: ColumnSchema['name'],
+  schema: ColumnSchema,
   el: GridRef
 ) => void;
 type sortColumnFn = (
@@ -34,13 +34,14 @@ type hideColumnFn = (
   value: boolean
 ) => void;
 
-export const resizeCol: resizeColFn = ({ updateColumnSchema }, name, el) => {
+export const resizeCol: resizeColFn = ({ updateColumnSchema }, schema, el) => {
+  const { minWidth, maxWidth } = getResizableColumnMetrics(schema, el?.clientWidth);
   const elX = el?.getBoundingClientRect().x;
   function resizable(ev: MouseEvent) {
     ev.preventDefault();
-    if (elX) {
-      updateColumnSchema(name, {
-        width: ev.pageX - elX,
+    if (elX !== undefined) {
+      updateColumnSchema(schema.name, {
+        width: clampColumnWidth(ev.pageX - elX, minWidth, maxWidth),
       });
     }
   }
@@ -49,6 +50,55 @@ export const resizeCol: resizeColFn = ({ updateColumnSchema }, name, el) => {
   window.addEventListener('mouseup', () => {
     window.removeEventListener('mousemove', resizable);
   });
+};
+
+const DEFAULT_COLUMN_WIDTH = 100;
+const DEFAULT_MIN_WIDTH = 96;
+const DEFAULT_MAX_WIDTH = 800;
+
+const resolveWidth = (width: React.ReactText | undefined, fallback: number) => {
+  if (typeof width === 'number') {
+    return width;
+  }
+
+  if (typeof width === 'string') {
+    if (width.trim().endsWith('%')) {
+      return fallback;
+    }
+
+    const parsedWidth = Number.parseFloat(width);
+    if (!Number.isNaN(parsedWidth)) {
+      return parsedWidth;
+    }
+  }
+
+  return fallback;
+};
+
+export const clampColumnWidth = (width: number, minWidth: number, maxWidth: number) => {
+  return Math.min(Math.max(width, minWidth), maxWidth);
+};
+
+export const getResizableColumnMetrics = (schema: ColumnSchema, fallbackWidth?: number) => {
+  const minWidth = resolveWidth(schema.minWidth, DEFAULT_MIN_WIDTH);
+  const maxWidth = resolveWidth(schema.maxWidth, DEFAULT_MAX_WIDTH);
+  const effectiveFallback = fallbackWidth || DEFAULT_COLUMN_WIDTH;
+  const currentWidth = clampColumnWidth(resolveWidth(schema.width, effectiveFallback), minWidth, maxWidth);
+
+  return {
+    currentWidth,
+    minWidth,
+    maxWidth,
+  };
+};
+
+export const getNextResizableWidth = (schema: ColumnSchema, fallbackWidth: number | undefined, widthDelta: number) => {
+  const { currentWidth, minWidth, maxWidth } = getResizableColumnMetrics(schema, fallbackWidth);
+  return clampColumnWidth(currentWidth + widthDelta, minWidth, maxWidth);
+};
+
+export const getResizeHandleLabel = (schema: ColumnSchema) => {
+  return `Resize ${schema.displayName || schema.name} column`;
 };
 
 export const sortColumn: sortColumnFn = ({ sortingList, updateSortingList }, name, type) => {

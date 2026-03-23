@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render, fireEvent, cleanup } from '@testing-library/react';
+import { render, fireEvent, cleanup, waitFor } from '@testing-library/react';
 import { Grid } from '@/index';
 import { GridProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -1388,5 +1388,60 @@ describe('render Grid with filterType feature', () => {
       const applyButton2 = getAllByTestId('DesignSystem-FilterSelect--ApplyButton');
       expect(applyButton2.length).toBeGreaterThan(0);
     });
+  });
+});
+
+describe('Grid accessibility updates', () => {
+  const schema = [
+    {
+      name: 'name',
+      displayName: 'Name',
+      width: 100,
+      resizable: true,
+      minWidth: 80,
+      maxWidth: 120,
+    },
+  ];
+  const data = [{ name: 'Zara' }];
+
+  it('announces sorting changes in the live region', async () => {
+    const { getAllByTestId, getByRole } = render(<Grid schema={schema} data={data} />);
+
+    fireEvent.click(getAllByTestId('DesignSystem-Grid-cellContent')[0]);
+
+    await waitFor(() => {
+      expect(getByRole('status')).toHaveTextContent('Sorted by Name ascending.');
+    });
+  });
+
+  it('announces pagination changes in the live region', async () => {
+    const { getByRole, rerender } = render(
+      <Grid schema={schema} data={data} withPagination={true} totalRecords={20} pageSize={10} page={1} />
+    );
+
+    rerender(<Grid schema={schema} data={data} withPagination={true} totalRecords={20} pageSize={10} page={2} />);
+
+    await waitFor(() => {
+      expect(getByRole('status')).toHaveTextContent('Page 2 of 2.');
+    });
+  });
+
+  it('exposes a keyboard-resizable separator with the display name', () => {
+    const updateSchemaMock = jest.fn();
+    const { getByRole } = render(<Grid schema={schema} data={data} updateSchema={updateSchemaMock} />);
+
+    const resizeHandle = getByRole('separator', { name: 'Resize Name column' });
+    fireEvent.keyDown(resizeHandle, { key: 'ArrowRight' });
+
+    expect(updateSchemaMock).toHaveBeenCalledWith([
+      {
+        displayName: 'Name',
+        maxWidth: 120,
+        minWidth: 80,
+        name: 'name',
+        resizable: true,
+        width: 110,
+      },
+    ]);
   });
 });

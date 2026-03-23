@@ -74,20 +74,20 @@
   background: var(--secondary-dark);
 }
 
-.MenuItem:focus {
+.MenuItem:focus-visible {
   outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: var(--spacing-05);
 }
 
-.MenuItem--expanded:focus {
+.MenuItem--expanded:focus-visible {
   clip-path: inset(-6px -6px -6px 0);
 }
 
-.MenuItem--expandedRounded:focus {
+.MenuItem--expandedRounded:focus-visible {
   clip-path: inset(-6px);
 }
 
-.MenuItem--disabled:focus {
+.MenuItem--disabled:focus-visible {
   outline: none;
 }
 
@@ -130,7 +130,7 @@
   color: var(--primary-darker);
 }
 
-.MenuItem--active:focus {
+.MenuItem--active:focus-visible {
   outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: var(--spacing-05);
 }

@@ -198,3 +198,26 @@ describe('Collapsible component with prop: onToggle', () => {
     expect(onToggleMock).toHaveBeenLastCalledWith(true);
   });
 });
+
+describe('Collapsible accessibility attributes', () => {
+  it('links the trigger and content panel with aria-controls and aria-labelledby', () => {
+    const { getByTestId } = render(
+      <>
+        <span id="collapsible-label">Toggle panel</span>
+        <Collapsible expanded={false} aria-labelledby="collapsible-label">
+          <div />
+        </Collapsible>
+      </>
+    );
+
+    const footer = getByTestId('DesignSystem-Collapsible--Footer');
+    const body = getByTestId('DesignSystem-CollapsibleBody');
+    const controlsId = footer.getAttribute('aria-controls');
+
+    expect(footer).toHaveAttribute('aria-labelledby', 'collapsible-label');
+    expect(controlsId).toBe(body.getAttribute('id'));
+    expect(body).toHaveAttribute('role', 'region');
+    expect(body).toHaveAttribute('aria-labelledby', 'collapsible-label');
+    expect(getByTestId('DesignSystem-Collapsible--FooterIcon')).toHaveAttribute('aria-hidden', 'true');
+  });
+});

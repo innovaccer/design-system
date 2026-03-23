@@ -147,6 +147,18 @@ export const GenericChip = (props: GenericChipProps) => {
     return label;
   };
 
+  const getAccessibleLabelText = () => {
+    if (typeof label === 'string') {
+      return label;
+    }
+
+    if (typeof props.name === 'string' || typeof props.name === 'number') {
+      return String(props.name);
+    }
+
+    return 'chip';
+  };
+
   const getTooltipText = () => {
     const labelText = typeof label === 'string' ? label : '';
 
@@ -172,6 +184,8 @@ export const GenericChip = (props: GenericChipProps) => {
 
     return ariaProps;
   };
+
+  const clearButtonAriaLabel = `Remove ${labelPrefix ? `${labelPrefix} ` : ''}${getAccessibleLabelText()}`;
 
   return (
     <Tooltip
@@ -207,14 +221,14 @@ export const GenericChip = (props: GenericChipProps) => {
         {clearButton && (
           <div
             role="button"
-            aria-label={`Remove ${labelPrefix ? labelPrefix + ' ' : ''}${label}`}
+            aria-label={clearButtonAriaLabel}
             onClick={onCloseHandler}
             tabIndex={disabled ? -1 : 0}
             onKeyDown={onKeyDownHandler}
             className={iconClass('right')}
             data-test="DesignSystem-GenericChip--clearButton"
           >
-            <Icon name="clear" appearance={iconAppearance('right')} size={ClearIconSize} />
+            <Icon name="clear" appearance={iconAppearance('right')} size={ClearIconSize} aria-hidden={true} />
           </div>
         )}
       </div>

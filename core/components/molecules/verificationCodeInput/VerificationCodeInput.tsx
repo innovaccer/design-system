@@ -52,7 +52,6 @@ type Refs = RefObject<HTMLInputElement>[];
 export type VerificationCodeInputProps = VerificationProps &
   Omit<
     InputProps,
-    | 'name'
     | 'type'
     | 'defaultValue'
     | 'size'
@@ -81,6 +80,9 @@ const VerificationCodeInput = (props: VerificationCodeInputProps) => {
     onBlur,
     className,
     value,
+    name,
+    error,
+    required,
     'aria-label': ariaLabel,
     'aria-labelledby': ariaLabelledBy,
     ...rest
@@ -246,7 +248,12 @@ const VerificationCodeInput = (props: VerificationCodeInputProps) => {
           data-id={index}
           ref={refs[index]}
           type={type}
+          name={name ? `${name}-${index + 1}` : `verification-code-${index + 1}`}
+          error={error}
+          required={required}
           {...rest}
+          aria-required={required || undefined}
+          aria-invalid={error || undefined}
           aria-label={ariaLabel ? `${ariaLabel} digit ${index + 1}` : `Digit ${index + 1} of ${fields}`}
         />
       ))}

@@ -2,11 +2,30 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { Icon, Text } from '@/index';
 import { IconType } from '@/common.type';
+import useComponentId from '@/utils/useComponentId';
 import dropdownButtonStyles from '@css/components/dropdownButton.module.css';
 import buttonStyles from '@css/components/button.module.css';
 import textStyles from '@css/components/text.module.css';
 
 export type DropDownButtonSize = 'tiny' | 'regular';
+
+const visuallyHiddenStyles: React.CSSProperties = {
+  position: 'absolute',
+  width: '1px',
+  height: '1px',
+  padding: 0,
+  margin: '-1px',
+  overflow: 'hidden',
+  clip: 'rect(0, 0, 0, 0)',
+  whiteSpace: 'nowrap',
+  border: 0,
+};
+
+const joinAriaIds = (...ids: Array<string | undefined>) => {
+  const validIds = ids.filter((id): id is string => Boolean(id && id.trim()));
+
+  return validIds.length > 0 ? validIds.join(' ') : undefined;
+};
 
 export interface TriggerProps {
   /**
@@ -78,6 +97,7 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
   const trimmedPlaceholder = placeholder.trim();
   const value = children ? children : trimmedPlaceholder;
   const iconName = !menu ? 'keyboard_arrow_down' : icon ? icon : 'more_horiz';
+  const trimmedInlineLabel = inlineLabel?.trim();
 
   const buttonClass = classNames({
     [buttonStyles['Button']]: true,
@@ -96,11 +116,22 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
     [dropdownButtonStyles['DropdownButton-text']]: true,
   });
 
-  // Don't override visible selected value (children) with static aria-label; use aria-labelledby when we have value
-  const valueId = React.useId?.() ?? `dropdown-trigger-value-${Math.random().toString(36).slice(2)}`;
+  const valueId = useComponentId('dropdown-trigger-value');
+  const inlineLabelId = useComponentId('dropdown-trigger-inline-label');
+  const assistiveLabelId = useComponentId('dropdown-trigger-label');
   const hasVisibleValue = !!children;
-  const ariaLabel = !hasVisibleValue && (props['aria-label'] || (inlineLabel ? inlineLabel.trim() : undefined));
-  const ariaLabelledBy = hasVisibleValue ? valueId : props['aria-labelledby'];
+  const resolvedAccessibleLabel = props['aria-label']?.trim() || trimmedInlineLabel || trimmedPlaceholder;
+  const shouldUseAssistiveLabel = hasVisibleValue && !props['aria-labelledby'] && !trimmedInlineLabel;
+  const ariaLabel =
+    !hasVisibleValue && !props['aria-labelledby'] ? props['aria-label']?.trim() || trimmedInlineLabel : undefined;
+  const ariaLabelledBy = hasVisibleValue
+    ? joinAriaIds(
+        props['aria-labelledby'],
+        !props['aria-labelledby'] && trimmedInlineLabel ? inlineLabelId : undefined,
+        shouldUseAssistiveLabel ? assistiveLabelId : undefined,
+        valueId
+      )
+    : props['aria-labelledby'];
 
   return (
     <button
@@ -117,10 +148,19 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
       aria-label={ariaLabel}
       aria-labelledby={ariaLabelledBy}
     >
+      {shouldUseAssistiveLabel && (
+        <span id={assistiveLabelId} style={visuallyHiddenStyles}>
+          {resolvedAccessibleLabel}
+        </span>
+      )}
       {!menu && (
         <div className={dropdownButtonStyles['DropdownButton-wrapper']}>
           {inlineLabel && (
-            <Text appearance="subtle" className="mr-4 white-space-nowrap">
+            <Text
+              id={!props['aria-labelledby'] && hasVisibleValue ? inlineLabelId : undefined}
+              appearance="subtle"
+              className="mr-4 white-space-nowrap"
+            >
               {`${inlineLabel.trim().charAt(0).toUpperCase()}${inlineLabel.trim().slice(1)}`}
             </Text>
           )}

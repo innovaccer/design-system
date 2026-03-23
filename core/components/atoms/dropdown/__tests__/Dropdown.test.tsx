@@ -268,6 +268,26 @@ describe('renders dropdown', () => {
 
     expect(getByTestId('DesignSystem-Popover')).toBeInTheDocument();
   });
+
+  it('retains the accessible label when a selected value is shown', async () => {
+    const onChangeMock = jest.fn();
+    const { getByTestId, getAllByTestId } = render(
+      <Dropdown options={storyOptions} aria-label="Status" onChange={onChangeMock} />
+    );
+    const dropdownTrigger = getByTestId(trigger);
+
+    fireEvent.click(dropdownTrigger);
+
+    await waitFor(() => {
+      expect(getAllByTestId('DesignSystem-DropdownOption--DEFAULT')[0]).toBeInTheDocument();
+    });
+
+    fireEvent.click(getAllByTestId('DesignSystem-DropdownOption--DEFAULT')[0]);
+
+    await waitFor(() => {
+      expect(dropdownTrigger).toHaveAccessibleName('Status Option 1');
+    });
+  });
 });
 
 describe('renders async dropdown', () => {
