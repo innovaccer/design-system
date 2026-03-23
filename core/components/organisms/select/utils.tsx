@@ -74,6 +74,7 @@ export const handleKeyDownTrigger = (
 ) => {
   switch (event.key) {
     case 'Enter':
+    case ' ':
       event.preventDefault();
       setOpenPopover?.(true);
       setHighlightFirstItem?.(true);

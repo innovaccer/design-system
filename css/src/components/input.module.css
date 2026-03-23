@@ -46,22 +46,22 @@
   cursor: text;
 }
 
-.Input:focus-within {
+.Input:has(input:focus-visible) {
   background: var(--white);
   outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: var(--spacing-05);
 }
 
-.Input:focus-within .Input-icon--left {
+.Input:has(input:focus-visible) .Input-icon--left {
   color: var(--primary);
 }
 
-.Input--error:focus-within {
+.Input--error:has(input:focus-visible) {
   border-color: var(--alert);
   box-shadow: var(--shadow-spread) var(--alert-shadow);
 }
 
-.Input--error:focus-within .Input-icon--left {
+.Input--error:has(input:focus-visible) .Input-icon--left {
   color: var(--alert);
 }
 
