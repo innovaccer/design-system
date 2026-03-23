@@ -93,7 +93,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
 
   const contextProp = React.useContext(SelectContext);
   const elementRef = React.useRef(null);
-  const valueId = React.useRef(`select-value-${Math.random().toString(36).slice(2, 9)}`).current;
+  const valueId = React.useMemo(() => `select-value-${++SelectTrigger._idCounter}`, []);
 
   const {
     openPopover,
@@ -115,7 +115,9 @@ const SelectTrigger = (props: SelectTriggerProps) => {
   const trimmedPlaceholder = placeholder?.trim();
 
   // Name = stable field purpose (e.g. "Medicine"), Value = current selection (e.g. "Paracetamol")
-  const triggerName = inlineLabel?.trim() || ariaLabel;
+  // Prefer explicit aria-label over inlineLabel so callers can provide a more specific screen-reader name
+  const explicitAriaLabel = props['aria-label'];
+  const triggerName = explicitAriaLabel?.trim() || inlineLabel?.trim() || ariaLabel;
   const displayValue = computeValue(multiSelect, selectValue, setLabel);
   const value = isOptionSelected && displayValue.length > 0 ? displayValue : trimmedPlaceholder;
   const iconName = openPopover ? 'keyboard_arrow_up' : 'keyboard_arrow_down';
@@ -217,7 +219,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
           </div>
         }
         {isOptionSelected && withClearButton && (
-          <span aria-hidden="true">
+          <span>
             <Icon
               appearance={buttonDisabled}
               onClick={onClearHandler}
@@ -236,6 +238,8 @@ const SelectTrigger = (props: SelectTriggerProps) => {
     </Tooltip>
   );
 };
+
+SelectTrigger._idCounter = 0;
 
 SelectTrigger.defaultProps = {
   triggerSize: 'regular',
