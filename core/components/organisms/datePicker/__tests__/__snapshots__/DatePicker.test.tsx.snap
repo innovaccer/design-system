@@ -9036,6 +9036,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
             class="Input-icon Input-iconWrapper--right"
           >
             <i
+              aria-label="Clear mm/dd/yyyy"
               class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
               data-test="DesignSystem-Input--closeIcon"
               role="button"

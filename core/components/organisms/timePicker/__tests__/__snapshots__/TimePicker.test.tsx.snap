@@ -201,6 +201,7 @@ exports[`TimePicker component prop:time snapshot
           class="Input-icon Input-iconWrapper--right"
         >
           <i
+            aria-label="Clear --:-- AM"
             class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
             data-test="DesignSystem-Input--closeIcon"
             role="button"
@@ -243,6 +244,7 @@ exports[`TimePicker component prop:time snapshot
           class="Input-icon Input-iconWrapper--right"
         >
           <i
+            aria-label="Clear --:-- AM"
             class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
             data-test="DesignSystem-Input--closeIcon"
             role="button"
