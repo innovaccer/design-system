@@ -162,7 +162,11 @@ export const navigateOptions = (
   listRef?: any,
   withSearch?: boolean
 ) => {
-  const listItems = listRef.current.querySelectorAll('[data-test="DesignSystem-Listbox-Item"]');
+  const selectOptions = listRef.current.querySelectorAll('[data-test="DesignSystem-Select-Option"]');
+  const listItems =
+    selectOptions.length > 0
+      ? selectOptions
+      : listRef.current.querySelectorAll('[data-test="DesignSystem-Listbox-Item"]');
   let index = Array.from(listItems).findIndex((item) => {
     return item == focusedOption;
   });

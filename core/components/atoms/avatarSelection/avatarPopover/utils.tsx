@@ -46,9 +46,11 @@ const navigateOptions = (
   listRef?: any,
   withSearch?: boolean
 ) => {
+  const listboxItems = listRef?.current.querySelectorAll('[data-test="DesignSystem-Listbox-Item"]');
   const listItems =
-    listRef?.current.querySelectorAll('[data-test="DesignSystem-Listbox-Item"]') ||
-    listRef?.current.querySelectorAll('[data-test="DesignSystem-AvatarSelection--Option"]');
+    listboxItems && listboxItems.length > 0
+      ? listboxItems
+      : listRef?.current.querySelectorAll('[data-test="DesignSystem-AvatarSelection--Option"]');
   let index = Array.from(listItems).findIndex((item) => {
     return item == focusedOption;
   });
