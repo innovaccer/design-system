@@ -2,7 +2,6 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { Icon, Text } from '@/index';
 import { isSpaceKey } from '@/accessibility/utils';
-import useComponentId from '@/utils/useComponentId';
 import styles from '@css/components/stepper.module.css';
 
 export interface StepProps {
@@ -20,7 +19,11 @@ export interface StepProps {
 
 export const Step = React.forwardRef<HTMLDivElement, StepProps>((props, ref) => {
   const { label, value, disabled, active, completed, onChange, onKeyDown, isTabStop = false } = props;
-  const completedStateId = useComponentId(`step-${label.toLowerCase().replace(/\s+/g, '-')}-completed`);
+  const completedStateId = `${label
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/\s+/g, '-')}-completed`;
 
   const StepClass = classNames({
     [styles['Step']]: true,
