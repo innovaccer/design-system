@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { Icon } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import useComponentId from '@/utils/useComponentId';
 import { isEnterKey, isSpaceKey } from '@/accessibility/utils';
 import styles from '@css/components/collapsible.module.css';
 
@@ -52,7 +53,8 @@ export const Collapsible = (props: CollapsibleProps) => {
 
   const ref = React.createRef<HTMLDivElement>();
   const baseProps = extractBaseProps(props);
-  const baseId = props.id || 'design-system-collapsible';
+  const generatedId = useComponentId('collapsible');
+  const baseId = props.id || generatedId;
   const contentId = `${baseId}-content`;
   const triggerId = `${baseId}-trigger`;
   const triggerAriaLabel = props['aria-labelledby']

@@ -328,23 +328,17 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
           {/* eslint-enable */}
         </div>
         {(chips.length > 0 || inputValue.length > 0) && (
-          <span
-            role="button"
-            tabIndex={-1}
+          <button
+            type="button"
+            tabIndex={disabled ? -1 : 0}
             className={styles['ChipInput-icon']}
+            disabled={disabled}
             onClick={onDeleteAllHandler}
-            onKeyDown={(e: React.KeyboardEvent) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                e.stopPropagation();
-                onDeleteAllHandler(e as any);
-              }
-            }}
             aria-label="Clear all selections"
             data-test="DesignSystem-MultiSelectTrigger--Icon"
           >
             <Icon name="close" appearance={disabled ? 'disabled' : 'subtle'} aria-hidden />
-          </span>
+          </button>
         )}
       </div>
     </div>

@@ -216,7 +216,7 @@ describe('Select component single input trigger tests', () => {
     fireEvent.click(inputTrigger);
     fireEvent.click(getByTestId('DesignSystem-Select-Option'));
 
-    expect(inputTrigger).toHaveAccessibleName('Country Option 1');
+    expect(inputTrigger).toHaveAccessibleName('Country');
   });
 
   it('check for onClear event handler in single input trigger', () => {

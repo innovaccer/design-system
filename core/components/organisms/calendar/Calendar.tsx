@@ -1070,7 +1070,23 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
       dateState > 0 &&
       dateState <= dayRange;
     const isTodayInView = currYear === yearNavVal && currMonth === monthNavVal;
-    const focusDate = hasActiveDate ? dateState : isTodayInView ? todayDate : 1;
+    // Find the first enabled date as fallback so keyboard users can always tab into the grid
+    const getFirstEnabledDate = () => {
+      for (let d = 1; d <= dayRange; d++) {
+        const isDisabled =
+          compareDate(disabledBefore, 'more', yearNavVal, monthNavVal, d) ||
+          compareDate(disabledAfter, 'less', yearNavVal, monthNavVal, d);
+        if (!isDisabled) return d;
+      }
+      return 1;
+    };
+
+    const isTodayDisabled =
+      isTodayInView &&
+      (compareDate(disabledBefore, 'more', yearNavVal, monthNavVal, todayDate) ||
+        compareDate(disabledAfter, 'less', yearNavVal, monthNavVal, todayDate));
+    const fallbackDate = isTodayInView && !isTodayDisabled ? todayDate : getFirstEnabledDate();
+    const focusDate = hasActiveDate ? dateState : fallbackDate;
 
     return Array.from({ length: noOfRows }, (_y, row) => {
       return (
