@@ -258,7 +258,13 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
   );
 
   const iconSize = iconSizeMapping[size];
-  const inputName = inlineLabel?.trim() || placeholder || name || 'input';
+  const explicitAriaLabel = (props as React.HTMLAttributes<HTMLInputElement>)['aria-label'];
+  const inputName =
+    (typeof explicitAriaLabel === 'string' && explicitAriaLabel.trim()) ||
+    inlineLabel?.trim() ||
+    placeholder ||
+    name ||
+    'input';
 
   return (
     <div

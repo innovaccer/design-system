@@ -32,7 +32,7 @@ exports[`Select List component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-9"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -84,7 +84,7 @@ exports[`Select List component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-11"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -136,7 +136,7 @@ exports[`Select List component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-10"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -188,7 +188,7 @@ exports[`Select List component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-12"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -240,7 +240,7 @@ exports[`Select List component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-14"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -292,7 +292,7 @@ exports[`Select List component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-13"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -344,7 +344,7 @@ exports[`Select List component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-6"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -396,7 +396,7 @@ exports[`Select List component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-8"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -448,7 +448,7 @@ exports[`Select List component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-7"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -500,7 +500,7 @@ exports[`Select List component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-3"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -552,7 +552,7 @@ exports[`Select List component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-5"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -604,7 +604,7 @@ exports[`Select List component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-4"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -656,7 +656,7 @@ exports[`Select List component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-21"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -708,7 +708,7 @@ exports[`Select List component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-23"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -760,7 +760,7 @@ exports[`Select List component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-22"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -812,7 +812,7 @@ exports[`Select List component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-24"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -864,7 +864,7 @@ exports[`Select List component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-26"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -916,7 +916,7 @@ exports[`Select List component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-25"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -968,7 +968,7 @@ exports[`Select List component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-18"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -1020,7 +1020,7 @@ exports[`Select List component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-20"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -1072,7 +1072,7 @@ exports[`Select List component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-19"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -1124,7 +1124,7 @@ exports[`Select List component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-15"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -1176,7 +1176,7 @@ exports[`Select List component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-17"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -1228,7 +1228,7 @@ exports[`Select List component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-16"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -1280,7 +1280,7 @@ exports[`Select List component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-33"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -1332,7 +1332,7 @@ exports[`Select List component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-35"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -1384,7 +1384,7 @@ exports[`Select List component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-34"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -1436,7 +1436,7 @@ exports[`Select List component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-36"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -1488,7 +1488,7 @@ exports[`Select List component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-38"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -1540,7 +1540,7 @@ exports[`Select List component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-37"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -1592,7 +1592,7 @@ exports[`Select List component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-30"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -1644,7 +1644,7 @@ exports[`Select List component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-32"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -1696,7 +1696,7 @@ exports[`Select List component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-31"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -1748,7 +1748,7 @@ exports[`Select List component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-27"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -1800,7 +1800,7 @@ exports[`Select List component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-29"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -1852,7 +1852,7 @@ exports[`Select List component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-28"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -1904,7 +1904,7 @@ exports[`Select Option component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-48"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -1956,7 +1956,7 @@ exports[`Select Option component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-50"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -2008,7 +2008,7 @@ exports[`Select Option component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-49"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -2060,7 +2060,7 @@ exports[`Select Option component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-54"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -2112,7 +2112,7 @@ exports[`Select Option component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-56"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -2164,7 +2164,7 @@ exports[`Select Option component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-55"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -2216,7 +2216,7 @@ exports[`Select Option component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-51"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -2268,7 +2268,7 @@ exports[`Select Option component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-53"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -2320,7 +2320,7 @@ exports[`Select Option component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-52"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -2372,7 +2372,7 @@ exports[`Select Option component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-66"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -2424,7 +2424,7 @@ exports[`Select Option component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-68"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -2476,7 +2476,7 @@ exports[`Select Option component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-67"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -2528,7 +2528,7 @@ exports[`Select Option component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-72"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -2580,7 +2580,7 @@ exports[`Select Option component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-74"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -2632,7 +2632,7 @@ exports[`Select Option component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-73"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -2684,7 +2684,7 @@ exports[`Select Option component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-69"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -2736,7 +2736,7 @@ exports[`Select Option component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-71"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -2788,7 +2788,7 @@ exports[`Select Option component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-70"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -2840,7 +2840,7 @@ exports[`Select Option component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-57"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -2892,7 +2892,7 @@ exports[`Select Option component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-59"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -2944,7 +2944,7 @@ exports[`Select Option component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-58"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -2996,7 +2996,7 @@ exports[`Select Option component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-63"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -3048,7 +3048,7 @@ exports[`Select Option component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-65"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -3100,7 +3100,7 @@ exports[`Select Option component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-64"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -3152,7 +3152,7 @@ exports[`Select Option component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-60"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -3204,7 +3204,7 @@ exports[`Select Option component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-62"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -3256,7 +3256,7 @@ exports[`Select Option component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-61"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -3308,7 +3308,7 @@ exports[`Select Option component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-39"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -3360,7 +3360,7 @@ exports[`Select Option component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-41"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -3412,7 +3412,7 @@ exports[`Select Option component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-40"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -3464,7 +3464,7 @@ exports[`Select Option component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-45"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -3516,7 +3516,7 @@ exports[`Select Option component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-47"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -3568,7 +3568,7 @@ exports[`Select Option component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-46"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -3620,7 +3620,7 @@ exports[`Select Option component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-42"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -3672,7 +3672,7 @@ exports[`Select Option component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-44"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -3724,7 +3724,7 @@ exports[`Select Option component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-43"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -3776,7 +3776,7 @@ exports[`Select component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-2"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>
@@ -3828,7 +3828,7 @@ exports[`Select component snapshots
           >
             <span
               class="Text Text--regular Select-trigger--text"
-              id="select-value-1"
+              id="select-listbox-Test-uid-value"
             >
               Select
             </span>

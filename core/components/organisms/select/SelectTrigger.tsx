@@ -4,6 +4,7 @@ import { Icon, Text, Tooltip } from '@/index';
 import { IconType } from '@/common.type';
 import { SelectContext } from './SelectContext';
 import { handleKeyDownTrigger, computeValue } from './utils';
+import uidGenerator from '@/utils/uidGenerator';
 import { BaseProps } from '@/utils/types';
 import selectStyles from '@css/components/select.module.css';
 import buttonStyles from '@css/components/button.module.css';
@@ -93,7 +94,8 @@ const SelectTrigger = (props: SelectTriggerProps) => {
 
   const contextProp = React.useContext(SelectContext);
   const elementRef = React.useRef(null);
-  const valueId = React.useMemo(() => `select-value-${++SelectTrigger._idCounter}`, []);
+  const fallbackId = React.useRef(`select-value-${uidGenerator()}`).current;
+  const valueId = ariaControls ? `${ariaControls}-value` : fallbackId;
 
   const {
     openPopover,
@@ -238,8 +240,6 @@ const SelectTrigger = (props: SelectTriggerProps) => {
     </Tooltip>
   );
 };
-
-SelectTrigger._idCounter = 0;
 
 SelectTrigger.defaultProps = {
   triggerSize: 'regular',
