@@ -9,7 +9,7 @@ Run:
 git tag --sort=-version:refname | head -5
 ```
 
-Pick the most recent version tag (e.g. `v4.21.0` or `4.21.0`). This is `LAST_TAG`.
+Pick the most recent version tag (e.g. `v4.21.0` or `4.21.0` or `v4.21.0-1`). This is `LAST_TAG`.
 
 ## Step 2 — Collect commits since `LAST_TAG`
 
