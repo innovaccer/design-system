@@ -63,10 +63,10 @@ const customCode = `
       <div className="w-100">
         <Card className="px-6 py-6">
           <form onSubmit={this.onSubmit}>
-            <Row className="mb-6" role="group" aria-label="Known Languages">
+            <Row className="mb-6" role="group" aria-labelledby="known-languages-label">
               <Column size={3} className="d-flex align-items-center">
-                <Icon className="mr-4" name="language" />
-                <Text>Known Languages</Text>
+                <Icon aria-hidden="true" className="mr-4" name="language" />
+                <Text id="known-languages-label">Known Languages</Text>
               </Column>
               <Column size={8} className="d-flex">
                 <div className="mr-5 w-25">
@@ -110,10 +110,10 @@ const customCode = `
                 <Button icon="delete" appearance="transparent" aria-label="Delete known language" />
               </Column>
             </Row>
-            <Row className="my-5" role="group" aria-label="Preferred Method of Contact">
+            <Row className="my-5" role="group" aria-labelledby="contact-method-label">
               <Column className="d-flex align-items-center" size={3}>
-                <Icon className="mr-4" name="record_voice_over" />
-                <Text>Preferred Method of Contact</Text>
+                <Icon aria-hidden="true" className="mr-4" name="record_voice_over" />
+                <Text id="contact-method-label">Preferred Method of Contact</Text>
               </Column>
               <Column size={8} className="d-flex" role="group" aria-label="Contact method options">
                 <Button className="mr-3" icon="call" onClick={() => this.onChange('phone', 'contact')}>Phone</Button>
@@ -131,11 +131,11 @@ const customCode = `
                 <Button icon="delete" appearance="transparent" aria-label="Delete contact method" />
               </Column>
             </Row>
-            <div role="group" aria-label="Phone Numbers">
+            <div role="group" aria-labelledby="phone-numbers-label">
             <Row className="mt-6">
               <Column size={3} className="d-flex align-items-center">
-                <Icon className="mr-4" name="call" />
-                <Text>Phone Numbers</Text>
+                <Icon aria-hidden="true" className="mr-4" name="call" />
+                <Text id="phone-numbers-label">Phone Numbers</Text>
               </Column>
               <Column size={8} className="d-flex">
                 <InputMask
