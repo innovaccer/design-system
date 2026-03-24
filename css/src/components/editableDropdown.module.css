@@ -53,6 +53,8 @@
 }
 
 .EditableDropdown:focus-visible .EditableDropdown-default {
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-05);
+  border-radius: var(--border-radius-10);
   background: var(--secondary-light);
-  box-shadow: var(--shadow-spread) var(--secondary-shadow);
 }

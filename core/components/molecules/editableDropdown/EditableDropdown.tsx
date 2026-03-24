@@ -111,6 +111,10 @@ export const EditableDropdown = (props: EditableDropdownProps) => {
     if (!editing) onChangeHandler('edit');
   };
 
+  const ariaLabel = (props as any)['aria-label'];
+  const computedAriaLabel =
+    ariaLabel || (label ? `Click to edit. Current selection: ${label}` : `Click to edit. ${placeholder}`);
+
   return (
     <div
       data-test="DesignSystem-EditableDropdown"
@@ -120,6 +124,7 @@ export const EditableDropdown = (props: EditableDropdownProps) => {
       onClick={handleClick}
       role="button"
       tabIndex={editing ? -1 : 0}
+      aria-label={computedAriaLabel}
     >
       <Editable onChange={onChangeHandler} editing={editing}>
         <Dropdown
