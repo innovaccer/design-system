@@ -71,27 +71,27 @@
   --inverse-lightest: var(--night-lightest);
 
   /* Focus */
-  --primary-focus: var(--jal-dark);
+  --primary-focus: var(--primary-dark);
 
   /* Ultra Light */
-  --primary-ultra-light: #eef6fc;
-  --success-ultra-light: #ecf7f0;
-  --alert-ultra-light: #fcf1f1;
-  --warning-ultra-light: #fffae4;
-  --accent1-ultra-light: #fef3e7;
-  --accent2-ultra-light: #f0ecf7;
-  --accent3-ultra-light: #f1f3fc;
-  --accent4-ultra-light: #f2f9e7;
+  --primary-ultra-light: var(--color-blue-100);
+  --success-ultra-light: var(--color-green-100);
+  --alert-ultra-light: var(--color-red-100);
+  --warning-ultra-light: var(--color-yellow-100);
+  --accent1-ultra-light: var(--color-orange-100);
+  --accent2-ultra-light: var(--color-violet-100);
+  --accent3-ultra-light: var(--color-indigo-100);
+  --accent4-ultra-light: var(--color-lime-100);
 
   /* Avatar specific color for the time being */
-  --primary-300: #c9e1f5;
-  --success-300: #caeacd;
-  --alert-300: #fad1cd;
-  --warning-300: #ffebad;
-  --accent1-300: #fcd9b6;
-  --accent2-300: #d7cae8;
-  --accent3-300: #cbd1f5;
-  --accent4-300: #d3ebb2;
+  --primary-300: var(--color-blue-300);
+  --success-300: var(--color-green-300);
+  --alert-300: var(--color-red-300);
+  --warning-300: var(--color-yellow-300);
+  --accent1-300: var(--color-orange-300);
+  --accent2-300: var(--color-violet-300);
+  --accent3-300: var(--color-indigo-300);
+  --accent4-300: var(--color-lime-300);
 
   /* shadow */
   --primary-shadow: color-mod(var(--primary) a(var(--opacity-4)));

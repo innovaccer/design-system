@@ -431,11 +431,11 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
       left: this.state.targetX,
       width: this.state.targetWidth,
       height: this.state.targetHeight,
-      backgroundColor: '#ffffff',
+      backgroundColor: 'var(--text-white)',
       listStyleType: 'none',
       margin: 0,
       position: 'fixed',
-      boxShadow: '0 4px 16px 0 rgba(0, 0, 0, 0.16)',
+      boxShadow: 'var(--shadow-l)',
     } as React.CSSProperties;
     return (
       <React.Fragment>

@@ -1,6 +1,6 @@
 .SubList-wrapper {
   margin-left: 40px;
-  background-color: #fcfafa;
+  background-color: var(--card-subdued-bg);
 }
 
 .Listbox-wrapper {
