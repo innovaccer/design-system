@@ -28,12 +28,14 @@ export interface InternalHandleProps extends HandleProps {
 export interface HandleState {
   isHandleMoving?: boolean;
   isHandleHovered?: boolean;
+  isHandleFocused?: boolean;
 }
 
 export class Handle extends React.Component<InternalHandleProps, HandleState> {
   state = {
     isHandleMoving: false,
     isHandleHovered: false,
+    isHandleFocused: false,
   };
 
   handleElement: HTMLElement | null = null;
@@ -269,11 +271,23 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
     });
   };
 
+  handleFocus = () => {
+    this.setState({
+      isHandleFocused: true,
+    });
+  };
+
+  handleBlur = () => {
+    this.setState({
+      isHandleFocused: false,
+    });
+  };
+
   render() {
     const { min, tickSizeRatio, value, disabled, label, isCurrentLabelHovered } = this.props;
-    const { isHandleMoving, isHandleHovered } = this.state;
+    const { isHandleMoving, isHandleHovered, isHandleFocused } = this.state;
 
-    const showTootlip = isHandleMoving || isHandleHovered || isCurrentLabelHovered;
+    const showTootlip = isHandleMoving || isHandleHovered || isHandleFocused || isCurrentLabelHovered;
 
     const { handleMidpoint } = this.getHandleMidpointAndOffset(this.handleElement, true);
     const offsetRatio = (value - min) * tickSizeRatio;
@@ -298,9 +312,9 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
         <div
           className={className}
           onMouseOver={this.handleMouseOver}
-          onFocus={this.handleMouseOver}
+          onFocus={this.handleFocus}
           onMouseLeave={this.handleMouseLeave}
-          onBlur={this.handleMouseLeave}
+          onBlur={this.handleBlur}
           onMouseDown={this.beginHandleMovement}
           onKeyDown={this.handleKeyDown}
           onKeyUp={this.handleKeyUp}
