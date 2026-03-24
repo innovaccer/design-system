@@ -4,7 +4,6 @@ import { Icon, Text, Tooltip } from '@/index';
 import { IconType } from '@/common.type';
 import { SelectContext } from './SelectContext';
 import { handleKeyDownTrigger, computeValue } from './utils';
-import uidGenerator from '@/utils/uidGenerator';
 import { BaseProps } from '@/utils/types';
 import selectStyles from '@css/components/select.module.css';
 import buttonStyles from '@css/components/button.module.css';
@@ -94,8 +93,9 @@ const SelectTrigger = (props: SelectTriggerProps) => {
 
   const contextProp = React.useContext(SelectContext);
   const elementRef = React.useRef(null);
-  const fallbackId = React.useRef(`select-value-${uidGenerator()}`).current;
-  const valueId = ariaControls ? `${ariaControls}-value` : fallbackId;
+  const [isMounted, setIsMounted] = React.useState(false);
+  React.useEffect(() => setIsMounted(true), []);
+  const valueId = ariaControls ? `${ariaControls}-value` : undefined;
 
   const {
     openPopover,
@@ -186,9 +186,9 @@ const SelectTrigger = (props: SelectTriggerProps) => {
         style={triggerStyle}
         aria-haspopup="listbox"
         aria-expanded={openPopover}
-        aria-controls={ariaControls}
+        aria-controls={openPopover ? ariaControls : undefined}
         aria-label={triggerName}
-        aria-describedby={isOptionSelected ? valueId : undefined}
+        aria-describedby={isMounted && isOptionSelected && valueId ? valueId : undefined}
         data-test="DesignSystem-Select-trigger"
         {...rest}
       >
@@ -214,7 +214,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
               />
             )}
             {value && (
-              <span id={valueId} ref={elementRef} className={textClass}>
+              <span id={isMounted ? valueId : undefined} ref={elementRef} className={textClass}>
                 {value}
               </span>
             )}
