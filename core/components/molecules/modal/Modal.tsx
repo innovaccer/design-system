@@ -13,6 +13,7 @@ import {
   closeOnEscapeKeypress,
   getFocusableElements,
   handleFocusTrapKeyDown,
+  restoreFocusToElementIfConnected,
 } from '@/utils/overlayHelper';
 import OverlayManager from '@/utils/OverlayManager';
 import { FooterOptions } from '@/common.type';
@@ -211,9 +212,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
     const elementToFocus = this.previousActiveElement;
     this.previousActiveElement = null;
 
-    if (elementToFocus?.focus && OverlayManager.isTopOverlay(this.modalRef.current)) {
-      window.requestAnimationFrame(() => elementToFocus.focus({ preventScroll: true }));
-    }
+    restoreFocusToElementIfConnected(elementToFocus);
   };
 
   componentDidMount() {

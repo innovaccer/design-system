@@ -13,6 +13,7 @@ import {
   closeOnEscapeKeypress,
   getFocusableElements,
   handleFocusTrapKeyDown,
+  restoreFocusToElementIfConnected,
 } from '@/utils/overlayHelper';
 import OverlayManager from '@/utils/OverlayManager';
 import { FooterOptions } from '@/common.type';
@@ -223,9 +224,7 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
     const elementToFocus = this.previousActiveElement;
     this.previousActiveElement = null;
 
-    if (elementToFocus?.focus && OverlayManager.isTopOverlay(this.sidesheetRef.current)) {
-      window.requestAnimationFrame(() => elementToFocus.focus({ preventScroll: true }));
-    }
+    restoreFocusToElementIfConnected(elementToFocus);
   };
 
   componentDidMount() {
