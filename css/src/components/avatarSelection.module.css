@@ -140,10 +140,24 @@
   background: var(--secondary-dark) !important;
 }
 
-.SelectionAvatarCount-wrapper:focus,
+.SelectionAvatarCount-wrapper:focus {
+  outline: none;
+}
+
 .SelectionAvatarCount-wrapper:focus-visible {
-  outline: 3px solid var(--primary-shadow);
-  outline-offset: 3px;
+  outline: none;
+}
+
+.SelectionAvatarCount-wrapper:focus-visible::after {
+  content: '';
+  position: absolute;
+  top: calc(-1 * var(--spacing-20));
+  bottom: calc(-1 * var(--spacing-20));
+  left: calc(-1 * var(--spacing-10));
+  right: calc(-1 * var(--spacing-10));
+  border: var(--border-width-05) solid var(--primary);
+  border-radius: var(--border-radius-10);
+  pointer-events: none;
 }
 
 .SelectionAvatarCount--selected {
