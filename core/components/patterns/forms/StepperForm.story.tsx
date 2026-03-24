@@ -88,10 +88,10 @@ const customCode = `
       const { value } = steps[this.state.activeStep];
 
       return (
-        <div className="w-75">
+        <div>
           <Card className="px-7 py-6">
             <form onSubmit={this.onSubmit}>
-              <div className="d-flex justify-content-between">
+              <div className="d-flex flex-wrap justify-content-between">
                 <Stepper
                   steps={steps}
                   active={this.state.activeStep}
@@ -102,15 +102,15 @@ const customCode = `
               </div>
               <div className={value !== 'Define_Input_Output' ? 'd-none' : ''}>
                 <div className="d-flex mr-3 mt-7 mb-2">
-                  <Text weight="strong" className="mr-4">Source</Text>
+                  <Heading size="s" className="mr-4">Source</Heading>
                   <Badge appearance="warning">2 Inputs</Badge>
                 </div>
                 <Text size="small" appearance="subtle">
                   The system automatically creates collection for multiple support.
                 </Text>
-                <div className="w-50 mt-4">
+                <div className="mt-4">
                   <Label withInput={true}>Input Collection 1</Label>
-                  <Select 
+                  <Select
                     width="100%"
                     className="mb-4"
                     triggerOptions={{ placeholder: "Input Collection 1", 'aria-label': "Input Collection 1" }}
@@ -127,7 +127,7 @@ const customCode = `
                     </Select.List>
                   </Select>
                   <Label withInput={true}>Input Collection 2</Label>
-                  <Select 
+                  <Select
                     width="100%"
                     triggerOptions={{ placeholder: "Input Collection 2", 'aria-label': "Input Collection 2" }}
                     onSelect={(option) => this.onChangeOutput(option.value, 'collection2')}
@@ -144,16 +144,16 @@ const customCode = `
                   </Select>
                 </div>
                 <div className="d-flex mr-3 mt-8 mb-2">
-                  <Text weight="strong" className="mr-4">Destination</Text>
+                  <Heading size="s" className="mr-4">Destination</Heading>
                   <Badge appearance="success">8 Outputs</Badge>
                 </div>
                 <Text size="small" appearance="subtle">
                   The system automatically creates collection for multiple support.
                 </Text>
-                <div className="w-50 mt-6">
+                <div className="mt-6">
                   <Label withInput={true}>Destination Collection</Label>
-                  <Select 
-                    width="100%" 
+                  <Select
+                    width="100%"
                     triggerOptions={{ placeholder: "Select Destination", 'aria-label': "Destination Collection" }}
                     onSelect={(option) => this.onChangeOutput(option.value, 'collection')}
                   >
@@ -168,9 +168,10 @@ const customCode = `
                     </Select.List>
                   </Select>
                 </div>
-                <div className="mt-6 w-50">
-                  <Label withInput={true} required>Prefix</Label>
+                <div className="mt-6">
+                  <Label withInput={true} required htmlFor="prefix-input">Prefix</Label>
                   <InputMask
+                    id="prefix-input"
                     mask={[/\\d/, '_', /\\d/, '_', /\\d/]}
                     name="prefix"
                     placeholder="ID_ID_ID"
@@ -178,11 +179,11 @@ const customCode = `
                     onChange={(e) => this.onChangeOutput(e.target.value, e.target.name)}
                   />
                 </div>
-                <div className="w-25 mt-6">
-                  <Label withInput={true} required>Retention</Label>
-                  <Select 
+                <div className="mt-6">
+                  <Label withInput={true} required>Retention Period</Label>
+                  <Select
                     width="100%"
-                    triggerOptions={{ 'aria-label': "Retention" }}
+                    triggerOptions={{ 'aria-label': "Retention Period" }}
                     onSelect={(option) => this.onChangeOutput(option.value, 'retention')}
                   >
                     <Select.List>
@@ -217,13 +218,13 @@ const customCode = `
                 <div className="d-flex mt-7">
                   <Avatar className="mr-5" firstName="A" appearance="success" />
                   <div className="d-flex flex-column">
-                    <Text weight="strong" className="mb-2">Job Configuration</Text>
+                    <Heading size="s" className="mb-2">Job Configuration</Heading>
                     <Text size="small" appearance="subtle">
                       The system automatically creates collection for multiple support.
                     </Text>
                   </div>
                 </div>
-                <div className="w-25 mt-6">
+                <div className="mt-6">
                   <Label withInput={true} required>Mode</Label>
                   <Select
                     triggerOptions={{ 'aria-label': "Mode" }}
@@ -244,9 +245,10 @@ const customCode = `
                     </Select.List>
                   </Select>
                 </div>
-                <div className="mt-6 w-50">
-                  <Label withInput={true} required>Regex</Label>
+                <div className="mt-6">
+                  <Label withInput={true} required htmlFor="regex-input">Regex</Label>
                   <Textarea
+                    id="regex-input"
                     rows={3}
                     onChange={(e, value) => {
                       this.setState({
@@ -255,8 +257,8 @@ const customCode = `
                     }}
                   />
                 </div>
-                <Label className="mt-6" withInput={true} required>Retention</Label>
-                <Switch appearance="primary" defaultChecked={true} className="d-flex" />
+                <Label className="mt-6" withInput={true} htmlFor="enable-retention" required>Enable Retention</Label>
+                <Switch id="enable-retention" appearance="primary" defaultChecked={true} className="d-flex" />
               </div>
             </form>
           </Card>

@@ -10,7 +10,7 @@ export const customLabels = () => {
   };
 
   const labelRenderer = (newValue) => {
-    return <div>${newValue}%</div>;
+    return <div>{newValue}%</div>;
   };
 
   return (
