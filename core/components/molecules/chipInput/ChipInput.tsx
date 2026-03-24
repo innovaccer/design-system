@@ -297,12 +297,7 @@ export const ChipInput = (props: ChipInputProps) => {
   return (
     <div data-test="DesignSystem-ChipInput--Border" className={ChipInputBorderClass}>
       {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
-      <div
-        data-test="DesignSystem-ChipInput"
-        {...baseProps}
-        className={ChipInputClass}
-        onClick={onClickHandler}
-      >
+      <div data-test="DesignSystem-ChipInput" {...baseProps} className={ChipInputClass} onClick={onClickHandler}>
         <div className={styles['ChipInput-wrapper']} ref={customRef}>
           {chips && chips.length > 0 && chipComponents}
           <input

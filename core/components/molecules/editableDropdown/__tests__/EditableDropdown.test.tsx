@@ -22,7 +22,6 @@ const dropdownOptions = {
 };
 
 const dropdownOptionTestId = `DesignSystem-DropdownOption--${optionType}`;
-const dropdownTriggerTestId = 'DesignSystem-DropdownTrigger';
 const editableWrapperTestId = 'DesignSystem-EditableWrapper';
 
 describe('EditableDropdown component', () => {
