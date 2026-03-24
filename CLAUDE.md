@@ -94,7 +94,7 @@ Props interface: `ComponentNameProps extends BaseProps`. Capitalize type aliases
 
 - **CSS**: Gulp + PostCSS compiles `css/src/**/*.css` → `css/dist/`.
 - **JS**: Rollup produces CJS (`dist/cjs/`), ESM (`dist/esm/`), and UMD (`dist/`) bundles.
-- **Types**: `tsc -b tsconfig.type.json` emits declaration files to `.lib/`, then bundled by `dts-bundle-generator`.
+- **Types**: Rollup's `tsConfig` build (`rollup.config.js:188-235`) uses `ttypescript` with `tsconfig.type.json` to emit declaration files directly into `dist/`. The shipped entry point is `dist/core/index.type.d.ts` (referenced by `"types"` in `package.json`). `dts.config.js` / `dts-bundle-generator` is a **separate, optional step** that writes a bundled `types/index.d.ts` — it is **not** part of `npm run build` and is not what consumers receive.
 
 ### Testing setup
 
