@@ -5,6 +5,7 @@ exports[`EditableDropdown component
  1`] = `
 <DocumentFragment>
   <div
+    aria-label="Click to edit. "
     class="EditableDropdown"
     data-test="DesignSystem-EditableDropdown"
     role="button"

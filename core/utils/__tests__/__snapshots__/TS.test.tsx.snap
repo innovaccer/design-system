@@ -1308,6 +1308,7 @@ exports[`TS renders children 1`] = `
     </div>
   </div>
   <div
+    aria-label="Click to edit. "
     class="EditableDropdown"
     data-test="DesignSystem-EditableDropdown"
     role="button"
