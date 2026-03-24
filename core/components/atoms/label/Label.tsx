@@ -68,12 +68,12 @@ export const Label = (props: LabelProps) => {
 
   const renderInfo = (isRequired = false, isOptional?: boolean) => {
     if (isRequired) {
+      const requiredIndicator = classNames({
+        [styles['Label-requiredIndicator']]: true,
+        'mb-3-5 mt-2': size && size === 'small',
+      });
       return (
-        <span
-          className={styles['Label-requiredIndicator']}
-          aria-label="required"
-          data-test="DesignSystem-Label--RequiredIndicator"
-        />
+        <span className={requiredIndicator} aria-label="required" data-test="DesignSystem-Label--RequiredIndicator" />
       );
     }
 
@@ -93,7 +93,7 @@ export const Label = (props: LabelProps) => {
       'cursor-pointer': true,
       'd-flex': true,
       'align-items-center': true,
-      [styles['Label-infoIcon']]: true,
+      'mb-3-5': size && size === 'small',
     });
 
     return (
