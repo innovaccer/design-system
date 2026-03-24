@@ -1,0 +1,5 @@
+base: accessibility
+menus:
+  - label: Guidelines
+    link: /accessibility/
+    hideInMobile: false
