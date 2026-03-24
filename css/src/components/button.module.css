@@ -346,7 +346,6 @@
   background: transparent;
   box-shadow: inset 0 0 0 1px var(--primary);
   color: var(--primary);
-  mix-blend-mode: multiply;
 }
 
 .Button-outlined--primary:hover {
@@ -377,7 +376,6 @@
   background: transparent;
   box-shadow: inset 0 0 0 1px var(--alert);
   color: var(--alert);
-  mix-blend-mode: multiply;
 }
 
 .Button-outlined--alert:hover {
