@@ -24,20 +24,20 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-gray-500);
+  background: var(--secondary-dark);
   border-radius: 8px;
   border: 2px solid transparent;
   background-clip: content-box;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-gray-700);
+  background: var(--inverse-lightest);
   border: 2px solid transparent;
   background-clip: content-box;
 }
 
 ::-webkit-scrollbar-thumb:active {
-  background: var(--color-gray-900);
+  background: var(--inverse-lighter);
   border: 2px solid transparent;
   background-clip: content-box;
 }
