@@ -3,21 +3,6 @@ import { AIResponse, Text, Menu } from '@/index';
 import './style.css';
 
 export const All = () => {
-  /**
-   *
-   *  .AIResponse-menu-button {
-   *    opacity: var(--opacity-12);
-   *  }
-   *
-   *  .AIResponse-box:hover .AIResponse-menu-button {
-   *    opacity: 1;
-   *  }
-   *
-   *  .AIResponse-box .Menu-Trigger--active {
-   *    opacity: 1;
-   *  }
-   */
-
   const [selectedList, setSelectedList] = React.useState({
     pin: false,
     like: false,
@@ -72,7 +57,7 @@ export const All = () => {
             onClick={() => setSelectedList({ ...selectedList, dislike: !selectedList.dislike, like: false })}
           />
 
-          <Menu trigger={<Menu.Trigger className="AIResponse-menu-button" appearance="transparent" size="tiny" />}>
+          <Menu trigger={<Menu.Trigger appearance="transparent" size="tiny" />}>
             <Menu.List>
               <Menu.Item>Share</Menu.Item>
               <Menu.Item>View source</Menu.Item>
@@ -86,20 +71,6 @@ export const All = () => {
 };
 
 const customCode = `() => {
-/**
-   *
-   *  .AIResponse-menu-button {
-   *    opacity: var(--opacity-12);
-   *  }
-   *
-   *  .AIResponse-box:hover .AIResponse-menu-button {
-   *    opacity: 1;
-   *  }
-   * 
-   *  .AIResponse-box .Menu-Trigger--active {
-   *    opacity: 1;
-   *  }
-   */
 
   const [selectedList, setSelectedList] = React.useState({
     pin: false,
@@ -153,7 +124,7 @@ const customCode = `() => {
             onClick={() => setSelectedList({ ...selectedList, dislike: !selectedList.dislike, like: false })}
           />
 
-          <Menu trigger={<Menu.Trigger className="AIResponse-menu-button" appearance="transparent" size="tiny" />}>
+          <Menu trigger={<Menu.Trigger appearance="transparent" size="tiny" />}>
             <Menu.List>
               <Menu.Item>Share</Menu.Item>
               <Menu.Item>View source</Menu.Item>
