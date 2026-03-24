@@ -169,6 +169,7 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
       if (this.popupRef.current && this.props.open) {
         this._overlayElement = this.popupRef.current;
         OverlayManager.add(this._overlayElement);
+        this.addEscapeKeyHandler();
       }
     }, 0);
   }
@@ -183,7 +184,6 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
   componentDidMount() {
     this.addBoundaryScrollHandler();
     if (this.props.open) {
-      this.addEscapeKeyHandler();
       this.scheduleOverlayAdd();
     }
     const triggerElement = this.triggerRef.current;
@@ -200,7 +200,6 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
     }
     if (prevProps.open !== this.props.open) {
       if (this.props.open) {
-        this.addEscapeKeyHandler();
         this.scheduleOverlayAdd();
       } else {
         this.removeEscapeKeyHandler();
