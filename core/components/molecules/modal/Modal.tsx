@@ -178,7 +178,9 @@ class Modal extends React.Component<ModalProps, ModalState> {
   };
 
   activateFocusTrap = () => {
-    this.previousActiveElement = document.activeElement as HTMLElement | null;
+    if (!this.previousActiveElement || !this.modalRef.current?.contains(document.activeElement)) {
+      this.previousActiveElement = document.activeElement as HTMLElement | null;
+    }
     const container = this.modalContentRef.current;
     if (!container) return;
 
