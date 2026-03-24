@@ -16,8 +16,8 @@ export const TableWrapper = styled.table<{
     // Resets for cascading/system styles
     borderSpacing: 0,
     color: theme.color.defaultText,
-    border: '1px solid #E5E5E5',
-    backgroundColor: '#FFFFFF',
+    border: '1px solid var(--secondary-light)',
+    backgroundColor: 'var(--text-white)',
     borderRadius: '4px',
     'td, th': {
       padding: 0,
@@ -125,7 +125,7 @@ export const TableWrapper = styled.table<{
 
       td: {
         background: theme.background.content,
-        borderTop: '1px solid #E5E5E5',
+        borderTop: '1px solid var(--secondary-light)',
       },
     },
   },
