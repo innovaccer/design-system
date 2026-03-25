@@ -14,7 +14,8 @@ export interface EditableDropdownProps extends BaseProps {
    */
   placeholder: string;
   /**
-   * Props to be used for `Dropdown`
+   * Props to be used for `Dropdown`. `open` and `onPopperToggle` are managed internally for edit mode;
+   * passing them here has no effect. Use `disabled` to block entering edit mode and opening the menu.
    */
   dropdownOptions: Omit<DropdownOptions, 'getLabel' | 'placeholder'>;
   /**
@@ -26,7 +27,14 @@ export interface EditableDropdownProps extends BaseProps {
 export const EditableDropdown = (props: EditableDropdownProps) => {
   const { placeholder, dropdownOptions, className, customTriggerRenderer } = props;
 
-  const { onChange: onDropdownChange, onClose: onDropdownClose, ...rest } = dropdownOptions;
+  const {
+    onChange: onDropdownChange,
+    onClose: onDropdownClose,
+    open: _dropdownOpenIgnored,
+    onPopperToggle: _onPopperToggleIgnored,
+    disabled: dropdownDisabled,
+    ...rest
+  } = dropdownOptions;
 
   const [label, setLabel] = React.useState(placeholder);
   const [editing, setEditing] = React.useState(false);
@@ -55,7 +63,10 @@ export const EditableDropdown = (props: EditableDropdownProps) => {
     setLabel(updatedLabel);
   };
 
+  const isDropdownDisabled = !!dropdownDisabled;
+
   const onChangeHandler = (eventType: string) => {
+    if (isDropdownDisabled) return;
     switch (eventType) {
       case 'edit':
         setEditing(true);
@@ -99,6 +110,7 @@ export const EditableDropdown = (props: EditableDropdownProps) => {
   };
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (isDropdownDisabled) return;
     if (!editing && (event.key === 'Enter' || event.key === ' ')) {
       if (event.currentTarget !== event.target) return;
       event.preventDefault();
@@ -108,6 +120,7 @@ export const EditableDropdown = (props: EditableDropdownProps) => {
   };
 
   const handleClick = () => {
+    if (isDropdownDisabled) return;
     if (!editing) onChangeHandler('edit');
   };
 
@@ -123,20 +136,22 @@ export const EditableDropdown = (props: EditableDropdownProps) => {
       onKeyDown={handleKeyDown}
       onClick={handleClick}
       role="button"
-      tabIndex={editing ? -1 : 0}
+      tabIndex={isDropdownDisabled || editing ? -1 : 0}
+      aria-disabled={isDropdownDisabled || undefined}
       aria-label={computedAriaLabel}
     >
       <Editable onChange={onChangeHandler} editing={editing}>
         <Dropdown
+          {...rest}
           placeholder={placeholder}
           onChange={onChange}
           getLabel={getLabel}
           onClose={onClose}
+          disabled={dropdownDisabled}
           open={dropdownOpen}
           onPopperToggle={onPopperToggle}
           className={EditableDropdownClass}
           data-test="DesignSystem-EditableDropdown--Dropdown"
-          {...rest}
         />
         <div className={DefaultCompClass} data-test="DesignSystem-EditableDropdown--Default">
           <div className={styles['EditableDropdown-wrapper']}>
