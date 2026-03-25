@@ -8,17 +8,27 @@ export interface FileUploaderStatusProps {
   id?: any;
   status: FileStatus;
   onRetry?: () => void;
+  fileName?: string;
 }
 
 export const FileUploaderStatus = (props: FileUploaderStatusProps) => {
-  const { progress, status, onRetry } = props;
+  const { progress, status, onRetry, fileName } = props;
 
   switch (status) {
     case 'uploading':
       return <ProgressRing size="small" value={progress} className="mr-4" />;
 
     case 'error':
-      return <Button appearance="transparent" size="regular" onClick={onRetry} icon="refresh" className="mr-2" />;
+      return (
+        <Button
+          appearance="transparent"
+          size="regular"
+          onClick={onRetry}
+          icon="refresh"
+          className="mr-2"
+          aria-label={`Retry ${fileName}`}
+        />
+      );
 
     default:
       return null;

@@ -83,6 +83,7 @@ export const FileUploaderItem = (props: FileUploaderItemProps) => {
             status={status}
             progress={progress}
             onRetry={() => onRetry && onRetry(file, id)}
+            fileName={name}
           />
           <Button
             data-test="DesignSystem-FileUploader--CancelButton"
@@ -90,6 +91,7 @@ export const FileUploaderItem = (props: FileUploaderItemProps) => {
             size="regular"
             onClick={() => onDelete && onDelete(file, id)}
             icon="close"
+            aria-label={`Remove ${name}`}
           />
         </div>
       </div>
