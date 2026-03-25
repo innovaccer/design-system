@@ -177,6 +177,13 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
   const spinnerSize = size === 'large' && children ? 'small' : 'xsmall';
   const iconSize = size === 'tiny' ? 14 : largeIcon && !children ? sizeMapping[size] + 4 : sizeMapping[size];
 
+  const accessibleLabel = (() => {
+    if (props['aria-label']) return props['aria-label'];
+    if (!children && tooltip) return tooltip;
+    if (loading && children) return String(children);
+    return undefined;
+  })();
+
   return (
     <button
       data-test="DesignSystem-Button"
@@ -186,7 +193,8 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
       disabled={disabled || loading}
       tabIndex={tabIndex}
       aria-busy={loading || undefined}
-      aria-label={props['aria-label'] || (!children && tooltip ? tooltip : undefined)}
+      aria-pressed={selected !== undefined && isBasicOrTransparent ? selected : undefined}
+      aria-label={accessibleLabel}
       {...rest}
     >
       {loading ? (
@@ -215,6 +223,16 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
   const { icon, tooltip, children } = props;
+
+  if (process.env.NODE_ENV !== 'production') {
+    const isIconOnly = icon && !children;
+    const hasAccessibleLabel = tooltip || props['aria-label'] || props['aria-labelledby'];
+    if (isIconOnly && !hasAccessibleLabel) {
+      console.warn(
+        'Button: Icon-only button without an accessible label. Provide `tooltip`, `aria-label`, or `aria-labelledby` so screen readers can announce the button.'
+      );
+    }
+  }
 
   return icon && tooltip && !children ? (
     <Tooltip tooltip={tooltip}>
