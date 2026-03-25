@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { Button, Heading, Text, Icon } from '@/index';
+import { Button, Heading, Text, Icon, Tooltip } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { TextColor } from '@/common.type';
 import styles from '@css/components/calendar.module.css';
@@ -623,16 +623,23 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
       [styles[`Calendar-headerIcon--${type}`]]: type,
     });
 
+    const directionLabel = type === 'prev' ? 'Previous' : 'Next';
+    const viewLabel = view === 'date' ? 'month' : view === 'month' ? 'year' : 'years';
+    const tooltipLabel = `${directionLabel} ${viewLabel}`;
+
     return (
-      <Button
-        type="button"
-        className={headerIconClass}
-        appearance="basic"
-        icon={`arrow_${type === 'next' ? 'forward' : 'back'}`}
-        disabled={disabled}
-        size={size === 'small' ? 'tiny' : 'regular'}
-        onClick={this.onNavIconClickHandler(type)}
-      />
+      <Tooltip tooltip={tooltipLabel} position="bottom">
+        <Button
+          type="button"
+          className={headerIconClass}
+          appearance="basic"
+          icon={`arrow_${type === 'next' ? 'forward' : 'back'}`}
+          disabled={disabled}
+          size={size === 'small' ? 'tiny' : 'regular'}
+          onClick={this.onNavIconClickHandler(type)}
+          aria-label={tooltipLabel}
+        />
+      </Tooltip>
     );
   };
 
