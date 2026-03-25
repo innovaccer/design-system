@@ -22,6 +22,12 @@ export const Divider = (props: DividerProps) => {
 
   const baseProps = extractBaseProps(props);
 
+  const isDecorative =
+    rest.role === 'none' ||
+    rest.role === 'presentation' ||
+    rest['aria-hidden'] === true ||
+    rest['aria-hidden'] === 'true';
+
   const DividerClass = classNames(
     {
       [styles['Divider']]: true,
@@ -39,7 +45,7 @@ export const Divider = (props: DividerProps) => {
       {...rest}
       {...baseProps}
       className={DividerClass}
-      aria-orientation={vertical ? 'vertical' : 'horizontal'}
+      {...(!isDecorative && { 'aria-orientation': vertical ? 'vertical' : 'horizontal' })}
     />
   );
 };
