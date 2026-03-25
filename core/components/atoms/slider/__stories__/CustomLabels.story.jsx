@@ -3,22 +3,22 @@ import { Slider } from '@/index';
 
 // CSF format story
 export const customLabels = () => {
-  const [value, setValue] = React.useState(4);
+  const [value, setValue] = React.useState(10);
 
   const onChange = (newValue) => {
     setValue(newValue);
   };
 
   const labelRenderer = (newValue) => {
-    return <div>{newValue}%</div>;
+    return <div>{newValue} GB</div>;
   };
 
   return (
     <Slider
-      min={1}
-      max={10}
-      stepSize={0.1}
-      labelStepSize={1}
+      min={0}
+      max={20}
+      stepSize={3}
+      labelStepSize={3}
       value={value}
       onChange={onChange}
       labelRenderer={labelRenderer}
@@ -28,22 +28,22 @@ export const customLabels = () => {
 };
 
 const customCode = `() => {
-  const [value, setValue] = React.useState(4);
+  const [value, setValue] = React.useState(10);
 
   const onChange = (value) => {
     setValue(value);
   };
 
   const labelRenderer = (value) => {
-    return \`\${value}%\`;
+    return \`\${value} GB\`;
   };
 
   return (
     <Slider
-      min={1}
-      max={10}
-      stepSize={0.1}
-      labelStepSize={1}
+      min={0}
+      max={20}
+      stepSize={3}
+      labelStepSize={3}
       value={value}
       onChange={onChange}
       labelRenderer={labelRenderer}

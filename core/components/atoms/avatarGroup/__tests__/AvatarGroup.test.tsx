@@ -195,6 +195,23 @@ describe('AvatarGroup component', () => {
     });
   });
 
+  it('marks popover list avatars as decorative', () => {
+    const { getByTestId, getAllByTestId } = render(
+      <AvatarGroup list={list} max={3} popoverOptions={{ on: 'click' }} />
+    );
+
+    const extraAvatar = getByTestId('DesignSystem-AvatarGroup--TriggerAvatar');
+    fireEvent.click(extraAvatar);
+
+    const listItems = getAllByTestId('DesignSystem-AvatarGroup--Item');
+    listItems.forEach((item) => {
+      const avatarElement = item.querySelector('[data-test="DesignSystem-Avatar"]');
+      expect(avatarElement).toHaveAttribute('role', 'presentation');
+      expect(avatarElement).toHaveAttribute('aria-hidden', 'true');
+      expect(avatarElement).toHaveAttribute('tabindex', '-1');
+    });
+  });
+
   it('renders popover list item with disabled state', () => {
     const list = [
       {
@@ -265,6 +282,24 @@ describe('AvatarGroup Component with overwrite class', () => {
   it('overwrite Avatar class', () => {
     const { getByTestId } = render(<AvatarGroup className="AvatarGroupClass" list={list} />);
     expect(getByTestId('DesignSystem-AvatarGroup')).toHaveClass('AvatarGroupClass');
+  });
+
+  it('has group semantics on root wrapper', () => {
+    const { getByTestId } = render(<AvatarGroup list={list} />);
+    expect(getByTestId('DesignSystem-AvatarGroup')).toHaveAttribute('role', 'group');
+  });
+
+  it('supports aria-label and aria-labelledby on root wrapper', () => {
+    const { getByTestId } = render(
+      <>
+        <span id="avatar-group-label">Team Members</span>
+        <AvatarGroup list={list} aria-label="Assignees" aria-labelledby="avatar-group-label" />
+      </>
+    );
+
+    const avatarGroup = getByTestId('DesignSystem-AvatarGroup');
+    expect(avatarGroup).toHaveAttribute('aria-label', 'Assignees');
+    expect(avatarGroup).toHaveAttribute('aria-labelledby', 'avatar-group-label');
   });
 });
 
@@ -463,5 +498,19 @@ describe('AvatarGroup component with shape in data', () => {
       const avatarElement = item.querySelector('[data-test="DesignSystem-Avatar"]');
       expect(avatarElement).toHaveClass('Avatar--square');
     });
+  });
+});
+
+describe('AvatarGroup component with size based spacing', () => {
+  it('applies tiny spacing class on avatar wrappers', () => {
+    const { getAllByTestId } = render(<AvatarGroup list={list} size="tiny" max={3} />);
+    const avatars = getAllByTestId('DesignSystem-AvatarGroup--Avatar');
+    expect(avatars[0]).toHaveClass('AvatarGroup-item--tiny');
+  });
+
+  it('applies micro spacing class on avatar wrappers', () => {
+    const { getAllByTestId } = render(<AvatarGroup list={list} size="micro" max={3} />);
+    const avatars = getAllByTestId('DesignSystem-AvatarGroup--Avatar');
+    expect(avatars[0]).toHaveClass('AvatarGroup-item--micro');
   });
 });

@@ -88,7 +88,7 @@ export const AIIconButton = (props: AIIconButtonProps) => {
     fontSize: `${sizeMapping[size!]}px`,
     width: `${sizeMapping[size!]}px`,
     height: `${sizeMapping[size!]}px`,
-    color: disabled ? '#A6A6A6' : 'rgb(0, 0, 0)',
+    color: disabled ? 'var(--text-disabled)' : 'var(--text)',
   };
 
   const saraIconProps = {
@@ -119,7 +119,7 @@ export const AIIconButton = (props: AIIconButtonProps) => {
 AIIconButton.defaultProps = {
   size: 'regular',
   position: 'top',
-  strokeColor: '#fff',
+  strokeColor: 'var(--text-white)',
 };
 
 export default AIIconButton;
