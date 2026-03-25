@@ -41,6 +41,16 @@ jobs:
           npm version "$PRE_VERSION" --no-git-tag-version
           echo "MCP_VERSION=$PRE_VERSION" >> "$GITHUB_ENV"
 
+      - name: Pack MCPB bundle
+        run: npm run pack
+
+      - name: Upload MCPB artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: mds-mcp-${{ env.MCP_VERSION }}.mcpb
+          path: mcp/*.mcpb
+          retention-days: 30
+
       - name: Generate .npmrc
         run: cp ../.npmrc.stub .npmrc
 
@@ -50,4 +60,6 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Summary
-        run: echo "Published @innovaccer/mds-mcp@$MCP_VERSION" >> "$GITHUB_STEP_SUMMARY"
+        run: |
+          echo "Published @innovaccer/mds-mcp@$MCP_VERSION" >> "$GITHUB_STEP_SUMMARY"
+          echo "MCPB artifact: mds-mcp-${MCP_VERSION}.mcpb" >> "$GITHUB_STEP_SUMMARY"

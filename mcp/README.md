@@ -37,6 +37,15 @@ Add to `.cursor/mcp.json`:
 claude mcp add masala-design-system mds-mcp
 ```
 
+### Claude Desktop / Claude for macOS
+
+Open the `.mcpb` file for one-click installation:
+
+```bash
+npm run generate && npm run pack  # → mds-mcp-<version>.mcpb
+open mds-mcp-*.mcpb               # opens install dialog in Claude
+```
+
 ### Windsurf
 
 Add to `~/.codeium/windsurf/mcp_config.json`:

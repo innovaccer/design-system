@@ -1,0 +1,53 @@
+{
+  "manifest_version": "0.3",
+  "name": "masala-design-system",
+  "display_name": "Masala Design System (MDS)",
+  "version": "4.20.0",
+  "description": "MCP server for the Innovaccer Masala Design System. Provides tools for tokens, components, examples, patterns, helpers, and code validation.",
+  "long_description": "The Masala Design System (MDS) MCP server enables AI coding tools to correctly use Innovaccer's design system.\n\n**This server is read-only and makes no network requests.** It only reads static JSON files bundled inside the extension itself — it does not access your files, environment variables, or the internet.\n\nIt provides 14 deterministic tools backed by static manifests — no AI inside. Tools cover design tokens, component props/variants/a11y, usage examples, UI patterns, CSS helper classes, and a code validator that checks for raw HTML controls, hardcoded colors, non-approved imports, and inline styles.",
+  "author": {
+    "name": "Innovaccer",
+    "url": "https://github.com/innovaccer/design-system"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/innovaccer/design-system"
+  },
+  "support": "https://github.com/innovaccer/design-system/issues",
+  "server": {
+    "type": "node",
+    "entry_point": "server/bundle.mjs",
+    "mcp_config": {
+      "command": "node",
+      "args": [
+        "${__dirname}/server/bundle.mjs",
+        "--manifest-path",
+        "${__dirname}/generated"
+      ]
+    }
+  },
+  "tools": [
+    { "name": "ds_list_tokens", "description": "List design tokens by namespace" },
+    { "name": "ds_get_token", "description": "Get a specific token's details" },
+    { "name": "ds_search_tokens", "description": "Search tokens by name/value" },
+    { "name": "ds_list_components", "description": "List all components by category" },
+    { "name": "ds_get_component", "description": "Get component props, variants, and a11y info" },
+    { "name": "ds_search_components", "description": "Search components by keyword" },
+    { "name": "ds_search_examples", "description": "Search usage examples by keyword" },
+    { "name": "ds_get_example", "description": "Get full example code by ID" },
+    { "name": "ds_list_patterns", "description": "List UI patterns" },
+    { "name": "ds_get_pattern", "description": "Get pattern code and component list" },
+    { "name": "ds_search_helpers", "description": "Search CSS helper/utility classes by keyword" },
+    { "name": "ds_validate_code", "description": "Validate code for DS compliance (colors, imports, HTML controls, inline styles)" },
+    { "name": "ds_get_usage", "description": "Get usage guidelines for a component" },
+    { "name": "ds_search_usage", "description": "Search usage guidelines by keyword" }
+  ],
+  "keywords": ["design-system", "masala", "mds", "innovaccer", "components", "tokens"],
+  "license": "MIT",
+  "compatibility": {
+    "platforms": ["darwin", "win32", "linux"],
+    "runtimes": {
+      "node": ">=18.0.0"
+    }
+  }
+}
