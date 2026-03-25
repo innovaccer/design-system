@@ -48,3 +48,20 @@ describe('Divider component with orientation:vertical', () => {
     expect(getByTestId('DesignSystem-Divider')).toHaveClass('Divider');
   });
 });
+
+describe('Divider component with HTML props', () => {
+  it('supports aria-hidden for decorative dividers', () => {
+    const { getByTestId } = render(<Divider aria-hidden="true" />);
+    expect(getByTestId('DesignSystem-Divider')).toHaveAttribute('aria-hidden', 'true');
+  });
+
+  it('supports role="none" for decorative dividers', () => {
+    const { getByTestId } = render(<Divider role="none" />);
+    expect(getByTestId('DesignSystem-Divider')).toHaveAttribute('role', 'none');
+  });
+
+  it('supports id prop', () => {
+    const { getByTestId } = render(<Divider id="my-divider" />);
+    expect(getByTestId('DesignSystem-Divider')).toHaveAttribute('id', 'my-divider');
+  });
+});

@@ -1,11 +1,11 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { BaseProps, extractBaseProps } from '@/utils/types';
+import { BaseProps, extractBaseProps, BaseHtmlProps } from '@/utils/types';
 import styles from '@css/components/divider.module.css';
 
 type DividerType = 'basic' | 'header';
 
-export interface DividerProps extends BaseProps {
+export interface DividerProps extends BaseProps, BaseHtmlProps<HTMLHRElement> {
   /**
    * Determines if orientation of `Divider` is vertical
    */
@@ -18,7 +18,7 @@ export interface DividerProps extends BaseProps {
 }
 
 export const Divider = (props: DividerProps) => {
-  const { vertical, appearance, className } = props;
+  const { vertical, appearance, className, ...rest } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -36,6 +36,7 @@ export const Divider = (props: DividerProps) => {
   return (
     <hr
       data-test="DesignSystem-Divider"
+      {...rest}
       {...baseProps}
       className={DividerClass}
       aria-orientation={vertical ? 'vertical' : 'horizontal'}

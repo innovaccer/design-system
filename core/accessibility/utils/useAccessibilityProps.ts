@@ -48,6 +48,12 @@ const useAccessibilityProps = ({ onClick, onKeyDown, role = 'button', tabIndex, 
       ...(ariaHidden != null && { 'aria-hidden': ariaHidden }),
     };
   }
+  if (process.env.NODE_ENV !== 'production' && !rest['aria-label']) {
+    console.warn(
+      'useAccessibilityProps: Interactive element (onClick) without an accessible label. Provide `aria-label` so screen readers can announce its purpose.'
+    );
+  }
+
   return {
     onClick: onClick,
     role: role,
