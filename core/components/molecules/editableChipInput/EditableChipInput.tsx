@@ -29,7 +29,8 @@ export interface EditableChipInputProps extends BaseProps {
    */
   disableSaveAction?: boolean;
   /**
-   * Props to be used for `ChipInput`
+   * Props for the inner `ChipInput`. Omits `placeholder`, `value`, and `defaultValue` (set by this component).
+   * If `autoFocus` is omitted, it defaults to `true` when edit mode opens so the field can be typed into immediately; pass `false` to opt out.
    */
   chipInputOptions: Omit<ChipInputProps, 'placeholder' | 'value' | 'defaultValue'>;
 }
@@ -37,7 +38,7 @@ export interface EditableChipInputProps extends BaseProps {
 export const EditableChipInput = (props: EditableChipInputProps) => {
   const { placeholder, onChange, className, disableSaveAction, chipInputOptions, size = 'regular' } = props;
 
-  const { onChange: onChipInputChange, chipOptions = {}, ...rest } = chipInputOptions;
+  const { onChange: onChipInputChange, chipOptions = {}, autoFocus: autoFocusOption, ...rest } = chipInputOptions;
   const { onClick, ...chipObject } = chipOptions;
 
   const [inputValue, setInputValue] = React.useState(props.value);
@@ -165,6 +166,7 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
             value={inputValue}
             size={size}
             chipOptions={chipOptions}
+            autoFocus={autoFocusOption ?? true}
             {...rest}
             className={inputClass}
           />

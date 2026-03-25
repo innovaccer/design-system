@@ -563,14 +563,14 @@ describe('ChipInput Component - Size Variants and Icon Alignment', () => {
       expect(icon).toHaveAttribute('tabIndex', '-1');
     });
 
-    it('should focus input when container is clicked regardless of size', () => {
+    it('should not focus input when outer container is clicked', () => {
       const { getByTestId } = render(<ChipInput {...defaultProps} size="small" />);
 
       const container = getByTestId('DesignSystem-ChipInput');
       const input = getByTestId('DesignSystem-ChipInput--Input');
 
       fireEvent.click(container);
-      expect(input).toHaveFocus();
+      expect(input).not.toHaveFocus();
     });
   });
 });
