@@ -60,7 +60,20 @@
 }
 
 .Listbox-item--selected {
+  position: relative;
   background: color-mod(var(--primary-lightest) a(var(--opacity-12)));
+}
+
+.Listbox-item--selected::before {
+  content: '';
+  position: absolute;
+  top: var(--spacing-10);
+  left: var(--spacing-10);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 8px 8px 0 0;
+  border-color: var(--primary) transparent transparent transparent;
 }
 
 .Listbox-item--selected:hover {
