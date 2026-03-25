@@ -77,6 +77,35 @@ describe('EditableDropdown component', () => {
     expect(getByTestId('DesignSystem-EditableDropdown--Dropdown')).not.toHaveClass('d-none');
   });
 
+  it('does not enter edit mode when dropdownOptions.disabled is true', () => {
+    const { getByTestId } = render(
+      <EditableDropdown placeholder={placeholder} dropdownOptions={{ ...dropdownOptions, disabled: true }} />
+    );
+
+    const root = getByTestId('DesignSystem-EditableDropdown');
+    fireEvent.click(root);
+
+    expect(getByTestId('DesignSystem-EditableDropdown--Default')).not.toHaveClass('d-none');
+    expect(getByTestId('DesignSystem-EditableDropdown--Dropdown')).toHaveClass('d-none');
+    expect(root).toHaveAttribute('aria-disabled', 'true');
+    expect(root).toHaveAttribute('tabIndex', '-1');
+  });
+
+  it('ignores consumer open and onPopperToggle so internal edit state controls the menu', () => {
+    const onPopperToggle = jest.fn();
+    const { getByTestId } = render(
+      <EditableDropdown
+        placeholder={placeholder}
+        dropdownOptions={{ ...dropdownOptions, open: true, onPopperToggle }}
+      />
+    );
+
+    expect(getByTestId('DesignSystem-EditableDropdown--Dropdown')).toHaveClass('d-none');
+
+    fireEvent.click(getByTestId('DesignSystem-EditableDropdown'));
+    expect(getByTestId('DesignSystem-EditableDropdown--Dropdown')).not.toHaveClass('d-none');
+  });
+
   it('updates label and renders default div on selecting an option', () => {
     const clickedOption = 0;
     const { label } = options[clickedOption];

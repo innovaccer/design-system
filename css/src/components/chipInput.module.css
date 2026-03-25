@@ -55,31 +55,14 @@
   min-height: var(--spacing-60);
 }
 
-.ChipInput-border:focus-within:not(:has(.ChipInput-icon:focus)):not(:has(.ChipInput-input:focus)):not(
-    :has(.Chip--input:focus)
-  ):not(:has(.Chip-icon--right:focus)):not(:has(.Chip-icon--selected:focus)) {
+/* Outer focus ring driven by ChipInput.tsx (ChipInput-border--focusRing), not :has() selectors */
+.ChipInput-border--focusRing {
   border-radius: var(--border-radius-10);
   outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: var(--spacing-05);
 }
 
-.ChipInput-border:has(.ChipInput-input:focus) {
-  border-radius: var(--border-radius-10);
-  outline: var(--border-width-05) solid var(--primary-focus);
-  outline-offset: var(--spacing-05);
-}
-
-.ChipInput-border--error:focus-within:not(:has(.ChipInput-icon:focus)):not(:has(.ChipInput-input:focus)):not(
-    :has(.Chip--input:focus)
-  ):not(:has(.Chip-icon--right:focus)):not(:has(.Chip-icon--selected:focus)) {
-  outline: var(--border-width-05) solid var(--primary-focus);
-  outline-offset: var(--spacing-05);
-  box-shadow: var(--shadow-spread) var(--alert-shadow);
-}
-
-.ChipInput-border--error:has(.ChipInput-input:focus) {
-  outline: var(--border-width-05) solid var(--primary-focus);
-  outline-offset: var(--spacing-05);
+.ChipInput-border--error.ChipInput-border--focusRing {
   box-shadow: var(--shadow-spread) var(--alert-shadow);
 }
 
