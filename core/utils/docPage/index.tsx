@@ -296,7 +296,7 @@ const StoryComp = (props: {
                   {activeTab == 0 && (
                     <div
                       className="overflow-auto"
-                      style={{ height: getHeight(shouldShowMore, showMore), background: 'rgb(30, 30, 30)' }}
+                      style={{ height: getHeight(shouldShowMore, showMore), background: 'var(--inverse)' }}
                     >
                       <CopyComp
                         onClick={() => {

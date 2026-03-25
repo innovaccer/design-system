@@ -136,7 +136,7 @@ blockquote {
 
 blockquote p {
   margin: 0;
-  color: #000000;
+  color: var(--text);
 }
 
 .Heading-tooltip {

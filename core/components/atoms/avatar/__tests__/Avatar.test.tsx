@@ -143,6 +143,16 @@ describe('Avatar component accessibility', () => {
     const { getByTestId } = render(<Avatar appearance="primary">Design</Avatar>);
     expect(getByTestId('DesignSystem-Text')).toHaveClass('Avatar-content--primary');
   });
+
+  it('should render decorative avatar semantics when aria-hidden is true', () => {
+    const { getByTestId } = render(<Avatar aria-hidden={true}>Design</Avatar>);
+    const avatar = getByTestId('DesignSystem-Avatar');
+
+    expect(avatar).toHaveAttribute('role', 'presentation');
+    expect(avatar).toHaveAttribute('aria-hidden', 'true');
+    expect(avatar).toHaveAttribute('tabindex', '-1');
+    expect(avatar).not.toHaveAttribute('aria-label');
+  });
 });
 
 describe('Avatar component with prop:size', () => {
