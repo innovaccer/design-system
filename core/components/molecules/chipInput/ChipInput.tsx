@@ -13,6 +13,24 @@ const keyCodes = {
   ENTER: 'Enter',
 };
 
+type ChipInputBorderFocusRegion = 'input' | 'icon' | 'chip' | 'fieldChrome' | null;
+
+const getChipInputBorderFocusRegion = (
+  target: EventTarget | null,
+  inputClassName: string
+): ChipInputBorderFocusRegion => {
+  if (!(target instanceof HTMLElement)) return null;
+  if (
+    target.getAttribute('data-test') === 'DesignSystem-ChipInput--Input' ||
+    target.classList.contains(inputClassName)
+  ) {
+    return 'input';
+  }
+  if (target.closest('[data-test="DesignSystem-ChipInput--Icon"]')) return 'icon';
+  if (target.closest('[data-test="DesignSystem-ChipInput--Chip"]')) return 'chip';
+  return 'fieldChrome';
+};
+
 type ChipOptions = {
   icon?: ChipProps['icon'];
   type?: ChipProps['type'];
@@ -128,6 +146,17 @@ export const ChipInput = (props: ChipInputProps) => {
 
   const [chips, setChips] = React.useState(value || defaultValue);
   const [inputValue, setInputValue] = React.useState('');
+  const [borderFocusRegion, setBorderFocusRegion] = React.useState<ChipInputBorderFocusRegion>(null);
+
+  const handleBorderFocusIn = React.useCallback((e: React.FocusEvent<HTMLDivElement>) => {
+    setBorderFocusRegion(getChipInputBorderFocusRegion(e.target, styles['ChipInput-input']));
+  }, []);
+
+  const handleBorderFocusOut = React.useCallback((e: React.FocusEvent<HTMLDivElement>) => {
+    const next = e.relatedTarget;
+    if (next instanceof Node && e.currentTarget.contains(next)) return;
+    setBorderFocusRegion(null);
+  }, []);
 
   const baseProps = extractBaseProps(props);
 
@@ -144,9 +173,12 @@ export const ChipInput = (props: ChipInputProps) => {
     }
   }, [inputValue]);
 
+  const showBorderFocusRing = borderFocusRegion === 'input' || borderFocusRegion === 'fieldChrome';
+
   const ChipInputBorderClass = classNames({
     [styles['ChipInput-border']]: true,
     [styles['ChipInput-border--error']]: error,
+    [styles['ChipInput-border--focusRing']]: showBorderFocusRing,
   });
 
   const ChipInputClass = classNames(
@@ -291,7 +323,12 @@ export const ChipInput = (props: ChipInputProps) => {
   const iconSize = size === 'small' ? 12 : 16;
 
   return (
-    <div data-test="DesignSystem-ChipInput--Border" className={ChipInputBorderClass}>
+    <div
+      data-test="DesignSystem-ChipInput--Border"
+      className={ChipInputBorderClass}
+      onFocusCapture={handleBorderFocusIn}
+      onBlurCapture={handleBorderFocusOut}
+    >
       <div data-test="DesignSystem-ChipInput" {...baseProps} className={ChipInputClass}>
         <div className={styles['ChipInput-wrapper']} ref={customRef}>
           {chips && chips.length > 0 && chipComponents}
