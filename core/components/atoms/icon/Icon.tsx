@@ -86,11 +86,6 @@ export interface IconProps extends BaseProps {
    */
   tabIndex?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>['tabIndex'];
   /**
-<<<<<<< HEAD
-   * Hides the icon from assistive technologies when used as decorative.
-   */
-  'aria-hidden'?: React.AriaAttributes['aria-hidden'];
-=======
    * Provides an accessible name for the icon.
    */
   'aria-label'?: string;
@@ -98,7 +93,6 @@ export interface IconProps extends BaseProps {
    * Hides the icon from assistive technologies. Use on decorative, non-interactive icons.
    */
   'aria-hidden'?: boolean;
->>>>>>> cbc2f09e (fix(a11y): correct registry entries and DraggableList prop forwarding)
 }
 
 const iconTypeMapper: Record<string, string> = {

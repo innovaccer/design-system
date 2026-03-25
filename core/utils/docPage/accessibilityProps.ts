@@ -19,6 +19,10 @@ export type HtmlElementType =
 export interface A11yPropTableConfig {
   htmlElement: HtmlElementType;
   customProps?: AccessibilityPropDef[];
+  nestedComponents?: {
+    name: string;
+    config: A11yPropTableConfig;
+  }[];
 }
 
 /**
@@ -281,9 +285,12 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
   // FULL: extends BaseHtmlProps / OmitNativeProps — all curated props passable
   // ========================================================================
 
-  // Button-like (BaseHtmlProps<HTMLButtonElement>)
+  // Button-like (BaseHtmlProps<HTMLButtonElement> or React.ComponentProps<'button'>)
   Button: { htmlElement: 'button' },
   LinkButton: { htmlElement: 'button' },
+  AIButton: { htmlElement: 'button' },
+  AIChip: { htmlElement: 'button' }, // extends React.ComponentProps<'button'> (functionally equivalent)
+  AIIconButton: { htmlElement: 'button' },
 
   // Checkbox-like (OmitNativeProps<HTMLInputElement>)
   Checkbox: { htmlElement: 'checkbox' },
@@ -298,6 +305,7 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
   // Textbox-like (BaseHtmlProps<HTMLInputElement/HTMLTextAreaElement>)
   // Note: Input overrides tabIndex internally (readOnly ? -1 : undefined), so consumers cannot customise it.
   Input: { htmlElement: 'textbox' },
+  TextField: { htmlElement: 'textbox' },
   Textarea: {
     htmlElement: 'textbox',
     customProps: [{ name: 'tabIndex', type: 'number', description: 'Controls focus order.' }],
@@ -313,6 +321,21 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
 
   // Card (BaseHtmlProps<HTMLDivElement>)
   Card: { htmlElement: 'generic' },
+  CardSubdued: { htmlElement: 'generic' },
+  Column: { htmlElement: 'generic' },
+  Flex: { htmlElement: 'generic' },
+  Heading: { htmlElement: 'generic' },
+  Label: { htmlElement: 'generic' },
+  MdsGrid: { htmlElement: 'generic' },
+  OutsideClick: { htmlElement: 'generic' },
+  Paragraph: { htmlElement: 'generic' },
+  Row: { htmlElement: 'generic' },
+  Sara: { htmlElement: 'generic' },
+  SaraSparkle: { htmlElement: 'generic' },
+  Subheading: { htmlElement: 'generic' },
+  Text: { htmlElement: 'generic' },
+  AIResponse: { htmlElement: 'generic' },
+  Badge: { htmlElement: 'generic' },
 
   // Meter (BaseProps + React.HTMLAttributes<HTMLDivElement>)
   Meter: { htmlElement: 'range' },
@@ -330,6 +353,15 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
   // CUSTOM: extends only BaseProps — ONLY explicitly defined props are passable.
   // These components use extractBaseProps() which does NOT spread aria-* attributes.
   // ========================================================================
+
+  // Calendar: accepts aria-label, aria-labelledby
+  Calendar: {
+    htmlElement: 'custom',
+    customProps: [
+      { name: 'aria-label', type: 'string', description: 'Accessible label for calendar wrapper.' },
+      { name: 'aria-labelledby', type: 'string', description: 'Associates calendar wrapper with an external label.' },
+    ],
+  },
 
   // Chip: accepts role, aria-label, aria-labelledby
   Chip: {
@@ -376,6 +408,32 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
     ],
   },
 
+  // AvatarGroup: accepts aria-label, aria-labelledby
+  AvatarGroup: {
+    htmlElement: 'custom',
+    customProps: [
+      { name: 'aria-label', type: 'string', description: 'Accessible label for the avatar group container.' },
+      {
+        name: 'aria-labelledby',
+        type: 'string',
+        description: 'Points to element(s) that label the avatar group container.',
+      },
+    ],
+  },
+
+  // AvatarSelection: accepts aria-label, aria-labelledby
+  AvatarSelection: {
+    htmlElement: 'custom',
+    customProps: [
+      { name: 'aria-label', type: 'string', description: 'Accessible label for the avatar selection container.' },
+      {
+        name: 'aria-labelledby',
+        type: 'string',
+        description: 'Points to element(s) that label the avatar selection container.',
+      },
+    ],
+  },
+
   // Icon: useAccessibilityProps forwards different props based on onClick presence.
   // With onClick: role, tabIndex, aria-label, onKeyDown.
   // Without onClick: aria-label, aria-labelledby, aria-describedby, aria-hidden.
@@ -407,6 +465,12 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
   // Consumers should NOT pass aria-valuemin, aria-valuemax, aria-valuenow, or aria-valuetext
   // directly — ProgressBarProps does not declare them and extractBaseProps does not forward them.
 
+  // PageHeader: accepts aria-label
+  PageHeader: {
+    htmlElement: 'custom',
+    customProps: [{ name: 'aria-label', type: 'string', description: 'Accessible label for the page header.' }],
+  },
+
   // Pills: accepts aria-label
   Pills: {
     htmlElement: 'custom',
@@ -419,7 +483,26 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
     ],
   },
 
+  // List: accepts aria-label, aria-labelledby
+  List: {
+    htmlElement: 'custom',
+    customProps: [
+      { name: 'aria-label', type: 'string', description: 'Accessible label for list container.' },
+      { name: 'aria-labelledby', type: 'string', description: 'Associates list with an external label element.' },
+    ],
+  },
+
+  // Menu: accepts aria-label, aria-labelledby
+  Menu: {
+    htmlElement: 'custom',
+    customProps: [
+      { name: 'aria-label', type: 'string', description: 'Accessible label for the menu.' },
+      { name: 'aria-labelledby', type: 'string', description: 'Associates menu with an external label element.' },
+    ],
+  },
+
   // Modal: accepts aria-labelledby (role="dialog" and aria-modal are hardcoded)
+  // footerOptions.actions[] is ButtonProps[] constructed by the developer — full control, no nested tab needed.
   Modal: {
     htmlElement: 'custom',
     customProps: [
@@ -432,6 +515,7 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
   },
 
   // Sidesheet: accepts aria-labelledby (role="dialog" and aria-modal are hardcoded)
+  // footerOptions.actions[] is ButtonProps[] constructed by the developer — full control, no nested tab needed.
   Sidesheet: {
     htmlElement: 'custom',
     customProps: [
@@ -444,6 +528,7 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
   },
 
   // FullscreenModal: accepts aria-labelledby, aria-label, aria-describedby
+  // footerOptions.actions[] is ButtonProps[] constructed by the developer — full control, no nested tab needed.
   FullscreenModal: {
     htmlElement: 'custom',
     customProps: [
@@ -463,6 +548,15 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
         type: 'string',
         description: 'References the element(s) providing an accessible description for the dialog.',
       },
+    ],
+  },
+
+  // Table: accepts aria-label, aria-labelledby
+  Table: {
+    htmlElement: 'custom',
+    customProps: [
+      { name: 'aria-label', type: 'string', description: 'Accessible label for table wrapper.' },
+      { name: 'aria-labelledby', type: 'string', description: 'Associates table wrapper with an external label.' },
     ],
   },
 
@@ -489,6 +583,30 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
         description: 'References the ID of element(s) that label the chip input.',
       },
       { name: 'aria-describedby', type: 'string', description: 'References help text or additional description.' },
+    ],
+    nestedComponents: [
+      {
+        name: 'chipOptions',
+        config: {
+          htmlElement: 'custom',
+          customProps: [
+            {
+              name: 'role',
+              type: 'string',
+              description: 'Overrides the implicit role for individual chips (e.g., "option").',
+            },
+          ],
+        },
+      },
+    ],
+  },
+
+  // Grid: accepts aria-label, aria-labelledby
+  Grid: {
+    htmlElement: 'custom',
+    customProps: [
+      { name: 'aria-label', type: 'string', description: 'Accessible label for grid container.' },
+      { name: 'aria-labelledby', type: 'string', description: 'Associates grid with an external label element.' },
     ],
   },
 
@@ -519,7 +637,60 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
     ],
   },
 
-  // Dropdown: accepts aria-label, aria-labelledby (forwarded to built-in trigger only), optionsAriaLabel
+  // Combobox: accepts aria-label, aria-labelledby
+  Combobox: {
+    htmlElement: 'custom',
+    customProps: [
+      { name: 'aria-label', type: 'string', description: 'Accessible label for the combobox input.' },
+      { name: 'aria-labelledby', type: 'string', description: 'Points to element(s) that label the combobox input.' },
+    ],
+  },
+
+  // DatePicker: accepts aria-label, aria-labelledby
+  DatePicker: {
+    htmlElement: 'custom',
+    customProps: [
+      { name: 'aria-label', type: 'string', description: 'Accessible label for date input trigger.' },
+      { name: 'aria-labelledby', type: 'string', description: 'Associates date input trigger with an external label.' },
+    ],
+    nestedComponents: [
+      {
+        name: 'inputOptions',
+        config: {
+          htmlElement: 'textbox',
+        },
+      },
+    ],
+  },
+
+  // DateRangePicker: accepts aria-label, aria-labelledby
+  DateRangePicker: {
+    htmlElement: 'custom',
+    customProps: [
+      { name: 'aria-label', type: 'string', description: 'Accessible label for date range input trigger.' },
+      {
+        name: 'aria-labelledby',
+        type: 'string',
+        description: 'Associates date range input trigger with an external label.',
+      },
+    ],
+    nestedComponents: [
+      {
+        name: 'inputOptions',
+        config: { htmlElement: 'textbox' },
+      },
+      {
+        name: 'startInputOptions',
+        config: { htmlElement: 'textbox' },
+      },
+      {
+        name: 'endInputOptions',
+        config: { htmlElement: 'textbox' },
+      },
+    ],
+  },
+
+  // Dropdown: accepts aria-label, aria-labelledby (forwarded to built-in trigger only), optionsAriaLabel, tabIndex
   Dropdown: {
     htmlElement: 'custom',
     customProps: [
@@ -540,15 +711,132 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
         type: 'string',
         description: 'Accessible name for the options list container. Defaults to "{aria-label} options" or "Options".',
       },
+      {
+        name: 'tabIndex',
+        type: 'number',
+        description: 'Controls focus order of the dropdown trigger.',
+      },
+    ],
+  },
+
+  // EditableChipInput: nested chipInputOptions
+  EditableChipInput: {
+    htmlElement: 'custom',
+    nestedComponents: [
+      {
+        name: 'chipInputOptions',
+        config: {
+          htmlElement: 'custom',
+          customProps: [
+            { name: 'aria-label', type: 'string', description: 'Defines an accessible name for the chip input.' },
+            {
+              name: 'aria-labelledby',
+              type: 'string',
+              description: 'References the ID of element(s) that label the chip input.',
+            },
+            {
+              name: 'aria-describedby',
+              type: 'string',
+              description: 'References help text or additional description.',
+            },
+          ],
+        },
+      },
+    ],
+  },
+
+  // EditableDropdown: nested dropdownOptions
+  EditableDropdown: {
+    htmlElement: 'custom',
+    nestedComponents: [
+      {
+        name: 'dropdownOptions',
+        config: {
+          htmlElement: 'custom',
+          customProps: [
+            {
+              name: 'aria-label',
+              type: 'string',
+              description: 'Defines an accessible name for the dropdown trigger.',
+            },
+            {
+              name: 'aria-labelledby',
+              type: 'string',
+              description: 'References the ID of element(s) that label the dropdown trigger.',
+            },
+            {
+              name: 'optionsAriaLabel',
+              type: 'string',
+              description: 'Accessible name for the options list container.',
+            },
+            {
+              name: 'tabIndex',
+              type: 'number',
+              description: 'Controls focus order of the dropdown trigger.',
+            },
+          ],
+        },
+      },
+    ],
+  },
+
+  // EditableInput: nested inputOptions
+  EditableInput: {
+    htmlElement: 'custom',
+    nestedComponents: [
+      {
+        name: 'inputOptions',
+        config: { htmlElement: 'textbox' },
+      },
+    ],
+  },
+
+  // Select: nested triggerOptions
+  Select: {
+    htmlElement: 'custom',
+    nestedComponents: [
+      {
+        name: 'triggerOptions',
+        config: {
+          htmlElement: 'custom',
+          customProps: [
+            {
+              name: 'aria-label',
+              type: 'string',
+              description: 'Accessible label for the Select trigger button.',
+              defaultValue: '"Select trigger"',
+            },
+          ],
+        },
+      },
+    ],
+  },
+
+  // TimePicker: accepts aria-label, id
+  TimePicker: {
+    htmlElement: 'custom',
+    customProps: [
+      { name: 'aria-label', type: 'string', description: 'Accessible label for the time picker input.' },
+      {
+        name: 'id',
+        type: 'string',
+        description: 'ID for the time picker input. Only available on the search variant.',
+      },
+    ],
+    nestedComponents: [
+      {
+        name: 'inputOptions',
+        config: { htmlElement: 'textbox' },
+      },
     ],
   },
 
   // ========================================================================
   // NOT INCLUDED (BaseProps only, NO passable a11y props):
-  // SegmentedControl, AvatarSelection, ProgressBar, ProgressRing, Toast,
-  // Message, Collapsible, AvatarGroup, HelpText, Dialog, Tooltip, Popover,
-  // Dropzone, EditableInput, EditableChipInput, EditableDropdown, Stepper,
-  // VerticalNav, Navigation, DatePicker, DateRangePicker, Calendar,
+  // SegmentedControl, ProgressBar, ProgressRing, Toast,
+  // Message, Collapsible, HelpText, Dialog, Tooltip, Popover,
+  // Dropzone, Stepper,
+  // VerticalNav, Navigation,
   // InlineMessage
   // These components manage a11y internally and do not expose configurable
   // aria-* props to consumers.
