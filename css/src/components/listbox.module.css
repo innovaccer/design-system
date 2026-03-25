@@ -59,7 +59,19 @@
 }
 
 .Listbox-item--selected {
+  position: relative;
   background: color-mod(var(--primary-lightest) a(var(--opacity-12)));
+}
+
+.Listbox-item--selected::before {
+  content: '';
+  position: absolute;
+  top: var(--spacing-10);
+  left: var(--spacing-10);
+  width: 8px;
+  height: 8px;
+  background-color: var(--primary);
+  clip-path: polygon(0 0, 100% 0, 0 100%);
 }
 
 .Listbox-item--selected:hover {
