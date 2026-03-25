@@ -91,13 +91,7 @@ const curatedElementProps: Record<HtmlElementType, AccessibilityPropDef[]> = {
     { name: 'aria-labelledby', type: 'string', description: 'References the ID of element(s) that label the element.' },
     { name: 'aria-describedby', type: 'string', description: 'References help text or additional description.' },
     { name: 'aria-disabled', type: 'boolean', description: 'Indicates the element is perceivable but not operable.' },
-    {
-      name: 'aria-checked',
-      type: '"false" | "true" | "mixed"',
-      description: 'Indicates the checked state. Set to "mixed" for indeterminate state.',
-    },
     { name: 'aria-required', type: 'boolean', description: 'Indicates selection is required before form submission.' },
-    { name: 'aria-invalid', type: '"false" | "true"', description: 'Indicates a validation error.' },
     {
       name: 'aria-errormessage',
       type: 'string',
@@ -812,7 +806,7 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
     ],
   },
 
-  // TimePicker: accepts aria-label, id
+  // TimePicker: accepts aria-label, id, optionsAriaLabel
   TimePicker: {
     htmlElement: 'custom',
     customProps: [
@@ -821,6 +815,12 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
         name: 'id',
         type: 'string',
         description: 'ID for the time picker input. Only available on the search variant.',
+      },
+      {
+        name: 'optionsAriaLabel',
+        type: 'string',
+        description: 'Accessible name for the options list container. Only available on the search variant.',
+        defaultValue: '"Time options"',
       },
     ],
     nestedComponents: [
