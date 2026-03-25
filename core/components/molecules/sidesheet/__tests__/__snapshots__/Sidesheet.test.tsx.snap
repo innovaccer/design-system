@@ -73,7 +73,6 @@ exports[`Sidesheet component
                   <i
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
-                    role="button"
                     style="font-size: 20px; width: 20px;"
                   >
                     close
@@ -175,7 +174,6 @@ exports[`Sidesheet component
                   <i
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
-                    role="button"
                     style="font-size: 20px; width: 20px;"
                   >
                     close

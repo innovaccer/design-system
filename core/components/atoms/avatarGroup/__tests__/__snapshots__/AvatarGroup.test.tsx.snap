@@ -10,6 +10,7 @@ Object {
       <div
         class="AvatarGroup d-inline-flex"
         data-test="DesignSystem-AvatarGroup"
+        role="group"
       >
         <div
           class="AvatarGroup-item AvatarGroup-item--regular"
@@ -24,7 +25,7 @@ Object {
               class="PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -37,7 +38,6 @@ Object {
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
                     data-test="DesignSystem-Icon"
-                    role="button"
                     style="font-size: 20px; width: 20px;"
                   >
                     places
@@ -60,7 +60,7 @@ Object {
               class="PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -73,7 +73,6 @@ Object {
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
                     data-test="DesignSystem-Icon"
-                    role="button"
                     style="font-size: 20px; width: 20px;"
                   >
                     smart_toy
@@ -90,6 +89,7 @@ Object {
     <div
       class="AvatarGroup d-inline-flex"
       data-test="DesignSystem-AvatarGroup"
+      role="group"
     >
       <div
         class="AvatarGroup-item AvatarGroup-item--regular"
@@ -104,7 +104,7 @@ Object {
             class="PopperWrapper-trigger flex-grow-0"
           >
             <span
-              class=""
+              class="Avatar-wrapper"
               data-test="DesignSystem-AvatarWrapper"
             >
               <span
@@ -117,7 +117,6 @@ Object {
                 <i
                   class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
                   data-test="DesignSystem-Icon"
-                  role="button"
                   style="font-size: 20px; width: 20px;"
                 >
                   places
@@ -140,7 +139,7 @@ Object {
             class="PopperWrapper-trigger flex-grow-0"
           >
             <span
-              class=""
+              class="Avatar-wrapper"
               data-test="DesignSystem-AvatarWrapper"
             >
               <span
@@ -153,7 +152,6 @@ Object {
                 <i
                   class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
                   data-test="DesignSystem-Icon"
-                  role="button"
                   style="font-size: 20px; width: 20px;"
                 >
                   smart_toy
@@ -229,6 +227,7 @@ Object {
       <div
         class="AvatarGroup d-inline-flex"
         data-test="DesignSystem-AvatarGroup"
+        role="group"
       >
         <div
           class="AvatarGroup-item AvatarGroup-item--regular"
@@ -243,7 +242,7 @@ Object {
               class="PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -256,7 +255,6 @@ Object {
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
                     data-test="DesignSystem-Icon"
-                    role="button"
                     style="font-size: 20px; width: 20px;"
                   >
                     places
@@ -279,7 +277,7 @@ Object {
               class="PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -292,7 +290,6 @@ Object {
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
                     data-test="DesignSystem-Icon"
-                    role="button"
                     style="font-size: 20px; width: 20px;"
                   >
                     smart_toy
@@ -309,6 +306,7 @@ Object {
     <div
       class="AvatarGroup d-inline-flex"
       data-test="DesignSystem-AvatarGroup"
+      role="group"
     >
       <div
         class="AvatarGroup-item AvatarGroup-item--regular"
@@ -323,7 +321,7 @@ Object {
             class="PopperWrapper-trigger flex-grow-0"
           >
             <span
-              class=""
+              class="Avatar-wrapper"
               data-test="DesignSystem-AvatarWrapper"
             >
               <span
@@ -336,7 +334,6 @@ Object {
                 <i
                   class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
                   data-test="DesignSystem-Icon"
-                  role="button"
                   style="font-size: 20px; width: 20px;"
                 >
                   places
@@ -359,7 +356,7 @@ Object {
             class="PopperWrapper-trigger flex-grow-0"
           >
             <span
-              class=""
+              class="Avatar-wrapper"
               data-test="DesignSystem-AvatarWrapper"
             >
               <span
@@ -372,7 +369,6 @@ Object {
                 <i
                   class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
                   data-test="DesignSystem-Icon"
-                  role="button"
                   style="font-size: 20px; width: 20px;"
                 >
                   smart_toy
@@ -448,6 +444,7 @@ Object {
       <div
         class="AvatarGroup d-inline-flex"
         data-test="DesignSystem-AvatarGroup"
+        role="group"
       >
         <div
           class="AvatarGroup-item AvatarGroup-item--tiny"
@@ -462,7 +459,7 @@ Object {
               class="PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -475,7 +472,6 @@ Object {
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
                     data-test="DesignSystem-Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     places
@@ -498,7 +494,7 @@ Object {
               class="PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -511,7 +507,6 @@ Object {
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
                     data-test="DesignSystem-Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     smart_toy
@@ -528,6 +523,7 @@ Object {
     <div
       class="AvatarGroup d-inline-flex"
       data-test="DesignSystem-AvatarGroup"
+      role="group"
     >
       <div
         class="AvatarGroup-item AvatarGroup-item--tiny"
@@ -542,7 +538,7 @@ Object {
             class="PopperWrapper-trigger flex-grow-0"
           >
             <span
-              class=""
+              class="Avatar-wrapper"
               data-test="DesignSystem-AvatarWrapper"
             >
               <span
@@ -555,7 +551,6 @@ Object {
                 <i
                   class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
                   data-test="DesignSystem-Icon"
-                  role="button"
                   style="font-size: 16px; width: 16px;"
                 >
                   places
@@ -578,7 +573,7 @@ Object {
             class="PopperWrapper-trigger flex-grow-0"
           >
             <span
-              class=""
+              class="Avatar-wrapper"
               data-test="DesignSystem-AvatarWrapper"
             >
               <span
@@ -591,7 +586,6 @@ Object {
                 <i
                   class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
                   data-test="DesignSystem-Icon"
-                  role="button"
                   style="font-size: 16px; width: 16px;"
                 >
                   smart_toy
@@ -667,6 +661,7 @@ Object {
       <div
         class="AvatarGroup d-inline-flex"
         data-test="DesignSystem-AvatarGroup"
+        role="group"
       >
         <div
           class="AvatarGroup-item AvatarGroup-item--tiny"
@@ -681,7 +676,7 @@ Object {
               class="PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -694,7 +689,6 @@ Object {
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
                     data-test="DesignSystem-Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     places
@@ -717,7 +711,7 @@ Object {
               class="PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -730,7 +724,6 @@ Object {
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
                     data-test="DesignSystem-Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     smart_toy
@@ -747,6 +740,7 @@ Object {
     <div
       class="AvatarGroup d-inline-flex"
       data-test="DesignSystem-AvatarGroup"
+      role="group"
     >
       <div
         class="AvatarGroup-item AvatarGroup-item--tiny"
@@ -761,7 +755,7 @@ Object {
             class="PopperWrapper-trigger flex-grow-0"
           >
             <span
-              class=""
+              class="Avatar-wrapper"
               data-test="DesignSystem-AvatarWrapper"
             >
               <span
@@ -774,7 +768,6 @@ Object {
                 <i
                   class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
                   data-test="DesignSystem-Icon"
-                  role="button"
                   style="font-size: 16px; width: 16px;"
                 >
                   places
@@ -797,7 +790,7 @@ Object {
             class="PopperWrapper-trigger flex-grow-0"
           >
             <span
-              class=""
+              class="Avatar-wrapper"
               data-test="DesignSystem-AvatarWrapper"
             >
               <span
@@ -810,7 +803,6 @@ Object {
                 <i
                   class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
                   data-test="DesignSystem-Icon"
-                  role="button"
                   style="font-size: 16px; width: 16px;"
                 >
                   smart_toy

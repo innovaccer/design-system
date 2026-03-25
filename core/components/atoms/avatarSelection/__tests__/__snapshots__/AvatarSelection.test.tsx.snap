@@ -10,6 +10,7 @@ Object {
       <div
         class="SelectionAvatarGroup"
         data-test="DesignSystem-AvatarSelection"
+        role="group"
       >
         <span
           class="SelectionAvatarGroup-wrapper"
@@ -30,7 +31,7 @@ Object {
                 class="PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class=""
+                  class="Avatar-wrapper"
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
@@ -71,7 +72,7 @@ Object {
                 class="PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class=""
+                  class="Avatar-wrapper"
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
@@ -112,7 +113,7 @@ Object {
                 class="PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class=""
+                  class="Avatar-wrapper"
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
@@ -153,7 +154,7 @@ Object {
                 class="PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class=""
+                  class="Avatar-wrapper"
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
@@ -194,7 +195,7 @@ Object {
                 class="PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class=""
+                  class="Avatar-wrapper"
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
@@ -234,7 +235,7 @@ Object {
               class="position-relative d-inline-flex"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -262,6 +263,7 @@ Object {
     <div
       class="SelectionAvatarGroup"
       data-test="DesignSystem-AvatarSelection"
+      role="group"
     >
       <span
         class="SelectionAvatarGroup-wrapper"
@@ -282,7 +284,7 @@ Object {
               class="PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -323,7 +325,7 @@ Object {
               class="PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -364,7 +366,7 @@ Object {
               class="PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -405,7 +407,7 @@ Object {
               class="PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -446,7 +448,7 @@ Object {
               class="PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -486,7 +488,7 @@ Object {
             class="position-relative d-inline-flex"
           >
             <span
-              class=""
+              class="Avatar-wrapper"
               data-test="DesignSystem-AvatarWrapper"
             >
               <span
@@ -573,6 +575,7 @@ Object {
       <div
         class="SelectionAvatarGroup"
         data-test="DesignSystem-AvatarSelection"
+        role="group"
       >
         <span
           class="SelectionAvatarGroup-wrapper"
@@ -593,7 +596,7 @@ Object {
                 class="PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class=""
+                  class="Avatar-wrapper"
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
@@ -634,7 +637,7 @@ Object {
                 class="PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class=""
+                  class="Avatar-wrapper"
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
@@ -675,7 +678,7 @@ Object {
                 class="PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class=""
+                  class="Avatar-wrapper"
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
@@ -716,7 +719,7 @@ Object {
                 class="PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class=""
+                  class="Avatar-wrapper"
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
@@ -757,7 +760,7 @@ Object {
                 class="PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class=""
+                  class="Avatar-wrapper"
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
@@ -797,7 +800,7 @@ Object {
               class="position-relative d-inline-flex"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -825,6 +828,7 @@ Object {
     <div
       class="SelectionAvatarGroup"
       data-test="DesignSystem-AvatarSelection"
+      role="group"
     >
       <span
         class="SelectionAvatarGroup-wrapper"
@@ -845,7 +849,7 @@ Object {
               class="PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -886,7 +890,7 @@ Object {
               class="PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -927,7 +931,7 @@ Object {
               class="PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -968,7 +972,7 @@ Object {
               class="PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -1009,7 +1013,7 @@ Object {
               class="PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -1049,7 +1053,7 @@ Object {
             class="position-relative d-inline-flex"
           >
             <span
-              class=""
+              class="Avatar-wrapper"
               data-test="DesignSystem-AvatarWrapper"
             >
               <span
@@ -1136,13 +1140,14 @@ Object {
       <div
         class="SelectionAvatarGroup"
         data-test="DesignSystem-AvatarSelection"
+        role="group"
       >
         <span
           class="SelectionAvatarGroup-wrapper"
         >
           <div
             aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 5;"
@@ -1156,7 +1161,7 @@ Object {
                 class="PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class=""
+                  class="Avatar-wrapper"
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
@@ -1183,7 +1188,7 @@ Object {
         >
           <div
             aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 4;"
@@ -1197,7 +1202,7 @@ Object {
                 class="PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class=""
+                  class="Avatar-wrapper"
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
@@ -1224,7 +1229,7 @@ Object {
         >
           <div
             aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 3;"
@@ -1238,7 +1243,7 @@ Object {
                 class="PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class=""
+                  class="Avatar-wrapper"
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
@@ -1265,7 +1270,7 @@ Object {
         >
           <div
             aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 2;"
@@ -1279,7 +1284,7 @@ Object {
                 class="PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class=""
+                  class="Avatar-wrapper"
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
@@ -1306,7 +1311,7 @@ Object {
         >
           <div
             aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 1;"
@@ -1320,7 +1325,7 @@ Object {
                 class="PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class=""
+                  class="Avatar-wrapper"
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
@@ -1350,7 +1355,7 @@ Object {
             aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
             aria-expanded="false"
             aria-haspopup="listbox"
-            class="SelectionAvatarCount-wrapper SelectionAvatarGroup-item"
+            class="SelectionAvatarCount-wrapper SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny"
             data-test="DesignSystem-AvatarSelection--TriggerAvatar"
             role="button"
             style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white;"
@@ -1360,7 +1365,7 @@ Object {
               class="position-relative d-inline-flex"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -1388,13 +1393,14 @@ Object {
     <div
       class="SelectionAvatarGroup"
       data-test="DesignSystem-AvatarSelection"
+      role="group"
     >
       <span
         class="SelectionAvatarGroup-wrapper"
       >
         <div
           aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
           style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 5;"
@@ -1408,7 +1414,7 @@ Object {
               class="PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -1435,7 +1441,7 @@ Object {
       >
         <div
           aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
           style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 4;"
@@ -1449,7 +1455,7 @@ Object {
               class="PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -1476,7 +1482,7 @@ Object {
       >
         <div
           aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
           style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 3;"
@@ -1490,7 +1496,7 @@ Object {
               class="PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -1517,7 +1523,7 @@ Object {
       >
         <div
           aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
           style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 2;"
@@ -1531,7 +1537,7 @@ Object {
               class="PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -1558,7 +1564,7 @@ Object {
       >
         <div
           aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
           style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 1;"
@@ -1572,7 +1578,7 @@ Object {
               class="PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -1602,7 +1608,7 @@ Object {
           aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          class="SelectionAvatarCount-wrapper SelectionAvatarGroup-item"
+          class="SelectionAvatarCount-wrapper SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny"
           data-test="DesignSystem-AvatarSelection--TriggerAvatar"
           role="button"
           style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white;"
@@ -1612,7 +1618,7 @@ Object {
             class="position-relative d-inline-flex"
           >
             <span
-              class=""
+              class="Avatar-wrapper"
               data-test="DesignSystem-AvatarWrapper"
             >
               <span
@@ -1699,6 +1705,7 @@ Object {
       <div
         class="SelectionAvatarGroup"
         data-test="DesignSystem-AvatarSelection"
+        role="group"
       >
         <span
           class="SelectionAvatarGroup-wrapper"
@@ -1719,7 +1726,7 @@ Object {
                 class="PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class=""
+                  class="Avatar-wrapper"
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
@@ -1760,7 +1767,7 @@ Object {
                 class="PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class=""
+                  class="Avatar-wrapper"
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
@@ -1801,7 +1808,7 @@ Object {
                 class="PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class=""
+                  class="Avatar-wrapper"
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
@@ -1842,7 +1849,7 @@ Object {
                 class="PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class=""
+                  class="Avatar-wrapper"
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
@@ -1883,7 +1890,7 @@ Object {
                 class="PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class=""
+                  class="Avatar-wrapper"
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
@@ -1923,7 +1930,7 @@ Object {
               class="position-relative d-inline-flex"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -1965,6 +1972,7 @@ Object {
       <div
         class="SelectionAvatarGroup"
         data-test="DesignSystem-AvatarSelection"
+        role="group"
       >
         <div
           data-test="AvatarSelection-Custom-Renderer"
@@ -2009,7 +2017,7 @@ Object {
               class="position-relative d-inline-flex"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -2036,13 +2044,14 @@ Object {
       <div
         class="SelectionAvatarGroup"
         data-test="DesignSystem-AvatarSelection"
+        role="group"
       >
         <span
           class="SelectionAvatarGroup-wrapper"
         >
           <div
             aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 5;"
@@ -2056,7 +2065,7 @@ Object {
                 class="PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class=""
+                  class="Avatar-wrapper"
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
@@ -2083,7 +2092,7 @@ Object {
         >
           <div
             aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 4;"
@@ -2097,7 +2106,7 @@ Object {
                 class="PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class=""
+                  class="Avatar-wrapper"
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
@@ -2124,7 +2133,7 @@ Object {
         >
           <div
             aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 3;"
@@ -2138,7 +2147,7 @@ Object {
                 class="PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class=""
+                  class="Avatar-wrapper"
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
@@ -2165,7 +2174,7 @@ Object {
         >
           <div
             aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 2;"
@@ -2179,7 +2188,7 @@ Object {
                 class="PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class=""
+                  class="Avatar-wrapper"
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
@@ -2206,7 +2215,7 @@ Object {
         >
           <div
             aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 1;"
@@ -2220,7 +2229,7 @@ Object {
                 class="PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class=""
+                  class="Avatar-wrapper"
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
@@ -2250,7 +2259,7 @@ Object {
             aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
             aria-expanded="false"
             aria-haspopup="listbox"
-            class="SelectionAvatarCount-wrapper SelectionAvatarGroup-item"
+            class="SelectionAvatarCount-wrapper SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny"
             data-test="DesignSystem-AvatarSelection--TriggerAvatar"
             role="button"
             style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white;"
@@ -2260,7 +2269,7 @@ Object {
               class="position-relative d-inline-flex"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -2288,13 +2297,14 @@ Object {
     <div
       class="SelectionAvatarGroup"
       data-test="DesignSystem-AvatarSelection"
+      role="group"
     >
       <span
         class="SelectionAvatarGroup-wrapper"
       >
         <div
           aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
           style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 5;"
@@ -2308,7 +2318,7 @@ Object {
               class="PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -2335,7 +2345,7 @@ Object {
       >
         <div
           aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
           style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 4;"
@@ -2349,7 +2359,7 @@ Object {
               class="PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -2376,7 +2386,7 @@ Object {
       >
         <div
           aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
           style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 3;"
@@ -2390,7 +2400,7 @@ Object {
               class="PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -2417,7 +2427,7 @@ Object {
       >
         <div
           aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
           style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 2;"
@@ -2431,7 +2441,7 @@ Object {
               class="PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -2458,7 +2468,7 @@ Object {
       >
         <div
           aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
           style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 1;"
@@ -2472,7 +2482,7 @@ Object {
               class="PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -2502,7 +2512,7 @@ Object {
           aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          class="SelectionAvatarCount-wrapper SelectionAvatarGroup-item"
+          class="SelectionAvatarCount-wrapper SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny"
           data-test="DesignSystem-AvatarSelection--TriggerAvatar"
           role="button"
           style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white;"
@@ -2512,7 +2522,7 @@ Object {
             class="position-relative d-inline-flex"
           >
             <span
-              class=""
+              class="Avatar-wrapper"
               data-test="DesignSystem-AvatarWrapper"
             >
               <span
