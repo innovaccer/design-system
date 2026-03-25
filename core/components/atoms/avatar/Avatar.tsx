@@ -82,7 +82,7 @@ export interface AvatarProps extends BaseProps {
    * Hides avatar from assistive technologies.
    * Internally sets role to `presentation`, removes `aria-label`, and applies `tabIndex={-1}`.
    */
-  'aria-hidden'?: boolean;
+  'aria-hidden'?: React.AriaAttributes['aria-hidden'] | boolean;
 }
 
 const initialsLength = 2;
@@ -128,7 +128,7 @@ export const Avatar = (props: AvatarProps) => {
 
   const AvatarAppearance =
     appearance || colors[(initials.charCodeAt(0) + (initials.charCodeAt(1) || 0)) % 8] || DefaultAppearance;
-  const isDecorative = ariaHidden === true;
+  const isDecorative = ariaHidden === true || ariaHidden === 'true';
   const resolvedRole = isDecorative ? 'presentation' : role ?? (tabIndex !== undefined ? 'button' : 'img');
   const ariaLabel = isDecorative ? undefined : ariaLabelProp || getTooltipName().trim() || initials || 'Avatar';
   const resolvedTabIndex = isDecorative ? -1 : disabled ? -1 : tabIndex !== undefined ? tabIndex : 0;

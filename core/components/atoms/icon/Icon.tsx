@@ -92,7 +92,7 @@ export interface IconProps extends BaseProps {
   /**
    * Hides the icon from assistive technologies. Use on decorative, non-interactive icons.
    */
-  'aria-hidden'?: boolean;
+  'aria-hidden'?: React.AriaAttributes['aria-hidden'] | boolean;
 }
 
 const iconTypeMapper: Record<string, string> = {
