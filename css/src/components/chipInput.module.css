@@ -14,6 +14,8 @@
 }
 
 .ChipInput--small {
+  align-items: center;
+  min-height: var(--spacing-60);
   padding-left: var(--spacing-20);
   padding-right: var(--spacing-20);
 }
@@ -46,6 +48,10 @@
   flex: 100%;
   align-items: center;
   flex-wrap: wrap;
+}
+
+.ChipInput--small .ChipInput-wrapper {
+  min-height: var(--spacing-60);
 }
 
 .ChipInput-border:focus-within:not(:has(.ChipInput-icon:focus)):not(:has(.ChipInput-input:focus)):not(
@@ -117,8 +123,9 @@
 }
 
 .ChipInput-icon--small {
+  flex-shrink: 0;
+  align-self: center;
   margin-left: var(--spacing-15);
-  margin-top: var(--spacing-15);
   height: var(--spacing-30);
 }
 
