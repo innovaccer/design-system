@@ -384,11 +384,17 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
     ],
   },
 
-  // Avatar: accepts aria-label, role, tabIndex
+  // Avatar: accepts aria-label, aria-hidden, role, tabIndex
   Avatar: {
     htmlElement: 'custom',
     customProps: [
       { name: 'aria-label', type: 'string', description: 'Provides an accessible name for the avatar.' },
+      {
+        name: 'aria-hidden',
+        type: 'boolean',
+        description:
+          'Hides avatar from assistive technologies. Internally sets role to presentation, removes aria-label, and applies tabIndex={-1}.',
+      },
       {
         name: 'role',
         type: 'string',
@@ -705,11 +711,6 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
         type: 'string',
         description: 'Accessible name for the options list container. Defaults to "{aria-label} options" or "Options".',
       },
-      {
-        name: 'tabIndex',
-        type: 'number',
-        description: 'Controls focus order of the dropdown trigger.',
-      },
     ],
   },
 
@@ -762,11 +763,6 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
               name: 'optionsAriaLabel',
               type: 'string',
               description: 'Accessible name for the options list container.',
-            },
-            {
-              name: 'tabIndex',
-              type: 'number',
-              description: 'Controls focus order of the dropdown trigger.',
             },
           ],
         },

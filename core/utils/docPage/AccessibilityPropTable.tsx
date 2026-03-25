@@ -63,8 +63,10 @@ const AccessibilityPropTable = ({ config }: AccessibilityPropTableProps) => {
 
   // When there are no root props, offset tabs so index 0 maps to the first nested component
   const tabOffset = hasRootProps ? 1 : 0;
+  const totalTabs = tabOffset + (config.nestedComponents?.length || 0);
+  const safeActiveTab = activeTab >= totalTabs ? Math.max(0, totalTabs - 1) : activeTab;
 
-  const getActiveNestedIndex = () => activeTab - tabOffset;
+  const getActiveNestedIndex = () => safeActiveTab - tabOffset;
 
   const getActiveNestedConfig = () => {
     if (!config.nestedComponents) return null;
@@ -76,7 +78,7 @@ const AccessibilityPropTable = ({ config }: AccessibilityPropTableProps) => {
   // Count for the currently visible tab
   const getActiveTabCount = () => {
     if (!hasNested) return totalProps;
-    if (hasRootProps && activeTab === 0) return mainProps.length;
+    if (hasRootProps && safeActiveTab === 0) return mainProps.length;
     const nestedIndex = getActiveNestedIndex();
     return nestedPropCounts[nestedIndex] || 0;
   };
@@ -119,11 +121,11 @@ const AccessibilityPropTable = ({ config }: AccessibilityPropTableProps) => {
             <PropTable props={mainProps} />
           ) : (
             <div className="a11y-prop-table-tabs-wrapper">
-              <Tabs activeIndex={activeTab} onTabChange={handleTabChange} className="mb-4">
+              <Tabs activeIndex={safeActiveTab} onTabChange={handleTabChange} className="mb-4">
                 {tabElements}
               </Tabs>
 
-              {hasRootProps && activeTab === 0 && <PropTable props={mainProps} />}
+              {hasRootProps && safeActiveTab === 0 && <PropTable props={mainProps} />}
 
               {(() => {
                 const nested = getActiveNestedConfig();
