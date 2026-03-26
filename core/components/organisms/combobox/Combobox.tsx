@@ -257,6 +257,27 @@ export const Combobox = (props: ComboboxProps) => {
     onSearch && onSearch(chipInputText);
   }, [chipInputText]);
 
+  // Tab / Shift+Tab: intercept in capture phase on the list root so we still close and return
+  // focus when the active element is a nested node (inner row, etc.) that might not bubble
+  // cleanly—especially with the list portaled to the end of `document.body`.
+  React.useLayoutEffect(() => {
+    if (!openPopover || disabled) return;
+    const el = listRef.current;
+    if (!el) return;
+
+    const onTabCapture = (event: KeyboardEvent) => {
+      if (event.key !== 'Tab') return;
+      if (!el.contains(event.target as Node)) return;
+      event.preventDefault();
+      setOpenPopover(false);
+      setFocusedOption(undefined);
+      inputTriggerRef.current?.focus();
+    };
+
+    el.addEventListener('keydown', onTabCapture, true);
+    return () => el.removeEventListener('keydown', onTabCapture, true);
+  }, [openPopover, disabled]);
+
   const onOptionClick = (option: OptionType) => {
     setIsOptionSelected(true);
     if (!multiSelect) {

@@ -47,7 +47,7 @@ export interface ComboboxOptionProps extends BaseProps {
 }
 
 export const ComboboxOption = (props: ComboboxOptionProps) => {
-  const { children, option, onClick, ...rest } = props;
+  const { children, option, onClick, onFocus, onBlur, ...rest } = props;
 
   const contextProp = React.useContext(ComboboxContext);
 
@@ -88,13 +88,15 @@ export const ComboboxOption = (props: ComboboxOptionProps) => {
 
   return (
     <Listbox.Item
+      {...rest}
       onClick={onClickHandler}
       selected={option.label === inputValue?.label}
+      onFocus={onFocus}
+      onBlur={onBlur}
       onKeyDown={onKeyDownHandler}
       tabIndex={-1}
       role="option"
       data-test="DesignSystem-Combobox-Option"
-      {...rest}
     >
       {children}
     </Listbox.Item>

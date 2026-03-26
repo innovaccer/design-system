@@ -93,6 +93,21 @@ describe('Combobox component single input trigger tests', () => {
     expect(FunctionValue).toHaveBeenCalled();
     expect(inputTrigger).toHaveValue('');
   });
+
+  it('closes list and returns focus to input when Tab is pressed on inner list row (capture)', () => {
+    const { getByTestId } = render(<Combobox onChange={FunctionValue}>{children}</Combobox>);
+    const inputTrigger = getByTestId('DesignSystem-Combobox-Input');
+    fireEvent.click(inputTrigger);
+    const popover = getByTestId('DesignSystem-Popover');
+    expect(popover).toHaveAttribute('data-opened', 'true');
+
+    const innerRow = getByTestId('DesignSystem-Listbox-ItemWrapper');
+    innerRow.focus();
+    fireEvent.keyDown(innerRow, { key: 'Tab', shiftKey: true });
+
+    expect(popover).toHaveAttribute('data-opened', 'false');
+    expect(inputTrigger).toHaveFocus();
+  });
 });
 
 describe('Combobox component multiple select trigger tests', () => {
