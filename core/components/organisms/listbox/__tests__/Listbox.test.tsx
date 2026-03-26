@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor, within } from '@testing-library/react';
 import { Listbox, Text } from '@/index';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { ListboxItemProps as Props, ListboxProps as ListboxProps } from '@/index.type';
@@ -339,11 +339,11 @@ describe('Listbox component test for keyboard events', () => {
   const dataList = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'];
 
   it('test for keyboard arrow down event', () => {
-    const { getAllByTestId } = render(
+    const { container } = render(
       <Listbox>
         {dataList.map((record, key) => {
           return (
-            <Listbox.Item id={record} key={key}>
+            <Listbox.Item id={record} key={key} tabIndex={-1}>
               <Text>{record}</Text>
             </Listbox.Item>
           );
@@ -351,20 +351,20 @@ describe('Listbox component test for keyboard events', () => {
       </Listbox>
     );
 
-    const sourceElement = getAllByTestId('DesignSystem-Listbox-ItemWrapper')[0];
-    const targetElement = getAllByTestId('DesignSystem-Listbox-ItemWrapper')[1];
-    fireEvent.click(sourceElement);
-    fireEvent.keyDown(sourceElement, { key: 'ArrowDown' });
+    const list = container.querySelector('[data-test="DesignSystem-Listbox"]') as HTMLElement;
+    const items = within(list).getAllByTestId('DesignSystem-Listbox-Item');
+    items[0].focus();
+    fireEvent.keyDown(items[0], { key: 'ArrowDown' });
 
-    expect(targetElement).toHaveFocus();
+    expect(items[1]).toHaveFocus();
   });
 
   it('test for keyboard arrow up event', () => {
-    const { getAllByTestId } = render(
+    const { container } = render(
       <Listbox>
         {dataList.map((record, key) => {
           return (
-            <Listbox.Item id={record} key={key}>
+            <Listbox.Item id={record} key={key} tabIndex={-1}>
               <Text>{record}</Text>
             </Listbox.Item>
           );
@@ -372,20 +372,20 @@ describe('Listbox component test for keyboard events', () => {
       </Listbox>
     );
 
-    const sourceElement = getAllByTestId('DesignSystem-Listbox-ItemWrapper')[1];
-    const targetElement = getAllByTestId('DesignSystem-Listbox-ItemWrapper')[0];
-    fireEvent.click(sourceElement);
-    fireEvent.keyDown(sourceElement, { key: 'ArrowUp' });
+    const list = container.querySelector('[data-test="DesignSystem-Listbox"]') as HTMLElement;
+    const items = within(list).getAllByTestId('DesignSystem-Listbox-Item');
+    items[1].focus();
+    fireEvent.keyDown(items[1], { key: 'ArrowUp' });
 
-    expect(targetElement).toHaveFocus();
+    expect(items[0]).toHaveFocus();
   });
 
   it('test for keyboard arrow down event with disabled item', () => {
-    const { getAllByTestId } = render(
+    const { container } = render(
       <Listbox>
         {dataList.map((record, key) => {
           return (
-            <Listbox.Item id={record} key={key} disabled={key === 2}>
+            <Listbox.Item id={record} key={key} disabled={key === 2} tabIndex={-1}>
               <Text>{record}</Text>
             </Listbox.Item>
           );
@@ -393,20 +393,20 @@ describe('Listbox component test for keyboard events', () => {
       </Listbox>
     );
 
-    const sourceElement = getAllByTestId('DesignSystem-Listbox-ItemWrapper')[1];
-    const targetElement = getAllByTestId('DesignSystem-Listbox-ItemWrapper')[3];
-    fireEvent.click(sourceElement);
-    fireEvent.keyDown(sourceElement, { key: 'ArrowDown' });
+    const list = container.querySelector('[data-test="DesignSystem-Listbox"]') as HTMLElement;
+    const items = within(list).getAllByTestId('DesignSystem-Listbox-Item');
+    items[1].focus();
+    fireEvent.keyDown(items[1], { key: 'ArrowDown' });
 
-    expect(targetElement).toHaveFocus();
+    expect(items[3]).toHaveFocus();
   });
 
   it('test for keyboard arrow up event with disabled item', () => {
-    const { getAllByTestId } = render(
+    const { container } = render(
       <Listbox>
         {dataList.map((record, key) => {
           return (
-            <Listbox.Item id={record} key={key} disabled={key === 2}>
+            <Listbox.Item id={record} key={key} disabled={key === 2} tabIndex={-1}>
               <Text>{record}</Text>
             </Listbox.Item>
           );
@@ -414,12 +414,32 @@ describe('Listbox component test for keyboard events', () => {
       </Listbox>
     );
 
-    const sourceElement = getAllByTestId('DesignSystem-Listbox-ItemWrapper')[3];
-    const targetElement = getAllByTestId('DesignSystem-Listbox-ItemWrapper')[1];
-    fireEvent.click(sourceElement);
-    fireEvent.keyDown(sourceElement, { key: 'ArrowUp' });
+    const list = container.querySelector('[data-test="DesignSystem-Listbox"]') as HTMLElement;
+    const items = within(list).getAllByTestId('DesignSystem-Listbox-Item');
+    items[3].focus();
+    fireEvent.keyDown(items[3], { key: 'ArrowUp' });
 
-    expect(targetElement).toHaveFocus();
+    expect(items[1]).toHaveFocus();
+  });
+});
+
+describe('Listbox suppressKeyboard context', () => {
+  it('does not move focus with ArrowDown when suppressKeyboard is true and no item onKeyDown', () => {
+    const { container } = render(
+      <Listbox suppressKeyboard type="option" tagName="ul" size="standard" showDivider={false}>
+        <Listbox.Item id="a" tabIndex={-1}>
+          first
+        </Listbox.Item>
+        <Listbox.Item id="b" tabIndex={-1}>
+          second
+        </Listbox.Item>
+      </Listbox>
+    );
+    const list = container.querySelector('[data-test="DesignSystem-Listbox"]') as HTMLElement;
+    const items = within(list).getAllByTestId('DesignSystem-Listbox-Item');
+    items[0].focus();
+    fireEvent.keyDown(items[0], { key: 'ArrowDown' });
+    expect(items[0]).toHaveFocus();
   });
 });
 

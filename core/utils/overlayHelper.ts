@@ -63,8 +63,63 @@ export const getFocusableElements = (container: HTMLElement): HTMLElement[] => {
     const isAriaHidden = el.getAttribute('aria-hidden') === 'true';
     const isAriaDisabled = el.getAttribute('aria-disabled') === 'true';
     const isInert = el.closest('[inert]') !== null;
-    return isVisible && !isAriaHidden && !isAriaDisabled && !isInert;
+    const isExplicitlyNonFocusable = el.getAttribute('tabindex') === '-1';
+    return isVisible && !isAriaHidden && !isAriaDisabled && !isInert && !isExplicitlyNonFocusable;
   });
+};
+
+const LISTBOX_OPTION_SELECTOR = '[role="option"]';
+
+/**
+ * Returns enabled, visible listbox options (`[role="option"]`) under a listbox root, in DOM order.
+ * Matches combobox items that use roving `tabIndex={-1}` (excluded by {@link getFocusableElements}).
+ */
+const getListboxOptionElements = (listboxRoot: HTMLElement): HTMLElement[] => {
+  const options = listboxRoot.querySelectorAll<HTMLElement>(LISTBOX_OPTION_SELECTOR);
+  return Array.from(options).filter((el) => {
+    const style = window.getComputedStyle(el);
+    const isVisible = style.visibility !== 'hidden' && style.display !== 'none';
+    const isAriaHidden = el.getAttribute('aria-hidden') === 'true';
+    const isAriaDisabled = el.getAttribute('aria-disabled') === 'true';
+    const isInert = el.closest('[inert]') !== null;
+    const inner = el.querySelector<HTMLElement>('[data-test="DesignSystem-Listbox-ItemWrapper"]');
+    const isDataDisabled = inner?.getAttribute('data-disabled') === 'true';
+    return isVisible && !isAriaHidden && !isAriaDisabled && !isInert && !isDataDisabled;
+  });
+};
+
+/**
+ * Focusable/interactive list descendants for keyboard navigation.
+ * With `roleHint` `"listbox"`, returns `[role="option"]` elements under the listbox root(s), not generic tabbables
+ * (listbox options often use `tabindex="-1"`).
+ */
+export const getAllFocusableElements = (container: HTMLElement, roleHint?: string): HTMLElement[] => {
+  if (roleHint !== 'listbox') {
+    return getFocusableElements(container);
+  }
+
+  const roots: HTMLElement[] = [];
+  if (container.getAttribute('role') === 'listbox') {
+    roots.push(container);
+  } else {
+    roots.push(...Array.from(container.querySelectorAll<HTMLElement>('[role="listbox"]')));
+  }
+
+  if (roots.length === 0) {
+    return [];
+  }
+
+  const seen = new Set<HTMLElement>();
+  const out: HTMLElement[] = [];
+  for (const root of roots) {
+    for (const el of getListboxOptionElements(root)) {
+      if (!seen.has(el)) {
+        seen.add(el);
+        out.push(el);
+      }
+    }
+  }
+  return out;
 };
 
 /**
