@@ -82,6 +82,51 @@ describe('Calls slider event handlers', () => {
   });
 });
 
+describe('MultiSlider handle aria-labels', () => {
+  it('renders aria-label with value for each handle', () => {
+    const { getAllByRole } = render(
+      <MultiSlider min={0} max={10} stepSize={1}>
+        <MultiSlider.Handle value={2} />
+        <MultiSlider.Handle value={8} />
+      </MultiSlider>
+    );
+    const sliders = getAllByRole('slider');
+    expect(sliders).toHaveLength(2);
+    expect(sliders[0]).toHaveAttribute('aria-label', 'Slider on 2');
+    expect(sliders[1]).toHaveAttribute('aria-label', 'Slider on 8');
+  });
+
+  it('renders custom aria-labels when provided', () => {
+    const { getAllByRole } = render(
+      <MultiSlider min={0} max={10} stepSize={1}>
+        <MultiSlider.Handle value={2} ariaLabel="Start price" />
+        <MultiSlider.Handle value={8} ariaLabel="End price" />
+      </MultiSlider>
+    );
+    const sliders = getAllByRole('slider');
+    expect(sliders[0]).toHaveAttribute('aria-label', 'Start price');
+    expect(sliders[1]).toHaveAttribute('aria-label', 'End price');
+  });
+
+  it('renders aria-label for single handle', () => {
+    const { getByRole } = render(
+      <MultiSlider min={0} max={10} stepSize={1}>
+        <MultiSlider.Handle value={5} />
+      </MultiSlider>
+    );
+    const slider = getByRole('slider');
+    expect(slider).toHaveAttribute('aria-label', 'Slider on 5');
+  });
+
+  it('renders aria-label on label ticks', () => {
+    const { getAllByTestId } = render(<MultiSlider min={0} max={2} stepSize={1} labelStepSize={1} />);
+    const labels = getAllByTestId('DesignSystem-MultiSlider-Label');
+    expect(labels[0]).toHaveAttribute('aria-label', '0');
+    expect(labels[1]).toHaveAttribute('aria-label', '1');
+    expect(labels[2]).toHaveAttribute('aria-label', '2');
+  });
+});
+
 describe('Range slider handle collision (snap-to-lock)', () => {
   it('End key on first handle snaps to second handle position when blocked', () => {
     const onRangeChange = jest.fn();

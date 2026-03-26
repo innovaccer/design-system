@@ -289,7 +289,7 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
       return null;
     }
 
-    return handleProps.map(({ value }, index) => {
+    return handleProps.map(({ value, ariaLabel }, index) => {
       const isCurrentLabelHovered = this.state.hoveredLabelValue === Number(value.toFixed(this.state.labelPrecision));
 
       return (
@@ -307,6 +307,7 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
           tickSizeRatio={this.state.tickSizeRatio}
           value={value}
           isCurrentLabelHovered={isCurrentLabelHovered}
+          ariaLabel={ariaLabel || `Slider on ${this.formatLabel(value)}`}
         />
       );
     });
@@ -367,6 +368,7 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
           role="button"
           // tabIndex={disabled ? -1 : 0}
           aria-disabled={disabled || undefined}
+          aria-label={this.formatLabel(i)}
         >
           {/* eslint-enable  */}
           <span className={SliderTicksClass} />

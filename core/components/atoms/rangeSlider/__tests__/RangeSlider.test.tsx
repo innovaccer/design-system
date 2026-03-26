@@ -2,6 +2,18 @@ import * as React from 'react';
 import { fireEvent, render } from '@testing-library/react';
 import { RangeSlider } from '@/index';
 
+describe('RangeSlider accessibility', () => {
+  it('renders distinct aria-labels for each thumb', () => {
+    const { getAllByRole } = render(
+      <RangeSlider defaultValue={[20, 80]} label="Range" min={0} max={100} stepSize={5} />
+    );
+    const sliders = getAllByRole('slider');
+    expect(sliders).toHaveLength(2);
+    expect(sliders[0]).toHaveAttribute('aria-label', 'Slider on 20');
+    expect(sliders[1]).toHaveAttribute('aria-label', 'Slider on 80');
+  });
+});
+
 describe('RangeSlider keyboard smoke tests', () => {
   it('Home/End work on first handle', () => {
     const onChange = jest.fn();

@@ -37,6 +37,7 @@ exports[`MultiSlider component
           class="Slider-axis"
         >
           <div
+            aria-label="0.00000"
             class="Slider-label"
             data-test="DesignSystem-MultiSlider-Label"
             role="button"
@@ -53,6 +54,7 @@ exports[`MultiSlider component
             </span>
           </div>
           <div
+            aria-label="10.00000"
             class="Slider-label"
             data-test="DesignSystem-MultiSlider-Label"
             role="button"
@@ -69,6 +71,7 @@ exports[`MultiSlider component
             </span>
           </div>
           <div
+            aria-label="20.00000"
             class="Slider-label"
             data-test="DesignSystem-MultiSlider-Label"
             role="button"
@@ -85,6 +88,7 @@ exports[`MultiSlider component
             </span>
           </div>
           <div
+            aria-label="30.00000"
             class="Slider-label"
             data-test="DesignSystem-MultiSlider-Label"
             role="button"
@@ -101,6 +105,7 @@ exports[`MultiSlider component
             </span>
           </div>
           <div
+            aria-label="40.00000"
             class="Slider-label"
             data-test="DesignSystem-MultiSlider-Label"
             role="button"
@@ -117,6 +122,7 @@ exports[`MultiSlider component
             </span>
           </div>
           <div
+            aria-label="50.00000"
             class="Slider-label"
             data-test="DesignSystem-MultiSlider-Label"
             role="button"
@@ -133,6 +139,7 @@ exports[`MultiSlider component
             </span>
           </div>
           <div
+            aria-label="60.00000"
             class="Slider-label"
             data-test="DesignSystem-MultiSlider-Label"
             role="button"
@@ -149,6 +156,7 @@ exports[`MultiSlider component
             </span>
           </div>
           <div
+            aria-label="70.00000"
             class="Slider-label"
             data-test="DesignSystem-MultiSlider-Label"
             role="button"
@@ -165,6 +173,7 @@ exports[`MultiSlider component
             </span>
           </div>
           <div
+            aria-label="80.00000"
             class="Slider-label"
             data-test="DesignSystem-MultiSlider-Label"
             role="button"
@@ -181,6 +190,7 @@ exports[`MultiSlider component
             </span>
           </div>
           <div
+            aria-label="90.00000"
             class="Slider-label"
             data-test="DesignSystem-MultiSlider-Label"
             role="button"
@@ -197,6 +207,7 @@ exports[`MultiSlider component
             </span>
           </div>
           <div
+            aria-label="100.00000"
             class="Slider-label"
             data-test="DesignSystem-MultiSlider-Label"
             role="button"

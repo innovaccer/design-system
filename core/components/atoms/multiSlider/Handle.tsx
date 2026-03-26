@@ -11,6 +11,11 @@ export interface HandleProps {
   fillBefore?: boolean;
   onChange?: (newValue: number) => void;
   onRelease?: (newValue: number) => void;
+  /**
+   * Accessible label for the slider handle. Used to distinguish multiple handles
+   * (e.g., "Minimum value" and "Maximum value" in a RangeSlider).
+   */
+  ariaLabel?: string;
 }
 
 export interface InternalHandleProps extends HandleProps {
@@ -328,6 +333,7 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
           aria-valuenow={value}
           aria-valuetext={label}
           aria-disabled={disabled || undefined}
+          aria-label={this.props.ariaLabel}
         />
         {/* eslint-enable  */}
         <div className={TooltipClass} style={style}>
