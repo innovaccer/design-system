@@ -1,7 +1,7 @@
 .ChipInput {
   display: flex;
   border-radius: var(--border-radius-10);
-  box-shadow: inset 0 0 0 var(--spacing-2-5) var(--secondary);
+  border: var(--border);
   background: var(--white);
   cursor: text;
   flex: 100%;
@@ -19,7 +19,7 @@
 
 .ChipInput:focus,
 .ChipInput:focus-visible {
-  outline: var(--spacing-2-5) var(--primary);
+  outline: none;
 }
 
 .ChipInput:hover {
@@ -28,13 +28,14 @@
 }
 
 .ChipInput:focus-within {
-  box-shadow: inset 0 0 0 var(--spacing-2-5) var(--primary);
   background: var(--white);
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-05);
 }
 
 .ChipInput--disabled {
   background: var(--secondary-lightest);
-  border-color: var(--secondary-light);
+  border-color: var(--secondary-lighter);
   pointer-events: none;
 }
 
@@ -43,8 +44,14 @@
 }
 
 .ChipInput--error,
+.ChipInput--error:hover {
+  background: var(--white);
+  border-color: var(--alert);
+}
+
 .ChipInput--error:focus-within {
-  box-shadow: inset 0 0 0 var(--spacing-2-5) var(--alert);
+  border-color: var(--alert);
+  box-shadow: var(--shadow-spread) var(--alert-shadow);
 }
 
 .ChipInput-wrapper {
@@ -52,15 +59,6 @@
   flex: 100%;
   align-items: center;
   flex-wrap: wrap;
-}
-
-.ChipInput-border:focus-within {
-  border-radius: var(--border-radius-10);
-  box-shadow: var(--shadow-spread) var(--primary-shadow);
-}
-
-.ChipInput-border--error:focus-within {
-  box-shadow: var(--shadow-spread) var(--alert-shadow);
 }
 
 .ChipInput-input {
@@ -98,32 +96,31 @@
   background: var(--white);
 }
 
-.ChipInput-icon {
+.ChipInput-iconWrapper {
+  display: flex;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  width: var(--spacing-60);
+  height: var(--spacing-60);
+  flex-shrink: 0;
   cursor: pointer;
   border-radius: var(--border-radius-full);
 }
 
-.ChipInput-icon--small {
-  margin-left: var(--spacing-15);
-  margin-top: var(--spacing-15);
-  height: var(--spacing-30);
-}
-
-.ChipInput-icon--regular {
-  height: var(--spacing-40);
-  margin-left: var(--spacing-20);
-  margin-top: var(--spacing-20);
-}
-
-.ChipInput-icon:hover {
+.ChipInput-iconWrapper:hover {
   background-color: var(--secondary);
 }
 
-.ChipInput-icon:active {
+.ChipInput-iconWrapper:active {
   background-color: var(--secondary-dark);
 }
 
-.ChipInput-icon:focus,
-.ChipInput-icon:focus-visible {
-  outline: var(--spacing-05) solid var(--secondary-shadow);
+.ChipInput-iconWrapper:focus-visible {
+  outline: var(--spacing-05) solid var(--primary-focus);
+}
+
+.ChipInput-icon {
+  color: var(--inverse-lighter);
+  border-radius: var(--border-radius-full);
 }
