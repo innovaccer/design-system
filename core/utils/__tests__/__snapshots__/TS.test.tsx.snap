@@ -37,7 +37,8 @@ exports[`TS renders children 1`] = `
   >
     Badge
   </span>
-  <div
+  <nav
+    aria-label="Breadcrumb"
     class="Breadcrumbs"
     data-test="DesignSystem-Breadcrumbs"
   />
