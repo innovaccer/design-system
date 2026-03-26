@@ -75,8 +75,11 @@ const LISTBOX_OPTION_SELECTOR = '[role="option"]';
  * Matches combobox items that use roving `tabIndex={-1}` (excluded by {@link getFocusableElements}).
  */
 const getListboxOptionElements = (listboxRoot: HTMLElement): HTMLElement[] => {
-  const options = listboxRoot.querySelectorAll<HTMLElement>(LISTBOX_OPTION_SELECTOR);
-  return Array.from(options).filter((el) => {
+  // Only direct children so nested listboxes / options inside a row are not mixed into navigation.
+  const options = Array.from(listboxRoot.children).filter(
+    (node): node is HTMLElement => node instanceof HTMLElement && node.matches(LISTBOX_OPTION_SELECTOR)
+  );
+  return options.filter((el) => {
     const style = window.getComputedStyle(el);
     const isVisible = style.visibility !== 'hidden' && style.display !== 'none';
     const isAriaHidden = el.getAttribute('aria-hidden') === 'true';

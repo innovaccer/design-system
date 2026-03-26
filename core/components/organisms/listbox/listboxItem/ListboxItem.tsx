@@ -5,6 +5,7 @@ import { ListboxContext } from '../Listbox';
 import { ListBody } from './ListBody';
 import { NestedList } from '../nestedList';
 import { onKeyDown as listboxKeyDownHandler } from '../utils';
+import { getAllFocusableElements } from '@/utils/overlayHelper';
 import classNames from 'classnames';
 import styles from '@css/components/listbox.module.css';
 
@@ -57,10 +58,6 @@ export interface ListboxItemProps extends BaseProps, BaseHtmlProps<HTMLLIElement
    * Specify tabIndex to list item
    */
   tabIndex?: number;
-  /**
-   * @internal Injected by `Listbox` for default roving `tabIndex` when the list manages its own keyboard.
-   */
-  listboxRovingSerial?: number;
 }
 
 export const ListboxItem = (props: ListboxItemProps) => {
@@ -74,13 +71,13 @@ export const ListboxItem = (props: ListboxItemProps) => {
     tabIndex,
     onKeyDown,
     onFocus,
-    listboxRovingSerial,
+    role,
     disabled,
     ...rest
   } = props;
 
   const contextProp = React.useContext(ListboxContext);
-  const { showDivider, draggable, suppressKeyboard, rovingIndex, setRovingIndex } = contextProp;
+  const { showDivider, draggable, suppressKeyboard, setRovingIndex } = contextProp;
 
   const onClickHandler = (e: React.MouseEvent) => {
     onClick && onClick(e, id, value);
@@ -93,20 +90,29 @@ export const ListboxItem = (props: ListboxItemProps) => {
   // Parent owns keys when `onKeyDown` is set (Menu/Select/Combobox) or when `Listbox` sets `suppressKeyboard`.
   const keyDownHandler = onKeyDown || (!suppressKeyboard ? listboxKeyDownHandler : undefined);
 
-  const isRovingManaged = !suppressKeyboard && !draggable && typeof listboxRovingSerial === 'number' && !onKeyDown;
+  const rovingFromListbox = !suppressKeyboard && !draggable && !onKeyDown;
 
-  const resolvedTabIndex = (() => {
-    if (isRovingManaged) {
-      if (disabled) return -1;
-      return listboxRovingSerial === rovingIndex ? 0 : -1;
+  const tabIndexProps: { tabIndex?: number } = {};
+  if (rovingFromListbox) {
+    if (disabled) {
+      tabIndexProps.tabIndex = -1;
     }
-    return tabIndex;
-  })();
+  } else if (tabIndex !== undefined) {
+    tabIndexProps.tabIndex = tabIndex;
+  }
 
   const handleFocus = (e: React.FocusEvent<HTMLLIElement & HTMLDivElement & HTMLAnchorElement>) => {
     onFocus?.(e);
-    if (isRovingManaged && !disabled) {
-      setRovingIndex(listboxRovingSerial!);
+    if (rovingFromListbox && !disabled) {
+      const root = (e.currentTarget as HTMLElement).closest<HTMLElement>('[role="listbox"]');
+      if (!root) {
+        return;
+      }
+      const options = getAllFocusableElements(root, 'listbox');
+      const idx = options.indexOf(e.currentTarget as HTMLElement);
+      if (idx >= 0) {
+        setRovingIndex(idx);
+      }
     }
   };
 
@@ -120,8 +126,9 @@ export const ListboxItem = (props: ListboxItemProps) => {
       onFocus={handleFocus}
       data-value={value}
       className={tagClass}
-      tabIndex={resolvedTabIndex}
+      {...tabIndexProps}
       onKeyDown={keyDownHandler}
+      role={role ?? 'option'}
     >
       <ListBody {...props} />
       {nestedBody && <NestedList expanded={expanded} nestedBody={nestedBody} />}
