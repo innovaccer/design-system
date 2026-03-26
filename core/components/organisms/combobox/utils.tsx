@@ -34,6 +34,7 @@ export const handleKeyDown = (
     case 'Tab':
       event.preventDefault();
       setOpenPopover?.(false);
+      setFocusedOption?.(undefined);
       inputTriggerRef.current?.focus();
       break;
     default:
