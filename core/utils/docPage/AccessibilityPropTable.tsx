@@ -43,6 +43,11 @@ const AccessibilityPropTable = ({ config }: AccessibilityPropTableProps) => {
   const [isExpanded, setIsExpanded] = React.useState(false);
   const [activeTab, setActiveTab] = React.useState(0);
 
+  // Reset active tab when config changes to avoid out-of-bounds index
+  React.useEffect(() => {
+    setActiveTab(0);
+  }, [config]);
+
   const mainProps = React.useMemo(() => getAccessibilityProps(config), [config]);
   const hasNested = config.nestedComponents && config.nestedComponents.length > 0;
   const hasRootProps = mainProps.length > 0;

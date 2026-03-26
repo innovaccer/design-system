@@ -752,12 +752,14 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
             {
               name: 'aria-label',
               type: 'string',
-              description: 'Defines an accessible name for the dropdown trigger.',
+              description:
+                'Defines an accessible name for the dropdown trigger. Applied to the built-in trigger only; not forwarded when using customTriggerRenderer.',
             },
             {
               name: 'aria-labelledby',
               type: 'string',
-              description: 'References the ID of element(s) that label the dropdown trigger.',
+              description:
+                'References the ID of element(s) that label the dropdown trigger. Applied to the built-in trigger only; not forwarded when using customTriggerRenderer.',
             },
             {
               name: 'optionsAriaLabel',
@@ -793,7 +795,8 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
             {
               name: 'aria-label',
               type: 'string',
-              description: 'Accessible label for the Select trigger button.',
+              description:
+                'Accessible label for the Select trigger button. Applied to the built-in trigger only; not forwarded when using customTrigger.',
               defaultValue: '"Select trigger"',
             },
           ],
