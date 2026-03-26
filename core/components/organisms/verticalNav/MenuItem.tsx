@@ -126,6 +126,7 @@ export const MenuItem = (props: MenuItemProps) => {
     role: 'treeitem',
     'aria-level': isChildren ? 2 : 1,
     'aria-expanded': hasSubmenu ? (isChildrenVisible ? 'true' : 'false') : undefined,
+    'aria-label': !expanded && menu.icon ? menu.label : undefined,
     'data-menu-name': menu.name,
     'data-disabled': menu.disabled ? 'true' : undefined,
     ...extractBaseProps(props),
