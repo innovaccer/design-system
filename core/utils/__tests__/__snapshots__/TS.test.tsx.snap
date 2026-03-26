@@ -1320,8 +1320,10 @@ exports[`TS renders children 1`] = `
         tabindex="0"
       >
         <div
+          aria-hidden="true"
           class="Dropdown d-none"
           data-test="DesignSystem-EditableDropdown--Dropdown"
+          inert=""
           role="presentation"
         >
           <div

@@ -43,7 +43,11 @@ export interface ErrorTemplateProps {
   errorType?: ErrorType;
 }
 
-export interface DropdownListProps extends TriggerAndOptionProps {
+export interface DropdownListProps extends TriggerAndOptionProps, React.AriaAttributes {
+  /**
+   * Makes the dropdown and all its descendants inert (non-interactive, non-focusable)
+   */
+  inert?: string;
   /**
    * Aligns the `Dropdown` left/right
    * @default "right"
@@ -255,6 +259,12 @@ const DropdownList = (props: OptionsProps) => {
     optionsAriaLabel?.trim() || (triggerAriaLabel ? `${triggerAriaLabel} options` : menu ? 'Menu options' : 'Options');
 
   const baseProps = extractBaseProps(props);
+  const ariaProps = (Object.keys(props) as (keyof typeof props)[])
+    .filter((key) => key.startsWith('aria-') || key === 'inert')
+    .reduce((acc: Record<string, any>, key) => {
+      acc[key] = props[key];
+      return acc;
+    }, {});
 
   const dropdownRef = React.createRef<HTMLDivElement>();
   const triggerRef = React.createRef<HTMLDivElement>();
@@ -747,7 +757,14 @@ const DropdownList = (props: OptionsProps) => {
   const enableSearch = withSearch || props.async;
 
   return (
-    <div {...baseProps} className={dropdownClass} ref={triggerRef} onKeyDown={onkeydown} role="presentation">
+    <div
+      {...baseProps}
+      {...ariaProps}
+      className={dropdownClass}
+      ref={triggerRef}
+      onKeyDown={onkeydown}
+      role="presentation"
+    >
       <Popover
         onToggle={onToggleDropdown}
         trigger={trigger}
