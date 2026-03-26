@@ -128,8 +128,8 @@ const iconTypeMapper: Record<string, string> = {
  */
 
 export const Icon = (props: IconProps) => {
-  const { appearance, className, name, size, children } = props;
-  const accessibilityProps = useAccessibilityProps(props);
+  const { appearance, className, name, size, children, type: propsType, ...rest } = props;
+  const accessibilityProps = useAccessibilityProps(rest);
 
   const baseProps = extractBaseProps(props);
 
@@ -141,7 +141,7 @@ export const Icon = (props: IconProps) => {
     'two-tone': 'rounded',
   };
 
-  const type = (props.type && mapper[props.type]) || props.type || (name && iconTypeMapper[name]) || 'rounded';
+  const type = (propsType && mapper[propsType]) || propsType || (name && iconTypeMapper[name]) || 'rounded';
 
   const getIconAppearance = (iconColor: string) => {
     const x = iconColor.indexOf('_');
