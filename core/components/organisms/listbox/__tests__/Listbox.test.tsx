@@ -343,7 +343,7 @@ describe('Listbox component test for keyboard events', () => {
       <Listbox>
         {dataList.map((record, key) => {
           return (
-            <Listbox.Item id={record} key={key} tabIndex={-1}>
+            <Listbox.Item id={record} key={key}>
               <Text>{record}</Text>
             </Listbox.Item>
           );
@@ -364,7 +364,7 @@ describe('Listbox component test for keyboard events', () => {
       <Listbox>
         {dataList.map((record, key) => {
           return (
-            <Listbox.Item id={record} key={key} tabIndex={-1}>
+            <Listbox.Item id={record} key={key}>
               <Text>{record}</Text>
             </Listbox.Item>
           );
@@ -385,7 +385,7 @@ describe('Listbox component test for keyboard events', () => {
       <Listbox>
         {dataList.map((record, key) => {
           return (
-            <Listbox.Item id={record} key={key} disabled={key === 2} tabIndex={-1}>
+            <Listbox.Item id={record} key={key} disabled={key === 2}>
               <Text>{record}</Text>
             </Listbox.Item>
           );
@@ -406,7 +406,7 @@ describe('Listbox component test for keyboard events', () => {
       <Listbox>
         {dataList.map((record, key) => {
           return (
-            <Listbox.Item id={record} key={key} disabled={key === 2} tabIndex={-1}>
+            <Listbox.Item id={record} key={key} disabled={key === 2}>
               <Text>{record}</Text>
             </Listbox.Item>
           );
@@ -420,6 +420,38 @@ describe('Listbox component test for keyboard events', () => {
     fireEvent.keyDown(items[3], { key: 'ArrowUp' });
 
     expect(items[1]).toHaveFocus();
+  });
+});
+
+describe('Listbox default roving tabindex', () => {
+  it('sets tabindex 0 on first enabled item and -1 on siblings when keyboard is not suppressed', () => {
+    const { container } = render(
+      <Listbox showDivider={false}>
+        <Listbox.Item id="a">first</Listbox.Item>
+        <Listbox.Item id="b">second</Listbox.Item>
+      </Listbox>
+    );
+    const list = container.querySelector('[data-test="DesignSystem-Listbox"]') as HTMLElement;
+    const items = within(list).getAllByTestId('DesignSystem-Listbox-Item');
+    expect(items[0]).toHaveAttribute('tabindex', '0');
+    expect(items[1]).toHaveAttribute('tabindex', '-1');
+  });
+
+  it('does not inject roving tabindex when suppressKeyboard is true', () => {
+    const { container } = render(
+      <Listbox suppressKeyboard showDivider={false}>
+        <Listbox.Item id="a" tabIndex={-1}>
+          first
+        </Listbox.Item>
+        <Listbox.Item id="b" tabIndex={-1}>
+          second
+        </Listbox.Item>
+      </Listbox>
+    );
+    const list = container.querySelector('[data-test="DesignSystem-Listbox"]') as HTMLElement;
+    const items = within(list).getAllByTestId('DesignSystem-Listbox-Item');
+    expect(items[0]).toHaveAttribute('tabindex', '-1');
+    expect(items[1]).toHaveAttribute('tabindex', '-1');
   });
 });
 

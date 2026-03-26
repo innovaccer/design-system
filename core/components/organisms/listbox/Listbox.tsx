@@ -6,6 +6,35 @@ import { ListboxItem } from './listboxItem';
 import { TListboxSize } from '@/common.type';
 import styles from '@css/components/listbox.module.css';
 
+function findFirstEnabledItemIndex(children: React.ReactNode): number {
+  let idx = 0;
+  let result = -1;
+  React.Children.forEach(children, (child) => {
+    if (!React.isValidElement(child) || child.type !== ListboxItem) {
+      return;
+    }
+    if (result === -1 && !child.props.disabled) {
+      result = idx;
+    }
+    idx += 1;
+  });
+  return result;
+}
+
+function mapItemsWithRoving(children: React.ReactNode, suppressKeyboard: boolean, draggable: boolean): React.ReactNode {
+  if (suppressKeyboard || draggable) {
+    return children;
+  }
+  let serial = 0;
+  return React.Children.map(children, (child) => {
+    if (!React.isValidElement(child) || child.type !== ListboxItem) {
+      return child;
+    }
+    const listboxRovingSerial = serial++;
+    return React.cloneElement(child, { listboxRovingSerial });
+  });
+}
+
 type ListboxType = 'option' | 'description' | 'resource';
 export type TagType = 'ul' | 'ol' | 'div' | 'nav';
 
@@ -39,18 +68,25 @@ export interface ListboxProps extends BaseProps, BaseHtmlProps<HTMLUListElement 
 export interface ListboxInternalProps extends ListboxProps {
   /**
    * @internal
-   * When `true`, `Listbox.Item` does not attach the default listbox arrow-key handler.
-   * Use for lists embedded in Combobox, Menu, or Select where the parent owns keyboard navigation.
+   * When `true`, `Listbox.Item` does not use default arrow-key handling or default roving `tabIndex`.
+   * Use for Combobox, Menu, Select, etc., where the parent owns keyboard focus and `tabIndex`.
    */
   suppressKeyboard?: boolean;
 }
 
-export const ListboxContext = React.createContext<Omit<ListboxInternalProps, 'children' | 'tagName'>>({
+export type ListboxContextValue = Omit<ListboxInternalProps, 'children' | 'tagName'> & {
+  rovingIndex: number;
+  setRovingIndex: React.Dispatch<React.SetStateAction<number>>;
+};
+
+export const ListboxContext = React.createContext<ListboxContextValue>({
   size: 'standard',
   type: 'resource',
   draggable: false,
   showDivider: true,
   suppressKeyboard: false,
+  rovingIndex: -1,
+  setRovingIndex: () => {},
 });
 
 const { Provider } = ListboxContext;
@@ -71,12 +107,26 @@ export const Listbox = (props: ListboxInternalProps) => {
 
   const classes = classNames(styles.Listbox, className);
 
-  const sharedProp = {
+  const [rovingIndex, setRovingIndex] = React.useState(() => findFirstEnabledItemIndex(children));
+
+  React.useLayoutEffect(() => {
+    if (suppressKeyboard || draggable) {
+      return;
+    }
+    const first = findFirstEnabledItemIndex(children);
+    setRovingIndex(first >= 0 ? first : -1);
+  }, [children, suppressKeyboard, draggable]);
+
+  const mappedChildren = mapItemsWithRoving(children, suppressKeyboard, draggable);
+
+  const sharedProp: ListboxContextValue = {
     size,
     type,
     draggable,
     showDivider,
     suppressKeyboard,
+    rovingIndex,
+    setRovingIndex,
   };
 
   return (
@@ -85,7 +135,7 @@ export const Listbox = (props: ListboxInternalProps) => {
         <DraggableList {...props} />
       ) : (
         <Tag data-test="DesignSystem-Listbox" {...baseProps} className={classes} {...rest}>
-          {children}
+          {mappedChildren}
         </Tag>
       )}
     </Provider>
