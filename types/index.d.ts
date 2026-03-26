@@ -582,8 +582,6 @@ export interface IconProps extends BaseProps {
 	onKeyDown?: (e: React.KeyboardEvent<HTMLElement>) => void;
 	children?: React.ReactNode;
 	tabIndex?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>["tabIndex"];
-	"aria-label"?: string;
-	"aria-hidden"?: React.AriaAttributes["aria-hidden"] | boolean;
 }
 export declare const Icon: {
 	(props: IconProps): JSX.Element;
