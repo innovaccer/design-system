@@ -2,11 +2,11 @@ import React from 'react';
 import { extractBaseProps } from '@/utils/types';
 import Draggable from './Draggable';
 import { arrayMove } from './utils';
-import { ListboxProps } from '@/index.type';
+import { ListboxInternalProps } from '../Listbox';
 import classNames from 'classnames';
 import styles from '@css/components/listbox.module.css';
 
-export const DraggableList = (props: ListboxProps) => {
+export const DraggableList = (props: ListboxInternalProps) => {
   const { children, className, tagName: Tag } = props;
   const baseProps = extractBaseProps(props);
 

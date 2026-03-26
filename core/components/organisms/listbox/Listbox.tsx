@@ -36,17 +36,37 @@ export interface ListboxProps extends BaseProps, BaseHtmlProps<HTMLUListElement 
   showDivider: boolean;
 }
 
-export const ListboxContext = React.createContext<Omit<ListboxProps, 'children' | 'tagName'>>({
+export interface ListboxInternalProps extends ListboxProps {
+  /**
+   * @internal
+   * When `true`, `Listbox.Item` does not attach the default listbox arrow-key handler.
+   * Use for lists embedded in Combobox, Menu, or Select where the parent owns keyboard navigation.
+   */
+  suppressKeyboard?: boolean;
+}
+
+export const ListboxContext = React.createContext<Omit<ListboxInternalProps, 'children' | 'tagName'>>({
   size: 'standard',
   type: 'resource',
   draggable: false,
   showDivider: true,
+  suppressKeyboard: false,
 });
 
 const { Provider } = ListboxContext;
 
-export const Listbox = (props: ListboxProps) => {
-  const { children, className, draggable, size, type, showDivider, tagName: Tag, ...rest } = props;
+export const Listbox = (props: ListboxInternalProps) => {
+  const {
+    children,
+    className,
+    draggable,
+    size,
+    type,
+    showDivider,
+    suppressKeyboard = false,
+    tagName: Tag,
+    ...rest
+  } = props;
   const baseProps = extractBaseProps(props);
 
   const classes = classNames(styles.Listbox, className);
@@ -56,6 +76,7 @@ export const Listbox = (props: ListboxProps) => {
     type,
     draggable,
     showDivider,
+    suppressKeyboard,
   };
 
   return (
@@ -79,6 +100,7 @@ Listbox.defaultProps = {
   type: 'resource',
   draggable: false,
   showDivider: true,
+  suppressKeyboard: false,
 };
 
 Listbox.Item = ListboxItem;
