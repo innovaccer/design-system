@@ -190,3 +190,49 @@ describe('Radio component', () => {
     expect(radioElement.getAttribute('data-test')).toBe(testDataValue);
   });
 });
+
+describe('Radio accessibility', () => {
+  let consoleWarnSpy: jest.SpyInstance;
+
+  beforeEach(() => {
+    consoleWarnSpy = jest.spyOn(console, 'warn').mockImplementation();
+  });
+
+  afterEach(() => {
+    consoleWarnSpy.mockRestore();
+  });
+
+  it('warns when rendered without label, aria-label, or aria-labelledby', () => {
+    render(<Radio name={StringValue} value={StringValue} />);
+    expect(consoleWarnSpy).toHaveBeenCalledWith(
+      'Radio: A Radio without a `label` prop requires an `aria-label` or `aria-labelledby` attribute for accessibility.'
+    );
+  });
+
+  it('does not warn when label prop is provided', () => {
+    render(<Radio label={label} name={StringValue} value={StringValue} />);
+    expect(consoleWarnSpy).not.toHaveBeenCalled();
+  });
+
+  it('does not warn when aria-label is provided', () => {
+    render(<Radio aria-label="Option A" name={StringValue} value={StringValue} />);
+    expect(consoleWarnSpy).not.toHaveBeenCalled();
+  });
+
+  it('does not warn when aria-labelledby is provided', () => {
+    render(<Radio aria-labelledby="external-label-id" name={StringValue} value={StringValue} />);
+    expect(consoleWarnSpy).not.toHaveBeenCalled();
+  });
+
+  it('sets aria-label on the input element', () => {
+    const { getByTestId } = render(<Radio aria-label="Option A" name={StringValue} value={StringValue} />);
+    expect(getByTestId('DesignSystem-Radio-Input')).toHaveAttribute('aria-label', 'Option A');
+  });
+
+  it('sets aria-labelledby on the input element', () => {
+    const { getByTestId } = render(
+      <Radio aria-labelledby="external-label-id" name={StringValue} value={StringValue} />
+    );
+    expect(getByTestId('DesignSystem-Radio-Input')).toHaveAttribute('aria-labelledby', 'external-label-id');
+  });
+});

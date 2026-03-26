@@ -65,8 +65,16 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forw
     className,
     helpText,
     error,
+    'aria-label': ariaLabel,
+    'aria-labelledby': ariaLabelledBy,
     ...rest
   } = props;
+
+  if (process.env.NODE_ENV !== 'production' && !label && !ariaLabel && !ariaLabelledBy) {
+    console.warn(
+      'Radio: A Radio without a `label` prop requires an `aria-label` or `aria-labelledby` attribute for accessibility.'
+    );
+  }
 
   const ref = React.useRef<HTMLInputElement>(null);
 
@@ -115,6 +123,8 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forw
           className={styles['Radio-input']}
           id={id}
           data-test="DesignSystem-Radio-Input"
+          aria-label={ariaLabel}
+          aria-labelledby={ariaLabelledBy}
           {...rest}
         />
         <span data-test="DesignSystem-Radio-wrapper" className={RadioWrapper} />
