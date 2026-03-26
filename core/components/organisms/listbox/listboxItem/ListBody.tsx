@@ -24,7 +24,7 @@ export const ListBody = (props: ListboxItemProps) => {
   );
 
   return (
-    <div data-disabled={disabled} data-test="DesignSystem-Listbox-ItemWrapper" className={itemClass}>
+    <div data-disabled={disabled} data-test="DesignSystem-Listbox-ItemWrapper" className={itemClass} tabIndex={-1}>
       {draggable && (
         <Icon
           size={16}
