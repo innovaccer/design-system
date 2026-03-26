@@ -4,6 +4,7 @@ import { Divider } from '@/index';
 import { ListboxContext } from '../Listbox';
 import { ListBody } from './ListBody';
 import { NestedList } from '../nestedList';
+import { onKeyDown as listboxKeyDownHandler } from '../utils';
 import classNames from 'classnames';
 import styles from '@css/components/listbox.module.css';
 
@@ -59,10 +60,10 @@ export interface ListboxItemProps extends BaseProps, BaseHtmlProps<HTMLLIElement
 }
 
 export const ListboxItem = (props: ListboxItemProps) => {
-  const { nestedBody, expanded, id, onClick, value, tagName: Tag = 'li', ...rest } = props;
+  const { nestedBody, expanded, id, onClick, value, tagName: Tag = 'li', tabIndex, onKeyDown, ...rest } = props;
 
   const contextProp = React.useContext(ListboxContext);
-  const { showDivider, draggable } = contextProp;
+  const { showDivider, draggable, suppressKeyboard } = contextProp;
 
   const onClickHandler = (e: React.MouseEvent) => {
     onClick && onClick(e, id, value);
@@ -72,6 +73,9 @@ export const ListboxItem = (props: ListboxItemProps) => {
     [styles['Listbox-item-wrapper']]: !draggable,
   });
 
+  // Parent owns keys when `onKeyDown` is set (Menu/Select/Combobox) or when `Listbox` sets `suppressKeyboard`.
+  const keyDownHandler = onKeyDown || (!suppressKeyboard ? listboxKeyDownHandler : undefined);
+
   return (
     <Tag
       id={id}
@@ -80,6 +84,8 @@ export const ListboxItem = (props: ListboxItemProps) => {
       onClick={onClickHandler}
       data-value={value}
       className={tagClass}
+      tabIndex={tabIndex}
+      onKeyDown={keyDownHandler}
     >
       <ListBody {...props} />
       {nestedBody && <NestedList expanded={expanded} nestedBody={nestedBody} />}

@@ -26,7 +26,7 @@ export interface ComboboxListProps extends BaseProps {
 
 export const ComboboxList = (props: ComboboxListProps) => {
   return (
-    <Listbox className="py-3" {...props} role="listbox">
+    <Listbox className="py-3" {...props} role="listbox" suppressKeyboard>
       {props.children}
     </Listbox>
   );

@@ -3,18 +3,22 @@ const isDisabledElement = (element: HTMLElement) => {
 };
 
 const getNextSibling = (element: HTMLElement) => {
-  return element?.parentNode?.nextSibling?.firstChild as HTMLElement;
+  // element is now the outer wrapper (ListboxItem Tag), so nextSibling is the next wrapper
+  return element?.nextSibling as HTMLElement;
 };
 
 const getPrevSibling = (element: HTMLElement) => {
-  return element?.parentNode?.previousSibling?.firstChild as HTMLElement;
+  // element is now the outer wrapper (ListboxItem Tag), so previousSibling is the prev wrapper
+  return element?.previousSibling as HTMLElement;
 };
 
 const focusOption = (element: HTMLElement, direction: string) => {
   let iterateElement = element;
 
   while (iterateElement) {
-    if (!isDisabledElement(iterateElement)) {
+    // Check the inner div for disabled state
+    const innerElement = iterateElement.querySelector('[data-test="DesignSystem-Listbox-ItemWrapper"]') as HTMLElement;
+    if (!isDisabledElement(innerElement)) {
       iterateElement.focus();
       break;
     }
@@ -28,7 +32,8 @@ const focusOption = (element: HTMLElement, direction: string) => {
 };
 
 export const onKeyDown = (event: React.KeyboardEvent) => {
-  const sourceElement = event.target as HTMLElement;
+  // currentTarget is the Listbox.Item root (`li`/`div`); target may be inner row content.
+  const sourceElement = event.currentTarget as HTMLElement;
   const nextElement = getNextSibling(sourceElement);
   const prevElement = getPrevSibling(sourceElement);
 
