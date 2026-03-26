@@ -63,6 +63,7 @@ export const SelectList = (props: SelectListProps) => {
         className="my-3"
         size={size}
         {...rest}
+        suppressKeyboard
       >
         {childrenWithIndex}
       </Listbox>

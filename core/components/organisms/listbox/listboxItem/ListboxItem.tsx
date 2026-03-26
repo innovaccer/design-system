@@ -57,13 +57,30 @@ export interface ListboxItemProps extends BaseProps, BaseHtmlProps<HTMLLIElement
    * Specify tabIndex to list item
    */
   tabIndex?: number;
+  /**
+   * @internal Injected by `Listbox` for default roving `tabIndex` when the list manages its own keyboard.
+   */
+  listboxRovingSerial?: number;
 }
 
 export const ListboxItem = (props: ListboxItemProps) => {
-  const { nestedBody, expanded, id, onClick, value, tagName: Tag = 'li', tabIndex, onKeyDown, ...rest } = props;
+  const {
+    nestedBody,
+    expanded,
+    id,
+    onClick,
+    value,
+    tagName: Tag = 'li',
+    tabIndex,
+    onKeyDown,
+    onFocus,
+    listboxRovingSerial,
+    disabled,
+    ...rest
+  } = props;
 
   const contextProp = React.useContext(ListboxContext);
-  const { showDivider, draggable, suppressKeyboard } = contextProp;
+  const { showDivider, draggable, suppressKeyboard, rovingIndex, setRovingIndex } = contextProp;
 
   const onClickHandler = (e: React.MouseEvent) => {
     onClick && onClick(e, id, value);
@@ -76,15 +93,34 @@ export const ListboxItem = (props: ListboxItemProps) => {
   // Parent owns keys when `onKeyDown` is set (Menu/Select/Combobox) or when `Listbox` sets `suppressKeyboard`.
   const keyDownHandler = onKeyDown || (!suppressKeyboard ? listboxKeyDownHandler : undefined);
 
+  const isRovingManaged = !suppressKeyboard && !draggable && typeof listboxRovingSerial === 'number' && !onKeyDown;
+
+  const resolvedTabIndex = (() => {
+    if (isRovingManaged) {
+      if (disabled) return -1;
+      return listboxRovingSerial === rovingIndex ? 0 : -1;
+    }
+    return tabIndex;
+  })();
+
+  const handleFocus = (e: React.FocusEvent<HTMLLIElement & HTMLDivElement & HTMLAnchorElement>) => {
+    onFocus?.(e);
+    if (isRovingManaged && !disabled) {
+      setRovingIndex(listboxRovingSerial!);
+    }
+  };
+
   return (
     <Tag
       id={id}
       data-test="DesignSystem-Listbox-Item"
       {...rest}
+      disabled={disabled}
       onClick={onClickHandler}
+      onFocus={handleFocus}
       data-value={value}
       className={tagClass}
-      tabIndex={tabIndex}
+      tabIndex={resolvedTabIndex}
       onKeyDown={keyDownHandler}
     >
       <ListBody {...props} />
