@@ -16,7 +16,7 @@
 
 <div align="center">
 
-[![codecov](https://codecov.io/gh/innovaccer/design-system/branch/master/graph/badge.svg?token=2LY7JLZGX0)](https://codecov.io/gh/innovaccer/design-system) ![GitHub](https://img.shields.io/github/license/innovaccer/design-system) ![GitHub top language](https://img.shields.io/github/languages/top/innovaccer/design-system) ![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/innovaccer/design-system)
+[![codecov](https://codecov.io/gh/innovaccer/design-system/branch/master/graph/badge.svg?token=2LY7JLZGX0)](https://codecov.io/gh/innovaccer/design-system) ![GitHub](https://img.shields.io/github/license/innovaccer/design-system) ![GitHub top language](https://img.shields.io/github/languages/top/innovaccer/design-system) [![Known Vulnerabilities](https://snyk.io/test/github/innovaccer/design-system/badge.svg)](https://snyk.io/test/github/innovaccer/design-system)
 
 </div>
 <br/>
