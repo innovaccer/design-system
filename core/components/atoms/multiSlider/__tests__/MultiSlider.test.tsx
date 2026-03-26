@@ -92,8 +92,8 @@ describe('MultiSlider handle aria-labels', () => {
     );
     const sliders = getAllByRole('slider');
     expect(sliders).toHaveLength(2);
-    expect(sliders[0]).toHaveAttribute('aria-label', 'Slider on 2');
-    expect(sliders[1]).toHaveAttribute('aria-label', 'Slider on 8');
+    expect(sliders[0]).toHaveAttribute('aria-label', 'Slider handle 1 on 2');
+    expect(sliders[1]).toHaveAttribute('aria-label', 'Slider handle 2 on 8');
   });
 
   it('renders custom aria-labels when provided', () => {
@@ -115,7 +115,7 @@ describe('MultiSlider handle aria-labels', () => {
       </MultiSlider>
     );
     const slider = getByRole('slider');
-    expect(slider).toHaveAttribute('aria-label', 'Slider on 5');
+    expect(slider).toHaveAttribute('aria-label', 'Slider handle 1 on 5');
   });
 
   it('renders aria-label on label ticks', () => {

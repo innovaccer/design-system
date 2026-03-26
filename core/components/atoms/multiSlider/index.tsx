@@ -307,7 +307,7 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
           tickSizeRatio={this.state.tickSizeRatio}
           value={value}
           isCurrentLabelHovered={isCurrentLabelHovered}
-          ariaLabel={ariaLabel || `Slider on ${this.formatLabel(value)}`}
+          ariaLabel={ariaLabel || `Slider handle ${index + 1} on ${this.formatLabel(value)}`}
         />
       );
     });
