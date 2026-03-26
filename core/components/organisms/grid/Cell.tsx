@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { RowData, ColumnSchema, SortType } from './Grid';
 import { Dropdown, Placeholder, PlaceholderParagraph, Text, Icon, Button, Tooltip, GridCell } from '@/index';
 import { DropdownProps, GridCellProps } from '@/index.type';
+import { isSpaceKey } from '@/accessibility/utils';
 import { resizeCol, hasSchema } from './utility';
 import { getCellSize, getWidth } from './columnUtility';
 import { GridHeadProps } from './GridHead';
@@ -316,7 +317,7 @@ const BodyCell = (props: BodyCellProps) => {
             }
           }}
           onKeyDown={(e: React.KeyboardEvent) => {
-            if (nestedRowData && (e.key === 'Enter' || e.key === ' ')) {
+            if (nestedRowData && (e.key === 'Enter' || isSpaceKey(e))) {
               e.preventDefault();
               e.stopPropagation();
               setExpanded(!expanded);
