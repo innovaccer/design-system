@@ -163,6 +163,7 @@ describe('handleKeyDown function', () => {
 
     expect(event.preventDefault).toHaveBeenCalled();
     expect(setOpenPopover).toHaveBeenCalledWith(false);
+    expect(setFocusedOption).toHaveBeenCalledWith(undefined);
     expect(inputTriggerRef.current.focus).toHaveBeenCalled();
   });
 });
