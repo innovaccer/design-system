@@ -31,7 +31,7 @@ export const ListBody = (props: ListboxItemProps) => {
       tabIndex={draggable ? -1 : tabIndex || 0}
       className={itemClass}
       onKeyDown={onKeyDown}
-      role="tablist"
+      role="presentation"
     >
       {draggable && (
         <Icon

@@ -5,6 +5,8 @@ import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/u
 import { Select, AIIconButton } from '@/index';
 import { SelectProps as Props } from '@/index.type';
 
+window.HTMLElement.prototype.scrollIntoView = jest.fn();
+
 const BooleanValue = [true, false];
 const FunctionValue = jest.fn();
 const placeholder = 'Select';

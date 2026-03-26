@@ -47,7 +47,7 @@ export interface SelectProps extends BaseProps {
   /**
    * width of the popover by default it will be equal to the width of trigger.
    */
-  popoverWidth?: number;
+  popoverWidth?: number | string;
   /**
    * The maximum height of the popover before scroll is enabled.
    */
@@ -274,6 +274,7 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
   };
 
   const contextProp = {
+    listboxId,
     openPopover,
     setOpenPopover,
     selectValue,
@@ -303,6 +304,7 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
         data-test="DesignSystem-Select"
         style={WrapperStyle}
         role="combobox"
+        aria-label={triggerOptions?.['aria-label'] || 'Select'}
         aria-haspopup="listbox"
         aria-expanded={openPopover}
         aria-controls={listboxId}
@@ -320,9 +322,7 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
           trigger={getTriggerElement()}
         >
           <OutsideClick onOutsideClick={onOutsideClickHandler}>
-            <div role="listbox" id={listboxId} tabIndex={0} ref={listRef}>
-              {children}
-            </div>
+            <div ref={listRef}>{children}</div>
           </OutsideClick>
         </Popover>
       </div>

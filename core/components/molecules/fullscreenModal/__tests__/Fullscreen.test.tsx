@@ -269,7 +269,11 @@ describe('FullscreenModal Component with overwrite className', () => {
 
 describe('FullscreenModal component a11y', () => {
   it('has no detectable a11y violations', async () => {
-    render(<FullscreenModal open={true}>this is modal body</FullscreenModal>);
+    render(
+      <FullscreenModal open={true} aria-label="Fullscreen modal">
+        this is modal body
+      </FullscreenModal>
+    );
     const results = await axe(document.body);
     expect(results).toHaveNoViolations();
   });

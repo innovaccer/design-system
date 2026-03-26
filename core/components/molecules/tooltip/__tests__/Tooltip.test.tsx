@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, act } from '@testing-library/react';
 import { axe } from '@/utils/testAxe';
 import { Tooltip, Button } from '@/index';
 import { TooltipProps as Props } from '@/index.type';
@@ -141,7 +141,7 @@ describe('Tooltip component a11y', () => {
 });
 
 describe('Tooltip component keyboard accessibility', () => {
-  it('should close tooltip when Escape key is pressed', async () => {
+  it('should close tooltip when Escape key is pressed', () => {
     const { getByRole, queryByText } = render(
       <Tooltip tooltip="A tooltip">
         <Button>Hover over me</Button>
@@ -151,7 +151,9 @@ describe('Tooltip component keyboard accessibility', () => {
     fireEvent.mouseOver(button);
     expect(queryByText('A tooltip')).toBeInTheDocument();
 
-    await new Promise((resolve) => setTimeout(resolve, 0));
+    act(() => {
+      jest.runAllTimers();
+    });
     fireEvent.keyDown(document, { key: 'Escape' });
     expect(queryByText('A tooltip')).not.toBeInTheDocument();
   });

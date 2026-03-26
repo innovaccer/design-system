@@ -647,7 +647,7 @@ describe('Modal focus trap', () => {
 
 describe('Modal component a11y', () => {
   it('has no detectable a11y violations', async () => {
-    render(<Modal open={true} />);
+    render(<Modal open={true} headerOptions={{ heading: 'Test Modal' }} />);
     const results = await axe(document.body);
     expect(results).toHaveNoViolations();
   });

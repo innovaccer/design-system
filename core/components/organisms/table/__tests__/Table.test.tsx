@@ -1540,12 +1540,9 @@ describe('render Table with filterType feature', () => {
           expect(screen.getAllByTestId('DesignSystem-Select-Option').length).toBeGreaterThan(0);
         });
 
-        // Find the div with style inside the Select listbox
-        const listbox = document.querySelector('[role="listbox"]');
-        expect(listbox).toBeInTheDocument();
-        const selectListDiv = listbox?.querySelector('div[style]');
-        expect(selectListDiv).toBeInTheDocument();
-        const style = (selectListDiv as HTMLElement).style;
+        const listWrapper = screen.getByTestId('DesignSystem-FilterSelect--ListWrapper');
+        expect(listWrapper).toBeInTheDocument();
+        const style = listWrapper.style;
         expect(parseFloat(style.minWidth || '0')).toBeGreaterThanOrEqual(176);
       });
 
@@ -1583,12 +1580,9 @@ describe('render Table with filterType feature', () => {
           expect(screen.getAllByTestId('DesignSystem-Select-Option').length).toBeGreaterThan(0);
         });
 
-        // Find the div with style inside the Select listbox
-        const listbox = document.querySelector('[role="listbox"]');
-        expect(listbox).toBeInTheDocument();
-        const selectListDiv = listbox?.querySelector('div[style]');
-        expect(selectListDiv).toBeInTheDocument();
-        const style = (selectListDiv as HTMLElement).style;
+        const listWrapper = screen.getByTestId('DesignSystem-FilterSelect--ListWrapper');
+        expect(listWrapper).toBeInTheDocument();
+        const style = listWrapper.style;
         expect(parseFloat(style.minWidth || '0')).toBeGreaterThanOrEqual(200);
       });
 
@@ -1626,12 +1620,9 @@ describe('render Table with filterType feature', () => {
           expect(screen.getAllByTestId('DesignSystem-Select-Option').length).toBeGreaterThan(0);
         });
 
-        // Find the div with style inside the Select listbox
-        const listbox = document.querySelector('[role="listbox"]');
-        expect(listbox).toBeInTheDocument();
-        const selectListDiv = listbox?.querySelector('div[style]');
-        expect(selectListDiv).toBeInTheDocument();
-        const style = (selectListDiv as HTMLElement).style;
+        const listWrapper = screen.getByTestId('DesignSystem-FilterSelect--ListWrapper');
+        expect(listWrapper).toBeInTheDocument();
+        const style = listWrapper.style;
         expect(style.maxWidth).toBe('500px');
       });
 
@@ -1666,12 +1657,9 @@ describe('render Table with filterType feature', () => {
           expect(screen.getAllByTestId('DesignSystem-Select-Option').length).toBeGreaterThan(0);
         });
 
-        // Find the div with style inside the Select listbox
-        const listbox = document.querySelector('[role="listbox"]');
-        expect(listbox).toBeInTheDocument();
-        const selectListDiv = listbox?.querySelector('div[style]');
-        expect(selectListDiv).toBeInTheDocument();
-        const style = (selectListDiv as HTMLElement).style;
+        const listWrapper = screen.getByTestId('DesignSystem-FilterSelect--ListWrapper');
+        expect(listWrapper).toBeInTheDocument();
+        const style = listWrapper.style;
         // Should be clamped to 176 since 150 < 176
         expect(parseFloat(style.minWidth || '0')).toBeGreaterThanOrEqual(176);
       });
@@ -1706,12 +1694,9 @@ describe('render Table with filterType feature', () => {
           expect(screen.getAllByTestId('DesignSystem-Select-Option').length).toBeGreaterThan(0);
         });
 
-        // Find the div with style inside the Select listbox
-        const listbox = document.querySelector('[role="listbox"]');
-        expect(listbox).toBeInTheDocument();
-        const selectListDiv = listbox?.querySelector('div[style]');
-        expect(selectListDiv).toBeInTheDocument();
-        const style = (selectListDiv as HTMLElement).style;
+        const listWrapper = screen.getByTestId('DesignSystem-FilterSelect--ListWrapper');
+        expect(listWrapper).toBeInTheDocument();
+        const style = listWrapper.style;
         expect(parseFloat(style.minWidth || '0')).toBeGreaterThanOrEqual(176);
       });
     });
