@@ -397,6 +397,7 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
                   icon="close"
                   appearance="transparent"
                   data-test="DesignSystem-Sidesheet--CloseButton"
+                  aria-label="Close"
                   largeIcon={true}
                   onClick={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
                     if (onClose) onClose(event, 'IconClick');
