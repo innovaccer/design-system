@@ -3657,6 +3657,7 @@ exports[`TS renders children 1`] = `
       data-test="DesignSystem-Editable"
     >
       <div
+        aria-label="Edit chips"
         data-test="DesignSystem-EditableWrapper"
         role="button"
         tabindex="0"
