@@ -830,12 +830,24 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
     ],
   },
 
+  // Navigation: accepts aria-label
+  Navigation: {
+    htmlElement: 'custom',
+    customProps: [
+      {
+        name: 'aria-label',
+        type: 'string',
+        description: 'Names the navigation landmark. Essential when multiple navs exist on a page.',
+      },
+    ],
+  },
+
   // ========================================================================
   // NOT INCLUDED (BaseProps only, NO passable a11y props):
   // SegmentedControl, ProgressBar, ProgressRing, Toast,
   // Message, Collapsible, HelpText, Dialog, Tooltip, Popover,
   // Dropzone, Stepper,
-  // VerticalNav, Navigation,
+  // VerticalNav,
   // InlineMessage
   // These components manage a11y internally and do not expose configurable
   // aria-* props to consumers.
