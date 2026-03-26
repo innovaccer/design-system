@@ -32,7 +32,7 @@ exports[`Toast component
           </h5>
           <i
             aria-label="Close"
-            class="material-symbols material-symbols-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--alert Toast-close-icon--alert"
+            class="material-symbols material-symbols-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--alert Toast-close-icon Toast-close-icon--alert"
             data-test="DesignSystem-Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -79,7 +79,7 @@ exports[`Toast component
           </h5>
           <i
             aria-label="Close"
-            class="material-symbols material-symbols-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--info Toast-close-icon--info"
+            class="material-symbols material-symbols-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--info Toast-close-icon Toast-close-icon--info"
             data-test="DesignSystem-Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -126,7 +126,7 @@ exports[`Toast component
           </h5>
           <i
             aria-label="Close"
-            class="material-symbols material-symbols-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--success Toast-close-icon--success"
+            class="material-symbols material-symbols-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--success Toast-close-icon Toast-close-icon--success"
             data-test="DesignSystem-Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -173,7 +173,7 @@ exports[`Toast component
           </h5>
           <i
             aria-label="Close"
-            class="material-symbols material-symbols-rounded Icon Icon--default Toast-icon Toast-icon--right Toast-icon--warning Toast-close-icon--warning"
+            class="material-symbols material-symbols-rounded Icon Icon--default Toast-icon Toast-icon--right Toast-icon--warning Toast-close-icon Toast-close-icon--warning"
             data-test="DesignSystem-Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -220,7 +220,7 @@ exports[`Toast component
           </h5>
           <i
             aria-label="Close"
-            class="material-symbols material-symbols-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--alert Toast-close-icon--alert"
+            class="material-symbols material-symbols-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--alert Toast-close-icon Toast-close-icon--alert"
             data-test="DesignSystem-Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -273,7 +273,7 @@ exports[`Toast component
           </h5>
           <i
             aria-label="Close"
-            class="material-symbols material-symbols-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--alert Toast-close-icon--alert"
+            class="material-symbols material-symbols-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--alert Toast-close-icon Toast-close-icon--alert"
             data-test="DesignSystem-Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -293,10 +293,11 @@ exports[`Toast component
         >
           <button
             class="Button Button--tiny Toast-actionButton Toast-actionButton--alert"
+            type="button"
           >
             <span
-              class="Text Text--white Text--regular"
-              data-test="DesignSystem-Text"
+              class="Toast-actionButton-label"
+              data-test="DesignSystem-Toast-ActionButton-Label"
             >
               Action 1
             </span>
@@ -340,7 +341,7 @@ exports[`Toast component
           </h5>
           <i
             aria-label="Close"
-            class="material-symbols material-symbols-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--info Toast-close-icon--info"
+            class="material-symbols material-symbols-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--info Toast-close-icon Toast-close-icon--info"
             data-test="DesignSystem-Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -393,7 +394,7 @@ exports[`Toast component
           </h5>
           <i
             aria-label="Close"
-            class="material-symbols material-symbols-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--info Toast-close-icon--info"
+            class="material-symbols material-symbols-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--info Toast-close-icon Toast-close-icon--info"
             data-test="DesignSystem-Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -413,10 +414,11 @@ exports[`Toast component
         >
           <button
             class="Button Button--tiny Toast-actionButton Toast-actionButton--info"
+            type="button"
           >
             <span
-              class="Text Text--white Text--regular"
-              data-test="DesignSystem-Text"
+              class="Toast-actionButton-label"
+              data-test="DesignSystem-Toast-ActionButton-Label"
             >
               Action 1
             </span>
@@ -460,7 +462,7 @@ exports[`Toast component
           </h5>
           <i
             aria-label="Close"
-            class="material-symbols material-symbols-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--success Toast-close-icon--success"
+            class="material-symbols material-symbols-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--success Toast-close-icon Toast-close-icon--success"
             data-test="DesignSystem-Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -513,7 +515,7 @@ exports[`Toast component
           </h5>
           <i
             aria-label="Close"
-            class="material-symbols material-symbols-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--success Toast-close-icon--success"
+            class="material-symbols material-symbols-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--success Toast-close-icon Toast-close-icon--success"
             data-test="DesignSystem-Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -533,10 +535,11 @@ exports[`Toast component
         >
           <button
             class="Button Button--tiny Toast-actionButton Toast-actionButton--success"
+            type="button"
           >
             <span
-              class="Text Text--white Text--regular"
-              data-test="DesignSystem-Text"
+              class="Toast-actionButton-label"
+              data-test="DesignSystem-Toast-ActionButton-Label"
             >
               Action 1
             </span>
@@ -580,7 +583,7 @@ exports[`Toast component
           </h5>
           <i
             aria-label="Close"
-            class="material-symbols material-symbols-rounded Icon Icon--default Toast-icon Toast-icon--right Toast-icon--warning Toast-close-icon--warning"
+            class="material-symbols material-symbols-rounded Icon Icon--default Toast-icon Toast-icon--right Toast-icon--warning Toast-close-icon Toast-close-icon--warning"
             data-test="DesignSystem-Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -633,7 +636,7 @@ exports[`Toast component
           </h5>
           <i
             aria-label="Close"
-            class="material-symbols material-symbols-rounded Icon Icon--default Toast-icon Toast-icon--right Toast-icon--warning Toast-close-icon--warning"
+            class="material-symbols material-symbols-rounded Icon Icon--default Toast-icon Toast-icon--right Toast-icon--warning Toast-close-icon Toast-close-icon--warning"
             data-test="DesignSystem-Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -653,10 +656,11 @@ exports[`Toast component
         >
           <button
             class="Button Button--tiny Toast-actionButton Toast-actionButton--warning"
+            type="button"
           >
             <span
-              class="Text Text--white Text--regular"
-              data-test="DesignSystem-Text"
+              class="Toast-actionButton-label"
+              data-test="DesignSystem-Toast-ActionButton-Label"
             >
               Action 1
             </span>
