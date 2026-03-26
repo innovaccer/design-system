@@ -9,8 +9,8 @@ describe('RangeSlider accessibility', () => {
     );
     const sliders = getAllByRole('slider');
     expect(sliders).toHaveLength(2);
-    expect(sliders[0]).toHaveAttribute('aria-label', 'Slider on 20');
-    expect(sliders[1]).toHaveAttribute('aria-label', 'Slider on 80');
+    expect(sliders[0]).toHaveAttribute('aria-label', 'Slider handle 1 on 20');
+    expect(sliders[1]).toHaveAttribute('aria-label', 'Slider handle 2 on 80');
   });
 });
 
