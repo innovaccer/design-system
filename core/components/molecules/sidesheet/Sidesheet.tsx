@@ -224,7 +224,7 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
     const elementToFocus = this.previousActiveElement;
     this.previousActiveElement = null;
 
-    restoreFocusToElementIfConnected(elementToFocus);
+    restoreFocusToElementIfConnected(elementToFocus, this.sidesheetContentRef.current);
   };
 
   componentDidMount() {

@@ -212,7 +212,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
     const elementToFocus = this.previousActiveElement;
     this.previousActiveElement = null;
 
-    restoreFocusToElementIfConnected(elementToFocus);
+    restoreFocusToElementIfConnected(elementToFocus, this.modalContentRef.current);
   };
 
   componentDidMount() {
