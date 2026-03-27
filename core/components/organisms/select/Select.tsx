@@ -368,6 +368,7 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
     styleType,
     error,
     rovingIndex,
+    listboxId,
   };
 
   return (
@@ -391,7 +392,7 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
           trigger={getTriggerElement()}
         >
           <OutsideClick onOutsideClick={onOutsideClickHandler}>
-            <div role="listbox" id={listboxId} tabIndex={-1} ref={listRef} onKeyDown={handlePopoverKeyDown}>
+            <div role="presentation" tabIndex={-1} ref={listRef} onKeyDown={handlePopoverKeyDown}>
               {children}
             </div>
           </OutsideClick>

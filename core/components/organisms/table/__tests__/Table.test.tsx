@@ -1542,7 +1542,7 @@ describe('render Table with filterType feature', () => {
         // Find the div with style inside the Select listbox
         const listbox = document.querySelector('[role="listbox"]');
         expect(listbox).toBeInTheDocument();
-        const selectListDiv = listbox?.querySelector('div[style]');
+        const selectListDiv = listbox?.parentElement;
         expect(selectListDiv).toBeInTheDocument();
         const style = (selectListDiv as HTMLElement).style;
         expect(parseFloat(style.minWidth || '0')).toBeGreaterThanOrEqual(176);
@@ -1585,7 +1585,7 @@ describe('render Table with filterType feature', () => {
         // Find the div with style inside the Select listbox
         const listbox = document.querySelector('[role="listbox"]');
         expect(listbox).toBeInTheDocument();
-        const selectListDiv = listbox?.querySelector('div[style]');
+        const selectListDiv = listbox?.parentElement;
         expect(selectListDiv).toBeInTheDocument();
         const style = (selectListDiv as HTMLElement).style;
         expect(parseFloat(style.minWidth || '0')).toBeGreaterThanOrEqual(200);
@@ -1628,7 +1628,7 @@ describe('render Table with filterType feature', () => {
         // Find the div with style inside the Select listbox
         const listbox = document.querySelector('[role="listbox"]');
         expect(listbox).toBeInTheDocument();
-        const selectListDiv = listbox?.querySelector('div[style]');
+        const selectListDiv = listbox?.parentElement;
         expect(selectListDiv).toBeInTheDocument();
         const style = (selectListDiv as HTMLElement).style;
         expect(style.maxWidth).toBe('500px');
@@ -1668,7 +1668,7 @@ describe('render Table with filterType feature', () => {
         // Find the div with style inside the Select listbox
         const listbox = document.querySelector('[role="listbox"]');
         expect(listbox).toBeInTheDocument();
-        const selectListDiv = listbox?.querySelector('div[style]');
+        const selectListDiv = listbox?.parentElement;
         expect(selectListDiv).toBeInTheDocument();
         const style = (selectListDiv as HTMLElement).style;
         // Should be clamped to 176 since 150 < 176
@@ -1708,7 +1708,7 @@ describe('render Table with filterType feature', () => {
         // Find the div with style inside the Select listbox
         const listbox = document.querySelector('[role="listbox"]');
         expect(listbox).toBeInTheDocument();
-        const selectListDiv = listbox?.querySelector('div[style]');
+        const selectListDiv = listbox?.parentElement;
         expect(selectListDiv).toBeInTheDocument();
         const style = (selectListDiv as HTMLElement).style;
         expect(parseFloat(style.minWidth || '0')).toBeGreaterThanOrEqual(176);

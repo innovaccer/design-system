@@ -26,6 +26,7 @@ export type ContextProps = {
   error?: boolean;
   /** Index of the option that has tabindex=0 (roving tabstop). -1 when none (e.g. search focused or empty list). */
   rovingIndex?: number;
+  listboxId?: string;
 };
 
 export const SelectContext = React.createContext<ContextProps>({});
