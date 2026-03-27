@@ -275,9 +275,11 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
   };
 
   const chipComponents = chips.map((chip, index) => {
-    const { type = 'input', onClick, ...rest } = chipOptions;
+    const { type = 'input', onClick, clearButton, ...rest } = chipOptions;
 
     const chipLabel = typeof chip === 'string' ? chip : chip?.label;
+    const clearButtonAriaLabel =
+      typeof chipLabel === 'string' && chipLabel.trim() !== '' ? `Remove ${chipLabel.trim()}` : 'Remove';
 
     return (
       <Chip
@@ -291,6 +293,9 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
         onClick={() => onClick && onClick(chip, index)}
         onClose={() => onChipDeleteHandler(index)}
         {...rest}
+        clearButton={clearButton}
+        clearButtonAriaLabel={clearButtonAriaLabel}
+        wrapperTabIndex={clearButton ? -1 : undefined}
       />
     );
   });
@@ -303,7 +308,7 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
         className={ChipInputClass}
         onClick={onClickHandler}
         onKeyDown={handleTriggerKeyDown}
-        tabIndex={disabled ? -1 : tabIndex || 0}
+        tabIndex={disabled ? -1 : tabIndex ?? -1}
         role="button"
         aria-disabled={disabled || undefined}
       >
@@ -337,10 +342,10 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
               'align-items-center',
               'flex-shrink-0'
             )}
-            tabIndex={0}
             role="button"
-            aria-label="Clear all"
             onClick={onDeleteAllHandler}
+            tabIndex={disabled ? -1 : 0}
+            aria-label="Clear all options"
             onKeyDown={(e) => {
               if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
@@ -362,6 +367,7 @@ MultiSelectTrigger.defaultProps = {
   defaultValue: [],
   allowDuplicates: false,
   autoFocus: false,
+  tabIndex: -1,
 };
 
 export default MultiSelectTrigger;

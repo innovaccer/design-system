@@ -13,12 +13,22 @@ import {
   getFocusableElements,
   getNextFocusableAfterTrigger,
   getRovingIndex,
+  handleKeyDownTrigger,
   mapInitialValue,
 } from './utils';
 import SelectFooter from './SelectFooter';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import uidGenerator from '@/utils/uidGenerator';
 import { PopoverProps } from '@/index.type';
+
+function assignRef<T>(ref: React.Ref<T> | undefined, value: T | null) {
+  if (ref == null) return;
+  if (typeof ref === 'function') {
+    ref(value);
+  } else {
+    (ref as React.MutableRefObject<T | null>).current = value;
+  }
+}
 
 export type SelectStyleType = 'filled' | 'outlined';
 
@@ -180,7 +190,7 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
   const [selectValue, setSelectValue] = React.useState<OptionType | OptionType[]>(mapValue);
   const [isOptionSelected, setIsOptionSelected] = React.useState(false);
 
-  const triggerRef = React.createRef<HTMLButtonElement>();
+  const triggerRef = React.useRef<HTMLElement | null>(null);
   const listRef = React.useRef<HTMLDivElement | null>(null);
   const wasOpenRef = React.useRef(false);
 
@@ -198,7 +208,21 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
 
   const getTriggerElement = () => {
     if (trigger) {
-      return React.cloneElement(trigger, { ref: triggerRef });
+      const userOnKeyDown = trigger.props.onKeyDown;
+      const userRef = (trigger as React.ReactElement & { ref?: React.Ref<HTMLElement> }).ref;
+      return React.cloneElement(trigger, {
+        ref: (node: HTMLElement | null) => {
+          triggerRef.current = node;
+          assignRef(userRef, node);
+        },
+        'aria-controls': listboxId,
+        'aria-expanded': openPopover,
+        'aria-haspopup': 'listbox' as const,
+        onKeyDown: (event: React.KeyboardEvent<HTMLElement>) => {
+          handleKeyDownTrigger(event, setOpenPopover, setHighlightFirstItem, setHighlightLastItem);
+          userOnKeyDown?.(event);
+        },
+      });
     }
     return <SelectTrigger aria-controls={listboxId} {...triggerOptions} />;
   };

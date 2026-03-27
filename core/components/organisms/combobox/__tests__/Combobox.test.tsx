@@ -202,4 +202,16 @@ describe('Combobox component multiple select trigger tests', () => {
 
     expect(FunctionValue).toHaveBeenCalled();
   });
+
+  it('uses distinct accessible names for chip remove and clear-all when clearButton is enabled', () => {
+    const { getByTestId } = render(
+      <Combobox multiSelect={true} chipValue={defaultChipValue} clearButton={true}>
+        {children}
+      </Combobox>
+    );
+
+    expect(getByTestId('DesignSystem-GenericChip--clearButton')).toHaveAttribute('aria-label', 'Remove Option 1');
+    expect(getByTestId('DesignSystem-MultiSelectTrigger--Icon')).toHaveAttribute('aria-label', 'Clear all options');
+    expect(getByTestId('DesignSystem-MultiSelectTrigger--Chip')).toHaveAttribute('tabIndex', '-1');
+  });
 });
