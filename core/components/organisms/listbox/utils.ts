@@ -23,6 +23,9 @@ const focusAdjacentOption = (sourceElement: HTMLElement, direction: 'down' | 'up
     const candidate = options[nextIndex];
     if (!isListboxOptionDisabled(candidate)) {
       candidate.focus({ preventScroll: true });
+      if (typeof candidate.scrollIntoView === 'function') {
+        candidate.scrollIntoView({ block: 'nearest' });
+      }
       break;
     }
     nextIndex += delta;
