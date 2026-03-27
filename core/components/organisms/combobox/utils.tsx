@@ -45,7 +45,19 @@ export const handleKeyDown = (
       event.preventDefault();
       setOpenPopover?.(false);
       setFocusedOption?.(undefined);
-      inputTriggerRef.current?.focus();
+      
+      if (inputTriggerRef?.current && inputTriggerRef.current instanceof HTMLElement) {
+        import('@/components/organisms/select/utils').then(({ getNextFocusableAfterTrigger }) => {
+          const next = getNextFocusableAfterTrigger(inputTriggerRef.current, event.shiftKey);
+          if (next) {
+            next.focus({ preventScroll: true });
+          } else {
+            inputTriggerRef.current.focus();
+          }
+        });
+      } else if (inputTriggerRef?.current) {
+        inputTriggerRef.current.focus();
+      }
       break;
     default:
       if (event.key.length === 1 && !event.ctrlKey && !event.metaKey && !event.altKey) {

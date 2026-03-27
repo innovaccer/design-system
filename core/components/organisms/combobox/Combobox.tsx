@@ -281,7 +281,17 @@ export const Combobox = (props: ComboboxProps) => {
       event.preventDefault();
       setOpenPopover(false);
       setFocusedOption(undefined);
-      inputTriggerRef.current?.focus();
+      
+      if (inputTriggerRef?.current) {
+        import('@/components/organisms/select/utils').then(({ getNextFocusableAfterTrigger }) => {
+          const next = getNextFocusableAfterTrigger(inputTriggerRef.current, event.shiftKey);
+          if (next) {
+            next.focus({ preventScroll: true });
+          } else {
+            inputTriggerRef.current?.focus();
+          }
+        });
+      }
     };
 
     el.addEventListener('keydown', onTabCapture, true);

@@ -123,7 +123,7 @@ describe('Combobox component single input trigger tests', () => {
     expect(getByTestId('DesignSystem-MultiSelectTrigger--Input')).toHaveAttribute('aria-invalid', 'true');
   });
 
-  it('closes list and returns focus to input when Tab is pressed on inner list row (capture)', () => {
+  it('closes list and returns focus to input when Tab is pressed on inner list row (capture)', async () => {
     const { getByTestId } = render(<Combobox onChange={FunctionValue}>{children}</Combobox>);
     const inputTrigger = getByTestId('DesignSystem-Combobox-Input');
     fireEvent.click(inputTrigger);
@@ -135,6 +135,9 @@ describe('Combobox component single input trigger tests', () => {
     fireEvent.keyDown(innerRow, { key: 'Tab', shiftKey: true });
 
     expect(popover).toHaveAttribute('data-opened', 'false');
+    
+    // allow async import resolution
+    await new Promise(process.nextTick);
     expect(inputTrigger).toHaveFocus();
   });
 });
