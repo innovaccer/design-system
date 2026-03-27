@@ -32,7 +32,7 @@ exports[`Toast component
           </h5>
           <button
             aria-label="Close"
-            class="Toast-icon Toast-icon--right Toast-icon--alert Toast-close-icon--alert"
+            class="Toast-icon Toast-icon--right Toast-icon--alert Toast-close-icon Toast-close-icon--alert"
           >
             <i
               aria-hidden="true"
@@ -82,7 +82,7 @@ exports[`Toast component
           </h5>
           <button
             aria-label="Close"
-            class="Toast-icon Toast-icon--right Toast-icon--info Toast-close-icon--info"
+            class="Toast-icon Toast-icon--right Toast-icon--info Toast-close-icon Toast-close-icon--info"
           >
             <i
               aria-hidden="true"
@@ -132,7 +132,7 @@ exports[`Toast component
           </h5>
           <button
             aria-label="Close"
-            class="Toast-icon Toast-icon--right Toast-icon--success Toast-close-icon--success"
+            class="Toast-icon Toast-icon--right Toast-icon--success Toast-close-icon Toast-close-icon--success"
           >
             <i
               aria-hidden="true"
@@ -182,7 +182,7 @@ exports[`Toast component
           </h5>
           <button
             aria-label="Close"
-            class="Toast-icon Toast-icon--right Toast-icon--warning Toast-close-icon--warning"
+            class="Toast-icon Toast-icon--right Toast-icon--warning Toast-close-icon Toast-close-icon--warning"
           >
             <i
               aria-hidden="true"
@@ -232,7 +232,7 @@ exports[`Toast component
           </h5>
           <button
             aria-label="Close"
-            class="Toast-icon Toast-icon--right Toast-icon--alert Toast-close-icon--alert"
+            class="Toast-icon Toast-icon--right Toast-icon--alert Toast-close-icon Toast-close-icon--alert"
           >
             <i
               aria-hidden="true"
@@ -288,7 +288,7 @@ exports[`Toast component
           </h5>
           <button
             aria-label="Close"
-            class="Toast-icon Toast-icon--right Toast-icon--alert Toast-close-icon--alert"
+            class="Toast-icon Toast-icon--right Toast-icon--alert Toast-close-icon Toast-close-icon--alert"
           >
             <i
               aria-hidden="true"
@@ -311,10 +311,11 @@ exports[`Toast component
         >
           <button
             class="Button Button--tiny Toast-actionButton Toast-actionButton--alert"
+            type="button"
           >
             <span
-              class="Text Text--white Text--regular"
-              data-test="DesignSystem-Text"
+              class="Toast-actionButton-label"
+              data-test="DesignSystem-Toast-ActionButton-Label"
             >
               Action 1
             </span>
@@ -358,7 +359,7 @@ exports[`Toast component
           </h5>
           <button
             aria-label="Close"
-            class="Toast-icon Toast-icon--right Toast-icon--info Toast-close-icon--info"
+            class="Toast-icon Toast-icon--right Toast-icon--info Toast-close-icon Toast-close-icon--info"
           >
             <i
               aria-hidden="true"
@@ -414,7 +415,7 @@ exports[`Toast component
           </h5>
           <button
             aria-label="Close"
-            class="Toast-icon Toast-icon--right Toast-icon--info Toast-close-icon--info"
+            class="Toast-icon Toast-icon--right Toast-icon--info Toast-close-icon Toast-close-icon--info"
           >
             <i
               aria-hidden="true"
@@ -437,10 +438,11 @@ exports[`Toast component
         >
           <button
             class="Button Button--tiny Toast-actionButton Toast-actionButton--info"
+            type="button"
           >
             <span
-              class="Text Text--white Text--regular"
-              data-test="DesignSystem-Text"
+              class="Toast-actionButton-label"
+              data-test="DesignSystem-Toast-ActionButton-Label"
             >
               Action 1
             </span>
@@ -484,7 +486,7 @@ exports[`Toast component
           </h5>
           <button
             aria-label="Close"
-            class="Toast-icon Toast-icon--right Toast-icon--success Toast-close-icon--success"
+            class="Toast-icon Toast-icon--right Toast-icon--success Toast-close-icon Toast-close-icon--success"
           >
             <i
               aria-hidden="true"
@@ -540,7 +542,7 @@ exports[`Toast component
           </h5>
           <button
             aria-label="Close"
-            class="Toast-icon Toast-icon--right Toast-icon--success Toast-close-icon--success"
+            class="Toast-icon Toast-icon--right Toast-icon--success Toast-close-icon Toast-close-icon--success"
           >
             <i
               aria-hidden="true"
@@ -563,10 +565,11 @@ exports[`Toast component
         >
           <button
             class="Button Button--tiny Toast-actionButton Toast-actionButton--success"
+            type="button"
           >
             <span
-              class="Text Text--white Text--regular"
-              data-test="DesignSystem-Text"
+              class="Toast-actionButton-label"
+              data-test="DesignSystem-Toast-ActionButton-Label"
             >
               Action 1
             </span>
@@ -610,7 +613,7 @@ exports[`Toast component
           </h5>
           <button
             aria-label="Close"
-            class="Toast-icon Toast-icon--right Toast-icon--warning Toast-close-icon--warning"
+            class="Toast-icon Toast-icon--right Toast-icon--warning Toast-close-icon Toast-close-icon--warning"
           >
             <i
               aria-hidden="true"
@@ -666,7 +669,7 @@ exports[`Toast component
           </h5>
           <button
             aria-label="Close"
-            class="Toast-icon Toast-icon--right Toast-icon--warning Toast-close-icon--warning"
+            class="Toast-icon Toast-icon--right Toast-icon--warning Toast-close-icon Toast-close-icon--warning"
           >
             <i
               aria-hidden="true"
@@ -689,10 +692,11 @@ exports[`Toast component
         >
           <button
             class="Button Button--tiny Toast-actionButton Toast-actionButton--warning"
+            type="button"
           >
             <span
-              class="Text Text--white Text--regular"
-              data-test="DesignSystem-Text"
+              class="Toast-actionButton-label"
+              data-test="DesignSystem-Toast-ActionButton-Label"
             >
               Action 1
             </span>
