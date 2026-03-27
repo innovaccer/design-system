@@ -45,7 +45,7 @@ export const handleKeyDown = (
       event.preventDefault();
       setOpenPopover?.(false);
       setFocusedOption?.(undefined);
-      
+
       if (inputTriggerRef?.current && inputTriggerRef.current instanceof HTMLElement) {
         import('@/components/organisms/select/utils').then(({ getNextFocusableAfterTrigger }) => {
           const next = getNextFocusableAfterTrigger(inputTriggerRef.current, event.shiftKey);

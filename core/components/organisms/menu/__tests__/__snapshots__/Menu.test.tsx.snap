@@ -47,7 +47,6 @@ exports[`Menu component snapshot
           role="presentation"
         >
           <div
-            aria-selected="false"
             class="Listbox-item Listbox-item--compressed Listbox-item--option Menu-Item"
             data-test="DesignSystem-Menu-ListItem"
             role="menuitem"
@@ -62,7 +61,6 @@ exports[`Menu component snapshot
           role="presentation"
         >
           <div
-            aria-selected="false"
             class="Listbox-item Listbox-item--compressed Listbox-item--option Menu-Item"
             data-test="DesignSystem-Menu-ListItem"
             role="menuitem"
@@ -124,7 +122,6 @@ exports[`Menu component with Nesting snapshot
           role="presentation"
         >
           <div
-            aria-selected="false"
             class="Listbox-item Listbox-item--compressed Listbox-item--option Menu-Item"
             data-test="DesignSystem-Menu-ListItem"
             role="menuitem"
@@ -139,7 +136,6 @@ exports[`Menu component with Nesting snapshot
           role="presentation"
         >
           <div
-            aria-selected="false"
             class="Listbox-item Listbox-item--compressed Listbox-item--option Menu-Item"
             data-test="DesignSystem-Menu-ListItem"
             role="menuitem"
@@ -161,7 +157,6 @@ exports[`Menu component with Nesting snapshot
               aria-controls="DesignSystem-Menu--Popover-Test-uid"
               aria-expanded="false"
               aria-haspopup="menu"
-              aria-selected="false"
               class="Listbox-item Listbox-item--compressed Listbox-item--option Menu-Item d-flex align-items-center justify-content-between w-100"
               data-test="DesignSystem-Menu-ListItem"
               id="DesignSystem-Menu--Trigger-Test-uid"
@@ -278,7 +273,6 @@ exports[`Menu component with Trigger snapshot
           role="presentation"
         >
           <div
-            aria-selected="false"
             class="Listbox-item Listbox-item--compressed Listbox-item--option Menu-Item"
             data-test="DesignSystem-Menu-ListItem"
             role="menuitem"
@@ -293,7 +287,6 @@ exports[`Menu component with Trigger snapshot
           role="presentation"
         >
           <div
-            aria-selected="false"
             class="Listbox-item Listbox-item--compressed Listbox-item--option Menu-Item"
             data-test="DesignSystem-Menu-ListItem"
             role="menuitem"

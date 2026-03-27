@@ -251,7 +251,7 @@ describe('handleKeyDown function', () => {
     expect(event.preventDefault).toHaveBeenCalled();
     expect(setOpenPopover).toHaveBeenCalledWith(false);
     expect(setFocusedOption).toHaveBeenCalledWith(undefined);
-    
+
     // We mock the import of getNextFocusableAfterTrigger so need to await
     await Promise.resolve();
     // expect(inputTriggerRef.current.focus).toHaveBeenCalled();

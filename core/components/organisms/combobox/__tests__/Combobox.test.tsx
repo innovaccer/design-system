@@ -135,7 +135,7 @@ describe('Combobox component single input trigger tests', () => {
     fireEvent.keyDown(innerRow, { key: 'Tab', shiftKey: true });
 
     expect(popover).toHaveAttribute('data-opened', 'false');
-    
+
     // allow async import resolution
     await new Promise(process.nextTick);
     expect(inputTrigger).toHaveFocus();

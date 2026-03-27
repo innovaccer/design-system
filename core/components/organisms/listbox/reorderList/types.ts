@@ -2,6 +2,7 @@ export interface IItemProps {
   key?: number;
   tabIndex?: number;
   'aria-roledescription'?: string;
+  'aria-grabbed'?: boolean;
   onKeyDown?: (e: React.KeyboardEvent) => void;
   onWheel?: (e: React.WheelEvent) => void;
   style?: React.CSSProperties;

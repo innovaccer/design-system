@@ -23,6 +23,7 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
     itemDragged: -1,
     itemDraggedOutOfBounds: -1,
     selectedItem: -1,
+    focusedIndex: 0,
     initialX: 0,
     initialY: 0,
     targetX: 0,
@@ -394,12 +395,22 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
       const offset = getTranslateOffset(this.getChildren()[selectedItem]);
       this.needle++;
       this.animateItems(this.needle, selectedItem, offset, true);
+    } else if ((e.key === 'ArrowDown' || e.key === 'j') && selectedItem === -1) {
+      e.preventDefault();
+      const nextIndex = Math.min(this.state.focusedIndex + 1, this.props.values.length - 1);
+      this.setState({ focusedIndex: nextIndex });
+      (this.getChildren()[nextIndex] as HTMLElement).focus();
     }
     if ((e.key === 'ArrowUp' || e.key === 'k') && selectedItem > -1 && this.needle > 0) {
       e.preventDefault();
       const offset = getTranslateOffset(this.getChildren()[selectedItem]);
       this.needle--;
       this.animateItems(this.needle, selectedItem, offset, true);
+    } else if ((e.key === 'ArrowUp' || e.key === 'k') && selectedItem === -1) {
+      e.preventDefault();
+      const nextIndex = Math.max(this.state.focusedIndex - 1, 0);
+      this.setState({ focusedIndex: nextIndex });
+      (this.getChildren()[nextIndex] as HTMLElement).focus();
     }
     if (e.key === 'Escape' && selectedItem > -1) {
       this.getChildren().forEach((item) => {
@@ -447,8 +458,10 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
             const isDisabled = this.props.values[index] && this.props.values[index].props.disabled;
             const props: IItemProps = {
               key: index,
-              tabIndex: isDisabled ? -1 : 0,
+              tabIndex: isDisabled ? -1 : index === this.state.focusedIndex ? 0 : -1,
+              onFocus: () => this.setState({ focusedIndex: index }),
               onKeyDown: this.onKeyDown,
+              'aria-grabbed': isSelected,
               style: {
                 ...baseStyle,
                 visibility: isHidden ? 'hidden' : undefined,

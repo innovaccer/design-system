@@ -38,7 +38,7 @@ export const DraggableList = (props: ListboxProps) => {
         );
       }}
       renderList={({ children, props: dragProps }) => (
-        <Tag data-test="DesignSystem-Listbox" {...baseProps} className={classes} {...rest} {...dragProps}>
+        <Tag data-test="DesignSystem-Listbox" {...baseProps} className={classes} tabIndex={-1} {...rest} {...dragProps}>
           {children}
         </Tag>
       )}
