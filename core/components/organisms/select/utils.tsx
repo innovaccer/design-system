@@ -236,9 +236,11 @@ export const navigateOptions = (
     (withSearch && index === 0 && direction === 'up') ||
     (withSearch && index === listItems.length - 1 && direction === 'down')
   ) {
-    const searchInput = listRef.current.querySelector('[data-test="DesignSystem-Select--Input"]');
-    searchInput.focus();
-    setFocusedOption && setFocusedOption(searchInput);
+    const searchInput = listRef.current.querySelector<HTMLElement>('[data-test="DesignSystem-Select--Input"]');
+    if (searchInput) {
+      searchInput.focus();
+      setFocusedOption?.(searchInput);
+    }
   } else {
     index = direction === 'up' ? (index - 1 + listItems.length) % listItems.length : (index + 1) % listItems.length;
 
@@ -260,31 +262,38 @@ export const handleInputKeyDown = (
   triggerRef?: any
 ) => {
   const listItems = listRef.current?.querySelectorAll('[data-test="DesignSystem-Select-Option"]');
-  let targetOption;
 
   switch (event.key) {
     case 'ArrowUp':
       event.preventDefault();
-      targetOption = listItems[listItems.length - 1];
+      if (listItems?.length) {
+        const targetOption = listItems[listItems.length - 1] as HTMLElement;
+        targetOption.focus();
+        if (typeof targetOption.scrollIntoView === 'function') {
+          targetOption.scrollIntoView({ block: 'center' });
+        }
+        setFocusedOption?.(targetOption);
+      }
       break;
     case 'ArrowDown':
       event.preventDefault();
-      targetOption = listItems[0];
+      if (listItems?.length) {
+        const targetOption = listItems[0] as HTMLElement;
+        targetOption.focus();
+        if (typeof targetOption.scrollIntoView === 'function') {
+          targetOption.scrollIntoView({ block: 'center' });
+        }
+        setFocusedOption?.(targetOption);
+      }
       break;
     case 'Escape':
       setOpenPopover?.(false);
-      triggerRef.current.focus();
+      triggerRef?.current?.focus();
       setFocusedOption?.(undefined);
       break;
     default:
       break;
   }
-
-  (targetOption as HTMLElement)?.focus();
-  if (typeof (targetOption as HTMLElement)?.scrollIntoView === 'function') {
-    (targetOption as HTMLElement).scrollIntoView({ block: 'center' });
-  }
-  setFocusedOption && setFocusedOption(targetOption);
 };
 
 export const LISTBOX_ITEM_SELECTOR = '[data-test="DesignSystem-Select-Option"]';
