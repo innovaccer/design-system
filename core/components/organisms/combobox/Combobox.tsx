@@ -298,6 +298,17 @@ export const Combobox = (props: ComboboxProps) => {
     return () => el.removeEventListener('keydown', onTabCapture, true);
   }, [openPopover, disabled]);
 
+  const previousOpen = React.useRef(openPopover);
+
+  React.useEffect(() => {
+    if (previousOpen.current && !openPopover) {
+      if (document.activeElement === document.body) {
+        inputTriggerRef.current?.focus({ preventScroll: true });
+      }
+    }
+    previousOpen.current = openPopover;
+  }, [openPopover]);
+
   const onOptionClick = (option: OptionType) => {
     setIsOptionSelected(true);
     if (!multiSelect) {
