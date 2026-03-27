@@ -282,7 +282,7 @@ describe('Select Tab-escape fallback', () => {
       </div>
     );
     const trigger = getByTestId('DesignSystem-Select-trigger');
-    const afterButton = getByTestId('after-select-button');
+    expect(getByTestId('after-select-button')).toBeInTheDocument();
     fireEvent.click(trigger);
     expect(getByTestId('DesignSystem-Popover')).toBeInTheDocument();
     const options = getAllByTestId('DesignSystem-Select-Option');

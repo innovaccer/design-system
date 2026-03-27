@@ -326,11 +326,7 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
     if (focusables.length === 0 || currentIndex === -1) {
       e.preventDefault();
       setOpenPopover(false);
-      const next = getNextFocusableAfterTrigger(
-        triggerRef.current ?? null,
-        e.shiftKey,
-        container
-      );
+      const next = getNextFocusableAfterTrigger(triggerRef.current ?? null, e.shiftKey, container);
       if (next) {
         next.focus({ preventScroll: true });
       } else {
@@ -344,8 +340,8 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
         ? focusables.length - 1
         : currentIndex - 1
       : currentIndex === focusables.length - 1
-        ? 0
-        : currentIndex + 1;
+      ? 0
+      : currentIndex + 1;
     focusables[nextIndex].focus();
   };
 
@@ -395,13 +391,7 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
           trigger={getTriggerElement()}
         >
           <OutsideClick onOutsideClick={onOutsideClickHandler}>
-            <div
-              role="listbox"
-              id={listboxId}
-              tabIndex={-1}
-              ref={listRef}
-              onKeyDown={handlePopoverKeyDown}
-            >
+            <div role="listbox" id={listboxId} tabIndex={-1} ref={listRef} onKeyDown={handlePopoverKeyDown}>
               {children}
             </div>
           </OutsideClick>

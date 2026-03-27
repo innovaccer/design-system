@@ -2,6 +2,8 @@ import React from 'react';
 import { OptionType } from '@/common.type';
 
 /** Selector for elements that participate in document tab order (excludes tabindex="-1"). */
+const DOCUMENT_FOCUSABLE_SELECTOR =
+  'a[href], button:not([disabled]), input:not([disabled]):not([type="hidden"]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
 /**
  * Returns the next (or previous with shiftKey) focusable element in document order after the trigger.
@@ -15,16 +17,14 @@ export const getNextFocusableAfterTrigger = (
   excludeContainer: HTMLElement | null = null
 ): HTMLElement | null => {
   if (!trigger) return null;
-  const elements = Array.from(document.body.querySelectorAll<HTMLElement>(DOCUMENT_FOCUSABLE_SELECTOR)).filter(
-    (el) => {
-      const style = window.getComputedStyle(el);
-      if (style.visibility === 'hidden' || style.display === 'none' || el.getAttribute('aria-hidden') === 'true') {
-        return false;
-      }
-      if (excludeContainer && (el === excludeContainer || excludeContainer.contains(el))) return false;
-      return true;
+  const elements = Array.from(document.body.querySelectorAll<HTMLElement>(DOCUMENT_FOCUSABLE_SELECTOR)).filter((el) => {
+    const style = window.getComputedStyle(el);
+    if (style.visibility === 'hidden' || style.display === 'none' || el.getAttribute('aria-hidden') === 'true') {
+      return false;
     }
-  );
+    if (excludeContainer && (el === excludeContainer || excludeContainer.contains(el))) return false;
+    return true;
+  });
   const index = elements.indexOf(trigger);
   if (index === -1) return null;
   if (shiftKey) return index <= 0 ? null : elements[index - 1];
@@ -313,9 +313,7 @@ export const getRovingIndex = (
     if (focusedIdx !== -1 && isOptionFocusable(focusedOption)) return focusedIdx;
   }
 
-  const focusableIndices = items
-    .map((el, i) => (isOptionFocusable(el) ? i : -1))
-    .filter((i) => i !== -1);
+  const focusableIndices = items.map((el, i) => (isOptionFocusable(el) ? i : -1)).filter((i) => i !== -1);
   if (focusableIndices.length === 0) return -1;
 
   const firstSelectedIdx = items.findIndex(
