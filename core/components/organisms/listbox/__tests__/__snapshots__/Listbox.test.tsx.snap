@@ -4263,6 +4263,7 @@ exports[`Listbox component snapshot
       role="presentation"
     >
       <div
+        aria-disabled="true"
         class="Listbox-item Listbox-item--standard Listbox-item--resource Listbox-item--disabled"
         data-disabled="true"
         data-test="DesignSystem-Listbox-ItemWrapper"
@@ -6542,6 +6543,7 @@ exports[`Listbox item component snapshot
         role="presentation"
       >
         <div
+          aria-disabled="true"
           class="Listbox-item Listbox-item--standard Listbox-item--resource Listbox-item--disabled"
           data-disabled="true"
           data-test="DesignSystem-Listbox-ItemWrapper"
@@ -6579,6 +6581,7 @@ exports[`Listbox item component snapshot
         role="presentation"
       >
         <div
+          aria-disabled="true"
           class="Listbox-item Listbox-item--standard Listbox-item--resource Listbox-item--disabled"
           data-disabled="true"
           data-test="DesignSystem-Listbox-ItemWrapper"

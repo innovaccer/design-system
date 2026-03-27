@@ -44,17 +44,13 @@ export const SelectList = (props: SelectListProps) => {
 
       // Recursively traverse fragments
       if (child.type === React.Fragment) {
-        return React.cloneElement(
-          child,
-          child.props,
-          injectIndexToOptions(child.props.children)
-        );
+        return React.cloneElement(child, child.props, injectIndexToOptions(child.props.children));
       }
 
       // Inject sequential index into actual SelectOptions
       if (child.type === SelectOption) {
-        return React.cloneElement(child as React.ReactElement<{ index?: number }>, { 
-          index: optionIndex++ 
+        return React.cloneElement(child as React.ReactElement<{ index?: number }>, {
+          index: optionIndex++,
         });
       }
 
