@@ -243,7 +243,7 @@ export const navigateOptions = (
       return;
     }
   }
-  
+
   if (index === -1) {
     index = direction === 'up' ? listItems.length - 1 : 0;
   } else {
