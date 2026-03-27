@@ -335,7 +335,7 @@ describe('handleKeyDown function', () => {
     firstItem.scrollIntoView = jest.fn();
     container.querySelectorAll = jest.fn((selector: string) => {
       if (selector.includes('Select--Input')) return [];
-      if (selector.includes('Listbox-ItemWrapper')) return [firstItem];
+      if (selector.includes('Select-Option')) return [firstItem];
       return [];
     }) as any;
     const listRefWithQuery = { current: container };
@@ -363,7 +363,7 @@ describe('handleKeyDown function', () => {
     lastItem.scrollIntoView = jest.fn();
     container.querySelectorAll = jest.fn((selector: string) => {
       if (selector.includes('Select--Input')) return [];
-      if (selector.includes('Listbox-ItemWrapper')) return [lastItem];
+      if (selector.includes('Select-Option')) return [lastItem];
       return [];
     }) as any;
     const listRefWithQuery = { current: container };

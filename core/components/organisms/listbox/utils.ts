@@ -1,50 +1,44 @@
-const isDisabledElement = (element: HTMLElement) => {
-  return element && element.getAttribute('data-disabled') === 'true';
+import * as React from 'react';
+import { getAllFocusableElements } from '@/utils/overlayHelper';
+
+export const isListboxOptionDisabled = (optionElement: HTMLElement): boolean => {
+  const inner = optionElement.querySelector<HTMLElement>('[data-test="DesignSystem-Listbox-ItemWrapper"]');
+  return inner?.getAttribute('data-disabled') === 'true';
 };
 
-const getNextSibling = (element: HTMLElement) => {
-  // element is now the outer wrapper (ListboxItem Tag), so nextSibling is the next wrapper
-  return element?.nextSibling as HTMLElement;
-};
+const focusAdjacentOption = (sourceElement: HTMLElement, direction: 'down' | 'up') => {
+  const listRoot = sourceElement.closest<HTMLElement>('[role="listbox"]');
+  if (!listRoot) return;
 
-const getPrevSibling = (element: HTMLElement) => {
-  // element is now the outer wrapper (ListboxItem Tag), so previousSibling is the prev wrapper
-  return element?.previousSibling as HTMLElement;
-};
+  const options = getAllFocusableElements(listRoot, 'listbox');
+  const currentIndex = options.indexOf(sourceElement);
+  if (currentIndex < 0) return;
 
-const focusOption = (element: HTMLElement, direction: string) => {
-  let iterateElement = element;
+  const delta = direction === 'down' ? 1 : -1;
+  let nextIndex = currentIndex + delta;
 
-  while (iterateElement) {
-    // Check the inner div for disabled state
-    const innerElement = iterateElement.querySelector('[data-test="DesignSystem-Listbox-ItemWrapper"]') as HTMLElement;
-    if (!isDisabledElement(innerElement)) {
-      iterateElement.focus();
+  while (nextIndex >= 0 && nextIndex < options.length) {
+    const candidate = options[nextIndex];
+    if (!isListboxOptionDisabled(candidate)) {
+      candidate.focus({ preventScroll: true });
       break;
     }
-
-    if (direction === 'down') {
-      iterateElement = getNextSibling(iterateElement);
-    } else {
-      iterateElement = getPrevSibling(iterateElement);
-    }
+    nextIndex += delta;
   }
 };
 
 export const onKeyDown = (event: React.KeyboardEvent) => {
   // currentTarget is the Listbox.Item root (`li`/`div`); target may be inner row content.
   const sourceElement = event.currentTarget as HTMLElement;
-  const nextElement = getNextSibling(sourceElement);
-  const prevElement = getPrevSibling(sourceElement);
 
   switch (event.key) {
     case 'ArrowDown':
       event.preventDefault();
-      focusOption(nextElement, 'down');
+      focusAdjacentOption(sourceElement, 'down');
       break;
     case 'ArrowUp':
       event.preventDefault();
-      focusOption(prevElement, 'up');
+      focusAdjacentOption(sourceElement, 'up');
       break;
     default:
       break;

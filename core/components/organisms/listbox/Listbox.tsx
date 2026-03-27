@@ -5,35 +5,8 @@ import { DraggableList } from './reorderList';
 import { ListboxItem } from './listboxItem';
 import { TListboxSize } from '@/common.type';
 import styles from '@css/components/listbox.module.css';
-
-function findFirstEnabledItemIndex(children: React.ReactNode): number {
-  let idx = 0;
-  let result = -1;
-  React.Children.forEach(children, (child) => {
-    if (!React.isValidElement(child) || child.type !== ListboxItem) {
-      return;
-    }
-    if (result === -1 && !child.props.disabled) {
-      result = idx;
-    }
-    idx += 1;
-  });
-  return result;
-}
-
-function mapItemsWithRoving(children: React.ReactNode, suppressKeyboard: boolean, draggable: boolean): React.ReactNode {
-  if (suppressKeyboard || draggable) {
-    return children;
-  }
-  let serial = 0;
-  return React.Children.map(children, (child) => {
-    if (!React.isValidElement(child) || child.type !== ListboxItem) {
-      return child;
-    }
-    const listboxRovingSerial = serial++;
-    return React.cloneElement(child, { listboxRovingSerial });
-  });
-}
+import { getAllFocusableElements } from '@/utils/overlayHelper';
+import { isListboxOptionDisabled } from './utils';
 
 type ListboxType = 'option' | 'description' | 'resource';
 export type TagType = 'ul' | 'ol' | 'div' | 'nav';
@@ -100,24 +73,44 @@ export const Listbox = (props: ListboxInternalProps) => {
     type,
     showDivider,
     suppressKeyboard = false,
-    tagName: Tag,
+    tagName: Tag = 'ul',
     ...rest
   } = props;
   const baseProps = extractBaseProps(props);
 
   const classes = classNames(styles.Listbox, className);
+  const listRef = React.useRef<HTMLElement | null>(null);
 
-  const [rovingIndex, setRovingIndex] = React.useState(() => findFirstEnabledItemIndex(children));
+  const [rovingIndex, setRovingIndex] = React.useState(-1);
 
   React.useLayoutEffect(() => {
     if (suppressKeyboard || draggable) {
       return;
     }
-    const first = findFirstEnabledItemIndex(children);
-    setRovingIndex(first >= 0 ? first : -1);
-  }, [children, suppressKeyboard, draggable]);
+    const root = listRef.current;
+    if (!root) {
+      return;
+    }
 
-  const mappedChildren = mapItemsWithRoving(children, suppressKeyboard, draggable);
+    const options = getAllFocusableElements(root, 'listbox');
+    const firstEnabled = options.findIndex((el) => !isListboxOptionDisabled(el));
+
+    let targetIdx = rovingIndex;
+    if (options.length === 0) {
+      targetIdx = -1;
+    } else if (targetIdx < 0 || targetIdx >= options.length || isListboxOptionDisabled(options[targetIdx])) {
+      targetIdx = firstEnabled;
+    }
+
+    if (targetIdx !== rovingIndex) {
+      setRovingIndex(targetIdx);
+    }
+
+    options.forEach((el, i) => {
+      const dis = isListboxOptionDisabled(el);
+      el.tabIndex = dis ? -1 : i === targetIdx ? 0 : -1;
+    });
+  }, [children, suppressKeyboard, draggable, rovingIndex]);
 
   const sharedProp: ListboxContextValue = {
     size,
@@ -129,13 +122,22 @@ export const Listbox = (props: ListboxInternalProps) => {
     setRovingIndex,
   };
 
+  const listRole = suppressKeyboard || draggable ? rest.role : rest.role ?? 'listbox';
+
   return (
     <Provider value={sharedProp}>
       {draggable ? (
         <DraggableList {...props} />
       ) : (
-        <Tag data-test="DesignSystem-Listbox" {...baseProps} className={classes} {...rest}>
-          {mappedChildren}
+        <Tag
+          data-test="DesignSystem-Listbox"
+          {...baseProps}
+          className={classes}
+          {...rest}
+          role={listRole}
+          ref={listRef as React.RefObject<HTMLUListElement & HTMLOListElement & HTMLDivElement & HTMLElement>}
+        >
+          {children}
         </Tag>
       )}
     </Provider>

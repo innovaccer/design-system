@@ -2,8 +2,6 @@ import React from 'react';
 import { OptionType } from '@/common.type';
 
 /** Selector for elements that participate in document tab order (excludes tabindex="-1"). */
-const DOCUMENT_FOCUSABLE_SELECTOR =
-  'a[href], button:not([disabled]), input:not([disabled]):not([type="hidden"]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
 /**
  * Returns the next (or previous with shiftKey) focusable element in document order after the trigger.
@@ -142,7 +140,7 @@ export const focusListItem = (
   listRef?: any
 ) => {
   const searchInput = listRef.current?.querySelectorAll('[data-test="DesignSystem-Select--Input"]');
-  const listItems = listRef.current?.querySelectorAll('[data-test="DesignSystem-Listbox-ItemWrapper"]');
+  const listItems = listRef.current?.querySelectorAll('[data-test="DesignSystem-Select-Option"]');
   let targetOption;
 
   if (position === 'down') {
@@ -227,7 +225,7 @@ export const navigateOptions = (
   listRef?: any,
   withSearch?: boolean
 ) => {
-  const listItems = listRef.current.querySelectorAll('[data-test="DesignSystem-Listbox-ItemWrapper"]');
+  const listItems = listRef.current.querySelectorAll('[data-test="DesignSystem-Select-Option"]');
   let index = Array.from(listItems).findIndex((item) => {
     return item == focusedOption;
   });
@@ -261,7 +259,7 @@ export const handleInputKeyDown = (
   setOpenPopover?: React.Dispatch<React.SetStateAction<boolean>>,
   triggerRef?: any
 ) => {
-  const listItems = listRef.current?.querySelectorAll('[data-test="DesignSystem-Listbox-ItemWrapper"]');
+  const listItems = listRef.current?.querySelectorAll('[data-test="DesignSystem-Select-Option"]');
   let targetOption;
 
   switch (event.key) {
@@ -289,10 +287,11 @@ export const handleInputKeyDown = (
   setFocusedOption && setFocusedOption(targetOption);
 };
 
-export const LISTBOX_ITEM_SELECTOR = '[data-test="DesignSystem-Listbox-ItemWrapper"]';
+export const LISTBOX_ITEM_SELECTOR = '[data-test="DesignSystem-Select-Option"]';
 
 function isOptionFocusable(el: Element): boolean {
-  return el.getAttribute('data-disabled') !== 'true';
+  const inner = el.querySelector('[data-test="DesignSystem-Listbox-ItemWrapper"]');
+  return inner?.getAttribute('data-disabled') !== 'true' && el.getAttribute('disabled') === null;
 }
 
 /**
@@ -302,8 +301,7 @@ function isOptionFocusable(el: Element): boolean {
  */
 export const getRovingIndex = (
   listRef: React.RefObject<HTMLDivElement | null> | null,
-  focusedOption: HTMLElement | undefined,
-  _selectValue?: OptionType | OptionType[] | undefined
+  focusedOption: HTMLElement | undefined
 ): number => {
   const list = listRef?.current?.querySelectorAll(LISTBOX_ITEM_SELECTOR);
   if (!list?.length) return -1;
@@ -334,8 +332,7 @@ export const getRovingIndex = (
  */
 export const focusPopoverInitial = (
   listRef: React.RefObject<HTMLDivElement | null> | null,
-  setFocusedOption: React.Dispatch<React.SetStateAction<HTMLElement | undefined>> | undefined,
-  selectValue: OptionType | OptionType[] | undefined
+  setFocusedOption: React.Dispatch<React.SetStateAction<HTMLElement | undefined>> | undefined
 ): number => {
   const container = listRef?.current;
   if (!container) return -1;
@@ -350,7 +347,7 @@ export const focusPopoverInitial = (
     return -1;
   }
 
-  const idx = getRovingIndex(listRef, undefined, selectValue);
+  const idx = getRovingIndex(listRef, undefined);
   if (idx >= 0) {
     const list = container.querySelectorAll(LISTBOX_ITEM_SELECTOR);
     const option = list?.[idx] as HTMLElement | undefined;

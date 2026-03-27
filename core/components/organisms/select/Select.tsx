@@ -254,7 +254,7 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
       // Second rAF ensures options (and aria-selected) are in the DOM before we focus/roving
       requestAnimationFrame(() => {
         if (cancelled) return;
-        const idx = focusPopoverInitial(listRef, setFocusedOption, selectValue);
+        const idx = focusPopoverInitial(listRef, setFocusedOption);
         setRovingIndex(idx);
         setHighlightFirstItem(false);
       });
@@ -281,7 +281,7 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
 
   React.useEffect(() => {
     if (!openPopover || !listRef.current) return;
-    const idx = getRovingIndex(listRef, focusedOption, selectValue);
+    const idx = getRovingIndex(listRef, focusedOption);
     setRovingIndex(idx);
   }, [openPopover, focusedOption, selectValue]);
 
