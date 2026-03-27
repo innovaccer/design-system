@@ -1488,7 +1488,7 @@ exports[`TS renders children 1`] = `
             class="EditableDropdown-wrapper"
           >
             <span
-              class="EditableDropdown-text"
+              class="EditableDropdown-text EditableDropdown-text--subtle"
             />
           </div>
           <i

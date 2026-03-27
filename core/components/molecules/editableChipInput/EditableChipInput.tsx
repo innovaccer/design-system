@@ -38,7 +38,13 @@ export interface EditableChipInputProps extends BaseProps {
 export const EditableChipInput = (props: EditableChipInputProps) => {
   const { placeholder, onChange, className, disableSaveAction, chipInputOptions, size = 'regular' } = props;
 
-  const { onChange: onChipInputChange, chipOptions = {}, autoFocus: autoFocusOption, ...rest } = chipInputOptions;
+  const {
+    onChange: onChipInputChange,
+    chipOptions = {},
+    autoFocus: autoFocusOption,
+    disabled: chipInputDisabled,
+    ...rest
+  } = chipInputOptions;
   const { onClick, ...chipObject } = chipOptions;
 
   const [inputValue, setInputValue] = React.useState(props.value);
@@ -109,6 +115,7 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
   };
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (chipInputDisabled) return;
     if (!showComponent && (event.key === 'Enter' || event.key === ' ')) {
       if (event.currentTarget !== event.target) return;
       event.preventDefault();
@@ -118,7 +125,8 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
   };
 
   const handleClick = () => {
-    if (!showComponent) onChangeHandler('edit');
+    if (chipInputDisabled || showComponent) return;
+    onChangeHandler('edit');
   };
 
   const onChipDelete = (index: number) => {
@@ -187,8 +195,9 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
       {...baseProps}
       onKeyDown={handleKeyDown}
       onClick={handleClick}
-      role="button"
-      tabIndex={showComponent ? -1 : 0}
+      role={showComponent ? undefined : 'button'}
+      tabIndex={chipInputDisabled ? -1 : showComponent ? -1 : 0}
+      aria-disabled={chipInputDisabled || undefined}
     >
       <Editable onChange={onChangeHandler} editing={showComponent}>
         {renderChildren()}
