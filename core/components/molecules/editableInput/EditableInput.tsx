@@ -161,6 +161,7 @@ export const EditableInput = (props: EditableInputProps) => {
       size={size}
       onChange={onInputChangeHandler}
       error={error}
+      disabled={inputDisabled}
       icon={error ? 'error' : inputIcon}
       ref={inputRef}
       data-test="DesignSystem-EditableInput--Input"

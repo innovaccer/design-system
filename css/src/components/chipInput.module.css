@@ -55,7 +55,6 @@
   min-height: var(--spacing-60);
 }
 
-/* Outer focus ring driven by ChipInput.tsx (ChipInput-border--focusRing), not :has() selectors */
 .ChipInput-border--focusRing {
   border-radius: var(--border-radius-10);
   outline: var(--border-width-05) solid var(--primary-focus);
