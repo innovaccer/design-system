@@ -6,7 +6,7 @@ exports[`TS renders children 1`] = `
     class="position-relative d-inline-flex"
   >
     <span
-      class=""
+      class="Avatar-wrapper"
       data-test="DesignSystem-AvatarWrapper"
     >
       <span
@@ -29,6 +29,7 @@ exports[`TS renders children 1`] = `
   <div
     class="AvatarGroup d-inline-flex"
     data-test="DesignSystem-AvatarGroup"
+    role="group"
   />
   <span
     class="Badge Badge--secondary"
@@ -114,6 +115,7 @@ exports[`TS renders children 1`] = `
       >
         <div
           class="Calendar Calendar-date--large Calendar--large"
+          data-calendar-index="0"
           data-test="DesignSystem-Calendar"
         >
           <div
@@ -141,8 +143,10 @@ exports[`TS renders children 1`] = `
             <div
               class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
             >
-              <div
-                class="d-flex justify-content-center align-items-center"
+              <button
+                aria-label="Select month"
+                class="Calendar-headerButton"
+                type="button"
               >
                 <h5
                   class="Heading Heading--s Heading--default"
@@ -157,9 +161,11 @@ exports[`TS renders children 1`] = `
                 >
                   keyboard_arrow_down
                 </i>
-              </div>
-              <div
-                class="ml-4 d-flex justify-content-center align-items-center"
+              </button>
+              <button
+                aria-label="Select year"
+                class="Calendar-headerButton ml-4"
+                type="button"
               >
                 <h5
                   class="Heading Heading--s Heading--default"
@@ -174,7 +180,7 @@ exports[`TS renders children 1`] = `
                 >
                   keyboard_arrow_down
                 </i>
-              </div>
+              </button>
             </div>
             <button
               class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
@@ -255,78 +261,162 @@ exports[`TS renders children 1`] = `
                   class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                   data-test="designSystem-Calendar-WrapperClass"
                 >
-                  <span
-                    class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  <button
+                    aria-disabled="false"
+                    aria-label="May 30, 2021"
+                    class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                    data-calendar-date-cell="true"
+                    data-col="0"
+                    data-row="0"
                     data-test="DesignSystem-Calendar--dateValue"
+                    tabindex="0"
+                    type="button"
                   >
-                    30
-                  </span>
+                    <span
+                      class="Text Text--subtle Text--regular"
+                      data-test="DesignSystem-Text"
+                    >
+                      30
+                    </span>
+                  </button>
                 </div>
                 <div
                   class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                   data-test="designSystem-Calendar-WrapperClass"
                 >
-                  <span
-                    class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  <button
+                    aria-disabled="false"
+                    aria-label="May 31, 2021"
+                    class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                    data-calendar-date-cell="true"
+                    data-col="1"
+                    data-row="0"
                     data-test="DesignSystem-Calendar--dateValue"
+                    tabindex="-1"
+                    type="button"
                   >
-                    31
-                  </span>
+                    <span
+                      class="Text Text--subtle Text--regular"
+                      data-test="DesignSystem-Text"
+                    >
+                      31
+                    </span>
+                  </button>
                 </div>
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  <button
+                    aria-disabled="false"
+                    aria-label="June 1, 2021"
+                    class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                    data-calendar-date-cell="true"
+                    data-col="2"
+                    data-row="0"
                     data-test="DesignSystem-Calendar--dateValue"
+                    tabindex="-1"
+                    type="button"
                   >
-                    1
-                  </span>
+                    <span
+                      class="Text Text--regular color-inverse"
+                      data-test="DesignSystem-Text"
+                    >
+                      1
+                    </span>
+                  </button>
                 </div>
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  <button
+                    aria-disabled="false"
+                    aria-label="June 2, 2021"
+                    class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                    data-calendar-date-cell="true"
+                    data-col="3"
+                    data-row="0"
                     data-test="DesignSystem-Calendar--dateValue"
+                    tabindex="-1"
+                    type="button"
                   >
-                    2
-                  </span>
+                    <span
+                      class="Text Text--regular color-inverse"
+                      data-test="DesignSystem-Text"
+                    >
+                      2
+                    </span>
+                  </button>
                 </div>
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  <button
+                    aria-disabled="false"
+                    aria-label="June 3, 2021"
+                    class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                    data-calendar-date-cell="true"
+                    data-col="4"
+                    data-row="0"
                     data-test="DesignSystem-Calendar--dateValue"
+                    tabindex="-1"
+                    type="button"
                   >
-                    3
-                  </span>
+                    <span
+                      class="Text Text--regular color-inverse"
+                      data-test="DesignSystem-Text"
+                    >
+                      3
+                    </span>
+                  </button>
                 </div>
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  <button
+                    aria-disabled="false"
+                    aria-label="June 4, 2021"
+                    class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                    data-calendar-date-cell="true"
+                    data-col="5"
+                    data-row="0"
                     data-test="DesignSystem-Calendar--dateValue"
+                    tabindex="-1"
+                    type="button"
                   >
-                    4
-                  </span>
+                    <span
+                      class="Text Text--regular color-inverse"
+                      data-test="DesignSystem-Text"
+                    >
+                      4
+                    </span>
+                  </button>
                 </div>
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  <button
+                    aria-disabled="false"
+                    aria-label="June 5, 2021"
+                    class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                    data-calendar-date-cell="true"
+                    data-col="6"
+                    data-row="0"
                     data-test="DesignSystem-Calendar--dateValue"
+                    tabindex="-1"
+                    type="button"
                   >
-                    5
-                  </span>
+                    <span
+                      class="Text Text--regular color-inverse"
+                      data-test="DesignSystem-Text"
+                    >
+                      5
+                    </span>
+                  </button>
                 </div>
               </div>
               <div
@@ -336,78 +426,162 @@ exports[`TS renders children 1`] = `
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  <button
+                    aria-disabled="false"
+                    aria-label="June 6, 2021"
+                    class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                    data-calendar-date-cell="true"
+                    data-col="0"
+                    data-row="1"
                     data-test="DesignSystem-Calendar--dateValue"
+                    tabindex="-1"
+                    type="button"
                   >
-                    6
-                  </span>
+                    <span
+                      class="Text Text--regular color-inverse"
+                      data-test="DesignSystem-Text"
+                    >
+                      6
+                    </span>
+                  </button>
                 </div>
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  <button
+                    aria-disabled="false"
+                    aria-label="June 7, 2021"
+                    class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                    data-calendar-date-cell="true"
+                    data-col="1"
+                    data-row="1"
                     data-test="DesignSystem-Calendar--dateValue"
+                    tabindex="-1"
+                    type="button"
                   >
-                    7
-                  </span>
+                    <span
+                      class="Text Text--regular color-inverse"
+                      data-test="DesignSystem-Text"
+                    >
+                      7
+                    </span>
+                  </button>
                 </div>
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  <button
+                    aria-disabled="false"
+                    aria-label="June 8, 2021"
+                    class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                    data-calendar-date-cell="true"
+                    data-col="2"
+                    data-row="1"
                     data-test="DesignSystem-Calendar--dateValue"
+                    tabindex="-1"
+                    type="button"
                   >
-                    8
-                  </span>
+                    <span
+                      class="Text Text--regular color-inverse"
+                      data-test="DesignSystem-Text"
+                    >
+                      8
+                    </span>
+                  </button>
                 </div>
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  <button
+                    aria-disabled="false"
+                    aria-label="June 9, 2021"
+                    class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                    data-calendar-date-cell="true"
+                    data-col="3"
+                    data-row="1"
                     data-test="DesignSystem-Calendar--dateValue"
+                    tabindex="-1"
+                    type="button"
                   >
-                    9
-                  </span>
+                    <span
+                      class="Text Text--regular color-inverse"
+                      data-test="DesignSystem-Text"
+                    >
+                      9
+                    </span>
+                  </button>
                 </div>
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  <button
+                    aria-disabled="false"
+                    aria-label="June 10, 2021"
+                    class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                    data-calendar-date-cell="true"
+                    data-col="4"
+                    data-row="1"
                     data-test="DesignSystem-Calendar--dateValue"
+                    tabindex="-1"
+                    type="button"
                   >
-                    10
-                  </span>
+                    <span
+                      class="Text Text--regular color-inverse"
+                      data-test="DesignSystem-Text"
+                    >
+                      10
+                    </span>
+                  </button>
                 </div>
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  <button
+                    aria-disabled="false"
+                    aria-label="June 11, 2021"
+                    class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                    data-calendar-date-cell="true"
+                    data-col="5"
+                    data-row="1"
                     data-test="DesignSystem-Calendar--dateValue"
+                    tabindex="-1"
+                    type="button"
                   >
-                    11
-                  </span>
+                    <span
+                      class="Text Text--regular color-inverse"
+                      data-test="DesignSystem-Text"
+                    >
+                      11
+                    </span>
+                  </button>
                 </div>
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  <button
+                    aria-disabled="false"
+                    aria-label="June 12, 2021"
+                    class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                    data-calendar-date-cell="true"
+                    data-col="6"
+                    data-row="1"
                     data-test="DesignSystem-Calendar--dateValue"
+                    tabindex="-1"
+                    type="button"
                   >
-                    12
-                  </span>
+                    <span
+                      class="Text Text--regular color-inverse"
+                      data-test="DesignSystem-Text"
+                    >
+                      12
+                    </span>
+                  </button>
                 </div>
               </div>
               <div
@@ -417,78 +591,162 @@ exports[`TS renders children 1`] = `
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  <button
+                    aria-disabled="false"
+                    aria-label="June 13, 2021"
+                    class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                    data-calendar-date-cell="true"
+                    data-col="0"
+                    data-row="2"
                     data-test="DesignSystem-Calendar--dateValue"
+                    tabindex="-1"
+                    type="button"
                   >
-                    13
-                  </span>
+                    <span
+                      class="Text Text--regular color-inverse"
+                      data-test="DesignSystem-Text"
+                    >
+                      13
+                    </span>
+                  </button>
                 </div>
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
                 >
-                  <span
-                    class="Text Text--regular color-primary-dark Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large Calendar-value--currDateMonthYear Calendar-value--currDate"
+                  <button
+                    aria-disabled="false"
+                    aria-label="June 14, 2021"
+                    class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large Calendar-value--currDateMonthYear Calendar-value--currDate"
+                    data-calendar-date-cell="true"
+                    data-col="1"
+                    data-row="2"
                     data-test="DesignSystem-Calendar--dateValue"
+                    tabindex="-1"
+                    type="button"
                   >
-                    14
-                  </span>
+                    <span
+                      class="Text Text--regular color-primary-dark"
+                      data-test="DesignSystem-Text"
+                    >
+                      14
+                    </span>
+                  </button>
                 </div>
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  <button
+                    aria-disabled="false"
+                    aria-label="June 15, 2021"
+                    class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                    data-calendar-date-cell="true"
+                    data-col="2"
+                    data-row="2"
                     data-test="DesignSystem-Calendar--dateValue"
+                    tabindex="-1"
+                    type="button"
                   >
-                    15
-                  </span>
+                    <span
+                      class="Text Text--regular color-inverse"
+                      data-test="DesignSystem-Text"
+                    >
+                      15
+                    </span>
+                  </button>
                 </div>
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  <button
+                    aria-disabled="false"
+                    aria-label="June 16, 2021"
+                    class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                    data-calendar-date-cell="true"
+                    data-col="3"
+                    data-row="2"
                     data-test="DesignSystem-Calendar--dateValue"
+                    tabindex="-1"
+                    type="button"
                   >
-                    16
-                  </span>
+                    <span
+                      class="Text Text--regular color-inverse"
+                      data-test="DesignSystem-Text"
+                    >
+                      16
+                    </span>
+                  </button>
                 </div>
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  <button
+                    aria-disabled="false"
+                    aria-label="June 17, 2021"
+                    class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                    data-calendar-date-cell="true"
+                    data-col="4"
+                    data-row="2"
                     data-test="DesignSystem-Calendar--dateValue"
+                    tabindex="-1"
+                    type="button"
                   >
-                    17
-                  </span>
+                    <span
+                      class="Text Text--regular color-inverse"
+                      data-test="DesignSystem-Text"
+                    >
+                      17
+                    </span>
+                  </button>
                 </div>
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  <button
+                    aria-disabled="false"
+                    aria-label="June 18, 2021"
+                    class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                    data-calendar-date-cell="true"
+                    data-col="5"
+                    data-row="2"
                     data-test="DesignSystem-Calendar--dateValue"
+                    tabindex="-1"
+                    type="button"
                   >
-                    18
-                  </span>
+                    <span
+                      class="Text Text--regular color-inverse"
+                      data-test="DesignSystem-Text"
+                    >
+                      18
+                    </span>
+                  </button>
                 </div>
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  <button
+                    aria-disabled="false"
+                    aria-label="June 19, 2021"
+                    class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                    data-calendar-date-cell="true"
+                    data-col="6"
+                    data-row="2"
                     data-test="DesignSystem-Calendar--dateValue"
+                    tabindex="-1"
+                    type="button"
                   >
-                    19
-                  </span>
+                    <span
+                      class="Text Text--regular color-inverse"
+                      data-test="DesignSystem-Text"
+                    >
+                      19
+                    </span>
+                  </button>
                 </div>
               </div>
               <div
@@ -498,78 +756,162 @@ exports[`TS renders children 1`] = `
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  <button
+                    aria-disabled="false"
+                    aria-label="June 20, 2021"
+                    class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                    data-calendar-date-cell="true"
+                    data-col="0"
+                    data-row="3"
                     data-test="DesignSystem-Calendar--dateValue"
+                    tabindex="-1"
+                    type="button"
                   >
-                    20
-                  </span>
+                    <span
+                      class="Text Text--regular color-inverse"
+                      data-test="DesignSystem-Text"
+                    >
+                      20
+                    </span>
+                  </button>
                 </div>
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  <button
+                    aria-disabled="false"
+                    aria-label="June 21, 2021"
+                    class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                    data-calendar-date-cell="true"
+                    data-col="1"
+                    data-row="3"
                     data-test="DesignSystem-Calendar--dateValue"
+                    tabindex="-1"
+                    type="button"
                   >
-                    21
-                  </span>
+                    <span
+                      class="Text Text--regular color-inverse"
+                      data-test="DesignSystem-Text"
+                    >
+                      21
+                    </span>
+                  </button>
                 </div>
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  <button
+                    aria-disabled="false"
+                    aria-label="June 22, 2021"
+                    class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                    data-calendar-date-cell="true"
+                    data-col="2"
+                    data-row="3"
                     data-test="DesignSystem-Calendar--dateValue"
+                    tabindex="-1"
+                    type="button"
                   >
-                    22
-                  </span>
+                    <span
+                      class="Text Text--regular color-inverse"
+                      data-test="DesignSystem-Text"
+                    >
+                      22
+                    </span>
+                  </button>
                 </div>
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  <button
+                    aria-disabled="false"
+                    aria-label="June 23, 2021"
+                    class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                    data-calendar-date-cell="true"
+                    data-col="3"
+                    data-row="3"
                     data-test="DesignSystem-Calendar--dateValue"
+                    tabindex="-1"
+                    type="button"
                   >
-                    23
-                  </span>
+                    <span
+                      class="Text Text--regular color-inverse"
+                      data-test="DesignSystem-Text"
+                    >
+                      23
+                    </span>
+                  </button>
                 </div>
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  <button
+                    aria-disabled="false"
+                    aria-label="June 24, 2021"
+                    class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                    data-calendar-date-cell="true"
+                    data-col="4"
+                    data-row="3"
                     data-test="DesignSystem-Calendar--dateValue"
+                    tabindex="-1"
+                    type="button"
                   >
-                    24
-                  </span>
+                    <span
+                      class="Text Text--regular color-inverse"
+                      data-test="DesignSystem-Text"
+                    >
+                      24
+                    </span>
+                  </button>
                 </div>
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  <button
+                    aria-disabled="false"
+                    aria-label="June 25, 2021"
+                    class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                    data-calendar-date-cell="true"
+                    data-col="5"
+                    data-row="3"
                     data-test="DesignSystem-Calendar--dateValue"
+                    tabindex="-1"
+                    type="button"
                   >
-                    25
-                  </span>
+                    <span
+                      class="Text Text--regular color-inverse"
+                      data-test="DesignSystem-Text"
+                    >
+                      25
+                    </span>
+                  </button>
                 </div>
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  <button
+                    aria-disabled="false"
+                    aria-label="June 26, 2021"
+                    class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                    data-calendar-date-cell="true"
+                    data-col="6"
+                    data-row="3"
                     data-test="DesignSystem-Calendar--dateValue"
+                    tabindex="-1"
+                    type="button"
                   >
-                    26
-                  </span>
+                    <span
+                      class="Text Text--regular color-inverse"
+                      data-test="DesignSystem-Text"
+                    >
+                      26
+                    </span>
+                  </button>
                 </div>
               </div>
               <div
@@ -579,78 +921,162 @@ exports[`TS renders children 1`] = `
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  <button
+                    aria-disabled="false"
+                    aria-label="June 27, 2021"
+                    class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                    data-calendar-date-cell="true"
+                    data-col="0"
+                    data-row="4"
                     data-test="DesignSystem-Calendar--dateValue"
+                    tabindex="-1"
+                    type="button"
                   >
-                    27
-                  </span>
+                    <span
+                      class="Text Text--regular color-inverse"
+                      data-test="DesignSystem-Text"
+                    >
+                      27
+                    </span>
+                  </button>
                 </div>
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  <button
+                    aria-disabled="false"
+                    aria-label="June 28, 2021"
+                    class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                    data-calendar-date-cell="true"
+                    data-col="1"
+                    data-row="4"
                     data-test="DesignSystem-Calendar--dateValue"
+                    tabindex="-1"
+                    type="button"
                   >
-                    28
-                  </span>
+                    <span
+                      class="Text Text--regular color-inverse"
+                      data-test="DesignSystem-Text"
+                    >
+                      28
+                    </span>
+                  </button>
                 </div>
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  <button
+                    aria-disabled="false"
+                    aria-label="June 29, 2021"
+                    class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                    data-calendar-date-cell="true"
+                    data-col="2"
+                    data-row="4"
                     data-test="DesignSystem-Calendar--dateValue"
+                    tabindex="-1"
+                    type="button"
                   >
-                    29
-                  </span>
+                    <span
+                      class="Text Text--regular color-inverse"
+                      data-test="DesignSystem-Text"
+                    >
+                      29
+                    </span>
+                  </button>
                 </div>
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  <button
+                    aria-disabled="false"
+                    aria-label="June 30, 2021"
+                    class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                    data-calendar-date-cell="true"
+                    data-col="3"
+                    data-row="4"
                     data-test="DesignSystem-Calendar--dateValue"
+                    tabindex="-1"
+                    type="button"
                   >
-                    30
-                  </span>
+                    <span
+                      class="Text Text--regular color-inverse"
+                      data-test="DesignSystem-Text"
+                    >
+                      30
+                    </span>
+                  </button>
                 </div>
                 <div
                   class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                   data-test="designSystem-Calendar-WrapperClass"
                 >
-                  <span
-                    class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  <button
+                    aria-disabled="false"
+                    aria-label="July 1, 2021"
+                    class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                    data-calendar-date-cell="true"
+                    data-col="4"
+                    data-row="4"
                     data-test="DesignSystem-Calendar--dateValue"
+                    tabindex="-1"
+                    type="button"
                   >
-                    1
-                  </span>
+                    <span
+                      class="Text Text--subtle Text--regular"
+                      data-test="DesignSystem-Text"
+                    >
+                      1
+                    </span>
+                  </button>
                 </div>
                 <div
                   class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                   data-test="designSystem-Calendar-WrapperClass"
                 >
-                  <span
-                    class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  <button
+                    aria-disabled="false"
+                    aria-label="July 2, 2021"
+                    class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                    data-calendar-date-cell="true"
+                    data-col="5"
+                    data-row="4"
                     data-test="DesignSystem-Calendar--dateValue"
+                    tabindex="-1"
+                    type="button"
                   >
-                    2
-                  </span>
+                    <span
+                      class="Text Text--subtle Text--regular"
+                      data-test="DesignSystem-Text"
+                    >
+                      2
+                    </span>
+                  </button>
                 </div>
                 <div
                   class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                   data-test="designSystem-Calendar-WrapperClass"
                 >
-                  <span
-                    class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  <button
+                    aria-disabled="false"
+                    aria-label="July 3, 2021"
+                    class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                    data-calendar-date-cell="true"
+                    data-col="6"
+                    data-row="4"
                     data-test="DesignSystem-Calendar--dateValue"
+                    tabindex="-1"
+                    type="button"
                   >
-                    3
-                  </span>
+                    <span
+                      class="Text Text--subtle Text--regular"
+                      data-test="DesignSystem-Text"
+                    >
+                      3
+                    </span>
+                  </button>
                 </div>
               </div>
               <div
@@ -660,78 +1086,162 @@ exports[`TS renders children 1`] = `
                   class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                   data-test="designSystem-Calendar-WrapperClass"
                 >
-                  <span
-                    class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  <button
+                    aria-disabled="false"
+                    aria-label="July 4, 2021"
+                    class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                    data-calendar-date-cell="true"
+                    data-col="0"
+                    data-row="5"
                     data-test="DesignSystem-Calendar--dateValue"
+                    tabindex="-1"
+                    type="button"
                   >
-                    4
-                  </span>
+                    <span
+                      class="Text Text--subtle Text--regular"
+                      data-test="DesignSystem-Text"
+                    >
+                      4
+                    </span>
+                  </button>
                 </div>
                 <div
                   class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                   data-test="designSystem-Calendar-WrapperClass"
                 >
-                  <span
-                    class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  <button
+                    aria-disabled="false"
+                    aria-label="July 5, 2021"
+                    class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                    data-calendar-date-cell="true"
+                    data-col="1"
+                    data-row="5"
                     data-test="DesignSystem-Calendar--dateValue"
+                    tabindex="-1"
+                    type="button"
                   >
-                    5
-                  </span>
+                    <span
+                      class="Text Text--subtle Text--regular"
+                      data-test="DesignSystem-Text"
+                    >
+                      5
+                    </span>
+                  </button>
                 </div>
                 <div
                   class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                   data-test="designSystem-Calendar-WrapperClass"
                 >
-                  <span
-                    class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  <button
+                    aria-disabled="false"
+                    aria-label="July 6, 2021"
+                    class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                    data-calendar-date-cell="true"
+                    data-col="2"
+                    data-row="5"
                     data-test="DesignSystem-Calendar--dateValue"
+                    tabindex="-1"
+                    type="button"
                   >
-                    6
-                  </span>
+                    <span
+                      class="Text Text--subtle Text--regular"
+                      data-test="DesignSystem-Text"
+                    >
+                      6
+                    </span>
+                  </button>
                 </div>
                 <div
                   class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                   data-test="designSystem-Calendar-WrapperClass"
                 >
-                  <span
-                    class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  <button
+                    aria-disabled="false"
+                    aria-label="July 7, 2021"
+                    class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                    data-calendar-date-cell="true"
+                    data-col="3"
+                    data-row="5"
                     data-test="DesignSystem-Calendar--dateValue"
+                    tabindex="-1"
+                    type="button"
                   >
-                    7
-                  </span>
+                    <span
+                      class="Text Text--subtle Text--regular"
+                      data-test="DesignSystem-Text"
+                    >
+                      7
+                    </span>
+                  </button>
                 </div>
                 <div
                   class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                   data-test="designSystem-Calendar-WrapperClass"
                 >
-                  <span
-                    class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  <button
+                    aria-disabled="false"
+                    aria-label="July 8, 2021"
+                    class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                    data-calendar-date-cell="true"
+                    data-col="4"
+                    data-row="5"
                     data-test="DesignSystem-Calendar--dateValue"
+                    tabindex="-1"
+                    type="button"
                   >
-                    8
-                  </span>
+                    <span
+                      class="Text Text--subtle Text--regular"
+                      data-test="DesignSystem-Text"
+                    >
+                      8
+                    </span>
+                  </button>
                 </div>
                 <div
                   class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                   data-test="designSystem-Calendar-WrapperClass"
                 >
-                  <span
-                    class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  <button
+                    aria-disabled="false"
+                    aria-label="July 9, 2021"
+                    class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                    data-calendar-date-cell="true"
+                    data-col="5"
+                    data-row="5"
                     data-test="DesignSystem-Calendar--dateValue"
+                    tabindex="-1"
+                    type="button"
                   >
-                    9
-                  </span>
+                    <span
+                      class="Text Text--subtle Text--regular"
+                      data-test="DesignSystem-Text"
+                    >
+                      9
+                    </span>
+                  </button>
                 </div>
                 <div
                   class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                   data-test="designSystem-Calendar-WrapperClass"
                 >
-                  <span
-                    class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  <button
+                    aria-disabled="false"
+                    aria-label="July 10, 2021"
+                    class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                    data-calendar-date-cell="true"
+                    data-col="6"
+                    data-row="5"
                     data-test="DesignSystem-Calendar--dateValue"
+                    tabindex="-1"
+                    type="button"
                   >
-                    10
-                  </span>
+                    <span
+                      class="Text Text--subtle Text--regular"
+                      data-test="DesignSystem-Text"
+                    >
+                      10
+                    </span>
+                  </button>
                 </div>
               </div>
             </div>
@@ -1114,7 +1624,7 @@ exports[`TS renders children 1`] = `
             class="Slider-ticks bg-dark"
           />
           <span
-            class="Text Text--default Text--small"
+            class="Text Text--default Text--strong Text--small"
             data-test="DesignSystem-Text"
           >
             0
@@ -1338,7 +1848,7 @@ exports[`TS renders children 1`] = `
             class="Slider-ticks bg-dark"
           />
           <span
-            class="Text Text--default Text--small"
+            class="Text Text--default Text--strong Text--small"
             data-test="DesignSystem-Text"
           >
             0
@@ -1498,7 +2008,7 @@ exports[`TS renders children 1`] = `
             class="Slider-ticks bg-dark"
           />
           <span
-            class="Text Text--default Text--small"
+            class="Text Text--default Text--strong Text--small"
             data-test="DesignSystem-Text"
           >
             10
@@ -1599,7 +2109,7 @@ exports[`TS renders children 1`] = `
         </h5>
         <i
           aria-label="Close"
-          class="material-symbols material-symbols-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--info Toast-close-icon--info"
+          class="material-symbols material-symbols-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--info Toast-close-icon Toast-close-icon--info"
           data-test="DesignSystem-Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -1846,6 +2356,7 @@ exports[`TS renders children 1`] = `
   >
     <div
       class="Calendar Calendar-date--large Calendar--large"
+      data-calendar-index="0"
       data-test="DesignSystem-Calendar"
     >
       <div
@@ -1873,8 +2384,10 @@ exports[`TS renders children 1`] = `
         <div
           class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
         >
-          <div
-            class="d-flex justify-content-center align-items-center"
+          <button
+            aria-label="Select month"
+            class="Calendar-headerButton"
+            type="button"
           >
             <h5
               class="Heading Heading--s Heading--default"
@@ -1882,9 +2395,11 @@ exports[`TS renders children 1`] = `
             >
               Jun
             </h5>
-          </div>
-          <div
-            class="ml-4 d-flex justify-content-center align-items-center"
+          </button>
+          <button
+            aria-label="Select year"
+            class="Calendar-headerButton ml-4"
+            type="button"
           >
             <h5
               class="Heading Heading--s Heading--default"
@@ -1892,7 +2407,7 @@ exports[`TS renders children 1`] = `
             >
               2021
             </h5>
-          </div>
+          </button>
         </div>
         <button
           class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
@@ -1973,78 +2488,162 @@ exports[`TS renders children 1`] = `
               class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
               data-test="designSystem-Calendar-WrapperClass"
             >
-              <span
-                class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+              <button
+                aria-disabled="false"
+                aria-label="May 30, 2021"
+                class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                data-calendar-date-cell="true"
+                data-col="0"
+                data-row="0"
                 data-test="DesignSystem-Calendar--dateValue"
+                tabindex="0"
+                type="button"
               >
-                30
-              </span>
+                <span
+                  class="Text Text--subtle Text--regular"
+                  data-test="DesignSystem-Text"
+                >
+                  30
+                </span>
+              </button>
             </div>
             <div
               class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
               data-test="designSystem-Calendar-WrapperClass"
             >
-              <span
-                class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+              <button
+                aria-disabled="false"
+                aria-label="May 31, 2021"
+                class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                data-calendar-date-cell="true"
+                data-col="1"
+                data-row="0"
                 data-test="DesignSystem-Calendar--dateValue"
+                tabindex="-1"
+                type="button"
               >
-                31
-              </span>
+                <span
+                  class="Text Text--subtle Text--regular"
+                  data-test="DesignSystem-Text"
+                >
+                  31
+                </span>
+              </button>
             </div>
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
             >
-              <span
-                class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+              <button
+                aria-disabled="false"
+                aria-label="June 1, 2021"
+                class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                data-calendar-date-cell="true"
+                data-col="2"
+                data-row="0"
                 data-test="DesignSystem-Calendar--dateValue"
+                tabindex="-1"
+                type="button"
               >
-                1
-              </span>
+                <span
+                  class="Text Text--regular color-inverse"
+                  data-test="DesignSystem-Text"
+                >
+                  1
+                </span>
+              </button>
             </div>
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
             >
-              <span
-                class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+              <button
+                aria-disabled="false"
+                aria-label="June 2, 2021"
+                class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                data-calendar-date-cell="true"
+                data-col="3"
+                data-row="0"
                 data-test="DesignSystem-Calendar--dateValue"
+                tabindex="-1"
+                type="button"
               >
-                2
-              </span>
+                <span
+                  class="Text Text--regular color-inverse"
+                  data-test="DesignSystem-Text"
+                >
+                  2
+                </span>
+              </button>
             </div>
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
             >
-              <span
-                class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+              <button
+                aria-disabled="false"
+                aria-label="June 3, 2021"
+                class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                data-calendar-date-cell="true"
+                data-col="4"
+                data-row="0"
                 data-test="DesignSystem-Calendar--dateValue"
+                tabindex="-1"
+                type="button"
               >
-                3
-              </span>
+                <span
+                  class="Text Text--regular color-inverse"
+                  data-test="DesignSystem-Text"
+                >
+                  3
+                </span>
+              </button>
             </div>
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
             >
-              <span
-                class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+              <button
+                aria-disabled="false"
+                aria-label="June 4, 2021"
+                class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                data-calendar-date-cell="true"
+                data-col="5"
+                data-row="0"
                 data-test="DesignSystem-Calendar--dateValue"
+                tabindex="-1"
+                type="button"
               >
-                4
-              </span>
+                <span
+                  class="Text Text--regular color-inverse"
+                  data-test="DesignSystem-Text"
+                >
+                  4
+                </span>
+              </button>
             </div>
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
             >
-              <span
-                class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+              <button
+                aria-disabled="false"
+                aria-label="June 5, 2021"
+                class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                data-calendar-date-cell="true"
+                data-col="6"
+                data-row="0"
                 data-test="DesignSystem-Calendar--dateValue"
+                tabindex="-1"
+                type="button"
               >
-                5
-              </span>
+                <span
+                  class="Text Text--regular color-inverse"
+                  data-test="DesignSystem-Text"
+                >
+                  5
+                </span>
+              </button>
             </div>
           </div>
           <div
@@ -2054,78 +2653,162 @@ exports[`TS renders children 1`] = `
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
             >
-              <span
-                class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+              <button
+                aria-disabled="false"
+                aria-label="June 6, 2021"
+                class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                data-calendar-date-cell="true"
+                data-col="0"
+                data-row="1"
                 data-test="DesignSystem-Calendar--dateValue"
+                tabindex="-1"
+                type="button"
               >
-                6
-              </span>
+                <span
+                  class="Text Text--regular color-inverse"
+                  data-test="DesignSystem-Text"
+                >
+                  6
+                </span>
+              </button>
             </div>
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
             >
-              <span
-                class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+              <button
+                aria-disabled="false"
+                aria-label="June 7, 2021"
+                class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                data-calendar-date-cell="true"
+                data-col="1"
+                data-row="1"
                 data-test="DesignSystem-Calendar--dateValue"
+                tabindex="-1"
+                type="button"
               >
-                7
-              </span>
+                <span
+                  class="Text Text--regular color-inverse"
+                  data-test="DesignSystem-Text"
+                >
+                  7
+                </span>
+              </button>
             </div>
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
             >
-              <span
-                class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+              <button
+                aria-disabled="false"
+                aria-label="June 8, 2021"
+                class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                data-calendar-date-cell="true"
+                data-col="2"
+                data-row="1"
                 data-test="DesignSystem-Calendar--dateValue"
+                tabindex="-1"
+                type="button"
               >
-                8
-              </span>
+                <span
+                  class="Text Text--regular color-inverse"
+                  data-test="DesignSystem-Text"
+                >
+                  8
+                </span>
+              </button>
             </div>
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
             >
-              <span
-                class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+              <button
+                aria-disabled="false"
+                aria-label="June 9, 2021"
+                class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                data-calendar-date-cell="true"
+                data-col="3"
+                data-row="1"
                 data-test="DesignSystem-Calendar--dateValue"
+                tabindex="-1"
+                type="button"
               >
-                9
-              </span>
+                <span
+                  class="Text Text--regular color-inverse"
+                  data-test="DesignSystem-Text"
+                >
+                  9
+                </span>
+              </button>
             </div>
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
             >
-              <span
-                class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+              <button
+                aria-disabled="false"
+                aria-label="June 10, 2021"
+                class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                data-calendar-date-cell="true"
+                data-col="4"
+                data-row="1"
                 data-test="DesignSystem-Calendar--dateValue"
+                tabindex="-1"
+                type="button"
               >
-                10
-              </span>
+                <span
+                  class="Text Text--regular color-inverse"
+                  data-test="DesignSystem-Text"
+                >
+                  10
+                </span>
+              </button>
             </div>
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
             >
-              <span
-                class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+              <button
+                aria-disabled="false"
+                aria-label="June 11, 2021"
+                class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                data-calendar-date-cell="true"
+                data-col="5"
+                data-row="1"
                 data-test="DesignSystem-Calendar--dateValue"
+                tabindex="-1"
+                type="button"
               >
-                11
-              </span>
+                <span
+                  class="Text Text--regular color-inverse"
+                  data-test="DesignSystem-Text"
+                >
+                  11
+                </span>
+              </button>
             </div>
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
             >
-              <span
-                class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+              <button
+                aria-disabled="false"
+                aria-label="June 12, 2021"
+                class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                data-calendar-date-cell="true"
+                data-col="6"
+                data-row="1"
                 data-test="DesignSystem-Calendar--dateValue"
+                tabindex="-1"
+                type="button"
               >
-                12
-              </span>
+                <span
+                  class="Text Text--regular color-inverse"
+                  data-test="DesignSystem-Text"
+                >
+                  12
+                </span>
+              </button>
             </div>
           </div>
           <div
@@ -2135,78 +2818,162 @@ exports[`TS renders children 1`] = `
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
             >
-              <span
-                class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+              <button
+                aria-disabled="false"
+                aria-label="June 13, 2021"
+                class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                data-calendar-date-cell="true"
+                data-col="0"
+                data-row="2"
                 data-test="DesignSystem-Calendar--dateValue"
+                tabindex="-1"
+                type="button"
               >
-                13
-              </span>
+                <span
+                  class="Text Text--regular color-inverse"
+                  data-test="DesignSystem-Text"
+                >
+                  13
+                </span>
+              </button>
             </div>
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
             >
-              <span
-                class="Text Text--regular color-primary-dark Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large Calendar-value--currDateMonthYear Calendar-value--currDate"
+              <button
+                aria-disabled="false"
+                aria-label="June 14, 2021"
+                class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large Calendar-value--currDateMonthYear Calendar-value--currDate"
+                data-calendar-date-cell="true"
+                data-col="1"
+                data-row="2"
                 data-test="DesignSystem-Calendar--dateValue"
+                tabindex="-1"
+                type="button"
               >
-                14
-              </span>
+                <span
+                  class="Text Text--regular color-primary-dark"
+                  data-test="DesignSystem-Text"
+                >
+                  14
+                </span>
+              </button>
             </div>
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
             >
-              <span
-                class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+              <button
+                aria-disabled="false"
+                aria-label="June 15, 2021"
+                class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                data-calendar-date-cell="true"
+                data-col="2"
+                data-row="2"
                 data-test="DesignSystem-Calendar--dateValue"
+                tabindex="-1"
+                type="button"
               >
-                15
-              </span>
+                <span
+                  class="Text Text--regular color-inverse"
+                  data-test="DesignSystem-Text"
+                >
+                  15
+                </span>
+              </button>
             </div>
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
             >
-              <span
-                class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+              <button
+                aria-disabled="false"
+                aria-label="June 16, 2021"
+                class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                data-calendar-date-cell="true"
+                data-col="3"
+                data-row="2"
                 data-test="DesignSystem-Calendar--dateValue"
+                tabindex="-1"
+                type="button"
               >
-                16
-              </span>
+                <span
+                  class="Text Text--regular color-inverse"
+                  data-test="DesignSystem-Text"
+                >
+                  16
+                </span>
+              </button>
             </div>
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
             >
-              <span
-                class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+              <button
+                aria-disabled="false"
+                aria-label="June 17, 2021"
+                class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                data-calendar-date-cell="true"
+                data-col="4"
+                data-row="2"
                 data-test="DesignSystem-Calendar--dateValue"
+                tabindex="-1"
+                type="button"
               >
-                17
-              </span>
+                <span
+                  class="Text Text--regular color-inverse"
+                  data-test="DesignSystem-Text"
+                >
+                  17
+                </span>
+              </button>
             </div>
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
             >
-              <span
-                class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+              <button
+                aria-disabled="false"
+                aria-label="June 18, 2021"
+                class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                data-calendar-date-cell="true"
+                data-col="5"
+                data-row="2"
                 data-test="DesignSystem-Calendar--dateValue"
+                tabindex="-1"
+                type="button"
               >
-                18
-              </span>
+                <span
+                  class="Text Text--regular color-inverse"
+                  data-test="DesignSystem-Text"
+                >
+                  18
+                </span>
+              </button>
             </div>
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
             >
-              <span
-                class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+              <button
+                aria-disabled="false"
+                aria-label="June 19, 2021"
+                class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                data-calendar-date-cell="true"
+                data-col="6"
+                data-row="2"
                 data-test="DesignSystem-Calendar--dateValue"
+                tabindex="-1"
+                type="button"
               >
-                19
-              </span>
+                <span
+                  class="Text Text--regular color-inverse"
+                  data-test="DesignSystem-Text"
+                >
+                  19
+                </span>
+              </button>
             </div>
           </div>
           <div
@@ -2216,78 +2983,162 @@ exports[`TS renders children 1`] = `
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
             >
-              <span
-                class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+              <button
+                aria-disabled="false"
+                aria-label="June 20, 2021"
+                class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                data-calendar-date-cell="true"
+                data-col="0"
+                data-row="3"
                 data-test="DesignSystem-Calendar--dateValue"
+                tabindex="-1"
+                type="button"
               >
-                20
-              </span>
+                <span
+                  class="Text Text--regular color-inverse"
+                  data-test="DesignSystem-Text"
+                >
+                  20
+                </span>
+              </button>
             </div>
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
             >
-              <span
-                class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+              <button
+                aria-disabled="false"
+                aria-label="June 21, 2021"
+                class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                data-calendar-date-cell="true"
+                data-col="1"
+                data-row="3"
                 data-test="DesignSystem-Calendar--dateValue"
+                tabindex="-1"
+                type="button"
               >
-                21
-              </span>
+                <span
+                  class="Text Text--regular color-inverse"
+                  data-test="DesignSystem-Text"
+                >
+                  21
+                </span>
+              </button>
             </div>
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
             >
-              <span
-                class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+              <button
+                aria-disabled="false"
+                aria-label="June 22, 2021"
+                class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                data-calendar-date-cell="true"
+                data-col="2"
+                data-row="3"
                 data-test="DesignSystem-Calendar--dateValue"
+                tabindex="-1"
+                type="button"
               >
-                22
-              </span>
+                <span
+                  class="Text Text--regular color-inverse"
+                  data-test="DesignSystem-Text"
+                >
+                  22
+                </span>
+              </button>
             </div>
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
             >
-              <span
-                class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+              <button
+                aria-disabled="false"
+                aria-label="June 23, 2021"
+                class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                data-calendar-date-cell="true"
+                data-col="3"
+                data-row="3"
                 data-test="DesignSystem-Calendar--dateValue"
+                tabindex="-1"
+                type="button"
               >
-                23
-              </span>
+                <span
+                  class="Text Text--regular color-inverse"
+                  data-test="DesignSystem-Text"
+                >
+                  23
+                </span>
+              </button>
             </div>
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
             >
-              <span
-                class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+              <button
+                aria-disabled="false"
+                aria-label="June 24, 2021"
+                class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                data-calendar-date-cell="true"
+                data-col="4"
+                data-row="3"
                 data-test="DesignSystem-Calendar--dateValue"
+                tabindex="-1"
+                type="button"
               >
-                24
-              </span>
+                <span
+                  class="Text Text--regular color-inverse"
+                  data-test="DesignSystem-Text"
+                >
+                  24
+                </span>
+              </button>
             </div>
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
             >
-              <span
-                class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+              <button
+                aria-disabled="false"
+                aria-label="June 25, 2021"
+                class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                data-calendar-date-cell="true"
+                data-col="5"
+                data-row="3"
                 data-test="DesignSystem-Calendar--dateValue"
+                tabindex="-1"
+                type="button"
               >
-                25
-              </span>
+                <span
+                  class="Text Text--regular color-inverse"
+                  data-test="DesignSystem-Text"
+                >
+                  25
+                </span>
+              </button>
             </div>
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
             >
-              <span
-                class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+              <button
+                aria-disabled="false"
+                aria-label="June 26, 2021"
+                class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                data-calendar-date-cell="true"
+                data-col="6"
+                data-row="3"
                 data-test="DesignSystem-Calendar--dateValue"
+                tabindex="-1"
+                type="button"
               >
-                26
-              </span>
+                <span
+                  class="Text Text--regular color-inverse"
+                  data-test="DesignSystem-Text"
+                >
+                  26
+                </span>
+              </button>
             </div>
           </div>
           <div
@@ -2297,78 +3148,162 @@ exports[`TS renders children 1`] = `
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
             >
-              <span
-                class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+              <button
+                aria-disabled="false"
+                aria-label="June 27, 2021"
+                class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                data-calendar-date-cell="true"
+                data-col="0"
+                data-row="4"
                 data-test="DesignSystem-Calendar--dateValue"
+                tabindex="-1"
+                type="button"
               >
-                27
-              </span>
+                <span
+                  class="Text Text--regular color-inverse"
+                  data-test="DesignSystem-Text"
+                >
+                  27
+                </span>
+              </button>
             </div>
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
             >
-              <span
-                class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+              <button
+                aria-disabled="false"
+                aria-label="June 28, 2021"
+                class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                data-calendar-date-cell="true"
+                data-col="1"
+                data-row="4"
                 data-test="DesignSystem-Calendar--dateValue"
+                tabindex="-1"
+                type="button"
               >
-                28
-              </span>
+                <span
+                  class="Text Text--regular color-inverse"
+                  data-test="DesignSystem-Text"
+                >
+                  28
+                </span>
+              </button>
             </div>
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
             >
-              <span
-                class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+              <button
+                aria-disabled="false"
+                aria-label="June 29, 2021"
+                class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                data-calendar-date-cell="true"
+                data-col="2"
+                data-row="4"
                 data-test="DesignSystem-Calendar--dateValue"
+                tabindex="-1"
+                type="button"
               >
-                29
-              </span>
+                <span
+                  class="Text Text--regular color-inverse"
+                  data-test="DesignSystem-Text"
+                >
+                  29
+                </span>
+              </button>
             </div>
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
             >
-              <span
-                class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+              <button
+                aria-disabled="false"
+                aria-label="June 30, 2021"
+                class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                data-calendar-date-cell="true"
+                data-col="3"
+                data-row="4"
                 data-test="DesignSystem-Calendar--dateValue"
+                tabindex="-1"
+                type="button"
               >
-                30
-              </span>
+                <span
+                  class="Text Text--regular color-inverse"
+                  data-test="DesignSystem-Text"
+                >
+                  30
+                </span>
+              </button>
             </div>
             <div
               class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
               data-test="designSystem-Calendar-WrapperClass"
             >
-              <span
-                class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+              <button
+                aria-disabled="false"
+                aria-label="July 1, 2021"
+                class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                data-calendar-date-cell="true"
+                data-col="4"
+                data-row="4"
                 data-test="DesignSystem-Calendar--dateValue"
+                tabindex="-1"
+                type="button"
               >
-                1
-              </span>
+                <span
+                  class="Text Text--subtle Text--regular"
+                  data-test="DesignSystem-Text"
+                >
+                  1
+                </span>
+              </button>
             </div>
             <div
               class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
               data-test="designSystem-Calendar-WrapperClass"
             >
-              <span
-                class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+              <button
+                aria-disabled="false"
+                aria-label="July 2, 2021"
+                class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                data-calendar-date-cell="true"
+                data-col="5"
+                data-row="4"
                 data-test="DesignSystem-Calendar--dateValue"
+                tabindex="-1"
+                type="button"
               >
-                2
-              </span>
+                <span
+                  class="Text Text--subtle Text--regular"
+                  data-test="DesignSystem-Text"
+                >
+                  2
+                </span>
+              </button>
             </div>
             <div
               class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
               data-test="designSystem-Calendar-WrapperClass"
             >
-              <span
-                class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+              <button
+                aria-disabled="false"
+                aria-label="July 3, 2021"
+                class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                data-calendar-date-cell="true"
+                data-col="6"
+                data-row="4"
                 data-test="DesignSystem-Calendar--dateValue"
+                tabindex="-1"
+                type="button"
               >
-                3
-              </span>
+                <span
+                  class="Text Text--subtle Text--regular"
+                  data-test="DesignSystem-Text"
+                >
+                  3
+                </span>
+              </button>
             </div>
           </div>
           <div
@@ -2378,78 +3313,162 @@ exports[`TS renders children 1`] = `
               class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
               data-test="designSystem-Calendar-WrapperClass"
             >
-              <span
-                class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+              <button
+                aria-disabled="false"
+                aria-label="July 4, 2021"
+                class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                data-calendar-date-cell="true"
+                data-col="0"
+                data-row="5"
                 data-test="DesignSystem-Calendar--dateValue"
+                tabindex="-1"
+                type="button"
               >
-                4
-              </span>
+                <span
+                  class="Text Text--subtle Text--regular"
+                  data-test="DesignSystem-Text"
+                >
+                  4
+                </span>
+              </button>
             </div>
             <div
               class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
               data-test="designSystem-Calendar-WrapperClass"
             >
-              <span
-                class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+              <button
+                aria-disabled="false"
+                aria-label="July 5, 2021"
+                class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                data-calendar-date-cell="true"
+                data-col="1"
+                data-row="5"
                 data-test="DesignSystem-Calendar--dateValue"
+                tabindex="-1"
+                type="button"
               >
-                5
-              </span>
+                <span
+                  class="Text Text--subtle Text--regular"
+                  data-test="DesignSystem-Text"
+                >
+                  5
+                </span>
+              </button>
             </div>
             <div
               class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
               data-test="designSystem-Calendar-WrapperClass"
             >
-              <span
-                class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+              <button
+                aria-disabled="false"
+                aria-label="July 6, 2021"
+                class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                data-calendar-date-cell="true"
+                data-col="2"
+                data-row="5"
                 data-test="DesignSystem-Calendar--dateValue"
+                tabindex="-1"
+                type="button"
               >
-                6
-              </span>
+                <span
+                  class="Text Text--subtle Text--regular"
+                  data-test="DesignSystem-Text"
+                >
+                  6
+                </span>
+              </button>
             </div>
             <div
               class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
               data-test="designSystem-Calendar-WrapperClass"
             >
-              <span
-                class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+              <button
+                aria-disabled="false"
+                aria-label="July 7, 2021"
+                class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                data-calendar-date-cell="true"
+                data-col="3"
+                data-row="5"
                 data-test="DesignSystem-Calendar--dateValue"
+                tabindex="-1"
+                type="button"
               >
-                7
-              </span>
+                <span
+                  class="Text Text--subtle Text--regular"
+                  data-test="DesignSystem-Text"
+                >
+                  7
+                </span>
+              </button>
             </div>
             <div
               class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
               data-test="designSystem-Calendar-WrapperClass"
             >
-              <span
-                class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+              <button
+                aria-disabled="false"
+                aria-label="July 8, 2021"
+                class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                data-calendar-date-cell="true"
+                data-col="4"
+                data-row="5"
                 data-test="DesignSystem-Calendar--dateValue"
+                tabindex="-1"
+                type="button"
               >
-                8
-              </span>
+                <span
+                  class="Text Text--subtle Text--regular"
+                  data-test="DesignSystem-Text"
+                >
+                  8
+                </span>
+              </button>
             </div>
             <div
               class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
               data-test="designSystem-Calendar-WrapperClass"
             >
-              <span
-                class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+              <button
+                aria-disabled="false"
+                aria-label="July 9, 2021"
+                class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                data-calendar-date-cell="true"
+                data-col="5"
+                data-row="5"
                 data-test="DesignSystem-Calendar--dateValue"
+                tabindex="-1"
+                type="button"
               >
-                9
-              </span>
+                <span
+                  class="Text Text--subtle Text--regular"
+                  data-test="DesignSystem-Text"
+                >
+                  9
+                </span>
+              </button>
             </div>
             <div
               class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
               data-test="designSystem-Calendar-WrapperClass"
             >
-              <span
-                class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+              <button
+                aria-disabled="false"
+                aria-label="July 10, 2021"
+                class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                data-calendar-date-cell="true"
+                data-col="6"
+                data-row="5"
                 data-test="DesignSystem-Calendar--dateValue"
+                tabindex="-1"
+                type="button"
               >
-                10
-              </span>
+                <span
+                  class="Text Text--subtle Text--regular"
+                  data-test="DesignSystem-Text"
+                >
+                  10
+                </span>
+              </button>
             </div>
           </div>
         </div>

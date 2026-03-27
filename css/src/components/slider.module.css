@@ -18,6 +18,7 @@
   display: flex;
   align-items: center;
   overflow: hidden;
+  padding-bottom: var(--spacing-20);
 }
 
 .Slider-progress {
@@ -33,6 +34,10 @@
 
 .Slider-progress--inRangeDisabled {
   border: var(--border);
+}
+
+.Slider-axis {
+  margin-top: calc(-1 * var(--spacing-20));
 }
 
 .Slider-label {

@@ -15,7 +15,7 @@ Object {
           class="PopperWrapper-trigger flex-grow-0"
         >
           <span
-            class=""
+            class="Avatar-wrapper"
             data-test="DesignSystem-AvatarWrapper"
           >
             <span
@@ -46,7 +46,7 @@ Object {
         class="PopperWrapper-trigger flex-grow-0"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -136,7 +136,7 @@ Object {
           class="PopperWrapper-trigger flex-grow-0"
         >
           <span
-            class=""
+            class="Avatar-wrapper"
             data-test="DesignSystem-AvatarWrapper"
           >
             <span
@@ -167,7 +167,7 @@ Object {
         class="PopperWrapper-trigger flex-grow-0"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -257,7 +257,7 @@ Object {
           class="PopperWrapper-trigger flex-grow-0"
         >
           <span
-            class=""
+            class="Avatar-wrapper"
             data-test="DesignSystem-AvatarWrapper"
           >
             <span
@@ -288,7 +288,7 @@ Object {
         class="PopperWrapper-trigger flex-grow-0"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -378,7 +378,7 @@ Object {
           class="PopperWrapper-trigger flex-grow-0"
         >
           <span
-            class=""
+            class="Avatar-wrapper"
             data-test="DesignSystem-AvatarWrapper"
           >
             <span
@@ -409,7 +409,7 @@ Object {
         class="PopperWrapper-trigger flex-grow-0"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -499,7 +499,7 @@ Object {
           class="PopperWrapper-trigger flex-grow-0"
         >
           <span
-            class=""
+            class="Avatar-wrapper"
             data-test="DesignSystem-AvatarWrapper"
           >
             <span
@@ -530,7 +530,7 @@ Object {
         class="PopperWrapper-trigger flex-grow-0"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -620,7 +620,7 @@ Object {
           class="PopperWrapper-trigger flex-grow-0"
         >
           <span
-            class=""
+            class="Avatar-wrapper"
             data-test="DesignSystem-AvatarWrapper"
           >
             <span
@@ -651,7 +651,7 @@ Object {
         class="PopperWrapper-trigger flex-grow-0"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -741,7 +741,7 @@ Object {
           class="PopperWrapper-trigger flex-grow-0"
         >
           <span
-            class=""
+            class="Avatar-wrapper"
             data-test="DesignSystem-AvatarWrapper"
           >
             <span
@@ -772,7 +772,7 @@ Object {
         class="PopperWrapper-trigger flex-grow-0"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -862,7 +862,7 @@ Object {
           class="PopperWrapper-trigger flex-grow-0"
         >
           <span
-            class=""
+            class="Avatar-wrapper"
             data-test="DesignSystem-AvatarWrapper"
           >
             <span
@@ -893,7 +893,7 @@ Object {
         class="PopperWrapper-trigger flex-grow-0"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -983,7 +983,7 @@ Object {
           class="PopperWrapper-trigger flex-grow-0"
         >
           <span
-            class=""
+            class="Avatar-wrapper"
             data-test="DesignSystem-AvatarWrapper"
           >
             <span
@@ -1014,7 +1014,7 @@ Object {
         class="PopperWrapper-trigger flex-grow-0"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -1104,7 +1104,7 @@ Object {
           class="PopperWrapper-trigger flex-grow-0"
         >
           <span
-            class=""
+            class="Avatar-wrapper"
             data-test="DesignSystem-AvatarWrapper"
           >
             <span
@@ -1135,7 +1135,7 @@ Object {
         class="PopperWrapper-trigger flex-grow-0"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -1225,7 +1225,7 @@ Object {
           class="PopperWrapper-trigger flex-grow-0"
         >
           <span
-            class=""
+            class="Avatar-wrapper"
             data-test="DesignSystem-AvatarWrapper"
           >
             <span
@@ -1256,7 +1256,7 @@ Object {
         class="PopperWrapper-trigger flex-grow-0"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -1346,7 +1346,7 @@ Object {
           class="PopperWrapper-trigger flex-grow-0"
         >
           <span
-            class=""
+            class="Avatar-wrapper"
             data-test="DesignSystem-AvatarWrapper"
           >
             <span
@@ -1377,7 +1377,7 @@ Object {
         class="PopperWrapper-trigger flex-grow-0"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -1467,7 +1467,7 @@ Object {
           class="PopperWrapper-trigger flex-grow-0"
         >
           <span
-            class=""
+            class="Avatar-wrapper"
             data-test="DesignSystem-AvatarWrapper"
           >
             <span
@@ -1498,7 +1498,7 @@ Object {
         class="PopperWrapper-trigger flex-grow-0"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -1588,7 +1588,7 @@ Object {
           class="PopperWrapper-trigger flex-grow-0"
         >
           <span
-            class=""
+            class="Avatar-wrapper"
             data-test="DesignSystem-AvatarWrapper"
           >
             <span
@@ -1619,7 +1619,7 @@ Object {
         class="PopperWrapper-trigger flex-grow-0"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -1709,7 +1709,7 @@ Object {
           class="PopperWrapper-trigger flex-grow-0"
         >
           <span
-            class=""
+            class="Avatar-wrapper"
             data-test="DesignSystem-AvatarWrapper"
           >
             <span
@@ -1740,7 +1740,7 @@ Object {
         class="PopperWrapper-trigger flex-grow-0"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -1830,7 +1830,7 @@ Object {
           class="PopperWrapper-trigger flex-grow-0"
         >
           <span
-            class=""
+            class="Avatar-wrapper"
             data-test="DesignSystem-AvatarWrapper"
           >
             <span
@@ -1861,7 +1861,7 @@ Object {
         class="PopperWrapper-trigger flex-grow-0"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -1951,7 +1951,7 @@ Object {
           class="PopperWrapper-trigger flex-grow-0"
         >
           <span
-            class=""
+            class="Avatar-wrapper"
             data-test="DesignSystem-AvatarWrapper"
           >
             <span
@@ -1982,7 +1982,7 @@ Object {
         class="PopperWrapper-trigger flex-grow-0"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -2072,7 +2072,7 @@ Object {
           class="PopperWrapper-trigger flex-grow-0"
         >
           <span
-            class="Avatar-wrapper--square Avatar--regular"
+            class="Avatar-wrapper Avatar-wrapper--square Avatar--regular"
             data-test="DesignSystem-AvatarWrapper"
           >
             <span
@@ -2103,7 +2103,7 @@ Object {
         class="PopperWrapper-trigger flex-grow-0"
       >
         <span
-          class="Avatar-wrapper--square Avatar--regular"
+          class="Avatar-wrapper Avatar-wrapper--square Avatar--regular"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -2193,7 +2193,7 @@ Object {
           class="PopperWrapper-trigger flex-grow-0"
         >
           <span
-            class=""
+            class="Avatar-wrapper"
             data-test="DesignSystem-AvatarWrapper"
           >
             <span
@@ -2224,7 +2224,7 @@ Object {
         class="PopperWrapper-trigger flex-grow-0"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -2314,7 +2314,7 @@ Object {
           class="PopperWrapper-trigger flex-grow-0"
         >
           <span
-            class=""
+            class="Avatar-wrapper"
             data-test="DesignSystem-AvatarWrapper"
           >
             <span
@@ -2345,7 +2345,7 @@ Object {
         class="PopperWrapper-trigger flex-grow-0"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -2435,7 +2435,7 @@ Object {
           class="PopperWrapper-trigger flex-grow-0"
         >
           <span
-            class=""
+            class="Avatar-wrapper"
             data-test="DesignSystem-AvatarWrapper"
           >
             <span
@@ -2466,7 +2466,7 @@ Object {
         class="PopperWrapper-trigger flex-grow-0"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
