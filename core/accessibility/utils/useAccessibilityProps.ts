@@ -52,7 +52,10 @@ const useAccessibilityProps = ({ onClick, onKeyDown, role = 'button', tabIndex, 
     onClick: onClick,
     role: role,
     tabIndex: tabIndex ?? 0,
-    'aria-label': rest['aria-label'],
+    ...(rest['aria-label'] != null && { 'aria-label': rest['aria-label'] }),
+    ...(rest['aria-labelledby'] != null && { 'aria-labelledby': rest['aria-labelledby'] }),
+    ...(rest['aria-describedby'] != null && { 'aria-describedby': rest['aria-describedby'] }),
+    ...(rest['aria-hidden'] != null && { 'aria-hidden': rest['aria-hidden'] }),
     onKeyDown: (e: React.SyntheticEvent<HTMLElement>) => {
       if (onKeyDown) {
         onKeyDown(e as React.KeyboardEvent<HTMLElement>);

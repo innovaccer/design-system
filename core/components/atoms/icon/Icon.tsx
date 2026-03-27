@@ -86,6 +86,18 @@ export interface IconProps extends BaseProps {
    */
   tabIndex?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>['tabIndex'];
   /**
+   * Accessible label for interactive (clickable) icons.
+   */
+  'aria-label'?: React.AriaAttributes['aria-label'];
+  /**
+   * ID of the element that labels this icon.
+   */
+  'aria-labelledby'?: React.AriaAttributes['aria-labelledby'];
+  /**
+   * ID of the element that describes this icon.
+   */
+  'aria-describedby'?: React.AriaAttributes['aria-describedby'];
+  /**
    * Hides the icon from assistive technologies when used as decorative.
    */
   'aria-hidden'?: React.AriaAttributes['aria-hidden'];
@@ -133,7 +145,24 @@ const iconTypeMapper: Record<string, string> = {
 
 export const Icon = (props: IconProps) => {
   const { appearance, className, name, size, children } = props;
-  const accessibilityProps = useAccessibilityProps(props);
+
+  const isInteractive = !!props.onClick;
+  const hasAccessibleName = !!(props['aria-label'] || props['aria-labelledby']);
+
+  // Default decorative (non-interactive, unlabelled) icons to aria-hidden="true"
+  const resolvedProps =
+    !isInteractive && !hasAccessibleName && props['aria-hidden'] == null
+      ? { ...props, 'aria-hidden': true as const }
+      : props;
+
+  const accessibilityProps = useAccessibilityProps(resolvedProps);
+
+  if (process.env.NODE_ENV !== 'production' && props.onClick && !props['aria-label'] && !props['aria-labelledby']) {
+    console.warn(
+      `Icon: Clickable icon "${name || 'unknown'}" is missing an accessible name. ` +
+        'Add an "aria-label" or "aria-labelledby" prop so screen readers can identify it.'
+    );
+  }
 
   const baseProps = extractBaseProps(props);
 
