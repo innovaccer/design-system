@@ -96,6 +96,7 @@ export const FileListItem = (props: FileListItemProps) => {
       data-test="DesignSystem-FileListItem"
       role="button"
       tabIndex={0}
+      aria-label={`${name}${status === 'error' ? ', upload failed' : status === 'uploading' ? ', uploading' : ''}`}
     >
       <div className={styles['FileItem-file']}>
         <div className={styles['FileItem-fileContent']}>
