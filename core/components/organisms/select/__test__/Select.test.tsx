@@ -121,14 +121,8 @@ describe('SelectOption multiselect checkbox accessibility', () => {
     const inputs = getAllByTestId('DesignSystem-Checkbox-InputBox');
     expect(inputs).toHaveLength(2);
 
-    expect(inputs[0]).toHaveAttribute(
-      'aria-labelledby',
-      `${listboxIdAttr}-DesignSystem-SelectOption-label-0`
-    );
-    expect(inputs[1]).toHaveAttribute(
-      'aria-labelledby',
-      `${listboxIdAttr}-DesignSystem-SelectOption-label-1`
-    );
+    expect(inputs[0]).toHaveAttribute('aria-labelledby', `${listboxIdAttr}-DesignSystem-SelectOption-label-0`);
+    expect(inputs[1]).toHaveAttribute('aria-labelledby', `${listboxIdAttr}-DesignSystem-SelectOption-label-1`);
 
     const labels = document.querySelectorAll('[id*="DesignSystem-SelectOption-label-"]');
     expect(labels).toHaveLength(2);

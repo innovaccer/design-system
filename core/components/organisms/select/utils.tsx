@@ -1,8 +1,7 @@
 import React from 'react';
 import { OptionType } from '@/common.type';
 
-/** Selector for elements that participate in document tab order (excludes tabindex="-1"). */
-const DOCUMENT_FOCUSABLE_SELECTOR =
+const FOCUSABLE_ELEMENTS_SELECTOR =
   'a[href], button:not([disabled]), input:not([disabled]):not([type="hidden"]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
 /**
@@ -12,23 +11,44 @@ const DOCUMENT_FOCUSABLE_SELECTOR =
  * Excludes focusables inside excludeContainer (e.g. the popover) so we do not focus an element inside the closing popover.
  */
 export const getNextFocusableAfterTrigger = (
-  trigger: HTMLElement | null,
+  startNode: HTMLElement | null,
   shiftKey: boolean,
-  excludeContainer: HTMLElement | null = null
+  excludeContainer?: HTMLElement | null
 ): HTMLElement | null => {
-  if (!trigger) return null;
-  const elements = Array.from(document.body.querySelectorAll<HTMLElement>(DOCUMENT_FOCUSABLE_SELECTOR)).filter((el) => {
-    const style = window.getComputedStyle(el);
-    if (style.visibility === 'hidden' || style.display === 'none' || el.getAttribute('aria-hidden') === 'true') {
-      return false;
-    }
-    if (excludeContainer && (el === excludeContainer || excludeContainer.contains(el))) return false;
-    return true;
+  if (!startNode) return null;
+
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_ELEMENT, {
+    acceptNode: (node: HTMLElement) => {
+      // Skip the container we want to exclude (the popover itself)
+      if (excludeContainer && (node === excludeContainer || excludeContainer.contains(node))) {
+        return NodeFilter.FILTER_REJECT; // Reject skips this node AND its children
+      }
+
+      // Skip inherently hidden elements
+      if (node.hasAttribute('disabled') || node.getAttribute('aria-hidden') === 'true') {
+        return NodeFilter.FILTER_SKIP;
+      }
+
+      // Check if it matches our focusable selector
+      if (node.matches(FOCUSABLE_ELEMENTS_SELECTOR)) {
+        // Only do the expensive style check if it's actually focusable
+        const style = window.getComputedStyle(node);
+        if (style.visibility !== 'hidden' && style.display !== 'none') {
+          return NodeFilter.FILTER_ACCEPT;
+        }
+      }
+
+      return NodeFilter.FILTER_SKIP;
+    },
   });
-  const index = elements.indexOf(trigger);
-  if (index === -1) return null;
-  if (shiftKey) return index <= 0 ? null : elements[index - 1];
-  return index >= elements.length - 1 ? null : elements[index + 1];
+
+  walker.currentNode = startNode;
+
+  if (shiftKey) {
+    return (walker.previousNode() as HTMLElement) || null;
+  } else {
+    return (walker.nextNode() as HTMLElement) || null;
+  }
 };
 
 /** Returns focusable elements inside container (for focus trap). Excludes elements with tabindex="-1" so e.g. checkboxes inside list options do not get their own tab stop. */
@@ -236,7 +256,7 @@ export const navigateOptions = (
     (withSearch && index <= 0 && direction === 'up') ||
     (withSearch && index === listItems.length - 1 && direction === 'down')
   ) {
-    const searchInput = listRef.current.querySelector<HTMLElement>('[data-test="DesignSystem-Select--Input"]');
+    const searchInput = listRef.current.querySelector('[data-test="DesignSystem-Select--Input"]') as HTMLElement;
     if (searchInput) {
       searchInput.focus();
       setFocusedOption?.(searchInput);

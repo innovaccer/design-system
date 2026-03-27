@@ -155,6 +155,11 @@ export interface SelectProps extends BaseProps {
    * Merged into the default trigger (or custom `trigger`) when `triggerOptions` does not set the same attribute.
    */
   'aria-errormessage'?: string;
+  /**
+   * Determines whether the focus should be trapped within the `Select` popover.
+   * If not provided, it will automatically be set to true if `Select.Footer` is present.
+   */
+  trapFocus?: boolean;
 }
 
 export interface SelectMethods {
@@ -192,6 +197,7 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
     error = false,
     'aria-describedby': ariaDescribedByProp,
     'aria-errormessage': ariaErrormessageProp,
+    trapFocus,
   } = props;
 
   const [openPopover, setOpenPopover] = React.useState(false);
@@ -369,10 +375,31 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
     onOutsideClick?.();
   };
 
+  const hasFooter = React.useMemo(() => {
+    return React.Children.toArray(children).some(
+      (child) => React.isValidElement(child) && (child.type === SelectFooter || child.type === Select.Footer)
+    );
+  }, [children]);
+
+  const effectiveTrapFocus = trapFocus !== undefined ? trapFocus : hasFooter;
+
   const handlePopoverKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
     if (!openPopover || e.key !== 'Tab' || !listRef.current) return;
     const container = listRef.current;
     if (!container.contains(document.activeElement as Node)) return;
+
+    if (!effectiveTrapFocus) {
+      e.preventDefault();
+      setOpenPopover(false);
+      const next = getNextFocusableAfterTrigger(triggerRef.current ?? null, e.shiftKey, container);
+      if (next) {
+        next.focus({ preventScroll: true });
+      } else {
+        triggerRef.current?.focus({ preventScroll: true });
+      }
+      return;
+    }
+
     const focusables = getFocusableElements(container);
     const currentIndex = focusables.length > 0 ? focusables.indexOf(document.activeElement as HTMLElement) : -1;
     if (focusables.length === 0 || currentIndex === -1) {
