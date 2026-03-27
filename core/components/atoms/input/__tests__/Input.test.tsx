@@ -596,6 +596,36 @@ describe('Input Component - Comprehensive Behavior Tests', () => {
       const infoWrapper = container.querySelector('[tabIndex="0"]');
       expect(infoWrapper).toBeInTheDocument();
     });
+
+    it('sets aria-invalid when error is true', () => {
+      const { getByTestId } = render(<Input name="test" error={true} />);
+
+      const input = getByTestId('DesignSystem-Input');
+      expect(input).toHaveAttribute('aria-invalid', 'true');
+    });
+
+    it('does not set aria-invalid when error is false', () => {
+      const { getByTestId } = render(<Input name="test" error={false} />);
+
+      const input = getByTestId('DesignSystem-Input');
+      expect(input).not.toHaveAttribute('aria-invalid');
+    });
+
+    it('associates inline label with input via aria-labelledby', () => {
+      const { getByTestId, getByText } = render(<Input name="test" inlineLabel="USD" value="100" />);
+
+      const input = getByTestId('DesignSystem-Input');
+      const inlineLabelElement = getByText('USD').closest('[id]') as HTMLElement;
+
+      expect(input).toHaveAttribute('aria-labelledby', inlineLabelElement.id);
+    });
+
+    it('does not set aria-labelledby when inlineLabel is not provided', () => {
+      const { getByTestId } = render(<Input name="test" value="100" />);
+
+      const input = getByTestId('DesignSystem-Input');
+      expect(input).not.toHaveAttribute('aria-labelledby');
+    });
   });
 
   describe('Input Component - HTML Validation Attributes', () => {
