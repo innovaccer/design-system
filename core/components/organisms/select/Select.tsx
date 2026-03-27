@@ -147,6 +147,14 @@ export interface SelectProps extends BaseProps {
    */
 
   triggerOptions?: SelectTriggerProps;
+  /**
+   * Merged into the default trigger (or custom `trigger`) when `triggerOptions` does not set the same attribute.
+   */
+  'aria-describedby'?: string;
+  /**
+   * Merged into the default trigger (or custom `trigger`) when `triggerOptions` does not set the same attribute.
+   */
+  'aria-errormessage'?: string;
 }
 
 export interface SelectMethods {
@@ -182,6 +190,8 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
     onToggle,
     styleType = 'filled',
     error = false,
+    'aria-describedby': ariaDescribedByProp,
+    'aria-errormessage': ariaErrormessageProp,
   } = props;
 
   const [openPopover, setOpenPopover] = React.useState(false);
@@ -206,6 +216,16 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
   const baseProps = extractBaseProps(props);
   const WrapperStyle = trigger ? {} : { width: width };
 
+  const mergedTriggerOptions = {
+    ...triggerOptions,
+    ...((triggerOptions == null || triggerOptions['aria-describedby'] == null) && ariaDescribedByProp
+      ? { 'aria-describedby': ariaDescribedByProp }
+      : {}),
+    ...((triggerOptions == null || triggerOptions['aria-errormessage'] == null) && ariaErrormessageProp
+      ? { 'aria-errormessage': ariaErrormessageProp }
+      : {}),
+  };
+
   const getTriggerElement = () => {
     if (trigger) {
       const userOnKeyDown = trigger.props.onKeyDown;
@@ -218,13 +238,24 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
         'aria-controls': listboxId,
         'aria-expanded': openPopover,
         'aria-haspopup': 'listbox' as const,
+        'aria-invalid': error ? true : trigger.props['aria-invalid'],
+        'aria-describedby':
+          trigger.props['aria-describedby'] ??
+          (triggerOptions && triggerOptions['aria-describedby'] != null
+            ? triggerOptions['aria-describedby']
+            : ariaDescribedByProp),
+        'aria-errormessage':
+          trigger.props['aria-errormessage'] ??
+          (triggerOptions && triggerOptions['aria-errormessage'] != null
+            ? triggerOptions['aria-errormessage']
+            : ariaErrormessageProp),
         onKeyDown: (event: React.KeyboardEvent<HTMLElement>) => {
           handleKeyDownTrigger(event, setOpenPopover, setHighlightFirstItem, setHighlightLastItem);
           userOnKeyDown?.(event);
         },
       });
     }
-    return <SelectTrigger aria-controls={listboxId} {...triggerOptions} />;
+    return <SelectTrigger aria-controls={listboxId} {...mergedTriggerOptions} />;
   };
 
   React.useEffect(() => {
@@ -263,9 +294,6 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
       setHighlightFirstItem(false);
       setHighlightLastItem(false);
       setRovingIndex(-1);
-      if (wasOpenRef.current) {
-        triggerRef.current?.focus({ preventScroll: true });
-      }
     }
     wasOpenRef.current = openPopover;
   }, [openPopover]);

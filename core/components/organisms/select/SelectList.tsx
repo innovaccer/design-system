@@ -36,12 +36,33 @@ export const SelectList = (props: SelectListProps) => {
   const { children, size, ...rest } = props;
   const searchInputHeight = 33;
 
-  const childrenWithIndex = React.Children.map(children, (child, index) => {
-    if (React.isValidElement(child) && child.type === SelectOption) {
-      return React.cloneElement(child as React.ReactElement<{ index?: number }>, { index });
-    }
-    return child;
-  });
+  let optionIndex = 0;
+
+  const injectIndexToOptions = (nodes: React.ReactNode): React.ReactNode => {
+    return React.Children.map(nodes, (child) => {
+      if (!React.isValidElement(child)) return child;
+
+      // Recursively traverse fragments
+      if (child.type === React.Fragment) {
+        return React.cloneElement(
+          child,
+          child.props,
+          injectIndexToOptions(child.props.children)
+        );
+      }
+
+      // Inject sequential index into actual SelectOptions
+      if (child.type === SelectOption) {
+        return React.cloneElement(child as React.ReactElement<{ index?: number }>, { 
+          index: optionIndex++ 
+        });
+      }
+
+      return child;
+    });
+  };
+
+  const childrenWithIndex = injectIndexToOptions(children);
 
   const wrapperStyle: React.CSSProperties = {
     maxHeight: withSearch ? maxHeight! - searchInputHeight : maxHeight,
