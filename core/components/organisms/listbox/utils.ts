@@ -1,4 +1,5 @@
 import * as React from 'react';
+import isSpaceKey from '@/accessibility/utils/isSpaceKey';
 import { getAllFocusableElements } from '@/utils/overlayHelper';
 
 export const isListboxOptionDisabled = (optionElement: HTMLElement): boolean => {
@@ -32,11 +33,26 @@ const focusAdjacentOption = (sourceElement: HTMLElement, direction: 'down' | 'up
   }
 };
 
+const activateOptionRow = (sourceElement: HTMLElement) => {
+  if (isListboxOptionDisabled(sourceElement)) return;
+  sourceElement.click();
+};
+
 export const onKeyDown = (event: React.KeyboardEvent) => {
   // currentTarget is the interactive list row (`ListBody`); target may be nested content inside it.
   const sourceElement = event.currentTarget as HTMLElement;
 
+  if (isSpaceKey(event)) {
+    event.preventDefault();
+    activateOptionRow(sourceElement);
+    return;
+  }
+
   switch (event.key) {
+    case 'Enter':
+      event.preventDefault();
+      activateOptionRow(sourceElement);
+      break;
     case 'ArrowDown':
       event.preventDefault();
       focusAdjacentOption(sourceElement, 'down');

@@ -23,7 +23,7 @@ export const ListBody = (props: ListboxItemProps & React.HTMLAttributes<HTMLDivE
     className
   );
 
-  const defaultAriaSelected = type === 'option' && selected ? true : undefined;
+  const defaultAriaSelected = type === 'option' ? Boolean(selected) : undefined;
 
   return (
     <div

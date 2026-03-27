@@ -425,6 +425,72 @@ describe('Listbox component test for keyboard events', () => {
 
     expect(innerItems[1]).toHaveFocus();
   });
+
+  it('fires onClick when Enter is pressed on focused option row', () => {
+    const onClick = jest.fn();
+    const { container } = render(
+      <Listbox type="option">
+        <Listbox.Item id="a" onClick={onClick}>
+          first
+        </Listbox.Item>
+        <Listbox.Item id="b">second</Listbox.Item>
+      </Listbox>
+    );
+    const list = container.querySelector('[data-test="DesignSystem-Listbox"]') as HTMLElement;
+    const innerItems = within(list).getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+    innerItems[0].focus();
+    fireEvent.keyDown(innerItems[0], { key: 'Enter' });
+    expect(onClick).toHaveBeenCalledTimes(1);
+  });
+
+  it('fires onClick when Space is pressed on focused option row', () => {
+    const onClick = jest.fn();
+    const { container } = render(
+      <Listbox type="option">
+        <Listbox.Item id="a" onClick={onClick}>
+          first
+        </Listbox.Item>
+      </Listbox>
+    );
+    const list = container.querySelector('[data-test="DesignSystem-Listbox"]') as HTMLElement;
+    const row = within(list).getByTestId('DesignSystem-Listbox-ItemWrapper');
+    row.focus();
+    fireEvent.keyDown(row, { key: ' ' });
+    expect(onClick).toHaveBeenCalledTimes(1);
+  });
+
+  it('does not fire onClick on Enter when the option is disabled', () => {
+    const onClick = jest.fn();
+    const { container } = render(
+      <Listbox type="option">
+        <Listbox.Item id="a" disabled onClick={onClick}>
+          first
+        </Listbox.Item>
+      </Listbox>
+    );
+    const list = container.querySelector('[data-test="DesignSystem-Listbox"]') as HTMLElement;
+    const row = within(list).getByTestId('DesignSystem-Listbox-ItemWrapper');
+    row.focus();
+    fireEvent.keyDown(row, { key: 'Enter' });
+    expect(onClick).not.toHaveBeenCalled();
+  });
+});
+
+describe('Listbox option type aria-selected', () => {
+  it('sets aria-selected true and false on option rows', () => {
+    const { container } = render(
+      <Listbox type="option" showDivider={false}>
+        <Listbox.Item id="a" selected>
+          one
+        </Listbox.Item>
+        <Listbox.Item id="b">two</Listbox.Item>
+      </Listbox>
+    );
+    const list = container.querySelector('[data-test="DesignSystem-Listbox"]') as HTMLElement;
+    const items = within(list).getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+    expect(items[0]).toHaveAttribute('aria-selected', 'true');
+    expect(items[1]).toHaveAttribute('aria-selected', 'false');
+  });
 });
 
 describe('Listbox default roving tabindex', () => {

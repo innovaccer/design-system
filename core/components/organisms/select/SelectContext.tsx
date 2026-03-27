@@ -16,7 +16,7 @@ export type ContextProps = {
   setWithSearch?: React.Dispatch<React.SetStateAction<boolean>>;
   multiSelect?: boolean;
   listRef?: React.RefObject<HTMLDivElement>;
-  triggerRef?: React.RefObject<HTMLButtonElement>;
+  triggerRef?: React.RefObject<HTMLElement | null>;
   focusedOption?: HTMLElement;
   setFocusedOption?: React.Dispatch<React.SetStateAction<HTMLElement | undefined>>;
   setHighlightFirstItem?: React.Dispatch<React.SetStateAction<boolean>>;

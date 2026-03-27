@@ -902,7 +902,10 @@ describe('Pre-selected value with nested object values', () => {
 });
 
 describe('Render custom trigger in select', () => {
-  const customTrigger = <AIIconButton data-test="AIIconButton-trigger" icon="import_contacts" type="button" />;
+  const userOnKeyDown = jest.fn();
+  const customTrigger = (
+    <AIIconButton data-test="AIIconButton-trigger" icon="import_contacts" type="button" onKeyDown={userOnKeyDown} />
+  );
 
   it('check for custom trigger', () => {
     const { getByTestId } = render(
@@ -912,9 +915,27 @@ describe('Render custom trigger in select', () => {
     );
     const Trigger = getByTestId('AIIconButton-trigger');
     expect(Trigger).toBeInTheDocument();
+    expect(Trigger).toHaveAttribute('aria-haspopup', 'listbox');
+    expect(Trigger).toHaveAttribute('aria-expanded', 'false');
+    expect(Trigger.getAttribute('aria-controls')).toMatch(/^select-listbox-/);
     fireEvent.click(Trigger);
     const popover = getByTestId('DesignSystem-Popover');
     expect(popover).toBeInTheDocument();
+    expect(Trigger).toHaveAttribute('aria-expanded', 'true');
+  });
+
+  it('opens listbox from custom trigger via keyboard and composes onKeyDown', () => {
+    userOnKeyDown.mockClear();
+    const { getByTestId } = render(
+      <Select onSelect={FunctionValue} trigger={customTrigger}>
+        {children}
+      </Select>
+    );
+    const Trigger = getByTestId('AIIconButton-trigger');
+    Trigger.focus();
+    fireEvent.keyDown(Trigger, { key: 'Enter', code: 'Enter' });
+    expect(getByTestId('DesignSystem-Popover')).toBeInTheDocument();
+    expect(userOnKeyDown).toHaveBeenCalled();
   });
 });
 

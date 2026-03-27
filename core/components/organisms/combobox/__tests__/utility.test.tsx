@@ -40,11 +40,36 @@ describe('handleKeyDown function', () => {
     document.body.innerHTML = '';
   });
 
-  it('should navigate up when ArrowUp is pressed', () => {
+  it('should focus input when ArrowUp is pressed on the first item', () => {
     const { list, items } = mountListbox(2);
     listRef = { current: list };
     focusedOption = items[0];
-    const focusSpy = jest.spyOn(items[1], 'focus');
+
+    const event = new KeyboardEvent('keydown', { key: 'ArrowUp' }) as unknown as React.KeyboardEvent<Element>;
+    jest.spyOn(event, 'preventDefault');
+
+    handleKeyDown(
+      event,
+      focusedOption,
+      setFocusedOption,
+      undefined,
+      inputTriggerRef,
+      undefined,
+      undefined,
+      undefined,
+      listRef
+    );
+
+    expect(event.preventDefault).toHaveBeenCalled();
+    expect(inputTriggerRef.current.focus).toHaveBeenCalled();
+    expect(setFocusedOption).toHaveBeenCalledWith(undefined);
+  });
+
+  it('should navigate up when ArrowUp is pressed on a non-first item', () => {
+    const { list, items } = mountListbox(2);
+    listRef = { current: list };
+    focusedOption = items[1];
+    const focusSpy = jest.spyOn(items[0], 'focus');
 
     const event = new KeyboardEvent('keydown', { key: 'ArrowUp' }) as unknown as React.KeyboardEvent<Element>;
     jest.spyOn(event, 'preventDefault');
@@ -63,7 +88,7 @@ describe('handleKeyDown function', () => {
 
     expect(event.preventDefault).toHaveBeenCalled();
     expect(focusSpy).toHaveBeenCalled();
-    expect(setFocusedOption).toHaveBeenCalledWith(items[1]);
+    expect(setFocusedOption).toHaveBeenCalledWith(items[0]);
   });
 
   it('should navigate down when ArrowDown is pressed', () => {
@@ -98,7 +123,11 @@ describe('handleKeyDown function', () => {
     focusedOption = items[0];
     const clickSpy = jest.spyOn(focusedOption, 'click');
 
-    const event = new KeyboardEvent('keydown', { key: 'Enter' }) as unknown as React.KeyboardEvent<Element>;
+    const event = {
+      key: 'Enter',
+      preventDefault: jest.fn(),
+      currentTarget: focusedOption,
+    } as unknown as React.KeyboardEvent<HTMLElement>;
 
     handleKeyDown(
       event,
@@ -112,9 +141,67 @@ describe('handleKeyDown function', () => {
       listRef
     );
 
+    expect(event.preventDefault).toHaveBeenCalled();
     expect(clickSpy).toHaveBeenCalled();
     expect(setHighlightFirstItem).toHaveBeenCalledWith(false);
     expect(setHighlightLastItem).toHaveBeenCalledWith(false);
+  });
+
+  it('should click event.currentTarget on Enter even when focusedOption state is stale', () => {
+    const { list, items } = mountListbox(2);
+    listRef = { current: list };
+    const clickSpy0 = jest.spyOn(items[0], 'click');
+    const clickSpy1 = jest.spyOn(items[1], 'click');
+
+    const event = {
+      key: 'Enter',
+      preventDefault: jest.fn(),
+      currentTarget: items[1],
+    } as unknown as React.KeyboardEvent<HTMLElement>;
+
+    // Single-select path avoids multiselect “last option” focus wrap (needs scrollIntoView in jsdom).
+    handleKeyDown(
+      event,
+      items[0],
+      setFocusedOption,
+      setOpenPopover,
+      inputTriggerRef,
+      setHighlightFirstItem,
+      setHighlightLastItem,
+      false,
+      listRef
+    );
+
+    expect(clickSpy1).toHaveBeenCalled();
+    expect(clickSpy0).not.toHaveBeenCalled();
+  });
+
+  it('should prevent default and click currentTarget when Space is pressed', () => {
+    const { list, items } = mountListbox(2);
+    listRef = { current: list };
+    focusedOption = items[0];
+    const clickSpy = jest.spyOn(focusedOption, 'click');
+
+    const event = {
+      key: ' ',
+      preventDefault: jest.fn(),
+      currentTarget: focusedOption,
+    } as unknown as React.KeyboardEvent<HTMLElement>;
+
+    handleKeyDown(
+      event,
+      focusedOption,
+      setFocusedOption,
+      setOpenPopover,
+      inputTriggerRef,
+      setHighlightFirstItem,
+      setHighlightLastItem,
+      true,
+      listRef
+    );
+
+    expect(event.preventDefault).toHaveBeenCalled();
+    expect(clickSpy).toHaveBeenCalled();
   });
 
   it('should close popover and clear focused option when Escape is pressed', () => {

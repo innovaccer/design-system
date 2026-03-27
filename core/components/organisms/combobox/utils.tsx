@@ -1,5 +1,6 @@
 import React from 'react';
 import { getAllFocusableElements } from '@/utils/overlayHelper';
+import isSpaceKey from '@/accessibility/utils/isSpaceKey';
 
 export const handleKeyDown = (
   event: React.KeyboardEvent,
@@ -12,17 +13,26 @@ export const handleKeyDown = (
   multiSelect?: boolean,
   listRef?: any
 ) => {
+  if (isSpaceKey(event)) {
+    event.preventDefault();
+    handleEnterKey(event.currentTarget as HTMLElement, multiSelect, inputTriggerRef, listRef, setFocusedOption);
+    setHighlightLastItem?.(false);
+    setHighlightFirstItem?.(false);
+    return;
+  }
+
   switch (event.key) {
     case 'ArrowUp':
       event.preventDefault();
-      navigateOptions('up', focusedOption, setFocusedOption, listRef);
+      navigateOptions('up', focusedOption, setFocusedOption, listRef, inputTriggerRef);
       break;
     case 'ArrowDown':
       event.preventDefault();
-      navigateOptions('down', focusedOption, setFocusedOption, listRef);
+      navigateOptions('down', focusedOption, setFocusedOption, listRef, inputTriggerRef);
       break;
     case 'Enter':
-      handleEnterKey(focusedOption, multiSelect, inputTriggerRef, listRef, setFocusedOption);
+      event.preventDefault();
+      handleEnterKey(event.currentTarget as HTMLElement, multiSelect, inputTriggerRef, listRef, setFocusedOption);
       setHighlightLastItem?.(false);
       setHighlightFirstItem?.(false);
       break;
@@ -38,18 +48,23 @@ export const handleKeyDown = (
       inputTriggerRef.current?.focus();
       break;
     default:
+      if (event.key.length === 1 && !event.ctrlKey && !event.metaKey && !event.altKey) {
+        if (inputTriggerRef?.current) {
+          inputTriggerRef.current.focus();
+        }
+      }
       break;
   }
 };
 
 const handleEnterKey = (
-  focusedOption: Element | undefined,
+  activationTarget: HTMLElement | undefined,
   multiSelect?: boolean,
   inputTriggerRef?: any,
   listRef?: any,
   setFocusedOption?: React.Dispatch<React.SetStateAction<HTMLElement | undefined>>
 ) => {
-  (focusedOption as HTMLElement)?.click();
+  activationTarget?.click();
   if (!multiSelect) {
     inputTriggerRef.current.focus();
   } else {
@@ -58,12 +73,12 @@ const handleEnterKey = (
 
     // Scope to 'listbox' role to exclude nested elements
     const focusables = getAllFocusableElements(listRef.current, 'listbox');
-    const index = focusables.findIndex((item) => item === focusedOption);
+    const index = focusables.findIndex((item) => item === activationTarget);
 
     if (index === focusables.length - 1 && focusables.length > 0) {
       focusables[0].focus({ preventScroll: true });
       setFocusedOption && setFocusedOption(focusables[0]);
-      focusables[0].scrollIntoView({ block: 'center' });
+      focusables[0].scrollIntoView?.({ block: 'center' });
     }
   }
 };
@@ -72,7 +87,8 @@ const navigateOptions = (
   direction: string,
   focusedOption: Element | undefined,
   setFocusedOption?: React.Dispatch<React.SetStateAction<HTMLElement | undefined>>,
-  listRef?: any
+  listRef?: any,
+  inputTriggerRef?: any
 ) => {
   if (!listRef?.current) return;
 
@@ -84,6 +100,14 @@ const navigateOptions = (
 
   if (index === -1) {
     index = direction === 'up' ? focusables.length - 1 : 0;
+  } else if (direction === 'up' && index === 0) {
+    // If we're on the first item and pressing up, return focus to the input
+    if (inputTriggerRef?.current) {
+      inputTriggerRef.current.focus();
+      setFocusedOption && setFocusedOption(undefined);
+      return;
+    }
+    index = focusables.length - 1; // Fallback to wrap-around if no input ref
   } else {
     index = direction === 'up' ? (index - 1 + focusables.length) % focusables.length : (index + 1) % focusables.length;
   }
