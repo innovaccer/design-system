@@ -7,7 +7,6 @@ exports[`EditableChipInput component
   <div
     class="EditableChipInput"
     data-test="DesignSystem-EditableChipInput"
-    role="button"
     tabindex="0"
   >
     <div
@@ -101,7 +100,6 @@ exports[`EditableChipInput component
   <div
     class="EditableChipInput"
     data-test="DesignSystem-EditableChipInput"
-    role="button"
     tabindex="0"
   >
     <div
@@ -195,7 +193,6 @@ exports[`EditableChipInput component
   <div
     class="EditableChipInput"
     data-test="DesignSystem-EditableChipInput"
-    role="button"
     tabindex="0"
   >
     <div
@@ -289,7 +286,6 @@ exports[`EditableChipInput component
   <div
     class="EditableChipInput"
     data-test="DesignSystem-EditableChipInput"
-    role="button"
     tabindex="0"
   >
     <div
@@ -383,7 +379,6 @@ exports[`EditableChipInput component
   <div
     class="EditableChipInput"
     data-test="DesignSystem-EditableChipInput"
-    role="button"
     tabindex="0"
   >
     <div
@@ -477,7 +472,6 @@ exports[`EditableChipInput component
   <div
     class="EditableChipInput"
     data-test="DesignSystem-EditableChipInput"
-    role="button"
     tabindex="0"
   >
     <div

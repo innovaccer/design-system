@@ -208,7 +208,7 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
       {...baseProps}
       onKeyDown={handleKeyDown}
       onClick={handleClick}
-      role={showComponent ? undefined : 'button'}
+      role={showComponent || isWithChips ? undefined : 'button'}
       tabIndex={chipInputDisabled ? -1 : showComponent ? -1 : 0}
       aria-disabled={chipInputDisabled || undefined}
     >

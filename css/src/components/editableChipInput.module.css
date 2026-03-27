@@ -14,6 +14,7 @@
   border-left: var(--border-width-2-5) solid transparent;
   min-height: var(--spacing-80);
   flex-wrap: wrap;
+  row-gap: var(--spacing-05);
   border-radius: var(--border-radius-10);
   transition: var(--duration--fast-01) var(--standard-productive-curve);
   cursor: pointer;
@@ -34,6 +35,7 @@
   padding-bottom: var(--spacing-2-5);
   max-width: calc(100% - 28px);
   flex-wrap: wrap;
+  row-gap: var(--spacing-05);
   border-radius: var(--border-radius-10);
   transition: var(--duration--fast-01) var(--standard-productive-curve);
   cursor: pointer;
@@ -43,6 +45,7 @@
   min-height: var(--spacing-60);
   padding-top: 0;
   padding-bottom: 0;
+  row-gap: var(--spacing-05);
 }
 
 .EditableChipInput-defaultWithChips:hover,
@@ -65,7 +68,10 @@
 
 /* Mirrors my-2 mx-2 utilities for regular chips */
 .EditableChipInput-chip--regular {
-  margin: var(--spacing-05);
+  margin-left: var(--spacing-05);
+  margin-right: var(--spacing-05);
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 /* Small chips (20px): no vertical margin so row fits --spacing-60 with flex alignment */
