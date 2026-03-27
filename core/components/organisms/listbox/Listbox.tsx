@@ -83,8 +83,10 @@ export const Listbox = (props: ListboxInternalProps) => {
 
   const [rovingIndex, setRovingIndex] = React.useState(-1);
 
+  const effectiveSuppressKeyboard = suppressKeyboard || type === 'description';
+
   React.useLayoutEffect(() => {
-    if (suppressKeyboard || draggable) {
+    if (effectiveSuppressKeyboard || draggable) {
       return;
     }
     const root = listRef.current;
@@ -110,19 +112,19 @@ export const Listbox = (props: ListboxInternalProps) => {
       const dis = isListboxOptionDisabled(el);
       el.tabIndex = dis ? -1 : i === targetIdx ? 0 : -1;
     });
-  }, [children, suppressKeyboard, draggable, rovingIndex]);
+  }, [children, effectiveSuppressKeyboard, draggable, rovingIndex]);
 
   const sharedProp: ListboxContextValue = {
     size,
     type,
     draggable,
     showDivider,
-    suppressKeyboard,
+    suppressKeyboard: effectiveSuppressKeyboard,
     rovingIndex,
     setRovingIndex,
   };
 
-  const listRole = suppressKeyboard || draggable ? rest.role : rest.role ?? 'listbox';
+  const listRole = effectiveSuppressKeyboard || draggable ? rest.role : rest.role ?? 'listbox';
 
   return (
     <Provider value={sharedProp}>
