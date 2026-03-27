@@ -170,9 +170,12 @@ export const ChipInput = (props: ChipInputProps) => {
     ['my-3']: size === 'regular',
   });
 
+  const IconWrapperClass = classNames({
+    [styles['ChipInput-iconWrapper']]: true,
+  });
+
   const IconClass = classNames({
     [styles['ChipInput-icon']]: true,
-    [styles[`ChipInput-icon--${size}`]]: size,
   });
 
   const onUpdateChips = (updatedChips: string[]) => {
@@ -330,15 +333,28 @@ export const ChipInput = (props: ChipInputProps) => {
           {/* eslint-enable */}
         </div>
         {chips.length > 0 && (
-          <Icon
-            data-test="DesignSystem-ChipInput--Icon"
-            name="close"
-            size={iconSize}
-            appearance={disabled ? 'disabled' : 'subtle'}
-            className={IconClass}
+          <div
+            data-test="DesignSystem-ChipInput--IconWrapper"
+            className={IconWrapperClass}
             onClick={onDeleteAllHandler}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                onDeleteAllHandler();
+              }
+            }}
             tabIndex={disabled ? -1 : 0}
-          />
+            role="button"
+            aria-label="Clear all"
+          >
+            <Icon
+              data-test="DesignSystem-ChipInput--Icon"
+              name="close"
+              size={iconSize}
+              appearance={disabled ? 'disabled' : 'subtle'}
+              className={IconClass}
+            />
+          </div>
         )}
       </div>
     </div>
