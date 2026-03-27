@@ -89,10 +89,13 @@ export const detectTruncation = (boundaryRef: React.RefObject<HTMLElement>) => {
   return isTruncated;
 };
 
+let tooltipCounter = 0;
+
 export const Tooltip = (props: TooltipProps) => {
   const { children, tooltip, showTooltip, showOnTruncation, elementRef, className, size = 'regular', ...rest } = props;
   const childrenRef = React.useRef(null);
   const [isTruncated, setIsTruncated] = React.useState(false);
+  const tooltipId = React.useMemo(() => `Tooltip-${++tooltipCounter}`, []);
 
   React.useEffect(() => {
     const element = elementRef ? elementRef : childrenRef;
@@ -104,6 +107,7 @@ export const Tooltip = (props: TooltipProps) => {
       ? children
       : React.cloneElement(children as React.ReactElement<any>, {
           ref: childrenRef,
+          'aria-describedby': tooltipId,
         });
 
   if (!showTooltip) {
@@ -117,7 +121,7 @@ export const Tooltip = (props: TooltipProps) => {
   });
 
   const tooltipWrapper = (
-    <div className={tooltipClass} data-test="DesignSystem-Tooltip-Wrapper">
+    <div id={tooltipId} role="tooltip" className={tooltipClass} data-test="DesignSystem-Tooltip-Wrapper">
       <Text className={styles['Tooltip-text']} appearance="white" size={size}>
         {tooltip}
       </Text>
@@ -146,9 +150,13 @@ export const Tooltip = (props: TooltipProps) => {
     );
   }
 
+  const triggerWithA11y = React.isValidElement(children)
+    ? React.cloneElement(children as React.ReactElement<any>, { 'aria-describedby': tooltipId })
+    : children;
+
   return (
     <Popover
-      trigger={children}
+      trigger={triggerWithA11y}
       on={'hover'}
       offset={'medium'}
       animationClass={{

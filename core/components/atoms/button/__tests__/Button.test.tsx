@@ -502,3 +502,86 @@ describe('Button component with styleType prop', () => {
     });
   });
 });
+
+describe('Button accessibility', () => {
+  describe('aria-pressed for toggle state', () => {
+    it('should set aria-pressed=true when selected is true', () => {
+      const { getByTestId } = render(
+        <Button appearance="basic" selected={true}>
+          Toggle
+        </Button>
+      );
+      expect(getByTestId('DesignSystem-Button')).toHaveAttribute('aria-pressed', 'true');
+    });
+
+    it('should not set aria-pressed when selected is false', () => {
+      const { getByTestId } = render(
+        <Button appearance="basic" selected={false}>
+          Toggle
+        </Button>
+      );
+      expect(getByTestId('DesignSystem-Button')).not.toHaveAttribute('aria-pressed');
+    });
+
+    it('should not set aria-pressed when selected is not provided', () => {
+      const { getByTestId } = render(<Button appearance="basic">Button</Button>);
+      expect(getByTestId('DesignSystem-Button')).not.toHaveAttribute('aria-pressed');
+    });
+  });
+
+  describe('loading state preserves accessible name', () => {
+    it('should set aria-label to children text when loading', () => {
+      const { getByTestId } = render(<Button loading={true}>Save</Button>);
+      expect(getByTestId('DesignSystem-Button')).toHaveAttribute('aria-label', 'Save');
+    });
+
+    it('should prefer explicit aria-label over children when loading', () => {
+      const { getByTestId } = render(
+        <Button loading={true} aria-label="Saving changes">
+          Save
+        </Button>
+      );
+      expect(getByTestId('DesignSystem-Button')).toHaveAttribute('aria-label', 'Saving changes');
+    });
+
+    it('should not set aria-label when not loading and children are present', () => {
+      const { getByTestId } = render(<Button>Save</Button>);
+      expect(getByTestId('DesignSystem-Button')).not.toHaveAttribute('aria-label');
+    });
+  });
+
+  describe('icon-only button accessible name', () => {
+    it('should set aria-label from tooltip for icon-only button', () => {
+      const { getByTestId } = render(<Button icon="close" tooltip="Close dialog" />);
+      expect(getByTestId('DesignSystem-Button')).toHaveAttribute('aria-label', 'Close dialog');
+    });
+
+    it('should prefer explicit aria-label over tooltip for icon-only button', () => {
+      const { getByTestId } = render(<Button icon="close" tooltip="Close" aria-label="Close dialog" />);
+      expect(getByTestId('DesignSystem-Button')).toHaveAttribute('aria-label', 'Close dialog');
+    });
+
+    it('should warn when icon-only button has no accessible name', () => {
+      const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
+      render(<Button icon="close" />);
+      expect(warnSpy).toHaveBeenCalledWith(
+        'Button: Icon-only buttons require a `tooltip` or `aria-label` prop for accessibility.'
+      );
+      warnSpy.mockRestore();
+    });
+
+    it('should not warn when icon-only button has tooltip', () => {
+      const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
+      render(<Button icon="close" tooltip="Close" />);
+      expect(warnSpy).not.toHaveBeenCalled();
+      warnSpy.mockRestore();
+    });
+
+    it('should not warn when icon-only button has aria-label', () => {
+      const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
+      render(<Button icon="close" aria-label="Close" />);
+      expect(warnSpy).not.toHaveBeenCalled();
+      warnSpy.mockRestore();
+    });
+  });
+});

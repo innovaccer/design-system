@@ -127,6 +127,32 @@ describe('Tooltip component with size prop', () => {
   });
 });
 
+describe('Tooltip ARIA attributes', () => {
+  it('should have role="tooltip" on the tooltip wrapper', () => {
+    const { getByRole, getByTestId } = render(
+      <Tooltip tooltip="A tooltip">
+        <Button>Hover over me</Button>
+      </Tooltip>
+    );
+    fireEvent.mouseOver(getByRole('button'));
+    expect(getByTestId('DesignSystem-Tooltip-Wrapper')).toHaveAttribute('role', 'tooltip');
+  });
+
+  it('should set aria-describedby on the trigger linking to the tooltip id', () => {
+    const { getByRole, getByTestId } = render(
+      <Tooltip tooltip="A tooltip">
+        <Button>Hover over me</Button>
+      </Tooltip>
+    );
+    const button = getByRole('button');
+    fireEvent.mouseOver(button);
+    const tooltipWrapper = getByTestId('DesignSystem-Tooltip-Wrapper');
+    const tooltipId = tooltipWrapper.getAttribute('id');
+    expect(tooltipId).toBeTruthy();
+    expect(button).toHaveAttribute('aria-describedby', tooltipId);
+  });
+});
+
 describe('Tooltip component keyboard accessibility', () => {
   it('should close tooltip when Escape key is pressed', async () => {
     const { getByRole, queryByText } = render(
