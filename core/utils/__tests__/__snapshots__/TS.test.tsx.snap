@@ -1622,7 +1622,7 @@ exports[`TS renders children 1`] = `
             class="Slider-ticks bg-dark"
           />
           <span
-            class="Text Text--default Text--small"
+            class="Text Text--default Text--strong Text--small"
             data-test="DesignSystem-Text"
           >
             0
@@ -1846,7 +1846,7 @@ exports[`TS renders children 1`] = `
             class="Slider-ticks bg-dark"
           />
           <span
-            class="Text Text--default Text--small"
+            class="Text Text--default Text--strong Text--small"
             data-test="DesignSystem-Text"
           >
             0
@@ -2006,7 +2006,7 @@ exports[`TS renders children 1`] = `
             class="Slider-ticks bg-dark"
           />
           <span
-            class="Text Text--default Text--small"
+            class="Text Text--default Text--strong Text--small"
             data-test="DesignSystem-Text"
           >
             10
