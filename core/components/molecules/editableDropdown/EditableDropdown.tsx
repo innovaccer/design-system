@@ -30,9 +30,9 @@ export const EditableDropdown = (props: EditableDropdownProps) => {
   const {
     onChange: onDropdownChange,
     onClose: onDropdownClose,
+    disabled: dropdownDisabled,
     open: _dropdownOpenIgnored,
     onPopperToggle: _onPopperToggleIgnored,
-    disabled: dropdownDisabled,
     ...rest
   } = dropdownOptions;
 
@@ -40,6 +40,9 @@ export const EditableDropdown = (props: EditableDropdownProps) => {
   const [editing, setEditing] = React.useState(false);
   const [showComponent, setShowComponent] = React.useState(false);
   const [dropdownOpen, setDropdownOpen] = React.useState(false);
+
+  const containerRef = React.useRef<HTMLDivElement>(null);
+  const focusDropdownTriggerAfterOpenRef = React.useRef(false);
 
   const CompClass = classNames(
     {
@@ -109,34 +112,54 @@ export const EditableDropdown = (props: EditableDropdownProps) => {
     return componentLabel;
   };
 
+  React.useEffect(() => {
+    if (!editing || !dropdownOpen || isDropdownDisabled || !focusDropdownTriggerAfterOpenRef.current) return;
+    const frame = requestAnimationFrame(() => {
+      focusDropdownTriggerAfterOpenRef.current = false;
+      const trigger = containerRef.current?.querySelector<HTMLElement>('[data-test="DesignSystem-DropdownTrigger"]');
+      trigger?.focus();
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [editing, dropdownOpen, isDropdownDisabled]);
+
+  const displayText = label || placeholder;
+  const textClass = classNames(styles['EditableDropdown-text'], {
+    [styles['EditableDropdown-text--subtle']]: !label,
+  });
+
   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
     if (isDropdownDisabled) return;
     if (!editing && (event.key === 'Enter' || event.key === ' ')) {
       if (event.currentTarget !== event.target) return;
       event.preventDefault();
       if (event.repeat) return;
+      focusDropdownTriggerAfterOpenRef.current = true;
       onChangeHandler('edit');
     }
   };
 
   const handleClick = () => {
-    if (isDropdownDisabled) return;
-    if (!editing) onChangeHandler('edit');
+    if (isDropdownDisabled || editing) return;
+    focusDropdownTriggerAfterOpenRef.current = true;
+    onChangeHandler('edit');
   };
 
   const ariaLabel = (props as any)['aria-label'];
   const computedAriaLabel =
     ariaLabel || (label ? `Click to edit. Current selection: ${label}` : `Click to edit. ${placeholder}`);
 
+  const labelContent = renderComponent(displayText);
+
   return (
     <div
+      ref={containerRef}
       data-test="DesignSystem-EditableDropdown"
       {...baseProps}
       className={CompClass}
       onKeyDown={handleKeyDown}
       onClick={handleClick}
-      role="button"
-      tabIndex={isDropdownDisabled || editing ? -1 : 0}
+      role={editing ? undefined : 'button'}
+      tabIndex={isDropdownDisabled ? -1 : editing ? -1 : 0}
       aria-disabled={isDropdownDisabled || undefined}
       aria-label={computedAriaLabel}
     >
@@ -147,22 +170,23 @@ export const EditableDropdown = (props: EditableDropdownProps) => {
           onChange={onChange}
           getLabel={getLabel}
           onClose={onClose}
-          disabled={dropdownDisabled}
           open={dropdownOpen}
           onPopperToggle={onPopperToggle}
+          disabled={isDropdownDisabled}
           className={EditableDropdownClass}
           data-test="DesignSystem-EditableDropdown--Dropdown"
         />
         <div className={DefaultCompClass} data-test="DesignSystem-EditableDropdown--Default">
           <div className={styles['EditableDropdown-wrapper']}>
-            <span
-              className={styles['EditableDropdown-text']}
-              style={{ color: !label ? 'var(--text-subtle)' : undefined }}
-            >
-              {renderComponent(label || placeholder)}
-            </span>
+            {customTriggerRenderer ? (
+              <div className={textClass}>{labelContent}</div>
+            ) : (
+              <span className={textClass}>{labelContent}</span>
+            )}
           </div>
-          <Icon appearance="default" name="keyboard_arrow_down" className={styles['EditableDropdown-icon']} />
+          {!customTriggerRenderer && (
+            <Icon appearance="default" name="keyboard_arrow_down" className={styles['EditableDropdown-icon']} />
+          )}
         </div>
       </Editable>
     </div>

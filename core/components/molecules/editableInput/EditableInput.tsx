@@ -44,7 +44,7 @@ export interface EditableInputProps extends BaseProps {
 export const EditableInput = (props: EditableInputProps) => {
   const { error, size, errorMessage, placeholder, inputOptions, disableSaveAction, onChange, className } = props;
 
-  const { onChange: onInputChange, icon: inputIcon, ...rest } = inputOptions;
+  const { onChange: onInputChange, icon: inputIcon, disabled: inputDisabled, ...rest } = inputOptions;
 
   const [inputValue, setInputValue] = React.useState(props.value);
   const [value, setValue] = React.useState(props.value);
@@ -125,6 +125,7 @@ export const EditableInput = (props: EditableInputProps) => {
   };
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (inputDisabled) return;
     // When not editing, Enter/Space enters edit mode
     if (!editing && (event.key === 'Enter' || event.key === ' ')) {
       if (event.currentTarget !== event.target) return;
@@ -147,9 +148,8 @@ export const EditableInput = (props: EditableInputProps) => {
   };
 
   const handleClick = () => {
-    if (!editing) {
-      onChangeHandler('edit');
-    }
+    if (inputDisabled || editing) return;
+    onChangeHandler('edit');
   };
 
   const inputComponent = (
@@ -184,9 +184,13 @@ export const EditableInput = (props: EditableInputProps) => {
     return (
       <div className={EditableDefaultClass} data-test="DesignSystem-EditableInput--Default">
         {error && (
-          <span aria-hidden="true" className="d-flex align-items-center">
-            <Icon name="error" appearance="alert" size={iconSize} className={ErrorIconClass} />
-          </span>
+          <Icon
+            name="error"
+            appearance="alert"
+            size={iconSize}
+            className={classNames('d-flex align-items-center', ErrorIconClass)}
+            aria-hidden
+          />
         )}
         {value || placeholder}
       </div>
@@ -200,8 +204,9 @@ export const EditableInput = (props: EditableInputProps) => {
       className={EditableInputClass}
       onKeyDown={handleKeyDown}
       onClick={handleClick}
-      role="button"
-      tabIndex={editing ? -1 : 0}
+      role={editing ? undefined : 'button'}
+      tabIndex={inputDisabled ? -1 : editing ? -1 : 0}
+      aria-disabled={inputDisabled || undefined}
     >
       <Editable onChange={onChangeHandler} editing={editing}>
         {renderChildren()}

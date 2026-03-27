@@ -54,7 +54,7 @@ exports[`EditableDropdown component
             class="EditableDropdown-wrapper"
           >
             <span
-              class="EditableDropdown-text"
+              class="EditableDropdown-text EditableDropdown-text--subtle"
             />
           </div>
           <i
