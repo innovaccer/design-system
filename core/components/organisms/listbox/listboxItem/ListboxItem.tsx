@@ -118,19 +118,25 @@ export const ListboxItem = (props: ListboxItemProps) => {
 
   return (
     <Tag
-      id={id}
       data-test="DesignSystem-Listbox-Item"
-      {...rest}
-      disabled={disabled}
-      onClick={onClickHandler}
-      onFocus={handleFocus}
-      data-value={value}
       className={tagClass}
-      {...tabIndexProps}
-      onKeyDown={keyDownHandler}
-      role={role ?? 'option'}
+      role="presentation"
     >
-      <ListBody {...props} />
+      <ListBody
+        {...rest}
+        className={props.className}
+        children={props.children}
+        selected={props.selected}
+        activated={props.activated}
+        id={id}
+        data-value={value}
+        disabled={disabled}
+        onClick={onClickHandler}
+        onFocus={handleFocus}
+        tabIndex={tabIndexProps.tabIndex ?? -1}
+        onKeyDown={keyDownHandler}
+        role={role ?? 'option'}
+      />
       {nestedBody && <NestedList expanded={expanded} nestedBody={nestedBody} />}
       {showDivider && <Divider className={styles['Listbox-divider']} />}
     </Tag>

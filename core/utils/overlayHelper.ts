@@ -75,20 +75,41 @@ const LISTBOX_OPTION_SELECTOR = '[role="option"]';
  * Matches combobox items that use roving `tabIndex={-1}` (excluded by {@link getFocusableElements}).
  */
 const getListboxOptionElements = (listboxRoot: HTMLElement): HTMLElement[] => {
-  // Only direct children so nested listboxes / options inside a row are not mixed into navigation.
-  const options = Array.from(listboxRoot.children).filter(
-    (node): node is HTMLElement => node instanceof HTMLElement && node.matches(LISTBOX_OPTION_SELECTOR)
-  );
-  return options.filter((el) => {
-    const style = window.getComputedStyle(el);
-    const isVisible = style.visibility !== 'hidden' && style.display !== 'none';
-    const isAriaHidden = el.getAttribute('aria-hidden') === 'true';
-    const isAriaDisabled = el.getAttribute('aria-disabled') === 'true';
-    const isInert = el.closest('[inert]') !== null;
-    const inner = el.querySelector<HTMLElement>('[data-test="DesignSystem-Listbox-ItemWrapper"]');
-    const isDataDisabled = inner?.getAttribute('data-disabled') === 'true';
-    return isVisible && !isAriaHidden && !isAriaDisabled && !isInert && !isDataDisabled;
-  });
+  const options: HTMLElement[] = [];
+  
+  for (const node of Array.from(listboxRoot.children)) {
+    if (!(node instanceof HTMLElement)) continue;
+    
+    let optionNode: HTMLElement | null = null;
+    if (node.matches(LISTBOX_OPTION_SELECTOR)) {
+      optionNode = node;
+    } else {
+      for (const child of Array.from(node.children)) {
+        if (child.matches(LISTBOX_OPTION_SELECTOR) || child.matches('[data-test="DesignSystem-Listbox-ItemWrapper"]')) {
+          optionNode = child as HTMLElement;
+          break;
+        }
+      }
+    }
+    
+    if (!optionNode) continue;
+    
+    const styleOuter = window.getComputedStyle(node);
+    const styleInner = optionNode !== node ? window.getComputedStyle(optionNode) : styleOuter;
+    
+    const isVisible = styleOuter.visibility !== 'hidden' && styleOuter.display !== 'none' && 
+                      styleInner.visibility !== 'hidden' && styleInner.display !== 'none';
+    const isAriaHidden = node.getAttribute('aria-hidden') === 'true' || optionNode.getAttribute('aria-hidden') === 'true';
+    const isAriaDisabled = node.getAttribute('aria-disabled') === 'true' || optionNode.getAttribute('aria-disabled') === 'true';
+    const isInert = optionNode.closest('[inert]') !== null;
+    const isDataDisabled = optionNode.getAttribute('data-disabled') === 'true' || node.getAttribute('data-disabled') === 'true';
+    
+    if (isVisible && !isAriaHidden && !isAriaDisabled && !isInert && !isDataDisabled) {
+      options.push(optionNode);
+    }
+  }
+  
+  return options;
 };
 
 /**
