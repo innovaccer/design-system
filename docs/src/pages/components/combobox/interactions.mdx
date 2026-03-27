@@ -35,19 +35,18 @@ Default [popover](https://design.innovaccer.com/components/popover/interactions/
     <tr style={{verticalAlign: "top"}}>
       <td>Combobox in default state </td>
       <td>&#60;Tab&#62;</td>
-      <td>Combobox will be in focus but the popover will not be opened. </td>
+      <td>Focus shifts to the combobox. The popover stays closed.</td>
     </tr>
     <tr style={{verticalAlign: "top"}}>
       <td></td>
       <td>Click</td>
-      <td>Combobox will be in focus and the popover will be opened. </td>
+      <td>Focus shifts to the combobox and the popover opens.</td>
     </tr>
     <tr style={{verticalAlign: "top"}}>
       <td>Combobox in focus (typing state)</td>
       <td>&#60;Tab&#62;</td>
       <td>
-        Focus shifts to next item in Tab sequence on the page. <br /> The popover will be excluded from the tab sequence
-        on the page
+        Focus shifts to the next item in the page tab sequence
       </td>
     </tr>
     <tr style={{verticalAlign: "top"}}>
@@ -55,32 +54,32 @@ Default [popover](https://design.innovaccer.com/components/popover/interactions/
       <td>Type characters</td>
       <td>
         <ul>
-          <li>Show the filtered out options in the listbox (irrespective of the visibility of popover). </li>
-          <li>Close the popover if no matches were found. </li>
+          <li>The list shows only options that match what was typed (whether or not the popover was already open).</li>
+          <li>If nothing matches, the popover closes.</li>
         </ul>
       </td>
     </tr>
     <tr style={{verticalAlign: "top"}}>
       <td></td>
-      <td>&#60;down arrow&#62;</td>
+      <td>&#60;Arrow Down&#62;</td>
       <td>
         <ul>
           <li>
-            If popover is not open: open popover and shifts focus from combobox to first focusable item in listbox
+            If the popover is closed: the popover opens and focus shifts from the combobox to the first focusable item in the list.
           </li>
-          <li>If popover is open: Focus shifts from combobox to first focusable item in listbox</li>
+          <li>If the popover is open: focus shifts from the combobox to the first focusable item in the list.</li>
         </ul>
       </td>
     </tr>
     <tr style={{verticalAlign: "top"}}>
       <td></td>
-      <td>&#60;up arrow&#62;</td>
+      <td>&#60;Arrow Up&#62;</td>
       <td>
         <ul>
           <li>
-            If popover is not open: open popover and shifts focus from combobox to the last focusable item in listbox
+            If the popover is closed: the popover opens and focus shifts from the combobox to the last focusable item in the list.
           </li>
-          <li>If popover is open: Focus shifts from combobox to the last focusable item in listbox</li>
+          <li>If the popover is open: focus shifts from the combobox to the last focusable item in the list.</li>
         </ul>
       </td>
     </tr>
@@ -90,10 +89,10 @@ Default [popover](https://design.innovaccer.com/components/popover/interactions/
       <td>
         <ul>
           <li>
-            If popover is open: Close the popover. Focus is now on the combobox with no change to the value entered in
-            the combobox.
+            If the popover is open: the popover closes, focus shifts back to the combobox input, and the typed value
+            stays the same.
           </li>
-          <li>If popover is not open: Nothing happens. </li>
+          <li>If the popover is already closed: no change.</li>
         </ul>
       </td>
     </tr>
@@ -103,55 +102,55 @@ Default [popover](https://design.innovaccer.com/components/popover/interactions/
       <td>
         <ul>
           <li>
-            If value is already present:
+            If there is already a value:
             <ul>
-              <li class="ml-5">
+              <li className="ml-5">
                 <b>Single-select:</b>
                 <ul>
-                  <li class="ml-5">Edits the value in the combobox</li>
+                  <li className="ml-5">Characters are removed from or adjusted in the combobox value.</li>
                 </ul>
               </li>
-              <li class="ml-5">
+              <li className="ml-5">
                 <b>Multi-select:</b>
                 <ul>
-                  <li class="ml-5">Removes the input chip</li>
+                  <li className="ml-5">A chip (a selected value) is removed from the field.</li>
                 </ul>
               </li>
             </ul>
           </li>
-          <li>If no value is present: Nothing happens</li>
+          <li>If there is no value to change: no change.</li>
         </ul>
       </td>
     </tr>
     <tr style={{verticalAlign: "top"}}>
-      <td>Popover is open and first item is focused. <br /> (Combobox will not be in focus at this instance)  </td>
-      <td>&#60;Tab&#62;</td>
-      <td>Close the popover. Focus returns to the combobox input. Pressing Tab again shifts focus to the next item in the page tab sequence.</td>
+      <td>Popover is open; focus is on a list item (not the combobox input).</td>
+      <td>&#60;Tab&#62; / &#60;Shift Tab&#62;</td>
+      <td>The popover closes and focus shifts to the combobox input. Further Tab or Shift Tab follows the normal page tab sequence.</td>
     </tr>
     <tr style={{verticalAlign: "top"}}>
       <td></td>
-      <td>&#60;down arrow&#62;</td>
+      <td>&#60;Arrow Down&#62;</td>
       <td>
         <ul>
-          <li>Focus shifts to next focusable item in the list</li>
-          <li>If focus is on last focusable item: Focus shifts to first focusable item in listbox</li>
+          <li>Focus shifts to the next focusable item in the list.</li>
+          <li>If focus is on the last focusable item, focus shifts to the first focusable item in the list.</li>
         </ul>
       </td>
     </tr>
     <tr style={{verticalAlign: "top"}}>
       <td></td>
-      <td>&#60;up arrow&#62;</td>
+      <td>&#60;Arrow Up&#62;</td>
       <td>
         <ul>
-          <li>Focus shifts to previous focusable item in the list</li>
-          <li>If focus is on first focusable item: Focus shifts to the last focusable item in listbox</li>
+          <li>Focus shifts to the previous focusable item in the list.</li>
+          <li>If focus is on the first focusable item, focus shifts to the last focusable item in the list.</li>
         </ul>
       </td>
     </tr>
     <tr style={{verticalAlign: "top"}}>
       <td></td>
       <td>&#60;Escape&#62;</td>
-      <td>Close the popover. Focus is now on the combobox with no change to the value entered in the combobox(if any). </td>
+      <td>The popover closes, focus shifts to the combobox input, and any typed value stays the same.</td>
     </tr>
     <tr style={{verticalAlign: "top"}}>
       <td></td>
@@ -161,19 +160,19 @@ Default [popover](https://design.innovaccer.com/components/popover/interactions/
           <li>
             <b>Single select:</b>
             <ul>
-              <li class="ml-5">Select the focused item and input it in the combobox and focus is now shifted to the combobox</li>
-              <li class="ml-5">Selected item will be in the selected state in the listbox</li>
-              <li class="ml-5">Close the popover by default</li>
+              <li className="ml-5">The focused option becomes the combobox value; focus shifts back to the combobox input.</li>
+              <li className="ml-5">That option appears selected in the list.</li>
+              <li className="ml-5">The popover closes (default).</li>
             </ul>
           </li>
           <li>
             <b>Multi select:</b>
             <ul>
-              <li class="ml-5">Select the focused item and add it as a chip in combobox. </li>
-              <li class="ml-5">Selected item will be removed from the listbox, </li>
-              <li class="ml-5">The popover will not be closed by default. </li>
-              <li class="ml-5">Focus will now be shifted to the first focusable item in the listbox</li>
-            </ul>  
+              <li className="ml-5">The focused option is added as a chip in the combobox.</li>
+              <li className="ml-5">That option no longer appears in the list.</li>
+              <li className="ml-5">The popover stays open (default).</li>
+              <li className="ml-5">Focus shifts to the first focusable item in the list.</li>
+            </ul>
           </li>
         </ul>
       </td>
