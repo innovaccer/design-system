@@ -110,7 +110,19 @@
 }
 
 .Listbox-item--activated {
+  position: relative;
   background: var(--primary-lightest);
+}
+
+.Listbox-item--activated::before {
+  content: '';
+  position: absolute;
+  top: var(--spacing-10);
+  left: var(--spacing-10);
+  width: 8px;
+  height: 8px;
+  background-color: var(--primary);
+  clip-path: polygon(0 0, 100% 0, 0 100%);
 }
 
 /* Listbox type - description  */
