@@ -55,6 +55,8 @@
   padding-left: var(--spacing-10);
   height: var(--spacing-60);
   box-sizing: initial;
+  background: transparent;
+  border: none;
 }
 
 .Toast-icon--info,
