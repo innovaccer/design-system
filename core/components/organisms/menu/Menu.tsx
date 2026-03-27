@@ -11,6 +11,7 @@ import classNames from 'classnames';
 import MenuContext from './MenuContext';
 import { focusListItem } from './trigger/utils';
 import SubMenuContext from './SubMenuContext';
+import uidGenerator from '@/utils/uidGenerator';
 import styles from '@css/components/menu.module.css';
 
 export interface MenuProps extends BaseProps {
@@ -90,6 +91,11 @@ export const Menu = (props: MenuProps) => {
 
   const { menuID } = subMenuContextProp;
 
+  const generatedMenuId = React.useRef(`DesignSystem-Menu-${uidGenerator()}`).current;
+  const generatedTriggerId = React.useRef(`DesignSystem-Menu-Trigger-${uidGenerator()}`).current;
+  const menuId = menuID || generatedMenuId;
+  const triggerId = subMenuContextProp.triggerID || generatedTriggerId;
+
   const popoverClassName = classNames(styles.Menu, className);
 
   React.useEffect(() => {
@@ -129,6 +135,8 @@ export const Menu = (props: MenuProps) => {
     setFocusedOption,
     menuTriggerRef,
     listRef,
+    menuId,
+    triggerId,
   };
 
   return (
@@ -144,9 +152,10 @@ export const Menu = (props: MenuProps) => {
       >
         <div
           ref={listRef}
+          id={menuId}
           role="menu"
           aria-label={ariaLabel}
-          aria-labelledby={ariaLabelledBy}
+          aria-labelledby={ariaLabelledBy || (!ariaLabel ? triggerId : undefined)}
           data-test={props['data-test'] || 'DesignSystem-Menu-Wrapper'}
           className={popoverClassName}
           style={{ maxHeight, minHeight }}

@@ -31,8 +31,10 @@ exports[`Menu component snapshot
     style="width: 176px; position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; z-index: 501;"
   >
     <div
+      aria-labelledby="DesignSystem-Menu-Trigger-Test-uid"
       class="Menu"
       data-test="DesignSystem-Menu-Wrapper"
+      id="DesignSystem-Menu-Test-uid"
       role="menu"
       style="max-height: 256px;"
     >
@@ -107,8 +109,10 @@ exports[`Menu component with Nesting snapshot
     style="width: 176px; position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; z-index: 501;"
   >
     <div
+      aria-labelledby="DesignSystem-Menu-Trigger-Test-uid"
       class="Menu"
       data-test="DesignSystem-Menu-Wrapper"
+      id="DesignSystem-Menu-Test-uid"
       role="menu"
       style="max-height: 256px;"
     >
@@ -198,6 +202,7 @@ exports[`Menu component with Trigger snapshot
         aria-label="Open menu"
         class="Button Button--regular Button--regularSquare Button--basic"
         data-test="DesignSystem-Menu-Trigger"
+        id="DesignSystem-Menu-Trigger-Test-uid"
         tabindex="0"
       >
         <div
@@ -228,11 +233,13 @@ exports[`Menu component with Trigger snapshot
       class="PopperWrapper-trigger"
     >
       <button
+        aria-controls="DesignSystem-Menu-Test-uid"
         aria-expanded="true"
         aria-haspopup="true"
         aria-label="Open menu"
         class="Button Button--regular Button--regularSquare Button--basic Menu-Trigger--active"
         data-test="DesignSystem-Menu-Trigger"
+        id="DesignSystem-Menu-Trigger-Test-uid"
         tabindex="0"
       >
         <div
@@ -258,8 +265,10 @@ exports[`Menu component with Trigger snapshot
     style="width: 176px; position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; z-index: 501;"
   >
     <div
+      aria-labelledby="DesignSystem-Menu-Trigger-Test-uid"
       class="Menu"
       data-test="DesignSystem-Menu-Wrapper"
+      id="DesignSystem-Menu-Test-uid"
       role="menu"
       style="max-height: 256px;"
     >
