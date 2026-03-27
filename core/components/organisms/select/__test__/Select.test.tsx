@@ -114,13 +114,23 @@ describe('SelectOption multiselect checkbox accessibility', () => {
 
     fireEvent.click(getByTestId('DesignSystem-Select-trigger'));
 
+    const listbox = document.querySelector('[role="listbox"]');
+    const listboxIdAttr = listbox?.getAttribute('id');
+    expect(listboxIdAttr).toBeTruthy();
+
     const inputs = getAllByTestId('DesignSystem-Checkbox-InputBox');
     expect(inputs).toHaveLength(2);
 
-    expect(inputs[0]).toHaveAttribute('aria-labelledby', 'DesignSystem-SelectOption-label-0');
-    expect(inputs[1]).toHaveAttribute('aria-labelledby', 'DesignSystem-SelectOption-label-1');
+    expect(inputs[0]).toHaveAttribute(
+      'aria-labelledby',
+      `${listboxIdAttr}-DesignSystem-SelectOption-label-0`
+    );
+    expect(inputs[1]).toHaveAttribute(
+      'aria-labelledby',
+      `${listboxIdAttr}-DesignSystem-SelectOption-label-1`
+    );
 
-    const labels = document.querySelectorAll('[id^="DesignSystem-SelectOption-label-"]');
+    const labels = document.querySelectorAll('[id*="DesignSystem-SelectOption-label-"]');
     expect(labels).toHaveLength(2);
     expect(labels[0]).toHaveTextContent('Alpha');
     expect(labels[1]).toHaveTextContent('Beta');

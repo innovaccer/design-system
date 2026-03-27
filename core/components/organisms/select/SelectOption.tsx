@@ -71,6 +71,7 @@ export const SelectOption = (props: SelectOptionProps) => {
     triggerRef,
     size,
     rovingIndex,
+    listboxId,
   } = contextProp;
 
   const isRovingTabstop = typeof index === 'number' && rovingIndex === index;
@@ -123,8 +124,9 @@ export const SelectOption = (props: SelectOptionProps) => {
   };
 
   const idSuffix = typeof index === 'number' ? String(index) : uidGenerator();
-  const optionLabelId = `DesignSystem-SelectOption-label-${idSuffix}`;
-  const checkboxInputId = `DesignSystem-SelectOption-checkbox-${idSuffix}`;
+  const idPrefix = listboxId ? `${listboxId}-` : '';
+  const optionLabelId = `${idPrefix}DesignSystem-SelectOption-label-${idSuffix}`;
+  const checkboxInputId = `${idPrefix}DesignSystem-SelectOption-checkbox-${idSuffix}`;
 
   const childCount = React.Children.count(children);
   const optionLabelString = typeof option.label === 'string' ? option.label.trim() : '';
