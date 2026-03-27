@@ -103,7 +103,7 @@ export const ListboxItem = (props: ListboxItemProps) => {
 
   const handleFocus = (e: React.FocusEvent<HTMLLIElement & HTMLDivElement & HTMLAnchorElement>) => {
     onFocus?.(e);
-    if (rovingFromListbox && !disabled) {
+    if (rovingFromListbox && !disabled && e.target === e.currentTarget) {
       const root = (e.currentTarget as HTMLElement).closest<HTMLElement>('[role="listbox"]');
       if (!root) {
         return;
