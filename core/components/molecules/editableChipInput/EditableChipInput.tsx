@@ -76,7 +76,12 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
   const defaultClasses = classNames({
     [styles['EditableChipInput-default']]: !isWithChips,
     [styles['EditableChipInput-defaultWithChips']]: isWithChips,
+    [styles['EditableChipInput-default--small']]: !isWithChips && size === 'small',
+    [styles['EditableChipInput-defaultWithChips--small']]: isWithChips && size === 'small',
   });
+
+  const chipMarginClass =
+    size === 'small' ? styles['EditableChipInput-chip--small'] : styles['EditableChipInput-chip--regular'];
 
   const inputClass = classNames({
     [styles['EditableChipInput-chipInput']]: true,
@@ -152,7 +157,7 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
             name={val}
             label={val}
             size={size}
-            className="my-2 mx-2"
+            className={chipMarginClass}
             {...chipObject}
             onClose={() => onChipDelete(index)}
             onClick={() => onClick && onClick(val, index)}
@@ -160,7 +165,14 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
         );
       });
     }
-    return <Text className="pt-1">{placeholder}</Text>;
+    return (
+      <Text
+        className={size === 'small' ? styles['EditableChipInput-placeholder--small'] : 'pt-1'}
+        size={size === 'small' ? 'small' : 'regular'}
+      >
+        {placeholder}
+      </Text>
+    );
   };
 
   const renderChildren = () => {
@@ -173,6 +185,7 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
             onChange={onChipInputChangeHandler}
             value={inputValue}
             size={size}
+            disabled={chipInputDisabled}
             chipOptions={chipOptions}
             autoFocus={autoFocusOption ?? true}
             {...rest}
