@@ -624,7 +624,7 @@ describe('navigateOptions function', () => {
   it('should not focus on the search input when withSearch is false', () => {
     navigateOptions('up', undefined, setFocusedOptionMock, listRefMock, false);
     expect(searchInputMock.focus).not.toHaveBeenCalled();
-    expect(setFocusedOptionMock).not.toHaveBeenCalled();
+    expect(setFocusedOptionMock).toHaveBeenCalledWith(listItemsMock[2]);
   });
 });
 
