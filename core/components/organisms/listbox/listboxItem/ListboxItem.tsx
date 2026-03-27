@@ -4,7 +4,7 @@ import { Divider } from '@/index';
 import { ListboxContext } from '../Listbox';
 import { ListBody } from './ListBody';
 import { NestedList } from '../nestedList';
-import { onKeyDown as listboxKeyDownHandler } from '../utils';
+import { onKeyDown as listboxKeyDownHandler, resolveListboxOptionFromEvent } from '../utils';
 import { getAllFocusableElements } from '@/utils/overlayHelper';
 import classNames from 'classnames';
 import styles from '@css/components/listbox.module.css';
@@ -24,6 +24,14 @@ export interface ListboxItemProps extends BaseProps, BaseHtmlProps<HTMLLIElement
    * Set `true` to show nested row
    */
   expanded?: boolean;
+  /**
+   * DOM id for the nested panel; use with `aria-controls` on the row expand control
+   */
+  nestedListId?: string;
+  /**
+   * Accessible name for the nested panel landmark (`role="region"`) when expanded
+   */
+  nestedListAriaLabel?: string;
   /**
    * Disables the list item
    */
@@ -66,6 +74,8 @@ export const ListboxItem = (props: ListboxItemProps) => {
     nestedBody,
     expanded,
     id,
+    nestedListId,
+    nestedListAriaLabel,
     onClick,
     value,
     tagName: Tag = 'li',
@@ -79,10 +89,6 @@ export const ListboxItem = (props: ListboxItemProps) => {
 
   const contextProp = React.useContext(ListboxContext);
   const { showDivider, draggable, suppressKeyboard, setRovingIndex } = contextProp;
-
-  const onClickHandler = (e: React.MouseEvent) => {
-    onClick && onClick(e, id, value);
-  };
 
   const tagClass = classNames({
     [styles['Listbox-item-wrapper']]: !draggable,
@@ -102,19 +108,31 @@ export const ListboxItem = (props: ListboxItemProps) => {
     tabIndexProps.tabIndex = tabIndex;
   }
 
+  const updateRovingFromListBody = (optionEl: HTMLElement) => {
+    if (!rovingFromListbox || disabled) {
+      return;
+    }
+    const root = optionEl.closest<HTMLElement>('[role="listbox"]');
+    if (!root) {
+      return;
+    }
+    const options = getAllFocusableElements(root, 'listbox');
+    const idx = options.indexOf(optionEl);
+    if (idx >= 0) {
+      setRovingIndex(idx);
+    }
+  };
+
+  const onClickHandler = (e: React.MouseEvent) => {
+    const optionEl = resolveListboxOptionFromEvent(e, e.currentTarget as HTMLElement);
+    updateRovingFromListBody(optionEl);
+    onClick && onClick(e, id, value);
+  };
+
   const handleFocus = (e: React.FocusEvent<HTMLLIElement & HTMLDivElement & HTMLAnchorElement>) => {
     onFocus?.(e);
-    if (rovingFromListbox && !disabled && e.target === e.currentTarget) {
-      const root = (e.currentTarget as HTMLElement).closest<HTMLElement>('[role="listbox"]');
-      if (!root) {
-        return;
-      }
-      const options = getAllFocusableElements(root, 'listbox');
-      const idx = options.indexOf(e.currentTarget as HTMLElement);
-      if (idx >= 0) {
-        setRovingIndex(idx);
-      }
-    }
+    const optionEl = resolveListboxOptionFromEvent(e, e.currentTarget as HTMLElement);
+    updateRovingFromListBody(optionEl);
   };
 
   return (
@@ -135,7 +153,9 @@ export const ListboxItem = (props: ListboxItemProps) => {
       >
         {children}
       </ListBody>
-      {nestedBody && <NestedList expanded={expanded} nestedBody={nestedBody} />}
+      {nestedBody && (
+        <NestedList expanded={expanded} nestedBody={nestedBody} id={nestedListId} aria-label={nestedListAriaLabel} />
+      )}
       {showDivider && <Divider className={styles['Listbox-divider']} />}
     </Tag>
   );

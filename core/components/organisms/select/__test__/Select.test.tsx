@@ -101,6 +101,83 @@ describe('Select Option component snapshots', () => {
   testHelper(mapper, testFunc);
 });
 
+describe('SelectOption multiselect checkbox accessibility', () => {
+  it('associates each option checkbox with its visible label via aria-labelledby', () => {
+    const { getByTestId, getAllByTestId } = render(
+      <Select multiSelect={true} onSelect={FunctionValue}>
+        <Select.List>
+          <Select.Option option={{ label: 'Alpha', value: 'a' }}>Alpha</Select.Option>
+          <Select.Option option={{ label: 'Beta', value: 'b' }}>Beta</Select.Option>
+        </Select.List>
+      </Select>
+    );
+
+    fireEvent.click(getByTestId('DesignSystem-Select-trigger'));
+
+    const inputs = getAllByTestId('DesignSystem-Checkbox-InputBox');
+    expect(inputs).toHaveLength(2);
+
+    expect(inputs[0]).toHaveAttribute('aria-labelledby', 'DesignSystem-SelectOption-label-0');
+    expect(inputs[1]).toHaveAttribute('aria-labelledby', 'DesignSystem-SelectOption-label-1');
+
+    const labels = document.querySelectorAll('[id^="DesignSystem-SelectOption-label-"]');
+    expect(labels).toHaveLength(2);
+    expect(labels[0]).toHaveTextContent('Alpha');
+    expect(labels[1]).toHaveTextContent('Beta');
+  });
+});
+
+describe('Select trigger accessibility for error and descriptions', () => {
+  it('sets aria-invalid on trigger when error is true', () => {
+    const { getByTestId } = render(
+      <Select error onSelect={FunctionValue} triggerOptions={{ 'aria-label': 'Pick one' }}>
+        {children}
+      </Select>
+    );
+    expect(getByTestId('DesignSystem-Select-trigger')).toHaveAttribute('aria-invalid', 'true');
+  });
+
+  it('forwards aria-describedby and aria-errormessage from triggerOptions', () => {
+    const { getByTestId } = render(
+      <Select
+        onSelect={FunctionValue}
+        triggerOptions={{
+          'aria-label': 'Pick one',
+          'aria-describedby': 'hint-id',
+          'aria-errormessage': 'err-id',
+        }}
+      >
+        {children}
+      </Select>
+    );
+    const trigger = getByTestId('DesignSystem-Select-trigger');
+    expect(trigger).toHaveAttribute('aria-describedby', 'hint-id');
+    expect(trigger).toHaveAttribute('aria-errormessage', 'err-id');
+  });
+
+  it('merges top-level aria-describedby when triggerOptions omits it', () => {
+    const { getByTestId } = render(
+      <Select onSelect={FunctionValue} aria-describedby="parent-hint" triggerOptions={{ 'aria-label': 'Pick one' }}>
+        {children}
+      </Select>
+    );
+    expect(getByTestId('DesignSystem-Select-trigger')).toHaveAttribute('aria-describedby', 'parent-hint');
+  });
+
+  it('lets triggerOptions override top-level aria-describedby', () => {
+    const { getByTestId } = render(
+      <Select
+        onSelect={FunctionValue}
+        aria-describedby="parent-hint"
+        triggerOptions={{ 'aria-label': 'Pick one', 'aria-describedby': 'opt-hint' }}
+      >
+        {children}
+      </Select>
+    );
+    expect(getByTestId('DesignSystem-Select-trigger')).toHaveAttribute('aria-describedby', 'opt-hint');
+  });
+});
+
 describe('Select component single input trigger tests', () => {
   it('check for placeholder in single input trigger', () => {
     const { getByTestId } = render(
@@ -295,9 +372,9 @@ describe('Select Tab-escape fallback', () => {
     await waitFor(() => {
       expect(getByTestId('DesignSystem-Popover')).toHaveAttribute('data-opened', 'false');
     });
+    const afterTrigger = getByTestId('after-select-button');
     await waitFor(() => {
-      // In jsdom environment with Popover, focus returns to trigger on unmount
-      expect(document.activeElement).toBe(trigger);
+      expect(document.activeElement).toBe(afterTrigger);
     });
   });
 

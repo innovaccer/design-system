@@ -4,6 +4,7 @@ import { Listbox } from '@/index';
 import { BaseProps } from '@/utils/types';
 import { OptionType } from '@/common.type';
 import { handleKeyDown } from './utils';
+import { resolveListboxOptionFromEvent } from '../listbox/utils';
 
 type ItemTagType = 'li' | 'div';
 
@@ -64,12 +65,20 @@ export const ComboboxOption = (props: ComboboxOptionProps) => {
     listRef,
   } = contextProp;
 
-  const onClickHandler = () => {
+  const onClickHandler = (e: React.MouseEvent) => {
+    const optionEl = resolveListboxOptionFromEvent(e, e.currentTarget as HTMLElement);
+    setFocusedOption?.(optionEl);
     if (onClick) {
       return onClick(option);
     }
 
     return onOptionClick && onOptionClick({ ...option, isSelectedOption: true });
+  };
+
+  const handleFocus = (event: React.FocusEvent) => {
+    const optionEl = resolveListboxOptionFromEvent(event, event.currentTarget as HTMLElement);
+    setFocusedOption?.(optionEl);
+    onFocus?.(event);
   };
 
   const onKeyDownHandler = (event: React.KeyboardEvent) => {
@@ -91,7 +100,7 @@ export const ComboboxOption = (props: ComboboxOptionProps) => {
       {...rest}
       onClick={onClickHandler}
       selected={option.label === inputValue?.label}
-      onFocus={onFocus}
+      onFocus={handleFocus}
       onBlur={onBlur}
       onKeyDown={onKeyDownHandler}
       tabIndex={-1}

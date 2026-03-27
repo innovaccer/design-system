@@ -108,6 +108,10 @@ export interface MultiSelectTriggerProps extends BaseProps {
    * Associates trigger with external label
    */
   'aria-labelledby'?: string;
+  /**
+   * Exposes invalid state to assistive tech; when `error` is true this is set to `true` automatically.
+   */
+  'aria-invalid'?: boolean | 'true' | 'false' | 'grammar' | 'spelling';
 }
 
 export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTriggerProps>((props, forwardedInputRef) => {
@@ -130,6 +134,7 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
     role,
     'aria-label': ariaLabel,
     'aria-labelledby': ariaLabelledBy,
+    'aria-invalid': ariaInvalid,
     ...rest
   } = props;
 
@@ -330,6 +335,7 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
             role={role}
             aria-label={ariaLabel}
             aria-labelledby={ariaLabelledBy}
+            aria-invalid={error === true ? true : ariaInvalid}
           />
           {/* eslint-enable */}
         </div>
