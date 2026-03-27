@@ -128,6 +128,7 @@ export const SelectOption = (props: SelectOptionProps) => {
       aria-selected={checked}
       aria-label={props['aria-label'] || 'option item'}
       onKeyDown={(event) => onKeyDownHandler(event)}
+      onFocus={(e) => setFocusedOption?.(e.currentTarget)}
       selected={checked}
       tabIndex={isRovingTabstop ? 0 : -1}
       disabled={disabled}

@@ -167,25 +167,27 @@ export const handleKeyDown = (
   setOpenPopover?: React.Dispatch<React.SetStateAction<boolean>>,
   triggerRef?: any
 ) => {
+  const currentTarget = event.currentTarget as HTMLElement;
+
   switch (event.key) {
     case 'ArrowUp':
       event.preventDefault();
-      navigateOptions('up', focusedOption, setFocusedOption, listRef, withSearch);
+      navigateOptions('up', currentTarget, setFocusedOption, listRef, withSearch);
       break;
     case 'ArrowDown':
       event.preventDefault();
-      navigateOptions('down', focusedOption, setFocusedOption, listRef, withSearch);
+      navigateOptions('down', currentTarget, setFocusedOption, listRef, withSearch);
       break;
     case 'Enter':
       event.preventDefault();
-      handleEnterKey(focusedOption);
+      handleEnterKey(event.currentTarget as HTMLElement);
       setHighlightLastItem?.(false);
       setHighlightFirstItem?.(false);
       break;
     case ' ':
     case 'Spacebar':
       event.preventDefault();
-      handleEnterKey(focusedOption);
+      handleEnterKey(event.currentTarget as HTMLElement);
       setHighlightLastItem?.(false);
       setHighlightFirstItem?.(false);
       break;
@@ -220,37 +222,44 @@ export const handleEnterKey = (focusedOption: Element | undefined) => {
 
 export const navigateOptions = (
   direction: string,
-  focusedOption: Element | undefined,
+  eventTarget: Element | undefined,
   setFocusedOption?: React.Dispatch<React.SetStateAction<HTMLElement | undefined>>,
   listRef?: any,
   withSearch?: boolean
 ) => {
   const listItems = listRef.current.querySelectorAll('[data-test="DesignSystem-Select-Option"]');
   let index = Array.from(listItems).findIndex((item) => {
-    return item == focusedOption;
+    return item == eventTarget;
   });
 
-  if (index === -1) {
-    index = direction === 'up' ? listItems.length - 1 : 0;
-  } else if (
-    (withSearch && index === 0 && direction === 'up') ||
+  if (
+    (withSearch && index <= 0 && direction === 'up') ||
     (withSearch && index === listItems.length - 1 && direction === 'down')
   ) {
     const searchInput = listRef.current.querySelector<HTMLElement>('[data-test="DesignSystem-Select--Input"]');
     if (searchInput) {
       searchInput.focus();
       setFocusedOption?.(searchInput);
+      return;
     }
+  }
+  
+  if (index === -1) {
+    index = direction === 'up' ? listItems.length - 1 : 0;
   } else {
     index = direction === 'up' ? (index - 1 + listItems.length) % listItems.length : (index + 1) % listItems.length;
+  }
 
-    const targetOption = listItems[index];
+  const targetOption = listItems[index] as HTMLElement | undefined;
 
-    (targetOption as HTMLElement).focus();
+  if (targetOption) {
+    targetOption.focus();
     setFocusedOption && setFocusedOption(targetOption);
-    if (typeof (targetOption as HTMLElement).scrollIntoView === 'function') {
-      (targetOption as HTMLElement).scrollIntoView({ block: 'center' });
+    if (typeof targetOption.scrollIntoView === 'function') {
+      targetOption.scrollIntoView({ block: 'center' });
     }
+  } else {
+    setFocusedOption && setFocusedOption(undefined);
   }
 };
 
