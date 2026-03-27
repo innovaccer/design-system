@@ -21,18 +21,14 @@ exports[`EditableInput component
           class="EditableInput-default EditableInput-default--regular"
           data-test="DesignSystem-EditableInput--Default"
         >
-          <span
+          <i
             aria-hidden="true"
-            class="d-flex align-items-center"
+            class="material-symbols material-symbols-rounded Icon Icon--alert d-flex align-items-center EditableInput-errorIcon--regular"
+            data-test="DesignSystem-Icon"
+            style="font-size: 16px; width: 16px;"
           >
-            <i
-              class="material-symbols material-symbols-rounded Icon Icon--alert EditableInput-errorIcon--regular"
-              data-test="DesignSystem-Icon"
-              style="font-size: 16px; width: 16px;"
-            >
-              error
-            </i>
-          </span>
+            error
+          </i>
         </div>
       </div>
     </div>
@@ -61,18 +57,14 @@ exports[`EditableInput component
           class="EditableInput-default EditableInput-default--tiny"
           data-test="DesignSystem-EditableInput--Default"
         >
-          <span
+          <i
             aria-hidden="true"
-            class="d-flex align-items-center"
+            class="material-symbols material-symbols-rounded Icon Icon--alert d-flex align-items-center EditableInput-errorIcon--tiny"
+            data-test="DesignSystem-Icon"
+            style="font-size: 14px; width: 14px;"
           >
-            <i
-              class="material-symbols material-symbols-rounded Icon Icon--alert EditableInput-errorIcon--tiny"
-              data-test="DesignSystem-Icon"
-              style="font-size: 14px; width: 14px;"
-            >
-              error
-            </i>
-          </span>
+            error
+          </i>
         </div>
       </div>
     </div>
