@@ -541,17 +541,17 @@ describe('ChipInput Component - Size Variants and Icon Alignment', () => {
   });
 
   describe('Focus and Accessibility with Size Variants', () => {
-    it('should maintain proper tabIndex for interactive elements across sizes', () => {
+    it('should keep wrapper out of tab order and tabIndex on clear icon when enabled', () => {
       const { getByTestId } = render(<ChipInput {...defaultProps} size="small" defaultValue={['chip1']} />);
 
       const container = getByTestId('DesignSystem-ChipInput');
       const icon = getByTestId('DesignSystem-ChipInput--Icon');
 
-      expect(container).toHaveAttribute('tabIndex', '0');
+      expect(container).not.toHaveAttribute('tabIndex');
       expect(icon).toHaveAttribute('tabIndex', '0');
     });
 
-    it('should set proper tabIndex when disabled regardless of size', () => {
+    it('should omit wrapper tabIndex and set clear icon tabIndex -1 when disabled', () => {
       const { getByTestId } = render(
         <ChipInput {...defaultProps} size="small" defaultValue={['chip1']} disabled={true} />
       );
@@ -559,18 +559,18 @@ describe('ChipInput Component - Size Variants and Icon Alignment', () => {
       const container = getByTestId('DesignSystem-ChipInput');
       const icon = getByTestId('DesignSystem-ChipInput--Icon');
 
-      expect(container).toHaveAttribute('tabIndex', '-1');
+      expect(container).not.toHaveAttribute('tabIndex');
       expect(icon).toHaveAttribute('tabIndex', '-1');
     });
 
-    it('should focus input when container is clicked regardless of size', () => {
+    it('should not focus input when outer container is clicked', () => {
       const { getByTestId } = render(<ChipInput {...defaultProps} size="small" />);
 
       const container = getByTestId('DesignSystem-ChipInput');
       const input = getByTestId('DesignSystem-ChipInput--Input');
 
       fireEvent.click(container);
-      expect(input).toHaveFocus();
+      expect(input).not.toHaveFocus();
     });
   });
 });
