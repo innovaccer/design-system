@@ -3,11 +3,11 @@ import classNames from 'classnames';
 import Meta, { MetaProps } from './Meta';
 import { Icon } from '@/index';
 import { IconProps, TextProps } from '@/index.type';
-import { BaseProps, extractBaseProps } from '@/utils/types';
+import { DecorativeProps, extractBaseProps } from '@/utils/types';
 import styles from '@css/components/metaList.module.css';
 
 export type MetaSize = 'small' | 'regular';
-export interface MetaListProps extends BaseProps {
+export interface MetaListProps extends DecorativeProps {
   /**
    * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
    * MetaProps:

@@ -29,14 +29,32 @@ export type BaseProps = {
   'data-test'?: string;
 };
 
+export type DecorativeProps = BaseProps & {
+  /**
+   * Set `true` to hide the element from assistive technology.
+   * Use for decorative or redundant content.
+   */
+  'aria-hidden'?: boolean | 'true' | 'false';
+  /**
+   * ARIA role for the element. Use `"none"` or `"presentation"`
+   * to mark decorative elements.
+   */
+  role?: string;
+};
+
 export type BaseHtmlProps<T> = Omit<React.HTMLProps<T>, 'ref' | 'size' | 'className'>;
 export type OmitNativeProps<T, K extends keyof any> = Omit<BaseHtmlProps<T>, K>;
 
 export const extractBaseProps = (props: Record<string, any>) => {
-  const baseProps = ['className', 'data-test'];
-  const basePropsObj = baseProps.reduce((acc, curr) => {
-    return props[curr] ? { ...acc, [curr]: props[curr] } : { ...acc };
-  }, {});
+  const basePropsObj: Record<string, any> = {};
+
+  // Original base props — preserve truthiness check for backward compatibility
+  if (props.className) basePropsObj.className = props.className;
+  if (props['data-test']) basePropsObj['data-test'] = props['data-test'];
+
+  // Decorative props — use null check so explicit `false` (aria-hidden={false}) is forwarded
+  if (props['aria-hidden'] != null) basePropsObj['aria-hidden'] = props['aria-hidden'];
+  if (props.role != null) basePropsObj.role = props.role;
 
   return basePropsObj;
 };

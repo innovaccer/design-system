@@ -1,11 +1,11 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { BaseProps, extractBaseProps } from '@/utils/types';
+import { DecorativeProps, extractBaseProps } from '@/utils/types';
 import styles from '@css/components/progressRing.module.css';
 
 export type ProgressRingSize = 'small' | 'regular' | 'large';
 
-export interface ProgressRingProps extends BaseProps {
+export interface ProgressRingProps extends DecorativeProps {
   /**
    * Size of `Progress Ring`
    */

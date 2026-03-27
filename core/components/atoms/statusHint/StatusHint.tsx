@@ -1,14 +1,14 @@
 import * as React from 'react';
 import Text from '@/components/atoms/text';
 import classNames from 'classnames';
-import { BaseProps, extractBaseProps } from '@/utils/types';
+import { DecorativeProps, extractBaseProps } from '@/utils/types';
 import { MessageAppearance } from '@/common.type';
 import styles from '@css/components/statusHint.module.css';
 import pageHeaderStyles from '@css/components/pageHeader.module.css';
 
 type StatusHintSize = 'small' | 'regular';
 
-export interface StatusHintProps extends BaseProps {
+export interface StatusHintProps extends DecorativeProps {
   /**
    * Describes label of the `Status Hint`
    */

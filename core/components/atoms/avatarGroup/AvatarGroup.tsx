@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { BaseProps, extractBaseProps } from '@/utils/types';
+import { DecorativeProps, extractBaseProps } from '@/utils/types';
 import { Popover } from '@/index';
 import { AvatarProps, PopoverProps } from '@/index.type';
 import { AvatarSize, AvatarShape } from '@/common.type';
@@ -37,7 +37,7 @@ interface AvatarPopoverProps {
   searchComparator?: (searchValue: string, avatarData: AvatarData) => boolean;
 }
 
-export interface AvatarGroupProps extends BaseProps {
+export interface AvatarGroupProps extends DecorativeProps {
   /**
    * Accessible label for the avatar group container.
    */

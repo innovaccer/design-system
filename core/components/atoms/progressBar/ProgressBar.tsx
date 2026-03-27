@@ -1,12 +1,12 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { BaseProps, extractBaseProps } from '@/utils/types';
+import { DecorativeProps, extractBaseProps } from '@/utils/types';
 import styles from '@css/components/progressBar.module.css';
 
 export type ProgressBarSize = 'small' | 'regular';
 export type ProgressBarState = 'default' | 'indeterminate';
 
-export interface ProgressBarProps extends BaseProps {
+export interface ProgressBarProps extends DecorativeProps {
   /**
    * Specifies how much of the task that has been completed. Value should lie between 0 to max,
    */
