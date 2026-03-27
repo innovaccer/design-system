@@ -350,6 +350,17 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
     }
   }, [value]);
 
+  const previousOpen = React.useRef(openPopover);
+
+  React.useEffect(() => {
+    if (previousOpen.current && !openPopover) {
+      if (document.activeElement === document.body) {
+        triggerRef.current?.focus({ preventScroll: true });
+      }
+    }
+    previousOpen.current = openPopover;
+  }, [openPopover]);
+
   const onToggleHandler = (open: boolean) => {
     if (onToggle) {
       onToggle(open);
