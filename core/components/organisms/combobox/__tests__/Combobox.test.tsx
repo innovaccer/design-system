@@ -101,7 +101,7 @@ describe('Combobox component single input trigger tests', () => {
     const popover = getByTestId('DesignSystem-Popover');
     expect(popover).toHaveAttribute('data-opened', 'true');
 
-    const innerRow = getByTestId('DesignSystem-Listbox-ItemWrapper');
+    const innerRow = getByTestId('DesignSystem-Combobox-Option');
     innerRow.focus();
     fireEvent.keyDown(innerRow, { key: 'Tab', shiftKey: true });
 

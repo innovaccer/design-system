@@ -62,6 +62,7 @@ export interface ListboxItemProps extends BaseProps, BaseHtmlProps<HTMLLIElement
 
 export const ListboxItem = (props: ListboxItemProps) => {
   const {
+    children,
     nestedBody,
     expanded,
     id,
@@ -117,15 +118,10 @@ export const ListboxItem = (props: ListboxItemProps) => {
   };
 
   return (
-    <Tag
-      data-test="DesignSystem-Listbox-Item"
-      className={tagClass}
-      role="presentation"
-    >
+    <Tag data-test="DesignSystem-Listbox-Item" className={tagClass} role="presentation">
       <ListBody
         {...rest}
         className={props.className}
-        children={props.children}
         selected={props.selected}
         activated={props.activated}
         id={id}
@@ -136,7 +132,9 @@ export const ListboxItem = (props: ListboxItemProps) => {
         tabIndex={tabIndexProps.tabIndex ?? -1}
         onKeyDown={keyDownHandler}
         role={role ?? 'option'}
-      />
+      >
+        {children}
+      </ListBody>
       {nestedBody && <NestedList expanded={expanded} nestedBody={nestedBody} />}
       {showDivider && <Divider className={styles['Listbox-divider']} />}
     </Tag>

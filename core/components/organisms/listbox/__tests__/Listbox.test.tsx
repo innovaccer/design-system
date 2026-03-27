@@ -352,12 +352,10 @@ describe('Listbox component test for keyboard events', () => {
     );
 
     const list = container.querySelector('[data-test="DesignSystem-Listbox"]') as HTMLElement;
-    const items = within(list).getAllByTestId('DesignSystem-Listbox-Item');
     const innerItems = within(list).getAllByTestId('DesignSystem-Listbox-ItemWrapper');
-    
-    // The event is handled at the wrapper level, but focus should land on the inner item
-    items[0].focus();
-    fireEvent.keyDown(items[0], { key: 'ArrowDown' });
+
+    innerItems[0].focus();
+    fireEvent.keyDown(innerItems[0], { key: 'ArrowDown' });
 
     expect(innerItems[1]).toHaveFocus();
   });
@@ -376,11 +374,10 @@ describe('Listbox component test for keyboard events', () => {
     );
 
     const list = container.querySelector('[data-test="DesignSystem-Listbox"]') as HTMLElement;
-    const items = within(list).getAllByTestId('DesignSystem-Listbox-Item');
     const innerItems = within(list).getAllByTestId('DesignSystem-Listbox-ItemWrapper');
-    
-    items[1].focus();
-    fireEvent.keyDown(items[1], { key: 'ArrowUp' });
+
+    innerItems[1].focus();
+    fireEvent.keyDown(innerItems[1], { key: 'ArrowUp' });
 
     expect(innerItems[0]).toHaveFocus();
   });
@@ -399,11 +396,10 @@ describe('Listbox component test for keyboard events', () => {
     );
 
     const list = container.querySelector('[data-test="DesignSystem-Listbox"]') as HTMLElement;
-    const items = within(list).getAllByTestId('DesignSystem-Listbox-Item');
     const innerItems = within(list).getAllByTestId('DesignSystem-Listbox-ItemWrapper');
-    
-    items[1].focus();
-    fireEvent.keyDown(items[1], { key: 'ArrowDown' });
+
+    innerItems[1].focus();
+    fireEvent.keyDown(innerItems[1], { key: 'ArrowDown' });
 
     expect(innerItems[3]).toHaveFocus();
   });
@@ -422,11 +418,10 @@ describe('Listbox component test for keyboard events', () => {
     );
 
     const list = container.querySelector('[data-test="DesignSystem-Listbox"]') as HTMLElement;
-    const items = within(list).getAllByTestId('DesignSystem-Listbox-Item');
     const innerItems = within(list).getAllByTestId('DesignSystem-Listbox-ItemWrapper');
-    
-    items[3].focus();
-    fireEvent.keyDown(items[3], { key: 'ArrowUp' });
+
+    innerItems[3].focus();
+    fireEvent.keyDown(innerItems[3], { key: 'ArrowUp' });
 
     expect(innerItems[1]).toHaveFocus();
   });

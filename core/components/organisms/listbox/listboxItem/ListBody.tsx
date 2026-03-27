@@ -23,13 +23,13 @@ export const ListBody = (props: ListboxItemProps & React.HTMLAttributes<HTMLDivE
     className
   );
 
-  const defaultAriaSelected = (type === 'option' && selected) ? true : undefined;
+  const defaultAriaSelected = type === 'option' && selected ? true : undefined;
 
   return (
-    <div 
-      data-disabled={disabled} 
-      data-test="DesignSystem-Listbox-ItemWrapper" 
-      className={itemClass} 
+    <div
+      data-disabled={disabled}
+      data-test="DesignSystem-Listbox-ItemWrapper"
+      className={itemClass}
       aria-selected={rest['aria-selected'] ?? defaultAriaSelected}
       {...rest}
     >

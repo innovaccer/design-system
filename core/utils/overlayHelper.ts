@@ -76,10 +76,10 @@ const LISTBOX_OPTION_SELECTOR = '[role="option"]';
  */
 const getListboxOptionElements = (listboxRoot: HTMLElement): HTMLElement[] => {
   const options: HTMLElement[] = [];
-  
+
   for (const node of Array.from(listboxRoot.children)) {
     if (!(node instanceof HTMLElement)) continue;
-    
+
     let optionNode: HTMLElement | null = null;
     if (node.matches(LISTBOX_OPTION_SELECTOR)) {
       optionNode = node;
@@ -91,24 +91,30 @@ const getListboxOptionElements = (listboxRoot: HTMLElement): HTMLElement[] => {
         }
       }
     }
-    
+
     if (!optionNode) continue;
-    
+
     const styleOuter = window.getComputedStyle(node);
     const styleInner = optionNode !== node ? window.getComputedStyle(optionNode) : styleOuter;
-    
-    const isVisible = styleOuter.visibility !== 'hidden' && styleOuter.display !== 'none' && 
-                      styleInner.visibility !== 'hidden' && styleInner.display !== 'none';
-    const isAriaHidden = node.getAttribute('aria-hidden') === 'true' || optionNode.getAttribute('aria-hidden') === 'true';
-    const isAriaDisabled = node.getAttribute('aria-disabled') === 'true' || optionNode.getAttribute('aria-disabled') === 'true';
+
+    const isVisible =
+      styleOuter.visibility !== 'hidden' &&
+      styleOuter.display !== 'none' &&
+      styleInner.visibility !== 'hidden' &&
+      styleInner.display !== 'none';
+    const isAriaHidden =
+      node.getAttribute('aria-hidden') === 'true' || optionNode.getAttribute('aria-hidden') === 'true';
+    const isAriaDisabled =
+      node.getAttribute('aria-disabled') === 'true' || optionNode.getAttribute('aria-disabled') === 'true';
     const isInert = optionNode.closest('[inert]') !== null;
-    const isDataDisabled = optionNode.getAttribute('data-disabled') === 'true' || node.getAttribute('data-disabled') === 'true';
-    
+    const isDataDisabled =
+      optionNode.getAttribute('data-disabled') === 'true' || node.getAttribute('data-disabled') === 'true';
+
     if (isVisible && !isAriaHidden && !isAriaDisabled && !isInert && !isDataDisabled) {
       options.push(optionNode);
     }
   }
-  
+
   return options;
 };
 
