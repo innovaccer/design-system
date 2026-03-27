@@ -33,6 +33,7 @@ exports[`Menu component snapshot
     <div
       class="Menu"
       data-test="DesignSystem-Menu-Wrapper"
+      id="menu-Test-uid"
       role="menu"
       style="max-height: 256px;"
     >
@@ -107,6 +108,7 @@ exports[`Menu component with Nesting snapshot
     <div
       class="Menu"
       data-test="DesignSystem-Menu-Wrapper"
+      id="menu-Test-uid"
       role="menu"
       style="max-height: 256px;"
     >
@@ -188,6 +190,7 @@ exports[`Menu component with Trigger snapshot
       class="PopperWrapper-trigger"
     >
       <button
+        aria-controls="menu-Test-uid"
         aria-expanded="false"
         aria-haspopup="true"
         aria-label="Open menu"
@@ -223,6 +226,7 @@ exports[`Menu component with Trigger snapshot
       class="PopperWrapper-trigger"
     >
       <button
+        aria-controls="menu-Test-uid"
         aria-expanded="true"
         aria-haspopup="true"
         aria-label="Open menu"
@@ -255,6 +259,7 @@ exports[`Menu component with Trigger snapshot
     <div
       class="Menu"
       data-test="DesignSystem-Menu-Wrapper"
+      id="menu-Test-uid"
       role="menu"
       style="max-height: 256px;"
     >
