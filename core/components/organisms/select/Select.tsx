@@ -387,9 +387,25 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
   };
 
   const hasFooter = React.useMemo(() => {
-    return React.Children.toArray(children).some(
-      (child) => React.isValidElement(child) && (child.type === SelectFooter || child.type === Select.Footer)
-    );
+    const checkFooter = (nodes: React.ReactNode): boolean => {
+      return React.Children.toArray(nodes).some((child) => {
+        if (!React.isValidElement(child)) return false;
+
+        // If it's the Footer, we found it!
+        if (child.type === SelectFooter || child.type === Select.Footer) {
+          return true;
+        }
+
+        // If it's a Fragment, recursively check its children
+        if (child.type === React.Fragment) {
+          return checkFooter(child.props.children);
+        }
+
+        return false;
+      });
+    };
+
+    return checkFooter(children);
   }, [children]);
 
   const effectiveTrapFocus = trapFocus !== undefined ? trapFocus : hasFooter;

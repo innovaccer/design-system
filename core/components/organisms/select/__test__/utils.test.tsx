@@ -188,14 +188,17 @@ describe('handleKeyDownTrigger function', () => {
   });
 
   it('should call setOpenPopover(true) and setHighlightFirstItem(true) when "ArrowDown" key is pressed', () => {
-    const event: React.KeyboardEvent = { key: 'ArrowDown' } as React.KeyboardEvent;
+    const event: React.KeyboardEvent = {
+      key: 'ArrowDown',
+      preventDefault: jest.fn(),
+    } as unknown as React.KeyboardEvent;
     handleKeyDownTrigger(event, setOpenPopoverMock, setHighlightFirstItemMock);
     expect(setOpenPopoverMock).toHaveBeenCalledWith(true);
     expect(setHighlightFirstItemMock).toHaveBeenCalledWith(true);
   });
 
   it('should call setOpenPopover(true) and setHighlightLastItem(true) when "ArrowUp" key is pressed', () => {
-    const event: React.KeyboardEvent = { key: 'ArrowUp' } as React.KeyboardEvent;
+    const event: React.KeyboardEvent = { key: 'ArrowUp', preventDefault: jest.fn() } as unknown as React.KeyboardEvent;
     handleKeyDownTrigger(event, setOpenPopoverMock, undefined, setHighlightLastItemMock);
     expect(setOpenPopoverMock).toHaveBeenCalledWith(true);
     expect(setHighlightLastItemMock).toHaveBeenCalledWith(true);

@@ -281,7 +281,7 @@ export const Combobox = (props: ComboboxProps) => {
       event.preventDefault();
       setOpenPopover(false);
       setFocusedOption(undefined);
-      
+
       if (inputTriggerRef?.current) {
         import('@/components/organisms/select/utils').then(({ getNextFocusableAfterTrigger }) => {
           const next = getNextFocusableAfterTrigger(inputTriggerRef.current, event.shiftKey);

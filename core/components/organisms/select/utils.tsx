@@ -142,10 +142,12 @@ export const handleKeyDownTrigger = (
       setHighlightFirstItem?.(true);
       break;
     case 'ArrowDown':
+      event.preventDefault();
       setOpenPopover?.(true);
       setHighlightFirstItem?.(true);
       break;
     case 'ArrowUp':
+      event.preventDefault();
       setOpenPopover?.(true);
       setHighlightLastItem?.(true);
       break;
@@ -302,6 +304,14 @@ export const handleInputKeyDown = (
           targetOption.scrollIntoView({ block: 'center' });
         }
         setFocusedOption?.(targetOption);
+      } else if (listRef.current) {
+        const focusables = getFocusableElements(listRef.current);
+        // Exclude the search input itself from the focusables we want to focus
+        const validFocusables = focusables.filter((f) => f !== event.target);
+        if (validFocusables.length > 0) {
+          const lastFocusable = validFocusables[validFocusables.length - 1];
+          lastFocusable.focus();
+        }
       }
       break;
     case 'ArrowDown':
@@ -313,6 +323,11 @@ export const handleInputKeyDown = (
           targetOption.scrollIntoView({ block: 'center' });
         }
         setFocusedOption?.(targetOption);
+      } else if (listRef.current) {
+        const focusables = getFocusableElements(listRef.current);
+        const currentIndex = focusables.indexOf(event.target as HTMLElement);
+        const nextFocusable = focusables[currentIndex + 1];
+        if (nextFocusable) nextFocusable.focus();
       }
       break;
     case 'Escape':
