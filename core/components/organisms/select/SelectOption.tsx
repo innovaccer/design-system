@@ -6,6 +6,7 @@ import { BaseProps } from '@/utils/types';
 import { handleKeyDown, elementExist, removeOrAddToList } from './utils';
 import classNames from 'classnames';
 import styles from '@css/components/select.module.css';
+import uidGenerator from '@/utils/uidGenerator';
 
 type checkedType = 'checked' | 'unchecked' | 'indeterminate';
 
@@ -121,6 +122,15 @@ export const SelectOption = (props: SelectOptionProps) => {
     );
   };
 
+  const idSuffix = typeof index === 'number' ? String(index) : uidGenerator();
+  const optionLabelId = `DesignSystem-SelectOption-label-${idSuffix}`;
+  const checkboxInputId = `DesignSystem-SelectOption-checkbox-${idSuffix}`;
+
+  const childCount = React.Children.count(children);
+  const optionLabelString = typeof option.label === 'string' ? option.label.trim() : '';
+  const checkboxFallbackAriaLabel = props['aria-label'] ?? (optionLabelString || undefined);
+  const associateCheckboxWithOptionLabel = childCount > 0;
+
   return (
     <Listbox.Item
       role="option"
@@ -139,13 +149,19 @@ export const SelectOption = (props: SelectOptionProps) => {
       <div className={optionItemClass}>
         {multiSelect && withCheckbox && (
           <Checkbox
+            id={checkboxInputId}
             tabIndex={-1}
             aria-checked={indeterminate ? 'mixed' : checked}
             checked={checked}
             indeterminate={indeterminate}
+            {...(associateCheckboxWithOptionLabel
+              ? { 'aria-labelledby': optionLabelId }
+              : { 'aria-label': checkboxFallbackAriaLabel })}
           />
         )}
-        <div className={textClass}>{children}</div>
+        <div id={optionLabelId} className={textClass}>
+          {children}
+        </div>
       </div>
     </Listbox.Item>
   );

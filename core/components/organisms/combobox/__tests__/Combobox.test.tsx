@@ -94,6 +94,35 @@ describe('Combobox component single input trigger tests', () => {
     expect(inputTrigger).toHaveValue('');
   });
 
+  it('sets aria-invalid on single-select combobox input when error is true', () => {
+    const { getByTestId } = render(
+      <Combobox error={true} onChange={FunctionValue}>
+        {children}
+      </Combobox>
+    );
+    expect(getByTestId('DesignSystem-Combobox-Input')).toHaveAttribute('aria-invalid', 'true');
+  });
+
+  it('forwards aria-describedby and aria-errormessage to combobox input', () => {
+    const { getByTestId } = render(
+      <Combobox onChange={FunctionValue} aria-describedby="hint-id" aria-errormessage="err-id">
+        {children}
+      </Combobox>
+    );
+    const input = getByTestId('DesignSystem-Combobox-Input');
+    expect(input).toHaveAttribute('aria-describedby', 'hint-id');
+    expect(input).toHaveAttribute('aria-errormessage', 'err-id');
+  });
+
+  it('sets aria-invalid on multiselect combobox input when error is true', () => {
+    const { getByTestId } = render(
+      <Combobox multiSelect={true} error={true} onChange={FunctionValue}>
+        {children}
+      </Combobox>
+    );
+    expect(getByTestId('DesignSystem-MultiSelectTrigger--Input')).toHaveAttribute('aria-invalid', 'true');
+  });
+
   it('closes list and returns focus to input when Tab is pressed on inner list row (capture)', () => {
     const { getByTestId } = render(<Combobox onChange={FunctionValue}>{children}</Combobox>);
     const inputTrigger = getByTestId('DesignSystem-Combobox-Input');

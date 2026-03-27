@@ -32,6 +32,7 @@ export const ListBody = (props: ListboxItemProps & React.HTMLAttributes<HTMLDivE
       className={itemClass}
       aria-selected={rest['aria-selected'] ?? defaultAriaSelected}
       {...rest}
+      aria-disabled={disabled ? true : undefined}
     >
       {draggable && (
         <Icon

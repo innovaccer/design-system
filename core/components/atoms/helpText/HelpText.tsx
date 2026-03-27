@@ -2,8 +2,14 @@ import * as React from 'react';
 import { InlineMessage, Text } from '@/index';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import uidGenerator from '@/utils/uidGenerator';
 
 export interface HelpTextProps extends BaseProps {
+  /**
+   * Optional DOM id for the help/error region; when omitted, a stable id is generated for this instance.
+   * Pass the same id to `Combobox` / `Select` (or their triggers) via `aria-describedby` / `aria-errormessage`, or to a field’s matching attributes.
+   */
+  id?: string;
   /**
    * Text to be rendered
    */
@@ -15,8 +21,14 @@ export interface HelpTextProps extends BaseProps {
 }
 
 export const HelpText = (props: HelpTextProps) => {
-  const { error, message, className } = props;
+  const { error, message, className, id: idProp } = props;
   const baseProps = extractBaseProps(props);
+
+  const generatedIdRef = React.useRef<string | null>(null);
+  if (generatedIdRef.current === null) {
+    generatedIdRef.current = `HelpText-${uidGenerator()}`;
+  }
+  const resolvedId = idProp ?? generatedIdRef.current;
 
   const classes = classNames(
     {
@@ -28,11 +40,11 @@ export const HelpText = (props: HelpTextProps) => {
   if (!message) return null;
 
   if (error) {
-    return <InlineMessage size="small" className={classes} appearance="alert" description={message} />;
+    return <InlineMessage id={resolvedId} size="small" className={classes} appearance="alert" description={message} />;
   }
 
   return (
-    <div {...baseProps} className={classes}>
+    <div id={resolvedId} {...baseProps} className={classes}>
       <Text appearance="subtle" size="small" weight="medium">
         {message}
       </Text>

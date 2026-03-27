@@ -137,6 +137,14 @@ export interface ComboboxProps extends BaseProps {
    * Associates combobox trigger with an external label
    */
   'aria-labelledby'?: string;
+  /**
+   * Element ids (space-separated) for supplementary help or description regions (e.g. sibling `HelpText`).
+   */
+  'aria-describedby'?: string;
+  /**
+   * Id of the live error message element (e.g. `HelpText` with `error`); pair with `aria-invalid` when in error.
+   */
+  'aria-errormessage'?: string;
 }
 
 export const Combobox = (props: ComboboxProps) => {
@@ -166,6 +174,8 @@ export const Combobox = (props: ComboboxProps) => {
     computeStyles,
     'aria-label': ariaLabel,
     'aria-labelledby': ariaLabelledBy,
+    'aria-describedby': ariaDescribedBy,
+    'aria-errormessage': ariaErrormessage,
   } = props;
 
   const [popoverStyle, setPopoverStyle] = React.useState<PopoverProps['customStyle']>();
@@ -316,6 +326,8 @@ export const Combobox = (props: ComboboxProps) => {
     onKeyUp,
     'aria-label': ariaLabel,
     'aria-labelledby': ariaLabelledBy,
+    'aria-describedby': ariaDescribedBy,
+    'aria-errormessage': ariaErrormessage,
   };
 
   const contextProp = {

@@ -2,6 +2,28 @@ import * as React from 'react';
 import isSpaceKey from '@/accessibility/utils/isSpaceKey';
 import { getAllFocusableElements } from '@/utils/overlayHelper';
 
+const elementFromEventTarget = (target: EventTarget | null): Element | null => {
+  if (target instanceof Element) return target;
+  if (target instanceof Text && target.parentElement) return target.parentElement;
+  return null;
+};
+
+/**
+ * Resolves the listbox option row (`[role="option"]`) for pointer/focus events when the
+ * interaction target is nested inside the row. Falls back to `fallback` (typically `currentTarget`).
+ */
+export const resolveListboxOptionFromEvent = (event: React.SyntheticEvent, fallback: HTMLElement): HTMLElement => {
+  const listRoot = fallback.closest<HTMLElement>('[role="listbox"]');
+  const el = elementFromEventTarget(event.target);
+  if (el) {
+    const option = el.closest<HTMLElement>('[role="option"]');
+    if (option && listRoot?.contains(option)) {
+      return option;
+    }
+  }
+  return fallback;
+};
+
 export const isListboxOptionDisabled = (optionElement: HTMLElement): boolean => {
   const inner = optionElement.matches('[data-test="DesignSystem-Listbox-ItemWrapper"]')
     ? optionElement

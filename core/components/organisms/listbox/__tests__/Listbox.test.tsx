@@ -507,6 +507,27 @@ describe('Listbox default roving tabindex', () => {
     expect(items[1]).toHaveAttribute('tabindex', '-1');
   });
 
+  it('updates roving tabindex when the click target is nested inside the option row', async () => {
+    const { container } = render(
+      <Listbox showDivider={false}>
+        <Listbox.Item id="a">
+          <span data-testid="nested-a">first</span>
+        </Listbox.Item>
+        <Listbox.Item id="b">
+          <span data-testid="nested-b">second</span>
+        </Listbox.Item>
+      </Listbox>
+    );
+    const list = container.querySelector('[data-test="DesignSystem-Listbox"]') as HTMLElement;
+    const items = within(list).getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+    const nestedB = list.querySelector('[data-testid="nested-b"]') as HTMLElement;
+    fireEvent.click(nestedB);
+    await waitFor(() => {
+      expect(items[0]).toHaveAttribute('tabindex', '-1');
+      expect(items[1]).toHaveAttribute('tabindex', '0');
+    });
+  });
+
   it('does not inject roving tabindex when suppressKeyboard is true', () => {
     const { container } = render(
       <Listbox suppressKeyboard showDivider={false}>
