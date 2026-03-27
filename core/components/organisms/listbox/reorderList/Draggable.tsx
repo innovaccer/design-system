@@ -428,6 +428,11 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
   };
 
   render() {
+    const firstEnabledIndex = this.props.values.findIndex((value: any) => !(value && value.props.disabled));
+    const currentItemIsDisabled =
+      this.props.values[this.state.focusedIndex] && this.props.values[this.state.focusedIndex].props.disabled;
+    const effectiveFocusedIndex = currentItemIsDisabled ? firstEnabledIndex : this.state.focusedIndex;
+
     const baseStyle = {
       userSelect: 'none',
       WebkitUserSelect: 'none',
@@ -458,7 +463,7 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
             const isDisabled = this.props.values[index] && this.props.values[index].props.disabled;
             const props: IItemProps = {
               key: index,
-              tabIndex: isDisabled ? -1 : index === this.state.focusedIndex ? 0 : -1,
+              tabIndex: isDisabled ? -1 : index === effectiveFocusedIndex ? 0 : -1,
               onFocus: () => this.setState({ focusedIndex: index }),
               onKeyDown: this.onKeyDown,
               'aria-grabbed': isSelected,
