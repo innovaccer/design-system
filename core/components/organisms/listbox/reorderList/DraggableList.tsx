@@ -2,7 +2,7 @@ import React from 'react';
 import { extractBaseProps } from '@/utils/types';
 import Draggable from './Draggable';
 import { arrayMove } from './utils';
-import { ListboxInternalProps } from '../Listbox';
+import { ListboxProps } from '../Listbox';
 import classNames from 'classnames';
 import styles from '@css/components/listbox.module.css';
 

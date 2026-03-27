@@ -209,13 +209,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
             aria-label="clear selected"
             data-test="DesignSystem-Select--closeIcon"
           >
-            <Icon
-              appearance={buttonDisabled}
-              size={12}
-              name="close"
-              type={iconType}
-              aria-hidden={true}
-            />
+            <Icon appearance={buttonDisabled} size={12} name="close" type={iconType} aria-hidden={true} />
           </button>
         )}
 
