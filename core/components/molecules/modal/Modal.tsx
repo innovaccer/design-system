@@ -407,6 +407,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
                   <Button
                     icon="close"
                     appearance="transparent"
+                    aria-label="Close"
                     data-test="DesignSystem-Modal--CloseButton"
                     onClick={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
                       if (onClose) onClose(event, 'IconClick');
