@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Text } from '@/index';
 import { SelectContext } from './SelectContext';
 import { BaseProps } from '@/utils/types';
+import uidGenerator from '@/utils/uidGenerator';
 
 interface SelectEmptyTemplateProps extends BaseProps {
   /**
@@ -25,6 +26,9 @@ export const SelectEmptyTemplate = (props: SelectEmptyTemplateProps) => {
 
   const { title, description, children, ...rest } = props;
 
+  const titleId = React.useRef(`select-empty-title-${uidGenerator()}`).current;
+  const descriptionId = React.useRef(`select-empty-desc-${uidGenerator()}`).current;
+
   const searchInputHeight = 33;
 
   const wrapperStyle = {
@@ -41,17 +45,17 @@ export const SelectEmptyTemplate = (props: SelectEmptyTemplateProps) => {
       {...rest}
     >
       <div
-        aria-labelledby={title}
-        aria-describedby={description}
+        aria-labelledby={title ? titleId : undefined}
+        aria-describedby={description ? descriptionId : undefined}
         className="d-flex flex-column justify-content-center align-items-center"
       >
         {title && (
-          <Text id={title} role="heading" className="text-align-center mb-3" weight="strong">
+          <Text id={titleId} role="heading" className="text-align-center mb-3" weight="strong">
             {title}
           </Text>
         )}
         {description && (
-          <Text id={description} className="text-align-center mb-6" weight="medium" size="small" appearance="subtle">
+          <Text id={descriptionId} className="text-align-center mb-6" weight="medium" size="small" appearance="subtle">
             {description}
           </Text>
         )}

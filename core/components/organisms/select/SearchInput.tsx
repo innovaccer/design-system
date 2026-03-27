@@ -51,7 +51,6 @@ export const SearchInput = (props: SelectInputProps) => {
         onClear={searchClearHandler}
         autoComplete={'off'}
         aria-label="Search"
-        aria-haspopup="listbox"
         className={inputClass}
         data-test="DesignSystem-Select--Input"
       />

@@ -31,7 +31,7 @@ export interface SelectListProps extends BaseProps {
 
 export const SelectList = (props: SelectListProps) => {
   const contextProp = React.useContext(SelectContext);
-  const { withSearch, minHeight, maxHeight, multiSelect } = contextProp;
+  const { withSearch, minHeight, maxHeight, multiSelect, listboxId } = contextProp;
   const { children, size, ...rest } = props;
   const searchInputHeight = 33;
 
@@ -49,6 +49,9 @@ export const SelectList = (props: SelectListProps) => {
   return (
     <SelectContext.Provider value={updatedContextProp}>
       <Listbox
+        role="listbox"
+        id={listboxId}
+        tabIndex={0}
         style={wrapperStyle}
         aria-label={props['aria-label'] || 'Options item list'}
         aria-multiselectable={multiSelect}

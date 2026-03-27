@@ -295,17 +295,12 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
     setHighlightLastItem,
     styleType,
     error,
+    listboxId,
   };
 
   return (
     <SelectContext.Provider value={contextProp}>
-      <div
-        data-test="DesignSystem-Select"
-        style={WrapperStyle}
-        aria-haspopup="listbox"
-        aria-expanded={openPopover}
-        {...baseProps}
-      >
+      <div data-test="DesignSystem-Select" style={WrapperStyle} {...baseProps}>
         <Popover
           open={openPopover}
           onToggle={onToggleHandler}
@@ -318,9 +313,7 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
           trigger={getTriggerElement()}
         >
           <OutsideClick onOutsideClick={onOutsideClickHandler}>
-            <div role="listbox" id={listboxId} tabIndex={0} ref={listRef}>
-              {children}
-            </div>
+            <div ref={listRef}>{children}</div>
           </OutsideClick>
         </Popover>
       </div>
