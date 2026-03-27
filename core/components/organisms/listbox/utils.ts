@@ -2,8 +2,10 @@ import * as React from 'react';
 import { getAllFocusableElements } from '@/utils/overlayHelper';
 
 export const isListboxOptionDisabled = (optionElement: HTMLElement): boolean => {
-  const inner = optionElement.querySelector<HTMLElement>('[data-test="DesignSystem-Listbox-ItemWrapper"]');
-  return inner?.getAttribute('data-disabled') === 'true';
+  const inner = optionElement.matches('[data-test="DesignSystem-Listbox-ItemWrapper"]')
+    ? optionElement
+    : optionElement.querySelector<HTMLElement>('[data-test="DesignSystem-Listbox-ItemWrapper"]');
+  return inner?.getAttribute('data-disabled') === 'true' || optionElement.getAttribute('data-disabled') === 'true';
 };
 
 const focusAdjacentOption = (sourceElement: HTMLElement, direction: 'down' | 'up') => {
@@ -28,7 +30,7 @@ const focusAdjacentOption = (sourceElement: HTMLElement, direction: 'down' | 'up
 };
 
 export const onKeyDown = (event: React.KeyboardEvent) => {
-  // currentTarget is the Listbox.Item root (`li`/`div`); target may be inner row content.
+  // currentTarget is the interactive list row (`ListBody`); target may be nested content inside it.
   const sourceElement = event.currentTarget as HTMLElement;
 
   switch (event.key) {

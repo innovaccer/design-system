@@ -5,8 +5,8 @@ import { ListboxItemProps } from './ListboxItem';
 import { ListboxContext } from '../Listbox';
 import styles from '@css/components/listbox.module.css';
 
-export const ListBody = (props: ListboxItemProps) => {
-  const { children, className, disabled, selected, activated } = props;
+export const ListBody = (props: ListboxItemProps & React.HTMLAttributes<HTMLDivElement>) => {
+  const { children, className, disabled, selected, activated, ...rest } = props;
 
   const contextProp = React.useContext(ListboxContext);
   const { size, type, draggable } = contextProp;
@@ -23,8 +23,16 @@ export const ListBody = (props: ListboxItemProps) => {
     className
   );
 
+  const defaultAriaSelected = type === 'option' && selected ? true : undefined;
+
   return (
-    <div data-disabled={disabled} data-test="DesignSystem-Listbox-ItemWrapper" className={itemClass} tabIndex={-1}>
+    <div
+      data-disabled={disabled}
+      data-test="DesignSystem-Listbox-ItemWrapper"
+      className={itemClass}
+      aria-selected={rest['aria-selected'] ?? defaultAriaSelected}
+      {...rest}
+    >
       {draggable && (
         <Icon
           size={16}

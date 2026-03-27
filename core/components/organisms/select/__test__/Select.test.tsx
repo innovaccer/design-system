@@ -506,13 +506,12 @@ describe('Pre-selected value shows as selected in option list', () => {
     expect(popover).toBeInTheDocument();
 
     const optionElements = getAllByTestId('DesignSystem-Select-Option');
-    const itemElements = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
 
     expect(optionElements).toHaveLength(3);
 
     const selectedOption = optionElements[1];
     expect(selectedOption).toHaveAttribute('aria-selected', 'true');
-    expect(itemElements[1]).toHaveClass('Listbox-item--selected');
+    expect(optionElements[1]).toHaveClass('Listbox-item--selected');
   });
 
   it('should show pre-selected options as selected in multi select', () => {
@@ -540,21 +539,20 @@ describe('Pre-selected value shows as selected in option list', () => {
     expect(popover).toBeInTheDocument();
 
     const optionElements = getAllByTestId('DesignSystem-Select-Option');
-    const itemElements = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
 
     expect(optionElements).toHaveLength(3);
 
     const firstSelectedOption = optionElements[0];
     expect(firstSelectedOption).toHaveAttribute('aria-selected', 'true');
-    expect(itemElements[0]).toHaveClass('Listbox-item--selected');
+    expect(optionElements[0]).toHaveClass('Listbox-item--selected');
 
     const unselectedOption = optionElements[1];
     expect(unselectedOption).toHaveAttribute('aria-selected', 'false');
-    expect(itemElements[1]).not.toHaveClass('Listbox-item--selected');
+    expect(optionElements[1]).not.toHaveClass('Listbox-item--selected');
 
     const secondSelectedOption = optionElements[2];
     expect(secondSelectedOption).toHaveAttribute('aria-selected', 'true');
-    expect(itemElements[2]).toHaveClass('Listbox-item--selected');
+    expect(optionElements[2]).toHaveClass('Listbox-item--selected');
   });
 
   it('should show pre-selected option with checkbox as checked in multi select', () => {
@@ -579,13 +577,12 @@ describe('Pre-selected value shows as selected in option list', () => {
     expect(popover).toBeInTheDocument();
 
     const optionElements = getAllByTestId('DesignSystem-Select-Option');
-    const itemElements = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
 
     expect(optionElements).toHaveLength(3);
 
     const selectedOption = optionElements[1];
     expect(selectedOption).toHaveAttribute('aria-selected', 'true');
-    expect(itemElements[1]).toHaveClass('Listbox-item--selected');
+    expect(optionElements[1]).toHaveClass('Listbox-item--selected');
 
     const checkbox = selectedOption.querySelector('input[type="checkbox"]');
     expect(checkbox).toBeChecked();
@@ -613,12 +610,11 @@ describe('Pre-selected value shows as selected in option list', () => {
     expect(popover).toBeInTheDocument();
 
     const optionElements = getAllByTestId('DesignSystem-Select-Option');
-    const itemElements = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
     expect(optionElements).toHaveLength(3);
 
     const selectedOption = optionElements[1];
     expect(selectedOption).toHaveAttribute('aria-selected', 'true');
-    expect(itemElements[1]).toHaveClass('Listbox-item--selected');
+    expect(optionElements[1]).toHaveClass('Listbox-item--selected');
   });
 });
 
@@ -669,13 +665,12 @@ describe('Pre-selected value with nested object values', () => {
     expect(popover).toBeInTheDocument();
 
     const optionElements = getAllByTestId('DesignSystem-Select-Option');
-    const itemElements = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
 
     expect(optionElements).toHaveLength(3);
 
     const selectedOption = optionElements[0];
     expect(selectedOption).toHaveAttribute('aria-selected', 'true');
-    expect(itemElements[0]).toHaveClass('Listbox-item--selected');
+    expect(optionElements[0]).toHaveClass('Listbox-item--selected');
   });
 
   it('should show pre-selected options as selected in multi select with nested object values', () => {
@@ -724,21 +719,20 @@ describe('Pre-selected value with nested object values', () => {
     expect(popover).toBeInTheDocument();
 
     const optionElements = getAllByTestId('DesignSystem-Select-Option');
-    const itemElements = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
 
     expect(optionElements).toHaveLength(3);
 
     const firstSelectedOption = optionElements[0];
     expect(firstSelectedOption).toHaveAttribute('aria-selected', 'true');
-    expect(itemElements[0]).toHaveClass('Listbox-item--selected');
+    expect(optionElements[0]).toHaveClass('Listbox-item--selected');
 
     const unselectedOption = optionElements[1];
     expect(unselectedOption).toHaveAttribute('aria-selected', 'false');
-    expect(itemElements[1]).not.toHaveClass('Listbox-item--selected');
+    expect(optionElements[1]).not.toHaveClass('Listbox-item--selected');
 
     const secondSelectedOption = optionElements[2];
     expect(secondSelectedOption).toHaveAttribute('aria-selected', 'true');
-    expect(itemElements[2]).toHaveClass('Listbox-item--selected');
+    expect(optionElements[2]).toHaveClass('Listbox-item--selected');
   });
 
   it('should handle mixed value types in the same select', () => {
@@ -773,13 +767,12 @@ describe('Pre-selected value with nested object values', () => {
     expect(popover).toBeInTheDocument();
 
     const optionElements = getAllByTestId('DesignSystem-Select-Option');
-    const itemElements = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
 
     expect(optionElements).toHaveLength(3);
 
     const selectedOption = optionElements[1];
     expect(selectedOption).toHaveAttribute('aria-selected', 'true');
-    expect(itemElements[1]).toHaveClass('Listbox-item--selected');
+    expect(optionElements[1]).toHaveClass('Listbox-item--selected');
   });
 
   it('should handle deeply nested object values', () => {
@@ -841,13 +834,12 @@ describe('Pre-selected value with nested object values', () => {
     expect(popover).toBeInTheDocument();
 
     const optionElements = getAllByTestId('DesignSystem-Select-Option');
-    const itemElements = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
 
     expect(optionElements).toHaveLength(2);
 
     const selectedOption = optionElements[0];
     expect(selectedOption).toHaveAttribute('aria-selected', 'true');
-    expect(itemElements[0]).toHaveClass('Listbox-item--selected');
+    expect(optionElements[0]).toHaveClass('Listbox-item--selected');
   });
 
   it('should handle array values within nested objects', () => {
@@ -900,13 +892,12 @@ describe('Pre-selected value with nested object values', () => {
     expect(popover).toBeInTheDocument();
 
     const optionElements = getAllByTestId('DesignSystem-Select-Option');
-    const itemElements = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
 
     expect(optionElements).toHaveLength(2);
 
     const selectedOption = optionElements[0];
     expect(selectedOption).toHaveAttribute('aria-selected', 'true');
-    expect(itemElements[0]).toHaveClass('Listbox-item--selected');
+    expect(optionElements[0]).toHaveClass('Listbox-item--selected');
   });
 });
 
@@ -942,7 +933,7 @@ describe('Select component size functionality tests', () => {
       const triggerButton = getByTestId('DesignSystem-Select-trigger');
       fireEvent.click(triggerButton);
 
-      const listboxItems = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+      const listboxItems = getAllByTestId('DesignSystem-Select-Option');
       expect(listboxItems).toHaveLength(2);
 
       listboxItems.forEach((item) => {
@@ -963,7 +954,7 @@ describe('Select component size functionality tests', () => {
       const triggerButton = getByTestId('DesignSystem-Select-trigger');
       fireEvent.click(triggerButton);
 
-      const listboxItems = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+      const listboxItems = getAllByTestId('DesignSystem-Select-Option');
       expect(listboxItems).toHaveLength(2);
 
       listboxItems.forEach((item) => {
@@ -984,7 +975,7 @@ describe('Select component size functionality tests', () => {
       const triggerButton = getByTestId('DesignSystem-Select-trigger');
       fireEvent.click(triggerButton);
 
-      const listboxItems = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+      const listboxItems = getAllByTestId('DesignSystem-Select-Option');
       expect(listboxItems).toHaveLength(2);
 
       listboxItems.forEach((item) => {
@@ -1004,7 +995,7 @@ describe('Select component size functionality tests', () => {
       const triggerButton = getByTestId('DesignSystem-Select-trigger');
       fireEvent.click(triggerButton);
 
-      const listboxItems = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+      const listboxItems = getAllByTestId('DesignSystem-Select-Option');
       expect(listboxItems).toHaveLength(1);
 
       expect(listboxItems[0]).toHaveClass('Listbox-item--compressed');
@@ -1027,12 +1018,10 @@ describe('Select component size functionality tests', () => {
       fireEvent.click(triggerButton);
 
       const optionElements = getAllByTestId('DesignSystem-Select-Option');
-      const listboxItems = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
 
       expect(optionElements).toHaveLength(3);
-      expect(listboxItems).toHaveLength(3);
 
-      listboxItems.forEach((item) => {
+      optionElements.forEach((item) => {
         expect(item).toHaveClass('Listbox-item--tight');
       });
     });
@@ -1052,7 +1041,7 @@ describe('Select component size functionality tests', () => {
       const triggerButton = getByTestId('DesignSystem-Select-trigger');
       fireEvent.click(triggerButton);
 
-      const listboxItems = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+      const listboxItems = getAllByTestId('DesignSystem-Select-Option');
       expect(listboxItems).toHaveLength(4);
 
       listboxItems.forEach((item) => {
@@ -1148,7 +1137,7 @@ describe('Select component size functionality tests', () => {
       const inputWrapper = getByTestId('DesignSystem-InputWrapper');
       expect(inputWrapper).toHaveClass('Input--tiny');
 
-      const listboxItems = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+      const listboxItems = getAllByTestId('DesignSystem-Select-Option');
       expect(listboxItems).toHaveLength(2);
       listboxItems.forEach((item) => {
         expect(item).toHaveClass('Listbox-item--tight');
@@ -1174,7 +1163,7 @@ describe('Select component size functionality tests', () => {
       const inputWrapper = getByTestId('DesignSystem-InputWrapper');
       expect(inputWrapper).toHaveClass('Input--regular');
 
-      const listboxItems = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+      const listboxItems = getAllByTestId('DesignSystem-Select-Option');
       expect(listboxItems).toHaveLength(2);
       listboxItems.forEach((item) => {
         expect(item).toHaveClass('Listbox-item--compressed');
@@ -1200,7 +1189,7 @@ describe('Select component size functionality tests', () => {
       const inputWrapper = getByTestId('DesignSystem-InputWrapper');
       expect(inputWrapper).toHaveClass('Input--regular');
 
-      const listboxItems = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+      const listboxItems = getAllByTestId('DesignSystem-Select-Option');
       expect(listboxItems).toHaveLength(2);
       listboxItems.forEach((item) => {
         expect(item).toHaveClass('Listbox-item--standard');
@@ -1223,7 +1212,7 @@ describe('Select component size functionality tests', () => {
       const triggerButton = getByTestId('DesignSystem-Select-trigger');
       fireEvent.click(triggerButton);
 
-      const listboxItems = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+      const listboxItems = getAllByTestId('DesignSystem-Select-Option');
       const checkboxes = getAllByTestId('DesignSystem-Checkbox');
 
       expect(listboxItems).toHaveLength(3);
@@ -1251,7 +1240,7 @@ describe('Select component size functionality tests', () => {
       const inputWrapper = getByTestId('DesignSystem-InputWrapper');
       expect(inputWrapper).toHaveClass('Input--tiny');
 
-      const listboxItems = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+      const listboxItems = getAllByTestId('DesignSystem-Select-Option');
       const checkboxes = getAllByTestId('DesignSystem-Checkbox');
 
       expect(listboxItems).toHaveLength(2);
@@ -1276,7 +1265,7 @@ describe('Select component size functionality tests', () => {
       const triggerButton = getByTestId('DesignSystem-Select-trigger');
       fireEvent.click(triggerButton);
 
-      const listboxItems = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+      const listboxItems = getAllByTestId('DesignSystem-Select-Option');
       expect(listboxItems).toHaveLength(1);
 
       expect(listboxItems[0]).toBeInTheDocument();
@@ -1457,7 +1446,7 @@ describe('Select component size functionality tests', () => {
       const triggerButton = getByTestId('DesignSystem-Select-trigger');
       fireEvent.click(triggerButton);
 
-      const options = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+      const options = getAllByTestId('DesignSystem-Select-Option');
       fireEvent.click(options[0]);
 
       expect(triggerButton).toHaveClass('Select-trigger--outlined');
@@ -1575,7 +1564,7 @@ describe('Select component size functionality tests', () => {
       const triggerButton = getByTestId('DesignSystem-Select-trigger');
       fireEvent.click(triggerButton);
 
-      const options = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+      const options = getAllByTestId('DesignSystem-Select-Option');
       fireEvent.click(options[0]);
 
       expect(triggerButton).toHaveClass('Select-trigger--error');

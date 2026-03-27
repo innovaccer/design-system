@@ -13,14 +13,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--compressed Listbox-item--description"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -45,14 +45,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--compressed Listbox-item--description"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -82,14 +82,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--compressed Listbox-item--description"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -114,14 +114,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--compressed Listbox-item--description"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -151,14 +151,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--compressed Listbox-item--description"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -183,14 +183,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--compressed Listbox-item--description"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -220,14 +220,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--compressed Listbox-item--description"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -252,14 +252,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--compressed Listbox-item--description"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -289,14 +289,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--compressed Listbox-item--option"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -321,14 +321,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--compressed Listbox-item--option"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -358,14 +358,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--compressed Listbox-item--option"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -390,14 +390,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--compressed Listbox-item--option"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -427,14 +427,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--compressed Listbox-item--option"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -459,14 +459,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--compressed Listbox-item--option"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -496,14 +496,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--compressed Listbox-item--option"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -528,14 +528,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--compressed Listbox-item--option"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -565,14 +565,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--compressed Listbox-item--resource"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -597,14 +597,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--compressed Listbox-item--resource"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -634,14 +634,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--compressed Listbox-item--resource"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -666,14 +666,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--compressed Listbox-item--resource"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -703,14 +703,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--compressed Listbox-item--resource"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -735,14 +735,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--compressed Listbox-item--resource"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -772,14 +772,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--compressed Listbox-item--resource"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -804,14 +804,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--compressed Listbox-item--resource"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -841,14 +841,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--standard Listbox-item--description"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -873,14 +873,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--standard Listbox-item--description"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -910,14 +910,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--standard Listbox-item--description"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -942,14 +942,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--standard Listbox-item--description"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -979,14 +979,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--standard Listbox-item--description"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -1011,14 +1011,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--standard Listbox-item--description"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -1048,14 +1048,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--standard Listbox-item--description"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -1080,14 +1080,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--standard Listbox-item--description"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -1117,14 +1117,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--standard Listbox-item--option"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -1149,14 +1149,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--standard Listbox-item--option"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -1186,14 +1186,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--standard Listbox-item--option"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -1218,14 +1218,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--standard Listbox-item--option"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -1255,14 +1255,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--standard Listbox-item--option"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -1287,14 +1287,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--standard Listbox-item--option"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -1324,14 +1324,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--standard Listbox-item--option"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -1356,14 +1356,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--standard Listbox-item--option"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -1393,14 +1393,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--standard Listbox-item--resource"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -1425,14 +1425,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--standard Listbox-item--resource"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -1462,14 +1462,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--standard Listbox-item--resource"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -1494,14 +1494,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--standard Listbox-item--resource"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -1531,14 +1531,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--standard Listbox-item--resource"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -1563,14 +1563,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--standard Listbox-item--resource"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -1600,14 +1600,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--standard Listbox-item--resource"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -1632,14 +1632,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--standard Listbox-item--resource"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -1669,14 +1669,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--tight Listbox-item--description"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -1701,14 +1701,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--tight Listbox-item--description"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -1738,14 +1738,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--tight Listbox-item--description"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -1770,14 +1770,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--tight Listbox-item--description"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -1807,14 +1807,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--tight Listbox-item--description"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -1839,14 +1839,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--tight Listbox-item--description"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -1876,14 +1876,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--tight Listbox-item--description"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -1908,14 +1908,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--tight Listbox-item--description"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -1945,14 +1945,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--tight Listbox-item--option"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -1977,14 +1977,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--tight Listbox-item--option"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -2014,14 +2014,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--tight Listbox-item--option"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -2046,14 +2046,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--tight Listbox-item--option"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -2083,14 +2083,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--tight Listbox-item--option"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -2115,14 +2115,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--tight Listbox-item--option"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -2152,14 +2152,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--tight Listbox-item--option"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -2184,14 +2184,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--tight Listbox-item--option"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -2221,14 +2221,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--tight Listbox-item--resource"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -2253,14 +2253,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--tight Listbox-item--resource"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -2290,14 +2290,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--tight Listbox-item--resource"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -2322,14 +2322,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--tight Listbox-item--resource"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -2359,14 +2359,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--tight Listbox-item--resource"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -2391,14 +2391,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--tight Listbox-item--resource"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -2428,14 +2428,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--tight Listbox-item--resource"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -2460,14 +2460,14 @@ exports[`Listbox component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--tight Listbox-item--resource"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -2501,13 +2501,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--compressed Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -2545,13 +2546,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--compressed Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -2594,13 +2596,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--compressed Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -2638,13 +2641,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--compressed Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -2687,13 +2691,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--compressed Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -2731,13 +2736,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--compressed Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -2780,13 +2786,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--compressed Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -2824,13 +2831,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--compressed Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -2873,13 +2881,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--compressed Listbox-item--option"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -2917,13 +2926,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--compressed Listbox-item--option"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -2966,13 +2976,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--compressed Listbox-item--option"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -3010,13 +3021,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--compressed Listbox-item--option"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -3059,13 +3071,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--compressed Listbox-item--option"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -3103,13 +3116,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--compressed Listbox-item--option"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -3152,13 +3166,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--compressed Listbox-item--option"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -3196,13 +3211,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--compressed Listbox-item--option"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -3245,13 +3261,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--compressed Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -3289,13 +3306,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--compressed Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -3338,13 +3356,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--compressed Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -3382,13 +3401,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--compressed Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -3431,13 +3451,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--compressed Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -3475,13 +3496,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--compressed Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -3524,13 +3546,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--compressed Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -3568,13 +3591,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--compressed Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -3617,13 +3641,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--standard Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -3661,13 +3686,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--standard Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -3710,13 +3736,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--standard Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -3754,13 +3781,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--standard Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -3803,13 +3831,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--standard Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -3847,13 +3876,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--standard Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -3896,13 +3926,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--standard Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -3940,13 +3971,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--standard Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -3989,13 +4021,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--standard Listbox-item--option"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -4033,13 +4066,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--standard Listbox-item--option"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -4082,13 +4116,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--standard Listbox-item--option"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -4126,13 +4161,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--standard Listbox-item--option"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -4175,13 +4211,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--standard Listbox-item--option"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -4210,15 +4247,14 @@ exports[`Listbox component snapshot
     <li
       class="Listbox-item-wrapper"
       data-test="DesignSystem-Listbox-Item"
-      disabled=""
-      id="list-item-id"
-      role="option"
-      tabindex="-1"
+      role="presentation"
     >
       <div
         class="Listbox-item Listbox-item--standard Listbox-item--resource Listbox-item--disabled"
         data-disabled="true"
         data-test="DesignSystem-Listbox-ItemWrapper"
+        id="list-item-id"
+        role="option"
         tabindex="-1"
       >
         <div>
@@ -4245,13 +4281,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--standard Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -4287,13 +4324,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--standard Listbox-item--option"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -4336,13 +4374,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--standard Listbox-item--option"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -4380,13 +4419,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--standard Listbox-item--option"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -4429,13 +4469,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--standard Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -4473,13 +4514,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--standard Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -4522,13 +4564,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--standard Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -4566,13 +4609,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--standard Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -4615,13 +4659,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--standard Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -4659,13 +4704,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--standard Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -4708,13 +4754,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--standard Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -4752,13 +4799,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--standard Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -4801,13 +4849,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--tight Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -4845,13 +4894,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--tight Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -4894,13 +4944,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--tight Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -4938,13 +4989,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--tight Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -4987,13 +5039,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--tight Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -5031,13 +5084,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--tight Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -5080,13 +5134,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--tight Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -5124,13 +5179,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--tight Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -5173,13 +5229,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--tight Listbox-item--option"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -5217,13 +5274,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--tight Listbox-item--option"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -5266,13 +5324,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--tight Listbox-item--option"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -5310,13 +5369,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--tight Listbox-item--option"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -5359,13 +5419,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--tight Listbox-item--option"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -5403,13 +5464,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--tight Listbox-item--option"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -5452,13 +5514,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--tight Listbox-item--option"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -5496,13 +5559,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--tight Listbox-item--option"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -5545,13 +5609,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--tight Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -5589,13 +5654,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--tight Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -5638,13 +5704,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--tight Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -5682,13 +5749,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--tight Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -5731,13 +5799,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--tight Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -5775,13 +5844,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--tight Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -5824,13 +5894,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--tight Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -5868,13 +5939,14 @@ exports[`Listbox component snapshot
         <li
           class=""
           data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-          role="option"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--tight Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
+            id="list-item-id"
+            parentprops="[object Object]"
+            role="option"
             tabindex="-1"
           >
             <i
@@ -5913,15 +5985,15 @@ exports[`Listbox component snapshot for states
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
-        type="description"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--standard Listbox-item--resource"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
+          type="description"
         >
           <div>
             list item element
@@ -5951,15 +6023,15 @@ exports[`Listbox component snapshot for states
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
-        type="option"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--standard Listbox-item--resource"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
+          type="option"
         >
           <div>
             list item element
@@ -5989,15 +6061,15 @@ exports[`Listbox component snapshot for states
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
-        type="resource"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--standard Listbox-item--resource"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
+          type="resource"
         >
           <div>
             list item element
@@ -6027,15 +6099,15 @@ exports[`Listbox component snapshot for states
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
-        type="description"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--standard Listbox-item--resource Listbox-item--activated"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
+          type="description"
         >
           <div>
             list item element
@@ -6065,15 +6137,15 @@ exports[`Listbox component snapshot for states
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
-        type="option"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--standard Listbox-item--resource Listbox-item--activated"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
+          type="option"
         >
           <div>
             list item element
@@ -6103,15 +6175,15 @@ exports[`Listbox component snapshot for states
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
-        type="resource"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--standard Listbox-item--resource Listbox-item--activated"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
+          type="resource"
         >
           <div>
             list item element
@@ -6141,15 +6213,15 @@ exports[`Listbox component snapshot for states
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
-        type="description"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--standard Listbox-item--resource"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
+          type="description"
         >
           <div>
             list item element
@@ -6179,15 +6251,15 @@ exports[`Listbox component snapshot for states
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
-        type="option"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--standard Listbox-item--resource"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
+          type="option"
         >
           <div>
             list item element
@@ -6217,15 +6289,15 @@ exports[`Listbox component snapshot for states
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
-        type="resource"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--standard Listbox-item--resource"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
+          type="resource"
         >
           <div>
             list item element
@@ -6255,15 +6327,15 @@ exports[`Listbox component snapshot for states
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
-        type="description"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--standard Listbox-item--resource Listbox-item--activated"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
+          type="description"
         >
           <div>
             list item element
@@ -6293,15 +6365,15 @@ exports[`Listbox component snapshot for states
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
-        type="option"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--standard Listbox-item--resource Listbox-item--activated"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
+          type="option"
         >
           <div>
             list item element
@@ -6331,15 +6403,15 @@ exports[`Listbox component snapshot for states
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        id="list-item-id"
-        role="option"
-        tabindex="0"
-        type="resource"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--standard Listbox-item--resource Listbox-item--activated"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          id="list-item-id"
+          role="option"
+          tabindex="0"
+          type="resource"
         >
           <div>
             list item element
@@ -6369,14 +6441,14 @@ exports[`Listbox item component snapshot
       <div
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--standard Listbox-item--resource"
           data-disabled="false"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -6406,14 +6478,14 @@ exports[`Listbox item component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        role="option"
-        tabindex="0"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--standard Listbox-item--resource"
           data-disabled="false"
           data-test="DesignSystem-Listbox-ItemWrapper"
-          tabindex="-1"
+          role="option"
+          tabindex="0"
         >
           <div>
             list item element
@@ -6443,14 +6515,13 @@ exports[`Listbox item component snapshot
       <div
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        disabled=""
-        role="option"
-        tabindex="-1"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--standard Listbox-item--resource Listbox-item--disabled"
           data-disabled="true"
           data-test="DesignSystem-Listbox-ItemWrapper"
+          role="option"
           tabindex="-1"
         >
           <div>
@@ -6481,14 +6552,13 @@ exports[`Listbox item component snapshot
       <li
         class="Listbox-item-wrapper"
         data-test="DesignSystem-Listbox-Item"
-        disabled=""
-        role="option"
-        tabindex="-1"
+        role="presentation"
       >
         <div
           class="Listbox-item Listbox-item--standard Listbox-item--resource Listbox-item--disabled"
           data-disabled="true"
           data-test="DesignSystem-Listbox-ItemWrapper"
+          role="option"
           tabindex="-1"
         >
           <div>
