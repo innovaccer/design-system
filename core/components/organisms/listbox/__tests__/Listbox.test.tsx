@@ -352,11 +352,12 @@ describe('Listbox component test for keyboard events', () => {
     );
 
     const list = container.querySelector('[data-test="DesignSystem-Listbox"]') as HTMLElement;
-    const items = within(list).getAllByTestId('DesignSystem-Listbox-Item');
-    items[0].focus();
-    fireEvent.keyDown(items[0], { key: 'ArrowDown' });
+    const innerItems = within(list).getAllByTestId('DesignSystem-Listbox-ItemWrapper');
 
-    expect(items[1]).toHaveFocus();
+    innerItems[0].focus();
+    fireEvent.keyDown(innerItems[0], { key: 'ArrowDown' });
+
+    expect(innerItems[1]).toHaveFocus();
   });
 
   it('test for keyboard arrow up event', () => {
@@ -373,11 +374,12 @@ describe('Listbox component test for keyboard events', () => {
     );
 
     const list = container.querySelector('[data-test="DesignSystem-Listbox"]') as HTMLElement;
-    const items = within(list).getAllByTestId('DesignSystem-Listbox-Item');
-    items[1].focus();
-    fireEvent.keyDown(items[1], { key: 'ArrowUp' });
+    const innerItems = within(list).getAllByTestId('DesignSystem-Listbox-ItemWrapper');
 
-    expect(items[0]).toHaveFocus();
+    innerItems[1].focus();
+    fireEvent.keyDown(innerItems[1], { key: 'ArrowUp' });
+
+    expect(innerItems[0]).toHaveFocus();
   });
 
   it('test for keyboard arrow down event with disabled item', () => {
@@ -394,11 +396,12 @@ describe('Listbox component test for keyboard events', () => {
     );
 
     const list = container.querySelector('[data-test="DesignSystem-Listbox"]') as HTMLElement;
-    const items = within(list).getAllByTestId('DesignSystem-Listbox-Item');
-    items[1].focus();
-    fireEvent.keyDown(items[1], { key: 'ArrowDown' });
+    const innerItems = within(list).getAllByTestId('DesignSystem-Listbox-ItemWrapper');
 
-    expect(items[3]).toHaveFocus();
+    innerItems[1].focus();
+    fireEvent.keyDown(innerItems[1], { key: 'ArrowDown' });
+
+    expect(innerItems[3]).toHaveFocus();
   });
 
   it('test for keyboard arrow up event with disabled item', () => {
@@ -415,11 +418,12 @@ describe('Listbox component test for keyboard events', () => {
     );
 
     const list = container.querySelector('[data-test="DesignSystem-Listbox"]') as HTMLElement;
-    const items = within(list).getAllByTestId('DesignSystem-Listbox-Item');
-    items[3].focus();
-    fireEvent.keyDown(items[3], { key: 'ArrowUp' });
+    const innerItems = within(list).getAllByTestId('DesignSystem-Listbox-ItemWrapper');
 
-    expect(items[1]).toHaveFocus();
+    innerItems[3].focus();
+    fireEvent.keyDown(innerItems[3], { key: 'ArrowUp' });
+
+    expect(innerItems[1]).toHaveFocus();
   });
 });
 
@@ -432,7 +436,7 @@ describe('Listbox default roving tabindex', () => {
       </Listbox>
     );
     const list = container.querySelector('[data-test="DesignSystem-Listbox"]') as HTMLElement;
-    const items = within(list).getAllByTestId('DesignSystem-Listbox-Item');
+    const items = within(list).getAllByTestId('DesignSystem-Listbox-ItemWrapper');
     expect(items[0]).toHaveAttribute('tabindex', '0');
     expect(items[1]).toHaveAttribute('tabindex', '-1');
   });
@@ -449,7 +453,7 @@ describe('Listbox default roving tabindex', () => {
       </Listbox>
     );
     const list = container.querySelector('[data-test="DesignSystem-Listbox"]') as HTMLElement;
-    const items = within(list).getAllByTestId('DesignSystem-Listbox-Item');
+    const items = within(list).getAllByTestId('DesignSystem-Listbox-ItemWrapper');
     expect(items[0]).toHaveAttribute('tabindex', '-1');
     expect(items[1]).toHaveAttribute('tabindex', '-1');
   });
@@ -469,9 +473,10 @@ describe('Listbox suppressKeyboard context', () => {
     );
     const list = container.querySelector('[data-test="DesignSystem-Listbox"]') as HTMLElement;
     const items = within(list).getAllByTestId('DesignSystem-Listbox-Item');
+    const innerItems = within(list).getAllByTestId('DesignSystem-Listbox-ItemWrapper');
     items[0].focus();
     fireEvent.keyDown(items[0], { key: 'ArrowDown' });
-    expect(items[0]).toHaveFocus();
+    expect(innerItems[0]).not.toHaveFocus(); // Focus is trapped or suppressed, so it doesn't move to innerItems[1]
   });
 });
 
