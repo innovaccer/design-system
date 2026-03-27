@@ -681,4 +681,10 @@ describe('handleInputKeyDown function', () => {
     expect(triggerRefMock.current.focus).toHaveBeenCalled();
     expect(setFocusedOptionMock).toHaveBeenCalledWith(undefined);
   });
+
+  it('should not change focused option when typing in search (non-arrow keys)', () => {
+    const event: React.KeyboardEvent = { key: 'a', preventDefault: jest.fn() } as unknown as React.KeyboardEvent;
+    handleInputKeyDown(event, listRefMock, setFocusedOptionMock, setOpenPopoverMock, triggerRefMock);
+    expect(setFocusedOptionMock).not.toHaveBeenCalled();
+  });
 });
