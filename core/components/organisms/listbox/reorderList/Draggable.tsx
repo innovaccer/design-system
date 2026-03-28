@@ -445,8 +445,10 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
     const firstEnabledIndex = this.props.values.findIndex((value: any) => !(value && value.props.disabled));
     const isOutOfBounds = this.state.focusedIndex < 0 || this.state.focusedIndex >= this.props.values.length;
     const currentItemIsDisabled =
-      !isOutOfBounds && this.props.values[this.state.focusedIndex] && this.props.values[this.state.focusedIndex].props.disabled;
-    const effectiveFocusedIndex = (isOutOfBounds || currentItemIsDisabled) ? firstEnabledIndex : this.state.focusedIndex;
+      !isOutOfBounds &&
+      this.props.values[this.state.focusedIndex] &&
+      this.props.values[this.state.focusedIndex].props.disabled;
+    const effectiveFocusedIndex = isOutOfBounds || currentItemIsDisabled ? firstEnabledIndex : this.state.focusedIndex;
 
     const baseStyle = {
       userSelect: 'none',

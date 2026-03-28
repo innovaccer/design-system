@@ -194,7 +194,7 @@
   background: var(--secondary-dark);
 }
 
-.Button--transparent:focus:active {
+.Button--transparent:focus-visible:active {
   background: var(--secondary-dark);
 }
 
@@ -225,14 +225,14 @@
   box-shadow: inset 0 0 0 2px var(--primary-dark);
 }
 
-.Button--selected:focus {
+.Button--selected:focus-visible {
   background: var(--primary-ultra-light);
   outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: var(--spacing-05);
   box-shadow: inset 0 0 0 var(--border-width-05) var(--primary);
 }
 
-.Button--selected:focus:active {
+.Button--selected:focus-visible:active {
   background: var(--primary-lighter);
   outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: var(--spacing-05);
@@ -273,8 +273,13 @@
   box-shadow: inset 0 0 0 1px var(--inverse-lightest);
 }
 
+<<<<<<< HEAD
 .Button-outlined--basic:focus {
   outline: var(--border-width-05) solid var(--primary-focus);
+=======
+.Button-outlined--basic:focus-visible {
+  outline: var(--border-width-05) solid var(--inverse-focus);
+>>>>>>> d454fb40c (style(Button): update focus ring to use :focus-visible for better mouse UX)
   outline-offset: var(--spacing-05);
   box-shadow: inset 0 0 0 var(--border-width-2-5) var(--secondary);
 }
@@ -302,14 +307,14 @@
   box-shadow: inset 0 0 0 2px var(--primary-dark);
 }
 
-.Button-outlined--selected:focus {
+.Button-outlined--selected:focus-visible {
   color: var(--primary-dark);
   outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: var(--spacing-05);
   box-shadow: inset 0 0 0 var(--border-width-05) var(--primary);
 }
 
-.Button-outlined--selected:focus:active {
+.Button-outlined--selected:focus-visible:active {
   background: var(--primary-lighter);
   color: var(--primary-darker);
   outline: var(--border-width-05) solid var(--primary-focus);
@@ -341,8 +346,13 @@
   color: var(--primary-dark);
 }
 
+<<<<<<< HEAD
 .Button-outlined--primary:focus {
   outline: var(--border-width-05) solid var(--primary-focus);
+=======
+.Button-outlined--primary:focus-visible {
+  outline: var(--border-width-05) solid var(--inverse-focus);
+>>>>>>> d454fb40c (style(Button): update focus ring to use :focus-visible for better mouse UX)
   outline-offset: var(--spacing-05);
   box-shadow: inset 0 0 0 var(--border-width-2-5) var(--primary);
 }
@@ -371,8 +381,13 @@
   color: var(--alert-dark);
 }
 
+<<<<<<< HEAD
 .Button-outlined--alert:focus {
   outline: var(--border-width-05) solid var(--primary-focus);
+=======
+.Button-outlined--alert:focus-visible {
+  outline: var(--border-width-05) solid var(--inverse-focus);
+>>>>>>> d454fb40c (style(Button): update focus ring to use :focus-visible for better mouse UX)
   outline-offset: var(--spacing-05);
   box-shadow: inset 0 0 0 var(--border-width-2-5) var(--alert);
 }
