@@ -397,9 +397,18 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
       this.animateItems(this.needle, selectedItem, offset, true);
     } else if ((e.key === 'ArrowDown' || e.key === 'j') && selectedItem === -1) {
       e.preventDefault();
-      const nextIndex = Math.min(this.state.focusedIndex + 1, this.props.values.length - 1);
-      this.setState({ focusedIndex: nextIndex });
-      (this.getChildren()[nextIndex] as HTMLElement).focus();
+      let nextIndex = this.state.focusedIndex + 1;
+      while (
+        nextIndex < this.props.values.length &&
+        this.props.values[nextIndex] &&
+        this.props.values[nextIndex].props.disabled
+      ) {
+        nextIndex++;
+      }
+      if (nextIndex < this.props.values.length) {
+        this.setState({ focusedIndex: nextIndex });
+        (this.getChildren()[nextIndex] as HTMLElement).focus();
+      }
     }
     if ((e.key === 'ArrowUp' || e.key === 'k') && selectedItem > -1 && this.needle > 0) {
       e.preventDefault();
@@ -408,9 +417,14 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
       this.animateItems(this.needle, selectedItem, offset, true);
     } else if ((e.key === 'ArrowUp' || e.key === 'k') && selectedItem === -1) {
       e.preventDefault();
-      const nextIndex = Math.max(this.state.focusedIndex - 1, 0);
-      this.setState({ focusedIndex: nextIndex });
-      (this.getChildren()[nextIndex] as HTMLElement).focus();
+      let nextIndex = this.state.focusedIndex - 1;
+      while (nextIndex >= 0 && this.props.values[nextIndex] && this.props.values[nextIndex].props.disabled) {
+        nextIndex--;
+      }
+      if (nextIndex >= 0) {
+        this.setState({ focusedIndex: nextIndex });
+        (this.getChildren()[nextIndex] as HTMLElement).focus();
+      }
     }
     if (e.key === 'Escape' && selectedItem > -1) {
       this.getChildren().forEach((item) => {
@@ -429,9 +443,10 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
 
   render() {
     const firstEnabledIndex = this.props.values.findIndex((value: any) => !(value && value.props.disabled));
+    const isOutOfBounds = this.state.focusedIndex < 0 || this.state.focusedIndex >= this.props.values.length;
     const currentItemIsDisabled =
-      this.props.values[this.state.focusedIndex] && this.props.values[this.state.focusedIndex].props.disabled;
-    const effectiveFocusedIndex = currentItemIsDisabled ? firstEnabledIndex : this.state.focusedIndex;
+      !isOutOfBounds && this.props.values[this.state.focusedIndex] && this.props.values[this.state.focusedIndex].props.disabled;
+    const effectiveFocusedIndex = (isOutOfBounds || currentItemIsDisabled) ? firstEnabledIndex : this.state.focusedIndex;
 
     const baseStyle = {
       userSelect: 'none',

@@ -113,7 +113,7 @@
 
 /* Listbox type - draggable  */
 
-.Listbox-item--draggable:focus {
+.Listbox-item--draggable:focus-visible {
   outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: calc(-1 * var(--border-width-05));
 }
