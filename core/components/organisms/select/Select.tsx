@@ -341,7 +341,7 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
     if (!openPopover || !listRef.current) return;
     const idx = getRovingIndex(listRef, focusedOption);
     setRovingIndex(idx);
-  }, [openPopover, focusedOption, selectValue]);
+  }, [openPopover, focusedOption, selectValue, children]);
 
   React.useEffect(() => {
     if (value) {
