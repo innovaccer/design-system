@@ -47,7 +47,7 @@
 }
 
 .Badge--accent1 {
-  background: var(--accent1);
+  background: var(--accent1-dark);
   color: var(--white);
 }
 

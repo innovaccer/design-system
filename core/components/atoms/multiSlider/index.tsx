@@ -371,7 +371,11 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
           {/* eslint-enable  */}
           <span className={SliderTicksClass} />
           {labelRenderer !== false && (
-            <Text size="small" appearance={active ? 'default' : 'subtle'}>
+            <Text
+              size="small"
+              appearance={disabled ? 'disabled' : active ? 'default' : 'subtle'}
+              weight={!disabled && active ? 'strong' : undefined}
+            >
               {this.formatLabel(i)}
             </Text>
           )}
