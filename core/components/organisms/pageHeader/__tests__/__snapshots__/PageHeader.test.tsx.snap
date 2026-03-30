@@ -156,6 +156,7 @@ exports[`Navigation component
                     </span>
                   </span>
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--disabled MetaList-seperator"
                     data-test="DesignSystem-MetaList--rightSeperator"
                     style="font-size: 8px; width: 8px;"
@@ -520,6 +521,7 @@ exports[`Navigation component
                     </span>
                   </span>
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--disabled MetaList-seperator"
                     data-test="DesignSystem-MetaList--rightSeperator"
                     style="font-size: 8px; width: 8px;"
@@ -811,6 +813,7 @@ exports[`Navigation component
                     </span>
                   </span>
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--disabled MetaList-seperator"
                     data-test="DesignSystem-MetaList--rightSeperator"
                     style="font-size: 8px; width: 8px;"
@@ -1778,6 +1781,7 @@ exports[`Navigation component
                     </span>
                   </span>
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--disabled MetaList-seperator"
                     data-test="DesignSystem-MetaList--rightSeperator"
                     style="font-size: 8px; width: 8px;"
