@@ -1,6 +1,5 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import Text from '@/components/atoms/text';
 import { MessageAppearance } from '@/common.type';
 import buttonStyles from '@css/components/button.module.css';
 import toastStyles from '@css/components/toast.module.css';
@@ -27,8 +26,10 @@ const ActionButton = (props: Props) => {
   };
 
   return (
-    <button className={buttonClass} onClick={onClickHandler}>
-      <Text appearance="white">{label}</Text>
+    <button type="button" className={buttonClass} onClick={onClickHandler}>
+      <span className={toastStyles['Toast-actionButton-label']} data-test="DesignSystem-Toast-ActionButton-Label">
+        {label}
+      </span>
     </button>
   );
 };

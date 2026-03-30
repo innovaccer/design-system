@@ -1,6 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { Icon, Text } from '@/index';
+import { isSpaceKey } from '@/accessibility/utils';
 import styles from '@css/components/stepper.module.css';
 
 export interface StepProps {
@@ -10,10 +11,12 @@ export interface StepProps {
   active: boolean;
   completed: boolean;
   onChange?: (label: string, value?: string | number) => void;
+  onKeyDown?: (e: React.KeyboardEvent) => void;
+  isTabStop?: boolean;
 }
 
-export const Step = (props: StepProps) => {
-  const { label, value, disabled, active, completed, onChange } = props;
+export const Step = React.forwardRef<HTMLDivElement, StepProps>((props, ref) => {
+  const { label, value, disabled, active, completed, onChange, onKeyDown, isTabStop = false } = props;
 
   const StepClass = classNames({
     [styles['Step']]: true,
@@ -39,8 +42,14 @@ export const Step = (props: StepProps) => {
   };
 
   const onKeyDownHandler = (event: React.KeyboardEvent) => {
-    if (event.key === 'Enter' || event.key === ' ') {
+    if (['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) {
+      onKeyDown?.(event);
+      return;
+    }
+    if (event.key === 'Enter' || isSpaceKey(event)) {
       event.preventDefault();
+      // Prevent auto-repeat: only process first keydown
+      if (event.repeat) return;
       onClickHandle();
     }
   };
@@ -49,11 +58,12 @@ export const Step = (props: StepProps) => {
 
   return (
     <div
+      ref={ref}
       data-test="DesignSystem-Step"
       className={StepClass}
       onKeyDown={(e) => onKeyDownHandler(e)}
       onClick={onClickHandle}
-      tabIndex={disabled ? -1 : 0}
+      tabIndex={disabled ? -1 : isTabStop ? 0 : -1}
       role="button"
       aria-disabled={disabled || undefined}
     >
@@ -70,7 +80,7 @@ export const Step = (props: StepProps) => {
       )}
     </div>
   );
-};
+});
 
 Step.displayName = 'Step';
 

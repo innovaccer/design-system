@@ -88,6 +88,7 @@ export const Toast = (props: ToastProps) => {
       [styles['Toast-icon']]: true,
       [styles[`Toast-icon--${align}`]]: align,
       [styles[`Toast-icon--${appearance}`]]: appearance,
+      [styles['Toast-close-icon']]: align === 'right',
       [styles[`Toast-close-icon--${appearance}`]]: appearance && align === 'right',
     });
 

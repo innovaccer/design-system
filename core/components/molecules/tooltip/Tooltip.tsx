@@ -183,7 +183,9 @@ Tooltip.useAutoTooltip = function () {
 };
 
 Tooltip.defaultProps = {
-  hoverable: false,
+  hoverable: true,
+  showTooltip: true,
+  showOnTruncation: false,
 };
 
 export default Tooltip;

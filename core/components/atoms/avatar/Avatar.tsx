@@ -77,6 +77,11 @@ export type AvatarProps = {
    * Stroke color of `Presence indicator` & `Status indicator` in `Avatar`
    */
   strokeColor?: string;
+  /**
+   * Hides avatar from assistive technologies.
+   * Internally sets role to `presentation`, removes `aria-label`, and applies `tabIndex={-1}`.
+   */
+  'aria-hidden'?: boolean;
 } & BaseProps;
 
 const initialsLength = 2;
@@ -101,6 +106,7 @@ export const Avatar = (props: AvatarProps) => {
     status,
     strokeColor = 'var(--white)',
     role = 'presentation',
+    'aria-hidden': ariaHidden,
     'aria-label': ariaLabelProp,
   } = props;
 
@@ -121,8 +127,10 @@ export const Avatar = (props: AvatarProps) => {
 
   const AvatarAppearance =
     appearance || colors[(initials.charCodeAt(0) + (initials.charCodeAt(1) || 0)) % 8] || DefaultAppearance;
-  const resolvedRole = role ?? (tabIndex !== undefined ? 'button' : 'img');
-  const ariaLabel = ariaLabelProp || getTooltipName().trim() || initials || 'Avatar';
+  const isDecorative = ariaHidden === true;
+  const resolvedRole = isDecorative ? 'presentation' : (role ?? (tabIndex !== undefined ? 'button' : 'img'));
+  const ariaLabel = isDecorative ? undefined : ariaLabelProp || getTooltipName().trim() || initials || 'Avatar';
+  const resolvedTabIndex = isDecorative ? -1 : disabled ? -1 : tabIndex !== undefined ? tabIndex : 0;
 
   const darkAppearance = ['secondary', 'success', 'warning', 'accent1', 'accent4'];
   const showPresence =
@@ -143,6 +151,7 @@ export const Avatar = (props: AvatarProps) => {
   );
 
   const AvatarWrapperClassNames = classNames({
+    [styles['Avatar-wrapper']]: true,
     [styles['Avatar-wrapper--square']]: shape === 'square',
     [styles[`Avatar--${size}`]]: shape === 'square',
   });
@@ -194,7 +203,8 @@ export const Avatar = (props: AvatarProps) => {
               className={AvatarClassNames}
               role={resolvedRole}
               aria-label={ariaLabel}
-              tabIndex={disabled ? -1 : tabIndex !== undefined ? tabIndex : 0}
+              aria-hidden={ariaHidden}
+              tabIndex={resolvedTabIndex}
             >
               {children}
             </span>
@@ -211,7 +221,8 @@ export const Avatar = (props: AvatarProps) => {
           className={AvatarClassNames}
           role={resolvedRole}
           aria-label={ariaLabel}
-          tabIndex={disabled ? -1 : tabIndex !== undefined ? tabIndex : 0}
+          aria-hidden={ariaHidden}
+          tabIndex={resolvedTabIndex}
         >
           <>
             {initials && (

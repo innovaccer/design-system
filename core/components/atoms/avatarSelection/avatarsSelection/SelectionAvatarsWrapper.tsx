@@ -60,11 +60,14 @@ export const SelectionAvatarsWrapper = (props: SelectionAvatarsWrapperProps) => 
         const isSelected = selectedItems?.includes(avatarItem);
         const GroupClass = classNames({
           [styles[`SelectionAvatarGroup-item`]]: true,
-          [styles[`SelectionAvatarGroup-item--square`]]: avatarShape === 'square',
+          [styles[`SelectionAvatarGroup-item--tiny`]]: size === 'tiny',
+          [styles[`SelectionAvatarGroup-item--micro`]]: size === 'micro',
           [styles[`SelectionAvatarGroup-item--active`]]: !disabled,
           [styles[`SelectionAvatarGroup-item--active-${size}`]]: !disabled && size,
           [styles[`SelectionAvatarGroup-item--selected`]]: isSelected,
           [styles[`SelectionAvatarGroup-item--selected-${size}`]]: isSelected && size,
+          ['rounded-15']: avatarShape === 'square' && size === 'regular',
+          ['rounded-10']: avatarShape === 'square' && size !== 'regular',
         });
 
         const newAvatarStyle = { ...avatarStyle, zIndex: avatarList.length - index };

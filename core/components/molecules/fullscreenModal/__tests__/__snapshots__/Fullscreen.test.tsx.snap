@@ -57,6 +57,7 @@ exports[`FullscreenModal component
                     data-state="closed"
                   >
                     <button
+                      aria-label="Close"
                       class="Button Button--regular Button--regularSquare Button--transparent"
                       data-test="DesignSystem-FullscreenModal--CloseButton"
                       tabindex="0"
@@ -152,6 +153,7 @@ exports[`FullscreenModal component
                     data-state="closed"
                   >
                     <button
+                      aria-label="Close"
                       class="Button Button--regular Button--regularSquare Button--transparent"
                       data-test="DesignSystem-FullscreenModal--CloseButton"
                       tabindex="0"
@@ -291,6 +293,7 @@ exports[`FullscreenModal component
                     data-state="closed"
                   >
                     <button
+                      aria-label="Close"
                       class="Button Button--regular Button--regularSquare Button--transparent"
                       data-test="DesignSystem-FullscreenModal--CloseButton"
                       tabindex="0"
@@ -393,6 +396,7 @@ exports[`FullscreenModal component
                     data-state="closed"
                   >
                     <button
+                      aria-label="Close"
                       class="Button Button--regular Button--regularSquare Button--transparent"
                       data-test="DesignSystem-FullscreenModal--CloseButton"
                       tabindex="0"
@@ -487,6 +491,7 @@ exports[`FullscreenModal component
                     data-state="closed"
                   >
                     <button
+                      aria-label="Close"
                       class="Button Button--regular Button--regularSquare Button--transparent"
                       data-test="DesignSystem-FullscreenModal--CloseButton"
                       tabindex="0"
@@ -626,6 +631,7 @@ exports[`FullscreenModal component
                     data-state="closed"
                   >
                     <button
+                      aria-label="Close"
                       class="Button Button--regular Button--regularSquare Button--transparent"
                       data-test="DesignSystem-FullscreenModal--CloseButton"
                       tabindex="0"

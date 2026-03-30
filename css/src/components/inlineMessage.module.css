@@ -21,7 +21,7 @@
 
 .InlineMessage-text--warning,
 .InlineMessage-icon--warning {
-  color: var(--accent1);
+  color: var(--accent1-dark);
 }
 
 .InlineMessage-text--alert {

@@ -39,6 +39,14 @@ interface AvatarPopoverProps {
 
 export type AvatarGroupProps = {
   /**
+   * Accessible label for the avatar group container.
+   */
+  'aria-label'?: string;
+  /**
+   * Points to element(s) that label the avatar group container.
+   */
+  'aria-labelledby'?: string;
+  /**
    * List of `Avatars`
    *
    * <pre className="DocPage-codeBlock">
@@ -132,6 +140,8 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
     list,
     className,
     size = 'regular',
+    'aria-label': ariaLabel,
+    'aria-labelledby': ariaLabelledBy,
   } = props;
 
   const {
@@ -187,7 +197,14 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
   };
 
   return (
-    <div data-test="DesignSystem-AvatarGroup" {...baseProps} className={AvatarGroupClass}>
+    <div
+      data-test="DesignSystem-AvatarGroup"
+      {...baseProps}
+      className={AvatarGroupClass}
+      role="group"
+      aria-label={ariaLabel}
+      aria-labelledby={ariaLabelledBy}
+    >
       <Avatars size={size} avatarList={avatarList} avatarStyle={avatarStyle} tooltipPosition={tooltipPosition} />
       {list.length - max > 0 && list.length !== 3 && (
         <Popover

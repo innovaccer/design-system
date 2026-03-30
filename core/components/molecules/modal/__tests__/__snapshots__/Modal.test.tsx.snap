@@ -232,6 +232,7 @@ exports[`Modal component
                 data-state="closed"
               >
                 <button
+                  aria-label="Close"
                   class="Button Button--regular Button--regularSquare Button--transparent"
                   data-test="DesignSystem-Modal--CloseButton"
                   tabindex="0"
@@ -409,6 +410,7 @@ exports[`Modal component
                   data-state="closed"
                 >
                   <button
+                    aria-label="Close"
                     class="Button Button--regular Button--regularSquare Button--transparent"
                     data-test="DesignSystem-Modal--CloseButton"
                     tabindex="0"
@@ -601,6 +603,7 @@ exports[`Modal component
                 data-state="closed"
               >
                 <button
+                  aria-label="Close"
                   class="Button Button--regular Button--regularSquare Button--transparent"
                   data-test="DesignSystem-Modal--CloseButton"
                   tabindex="0"
@@ -772,6 +775,7 @@ exports[`Modal component
                   data-state="closed"
                 >
                   <button
+                    aria-label="Close"
                     class="Button Button--regular Button--regularSquare Button--transparent"
                     data-test="DesignSystem-Modal--CloseButton"
                     tabindex="0"
@@ -1106,6 +1110,7 @@ exports[`Modal component
                 data-state="closed"
               >
                 <button
+                  aria-label="Close"
                   class="Button Button--regular Button--regularSquare Button--transparent"
                   data-test="DesignSystem-Modal--CloseButton"
                   tabindex="0"
@@ -1283,6 +1288,7 @@ exports[`Modal component
                   data-state="closed"
                 >
                   <button
+                    aria-label="Close"
                     class="Button Button--regular Button--regularSquare Button--transparent"
                     data-test="DesignSystem-Modal--CloseButton"
                     tabindex="0"
@@ -1475,6 +1481,7 @@ exports[`Modal component
                 data-state="closed"
               >
                 <button
+                  aria-label="Close"
                   class="Button Button--regular Button--regularSquare Button--transparent"
                   data-test="DesignSystem-Modal--CloseButton"
                   tabindex="0"
@@ -1646,6 +1653,7 @@ exports[`Modal component
                   data-state="closed"
                 >
                   <button
+                    aria-label="Close"
                     class="Button Button--regular Button--regularSquare Button--transparent"
                     data-test="DesignSystem-Modal--CloseButton"
                     tabindex="0"
@@ -1980,6 +1988,7 @@ exports[`Modal component
                 data-state="closed"
               >
                 <button
+                  aria-label="Close"
                   class="Button Button--regular Button--regularSquare Button--transparent"
                   data-test="DesignSystem-Modal--CloseButton"
                   tabindex="0"
@@ -2157,6 +2166,7 @@ exports[`Modal component
                   data-state="closed"
                 >
                   <button
+                    aria-label="Close"
                     class="Button Button--regular Button--regularSquare Button--transparent"
                     data-test="DesignSystem-Modal--CloseButton"
                     tabindex="0"
@@ -2349,6 +2359,7 @@ exports[`Modal component
                 data-state="closed"
               >
                 <button
+                  aria-label="Close"
                   class="Button Button--regular Button--regularSquare Button--transparent"
                   data-test="DesignSystem-Modal--CloseButton"
                   tabindex="0"
@@ -2520,6 +2531,7 @@ exports[`Modal component
                   data-state="closed"
                 >
                   <button
+                    aria-label="Close"
                     class="Button Button--regular Button--regularSquare Button--transparent"
                     data-test="DesignSystem-Modal--CloseButton"
                     tabindex="0"

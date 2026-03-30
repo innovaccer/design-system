@@ -18,6 +18,7 @@
   display: flex;
   align-items: center;
   overflow: hidden;
+  padding-bottom: var(--spacing-20);
 }
 
 .Slider-progress {
@@ -33,6 +34,10 @@
 
 .Slider-progress--inRangeDisabled {
   border: var(--border);
+}
+
+.Slider-axis {
+  margin-top: calc(-1 * var(--spacing-20));
 }
 
 .Slider-label {
@@ -90,6 +95,18 @@
     background-color var(--duration--fast-01) var(--standard-productive-curve);
 }
 
+.Slider-handle::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: var(--spacing-60);
+  height: var(--spacing-60);
+  background-color: transparent;
+  border-radius: var(--border-radius-full);
+}
+
 .Slider-handle:hover {
   background-color: var(--primary-lightest);
 }
@@ -99,6 +116,11 @@
 }
 
 .Slider-handle:focus {
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-05);
+}
+
+.Slider-handle:focus-visible {
   outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: var(--spacing-05);
 }

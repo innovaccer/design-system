@@ -22,12 +22,12 @@ export const clamp = (value: number, min: number, max: number) => {
   if (value == null) {
     return value;
   }
-
-  return Math.min(Math.max(value, min), max);
+  const result = Math.min(Math.max(value, min), max);
+  return result;
 };
 
 export const arraysEqual = (oldValues: number[], newValues: number[]) => {
-  if (oldValues.length !== oldValues.length) return;
+  if (oldValues.length !== newValues.length) return false;
 
   return newValues.every((value, index) => value === oldValues[index]);
 };

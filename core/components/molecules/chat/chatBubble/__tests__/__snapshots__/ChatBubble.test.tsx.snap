@@ -73,7 +73,7 @@ exports[`ChatBubble component snapshot
                 class="position-relative d-inline-flex"
               >
                 <span
-                  class=""
+                  class="Avatar-wrapper"
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
@@ -175,7 +175,7 @@ exports[`ChatBubble component snapshot
               class="position-relative d-inline-flex"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span

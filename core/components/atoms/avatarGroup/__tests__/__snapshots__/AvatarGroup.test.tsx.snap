@@ -10,6 +10,7 @@ exports[`AvatarGroup component snapshot
       <div
         class="AvatarGroup d-inline-flex"
         data-test="DesignSystem-AvatarGroup"
+        role="group"
       >
         <div
           class="AvatarGroup-item AvatarGroup-item--regular"
@@ -29,7 +30,7 @@ exports[`AvatarGroup component snapshot
                 data-state="closed"
               >
                 <span
-                  class=""
+                  class="Avatar-wrapper"
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
@@ -70,7 +71,7 @@ exports[`AvatarGroup component snapshot
                 data-state="closed"
               >
                 <span
-                  class=""
+                  class="Avatar-wrapper"
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
@@ -108,6 +109,7 @@ exports[`AvatarGroup component snapshot
     <div
       class="AvatarGroup d-inline-flex"
       data-test="DesignSystem-AvatarGroup"
+      role="group"
     >
       <div
         class="AvatarGroup-item AvatarGroup-item--regular"
@@ -127,7 +129,7 @@ exports[`AvatarGroup component snapshot
               data-state="closed"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -168,7 +170,7 @@ exports[`AvatarGroup component snapshot
               data-state="closed"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -257,6 +259,7 @@ exports[`AvatarGroup component snapshot
       <div
         class="AvatarGroup d-inline-flex"
         data-test="DesignSystem-AvatarGroup"
+        role="group"
       >
         <div
           class="AvatarGroup-item AvatarGroup-item--regular"
@@ -276,7 +279,7 @@ exports[`AvatarGroup component snapshot
                 data-state="closed"
               >
                 <span
-                  class=""
+                  class="Avatar-wrapper"
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
@@ -317,7 +320,7 @@ exports[`AvatarGroup component snapshot
                 data-state="closed"
               >
                 <span
-                  class=""
+                  class="Avatar-wrapper"
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
@@ -355,6 +358,7 @@ exports[`AvatarGroup component snapshot
     <div
       class="AvatarGroup d-inline-flex"
       data-test="DesignSystem-AvatarGroup"
+      role="group"
     >
       <div
         class="AvatarGroup-item AvatarGroup-item--regular"
@@ -374,7 +378,7 @@ exports[`AvatarGroup component snapshot
               data-state="closed"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -415,7 +419,7 @@ exports[`AvatarGroup component snapshot
               data-state="closed"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -504,6 +508,7 @@ exports[`AvatarGroup component snapshot
       <div
         class="AvatarGroup d-inline-flex"
         data-test="DesignSystem-AvatarGroup"
+        role="group"
       >
         <div
           class="AvatarGroup-item AvatarGroup-item--tiny"
@@ -523,7 +528,7 @@ exports[`AvatarGroup component snapshot
                 data-state="closed"
               >
                 <span
-                  class=""
+                  class="Avatar-wrapper"
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
@@ -564,7 +569,7 @@ exports[`AvatarGroup component snapshot
                 data-state="closed"
               >
                 <span
-                  class=""
+                  class="Avatar-wrapper"
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
@@ -602,6 +607,7 @@ exports[`AvatarGroup component snapshot
     <div
       class="AvatarGroup d-inline-flex"
       data-test="DesignSystem-AvatarGroup"
+      role="group"
     >
       <div
         class="AvatarGroup-item AvatarGroup-item--tiny"
@@ -621,7 +627,7 @@ exports[`AvatarGroup component snapshot
               data-state="closed"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -662,7 +668,7 @@ exports[`AvatarGroup component snapshot
               data-state="closed"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -751,6 +757,7 @@ exports[`AvatarGroup component snapshot
       <div
         class="AvatarGroup d-inline-flex"
         data-test="DesignSystem-AvatarGroup"
+        role="group"
       >
         <div
           class="AvatarGroup-item AvatarGroup-item--tiny"
@@ -770,7 +777,7 @@ exports[`AvatarGroup component snapshot
                 data-state="closed"
               >
                 <span
-                  class=""
+                  class="Avatar-wrapper"
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
@@ -811,7 +818,7 @@ exports[`AvatarGroup component snapshot
                 data-state="closed"
               >
                 <span
-                  class=""
+                  class="Avatar-wrapper"
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
@@ -849,6 +856,7 @@ exports[`AvatarGroup component snapshot
     <div
       class="AvatarGroup d-inline-flex"
       data-test="DesignSystem-AvatarGroup"
+      role="group"
     >
       <div
         class="AvatarGroup-item AvatarGroup-item--tiny"
@@ -868,7 +876,7 @@ exports[`AvatarGroup component snapshot
               data-state="closed"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -909,7 +917,7 @@ exports[`AvatarGroup component snapshot
               data-state="closed"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span

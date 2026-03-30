@@ -14,6 +14,7 @@ const Avatars = (props: any) => {
       [styles[`AvatarGroup-item`]]: true,
       [styles[`AvatarGroup-item--square`]]: avatarShape === 'square',
       [styles[`AvatarGroup-item--tiny`]]: size === 'tiny',
+      [styles[`AvatarGroup-item--micro`]]: size === 'micro',
       [styles[`AvatarGroup-item--regular`]]: size === 'regular',
     });
 

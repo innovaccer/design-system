@@ -20,7 +20,7 @@ exports[`Avatar Image component
             data-state="closed"
           >
             <span
-              class=""
+              class="Avatar-wrapper"
               data-test="DesignSystem-AvatarWrapper"
             >
               <span
@@ -52,7 +52,7 @@ exports[`Avatar Image component
         class="position-relative d-inline-flex"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -78,7 +78,7 @@ exports[`Avatar Image component
       class="position-relative d-inline-flex"
     >
       <span
-        class=""
+        class="Avatar-wrapper"
         data-test="DesignSystem-AvatarWrapper"
       >
         <span
@@ -163,7 +163,7 @@ exports[`Avatar Image component with svg
         class="position-relative d-inline-flex"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -198,7 +198,7 @@ exports[`Avatar Image component with svg
       class="position-relative d-inline-flex"
     >
       <span
-        class=""
+        class="Avatar-wrapper"
         data-test="DesignSystem-AvatarWrapper"
       >
         <span
