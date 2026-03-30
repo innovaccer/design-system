@@ -1,3 +1,54 @@
+## 4.22.0 (2026-03-30)
+
+### Highlights
+
+- feat(colors): introduced primitive color scale tokens.
+- Extended WCAG 2.2 AA accessibility coverage across Table, FileList, Breadcrumbs, Pagination, ProgressRing, Modal, Calendar, Tooltip, Slider, and Avatar; 
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(Table): add aria-labels to column filter and menu icon buttons (e56f9a4d6)
+- feat(fileList): enhance accessibility with aria-labels for file items (fd42fdbab)
+- feat(breadcrumbs): enhance accessibility by adding aria-labels and changing div to nav (293c1be80)
+- feat(pagination): add aria-labels for accessibility on pagination buttons (0e3897481)
+- feat(progressRing): add accessibility attributes for progress indication (5169b0b8e)
+- feat(modal): add aria-label for close button to improve accessibility (66f22a52a)
+- feat(a11y): add accessibility prop table (159bcebfc)
+- feat(calendar): add keyboard navigation (730dd9339)
+- feat(tooltip): close tooltip on Escape key for WCAG (48aee979d)
+- feat(slider): improve keyboard navigation and story updates (7233a83c0)
+- feat(avatar): add accessibility support in avatar family components (040a32c00)
+- feat(tokens): introduce primitive color scale and update palette (339e8d307)
+
+### Fixes
+
+- fix(combobox): update multiselect clear icon to match Input clear icon pattern (3d48abbb7)
+- fix(chatInput): update focus state to outline-based ring per design spec (a5309c8d8)
+- fix(chipInput): update focus ring to outline-based style, remove error halo (040f94e1f)
+- fix(button): revert focus ring to primary-focus, keep inverse-focus only for toast (bfd4fca54)
+- fix(colors): replace hardcoded colors with design tokens and update focus styles (5b3677350)
+- fix(table): update infinite scroll fetch rows issue (03855578a)
+- fix(button): remove blend mode from outlined variants (9364aa673)
+
+### Improvements
+
+- chore: fix synk vulnerability badge link (12e3ae1f4)
+- chore: add mkdirp dependencies for docs site (135834ae8)
+
+---
+
 ## 4.21.0 (2026-03-19)
 
 ### Highlights

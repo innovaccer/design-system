@@ -5,6 +5,7 @@ import { ChipProps } from '@/index.type';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { OptionType } from '@/common.type';
 import styles from '@css/components/chipInput.module.css';
+import inputStyles from '@css/components/input.module.css';
 
 const keyCodes = {
   BACKSPACE: 'Backspace',
@@ -338,16 +339,30 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
           />
           {/* eslint-enable */}
         </div>
-        {(chips.length > 0 || inputValue.length > 0) && (
-          <Icon
+        {!disabled && (chips.length > 0 || inputValue.length > 0) && (
+          <div
             data-test="DesignSystem-MultiSelectTrigger--Icon"
-            name="close"
-            appearance={disabled ? 'disabled' : 'subtle'}
-            className={styles['ChipInput-icon']}
+            className={classNames(
+              inputStyles['Input-icon'],
+              inputStyles['Input-iconWrapper--right'],
+              'align-items-center',
+              'flex-shrink-0'
+            )}
+            tabIndex={0}
+            role="button"
+            aria-label="Clear all"
             onClick={onDeleteAllHandler}
             tabIndex={disabled ? -1 : 0}
             aria-label="Clear all options"
-          />
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                onDeleteAllHandler(e as any);
+              }
+            }}
+          >
+            <Icon name="close" size={16} className={classNames(inputStyles['Input-icon--right'], 'p-3')} />
+          </div>
         )}
       </div>
     </div>
