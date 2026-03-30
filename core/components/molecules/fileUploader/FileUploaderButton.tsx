@@ -2,7 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { Button } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
-import uidGenerator from '@/utils/uidGenerator';
+import { useStableDomId } from '@/utils/useStableDomId';
 import styles from '@css/components/fileUploader.module.css';
 
 export interface FileUploaderButtonProps extends BaseProps {
@@ -11,7 +11,7 @@ export interface FileUploaderButtonProps extends BaseProps {
    */
   name?: string;
   /**
-   * Id of `FileUploaderInput`
+   * Id of `FileUploaderInput`. Prefer setting this in SSR apps on React &lt; 18 so server and client markup match.
    */
   id?: string;
   /**
@@ -60,8 +60,9 @@ export const FileUploaderButton = (props: FileUploaderButtonProps) => {
 
   const baseProps = extractBaseProps(props);
   const inputRef = React.useRef<HTMLInputElement>(null);
+  const generatedInputId = useStableDomId('ds-file-uploader-input');
 
-  const inputId = React.useMemo(() => id || `ds-file-uploader-input-${uidGenerator()}`, [id]);
+  const inputId = id || generatedInputId;
 
   const openFilePicker = React.useCallback(() => {
     if (disabled) return;
