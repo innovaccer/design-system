@@ -19,7 +19,8 @@
 
 .ChipInput:focus,
 .ChipInput:focus-visible {
-  outline: var(--spacing-2-5) var(--primary);
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-05);
 }
 
 .ChipInput:hover {
@@ -28,7 +29,6 @@
 }
 
 .ChipInput:focus-within {
-  box-shadow: inset 0 0 0 var(--spacing-2-5) var(--primary);
   background: var(--white);
 }
 
@@ -42,8 +42,7 @@
   padding-right: var(--spacing-20);
 }
 
-.ChipInput--error,
-.ChipInput--error:focus-within {
+.ChipInput--error {
   box-shadow: inset 0 0 0 var(--spacing-2-5) var(--alert);
 }
 
@@ -56,11 +55,13 @@
 
 .ChipInput-border:focus-within {
   border-radius: var(--border-radius-10);
-  box-shadow: var(--shadow-spread) var(--primary-shadow);
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-05);
 }
 
 .ChipInput-border--error:focus-within {
-  box-shadow: var(--shadow-spread) var(--alert-shadow);
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-05);
 }
 
 .ChipInput-input {

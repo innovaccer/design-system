@@ -29,7 +29,7 @@
 }
 
 .Button:focus {
-  outline: var(--border-width-05) solid var(--inverse-focus);
+  outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: var(--spacing-05);
 }
 
@@ -227,14 +227,14 @@
 
 .Button--selected:focus {
   background: var(--primary-ultra-light);
-  outline: var(--border-width-05) solid var(--inverse-focus);
+  outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: var(--spacing-05);
   box-shadow: inset 0 0 0 var(--border-width-05) var(--primary);
 }
 
 .Button--selected:focus:active {
   background: var(--primary-lighter);
-  outline: var(--border-width-05) solid var(--inverse-focus);
+  outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: var(--spacing-05);
   box-shadow: inset 0 0 0 var(--border-width-05) var(--primary-dark);
 }
@@ -274,7 +274,7 @@
 }
 
 .Button-outlined--basic:focus {
-  outline: var(--border-width-05) solid var(--inverse-focus);
+  outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: var(--spacing-05);
   box-shadow: inset 0 0 0 var(--border-width-2-5) var(--secondary);
 }
@@ -304,7 +304,7 @@
 
 .Button-outlined--selected:focus {
   color: var(--primary-dark);
-  outline: var(--border-width-05) solid var(--inverse-focus);
+  outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: var(--spacing-05);
   box-shadow: inset 0 0 0 var(--border-width-05) var(--primary);
 }
@@ -312,7 +312,7 @@
 .Button-outlined--selected:focus:active {
   background: var(--primary-lighter);
   color: var(--primary-darker);
-  outline: var(--border-width-05) solid var(--inverse-focus);
+  outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: var(--spacing-05);
   box-shadow: inset 0 0 0 var(--border-width-05) var(--primary-dark);
 }
@@ -342,7 +342,7 @@
 }
 
 .Button-outlined--primary:focus {
-  outline: var(--border-width-05) solid var(--inverse-focus);
+  outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: var(--spacing-05);
   box-shadow: inset 0 0 0 var(--border-width-2-5) var(--primary);
 }
@@ -372,7 +372,7 @@
 }
 
 .Button-outlined--alert:focus {
-  outline: var(--border-width-05) solid var(--inverse-focus);
+  outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: var(--spacing-05);
   box-shadow: inset 0 0 0 var(--border-width-2-5) var(--alert);
 }
