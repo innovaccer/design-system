@@ -106,3 +106,17 @@ export const handleFocusTrapKeyDown = (event: KeyboardEvent, container: HTMLElem
 
   return false;
 };
+
+/**
+ * Returns focus to a previously focused element after an overlay closes.
+ * Does not consult overlay stacking order — dismissal priority and focus restoration are separate concerns.
+ */
+export const restoreFocusToElementIfConnected = (element: HTMLElement | null | undefined): void => {
+  if (!element?.focus || !element.isConnected) return;
+
+  window.requestAnimationFrame(() => {
+    if (element.isConnected) {
+      element.focus({ preventScroll: true });
+    }
+  });
+};

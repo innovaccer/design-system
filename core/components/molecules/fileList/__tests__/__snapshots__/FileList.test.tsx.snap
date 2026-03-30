@@ -9,6 +9,7 @@ exports[`FileList component
     data-test="DesignSystem-Card"
   >
     <div
+      aria-label="Audio File.mp3, uploading"
       class="FileItem"
       data-test="DesignSystem-FileListItem"
       role="button"
@@ -21,8 +22,13 @@ exports[`FileList component
           class="FileItem-fileContent"
         >
           <svg
+            aria-label="Progress Ring"
+            aria-valuemax="100"
+            aria-valuemin="0"
+            aria-valuenow="45"
             class="Ring Ring--small FileIcon FileIcon--uploading"
             data-test="DesignSystem-FileListItem--ProgressRing"
+            role="progressbar"
             viewBox="0 0 50 50"
           >
             <circle
@@ -66,6 +72,7 @@ exports[`FileList component
       </div>
     </div>
     <div
+      aria-label="Video File.mp4"
       class="FileItem"
       data-test="DesignSystem-FileListItem"
       role="button"
@@ -104,6 +111,7 @@ exports[`FileList component
       </div>
     </div>
     <div
+      aria-label="Image File.jpeg, upload failed"
       class="FileItem"
       data-test="DesignSystem-FileListItem"
       role="button"
@@ -160,6 +168,7 @@ exports[`FileList component
       </div>
     </div>
     <div
+      aria-label="Document File.pdf"
       class="FileItem"
       data-test="DesignSystem-FileListItem"
       role="button"
@@ -198,6 +207,7 @@ exports[`FileList component
       </div>
     </div>
     <div
+      aria-label="Other File"
       class="FileItem"
       data-test="DesignSystem-FileListItem"
       role="button"

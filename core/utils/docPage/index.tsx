@@ -12,6 +12,8 @@ import openSandbox from './sandbox';
 import generateImports from './generateImports';
 import * as componentLib from '@/index';
 import classNames from 'classnames';
+import AccessibilityPropTable from './AccessibilityPropTable';
+import { resolveA11yConfig } from './accessibilityProps';
 
 export interface Example {
   title: string;
@@ -294,7 +296,7 @@ const StoryComp = (props: {
                   {activeTab == 0 && (
                     <div
                       className="overflow-auto"
-                      style={{ height: getHeight(shouldShowMore, showMore), background: 'rgb(30, 30, 30)' }}
+                      style={{ height: getHeight(shouldShowMore, showMore), background: 'var(--inverse)' }}
                     >
                       <CopyComp
                         onClick={() => {
@@ -339,13 +341,15 @@ export const docPage = () => {
     noSandbox,
     imports,
     a11yProps,
+    a11yPropTable,
     propDescription,
     sandboxTitle,
     isDeprecated,
     isPattern,
     tsxStory,
   } = sp.docs.docPage || {};
-  const { component: { displayName = '' } = {} } = story;
+  const { component: { displayName = '', name: componentName = '' } = {} } = story;
+  const resolvedA11yConfig = resolveA11yConfig(a11yPropTable, displayName || componentName);
   const pageClassnames = classNames({
     DocPage: true,
     'pt-8 pb-8': !(isEmbed || isEmbedWithProp),
@@ -396,6 +400,13 @@ export const docPage = () => {
 
       {!noProps && (
         <>
+          {resolvedA11yConfig && (
+            <>
+              <br />
+              <br />
+              <AccessibilityPropTable config={resolvedA11yConfig} />
+            </>
+          )}
           <br />
           <br />
           <Heading appearance="subtle">Prop table</Heading>
