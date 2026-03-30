@@ -131,6 +131,14 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
     ...rest
   } = props;
 
+  const buttonLabel = children ? String(children) : undefined;
+  const isIconOnly = icon && !children;
+
+  const computedAriaLabel =
+    props['aria-label'] ||
+    (loading && buttonLabel ? buttonLabel : undefined) ||
+    (isIconOnly && tooltip ? tooltip : undefined);
+
   const isOutlined = styleType === 'outlined' && appearance !== 'transparent';
   const isBasicOrTransparent = appearance === 'basic' || appearance === 'transparent';
 
@@ -186,7 +194,8 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
       disabled={disabled || loading}
       tabIndex={tabIndex}
       aria-busy={loading || undefined}
-      aria-label={props['aria-label'] || (!children && tooltip ? tooltip : undefined)}
+      aria-pressed={selected ? true : undefined}
+      aria-label={computedAriaLabel}
       {...rest}
     >
       {loading ? (
