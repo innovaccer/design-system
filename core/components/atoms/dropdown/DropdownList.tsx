@@ -655,14 +655,14 @@ const DropdownList = (props: OptionsProps) => {
 
     return (
       <div className={dropdownWrapperClass} style={dropdownStyle} ref={dropdownRef}>
-        {selectAllPresent && renderSelectAll()}
-        {selected.length > 0 && renderGroups(selectedSectionLabel, true)}
         <div
           role={menu ? 'menu' : 'listbox'}
           aria-label={resolvedOptionsAriaLabel}
           aria-labelledby={triggerAriaLabelledBy}
           aria-multiselectable={!menu && withCheckbox ? true : undefined}
         >
+          {selectAllPresent && renderSelectAll()}
+          {selected.length > 0 && renderGroups(selectedSectionLabel, true, true)}
           {selected.map((option, index) => renderOptions(option, index))}
           {selected.length > 0 &&
             listOptions.length - selected.length > 0 &&
@@ -779,6 +779,32 @@ const DropdownList = (props: OptionsProps) => {
     }
   };
 
+  const getActiveOptionElement = () => {
+    const container = popoverContentRef.current;
+    if (!container) return null;
+
+    const activeOption = container.querySelector(
+      `.${dropdownStyles['Option--active']}, .${dropdownStyles['Option-checkbox--active']}`
+    );
+
+    if (activeOption && isFocusableOption(activeOption)) return activeOption as HTMLElement;
+
+    const allOptions = Array.from(container.querySelectorAll('.OptionWrapper'));
+    return (allOptions.find((option) => isFocusableOption(option)) as HTMLElement | undefined) || null;
+  };
+
+  const activateOptionElement = (element: HTMLElement | null) => {
+    if (!element || !isFocusableOption(element)) return;
+
+    const checkboxInput = element.querySelector('input[type="checkbox"]') as HTMLInputElement | null;
+    if (checkboxInput) {
+      checkboxInput.click();
+      return;
+    }
+
+    element.click();
+  };
+
   const onkeydown = (event: any) => {
     const optionClass = '.OptionWrapper';
     switch (event.key) {
@@ -878,6 +904,20 @@ const DropdownList = (props: OptionsProps) => {
           event.preventDefault();
           event.stopPropagation();
           focusEdgeOption('last');
+        }
+        break;
+      }
+      case 'Enter': {
+        const enterTarget = document.activeElement;
+        const isInputFocused =
+          enableSearch &&
+          inputRef.current &&
+          (enterTarget === inputRef.current || inputRef.current.contains(enterTarget));
+
+        if (isInputFocused) {
+          event.preventDefault();
+          event.stopPropagation();
+          activateOptionElement(getActiveOptionElement());
         }
         break;
       }

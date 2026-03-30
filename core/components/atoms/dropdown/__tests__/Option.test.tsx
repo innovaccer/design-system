@@ -261,6 +261,7 @@ describe('renders disabled option', () => {
     const dropdownTrigger = getByTestId(trigger);
     fireEvent.click(dropdownTrigger);
     expect(getAllByTestId('DesignSystem-DropdownOption--WITH_CHECKBOX')[1]).toHaveAttribute('data-disabled');
+    expect(getAllByTestId('DesignSystem-DropdownOption--WITH_CHECKBOX')[1]).toHaveClass('OptionWrapper--disabled');
   });
 
   it('WITH_ICON options', () => {

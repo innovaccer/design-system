@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render, fireEvent, waitFor, screen } from '@testing-library/react';
+import { render, fireEvent, waitFor, screen, within } from '@testing-library/react';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { Dropdown, Text } from '@/index';
 import { DropdownProps as Props } from '@/index.type';
@@ -353,6 +353,32 @@ describe('Dropdown component', () => {
     fireEvent.mouseEnter(optionList[1]);
     expect(optionList[1]).toHaveClass('Option-checkbox--active');
   });
+
+  it('renders Select All inside the listbox', () => {
+    const { getByTestId } = render(<Dropdown options={storyOptions} withCheckbox={true} withSearch={false} />);
+    const dropdownTrigger = getByTestId(trigger);
+
+    fireEvent.click(dropdownTrigger);
+
+    const listbox = screen.getByRole('listbox');
+    expect(within(listbox).getByText('Select All')).toBeInTheDocument();
+    expect(screen.getAllByRole('option')[0]).toHaveTextContent('Select All');
+  });
+
+  it('toggles checkbox option with keyboard when option wrapper has focus', () => {
+    const { getByTestId, getAllByTestId } = render(
+      <Dropdown options={storyOptions} withCheckbox={true} withSearch={false} />
+    );
+    const dropdownTrigger = getByTestId(trigger);
+
+    fireEvent.click(dropdownTrigger);
+
+    const option = getAllByTestId('DesignSystem-DropdownOption--WITH_CHECKBOX')[0];
+    option.focus();
+    fireEvent.keyDown(option, { key: ' ' });
+
+    expect(within(option).getByTestId('DesignSystem-Checkbox-InputBox')).toHaveClass('Checkbox-input--checked');
+  });
 });
 
 describe('renders dropdown component onKeyDown Handler', () => {
@@ -504,6 +530,31 @@ describe('Dropdown component with search', () => {
     await waitFor(() => {
       expect(getAllByTestId('DesignSystem-Dropdown--errorWrapper')).toHaveLength(1);
       expect(searchInput).toBeInTheDocument();
+    });
+  });
+
+  it('selects the active search result when Enter is pressed in the search input', async () => {
+    const onChange = jest.fn();
+    const { getByTestId, getAllByTestId } = render(
+      <Dropdown options={storyOptions} withSearch={true} onChange={onChange} />
+    );
+
+    const dropdownTrigger = getByTestId(trigger);
+    fireEvent.click(dropdownTrigger);
+
+    const searchInput = getByTestId('DesignSystem-Input');
+    fireEvent.change(searchInput, { target: { value: 'Option 3' } });
+
+    await waitFor(() => {
+      const optionList = getAllByTestId('DesignSystem-DropdownOption--DEFAULT');
+      expect(optionList[0]).toHaveClass('Option--active');
+      expect(optionList[0]).toHaveTextContent('Option 3');
+    });
+
+    fireEvent.keyDown(searchInput, { key: 'Enter' });
+
+    await waitFor(() => {
+      expect(onChange).toHaveBeenCalledWith('Option 3', undefined);
     });
   });
 });

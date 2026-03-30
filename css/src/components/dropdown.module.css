@@ -95,13 +95,13 @@
   padding-bottom: var(--spacing-15);
 }
 
-.Option:hover,
-.Option-checkbox:hover {
+.Option:not(.Option--disabled):hover,
+.Option-checkbox:not(.OptionWrapper--disabled):hover {
   background-color: var(--secondary-lightest);
 }
 
-.Option:hover:active,
-.Option-checkbox:hover:active {
+.Option:not(.Option--disabled):hover:active,
+.Option-checkbox:not(.OptionWrapper--disabled):hover:active {
   background-color: var(--secondary-light);
 }
 
@@ -127,11 +127,11 @@
   outline-offset: calc(-1 * var(--border-width-05));
 }
 
-.Option--selected:hover {
+.Option--selected:not(.Option--disabled):hover {
   background-color: var(--primary-lighter);
 }
 
-.Option--selected:active {
+.Option--selected:not(.Option--disabled):active {
   background-color: var(--primary-lighter);
   color: var(--primary-darker);
 }

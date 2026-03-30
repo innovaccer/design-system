@@ -116,6 +116,7 @@ const Option = (props: OptionProps) => {
   const CheckboxClassName = classNames({
     [styles['Option-checkbox']]: true,
     [styles['Option-checkbox--active']]: active,
+    [styles['OptionWrapper--disabled']]: disabled,
     ['OptionWrapper']: true,
   });
 
