@@ -21,6 +21,7 @@ exports[`TextField component matches snapshot when input exceeds maximum charact
       style="min-width: 256px;"
     >
       <input
+        aria-invalid="true"
         class="Input-input Input-input--regular"
         data-test="DesignSystem-Input"
         label="Test Label"
