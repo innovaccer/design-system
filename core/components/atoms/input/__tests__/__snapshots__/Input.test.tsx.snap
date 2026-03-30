@@ -379,7 +379,7 @@ exports[`Input Component - Number Type with Inline Label Snapshot Tests
     >
       <div
         class="Input-inlineLabel"
-        id="Input-inlineLabel-name"
+        id="Input-inlineLabel-q5iwm8e"
       >
         <span
           class="Text Text--subtle Text--regular"
@@ -389,7 +389,7 @@ exports[`Input Component - Number Type with Inline Label Snapshot Tests
         </span>
       </div>
       <input
-        aria-labelledby="Input-inlineLabel-name"
+        aria-describedby="Input-inlineLabel-q5iwm8e"
         class="Input-input Input-input--large"
         data-test="DesignSystem-Input"
         name="name"
@@ -413,7 +413,7 @@ exports[`Input Component - Number Type with Inline Label Snapshot Tests
     >
       <div
         class="Input-inlineLabel"
-        id="Input-inlineLabel-name"
+        id="Input-inlineLabel-1fo5lta"
       >
         <span
           class="Text Text--subtle Text--regular"
@@ -423,7 +423,7 @@ exports[`Input Component - Number Type with Inline Label Snapshot Tests
         </span>
       </div>
       <input
-        aria-labelledby="Input-inlineLabel-name"
+        aria-describedby="Input-inlineLabel-1fo5lta"
         class="Input-input Input-input--regular"
         data-test="DesignSystem-Input"
         name="name"
@@ -447,7 +447,7 @@ exports[`Input Component - Number Type with Inline Label Snapshot Tests
     >
       <div
         class="Input-inlineLabel"
-        id="Input-inlineLabel-name"
+        id="Input-inlineLabel-duoqqjh"
       >
         <span
           class="Text Text--subtle Text--regular"
@@ -457,7 +457,7 @@ exports[`Input Component - Number Type with Inline Label Snapshot Tests
         </span>
       </div>
       <input
-        aria-labelledby="Input-inlineLabel-name"
+        aria-describedby="Input-inlineLabel-duoqqjh"
         class="Input-input Input-input--tiny"
         data-test="DesignSystem-Input"
         name="name"
