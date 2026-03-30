@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { Chip, Icon } from '@/index';
 import { ChipProps } from '@/index.type';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import { ChipInputBorderFocusRegion, getChipInputBorderFocusRegion } from './utils';
 import styles from '@css/components/chipInput.module.css';
 
 const keyCodes = {
@@ -10,8 +11,6 @@ const keyCodes = {
   DELETE: 'Delete',
   ENTER: 'Enter',
 };
-
-import { ChipInputBorderFocusRegion, getChipInputBorderFocusRegion } from './utils';
 
 type ChipOptions = {
   icon?: ChipProps['icon'];
