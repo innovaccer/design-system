@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { RowData, ColumnSchema, SortType } from './Grid';
 import { Dropdown, Placeholder, PlaceholderParagraph, Text, Icon, Button, Tooltip, GridCell } from '@/index';
 import { DropdownProps, GridCellProps } from '@/index.type';
+import { isSpaceKey } from '@/accessibility/utils';
 import { resizeCol, hasSchema } from './utility';
 import { getCellSize, getWidth } from './columnUtility';
 import { GridHeadProps } from './GridHead';
@@ -207,7 +208,13 @@ const HeaderCell = (props: HeaderCellProps) => {
                 }}
                 filterType={filterType}
                 className="m-0"
-                customTrigger={<Button icon="filter_list" appearance="transparent" />}
+                customTrigger={
+                  <Button
+                    icon="filter_list"
+                    appearance="transparent"
+                    aria-label={`Filter ${schema.displayName} column`}
+                  />
+                }
               />
             </div>
           )}
@@ -226,7 +233,13 @@ const HeaderCell = (props: HeaderCellProps) => {
                 menu={true}
                 optionType="WITH_ICON"
                 triggerOptions={{
-                  customTrigger: () => <Button icon="more_vert_filled" appearance="transparent" />,
+                  customTrigger: () => (
+                    <Button
+                      icon="more_vert_filled"
+                      appearance="transparent"
+                      aria-label={`More options for ${schema.displayName} column`}
+                    />
+                  ),
                 }}
                 options={options}
                 align={'left'}
@@ -295,8 +308,17 @@ const BodyCell = (props: BodyCellProps) => {
           name={expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}
           size={20}
           appearance={'default'}
+          aria-label={expanded ? 'Collapse row' : 'Expand row'}
+          tabIndex={0}
           onClick={(e) => {
             if (nestedRowData) {
+              e.stopPropagation();
+              setExpanded(!expanded);
+            }
+          }}
+          onKeyDown={(e: React.KeyboardEvent) => {
+            if (nestedRowData && (e.key === 'Enter' || isSpaceKey(e))) {
+              e.preventDefault();
               e.stopPropagation();
               setExpanded(!expanded);
             }

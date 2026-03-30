@@ -212,6 +212,7 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
 
     switch (type) {
       case 'outsideClick':
+      case 'escapeKeypress':
         this.setState({ open: o });
         break;
       case 'onClick':

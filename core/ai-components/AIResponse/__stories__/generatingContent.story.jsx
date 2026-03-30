@@ -56,18 +56,6 @@ const ChatMessage = (props) => {
 export const GeneratingContent = () => {
   /**
    *
-   *  .AIResponse-menu-button {
-   *    opacity: var(--opacity-12);
-   *  }
-   *
-   *  .AIResponse-box:hover .AIResponse-menu-button {
-   *    opacity: 1;
-   *  }
-   *
-   *  .AIResponse-box .Menu-Trigger--active {
-   *    opacity: 1;
-   *  }
-   *
    *  .AIResponse-text {
    *    animation: fadeIn var(--duration--moderate-02) var(--standard-productive-curve);
    *  }
@@ -151,7 +139,7 @@ export const GeneratingContent = () => {
               onClick={() => setSelectedList({ ...selectedList, dislike: !selectedList.dislike, like: false })}
             />
 
-            <Menu trigger={<Menu.Trigger className="AIResponse-menu-button" appearance="transparent" size="tiny" />}>
+            <Menu trigger={<Menu.Trigger appearance="transparent" size="tiny" />}>
               <Menu.List>
                 <Menu.Item>Share</Menu.Item>
                 <Menu.Item>View source</Menu.Item>
@@ -220,18 +208,6 @@ const customCode = `() => {
   const GenerateContent = () => {
 
     /**
-     *
-     *  .AIResponse-menu-button {
-     *    opacity: var(--opacity-12);
-     *  }
-     *
-     *  .AIResponse-box:hover .AIResponse-menu-button {
-     *    opacity: 1;
-     *  }
-     *
-     *  .AIResponse-box .Menu-Trigger--active {
-     *    opacity: 1;
-     *  }
      *
      *  .AIResponse-text {
      *    animation: fadeIn var(--duration--moderate-02) var(--standard-productive-curve);
@@ -305,7 +281,7 @@ const customCode = `() => {
               onClick={() => setSelectedList({ ...selectedList, dislike: !selectedList.dislike, like: false })}
             />
 
-            <Menu trigger={<Menu.Trigger className="AIResponse-menu-button" appearance="transparent" size="tiny" />}>
+            <Menu trigger={<Menu.Trigger appearance="transparent" size="tiny" />}>
               <Menu.List>
                 <Menu.Item>Share</Menu.Item>
                 <Menu.Item>View source</Menu.Item>

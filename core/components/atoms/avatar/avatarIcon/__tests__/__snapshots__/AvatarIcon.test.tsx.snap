@@ -11,7 +11,7 @@ exports[`Avatar Icon component
         class="position-relative d-inline-flex"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -38,7 +38,7 @@ exports[`Avatar Icon component
       class="position-relative d-inline-flex"
     >
       <span
-        class=""
+        class="Avatar-wrapper"
         data-test="DesignSystem-AvatarWrapper"
       >
         <span
@@ -124,7 +124,7 @@ exports[`Avatar Icon component
         class="position-relative d-inline-flex"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -151,7 +151,7 @@ exports[`Avatar Icon component
       class="position-relative d-inline-flex"
     >
       <span
-        class=""
+        class="Avatar-wrapper"
         data-test="DesignSystem-AvatarWrapper"
       >
         <span
@@ -237,7 +237,7 @@ exports[`Avatar Icon component
         class="position-relative d-inline-flex"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -264,7 +264,7 @@ exports[`Avatar Icon component
       class="position-relative d-inline-flex"
     >
       <span
-        class=""
+        class="Avatar-wrapper"
         data-test="DesignSystem-AvatarWrapper"
       >
         <span
@@ -350,7 +350,7 @@ exports[`Avatar Icon component
         class="position-relative d-inline-flex"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -377,7 +377,7 @@ exports[`Avatar Icon component
       class="position-relative d-inline-flex"
     >
       <span
-        class=""
+        class="Avatar-wrapper"
         data-test="DesignSystem-AvatarWrapper"
       >
         <span
@@ -463,7 +463,7 @@ exports[`Avatar Icon component
         class="position-relative d-inline-flex"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -490,7 +490,7 @@ exports[`Avatar Icon component
       class="position-relative d-inline-flex"
     >
       <span
-        class=""
+        class="Avatar-wrapper"
         data-test="DesignSystem-AvatarWrapper"
       >
         <span
@@ -576,7 +576,7 @@ exports[`Avatar Icon component
         class="position-relative d-inline-flex"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -603,7 +603,7 @@ exports[`Avatar Icon component
       class="position-relative d-inline-flex"
     >
       <span
-        class=""
+        class="Avatar-wrapper"
         data-test="DesignSystem-AvatarWrapper"
       >
         <span
@@ -689,7 +689,7 @@ exports[`Avatar Icon component
         class="position-relative d-inline-flex"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -716,7 +716,7 @@ exports[`Avatar Icon component
       class="position-relative d-inline-flex"
     >
       <span
-        class=""
+        class="Avatar-wrapper"
         data-test="DesignSystem-AvatarWrapper"
       >
         <span
@@ -802,7 +802,7 @@ exports[`Avatar Icon component
         class="position-relative d-inline-flex"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -829,7 +829,7 @@ exports[`Avatar Icon component
       class="position-relative d-inline-flex"
     >
       <span
-        class=""
+        class="Avatar-wrapper"
         data-test="DesignSystem-AvatarWrapper"
       >
         <span
@@ -915,7 +915,7 @@ exports[`Avatar Icon component
         class="position-relative d-inline-flex"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -942,7 +942,7 @@ exports[`Avatar Icon component
       class="position-relative d-inline-flex"
     >
       <span
-        class=""
+        class="Avatar-wrapper"
         data-test="DesignSystem-AvatarWrapper"
       >
         <span
@@ -1028,7 +1028,7 @@ exports[`Avatar Icon component
         class="position-relative d-inline-flex"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -1055,7 +1055,7 @@ exports[`Avatar Icon component
       class="position-relative d-inline-flex"
     >
       <span
-        class=""
+        class="Avatar-wrapper"
         data-test="DesignSystem-AvatarWrapper"
       >
         <span
@@ -1141,7 +1141,7 @@ exports[`Avatar Icon component
         class="position-relative d-inline-flex"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -1168,7 +1168,7 @@ exports[`Avatar Icon component
       class="position-relative d-inline-flex"
     >
       <span
-        class=""
+        class="Avatar-wrapper"
         data-test="DesignSystem-AvatarWrapper"
       >
         <span
@@ -1254,7 +1254,7 @@ exports[`Avatar Icon component
         class="position-relative d-inline-flex"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -1281,7 +1281,7 @@ exports[`Avatar Icon component
       class="position-relative d-inline-flex"
     >
       <span
-        class=""
+        class="Avatar-wrapper"
         data-test="DesignSystem-AvatarWrapper"
       >
         <span
@@ -1367,7 +1367,7 @@ exports[`Avatar Icon component
         class="position-relative d-inline-flex"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -1394,7 +1394,7 @@ exports[`Avatar Icon component
       class="position-relative d-inline-flex"
     >
       <span
-        class=""
+        class="Avatar-wrapper"
         data-test="DesignSystem-AvatarWrapper"
       >
         <span
@@ -1480,7 +1480,7 @@ exports[`Avatar Icon component
         class="position-relative d-inline-flex"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -1507,7 +1507,7 @@ exports[`Avatar Icon component
       class="position-relative d-inline-flex"
     >
       <span
-        class=""
+        class="Avatar-wrapper"
         data-test="DesignSystem-AvatarWrapper"
       >
         <span
@@ -1593,7 +1593,7 @@ exports[`Avatar Icon component
         class="position-relative d-inline-flex"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -1620,7 +1620,7 @@ exports[`Avatar Icon component
       class="position-relative d-inline-flex"
     >
       <span
-        class=""
+        class="Avatar-wrapper"
         data-test="DesignSystem-AvatarWrapper"
       >
         <span
@@ -1706,7 +1706,7 @@ exports[`Avatar Icon component
         class="position-relative d-inline-flex"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -1733,7 +1733,7 @@ exports[`Avatar Icon component
       class="position-relative d-inline-flex"
     >
       <span
-        class=""
+        class="Avatar-wrapper"
         data-test="DesignSystem-AvatarWrapper"
       >
         <span
@@ -1819,7 +1819,7 @@ exports[`Avatar Icon component
         class="position-relative d-inline-flex"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -1846,7 +1846,7 @@ exports[`Avatar Icon component
       class="position-relative d-inline-flex"
     >
       <span
-        class=""
+        class="Avatar-wrapper"
         data-test="DesignSystem-AvatarWrapper"
       >
         <span
@@ -1932,7 +1932,7 @@ exports[`Avatar Icon component
         class="position-relative d-inline-flex"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -1959,7 +1959,7 @@ exports[`Avatar Icon component
       class="position-relative d-inline-flex"
     >
       <span
-        class=""
+        class="Avatar-wrapper"
         data-test="DesignSystem-AvatarWrapper"
       >
         <span

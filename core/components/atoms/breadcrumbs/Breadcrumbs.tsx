@@ -99,6 +99,7 @@ const renderDropdown = (list: BreadcrumbsProps['list'], onClick: BreadcrumbsProp
         appearance="transparent"
         icon="more_horiz_filled"
         largeIcon={true}
+        aria-label="Show more breadcrumbs"
         className={styles['Breadcrumbs-Button']}
         data-test="DesignSystem-Breadcrumbs--Button"
       />
@@ -134,7 +135,7 @@ export const Breadcrumbs = (props: BreadcrumbsProps) => {
   );
 
   return (
-    <div data-test="DesignSystem-Breadcrumbs" {...baseProps} className={BreadcrumbClass}>
+    <nav data-test="DesignSystem-Breadcrumbs" {...baseProps} className={BreadcrumbClass} aria-label="Breadcrumb">
       {list.length <= 4 ? (
         list.map((item, index) => {
           return <RenderItem key={index} item={item} onClick={onClick} showTooltip={showTooltip} />;
@@ -149,7 +150,7 @@ export const Breadcrumbs = (props: BreadcrumbsProps) => {
           <RenderItem item={list[list.length - 1]} onClick={onClick} showTooltip={showTooltip} />
         </>
       )}
-    </div>
+    </nav>
   );
 };
 

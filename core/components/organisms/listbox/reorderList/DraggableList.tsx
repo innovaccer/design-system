@@ -7,7 +7,7 @@ import classNames from 'classnames';
 import styles from '@css/components/listbox.module.css';
 
 export const DraggableList = (props: ListboxProps) => {
-  const { children, className, tagName: Tag = 'ul' } = props;
+  const { children, className, tagName: Tag = 'ul', size, type, draggable, showDivider, ...rest } = props;
   const baseProps = extractBaseProps(props);
 
   const classes = classNames(styles.Listbox, className);
@@ -37,8 +37,8 @@ export const DraggableList = (props: ListboxProps) => {
           </div>
         );
       }}
-      renderList={({ children, props }) => (
-        <Tag data-test="DesignSystem-Listbox" {...baseProps} className={classes} {...props}>
+      renderList={({ children, props: dragProps }) => (
+        <Tag data-test="DesignSystem-Listbox" {...baseProps} className={classes} {...rest} {...dragProps}>
           {children}
         </Tag>
       )}

@@ -46,7 +46,7 @@ exports[`MultiSlider component
               class="Slider-ticks"
             />
             <span
-              class="Text Text--disabled Text--small"
+              class="Text Text--subtle Text--small"
               data-test="DesignSystem-Text"
             >
               0.00000
@@ -62,7 +62,7 @@ exports[`MultiSlider component
               class="Slider-ticks"
             />
             <span
-              class="Text Text--disabled Text--small"
+              class="Text Text--subtle Text--small"
               data-test="DesignSystem-Text"
             >
               10.00000
@@ -78,7 +78,7 @@ exports[`MultiSlider component
               class="Slider-ticks"
             />
             <span
-              class="Text Text--disabled Text--small"
+              class="Text Text--subtle Text--small"
               data-test="DesignSystem-Text"
             >
               20.00000
@@ -94,7 +94,7 @@ exports[`MultiSlider component
               class="Slider-ticks"
             />
             <span
-              class="Text Text--disabled Text--small"
+              class="Text Text--subtle Text--small"
               data-test="DesignSystem-Text"
             >
               30.00000
@@ -110,7 +110,7 @@ exports[`MultiSlider component
               class="Slider-ticks"
             />
             <span
-              class="Text Text--disabled Text--small"
+              class="Text Text--subtle Text--small"
               data-test="DesignSystem-Text"
             >
               40.00000
@@ -126,7 +126,7 @@ exports[`MultiSlider component
               class="Slider-ticks"
             />
             <span
-              class="Text Text--disabled Text--small"
+              class="Text Text--subtle Text--small"
               data-test="DesignSystem-Text"
             >
               50.00000
@@ -142,7 +142,7 @@ exports[`MultiSlider component
               class="Slider-ticks"
             />
             <span
-              class="Text Text--disabled Text--small"
+              class="Text Text--subtle Text--small"
               data-test="DesignSystem-Text"
             >
               60.00000
@@ -158,7 +158,7 @@ exports[`MultiSlider component
               class="Slider-ticks"
             />
             <span
-              class="Text Text--disabled Text--small"
+              class="Text Text--subtle Text--small"
               data-test="DesignSystem-Text"
             >
               70.00000
@@ -174,7 +174,7 @@ exports[`MultiSlider component
               class="Slider-ticks"
             />
             <span
-              class="Text Text--disabled Text--small"
+              class="Text Text--subtle Text--small"
               data-test="DesignSystem-Text"
             >
               80.00000
@@ -190,7 +190,7 @@ exports[`MultiSlider component
               class="Slider-ticks"
             />
             <span
-              class="Text Text--disabled Text--small"
+              class="Text Text--subtle Text--small"
               data-test="DesignSystem-Text"
             >
               90.00000
@@ -206,7 +206,7 @@ exports[`MultiSlider component
               class="Slider-ticks"
             />
             <span
-              class="Text Text--disabled Text--small"
+              class="Text Text--subtle Text--small"
               data-test="DesignSystem-Text"
             >
               100.00000

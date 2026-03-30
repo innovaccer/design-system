@@ -58,7 +58,7 @@ const AvatarSelectionItem = (props: AvatarSelectionItemProps) => {
         tabIndex={-1}
         data-test="DesignSystem-AvatarSelection--Checkbox"
       />
-      <Avatar {...avatarData} shape={avatarShape} size={size} className="ml-3" withTooltip={false}>
+      <Avatar {...avatarData} shape={avatarShape} size={size} className="ml-3" withTooltip={false} aria-hidden={true}>
         {image || icon}
       </Avatar>
       <Tooltip
@@ -67,6 +67,7 @@ const AvatarSelectionItem = (props: AvatarSelectionItemProps) => {
         elementRef={elementRef}
         open={showTooltip}
         triggerClass={triggerClassName}
+        position="right"
       >
         <Text className="ellipsis--noWrap ml-4" ref={elementRef}>
           {name}

@@ -1,13 +1,13 @@
 export const theme = {
   base: 'light',
 
-  colorPrimary: '#0000001a',
+  colorPrimary: 'var(--inverse-lightest)',
   colorSecondary: 'deepskyblue',
 
   // UI
-  appBg: 'white',
-  appContentBg: 'white',
-  appBorderColor: '#0000001a',
+  appBg: 'var(--text-white)',
+  appContentBg: 'var(--text-white)',
+  appBorderColor: '#0000001a', // concrete value required by polished transparentize/opacify
   appBorderRadius: 4,
 
   // Typography
@@ -17,14 +17,14 @@ export const theme = {
     },
   },
   background: {
-    content: 'white',
+    content: 'var(--text-white)',
   },
   animation: 'ease-out',
   input: '',
   color: {
-    defaultText: '#151414',
-    secondary: 'black',
-    negative: 'black',
+    defaultText: '#1a1a1a', // concrete value required by polished transparentize
+    secondary: 'var(--text)',
+    negative: 'var(--text)',
   },
   fonts: {
     base: '',
@@ -33,18 +33,18 @@ export const theme = {
   fontCode: 'Roboto mono',
 
   // Text colors
-  textColor: 'black',
-  textInverseColor: 'rgba(255,255,255,0.9)',
+  textColor: 'var(--text)',
+  textInverseColor: 'var(--text-white)',
 
   // Toolbar default and active colors
-  barTextColor: 'silver',
-  barSelectedColor: 'black',
-  barBg: 'white',
+  barTextColor: 'var(--inverse-lighter)',
+  barSelectedColor: 'var(--text)',
+  barBg: 'var(--text-white)',
 
   // Form colors
-  inputBg: 'white',
-  inputBorder: 'silver',
-  inputTextColor: 'black',
+  inputBg: 'var(--text-white)',
+  inputBorder: 'var(--inverse-lighter)',
+  inputTextColor: 'var(--text)',
   inputBorderRadius: 4,
   brand: 'Test',
   code: '123',

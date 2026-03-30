@@ -52,7 +52,17 @@ export const ProgressRing = (props: ProgressRingProps) => {
   };
 
   return (
-    <svg data-test="DesignSystem-ProgressRing" {...baseProps} className={ProgressRingClass} {...svgProps}>
+    <svg
+      data-test="DesignSystem-ProgressRing"
+      {...baseProps}
+      className={ProgressRingClass}
+      {...svgProps}
+      role="progressbar"
+      aria-valuemin={0}
+      aria-valuemax={max}
+      aria-valuenow={Math.max(0, Math.min(value, max))}
+      aria-label="Progress Ring"
+    >
       <circle className={styles['Ring-background']} {...circleProps} />
       <circle
         className={styles['Ring-indicator']}

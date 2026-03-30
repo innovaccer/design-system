@@ -85,6 +85,10 @@ export type IconProps = {
    * where it participates in sequential keyboard navigation.
    */
   tabIndex?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>['tabIndex'];
+  /**
+   * Hides the icon from assistive technologies when used as decorative.
+   */
+  'aria-hidden'?: React.AriaAttributes['aria-hidden'];
 } & BaseProps;
 
 const iconTypeMapper: Record<string, string> = {

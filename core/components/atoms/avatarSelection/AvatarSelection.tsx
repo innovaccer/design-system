@@ -33,6 +33,14 @@ export interface AvatarData extends Record<string, any> {
 
 export interface AvatarSelectionProps extends BaseProps {
   /**
+   * Accessible label for the avatar selection container.
+   */
+  'aria-label'?: string;
+  /**
+   * Points to element(s) that label the avatar selection container.
+   */
+  'aria-labelledby'?: string;
+  /**
    * List of `Avatars`
    *
    * <pre className="DocPage-codeBlock">
@@ -142,6 +150,8 @@ export const AvatarSelection = (props: AvatarSelectionProps) => {
     searchComparator,
     children,
     className,
+    'aria-label': ariaLabel,
+    'aria-labelledby': ariaLabelledBy,
   } = props;
 
   const [selectedItems, setSelectedItems] = React.useState<AvatarData[]>([]);
@@ -256,7 +266,14 @@ export const AvatarSelection = (props: AvatarSelectionProps) => {
 
   return (
     <AvatarSelectionContext.Provider value={contextProp}>
-      <div data-test="DesignSystem-AvatarSelection" {...baseProps} className={AvatarSelectionClass}>
+      <div
+        data-test="DesignSystem-AvatarSelection"
+        {...baseProps}
+        className={AvatarSelectionClass}
+        role="group"
+        aria-label={ariaLabel}
+        aria-labelledby={ariaLabelledBy}
+      >
         <SelectionAvatarsWrapper
           size={size}
           avatarStyle={avatarStyle}

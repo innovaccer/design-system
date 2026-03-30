@@ -15,7 +15,8 @@ exports[`Navigation component
           class="pl-6"
           data-test="DesignSystem-PageHeader--Breadcrumbs"
         >
-          <div
+          <nav
+            aria-label="Breadcrumb"
             class="Breadcrumbs"
             data-test="DesignSystem-Breadcrumbs"
           >
@@ -38,7 +39,7 @@ exports[`Navigation component
                 /
               </span>
             </div>
-          </div>
+          </nav>
         </div>
         <div
           class="d-flex pl-6"
@@ -339,7 +340,8 @@ exports[`Navigation component
           class="pl-6"
           data-test="DesignSystem-PageHeader--Breadcrumbs"
         >
-          <div
+          <nav
+            aria-label="Breadcrumb"
             class="Breadcrumbs"
             data-test="DesignSystem-Breadcrumbs"
           >
@@ -362,7 +364,7 @@ exports[`Navigation component
                 /
               </span>
             </div>
-          </div>
+          </nav>
         </div>
         <div
           class="d-flex pl-6"
@@ -668,7 +670,8 @@ exports[`Navigation component
           class="pl-6"
           data-test="DesignSystem-PageHeader--Breadcrumbs"
         >
-          <div
+          <nav
+            aria-label="Breadcrumb"
             class="Breadcrumbs"
             data-test="DesignSystem-Breadcrumbs"
           >
@@ -691,7 +694,7 @@ exports[`Navigation component
                 /
               </span>
             </div>
-          </div>
+          </nav>
         </div>
         <div
           class="d-flex pl-6"
@@ -1175,8 +1178,10 @@ exports[`Navigation component
                   data-test="DesignSystem-PageHeader--Nav"
                 >
                   <div
+                    aria-label="Steps"
                     class="Stepper"
                     data-test="DesignSystem-Stepper"
+                    role="group"
                   >
                     <div
                       class="Step Stepper-animate Step--active"
@@ -1343,7 +1348,8 @@ exports[`Navigation component
           class="pl-6"
           data-test="DesignSystem-PageHeader--Breadcrumbs"
         >
-          <div
+          <nav
+            aria-label="Breadcrumb"
             class="Breadcrumbs"
             data-test="DesignSystem-Breadcrumbs"
           >
@@ -1366,7 +1372,7 @@ exports[`Navigation component
                 /
               </span>
             </div>
-          </div>
+          </nav>
         </div>
         <div
           class="d-flex pl-6"
@@ -1589,7 +1595,8 @@ exports[`Navigation component
           class="pl-6"
           data-test="DesignSystem-PageHeader--Breadcrumbs"
         >
-          <div
+          <nav
+            aria-label="Breadcrumb"
             class="Breadcrumbs"
             data-test="DesignSystem-Breadcrumbs"
           >
@@ -1612,7 +1619,7 @@ exports[`Navigation component
                 /
               </span>
             </div>
-          </div>
+          </nav>
         </div>
         <div
           class="d-flex pl-6"

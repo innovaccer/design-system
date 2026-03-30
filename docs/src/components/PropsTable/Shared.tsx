@@ -29,12 +29,12 @@ export const codeCommon = (): CSSObject => ({
   borderRadius: 4,
   fontSize: '12px',
   fontWeight: 'bold',
-  border: theme.base === 'light' ? `1px solid #E5E5E5` : `1px solid#E5E5E5`,
+  border: theme.base === 'light' ? `1px solid var(--secondary-light)` : `1px solid var(--secondary-light)`,
   color:
     theme.base === 'light'
       ? transparentize(0.1, theme.color.defaultText)
       : transparentize(0.3, theme.color.defaultText),
-  backgroundColor: '#F4F4F4',
+  backgroundColor: 'var(--secondary-lightest)',
 });
 
 export const withReset = (): CSSObject => ({
