@@ -113,6 +113,13 @@
   outline-offset: calc(-1 * var(--border-width-05));
 }
 
+/* Custom `optionRenderer` rows: wrapper is only `.OptionWrapper`, so match built-in focus ring */
+.OptionWrapper:focus,
+.OptionWrapper:focus-visible {
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: calc(-1 * var(--border-width-05));
+}
+
 .Option-loading {
   pointer-events: none;
 }

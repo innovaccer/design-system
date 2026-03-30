@@ -107,7 +107,7 @@ export const focusListItem = (
   }
 
   (targetOption as HTMLElement)?.focus();
-  targetOption?.scrollIntoView({ block: 'center' });
+  (targetOption as HTMLElement | undefined)?.scrollIntoView?.({ block: 'center' });
   setFocusedOption && setFocusedOption(targetOption);
 };
 
@@ -182,7 +182,7 @@ export const navigateOptions = (
 
     (targetOption as HTMLElement).focus();
     setFocusedOption && setFocusedOption(targetOption);
-    targetOption.scrollIntoView({ block: 'center' });
+    (targetOption as HTMLElement).scrollIntoView?.({ block: 'center' });
   }
 };
 
@@ -215,6 +215,6 @@ export const handleInputKeyDown = (
   }
 
   (targetOption as HTMLElement)?.focus();
-  targetOption?.scrollIntoView({ block: 'center' });
+  (targetOption as HTMLElement | undefined)?.scrollIntoView?.({ block: 'center' });
   setFocusedOption && setFocusedOption(targetOption);
 };

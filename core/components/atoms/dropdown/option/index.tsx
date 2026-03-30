@@ -13,25 +13,6 @@ import styles from '@css/components/dropdown.module.css';
 
 export type ClickEvent = React.MouseEvent<HTMLDivElement>;
 
-export interface OptionRendererProps {
-  /**
-   * Adds custom option
-   *
-   * OptionProps: {
-   *   optionData: Option;
-   *   selected: boolean;
-   *   active?: boolean;
-   *   index: number;
-   *   onChange?: (checked: boolean) => void;
-   * }
-   */
-  optionRenderer?: (props: OptionProps) => React.ReactElement;
-  /**
-   * Type of option
-   */
-  optionType?: OptionType;
-}
-
 export interface OptionSchema extends Record<string, any> {
   label: string;
   value: React.ReactText;
@@ -42,6 +23,30 @@ export interface OptionSchema extends Record<string, any> {
   disabled?: boolean;
   group?: string;
   iconType?: IconType;
+}
+
+/** Props passed to `optionRenderer` for custom dropdown rows */
+export interface CustomOptionRendererParams {
+  optionData: OptionSchema;
+  selected: boolean;
+  active?: boolean;
+  index: number;
+  /** Same handler as built-in options: use for row `onClick` (esp. custom checkbox layouts). */
+  onClick?: () => void;
+  onChange?: (event: ChangeEvent) => void;
+  /** Pass to `Checkbox` `id` so the wrapping `<label htmlFor>` in the list can activate it. */
+  id?: string;
+}
+
+export interface OptionRendererProps {
+  /**
+   * Adds custom option
+   */
+  optionRenderer?: (props: CustomOptionRendererParams) => React.ReactElement;
+  /**
+   * Type of option
+   */
+  optionType?: OptionType;
 }
 
 export interface OptionTypeProps {
@@ -150,6 +155,20 @@ const Option = (props: OptionProps) => {
     if (onChange) onChange(e);
   };
 
+  const handleCustomOptionKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (disabled) return;
+
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      if (checkboxes) {
+        const checkboxInput = event.currentTarget.querySelector('input[type="checkbox"]') as HTMLInputElement | null;
+        checkboxInput?.click();
+      } else if (onClick) {
+        onClick();
+      }
+    }
+  };
+
   if (props.optionRenderer) {
     return (
       <div
@@ -157,9 +176,11 @@ const Option = (props: OptionProps) => {
         className={customOptionClass}
         data-disabled={disabled}
         onMouseEnter={onUpdateActiveOption}
+        onKeyDown={handleCustomOptionKeyDown}
         role={menu ? 'menuitem' : 'option'}
         aria-selected={!menu ? selected : undefined}
         aria-disabled={disabled || undefined}
+        tabIndex={disabled ? -1 : 0}
         {...(!checkboxes && { onClick })}
       >
         {props.optionRenderer({
@@ -168,6 +189,8 @@ const Option = (props: OptionProps) => {
           onChange,
           active,
           index,
+          onClick,
+          id,
         })}
       </div>
     );

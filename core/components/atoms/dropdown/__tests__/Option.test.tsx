@@ -84,6 +84,34 @@ describe('renders custom option', () => {
     expect(getAllByTestId('DesignSystem-DropdownOption--Custom')[0]).toHaveClass('OptionWrapper');
     expect(FunctionValue).toHaveBeenCalled();
   });
+
+  it('custom option row is focusable for roving tabindex and selects on Enter', () => {
+    const optionRenderer = () => <div>Custom row</div>;
+    const onChange = jest.fn();
+    const { getAllByTestId, getByTestId } = render(
+      <Dropdown options={storyOptions} optionRenderer={optionRenderer} onChange={onChange} />
+    );
+    fireEvent.click(getByTestId(trigger));
+    const firstCustom = getAllByTestId('DesignSystem-DropdownOption--Custom')[0];
+    expect(firstCustom).toHaveAttribute('tabindex', '0');
+    firstCustom.focus();
+    fireEvent.keyDown(firstCustom, { key: 'Enter' });
+    expect(onChange).toHaveBeenCalled();
+  });
+
+  it('passes id and onClick to custom optionRenderer params', () => {
+    const optionRenderer = jest.fn(() => <div>Custom</div>);
+    const { getByTestId } = render(
+      <Dropdown options={storyOptions} withCheckbox={true} optionRenderer={optionRenderer} />
+    );
+    fireEvent.click(getByTestId(trigger));
+    expect(optionRenderer).toHaveBeenCalled();
+    const params = optionRenderer.mock.calls[0][0];
+    expect(params).toHaveProperty('id');
+    expect(typeof params.id).toBe('string');
+    expect(params).toHaveProperty('onClick');
+    expect(params).toHaveProperty('onChange');
+  });
 });
 
 describe('dropdown with prop: truncateOption', () => {

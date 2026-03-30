@@ -944,6 +944,8 @@ const DropdownList = (props: OptionsProps) => {
         // Collect all non-option focusable elements in the popover
         const focusableSelector = 'button:not([disabled]), input:not([disabled]), [tabindex="0"]';
         const nonOptionFocusables = Array.from(container.querySelectorAll(focusableSelector)).filter((el) => {
+          if ((el as HTMLButtonElement | HTMLInputElement).disabled) return false;
+          if (el.getAttribute('aria-disabled') === 'true') return false;
           if (el.closest('.OptionWrapper')) return false;
           if ((el as HTMLElement).closest('[data-test="DesignSystem-Checkbox"]')) return false;
           return true;

@@ -354,6 +354,28 @@ describe('Dropdown component', () => {
     expect(optionList[1]).toHaveClass('Option-checkbox--active');
   });
 
+  it('returns focus to the trigger when tabbing past Cancel and Apply is disabled', async () => {
+    const { getByTestId } = render(
+      <Dropdown options={storyOptions} showApplyButton={true} withCheckbox={true} withSearch={false} />
+    );
+
+    const dropdownTrigger = getByTestId(trigger);
+    fireEvent.click(dropdownTrigger);
+
+    const cancelButton = getByTestId('DesignSystem-Dropdown-CancelButton');
+    const applyButton = getByTestId('DesignSystem-Dropdown-ApplyButton');
+
+    expect(applyButton).toHaveAttribute('disabled');
+
+    cancelButton.focus();
+    fireEvent.keyDown(cancelButton, { key: 'Tab' });
+
+    await waitFor(() => {
+      expect(dropdownTrigger).toHaveFocus();
+      expect(getByTestId('DesignSystem-Popover')).toHaveAttribute('data-opened', 'false');
+    });
+  });
+
   it('renders Select All inside the listbox', () => {
     const { getByTestId } = render(<Dropdown options={storyOptions} withCheckbox={true} withSearch={false} />);
     const dropdownTrigger = getByTestId(trigger);
