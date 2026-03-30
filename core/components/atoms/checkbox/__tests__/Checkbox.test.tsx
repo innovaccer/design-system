@@ -164,4 +164,44 @@ describe('Checkbox component accessibility', () => {
     const { getByTestId } = render(<Checkbox label={StringValue} indeterminate={true} />);
     expect(getByTestId('DesignSystem-Checkbox-InputBox')).toHaveAttribute('aria-checked', 'mixed');
   });
+
+  it('warns when no accessible name is provided', () => {
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
+    render(<Checkbox />);
+    expect(warnSpy).toHaveBeenCalledWith(
+      'Checkbox: An accessible name is required. Provide a `label`, `aria-label`, or `aria-labelledby` prop.'
+    );
+    warnSpy.mockRestore();
+  });
+
+  it('does not warn when label is provided', () => {
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
+    render(<Checkbox label="Accept terms" />);
+    expect(warnSpy).not.toHaveBeenCalled();
+    warnSpy.mockRestore();
+  });
+
+  it('does not warn when aria-label is provided without label', () => {
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
+    render(<Checkbox aria-label="Accept terms" />);
+    expect(warnSpy).not.toHaveBeenCalled();
+    warnSpy.mockRestore();
+  });
+
+  it('forwards aria-label to the input element', () => {
+    const { getByTestId } = render(<Checkbox aria-label="Accept terms" />);
+    expect(getByTestId('DesignSystem-Checkbox-InputBox')).toHaveAttribute('aria-label', 'Accept terms');
+  });
+
+  it('does not warn when aria-labelledby is provided without label', () => {
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
+    render(<Checkbox aria-labelledby="external-label" />);
+    expect(warnSpy).not.toHaveBeenCalled();
+    warnSpy.mockRestore();
+  });
+
+  it('forwards aria-labelledby to the input element', () => {
+    const { getByTestId } = render(<Checkbox aria-labelledby="external-label" />);
+    expect(getByTestId('DesignSystem-Checkbox-InputBox')).toHaveAttribute('aria-labelledby', 'external-label');
+  });
 });

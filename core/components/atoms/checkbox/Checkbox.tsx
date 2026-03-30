@@ -95,8 +95,16 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
     labelRef,
     wrapLabel,
     ['aria-describedby']: ariaDescribedby,
+    ['aria-label']: ariaLabel,
+    ['aria-labelledby']: ariaLabelledBy,
     ...rest
   } = props;
+
+  if (process.env.NODE_ENV !== 'production' && !label?.trim() && !ariaLabel && !ariaLabelledBy) {
+    console.warn(
+      'Checkbox: An accessible name is required. Provide a `label`, `aria-label`, or `aria-labelledby` prop.'
+    );
+  }
 
   const ref = React.useRef<HTMLInputElement>(null);
 
@@ -198,6 +206,8 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
             aria-invalid={error || undefined}
             aria-checked={indeterminate ? 'mixed' : undefined}
             aria-describedby={describedBy}
+            aria-label={ariaLabel}
+            aria-labelledby={ariaLabelledBy}
           />
           <span className={CheckboxWrapper} data-test="DesignSystem-Checkbox-Icon">
             {IconMapper && <CheckboxIcon name={IconMapper} />}
