@@ -354,6 +354,21 @@ describe('Dropdown component', () => {
     expect(optionList[1]).toHaveClass('Option-checkbox--active');
   });
 
+  it('keeps checkbox checked when active option changes after selection', () => {
+    const { getByTestId, getAllByTestId } = render(
+      <Dropdown options={storyOptions} showApplyButton={true} withCheckbox={true} withSearch={false} />
+    );
+    fireEvent.click(getByTestId(trigger));
+    const rows = getAllByTestId('DesignSystem-DropdownOption--WITH_CHECKBOX');
+
+    fireEvent.click(getAllByTestId('DesignSystem-Checkbox-InputBox')[1]);
+    expect(getAllByTestId('DesignSystem-Checkbox-InputBox')[1]).toBeChecked();
+
+    fireEvent.mouseEnter(rows[3]);
+
+    expect(getAllByTestId('DesignSystem-Checkbox-InputBox')[1]).toBeChecked();
+  });
+
   it('returns focus to the trigger when tabbing past Cancel and Apply is disabled', async () => {
     const { getByTestId } = render(
       <Dropdown options={storyOptions} showApplyButton={true} withCheckbox={true} withSearch={false} />

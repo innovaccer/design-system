@@ -7,6 +7,7 @@ import Option, { OptionRendererProps, OptionSchema } from './option';
 import classNames from 'classnames';
 import Loading from './Loading';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import uidGenerator from '@/utils/uidGenerator';
 import { ChangeEvent } from '@/common.type';
 import { ErrorTemplate } from './ErrorTemplate';
 import { ErrorType } from './Dropdown';
@@ -261,6 +262,8 @@ const DropdownList = (props: OptionsProps) => {
   const dropdownTriggerRef = React.createRef<HTMLButtonElement>();
   const dropdownCancelButtonRef = React.createRef<HTMLButtonElement>();
   const dropdownApplyButtonRef = React.createRef<HTMLButtonElement>();
+  /** Stable prefix so checkbox ids do not change every render (avoids unchecking / label churn when cursor moves). */
+  const dropdownFieldIdsPrefixRef = React.useRef(`ds-dropdown-${uidGenerator()}`);
 
   const enableSearch = withSearch || props.async;
 
@@ -546,7 +549,7 @@ const DropdownList = (props: OptionsProps) => {
     const { selectAllLabel = 'Select All', selectAll, onSelectAll } = props;
 
     const label = selectAllLabel.trim() ? selectAllLabel.trim() : 'Select All';
-    const id = `Checkbox-option-${label.toLowerCase().replace(/\s+/g, '')}-${new Date().getTime()}`;
+    const id = `${dropdownFieldIdsPrefixRef.current}-select-all`;
 
     const onSelectAllKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
       if (event.key === 'Enter' || event.key === ' ') {
@@ -590,7 +593,7 @@ const DropdownList = (props: OptionsProps) => {
 
     const active = selectAllPresent ? index + 1 === cursor : index === cursor;
     const optionIsSelected = tempSelected.findIndex((option) => option.value === item.value) !== -1;
-    const id = `Checkbox-option-${index}-${item.value}-${new Date().getTime()}`;
+    const id = `${dropdownFieldIdsPrefixRef.current}-option-${index}`;
 
     return (
       <label htmlFor={id} key={index} role="presentation">
