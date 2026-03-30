@@ -25,6 +25,7 @@ Object {
               class="PopperWrapper-trigger flex-grow-0"
             >
               <span
+                aria-describedby="Tooltip-7"
                 class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
@@ -60,6 +61,7 @@ Object {
               class="PopperWrapper-trigger flex-grow-0"
             >
               <span
+                aria-describedby="Tooltip-8"
                 class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
@@ -104,6 +106,7 @@ Object {
             class="PopperWrapper-trigger flex-grow-0"
           >
             <span
+              aria-describedby="Tooltip-7"
               class="Avatar-wrapper"
               data-test="DesignSystem-AvatarWrapper"
             >
@@ -139,6 +142,7 @@ Object {
             class="PopperWrapper-trigger flex-grow-0"
           >
             <span
+              aria-describedby="Tooltip-8"
               class="Avatar-wrapper"
               data-test="DesignSystem-AvatarWrapper"
             >
@@ -242,6 +246,7 @@ Object {
               class="PopperWrapper-trigger flex-grow-0"
             >
               <span
+                aria-describedby="Tooltip-5"
                 class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
@@ -277,6 +282,7 @@ Object {
               class="PopperWrapper-trigger flex-grow-0"
             >
               <span
+                aria-describedby="Tooltip-6"
                 class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
@@ -321,6 +327,7 @@ Object {
             class="PopperWrapper-trigger flex-grow-0"
           >
             <span
+              aria-describedby="Tooltip-5"
               class="Avatar-wrapper"
               data-test="DesignSystem-AvatarWrapper"
             >
@@ -356,6 +363,7 @@ Object {
             class="PopperWrapper-trigger flex-grow-0"
           >
             <span
+              aria-describedby="Tooltip-6"
               class="Avatar-wrapper"
               data-test="DesignSystem-AvatarWrapper"
             >
@@ -459,6 +467,7 @@ Object {
               class="PopperWrapper-trigger flex-grow-0"
             >
               <span
+                aria-describedby="Tooltip-3"
                 class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
@@ -494,6 +503,7 @@ Object {
               class="PopperWrapper-trigger flex-grow-0"
             >
               <span
+                aria-describedby="Tooltip-4"
                 class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
@@ -538,6 +548,7 @@ Object {
             class="PopperWrapper-trigger flex-grow-0"
           >
             <span
+              aria-describedby="Tooltip-3"
               class="Avatar-wrapper"
               data-test="DesignSystem-AvatarWrapper"
             >
@@ -573,6 +584,7 @@ Object {
             class="PopperWrapper-trigger flex-grow-0"
           >
             <span
+              aria-describedby="Tooltip-4"
               class="Avatar-wrapper"
               data-test="DesignSystem-AvatarWrapper"
             >
@@ -676,6 +688,7 @@ Object {
               class="PopperWrapper-trigger flex-grow-0"
             >
               <span
+                aria-describedby="Tooltip-1"
                 class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
@@ -711,6 +724,7 @@ Object {
               class="PopperWrapper-trigger flex-grow-0"
             >
               <span
+                aria-describedby="Tooltip-2"
                 class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
@@ -755,6 +769,7 @@ Object {
             class="PopperWrapper-trigger flex-grow-0"
           >
             <span
+              aria-describedby="Tooltip-1"
               class="Avatar-wrapper"
               data-test="DesignSystem-AvatarWrapper"
             >
@@ -790,6 +805,7 @@ Object {
             class="PopperWrapper-trigger flex-grow-0"
           >
             <span
+              aria-describedby="Tooltip-2"
               class="Avatar-wrapper"
               data-test="DesignSystem-AvatarWrapper"
             >
