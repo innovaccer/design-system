@@ -10,9 +10,10 @@ exports[`StatusHint component
       data-test="DesignSystem-StatusHint"
     >
       <span
-        aria-hidden="true"
+        aria-label="alert status"
         class="StatusHint-icon StatusHint--alert mr-4"
         data-test="DesignSystem-StatusHint--Icon"
+        role="img"
       />
       <span
         class="Text Text--default Text--medium Text--regular"
@@ -35,9 +36,10 @@ exports[`StatusHint component
       data-test="DesignSystem-StatusHint"
     >
       <span
-        aria-hidden="true"
+        aria-label="alert status"
         class="StatusHint-icon StatusHint--alert mr-3-5"
         data-test="DesignSystem-StatusHint--Icon"
+        role="img"
       />
       <span
         class="Text Text--default Text--medium Text--small"
@@ -60,9 +62,10 @@ exports[`StatusHint component
       data-test="DesignSystem-StatusHint"
     >
       <span
-        aria-hidden="true"
+        aria-label="default status"
         class="StatusHint-icon StatusHint--default mr-4"
         data-test="DesignSystem-StatusHint--Icon"
+        role="img"
       />
       <span
         class="Text Text--default Text--medium Text--regular"
@@ -85,9 +88,10 @@ exports[`StatusHint component
       data-test="DesignSystem-StatusHint"
     >
       <span
-        aria-hidden="true"
+        aria-label="default status"
         class="StatusHint-icon StatusHint--default mr-3-5"
         data-test="DesignSystem-StatusHint--Icon"
+        role="img"
       />
       <span
         class="Text Text--default Text--medium Text--small"
@@ -110,9 +114,10 @@ exports[`StatusHint component
       data-test="DesignSystem-StatusHint"
     >
       <span
-        aria-hidden="true"
+        aria-label="info status"
         class="StatusHint-icon StatusHint--info mr-4"
         data-test="DesignSystem-StatusHint--Icon"
+        role="img"
       />
       <span
         class="Text Text--default Text--medium Text--regular"
@@ -135,9 +140,10 @@ exports[`StatusHint component
       data-test="DesignSystem-StatusHint"
     >
       <span
-        aria-hidden="true"
+        aria-label="info status"
         class="StatusHint-icon StatusHint--info mr-3-5"
         data-test="DesignSystem-StatusHint--Icon"
+        role="img"
       />
       <span
         class="Text Text--default Text--medium Text--small"
@@ -160,9 +166,10 @@ exports[`StatusHint component
       data-test="DesignSystem-StatusHint"
     >
       <span
-        aria-hidden="true"
+        aria-label="success status"
         class="StatusHint-icon StatusHint--success mr-4"
         data-test="DesignSystem-StatusHint--Icon"
+        role="img"
       />
       <span
         class="Text Text--default Text--medium Text--regular"
@@ -185,9 +192,10 @@ exports[`StatusHint component
       data-test="DesignSystem-StatusHint"
     >
       <span
-        aria-hidden="true"
+        aria-label="success status"
         class="StatusHint-icon StatusHint--success mr-3-5"
         data-test="DesignSystem-StatusHint--Icon"
+        role="img"
       />
       <span
         class="Text Text--default Text--medium Text--small"
@@ -210,9 +218,10 @@ exports[`StatusHint component
       data-test="DesignSystem-StatusHint"
     >
       <span
-        aria-hidden="true"
+        aria-label="warning status"
         class="StatusHint-icon StatusHint--warning mr-4"
         data-test="DesignSystem-StatusHint--Icon"
+        role="img"
       />
       <span
         class="Text Text--default Text--medium Text--regular"
@@ -235,9 +244,10 @@ exports[`StatusHint component
       data-test="DesignSystem-StatusHint"
     >
       <span
-        aria-hidden="true"
+        aria-label="warning status"
         class="StatusHint-icon StatusHint--warning mr-3-5"
         data-test="DesignSystem-StatusHint--Icon"
+        role="img"
       />
       <span
         class="Text Text--default Text--medium Text--small"
