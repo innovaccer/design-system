@@ -560,28 +560,5 @@ describe('Button accessibility', () => {
       const { getByTestId } = render(<Button icon="close" tooltip="Close" aria-label="Close dialog" />);
       expect(getByTestId('DesignSystem-Button')).toHaveAttribute('aria-label', 'Close dialog');
     });
-
-    it('should warn when icon-only button has no accessible name', () => {
-      const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
-      render(<Button icon="close" />);
-      expect(warnSpy).toHaveBeenCalledWith(
-        'Button: Icon-only buttons require a `tooltip` or `aria-label` prop for accessibility.'
-      );
-      warnSpy.mockRestore();
-    });
-
-    it('should not warn when icon-only button has tooltip', () => {
-      const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
-      render(<Button icon="close" tooltip="Close" />);
-      expect(warnSpy).not.toHaveBeenCalled();
-      warnSpy.mockRestore();
-    });
-
-    it('should not warn when icon-only button has aria-label', () => {
-      const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
-      render(<Button icon="close" aria-label="Close" />);
-      expect(warnSpy).not.toHaveBeenCalled();
-      warnSpy.mockRestore();
-    });
   });
 });

@@ -134,9 +134,10 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
   const buttonLabel = children ? String(children) : undefined;
   const isIconOnly = icon && !children;
 
-  if (process.env.NODE_ENV !== 'production' && isIconOnly && !tooltip && !props['aria-label']) {
-    console.warn('Button: Icon-only buttons require a `tooltip` or `aria-label` prop for accessibility.');
-  }
+  const computedAriaLabel =
+    props['aria-label'] ||
+    (loading && buttonLabel ? buttonLabel : undefined) ||
+    (isIconOnly && tooltip ? tooltip : undefined);
 
   const isOutlined = styleType === 'outlined' && appearance !== 'transparent';
   const isBasicOrTransparent = appearance === 'basic' || appearance === 'transparent';
@@ -194,11 +195,7 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
       tabIndex={tabIndex}
       aria-busy={loading || undefined}
       aria-pressed={selected ? true : undefined}
-      aria-label={
-        props['aria-label'] ||
-        (loading && buttonLabel ? buttonLabel : undefined) ||
-        (isIconOnly && tooltip ? tooltip : undefined)
-      }
+      aria-label={computedAriaLabel}
       {...rest}
     >
       {loading ? (
