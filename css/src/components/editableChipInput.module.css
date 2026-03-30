@@ -2,16 +2,30 @@
   position: relative;
   width: 100%;
 }
+
+.EditableChipInput:focus-visible {
+  outline: none;
+}
 .EditableChipInput-default {
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   padding-left: var(--spacing-30);
   border-left: var(--border-width-2-5) solid transparent;
   min-height: var(--spacing-80);
   flex-wrap: wrap;
+  border-radius: var(--border-radius-10);
+  transition: var(--duration--fast-01) var(--standard-productive-curve);
+  cursor: pointer;
+}
+
+.EditableChipInput-default--small {
+  min-height: var(--spacing-60);
+  padding-left: var(--spacing-20);
 }
 
 .EditableChipInput-defaultWithChips {
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   padding-left: var(--spacing-20);
@@ -20,15 +34,50 @@
   padding-bottom: var(--spacing-2-5);
   max-width: calc(100% - 28px);
   flex-wrap: wrap;
+  border-radius: var(--border-radius-10);
+  transition: var(--duration--fast-01) var(--standard-productive-curve);
+  cursor: pointer;
+}
+
+.EditableChipInput-defaultWithChips--small {
+  min-height: var(--spacing-60);
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .EditableChipInput-defaultWithChips:hover,
 .EditableChipInput-default:hover {
-  background-color: var(--secondary-lightest);
+  background-color: var(--secondary-lighter);
+  box-shadow: inset 0 0 0 var(--spacing-2-5) var(--secondary-dark);
+}
+
+.EditableChipInput:focus-visible .EditableChipInput-default,
+.EditableChipInput:focus-visible .EditableChipInput-defaultWithChips {
+  background: var(--white);
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-05);
+  box-shadow: inset 0 0 0 var(--spacing-2-5) var(--secondary);
 }
 
 .EditableChipInput-chipInput {
   padding-left: var(--spacing-20);
+}
+
+/* Mirrors my-2 mx-2 utilities for regular chips */
+.EditableChipInput-chip--regular {
+  margin: var(--spacing-05);
+}
+
+/* Small chips (20px): no vertical margin so row fits --spacing-60 with flex alignment */
+.EditableChipInput-chip--small {
+  margin-left: var(--spacing-05);
+  margin-right: var(--spacing-05);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.EditableChipInput-placeholder--small {
+  padding-top: 0;
 }
 
 .EditableChipInput-actions {
