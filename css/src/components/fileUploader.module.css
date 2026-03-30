@@ -17,6 +17,8 @@
   font-size: 0;
   z-index: 2;
   cursor: pointer;
+  /* Clicks go to the Button so keyboard (Enter/Space) and mouse share one activation path */
+  pointer-events: none;
 }
 
 .FileUploaderItem {
