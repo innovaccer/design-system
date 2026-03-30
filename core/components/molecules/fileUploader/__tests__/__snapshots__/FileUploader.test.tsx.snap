@@ -30,6 +30,7 @@ exports[`FileUploader component
       class="FileUploaderButton mt-5"
     >
       <button
+        aria-controls="ds-file-uploader-input-Test-uid"
         class="Button Button--regular Button--basic Button--iconAlign-left"
         data-test="DesignSystem-Button"
         tabindex="0"
@@ -56,6 +57,7 @@ exports[`FileUploader component
       <input
         class="FileUploaderButton-input"
         data-test="DesignSystem-FileUploaderButton--Input"
+        id="ds-file-uploader-input-Test-uid"
         tabindex="-1"
         type="file"
       />
@@ -88,6 +90,7 @@ exports[`FileUploader component prop:accept snapshot
       class="FileUploaderButton mt-5"
     >
       <button
+        aria-controls="ds-file-uploader-input-Test-uid"
         class="Button Button--regular Button--basic Button--iconAlign-left"
         data-test="DesignSystem-Button"
         tabindex="0"
@@ -115,6 +118,7 @@ exports[`FileUploader component prop:accept snapshot
         accept="jpg, pdf, png"
         class="FileUploaderButton-input"
         data-test="DesignSystem-FileUploaderButton--Input"
+        id="ds-file-uploader-input-Test-uid"
         tabindex="-1"
         type="file"
       />
@@ -147,6 +151,7 @@ exports[`FileUploader component prop:disabled snapshot
       class="FileUploaderButton mt-5"
     >
       <button
+        aria-controls="ds-file-uploader-input-Test-uid"
         class="Button Button--regular Button--basic Button--iconAlign-left"
         data-test="DesignSystem-Button"
         tabindex="0"
@@ -173,6 +178,7 @@ exports[`FileUploader component prop:disabled snapshot
       <input
         class="FileUploaderButton-input"
         data-test="DesignSystem-FileUploaderButton--Input"
+        id="ds-file-uploader-input-Test-uid"
         tabindex="-1"
         type="file"
       />
@@ -205,6 +211,7 @@ exports[`FileUploader component prop:disabled snapshot
       class="FileUploaderButton mt-5"
     >
       <button
+        aria-controls="ds-file-uploader-input-Test-uid"
         class="Button Button--regular Button--basic Button--iconAlign-left"
         data-test="DesignSystem-Button"
         disabled=""
@@ -233,6 +240,7 @@ exports[`FileUploader component prop:disabled snapshot
         class="FileUploaderButton-input"
         data-test="DesignSystem-FileUploaderButton--Input"
         disabled=""
+        id="ds-file-uploader-input-Test-uid"
         tabindex="-1"
         type="file"
       />
@@ -265,6 +273,7 @@ exports[`FileUploader component prop:multiple snapshot
       class="FileUploaderButton mt-5"
     >
       <button
+        aria-controls="ds-file-uploader-input-Test-uid"
         class="Button Button--regular Button--basic Button--iconAlign-left"
         data-test="DesignSystem-Button"
         tabindex="0"
@@ -291,6 +300,7 @@ exports[`FileUploader component prop:multiple snapshot
       <input
         class="FileUploaderButton-input"
         data-test="DesignSystem-FileUploaderButton--Input"
+        id="ds-file-uploader-input-Test-uid"
         tabindex="-1"
         type="file"
       />
@@ -323,6 +333,7 @@ exports[`FileUploader component prop:multiple snapshot
       class="FileUploaderButton mt-5"
     >
       <button
+        aria-controls="ds-file-uploader-input-Test-uid"
         class="Button Button--regular Button--basic Button--iconAlign-left"
         data-test="DesignSystem-Button"
         tabindex="0"
@@ -349,6 +360,7 @@ exports[`FileUploader component prop:multiple snapshot
       <input
         class="FileUploaderButton-input"
         data-test="DesignSystem-FileUploaderButton--Input"
+        id="ds-file-uploader-input-Test-uid"
         multiple=""
         tabindex="-1"
         type="file"
