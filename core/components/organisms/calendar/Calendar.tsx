@@ -623,6 +623,11 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
       [styles[`Calendar-headerIcon--${type}`]]: type,
     });
 
+    let ariaLabel = '';
+    if (view === 'date') ariaLabel = type === 'prev' ? 'Previous month' : 'Next month';
+    else if (view === 'month') ariaLabel = type === 'prev' ? 'Previous year' : 'Next year';
+    else if (view === 'year') ariaLabel = type === 'prev' ? 'Previous year block' : 'Next year block';
+
     return (
       <Button
         type="button"
@@ -632,6 +637,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
         disabled={disabled}
         size={size === 'small' ? 'tiny' : 'regular'}
         onClick={this.onNavIconClickHandler(type)}
+        aria-label={ariaLabel}
       />
     );
   };
