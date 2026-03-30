@@ -360,6 +360,93 @@ describe('Button component with Icon', () => {
   });
 });
 
+describe('Button accessibility', () => {
+  describe('aria-pressed for selected state', () => {
+    it('sets aria-pressed=true when selected=true and appearance=basic', () => {
+      const { getByTestId } = render(
+        <Button appearance="basic" selected={true}>
+          Toggle
+        </Button>
+      );
+      expect(getByTestId('DesignSystem-Button')).toHaveAttribute('aria-pressed', 'true');
+    });
+
+    it('sets aria-pressed=false when selected=false and appearance=basic', () => {
+      const { getByTestId } = render(
+        <Button appearance="basic" selected={false}>
+          Toggle
+        </Button>
+      );
+      expect(getByTestId('DesignSystem-Button')).toHaveAttribute('aria-pressed', 'false');
+    });
+
+    it('sets aria-pressed=true when selected=true and appearance=transparent', () => {
+      const { getByTestId } = render(
+        <Button appearance="transparent" selected={true}>
+          Toggle
+        </Button>
+      );
+      expect(getByTestId('DesignSystem-Button')).toHaveAttribute('aria-pressed', 'true');
+    });
+
+    it('does not set aria-pressed for non-basic/transparent appearances', () => {
+      const { getByTestId } = render(
+        <Button appearance="primary" selected={true}>
+          Button
+        </Button>
+      );
+      expect(getByTestId('DesignSystem-Button')).not.toHaveAttribute('aria-pressed');
+    });
+
+    it('does not set aria-pressed when selected is undefined', () => {
+      const { getByTestId } = render(<Button appearance="basic">Button</Button>);
+      expect(getByTestId('DesignSystem-Button')).not.toHaveAttribute('aria-pressed');
+    });
+  });
+
+  describe('loading state accessibility', () => {
+    it('sets aria-busy=true when loading', () => {
+      const { getByTestId } = render(<Button loading={true}>Save</Button>);
+      expect(getByTestId('DesignSystem-Button')).toHaveAttribute('aria-busy', 'true');
+    });
+
+    it('preserves accessible name via aria-label when loading hides text', () => {
+      const { getByTestId } = render(<Button loading={true}>Save</Button>);
+      expect(getByTestId('DesignSystem-Button')).toHaveAttribute('aria-label', 'Save');
+    });
+
+    it('uses explicit aria-label over children when loading', () => {
+      const { getByTestId } = render(
+        <Button loading={true} aria-label="Saving changes">
+          Save
+        </Button>
+      );
+      expect(getByTestId('DesignSystem-Button')).toHaveAttribute('aria-label', 'Saving changes');
+    });
+
+    it('does not set aria-busy when not loading', () => {
+      const { getByTestId } = render(<Button>Save</Button>);
+      expect(getByTestId('DesignSystem-Button')).not.toHaveAttribute('aria-busy');
+    });
+  });
+
+  describe('icon-only button dev warning', () => {
+    it('warns in dev when icon-only button has no tooltip or aria-label', () => {
+      const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
+      render(<Button icon="delete" />);
+      expect(warnSpy).toHaveBeenCalledWith(expect.stringContaining('Icon-only button without an accessible label'));
+      warnSpy.mockRestore();
+    });
+
+    it('does not warn when icon-only button has tooltip', () => {
+      const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
+      render(<Button icon="delete" tooltip="Delete item" />);
+      expect(warnSpy).not.toHaveBeenCalled();
+      warnSpy.mockRestore();
+    });
+  });
+});
+
 describe('Button component with styleType prop', () => {
   describe('Outlined buttons - CSS class generation', () => {
     it('should apply outlined class for basic appearance', () => {

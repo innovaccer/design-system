@@ -83,4 +83,32 @@ describe('useAccessibilityProps', () => {
       expect(onClick).toHaveBeenCalledTimes(1);
     }
   });
+
+  test('warns in dev when onClick is provided without aria-label', () => {
+    const originalEnv = process.env.NODE_ENV;
+    process.env.NODE_ENV = 'development';
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
+    const onClick = jest.fn();
+
+    render(<TestComponent onClick={onClick} />);
+    expect(warnSpy).toHaveBeenCalledWith(
+      expect.stringContaining('Interactive element (onClick) without an accessible label')
+    );
+
+    warnSpy.mockRestore();
+    process.env.NODE_ENV = originalEnv;
+  });
+
+  test('does not warn when onClick is provided with aria-label', () => {
+    const originalEnv = process.env.NODE_ENV;
+    process.env.NODE_ENV = 'development';
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
+    const onClick = jest.fn();
+
+    render(<TestComponent onClick={onClick} aria-label="Close dialog" />);
+    expect(warnSpy).not.toHaveBeenCalled();
+
+    warnSpy.mockRestore();
+    process.env.NODE_ENV = originalEnv;
+  });
 });
