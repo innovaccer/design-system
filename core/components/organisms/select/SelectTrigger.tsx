@@ -60,6 +60,10 @@ export interface SelectTriggerProps extends BaseProps {
    * */
   setLabel?: (count: number) => string | undefined;
   /**
+   * ID of the controlled listbox element.
+   */
+  'aria-controls'?: string;
+  /**
    * Minimum width of the Select trigger button.
    */
   minWidth?: number | string;
@@ -73,6 +77,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
   const {
     triggerSize = 'regular',
     'aria-label': ariaLabel = 'Select trigger',
+    'aria-controls': ariaControls,
     placeholder,
     withClearButton,
     icon,
@@ -88,6 +93,9 @@ const SelectTrigger = (props: SelectTriggerProps) => {
 
   const contextProp = React.useContext(SelectContext);
   const elementRef = React.useRef(null);
+  const [isMounted, setIsMounted] = React.useState(false);
+  React.useEffect(() => setIsMounted(true), []);
+  const valueId = ariaControls ? `${ariaControls}-value` : undefined;
 
   const {
     openPopover,
@@ -107,6 +115,11 @@ const SelectTrigger = (props: SelectTriggerProps) => {
 
   const buttonDisabled = disabled ? 'disabled' : 'default';
   const trimmedPlaceholder = placeholder?.trim();
+
+  // Name = stable field purpose (e.g. "Medicine"), Value = current selection (e.g. "Paracetamol")
+  // Prefer explicit aria-label over inlineLabel so callers can provide a more specific screen-reader name
+  const explicitAriaLabel = props['aria-label'];
+  const triggerName = explicitAriaLabel?.trim() || inlineLabel?.trim() || ariaLabel;
   const displayValue = computeValue(multiSelect, selectValue, setLabel);
   const value = isOptionSelected && displayValue.length > 0 ? displayValue : trimmedPlaceholder;
   const iconName = openPopover ? 'keyboard_arrow_up' : 'keyboard_arrow_down';
@@ -164,6 +177,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
     >
       <button
         ref={triggerRef}
+        role="combobox"
         onKeyDown={(event) => handleKeyDownTrigger(event, setOpenPopover, setHighlightFirstItem, setHighlightLastItem)}
         type="button"
         className={buttonClass}
@@ -172,14 +186,21 @@ const SelectTrigger = (props: SelectTriggerProps) => {
         style={triggerStyle}
         aria-haspopup="listbox"
         aria-expanded={openPopover}
-        aria-label={ariaLabel}
+        aria-controls={openPopover ? ariaControls : undefined}
+        aria-label={triggerName}
+        aria-describedby={isMounted && isOptionSelected && valueId ? valueId : undefined}
         data-test="DesignSystem-Select-trigger"
         {...rest}
       >
         {
           <div className={triggerClass}>
             {inlineLabel && (
-              <Text appearance="subtle" className={`${inlineLabelClass} mr-4`} size={triggerTextSize}>
+              <Text
+                aria-hidden="true"
+                appearance="subtle"
+                className={`${inlineLabelClass} mr-4`}
+                size={triggerTextSize}
+              >
                 {`${inlineLabel.trim().charAt(0).toUpperCase()}${inlineLabel.trim().slice(1)}`}
               </Text>
             )}
@@ -193,26 +214,28 @@ const SelectTrigger = (props: SelectTriggerProps) => {
               />
             )}
             {value && (
-              <span ref={elementRef} className={textClass}>
+              <span id={isMounted ? valueId : undefined} ref={elementRef} className={textClass}>
                 {value}
               </span>
             )}
           </div>
         }
         {isOptionSelected && withClearButton && (
-          <Icon
-            appearance={buttonDisabled}
-            onClick={onClearHandler}
-            className={iconClass}
-            size={12}
-            name="close"
-            aria-label="clear selected"
-            type={iconType}
-            data-test="DesignSystem-Select--closeIcon"
-          />
+          <span>
+            <Icon
+              appearance={buttonDisabled}
+              onClick={onClearHandler}
+              className={iconClass}
+              size={12}
+              name="close"
+              aria-label={`Clear ${triggerName}`}
+              type={iconType}
+              data-test="DesignSystem-Select--closeIcon"
+            />
+          </span>
         )}
 
-        <Icon appearance={buttonDisabled} name={iconName} type={iconType} />
+        <Icon aria-hidden="true" appearance={buttonDisabled} name={iconName} type={iconType} />
       </button>
     </Tooltip>
   );
