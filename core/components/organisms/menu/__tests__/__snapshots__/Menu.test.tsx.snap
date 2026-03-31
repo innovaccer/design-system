@@ -151,6 +151,7 @@ exports[`Menu component with Nesting snapshot
           <a
             class="Listbox-item-wrapper"
             data-test="DesignSystem-Listbox-Item"
+            id="DesignSystem-Menu--Trigger-Test-uid"
             role="presentation"
           >
             <div
@@ -159,7 +160,6 @@ exports[`Menu component with Nesting snapshot
               aria-haspopup="menu"
               class="Listbox-item Listbox-item--compressed Listbox-item--option Menu-Item d-flex align-items-center justify-content-between w-100"
               data-test="DesignSystem-Menu-ListItem"
-              id="DesignSystem-Menu--Trigger-Test-uid"
               role="menuitem"
               tabindex="-1"
             >

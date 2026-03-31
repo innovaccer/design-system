@@ -84,6 +84,10 @@ export const ListboxItem = (props: ListboxItemProps) => {
     onFocus,
     role,
     disabled,
+    href,
+    target,
+    rel,
+    download,
     ...rest
   } = props;
 
@@ -136,7 +140,15 @@ export const ListboxItem = (props: ListboxItemProps) => {
   };
 
   return (
-    <Tag data-test="DesignSystem-Listbox-Item" className={tagClass} role="presentation">
+    <Tag
+      data-test="DesignSystem-Listbox-Item"
+      className={tagClass}
+      role="presentation"
+      href={href}
+      target={target}
+      rel={rel}
+      download={download}
+    >
       <ListBody
         {...rest}
         className={props.className}
