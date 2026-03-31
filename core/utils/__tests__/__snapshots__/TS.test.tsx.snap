@@ -123,6 +123,7 @@ exports[`TS renders children 1`] = `
             class="Calendar-header--large"
           >
             <button
+              aria-label="Previous month"
               class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
               data-test="DesignSystem-Button"
               tabindex="0"
@@ -184,6 +185,7 @@ exports[`TS renders children 1`] = `
               </button>
             </div>
             <button
+              aria-label="Next month"
               class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
               data-test="DesignSystem-Button"
               tabindex="0"
@@ -2371,6 +2373,7 @@ exports[`TS renders children 1`] = `
         class="Calendar-header--large"
       >
         <button
+          aria-label="Previous month"
           class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
           data-test="DesignSystem-Button"
           tabindex="0"
@@ -2418,6 +2421,7 @@ exports[`TS renders children 1`] = `
           </button>
         </div>
         <button
+          aria-label="Next month"
           class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
           data-test="DesignSystem-Button"
           tabindex="0"
