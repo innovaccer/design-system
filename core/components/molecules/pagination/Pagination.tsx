@@ -7,6 +7,8 @@ import styles from '@css/components/pagination.module.css';
 
 import classNames from 'classnames';
 
+let paginationPageTotalDescriptionUid = 0;
+
 export type PaginationType = 'basic' | 'jump';
 
 export interface PaginationProps extends BaseProps {
@@ -36,6 +38,11 @@ export const Pagination = (props: PaginationProps) => {
   const { type, totalPages, onPageChange, className, pageJumpDebounceDuration } = props;
 
   const baseProps = extractBaseProps(props);
+  const pageTotalDescriptionIdRef = React.useRef<string>();
+  if (type === 'jump' && !pageTotalDescriptionIdRef.current) {
+    pageTotalDescriptionIdRef.current = `mds-Pagination-pageTotalDesc-${++paginationPageTotalDescriptionUid}`;
+  }
+  const pageTotalDescriptionId = type === 'jump' ? pageTotalDescriptionIdRef.current : undefined;
 
   const [page, setPage] = React.useState<number>(props.page);
   const [init, setInit] = React.useState<boolean>(false);
@@ -151,8 +158,10 @@ export const Pagination = (props: PaginationProps) => {
             value={`${isNaturalNumber(page) ? page : ''}`}
             data-test="DesignSystem-Pagination--Input"
             onKeyPress={onKeyPressHandler}
+            aria-label="Current page"
+            aria-describedby={pageTotalDescriptionId}
           />
-          <Text>{` of ${totalPages} pages`}</Text>
+          <Text id={pageTotalDescriptionId}>{` of ${totalPages} pages`}</Text>
         </div>
       )}
       <div className={nextButtonWrapperClass}>
