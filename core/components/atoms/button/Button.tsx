@@ -194,7 +194,7 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
       disabled={disabled || loading}
       tabIndex={tabIndex}
       aria-busy={loading || undefined}
-      aria-pressed={selected ? true : undefined}
+      aria-pressed={selected && isBasicOrTransparent ? true : undefined}
       aria-label={computedAriaLabel}
       {...rest}
     >

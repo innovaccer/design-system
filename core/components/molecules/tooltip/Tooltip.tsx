@@ -123,7 +123,6 @@ export const Tooltip = (props: TooltipProps) => {
       ? children
       : React.cloneElement(children as React.ReactElement<any>, {
           ref: childrenRef,
-          'aria-describedby': [children.props['aria-describedby'], mergedDescribedBy].filter(Boolean).join(' '),
         });
 
   if (!showTooltip) {
@@ -147,9 +146,21 @@ export const Tooltip = (props: TooltipProps) => {
   const classes = classNames(styles['Tooltip-container'], className);
 
   if (showOnTruncation) {
-    return isTruncated ? (
+    if (!isTruncated) {
+      return renderChildren;
+    }
+
+    const truncationTrigger = React.isValidElement(renderChildren)
+      ? React.cloneElement(renderChildren as React.ReactElement<any>, {
+          'aria-describedby': [(children as React.ReactElement<any>).props['aria-describedby'], mergedDescribedBy]
+            .filter(Boolean)
+            .join(' '),
+        })
+      : renderChildren;
+
+    return (
       <Popover
-        trigger={renderChildren}
+        trigger={truncationTrigger}
         on={'hover'}
         offset={'medium'}
         animationClass={{
@@ -161,8 +172,6 @@ export const Tooltip = (props: TooltipProps) => {
       >
         {tooltipWrapper}
       </Popover>
-    ) : (
-      renderChildren
     );
   }
 
