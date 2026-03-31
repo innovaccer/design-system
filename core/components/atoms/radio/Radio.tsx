@@ -70,14 +70,6 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forw
     ...rest
   } = props;
 
-  React.useEffect(() => {
-    if (process.env.NODE_ENV !== 'production' && !label && !ariaLabel && !ariaLabelledBy) {
-      console.warn(
-        'Radio: A Radio without a `label` prop requires an `aria-label` or `aria-labelledby` attribute for accessibility.'
-      );
-    }
-  }, []);
-
   const ref = React.useRef<HTMLInputElement>(null);
 
   React.useImperativeHandle(forwardedRef, (): HTMLInputElement => {
