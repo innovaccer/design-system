@@ -341,6 +341,7 @@ export const ChipInput = (props: ChipInputProps) => {
               if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
                 onDeleteAllHandler();
+                inputRef.current?.focus();
               }
             }}
             tabIndex={disabled ? -1 : 0}
