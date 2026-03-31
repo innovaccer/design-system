@@ -12,10 +12,14 @@ export interface HelpTextProps extends BaseProps {
    * Shows error state in case of failed validation
    */
   error?: boolean;
+  /**
+   * HTML id attribute for the help text element, used for aria-describedby associations
+   */
+  id?: string;
 }
 
 export const HelpText = (props: HelpTextProps) => {
-  const { error, message, className } = props;
+  const { error, message, className, id } = props;
   const baseProps = extractBaseProps(props);
 
   const classes = classNames(
@@ -28,11 +32,12 @@ export const HelpText = (props: HelpTextProps) => {
   if (!message) return null;
 
   if (error) {
-    return <InlineMessage size="small" className={classes} appearance="alert" description={message} />;
+    const inlineMessage = <InlineMessage size="small" className={classes} appearance="alert" description={message} />;
+    return id ? <div id={id}>{inlineMessage}</div> : inlineMessage;
   }
 
   return (
-    <div {...baseProps} className={classes}>
+    <div id={id} {...baseProps} className={classes}>
       <Text appearance="subtle" size="small" weight="medium">
         {message}
       </Text>

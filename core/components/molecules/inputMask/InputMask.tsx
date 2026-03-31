@@ -62,6 +62,8 @@ type InputMaskType = React.ForwardRefExoticComponent<InputProps & MaskProps & Re
   };
 };
 
+let helpTextIdCounter = 0;
+
 /**
  * It works as Uncontrolled Input
  *
@@ -125,6 +127,7 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
   const defaultSelection = React.useMemo(() => getDefaultSelection(), [getDefaultSelection]);
 
   const ref = React.useRef<HTMLInputElement>(null);
+  const helpTextId = React.useRef(`DesignSystem-InputMask--helpText-${++helpTextIdCounter}`).current;
   const deferId = React.useRef<number | undefined>();
   const selectionPos = React.useRef<SelectionPos>(defaultSelection);
   const newSelectionPos = React.useRef<number>(0);
@@ -387,6 +390,7 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
   );
 
   const isValueEqualPlaceholder = value === defaultPlaceholderValue;
+  const helpMessage = error ? caption : helpText;
 
   return (
     <div className={classes} data-test="DesignSystem-InputMask--Wrapper">
@@ -406,9 +410,10 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
         onBlur={onBlurHandler}
         onPaste={onPasteHandler}
         autoComplete={'off'}
+        aria-describedby={helpMessage ? helpTextId : undefined}
         ref={ref}
       />
-      <HelpText message={error ? caption : helpText} error={error} />
+      <HelpText message={helpMessage} error={error} id={helpMessage ? helpTextId : undefined} />
     </div>
   );
 });
