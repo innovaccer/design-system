@@ -88,9 +88,14 @@ export const Toast = (props: ToastProps) => {
       [styles['Toast-icon']]: true,
       [styles[`Toast-icon--${align}`]]: align,
       [styles[`Toast-icon--${appearance}`]]: appearance,
-      [styles['Toast-close-icon']]: align === 'right',
-      [styles[`Toast-close-icon--${appearance}`]]: appearance && align === 'right',
     });
+
+  const closeButtonClass = classNames({
+    [styles['Toast-closeButton']]: true,
+    [styles['Toast-icon--right']]: true,
+    [styles['Toast-close-icon']]: true,
+    [styles[`Toast-close-icon--${appearance}`]]: appearance,
+  });
 
   const textClass = classNames({
     [styles['Toast-text']]: true,
@@ -119,13 +124,15 @@ export const Toast = (props: ToastProps) => {
           <Heading size="s" className={headingClass} appearance={appearance !== 'warning' ? 'white' : 'default'}>
             {title}
           </Heading>
-          <Icon
-            name={'close'}
-            className={iconClass('right')}
+          <button
+            type="button"
+            className={closeButtonClass}
             onClick={onCloseHandler}
-            appearance={appearance !== 'warning' ? 'white' : 'default'}
             aria-label="Close"
-          />
+            data-test="DesignSystem-Toast--CloseButton"
+          >
+            <Icon name="close" appearance={appearance !== 'warning' ? 'white' : 'default'} aria-hidden="true" />
+          </button>
         </div>
         {message && (
           <Text appearance={appearance !== 'warning' ? 'white' : 'default'} className={textClass}>
