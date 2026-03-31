@@ -60,7 +60,7 @@ export interface AIIconButtonProps extends Omit<TBaseHtmlProps<HTMLButtonElement
   className?: string;
 }
 
-export const AIIconButton = React.forwardRef<HTMLButtonElement, AIIconButtonProps>((props, ref) => {
+export const AIIconButton = (props: AIIconButtonProps) => {
   const { icon, position, className, size, strokeColor, tooltip, disabled, ...rest } = props;
   const ariaLabel = rest['aria-label'] ?? tooltip ?? icon;
 
@@ -100,7 +100,6 @@ export const AIIconButton = React.forwardRef<HTMLButtonElement, AIIconButtonProp
   return (
     <Tooltip tooltip={tooltip} showTooltip={!!tooltip && !disabled}>
       <button
-        ref={ref}
         className={buttonClassNames}
         data-test="DesignSystem-AI-IconButton"
         disabled={disabled}
@@ -115,9 +114,7 @@ export const AIIconButton = React.forwardRef<HTMLButtonElement, AIIconButtonProp
       </button>
     </Tooltip>
   );
-});
-
-AIIconButton.displayName = 'AIIconButton';
+};
 
 AIIconButton.defaultProps = {
   size: 'regular',

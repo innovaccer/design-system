@@ -69,7 +69,7 @@ export interface SelectTriggerProps extends BaseProps {
   maxWidth?: number | string;
 }
 
-const SelectTrigger = React.forwardRef<HTMLButtonElement, SelectTriggerProps>((props, ref) => {
+const SelectTrigger = (props: SelectTriggerProps) => {
   const {
     triggerSize = 'regular',
     'aria-label': ariaLabel = 'Select trigger',
@@ -163,15 +163,7 @@ const SelectTrigger = React.forwardRef<HTMLButtonElement, SelectTriggerProps>((p
       triggerClass="w-100"
     >
       <button
-        ref={(node) => {
-          if (triggerRef) {
-            (triggerRef as React.MutableRefObject<HTMLButtonElement | null>).current = node;
-          }
-          if (ref) {
-            if (typeof ref === 'function') ref(node);
-            else (ref as React.MutableRefObject<HTMLButtonElement | null>).current = node;
-          }
-        }}
+        ref={triggerRef}
         onKeyDown={(event) => handleKeyDownTrigger(event, setOpenPopover, setHighlightFirstItem, setHighlightLastItem)}
         type="button"
         className={buttonClass}
@@ -224,9 +216,7 @@ const SelectTrigger = React.forwardRef<HTMLButtonElement, SelectTriggerProps>((p
       </button>
     </Tooltip>
   );
-});
-
-SelectTrigger.displayName = 'SelectTrigger';
+};
 
 SelectTrigger.defaultProps = {
   triggerSize: 'regular',

@@ -42,12 +42,3 @@
   margin-bottom: var(--spacing-15);
   display: inline-flex;
 }
-
-.Label--small .Label-requiredIndicator {
-  margin-bottom: var(--spacing-15);
-  margin-top: var(--spacing-05);
-}
-
-.Label--small .Label-infoIcon {
-  margin-bottom: var(--spacing-15);
-}

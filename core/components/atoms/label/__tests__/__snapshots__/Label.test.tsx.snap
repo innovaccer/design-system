@@ -100,7 +100,7 @@ exports[`Label component - info prop tests
         >
           <i
             aria-label="long information text"
-            class="material-symbols material-symbols-rounded Icon Icon--subtle ml-3 cursor-pointer d-flex align-items-center Label-infoIcon"
+            class="material-symbols material-symbols-rounded Icon Icon--subtle ml-3 cursor-pointer d-flex align-items-center"
             data-test="DesignSystem-Label--Info"
             style="font-size: 12px; width: 12px;"
           >
@@ -133,7 +133,7 @@ exports[`Label component - info prop tests
         >
           <i
             aria-label="sample info"
-            class="material-symbols material-symbols-rounded Icon Icon--subtle ml-3 cursor-pointer d-flex align-items-center Label-infoIcon"
+            class="material-symbols material-symbols-rounded Icon Icon--subtle ml-3 cursor-pointer d-flex align-items-center"
             data-test="DesignSystem-Label--Info"
             style="font-size: 12px; width: 12px;"
           >
@@ -166,7 +166,7 @@ exports[`Label component - info prop tests
         >
           <i
             aria-label="tooltip text"
-            class="material-symbols material-symbols-rounded Icon Icon--subtle ml-3 cursor-pointer d-flex align-items-center Label-infoIcon"
+            class="material-symbols material-symbols-rounded Icon Icon--subtle ml-3 cursor-pointer d-flex align-items-center"
             data-test="DesignSystem-Label--Info"
             style="font-size: 12px; width: 12px;"
           >
@@ -247,7 +247,7 @@ exports[`Label component - size prop snapshot tests renders correctly with size=
         Complex Small Label
         <span
           aria-label="required"
-          class="Label-requiredIndicator"
+          class="Label-requiredIndicator mb-3-5 mt-2"
           data-test="DesignSystem-Label--RequiredIndicator"
         />
         
@@ -256,7 +256,7 @@ exports[`Label component - size prop snapshot tests renders correctly with size=
         >
           <i
             aria-label="Small label info"
-            class="material-symbols material-symbols-rounded Icon Icon--subtle ml-3 cursor-pointer d-flex align-items-center Label-infoIcon"
+            class="material-symbols material-symbols-rounded Icon Icon--subtle ml-3 cursor-pointer d-flex align-items-center mb-3-5"
             data-test="DesignSystem-Label--Info"
             style="font-size: 12px; width: 12px;"
           >
@@ -307,7 +307,7 @@ exports[`Label component - size prop snapshot tests renders correctly with size=
         Small Required Label
         <span
           aria-label="required"
-          class="Label-requiredIndicator"
+          class="Label-requiredIndicator mb-3-5 mt-2"
           data-test="DesignSystem-Label--RequiredIndicator"
         />
       </label>
