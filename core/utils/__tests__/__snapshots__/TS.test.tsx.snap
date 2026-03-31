@@ -2106,16 +2106,21 @@ exports[`TS renders children 1`] = `
         >
           Hello World!
         </h5>
-        <i
+        <button
           aria-label="Close"
-          class="material-symbols material-symbols-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--info Toast-close-icon Toast-close-icon--info"
-          data-test="DesignSystem-Icon"
-          role="button"
-          style="font-size: 16px; width: 16px;"
-          tabindex="0"
+          class="Toast-closeButton Toast-icon--right Toast-close-icon Toast-close-icon--info"
+          data-test="DesignSystem-Toast--CloseButton"
+          type="button"
         >
-          close
-        </i>
+          <i
+            aria-hidden="true"
+            class="material-symbols material-symbols-rounded Icon Icon--white"
+            data-test="DesignSystem-Icon"
+            style="font-size: 16px; width: 16px;"
+          >
+            close
+          </i>
+        </button>
       </div>
     </div>
   </div>
