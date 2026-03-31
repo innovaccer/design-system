@@ -8,6 +8,8 @@ import ActionButton from './actionButton';
 import styles from '@css/components/input.module.css';
 import verificationCodeStyles from '@css/components/verificationCodeInput.module.css';
 
+let inlineLabelCounter = 0;
+
 export type InputType = 'text' | 'password' | 'number' | 'email' | 'tel' | 'url';
 export type InputSize = 'tiny' | 'regular' | 'large';
 
@@ -188,7 +190,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
 
   const ref = React.useRef<HTMLInputElement>(null);
   const [isInputBlank, setIsInputBlank] = React.useState<boolean>(!value);
-  const inlineLabelId = React.useRef(`Input-inlineLabel-${Math.random().toString(36).slice(2, 9)}`).current;
+  const inlineLabelId = React.useRef(`Input-inlineLabel-${++inlineLabelCounter}`).current;
 
   React.useImperativeHandle(forwardedRef, (): HTMLInputElement => {
     return ref.current as HTMLInputElement;
@@ -299,7 +301,9 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
         onFocus={onFocus}
         onPaste={onPaste}
         aria-invalid={error || undefined}
-        aria-describedby={inlineLabel ? inlineLabelId : undefined}
+        aria-describedby={
+          [rest['aria-describedby'], inlineLabel ? inlineLabelId : undefined].filter(Boolean).join(' ') || undefined
+        }
         /**
          *for readOnly: true, tab focus from input element is removed. Hence, its tabIndex is set to -1.
          *For rest, "undefined" lets user agent(browser) use the default tabIndex.
