@@ -185,6 +185,7 @@ interface CalendarState {
   focusedDateMonthIndex?: number;
   focusedMonth?: number;
   focusedYearIndex?: number;
+  pendingFocusDate?: Date;
 }
 
 export class Calendar extends React.Component<CalendarProps, CalendarState> {
@@ -223,6 +224,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
       currYear: todayCompleteDate.year,
       view: monthsInView > 1 ? 'date' : view,
       yearBlockNav: getYearBlock(yearNav),
+      pendingFocusDate: undefined,
     };
   }
 
@@ -370,6 +372,30 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
         this.setState({
           monthNav: month,
         });
+      }
+    }
+
+    if (this.state.pendingFocusDate) {
+      // Find the grid containing the pending date and focus it
+      const { pendingFocusDate } = this.state;
+      const { yearNav, monthNav } = this.state;
+      const { monthsInView } = this.props;
+
+      for (let i = 0; i < monthsInView; i++) {
+        const { year, month } = this.getNavDateInfo(i);
+        if (pendingFocusDate.getFullYear() === year && pendingFocusDate.getMonth() === month) {
+          const pos = this.getDateGridPosition(year, month, pendingFocusDate.getDate());
+          if (pos && this.calendarWrapperRef.current) {
+            focusDateCell(this.calendarWrapperRef.current, pos.row, pos.col, i);
+            this.setState({
+              pendingFocusDate: undefined,
+              focusedDateRow: pos.row,
+              focusedDateCol: pos.col,
+              focusedDateMonthIndex: i,
+            });
+          }
+          break;
+        }
       }
     }
 
@@ -787,6 +813,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             [styles['Calendar-yearValue']]: true,
             [styles[`Calendar-yearValue--${size}`]]: size,
             [styles['Calendar-value--currDateMonthYear']]: isCurrentYear(),
+            [styles['Calendar-valueWrapper--disabled']]: disabled && isCurrentYear(),
           });
 
           const textClass = classNames({
@@ -797,12 +824,11 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
           const getTextColor = classNames({
             inverse: !active && !isCurrentYear() && !disabled,
             white: active,
-            'primary-lighter': isCurrentYear() && disabled,
             'primary-dark': isCurrentYear(),
-            'inverse-lightest': disabled,
           }) as TextColor;
 
-          const getTextAppearance = (): 'default' | 'disabled' => (disabled ? 'disabled' : 'default');
+          const getTextAppearance = (): 'default' | 'disabled' =>
+            disabled && !isCurrentYear() ? 'disabled' : 'default';
 
           const isFocused = effectiveFocusedYearIndex === offset;
 
@@ -819,7 +845,6 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
               aria-label={year.toString()}
               aria-disabled={disabled}
               aria-selected={active}
-              disabled={disabled}
               onClick={this.selectYear(year)}
               onKeyDown={(ev) => this.handleYearCellKeyDown(ev, year, offset, disabled)}
               onFocus={() => this.setState({ focusedYearIndex: offset })}
@@ -889,17 +914,17 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             [styles['Calendar-monthValue']]: true,
             [styles[`Calendar-monthValue--${size}`]]: size,
             [styles['Calendar-value--currDateMonthYear']]: isCurrentMonth(),
+            [styles['Calendar-valueWrapper--disabled']]: disabled && isCurrentMonth(),
           });
 
           const getTextColor = classNames({
             inverse: !active && !isCurrentMonth() && !disabled,
             white: active,
-            'primary-lighter': isCurrentMonth() && disabled,
             'primary-dark': isCurrentMonth(),
-            'inverse-lightest': disabled,
           }) as TextColor;
 
-          const getTextAppearance = (): 'default' | 'disabled' => (disabled ? 'disabled' : 'default');
+          const getTextAppearance = (): 'default' | 'disabled' =>
+            disabled && !isCurrentMonth() ? 'disabled' : 'default';
 
           const textClass = classNames({
             [styles['Calendar-value--currDate']]: isCurrentMonth() && !active,
@@ -921,7 +946,6 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
               aria-label={months[month]}
               aria-disabled={disabled}
               aria-selected={active}
-              disabled={disabled}
               onClick={this.selectMonth(month)}
               onKeyDown={(ev) => this.handleMonthCellKeyDown(ev, month, disabled)}
               onFocus={() => this.setState({ focusedMonth: month })}
@@ -1040,21 +1064,69 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     const container = this.calendarWrapperRef.current;
     if (!container) return;
 
+    const { year: yearNavVal, month: monthNavVal } = this.getNavDateInfo(index);
+    const displayDate = date <= 0 ? prevMonthDayRange + date : date > dayRange ? date - dayRange : date;
+    const focusedDate =
+      this.calculateDate(index, date, prevMonthDayRange, dayRange, true) ||
+      this.getDateValue(yearNavVal, monthNavVal, displayDate) ||
+      new Date();
+
     const handled = handleDateViewKeyDown({
       event: ev,
       container,
-      focusedRow: row,
-      focusedCol: col,
-      totalRows: noOfRows,
-      monthIndex: index,
-      onNavigate: (r, c) => {
-        const didFocus = focusDateCell(container, r, c, index);
-        if (didFocus) {
-          this.setState({
-            focusedDateRow: r,
-            focusedDateCol: c,
-            focusedDateMonthIndex: index,
-          });
+      focusedDate,
+      minDate: this.props.disabledBefore,
+      maxDate: this.props.disabledAfter,
+      onNavigate: (newDate: Date) => {
+        // Here we need to check if newDate falls out of bounds of current view
+        const { yearNav, monthNav, view } = this.state;
+        const { monthsInView } = this.props;
+
+        const isVisible = (target: Date) => {
+          for (let i = 0; i < monthsInView; i++) {
+            const { year, month } = this.getNavDateInfo(i);
+            if (target.getFullYear() === year && target.getMonth() === month) {
+              return { visible: true, monthIndex: i };
+            }
+          }
+          return { visible: false };
+        };
+
+        const targetVisibility = isVisible(newDate);
+
+        if (targetVisibility.visible) {
+          // Date is in view, we can just jump focus to it directly
+          const pos = this.getDateGridPosition(newDate.getFullYear(), newDate.getMonth(), newDate.getDate());
+          if (pos) {
+            const didFocus = focusDateCell(container, pos.row, pos.col, targetVisibility.monthIndex);
+            if (didFocus) {
+              this.setState({
+                focusedDateRow: pos.row,
+                focusedDateCol: pos.col,
+                focusedDateMonthIndex: targetVisibility.monthIndex,
+              });
+            }
+          }
+        } else {
+          // Date is NOT in view. We need to shift the view.
+          // For now, let's just trigger a month nav forward/back based on the direction.
+          const currentVisibleStart = this.getDateValue(yearNav, monthNav, 1)!;
+
+          if (newDate < currentVisibleStart) {
+            // Need to navigate backward
+            this.setState({
+              monthNav: (config.monthBlock + monthNav - 1) % config.monthBlock,
+              yearNav: monthNav === 0 ? yearNav - 1 : yearNav,
+              pendingFocusDate: newDate,
+            });
+          } else {
+            // Need to navigate forward
+            this.setState({
+              monthNav: (monthNav + 1) % config.monthBlock,
+              yearNav: monthNav === config.monthBlock - 1 ? yearNav + 1 : yearNav,
+              pendingFocusDate: newDate,
+            });
+          }
         }
       },
       onSelect: () => {
@@ -1458,7 +1530,6 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                   aria-label={formatDateAriaLabel(fullDate)}
                   aria-disabled={disabled}
                   aria-selected={Boolean(active || activeDate)}
-                  disabled={disabled}
                   onClick={onClickHandler(date)}
                   onKeyDown={(ev) =>
                     this.handleDateCellKeyDown(

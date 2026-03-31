@@ -129,11 +129,10 @@ export const formatDateAriaLabel = (d: Date): string => {
 export interface HandleDateViewKeyDownParams {
   event: React.KeyboardEvent;
   container: HTMLElement;
-  focusedRow: number;
-  focusedCol: number;
-  totalRows: number;
-  monthIndex: number;
-  onNavigate: (row: number, col: number) => void;
+  focusedDate: Date;
+  minDate?: Date;
+  maxDate?: Date;
+  onNavigate: (newDate: Date) => void;
   onSelect: () => void;
   onPageUp: () => void;
   onPageDown: () => void;
@@ -143,15 +142,15 @@ export interface HandleDateViewKeyDownParams {
 }
 
 /**
- * Handle keyboard events in the date view grid.
+ * Handle keyboard events in the date view grid using Date Math.
  * Returns true if the key was handled (caller should preventDefault).
  */
 export const handleDateViewKeyDown = (params: HandleDateViewKeyDownParams): boolean => {
   const {
     event,
-    focusedRow,
-    focusedCol,
-    totalRows,
+    focusedDate,
+    minDate,
+    maxDate,
     onNavigate,
     onSelect,
     onPageUp,
@@ -161,51 +160,33 @@ export const handleDateViewKeyDown = (params: HandleDateViewKeyDownParams): bool
     onEscape,
   } = params;
 
+  let newDate: Date | null = null;
+
   switch (event.key) {
-    case 'ArrowUp': {
-      const up = navigateDateGrid('up', focusedRow, focusedCol, totalRows);
-      if (up) {
-        event.preventDefault();
-        onNavigate(up.row, up.col);
-        return true;
-      }
+    case 'ArrowUp':
+      newDate = new Date(focusedDate);
+      newDate.setDate(focusedDate.getDate() - 7);
       break;
-    }
-    case 'ArrowDown': {
-      const down = navigateDateGrid('down', focusedRow, focusedCol, totalRows);
-      if (down) {
-        event.preventDefault();
-        onNavigate(down.row, down.col);
-        return true;
-      }
+    case 'ArrowDown':
+      newDate = new Date(focusedDate);
+      newDate.setDate(focusedDate.getDate() + 7);
       break;
-    }
-    case 'ArrowLeft': {
-      const left = navigateDateGrid('left', focusedRow, focusedCol, totalRows);
-      if (left) {
-        event.preventDefault();
-        onNavigate(left.row, left.col);
-        return true;
-      }
+    case 'ArrowLeft':
+      newDate = new Date(focusedDate);
+      newDate.setDate(focusedDate.getDate() - 1);
       break;
-    }
-    case 'ArrowRight': {
-      const right = navigateDateGrid('right', focusedRow, focusedCol, totalRows);
-      if (right) {
-        event.preventDefault();
-        onNavigate(right.row, right.col);
-        return true;
-      }
+    case 'ArrowRight':
+      newDate = new Date(focusedDate);
+      newDate.setDate(focusedDate.getDate() + 1);
       break;
-    }
     case 'Home':
-      event.preventDefault();
-      onNavigate(focusedRow, 0);
-      return true;
+      newDate = new Date(focusedDate);
+      newDate.setDate(focusedDate.getDate() - focusedDate.getDay());
+      break;
     case 'End':
-      event.preventDefault();
-      onNavigate(focusedRow, daysInRow - 1);
-      return true;
+      newDate = new Date(focusedDate);
+      newDate.setDate(focusedDate.getDate() + (6 - focusedDate.getDay()));
+      break;
     case 'PageUp':
       event.preventDefault();
       if (event.shiftKey) {
@@ -223,15 +204,9 @@ export const handleDateViewKeyDown = (params: HandleDateViewKeyDownParams): bool
       }
       return true;
     case 'Enter':
-      event.preventDefault();
-      // Prevent auto-repeat: only process first keydown
-      if (event.repeat) return true;
-      onSelect();
-      return true;
     case ' ':
     case 'Spacebar':
       event.preventDefault();
-      // Prevent auto-repeat: only process first keydown
       if (event.repeat) return true;
       onSelect();
       return true;
@@ -243,8 +218,24 @@ export const handleDateViewKeyDown = (params: HandleDateViewKeyDownParams): bool
       }
       break;
     default:
-      break;
+      return false;
   }
+
+  if (newDate) {
+    // Check if newDate exceeds minDate or maxDate limits
+    if (minDate && newDate < minDate) {
+      newDate = null;
+    } else if (maxDate && newDate > maxDate) {
+      newDate = null;
+    }
+
+    if (newDate) {
+      event.preventDefault();
+      onNavigate(newDate);
+      return true;
+    }
+  }
+
   return false;
 };
 
