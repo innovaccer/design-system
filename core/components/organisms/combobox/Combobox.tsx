@@ -290,7 +290,7 @@ export const Combobox = (props: ComboboxProps) => {
       setFocusedOption(undefined);
 
       if (inputTriggerRef?.current) {
-        const next = getNextFocusableAfterTrigger(inputTriggerRef.current, event.shiftKey);
+        const next = getNextFocusableAfterTrigger(inputTriggerRef.current, event.shiftKey, el);
         if (next) {
           next.focus({ preventScroll: true });
         } else {
