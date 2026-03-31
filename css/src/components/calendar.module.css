@@ -140,6 +140,13 @@
   position: relative;
 }
 
+.Calendar-monthValueWrapper,
+.Calendar-yearValueWrapper {
+  display: inline-flex;
+  justify-content: center;
+  position: relative;
+}
+
 .Calendar-valueWrapper--inRange {
   background: var(--primary-ultra-light);
 }
