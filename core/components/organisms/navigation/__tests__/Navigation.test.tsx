@@ -148,6 +148,34 @@ describe('VerticalNavigation component', () => {
   });
 });
 
+describe('VerticalNavigation component: aria-current', () => {
+  it('sets aria-current="page" on the active menu item', () => {
+    const { getAllByTestId } = render(<Navigation menus={menus} type="vertical" active={{ name: 'tab1' }} />);
+    const menuItems = getAllByTestId('DesignSystem-Navigation-VerticalNavigation--menuItem');
+    expect(menuItems[0]).toHaveAttribute('aria-current', 'page');
+    expect(menuItems[1]).not.toHaveAttribute('aria-current');
+    expect(menuItems[2]).not.toHaveAttribute('aria-current');
+  });
+
+  it('sets aria-current="page" on the active sub-menu item', () => {
+    const { getAllByTestId } = render(
+      <Navigation menus={menus} type="vertical" active={{ name: 'tab3child1' }} autoCollapse={false} />
+    );
+    const parentMenu = getAllByTestId('DesignSystem-Navigation-VerticalNavigation--menuItem')[2];
+    fireEvent.click(parentMenu);
+    const subMenuItems = getAllByTestId('DesignSystem-Navigation-VerticalNavigation--subMenu');
+    expect(subMenuItems[0]).toHaveAttribute('aria-current', 'page');
+  });
+
+  it('does not set aria-current when no item is active', () => {
+    const { getAllByTestId } = render(<Navigation menus={menus} type="vertical" />);
+    const menuItems = getAllByTestId('DesignSystem-Navigation-VerticalNavigation--menuItem');
+    menuItems.forEach((item) => {
+      expect(item).not.toHaveAttribute('aria-current');
+    });
+  });
+});
+
 describe('Vertical Navigation component prop: onClick', () => {
   it('renders vertical nav  component with  onClick without submenu ', () => {
     const { getAllByTestId } = render(<Navigation onClick={onClick} menus={menus} type="vertical" />);

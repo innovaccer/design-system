@@ -131,6 +131,7 @@ export const MenuItem = (props: MenuItemProps) => {
     'aria-expanded': hasSubmenu ? (isChildrenVisible ? 'true' : 'false') : undefined,
     'data-menu-name': menu.name,
     'data-disabled': menu.disabled ? 'true' : undefined,
+    'aria-selected': isActive ? 'true' : 'false',
     ...extractBaseProps(props),
   };
 
