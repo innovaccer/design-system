@@ -4,6 +4,7 @@ import { Text } from '@/index';
 import FileUploaderFormat, { FileUploaderFormatProps } from './FileUploaderFormat';
 import FileUploaderButton, { FileUploaderButtonProps } from './FileUploaderButton';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import uidGenerator from '@/utils/uidGenerator';
 import styles from '@css/components/fileUploader.module.css';
 
 export interface FileUploaderProps extends FileUploaderButtonProps, FileUploaderFormatProps, BaseProps {
@@ -38,6 +39,9 @@ export const FileUploader = (props: FileUploaderProps) => {
   } = props;
 
   const baseProps = extractBaseProps(props);
+  const baseId = React.useRef(`file-uploader-${uidGenerator()}`).current;
+  const titleId = `${baseId}-title`;
+  const sizeLabelId = `${baseId}-size`;
 
   const FileUploaderClass = classNames(
     {
@@ -48,9 +52,11 @@ export const FileUploader = (props: FileUploaderProps) => {
 
   return (
     <div {...baseProps} className={FileUploaderClass} data-test="DesignSystem-FileUploader">
-      <Text weight="medium">{title}</Text>
+      <Text weight="medium" id={titleId}>
+        {title}
+      </Text>
       <FileUploaderFormat formatLabel={formatLabel} />
-      <Text size="small" appearance="subtle" className={!formatLabel ? 'mt-4' : ''}>
+      <Text size="small" appearance="subtle" className={!formatLabel ? 'mt-4' : ''} id={sizeLabelId}>
         {sizeLabel}
       </Text>
       {sampleFileLink && <div className="mt-4">{sampleFileLink}</div>}
@@ -63,6 +69,8 @@ export const FileUploader = (props: FileUploaderProps) => {
         uploadButtonLabel={uploadButtonLabel}
         onChange={onChange}
         className="mt-5"
+        aria-labelledby={titleId}
+        aria-describedby={sizeLabelId}
       />
     </div>
   );
