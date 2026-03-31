@@ -202,7 +202,6 @@
 
   /* Button reset (used on <button> for a11y) */
   background: transparent;
-  border: none;
   padding: 0;
   margin: 0;
   font-family: inherit;
@@ -302,7 +301,6 @@
   height: var(--spacing-80);
   width: var(--spacing-80);
 }
-
 
 .Calendar-valueWrapper--active-dummy .Calendar-value {
   border: none;
