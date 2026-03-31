@@ -25,7 +25,9 @@ export interface SpinnerProps extends DecorativeProps {
 export const Spinner = (props: SpinnerProps) => {
   const { appearance, size, className, 'aria-label': ariaLabel = 'Loading' } = props;
 
-  const baseProps = extractBaseProps(props);
+  const { role: roleOverride, ...restBaseProps } = extractBaseProps(props);
+  const effectiveRole = roleOverride ?? 'status';
+  const isStatusRole = effectiveRole === 'status';
 
   const wrapperClasses = classNames(
     {
@@ -62,10 +64,9 @@ export const Spinner = (props: SpinnerProps) => {
 
   return (
     <svg
-      {...baseProps}
-      role="status"
-      aria-live="polite"
-      aria-label={ariaLabel}
+      {...restBaseProps}
+      role={effectiveRole}
+      {...(isStatusRole && { 'aria-live': 'polite' as const, 'aria-label': ariaLabel })}
       className={wrapperClasses}
       {...svgProps}
     >

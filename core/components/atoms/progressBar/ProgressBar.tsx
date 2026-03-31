@@ -28,7 +28,9 @@ export interface ProgressBarProps extends DecorativeProps {
 export const ProgressBar = (props: ProgressBarProps) => {
   const { max, value, className, size, state } = props;
 
-  const baseProps = extractBaseProps(props);
+  const { role: roleOverride, ...restBaseProps } = extractBaseProps(props);
+  const effectiveRole = roleOverride ?? 'progressbar';
+  const isProgressbarRole = effectiveRole === 'progressbar';
 
   const style =
     state !== 'indeterminate'
@@ -58,12 +60,12 @@ export const ProgressBar = (props: ProgressBarProps) => {
   return (
     <div
       data-test="DesignSystem-ProgressBar"
-      role="progressbar"
-      aria-valuemin={0}
-      aria-valuemax={max}
-      aria-valuenow={clampedValue}
-      aria-valuetext={percentage !== undefined ? `${percentage}%` : undefined}
-      {...baseProps}
+      {...restBaseProps}
+      role={effectiveRole}
+      aria-valuemin={isProgressbarRole ? 0 : undefined}
+      aria-valuemax={isProgressbarRole ? max : undefined}
+      aria-valuenow={isProgressbarRole ? clampedValue : undefined}
+      aria-valuetext={isProgressbarRole && percentage !== undefined ? `${percentage}%` : undefined}
       className={ProgressBarClass}
     >
       <div data-test="DesignSystem-ProgressBar-Indicator" className={ProgressIndicatorClass} style={style} />
