@@ -136,7 +136,8 @@ export const Tooltip = (props: TooltipProps) => {
 
     const truncatedTrigger = React.isValidElement(renderChildren)
       ? React.cloneElement(renderChildren as React.ReactElement<any>, {
-          'aria-describedby': tooltipId,
+          'aria-describedby':
+            [renderChildren.props['aria-describedby'], tooltipId].filter(Boolean).join(' ') || undefined,
         })
       : renderChildren;
 
@@ -159,7 +160,9 @@ export const Tooltip = (props: TooltipProps) => {
 
   const triggerWithA11y = React.isValidElement(children)
     ? React.cloneElement(children as React.ReactElement<any>, {
-        'aria-describedby': tooltipId,
+        'aria-describedby':
+          [(children as React.ReactElement<any>).props['aria-describedby'], tooltipId].filter(Boolean).join(' ') ||
+          undefined,
       })
     : children;
 
