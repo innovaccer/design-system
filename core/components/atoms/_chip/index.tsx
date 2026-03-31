@@ -165,8 +165,7 @@ export const GenericChip = (props: GenericChipProps) => {
     return labelText;
   };
 
-  const computedTabIndex =
-    props.tabIndex !== undefined ? (disabled ? -1 : props.tabIndex) : disabled ? -1 : 0;
+  const computedTabIndex = props.tabIndex !== undefined ? (disabled ? -1 : props.tabIndex) : disabled ? -1 : 0;
 
   const getAriaProps = () => {
     const effectiveRole = props.role || 'button';

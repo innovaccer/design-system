@@ -657,7 +657,8 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
       {
         name: 'aria-errormessage',
         type: 'string',
-        description: 'Id of the live error message element (e.g. HelpText with error); pair with aria-invalid when in error.',
+        description:
+          'Id of the live error message element (e.g. HelpText with error); pair with aria-invalid when in error.',
       },
     ],
   },
@@ -811,12 +812,14 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
       {
         name: 'aria-describedby',
         type: 'string',
-        description: 'Element ids (space-separated) for supplementary help or description regions (e.g. sibling HelpText).',
+        description:
+          'Element ids (space-separated) for supplementary help or description regions (e.g. sibling HelpText).',
       },
       {
         name: 'aria-errormessage',
         type: 'string',
-        description: 'Id of the live error message element (e.g. HelpText with error); pair with aria-invalid when in error.',
+        description:
+          'Id of the live error message element (e.g. HelpText with error); pair with aria-invalid when in error.',
       },
     ],
     nestedComponents: [

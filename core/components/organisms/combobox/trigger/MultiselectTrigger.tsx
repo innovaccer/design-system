@@ -307,6 +307,7 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
 
   return (
     <div data-test="DesignSystem-MultiSelectTrigger--Border" className={ChipInputBorderClass}>
+      {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
       <div
         data-test="DesignSystem-MultiSelectTrigger"
         {...baseProps}
@@ -346,9 +347,7 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
               'align-items-center',
               'flex-shrink-0'
             )}
-            tabIndex={0}
             role="button"
-            aria-label="Clear all"
             onClick={onDeleteAllHandler}
             tabIndex={disabled ? -1 : 0}
             aria-label="Clear all options"
