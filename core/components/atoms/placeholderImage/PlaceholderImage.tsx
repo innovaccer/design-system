@@ -31,7 +31,7 @@ export const PlaceholderImage = (props: PlaceholderImageProps) => {
     className
   );
 
-  return <span {...baseProps} className={classes} />;
+  return <span {...baseProps} className={classes} aria-hidden="true" />;
 };
 
 PlaceholderImage.displayName = 'PlaceholderImage';

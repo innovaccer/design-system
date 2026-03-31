@@ -126,9 +126,10 @@ exports[`Navigation component
                 data-test="DesignSystem-StatusHint"
               >
                 <span
-                  aria-hidden="true"
+                  aria-label="default status"
                   class="StatusHint-icon StatusHint--default mr-4"
                   data-test="DesignSystem-StatusHint--Icon"
+                  role="img"
                 />
                 <span
                   class="Text Text--default Text--medium Text--regular"
@@ -490,9 +491,10 @@ exports[`Navigation component
                 data-test="DesignSystem-StatusHint"
               >
                 <span
-                  aria-hidden="true"
+                  aria-label="default status"
                   class="StatusHint-icon StatusHint--default mr-4"
                   data-test="DesignSystem-StatusHint--Icon"
+                  role="img"
                 />
                 <span
                   class="Text Text--default Text--medium Text--regular"
@@ -781,9 +783,10 @@ exports[`Navigation component
                 data-test="DesignSystem-StatusHint"
               >
                 <span
-                  aria-hidden="true"
+                  aria-label="default status"
                   class="StatusHint-icon StatusHint--default mr-4"
                   data-test="DesignSystem-StatusHint--Icon"
+                  role="img"
                 />
                 <span
                   class="Text Text--default Text--medium Text--regular"
@@ -1745,9 +1748,10 @@ exports[`Navigation component
                 data-test="DesignSystem-StatusHint"
               >
                 <span
-                  aria-hidden="true"
+                  aria-label="default status"
                   class="StatusHint-icon StatusHint--default mr-4"
                   data-test="DesignSystem-StatusHint--Icon"
+                  role="img"
                 />
                 <span
                   class="Text Text--default Text--medium Text--regular"
