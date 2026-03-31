@@ -337,7 +337,6 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
             aria-labelledby={ariaLabelledBy}
             aria-invalid={error === true ? true : ariaInvalid}
           />
-          {/* eslint-enable */}
         </div>
         {!disabled && (chips.length > 0 || inputValue.length > 0) && (
           <div
