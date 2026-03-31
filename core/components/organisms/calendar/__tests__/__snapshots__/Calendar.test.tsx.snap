@@ -2002,7 +2002,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     21
@@ -2033,7 +2033,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     22
@@ -2059,7 +2059,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     23
@@ -2085,7 +2085,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     24
@@ -2111,7 +2111,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     25
@@ -2137,7 +2137,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     26
@@ -2163,7 +2163,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     27
@@ -2189,7 +2189,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     28
@@ -2220,7 +2220,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     29
@@ -2246,7 +2246,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     30
@@ -2272,7 +2272,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     31
@@ -2298,7 +2298,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     1
@@ -2324,7 +2324,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     2
@@ -2350,7 +2350,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     3
@@ -2376,7 +2376,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     4
@@ -2407,7 +2407,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     5
@@ -2433,7 +2433,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     6
@@ -2459,7 +2459,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     7
@@ -2485,7 +2485,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     8
@@ -2511,7 +2511,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     9
@@ -2537,7 +2537,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     10
@@ -2563,7 +2563,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     11
@@ -2793,7 +2793,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     1
@@ -2819,7 +2819,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     2
@@ -2845,7 +2845,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     3
@@ -2871,7 +2871,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     4
@@ -2897,7 +2897,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     5
@@ -2923,7 +2923,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     6
@@ -2949,7 +2949,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     7
@@ -2980,7 +2980,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     8
@@ -3006,7 +3006,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     9
@@ -4082,7 +4082,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     1
@@ -4108,7 +4108,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     2
@@ -4134,7 +4134,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     3
@@ -4160,7 +4160,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     4
@@ -4186,7 +4186,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     5
@@ -4212,7 +4212,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     6
@@ -4238,7 +4238,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     7
@@ -4269,7 +4269,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     8
@@ -4295,7 +4295,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     9
@@ -4601,7 +4601,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     21
@@ -4632,7 +4632,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     22
@@ -4658,7 +4658,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     23
@@ -4684,7 +4684,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     24
@@ -4710,7 +4710,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     25
@@ -4736,7 +4736,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     26
@@ -4762,7 +4762,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     27
@@ -4788,7 +4788,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     28
@@ -4819,7 +4819,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     29
@@ -4845,7 +4845,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     30
@@ -4871,7 +4871,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     31
@@ -4897,7 +4897,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     1
@@ -4923,7 +4923,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     2
@@ -4949,7 +4949,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     3
@@ -4975,7 +4975,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     4
@@ -5006,7 +5006,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     5
@@ -5032,7 +5032,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     6
@@ -5058,7 +5058,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     7
@@ -5084,7 +5084,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     8
@@ -5110,7 +5110,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     9
@@ -5136,7 +5136,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     10
@@ -5162,7 +5162,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--disabled Text--regular"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     11

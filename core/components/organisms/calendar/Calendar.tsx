@@ -1434,8 +1434,8 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
               'primary-dark': today(),
             }) as TextColor;
 
-            const getTextAppearance = (): 'default' | 'subtle' | 'disabled' =>
-              disabled ? 'disabled' : active || activeDate ? 'default' : dummy ? 'subtle' : 'default';
+            const getTextAppearance = (): 'default' | 'subtle' =>
+              disabled ? 'subtle' : active || activeDate ? 'default' : dummy ? 'subtle' : 'default';
 
             const displayDate = !dummy ? date : date <= 0 ? prevMonthDayRange + date : date - dayRange;
             const fullDate =
@@ -1487,7 +1487,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                   onMouseEnter={onMouseEnterHandler.bind(this, date, today(), disabled)}
                 >
                   <Text
-                    color={getTextAppearance() === 'default' ? getTextColor : undefined}
+                    color={getTextAppearance() === 'default' || today() ? getTextColor : undefined}
                     appearance={getTextAppearance()}
                     size={size === 'small' ? 'small' : 'regular'}
                     weight={active || activeDate ? 'strong' : undefined}
