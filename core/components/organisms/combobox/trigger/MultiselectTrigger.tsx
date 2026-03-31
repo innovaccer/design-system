@@ -348,9 +348,9 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
               'flex-shrink-0'
             )}
             role="button"
-            onClick={onDeleteAllHandler}
-            tabIndex={disabled ? -1 : 0}
+            tabIndex={0}
             aria-label="Clear all options"
+            onClick={onDeleteAllHandler}
             onKeyDown={(e) => {
               if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
