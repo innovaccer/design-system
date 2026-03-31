@@ -21,25 +21,31 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
             <div
               class="Calendar-header--large"
             >
-              <button
-                class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
-                data-test="DesignSystem-Button"
-                tabindex="0"
-                type="button"
+              
+              <div
+                class="PopperWrapper-trigger"
               >
-                <div
-                  class="Button-icon"
-                  data-test="DesignSystem-Button--Icon-Wrapper"
+                <button
+                  aria-label="Previous month"
+                  class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
+                  data-test="DesignSystem-Button"
+                  tabindex="0"
+                  type="button"
                 >
-                  <i
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
+                  <div
+                    class="Button-icon"
+                    data-test="DesignSystem-Button--Icon-Wrapper"
                   >
-                    arrow_back
-                  </i>
-                </div>
-              </button>
+                    <i
+                      class="material-symbols material-symbols-rounded Icon"
+                      data-test="DesignSystem-Button--Icon"
+                      style="font-size: 16px; width: 16px;"
+                    >
+                      arrow_back
+                    </i>
+                  </div>
+                </button>
+              </div>
               <div
                 class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
               >
@@ -82,25 +88,31 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
                   </i>
                 </button>
               </div>
-              <button
-                class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
-                data-test="DesignSystem-Button"
-                tabindex="0"
-                type="button"
+              
+              <div
+                class="PopperWrapper-trigger"
               >
-                <div
-                  class="Button-icon"
-                  data-test="DesignSystem-Button--Icon-Wrapper"
+                <button
+                  aria-label="Next month"
+                  class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
+                  data-test="DesignSystem-Button"
+                  tabindex="0"
+                  type="button"
                 >
-                  <i
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
+                  <div
+                    class="Button-icon"
+                    data-test="DesignSystem-Button--Icon-Wrapper"
                   >
-                    arrow_forward
-                  </i>
-                </div>
-              </button>
+                    <i
+                      class="material-symbols material-symbols-rounded Icon"
+                      data-test="DesignSystem-Button--Icon"
+                      style="font-size: 16px; width: 16px;"
+                    >
+                      arrow_forward
+                    </i>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="Calendar-body"
@@ -1198,26 +1210,32 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
             <div
               class="Calendar-header--large"
             >
-              <button
-                class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
-                data-test="DesignSystem-Button"
-                disabled=""
-                tabindex="0"
-                type="button"
+              
+              <div
+                class="PopperWrapper-trigger"
               >
-                <div
-                  class="Button-icon"
-                  data-test="DesignSystem-Button--Icon-Wrapper"
+                <button
+                  aria-label="Previous month"
+                  class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
+                  data-test="DesignSystem-Button"
+                  disabled=""
+                  tabindex="0"
+                  type="button"
                 >
-                  <i
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
+                  <div
+                    class="Button-icon"
+                    data-test="DesignSystem-Button--Icon-Wrapper"
                   >
-                    arrow_back
-                  </i>
-                </div>
-              </button>
+                    <i
+                      class="material-symbols material-symbols-rounded Icon"
+                      data-test="DesignSystem-Button--Icon"
+                      style="font-size: 16px; width: 16px;"
+                    >
+                      arrow_back
+                    </i>
+                  </div>
+                </button>
+              </div>
               <div
                 class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
               >
@@ -1260,25 +1278,31 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                   </i>
                 </button>
               </div>
-              <button
-                class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
-                data-test="DesignSystem-Button"
-                tabindex="0"
-                type="button"
+              
+              <div
+                class="PopperWrapper-trigger"
               >
-                <div
-                  class="Button-icon"
-                  data-test="DesignSystem-Button--Icon-Wrapper"
+                <button
+                  aria-label="Next month"
+                  class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
+                  data-test="DesignSystem-Button"
+                  tabindex="0"
+                  type="button"
                 >
-                  <i
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
+                  <div
+                    class="Button-icon"
+                    data-test="DesignSystem-Button--Icon-Wrapper"
                   >
-                    arrow_forward
-                  </i>
-                </div>
-              </button>
+                    <i
+                      class="material-symbols material-symbols-rounded Icon"
+                      data-test="DesignSystem-Button--Icon"
+                      style="font-size: 16px; width: 16px;"
+                    >
+                      arrow_forward
+                    </i>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="Calendar-body"
@@ -2418,26 +2442,32 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
             <div
               class="Calendar-header--large"
             >
-              <button
-                class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
-                data-test="DesignSystem-Button"
-                disabled=""
-                tabindex="0"
-                type="button"
+              
+              <div
+                class="PopperWrapper-trigger"
               >
-                <div
-                  class="Button-icon"
-                  data-test="DesignSystem-Button--Icon-Wrapper"
+                <button
+                  aria-label="Previous month"
+                  class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
+                  data-test="DesignSystem-Button"
+                  disabled=""
+                  tabindex="0"
+                  type="button"
                 >
-                  <i
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
+                  <div
+                    class="Button-icon"
+                    data-test="DesignSystem-Button--Icon-Wrapper"
                   >
-                    arrow_back
-                  </i>
-                </div>
-              </button>
+                    <i
+                      class="material-symbols material-symbols-rounded Icon"
+                      data-test="DesignSystem-Button--Icon"
+                      style="font-size: 16px; width: 16px;"
+                    >
+                      arrow_back
+                    </i>
+                  </div>
+                </button>
+              </div>
               <div
                 class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
               >
@@ -2480,25 +2510,31 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                   </i>
                 </button>
               </div>
-              <button
-                class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
-                data-test="DesignSystem-Button"
-                tabindex="0"
-                type="button"
+              
+              <div
+                class="PopperWrapper-trigger"
               >
-                <div
-                  class="Button-icon"
-                  data-test="DesignSystem-Button--Icon-Wrapper"
+                <button
+                  aria-label="Next month"
+                  class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
+                  data-test="DesignSystem-Button"
+                  tabindex="0"
+                  type="button"
                 >
-                  <i
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
+                  <div
+                    class="Button-icon"
+                    data-test="DesignSystem-Button--Icon-Wrapper"
                   >
-                    arrow_forward
-                  </i>
-                </div>
-              </button>
+                    <i
+                      class="material-symbols material-symbols-rounded Icon"
+                      data-test="DesignSystem-Button--Icon"
+                      style="font-size: 16px; width: 16px;"
+                    >
+                      arrow_forward
+                    </i>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="Calendar-body"
@@ -3638,25 +3674,31 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
             <div
               class="Calendar-header--large"
             >
-              <button
-                class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
-                data-test="DesignSystem-Button"
-                tabindex="0"
-                type="button"
+              
+              <div
+                class="PopperWrapper-trigger"
               >
-                <div
-                  class="Button-icon"
-                  data-test="DesignSystem-Button--Icon-Wrapper"
+                <button
+                  aria-label="Previous month"
+                  class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
+                  data-test="DesignSystem-Button"
+                  tabindex="0"
+                  type="button"
                 >
-                  <i
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
+                  <div
+                    class="Button-icon"
+                    data-test="DesignSystem-Button--Icon-Wrapper"
                   >
-                    arrow_back
-                  </i>
-                </div>
-              </button>
+                    <i
+                      class="material-symbols material-symbols-rounded Icon"
+                      data-test="DesignSystem-Button--Icon"
+                      style="font-size: 16px; width: 16px;"
+                    >
+                      arrow_back
+                    </i>
+                  </div>
+                </button>
+              </div>
               <div
                 class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
               >
@@ -3699,25 +3741,31 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                   </i>
                 </button>
               </div>
-              <button
-                class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
-                data-test="DesignSystem-Button"
-                tabindex="0"
-                type="button"
+              
+              <div
+                class="PopperWrapper-trigger"
               >
-                <div
-                  class="Button-icon"
-                  data-test="DesignSystem-Button--Icon-Wrapper"
+                <button
+                  aria-label="Next month"
+                  class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
+                  data-test="DesignSystem-Button"
+                  tabindex="0"
+                  type="button"
                 >
-                  <i
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
+                  <div
+                    class="Button-icon"
+                    data-test="DesignSystem-Button--Icon-Wrapper"
                   >
-                    arrow_forward
-                  </i>
-                </div>
-              </button>
+                    <i
+                      class="material-symbols material-symbols-rounded Icon"
+                      data-test="DesignSystem-Button--Icon"
+                      style="font-size: 16px; width: 16px;"
+                    >
+                      arrow_forward
+                    </i>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="Calendar-body"
@@ -4815,25 +4863,31 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
             <div
               class="Calendar-header--large"
             >
-              <button
-                class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
-                data-test="DesignSystem-Button"
-                tabindex="0"
-                type="button"
+              
+              <div
+                class="PopperWrapper-trigger"
               >
-                <div
-                  class="Button-icon"
-                  data-test="DesignSystem-Button--Icon-Wrapper"
+                <button
+                  aria-label="Previous month"
+                  class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
+                  data-test="DesignSystem-Button"
+                  tabindex="0"
+                  type="button"
                 >
-                  <i
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
+                  <div
+                    class="Button-icon"
+                    data-test="DesignSystem-Button--Icon-Wrapper"
                   >
-                    arrow_back
-                  </i>
-                </div>
-              </button>
+                    <i
+                      class="material-symbols material-symbols-rounded Icon"
+                      data-test="DesignSystem-Button--Icon"
+                      style="font-size: 16px; width: 16px;"
+                    >
+                      arrow_back
+                    </i>
+                  </div>
+                </button>
+              </div>
               <div
                 class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
               >
@@ -4876,25 +4930,31 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                   </i>
                 </button>
               </div>
-              <button
-                class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
-                data-test="DesignSystem-Button"
-                tabindex="0"
-                type="button"
+              
+              <div
+                class="PopperWrapper-trigger"
               >
-                <div
-                  class="Button-icon"
-                  data-test="DesignSystem-Button--Icon-Wrapper"
+                <button
+                  aria-label="Next month"
+                  class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
+                  data-test="DesignSystem-Button"
+                  tabindex="0"
+                  type="button"
                 >
-                  <i
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
+                  <div
+                    class="Button-icon"
+                    data-test="DesignSystem-Button--Icon-Wrapper"
                   >
-                    arrow_forward
-                  </i>
-                </div>
-              </button>
+                    <i
+                      class="material-symbols material-symbols-rounded Icon"
+                      data-test="DesignSystem-Button--Icon"
+                      style="font-size: 16px; width: 16px;"
+                    >
+                      arrow_forward
+                    </i>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="Calendar-body"
@@ -5992,25 +6052,31 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
             <div
               class="Calendar-header--large"
             >
-              <button
-                class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
-                data-test="DesignSystem-Button"
-                tabindex="0"
-                type="button"
+              
+              <div
+                class="PopperWrapper-trigger"
               >
-                <div
-                  class="Button-icon"
-                  data-test="DesignSystem-Button--Icon-Wrapper"
+                <button
+                  aria-label="Previous month"
+                  class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
+                  data-test="DesignSystem-Button"
+                  tabindex="0"
+                  type="button"
                 >
-                  <i
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
+                  <div
+                    class="Button-icon"
+                    data-test="DesignSystem-Button--Icon-Wrapper"
                   >
-                    arrow_back
-                  </i>
-                </div>
-              </button>
+                    <i
+                      class="material-symbols material-symbols-rounded Icon"
+                      data-test="DesignSystem-Button--Icon"
+                      style="font-size: 16px; width: 16px;"
+                    >
+                      arrow_back
+                    </i>
+                  </div>
+                </button>
+              </div>
               <div
                 class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
               >
@@ -6053,25 +6119,31 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                   </i>
                 </button>
               </div>
-              <button
-                class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
-                data-test="DesignSystem-Button"
-                tabindex="0"
-                type="button"
+              
+              <div
+                class="PopperWrapper-trigger"
               >
-                <div
-                  class="Button-icon"
-                  data-test="DesignSystem-Button--Icon-Wrapper"
+                <button
+                  aria-label="Next month"
+                  class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
+                  data-test="DesignSystem-Button"
+                  tabindex="0"
+                  type="button"
                 >
-                  <i
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
+                  <div
+                    class="Button-icon"
+                    data-test="DesignSystem-Button--Icon-Wrapper"
                   >
-                    arrow_forward
-                  </i>
-                </div>
-              </button>
+                    <i
+                      class="material-symbols material-symbols-rounded Icon"
+                      data-test="DesignSystem-Button--Icon"
+                      style="font-size: 16px; width: 16px;"
+                    >
+                      arrow_forward
+                    </i>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="Calendar-body"
@@ -7169,25 +7241,31 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
             <div
               class="Calendar-header--large"
             >
-              <button
-                class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
-                data-test="DesignSystem-Button"
-                tabindex="0"
-                type="button"
+              
+              <div
+                class="PopperWrapper-trigger"
               >
-                <div
-                  class="Button-icon"
-                  data-test="DesignSystem-Button--Icon-Wrapper"
+                <button
+                  aria-label="Previous year"
+                  class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
+                  data-test="DesignSystem-Button"
+                  tabindex="0"
+                  type="button"
                 >
-                  <i
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
+                  <div
+                    class="Button-icon"
+                    data-test="DesignSystem-Button--Icon-Wrapper"
                   >
-                    arrow_back
-                  </i>
-                </div>
-              </button>
+                    <i
+                      class="material-symbols material-symbols-rounded Icon"
+                      data-test="DesignSystem-Button--Icon"
+                      style="font-size: 16px; width: 16px;"
+                    >
+                      arrow_back
+                    </i>
+                  </div>
+                </button>
+              </div>
               <div
                 class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
               >
@@ -7211,25 +7289,31 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                   </i>
                 </button>
               </div>
-              <button
-                class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
-                data-test="DesignSystem-Button"
-                tabindex="0"
-                type="button"
+              
+              <div
+                class="PopperWrapper-trigger"
               >
-                <div
-                  class="Button-icon"
-                  data-test="DesignSystem-Button--Icon-Wrapper"
+                <button
+                  aria-label="Next year"
+                  class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
+                  data-test="DesignSystem-Button"
+                  tabindex="0"
+                  type="button"
                 >
-                  <i
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
+                  <div
+                    class="Button-icon"
+                    data-test="DesignSystem-Button--Icon-Wrapper"
                   >
-                    arrow_forward
-                  </i>
-                </div>
-              </button>
+                    <i
+                      class="material-symbols material-symbols-rounded Icon"
+                      data-test="DesignSystem-Button--Icon"
+                      style="font-size: 16px; width: 16px;"
+                    >
+                      arrow_forward
+                    </i>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="Calendar-body"
@@ -7507,25 +7591,31 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
             <div
               class="Calendar-header--large"
             >
-              <button
-                class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
-                data-test="DesignSystem-Button"
-                tabindex="0"
-                type="button"
+              
+              <div
+                class="PopperWrapper-trigger"
               >
-                <div
-                  class="Button-icon"
-                  data-test="DesignSystem-Button--Icon-Wrapper"
+                <button
+                  aria-label="Previous years"
+                  class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
+                  data-test="DesignSystem-Button"
+                  tabindex="0"
+                  type="button"
                 >
-                  <i
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
+                  <div
+                    class="Button-icon"
+                    data-test="DesignSystem-Button--Icon-Wrapper"
                   >
-                    arrow_back
-                  </i>
-                </div>
-              </button>
+                    <i
+                      class="material-symbols material-symbols-rounded Icon"
+                      data-test="DesignSystem-Button--Icon"
+                      style="font-size: 16px; width: 16px;"
+                    >
+                      arrow_back
+                    </i>
+                  </div>
+                </button>
+              </div>
               <div
                 class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
               >
@@ -7542,25 +7632,31 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                   </h5>
                 </button>
               </div>
-              <button
-                class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
-                data-test="DesignSystem-Button"
-                tabindex="0"
-                type="button"
+              
+              <div
+                class="PopperWrapper-trigger"
               >
-                <div
-                  class="Button-icon"
-                  data-test="DesignSystem-Button--Icon-Wrapper"
+                <button
+                  aria-label="Next years"
+                  class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
+                  data-test="DesignSystem-Button"
+                  tabindex="0"
+                  type="button"
                 >
-                  <i
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
+                  <div
+                    class="Button-icon"
+                    data-test="DesignSystem-Button--Icon-Wrapper"
                   >
-                    arrow_forward
-                  </i>
-                </div>
-              </button>
+                    <i
+                      class="material-symbols material-symbols-rounded Icon"
+                      data-test="DesignSystem-Button--Icon"
+                      style="font-size: 16px; width: 16px;"
+                    >
+                      arrow_forward
+                    </i>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="Calendar-body"
@@ -7838,25 +7934,31 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
             <div
               class="Calendar-header--large"
             >
-              <button
-                class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
-                data-test="DesignSystem-Button"
-                tabindex="0"
-                type="button"
+              
+              <div
+                class="PopperWrapper-trigger"
               >
-                <div
-                  class="Button-icon"
-                  data-test="DesignSystem-Button--Icon-Wrapper"
+                <button
+                  aria-label="Previous month"
+                  class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
+                  data-test="DesignSystem-Button"
+                  tabindex="0"
+                  type="button"
                 >
-                  <i
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
+                  <div
+                    class="Button-icon"
+                    data-test="DesignSystem-Button--Icon-Wrapper"
                   >
-                    arrow_back
-                  </i>
-                </div>
-              </button>
+                    <i
+                      class="material-symbols material-symbols-rounded Icon"
+                      data-test="DesignSystem-Button--Icon"
+                      style="font-size: 16px; width: 16px;"
+                    >
+                      arrow_back
+                    </i>
+                  </div>
+                </button>
+              </div>
               <div
                 class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
               >
@@ -7899,25 +8001,31 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
                   </i>
                 </button>
               </div>
-              <button
-                class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
-                data-test="DesignSystem-Button"
-                tabindex="0"
-                type="button"
+              
+              <div
+                class="PopperWrapper-trigger"
               >
-                <div
-                  class="Button-icon"
-                  data-test="DesignSystem-Button--Icon-Wrapper"
+                <button
+                  aria-label="Next month"
+                  class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
+                  data-test="DesignSystem-Button"
+                  tabindex="0"
+                  type="button"
                 >
-                  <i
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
+                  <div
+                    class="Button-icon"
+                    data-test="DesignSystem-Button--Icon-Wrapper"
                   >
-                    arrow_forward
-                  </i>
-                </div>
-              </button>
+                    <i
+                      class="material-symbols material-symbols-rounded Icon"
+                      data-test="DesignSystem-Button--Icon"
+                      style="font-size: 16px; width: 16px;"
+                    >
+                      arrow_forward
+                    </i>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="Calendar-body"

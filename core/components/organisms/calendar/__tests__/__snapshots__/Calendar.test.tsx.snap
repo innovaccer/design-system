@@ -17,30 +17,34 @@ exports[`Calendar component
         <div
           class="Calendar-header--large"
         >
-          
           <div
-            class="PopperWrapper-trigger"
+            class="Calendar-headerIcon Calendar-headerIcon--prev"
           >
-            <button
-              aria-label="Previous month"
-              class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
-              data-test="DesignSystem-Button"
-              tabindex="0"
-              type="button"
+            
+            <div
+              class="PopperWrapper-trigger"
             >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
+              <button
+                aria-label="Previous month"
+                class="Button Button--regular Button--regularSquare Button--basic"
+                data-test="DesignSystem-Button"
+                tabindex="0"
+                type="button"
               >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 16px; width: 16px;"
+                <div
+                  class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
-                  arrow_back
-                </i>
-              </div>
-            </button>
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    arrow_back
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
@@ -84,30 +88,34 @@ exports[`Calendar component
               </i>
             </button>
           </div>
-          
           <div
-            class="PopperWrapper-trigger"
+            class="Calendar-headerIcon Calendar-headerIcon--next"
           >
-            <button
-              aria-label="Next month"
-              class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
-              data-test="DesignSystem-Button"
-              tabindex="0"
-              type="button"
+            
+            <div
+              class="PopperWrapper-trigger"
             >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
+              <button
+                aria-label="Next month"
+                class="Button Button--regular Button--regularSquare Button--basic"
+                data-test="DesignSystem-Button"
+                tabindex="0"
+                type="button"
               >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 16px; width: 16px;"
+                <div
+                  class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
-                  arrow_forward
-                </i>
-              </div>
-            </button>
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    arrow_forward
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
         </div>
         <div
@@ -1177,30 +1185,34 @@ exports[`Calendar component
         <div
           class="Calendar-header--large"
         >
-          
           <div
-            class="PopperWrapper-trigger"
+            class="Calendar-headerIcon Calendar-headerIcon--prev"
           >
-            <button
-              aria-label="Previous month"
-              class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
-              data-test="DesignSystem-Button"
-              tabindex="0"
-              type="button"
+            
+            <div
+              class="PopperWrapper-trigger"
             >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
+              <button
+                aria-label="Previous month"
+                class="Button Button--regular Button--regularSquare Button--basic"
+                data-test="DesignSystem-Button"
+                tabindex="0"
+                type="button"
               >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 16px; width: 16px;"
+                <div
+                  class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
-                  arrow_back
-                </i>
-              </div>
-            </button>
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    arrow_back
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
@@ -1244,31 +1256,35 @@ exports[`Calendar component
               </i>
             </button>
           </div>
-          
           <div
-            class="PopperWrapper-trigger"
+            class="Calendar-headerIcon Calendar-headerIcon--next"
           >
-            <button
-              aria-label="Next month"
-              class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
-              data-test="DesignSystem-Button"
-              disabled=""
-              tabindex="0"
-              type="button"
+            
+            <div
+              class="PopperWrapper-trigger"
             >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
+              <button
+                aria-label="Next month"
+                class="Button Button--regular Button--regularSquare Button--basic"
+                data-test="DesignSystem-Button"
+                disabled=""
+                tabindex="0"
+                type="button"
               >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 16px; width: 16px;"
+                <div
+                  class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
-                  arrow_forward
-                </i>
-              </div>
-            </button>
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    arrow_forward
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
         </div>
         <div
@@ -2360,31 +2376,35 @@ exports[`Calendar component
         <div
           class="Calendar-header--large"
         >
-          
           <div
-            class="PopperWrapper-trigger"
+            class="Calendar-headerIcon Calendar-headerIcon--prev"
           >
-            <button
-              aria-label="Previous month"
-              class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
-              data-test="DesignSystem-Button"
-              disabled=""
-              tabindex="0"
-              type="button"
+            
+            <div
+              class="PopperWrapper-trigger"
             >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
+              <button
+                aria-label="Previous month"
+                class="Button Button--regular Button--regularSquare Button--basic"
+                data-test="DesignSystem-Button"
+                disabled=""
+                tabindex="0"
+                type="button"
               >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 16px; width: 16px;"
+                <div
+                  class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
-                  arrow_back
-                </i>
-              </div>
-            </button>
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    arrow_back
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
@@ -2428,30 +2448,34 @@ exports[`Calendar component
               </i>
             </button>
           </div>
-          
           <div
-            class="PopperWrapper-trigger"
+            class="Calendar-headerIcon Calendar-headerIcon--next"
           >
-            <button
-              aria-label="Next month"
-              class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
-              data-test="DesignSystem-Button"
-              tabindex="0"
-              type="button"
+            
+            <div
+              class="PopperWrapper-trigger"
             >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
+              <button
+                aria-label="Next month"
+                class="Button Button--regular Button--regularSquare Button--basic"
+                data-test="DesignSystem-Button"
+                tabindex="0"
+                type="button"
               >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 16px; width: 16px;"
+                <div
+                  class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
-                  arrow_forward
-                </i>
-              </div>
-            </button>
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    arrow_forward
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
         </div>
         <div
@@ -3530,31 +3554,35 @@ exports[`Calendar component
         <div
           class="Calendar-header--large"
         >
-          
           <div
-            class="PopperWrapper-trigger"
+            class="Calendar-headerIcon Calendar-headerIcon--prev"
           >
-            <button
-              aria-label="Previous month"
-              class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
-              data-test="DesignSystem-Button"
-              disabled=""
-              tabindex="0"
-              type="button"
+            
+            <div
+              class="PopperWrapper-trigger"
             >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
+              <button
+                aria-label="Previous month"
+                class="Button Button--regular Button--regularSquare Button--basic"
+                data-test="DesignSystem-Button"
+                disabled=""
+                tabindex="0"
+                type="button"
               >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 16px; width: 16px;"
+                <div
+                  class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
-                  arrow_back
-                </i>
-              </div>
-            </button>
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    arrow_back
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
@@ -3598,31 +3626,35 @@ exports[`Calendar component
               </i>
             </button>
           </div>
-          
           <div
-            class="PopperWrapper-trigger"
+            class="Calendar-headerIcon Calendar-headerIcon--next"
           >
-            <button
-              aria-label="Next month"
-              class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
-              data-test="DesignSystem-Button"
-              disabled=""
-              tabindex="0"
-              type="button"
+            
+            <div
+              class="PopperWrapper-trigger"
             >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
+              <button
+                aria-label="Next month"
+                class="Button Button--regular Button--regularSquare Button--basic"
+                data-test="DesignSystem-Button"
+                disabled=""
+                tabindex="0"
+                type="button"
               >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 16px; width: 16px;"
+                <div
+                  class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
-                  arrow_forward
-                </i>
-              </div>
-            </button>
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    arrow_forward
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
         </div>
         <div
@@ -4723,30 +4755,34 @@ exports[`Calendar component
         <div
           class="Calendar-header--large"
         >
-          
           <div
-            class="PopperWrapper-trigger"
+            class="Calendar-headerIcon Calendar-headerIcon--prev"
           >
-            <button
-              aria-label="Previous month"
-              class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
-              data-test="DesignSystem-Button"
-              tabindex="0"
-              type="button"
+            
+            <div
+              class="PopperWrapper-trigger"
             >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
+              <button
+                aria-label="Previous month"
+                class="Button Button--regular Button--regularSquare Button--basic"
+                data-test="DesignSystem-Button"
+                tabindex="0"
+                type="button"
               >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 16px; width: 16px;"
+                <div
+                  class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
-                  arrow_back
-                </i>
-              </div>
-            </button>
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    arrow_back
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
@@ -4790,30 +4826,34 @@ exports[`Calendar component
               </i>
             </button>
           </div>
-          
           <div
-            class="PopperWrapper-trigger"
+            class="Calendar-headerIcon Calendar-headerIcon--next"
           >
-            <button
-              aria-label="Next month"
-              class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
-              data-test="DesignSystem-Button"
-              tabindex="0"
-              type="button"
+            
+            <div
+              class="PopperWrapper-trigger"
             >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
+              <button
+                aria-label="Next month"
+                class="Button Button--regular Button--regularSquare Button--basic"
+                data-test="DesignSystem-Button"
+                tabindex="0"
+                type="button"
               >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 16px; width: 16px;"
+                <div
+                  class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
-                  arrow_forward
-                </i>
-              </div>
-            </button>
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    arrow_forward
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
         </div>
         <div
@@ -5883,30 +5923,34 @@ exports[`Calendar component
         <div
           class="Calendar-header--large"
         >
-          
           <div
-            class="PopperWrapper-trigger"
+            class="Calendar-headerIcon Calendar-headerIcon--prev"
           >
-            <button
-              aria-label="Previous month"
-              class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
-              data-test="DesignSystem-Button"
-              tabindex="0"
-              type="button"
+            
+            <div
+              class="PopperWrapper-trigger"
             >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
+              <button
+                aria-label="Previous month"
+                class="Button Button--regular Button--regularSquare Button--basic"
+                data-test="DesignSystem-Button"
+                tabindex="0"
+                type="button"
               >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 16px; width: 16px;"
+                <div
+                  class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
-                  arrow_back
-                </i>
-              </div>
-            </button>
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    arrow_back
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
@@ -5950,30 +5994,34 @@ exports[`Calendar component
               </i>
             </button>
           </div>
-          
           <div
-            class="PopperWrapper-trigger"
+            class="Calendar-headerIcon Calendar-headerIcon--next"
           >
-            <button
-              aria-label="Next month"
-              class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
-              data-test="DesignSystem-Button"
-              tabindex="0"
-              type="button"
+            
+            <div
+              class="PopperWrapper-trigger"
             >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
+              <button
+                aria-label="Next month"
+                class="Button Button--regular Button--regularSquare Button--basic"
+                data-test="DesignSystem-Button"
+                tabindex="0"
+                type="button"
               >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 16px; width: 16px;"
+                <div
+                  class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
-                  arrow_forward
-                </i>
-              </div>
-            </button>
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    arrow_forward
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
         </div>
         <div
@@ -7043,30 +7091,34 @@ exports[`Calendar component
         <div
           class="Calendar-header--large"
         >
-          
           <div
-            class="PopperWrapper-trigger"
+            class="Calendar-headerIcon Calendar-headerIcon--prev"
           >
-            <button
-              aria-label="Previous month"
-              class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
-              data-test="DesignSystem-Button"
-              tabindex="0"
-              type="button"
+            
+            <div
+              class="PopperWrapper-trigger"
             >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
+              <button
+                aria-label="Previous month"
+                class="Button Button--regular Button--regularSquare Button--basic"
+                data-test="DesignSystem-Button"
+                tabindex="0"
+                type="button"
               >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 16px; width: 16px;"
+                <div
+                  class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
-                  arrow_back
-                </i>
-              </div>
-            </button>
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    arrow_back
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
@@ -7110,30 +7162,34 @@ exports[`Calendar component
               </i>
             </button>
           </div>
-          
           <div
-            class="PopperWrapper-trigger"
+            class="Calendar-headerIcon Calendar-headerIcon--next"
           >
-            <button
-              aria-label="Next month"
-              class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
-              data-test="DesignSystem-Button"
-              tabindex="0"
-              type="button"
+            
+            <div
+              class="PopperWrapper-trigger"
             >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
+              <button
+                aria-label="Next month"
+                class="Button Button--regular Button--regularSquare Button--basic"
+                data-test="DesignSystem-Button"
+                tabindex="0"
+                type="button"
               >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 16px; width: 16px;"
+                <div
+                  class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
-                  arrow_forward
-                </i>
-              </div>
-            </button>
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    arrow_forward
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
         </div>
         <div
@@ -8203,30 +8259,34 @@ exports[`Calendar component
         <div
           class="Calendar-header--large"
         >
-          
           <div
-            class="PopperWrapper-trigger"
+            class="Calendar-headerIcon Calendar-headerIcon--prev"
           >
-            <button
-              aria-label="Previous month"
-              class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
-              data-test="DesignSystem-Button"
-              tabindex="0"
-              type="button"
+            
+            <div
+              class="PopperWrapper-trigger"
             >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
+              <button
+                aria-label="Previous month"
+                class="Button Button--regular Button--regularSquare Button--basic"
+                data-test="DesignSystem-Button"
+                tabindex="0"
+                type="button"
               >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 16px; width: 16px;"
+                <div
+                  class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
-                  arrow_back
-                </i>
-              </div>
-            </button>
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    arrow_back
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
@@ -8270,30 +8330,34 @@ exports[`Calendar component
               </i>
             </button>
           </div>
-          
           <div
-            class="PopperWrapper-trigger"
+            class="Calendar-headerIcon Calendar-headerIcon--next"
           >
-            <button
-              aria-label="Next month"
-              class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
-              data-test="DesignSystem-Button"
-              tabindex="0"
-              type="button"
+            
+            <div
+              class="PopperWrapper-trigger"
             >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
+              <button
+                aria-label="Next month"
+                class="Button Button--regular Button--regularSquare Button--basic"
+                data-test="DesignSystem-Button"
+                tabindex="0"
+                type="button"
               >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 16px; width: 16px;"
+                <div
+                  class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
-                  arrow_forward
-                </i>
-              </div>
-            </button>
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    arrow_forward
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
         </div>
         <div
@@ -9363,30 +9427,34 @@ exports[`Calendar component
         <div
           class="Calendar-header--large"
         >
-          
           <div
-            class="PopperWrapper-trigger"
+            class="Calendar-headerIcon Calendar-headerIcon--prev"
           >
-            <button
-              aria-label="Previous month"
-              class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
-              data-test="DesignSystem-Button"
-              tabindex="0"
-              type="button"
+            
+            <div
+              class="PopperWrapper-trigger"
             >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
+              <button
+                aria-label="Previous month"
+                class="Button Button--regular Button--regularSquare Button--basic"
+                data-test="DesignSystem-Button"
+                tabindex="0"
+                type="button"
               >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 16px; width: 16px;"
+                <div
+                  class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
-                  arrow_back
-                </i>
-              </div>
-            </button>
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    arrow_back
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
@@ -9430,30 +9498,34 @@ exports[`Calendar component
               </i>
             </button>
           </div>
-          
           <div
-            class="PopperWrapper-trigger"
+            class="Calendar-headerIcon Calendar-headerIcon--next"
           >
-            <button
-              aria-label="Next month"
-              class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
-              data-test="DesignSystem-Button"
-              tabindex="0"
-              type="button"
+            
+            <div
+              class="PopperWrapper-trigger"
             >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
+              <button
+                aria-label="Next month"
+                class="Button Button--regular Button--regularSquare Button--basic"
+                data-test="DesignSystem-Button"
+                tabindex="0"
+                type="button"
               >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 16px; width: 16px;"
+                <div
+                  class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
-                  arrow_forward
-                </i>
-              </div>
-            </button>
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    arrow_forward
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
         </div>
         <div
@@ -10523,30 +10595,34 @@ exports[`Calendar component
         <div
           class="Calendar-header--large"
         >
-          
           <div
-            class="PopperWrapper-trigger"
+            class="Calendar-headerIcon Calendar-headerIcon--prev"
           >
-            <button
-              aria-label="Previous month"
-              class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
-              data-test="DesignSystem-Button"
-              tabindex="0"
-              type="button"
+            
+            <div
+              class="PopperWrapper-trigger"
             >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
+              <button
+                aria-label="Previous month"
+                class="Button Button--regular Button--regularSquare Button--basic"
+                data-test="DesignSystem-Button"
+                tabindex="0"
+                type="button"
               >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 16px; width: 16px;"
+                <div
+                  class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
-                  arrow_back
-                </i>
-              </div>
-            </button>
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    arrow_back
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
@@ -10590,30 +10666,34 @@ exports[`Calendar component
               </i>
             </button>
           </div>
-          
           <div
-            class="PopperWrapper-trigger"
+            class="Calendar-headerIcon Calendar-headerIcon--next"
           >
-            <button
-              aria-label="Next month"
-              class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
-              data-test="DesignSystem-Button"
-              tabindex="0"
-              type="button"
+            
+            <div
+              class="PopperWrapper-trigger"
             >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
+              <button
+                aria-label="Next month"
+                class="Button Button--regular Button--regularSquare Button--basic"
+                data-test="DesignSystem-Button"
+                tabindex="0"
+                type="button"
               >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 16px; width: 16px;"
+                <div
+                  class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
-                  arrow_forward
-                </i>
-              </div>
-            </button>
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    arrow_forward
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
         </div>
         <div
@@ -11683,30 +11763,34 @@ exports[`Calendar component
         <div
           class="Calendar-header--large"
         >
-          
           <div
-            class="PopperWrapper-trigger"
+            class="Calendar-headerIcon Calendar-headerIcon--prev"
           >
-            <button
-              aria-label="Previous month"
-              class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
-              data-test="DesignSystem-Button"
-              tabindex="0"
-              type="button"
+            
+            <div
+              class="PopperWrapper-trigger"
             >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
+              <button
+                aria-label="Previous month"
+                class="Button Button--regular Button--regularSquare Button--basic"
+                data-test="DesignSystem-Button"
+                tabindex="0"
+                type="button"
               >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 16px; width: 16px;"
+                <div
+                  class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
-                  arrow_back
-                </i>
-              </div>
-            </button>
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    arrow_back
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
@@ -11750,30 +11834,34 @@ exports[`Calendar component
               </i>
             </button>
           </div>
-          
           <div
-            class="PopperWrapper-trigger"
+            class="Calendar-headerIcon Calendar-headerIcon--next"
           >
-            <button
-              aria-label="Next month"
-              class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
-              data-test="DesignSystem-Button"
-              tabindex="0"
-              type="button"
+            
+            <div
+              class="PopperWrapper-trigger"
             >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
+              <button
+                aria-label="Next month"
+                class="Button Button--regular Button--regularSquare Button--basic"
+                data-test="DesignSystem-Button"
+                tabindex="0"
+                type="button"
               >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 16px; width: 16px;"
+                <div
+                  class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
-                  arrow_forward
-                </i>
-              </div>
-            </button>
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    arrow_forward
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
         </div>
         <div
@@ -12843,30 +12931,34 @@ exports[`Calendar component
         <div
           class="Calendar-header--large"
         >
-          
           <div
-            class="PopperWrapper-trigger"
+            class="Calendar-headerIcon Calendar-headerIcon--prev"
           >
-            <button
-              aria-label="Previous month"
-              class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
-              data-test="DesignSystem-Button"
-              tabindex="0"
-              type="button"
+            
+            <div
+              class="PopperWrapper-trigger"
             >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
+              <button
+                aria-label="Previous month"
+                class="Button Button--regular Button--regularSquare Button--basic"
+                data-test="DesignSystem-Button"
+                tabindex="0"
+                type="button"
               >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 16px; width: 16px;"
+                <div
+                  class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
-                  arrow_back
-                </i>
-              </div>
-            </button>
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    arrow_back
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
@@ -12910,30 +13002,34 @@ exports[`Calendar component
               </i>
             </button>
           </div>
-          
           <div
-            class="PopperWrapper-trigger"
+            class="Calendar-headerIcon Calendar-headerIcon--next"
           >
-            <button
-              aria-label="Next month"
-              class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
-              data-test="DesignSystem-Button"
-              tabindex="0"
-              type="button"
+            
+            <div
+              class="PopperWrapper-trigger"
             >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
+              <button
+                aria-label="Next month"
+                class="Button Button--regular Button--regularSquare Button--basic"
+                data-test="DesignSystem-Button"
+                tabindex="0"
+                type="button"
               >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 16px; width: 16px;"
+                <div
+                  class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
-                  arrow_forward
-                </i>
-              </div>
-            </button>
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    arrow_forward
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
         </div>
         <div
@@ -14003,30 +14099,34 @@ exports[`Calendar component
         <div
           class="Calendar-header--large"
         >
-          
           <div
-            class="PopperWrapper-trigger"
+            class="Calendar-headerIcon Calendar-headerIcon--prev"
           >
-            <button
-              aria-label="Previous month"
-              class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
-              data-test="DesignSystem-Button"
-              tabindex="0"
-              type="button"
+            
+            <div
+              class="PopperWrapper-trigger"
             >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
+              <button
+                aria-label="Previous month"
+                class="Button Button--regular Button--regularSquare Button--basic"
+                data-test="DesignSystem-Button"
+                tabindex="0"
+                type="button"
               >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 16px; width: 16px;"
+                <div
+                  class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
-                  arrow_back
-                </i>
-              </div>
-            </button>
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    arrow_back
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-right"
@@ -14925,30 +15025,34 @@ exports[`Calendar component
               </i>
             </button>
           </div>
-          
           <div
-            class="PopperWrapper-trigger"
+            class="Calendar-headerIcon Calendar-headerIcon--next"
           >
-            <button
-              aria-label="Next month"
-              class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
-              data-test="DesignSystem-Button"
-              tabindex="0"
-              type="button"
+            
+            <div
+              class="PopperWrapper-trigger"
             >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
+              <button
+                aria-label="Next month"
+                class="Button Button--regular Button--regularSquare Button--basic"
+                data-test="DesignSystem-Button"
+                tabindex="0"
+                type="button"
               >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 16px; width: 16px;"
+                <div
+                  class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
-                  arrow_forward
-                </i>
-              </div>
-            </button>
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    arrow_forward
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
         </div>
         <div
@@ -15796,30 +15900,34 @@ exports[`Calendar component
         <div
           class="Calendar-header--large"
         >
-          
           <div
-            class="PopperWrapper-trigger"
+            class="Calendar-headerIcon Calendar-headerIcon--prev"
           >
-            <button
-              aria-label="Previous month"
-              class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
-              data-test="DesignSystem-Button"
-              tabindex="0"
-              type="button"
+            
+            <div
+              class="PopperWrapper-trigger"
             >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
+              <button
+                aria-label="Previous month"
+                class="Button Button--regular Button--regularSquare Button--basic"
+                data-test="DesignSystem-Button"
+                tabindex="0"
+                type="button"
               >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 16px; width: 16px;"
+                <div
+                  class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
-                  arrow_back
-                </i>
-              </div>
-            </button>
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    arrow_back
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-right"
@@ -17554,30 +17662,34 @@ exports[`Calendar component
               </i>
             </button>
           </div>
-          
           <div
-            class="PopperWrapper-trigger"
+            class="Calendar-headerIcon Calendar-headerIcon--next"
           >
-            <button
-              aria-label="Next month"
-              class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
-              data-test="DesignSystem-Button"
-              tabindex="0"
-              type="button"
+            
+            <div
+              class="PopperWrapper-trigger"
             >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
+              <button
+                aria-label="Next month"
+                class="Button Button--regular Button--regularSquare Button--basic"
+                data-test="DesignSystem-Button"
+                tabindex="0"
+                type="button"
               >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 16px; width: 16px;"
+                <div
+                  class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
-                  arrow_forward
-                </i>
-              </div>
-            </button>
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    arrow_forward
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
         </div>
         <div
@@ -18552,30 +18664,34 @@ exports[`Calendar component
         <div
           class="Calendar-header--large"
         >
-          
           <div
-            class="PopperWrapper-trigger"
+            class="Calendar-headerIcon Calendar-headerIcon--prev"
           >
-            <button
-              aria-label="Previous month"
-              class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
-              data-test="DesignSystem-Button"
-              tabindex="0"
-              type="button"
+            
+            <div
+              class="PopperWrapper-trigger"
             >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
+              <button
+                aria-label="Previous month"
+                class="Button Button--regular Button--regularSquare Button--basic"
+                data-test="DesignSystem-Button"
+                tabindex="0"
+                type="button"
               >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 16px; width: 16px;"
+                <div
+                  class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
-                  arrow_back
-                </i>
-              </div>
-            </button>
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    arrow_back
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
@@ -18619,30 +18735,34 @@ exports[`Calendar component
               </i>
             </button>
           </div>
-          
           <div
-            class="PopperWrapper-trigger"
+            class="Calendar-headerIcon Calendar-headerIcon--next"
           >
-            <button
-              aria-label="Next month"
-              class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
-              data-test="DesignSystem-Button"
-              tabindex="0"
-              type="button"
+            
+            <div
+              class="PopperWrapper-trigger"
             >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
+              <button
+                aria-label="Next month"
+                class="Button Button--regular Button--regularSquare Button--basic"
+                data-test="DesignSystem-Button"
+                tabindex="0"
+                type="button"
               >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 16px; width: 16px;"
+                <div
+                  class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
-                  arrow_forward
-                </i>
-              </div>
-            </button>
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    arrow_forward
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
         </div>
         <div
@@ -19712,30 +19832,34 @@ exports[`Calendar component
         <div
           class="Calendar-header--large"
         >
-          
           <div
-            class="PopperWrapper-trigger"
+            class="Calendar-headerIcon Calendar-headerIcon--prev"
           >
-            <button
-              aria-label="Previous year"
-              class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
-              data-test="DesignSystem-Button"
-              tabindex="0"
-              type="button"
+            
+            <div
+              class="PopperWrapper-trigger"
             >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
+              <button
+                aria-label="Previous year"
+                class="Button Button--regular Button--regularSquare Button--basic"
+                data-test="DesignSystem-Button"
+                tabindex="0"
+                type="button"
               >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 16px; width: 16px;"
+                <div
+                  class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
-                  arrow_back
-                </i>
-              </div>
-            </button>
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    arrow_back
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
@@ -19760,30 +19884,34 @@ exports[`Calendar component
               </i>
             </button>
           </div>
-          
           <div
-            class="PopperWrapper-trigger"
+            class="Calendar-headerIcon Calendar-headerIcon--next"
           >
-            <button
-              aria-label="Next year"
-              class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
-              data-test="DesignSystem-Button"
-              tabindex="0"
-              type="button"
+            
+            <div
+              class="PopperWrapper-trigger"
             >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
+              <button
+                aria-label="Next year"
+                class="Button Button--regular Button--regularSquare Button--basic"
+                data-test="DesignSystem-Button"
+                tabindex="0"
+                type="button"
               >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 16px; width: 16px;"
+                <div
+                  class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
-                  arrow_forward
-                </i>
-              </div>
-            </button>
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    arrow_forward
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
         </div>
         <div
@@ -20033,30 +20161,34 @@ exports[`Calendar component
         <div
           class="Calendar-header--large"
         >
-          
           <div
-            class="PopperWrapper-trigger"
+            class="Calendar-headerIcon Calendar-headerIcon--prev"
           >
-            <button
-              aria-label="Previous years"
-              class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
-              data-test="DesignSystem-Button"
-              tabindex="0"
-              type="button"
+            
+            <div
+              class="PopperWrapper-trigger"
             >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
+              <button
+                aria-label="Previous years"
+                class="Button Button--regular Button--regularSquare Button--basic"
+                data-test="DesignSystem-Button"
+                tabindex="0"
+                type="button"
               >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 16px; width: 16px;"
+                <div
+                  class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
-                  arrow_back
-                </i>
-              </div>
-            </button>
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    arrow_back
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
@@ -20074,30 +20206,34 @@ exports[`Calendar component
               </h5>
             </button>
           </div>
-          
           <div
-            class="PopperWrapper-trigger"
+            class="Calendar-headerIcon Calendar-headerIcon--next"
           >
-            <button
-              aria-label="Next years"
-              class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
-              data-test="DesignSystem-Button"
-              tabindex="0"
-              type="button"
+            
+            <div
+              class="PopperWrapper-trigger"
             >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
+              <button
+                aria-label="Next years"
+                class="Button Button--regular Button--regularSquare Button--basic"
+                data-test="DesignSystem-Button"
+                tabindex="0"
+                type="button"
               >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 16px; width: 16px;"
+                <div
+                  class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
-                  arrow_forward
-                </i>
-              </div>
-            </button>
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    arrow_forward
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
         </div>
         <div
@@ -20347,30 +20483,34 @@ exports[`Calendar component
         <div
           class="Calendar-header--small"
         >
-          
           <div
-            class="PopperWrapper-trigger"
+            class="Calendar-headerIcon Calendar-headerIcon--prev"
           >
-            <button
-              aria-label="Previous month"
-              class="Button Button--tiny Button--tinySquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
-              data-test="DesignSystem-Button"
-              tabindex="0"
-              type="button"
+            
+            <div
+              class="PopperWrapper-trigger"
             >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
+              <button
+                aria-label="Previous month"
+                class="Button Button--tiny Button--tinySquare Button--basic"
+                data-test="DesignSystem-Button"
+                tabindex="0"
+                type="button"
               >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 14px; width: 14px;"
+                <div
+                  class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
-                  arrow_back
-                </i>
-              </div>
-            </button>
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 14px; width: 14px;"
+                  >
+                    arrow_back
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
@@ -20414,30 +20554,34 @@ exports[`Calendar component
               </i>
             </button>
           </div>
-          
           <div
-            class="PopperWrapper-trigger"
+            class="Calendar-headerIcon Calendar-headerIcon--next"
           >
-            <button
-              aria-label="Next month"
-              class="Button Button--tiny Button--tinySquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
-              data-test="DesignSystem-Button"
-              tabindex="0"
-              type="button"
+            
+            <div
+              class="PopperWrapper-trigger"
             >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
+              <button
+                aria-label="Next month"
+                class="Button Button--tiny Button--tinySquare Button--basic"
+                data-test="DesignSystem-Button"
+                tabindex="0"
+                type="button"
               >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 14px; width: 14px;"
+                <div
+                  class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
-                  arrow_forward
-                </i>
-              </div>
-            </button>
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 14px; width: 14px;"
+                  >
+                    arrow_forward
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
         </div>
         <div
@@ -21507,30 +21651,34 @@ exports[`Calendar component
         <div
           class="Calendar-header--small"
         >
-          
           <div
-            class="PopperWrapper-trigger"
+            class="Calendar-headerIcon Calendar-headerIcon--prev"
           >
-            <button
-              aria-label="Previous month"
-              class="Button Button--tiny Button--tinySquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
-              data-test="DesignSystem-Button"
-              tabindex="0"
-              type="button"
+            
+            <div
+              class="PopperWrapper-trigger"
             >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
+              <button
+                aria-label="Previous month"
+                class="Button Button--tiny Button--tinySquare Button--basic"
+                data-test="DesignSystem-Button"
+                tabindex="0"
+                type="button"
               >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 14px; width: 14px;"
+                <div
+                  class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
-                  arrow_back
-                </i>
-              </div>
-            </button>
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 14px; width: 14px;"
+                  >
+                    arrow_back
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-right"
@@ -22429,30 +22577,34 @@ exports[`Calendar component
               </i>
             </button>
           </div>
-          
           <div
-            class="PopperWrapper-trigger"
+            class="Calendar-headerIcon Calendar-headerIcon--next"
           >
-            <button
-              aria-label="Next month"
-              class="Button Button--tiny Button--tinySquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
-              data-test="DesignSystem-Button"
-              tabindex="0"
-              type="button"
+            
+            <div
+              class="PopperWrapper-trigger"
             >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
+              <button
+                aria-label="Next month"
+                class="Button Button--tiny Button--tinySquare Button--basic"
+                data-test="DesignSystem-Button"
+                tabindex="0"
+                type="button"
               >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 14px; width: 14px;"
+                <div
+                  class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
-                  arrow_forward
-                </i>
-              </div>
-            </button>
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 14px; width: 14px;"
+                  >
+                    arrow_forward
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
         </div>
         <div
@@ -23300,30 +23452,34 @@ exports[`Calendar component
         <div
           class="Calendar-header--small"
         >
-          
           <div
-            class="PopperWrapper-trigger"
+            class="Calendar-headerIcon Calendar-headerIcon--prev"
           >
-            <button
-              aria-label="Previous month"
-              class="Button Button--tiny Button--tinySquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
-              data-test="DesignSystem-Button"
-              tabindex="0"
-              type="button"
+            
+            <div
+              class="PopperWrapper-trigger"
             >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
+              <button
+                aria-label="Previous month"
+                class="Button Button--tiny Button--tinySquare Button--basic"
+                data-test="DesignSystem-Button"
+                tabindex="0"
+                type="button"
               >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 14px; width: 14px;"
+                <div
+                  class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
-                  arrow_back
-                </i>
-              </div>
-            </button>
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 14px; width: 14px;"
+                  >
+                    arrow_back
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-right"
@@ -25058,30 +25214,34 @@ exports[`Calendar component
               </i>
             </button>
           </div>
-          
           <div
-            class="PopperWrapper-trigger"
+            class="Calendar-headerIcon Calendar-headerIcon--next"
           >
-            <button
-              aria-label="Next month"
-              class="Button Button--tiny Button--tinySquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
-              data-test="DesignSystem-Button"
-              tabindex="0"
-              type="button"
+            
+            <div
+              class="PopperWrapper-trigger"
             >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
+              <button
+                aria-label="Next month"
+                class="Button Button--tiny Button--tinySquare Button--basic"
+                data-test="DesignSystem-Button"
+                tabindex="0"
+                type="button"
               >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 14px; width: 14px;"
+                <div
+                  class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
-                  arrow_forward
-                </i>
-              </div>
-            </button>
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 14px; width: 14px;"
+                  >
+                    arrow_forward
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
         </div>
         <div
@@ -26056,30 +26216,34 @@ exports[`Calendar component
         <div
           class="Calendar-header--small"
         >
-          
           <div
-            class="PopperWrapper-trigger"
+            class="Calendar-headerIcon Calendar-headerIcon--prev"
           >
-            <button
-              aria-label="Previous month"
-              class="Button Button--tiny Button--tinySquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
-              data-test="DesignSystem-Button"
-              tabindex="0"
-              type="button"
+            
+            <div
+              class="PopperWrapper-trigger"
             >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
+              <button
+                aria-label="Previous month"
+                class="Button Button--tiny Button--tinySquare Button--basic"
+                data-test="DesignSystem-Button"
+                tabindex="0"
+                type="button"
               >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 14px; width: 14px;"
+                <div
+                  class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
-                  arrow_back
-                </i>
-              </div>
-            </button>
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 14px; width: 14px;"
+                  >
+                    arrow_back
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
@@ -26123,30 +26287,34 @@ exports[`Calendar component
               </i>
             </button>
           </div>
-          
           <div
-            class="PopperWrapper-trigger"
+            class="Calendar-headerIcon Calendar-headerIcon--next"
           >
-            <button
-              aria-label="Next month"
-              class="Button Button--tiny Button--tinySquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
-              data-test="DesignSystem-Button"
-              tabindex="0"
-              type="button"
+            
+            <div
+              class="PopperWrapper-trigger"
             >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
+              <button
+                aria-label="Next month"
+                class="Button Button--tiny Button--tinySquare Button--basic"
+                data-test="DesignSystem-Button"
+                tabindex="0"
+                type="button"
               >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 14px; width: 14px;"
+                <div
+                  class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
-                  arrow_forward
-                </i>
-              </div>
-            </button>
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 14px; width: 14px;"
+                  >
+                    arrow_forward
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
         </div>
         <div
@@ -27216,30 +27384,34 @@ exports[`Calendar component
         <div
           class="Calendar-header--small"
         >
-          
           <div
-            class="PopperWrapper-trigger"
+            class="Calendar-headerIcon Calendar-headerIcon--prev"
           >
-            <button
-              aria-label="Previous year"
-              class="Button Button--tiny Button--tinySquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
-              data-test="DesignSystem-Button"
-              tabindex="0"
-              type="button"
+            
+            <div
+              class="PopperWrapper-trigger"
             >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
+              <button
+                aria-label="Previous year"
+                class="Button Button--tiny Button--tinySquare Button--basic"
+                data-test="DesignSystem-Button"
+                tabindex="0"
+                type="button"
               >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 14px; width: 14px;"
+                <div
+                  class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
-                  arrow_back
-                </i>
-              </div>
-            </button>
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 14px; width: 14px;"
+                  >
+                    arrow_back
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
@@ -27264,30 +27436,34 @@ exports[`Calendar component
               </i>
             </button>
           </div>
-          
           <div
-            class="PopperWrapper-trigger"
+            class="Calendar-headerIcon Calendar-headerIcon--next"
           >
-            <button
-              aria-label="Next year"
-              class="Button Button--tiny Button--tinySquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
-              data-test="DesignSystem-Button"
-              tabindex="0"
-              type="button"
+            
+            <div
+              class="PopperWrapper-trigger"
             >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
+              <button
+                aria-label="Next year"
+                class="Button Button--tiny Button--tinySquare Button--basic"
+                data-test="DesignSystem-Button"
+                tabindex="0"
+                type="button"
               >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 14px; width: 14px;"
+                <div
+                  class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
-                  arrow_forward
-                </i>
-              </div>
-            </button>
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 14px; width: 14px;"
+                  >
+                    arrow_forward
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
         </div>
         <div
@@ -27537,30 +27713,34 @@ exports[`Calendar component
         <div
           class="Calendar-header--small"
         >
-          
           <div
-            class="PopperWrapper-trigger"
+            class="Calendar-headerIcon Calendar-headerIcon--prev"
           >
-            <button
-              aria-label="Previous years"
-              class="Button Button--tiny Button--tinySquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
-              data-test="DesignSystem-Button"
-              tabindex="0"
-              type="button"
+            
+            <div
+              class="PopperWrapper-trigger"
             >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
+              <button
+                aria-label="Previous years"
+                class="Button Button--tiny Button--tinySquare Button--basic"
+                data-test="DesignSystem-Button"
+                tabindex="0"
+                type="button"
               >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 14px; width: 14px;"
+                <div
+                  class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
-                  arrow_back
-                </i>
-              </div>
-            </button>
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 14px; width: 14px;"
+                  >
+                    arrow_back
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
@@ -27578,30 +27758,34 @@ exports[`Calendar component
               </span>
             </button>
           </div>
-          
           <div
-            class="PopperWrapper-trigger"
+            class="Calendar-headerIcon Calendar-headerIcon--next"
           >
-            <button
-              aria-label="Next years"
-              class="Button Button--tiny Button--tinySquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
-              data-test="DesignSystem-Button"
-              tabindex="0"
-              type="button"
+            
+            <div
+              class="PopperWrapper-trigger"
             >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
+              <button
+                aria-label="Next years"
+                class="Button Button--tiny Button--tinySquare Button--basic"
+                data-test="DesignSystem-Button"
+                tabindex="0"
+                type="button"
               >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 14px; width: 14px;"
+                <div
+                  class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
-                  arrow_forward
-                </i>
-              </div>
-            </button>
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 14px; width: 14px;"
+                  >
+                    arrow_forward
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
         </div>
         <div

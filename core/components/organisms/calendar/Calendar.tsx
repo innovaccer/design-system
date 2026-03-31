@@ -628,18 +628,19 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     const tooltipLabel = `${directionLabel} ${viewLabel}`;
 
     return (
-      <Tooltip tooltip={tooltipLabel} position="bottom">
-        <Button
-          type="button"
-          className={headerIconClass}
-          appearance="basic"
-          icon={`arrow_${type === 'next' ? 'forward' : 'back'}`}
-          disabled={disabled}
-          size={size === 'small' ? 'tiny' : 'regular'}
-          onClick={this.onNavIconClickHandler(type)}
-          aria-label={tooltipLabel}
-        />
-      </Tooltip>
+      <div className={headerIconClass}>
+        <Tooltip tooltip={tooltipLabel} position="bottom">
+          <Button
+            type="button"
+            appearance="basic"
+            icon={`arrow_${type === 'next' ? 'forward' : 'back'}`}
+            disabled={disabled}
+            size={size === 'small' ? 'tiny' : 'regular'}
+            onClick={this.onNavIconClickHandler(type)}
+            aria-label={tooltipLabel}
+          />
+        </Tooltip>
+      </div>
     );
   };
 
