@@ -82,7 +82,8 @@ export const SelectList = (props: SelectListProps) => {
         className="my-3"
         size={size}
         {...rest}
-        suppressKeyboard
+        // @ts-expect-error customFocusManagement is intentionally not exported in ListboxProps to keep it internal
+        customFocusManagement
       >
         {childrenWithIndex}
       </Listbox>

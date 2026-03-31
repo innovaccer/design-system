@@ -7,7 +7,7 @@ import uidGenerator from '@/utils/uidGenerator';
 export interface HelpTextProps extends BaseProps {
   /**
    * Optional DOM id for the help/error region; when omitted, a stable id is generated for this instance.
-   * Pass the same id to `Combobox` / `Select` (or their triggers) via `aria-describedby` / `aria-errormessage`, or to a field’s matching attributes.
+   * Pass the same id to form controls (e.g. Input, Select, etc.) via `aria-describedby` or `aria-errormessage` for accessibility.
    */
   id?: string;
   /**

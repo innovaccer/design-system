@@ -411,9 +411,20 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
   const effectiveTrapFocus = trapFocus !== undefined ? trapFocus : hasFooter;
 
   const handlePopoverKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
-    if (!openPopover || e.key !== 'Tab' || !listRef.current) return;
+    if (!openPopover || !listRef.current) return;
     const container = listRef.current;
     if (!container.contains(document.activeElement as Node)) return;
+
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      e.stopPropagation();
+      setOpenPopover(false);
+      setFocusedOption(undefined);
+      triggerRef.current?.focus({ preventScroll: true });
+      return;
+    }
+
+    if (e.key !== 'Tab') return;
 
     if (!effectiveTrapFocus) {
       e.preventDefault();
@@ -482,8 +493,6 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
       <div
         data-test="DesignSystem-Select"
         style={WrapperStyle}
-        aria-haspopup="listbox"
-        aria-expanded={openPopover}
         {...baseProps}
       >
         <Popover

@@ -81,7 +81,7 @@ export interface ChipProps extends BaseProps {
   /**
    * Overrides the chip wrapper `tabIndex` (e.g. `-1` when only the remove control should be tabbable).
    */
-  wrapperTabIndex?: number;
+  tabIndex?: number;
 }
 
 export const Chip = (props: ChipProps) => {
@@ -104,7 +104,7 @@ export const Chip = (props: ChipProps) => {
     'aria-label': ariaLabel,
     'aria-labelledby': ariaLabelledBy,
     clearButtonAriaLabel,
-    wrapperTabIndex,
+    tabIndex,
   } = props;
 
   const baseProps = extractBaseProps(props);
@@ -154,7 +154,7 @@ export const Chip = (props: ChipProps) => {
       aria-label={ariaLabel}
       aria-labelledby={ariaLabelledBy}
       clearButtonAriaLabel={clearButtonAriaLabel}
-      wrapperTabIndex={wrapperTabIndex}
+      tabIndex={tabIndex}
     />
   );
 };

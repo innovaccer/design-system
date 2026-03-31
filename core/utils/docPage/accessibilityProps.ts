@@ -483,12 +483,17 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
     ],
   },
 
-  // List: accepts aria-label, aria-labelledby
+  // List: accepts aria-label, aria-labelledby (mapped to Listbox component in codebase)
   List: {
     htmlElement: 'custom',
     customProps: [
       { name: 'aria-label', type: 'string', description: 'Accessible label for list container.' },
       { name: 'aria-labelledby', type: 'string', description: 'Associates list with an external label element.' },
+      {
+        name: 'aria-multiselectable',
+        type: 'boolean',
+        description: 'Indicates whether multiple items can be selected.',
+      },
     ],
   },
 
@@ -637,12 +642,23 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
     ],
   },
 
-  // Combobox: accepts aria-label, aria-labelledby
+  // Combobox: accepts aria-label, aria-labelledby, aria-describedby, aria-errormessage
   Combobox: {
     htmlElement: 'custom',
     customProps: [
       { name: 'aria-label', type: 'string', description: 'Accessible label for the combobox input.' },
       { name: 'aria-labelledby', type: 'string', description: 'Points to element(s) that label the combobox input.' },
+      {
+        name: 'aria-describedby',
+        type: 'string',
+        description:
+          'Element ids (space-separated) for supplementary help or description regions (e.g. sibling HelpText).',
+      },
+      {
+        name: 'aria-errormessage',
+        type: 'string',
+        description: 'Id of the live error message element (e.g. HelpText with error); pair with aria-invalid when in error.',
+      },
     ],
   },
 
@@ -783,9 +799,26 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
     ],
   },
 
-  // Select: nested triggerOptions
+  // Select: accepts aria-labelledby, aria-describedby, aria-errormessage, nested triggerOptions
   Select: {
     htmlElement: 'custom',
+    customProps: [
+      {
+        name: 'aria-labelledby',
+        type: 'string',
+        description: 'Associates select trigger with an external label.',
+      },
+      {
+        name: 'aria-describedby',
+        type: 'string',
+        description: 'Element ids (space-separated) for supplementary help or description regions (e.g. sibling HelpText).',
+      },
+      {
+        name: 'aria-errormessage',
+        type: 'string',
+        description: 'Id of the live error message element (e.g. HelpText with error); pair with aria-invalid when in error.',
+      },
+    ],
     nestedComponents: [
       {
         name: 'triggerOptions',
@@ -798,6 +831,12 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
               description:
                 'Accessible label for the Select trigger button. Applied to the built-in trigger only; not forwarded when using customTrigger.',
               defaultValue: '"Select trigger"',
+            },
+            {
+              name: 'aria-labelledby',
+              type: 'string',
+              description:
+                'References the ID of element(s) that label the Select trigger button. Applied to the built-in trigger only.',
             },
           ],
         },

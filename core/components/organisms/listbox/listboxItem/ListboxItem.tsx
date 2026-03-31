@@ -88,16 +88,16 @@ export const ListboxItem = (props: ListboxItemProps) => {
   } = props;
 
   const contextProp = React.useContext(ListboxContext);
-  const { showDivider, draggable, suppressKeyboard, setRovingIndex } = contextProp;
+  const { showDivider, draggable, customFocusManagement, setRovingIndex } = contextProp;
 
   const tagClass = classNames({
     [styles['Listbox-item-wrapper']]: !draggable,
   });
 
-  // Parent owns keys when `onKeyDown` is set (Menu/Select/Combobox) or when `Listbox` sets `suppressKeyboard`.
-  const keyDownHandler = onKeyDown || (!suppressKeyboard ? listboxKeyDownHandler : undefined);
+  // Parent owns keys when `onKeyDown` is set (Menu/Select/Combobox) or when `Listbox` sets `customFocusManagement`.
+  const keyDownHandler = onKeyDown || (!customFocusManagement ? listboxKeyDownHandler : undefined);
 
-  const rovingFromListbox = !suppressKeyboard && !draggable && !onKeyDown;
+  const rovingFromListbox = !customFocusManagement && !draggable && !onKeyDown;
 
   const tabIndexProps: { tabIndex?: number } = {};
   if (rovingFromListbox) {

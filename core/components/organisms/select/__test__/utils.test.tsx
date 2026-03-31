@@ -564,6 +564,20 @@ describe('getNextFocusableAfterTrigger function', () => {
     container.appendChild(trigger);
     expect(getNextFocusableAfterTrigger(trigger, true)).toBeNull();
   });
+
+  it('should skip focusable descendants inside a composite trigger', () => {
+    const trigger = document.createElement('div');
+    const innerButton = document.createElement('button');
+    innerButton.textContent = 'Clear';
+    trigger.appendChild(innerButton);
+
+    const nextInput = document.createElement('input');
+
+    container.appendChild(trigger);
+    container.appendChild(nextInput);
+
+    expect(getNextFocusableAfterTrigger(trigger, false)).toBe(nextInput);
+  });
 });
 
 describe('handleEnterKey function', () => {

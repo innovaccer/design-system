@@ -34,7 +34,7 @@ export interface GenericChipProps extends BaseProps {
   /**
    * Overrides the chip wrapper `tabIndex` (e.g. `-1` when the remove control is the only keyboard target).
    */
-  wrapperTabIndex?: number;
+  tabIndex?: number;
 }
 
 export const GenericChip = (props: GenericChipProps) => {
@@ -165,8 +165,8 @@ export const GenericChip = (props: GenericChipProps) => {
     return labelText;
   };
 
-  const wrapperTabIndex =
-    props.wrapperTabIndex !== undefined ? (disabled ? -1 : props.wrapperTabIndex) : disabled ? -1 : 0;
+  const computedTabIndex =
+    props.tabIndex !== undefined ? (disabled ? -1 : props.tabIndex) : disabled ? -1 : 0;
 
   const getAriaProps = () => {
     const effectiveRole = props.role || 'button';
@@ -193,7 +193,7 @@ export const GenericChip = (props: GenericChipProps) => {
       triggerClass="flex-grow-0"
     >
       <div
-        tabIndex={wrapperTabIndex}
+        tabIndex={computedTabIndex}
         style={wrapperStyle}
         data-test="DesignSystem-GenericChip--Wrapper"
         role={props.role || 'button'}

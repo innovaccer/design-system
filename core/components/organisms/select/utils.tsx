@@ -24,6 +24,11 @@ export const getNextFocusableAfterTrigger = (
         return NodeFilter.FILTER_REJECT; // Reject skips this node AND its children
       }
 
+      // Skip descendants of the trigger element to avoid trapping focus in composite triggers
+      if (node !== startNode && startNode.contains(node)) {
+        return NodeFilter.FILTER_REJECT;
+      }
+
       // Skip inherently hidden elements
       if (node.hasAttribute('disabled') || node.getAttribute('aria-hidden') === 'true') {
         return NodeFilter.FILTER_SKIP;

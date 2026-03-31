@@ -528,9 +528,9 @@ describe('Listbox default roving tabindex', () => {
     });
   });
 
-  it('does not inject roving tabindex when suppressKeyboard is true', () => {
+  it('does not inject roving tabindex when customFocusManagement is true', () => {
     const { container } = render(
-      <Listbox suppressKeyboard showDivider={false}>
+      <Listbox customFocusManagement showDivider={false}>
         <Listbox.Item id="a" tabIndex={-1}>
           first
         </Listbox.Item>
@@ -546,10 +546,10 @@ describe('Listbox default roving tabindex', () => {
   });
 });
 
-describe('Listbox suppressKeyboard context', () => {
-  it('does not move focus with ArrowDown when suppressKeyboard is true and no item onKeyDown', () => {
+describe('Listbox customFocusManagement context', () => {
+  it('does not move focus with ArrowDown when customFocusManagement is true and no item onKeyDown', () => {
     const { container } = render(
-      <Listbox suppressKeyboard type="option" tagName="ul" size="standard" showDivider={false}>
+      <Listbox customFocusManagement type="option" tagName="ul" size="standard" showDivider={false}>
         <Listbox.Item id="a" tabIndex={-1}>
           first
         </Listbox.Item>

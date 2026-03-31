@@ -34,7 +34,7 @@ export const focusListItem = (
   if (!container) return;
 
   // Match `navigateOptions` in combobox/utils.tsx: focus `[role="option"]` hosts, not the inner row
-  // wrapper. Otherwise the first ArrowDown from an option hits index -1 and re-focuses “first” again.
+  // wrapper. Otherwise the first ArrowDown from an option hits index -1 and re-focuses the first element again.
   const options = getAllFocusableElements(container, 'listbox');
   if (options.length === 0) return;
 

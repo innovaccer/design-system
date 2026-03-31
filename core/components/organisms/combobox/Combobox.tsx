@@ -8,6 +8,7 @@ import ComboboxContext, { ContextProps } from './ComboboxContext';
 import { PopoverProps } from '@/index.type';
 import { focusListItem } from './trigger/utils';
 import { ComboboxTrigger } from './trigger/ComboboxTrigger';
+import { getNextFocusableAfterTrigger } from '@/components/organisms/select/utils';
 import uidGenerator from '@/utils/uidGenerator';
 
 export type ComboboxInputSize = 'tiny' | 'regular' | 'large';
@@ -246,15 +247,21 @@ export const Combobox = (props: ComboboxProps) => {
 
   React.useEffect(() => {
     if (highlightFirstItem && openPopover) {
-      requestAnimationFrame(() => focusListItem('down', setFocusedOption, listRef));
+      requestAnimationFrame(() => {
+        focusListItem('down', setFocusedOption, listRef);
+        setHighlightFirstItem(false);
+      });
     }
-  }, [highlightFirstItem]);
+  }, [highlightFirstItem, openPopover]);
 
   React.useEffect(() => {
     if (highlightLastItem && openPopover) {
-      requestAnimationFrame(() => focusListItem('up', setFocusedOption, listRef));
+      requestAnimationFrame(() => {
+        focusListItem('up', setFocusedOption, listRef);
+        setHighlightLastItem(false);
+      });
     }
-  }, [highlightLastItem]);
+  }, [highlightLastItem, openPopover]);
 
   React.useEffect(() => {
     if (!openPopover) {
@@ -283,14 +290,12 @@ export const Combobox = (props: ComboboxProps) => {
       setFocusedOption(undefined);
 
       if (inputTriggerRef?.current) {
-        import('@/components/organisms/select/utils').then(({ getNextFocusableAfterTrigger }) => {
-          const next = getNextFocusableAfterTrigger(inputTriggerRef.current, event.shiftKey);
-          if (next) {
-            next.focus({ preventScroll: true });
-          } else {
-            inputTriggerRef.current?.focus();
-          }
-        });
+        const next = getNextFocusableAfterTrigger(inputTriggerRef.current, event.shiftKey);
+        if (next) {
+          next.focus({ preventScroll: true });
+        } else {
+          inputTriggerRef.current?.focus();
+        }
       }
     };
 
@@ -386,7 +391,7 @@ export const Combobox = (props: ComboboxProps) => {
             trigger={<ComboboxTrigger {...triggerProps} />}
             computeStyles={popoverComputeStyle}
           >
-            <div style={wrapperStyle} ref={listRef} id={popoverId}>
+            <div style={wrapperStyle} ref={listRef}>
               {children && typeof children === 'function' ? children(contextProp) : children}
             </div>
           </Popover>

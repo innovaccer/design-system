@@ -30,12 +30,20 @@ export interface ComboboxListProps extends BaseProps {
 }
 
 export const ComboboxList = (props: ComboboxListProps) => {
-  const { multiSelect } = React.useContext(ComboboxContext);
+  const { multiSelect, popoverId } = React.useContext(ComboboxContext);
   const { 'aria-multiselectable': ariaMultiselectableProp, children, ...restProps } = props;
   const ariaMultiselectable = ariaMultiselectableProp !== undefined ? ariaMultiselectableProp : Boolean(multiSelect);
 
   return (
-    <Listbox className="py-3" {...restProps} role="listbox" suppressKeyboard aria-multiselectable={ariaMultiselectable}>
+    <Listbox
+      id={popoverId}
+      className="py-3"
+      {...restProps}
+      role="listbox"
+      // @ts-expect-error customFocusManagement is intentionally not exported in ListboxProps to keep it internal
+      customFocusManagement
+      aria-multiselectable={ariaMultiselectable}
+    >
       {children}
     </Listbox>
   );

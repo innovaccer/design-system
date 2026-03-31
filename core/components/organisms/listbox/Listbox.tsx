@@ -44,7 +44,7 @@ export interface ListboxInternalProps extends ListboxProps {
    * When `true`, `Listbox.Item` does not use default arrow-key handling or default roving `tabIndex`.
    * Use for Combobox, Menu, Select, etc., where the parent owns keyboard focus and `tabIndex`.
    */
-  suppressKeyboard?: boolean;
+  customFocusManagement?: boolean;
 }
 
 export type ListboxContextValue = Omit<ListboxInternalProps, 'children' | 'tagName'> & {
@@ -57,14 +57,14 @@ export const ListboxContext = React.createContext<ListboxContextValue>({
   type: 'resource',
   draggable: false,
   showDivider: true,
-  suppressKeyboard: false,
+  customFocusManagement: false,
   rovingIndex: -1,
   setRovingIndex: () => {},
 });
 
 const { Provider } = ListboxContext;
 
-export const Listbox = (props: ListboxInternalProps) => {
+export const Listbox = (props: ListboxProps) => {
   const {
     children,
     className,
@@ -72,10 +72,10 @@ export const Listbox = (props: ListboxInternalProps) => {
     size,
     type,
     showDivider,
-    suppressKeyboard = false,
+    customFocusManagement = false,
     tagName: Tag = 'ul',
     ...rest
-  } = props;
+  } = props as ListboxInternalProps;
   const baseProps = extractBaseProps(props);
 
   const classes = classNames(styles.Listbox, className);
@@ -83,10 +83,10 @@ export const Listbox = (props: ListboxInternalProps) => {
 
   const [rovingIndex, setRovingIndex] = React.useState(-1);
 
-  const effectiveSuppressKeyboard = suppressKeyboard || type === 'description';
+  const effectiveCustomFocusManagement = customFocusManagement || type === 'description';
 
   React.useLayoutEffect(() => {
-    if (effectiveSuppressKeyboard || draggable) {
+    if (effectiveCustomFocusManagement || draggable) {
       return;
     }
     const root = listRef.current;
@@ -112,19 +112,19 @@ export const Listbox = (props: ListboxInternalProps) => {
       const dis = isListboxOptionDisabled(el);
       el.tabIndex = dis ? -1 : i === targetIdx ? 0 : -1;
     });
-  }, [children, effectiveSuppressKeyboard, draggable, rovingIndex]);
+  }, [children, effectiveCustomFocusManagement, draggable, rovingIndex]);
 
   const sharedProp: ListboxContextValue = {
     size,
     type,
     draggable,
     showDivider,
-    suppressKeyboard: effectiveSuppressKeyboard,
+    customFocusManagement: effectiveCustomFocusManagement,
     rovingIndex,
     setRovingIndex,
   };
 
-  const listRole = effectiveSuppressKeyboard || draggable ? rest.role : rest.role ?? 'listbox';
+  const listRole = effectiveCustomFocusManagement || draggable ? rest.role : rest.role ?? 'listbox';
 
   return (
     <Provider value={sharedProp}>
@@ -154,7 +154,7 @@ Listbox.defaultProps = {
   type: 'resource',
   draggable: false,
   showDivider: true,
-  suppressKeyboard: false,
+  customFocusManagement: false,
 };
 
 Listbox.Item = ListboxItem;

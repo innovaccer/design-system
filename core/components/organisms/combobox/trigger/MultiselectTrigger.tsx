@@ -300,7 +300,7 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
         {...rest}
         clearButton={clearButton}
         clearButtonAriaLabel={clearButtonAriaLabel}
-        wrapperTabIndex={clearButton ? -1 : undefined}
+        tabIndex={clearButton ? -1 : undefined}
       />
     );
   });
@@ -313,8 +313,6 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
         className={ChipInputClass}
         onClick={onClickHandler}
         onKeyDown={handleTriggerKeyDown}
-        tabIndex={disabled ? -1 : tabIndex ?? -1}
-        role="button"
         aria-disabled={disabled || undefined}
       >
         <div className={styles['ChipInput-wrapper']} ref={customRef}>
