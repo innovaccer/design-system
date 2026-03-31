@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import Heading, { HeadingProps as Props, HeadingSize } from '../Heading';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { HeadingAppearance } from '@/common.type';
@@ -102,5 +103,13 @@ describe('Heading Component with Prop:color', () => {
       </Heading>
     );
     expect(getByTestId('DesignSystem-Heading')).toHaveClass('color-accent1-lightest');
+  });
+});
+
+describe('Heading component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<Heading>Heading</Heading>);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

@@ -323,6 +323,7 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
           tabIndex={disabled ? -1 : 0}
           data-test="DesignSystem-MultiSlider-Handle"
           role="slider"
+          aria-label={label}
           aria-valuemin={this.props.min}
           aria-valuemax={this.props.max}
           aria-valuenow={value}

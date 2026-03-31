@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { ChipInput } from '@/index';
 import { ChipInputProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -572,5 +573,13 @@ describe('ChipInput Component - Size Variants and Icon Alignment', () => {
       fireEvent.click(container);
       expect(input).toHaveFocus();
     });
+  });
+});
+
+describe('ChipInput component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<ChipInput aria-label="Chip input" />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

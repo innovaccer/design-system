@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { Combobox } from '@/index';
 import { ComboboxProps as Props } from '@/index.type';
@@ -186,5 +187,19 @@ describe('Combobox component multiple select trigger tests', () => {
     fireEvent.click(closeIcon);
 
     expect(FunctionValue).toHaveBeenCalled();
+  });
+});
+
+describe('Combobox component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(
+      <Combobox placeholder="select an option">
+        <Combobox.List>
+          <Combobox.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Combobox.Option>
+        </Combobox.List>
+      </Combobox>
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

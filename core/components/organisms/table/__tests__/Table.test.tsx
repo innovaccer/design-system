@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent, waitFor, screen, cleanup } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { Table, Button } from '@/index';
 import { TableProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -1539,12 +1540,9 @@ describe('render Table with filterType feature', () => {
           expect(screen.getAllByTestId('DesignSystem-Select-Option').length).toBeGreaterThan(0);
         });
 
-        // Find the div with style inside the Select listbox
-        const listbox = document.querySelector('[role="listbox"]');
-        expect(listbox).toBeInTheDocument();
-        const selectListDiv = listbox?.querySelector('div[style]');
-        expect(selectListDiv).toBeInTheDocument();
-        const style = (selectListDiv as HTMLElement).style;
+        const listWrapper = screen.getByTestId('DesignSystem-FilterSelect--ListWrapper');
+        expect(listWrapper).toBeInTheDocument();
+        const style = listWrapper.style;
         expect(parseFloat(style.minWidth || '0')).toBeGreaterThanOrEqual(176);
       });
 
@@ -1582,12 +1580,9 @@ describe('render Table with filterType feature', () => {
           expect(screen.getAllByTestId('DesignSystem-Select-Option').length).toBeGreaterThan(0);
         });
 
-        // Find the div with style inside the Select listbox
-        const listbox = document.querySelector('[role="listbox"]');
-        expect(listbox).toBeInTheDocument();
-        const selectListDiv = listbox?.querySelector('div[style]');
-        expect(selectListDiv).toBeInTheDocument();
-        const style = (selectListDiv as HTMLElement).style;
+        const listWrapper = screen.getByTestId('DesignSystem-FilterSelect--ListWrapper');
+        expect(listWrapper).toBeInTheDocument();
+        const style = listWrapper.style;
         expect(parseFloat(style.minWidth || '0')).toBeGreaterThanOrEqual(200);
       });
 
@@ -1625,12 +1620,9 @@ describe('render Table with filterType feature', () => {
           expect(screen.getAllByTestId('DesignSystem-Select-Option').length).toBeGreaterThan(0);
         });
 
-        // Find the div with style inside the Select listbox
-        const listbox = document.querySelector('[role="listbox"]');
-        expect(listbox).toBeInTheDocument();
-        const selectListDiv = listbox?.querySelector('div[style]');
-        expect(selectListDiv).toBeInTheDocument();
-        const style = (selectListDiv as HTMLElement).style;
+        const listWrapper = screen.getByTestId('DesignSystem-FilterSelect--ListWrapper');
+        expect(listWrapper).toBeInTheDocument();
+        const style = listWrapper.style;
         expect(style.maxWidth).toBe('500px');
       });
 
@@ -1665,12 +1657,9 @@ describe('render Table with filterType feature', () => {
           expect(screen.getAllByTestId('DesignSystem-Select-Option').length).toBeGreaterThan(0);
         });
 
-        // Find the div with style inside the Select listbox
-        const listbox = document.querySelector('[role="listbox"]');
-        expect(listbox).toBeInTheDocument();
-        const selectListDiv = listbox?.querySelector('div[style]');
-        expect(selectListDiv).toBeInTheDocument();
-        const style = (selectListDiv as HTMLElement).style;
+        const listWrapper = screen.getByTestId('DesignSystem-FilterSelect--ListWrapper');
+        expect(listWrapper).toBeInTheDocument();
+        const style = listWrapper.style;
         // Should be clamped to 176 since 150 < 176
         expect(parseFloat(style.minWidth || '0')).toBeGreaterThanOrEqual(176);
       });
@@ -1705,12 +1694,9 @@ describe('render Table with filterType feature', () => {
           expect(screen.getAllByTestId('DesignSystem-Select-Option').length).toBeGreaterThan(0);
         });
 
-        // Find the div with style inside the Select listbox
-        const listbox = document.querySelector('[role="listbox"]');
-        expect(listbox).toBeInTheDocument();
-        const selectListDiv = listbox?.querySelector('div[style]');
-        expect(selectListDiv).toBeInTheDocument();
-        const style = (selectListDiv as HTMLElement).style;
+        const listWrapper = screen.getByTestId('DesignSystem-FilterSelect--ListWrapper');
+        expect(listWrapper).toBeInTheDocument();
+        const style = listWrapper.style;
         expect(parseFloat(style.minWidth || '0')).toBeGreaterThanOrEqual(176);
       });
     });
@@ -2300,5 +2286,13 @@ describe('render table with pagination during loading', () => {
       const paginationDuringSearch = queryByTestId('DesignSystem-Pagination');
       expect(paginationDuringSearch).not.toBeInTheDocument();
     });
+  });
+});
+
+describe('Table component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<Table data={tableData} schema={tableSchema} />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

@@ -26,7 +26,15 @@ export const SelectionAvatar = (props: SelectionAvatarProps) => {
   });
 
   return (
-    <Avatar role="checkbox" {...rest} shape={shape} disabled={disabled} withTooltip={true} className={avatarClassName}>
+    <Avatar
+      {...rest}
+      shape={shape}
+      disabled={disabled}
+      withTooltip={true}
+      className={avatarClassName}
+      role="img"
+      tabIndex={-1}
+    >
       {image || icon}
     </Avatar>
   );

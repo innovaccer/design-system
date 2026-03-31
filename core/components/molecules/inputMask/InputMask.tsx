@@ -87,6 +87,7 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
     className,
     id,
     helpText,
+    label,
     ...rest
   } = props;
 
@@ -392,6 +393,8 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
     <div className={classes} data-test="DesignSystem-InputMask--Wrapper">
       <Input
         {...rest}
+        label={label}
+        aria-label={label}
         id={id !== 'parent-TimePicker' && id !== 'parent-DatePicker' ? id : undefined}
         value={value}
         error={error}

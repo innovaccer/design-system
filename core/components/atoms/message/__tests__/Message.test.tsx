@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { Message, Text } from '@/index';
 import { MessageProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -177,5 +178,13 @@ describe('Message component with prop:size', () => {
       expect(getByTestId('DesignSystem-Message--Description')).toHaveClass(`Message-text--${size}`);
       expect(getByTestId('DesignSystem-Message--actions')).toHaveClass(`Message-actions--${size}`);
     });
+  });
+});
+
+describe('Message component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<Message appearance="info" description={description} />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

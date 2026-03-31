@@ -94,6 +94,8 @@ export const EditableDropdown = (props: EditableDropdownProps) => {
           onChange={onChange}
           getLabel={getLabel}
           onClose={onClose}
+          aria-hidden={!showComponent ? true : undefined}
+          inert={!showComponent ? '' : undefined}
           className={EditableDropdownClass}
           data-test="DesignSystem-EditableDropdown--Dropdown"
           {...rest}

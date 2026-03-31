@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import Card, { CardProps as Props, Shadow } from '../Card';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
@@ -39,5 +40,17 @@ describe('Card component shadow', () => {
       const { getByTestId } = render(<Card shadow={shadow}>Card</Card>);
       expect(getByTestId('DesignSystem-Card')).toHaveClass(`Card--${shadow}`);
     });
+  });
+});
+
+describe('Card component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(
+      <Card>
+        <span>Hello</span>
+      </Card>
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

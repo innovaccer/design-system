@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import Radio, { RadioProps as Props } from '../Radio';
 
@@ -188,5 +189,13 @@ describe('Radio component', () => {
 
     const radioElement = getByTestId('DesignSystem-Radio-TestValue');
     expect(radioElement.getAttribute('data-test')).toBe(testDataValue);
+  });
+});
+
+describe('Radio component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<Radio label={label} name={StringValue} value={StringValue} />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent, act } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { ModalProps as Props } from '@/index.type';
 import { ModalHeader, Modal, ModalBody, ModalFooter, Button, Text } from '@/index';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -641,5 +642,13 @@ describe('Modal focus trap', () => {
 
     const closeButton = getByTestId('DesignSystem-Modal--CloseButton');
     expect(document.activeElement).toBe(closeButton);
+  });
+});
+
+describe('Modal component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    render(<Modal open={true} headerOptions={{ heading: 'Test Modal' }} />);
+    const results = await axe(document.body);
+    expect(results).toHaveNoViolations();
   });
 });
