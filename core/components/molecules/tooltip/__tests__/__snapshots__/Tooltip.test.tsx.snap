@@ -10,6 +10,7 @@ exports[`Tooltip component
       class="PopperWrapper-trigger"
     >
       <button
+        aria-describedby="mds-tooltip-8"
         class="Button Button--regular Button--basic Button--iconAlign-left"
         data-test="DesignSystem-Button"
         tabindex="0"
@@ -35,6 +36,7 @@ exports[`Tooltip component
       class="PopperWrapper-trigger"
     >
       <button
+        aria-describedby="mds-tooltip-7"
         class="Button Button--regular Button--basic Button--iconAlign-left"
         data-test="DesignSystem-Button"
         tabindex="0"
@@ -60,6 +62,7 @@ exports[`Tooltip component
       class="PopperWrapper-trigger"
     >
       <button
+        aria-describedby="mds-tooltip-12"
         class="Button Button--regular Button--basic Button--iconAlign-left"
         data-test="DesignSystem-Button"
         tabindex="0"
@@ -85,6 +88,7 @@ exports[`Tooltip component
       class="PopperWrapper-trigger"
     >
       <button
+        aria-describedby="mds-tooltip-11"
         class="Button Button--regular Button--basic Button--iconAlign-left"
         data-test="DesignSystem-Button"
         tabindex="0"
@@ -110,6 +114,7 @@ exports[`Tooltip component
       class="PopperWrapper-trigger"
     >
       <button
+        aria-describedby="mds-tooltip-10"
         class="Button Button--regular Button--basic Button--iconAlign-left"
         data-test="DesignSystem-Button"
         tabindex="0"
@@ -135,6 +140,7 @@ exports[`Tooltip component
       class="PopperWrapper-trigger"
     >
       <button
+        aria-describedby="mds-tooltip-9"
         class="Button Button--regular Button--basic Button--iconAlign-left"
         data-test="DesignSystem-Button"
         tabindex="0"
@@ -160,6 +166,7 @@ exports[`Tooltip component
       class="PopperWrapper-trigger"
     >
       <button
+        aria-describedby="mds-tooltip-14"
         class="Button Button--regular Button--basic Button--iconAlign-left"
         data-test="DesignSystem-Button"
         tabindex="0"
@@ -185,6 +192,7 @@ exports[`Tooltip component
       class="PopperWrapper-trigger"
     >
       <button
+        aria-describedby="mds-tooltip-13"
         class="Button Button--regular Button--basic Button--iconAlign-left"
         data-test="DesignSystem-Button"
         tabindex="0"
@@ -210,6 +218,7 @@ exports[`Tooltip component
       class="PopperWrapper-trigger"
     >
       <button
+        aria-describedby="mds-tooltip-16"
         class="Button Button--regular Button--basic Button--iconAlign-left"
         data-test="DesignSystem-Button"
         tabindex="0"
@@ -235,6 +244,7 @@ exports[`Tooltip component
       class="PopperWrapper-trigger"
     >
       <button
+        aria-describedby="mds-tooltip-15"
         class="Button Button--regular Button--basic Button--iconAlign-left"
         data-test="DesignSystem-Button"
         tabindex="0"
@@ -260,6 +270,7 @@ exports[`Tooltip component
       class="PopperWrapper-trigger"
     >
       <button
+        aria-describedby="mds-tooltip-2"
         class="Button Button--regular Button--basic Button--iconAlign-left"
         data-test="DesignSystem-Button"
         tabindex="0"
@@ -285,6 +296,7 @@ exports[`Tooltip component
       class="PopperWrapper-trigger"
     >
       <button
+        aria-describedby="mds-tooltip-1"
         class="Button Button--regular Button--basic Button--iconAlign-left"
         data-test="DesignSystem-Button"
         tabindex="0"
@@ -310,6 +322,7 @@ exports[`Tooltip component
       class="PopperWrapper-trigger"
     >
       <button
+        aria-describedby="mds-tooltip-6"
         class="Button Button--regular Button--basic Button--iconAlign-left"
         data-test="DesignSystem-Button"
         tabindex="0"
@@ -335,6 +348,7 @@ exports[`Tooltip component
       class="PopperWrapper-trigger"
     >
       <button
+        aria-describedby="mds-tooltip-5"
         class="Button Button--regular Button--basic Button--iconAlign-left"
         data-test="DesignSystem-Button"
         tabindex="0"
@@ -360,6 +374,7 @@ exports[`Tooltip component
       class="PopperWrapper-trigger"
     >
       <button
+        aria-describedby="mds-tooltip-4"
         class="Button Button--regular Button--basic Button--iconAlign-left"
         data-test="DesignSystem-Button"
         tabindex="0"
@@ -385,6 +400,7 @@ exports[`Tooltip component
       class="PopperWrapper-trigger"
     >
       <button
+        aria-describedby="mds-tooltip-3"
         class="Button Button--regular Button--basic Button--iconAlign-left"
         data-test="DesignSystem-Button"
         tabindex="0"

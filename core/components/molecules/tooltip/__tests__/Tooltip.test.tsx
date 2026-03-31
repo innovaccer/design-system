@@ -127,6 +127,43 @@ describe('Tooltip component with size prop', () => {
   });
 });
 
+describe('Tooltip component ARIA attributes', () => {
+  it('should have role="tooltip" on the tooltip wrapper', () => {
+    const { getByRole } = render(
+      <Tooltip tooltip="A tooltip" position="top">
+        <Button>Hover over me</Button>
+      </Tooltip>
+    );
+    const button = getByRole('button');
+    fireEvent.mouseOver(button);
+    const tooltipEl = getByRole('tooltip');
+    expect(tooltipEl).toBeInTheDocument();
+    expect(tooltipEl).toHaveTextContent('A tooltip');
+  });
+
+  it('should link trigger to tooltip via aria-describedby', () => {
+    const { getByRole } = render(
+      <Tooltip tooltip="A tooltip" position="bottom">
+        <Button>Hover over me</Button>
+      </Tooltip>
+    );
+    const button = getByRole('button');
+    fireEvent.mouseOver(button);
+    const tooltipEl = getByRole('tooltip');
+    expect(button).toHaveAttribute('aria-describedby', tooltipEl.id);
+  });
+
+  it('should not add aria-describedby when showTooltip is false', () => {
+    const { getByRole } = render(
+      <Tooltip showTooltip={false} tooltip="A tooltip" position="top">
+        <Button>Button</Button>
+      </Tooltip>
+    );
+    const button = getByRole('button');
+    expect(button).not.toHaveAttribute('aria-describedby');
+  });
+});
+
 describe('Tooltip component keyboard accessibility', () => {
   it('should close tooltip when Escape key is pressed', async () => {
     const { getByRole, queryByText } = render(

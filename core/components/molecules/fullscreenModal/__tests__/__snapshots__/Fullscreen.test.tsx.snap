@@ -52,6 +52,7 @@ exports[`FullscreenModal component
                   class="PopperWrapper-trigger"
                 >
                   <button
+                    aria-describedby="mds-tooltip-2"
                     aria-label="Close"
                     class="Button Button--regular Button--regularSquare Button--transparent"
                     data-test="DesignSystem-FullscreenModal--CloseButton"
@@ -138,6 +139,7 @@ exports[`FullscreenModal component
                   class="PopperWrapper-trigger"
                 >
                   <button
+                    aria-describedby="mds-tooltip-4"
                     aria-label="Close"
                     class="Button Button--regular Button--regularSquare Button--transparent"
                     data-test="DesignSystem-FullscreenModal--CloseButton"
@@ -268,6 +270,7 @@ exports[`FullscreenModal component
                   class="PopperWrapper-trigger"
                 >
                   <button
+                    aria-describedby="mds-tooltip-6"
                     aria-label="Close"
                     class="Button Button--regular Button--regularSquare Button--transparent"
                     data-test="DesignSystem-FullscreenModal--CloseButton"
@@ -361,6 +364,7 @@ exports[`FullscreenModal component
                   class="PopperWrapper-trigger"
                 >
                   <button
+                    aria-describedby="mds-tooltip-1"
                     aria-label="Close"
                     class="Button Button--regular Button--regularSquare Button--transparent"
                     data-test="DesignSystem-FullscreenModal--CloseButton"
@@ -446,6 +450,7 @@ exports[`FullscreenModal component
                   class="PopperWrapper-trigger"
                 >
                   <button
+                    aria-describedby="mds-tooltip-3"
                     aria-label="Close"
                     class="Button Button--regular Button--regularSquare Button--transparent"
                     data-test="DesignSystem-FullscreenModal--CloseButton"
@@ -576,6 +581,7 @@ exports[`FullscreenModal component
                   class="PopperWrapper-trigger"
                 >
                   <button
+                    aria-describedby="mds-tooltip-5"
                     aria-label="Close"
                     class="Button Button--regular Button--regularSquare Button--transparent"
                     data-test="DesignSystem-FullscreenModal--CloseButton"
