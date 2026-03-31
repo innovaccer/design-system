@@ -15,6 +15,7 @@ Object {
           class="PopperWrapper-trigger flex-grow-0"
         >
           <span
+            aria-describedby="mds-tooltip-1"
             class="Avatar-wrapper"
             data-test="DesignSystem-AvatarWrapper"
           >

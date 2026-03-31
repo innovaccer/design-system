@@ -15,6 +15,7 @@ Object {
           class="PopperWrapper-trigger flex-grow-0"
         >
           <span
+            aria-describedby="mds-tooltip-10"
             class="Avatar-wrapper"
             data-test="DesignSystem-AvatarWrapper"
           >
@@ -46,6 +47,7 @@ Object {
         class="PopperWrapper-trigger flex-grow-0"
       >
         <span
+          aria-describedby="mds-tooltip-10"
           class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
@@ -136,6 +138,7 @@ Object {
           class="PopperWrapper-trigger flex-grow-0"
         >
           <span
+            aria-describedby="mds-tooltip-9"
             class="Avatar-wrapper"
             data-test="DesignSystem-AvatarWrapper"
           >
@@ -167,6 +170,7 @@ Object {
         class="PopperWrapper-trigger flex-grow-0"
       >
         <span
+          aria-describedby="mds-tooltip-9"
           class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
@@ -257,6 +261,7 @@ Object {
           class="PopperWrapper-trigger flex-grow-0"
         >
           <span
+            aria-describedby="mds-tooltip-12"
             class="Avatar-wrapper"
             data-test="DesignSystem-AvatarWrapper"
           >
@@ -288,6 +293,7 @@ Object {
         class="PopperWrapper-trigger flex-grow-0"
       >
         <span
+          aria-describedby="mds-tooltip-12"
           class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
@@ -378,6 +384,7 @@ Object {
           class="PopperWrapper-trigger flex-grow-0"
         >
           <span
+            aria-describedby="mds-tooltip-11"
             class="Avatar-wrapper"
             data-test="DesignSystem-AvatarWrapper"
           >
@@ -409,6 +416,7 @@ Object {
         class="PopperWrapper-trigger flex-grow-0"
       >
         <span
+          aria-describedby="mds-tooltip-11"
           class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
@@ -499,6 +507,7 @@ Object {
           class="PopperWrapper-trigger flex-grow-0"
         >
           <span
+            aria-describedby="mds-tooltip-14"
             class="Avatar-wrapper"
             data-test="DesignSystem-AvatarWrapper"
           >
@@ -530,6 +539,7 @@ Object {
         class="PopperWrapper-trigger flex-grow-0"
       >
         <span
+          aria-describedby="mds-tooltip-14"
           class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
@@ -620,6 +630,7 @@ Object {
           class="PopperWrapper-trigger flex-grow-0"
         >
           <span
+            aria-describedby="mds-tooltip-13"
             class="Avatar-wrapper"
             data-test="DesignSystem-AvatarWrapper"
           >
@@ -651,6 +662,7 @@ Object {
         class="PopperWrapper-trigger flex-grow-0"
       >
         <span
+          aria-describedby="mds-tooltip-13"
           class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
@@ -741,6 +753,7 @@ Object {
           class="PopperWrapper-trigger flex-grow-0"
         >
           <span
+            aria-describedby="mds-tooltip-16"
             class="Avatar-wrapper"
             data-test="DesignSystem-AvatarWrapper"
           >
@@ -772,6 +785,7 @@ Object {
         class="PopperWrapper-trigger flex-grow-0"
       >
         <span
+          aria-describedby="mds-tooltip-16"
           class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
@@ -862,6 +876,7 @@ Object {
           class="PopperWrapper-trigger flex-grow-0"
         >
           <span
+            aria-describedby="mds-tooltip-15"
             class="Avatar-wrapper"
             data-test="DesignSystem-AvatarWrapper"
           >
@@ -893,6 +908,7 @@ Object {
         class="PopperWrapper-trigger flex-grow-0"
       >
         <span
+          aria-describedby="mds-tooltip-15"
           class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
@@ -983,6 +999,7 @@ Object {
           class="PopperWrapper-trigger flex-grow-0"
         >
           <span
+            aria-describedby="mds-tooltip-4"
             class="Avatar-wrapper"
             data-test="DesignSystem-AvatarWrapper"
           >
@@ -1014,6 +1031,7 @@ Object {
         class="PopperWrapper-trigger flex-grow-0"
       >
         <span
+          aria-describedby="mds-tooltip-4"
           class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
@@ -1104,6 +1122,7 @@ Object {
           class="PopperWrapper-trigger flex-grow-0"
         >
           <span
+            aria-describedby="mds-tooltip-3"
             class="Avatar-wrapper"
             data-test="DesignSystem-AvatarWrapper"
           >
@@ -1135,6 +1154,7 @@ Object {
         class="PopperWrapper-trigger flex-grow-0"
       >
         <span
+          aria-describedby="mds-tooltip-3"
           class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
@@ -1225,6 +1245,7 @@ Object {
           class="PopperWrapper-trigger flex-grow-0"
         >
           <span
+            aria-describedby="mds-tooltip-2"
             class="Avatar-wrapper"
             data-test="DesignSystem-AvatarWrapper"
           >
@@ -1256,6 +1277,7 @@ Object {
         class="PopperWrapper-trigger flex-grow-0"
       >
         <span
+          aria-describedby="mds-tooltip-2"
           class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
@@ -1346,6 +1368,7 @@ Object {
           class="PopperWrapper-trigger flex-grow-0"
         >
           <span
+            aria-describedby="mds-tooltip-1"
             class="Avatar-wrapper"
             data-test="DesignSystem-AvatarWrapper"
           >
@@ -1377,6 +1400,7 @@ Object {
         class="PopperWrapper-trigger flex-grow-0"
       >
         <span
+          aria-describedby="mds-tooltip-1"
           class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
@@ -1467,6 +1491,7 @@ Object {
           class="PopperWrapper-trigger flex-grow-0"
         >
           <span
+            aria-describedby="mds-tooltip-8"
             class="Avatar-wrapper"
             data-test="DesignSystem-AvatarWrapper"
           >
@@ -1498,6 +1523,7 @@ Object {
         class="PopperWrapper-trigger flex-grow-0"
       >
         <span
+          aria-describedby="mds-tooltip-8"
           class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
@@ -1588,6 +1614,7 @@ Object {
           class="PopperWrapper-trigger flex-grow-0"
         >
           <span
+            aria-describedby="mds-tooltip-7"
             class="Avatar-wrapper"
             data-test="DesignSystem-AvatarWrapper"
           >
@@ -1619,6 +1646,7 @@ Object {
         class="PopperWrapper-trigger flex-grow-0"
       >
         <span
+          aria-describedby="mds-tooltip-7"
           class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
@@ -1709,6 +1737,7 @@ Object {
           class="PopperWrapper-trigger flex-grow-0"
         >
           <span
+            aria-describedby="mds-tooltip-6"
             class="Avatar-wrapper"
             data-test="DesignSystem-AvatarWrapper"
           >
@@ -1740,6 +1769,7 @@ Object {
         class="PopperWrapper-trigger flex-grow-0"
       >
         <span
+          aria-describedby="mds-tooltip-6"
           class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
@@ -1830,6 +1860,7 @@ Object {
           class="PopperWrapper-trigger flex-grow-0"
         >
           <span
+            aria-describedby="mds-tooltip-5"
             class="Avatar-wrapper"
             data-test="DesignSystem-AvatarWrapper"
           >
@@ -1861,6 +1892,7 @@ Object {
         class="PopperWrapper-trigger flex-grow-0"
       >
         <span
+          aria-describedby="mds-tooltip-5"
           class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
@@ -1951,6 +1983,7 @@ Object {
           class="PopperWrapper-trigger flex-grow-0"
         >
           <span
+            aria-describedby="mds-tooltip-20"
             class="Avatar-wrapper"
             data-test="DesignSystem-AvatarWrapper"
           >
@@ -1982,6 +2015,7 @@ Object {
         class="PopperWrapper-trigger flex-grow-0"
       >
         <span
+          aria-describedby="mds-tooltip-20"
           class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
@@ -2072,6 +2106,7 @@ Object {
           class="PopperWrapper-trigger flex-grow-0"
         >
           <span
+            aria-describedby="mds-tooltip-21"
             class="Avatar-wrapper Avatar-wrapper--square Avatar--regular"
             data-test="DesignSystem-AvatarWrapper"
           >
@@ -2103,6 +2138,7 @@ Object {
         class="PopperWrapper-trigger flex-grow-0"
       >
         <span
+          aria-describedby="mds-tooltip-21"
           class="Avatar-wrapper Avatar-wrapper--square Avatar--regular"
           data-test="DesignSystem-AvatarWrapper"
         >
@@ -2193,6 +2229,7 @@ Object {
           class="PopperWrapper-trigger flex-grow-0"
         >
           <span
+            aria-describedby="mds-tooltip-19"
             class="Avatar-wrapper"
             data-test="DesignSystem-AvatarWrapper"
           >
@@ -2224,6 +2261,7 @@ Object {
         class="PopperWrapper-trigger flex-grow-0"
       >
         <span
+          aria-describedby="mds-tooltip-19"
           class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
@@ -2314,6 +2352,7 @@ Object {
           class="PopperWrapper-trigger flex-grow-0"
         >
           <span
+            aria-describedby="mds-tooltip-17"
             class="Avatar-wrapper"
             data-test="DesignSystem-AvatarWrapper"
           >
@@ -2345,6 +2384,7 @@ Object {
         class="PopperWrapper-trigger flex-grow-0"
       >
         <span
+          aria-describedby="mds-tooltip-17"
           class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
@@ -2435,6 +2475,7 @@ Object {
           class="PopperWrapper-trigger flex-grow-0"
         >
           <span
+            aria-describedby="mds-tooltip-18"
             class="Avatar-wrapper"
             data-test="DesignSystem-AvatarWrapper"
           >
@@ -2466,6 +2507,7 @@ Object {
         class="PopperWrapper-trigger flex-grow-0"
       >
         <span
+          aria-describedby="mds-tooltip-18"
           class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
