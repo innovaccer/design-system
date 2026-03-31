@@ -89,6 +89,7 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
     className,
     id,
     helpText,
+    'aria-describedby': ariaDescribedBy,
     ...rest
   } = props;
 
@@ -410,7 +411,9 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
         onBlur={onBlurHandler}
         onPaste={onPasteHandler}
         autoComplete={'off'}
-        aria-describedby={helpMessage ? helpTextId : undefined}
+        aria-describedby={
+          [ariaDescribedBy, helpMessage ? helpTextId : undefined].filter(Boolean).join(' ') || undefined
+        }
         ref={ref}
       />
       <HelpText message={helpMessage} error={error} id={helpMessage ? helpTextId : undefined} />
