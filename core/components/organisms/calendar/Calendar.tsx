@@ -768,7 +768,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     const effectiveFocusedYearIndex = targetIndex;
 
     return Array.from({ length: noOfRows }, (_y, row) => (
-      <div key={row} className={styles['Calendar-valueRow']}>
+      <div key={row} role="row" className={styles['Calendar-valueRow']}>
         {Array.from({ length: yearsInRow }, (_x, col) => {
           const offset = yearsInRow * row + col;
           if (offset === yearBlockNav) return undefined;
@@ -810,6 +810,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             <button
               key={`${row}-${col}`}
               type="button"
+              role="gridcell"
               data-test="DesignSystem-Calendar--yearValue"
               data-calendar-year-cell
               data-year-index={offset}
@@ -817,6 +818,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
               tabIndex={isFocused ? 0 : -1}
               aria-label={year.toString()}
               aria-disabled={disabled}
+              aria-selected={active}
               disabled={disabled}
               onClick={this.selectYear(year)}
               onKeyDown={(ev) => this.handleYearCellKeyDown(ev, year, offset, disabled)}
@@ -871,7 +873,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     const effectiveFocusedMonth = targetMonth;
 
     return Array.from({ length: noOfRows }, (_y, row) => (
-      <div key={row} className={styles['Calendar-valueRow']}>
+      <div key={row} role="row" className={styles['Calendar-valueRow']}>
         {Array.from({ length: monthsInRow }, (_x, col) => {
           const month = monthsInRow * row + col;
           const disabled =
@@ -910,6 +912,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             <button
               key={`${row}-${col}`}
               type="button"
+              role="gridcell"
               data-test="DesignSystem-Calendar--monthValue"
               data-calendar-month-cell
               data-month={month}
@@ -917,6 +920,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
               tabIndex={isFocused ? 0 : -1}
               aria-label={months[month]}
               aria-disabled={disabled}
+              aria-selected={active}
               disabled={disabled}
               onClick={this.selectMonth(month)}
               onKeyDown={(ev) => this.handleMonthCellKeyDown(ev, month, disabled)}
@@ -1090,7 +1094,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
 
     return (
       <>
-        <div className={styles['Calendar-dayValues']}>
+        <div className={styles['Calendar-dayValues']} role="row">
           {Array.from({ length: 7 }, (_x, day) => {
             const valueClass = classNames({
               [styles['Calendar-valueWrapper']]: true,
@@ -1098,13 +1102,15 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             const dayValue = (day + daysInRow + getIndexOfDay(firstDayOfWeek)) % daysInRow;
 
             return (
-              <Text key={day} className={valueClass} appearance="default" weight="strong" size={textSize}>
-                {days[size][dayValue]}
-              </Text>
+              <div key={day} role="columnheader" className={valueClass}>
+                <Text appearance="default" weight="strong" size={textSize}>
+                  {days[size][dayValue]}
+                </Text>
+              </div>
             );
           })}
         </div>
-        <div className={styles['Calendar-dateValues']} onMouseLeave={this.onDateRowMouseLeaveHandler}>
+        <div className={styles['Calendar-dateValues']} role="rowgroup" onMouseLeave={this.onDateRowMouseLeaveHandler}>
           {this.renderDateValues(index)}
         </div>
       </>
@@ -1281,7 +1287,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
 
     return Array.from({ length: noOfRows }, (_y, row) => {
       return (
-        <div key={row} className={styles['Calendar-valueRow']}>
+        <div key={row} role="row" className={styles['Calendar-valueRow']}>
           {Array.from({ length: daysInRow }, (_x, colIndex) => {
             const date = daysInRow * row + colIndex - dummyDays + 1;
             const dummy = date <= 0 || date > dayRange;
@@ -1442,6 +1448,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
               <>
                 <button
                   type="button"
+                  role="gridcell"
                   data-calendar-date-cell
                   data-row={row}
                   data-col={colIndex}
@@ -1450,6 +1457,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                   tabIndex={isFocused ? 0 : -1}
                   aria-label={formatDateAriaLabel(fullDate)}
                   aria-disabled={disabled}
+                  aria-selected={Boolean(active || activeDate)}
                   disabled={disabled}
                   onClick={onClickHandler(date)}
                   onKeyDown={(ev) =>
@@ -1542,7 +1550,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
           {this.renderHeaderContent(index)}
           {index === monthsInView - 1 && this.renderJumpButton('next')}
         </div>
-        <div className={bodyClass}>
+        <div className={bodyClass} role="grid">
           {view === 'year' && this.renderBodyYear()}
           {view === 'month' && this.renderBodyMonth()}
           {view === 'date' && this.renderBodyDate(index)}
