@@ -1519,13 +1519,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="0"
                       data-row="0"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="0"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         1
@@ -1545,13 +1544,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="1"
                       data-row="0"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         2
@@ -1571,13 +1569,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="2"
                       data-row="0"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         3
@@ -1597,13 +1594,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="3"
                       data-row="0"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         4
@@ -1623,13 +1619,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="4"
                       data-row="0"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         5
@@ -1649,13 +1644,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="5"
                       data-row="0"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         6
@@ -1675,13 +1669,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="6"
                       data-row="0"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         7
@@ -1706,13 +1699,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="0"
                       data-row="1"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         8
@@ -1732,13 +1724,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="1"
                       data-row="1"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         9
@@ -1758,13 +1749,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="2"
                       data-row="1"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         10
@@ -1784,13 +1774,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="3"
                       data-row="1"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         11
@@ -1810,13 +1799,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="4"
                       data-row="1"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         12
@@ -1836,13 +1824,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="5"
                       data-row="1"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         13
@@ -1862,13 +1849,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="6"
                       data-row="1"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         14
@@ -1893,13 +1879,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="0"
                       data-row="2"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         15
@@ -1919,13 +1904,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="1"
                       data-row="2"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         16
@@ -1945,13 +1929,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="2"
                       data-row="2"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         17
@@ -1971,13 +1954,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="3"
                       data-row="2"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         18
@@ -1997,13 +1979,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="4"
                       data-row="2"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         19
@@ -2023,13 +2004,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="5"
                       data-row="2"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         20
@@ -2049,13 +2029,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="6"
                       data-row="2"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         21
@@ -2080,13 +2059,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="0"
                       data-row="3"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         22
@@ -2106,13 +2084,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="1"
                       data-row="3"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         23
@@ -2132,13 +2109,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="2"
                       data-row="3"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         24
@@ -2158,13 +2134,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="3"
                       data-row="3"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         25
@@ -2184,13 +2159,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="4"
                       data-row="3"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         26
@@ -2210,13 +2184,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="5"
                       data-row="3"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         27
@@ -2236,13 +2209,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="6"
                       data-row="3"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         28
@@ -2267,13 +2239,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="0"
                       data-row="4"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         29
@@ -2293,13 +2264,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="1"
                       data-row="4"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         30
@@ -2319,13 +2289,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="2"
                       data-row="4"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         31
@@ -2345,13 +2314,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="3"
                       data-row="4"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         1
@@ -2371,13 +2339,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="4"
                       data-row="4"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         2
@@ -2397,13 +2364,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="5"
                       data-row="4"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         3
@@ -2423,13 +2389,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="6"
                       data-row="4"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         4
@@ -2454,13 +2419,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="0"
                       data-row="5"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         5
@@ -2480,13 +2444,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="1"
                       data-row="5"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         6
@@ -2506,13 +2469,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="2"
                       data-row="5"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         7
@@ -2532,13 +2494,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="3"
                       data-row="5"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         8
@@ -2558,13 +2519,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="4"
                       data-row="5"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         9
@@ -2584,13 +2544,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="5"
                       data-row="5"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         10
@@ -2610,13 +2569,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="6"
                       data-row="5"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         11
@@ -2869,13 +2827,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="0"
                       data-row="0"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="0"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         1
@@ -2895,13 +2852,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="1"
                       data-row="0"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         2
@@ -2921,13 +2877,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="2"
                       data-row="0"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         3
@@ -2947,13 +2902,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="3"
                       data-row="0"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         4
@@ -2973,13 +2927,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="4"
                       data-row="0"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         5
@@ -2999,13 +2952,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="5"
                       data-row="0"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         6
@@ -3025,13 +2977,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="6"
                       data-row="0"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         7
@@ -3056,13 +3007,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="0"
                       data-row="1"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         8
@@ -3082,13 +3032,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="1"
                       data-row="1"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         9
@@ -3108,13 +3057,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="2"
                       data-row="1"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         10
@@ -3134,13 +3082,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="3"
                       data-row="1"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         11
@@ -3160,13 +3107,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="4"
                       data-row="1"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         12
@@ -3186,13 +3132,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="5"
                       data-row="1"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         13
@@ -3212,13 +3157,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="6"
                       data-row="1"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         14
@@ -3243,13 +3187,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="0"
                       data-row="2"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         15
@@ -3269,13 +3212,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="1"
                       data-row="2"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         16
@@ -3295,13 +3237,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="2"
                       data-row="2"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         17
@@ -3321,13 +3262,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="3"
                       data-row="2"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         18
@@ -3347,13 +3287,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="4"
                       data-row="2"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         19
@@ -3373,13 +3312,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="5"
                       data-row="2"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         20
@@ -3399,13 +3337,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="6"
                       data-row="2"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         21
@@ -3430,13 +3367,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="0"
                       data-row="3"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         22
@@ -3456,13 +3392,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="1"
                       data-row="3"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         23
@@ -3482,13 +3417,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="2"
                       data-row="3"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         24
@@ -3508,13 +3442,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="3"
                       data-row="3"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         25
@@ -3534,13 +3467,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="4"
                       data-row="3"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         26
@@ -3560,13 +3492,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="5"
                       data-row="3"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         27
@@ -3586,13 +3517,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="6"
                       data-row="3"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         28
@@ -3617,13 +3547,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="0"
                       data-row="4"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         29
@@ -3643,13 +3572,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="1"
                       data-row="4"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         30
@@ -3669,13 +3597,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="2"
                       data-row="4"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         31
@@ -3695,13 +3622,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="3"
                       data-row="4"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         1
@@ -3721,13 +3647,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="4"
                       data-row="4"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         2
@@ -3747,13 +3672,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="5"
                       data-row="4"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         3
@@ -3773,13 +3697,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="6"
                       data-row="4"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         4
@@ -3804,13 +3727,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="0"
                       data-row="5"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         5
@@ -3830,13 +3752,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="1"
                       data-row="5"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         6
@@ -3856,13 +3777,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="2"
                       data-row="5"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         7
@@ -3882,13 +3802,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="3"
                       data-row="5"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         8
@@ -3908,13 +3827,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="4"
                       data-row="5"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         9
@@ -3934,13 +3852,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="5"
                       data-row="5"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         10
@@ -3960,13 +3877,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       data-col="6"
                       data-row="5"
                       data-test="DesignSystem-Calendar--dateValue"
-                      disabled=""
                       role="gridcell"
                       tabindex="-1"
                       type="button"
                     >
                       <span
-                        class="Text Text--disabled Text--regular"
+                        class="Text Text--subtle Text--regular"
                         data-test="DesignSystem-Text"
                       >
                         11
@@ -8021,249 +7937,297 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                 class="Calendar-valueRow"
                 role="row"
               >
-                <button
-                  aria-disabled="false"
-                  aria-label="Jan"
-                  aria-selected="false"
-                  class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
-                  data-calendar-month-cell="true"
-                  data-month="0"
-                  data-test="DesignSystem-Calendar--monthValue"
-                  role="gridcell"
-                  tabindex="-1"
-                  type="button"
+                <div
+                  class="Calendar-monthValueWrapper"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-text"
-                    data-test="DesignSystem-Text"
+                  <button
+                    aria-disabled="false"
+                    aria-label="Jan"
+                    aria-selected="false"
+                    class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
+                    data-calendar-month-cell="true"
+                    data-month="0"
+                    data-test="DesignSystem-Calendar--monthValue"
+                    role="gridcell"
+                    tabindex="-1"
+                    type="button"
                   >
-                    Jan
-                  </span>
-                </button>
-                <button
-                  aria-disabled="false"
-                  aria-label="Feb"
-                  aria-selected="false"
-                  class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
-                  data-calendar-month-cell="true"
-                  data-month="1"
-                  data-test="DesignSystem-Calendar--monthValue"
-                  role="gridcell"
-                  tabindex="-1"
-                  type="button"
+                    <span
+                      class="Text Text--regular color-inverse Calendar-text"
+                      data-test="DesignSystem-Text"
+                    >
+                      Jan
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="Calendar-monthValueWrapper"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-text"
-                    data-test="DesignSystem-Text"
+                  <button
+                    aria-disabled="false"
+                    aria-label="Feb"
+                    aria-selected="false"
+                    class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
+                    data-calendar-month-cell="true"
+                    data-month="1"
+                    data-test="DesignSystem-Calendar--monthValue"
+                    role="gridcell"
+                    tabindex="-1"
+                    type="button"
                   >
-                    Feb
-                  </span>
-                </button>
-                <button
-                  aria-disabled="false"
-                  aria-label="Mar"
-                  aria-selected="true"
-                  class="Calendar-value Calendar-value--active Calendar-monthValue Calendar-monthValue--large"
-                  data-calendar-month-cell="true"
-                  data-month="2"
-                  data-test="DesignSystem-Calendar--monthValue"
-                  role="gridcell"
-                  tabindex="0"
-                  type="button"
+                    <span
+                      class="Text Text--regular color-inverse Calendar-text"
+                      data-test="DesignSystem-Text"
+                    >
+                      Feb
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="Calendar-monthValueWrapper"
                 >
-                  <span
-                    class="Text Text--strong Text--regular color-white Calendar-text"
-                    data-test="DesignSystem-Text"
+                  <button
+                    aria-disabled="false"
+                    aria-label="Mar"
+                    aria-selected="true"
+                    class="Calendar-value Calendar-value--active Calendar-monthValue Calendar-monthValue--large"
+                    data-calendar-month-cell="true"
+                    data-month="2"
+                    data-test="DesignSystem-Calendar--monthValue"
+                    role="gridcell"
+                    tabindex="0"
+                    type="button"
                   >
-                    Mar
-                  </span>
-                </button>
+                    <span
+                      class="Text Text--strong Text--regular color-white Calendar-text"
+                      data-test="DesignSystem-Text"
+                    >
+                      Mar
+                    </span>
+                  </button>
+                </div>
               </div>
               <div
                 class="Calendar-valueRow"
                 role="row"
               >
-                <button
-                  aria-disabled="false"
-                  aria-label="Apr"
-                  aria-selected="false"
-                  class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
-                  data-calendar-month-cell="true"
-                  data-month="3"
-                  data-test="DesignSystem-Calendar--monthValue"
-                  role="gridcell"
-                  tabindex="-1"
-                  type="button"
+                <div
+                  class="Calendar-monthValueWrapper"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-text"
-                    data-test="DesignSystem-Text"
+                  <button
+                    aria-disabled="false"
+                    aria-label="Apr"
+                    aria-selected="false"
+                    class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
+                    data-calendar-month-cell="true"
+                    data-month="3"
+                    data-test="DesignSystem-Calendar--monthValue"
+                    role="gridcell"
+                    tabindex="-1"
+                    type="button"
                   >
-                    Apr
-                  </span>
-                </button>
-                <button
-                  aria-disabled="false"
-                  aria-label="May"
-                  aria-selected="false"
-                  class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
-                  data-calendar-month-cell="true"
-                  data-month="4"
-                  data-test="DesignSystem-Calendar--monthValue"
-                  role="gridcell"
-                  tabindex="-1"
-                  type="button"
+                    <span
+                      class="Text Text--regular color-inverse Calendar-text"
+                      data-test="DesignSystem-Text"
+                    >
+                      Apr
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="Calendar-monthValueWrapper"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-text"
-                    data-test="DesignSystem-Text"
+                  <button
+                    aria-disabled="false"
+                    aria-label="May"
+                    aria-selected="false"
+                    class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
+                    data-calendar-month-cell="true"
+                    data-month="4"
+                    data-test="DesignSystem-Calendar--monthValue"
+                    role="gridcell"
+                    tabindex="-1"
+                    type="button"
                   >
-                    May
-                  </span>
-                </button>
-                <button
-                  aria-disabled="false"
-                  aria-label="Jun"
-                  aria-selected="false"
-                  class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
-                  data-calendar-month-cell="true"
-                  data-month="5"
-                  data-test="DesignSystem-Calendar--monthValue"
-                  role="gridcell"
-                  tabindex="-1"
-                  type="button"
+                    <span
+                      class="Text Text--regular color-inverse Calendar-text"
+                      data-test="DesignSystem-Text"
+                    >
+                      May
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="Calendar-monthValueWrapper"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-text"
-                    data-test="DesignSystem-Text"
+                  <button
+                    aria-disabled="false"
+                    aria-label="Jun"
+                    aria-selected="false"
+                    class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
+                    data-calendar-month-cell="true"
+                    data-month="5"
+                    data-test="DesignSystem-Calendar--monthValue"
+                    role="gridcell"
+                    tabindex="-1"
+                    type="button"
                   >
-                    Jun
-                  </span>
-                </button>
+                    <span
+                      class="Text Text--regular color-inverse Calendar-text"
+                      data-test="DesignSystem-Text"
+                    >
+                      Jun
+                    </span>
+                  </button>
+                </div>
               </div>
               <div
                 class="Calendar-valueRow"
                 role="row"
               >
-                <button
-                  aria-disabled="false"
-                  aria-label="Jul"
-                  aria-selected="false"
-                  class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
-                  data-calendar-month-cell="true"
-                  data-month="6"
-                  data-test="DesignSystem-Calendar--monthValue"
-                  role="gridcell"
-                  tabindex="-1"
-                  type="button"
+                <div
+                  class="Calendar-monthValueWrapper"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-text"
-                    data-test="DesignSystem-Text"
+                  <button
+                    aria-disabled="false"
+                    aria-label="Jul"
+                    aria-selected="false"
+                    class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
+                    data-calendar-month-cell="true"
+                    data-month="6"
+                    data-test="DesignSystem-Calendar--monthValue"
+                    role="gridcell"
+                    tabindex="-1"
+                    type="button"
                   >
-                    Jul
-                  </span>
-                </button>
-                <button
-                  aria-disabled="false"
-                  aria-label="Aug"
-                  aria-selected="false"
-                  class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
-                  data-calendar-month-cell="true"
-                  data-month="7"
-                  data-test="DesignSystem-Calendar--monthValue"
-                  role="gridcell"
-                  tabindex="-1"
-                  type="button"
+                    <span
+                      class="Text Text--regular color-inverse Calendar-text"
+                      data-test="DesignSystem-Text"
+                    >
+                      Jul
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="Calendar-monthValueWrapper"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-text"
-                    data-test="DesignSystem-Text"
+                  <button
+                    aria-disabled="false"
+                    aria-label="Aug"
+                    aria-selected="false"
+                    class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
+                    data-calendar-month-cell="true"
+                    data-month="7"
+                    data-test="DesignSystem-Calendar--monthValue"
+                    role="gridcell"
+                    tabindex="-1"
+                    type="button"
                   >
-                    Aug
-                  </span>
-                </button>
-                <button
-                  aria-disabled="false"
-                  aria-label="Sep"
-                  aria-selected="false"
-                  class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
-                  data-calendar-month-cell="true"
-                  data-month="8"
-                  data-test="DesignSystem-Calendar--monthValue"
-                  role="gridcell"
-                  tabindex="-1"
-                  type="button"
+                    <span
+                      class="Text Text--regular color-inverse Calendar-text"
+                      data-test="DesignSystem-Text"
+                    >
+                      Aug
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="Calendar-monthValueWrapper"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-text"
-                    data-test="DesignSystem-Text"
+                  <button
+                    aria-disabled="false"
+                    aria-label="Sep"
+                    aria-selected="false"
+                    class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
+                    data-calendar-month-cell="true"
+                    data-month="8"
+                    data-test="DesignSystem-Calendar--monthValue"
+                    role="gridcell"
+                    tabindex="-1"
+                    type="button"
                   >
-                    Sep
-                  </span>
-                </button>
+                    <span
+                      class="Text Text--regular color-inverse Calendar-text"
+                      data-test="DesignSystem-Text"
+                    >
+                      Sep
+                    </span>
+                  </button>
+                </div>
               </div>
               <div
                 class="Calendar-valueRow"
                 role="row"
               >
-                <button
-                  aria-disabled="false"
-                  aria-label="Oct"
-                  aria-selected="false"
-                  class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
-                  data-calendar-month-cell="true"
-                  data-month="9"
-                  data-test="DesignSystem-Calendar--monthValue"
-                  role="gridcell"
-                  tabindex="-1"
-                  type="button"
+                <div
+                  class="Calendar-monthValueWrapper"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-text"
-                    data-test="DesignSystem-Text"
+                  <button
+                    aria-disabled="false"
+                    aria-label="Oct"
+                    aria-selected="false"
+                    class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
+                    data-calendar-month-cell="true"
+                    data-month="9"
+                    data-test="DesignSystem-Calendar--monthValue"
+                    role="gridcell"
+                    tabindex="-1"
+                    type="button"
                   >
-                    Oct
-                  </span>
-                </button>
-                <button
-                  aria-disabled="false"
-                  aria-label="Nov"
-                  aria-selected="false"
-                  class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
-                  data-calendar-month-cell="true"
-                  data-month="10"
-                  data-test="DesignSystem-Calendar--monthValue"
-                  role="gridcell"
-                  tabindex="-1"
-                  type="button"
+                    <span
+                      class="Text Text--regular color-inverse Calendar-text"
+                      data-test="DesignSystem-Text"
+                    >
+                      Oct
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="Calendar-monthValueWrapper"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-text"
-                    data-test="DesignSystem-Text"
+                  <button
+                    aria-disabled="false"
+                    aria-label="Nov"
+                    aria-selected="false"
+                    class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
+                    data-calendar-month-cell="true"
+                    data-month="10"
+                    data-test="DesignSystem-Calendar--monthValue"
+                    role="gridcell"
+                    tabindex="-1"
+                    type="button"
                   >
-                    Nov
-                  </span>
-                </button>
-                <button
-                  aria-disabled="false"
-                  aria-label="Dec"
-                  aria-selected="false"
-                  class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
-                  data-calendar-month-cell="true"
-                  data-month="11"
-                  data-test="DesignSystem-Calendar--monthValue"
-                  role="gridcell"
-                  tabindex="-1"
-                  type="button"
+                    <span
+                      class="Text Text--regular color-inverse Calendar-text"
+                      data-test="DesignSystem-Text"
+                    >
+                      Nov
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="Calendar-monthValueWrapper"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-text"
-                    data-test="DesignSystem-Text"
+                  <button
+                    aria-disabled="false"
+                    aria-label="Dec"
+                    aria-selected="false"
+                    class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
+                    data-calendar-month-cell="true"
+                    data-month="11"
+                    data-test="DesignSystem-Calendar--monthValue"
+                    role="gridcell"
+                    tabindex="-1"
+                    type="button"
                   >
-                    Dec
-                  </span>
-                </button>
+                    <span
+                      class="Text Text--regular color-inverse Calendar-text"
+                      data-test="DesignSystem-Text"
+                    >
+                      Dec
+                    </span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -8383,249 +8347,297 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                 class="Calendar-valueRow"
                 role="row"
               >
-                <button
-                  aria-disabled="false"
-                  aria-label="2016"
-                  aria-selected="false"
-                  class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
-                  data-calendar-year-cell="true"
-                  data-test="DesignSystem-Calendar--yearValue"
-                  data-year-index="0"
-                  role="gridcell"
-                  tabindex="-1"
-                  type="button"
+                <div
+                  class="Calendar-yearValueWrapper"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-text"
-                    data-test="DesignSystem-Text"
+                  <button
+                    aria-disabled="false"
+                    aria-label="2016"
+                    aria-selected="false"
+                    class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
+                    data-calendar-year-cell="true"
+                    data-test="DesignSystem-Calendar--yearValue"
+                    data-year-index="0"
+                    role="gridcell"
+                    tabindex="-1"
+                    type="button"
                   >
-                    2016
-                  </span>
-                </button>
-                <button
-                  aria-disabled="false"
-                  aria-label="2017"
-                  aria-selected="false"
-                  class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
-                  data-calendar-year-cell="true"
-                  data-test="DesignSystem-Calendar--yearValue"
-                  data-year-index="1"
-                  role="gridcell"
-                  tabindex="-1"
-                  type="button"
+                    <span
+                      class="Text Text--regular color-inverse Calendar-text"
+                      data-test="DesignSystem-Text"
+                    >
+                      2016
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="Calendar-yearValueWrapper"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-text"
-                    data-test="DesignSystem-Text"
+                  <button
+                    aria-disabled="false"
+                    aria-label="2017"
+                    aria-selected="false"
+                    class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
+                    data-calendar-year-cell="true"
+                    data-test="DesignSystem-Calendar--yearValue"
+                    data-year-index="1"
+                    role="gridcell"
+                    tabindex="-1"
+                    type="button"
                   >
-                    2017
-                  </span>
-                </button>
-                <button
-                  aria-disabled="false"
-                  aria-label="2018"
-                  aria-selected="false"
-                  class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
-                  data-calendar-year-cell="true"
-                  data-test="DesignSystem-Calendar--yearValue"
-                  data-year-index="2"
-                  role="gridcell"
-                  tabindex="-1"
-                  type="button"
+                    <span
+                      class="Text Text--regular color-inverse Calendar-text"
+                      data-test="DesignSystem-Text"
+                    >
+                      2017
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="Calendar-yearValueWrapper"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-text"
-                    data-test="DesignSystem-Text"
+                  <button
+                    aria-disabled="false"
+                    aria-label="2018"
+                    aria-selected="false"
+                    class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
+                    data-calendar-year-cell="true"
+                    data-test="DesignSystem-Calendar--yearValue"
+                    data-year-index="2"
+                    role="gridcell"
+                    tabindex="-1"
+                    type="button"
                   >
-                    2018
-                  </span>
-                </button>
+                    <span
+                      class="Text Text--regular color-inverse Calendar-text"
+                      data-test="DesignSystem-Text"
+                    >
+                      2018
+                    </span>
+                  </button>
+                </div>
               </div>
               <div
                 class="Calendar-valueRow"
                 role="row"
               >
-                <button
-                  aria-disabled="false"
-                  aria-label="2019"
-                  aria-selected="false"
-                  class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
-                  data-calendar-year-cell="true"
-                  data-test="DesignSystem-Calendar--yearValue"
-                  data-year-index="3"
-                  role="gridcell"
-                  tabindex="-1"
-                  type="button"
+                <div
+                  class="Calendar-yearValueWrapper"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-text"
-                    data-test="DesignSystem-Text"
+                  <button
+                    aria-disabled="false"
+                    aria-label="2019"
+                    aria-selected="false"
+                    class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
+                    data-calendar-year-cell="true"
+                    data-test="DesignSystem-Calendar--yearValue"
+                    data-year-index="3"
+                    role="gridcell"
+                    tabindex="-1"
+                    type="button"
                   >
-                    2019
-                  </span>
-                </button>
-                <button
-                  aria-disabled="false"
-                  aria-label="2020"
-                  aria-selected="true"
-                  class="Calendar-value Calendar-value--active Calendar-yearValue Calendar-yearValue--large"
-                  data-calendar-year-cell="true"
-                  data-test="DesignSystem-Calendar--yearValue"
-                  data-year-index="4"
-                  role="gridcell"
-                  tabindex="0"
-                  type="button"
+                    <span
+                      class="Text Text--regular color-inverse Calendar-text"
+                      data-test="DesignSystem-Text"
+                    >
+                      2019
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="Calendar-yearValueWrapper"
                 >
-                  <span
-                    class="Text Text--strong Text--regular color-white Calendar-text"
-                    data-test="DesignSystem-Text"
+                  <button
+                    aria-disabled="false"
+                    aria-label="2020"
+                    aria-selected="true"
+                    class="Calendar-value Calendar-value--active Calendar-yearValue Calendar-yearValue--large"
+                    data-calendar-year-cell="true"
+                    data-test="DesignSystem-Calendar--yearValue"
+                    data-year-index="4"
+                    role="gridcell"
+                    tabindex="0"
+                    type="button"
                   >
-                    2020
-                  </span>
-                </button>
-                <button
-                  aria-disabled="false"
-                  aria-label="2021"
-                  aria-selected="false"
-                  class="Calendar-value Calendar-yearValue Calendar-yearValue--large Calendar-value--currDateMonthYear"
-                  data-calendar-year-cell="true"
-                  data-test="DesignSystem-Calendar--yearValue"
-                  data-year-index="5"
-                  role="gridcell"
-                  tabindex="-1"
-                  type="button"
+                    <span
+                      class="Text Text--strong Text--regular color-white Calendar-text"
+                      data-test="DesignSystem-Text"
+                    >
+                      2020
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="Calendar-yearValueWrapper"
                 >
-                  <span
-                    class="Text Text--regular color-primary-dark Calendar-value--currDate Calendar-text"
-                    data-test="DesignSystem-Text"
+                  <button
+                    aria-disabled="false"
+                    aria-label="2021"
+                    aria-selected="false"
+                    class="Calendar-value Calendar-yearValue Calendar-yearValue--large Calendar-value--currDateMonthYear"
+                    data-calendar-year-cell="true"
+                    data-test="DesignSystem-Calendar--yearValue"
+                    data-year-index="5"
+                    role="gridcell"
+                    tabindex="-1"
+                    type="button"
                   >
-                    2021
-                  </span>
-                </button>
+                    <span
+                      class="Text Text--regular color-primary-dark Calendar-value--currDate Calendar-text"
+                      data-test="DesignSystem-Text"
+                    >
+                      2021
+                    </span>
+                  </button>
+                </div>
               </div>
               <div
                 class="Calendar-valueRow"
                 role="row"
               >
-                <button
-                  aria-disabled="false"
-                  aria-label="2022"
-                  aria-selected="false"
-                  class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
-                  data-calendar-year-cell="true"
-                  data-test="DesignSystem-Calendar--yearValue"
-                  data-year-index="6"
-                  role="gridcell"
-                  tabindex="-1"
-                  type="button"
+                <div
+                  class="Calendar-yearValueWrapper"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-text"
-                    data-test="DesignSystem-Text"
+                  <button
+                    aria-disabled="false"
+                    aria-label="2022"
+                    aria-selected="false"
+                    class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
+                    data-calendar-year-cell="true"
+                    data-test="DesignSystem-Calendar--yearValue"
+                    data-year-index="6"
+                    role="gridcell"
+                    tabindex="-1"
+                    type="button"
                   >
-                    2022
-                  </span>
-                </button>
-                <button
-                  aria-disabled="false"
-                  aria-label="2023"
-                  aria-selected="false"
-                  class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
-                  data-calendar-year-cell="true"
-                  data-test="DesignSystem-Calendar--yearValue"
-                  data-year-index="7"
-                  role="gridcell"
-                  tabindex="-1"
-                  type="button"
+                    <span
+                      class="Text Text--regular color-inverse Calendar-text"
+                      data-test="DesignSystem-Text"
+                    >
+                      2022
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="Calendar-yearValueWrapper"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-text"
-                    data-test="DesignSystem-Text"
+                  <button
+                    aria-disabled="false"
+                    aria-label="2023"
+                    aria-selected="false"
+                    class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
+                    data-calendar-year-cell="true"
+                    data-test="DesignSystem-Calendar--yearValue"
+                    data-year-index="7"
+                    role="gridcell"
+                    tabindex="-1"
+                    type="button"
                   >
-                    2023
-                  </span>
-                </button>
-                <button
-                  aria-disabled="false"
-                  aria-label="2024"
-                  aria-selected="false"
-                  class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
-                  data-calendar-year-cell="true"
-                  data-test="DesignSystem-Calendar--yearValue"
-                  data-year-index="8"
-                  role="gridcell"
-                  tabindex="-1"
-                  type="button"
+                    <span
+                      class="Text Text--regular color-inverse Calendar-text"
+                      data-test="DesignSystem-Text"
+                    >
+                      2023
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="Calendar-yearValueWrapper"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-text"
-                    data-test="DesignSystem-Text"
+                  <button
+                    aria-disabled="false"
+                    aria-label="2024"
+                    aria-selected="false"
+                    class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
+                    data-calendar-year-cell="true"
+                    data-test="DesignSystem-Calendar--yearValue"
+                    data-year-index="8"
+                    role="gridcell"
+                    tabindex="-1"
+                    type="button"
                   >
-                    2024
-                  </span>
-                </button>
+                    <span
+                      class="Text Text--regular color-inverse Calendar-text"
+                      data-test="DesignSystem-Text"
+                    >
+                      2024
+                    </span>
+                  </button>
+                </div>
               </div>
               <div
                 class="Calendar-valueRow"
                 role="row"
               >
-                <button
-                  aria-disabled="false"
-                  aria-label="2025"
-                  aria-selected="false"
-                  class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
-                  data-calendar-year-cell="true"
-                  data-test="DesignSystem-Calendar--yearValue"
-                  data-year-index="9"
-                  role="gridcell"
-                  tabindex="-1"
-                  type="button"
+                <div
+                  class="Calendar-yearValueWrapper"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-text"
-                    data-test="DesignSystem-Text"
+                  <button
+                    aria-disabled="false"
+                    aria-label="2025"
+                    aria-selected="false"
+                    class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
+                    data-calendar-year-cell="true"
+                    data-test="DesignSystem-Calendar--yearValue"
+                    data-year-index="9"
+                    role="gridcell"
+                    tabindex="-1"
+                    type="button"
                   >
-                    2025
-                  </span>
-                </button>
-                <button
-                  aria-disabled="false"
-                  aria-label="2026"
-                  aria-selected="false"
-                  class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
-                  data-calendar-year-cell="true"
-                  data-test="DesignSystem-Calendar--yearValue"
-                  data-year-index="10"
-                  role="gridcell"
-                  tabindex="-1"
-                  type="button"
+                    <span
+                      class="Text Text--regular color-inverse Calendar-text"
+                      data-test="DesignSystem-Text"
+                    >
+                      2025
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="Calendar-yearValueWrapper"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-text"
-                    data-test="DesignSystem-Text"
+                  <button
+                    aria-disabled="false"
+                    aria-label="2026"
+                    aria-selected="false"
+                    class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
+                    data-calendar-year-cell="true"
+                    data-test="DesignSystem-Calendar--yearValue"
+                    data-year-index="10"
+                    role="gridcell"
+                    tabindex="-1"
+                    type="button"
                   >
-                    2026
-                  </span>
-                </button>
-                <button
-                  aria-disabled="false"
-                  aria-label="2027"
-                  aria-selected="false"
-                  class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
-                  data-calendar-year-cell="true"
-                  data-test="DesignSystem-Calendar--yearValue"
-                  data-year-index="11"
-                  role="gridcell"
-                  tabindex="-1"
-                  type="button"
+                    <span
+                      class="Text Text--regular color-inverse Calendar-text"
+                      data-test="DesignSystem-Text"
+                    >
+                      2026
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="Calendar-yearValueWrapper"
                 >
-                  <span
-                    class="Text Text--regular color-inverse Calendar-text"
-                    data-test="DesignSystem-Text"
+                  <button
+                    aria-disabled="false"
+                    aria-label="2027"
+                    aria-selected="false"
+                    class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
+                    data-calendar-year-cell="true"
+                    data-test="DesignSystem-Calendar--yearValue"
+                    data-year-index="11"
+                    role="gridcell"
+                    tabindex="-1"
+                    type="button"
                   >
-                    2027
-                  </span>
-                </button>
+                    <span
+                      class="Text Text--regular color-inverse Calendar-text"
+                      data-test="DesignSystem-Text"
+                    >
+                      2027
+                    </span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
