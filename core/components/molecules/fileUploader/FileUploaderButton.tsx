@@ -2,7 +2,6 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { Button } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
-import uidGenerator from '@/utils/uidGenerator';
 import styles from '@css/components/fileUploader.module.css';
 
 export interface FileUploaderButtonProps extends BaseProps {
@@ -40,14 +39,6 @@ export const FileUploaderButton = (props: FileUploaderButtonProps) => {
   const { accept, multiple, uploadButtonLabel, disabled, name, className, id, onChange } = props;
 
   const baseProps = extractBaseProps(props);
-  const inputRef = React.useRef<HTMLInputElement>(null);
-
-  const inputId = React.useMemo(() => id || `ds-file-uploader-input-${uidGenerator()}`, [id]);
-
-  const openFilePicker = React.useCallback(() => {
-    if (disabled) return;
-    inputRef.current?.click();
-  }, [disabled]);
 
   const FileUploaderButtonClass = classNames(
     {
@@ -58,13 +49,12 @@ export const FileUploaderButton = (props: FileUploaderButtonProps) => {
 
   return (
     <div {...baseProps} className={FileUploaderButtonClass}>
-      <Button type="button" disabled={disabled} icon="backup" onClick={openFilePicker} aria-controls={inputId}>
+      <Button type="button" disabled={disabled} icon="backup">
         {uploadButtonLabel}
       </Button>
       <input
-        ref={inputRef}
         name={name}
-        id={inputId}
+        id={id}
         data-test="DesignSystem-FileUploaderButton--Input"
         accept={accept && accept.join(', ')}
         multiple={multiple}

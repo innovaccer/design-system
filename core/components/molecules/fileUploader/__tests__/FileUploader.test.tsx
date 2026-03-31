@@ -163,28 +163,6 @@ describe('FileUploader component prop:onChange', () => {
     fireEvent.change(getByTestId('DesignSystem-FileUploaderButton--Input'));
     expect(FunctionValue).toHaveBeenCalled();
   });
-
-  it('forwards button click to file input so keyboard and mouse use the same path', () => {
-    const { getByTestId } = render(<FileUploader onChange={FunctionValue} />);
-    const input = getByTestId('DesignSystem-FileUploaderButton--Input') as HTMLInputElement;
-    const clickSpy = jest.spyOn(input, 'click').mockImplementation(() => {});
-
-    fireEvent.click(getByTestId('DesignSystem-Button'));
-
-    expect(clickSpy).toHaveBeenCalledTimes(1);
-    clickSpy.mockRestore();
-  });
-
-  it('does not call file input click when disabled', () => {
-    const { getByTestId } = render(<FileUploader onChange={FunctionValue} disabled />);
-    const input = getByTestId('DesignSystem-FileUploaderButton--Input') as HTMLInputElement;
-    const clickSpy = jest.spyOn(input, 'click').mockImplementation(() => {});
-
-    fireEvent.click(getByTestId('DesignSystem-Button'));
-
-    expect(clickSpy).not.toHaveBeenCalled();
-    clickSpy.mockRestore();
-  });
 });
 
 describe('FileUploader component prop:disabled', () => {
