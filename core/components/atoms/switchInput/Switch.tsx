@@ -76,7 +76,7 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>((props, re
     ...rest
   } = props;
 
-  if (process.env.NODE_ENV !== 'production' && !props['aria-label'] && !props['aria-labelledby']) {
+  if (process.env.NODE_ENV !== 'production' && !props['aria-label'] && !props['aria-labelledby'] && !props.id) {
     console.warn('Switch: An `aria-label` or `aria-labelledby` prop is required for accessibility.');
   }
 
