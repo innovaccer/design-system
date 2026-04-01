@@ -24,7 +24,8 @@ export interface MenuTriggerProps extends BaseProps {
 export const MenuTrigger = (props: MenuTriggerProps) => {
   const { className } = props;
   const contextProp = React.useContext(MenuContext);
-  const { openPopover, setOpenPopover, setHighlightFirstItem, setHighlightLastItem, menuTriggerRef } = contextProp;
+  const { openPopover, setOpenPopover, setHighlightFirstItem, setHighlightLastItem, menuTriggerRef, menuId } =
+    contextProp;
 
   const triggerClassName = classNames(
     {
@@ -44,6 +45,7 @@ export const MenuTrigger = (props: MenuTriggerProps) => {
       ref={menuTriggerRef}
       aria-label={props['aria-label'] || 'Open menu'}
       aria-haspopup={true}
+      aria-controls={menuId}
       aria-expanded={openPopover}
       {...props}
       className={triggerClassName}

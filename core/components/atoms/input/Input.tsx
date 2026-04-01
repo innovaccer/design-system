@@ -183,6 +183,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
     disabled,
     readOnly,
     iconType,
+    'aria-invalid': ariaInvalid,
     ...rest
   } = props;
 
@@ -302,6 +303,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
          *For rest, "undefined" lets user agent(browser) use the default tabIndex.
          */
         tabIndex={readOnly ? -1 : undefined}
+        aria-invalid={error === true ? true : ariaInvalid}
       />
       {disabled ? (
         ''
