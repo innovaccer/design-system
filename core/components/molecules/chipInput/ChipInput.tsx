@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { Chip, Icon } from '@/index';
 import { ChipProps } from '@/index.type';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import { isSpaceKey } from '@/accessibility/utils';
 import styles from '@css/components/chipInput.module.css';
 import inputStyles from '@css/components/input.module.css';
 
@@ -349,7 +350,7 @@ export const ChipInput = (props: ChipInputProps) => {
               disabled
                 ? undefined
                 : (e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
+                    if (e.key === 'Enter' || isSpaceKey(e)) {
                       e.preventDefault();
                       onDeleteAllHandler();
                     }
