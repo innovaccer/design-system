@@ -111,6 +111,7 @@ exports[`TS renders children 1`] = `
       class="d-flex"
     >
       <div
+        aria-label="Calendar"
         class="Calendar-wrapper"
         data-test="DesignSystem-Calendar-Wrapper"
       >
@@ -2489,6 +2490,7 @@ exports[`TS renders children 1`] = `
     role="group"
   />
   <div
+    aria-label="Calendar"
     class="Calendar-wrapper"
     data-test="DesignSystem-Calendar-Wrapper"
   >

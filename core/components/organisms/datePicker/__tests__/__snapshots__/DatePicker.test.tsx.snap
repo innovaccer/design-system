@@ -10,6 +10,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
         class="d-flex"
       >
         <div
+          aria-label="Calendar"
           class="Calendar-wrapper"
           data-test="DesignSystem-Calendar-Wrapper"
         >
@@ -1317,6 +1318,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
         class="d-flex"
       >
         <div
+          aria-label="Calendar"
           class="Calendar-wrapper"
           data-test="DesignSystem-Calendar-Wrapper"
         >
@@ -2625,6 +2627,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
         class="d-flex"
       >
         <div
+          aria-label="Calendar"
           class="Calendar-wrapper"
           data-test="DesignSystem-Calendar-Wrapper"
         >
@@ -3933,6 +3936,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
         class="d-flex"
       >
         <div
+          aria-label="Calendar"
           class="Calendar-wrapper"
           data-test="DesignSystem-Calendar-Wrapper"
         >
@@ -5240,6 +5244,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
         class="d-flex"
       >
         <div
+          aria-label="Calendar"
           class="Calendar-wrapper"
           data-test="DesignSystem-Calendar-Wrapper"
         >
@@ -6547,6 +6552,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
         class="d-flex"
       >
         <div
+          aria-label="Calendar"
           class="Calendar-wrapper"
           data-test="DesignSystem-Calendar-Wrapper"
         >
@@ -7854,6 +7860,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
         class="d-flex"
       >
         <div
+          aria-label="Calendar"
           class="Calendar-wrapper"
           data-test="DesignSystem-Calendar-Wrapper"
         >
@@ -8271,6 +8278,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
         class="d-flex"
       >
         <div
+          aria-label="Calendar"
           class="Calendar-wrapper"
           data-test="DesignSystem-Calendar-Wrapper"
         >
@@ -8681,6 +8689,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
         class="d-flex"
       >
         <div
+          aria-label="Calendar"
           class="Calendar-wrapper"
           data-test="DesignSystem-Calendar-Wrapper"
         >
