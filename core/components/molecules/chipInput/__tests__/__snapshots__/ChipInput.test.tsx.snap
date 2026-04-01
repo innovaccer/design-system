@@ -92,15 +92,21 @@ exports[`ChipInput component
             value=""
           />
         </div>
-        <i
-          class="material-symbols material-symbols-rounded Icon Icon--subtle ChipInput-icon ChipInput-icon--regular"
+        <button
+          aria-label="Clear all"
+          class="ChipInput-icon ChipInput-icon--regular"
           data-test="DesignSystem-ChipInput--Icon"
-          role="button"
-          style="font-size: 16px; width: 16px;"
           tabindex="0"
         >
-          close
-        </i>
+          <i
+            aria-hidden="true"
+            class="material-symbols material-symbols-rounded Icon Icon--subtle"
+            data-test="DesignSystem-Icon"
+            style="font-size: 16px; width: 16px;"
+          >
+            close
+          </i>
+        </button>
       </div>
     </div>
   </div>
@@ -201,15 +207,22 @@ exports[`ChipInput component
             value=""
           />
         </div>
-        <i
-          class="material-symbols material-symbols-rounded Icon Icon--disabled ChipInput-icon ChipInput-icon--regular"
+        <button
+          aria-label="Clear all"
+          class="ChipInput-icon ChipInput-icon--regular"
           data-test="DesignSystem-ChipInput--Icon"
-          role="button"
-          style="font-size: 16px; width: 16px;"
+          disabled=""
           tabindex="-1"
         >
-          close
-        </i>
+          <i
+            aria-hidden="true"
+            class="material-symbols material-symbols-rounded Icon Icon--disabled"
+            data-test="DesignSystem-Icon"
+            style="font-size: 16px; width: 16px;"
+          >
+            close
+          </i>
+        </button>
       </div>
     </div>
   </div>
@@ -308,15 +321,21 @@ exports[`ChipInput component
             value=""
           />
         </div>
-        <i
-          class="material-symbols material-symbols-rounded Icon Icon--subtle ChipInput-icon ChipInput-icon--regular"
+        <button
+          aria-label="Clear all"
+          class="ChipInput-icon ChipInput-icon--regular"
           data-test="DesignSystem-ChipInput--Icon"
-          role="button"
-          style="font-size: 16px; width: 16px;"
           tabindex="0"
         >
-          close
-        </i>
+          <i
+            aria-hidden="true"
+            class="material-symbols material-symbols-rounded Icon Icon--subtle"
+            data-test="DesignSystem-Icon"
+            style="font-size: 16px; width: 16px;"
+          >
+            close
+          </i>
+        </button>
       </div>
     </div>
   </div>

@@ -330,15 +330,16 @@ export const ChipInput = (props: ChipInputProps) => {
           {/* eslint-enable */}
         </div>
         {chips.length > 0 && (
-          <Icon
+          <button
             data-test="DesignSystem-ChipInput--Icon"
-            name="close"
-            size={iconSize}
-            appearance={disabled ? 'disabled' : 'subtle'}
             className={IconClass}
             onClick={onDeleteAllHandler}
             tabIndex={disabled ? -1 : 0}
-          />
+            aria-label="Clear all"
+            disabled={disabled}
+          >
+            <Icon name="close" size={iconSize} appearance={disabled ? 'disabled' : 'subtle'} aria-hidden="true" />
+          </button>
         )}
       </div>
     </div>
