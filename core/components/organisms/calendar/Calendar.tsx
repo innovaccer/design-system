@@ -1381,9 +1381,10 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
           else if (index === monthsInView - 1) renders = d > dayRange;
         }
         if (!renders) return false;
+        const actualD = this.getDateValue(yearNavVal, monthNavVal, d) || new Date();
         const disabled =
-          compareDate(disabledBefore, 'more', yearNavVal, monthNavVal, d) ||
-          compareDate(disabledAfter, 'less', yearNavVal, monthNavVal, d);
+          compareDate(disabledBefore, 'more', actualD.getFullYear(), actualD.getMonth(), actualD.getDate()) ||
+          compareDate(disabledAfter, 'less', actualD.getFullYear(), actualD.getMonth(), actualD.getDate());
         return !disabled;
       };
 
@@ -1430,9 +1431,22 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
           {Array.from({ length: daysInRow }, (_x, colIndex) => {
             const date = daysInRow * row + colIndex - dummyDays + 1;
             const dummy = date <= 0 || date > dayRange;
+            const actualDateObj = this.getDateValue(yearNavVal, monthNavVal, date) || new Date();
             const disabled =
-              compareDate(disabledBefore, 'more', yearNavVal, monthNavVal, date) ||
-              compareDate(disabledAfter, 'less', yearNavVal, monthNavVal, date);
+              compareDate(
+                disabledBefore,
+                'more',
+                actualDateObj.getFullYear(),
+                actualDateObj.getMonth(),
+                actualDateObj.getDate()
+              ) ||
+              compareDate(
+                disabledAfter,
+                'less',
+                actualDateObj.getFullYear(),
+                actualDateObj.getMonth(),
+                actualDateObj.getDate()
+              );
             let active = !disabled && yearState === yearNavVal && monthState === monthNavVal && dateState === date;
             const today = () => {
               let boolVal;
