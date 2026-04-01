@@ -513,7 +513,8 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     return false;
   };
 
-  selectYear = (year: number) => () => {
+  selectYear = (year: number, disabled?: boolean) => () => {
+    if (disabled) return;
     this.updateState(year);
     this.setState({
       view: 'month',
@@ -536,7 +537,8 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     if (onYearHover) onYearHover(yearData, ev);
   };
 
-  selectMonth = (month: number) => () => {
+  selectMonth = (month: number, disabled?: boolean) => () => {
+    if (disabled) return;
     this.updateState(this.state.yearNav, month);
     this.setState({
       view: 'date',
@@ -870,7 +872,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                 aria-label={year.toString()}
                 aria-disabled={disabled}
                 aria-selected={active}
-                onClick={this.selectYear(year)}
+                onClick={this.selectYear(year, disabled)}
                 onKeyDown={(ev) => this.handleYearCellKeyDown(ev, year, offset, disabled)}
                 onFocus={() => this.setState({ focusedYearIndex: offset })}
                 onMouseOver={this.yearMouseOverHandler.bind(this, year, isCurrentYear(), disabled)}
@@ -975,7 +977,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                 aria-label={months[month]}
                 aria-disabled={disabled}
                 aria-selected={active}
-                onClick={this.selectMonth(month)}
+                onClick={this.selectMonth(month, disabled)}
                 onKeyDown={(ev) => this.handleMonthCellKeyDown(ev, month, disabled)}
                 onFocus={() => this.setState({ focusedMonth: month })}
                 onMouseOver={this.monthMouseOverHandler.bind(this, month, isCurrentMonth(), disabled)}
@@ -1134,6 +1136,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
       event: ev,
       container,
       focusedDate,
+      startOfWeekIndex: getIndexOfDay(this.props.firstDayOfWeek),
       isDateDisabled: (d: Date) => {
         return (
           compareDate(this.props.disabledBefore, 'more', d.getFullYear(), d.getMonth(), d.getDate()) ||
@@ -1304,7 +1307,8 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
 
     const events = this.props.events;
 
-    const onClickHandler = (date: number) => () => {
+    const onClickHandler = (date: number, disabled: boolean) => () => {
+      if (disabled) return;
       if (rangePicker) {
         if (startDate && endDate) {
           this.selectDate(index, date, prevMonthDayRange, dayRange);
@@ -1593,7 +1597,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                   aria-label={formatDateAriaLabel(fullDate)}
                   aria-disabled={disabled}
                   aria-selected={Boolean(active || activeDate)}
-                  onClick={onClickHandler(date)}
+                  onClick={onClickHandler(date, disabled)}
                   onKeyDown={(ev) =>
                     this.handleDateCellKeyDown(
                       ev,

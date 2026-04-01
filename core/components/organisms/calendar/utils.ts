@@ -130,6 +130,7 @@ export interface HandleDateViewKeyDownParams {
   event: React.KeyboardEvent;
   container: HTMLElement;
   focusedDate: Date;
+  startOfWeekIndex?: number;
   isDateDisabled?: (d: Date) => boolean;
   onNavigate: (newDate: Date) => void;
   onSelect: () => void;
@@ -148,6 +149,7 @@ export const handleDateViewKeyDown = (params: HandleDateViewKeyDownParams): bool
   const {
     event,
     focusedDate,
+    startOfWeekIndex = 0,
     isDateDisabled,
     onNavigate,
     onSelect,
@@ -159,6 +161,8 @@ export const handleDateViewKeyDown = (params: HandleDateViewKeyDownParams): bool
   } = params;
 
   let newDate: Date | null = null;
+  const currentDayIndex = focusedDate.getDay();
+  const visualColumnIndex = (currentDayIndex - startOfWeekIndex + 7) % 7;
 
   switch (event.key) {
     case 'ArrowUp':
@@ -179,11 +183,11 @@ export const handleDateViewKeyDown = (params: HandleDateViewKeyDownParams): bool
       break;
     case 'Home':
       newDate = new Date(focusedDate);
-      newDate.setDate(focusedDate.getDate() - focusedDate.getDay());
+      newDate.setDate(focusedDate.getDate() - visualColumnIndex);
       break;
     case 'End':
       newDate = new Date(focusedDate);
-      newDate.setDate(focusedDate.getDate() + (6 - focusedDate.getDay()));
+      newDate.setDate(focusedDate.getDate() + (6 - visualColumnIndex));
       break;
     case 'PageUp':
       event.preventDefault();
