@@ -1704,13 +1704,15 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
       className
     );
 
+    const defaultAriaLabel = ariaLabelledBy ? undefined : 'Calendar';
+
     return (
       <div
         {...baseProps}
         ref={this.calendarWrapperRef}
         className={classes}
         data-test="DesignSystem-Calendar-Wrapper"
-        aria-label={ariaLabel}
+        aria-label={ariaLabel || defaultAriaLabel}
         aria-labelledby={ariaLabelledBy}
       >
         {Array.from({ length: monthsInView }, (_x, index) => {

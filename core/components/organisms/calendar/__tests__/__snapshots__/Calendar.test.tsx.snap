@@ -6,6 +6,7 @@ exports[`Calendar component
 <body>
   <div>
     <div
+      aria-label="Calendar"
       class="Calendar-wrapper"
       data-test="DesignSystem-Calendar-Wrapper"
     >
@@ -1284,6 +1285,7 @@ exports[`Calendar component
 <body>
   <div>
     <div
+      aria-label="Calendar"
       class="Calendar-wrapper"
       data-test="DesignSystem-Calendar-Wrapper"
     >
@@ -2563,6 +2565,7 @@ exports[`Calendar component
 <body>
   <div>
     <div
+      aria-label="Calendar"
       class="Calendar-wrapper"
       data-test="DesignSystem-Calendar-Wrapper"
     >
@@ -3842,6 +3845,7 @@ exports[`Calendar component
 <body>
   <div>
     <div
+      aria-label="Calendar"
       class="Calendar-wrapper"
       data-test="DesignSystem-Calendar-Wrapper"
     >
@@ -5122,6 +5126,7 @@ exports[`Calendar component
 <body>
   <div>
     <div
+      aria-label="Calendar"
       class="Calendar-wrapper"
       data-test="DesignSystem-Calendar-Wrapper"
     >
@@ -6400,6 +6405,7 @@ exports[`Calendar component
 <body>
   <div>
     <div
+      aria-label="Calendar"
       class="Calendar-wrapper"
       data-test="DesignSystem-Calendar-Wrapper"
     >
@@ -7678,6 +7684,7 @@ exports[`Calendar component
 <body>
   <div>
     <div
+      aria-label="Calendar"
       class="Calendar-wrapper"
       data-test="DesignSystem-Calendar-Wrapper"
     >
@@ -8956,6 +8963,7 @@ exports[`Calendar component
 <body>
   <div>
     <div
+      aria-label="Calendar"
       class="Calendar-wrapper"
       data-test="DesignSystem-Calendar-Wrapper"
     >
@@ -10234,6 +10242,7 @@ exports[`Calendar component
 <body>
   <div>
     <div
+      aria-label="Calendar"
       class="Calendar-wrapper"
       data-test="DesignSystem-Calendar-Wrapper"
     >
@@ -11512,6 +11521,7 @@ exports[`Calendar component
 <body>
   <div>
     <div
+      aria-label="Calendar"
       class="Calendar-wrapper"
       data-test="DesignSystem-Calendar-Wrapper"
     >
@@ -12790,6 +12800,7 @@ exports[`Calendar component
 <body>
   <div>
     <div
+      aria-label="Calendar"
       class="Calendar-wrapper"
       data-test="DesignSystem-Calendar-Wrapper"
     >
@@ -14068,6 +14079,7 @@ exports[`Calendar component
 <body>
   <div>
     <div
+      aria-label="Calendar"
       class="Calendar-wrapper"
       data-test="DesignSystem-Calendar-Wrapper"
     >
@@ -15346,6 +15358,7 @@ exports[`Calendar component
 <body>
   <div>
     <div
+      aria-label="Calendar"
       class="Calendar-wrapper"
       data-test="DesignSystem-Calendar-Wrapper"
     >
@@ -17341,6 +17354,7 @@ exports[`Calendar component
 <body>
   <div>
     <div
+      aria-label="Calendar"
       class="Calendar-wrapper"
       data-test="DesignSystem-Calendar-Wrapper"
     >
@@ -20413,6 +20427,7 @@ exports[`Calendar component
 <body>
   <div>
     <div
+      aria-label="Calendar"
       class="Calendar-wrapper"
       data-test="DesignSystem-Calendar-Wrapper"
     >
@@ -21691,6 +21706,7 @@ exports[`Calendar component
 <body>
   <div>
     <div
+      aria-label="Calendar"
       class="Calendar-wrapper"
       data-test="DesignSystem-Calendar-Wrapper"
     >
@@ -22079,6 +22095,7 @@ exports[`Calendar component
 <body>
   <div>
     <div
+      aria-label="Calendar"
       class="Calendar-wrapper"
       data-test="DesignSystem-Calendar-Wrapper"
     >
@@ -22460,6 +22477,7 @@ exports[`Calendar component
 <body>
   <div>
     <div
+      aria-label="Calendar"
       class="Calendar-wrapper"
       data-test="DesignSystem-Calendar-Wrapper"
     >
@@ -23738,6 +23756,7 @@ exports[`Calendar component
 <body>
   <div>
     <div
+      aria-label="Calendar"
       class="Calendar-wrapper"
       data-test="DesignSystem-Calendar-Wrapper"
     >
@@ -25733,6 +25752,7 @@ exports[`Calendar component
 <body>
   <div>
     <div
+      aria-label="Calendar"
       class="Calendar-wrapper"
       data-test="DesignSystem-Calendar-Wrapper"
     >
@@ -28805,6 +28825,7 @@ exports[`Calendar component
 <body>
   <div>
     <div
+      aria-label="Calendar"
       class="Calendar-wrapper"
       data-test="DesignSystem-Calendar-Wrapper"
     >
@@ -30083,6 +30104,7 @@ exports[`Calendar component
 <body>
   <div>
     <div
+      aria-label="Calendar"
       class="Calendar-wrapper"
       data-test="DesignSystem-Calendar-Wrapper"
     >
@@ -30471,6 +30493,7 @@ exports[`Calendar component
 <body>
   <div>
     <div
+      aria-label="Calendar"
       class="Calendar-wrapper"
       data-test="DesignSystem-Calendar-Wrapper"
     >
