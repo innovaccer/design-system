@@ -114,6 +114,7 @@ const Option = (props: OptionProps) => {
     [styles['Option--active']]: active,
     [styles['Option--selected']]: selected && !menu,
     [styles['Option--disabled']]: disabled,
+    [styles['Option--interactive']]: !disabled,
     ['OptionWrapper']: true,
     [`color-${color}`]: !!color,
   });
@@ -121,6 +122,7 @@ const Option = (props: OptionProps) => {
   const CheckboxClassName = classNames({
     [styles['Option-checkbox']]: true,
     [styles['Option-checkbox--active']]: active,
+    [styles['Option-checkbox--interactive']]: !disabled,
     [styles['OptionWrapper--disabled']]: disabled,
     ['OptionWrapper']: true,
   });

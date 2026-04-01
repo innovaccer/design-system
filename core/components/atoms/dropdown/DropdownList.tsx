@@ -303,10 +303,6 @@ const DropdownList = (props: OptionsProps) => {
         }, 100);
       }
 
-      // Focus first option when popover opens (when no search input).
-      // rAF is needed because the popover portal isn't in the DOM yet during useEffect.
-      // This is safe from hover race conditions since focusOption uses document.activeElement,
-      // not cursor state.
       if (!enableSearch) {
         requestAnimationFrame(() => {
           focusFirstOption();
@@ -405,6 +401,7 @@ const DropdownList = (props: OptionsProps) => {
     [dropdownStyles['Option-checkbox--active']]: cursor === 0,
     [dropdownStyles['Option-checkboxWrapper']]: true,
     [dropdownStyles['Option-checkbox']]: true,
+    [dropdownStyles['Option-checkbox--interactive']]: true,
     ['OptionWrapper']: true,
   });
 
@@ -697,7 +694,8 @@ const DropdownList = (props: OptionsProps) => {
   };
 
   const focusOption = (direction: string, classes: string) => {
-    const elements = document.querySelectorAll(classes);
+    const container = popoverContentRef.current || document;
+    const elements = container.querySelectorAll(classes);
     if (!elements.length) return;
 
     // Determine current position from actual DOM focus, not cursor state
@@ -747,8 +745,9 @@ const DropdownList = (props: OptionsProps) => {
   };
 
   const focusFirstOption = () => {
+    const container = popoverContentRef.current || document;
     const optionClass = '.OptionWrapper';
-    const elements = document.querySelectorAll(optionClass);
+    const elements = container.querySelectorAll(optionClass);
     if (!elements.length) return;
 
     for (let i = 0; i < elements.length; i++) {
@@ -762,7 +761,8 @@ const DropdownList = (props: OptionsProps) => {
   };
 
   const focusEdgeOption = (position: 'first' | 'last') => {
-    const elements = document.querySelectorAll('.OptionWrapper');
+    const container = popoverContentRef.current || document;
+    const elements = container.querySelectorAll('.OptionWrapper');
     if (!elements.length) return;
 
     if (position === 'first') {

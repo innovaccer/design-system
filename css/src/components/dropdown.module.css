@@ -21,7 +21,7 @@
   background: transparent;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-  height: 36px; /* Matches Select-input height — no spacing token for 36px */
+  height: 36px;
 }
 
 .Dropdown-input,
@@ -95,13 +95,13 @@
   padding-bottom: var(--spacing-15);
 }
 
-.Option:not(.Option--disabled):hover,
-.Option-checkbox:not(.OptionWrapper--disabled):hover {
+.Option--interactive:hover,
+.Option-checkbox--interactive:hover {
   background-color: var(--secondary-lightest);
 }
 
-.Option:not(.Option--disabled):hover:active,
-.Option-checkbox:not(.OptionWrapper--disabled):hover:active {
+.Option--interactive:hover:active,
+.Option-checkbox--interactive:hover:active {
   background-color: var(--secondary-light);
 }
 
@@ -113,7 +113,6 @@
   outline-offset: calc(-1 * var(--border-width-05));
 }
 
-/* Custom `optionRenderer` rows: wrapper is only `.OptionWrapper`, so match built-in focus ring */
 .OptionWrapper:focus,
 .OptionWrapper:focus-visible {
   outline: var(--border-width-05) solid var(--primary-focus);
@@ -134,11 +133,11 @@
   outline-offset: calc(-1 * var(--border-width-05));
 }
 
-.Option--selected:not(.Option--disabled):hover {
+.Option--selected.Option--interactive:hover {
   background-color: var(--primary-lighter);
 }
 
-.Option--selected:not(.Option--disabled):active {
+.Option--selected.Option--interactive:active {
   background-color: var(--primary-lighter);
   color: var(--primary-darker);
 }
