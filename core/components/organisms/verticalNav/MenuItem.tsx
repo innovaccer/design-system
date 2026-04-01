@@ -164,8 +164,6 @@ export const MenuItem = (props: MenuItemProps) => {
     return null;
   };
 
-  if (!expanded && !menu.icon) return null;
-
   const MenuIconFn = React.useCallback(() => MenuIcon({ isChildrenVisible }), [isChildrenVisible]);
 
   const MenuLabelFn = React.useCallback(
@@ -180,6 +178,8 @@ export const MenuItem = (props: MenuItemProps) => {
       menu.count !== undefined ? MenuPills({ disabled: menu.disabled, isActive: isActive, count: menu.count }) : <></>,
     [menu.count, menu.disabled, isActive]
   );
+
+  if (!expanded && !menu.icon) return null;
 
   const customItemProps = {
     ...props,
