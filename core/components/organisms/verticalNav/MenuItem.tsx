@@ -90,29 +90,32 @@ export const MenuItem = (props: MenuItemProps) => {
 
   const [isTextTruncated, setIsTextTruncated] = React.useState(false);
   const { detectTruncation } = Tooltip.useAutoTooltip();
-  const contentRef = React.createRef<HTMLElement>();
+  const contentRef = React.useRef<HTMLElement>(null);
 
   React.useEffect(() => {
     const isTruncated = detectTruncation(contentRef);
     setIsTextTruncated(isTruncated);
-  }, [contentRef]);
+  }, [menu.label, expanded]);
 
-  const MenuLabel = (props: MenuLabelProps) => {
-    const { label, labelColor } = props;
+  const MenuLabel = React.useCallback(
+    (props: MenuLabelProps) => {
+      const { label, labelColor } = props;
 
-    const labelClass = classNames({
-      [styles['MenuItem-Text']]: true,
-      [styles['MenuItem--overflow']]: true,
-      ['mr-5']: !hasSubmenu && menu.count,
-      ['ellipsis--noWrap']: true,
-    });
+      const labelClass = classNames({
+        [styles['MenuItem-Text']]: true,
+        [styles['MenuItem--overflow']]: true,
+        ['mr-5']: !hasSubmenu && menu.count,
+        ['ellipsis--noWrap']: true,
+      });
 
-    return (
-      <Text data-test="DesignSystem-VerticalNav--Text" ref={contentRef} color={labelColor} className={labelClass}>
-        {label}
-      </Text>
-    );
-  };
+      return (
+        <Text data-test="DesignSystem-VerticalNav--Text" ref={contentRef} color={labelColor} className={labelClass}>
+          {label}
+        </Text>
+      );
+    },
+    [hasSubmenu, menu.count]
+  );
 
   const onClickHandler = (ev: { preventDefault: () => void }) => {
     ev.preventDefault();
