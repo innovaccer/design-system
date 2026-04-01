@@ -37,7 +37,7 @@ export const focusListItem = (
     return;
   }
 
-  const listItems = listRef.current?.querySelectorAll('[data-test="DesignSystem-Listbox-ItemWrapper"]');
+  const listItems = listRef.current?.querySelectorAll('[data-test="DesignSystem-AvatarSelection--Option"]');
   let targetOption;
 
   if (position === 'down') {

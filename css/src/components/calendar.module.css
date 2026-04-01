@@ -311,8 +311,6 @@
   width: var(--spacing-80);
 }
 
-
-
 .Calendar-valueWrapper--active-dummy .Calendar-value--startError,
 .Calendar-valueWrapper--active-dummy .Calendar-value--endError {
   background: var(--alert-lightest);
