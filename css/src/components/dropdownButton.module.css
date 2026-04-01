@@ -54,7 +54,7 @@
   color: var(--text);
 }
 
-.DropdownButton:focus {
+.DropdownButton:focus-visible {
   background-color: var(--secondary-light);
 }
 

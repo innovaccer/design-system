@@ -53,6 +53,7 @@ export const InputBox = (props: InputProps) => {
       onKeyDown={onKeyDownHandler}
       onClear={onClearHandler}
       role="combobox"
+      aria-autocomplete="list"
       aria-haspopup="listbox"
       aria-controls={popoverId}
       aria-label={props['aria-label'] || props.placeholder || 'Combobox-Input-Trigger'}

@@ -185,6 +185,7 @@ interface CalendarState {
   focusedDateMonthIndex?: number;
   focusedMonth?: number;
   focusedYearIndex?: number;
+  pendingFocusDate?: Date;
 }
 
 export class Calendar extends React.Component<CalendarProps, CalendarState> {
@@ -223,6 +224,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
       currYear: todayCompleteDate.year,
       view: monthsInView > 1 ? 'date' : view,
       yearBlockNav: getYearBlock(yearNav),
+      pendingFocusDate: undefined,
     };
   }
 
@@ -370,6 +372,52 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
         this.setState({
           monthNav: month,
         });
+      }
+    }
+
+    if (this.state.pendingFocusDate) {
+      // Find the grid containing the pending date and focus it
+      const { pendingFocusDate } = this.state;
+      const { monthsInView } = this.props;
+
+      for (let i = 0; i < monthsInView; i++) {
+        const { year, month } = this.getNavDateInfo(i);
+        if (pendingFocusDate.getFullYear() === year && pendingFocusDate.getMonth() === month) {
+          const pos = this.getDateGridPosition(year, month, pendingFocusDate.getDate());
+          if (pos && this.calendarWrapperRef.current) {
+            const focused = focusDateCell(this.calendarWrapperRef.current, pos.row, pos.col, i);
+            if (focused) {
+              this.setState({
+                pendingFocusDate: undefined,
+                focusedDateRow: pos.row,
+                focusedDateCol: pos.col,
+                focusedDateMonthIndex: i,
+              });
+              return; // Successfully focused
+            }
+          }
+          break;
+        }
+      }
+
+      // Fallback 1: Try to focus the first valid focusable date cell
+      if (this.calendarWrapperRef.current) {
+        const firstFocusableDate = this.calendarWrapperRef.current.querySelector(
+          '[data-calendar-date-cell]:not([aria-disabled="true"]):not([disabled])'
+        ) as HTMLElement | null;
+        if (firstFocusableDate) {
+          firstFocusableDate.focus({ preventScroll: true });
+          this.setState({ pendingFocusDate: undefined });
+        } else {
+          // Fallback 2: Focus calendar header
+          const headerBtn = this.calendarWrapperRef.current.querySelector<HTMLElement>(
+            '[class*="Calendar-headerButton"]:not([disabled]), [class*="Calendar-headerIcon"]:not([disabled])'
+          );
+          if (headerBtn) {
+            headerBtn.focus({ preventScroll: true });
+          }
+          this.setState({ pendingFocusDate: undefined });
+        }
       }
     }
 
@@ -623,6 +671,11 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
       [styles[`Calendar-headerIcon--${type}`]]: type,
     });
 
+    let ariaLabel = '';
+    if (view === 'date') ariaLabel = type === 'prev' ? 'Previous month' : 'Next month';
+    else if (view === 'month') ariaLabel = type === 'prev' ? 'Previous year' : 'Next year';
+    else if (view === 'year') ariaLabel = type === 'prev' ? 'Previous year block' : 'Next year block';
+
     return (
       <Button
         type="button"
@@ -632,6 +685,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
         disabled={disabled}
         size={size === 'small' ? 'tiny' : 'regular'}
         onClick={this.onNavIconClickHandler(type)}
+        aria-label={ariaLabel}
       />
     );
   };
@@ -762,7 +816,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     const effectiveFocusedYearIndex = targetIndex;
 
     return Array.from({ length: noOfRows }, (_y, row) => (
-      <div key={row} className={styles['Calendar-valueRow']}>
+      <div key={row} role="row" className={styles['Calendar-valueRow']}>
         {Array.from({ length: yearsInRow }, (_x, col) => {
           const offset = yearsInRow * row + col;
           if (offset === yearBlockNav) return undefined;
@@ -773,6 +827,11 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
           const isCurrentYear = () => {
             return year === currYear;
           };
+
+          const wrapperClass = classNames({
+            [styles['Calendar-yearValueWrapper']]: true,
+            [styles['Calendar-valueWrapper--disabled']]: disabled,
+          });
 
           const valueClass = classNames({
             [styles['Calendar-value']]: true,
@@ -791,42 +850,42 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
           const getTextColor = classNames({
             inverse: !active && !isCurrentYear() && !disabled,
             white: active,
-            'primary-lighter': isCurrentYear() && disabled,
             'primary-dark': isCurrentYear(),
-            'inverse-lightest': disabled,
           }) as TextColor;
 
-          const getTextAppearance = (): 'default' | 'disabled' => (disabled ? 'disabled' : 'default');
+          const getTextAppearance = (): 'default' | 'subtle' => (disabled ? 'subtle' : 'default');
 
           const isFocused = effectiveFocusedYearIndex === offset;
 
           return (
-            <button
-              key={`${row}-${col}`}
-              type="button"
-              data-test="DesignSystem-Calendar--yearValue"
-              data-calendar-year-cell
-              data-year-index={offset}
-              className={valueClass}
-              tabIndex={isFocused ? 0 : -1}
-              aria-label={year.toString()}
-              aria-disabled={disabled}
-              disabled={disabled}
-              onClick={this.selectYear(year)}
-              onKeyDown={(ev) => this.handleYearCellKeyDown(ev, year, offset, disabled)}
-              onFocus={() => this.setState({ focusedYearIndex: offset })}
-              onMouseOver={this.yearMouseOverHandler.bind(this, year, isCurrentYear(), disabled)}
-            >
-              <Text
-                size={size === 'small' ? 'small' : 'regular'}
-                color={getTextAppearance() === 'default' ? getTextColor : undefined}
-                appearance={getTextAppearance()}
-                className={textClass}
-                weight={active ? 'strong' : undefined}
+            <div key={`${row}-${col}`} className={wrapperClass}>
+              <button
+                type="button"
+                role="gridcell"
+                data-test="DesignSystem-Calendar--yearValue"
+                data-calendar-year-cell
+                data-year-index={offset}
+                className={valueClass}
+                tabIndex={isFocused ? 0 : -1}
+                aria-label={year.toString()}
+                aria-disabled={disabled}
+                aria-selected={active}
+                onClick={this.selectYear(year)}
+                onKeyDown={(ev) => this.handleYearCellKeyDown(ev, year, offset, disabled)}
+                onFocus={() => this.setState({ focusedYearIndex: offset })}
+                onMouseOver={this.yearMouseOverHandler.bind(this, year, isCurrentYear(), disabled)}
               >
-                {year}
-              </Text>
-            </button>
+                <Text
+                  size={size === 'small' ? 'small' : 'regular'}
+                  color={getTextAppearance() === 'default' || isCurrentYear() ? getTextColor : undefined}
+                  appearance={getTextAppearance()}
+                  className={textClass}
+                  weight={active ? 'strong' : undefined}
+                >
+                  {year}
+                </Text>
+              </button>
+            </div>
           );
         })}
       </div>
@@ -865,7 +924,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     const effectiveFocusedMonth = targetMonth;
 
     return Array.from({ length: noOfRows }, (_y, row) => (
-      <div key={row} className={styles['Calendar-valueRow']}>
+      <div key={row} role="row" className={styles['Calendar-valueRow']}>
         {Array.from({ length: monthsInRow }, (_x, col) => {
           const month = monthsInRow * row + col;
           const disabled =
@@ -874,6 +933,11 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
           const isCurrentMonth = () => {
             return currYear === yearNav && currMonth === month;
           };
+          const wrapperClass = classNames({
+            [styles['Calendar-monthValueWrapper']]: true,
+            [styles['Calendar-valueWrapper--disabled']]: disabled,
+          });
+
           const valueClass = classNames({
             [styles['Calendar-value']]: true,
             [styles['Calendar-value--active']]: active,
@@ -886,12 +950,10 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
           const getTextColor = classNames({
             inverse: !active && !isCurrentMonth() && !disabled,
             white: active,
-            'primary-lighter': isCurrentMonth() && disabled,
             'primary-dark': isCurrentMonth(),
-            'inverse-lightest': disabled,
           }) as TextColor;
 
-          const getTextAppearance = (): 'default' | 'disabled' => (disabled ? 'disabled' : 'default');
+          const getTextAppearance = (): 'default' | 'subtle' => (disabled ? 'subtle' : 'default');
 
           const textClass = classNames({
             [styles['Calendar-value--currDate']]: isCurrentMonth() && !active,
@@ -901,32 +963,34 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
           const isFocused = effectiveFocusedMonth === month;
 
           return (
-            <button
-              key={`${row}-${col}`}
-              type="button"
-              data-test="DesignSystem-Calendar--monthValue"
-              data-calendar-month-cell
-              data-month={month}
-              className={valueClass}
-              tabIndex={isFocused ? 0 : -1}
-              aria-label={months[month]}
-              aria-disabled={disabled}
-              disabled={disabled}
-              onClick={this.selectMonth(month)}
-              onKeyDown={(ev) => this.handleMonthCellKeyDown(ev, month, disabled)}
-              onFocus={() => this.setState({ focusedMonth: month })}
-              onMouseOver={this.monthMouseOverHandler.bind(this, month, isCurrentMonth(), disabled)}
-            >
-              <Text
-                size={size === 'small' ? 'small' : 'regular'}
-                color={getTextAppearance() === 'default' ? getTextColor : undefined}
-                appearance={getTextAppearance()}
-                className={textClass}
-                weight={active ? 'strong' : undefined}
+            <div key={`${row}-${col}`} className={wrapperClass}>
+              <button
+                type="button"
+                role="gridcell"
+                data-test="DesignSystem-Calendar--monthValue"
+                data-calendar-month-cell
+                data-month={month}
+                className={valueClass}
+                tabIndex={isFocused ? 0 : -1}
+                aria-label={months[month]}
+                aria-disabled={disabled}
+                aria-selected={active}
+                onClick={this.selectMonth(month)}
+                onKeyDown={(ev) => this.handleMonthCellKeyDown(ev, month, disabled)}
+                onFocus={() => this.setState({ focusedMonth: month })}
+                onMouseOver={this.monthMouseOverHandler.bind(this, month, isCurrentMonth(), disabled)}
               >
-                {months[month]}
-              </Text>
-            </button>
+                <Text
+                  size={size === 'small' ? 'small' : 'regular'}
+                  color={getTextAppearance() === 'default' || isCurrentMonth() ? getTextColor : undefined}
+                  appearance={getTextAppearance()}
+                  className={textClass}
+                  weight={active ? 'strong' : undefined}
+                >
+                  {months[month]}
+                </Text>
+              </button>
+            </div>
           );
         })}
       </div>
@@ -948,7 +1012,16 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
       if (event.key === 'Enter' || event.key === ' ' || event.key === 'Spacebar') {
         event.preventDefault();
       }
-      return;
+      if (
+        event.key !== 'ArrowUp' &&
+        event.key !== 'ArrowDown' &&
+        event.key !== 'ArrowLeft' &&
+        event.key !== 'ArrowRight' &&
+        event.key !== 'Home' &&
+        event.key !== 'End'
+      ) {
+        return;
+      }
     }
 
     const container = this.calendarWrapperRef.current;
@@ -960,6 +1033,12 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
       event,
       container,
       focusedMonth,
+      isMonthDisabled: (m: number) => {
+        return (
+          compareDate(this.props.disabledBefore, 'more', this.state.yearNav, m) ||
+          compareDate(this.props.disabledAfter, 'less', this.state.yearNav, m)
+        );
+      },
       onNavigate: (newMonth: number) => {
         const didFocus = focusMonthCell(container, newMonth);
         if (didFocus) {
@@ -981,7 +1060,18 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
       if (event.key === 'Enter' || event.key === ' ' || event.key === 'Spacebar') {
         event.preventDefault();
       }
-      return;
+      if (
+        event.key !== 'ArrowUp' &&
+        event.key !== 'ArrowDown' &&
+        event.key !== 'ArrowLeft' &&
+        event.key !== 'ArrowRight' &&
+        event.key !== 'Home' &&
+        event.key !== 'End' &&
+        event.key !== 'PageUp' &&
+        event.key !== 'PageDown'
+      ) {
+        return;
+      }
     }
 
     const container = this.calendarWrapperRef.current;
@@ -995,6 +1085,9 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
       container,
       focusedYearIndex,
       yearBlockStart: yearBlockNav,
+      isYearDisabled: (y: number) => {
+        return compareDate(this.props.disabledBefore, 'more', y) || compareDate(this.props.disabledAfter, 'less', y);
+      },
       onNavigate: (newYearIndex: number) => {
         const didFocus = focusYearCell(container, newYearIndex);
         if (didFocus) {
@@ -1030,21 +1123,73 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     const container = this.calendarWrapperRef.current;
     if (!container) return;
 
+    const { year: yearNavVal, month: monthNavVal } = this.getNavDateInfo(index);
+    const displayDate = date <= 0 ? prevMonthDayRange + date : date > dayRange ? date - dayRange : date;
+    const focusedDate =
+      this.calculateDate(index, date, prevMonthDayRange, dayRange, true) ||
+      this.getDateValue(yearNavVal, monthNavVal, displayDate) ||
+      new Date();
+
     const handled = handleDateViewKeyDown({
       event: ev,
       container,
-      focusedRow: row,
-      focusedCol: col,
-      totalRows: noOfRows,
-      monthIndex: index,
-      onNavigate: (r, c) => {
-        const didFocus = focusDateCell(container, r, c, index);
-        if (didFocus) {
-          this.setState({
-            focusedDateRow: r,
-            focusedDateCol: c,
-            focusedDateMonthIndex: index,
-          });
+      focusedDate,
+      isDateDisabled: (d: Date) => {
+        return (
+          compareDate(this.props.disabledBefore, 'more', d.getFullYear(), d.getMonth(), d.getDate()) ||
+          compareDate(this.props.disabledAfter, 'less', d.getFullYear(), d.getMonth(), d.getDate())
+        );
+      },
+      onNavigate: (newDate: Date) => {
+        // Here we need to check if newDate falls out of bounds of current view
+        const { yearNav, monthNav } = this.state;
+        const { monthsInView } = this.props;
+
+        const isVisible = (target: Date) => {
+          for (let i = 0; i < monthsInView; i++) {
+            const { year, month } = this.getNavDateInfo(i);
+            if (target.getFullYear() === year && target.getMonth() === month) {
+              return { visible: true, monthIndex: i };
+            }
+          }
+          return { visible: false };
+        };
+
+        const targetVisibility = isVisible(newDate);
+
+        if (targetVisibility.visible) {
+          // Date is in view, we can just jump focus to it directly
+          const pos = this.getDateGridPosition(newDate.getFullYear(), newDate.getMonth(), newDate.getDate());
+          if (pos) {
+            const didFocus = focusDateCell(container, pos.row, pos.col, targetVisibility.monthIndex);
+            if (didFocus) {
+              this.setState({
+                focusedDateRow: pos.row,
+                focusedDateCol: pos.col,
+                focusedDateMonthIndex: targetVisibility.monthIndex,
+              });
+            }
+          }
+        } else {
+          // Date is NOT in view. We need to shift the view.
+          // For now, let's just trigger a month nav forward/back based on the direction.
+          const currentVisibleStart = this.getDateValue(yearNav, monthNav, 1)!;
+
+          if (newDate < currentVisibleStart) {
+            // Need to navigate backward
+            this.setState({
+              monthNav: (config.monthBlock + monthNav - 1) % config.monthBlock,
+              yearNav: monthNav === 0 ? yearNav - 1 : yearNav,
+              pendingFocusDate: newDate,
+            });
+          } else {
+            // Need to navigate forward
+            this.setState({
+              monthNav: (monthNav + 1) % config.monthBlock,
+              yearNav: monthNav === config.monthBlock - 1 ? yearNav + 1 : yearNav,
+              pendingFocusDate: newDate,
+            });
+          }
         }
       },
       onSelect: () => {
@@ -1084,7 +1229,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
 
     return (
       <>
-        <div className={styles['Calendar-dayValues']}>
+        <div className={styles['Calendar-dayValues']} role="row">
           {Array.from({ length: 7 }, (_x, day) => {
             const valueClass = classNames({
               [styles['Calendar-valueWrapper']]: true,
@@ -1092,13 +1237,15 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             const dayValue = (day + daysInRow + getIndexOfDay(firstDayOfWeek)) % daysInRow;
 
             return (
-              <Text key={day} className={valueClass} appearance="default" weight="strong" size={textSize}>
-                {days[size][dayValue]}
-              </Text>
+              <div key={day} role="columnheader" className={valueClass}>
+                <Text appearance="default" weight="strong" size={textSize}>
+                  {days[size][dayValue]}
+                </Text>
+              </div>
             );
           })}
         </div>
-        <div className={styles['Calendar-dateValues']} onMouseLeave={this.onDateRowMouseLeaveHandler}>
+        <div className={styles['Calendar-dateValues']} role="rowgroup" onMouseLeave={this.onDateRowMouseLeaveHandler}>
           {this.renderDateValues(index)}
         </div>
       </>
@@ -1275,7 +1422,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
 
     return Array.from({ length: noOfRows }, (_y, row) => {
       return (
-        <div key={row} className={styles['Calendar-valueRow']}>
+        <div key={row} role="row" className={styles['Calendar-valueRow']}>
           {Array.from({ length: daysInRow }, (_x, colIndex) => {
             const date = daysInRow * row + colIndex - dummyDays + 1;
             const dummy = date <= 0 || date > dayRange;
@@ -1422,8 +1569,8 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
               'primary-dark': today(),
             }) as TextColor;
 
-            const getTextAppearance = (): 'default' | 'subtle' | 'disabled' =>
-              disabled ? 'disabled' : active || activeDate ? 'default' : dummy ? 'subtle' : 'default';
+            const getTextAppearance = (): 'default' | 'subtle' =>
+              disabled ? 'subtle' : active || activeDate ? 'default' : dummy ? 'subtle' : 'default';
 
             const displayDate = !dummy ? date : date <= 0 ? prevMonthDayRange + date : date - dayRange;
             const fullDate =
@@ -1436,6 +1583,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
               <>
                 <button
                   type="button"
+                  role="gridcell"
                   data-calendar-date-cell
                   data-row={row}
                   data-col={colIndex}
@@ -1444,7 +1592,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                   tabIndex={isFocused ? 0 : -1}
                   aria-label={formatDateAriaLabel(fullDate)}
                   aria-disabled={disabled}
-                  disabled={disabled}
+                  aria-selected={Boolean(active || activeDate)}
                   onClick={onClickHandler(date)}
                   onKeyDown={(ev) =>
                     this.handleDateCellKeyDown(
@@ -1473,7 +1621,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                   onMouseEnter={onMouseEnterHandler.bind(this, date, today(), disabled)}
                 >
                   <Text
-                    color={getTextAppearance() === 'default' ? getTextColor : undefined}
+                    color={getTextAppearance() === 'default' || today() ? getTextColor : undefined}
                     appearance={getTextAppearance()}
                     size={size === 'small' ? 'small' : 'regular'}
                     weight={active || activeDate ? 'strong' : undefined}
@@ -1536,7 +1684,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
           {this.renderHeaderContent(index)}
           {index === monthsInView - 1 && this.renderJumpButton('next')}
         </div>
-        <div className={bodyClass}>
+        <div className={bodyClass} role="grid">
           {view === 'year' && this.renderBodyYear()}
           {view === 'month' && this.renderBodyMonth()}
           {view === 'date' && this.renderBodyDate(index)}
@@ -1556,13 +1704,15 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
       className
     );
 
+    const defaultAriaLabel = ariaLabelledBy ? undefined : 'Calendar';
+
     return (
       <div
         {...baseProps}
         ref={this.calendarWrapperRef}
         className={classes}
         data-test="DesignSystem-Calendar-Wrapper"
-        aria-label={ariaLabel}
+        aria-label={ariaLabel || defaultAriaLabel}
         aria-labelledby={ariaLabelledBy}
       >
         {Array.from({ length: monthsInView }, (_x, index) => {

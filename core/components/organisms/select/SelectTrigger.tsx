@@ -1,3 +1,5 @@
+/* jsx-a11y omits aria-invalid on <button>; we set it on the listbox trigger for aria-errormessage pairing */
+/* eslint-disable jsx-a11y/role-supports-aria-props */
 import * as React from 'react';
 import classNames from 'classnames';
 import { Icon, Text, Tooltip } from '@/index';
@@ -17,6 +19,18 @@ export interface SelectTriggerProps extends BaseProps {
    * @default "Select trigger"
    */
   'aria-label'?: string;
+  /**
+   * Ids of supplementary description or help text (space-separated).
+   */
+  'aria-describedby'?: string;
+  /**
+   * Id of the element that describes the validation error for this control.
+   */
+  'aria-errormessage'?: string;
+  /**
+   * Invalid state for assistive tech; when context `error` is true this becomes `true` automatically.
+   */
+  'aria-invalid'?: boolean | 'true' | 'false' | 'grammar' | 'spelling';
   /**
    * Specifies the size of the Select trigger button.
    * @default "regular"
@@ -83,6 +97,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
     setLabel,
     minWidth,
     maxWidth,
+    'aria-invalid': ariaInvalid,
     ...rest
   } = props;
 
@@ -124,6 +139,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
     if (onClear) {
       onClear(event);
     }
+    triggerRef?.current?.focus({ preventScroll: true });
   };
 
   const buttonClass = classNames({
@@ -173,6 +189,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
         aria-haspopup="listbox"
         aria-expanded={openPopover}
         aria-label={ariaLabel}
+        aria-invalid={error === true ? true : ariaInvalid}
         data-test="DesignSystem-Select-trigger"
         {...rest}
       >
@@ -200,16 +217,16 @@ const SelectTrigger = (props: SelectTriggerProps) => {
           </div>
         }
         {isOptionSelected && withClearButton && (
-          <Icon
-            appearance={buttonDisabled}
-            onClick={onClearHandler}
+          <button
+            type="button"
             className={iconClass}
-            size={12}
-            name="close"
+            onClick={onClearHandler}
+            onKeyDown={(e) => e.stopPropagation()}
             aria-label="clear selected"
-            type={iconType}
             data-test="DesignSystem-Select--closeIcon"
-          />
+          >
+            <Icon appearance={buttonDisabled} size={12} name="close" type={iconType} aria-hidden={true} />
+          </button>
         )}
 
         <Icon appearance={buttonDisabled} name={iconName} type={iconType} />
@@ -217,6 +234,8 @@ const SelectTrigger = (props: SelectTriggerProps) => {
     </Tooltip>
   );
 };
+
+/* eslint-enable jsx-a11y/role-supports-aria-props */
 
 SelectTrigger.defaultProps = {
   triggerSize: 'regular',
