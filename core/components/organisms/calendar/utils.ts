@@ -210,6 +210,7 @@ export const handleDateViewKeyDown = (params: HandleDateViewKeyDownParams): bool
     case 'Spacebar':
       event.preventDefault();
       if (event.repeat) return true;
+      if (isDateDisabled && isDateDisabled(focusedDate)) return true;
       onSelect();
       return true;
     case 'Escape':
