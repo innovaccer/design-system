@@ -1,22 +1,18 @@
 import path from 'path';
 import fs from 'fs';
-import mkdirp from 'mkdirp';
 import { createFilePath } from 'gatsby-source-filesystem';
-import { compileMDXWithCustomOptions } from "gatsby-plugin-mdx";
-import remarkHeadingsPlugin from "./remark-headings-plugin.mjs";
+import { compileMDXWithCustomOptions } from 'gatsby-plugin-mdx';
+import remarkHeadingsPlugin from './remark-headings-plugin.mjs';
 
 export const onPreBootstrap = async ({ store, reporter }) => {
   const { program } = store.getState();
 
-  const dirs = [
-    path.join(program.directory, 'src/images'),
-    path.join(program.directory, 'src/data'),
-  ];
+  const dirs = [path.join(program.directory, 'src/images'), path.join(program.directory, 'src/data')];
 
   dirs.forEach((dir) => {
     if (!fs.existsSync(dir)) {
       reporter.log(`creating the ${dir} directory`);
-      mkdirp.sync(dir);
+      fs.mkdirSync(dir, { recursive: true });
     }
   });
 
@@ -54,10 +50,7 @@ export const onCreateNode = ({ node, actions, getNode }) => {
 // We need to provide the actual file that created a specific page to append links for EditLink.
 // We can't do page queries from MDX templates, so we'll add the page's relative path to context after it's created.
 // The context object **is** supplied to MDX templates through the pageContext prop.
-export const onCreatePage = (
-  { page, actions, getNodesByType, ...rest },
-  pluginOptions
-) => {
+export const onCreatePage = ({ page, actions, getNodesByType, ...rest }, pluginOptions) => {
   // Don't override if it's already been provided
   if (!page.context.MdxNode) {
     // Find the MdxNode that created our page
@@ -70,9 +63,7 @@ export const onCreatePage = (
 
     const { titleType = 'page' } = pluginOptions;
     const { createPage, deletePage } = actions;
-    const [relativePagePath] = page.componentPath
-      .split('src/pages')
-      .splice('-1');
+    const [relativePagePath] = page.componentPath.split('src/pages').splice('-1');
 
     // Inject titles and descriptions for pages that don't include them
     if (!frontmatter.title) {
@@ -107,8 +98,17 @@ export const onCreatePage = (
   }
 };
 
-export const createSchemaCustomization = async ({ getNode, getNodesByType, pathPrefix, reporter, cache, actions, schema, store }) => {
-  const { createTypes } = actions
+export const createSchemaCustomization = async ({
+  getNode,
+  getNodesByType,
+  pathPrefix,
+  reporter,
+  cache,
+  actions,
+  schema,
+  store,
+}) => {
+  const { createTypes } = actions;
 
   const headingsResolver = schema.buildObjectType({
     name: `Mdx`,
@@ -116,10 +116,10 @@ export const createSchemaCustomization = async ({ getNode, getNodesByType, pathP
       headings: {
         type: `[MdxHeading]`,
         async resolve(mdxNode) {
-          const fileNode = getNode(mdxNode.parent)
+          const fileNode = getNode(mdxNode.parent);
 
           if (!fileNode) {
-            return null
+            return null;
           }
 
           const result = await compileMDXWithCustomOptions(
@@ -141,17 +141,17 @@ export const createSchemaCustomization = async ({ getNode, getNodesByType, pathP
               cache,
               store,
             }
-          )
+          );
 
           if (!result) {
-            return null
+            return null;
           }
 
-          return result.metadata.headings
-        }
-      }
-    }
-  })
+          return result.metadata.headings;
+        },
+      },
+    },
+  });
 
   createTypes([
     `
@@ -161,5 +161,5 @@ export const createSchemaCustomization = async ({ getNode, getNodesByType, pathP
       }
     `,
     headingsResolver,
-  ])
-}
+  ]);
+};

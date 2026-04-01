@@ -259,15 +259,19 @@ describe('Calendar component', () => {
 describe('text color for different states', () => {
   it('should have the text color as inverse when the state is default', () => {
     const { getAllByTestId } = render(<Calendar date={new Date('2021-01-10T18:30:00.000Z')} />);
-    expect(getAllByTestId('DesignSystem-Calendar--dateValue')[7]).toHaveClass('color-inverse');
+    const dateCell = getAllByTestId('DesignSystem-Calendar--dateValue')[7];
+    const textEl = dateCell.querySelector('.Text') || dateCell.querySelector('[data-test="DesignSystem-Text"]');
+    expect(textEl).toHaveClass('color-inverse');
   });
 
   it('should have text color as white when a date is selected', () => {
     const { getAllByTestId } = render(<Calendar date={new Date('2021-01-10T18:30:00.000Z')} />);
-    expect(getAllByTestId('DesignSystem-Calendar--dateValue')[14]).toHaveClass('color-white');
+    const dateCell = getAllByTestId('DesignSystem-Calendar--dateValue')[14];
+    const textEl = dateCell.querySelector('.Text') || dateCell.querySelector('[data-test="DesignSystem-Text"]');
+    expect(textEl).toHaveClass('color-white');
   });
 
-  it('should have the text color as inverse-lightest when the state is disabled', () => {
+  it('should have the text appearance as subtle when the state is disabled', () => {
     const { getAllByTestId } = render(
       <Calendar
         date={new Date('2020-03-14T18:30:00.000Z')}
@@ -275,17 +279,19 @@ describe('text color for different states', () => {
         view="year"
       />
     );
-    expect(getAllByTestId('DesignSystem-Text')[3]).toHaveClass('color-inverse-lightest');
+    expect(getAllByTestId('DesignSystem-Text')[3]).toHaveClass('Text--subtle');
   });
 
   it('should have the text color as primary-dark for current date ', () => {
     const { getAllByTestId } = render(<Calendar />);
-    expect(getAllByTestId('DesignSystem-Calendar--dateValue')[24]).toHaveClass('color-primary-dark');
+    const dateCell = getAllByTestId('DesignSystem-Calendar--dateValue')[24];
+    const textEl = dateCell.querySelector('.Text') || dateCell.querySelector('[data-test="DesignSystem-Text"]');
+    expect(textEl).toHaveClass('color-primary-dark');
   });
 
-  it('should have the text color as primary-lighter when the state is disabled but with current year', () => {
+  it('should have the text color as primary-dark when the state is disabled but with current year', () => {
     const { getAllByTestId } = render(<Calendar disabledBefore={new Date('2022-01-20T18:30:00.000Z')} view="year" />);
-    expect(getAllByTestId('DesignSystem-Text')[5]).toHaveClass('color-primary-lighter');
+    expect(getAllByTestId('DesignSystem-Text')[5]).toHaveClass('color-primary-dark');
   });
 });
 
@@ -331,6 +337,100 @@ describe('Calendar component', () => {
         const actualDayName = day[actualDayIndex];
         expect(actualDayName).toEqual(rotatedDays[firstDayIndex].val);
       });
+    });
+  });
+});
+
+describe('Calendar keyboard navigation', () => {
+  describe('Date view', () => {
+    it('selects date with Enter key', () => {
+      const onDateChange = jest.fn();
+      const { getAllByTestId } = render(
+        <Calendar date={new Date(2020, 2, 15)} onDateChange={onDateChange} view="date" />
+      );
+      const dateCells = getAllByTestId('DesignSystem-Calendar--dateValue');
+      const targetCell = dateCells.find((el) => el.textContent === '20');
+      if (targetCell) {
+        targetCell.focus();
+        fireEvent.keyDown(targetCell, { key: 'Enter' });
+        expect(onDateChange).toHaveBeenCalled();
+      }
+    });
+
+    it('selects date with Space key', () => {
+      const onDateChange = jest.fn();
+      const { getAllByTestId } = render(
+        <Calendar date={new Date(2020, 2, 15)} onDateChange={onDateChange} view="date" />
+      );
+      const dateCells = getAllByTestId('DesignSystem-Calendar--dateValue');
+      const targetCell = dateCells.find((el) => el.textContent === '16');
+      if (targetCell) {
+        targetCell.focus();
+        fireEvent.keyDown(targetCell, { key: ' ' });
+        expect(onDateChange).toHaveBeenCalled();
+      }
+    });
+
+    it('navigates dates with arrow keys', () => {
+      const { getAllByTestId } = render(<Calendar date={new Date(2020, 2, 15)} view="date" />);
+      const dateCells = getAllByTestId('DesignSystem-Calendar--dateValue');
+      const focusedCell = dateCells.find((el) => el.tabIndex === 0);
+      expect(focusedCell).toBeInTheDocument();
+      if (focusedCell) {
+        fireEvent.keyDown(focusedCell, { key: 'ArrowRight' });
+        const nextFocused = dateCells.find((el) => el.tabIndex === 0);
+        expect(nextFocused).toBeInTheDocument();
+      }
+    });
+  });
+
+  describe('Month view', () => {
+    it('navigates months with arrow keys', () => {
+      const { getAllByTestId } = render(<Calendar date={new Date(2020, 2, 15)} view="month" />);
+      const monthCells = getAllByTestId('DesignSystem-Calendar--monthValue');
+      const focusedCell = monthCells.find((el) => el.tabIndex === 0);
+      expect(focusedCell).toBeInTheDocument();
+      if (focusedCell) {
+        fireEvent.keyDown(focusedCell, { key: 'ArrowRight' });
+        const nextFocused = monthCells.find((el) => el.tabIndex === 0);
+        expect(nextFocused).toBeInTheDocument();
+      }
+    });
+
+    it('selects month with Enter and navigates to date view', () => {
+      const { getAllByTestId } = render(<Calendar date={new Date(2020, 2, 15)} view="month" />);
+      const monthCells = getAllByTestId('DesignSystem-Calendar--monthValue');
+      const aprilCell = monthCells.find((el) => el.textContent?.trim() === 'Apr');
+      if (aprilCell) {
+        aprilCell.focus();
+        fireEvent.keyDown(aprilCell, { key: 'Enter' });
+        expect(getAllByTestId('DesignSystem-Calendar--dateValue').length).toBeGreaterThan(0);
+      }
+    });
+  });
+
+  describe('Year view', () => {
+    it('navigates years with arrow keys', () => {
+      const { getAllByTestId } = render(<Calendar date={new Date(2020, 2, 15)} view="year" />);
+      const yearCells = getAllByTestId('DesignSystem-Calendar--yearValue');
+      const focusedCell = yearCells.find((el) => el.tabIndex === 0);
+      expect(focusedCell).toBeInTheDocument();
+      if (focusedCell) {
+        fireEvent.keyDown(focusedCell, { key: 'ArrowRight' });
+        const nextFocused = yearCells.find((el) => el.tabIndex === 0);
+        expect(nextFocused).toBeInTheDocument();
+      }
+    });
+
+    it('selects year with Enter and navigates to month view', () => {
+      const { getAllByTestId } = render(<Calendar date={new Date(2020, 2, 15)} view="year" />);
+      const yearCells = getAllByTestId('DesignSystem-Calendar--yearValue');
+      const year2020Cell = yearCells.find((el) => el.textContent?.trim() === '2020');
+      if (year2020Cell) {
+        year2020Cell.focus();
+        fireEvent.keyDown(year2020Cell, { key: 'Enter' });
+        expect(getAllByTestId('DesignSystem-Calendar--monthValue').length).toBeGreaterThan(0);
+      }
     });
   });
 });

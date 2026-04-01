@@ -13,6 +13,7 @@ import {
   closeOnEscapeKeypress,
   getFocusableElements,
   handleFocusTrapKeyDown,
+  restoreFocusToElementIfConnected,
 } from '@/utils/overlayHelper';
 import OverlayManager from '@/utils/OverlayManager';
 import { FooterOptions } from '@/common.type';
@@ -178,7 +179,9 @@ class Modal extends React.Component<ModalProps, ModalState> {
   };
 
   activateFocusTrap = () => {
-    this.previousActiveElement = document.activeElement as HTMLElement | null;
+    if (!this.previousActiveElement || !this.modalRef.current?.contains(document.activeElement)) {
+      this.previousActiveElement = document.activeElement as HTMLElement | null;
+    }
     const container = this.modalContentRef.current;
     if (!container) return;
 
@@ -209,9 +212,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
     const elementToFocus = this.previousActiveElement;
     this.previousActiveElement = null;
 
-    if (elementToFocus?.focus && OverlayManager.isTopOverlay(this.modalRef.current)) {
-      window.requestAnimationFrame(() => elementToFocus.focus({ preventScroll: true }));
-    }
+    restoreFocusToElementIfConnected(elementToFocus);
   };
 
   componentDidMount() {
@@ -406,6 +407,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
                   <Button
                     icon="close"
                     appearance="transparent"
+                    aria-label="Close"
                     data-test="DesignSystem-Modal--CloseButton"
                     onClick={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
                       if (onClose) onClose(event, 'IconClick');

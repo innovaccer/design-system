@@ -25,10 +25,16 @@ const AvatarOptionItem = (props: AvatarOptionItemProps) => {
 
   return (
     <Listbox.Item disabled={disabled} className={itemClassName} tagName="li" data-test="DesignSystem-AvatarGroup--Item">
-      <Avatar {...avatarData} withTooltip={false}>
+      <Avatar {...avatarData} withTooltip={false} aria-hidden={true}>
         {image || icon}
       </Avatar>
-      <Tooltip showOnTruncation={true} tooltip={name} elementRef={elementRef} triggerClass={triggerClassName}>
+      <Tooltip
+        showOnTruncation={true}
+        tooltip={name}
+        elementRef={elementRef}
+        triggerClass={triggerClassName}
+        position="right"
+      >
         <Text ref={elementRef} data-test="DesignSystem-AvatarGroup--Text" className="ellipsis--noWrap ml-4">
           {name}
         </Text>

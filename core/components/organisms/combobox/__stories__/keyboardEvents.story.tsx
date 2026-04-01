@@ -96,8 +96,11 @@ export const KeyboardEvents = () => {
 
   return (
     <div className="w-50">
-      <Label withInput={true}>Drug Name</Label>
+      <Label withInput={true} id="drug-name-label">
+        Drug Name
+      </Label>
       <Combobox
+        aria-labelledby="drug-name-label"
         multiSelect={false}
         onKeyDown={(ev) => console.log('onKeyDown :: ', ev)}
         onKeyUp={(ev) => console.log('onKeyUp :: ', ev)}
@@ -201,8 +204,9 @@ const customCode = `() => {
 
   return (
     <div className="w-50">
-      <Label withInput={true}>Drug Name</Label>
+      <Label withInput={true} id="drug-name-label">Drug Name</Label>
       <Combobox
+        aria-labelledby="drug-name-label"
         multiSelect={false}
         onKeyDown={(ev) => console.log('onKeyDown :: ', ev)}
         onKeyUp={(ev) => console.log('onKeyUp :: ', ev)}

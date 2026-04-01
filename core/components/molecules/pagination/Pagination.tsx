@@ -129,6 +129,7 @@ export const Pagination = (props: PaginationProps) => {
           disabled={page <= 1}
           appearance="transparent"
           icon="first_page"
+          aria-label="First page"
           className={styles['Pagination-button']}
           data-test="DesignSystem-Pagination--FirstButton"
         />
@@ -136,6 +137,7 @@ export const Pagination = (props: PaginationProps) => {
           onClick={() => onClickHandler('prev')}
           disabled={page <= 1}
           icon="navigate_before"
+          aria-label="Previous page"
           data-test="DesignSystem-Pagination--PrevButton"
           className={`ml-4 mr-3 ${styles['Pagination-button']}`}
         />
@@ -158,6 +160,7 @@ export const Pagination = (props: PaginationProps) => {
           onClick={() => onClickHandler('next')}
           disabled={page >= totalPages}
           icon="navigate_next"
+          aria-label="Next page"
           data-test="DesignSystem-Pagination--NextButton"
           className={`ml-3 mr-4 ${styles['Pagination-button']}`}
         />
@@ -166,6 +169,7 @@ export const Pagination = (props: PaginationProps) => {
           disabled={page >= totalPages}
           appearance="transparent"
           icon="last_page"
+          aria-label="Last page"
           className={styles['Pagination-button']}
           data-test="DesignSystem-Pagination--LastButton"
         />

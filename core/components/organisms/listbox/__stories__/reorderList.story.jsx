@@ -63,11 +63,12 @@ export const reorderList = () => {
         className="Listbox-wrapper overflow-auto"
       >
         {dataList.map((record, key) => {
+          const labelId = `reorder-list-item-${key}`;
           return (
             <Listbox.Item key={key + 1} id={key + 1}>
               <div className="d-flex align-items-center w-100 justify-content-between">
-                <Text>{record.name}</Text>
-                <Checkbox defaultChecked={record.checked} />
+                <Text id={labelId}>{record.name}</Text>
+                <Checkbox defaultChecked={record.checked} aria-labelledby={labelId} />
               </div>
             </Listbox.Item>
           );
