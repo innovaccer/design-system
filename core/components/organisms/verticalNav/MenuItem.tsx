@@ -95,7 +95,7 @@ export const MenuItem = (props: MenuItemProps) => {
   React.useEffect(() => {
     const isTruncated = detectTruncation(contentRef);
     setIsTextTruncated(isTruncated);
-  }, [menu.label, expanded]);
+  }, [menu.label, expanded, menu.count, hasSubmenu]);
 
   const MenuLabel = React.useCallback(
     (props: MenuLabelProps) => {
