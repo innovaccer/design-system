@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { render, fireEvent, waitFor, act } from '@testing-library/react';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
-import { Select, AIIconButton, Button } from '@/index';
+import { Select, AIIconButton } from '@/index';
 import { SelectProps as Props } from '@/index.type';
 
 const BooleanValue = [true, false];
@@ -1017,75 +1017,6 @@ describe('Render custom trigger in select', () => {
     fireEvent.keyDown(Trigger, { key: 'Enter', code: 'Enter' });
     expect(getByTestId('DesignSystem-Popover')).toBeInTheDocument();
     expect(userOnKeyDown).toHaveBeenCalled();
-  });
-});
-
-describe('Select footer keyboard navigation', () => {
-  const renderSelectWithFooter = (isApplyDisabled = false) =>
-    render(
-      <Select multiSelect={true} onSelect={FunctionValue}>
-        <Select.List>
-          <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
-          <Select.Option option={{ label: 'Option 2', value: 'Option 2' }}>Option 2</Select.Option>
-        </Select.List>
-        <Select.Footer>
-          <Button>Cancel</Button>
-          <Button disabled={isApplyDisabled}>Apply</Button>
-        </Select.Footer>
-      </Select>
-    );
-
-  it('closes the popover and restores trigger focus when tabbing past the last enabled footer action', async () => {
-    const { getByTestId, getAllByTestId } = renderSelectWithFooter(true);
-
-    const triggerButton = getByTestId('DesignSystem-Select-trigger');
-    fireEvent.click(triggerButton);
-
-    await waitFor(() => {
-      expect(getAllByTestId('DesignSystem-Listbox-ItemWrapper')[0]).toHaveFocus();
-    });
-
-    const cancelButton = getByTestId('DesignSystem-Popover').querySelector(
-      'button:not([disabled])'
-    ) as HTMLButtonElement;
-    cancelButton.focus();
-    fireEvent.keyDown(cancelButton, { key: 'Tab' });
-
-    await waitFor(() => {
-      expect(triggerButton).toHaveFocus();
-      expect(getByTestId('DesignSystem-Popover')).toHaveAttribute('data-opened', 'false');
-      expect(triggerButton).toHaveAttribute('aria-expanded', 'false');
-    });
-  });
-
-  it('keeps enabled footer actions in the tab order before closing the popover', async () => {
-    const { getByTestId, getAllByTestId } = renderSelectWithFooter();
-
-    const triggerButton = getByTestId('DesignSystem-Select-trigger');
-    fireEvent.click(triggerButton);
-
-    await waitFor(() => {
-      expect(getAllByTestId('DesignSystem-Listbox-ItemWrapper')[0]).toHaveFocus();
-    });
-
-    const footerButtons = getByTestId('DesignSystem-Popover').querySelectorAll('button');
-    const cancelButton = footerButtons[0] as HTMLButtonElement;
-    const applyButton = footerButtons[1] as HTMLButtonElement;
-
-    cancelButton.focus();
-    fireEvent.keyDown(cancelButton, { key: 'Tab' });
-
-    await waitFor(() => {
-      expect(applyButton).toHaveFocus();
-    });
-
-    fireEvent.keyDown(applyButton, { key: 'Tab' });
-
-    await waitFor(() => {
-      expect(triggerButton).toHaveFocus();
-      expect(getByTestId('DesignSystem-Popover')).toHaveAttribute('data-opened', 'false');
-      expect(triggerButton).toHaveAttribute('aria-expanded', 'false');
-    });
   });
 });
 

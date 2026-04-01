@@ -177,13 +177,9 @@ export const focusListItem = (
   }
 
   (targetOption as HTMLElement)?.focus();
-<<<<<<< feat-dropdown-ally
-  (targetOption as HTMLElement | undefined)?.scrollIntoView?.({ block: 'center' });
-=======
   if (typeof (targetOption as HTMLElement)?.scrollIntoView === 'function') {
     (targetOption as HTMLElement).scrollIntoView({ block: 'center' });
   }
->>>>>>> feat-ally
   setFocusedOption && setFocusedOption(targetOption);
 };
 
@@ -286,15 +282,11 @@ export const navigateOptions = (
   if (targetOption) {
     targetOption.focus();
     setFocusedOption && setFocusedOption(targetOption);
-<<<<<<< feat-dropdown-ally
-    (targetOption as HTMLElement).scrollIntoView?.({ block: 'center' });
-=======
     if (typeof targetOption.scrollIntoView === 'function') {
       targetOption.scrollIntoView({ block: 'center' });
     }
   } else {
     setFocusedOption && setFocusedOption(undefined);
->>>>>>> feat-ally
   }
 };
 
@@ -353,11 +345,6 @@ export const handleInputKeyDown = (
   }
 };
 
-<<<<<<< feat-dropdown-ally
-  (targetOption as HTMLElement)?.focus();
-  (targetOption as HTMLElement | undefined)?.scrollIntoView?.({ block: 'center' });
-  setFocusedOption && setFocusedOption(targetOption);
-=======
 export const LISTBOX_ITEM_SELECTOR = '[data-test="DesignSystem-Select-Option"]';
 
 function isOptionFocusable(el: Element): boolean {
@@ -429,5 +416,4 @@ export const focusPopoverInitial = (
     }
   }
   return idx;
->>>>>>> feat-ally
 };
