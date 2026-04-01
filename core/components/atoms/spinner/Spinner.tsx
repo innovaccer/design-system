@@ -1,12 +1,12 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { BaseProps, extractBaseProps } from '@/utils/types';
+import { DecorativeProps, extractBaseProps } from '@/utils/types';
 import styles from '@css/components/spinner.module.css';
 
 export type SpinnerAppearance = 'primary' | 'secondary' | 'white' | 'alert';
 export type SpinnerSize = 'xsmall' | 'small' | 'medium' | 'large';
 
-export interface SpinnerProps extends BaseProps {
+export interface SpinnerProps extends DecorativeProps {
   /**
    * Color of `Spinner`
    */
@@ -25,7 +25,9 @@ export interface SpinnerProps extends BaseProps {
 export const Spinner = (props: SpinnerProps) => {
   const { appearance, size, className, 'aria-label': ariaLabel = 'Loading' } = props;
 
-  const baseProps = extractBaseProps(props);
+  const { role: roleOverride, ...restBaseProps } = extractBaseProps(props);
+  const effectiveRole = roleOverride ?? 'status';
+  const isStatusRole = effectiveRole === 'status';
 
   const wrapperClasses = classNames(
     {
@@ -62,10 +64,9 @@ export const Spinner = (props: SpinnerProps) => {
 
   return (
     <svg
-      {...baseProps}
-      role="status"
-      aria-live="polite"
-      aria-label={ariaLabel}
+      {...restBaseProps}
+      role={effectiveRole}
+      {...(isStatusRole && { 'aria-live': 'polite' as const, 'aria-label': ariaLabel })}
       className={wrapperClasses}
       {...svgProps}
     >

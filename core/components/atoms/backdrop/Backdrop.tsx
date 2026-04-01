@@ -1,12 +1,12 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import classNames from 'classnames';
-import { BaseProps, extractBaseProps } from '@/utils/types';
+import { DecorativeProps, extractBaseProps } from '@/utils/types';
 import styles from '@css/components/backdrop.module.css';
 
 const { useEffect, useState } = React;
 
-export interface BackdropProps extends BaseProps {
+export interface BackdropProps extends DecorativeProps {
   /**
    * Handles open/close state
    */

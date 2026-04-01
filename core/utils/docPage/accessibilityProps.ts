@@ -261,10 +261,10 @@ const curatedElementProps: Record<HtmlElementType, AccessibilityPropDef[]> = {
   ],
 
   /**
-   * custom: For components that extend only BaseProps (not BaseHtmlProps).
-   * These components do NOT accept arbitrary aria-* attributes — only explicitly
-   * defined props are passable. The customProps field on the registry entry
-   * lists exactly what's available.
+   * custom: For components that extend only BaseProps or DecorativeProps (not BaseHtmlProps).
+   * Components extending DecorativeProps additionally accept aria-hidden and role,
+   * which are forwarded by extractBaseProps. The customProps field on the registry
+   * entry lists exactly what's available per component.
    */
   custom: [],
 };
@@ -344,8 +344,10 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
   VerificationCodeInput: { htmlElement: 'textbox' },
 
   // ========================================================================
-  // CUSTOM: extends only BaseProps — ONLY explicitly defined props are passable.
-  // These components use extractBaseProps() which does NOT spread aria-* attributes.
+  // CUSTOM: extends BaseProps or DecorativeProps (not BaseHtmlProps).
+  // Components extending DecorativeProps accept aria-hidden and role
+  // (forwarded by extractBaseProps). Additional aria-* props must be
+  // explicitly defined in customProps.
   // ========================================================================
 
   // Calendar: accepts aria-label, aria-labelledby
@@ -371,7 +373,8 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
     ],
   },
 
-  // Spinner: only accepts aria-label (role="status" and aria-live="polite" are hardcoded internally)
+  // Spinner: extends DecorativeProps — accepts aria-label, aria-hidden, role
+  // (role="status" and aria-live="polite" are hardcoded internally)
   Spinner: {
     htmlElement: 'custom',
     customProps: [
@@ -380,6 +383,16 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
         type: 'string',
         description: 'Describes the loading action for screen readers.',
         defaultValue: '"Loading"',
+      },
+      {
+        name: 'aria-hidden',
+        type: 'boolean',
+        description: 'Hides the spinner from assistive technologies when a visible loading message is present.',
+      },
+      {
+        name: 'role',
+        type: 'string',
+        description: 'Overrides the implicit "status" role. Use "none" or "presentation" to mark as decorative.',
       },
     ],
   },
@@ -408,7 +421,7 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
     ],
   },
 
-  // AvatarGroup: accepts aria-label, aria-labelledby
+  // AvatarGroup: extends DecorativeProps — accepts aria-label, aria-labelledby, aria-hidden, role
   AvatarGroup: {
     htmlElement: 'custom',
     customProps: [
@@ -417,6 +430,16 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
         name: 'aria-labelledby',
         type: 'string',
         description: 'Points to element(s) that label the avatar group container.',
+      },
+      {
+        name: 'aria-hidden',
+        type: 'boolean',
+        description: 'Hides the avatar group from assistive technologies.',
+      },
+      {
+        name: 'role',
+        type: 'string',
+        description: 'Overrides the implicit "group" role. Use "none" or "presentation" to mark as decorative.',
       },
     ],
   },
@@ -463,7 +486,7 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
 
   // ProgressBar: aria-value* attributes are computed internally from `value` and `max` props.
   // Consumers should NOT pass aria-valuemin, aria-valuemax, aria-valuenow, or aria-valuetext
-  // directly — ProgressBarProps does not declare them and extractBaseProps does not forward them.
+  // directly — ProgressBarProps does not declare them.
 
   // PageHeader: accepts aria-label
   PageHeader: {
@@ -471,7 +494,7 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
     customProps: [{ name: 'aria-label', type: 'string', description: 'Accessible label for the page header.' }],
   },
 
-  // Pills: accepts aria-label
+  // Pills: extends DecorativeProps — accepts aria-label, aria-hidden, role
   Pills: {
     htmlElement: 'custom',
     customProps: [
@@ -479,6 +502,16 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
         name: 'aria-label',
         type: 'string',
         description: 'Provides an accessible name for the pill (e.g., "3 unread notifications").',
+      },
+      {
+        name: 'aria-hidden',
+        type: 'boolean',
+        description: 'Hides the pill from assistive technologies when the count is conveyed elsewhere.',
+      },
+      {
+        name: 'role',
+        type: 'string',
+        description: 'Overrides the implicit role. Use "none" or "presentation" to mark as decorative.',
       },
     ],
   },
@@ -885,12 +918,150 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
   },
 
   // ========================================================================
+  // DECORATIVE: extends DecorativeProps — accepts aria-hidden and role
+  // via extractBaseProps. No other custom a11y props.
+  // ========================================================================
+
+  // Divider: extends DecorativeProps
+  Divider: {
+    htmlElement: 'custom',
+    customProps: [
+      {
+        name: 'aria-hidden',
+        type: 'boolean',
+        description: 'Hides the divider from assistive technologies when used purely for visual separation.',
+      },
+      {
+        name: 'role',
+        type: 'string',
+        description: 'Overrides the implicit role. Use "none" or "presentation" to mark as decorative.',
+      },
+    ],
+  },
+
+  // PlaceholderImage: extends DecorativeProps
+  PlaceholderImage: {
+    htmlElement: 'custom',
+    customProps: [
+      {
+        name: 'aria-hidden',
+        type: 'boolean',
+        description: 'Hides the placeholder from assistive technologies.',
+      },
+      {
+        name: 'role',
+        type: 'string',
+        description: 'Overrides the implicit role. Use "none" or "presentation" to mark as decorative.',
+      },
+    ],
+  },
+
+  // PlaceholderParagraph: extends DecorativeProps
+  PlaceholderParagraph: {
+    htmlElement: 'custom',
+    customProps: [
+      {
+        name: 'aria-hidden',
+        type: 'boolean',
+        description: 'Hides the placeholder from assistive technologies.',
+      },
+      {
+        name: 'role',
+        type: 'string',
+        description: 'Overrides the implicit role. Use "none" or "presentation" to mark as decorative.',
+      },
+    ],
+  },
+
+  // ProgressBar: extends DecorativeProps — aria-value* attributes are computed internally.
+  ProgressBar: {
+    htmlElement: 'custom',
+    customProps: [
+      {
+        name: 'aria-hidden',
+        type: 'boolean',
+        description: 'Hides the progress bar from assistive technologies when progress is conveyed elsewhere.',
+      },
+      {
+        name: 'role',
+        type: 'string',
+        description: 'Overrides the implicit "progressbar" role. Use "none" or "presentation" to mark as decorative.',
+      },
+    ],
+  },
+
+  // ProgressRing: extends DecorativeProps
+  ProgressRing: {
+    htmlElement: 'custom',
+    customProps: [
+      {
+        name: 'aria-hidden',
+        type: 'boolean',
+        description: 'Hides the progress ring from assistive technologies when progress is conveyed elsewhere.',
+      },
+      {
+        name: 'role',
+        type: 'string',
+        description: 'Overrides the implicit role. Use "none" or "presentation" to mark as decorative.',
+      },
+    ],
+  },
+
+  // StatusHint: extends DecorativeProps
+  StatusHint: {
+    htmlElement: 'custom',
+    customProps: [
+      {
+        name: 'aria-hidden',
+        type: 'boolean',
+        description: 'Hides the status hint from assistive technologies when status is conveyed elsewhere.',
+      },
+      {
+        name: 'role',
+        type: 'string',
+        description: 'Overrides the implicit role. Use "none" or "presentation" to mark as decorative.',
+      },
+    ],
+  },
+
+  // Backdrop: extends DecorativeProps
+  Backdrop: {
+    htmlElement: 'custom',
+    customProps: [
+      {
+        name: 'aria-hidden',
+        type: 'boolean',
+        description: 'Hides the backdrop from assistive technologies.',
+      },
+      {
+        name: 'role',
+        type: 'string',
+        description: 'Overrides the implicit role. Use "none" or "presentation" to mark as decorative.',
+      },
+    ],
+  },
+
+  // MetaList: extends DecorativeProps
+  MetaList: {
+    htmlElement: 'custom',
+    customProps: [
+      {
+        name: 'aria-hidden',
+        type: 'boolean',
+        description: 'Hides the meta list from assistive technologies when metadata is conveyed elsewhere.',
+      },
+      {
+        name: 'role',
+        type: 'string',
+        description: 'Overrides the implicit role. Use "none" or "presentation" to mark as decorative.',
+      },
+    ],
+  },
+
+  // ========================================================================
   // NOT INCLUDED (BaseProps only, NO passable a11y props):
-  // SegmentedControl, ProgressBar, ProgressRing, Toast,
-  // Message, Collapsible, HelpText, Dialog, Tooltip, Popover,
-  // Dropzone, Stepper,
-  // VerticalNav,
-  // InlineMessage
+  // SegmentedControl, Toast, Message, Collapsible, HelpText, Dialog,
+  // Tooltip, Popover, Dropzone, Stepper, VerticalNav, InlineMessage
   // These components manage a11y internally and do not expose configurable
   // aria-* props to consumers.
   // ========================================================================

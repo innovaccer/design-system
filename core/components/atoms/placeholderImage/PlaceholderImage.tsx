@@ -1,11 +1,11 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { BaseProps, extractBaseProps } from '@/utils/types';
+import { DecorativeProps, extractBaseProps } from '@/utils/types';
 import styles from '@css/components/placeholder.module.css';
 
 export type PlaceholderImageSize = 'small' | 'medium' | 'large';
 
-export interface PlaceholderImageProps extends BaseProps {
+export interface PlaceholderImageProps extends DecorativeProps {
   /**
    * Changes shape of `Placeholder` to circle
    */

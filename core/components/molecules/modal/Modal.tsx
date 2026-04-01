@@ -378,10 +378,10 @@ class Modal extends React.Component<ModalProps, ModalState> {
       >
         <Column
           data-test="DesignSystem-Modal"
+          {...baseProps}
           role="dialog"
           aria-modal={open}
           aria-labelledby={resolvedAriaLabelledBy}
-          {...baseProps}
           className={classes}
           {...sizeMap[dimension]}
           ref={(el) => {

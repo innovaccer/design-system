@@ -375,11 +375,11 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
             (this.sidesheetContentRef as React.MutableRefObject<HTMLDivElement | null>).current = el;
           }}
           data-test="DesignSystem-Sidesheet"
+          {...baseProps}
           role="dialog"
           aria-modal={open}
           aria-labelledby={resolvedAriaLabelledBy}
           onAnimationStart={this.onOpenAnimationStart}
-          {...baseProps}
           className={classes}
           size={sidesheetWidth[dimension]}
         >
