@@ -166,14 +166,28 @@ export const MenuItem = (props: MenuItemProps) => {
 
   if (!expanded && !menu.icon) return null;
 
+  const MenuIconFn = React.useCallback(() => MenuIcon({ isChildrenVisible }), [isChildrenVisible]);
+
+  const MenuLabelFn = React.useCallback(
+    () => MenuLabel({ label: menu.label, labelColor: itemColor }),
+    [MenuLabel, menu.label, itemColor]
+  );
+
+  const MenuWrapperFn = React.useCallback((wrapperProps: any) => MenuWrapper(wrapperProps), []);
+
+  const MenuPillsFn = React.useCallback(
+    () =>
+      menu.count !== undefined ? MenuPills({ disabled: menu.disabled, isActive: isActive, count: menu.count }) : <></>,
+    [menu.count, menu.disabled, isActive]
+  );
+
   const customItemProps = {
     ...props,
     contentRef,
-    MenuIcon: () => MenuIcon({ isChildrenVisible }),
-    MenuLabel: () => MenuLabel({ label: menu.label, labelColor: itemColor }),
-    MenuWrapper: (props: any) => MenuWrapper(props),
-    MenuPills: () =>
-      menu.count !== undefined ? MenuPills({ disabled: menu.disabled, isActive: isActive, count: menu.count }) : <></>,
+    MenuIcon: MenuIconFn,
+    MenuLabel: MenuLabelFn,
+    MenuWrapper: MenuWrapperFn,
+    MenuPills: MenuPillsFn,
   };
 
   return customItemRenderer ? (
