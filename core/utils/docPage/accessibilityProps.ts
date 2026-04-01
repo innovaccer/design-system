@@ -628,7 +628,7 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
     ],
   },
 
-  // ChoiceList: accepts aria-label and aria-labelledby on the component
+  // ChoiceList: accepts aria-label and aria-labelledby on the component; choices items accept a11y props
   ChoiceList: {
     htmlElement: 'custom',
     customProps: [
@@ -638,6 +638,31 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
         type: 'string',
         description:
           'References the ID of element(s) that label the choice list group. Use when the group is labelled by another element on the page.',
+      },
+    ],
+    nestedComponents: [
+      {
+        name: 'choices',
+        config: {
+          htmlElement: 'custom',
+          customProps: [
+            {
+              name: 'aria-label',
+              type: 'string',
+              description: 'Accessible label for the underlying input when no visible label is present.',
+            },
+            {
+              name: 'aria-labelledby',
+              type: 'string',
+              description: 'ID of the element that labels the underlying input.',
+            },
+            {
+              name: 'aria-describedby',
+              type: 'string',
+              description: 'ID of the element(s) that describe the underlying input.',
+            },
+          ],
+        },
       },
     ],
   },
@@ -800,7 +825,7 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
     ],
   },
 
-  // Select: accepts aria-labelledby, aria-describedby, aria-errormessage, nested triggerOptions
+  // Select: accepts aria-labelledby, aria-describedby, aria-errormessage, nested triggerOptions, Select.List, Select.Option
   Select: {
     htmlElement: 'custom',
     customProps: [
@@ -840,6 +865,32 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
               type: 'string',
               description:
                 'References the ID of element(s) that label the Select trigger button. Applied to the built-in trigger only.',
+            },
+          ],
+        },
+      },
+      {
+        name: 'Select.List',
+        config: {
+          htmlElement: 'custom',
+          customProps: [
+            {
+              name: 'aria-label',
+              type: 'string',
+              description: 'Accessible label for the options list container.',
+            },
+          ],
+        },
+      },
+      {
+        name: 'Select.Option',
+        config: {
+          htmlElement: 'custom',
+          customProps: [
+            {
+              name: 'aria-label',
+              type: 'string',
+              description: 'Accessible label for the select option.',
             },
           ],
         },
@@ -884,9 +935,34 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
     ],
   },
 
+  // SegmentedControl: parent has no passable a11y props; Item accepts aria-label, aria-labelledby
+  SegmentedControl: {
+    htmlElement: 'custom',
+    nestedComponents: [
+      {
+        name: 'SegmentedControl.Item',
+        config: {
+          htmlElement: 'custom',
+          customProps: [
+            {
+              name: 'aria-label',
+              type: 'string',
+              description: 'Accessible name for icon-only or custom content segments.',
+            },
+            {
+              name: 'aria-labelledby',
+              type: 'string',
+              description: 'Associates segment with an external label element.',
+            },
+          ],
+        },
+      },
+    ],
+  },
+
   // ========================================================================
   // NOT INCLUDED (BaseProps only, NO passable a11y props):
-  // SegmentedControl, ProgressBar, ProgressRing, Toast,
+  // ProgressBar, ProgressRing, Toast,
   // Message, Collapsible, HelpText, Dialog, Tooltip, Popover,
   // Dropzone, Stepper,
   // VerticalNav,

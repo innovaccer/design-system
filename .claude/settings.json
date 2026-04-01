@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(__NEW_LINE_72834bd85cb52df6__ find:*)",
+      "Bash(grep -E \"\\\\.\\(tsx|ts\\)$\")"
+    ]
+  }
+}
