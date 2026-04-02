@@ -181,108 +181,54 @@
       <th style={{width:"33%", textAlign: "left"}}>Final state</th>
     </tr>
     <tr style={{verticalAlign: "top"}}>
-      <td>Avatar in default state  </td>
+      <td>Focus is outside the avatar group</td>
       <td>&#60;Tab&#62;</td>
-      <td>The avatar will be in focus</td>
+      <td>Focus shifts to the first avatar in the group</td>
     </tr>
     <tr style={{verticalAlign: "top"}}>
-      <td>Avatar in focus  </td>
-      <td>&#60;Tab&#62;</td>
-      <td>
-        In case of avatar group:
-        <ul>
-          <li>Shift focus to the next avatar </li>
-          <li>In case the focus is on the last avatar, shift focus to next item in Tab sequence on the page. </li>
-        </ul>
-      </td>
+      <td>Focus is on a selection avatar</td>
+      <td>&#60;Enter&#62; / &#60;Space&#62;</td>
+      <td>Selects or deselects the avatar</td>
     </tr>
     <tr style={{verticalAlign: "top"}}>
-      <td></td>
-      <td>&#60;Enter&#62;</td>
-      <td>
-        <ul>
-          <li>Select/deselect avatar.</li>
-          <li>In case of a numeric avatar, open the popover, and transfer focus from the numeric avatar to either the first focusable item or the search option, depending on the context.</li>
-        </ul>
-      </td>
+      <td>Focus is on an avatar or counter</td>
+      <td>&#60;Arrow Right&#62; / &#60;Arrow Left&#62; / &#60;Arrow Down&#62; / &#60;Arrow Up&#62;</td>
+      <td>Focus shifts to the next or previous avatar or the counter (Note: &#60;Arrow Down&#62; and &#60;Arrow Up&#62; do not move focus if the counter is focused)</td>
     </tr>
     <tr style={{verticalAlign: "top"}}>
       <td></td>
-      <td>&#60;down arrow&#62;</td>
-      <td>
-        <ul>
-          <li>In case of a numeric avatar, open the popover, and transfer focus from the numeric avatar to either the first focusable item or the search option, depending on the context.</li>
-          <li>In case of a default avatar, nothing will happen. </li>
-        </ul>
-      </td>
+      <td>&#60;Tab&#62; / &#60;Shift Tab&#62;</td>
+      <td>Focus shifts away from the avatar group</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Focus is on the counter</td>
+      <td>&#60;Enter&#62; / &#60;Space&#62; / &#60;Arrow Down&#62; / &#60;Arrow Right&#62;</td>
+      <td>Counter-popover opens and focus shifts to the first focusable item inside the popover</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Focus is inside the counter-popover</td>
+      <td>&#60;Enter&#62; / &#60;Space&#62;</td>
+      <td>Selects or deselects the focused item (if it is a selection avatar). Popover remains open.</td>
     </tr>
     <tr style={{verticalAlign: "top"}}>
       <td></td>
-      <td>&#60;up arrow&#62;</td>
-      <td>
-        <ul>
-          <li>In case of a numeric avatar, open the popover, and transfer focus from the numeric avatar to the last focusable item.</li>
-          <li>In case of a default avatar, nothing will happen.</li>
-        </ul>
-      </td>
+      <td>&#60;Arrow Down&#62; / &#60;Arrow Right&#62; / &#60;Arrow Up&#62; / &#60;Arrow Left&#62;</td>
+      <td>Focus shifts to the next or previous focusable item (including search input), wrapping at the ends</td>
     </tr>
     <tr style={{verticalAlign: "top"}}>
       <td></td>
       <td>&#60;Escape&#62;</td>
-      <td>Nothing happens.</td>
+      <td>Counter-popover closes and focus shifts to the counter</td>
     </tr>
     <tr style={{verticalAlign: "top"}}>
-      <td>Popover is open and an item is in focus<br/>(The trigger will not be in focus at this instance)</td>
+      <td></td>
       <td>&#60;Tab&#62;</td>
-      <td>
-        Shift focus to the next item in Tab sequence on the page. <br/>The popover will be excluded from the tab sequence on the page. 
-      </td>
+      <td>Focus shifts to the next focusable element. If focus goes out of the popover, popover is closed.</td>
     </tr>
     <tr style={{verticalAlign: "top"}}>
       <td></td>
-      <td>&#60;Enter&#62;</td>
-      <td>
-        Select the focused item. Popover will remain open. 
-      </td>
-    </tr>
-    <tr style={{verticalAlign: "top"}}>
-      <td></td>
-      <td>&#60;down arrow&#62;</td>
-      <td>
-        <ul>
-          <li>Shift focus to the next focusable item.</li>
-          <li>If focus is on the last item, shift focus to the first focusable item.</li>
-          <li>
-            In case of search: 
-            <ul>
-              <li class="ml-5">If focus is on the last item, shift focus to search.</li>
-              <li class="ml-5">If focus is on search, shift focus to the first focusable item. </li>
-            </ul>
-          </li>
-        </ul>
-      </td>
-    </tr>
-    <tr style={{verticalAlign: "top"}}>
-      <td></td>
-      <td>&#60;up arrow&#62;</td>
-      <td>
-        <ul>
-          <li>Shift focus to the previous focusable item.</li>
-          <li>If focus is on the first item, shift focus to the last focusable item.</li>
-          <li>
-            In case of search: 
-            <ul>
-              <li class="ml-5">If focus is on the first item, shift focus to search.</li>
-              <li class="ml-5">If focus is on search, shift focus to the last focusable item.</li>
-            </ul>
-          </li>
-        </ul>
-      </td>
-    </tr>
-    <tr style={{verticalAlign: "top"}}>
-      <td></td>
-      <td>&#60;Escape&#62;</td>
-      <td>Close the popover. Focus is now on the numeric avatar.</td>
+      <td>&#60;Shift Tab&#62;</td>
+      <td>Focus shifts to the previous focusable element. If focus goes out of the popover, popover is closed.</td>
     </tr>
   </tbody>
 </table>

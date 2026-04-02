@@ -57,13 +57,13 @@ describe('AvatarSelection component focusListItem utility test', () => {
     setHighlightLastItem = jest.fn();
   });
 
-  it('should set popover open and highlight last item when "ArrowUp" is pressed', () => {
-    const event: any = new KeyboardEvent('keydown', { key: 'ArrowUp' });
+  it('should set popover open and highlight first item when "ArrowRight" is pressed', () => {
+    const event: any = new KeyboardEvent('keydown', { key: 'ArrowRight' });
     handleKeyDown(event, setOpenPopover, setHighlightFirstItem, setHighlightLastItem);
 
     expect(setOpenPopover).toHaveBeenCalledWith(true);
-    expect(setHighlightLastItem).toHaveBeenCalledWith(true);
-    expect(setHighlightFirstItem).not.toHaveBeenCalled();
+    expect(setHighlightFirstItem).toHaveBeenCalledWith(true);
+    expect(setHighlightLastItem).not.toHaveBeenCalled();
   });
 
   it('should set popover open and highlight first item when "ArrowDown" is pressed', () => {
