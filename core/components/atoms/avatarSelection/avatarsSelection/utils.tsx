@@ -4,20 +4,23 @@ export const handleKeyDown = (
   event: React.KeyboardEvent,
   setOpenPopover?: React.Dispatch<React.SetStateAction<boolean>>,
   setHighlightFirstItem?: React.Dispatch<React.SetStateAction<boolean>>,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   setHighlightLastItem?: React.Dispatch<React.SetStateAction<boolean>>
 ) => {
   switch (event.key) {
     case 'Enter':
+    case ' ':
+      event.preventDefault();
+      event.stopPropagation();
       setOpenPopover?.(true);
       setHighlightFirstItem?.(true);
       break;
     case 'ArrowDown':
+    case 'ArrowRight':
+      event.preventDefault();
+      event.stopPropagation();
       setOpenPopover?.(true);
       setHighlightFirstItem?.(true);
-      break;
-    case 'ArrowUp':
-      setOpenPopover?.(true);
-      setHighlightLastItem?.(true);
       break;
     default:
       break;

@@ -8,6 +8,7 @@ import AvatarCount from './AvatarCount';
 import Avatars from './Avatars';
 import AvatarPopperBody from './AvatarPopperBody';
 import styles from '@css/components/avatarGroup.module.css';
+import { getNextFocusableAfterTrigger } from '@/components/organisms/select/utils';
 
 export interface AvatarData extends Record<string, any> {
   firstName?: string;
@@ -114,7 +115,7 @@ export interface AvatarGroupProps extends BaseProps {
    * | popperRenderer | Callback function to create custom popover content  | |
    * | appendToBody | Appends `Popover` wrapper inside body | true |
    * | position | Position to place `Popover` | bottom |
-   * | on | Event triggering the `Popover` | hover |
+   * | on | Event triggering the `Popover` | click |
    * | maxHeight | Max height of `Popover Text Wrapper` (does not work in case of custom popperRenderer) | 256 |
    * | minHeight | Min height of `Popover Text Wrapper` (does not work in case of custom popperRenderer) |  |
    * | width | width of `Popover Text Wrapper` (does not work in case of custom popperRenderer) | 176 |
@@ -132,6 +133,12 @@ export interface AvatarGroupProps extends BaseProps {
 }
 
 export const AvatarGroup = (props: AvatarGroupProps) => {
+  const [openPopover, setOpenPopover] = React.useState(false);
+  const [rovingIndex, setRovingIndex] = React.useState(0);
+  const containerRef = React.useRef<HTMLDivElement>(null);
+
+  const triggerRef = React.useRef<HTMLDivElement>(null);
+
   const {
     max,
     borderColor,
@@ -150,7 +157,7 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
     width = 176,
     minHeight,
     position = 'bottom',
-    on = 'hover',
+    on = 'click',
     appendToBody = true,
     withSearch,
     searchPlaceholder,
@@ -175,6 +182,21 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
 
   const avatarList = list.length === 3 ? list : list.slice(0, max);
 
+  const hasCounter = list.length - max > 0 && list.length !== 3;
+
+  React.useEffect(() => {
+    const items = hasCounter ? [...avatarList, { disabled: false }] : avatarList;
+    if (items[rovingIndex]?.disabled) {
+      const firstEnabled = items.findIndex((item) => !item.disabled);
+      if (firstEnabled !== -1) setRovingIndex(firstEnabled);
+    }
+  }, [avatarList, rovingIndex, hasCounter]);
+
+  const avatarsWithTabIndex = avatarList.map((item, index) => ({
+    ...item,
+    tabIndex: index === rovingIndex ? 0 : -1,
+  }));
+
   const AvatarGroupClass = classNames(
     {
       [styles['AvatarGroup']]: true,
@@ -194,6 +216,64 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
     searchPlaceholder,
     searchComparator,
     size,
+    onClose: () => {
+      setOpenPopover(false);
+      triggerRef.current?.focus({ preventScroll: true });
+    },
+    onTabOut: (e: React.KeyboardEvent, container: HTMLElement) => {
+      setOpenPopover(false);
+      if (e.shiftKey) {
+        // Shift+Tab: focus the counter trigger
+        triggerRef.current?.focus({ preventScroll: true });
+      } else {
+        // Tab: focus next focusable after the trigger, excluding the popover
+        const next = getNextFocusableAfterTrigger(triggerRef.current, false, container);
+        if (next) {
+          next.focus({ preventScroll: true });
+        } else {
+          triggerRef.current?.focus({ preventScroll: true });
+        }
+      }
+    },
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    // If the event comes from inside the popover, ignore it here
+    if ((e.target as HTMLElement).closest('[data-test="DesignSystem-Popover"]')) return;
+
+    const items = hasCounter ? [...avatarList, { disabled: false }] : avatarList;
+    const validIndices = items.map((item, i) => (item.disabled ? -1 : i)).filter((i) => i !== -1);
+
+    if (validIndices.length === 0) return;
+
+    const currentValidPos = validIndices.indexOf(rovingIndex);
+    if (currentValidPos === -1) return;
+
+    let nextValidPos = currentValidPos;
+
+    const isCounterFocused = hasCounter && currentValidPos === validIndices.length - 1;
+
+    if (e.key === 'ArrowRight' || (!isCounterFocused && e.key === 'ArrowDown')) {
+      e.preventDefault();
+      nextValidPos = currentValidPos === validIndices.length - 1 ? 0 : currentValidPos + 1;
+    } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+      e.preventDefault();
+      nextValidPos = currentValidPos === 0 ? validIndices.length - 1 : currentValidPos - 1;
+    }
+
+    if (nextValidPos !== currentValidPos) {
+      const newRovingIndex = validIndices[nextValidPos];
+      setRovingIndex(newRovingIndex);
+
+      requestAnimationFrame(() => {
+        const els = containerRef.current?.querySelectorAll<HTMLElement>(
+          ':scope > [data-test="DesignSystem-AvatarGroup--Avatar"] [data-test="DesignSystem-Avatar"], :scope > * > [data-test="DesignSystem-AvatarGroup--TriggerAvatar"]'
+        );
+        if (els && els[newRovingIndex]) {
+          els[newRovingIndex].focus();
+        }
+      });
+    }
   };
 
   return (
@@ -204,12 +284,31 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
       role="group"
       aria-label={ariaLabel}
       aria-labelledby={ariaLabelledBy}
+      ref={containerRef}
+      onKeyDown={handleKeyDown}
     >
-      <Avatars size={size} avatarList={avatarList} avatarStyle={avatarStyle} tooltipPosition={tooltipPosition} />
-      {list.length - max > 0 && list.length !== 3 && (
+      <Avatars
+        size={size}
+        avatarList={avatarsWithTabIndex}
+        avatarStyle={avatarStyle}
+        tooltipPosition={tooltipPosition}
+      />
+      {hasCounter && (
         <Popover
           on={on}
-          trigger={<AvatarCount on={on} size={size} hiddenAvatarCount={hiddenAvatarCount} avatarStyle={avatarStyle} />}
+          open={openPopover}
+          onToggle={(newOpen) => setOpenPopover(newOpen)}
+          trigger={
+            <AvatarCount
+              ref={triggerRef}
+              on={on}
+              size={size}
+              hiddenAvatarCount={hiddenAvatarCount}
+              avatarStyle={avatarStyle}
+              isOpen={openPopover}
+              tabIndex={avatarList.length === rovingIndex ? 0 : -1}
+            />
+          }
           position={position}
           appendToBody={appendToBody}
           offset="medium"

@@ -476,7 +476,7 @@ describe('AvatarSelection component with keyboard interactions', () => {
       <AvatarSelection list={selectedList} withSearch={true} onSelect={FunctionValue} />
     );
     const trigger = getByTestId('DesignSystem-AvatarSelection--TriggerAvatar');
-    fireEvent.keyDown(trigger, { key: 'ArrowUp' });
+    fireEvent.keyDown(trigger, { key: 'ArrowDown' });
     expect(getByTestId('DesignSystem-AvatarSelection--Popover')).toBeInTheDocument();
 
     const searchInput = queryByTestId('DesignSystem-AvatarSelection--Input');
