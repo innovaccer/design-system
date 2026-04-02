@@ -3,27 +3,46 @@ import { AvatarGroup, Avatar, Text } from '@/index';
 import { list } from '../AvatarList';
 import './style.css';
 
+const MyCustomPopover = ({ names }) => {
+  const containerRef = React.useRef(null);
+
+  React.useEffect(() => {
+    if (containerRef.current) {
+      containerRef.current.focus({ preventScroll: true });
+    }
+  }, []);
+
+  const AvatarList = names.map((avatar, index) => {
+    const { firstName, lastName, appearance } = avatar;
+
+    return (
+      <div className="d-flex align-items-center mr-4 mb-4" key={index}>
+        <Avatar
+          firstName={firstName}
+          lastName={lastName}
+          appearance={appearance}
+          className="mr-4"
+          withTooltip={false}
+        />
+        <Text>{`${firstName} ${lastName}`}</Text>
+      </div>
+    );
+  });
+
+  return (
+    <div
+      ref={containerRef}
+      tabIndex={-1}
+      style={{ outline: 'none' }}
+      className="overflow-auto py-4 px-6 UserAvatars-popover"
+    >
+      {AvatarList}
+    </div>
+  );
+};
+
 export const customPopover = () => {
-  const popperRenderer = (names) => {
-    const AvatarList = names.map((avatar, index) => {
-      const { firstName, lastName, appearance } = avatar;
-
-      return (
-        <div className="d-flex align-items-center mr-4 mb-4" key={index}>
-          <Avatar
-            firstName={firstName}
-            lastName={lastName}
-            appearance={appearance}
-            className="mr-4"
-            withTooltip={false}
-          />
-          <Text>{`${firstName} ${lastName}`}</Text>
-        </div>
-      );
-    });
-
-    return <div className="overflow-auto py-4 px-6 UserAvatars-popover">{AvatarList}</div>;
-  };
+  const popperRenderer = (names) => <MyCustomPopover names={names} />;
 
   return <AvatarGroup list={list} popoverOptions={{ popperRenderer, dark: false }} />;
 };
@@ -67,8 +86,16 @@ const customCode = `/*
     },
   ];
 
-  const popperRenderer = (list) => {
-    const AvatarList = list.map((avatar, index) => {
+  const MyCustomPopover = ({ names }) => {
+    const containerRef = React.useRef(null);
+
+    React.useEffect(() => {
+      if (containerRef.current) {
+        containerRef.current.focus({ preventScroll: true });
+      }
+    }, []);
+
+    const AvatarList = names.map((avatar, index) => {
       const { firstName, lastName, appearance } = avatar;
 
       return (
@@ -82,15 +109,22 @@ const customCode = `/*
           />
           <Text>{\`\${firstName} \${lastName}\`}</Text>
         </div>
-      )
+      );
     });
 
     return (
-      <div className="overflow-auto py-4 px-6 UserAvatars-popover">
+      <div
+        ref={containerRef}
+        tabIndex={-1}
+        style={{ outline: 'none' }}
+        className="overflow-auto py-4 px-6 UserAvatars-popover"
+      >
         {AvatarList}
       </div>
-    )
+    );
   };
+
+  const popperRenderer = (names) => <MyCustomPopover names={names} />;
 
   return (
     <AvatarGroup
