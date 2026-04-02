@@ -13,10 +13,11 @@ interface SelectionAvatarsWrapperProps {
   avatarRenderer?: (data: AvatarData) => JSX.Element;
   tooltipPosition?: TooltipProps['position'];
   avatarStyle?: { backgroundColor?: string; boxShadow?: string };
+  rovingIndex?: number;
 }
 
 export const SelectionAvatarsWrapper = (props: SelectionAvatarsWrapperProps) => {
-  const { avatarList, avatarStyle, tooltipPosition, size, avatarRenderer } = props;
+  const { avatarList, avatarStyle, tooltipPosition, size, avatarRenderer, rovingIndex = 0 } = props;
 
   const contextProp = React.useContext(AvatarSelectionContext);
 
@@ -45,6 +46,8 @@ export const SelectionAvatarsWrapper = (props: SelectionAvatarsWrapperProps) => 
 
     switch (event.key) {
       case 'Enter':
+      case ' ':
+        event.preventDefault();
         onClickHandler(item);
         break;
       default:
@@ -79,7 +82,7 @@ export const SelectionAvatarsWrapper = (props: SelectionAvatarsWrapperProps) => 
         return (
           <span key={index} className={styles['SelectionAvatarGroup-wrapper']}>
             <div
-              tabIndex={-1}
+              tabIndex={index === rovingIndex ? 0 : -1}
               role="checkbox"
               style={newAvatarStyle}
               className={GroupClass}
