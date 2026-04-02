@@ -12,6 +12,7 @@ const AvatarOptionItem = (props: AvatarOptionItemProps) => {
   const { firstName = '', lastName = '', tooltipSuffix = '', disabled, image, icon } = avatarData;
   const name = `${firstName} ${lastName} ${tooltipSuffix}`;
   const elementRef = React.useRef(null);
+  const [showTooltip, setShowTooltip] = React.useState(false);
 
   const triggerClassName = classNames({
     ['cursor-not-allowed']: disabled,
@@ -24,7 +25,14 @@ const AvatarOptionItem = (props: AvatarOptionItemProps) => {
   });
 
   return (
-    <Listbox.Item disabled={disabled} className={itemClassName} tagName="li" data-test="DesignSystem-AvatarGroup--Item">
+    <Listbox.Item
+      disabled={disabled}
+      className={itemClassName}
+      tagName="li"
+      data-test="DesignSystem-AvatarGroup--Item"
+      onFocus={() => setShowTooltip(true)}
+      onBlur={() => setShowTooltip(false)}
+    >
       <Avatar {...avatarData} withTooltip={false} aria-hidden={true}>
         {image || icon}
       </Avatar>
@@ -32,6 +40,7 @@ const AvatarOptionItem = (props: AvatarOptionItemProps) => {
         showOnTruncation={true}
         tooltip={name}
         elementRef={elementRef}
+        open={showTooltip}
         triggerClass={triggerClassName}
         position="right"
       >

@@ -83,6 +83,14 @@ export interface AvatarProps extends BaseProps {
    * Internally sets role to `presentation`, removes `aria-label`, and applies `tabIndex={-1}`.
    */
   'aria-hidden'?: boolean;
+  /**
+   * Click handler for Avatar
+   */
+  onClick?: (e: React.MouseEvent<HTMLSpanElement, MouseEvent>) => void;
+  /**
+   * KeyDown handler for Avatar
+   */
+  onKeyDown?: (e: React.KeyboardEvent<HTMLSpanElement>) => void;
 }
 
 const initialsLength = 2;
@@ -109,6 +117,8 @@ export const Avatar = (props: AvatarProps) => {
     role,
     'aria-hidden': ariaHidden,
     'aria-label': ariaLabelProp,
+    onClick,
+    onKeyDown,
   } = props;
 
   const baseProps = extractBaseProps(props);
@@ -128,10 +138,22 @@ export const Avatar = (props: AvatarProps) => {
 
   const AvatarAppearance =
     appearance || colors[(initials.charCodeAt(0) + (initials.charCodeAt(1) || 0)) % 8] || DefaultAppearance;
+  const isInteractive = onClick !== undefined;
   const isDecorative = ariaHidden === true;
-  const resolvedRole = isDecorative ? 'presentation' : role ?? (tabIndex !== undefined ? 'button' : 'img');
+  const resolvedRole = isDecorative ? 'presentation' : role ?? (isInteractive ? 'button' : 'img');
   const ariaLabel = isDecorative ? undefined : ariaLabelProp || getTooltipName().trim() || initials || 'Avatar';
-  const resolvedTabIndex = isDecorative ? -1 : disabled ? -1 : tabIndex !== undefined ? tabIndex : 0;
+  const resolvedTabIndex = isDecorative || disabled ? -1 : tabIndex !== undefined ? tabIndex : 0;
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLSpanElement>) => {
+    if (onKeyDown) onKeyDown(e);
+
+    if ((resolvedRole === 'button' || role === 'button') && onClick) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        onClick(e as any);
+      }
+    }
+  };
 
   const darkAppearance = ['secondary', 'success', 'warning', 'accent1', 'accent4'];
   const showPresence =
@@ -206,6 +228,8 @@ export const Avatar = (props: AvatarProps) => {
               aria-label={ariaLabel}
               aria-hidden={ariaHidden}
               tabIndex={resolvedTabIndex}
+              onClick={onClick}
+              onKeyDown={handleKeyDown}
             >
               {children}
             </span>
@@ -224,6 +248,8 @@ export const Avatar = (props: AvatarProps) => {
           aria-label={ariaLabel}
           aria-hidden={ariaHidden}
           tabIndex={resolvedTabIndex}
+          onClick={onClick}
+          onKeyDown={handleKeyDown}
         >
           <>
             {initials && (

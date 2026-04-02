@@ -21,7 +21,7 @@ Object {
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 5;"
-            tabindex="-1"
+            tabindex="0"
           >
             <span
               class="position-relative d-inline-flex"
@@ -38,8 +38,8 @@ Object {
                     aria-label="John Doe"
                     class="Avatar Avatar--regular Avatar--accent1 Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
-                    role="checkbox"
-                    tabindex="0"
+                    role="img"
+                    tabindex="-1"
                   >
                     <span
                       class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
@@ -79,8 +79,8 @@ Object {
                     aria-label="Steven Packton"
                     class="Avatar Avatar--regular Avatar--alert Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
-                    role="checkbox"
-                    tabindex="0"
+                    role="img"
+                    tabindex="-1"
                   >
                     <span
                       class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--alert"
@@ -120,8 +120,8 @@ Object {
                     aria-label="Nancy Wheeler"
                     class="Avatar Avatar--regular Avatar--warning Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
-                    role="checkbox"
-                    tabindex="0"
+                    role="img"
+                    tabindex="-1"
                   >
                     <span
                       class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--warning"
@@ -161,8 +161,8 @@ Object {
                     aria-label="Monica Geller"
                     class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
-                    role="checkbox"
-                    tabindex="0"
+                    role="img"
+                    tabindex="-1"
                   >
                     <span
                       class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
@@ -202,8 +202,8 @@ Object {
                     aria-label="Arya Stark"
                     class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
-                    role="checkbox"
-                    tabindex="0"
+                    role="img"
+                    tabindex="-1"
                   >
                     <span
                       class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
@@ -224,12 +224,12 @@ Object {
           <div
             aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
             aria-expanded="false"
-            aria-haspopup="listbox"
+            aria-haspopup="dialog"
             class="SelectionAvatarCount-wrapper SelectionAvatarGroup-item"
             data-test="DesignSystem-AvatarSelection--TriggerAvatar"
             role="button"
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white;"
-            tabindex="0"
+            tabindex="-1"
           >
             <span
               class="position-relative d-inline-flex"
@@ -242,7 +242,7 @@ Object {
                   aria-label="Avatar"
                   class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
                   data-test="DesignSystem-Avatar"
-                  role="button"
+                  role="img"
                   tabindex="-1"
                 >
                   <span
@@ -274,7 +274,7 @@ Object {
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
           style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 5;"
-          tabindex="-1"
+          tabindex="0"
         >
           <span
             class="position-relative d-inline-flex"
@@ -291,8 +291,8 @@ Object {
                   aria-label="John Doe"
                   class="Avatar Avatar--regular Avatar--accent1 Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
-                  role="checkbox"
-                  tabindex="0"
+                  role="img"
+                  tabindex="-1"
                 >
                   <span
                     class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
@@ -332,8 +332,8 @@ Object {
                   aria-label="Steven Packton"
                   class="Avatar Avatar--regular Avatar--alert Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
-                  role="checkbox"
-                  tabindex="0"
+                  role="img"
+                  tabindex="-1"
                 >
                   <span
                     class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--alert"
@@ -373,8 +373,8 @@ Object {
                   aria-label="Nancy Wheeler"
                   class="Avatar Avatar--regular Avatar--warning Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
-                  role="checkbox"
-                  tabindex="0"
+                  role="img"
+                  tabindex="-1"
                 >
                   <span
                     class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--warning"
@@ -414,8 +414,8 @@ Object {
                   aria-label="Monica Geller"
                   class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
-                  role="checkbox"
-                  tabindex="0"
+                  role="img"
+                  tabindex="-1"
                 >
                   <span
                     class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
@@ -455,8 +455,8 @@ Object {
                   aria-label="Arya Stark"
                   class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
-                  role="checkbox"
-                  tabindex="0"
+                  role="img"
+                  tabindex="-1"
                 >
                   <span
                     class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
@@ -477,12 +477,12 @@ Object {
         <div
           aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
           aria-expanded="false"
-          aria-haspopup="listbox"
+          aria-haspopup="dialog"
           class="SelectionAvatarCount-wrapper SelectionAvatarGroup-item"
           data-test="DesignSystem-AvatarSelection--TriggerAvatar"
           role="button"
           style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white;"
-          tabindex="0"
+          tabindex="-1"
         >
           <span
             class="position-relative d-inline-flex"
@@ -495,7 +495,7 @@ Object {
                 aria-label="Avatar"
                 class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
                 data-test="DesignSystem-Avatar"
-                role="button"
+                role="img"
                 tabindex="-1"
               >
                 <span
@@ -586,7 +586,7 @@ Object {
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 5;"
-            tabindex="-1"
+            tabindex="0"
           >
             <span
               class="position-relative d-inline-flex"
@@ -603,8 +603,8 @@ Object {
                     aria-label="John Doe"
                     class="Avatar Avatar--regular Avatar--accent1 Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
-                    role="checkbox"
-                    tabindex="0"
+                    role="img"
+                    tabindex="-1"
                   >
                     <span
                       class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
@@ -644,8 +644,8 @@ Object {
                     aria-label="Steven Packton"
                     class="Avatar Avatar--regular Avatar--alert Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
-                    role="checkbox"
-                    tabindex="0"
+                    role="img"
+                    tabindex="-1"
                   >
                     <span
                       class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--alert"
@@ -685,8 +685,8 @@ Object {
                     aria-label="Nancy Wheeler"
                     class="Avatar Avatar--regular Avatar--warning Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
-                    role="checkbox"
-                    tabindex="0"
+                    role="img"
+                    tabindex="-1"
                   >
                     <span
                       class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--warning"
@@ -726,8 +726,8 @@ Object {
                     aria-label="Monica Geller"
                     class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
-                    role="checkbox"
-                    tabindex="0"
+                    role="img"
+                    tabindex="-1"
                   >
                     <span
                       class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
@@ -767,8 +767,8 @@ Object {
                     aria-label="Arya Stark"
                     class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
-                    role="checkbox"
-                    tabindex="0"
+                    role="img"
+                    tabindex="-1"
                   >
                     <span
                       class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
@@ -789,12 +789,12 @@ Object {
           <div
             aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
             aria-expanded="false"
-            aria-haspopup="listbox"
+            aria-haspopup="dialog"
             class="SelectionAvatarCount-wrapper SelectionAvatarGroup-item"
             data-test="DesignSystem-AvatarSelection--TriggerAvatar"
             role="button"
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white;"
-            tabindex="0"
+            tabindex="-1"
           >
             <span
               class="position-relative d-inline-flex"
@@ -807,7 +807,7 @@ Object {
                   aria-label="Avatar"
                   class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
                   data-test="DesignSystem-Avatar"
-                  role="button"
+                  role="img"
                   tabindex="-1"
                 >
                   <span
@@ -839,7 +839,7 @@ Object {
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
           style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 5;"
-          tabindex="-1"
+          tabindex="0"
         >
           <span
             class="position-relative d-inline-flex"
@@ -856,8 +856,8 @@ Object {
                   aria-label="John Doe"
                   class="Avatar Avatar--regular Avatar--accent1 Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
-                  role="checkbox"
-                  tabindex="0"
+                  role="img"
+                  tabindex="-1"
                 >
                   <span
                     class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
@@ -897,8 +897,8 @@ Object {
                   aria-label="Steven Packton"
                   class="Avatar Avatar--regular Avatar--alert Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
-                  role="checkbox"
-                  tabindex="0"
+                  role="img"
+                  tabindex="-1"
                 >
                   <span
                     class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--alert"
@@ -938,8 +938,8 @@ Object {
                   aria-label="Nancy Wheeler"
                   class="Avatar Avatar--regular Avatar--warning Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
-                  role="checkbox"
-                  tabindex="0"
+                  role="img"
+                  tabindex="-1"
                 >
                   <span
                     class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--warning"
@@ -979,8 +979,8 @@ Object {
                   aria-label="Monica Geller"
                   class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
-                  role="checkbox"
-                  tabindex="0"
+                  role="img"
+                  tabindex="-1"
                 >
                   <span
                     class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
@@ -1020,8 +1020,8 @@ Object {
                   aria-label="Arya Stark"
                   class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
-                  role="checkbox"
-                  tabindex="0"
+                  role="img"
+                  tabindex="-1"
                 >
                   <span
                     class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
@@ -1042,12 +1042,12 @@ Object {
         <div
           aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
           aria-expanded="false"
-          aria-haspopup="listbox"
+          aria-haspopup="dialog"
           class="SelectionAvatarCount-wrapper SelectionAvatarGroup-item"
           data-test="DesignSystem-AvatarSelection--TriggerAvatar"
           role="button"
           style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white;"
-          tabindex="0"
+          tabindex="-1"
         >
           <span
             class="position-relative d-inline-flex"
@@ -1060,7 +1060,7 @@ Object {
                 aria-label="Avatar"
                 class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
                 data-test="DesignSystem-Avatar"
-                role="button"
+                role="img"
                 tabindex="-1"
               >
                 <span
@@ -1151,7 +1151,7 @@ Object {
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 5;"
-            tabindex="-1"
+            tabindex="0"
           >
             <span
               class="position-relative d-inline-flex"
@@ -1168,8 +1168,8 @@ Object {
                     aria-label="John Doe"
                     class="Avatar Avatar--tiny Avatar--accent1 Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
-                    role="checkbox"
-                    tabindex="0"
+                    role="img"
+                    tabindex="-1"
                   >
                     <span
                       class="Text Text--default Text--medium Text--regular Avatar-content--tiny Avatar-content--accent1"
@@ -1209,8 +1209,8 @@ Object {
                     aria-label="Steven Packton"
                     class="Avatar Avatar--tiny Avatar--alert Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
-                    role="checkbox"
-                    tabindex="0"
+                    role="img"
+                    tabindex="-1"
                   >
                     <span
                       class="Text Text--default Text--medium Text--regular Avatar-content--tiny Avatar-content--alert"
@@ -1250,8 +1250,8 @@ Object {
                     aria-label="Nancy Wheeler"
                     class="Avatar Avatar--tiny Avatar--warning Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
-                    role="checkbox"
-                    tabindex="0"
+                    role="img"
+                    tabindex="-1"
                   >
                     <span
                       class="Text Text--default Text--medium Text--regular Avatar-content--tiny Avatar-content--warning"
@@ -1291,8 +1291,8 @@ Object {
                     aria-label="Monica Geller"
                     class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
-                    role="checkbox"
-                    tabindex="0"
+                    role="img"
+                    tabindex="-1"
                   >
                     <span
                       class="Text Text--default Text--medium Text--regular Avatar-content--tiny Avatar-content--accent2"
@@ -1332,8 +1332,8 @@ Object {
                     aria-label="Arya Stark"
                     class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
-                    role="checkbox"
-                    tabindex="0"
+                    role="img"
+                    tabindex="-1"
                   >
                     <span
                       class="Text Text--default Text--medium Text--regular Avatar-content--tiny Avatar-content--accent2"
@@ -1354,12 +1354,12 @@ Object {
           <div
             aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
             aria-expanded="false"
-            aria-haspopup="listbox"
+            aria-haspopup="dialog"
             class="SelectionAvatarCount-wrapper SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny"
             data-test="DesignSystem-AvatarSelection--TriggerAvatar"
             role="button"
             style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white;"
-            tabindex="0"
+            tabindex="-1"
           >
             <span
               class="position-relative d-inline-flex"
@@ -1372,7 +1372,7 @@ Object {
                   aria-label="Avatar"
                   class="Avatar Avatar--tiny Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
                   data-test="DesignSystem-Avatar"
-                  role="button"
+                  role="img"
                   tabindex="-1"
                 >
                   <span
@@ -1404,7 +1404,7 @@ Object {
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
           style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 5;"
-          tabindex="-1"
+          tabindex="0"
         >
           <span
             class="position-relative d-inline-flex"
@@ -1421,8 +1421,8 @@ Object {
                   aria-label="John Doe"
                   class="Avatar Avatar--tiny Avatar--accent1 Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
-                  role="checkbox"
-                  tabindex="0"
+                  role="img"
+                  tabindex="-1"
                 >
                   <span
                     class="Text Text--default Text--medium Text--regular Avatar-content--tiny Avatar-content--accent1"
@@ -1462,8 +1462,8 @@ Object {
                   aria-label="Steven Packton"
                   class="Avatar Avatar--tiny Avatar--alert Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
-                  role="checkbox"
-                  tabindex="0"
+                  role="img"
+                  tabindex="-1"
                 >
                   <span
                     class="Text Text--default Text--medium Text--regular Avatar-content--tiny Avatar-content--alert"
@@ -1503,8 +1503,8 @@ Object {
                   aria-label="Nancy Wheeler"
                   class="Avatar Avatar--tiny Avatar--warning Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
-                  role="checkbox"
-                  tabindex="0"
+                  role="img"
+                  tabindex="-1"
                 >
                   <span
                     class="Text Text--default Text--medium Text--regular Avatar-content--tiny Avatar-content--warning"
@@ -1544,8 +1544,8 @@ Object {
                   aria-label="Monica Geller"
                   class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
-                  role="checkbox"
-                  tabindex="0"
+                  role="img"
+                  tabindex="-1"
                 >
                   <span
                     class="Text Text--default Text--medium Text--regular Avatar-content--tiny Avatar-content--accent2"
@@ -1585,8 +1585,8 @@ Object {
                   aria-label="Arya Stark"
                   class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
-                  role="checkbox"
-                  tabindex="0"
+                  role="img"
+                  tabindex="-1"
                 >
                   <span
                     class="Text Text--default Text--medium Text--regular Avatar-content--tiny Avatar-content--accent2"
@@ -1607,12 +1607,12 @@ Object {
         <div
           aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
           aria-expanded="false"
-          aria-haspopup="listbox"
+          aria-haspopup="dialog"
           class="SelectionAvatarCount-wrapper SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny"
           data-test="DesignSystem-AvatarSelection--TriggerAvatar"
           role="button"
           style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white;"
-          tabindex="0"
+          tabindex="-1"
         >
           <span
             class="position-relative d-inline-flex"
@@ -1625,7 +1625,7 @@ Object {
                 aria-label="Avatar"
                 class="Avatar Avatar--tiny Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
                 data-test="DesignSystem-Avatar"
-                role="button"
+                role="img"
                 tabindex="-1"
               >
                 <span
@@ -1716,7 +1716,7 @@ Object {
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 5;"
-            tabindex="-1"
+            tabindex="0"
           >
             <span
               class="position-relative d-inline-flex"
@@ -1733,8 +1733,8 @@ Object {
                     aria-label="John Doe"
                     class="Avatar Avatar--regular Avatar--accent1 Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
-                    role="checkbox"
-                    tabindex="0"
+                    role="img"
+                    tabindex="-1"
                   >
                     <span
                       class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
@@ -1774,8 +1774,8 @@ Object {
                     aria-label="Steven Packton"
                     class="Avatar Avatar--regular Avatar--alert Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
-                    role="checkbox"
-                    tabindex="0"
+                    role="img"
+                    tabindex="-1"
                   >
                     <span
                       class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--alert"
@@ -1815,8 +1815,8 @@ Object {
                     aria-label="Nancy Wheeler"
                     class="Avatar Avatar--regular Avatar--warning Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
-                    role="checkbox"
-                    tabindex="0"
+                    role="img"
+                    tabindex="-1"
                   >
                     <span
                       class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--warning"
@@ -1856,8 +1856,8 @@ Object {
                     aria-label="Monica Geller"
                     class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
-                    role="checkbox"
-                    tabindex="0"
+                    role="img"
+                    tabindex="-1"
                   >
                     <span
                       class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
@@ -1897,8 +1897,8 @@ Object {
                     aria-label="Arya Stark"
                     class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
-                    role="checkbox"
-                    tabindex="0"
+                    role="img"
+                    tabindex="-1"
                   >
                     <span
                       class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
@@ -1919,12 +1919,12 @@ Object {
           <div
             aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
             aria-expanded="true"
-            aria-haspopup="listbox"
+            aria-haspopup="dialog"
             class="SelectionAvatarCount-wrapper SelectionAvatarGroup-item"
             data-test="DesignSystem-AvatarSelection--TriggerAvatar"
             role="button"
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white;"
-            tabindex="0"
+            tabindex="-1"
           >
             <span
               class="position-relative d-inline-flex"
@@ -1937,7 +1937,7 @@ Object {
                   aria-label="Avatar"
                   class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount SelectionAvatarCount--open cursor-pointer"
                   data-test="DesignSystem-Avatar"
-                  role="button"
+                  role="img"
                   tabindex="-1"
                 >
                   <span
@@ -2006,12 +2006,12 @@ Object {
           <div
             aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
             aria-expanded="false"
-            aria-haspopup="listbox"
+            aria-haspopup="dialog"
             class="SelectionAvatarCount-wrapper SelectionAvatarGroup-item"
             data-test="DesignSystem-AvatarSelection--TriggerAvatar"
             role="button"
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white;"
-            tabindex="0"
+            tabindex="-1"
           >
             <span
               class="position-relative d-inline-flex"
@@ -2024,7 +2024,7 @@ Object {
                   aria-label="Avatar"
                   class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
                   data-test="DesignSystem-Avatar"
-                  role="button"
+                  role="img"
                   tabindex="-1"
                 >
                   <span
@@ -2055,7 +2055,7 @@ Object {
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 5;"
-            tabindex="-1"
+            tabindex="0"
           >
             <span
               class="position-relative d-inline-flex"
@@ -2072,8 +2072,8 @@ Object {
                     aria-label="John Doe"
                     class="Avatar Avatar--tiny Avatar--accent1 Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
-                    role="checkbox"
-                    tabindex="0"
+                    role="img"
+                    tabindex="-1"
                   >
                     <span
                       class="Text Text--default Text--medium Text--regular Avatar-content--tiny Avatar-content--accent1"
@@ -2113,8 +2113,8 @@ Object {
                     aria-label="Steven Packton"
                     class="Avatar Avatar--tiny Avatar--alert Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
-                    role="checkbox"
-                    tabindex="0"
+                    role="img"
+                    tabindex="-1"
                   >
                     <span
                       class="Text Text--default Text--medium Text--regular Avatar-content--tiny Avatar-content--alert"
@@ -2154,8 +2154,8 @@ Object {
                     aria-label="Nancy Wheeler"
                     class="Avatar Avatar--tiny Avatar--warning Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
-                    role="checkbox"
-                    tabindex="0"
+                    role="img"
+                    tabindex="-1"
                   >
                     <span
                       class="Text Text--default Text--medium Text--regular Avatar-content--tiny Avatar-content--warning"
@@ -2195,8 +2195,8 @@ Object {
                     aria-label="Monica Geller"
                     class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
-                    role="checkbox"
-                    tabindex="0"
+                    role="img"
+                    tabindex="-1"
                   >
                     <span
                       class="Text Text--default Text--medium Text--regular Avatar-content--tiny Avatar-content--accent2"
@@ -2236,8 +2236,8 @@ Object {
                     aria-label="Arya Stark"
                     class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
-                    role="checkbox"
-                    tabindex="0"
+                    role="img"
+                    tabindex="-1"
                   >
                     <span
                       class="Text Text--default Text--medium Text--regular Avatar-content--tiny Avatar-content--accent2"
@@ -2258,12 +2258,12 @@ Object {
           <div
             aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
             aria-expanded="false"
-            aria-haspopup="listbox"
+            aria-haspopup="dialog"
             class="SelectionAvatarCount-wrapper SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny"
             data-test="DesignSystem-AvatarSelection--TriggerAvatar"
             role="button"
             style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white;"
-            tabindex="0"
+            tabindex="-1"
           >
             <span
               class="position-relative d-inline-flex"
@@ -2276,7 +2276,7 @@ Object {
                   aria-label="Avatar"
                   class="Avatar Avatar--tiny Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
                   data-test="DesignSystem-Avatar"
-                  role="button"
+                  role="img"
                   tabindex="-1"
                 >
                   <span
@@ -2308,7 +2308,7 @@ Object {
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
           style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 5;"
-          tabindex="-1"
+          tabindex="0"
         >
           <span
             class="position-relative d-inline-flex"
@@ -2325,8 +2325,8 @@ Object {
                   aria-label="John Doe"
                   class="Avatar Avatar--tiny Avatar--accent1 Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
-                  role="checkbox"
-                  tabindex="0"
+                  role="img"
+                  tabindex="-1"
                 >
                   <span
                     class="Text Text--default Text--medium Text--regular Avatar-content--tiny Avatar-content--accent1"
@@ -2366,8 +2366,8 @@ Object {
                   aria-label="Steven Packton"
                   class="Avatar Avatar--tiny Avatar--alert Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
-                  role="checkbox"
-                  tabindex="0"
+                  role="img"
+                  tabindex="-1"
                 >
                   <span
                     class="Text Text--default Text--medium Text--regular Avatar-content--tiny Avatar-content--alert"
@@ -2407,8 +2407,8 @@ Object {
                   aria-label="Nancy Wheeler"
                   class="Avatar Avatar--tiny Avatar--warning Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
-                  role="checkbox"
-                  tabindex="0"
+                  role="img"
+                  tabindex="-1"
                 >
                   <span
                     class="Text Text--default Text--medium Text--regular Avatar-content--tiny Avatar-content--warning"
@@ -2448,8 +2448,8 @@ Object {
                   aria-label="Monica Geller"
                   class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
-                  role="checkbox"
-                  tabindex="0"
+                  role="img"
+                  tabindex="-1"
                 >
                   <span
                     class="Text Text--default Text--medium Text--regular Avatar-content--tiny Avatar-content--accent2"
@@ -2489,8 +2489,8 @@ Object {
                   aria-label="Arya Stark"
                   class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
-                  role="checkbox"
-                  tabindex="0"
+                  role="img"
+                  tabindex="-1"
                 >
                   <span
                     class="Text Text--default Text--medium Text--regular Avatar-content--tiny Avatar-content--accent2"
@@ -2511,12 +2511,12 @@ Object {
         <div
           aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
           aria-expanded="false"
-          aria-haspopup="listbox"
+          aria-haspopup="dialog"
           class="SelectionAvatarCount-wrapper SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny"
           data-test="DesignSystem-AvatarSelection--TriggerAvatar"
           role="button"
           style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white;"
-          tabindex="0"
+          tabindex="-1"
         >
           <span
             class="position-relative d-inline-flex"
@@ -2529,7 +2529,7 @@ Object {
                 aria-label="Avatar"
                 class="Avatar Avatar--tiny Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
                 data-test="DesignSystem-Avatar"
-                role="button"
+                role="img"
                 tabindex="-1"
               >
                 <span
