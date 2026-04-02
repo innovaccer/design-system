@@ -68,7 +68,7 @@ Object {
                   class="Avatar Avatar--regular Avatar--alert Avatar--default"
                   data-test="DesignSystem-Avatar"
                   role="img"
-                  tabindex="0"
+                  tabindex="-1"
                 >
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
@@ -147,7 +147,7 @@ Object {
                 class="Avatar Avatar--regular Avatar--alert Avatar--default"
                 data-test="DesignSystem-Avatar"
                 role="img"
-                tabindex="0"
+                tabindex="-1"
               >
                 <i
                   class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
@@ -285,7 +285,7 @@ Object {
                   class="Avatar Avatar--regular Avatar--alert Avatar--default"
                   data-test="DesignSystem-Avatar"
                   role="img"
-                  tabindex="0"
+                  tabindex="-1"
                 >
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
@@ -364,7 +364,7 @@ Object {
                 class="Avatar Avatar--regular Avatar--alert Avatar--default"
                 data-test="DesignSystem-Avatar"
                 role="img"
-                tabindex="0"
+                tabindex="-1"
               >
                 <i
                   class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
@@ -502,7 +502,7 @@ Object {
                   class="Avatar Avatar--tiny Avatar--alert Avatar--default"
                   data-test="DesignSystem-Avatar"
                   role="img"
-                  tabindex="0"
+                  tabindex="-1"
                 >
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
@@ -581,7 +581,7 @@ Object {
                 class="Avatar Avatar--tiny Avatar--alert Avatar--default"
                 data-test="DesignSystem-Avatar"
                 role="img"
-                tabindex="0"
+                tabindex="-1"
               >
                 <i
                   class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
@@ -719,7 +719,7 @@ Object {
                   class="Avatar Avatar--tiny Avatar--alert Avatar--default"
                   data-test="DesignSystem-Avatar"
                   role="img"
-                  tabindex="0"
+                  tabindex="-1"
                 >
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
@@ -798,7 +798,7 @@ Object {
                 class="Avatar Avatar--tiny Avatar--alert Avatar--default"
                 data-test="DesignSystem-Avatar"
                 role="img"
-                tabindex="0"
+                tabindex="-1"
               >
                 <i
                   class="material-symbols material-symbols-rounded Icon Icon--alertDarker"

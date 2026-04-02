@@ -1,4 +1,30 @@
 import React from 'react';
+import { getNextFocusableAfterTrigger } from '@/components/organisms/select/utils';
+
+const handleTabExit = (
+  event: React.KeyboardEvent,
+  setOpenPopover?: React.Dispatch<React.SetStateAction<boolean>>,
+  setFocusedOption?: React.Dispatch<React.SetStateAction<HTMLElement | undefined>>,
+  triggerRef?: any,
+  listRef?: any
+) => {
+  event.preventDefault();
+  setOpenPopover?.(false);
+  setFocusedOption?.(undefined);
+
+  if (event.shiftKey) {
+    // Shift+Tab: focus the counter trigger
+    triggerRef?.current?.focus({ preventScroll: true });
+  } else {
+    // Tab: focus next focusable after trigger, excluding the popover
+    const next = getNextFocusableAfterTrigger(triggerRef?.current, false, listRef?.current);
+    if (next) {
+      next.focus({ preventScroll: true });
+    } else {
+      triggerRef?.current?.focus({ preventScroll: true });
+    }
+  }
+};
 
 export const handleKeyDown = (
   event: React.KeyboardEvent,
@@ -13,22 +39,40 @@ export const handleKeyDown = (
 ) => {
   switch (event.key) {
     case 'ArrowUp':
+    case 'ArrowLeft':
       event.preventDefault();
       navigateOptions('up', focusedOption, setFocusedOption, listRef, withSearch);
       break;
     case 'ArrowDown':
+    case 'ArrowRight':
       event.preventDefault();
       navigateOptions('down', focusedOption, setFocusedOption, listRef, withSearch);
       break;
     case 'Enter':
+    case ' ':
+      event.preventDefault();
       handleEnterKey(focusedOption);
       setHighlightLastItem?.(false);
       setHighlightFirstItem?.(false);
       break;
     case 'Escape':
       setOpenPopover?.(false);
-      triggerRef.current.focus();
+      triggerRef?.current?.focus();
       setFocusedOption?.(undefined);
+      break;
+    case 'Tab':
+      if (event.shiftKey && withSearch) {
+        event.preventDefault();
+        const searchInput = listRef.current?.querySelector('[data-test="DesignSystem-AvatarSelection--Input"]');
+        if (searchInput) {
+          (searchInput as HTMLElement).focus();
+          setFocusedOption?.(searchInput as HTMLElement);
+        } else {
+          handleTabExit(event, setOpenPopover, setFocusedOption, triggerRef, listRef);
+        }
+      } else {
+        handleTabExit(event, setOpenPopover, setFocusedOption, triggerRef, listRef);
+      }
       break;
     default:
       break;
@@ -89,18 +133,23 @@ export const handleInputKeyDown = (
 
   switch (event.key) {
     case 'ArrowUp':
+    case 'ArrowLeft':
       event.preventDefault();
       targetOption = listItems?.length ? listItems[listItems.length - 1] : undefined;
       break;
     case 'ArrowDown':
+    case 'ArrowRight':
       event.preventDefault();
       targetOption = listItems?.length ? listItems[0] : undefined;
       break;
     case 'Escape':
       setOpenPopover?.(false);
-      triggerRef.current.focus();
+      triggerRef?.current?.focus();
       setFocusedOption?.(undefined);
       break;
+    case 'Tab':
+      handleTabExit(event, setOpenPopover, setFocusedOption, triggerRef, listRef);
+      return; // Early return to skip focus logic below
     default:
       break;
   }

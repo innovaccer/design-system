@@ -419,9 +419,11 @@ describe('AvatarGroup component with prop:withSearch', () => {
     const emptyState = getByTestId('DesignSystem-AvatarGroup--EmptyState');
     expect(emptyState).toBeInTheDocument();
 
-    const clearIcon = getByTestId('DesignSystem-Input--closeIcon');
-    expect(clearIcon).toBeInTheDocument();
-    fireEvent.click(clearIcon);
+    const clearButton = searchInput
+      .closest('.AvatarGroup-inputWrapper')!
+      .querySelector('button[aria-label="Clear search"]') as HTMLElement;
+    expect(clearButton).toBeInTheDocument();
+    fireEvent.click(clearButton);
 
     const optionList = getAllByTestId('DesignSystem-AvatarGroup--Item');
     expect(optionList).toHaveLength(4);
