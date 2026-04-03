@@ -830,3 +830,51 @@ describe('Dropdown errorTemplate', () => {
     });
   });
 });
+
+describe('Dropdown trigger accessibility and visual parity with Select', () => {
+  it('renders aria-haspopup="listbox" on trigger button', () => {
+    const { getByTestId } = render(<Dropdown options={storyOptions} />);
+    const dropdownTrigger = getByTestId(trigger);
+    expect(dropdownTrigger).toHaveAttribute('aria-haspopup', 'listbox');
+  });
+
+  it('renders aria-haspopup="menu" on menu trigger button', () => {
+    const { getByTestId } = render(<Dropdown options={storyOptions} menu={true} />);
+    const dropdownTrigger = getByTestId(trigger);
+    expect(dropdownTrigger).toHaveAttribute('aria-haspopup', 'menu');
+  });
+
+  it('renders aria-expanded as false when dropdown is closed', () => {
+    const { getByTestId } = render(<Dropdown options={storyOptions} />);
+    const dropdownTrigger = getByTestId(trigger);
+    expect(dropdownTrigger).not.toHaveAttribute('aria-expanded', 'true');
+  });
+
+  it('shows keyboard_arrow_up icon when dropdown is open', () => {
+    const { getByTestId } = render(<Dropdown options={storyOptions} />);
+    const dropdownTrigger = getByTestId(trigger);
+
+    // Before opening - should show down arrow
+    expect(dropdownTrigger.textContent).toContain('keyboard_arrow_down');
+
+    fireEvent.click(dropdownTrigger);
+
+    // After opening - should show up arrow
+    expect(dropdownTrigger.textContent).toContain('keyboard_arrow_up');
+  });
+
+  it('shows keyboard_arrow_down icon when dropdown is closed', () => {
+    const { getByTestId } = render(<Dropdown options={storyOptions} />);
+    const dropdownTrigger = getByTestId(trigger);
+    expect(dropdownTrigger.textContent).toContain('keyboard_arrow_down');
+  });
+
+  it('option elements have tabIndex for focus support', () => {
+    const { getByTestId, getAllByTestId } = render(<Dropdown options={storyOptions} />);
+    const dropdownTrigger = getByTestId(trigger);
+    fireEvent.click(dropdownTrigger);
+
+    const options = getAllByTestId('DesignSystem-DropdownOption--DEFAULT');
+    expect(options[0]).toHaveAttribute('tabindex', '0');
+  });
+});
