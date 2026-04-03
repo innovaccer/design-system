@@ -102,8 +102,11 @@ export const Toast = (props: ToastProps) => {
     [styles[`Toast-heading--${appearance}`]]: appearance,
   });
 
-  const onCloseHandler = () => {
-    if (onClose) onClose();
+  const handleCloseKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      onClose!();
+    }
   };
 
   return (
@@ -119,13 +122,11 @@ export const Toast = (props: ToastProps) => {
           <Heading size="s" className={headingClass} appearance={appearance !== 'warning' ? 'white' : 'default'}>
             {title}
           </Heading>
-          <Icon
-            name={'close'}
-            className={iconClass('right')}
-            onClick={onCloseHandler}
-            appearance={appearance !== 'warning' ? 'white' : 'default'}
-            aria-label="Close"
-          />
+          {onClose && (
+            <button className={iconClass('right')} onClick={onClose} onKeyDown={handleCloseKeyDown} aria-label="Close">
+              <Icon name={'close'} appearance={appearance !== 'warning' ? 'white' : 'default'} aria-hidden="true" />
+            </button>
+          )}
         </div>
         {message && (
           <Text appearance={appearance !== 'warning' ? 'white' : 'default'} className={textClass}>
