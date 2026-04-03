@@ -158,6 +158,7 @@ export const VerticalNavigation = (props: VerticalNavigationProps) => {
           role="button"
           tabIndex={menu.disabled ? -1 : 0}
           aria-disabled={menu.disabled || undefined}
+          aria-label={!expanded && menu.icon ? menu.label : undefined}
         >
           {menu.icon && (
             <Icon
@@ -238,7 +239,14 @@ export const VerticalNavigation = (props: VerticalNavigationProps) => {
       </nav>
       {footer && (
         <div className={footerClasses}>
-          <Icon className={IconClassName} name="menu_open" size={16} onClick={() => onToggle && onToggle(!expanded)} />
+          <button
+            className={styles['Navigation-footerButton']}
+            onClick={() => onToggle && onToggle(!expanded)}
+            aria-label={expanded ? 'Collapse navigation' : 'Expand navigation'}
+            aria-expanded={expanded}
+          >
+            <Icon className={IconClassName} name="menu_open" size={16} />
+          </button>
         </div>
       )}
     </>
