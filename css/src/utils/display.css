@@ -33,3 +33,11 @@
 .d-inline-flex {
   display: inline-flex !important;
 }
+
+.d-grid {
+  display: grid !important;
+}
+
+.d-inline-grid {
+  display: inline-grid !important;
+}
