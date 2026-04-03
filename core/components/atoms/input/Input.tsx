@@ -210,6 +210,8 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
     }
   }, [type]);
 
+  const resolvedClearButtonAriaLabel = placeholder ? `Clear ${placeholder}` : 'Clear input';
+
   const baseProps = extractBaseProps(props);
 
   const classes = classNames(
@@ -316,13 +318,26 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
       ) : (
         onClear &&
         (value || defaultValue) && (
-          <div className={rightIconClass}>
-            <Icon
-              data-test="DesignSystem-Input--closeIcon"
-              onClick={(e) => {
+          <div
+            className={rightIconClass}
+            role="button"
+            tabIndex={0}
+            aria-label={resolvedClearButtonAriaLabel}
+            onClick={(e) => {
+              ref.current?.focus({ preventScroll: true });
+              onClear(e);
+            }}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
                 ref.current?.focus({ preventScroll: true });
                 onClear(e);
-              }}
+              }
+            }}
+          >
+            <Icon
+              data-test="DesignSystem-Input--closeIcon"
+              aria-hidden="true"
               name={'close'}
               size={sizeMapping[size]}
               className={inputRightIconClass}
