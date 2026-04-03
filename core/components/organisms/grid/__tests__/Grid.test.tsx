@@ -72,6 +72,67 @@ describe('renders Grid with showHead true and false', () => {
   });
 });
 
+describe('Grid keyboard navigation (WAI-ARIA Grid pattern)', () => {
+  const schema = [
+    { name: 'name', displayName: 'Name', width: '50%' },
+    { name: 'status', displayName: 'Status', width: '50%' },
+  ];
+  const data = [
+    { name: 'Zara', status: 'Active' },
+    { name: 'John', status: 'Inactive' },
+  ];
+
+  it('adds role="grid" and aria-rowcount/aria-colcount to Grid root', () => {
+    const { getByTestId } = render(<Grid schema={schema} data={data} />);
+    const grid = getByTestId('DesignSystem-Grid');
+    expect(grid).toHaveAttribute('role', 'grid');
+    expect(grid).toHaveAttribute('aria-rowcount');
+    expect(grid).toHaveAttribute('aria-colcount', '2');
+  });
+
+  it('body cells have role="gridcell" and support roving tabindex', () => {
+    const { getAllByRole } = render(<Grid schema={schema} data={data} />);
+    const cells = getAllByRole('gridcell');
+    expect(cells.length).toBeGreaterThanOrEqual(2);
+    const tabIndexValues = cells.map((c) => c.getAttribute('tabindex'));
+    const focusableCount = tabIndexValues.filter((t) => t === '0').length;
+    expect(focusableCount).toBe(1);
+  });
+
+  it('Arrow Right moves focus to next cell', () => {
+    const { getAllByRole } = render(<Grid schema={schema} data={data} />);
+    const cells = getAllByRole('gridcell');
+    const firstCell = cells.find((c) => c.getAttribute('tabindex') === '0') || cells[0];
+    firstCell.focus();
+    fireEvent.keyDown(firstCell, { key: 'ArrowRight' });
+    expect(document.activeElement).not.toBe(firstCell);
+  });
+
+  it('Enter activates row for resource type grid', () => {
+    const onRowClick = jest.fn();
+    const { getAllByRole } = render(
+      <Grid schema={schema} data={data} type="resource" onRowClick={onRowClick} />
+    );
+    const cells = getAllByRole('gridcell');
+    const firstCell = cells.find((c) => c.getAttribute('tabindex') === '0') || cells[0];
+    firstCell.focus();
+    fireEvent.keyDown(firstCell, { key: 'Enter' });
+    expect(onRowClick).toHaveBeenCalledWith(data[0], 0);
+  });
+
+  it('Space activates row for resource type grid', () => {
+    const onRowClick = jest.fn();
+    const { getAllByRole } = render(
+      <Grid schema={schema} data={data} type="resource" onRowClick={onRowClick} />
+    );
+    const cells = getAllByRole('gridcell');
+    const firstCell = cells.find((c) => c.getAttribute('tabindex') === '0') || cells[0];
+    firstCell.focus();
+    fireEvent.keyDown(firstCell, { key: ' ' });
+    expect(onRowClick).toHaveBeenCalledWith(data[0], 0);
+  });
+});
+
 describe('Grid component prop: onSelectAll when withCheckbox is true', () => {
   it('calls onSelectAll when head checkbox is rendered', () => {
     const schema = [
