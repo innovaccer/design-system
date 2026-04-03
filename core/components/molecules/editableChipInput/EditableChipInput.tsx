@@ -167,7 +167,7 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
 
   return (
     <div className={classes} data-test="DesignSystem-EditableChipInput" {...baseProps}>
-      <Editable onChange={onChangeHandler} editing={showComponent}>
+      <Editable onChange={onChangeHandler} editing={showComponent} aria-label={placeholder || 'Edit chips'}>
         {renderChildren()}
       </Editable>
       {showComponent && (
@@ -175,6 +175,7 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
           <Button
             data-test="DesignSystem-EditableChipInput--DiscardButton"
             icon="clear"
+            aria-label="Discard"
             className="mr-3"
             size="tiny"
             onClick={() => {
@@ -184,6 +185,7 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
           <Button
             data-test="DesignSystem-EditableChipInput--SaveButton"
             icon="check"
+            aria-label="Save"
             appearance="primary"
             size="tiny"
             disabled={disableSaveAction}

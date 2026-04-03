@@ -6,6 +6,10 @@ export interface EditableProps extends BaseProps {
   editing?: boolean;
   children: React.ReactNode;
   onChange: (eventType: string) => void;
+  /**
+   * Accessible label for the edit trigger button
+   */
+  'aria-label'?: string;
 }
 
 export const Editable = (props: EditableProps) => {
@@ -42,6 +46,7 @@ export const Editable = (props: EditableProps) => {
         onMouseLeave={() => !editing && onChange('default')}
         role="button"
         tabIndex={0}
+        aria-label={props['aria-label']}
       >
         {/* eslint-enable  */}
         {children}

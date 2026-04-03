@@ -13,6 +13,7 @@ exports[`EditableChipInput component
       data-test="DesignSystem-Editable"
     >
       <div
+        aria-label="Add Value"
         data-test="DesignSystem-EditableWrapper"
         role="button"
         tabindex="0"
@@ -107,6 +108,7 @@ exports[`EditableChipInput component
       data-test="DesignSystem-Editable"
     >
       <div
+        aria-label="Add Value"
         data-test="DesignSystem-EditableWrapper"
         role="button"
         tabindex="0"
@@ -201,6 +203,7 @@ exports[`EditableChipInput component
       data-test="DesignSystem-Editable"
     >
       <div
+        aria-label="Add Value"
         data-test="DesignSystem-EditableWrapper"
         role="button"
         tabindex="0"
@@ -295,6 +298,7 @@ exports[`EditableChipInput component
       data-test="DesignSystem-Editable"
     >
       <div
+        aria-label="Add Value"
         data-test="DesignSystem-EditableWrapper"
         role="button"
         tabindex="0"
@@ -389,6 +393,7 @@ exports[`EditableChipInput component
       data-test="DesignSystem-Editable"
     >
       <div
+        aria-label="Add Value"
         data-test="DesignSystem-EditableWrapper"
         role="button"
         tabindex="0"
@@ -483,6 +488,7 @@ exports[`EditableChipInput component
       data-test="DesignSystem-Editable"
     >
       <div
+        aria-label="Add Value"
         data-test="DesignSystem-EditableWrapper"
         role="button"
         tabindex="0"
