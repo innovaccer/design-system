@@ -1588,14 +1588,15 @@ exports[`TS renders children 1`] = `
       Hello World!
     </span>
   </div>
-  <a
+  <button
     aria-disabled="false"
-    class="Link Link--regular Link--default"
+    class="Link Link--regular Link--default Link--button-reset"
     data-test="DesignSystem-Link"
     tabindex="0"
+    type="button"
   >
     Hello World!
-  </a>
+  </button>
   <div
     class="Message Message--info"
     data-test="DesignSystem-Message"
