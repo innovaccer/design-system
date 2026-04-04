@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Switch component 
-  checked: true
+  checked: true, aria-label: "Test Switch"
  1`] = `
 <body>
   <div>
@@ -10,6 +10,7 @@ exports[`Switch component
     >
       <input
         aria-checked="true"
+        aria-label="Test Switch"
         checked=""
         class="Switch-input"
         role="switch"
@@ -25,7 +26,7 @@ exports[`Switch component
 `;
 
 exports[`Switch component 
-  checked: true, disabled: false
+  checked: true, aria-label: "Test Switch", size: "regular"
  1`] = `
 <body>
   <div>
@@ -34,6 +35,7 @@ exports[`Switch component
     >
       <input
         aria-checked="true"
+        aria-label="Test Switch"
         checked=""
         class="Switch-input"
         role="switch"
@@ -49,7 +51,57 @@ exports[`Switch component
 `;
 
 exports[`Switch component 
-  checked: true, disabled: true
+  checked: true, aria-label: "Test Switch", size: "tiny"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Switch Switch--tiny"
+    >
+      <input
+        aria-checked="true"
+        aria-label="Test Switch"
+        checked=""
+        class="Switch-input"
+        role="switch"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="Switch-wrapper Switch-wrapper--tiny Switch-wrapper--checked"
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Switch component 
+  checked: true, disabled: false, aria-label: "Test Switch"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Switch Switch--regular"
+    >
+      <input
+        aria-checked="true"
+        aria-label="Test Switch"
+        checked=""
+        class="Switch-input"
+        role="switch"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="Switch-wrapper Switch-wrapper--regular Switch-wrapper--checked"
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Switch component 
+  checked: true, disabled: true, aria-label: "Test Switch"
  1`] = `
 <body>
   <div>
@@ -58,6 +110,7 @@ exports[`Switch component
     >
       <input
         aria-checked="true"
+        aria-label="Test Switch"
         checked=""
         class="Switch-input"
         disabled=""
@@ -67,54 +120,6 @@ exports[`Switch component
       />
       <span
         class="Switch-wrapper Switch-wrapper--disabled Switch-wrapper--regular Switch-wrapper--checked Switch-wrapper--checkedDisabled"
-      />
-    </div>
-  </div>
-</body>
-`;
-
-exports[`Switch component 
-  checked: true, size: "regular"
- 1`] = `
-<body>
-  <div>
-    <div
-      class="Switch Switch--regular"
-    >
-      <input
-        aria-checked="true"
-        checked=""
-        class="Switch-input"
-        role="switch"
-        type="checkbox"
-        value=""
-      />
-      <span
-        class="Switch-wrapper Switch-wrapper--regular Switch-wrapper--checked"
-      />
-    </div>
-  </div>
-</body>
-`;
-
-exports[`Switch component 
-  checked: true, size: "tiny"
- 1`] = `
-<body>
-  <div>
-    <div
-      class="Switch Switch--tiny"
-    >
-      <input
-        aria-checked="true"
-        checked=""
-        class="Switch-input"
-        role="switch"
-        type="checkbox"
-        value=""
-      />
-      <span
-        class="Switch-wrapper Switch-wrapper--tiny Switch-wrapper--checked"
       />
     </div>
   </div>

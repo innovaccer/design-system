@@ -47,6 +47,14 @@ export interface SwitchProps extends BaseProps, OmitNativeProps<HTMLInputElement
    * Callback function called when `Switch` is toggled
    */
   onChange?: (event: ChangeEvent | KeyboardEvent, selected: boolean) => void;
+  /**
+   * Accessible label for the `Switch` (required when no visible label is associated)
+   */
+  'aria-label'?: string;
+  /**
+   * ID of the element that labels the `Switch`
+   */
+  'aria-labelledby'?: string;
 }
 
 /**
@@ -67,6 +75,10 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>((props, re
     checked: checkedProp,
     ...rest
   } = props;
+
+  if (process.env.NODE_ENV !== 'production' && !props['aria-label'] && !props['aria-labelledby'] && !props.id) {
+    console.warn('Switch: An `aria-label` or `aria-labelledby` prop is required for accessibility.');
+  }
 
   const [checked, setChecked] = React.useState(checkedProp === undefined ? defaultChecked : checkedProp);
 
