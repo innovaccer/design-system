@@ -40,6 +40,7 @@ exports[`Dropzone component snapshot
           browse files
         </span>
         <input
+          aria-label="Upload files"
           autocomplete="off"
           multiple=""
           style="display: none;"
@@ -104,6 +105,7 @@ exports[`Dropzone component snapshot
           browse files
         </span>
         <input
+          aria-label="Upload files"
           autocomplete="off"
           multiple=""
           style="display: none;"
@@ -157,6 +159,7 @@ exports[`Dropzone component snapshot
           browse files
         </span>
         <input
+          aria-label="Upload files"
           autocomplete="off"
           multiple=""
           style="display: none;"
@@ -220,6 +223,7 @@ exports[`Dropzone component snapshot
           browse files
         </span>
         <input
+          aria-label="Upload files"
           autocomplete="off"
           multiple=""
           style="display: none;"
@@ -283,6 +287,7 @@ exports[`Dropzone component snapshot
           browse files
         </span>
         <input
+          aria-label="Upload files"
           autocomplete="off"
           multiple=""
           style="display: none;"
@@ -335,6 +340,7 @@ exports[`Dropzone component snapshot
           browse files
         </span>
         <input
+          aria-label="Upload files"
           autocomplete="off"
           multiple=""
           style="display: none;"
@@ -399,6 +405,7 @@ exports[`Dropzone component snapshot
           browse files
         </span>
         <input
+          aria-label="Upload files"
           autocomplete="off"
           style="display: none;"
           tabindex="-1"
@@ -450,6 +457,7 @@ exports[`Dropzone component snapshot
           browse files
         </span>
         <input
+          aria-label="Upload files"
           autocomplete="off"
           multiple=""
           style="display: none;"
@@ -502,6 +510,7 @@ exports[`Dropzone component snapshot
           browse files
         </span>
         <input
+          aria-label="Upload files"
           autocomplete="off"
           style="display: none;"
           tabindex="-1"
@@ -553,6 +562,7 @@ exports[`Dropzone component snapshot
           browse files
         </span>
         <input
+          aria-label="Upload files"
           autocomplete="off"
           multiple=""
           style="display: none;"
