@@ -60,6 +60,15 @@ const IconWithMetaOption = (props: OptionTypeProps) => {
         </Text>
         {subInfo && renderSubInfo(subInfo)}
       </div>
+      {selected && !menu && (
+        <Icon
+          name="check"
+          appearance={appearance}
+          className={styles['Option-checkIcon']}
+          size={16}
+          data-test="DesignSystem-DropdownOption--checkIcon"
+        />
+      )}
     </div>
   );
 };

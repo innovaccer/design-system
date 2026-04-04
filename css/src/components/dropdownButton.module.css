@@ -46,7 +46,7 @@
 }
 
 .DropdownButton--placeholder {
-  color: var(--text-subtle);
+  color: var(--text);
 }
 
 .DropdownButton:hover {
@@ -56,7 +56,6 @@
 
 .DropdownButton:focus-visible {
   background-color: var(--secondary-light);
-  box-shadow: var(--shadow-spread) var(--secondary-shadow);
 }
 
 .DropdownButton:active,
