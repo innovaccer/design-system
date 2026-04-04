@@ -99,6 +99,23 @@ describe('Link Button component Event Handlers', () => {
   });
 });
 
+describe('Link Button component accessibility', () => {
+  it('uses icon name as aria-label for icon-only button', () => {
+    const { getByTestId } = render(<LinkButton icon="events" />);
+    expect(getByTestId('DesignSystem-LinkButton')).toHaveAttribute('aria-label', 'events');
+  });
+
+  it('uses explicit aria-label over icon name', () => {
+    const { getByTestId } = render(<LinkButton icon="events" aria-label="View events" />);
+    expect(getByTestId('DesignSystem-LinkButton')).toHaveAttribute('aria-label', 'View events');
+  });
+
+  it('does not add aria-label when children are present', () => {
+    const { getByTestId } = render(<LinkButton icon="events">LinkButton</LinkButton>);
+    expect(getByTestId('DesignSystem-LinkButton')).not.toHaveAttribute('aria-label');
+  });
+});
+
 describe('Link Button component appearance', () => {
   it('check for subtle class in link button', () => {
     const { getByTestId } = render(<LinkButton subtle={true}>LinkButton</LinkButton>);
