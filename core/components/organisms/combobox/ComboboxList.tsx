@@ -40,7 +40,6 @@ export const ComboboxList = (props: ComboboxListProps) => {
       className="py-3"
       {...restProps}
       role="listbox"
-      // @ts-expect-error customFocusManagement is intentionally not exported in ListboxProps to keep it internal
       customFocusManagement
       aria-multiselectable={ariaMultiselectable}
     >
