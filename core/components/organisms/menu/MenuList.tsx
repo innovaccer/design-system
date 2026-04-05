@@ -26,7 +26,6 @@ export const MenuList = (props: MenuListProps) => {
   const { children, ...rest } = props;
 
   return (
-    // @ts-expect-error customFocusManagement is intentionally not exported in ListboxProps to keep it internal
     <Listbox data-test="DesignSystem-Menu-List" {...rest} customFocusManagement>
       <MenuListContext.Provider value={{ size: props.size }}>{children}</MenuListContext.Provider>
     </Listbox>

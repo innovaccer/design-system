@@ -1,5 +1,3 @@
-/* jsx-a11y omits aria-invalid on <button>; we set it on the listbox trigger for aria-errormessage pairing */
-/* eslint-disable jsx-a11y/role-supports-aria-props */
 import * as React from 'react';
 import classNames from 'classnames';
 import { Icon, Text, Tooltip } from '@/index';
@@ -179,7 +177,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
       triggerClass="w-100"
     >
       <button
-        ref={triggerRef}
+        ref={triggerRef as React.RefObject<HTMLButtonElement>}
         onKeyDown={(event) => handleKeyDownTrigger(event, setOpenPopover, setHighlightFirstItem, setHighlightLastItem)}
         type="button"
         className={buttonClass}
@@ -189,7 +187,6 @@ const SelectTrigger = (props: SelectTriggerProps) => {
         aria-haspopup="listbox"
         aria-expanded={openPopover}
         aria-label={ariaLabel}
-        aria-invalid={error === true ? true : ariaInvalid}
         data-test="DesignSystem-Select-trigger"
         {...rest}
       >
