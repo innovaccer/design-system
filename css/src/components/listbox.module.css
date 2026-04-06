@@ -49,7 +49,6 @@
   background-color: var(--secondary-lightest);
 }
 
-.Listbox-item--option:focus,
 .Listbox-item--option:focus-visible {
   outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: calc(-1 * var(--border-width-05));
@@ -67,7 +66,6 @@
   background: color-mod(var(--primary-lighter) a(var(--opacity-12)));
 }
 
-.Listbox-item--selected:focus,
 .Listbox-item--selected:focus-visible {
   outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: calc(-1 * var(--border-width-05));
@@ -87,7 +85,6 @@
   background-color: var(--secondary-lightest);
 }
 
-.Listbox-item--resource:focus,
 .Listbox-item--resource:focus-visible {
   outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: calc(-1 * var(--border-width-05));
@@ -103,7 +100,6 @@
 
 /* Listbox type - description  */
 
-.Listbox-item--description:focus,
 .Listbox-item--description:focus-visible {
   outline: none;
 }
@@ -117,7 +113,7 @@
 
 /* Listbox type - draggable  */
 
-.Listbox-item--draggable:focus {
+.Listbox-item--draggable:focus-visible {
   outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: calc(-1 * var(--border-width-05));
 }

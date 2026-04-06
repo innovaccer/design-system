@@ -61,6 +61,7 @@ export const ChipInputBox = (props: MultiSelectTriggerProps) => {
       onKeyDown={onKeyDownHandler}
       tabIndex={-1}
       role="combobox"
+      aria-autocomplete="list"
       aria-haspopup="listbox"
       aria-controls={popoverId}
       aria-label={props['aria-label'] || props.placeholder || 'Combobox-ChipInput-Trigger'}
