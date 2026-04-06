@@ -100,12 +100,6 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
     ...rest
   } = props;
 
-  if (process.env.NODE_ENV !== 'production' && !label?.trim() && !ariaLabel && !ariaLabelledBy) {
-    console.warn(
-      'Checkbox: An accessible name is required. Provide a `label`, `aria-label`, or `aria-labelledby` prop.'
-    );
-  }
-
   const ref = React.useRef<HTMLInputElement>(null);
 
   React.useImperativeHandle(forwardedRef, (): HTMLInputElement => {
