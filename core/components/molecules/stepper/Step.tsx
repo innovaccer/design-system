@@ -13,10 +13,11 @@ export interface StepProps {
   onChange?: (label: string, value?: React.ReactText) => void;
   onKeyDown?: (e: React.KeyboardEvent) => void;
   isTabStop?: boolean;
+  stepIndex: number;
 }
 
 export const Step = React.forwardRef<HTMLDivElement, StepProps>((props, ref) => {
-  const { label, value, disabled, active, completed, onChange, onKeyDown, isTabStop = false } = props;
+  const { label, value, disabled, active, completed, onChange, onKeyDown, isTabStop = false, stepIndex } = props;
 
   const StepClass = classNames({
     [styles['Step']]: true,
@@ -56,6 +57,10 @@ export const Step = React.forwardRef<HTMLDivElement, StepProps>((props, ref) => 
 
   const textColor = active ? 'primary-dark' : disabled ? 'inverse-lightest' : 'inverse';
 
+  const stepLabel = label || `Step ${stepIndex + 1}`;
+  const stateDescription = active ? ', current' : completed ? ', completed' : '';
+  const ariaLabel = `Step ${stepIndex + 1}: ${stepLabel}${stateDescription}`;
+
   return (
     <div
       ref={ref}
@@ -65,6 +70,7 @@ export const Step = React.forwardRef<HTMLDivElement, StepProps>((props, ref) => 
       onClick={onClickHandle}
       tabIndex={disabled ? -1 : isTabStop ? 0 : -1}
       role="button"
+      aria-label={ariaLabel}
       aria-disabled={disabled || undefined}
     >
       <Icon

@@ -23,6 +23,7 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
     itemDragged: -1,
     itemDraggedOutOfBounds: -1,
     selectedItem: -1,
+    focusedIndex: 0,
     initialX: 0,
     initialY: 0,
     targetX: 0,
@@ -375,7 +376,9 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
             targetRect: this.getChildren()[this.needle].getBoundingClientRect(),
           });
 
-          (this.getChildren()[this.needle] as HTMLElement).focus();
+          const wrapper = this.getChildren()[this.needle] as HTMLElement;
+          const focusTarget = (wrapper.querySelector('[tabindex]') || wrapper) as HTMLElement;
+          focusTarget.focus();
         }
         this.setState({
           selectedItem: -1,
@@ -394,12 +397,40 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
       const offset = getTranslateOffset(this.getChildren()[selectedItem]);
       this.needle++;
       this.animateItems(this.needle, selectedItem, offset, true);
+    } else if ((e.key === 'ArrowDown' || e.key === 'j') && selectedItem === -1) {
+      e.preventDefault();
+      let nextIndex = this.state.focusedIndex + 1;
+      while (
+        nextIndex < this.props.values.length &&
+        this.props.values[nextIndex] &&
+        this.props.values[nextIndex].props.disabled
+      ) {
+        nextIndex++;
+      }
+      if (nextIndex < this.props.values.length) {
+        this.setState({ focusedIndex: nextIndex });
+        const wrapper = this.getChildren()[nextIndex] as HTMLElement;
+        const focusTarget = (wrapper.querySelector('[tabindex]') || wrapper) as HTMLElement;
+        focusTarget.focus();
+      }
     }
     if ((e.key === 'ArrowUp' || e.key === 'k') && selectedItem > -1 && this.needle > 0) {
       e.preventDefault();
       const offset = getTranslateOffset(this.getChildren()[selectedItem]);
       this.needle--;
       this.animateItems(this.needle, selectedItem, offset, true);
+    } else if ((e.key === 'ArrowUp' || e.key === 'k') && selectedItem === -1) {
+      e.preventDefault();
+      let nextIndex = this.state.focusedIndex - 1;
+      while (nextIndex >= 0 && this.props.values[nextIndex] && this.props.values[nextIndex].props.disabled) {
+        nextIndex--;
+      }
+      if (nextIndex >= 0) {
+        this.setState({ focusedIndex: nextIndex });
+        const wrapper = this.getChildren()[nextIndex] as HTMLElement;
+        const focusTarget = (wrapper.querySelector('[tabindex]') || wrapper) as HTMLElement;
+        focusTarget.focus();
+      }
     }
     if (e.key === 'Escape' && selectedItem > -1) {
       this.getChildren().forEach((item) => {
@@ -417,6 +448,14 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
   };
 
   render() {
+    const firstEnabledIndex = this.props.values.findIndex((value: any) => !(value && value.props.disabled));
+    const isOutOfBounds = this.state.focusedIndex < 0 || this.state.focusedIndex >= this.props.values.length;
+    const currentItemIsDisabled =
+      !isOutOfBounds &&
+      this.props.values[this.state.focusedIndex] &&
+      this.props.values[this.state.focusedIndex].props.disabled;
+    const effectiveFocusedIndex = isOutOfBounds || currentItemIsDisabled ? firstEnabledIndex : this.state.focusedIndex;
+
     const baseStyle = {
       userSelect: 'none',
       WebkitUserSelect: 'none',
@@ -447,8 +486,10 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
             const isDisabled = this.props.values[index] && this.props.values[index].props.disabled;
             const props: IItemProps = {
               key: index,
-              tabIndex: isDisabled ? -1 : 0,
+              tabIndex: isDisabled ? -1 : index === effectiveFocusedIndex ? 0 : -1,
+              onFocus: () => this.setState({ focusedIndex: index }),
               onKeyDown: this.onKeyDown,
+              'aria-grabbed': isSelected,
               style: {
                 ...baseStyle,
                 visibility: isHidden ? 'hidden' : undefined,
