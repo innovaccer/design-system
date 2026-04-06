@@ -12,7 +12,7 @@ export interface TextProps extends BaseProps, BaseHtmlProps<HTMLSpanElement> {
   /**
    * Text to be rendered
    */
-  children: React.ReactNode;
+  children: React.ReactText;
   /**
    * Denotes weight of `Text`
    */
