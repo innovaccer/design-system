@@ -59,7 +59,19 @@
 }
 
 .Listbox-item--selected {
+  position: relative;
   background: color-mod(var(--primary-lightest) a(var(--opacity-12)));
+}
+
+.Listbox-item--selected::before {
+  content: '';
+  position: absolute;
+  top: var(--spacing-10);
+  left: var(--spacing-10);
+  width: var(--spacing-20);
+  height: var(--spacing-20);
+  background-color: var(--primary);
+  clip-path: polygon(0 0, 100% 0, 0 100%);
 }
 
 .Listbox-item--selected:hover {
@@ -95,7 +107,19 @@
 }
 
 .Listbox-item--activated {
+  position: relative;
   background: var(--primary-lightest);
+}
+
+.Listbox-item--activated::before {
+  content: '';
+  position: absolute;
+  top: var(--spacing-10);
+  left: var(--spacing-10);
+  width: var(--spacing-20);
+  height: var(--spacing-20);
+  background-color: var(--primary);
+  clip-path: polygon(0 0, 100% 0, 0 100%);
 }
 
 /* Listbox type - description  */
