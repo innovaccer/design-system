@@ -10,6 +10,7 @@ import styles from '@css/components/verticalNav.module.css';
 export interface MenuItemProps extends BaseProps {
   menu: Menu;
   isActive: boolean;
+  isSelected?: boolean;
   rounded?: boolean;
   expanded?: boolean;
   hasSubmenu?: boolean;
@@ -77,6 +78,7 @@ export const MenuItem = (props: MenuItemProps) => {
   const {
     menu,
     isActive,
+    isSelected,
     expanded,
     rounded,
     hasSubmenu,
@@ -131,7 +133,7 @@ export const MenuItem = (props: MenuItemProps) => {
     'aria-expanded': hasSubmenu ? (isChildrenVisible ? 'true' : 'false') : undefined,
     'data-menu-name': menu.name,
     'data-disabled': menu.disabled ? 'true' : undefined,
-    'aria-selected': isActive ? 'true' : 'false',
+    'aria-selected': (isSelected !== undefined ? isSelected : isActive) ? 'true' : 'false',
     ...extractBaseProps(props),
   };
 

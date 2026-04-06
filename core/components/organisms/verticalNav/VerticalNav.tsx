@@ -231,6 +231,7 @@ export const VerticalNav = (props: VerticalNavProps) => {
               menu={menu}
               expanded={expanded}
               isActive={isActive}
+              isSelected={isMenuActive(menus, menu, active)}
               hasSubmenu={hasSubmenu}
               isChildren={false}
               rounded={rounded}
@@ -253,6 +254,7 @@ export const VerticalNav = (props: VerticalNavProps) => {
                   rounded={rounded}
                   onClick={onClickHandler}
                   isActive={isMenuActive(menus, subMenu, active)}
+                  isSelected={isMenuActive(menus, subMenu, active)}
                   customItemRenderer={customItemRenderer}
                   customOptionRenderer={customOptionRenderer}
                   tabIndex={effectiveFocused === subMenu.name ? 0 : -1}
