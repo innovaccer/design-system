@@ -386,6 +386,12 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
         type: 'string',
         description: 'ID of an external element that labels the spinner. When set, aria-label is suppressed.',
       },
+      {
+        name: 'label',
+        type: 'string',
+        description:
+          'Visible label for the slider. When provided, each handle (role="slider") is automatically linked to it via aria-labelledby so screen readers announce the label with the current value.',
+      },
     ],
   },
 
