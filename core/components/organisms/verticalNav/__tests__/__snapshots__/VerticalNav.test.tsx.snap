@@ -45,7 +45,7 @@ exports[`Vertical Navigation component
         <a
           aria-expanded="true"
           aria-level="1"
-          aria-selected="true"
+          aria-selected="false"
           class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
           data-menu-name="care_management"
           data-test="DesignSystem-VerticalNav--Item"
@@ -242,7 +242,7 @@ exports[`Vertical Navigation component
       <a
         aria-expanded="true"
         aria-level="1"
-        aria-selected="true"
+        aria-selected="false"
         class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--expandedRounded MenuItem--rounded color-inverse"
         data-menu-name="care_management"
         data-test="DesignSystem-VerticalNav--Item"
