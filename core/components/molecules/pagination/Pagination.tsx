@@ -3,6 +3,7 @@ import { debounce } from 'throttle-debounce';
 import { Text, MetricInput, Button } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { isNaturalNumber } from '@/utils/validators';
+import uidGenerator from '@/utils/uidGenerator';
 import styles from '@css/components/pagination.module.css';
 
 import classNames from 'classnames';
@@ -36,6 +37,11 @@ export const Pagination = (props: PaginationProps) => {
   const { type, totalPages, onPageChange, className, pageJumpDebounceDuration } = props;
 
   const baseProps = extractBaseProps(props);
+  const [descriptionId, setDescriptionId] = React.useState<string | undefined>();
+
+  React.useEffect(() => {
+    setDescriptionId(`DesignSystem-Pagination-totalPage-${uidGenerator()}`);
+  }, []);
 
   const [page, setPage] = React.useState<number>(props.page);
   const [init, setInit] = React.useState<boolean>(false);
@@ -151,8 +157,10 @@ export const Pagination = (props: PaginationProps) => {
             value={`${isNaturalNumber(page) ? page : ''}`}
             data-test="DesignSystem-Pagination--Input"
             onKeyPress={onKeyPressHandler}
+            aria-label="Current page"
+            aria-describedby={descriptionId}
           />
-          <Text>{` of ${totalPages} pages`}</Text>
+          <Text id={descriptionId}>{` of ${totalPages} pages`}</Text>
         </div>
       )}
       <div className={nextButtonWrapperClass}>
