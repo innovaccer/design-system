@@ -8,6 +8,7 @@ import ComboboxContext, { ContextProps } from './ComboboxContext';
 import { PopoverProps } from '@/index.type';
 import { focusListItem } from './trigger/utils';
 import { ComboboxTrigger } from './trigger/ComboboxTrigger';
+import { getNextFocusableAfterTrigger } from '@/components/organisms/select/utils';
 import uidGenerator from '@/utils/uidGenerator';
 
 export type ComboboxInputSize = 'tiny' | 'regular' | 'large';
@@ -137,6 +138,14 @@ export interface ComboboxProps extends BaseProps {
    * Associates combobox trigger with an external label
    */
   'aria-labelledby'?: string;
+  /**
+   * Element ids (space-separated) for supplementary help or description regions (e.g. sibling `HelpText`).
+   */
+  'aria-describedby'?: string;
+  /**
+   * Id of the live error message element (e.g. `HelpText` with `error`); pair with `aria-invalid` when in error.
+   */
+  'aria-errormessage'?: string;
 }
 
 export const Combobox = (props: ComboboxProps) => {
@@ -166,6 +175,8 @@ export const Combobox = (props: ComboboxProps) => {
     computeStyles,
     'aria-label': ariaLabel,
     'aria-labelledby': ariaLabelledBy,
+    'aria-describedby': ariaDescribedBy,
+    'aria-errormessage': ariaErrormessage,
   } = props;
 
   const [popoverStyle, setPopoverStyle] = React.useState<PopoverProps['customStyle']>();
@@ -236,15 +247,21 @@ export const Combobox = (props: ComboboxProps) => {
 
   React.useEffect(() => {
     if (highlightFirstItem && openPopover) {
-      requestAnimationFrame(() => focusListItem('down', setFocusedOption, listRef));
+      requestAnimationFrame(() => {
+        focusListItem('down', setFocusedOption, listRef);
+        setHighlightFirstItem(false);
+      });
     }
-  }, [highlightFirstItem]);
+  }, [highlightFirstItem, openPopover]);
 
   React.useEffect(() => {
     if (highlightLastItem && openPopover) {
-      requestAnimationFrame(() => focusListItem('up', setFocusedOption, listRef));
+      requestAnimationFrame(() => {
+        focusListItem('up', setFocusedOption, listRef);
+        setHighlightLastItem(false);
+      });
     }
-  }, [highlightLastItem]);
+  }, [highlightLastItem, openPopover]);
 
   React.useEffect(() => {
     if (!openPopover) {
@@ -256,6 +273,46 @@ export const Combobox = (props: ComboboxProps) => {
   React.useEffect(() => {
     onSearch && onSearch(chipInputText);
   }, [chipInputText]);
+
+  // Tab / Shift+Tab: intercept in capture phase on the list root so we still close and return
+  // focus when the active element is a nested node (inner row, etc.) that might not bubble
+  // cleanly—especially with the list portaled to the end of `document.body`.
+  React.useLayoutEffect(() => {
+    if (!openPopover || disabled) return;
+    const el = listRef.current;
+    if (!el) return;
+
+    const onTabCapture = (event: KeyboardEvent) => {
+      if (event.key !== 'Tab') return;
+      if (!el.contains(event.target as Node)) return;
+      event.preventDefault();
+      setOpenPopover(false);
+      setFocusedOption(undefined);
+
+      if (inputTriggerRef?.current) {
+        const next = getNextFocusableAfterTrigger(inputTriggerRef.current, event.shiftKey, el);
+        if (next) {
+          next.focus({ preventScroll: true });
+        } else {
+          inputTriggerRef.current?.focus();
+        }
+      }
+    };
+
+    el.addEventListener('keydown', onTabCapture, true);
+    return () => el.removeEventListener('keydown', onTabCapture, true);
+  }, [openPopover, disabled]);
+
+  const previousOpen = React.useRef(openPopover);
+
+  React.useEffect(() => {
+    if (previousOpen.current && !openPopover) {
+      if (document.activeElement === document.body) {
+        inputTriggerRef.current?.focus({ preventScroll: true });
+      }
+    }
+    previousOpen.current = openPopover;
+  }, [openPopover]);
 
   const onOptionClick = (option: OptionType) => {
     setIsOptionSelected(true);
@@ -295,6 +352,8 @@ export const Combobox = (props: ComboboxProps) => {
     onKeyUp,
     'aria-label': ariaLabel,
     'aria-labelledby': ariaLabelledBy,
+    'aria-describedby': ariaDescribedBy,
+    'aria-errormessage': ariaErrormessage,
   };
 
   const contextProp = {
@@ -332,7 +391,7 @@ export const Combobox = (props: ComboboxProps) => {
             trigger={<ComboboxTrigger {...triggerProps} />}
             computeStyles={popoverComputeStyle}
           >
-            <div style={wrapperStyle} ref={listRef} id={popoverId}>
+            <div style={wrapperStyle} ref={listRef}>
               {children && typeof children === 'function' ? children(contextProp) : children}
             </div>
           </Popover>

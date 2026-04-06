@@ -122,6 +122,7 @@ export const Stepper = (props: StepperProps) => {
             completed={completedStep}
             disabled={disabled}
             isTabStop={isTabStop}
+            stepIndex={index}
             onChange={(steplabel, stepvalue) => onChangeHandler(index, steplabel, stepvalue)}
             onKeyDown={(e) => handleStepKeyDown(e, index)}
           />

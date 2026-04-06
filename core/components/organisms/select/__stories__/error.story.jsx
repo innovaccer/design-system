@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Select } from '@/index';
+import { Select, HelpText } from '@/index';
 import { action } from '@/utils/action';
 
 // CSF format story
@@ -26,27 +26,38 @@ export const error = () => {
     action('selectedOption', selectedOption);
   };
 
+  const medicationFieldMessageId = 'medication-select-message';
+
   return (
-    <Select
-      error={hasError}
-      value={selectedValue}
-      onSelect={onSelectHandler}
-      triggerOptions={{ 'aria-label': 'Medication selector with error' }}
-    >
-      <Select.List aria-label="Medication options list">
-        {medicineList.map((item, key) => {
-          return (
-            <Select.Option
-              key={key}
-              option={{ label: item.label, value: item.value }}
-              aria-label={`${item.label} option`}
-            >
-              {item.label}
-            </Select.Option>
-          );
-        })}
-      </Select.List>
-    </Select>
+    <div>
+      <Select
+        error={hasError}
+        value={selectedValue}
+        onSelect={onSelectHandler}
+        aria-describedby={medicationFieldMessageId}
+        aria-errormessage={hasError ? medicationFieldMessageId : undefined}
+        triggerOptions={{ 'aria-label': 'Medication selector with error' }}
+      >
+        <Select.List aria-label="Medication options list">
+          {medicineList.map((item, key) => {
+            return (
+              <Select.Option
+                key={key}
+                option={{ label: item.label, value: item.value }}
+                aria-label={`${item.label} option`}
+              >
+                {item.label}
+              </Select.Option>
+            );
+          })}
+        </Select.List>
+      </Select>
+      <HelpText
+        id={medicationFieldMessageId}
+        error={hasError}
+        message={hasError ? 'Please select a medication from the list' : 'Pick a medication from the list.'}
+      />
+    </div>
   );
 };
 
@@ -73,11 +84,16 @@ const customCode = `() => {
     console.log('selectedOption', selectedOption);
   };
 
+  const medicationFieldMessageId = 'medication-select-message';
+
   return (
+    <div>
     <Select
       error={hasError}
       value={selectedValue}
       onSelect={onSelectHandler}
+      aria-describedby={medicationFieldMessageId}
+      aria-errormessage={hasError ? medicationFieldMessageId : undefined}
       triggerOptions={{ 'aria-label': 'Medication selector with error' }}
     >
       <Select.List aria-label="Medication options list">
@@ -94,6 +110,14 @@ const customCode = `() => {
         })}
       </Select.List>
     </Select>
+    <HelpText
+      id={medicationFieldMessageId}
+      error={hasError}
+      message={
+        hasError ? 'Please select a medication from the list' : 'Pick a medication from the list.'
+      }
+    />
+    </div>
   );
 }`;
 

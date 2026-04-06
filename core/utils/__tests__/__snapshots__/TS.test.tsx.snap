@@ -111,6 +111,7 @@ exports[`TS renders children 1`] = `
       class="d-flex"
     >
       <div
+        aria-label="Calendar"
         class="Calendar-wrapper"
         data-test="DesignSystem-Calendar-Wrapper"
       >
@@ -123,6 +124,7 @@ exports[`TS renders children 1`] = `
             class="Calendar-header--large"
           >
             <button
+              aria-label="Previous month"
               class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
               data-test="DesignSystem-Button"
               tabindex="0"
@@ -184,6 +186,7 @@ exports[`TS renders children 1`] = `
               </button>
             </div>
             <button
+              aria-label="Next month"
               class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
               data-test="DesignSystem-Button"
               tabindex="0"
@@ -205,58 +208,97 @@ exports[`TS renders children 1`] = `
           </div>
           <div
             class="Calendar-body"
+            role="grid"
           >
             <div
               class="Calendar-dayValues"
+              role="row"
             >
-              <span
-                class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
-                data-test="DesignSystem-Text"
+              <div
+                class="Calendar-valueWrapper"
+                role="columnheader"
               >
-                Su
-              </span>
-              <span
-                class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
-                data-test="DesignSystem-Text"
+                <span
+                  class="Text Text--default Text--strong Text--regular"
+                  data-test="DesignSystem-Text"
+                >
+                  Su
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper"
+                role="columnheader"
               >
-                Mo
-              </span>
-              <span
-                class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
-                data-test="DesignSystem-Text"
+                <span
+                  class="Text Text--default Text--strong Text--regular"
+                  data-test="DesignSystem-Text"
+                >
+                  Mo
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper"
+                role="columnheader"
               >
-                Tu
-              </span>
-              <span
-                class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
-                data-test="DesignSystem-Text"
+                <span
+                  class="Text Text--default Text--strong Text--regular"
+                  data-test="DesignSystem-Text"
+                >
+                  Tu
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper"
+                role="columnheader"
               >
-                We
-              </span>
-              <span
-                class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
-                data-test="DesignSystem-Text"
+                <span
+                  class="Text Text--default Text--strong Text--regular"
+                  data-test="DesignSystem-Text"
+                >
+                  We
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper"
+                role="columnheader"
               >
-                Th
-              </span>
-              <span
-                class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
-                data-test="DesignSystem-Text"
+                <span
+                  class="Text Text--default Text--strong Text--regular"
+                  data-test="DesignSystem-Text"
+                >
+                  Th
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper"
+                role="columnheader"
               >
-                Fr
-              </span>
-              <span
-                class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
-                data-test="DesignSystem-Text"
+                <span
+                  class="Text Text--default Text--strong Text--regular"
+                  data-test="DesignSystem-Text"
+                >
+                  Fr
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper"
+                role="columnheader"
               >
-                Sa
-              </span>
+                <span
+                  class="Text Text--default Text--strong Text--regular"
+                  data-test="DesignSystem-Text"
+                >
+                  Sa
+                </span>
+              </div>
             </div>
             <div
               class="Calendar-dateValues"
+              role="rowgroup"
             >
               <div
                 class="Calendar-valueRow"
+                role="row"
               >
                 <div
                   class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
@@ -265,11 +307,13 @@ exports[`TS renders children 1`] = `
                   <button
                     aria-disabled="false"
                     aria-label="May 30, 2021"
+                    aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
                     data-col="0"
                     data-row="0"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="gridcell"
                     tabindex="0"
                     type="button"
                   >
@@ -288,11 +332,13 @@ exports[`TS renders children 1`] = `
                   <button
                     aria-disabled="false"
                     aria-label="May 31, 2021"
+                    aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
                     data-col="1"
                     data-row="0"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="gridcell"
                     tabindex="-1"
                     type="button"
                   >
@@ -311,11 +357,13 @@ exports[`TS renders children 1`] = `
                   <button
                     aria-disabled="false"
                     aria-label="June 1, 2021"
+                    aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
                     data-col="2"
                     data-row="0"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="gridcell"
                     tabindex="-1"
                     type="button"
                   >
@@ -334,11 +382,13 @@ exports[`TS renders children 1`] = `
                   <button
                     aria-disabled="false"
                     aria-label="June 2, 2021"
+                    aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
                     data-col="3"
                     data-row="0"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="gridcell"
                     tabindex="-1"
                     type="button"
                   >
@@ -357,11 +407,13 @@ exports[`TS renders children 1`] = `
                   <button
                     aria-disabled="false"
                     aria-label="June 3, 2021"
+                    aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
                     data-col="4"
                     data-row="0"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="gridcell"
                     tabindex="-1"
                     type="button"
                   >
@@ -380,11 +432,13 @@ exports[`TS renders children 1`] = `
                   <button
                     aria-disabled="false"
                     aria-label="June 4, 2021"
+                    aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
                     data-col="5"
                     data-row="0"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="gridcell"
                     tabindex="-1"
                     type="button"
                   >
@@ -403,11 +457,13 @@ exports[`TS renders children 1`] = `
                   <button
                     aria-disabled="false"
                     aria-label="June 5, 2021"
+                    aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
                     data-col="6"
                     data-row="0"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="gridcell"
                     tabindex="-1"
                     type="button"
                   >
@@ -422,6 +478,7 @@ exports[`TS renders children 1`] = `
               </div>
               <div
                 class="Calendar-valueRow"
+                role="row"
               >
                 <div
                   class="Calendar-valueWrapper"
@@ -430,11 +487,13 @@ exports[`TS renders children 1`] = `
                   <button
                     aria-disabled="false"
                     aria-label="June 6, 2021"
+                    aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
                     data-col="0"
                     data-row="1"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="gridcell"
                     tabindex="-1"
                     type="button"
                   >
@@ -453,11 +512,13 @@ exports[`TS renders children 1`] = `
                   <button
                     aria-disabled="false"
                     aria-label="June 7, 2021"
+                    aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
                     data-col="1"
                     data-row="1"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="gridcell"
                     tabindex="-1"
                     type="button"
                   >
@@ -476,11 +537,13 @@ exports[`TS renders children 1`] = `
                   <button
                     aria-disabled="false"
                     aria-label="June 8, 2021"
+                    aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
                     data-col="2"
                     data-row="1"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="gridcell"
                     tabindex="-1"
                     type="button"
                   >
@@ -499,11 +562,13 @@ exports[`TS renders children 1`] = `
                   <button
                     aria-disabled="false"
                     aria-label="June 9, 2021"
+                    aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
                     data-col="3"
                     data-row="1"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="gridcell"
                     tabindex="-1"
                     type="button"
                   >
@@ -522,11 +587,13 @@ exports[`TS renders children 1`] = `
                   <button
                     aria-disabled="false"
                     aria-label="June 10, 2021"
+                    aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
                     data-col="4"
                     data-row="1"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="gridcell"
                     tabindex="-1"
                     type="button"
                   >
@@ -545,11 +612,13 @@ exports[`TS renders children 1`] = `
                   <button
                     aria-disabled="false"
                     aria-label="June 11, 2021"
+                    aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
                     data-col="5"
                     data-row="1"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="gridcell"
                     tabindex="-1"
                     type="button"
                   >
@@ -568,11 +637,13 @@ exports[`TS renders children 1`] = `
                   <button
                     aria-disabled="false"
                     aria-label="June 12, 2021"
+                    aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
                     data-col="6"
                     data-row="1"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="gridcell"
                     tabindex="-1"
                     type="button"
                   >
@@ -587,6 +658,7 @@ exports[`TS renders children 1`] = `
               </div>
               <div
                 class="Calendar-valueRow"
+                role="row"
               >
                 <div
                   class="Calendar-valueWrapper"
@@ -595,11 +667,13 @@ exports[`TS renders children 1`] = `
                   <button
                     aria-disabled="false"
                     aria-label="June 13, 2021"
+                    aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
                     data-col="0"
                     data-row="2"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="gridcell"
                     tabindex="-1"
                     type="button"
                   >
@@ -618,11 +692,13 @@ exports[`TS renders children 1`] = `
                   <button
                     aria-disabled="false"
                     aria-label="June 14, 2021"
+                    aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large Calendar-value--currDateMonthYear Calendar-value--currDate"
                     data-calendar-date-cell="true"
                     data-col="1"
                     data-row="2"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="gridcell"
                     tabindex="-1"
                     type="button"
                   >
@@ -641,11 +717,13 @@ exports[`TS renders children 1`] = `
                   <button
                     aria-disabled="false"
                     aria-label="June 15, 2021"
+                    aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
                     data-col="2"
                     data-row="2"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="gridcell"
                     tabindex="-1"
                     type="button"
                   >
@@ -664,11 +742,13 @@ exports[`TS renders children 1`] = `
                   <button
                     aria-disabled="false"
                     aria-label="June 16, 2021"
+                    aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
                     data-col="3"
                     data-row="2"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="gridcell"
                     tabindex="-1"
                     type="button"
                   >
@@ -687,11 +767,13 @@ exports[`TS renders children 1`] = `
                   <button
                     aria-disabled="false"
                     aria-label="June 17, 2021"
+                    aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
                     data-col="4"
                     data-row="2"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="gridcell"
                     tabindex="-1"
                     type="button"
                   >
@@ -710,11 +792,13 @@ exports[`TS renders children 1`] = `
                   <button
                     aria-disabled="false"
                     aria-label="June 18, 2021"
+                    aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
                     data-col="5"
                     data-row="2"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="gridcell"
                     tabindex="-1"
                     type="button"
                   >
@@ -733,11 +817,13 @@ exports[`TS renders children 1`] = `
                   <button
                     aria-disabled="false"
                     aria-label="June 19, 2021"
+                    aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
                     data-col="6"
                     data-row="2"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="gridcell"
                     tabindex="-1"
                     type="button"
                   >
@@ -752,6 +838,7 @@ exports[`TS renders children 1`] = `
               </div>
               <div
                 class="Calendar-valueRow"
+                role="row"
               >
                 <div
                   class="Calendar-valueWrapper"
@@ -760,11 +847,13 @@ exports[`TS renders children 1`] = `
                   <button
                     aria-disabled="false"
                     aria-label="June 20, 2021"
+                    aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
                     data-col="0"
                     data-row="3"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="gridcell"
                     tabindex="-1"
                     type="button"
                   >
@@ -783,11 +872,13 @@ exports[`TS renders children 1`] = `
                   <button
                     aria-disabled="false"
                     aria-label="June 21, 2021"
+                    aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
                     data-col="1"
                     data-row="3"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="gridcell"
                     tabindex="-1"
                     type="button"
                   >
@@ -806,11 +897,13 @@ exports[`TS renders children 1`] = `
                   <button
                     aria-disabled="false"
                     aria-label="June 22, 2021"
+                    aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
                     data-col="2"
                     data-row="3"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="gridcell"
                     tabindex="-1"
                     type="button"
                   >
@@ -829,11 +922,13 @@ exports[`TS renders children 1`] = `
                   <button
                     aria-disabled="false"
                     aria-label="June 23, 2021"
+                    aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
                     data-col="3"
                     data-row="3"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="gridcell"
                     tabindex="-1"
                     type="button"
                   >
@@ -852,11 +947,13 @@ exports[`TS renders children 1`] = `
                   <button
                     aria-disabled="false"
                     aria-label="June 24, 2021"
+                    aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
                     data-col="4"
                     data-row="3"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="gridcell"
                     tabindex="-1"
                     type="button"
                   >
@@ -875,11 +972,13 @@ exports[`TS renders children 1`] = `
                   <button
                     aria-disabled="false"
                     aria-label="June 25, 2021"
+                    aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
                     data-col="5"
                     data-row="3"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="gridcell"
                     tabindex="-1"
                     type="button"
                   >
@@ -898,11 +997,13 @@ exports[`TS renders children 1`] = `
                   <button
                     aria-disabled="false"
                     aria-label="June 26, 2021"
+                    aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
                     data-col="6"
                     data-row="3"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="gridcell"
                     tabindex="-1"
                     type="button"
                   >
@@ -917,6 +1018,7 @@ exports[`TS renders children 1`] = `
               </div>
               <div
                 class="Calendar-valueRow"
+                role="row"
               >
                 <div
                   class="Calendar-valueWrapper"
@@ -925,11 +1027,13 @@ exports[`TS renders children 1`] = `
                   <button
                     aria-disabled="false"
                     aria-label="June 27, 2021"
+                    aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
                     data-col="0"
                     data-row="4"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="gridcell"
                     tabindex="-1"
                     type="button"
                   >
@@ -948,11 +1052,13 @@ exports[`TS renders children 1`] = `
                   <button
                     aria-disabled="false"
                     aria-label="June 28, 2021"
+                    aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
                     data-col="1"
                     data-row="4"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="gridcell"
                     tabindex="-1"
                     type="button"
                   >
@@ -971,11 +1077,13 @@ exports[`TS renders children 1`] = `
                   <button
                     aria-disabled="false"
                     aria-label="June 29, 2021"
+                    aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
                     data-col="2"
                     data-row="4"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="gridcell"
                     tabindex="-1"
                     type="button"
                   >
@@ -994,11 +1102,13 @@ exports[`TS renders children 1`] = `
                   <button
                     aria-disabled="false"
                     aria-label="June 30, 2021"
+                    aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
                     data-col="3"
                     data-row="4"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="gridcell"
                     tabindex="-1"
                     type="button"
                   >
@@ -1017,11 +1127,13 @@ exports[`TS renders children 1`] = `
                   <button
                     aria-disabled="false"
                     aria-label="July 1, 2021"
+                    aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
                     data-col="4"
                     data-row="4"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="gridcell"
                     tabindex="-1"
                     type="button"
                   >
@@ -1040,11 +1152,13 @@ exports[`TS renders children 1`] = `
                   <button
                     aria-disabled="false"
                     aria-label="July 2, 2021"
+                    aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
                     data-col="5"
                     data-row="4"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="gridcell"
                     tabindex="-1"
                     type="button"
                   >
@@ -1063,11 +1177,13 @@ exports[`TS renders children 1`] = `
                   <button
                     aria-disabled="false"
                     aria-label="July 3, 2021"
+                    aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
                     data-col="6"
                     data-row="4"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="gridcell"
                     tabindex="-1"
                     type="button"
                   >
@@ -1082,6 +1198,7 @@ exports[`TS renders children 1`] = `
               </div>
               <div
                 class="Calendar-valueRow"
+                role="row"
               >
                 <div
                   class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
@@ -1090,11 +1207,13 @@ exports[`TS renders children 1`] = `
                   <button
                     aria-disabled="false"
                     aria-label="July 4, 2021"
+                    aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
                     data-col="0"
                     data-row="5"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="gridcell"
                     tabindex="-1"
                     type="button"
                   >
@@ -1113,11 +1232,13 @@ exports[`TS renders children 1`] = `
                   <button
                     aria-disabled="false"
                     aria-label="July 5, 2021"
+                    aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
                     data-col="1"
                     data-row="5"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="gridcell"
                     tabindex="-1"
                     type="button"
                   >
@@ -1136,11 +1257,13 @@ exports[`TS renders children 1`] = `
                   <button
                     aria-disabled="false"
                     aria-label="July 6, 2021"
+                    aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
                     data-col="2"
                     data-row="5"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="gridcell"
                     tabindex="-1"
                     type="button"
                   >
@@ -1159,11 +1282,13 @@ exports[`TS renders children 1`] = `
                   <button
                     aria-disabled="false"
                     aria-label="July 7, 2021"
+                    aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
                     data-col="3"
                     data-row="5"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="gridcell"
                     tabindex="-1"
                     type="button"
                   >
@@ -1182,11 +1307,13 @@ exports[`TS renders children 1`] = `
                   <button
                     aria-disabled="false"
                     aria-label="July 8, 2021"
+                    aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
                     data-col="4"
                     data-row="5"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="gridcell"
                     tabindex="-1"
                     type="button"
                   >
@@ -1205,11 +1332,13 @@ exports[`TS renders children 1`] = `
                   <button
                     aria-disabled="false"
                     aria-label="July 9, 2021"
+                    aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
                     data-col="5"
                     data-row="5"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="gridcell"
                     tabindex="-1"
                     type="button"
                   >
@@ -1228,11 +1357,13 @@ exports[`TS renders children 1`] = `
                   <button
                     aria-disabled="false"
                     aria-label="July 10, 2021"
+                    aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
                     data-col="6"
                     data-row="5"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="gridcell"
                     tabindex="-1"
                     type="button"
                   >
@@ -2364,6 +2495,7 @@ exports[`TS renders children 1`] = `
     role="group"
   />
   <div
+    aria-label="Calendar"
     class="Calendar-wrapper"
     data-test="DesignSystem-Calendar-Wrapper"
   >
@@ -2376,6 +2508,7 @@ exports[`TS renders children 1`] = `
         class="Calendar-header--large"
       >
         <button
+          aria-label="Previous month"
           class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
           data-test="DesignSystem-Button"
           tabindex="0"
@@ -2423,6 +2556,7 @@ exports[`TS renders children 1`] = `
           </button>
         </div>
         <button
+          aria-label="Next month"
           class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
           data-test="DesignSystem-Button"
           tabindex="0"
@@ -2444,58 +2578,97 @@ exports[`TS renders children 1`] = `
       </div>
       <div
         class="Calendar-body"
+        role="grid"
       >
         <div
           class="Calendar-dayValues"
+          role="row"
         >
-          <span
-            class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
-            data-test="DesignSystem-Text"
+          <div
+            class="Calendar-valueWrapper"
+            role="columnheader"
           >
-            Su
-          </span>
-          <span
-            class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
-            data-test="DesignSystem-Text"
+            <span
+              class="Text Text--default Text--strong Text--regular"
+              data-test="DesignSystem-Text"
+            >
+              Su
+            </span>
+          </div>
+          <div
+            class="Calendar-valueWrapper"
+            role="columnheader"
           >
-            Mo
-          </span>
-          <span
-            class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
-            data-test="DesignSystem-Text"
+            <span
+              class="Text Text--default Text--strong Text--regular"
+              data-test="DesignSystem-Text"
+            >
+              Mo
+            </span>
+          </div>
+          <div
+            class="Calendar-valueWrapper"
+            role="columnheader"
           >
-            Tu
-          </span>
-          <span
-            class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
-            data-test="DesignSystem-Text"
+            <span
+              class="Text Text--default Text--strong Text--regular"
+              data-test="DesignSystem-Text"
+            >
+              Tu
+            </span>
+          </div>
+          <div
+            class="Calendar-valueWrapper"
+            role="columnheader"
           >
-            We
-          </span>
-          <span
-            class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
-            data-test="DesignSystem-Text"
+            <span
+              class="Text Text--default Text--strong Text--regular"
+              data-test="DesignSystem-Text"
+            >
+              We
+            </span>
+          </div>
+          <div
+            class="Calendar-valueWrapper"
+            role="columnheader"
           >
-            Th
-          </span>
-          <span
-            class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
-            data-test="DesignSystem-Text"
+            <span
+              class="Text Text--default Text--strong Text--regular"
+              data-test="DesignSystem-Text"
+            >
+              Th
+            </span>
+          </div>
+          <div
+            class="Calendar-valueWrapper"
+            role="columnheader"
           >
-            Fr
-          </span>
-          <span
-            class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
-            data-test="DesignSystem-Text"
+            <span
+              class="Text Text--default Text--strong Text--regular"
+              data-test="DesignSystem-Text"
+            >
+              Fr
+            </span>
+          </div>
+          <div
+            class="Calendar-valueWrapper"
+            role="columnheader"
           >
-            Sa
-          </span>
+            <span
+              class="Text Text--default Text--strong Text--regular"
+              data-test="DesignSystem-Text"
+            >
+              Sa
+            </span>
+          </div>
         </div>
         <div
           class="Calendar-dateValues"
+          role="rowgroup"
         >
           <div
             class="Calendar-valueRow"
+            role="row"
           >
             <div
               class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
@@ -2504,11 +2677,13 @@ exports[`TS renders children 1`] = `
               <button
                 aria-disabled="false"
                 aria-label="May 30, 2021"
+                aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
                 data-col="0"
                 data-row="0"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="gridcell"
                 tabindex="0"
                 type="button"
               >
@@ -2527,11 +2702,13 @@ exports[`TS renders children 1`] = `
               <button
                 aria-disabled="false"
                 aria-label="May 31, 2021"
+                aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
                 data-col="1"
                 data-row="0"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="gridcell"
                 tabindex="-1"
                 type="button"
               >
@@ -2550,11 +2727,13 @@ exports[`TS renders children 1`] = `
               <button
                 aria-disabled="false"
                 aria-label="June 1, 2021"
+                aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
                 data-col="2"
                 data-row="0"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="gridcell"
                 tabindex="-1"
                 type="button"
               >
@@ -2573,11 +2752,13 @@ exports[`TS renders children 1`] = `
               <button
                 aria-disabled="false"
                 aria-label="June 2, 2021"
+                aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
                 data-col="3"
                 data-row="0"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="gridcell"
                 tabindex="-1"
                 type="button"
               >
@@ -2596,11 +2777,13 @@ exports[`TS renders children 1`] = `
               <button
                 aria-disabled="false"
                 aria-label="June 3, 2021"
+                aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
                 data-col="4"
                 data-row="0"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="gridcell"
                 tabindex="-1"
                 type="button"
               >
@@ -2619,11 +2802,13 @@ exports[`TS renders children 1`] = `
               <button
                 aria-disabled="false"
                 aria-label="June 4, 2021"
+                aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
                 data-col="5"
                 data-row="0"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="gridcell"
                 tabindex="-1"
                 type="button"
               >
@@ -2642,11 +2827,13 @@ exports[`TS renders children 1`] = `
               <button
                 aria-disabled="false"
                 aria-label="June 5, 2021"
+                aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
                 data-col="6"
                 data-row="0"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="gridcell"
                 tabindex="-1"
                 type="button"
               >
@@ -2661,6 +2848,7 @@ exports[`TS renders children 1`] = `
           </div>
           <div
             class="Calendar-valueRow"
+            role="row"
           >
             <div
               class="Calendar-valueWrapper"
@@ -2669,11 +2857,13 @@ exports[`TS renders children 1`] = `
               <button
                 aria-disabled="false"
                 aria-label="June 6, 2021"
+                aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
                 data-col="0"
                 data-row="1"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="gridcell"
                 tabindex="-1"
                 type="button"
               >
@@ -2692,11 +2882,13 @@ exports[`TS renders children 1`] = `
               <button
                 aria-disabled="false"
                 aria-label="June 7, 2021"
+                aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
                 data-col="1"
                 data-row="1"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="gridcell"
                 tabindex="-1"
                 type="button"
               >
@@ -2715,11 +2907,13 @@ exports[`TS renders children 1`] = `
               <button
                 aria-disabled="false"
                 aria-label="June 8, 2021"
+                aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
                 data-col="2"
                 data-row="1"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="gridcell"
                 tabindex="-1"
                 type="button"
               >
@@ -2738,11 +2932,13 @@ exports[`TS renders children 1`] = `
               <button
                 aria-disabled="false"
                 aria-label="June 9, 2021"
+                aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
                 data-col="3"
                 data-row="1"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="gridcell"
                 tabindex="-1"
                 type="button"
               >
@@ -2761,11 +2957,13 @@ exports[`TS renders children 1`] = `
               <button
                 aria-disabled="false"
                 aria-label="June 10, 2021"
+                aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
                 data-col="4"
                 data-row="1"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="gridcell"
                 tabindex="-1"
                 type="button"
               >
@@ -2784,11 +2982,13 @@ exports[`TS renders children 1`] = `
               <button
                 aria-disabled="false"
                 aria-label="June 11, 2021"
+                aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
                 data-col="5"
                 data-row="1"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="gridcell"
                 tabindex="-1"
                 type="button"
               >
@@ -2807,11 +3007,13 @@ exports[`TS renders children 1`] = `
               <button
                 aria-disabled="false"
                 aria-label="June 12, 2021"
+                aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
                 data-col="6"
                 data-row="1"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="gridcell"
                 tabindex="-1"
                 type="button"
               >
@@ -2826,6 +3028,7 @@ exports[`TS renders children 1`] = `
           </div>
           <div
             class="Calendar-valueRow"
+            role="row"
           >
             <div
               class="Calendar-valueWrapper"
@@ -2834,11 +3037,13 @@ exports[`TS renders children 1`] = `
               <button
                 aria-disabled="false"
                 aria-label="June 13, 2021"
+                aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
                 data-col="0"
                 data-row="2"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="gridcell"
                 tabindex="-1"
                 type="button"
               >
@@ -2857,11 +3062,13 @@ exports[`TS renders children 1`] = `
               <button
                 aria-disabled="false"
                 aria-label="June 14, 2021"
+                aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large Calendar-value--currDateMonthYear Calendar-value--currDate"
                 data-calendar-date-cell="true"
                 data-col="1"
                 data-row="2"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="gridcell"
                 tabindex="-1"
                 type="button"
               >
@@ -2880,11 +3087,13 @@ exports[`TS renders children 1`] = `
               <button
                 aria-disabled="false"
                 aria-label="June 15, 2021"
+                aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
                 data-col="2"
                 data-row="2"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="gridcell"
                 tabindex="-1"
                 type="button"
               >
@@ -2903,11 +3112,13 @@ exports[`TS renders children 1`] = `
               <button
                 aria-disabled="false"
                 aria-label="June 16, 2021"
+                aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
                 data-col="3"
                 data-row="2"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="gridcell"
                 tabindex="-1"
                 type="button"
               >
@@ -2926,11 +3137,13 @@ exports[`TS renders children 1`] = `
               <button
                 aria-disabled="false"
                 aria-label="June 17, 2021"
+                aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
                 data-col="4"
                 data-row="2"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="gridcell"
                 tabindex="-1"
                 type="button"
               >
@@ -2949,11 +3162,13 @@ exports[`TS renders children 1`] = `
               <button
                 aria-disabled="false"
                 aria-label="June 18, 2021"
+                aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
                 data-col="5"
                 data-row="2"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="gridcell"
                 tabindex="-1"
                 type="button"
               >
@@ -2972,11 +3187,13 @@ exports[`TS renders children 1`] = `
               <button
                 aria-disabled="false"
                 aria-label="June 19, 2021"
+                aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
                 data-col="6"
                 data-row="2"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="gridcell"
                 tabindex="-1"
                 type="button"
               >
@@ -2991,6 +3208,7 @@ exports[`TS renders children 1`] = `
           </div>
           <div
             class="Calendar-valueRow"
+            role="row"
           >
             <div
               class="Calendar-valueWrapper"
@@ -2999,11 +3217,13 @@ exports[`TS renders children 1`] = `
               <button
                 aria-disabled="false"
                 aria-label="June 20, 2021"
+                aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
                 data-col="0"
                 data-row="3"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="gridcell"
                 tabindex="-1"
                 type="button"
               >
@@ -3022,11 +3242,13 @@ exports[`TS renders children 1`] = `
               <button
                 aria-disabled="false"
                 aria-label="June 21, 2021"
+                aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
                 data-col="1"
                 data-row="3"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="gridcell"
                 tabindex="-1"
                 type="button"
               >
@@ -3045,11 +3267,13 @@ exports[`TS renders children 1`] = `
               <button
                 aria-disabled="false"
                 aria-label="June 22, 2021"
+                aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
                 data-col="2"
                 data-row="3"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="gridcell"
                 tabindex="-1"
                 type="button"
               >
@@ -3068,11 +3292,13 @@ exports[`TS renders children 1`] = `
               <button
                 aria-disabled="false"
                 aria-label="June 23, 2021"
+                aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
                 data-col="3"
                 data-row="3"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="gridcell"
                 tabindex="-1"
                 type="button"
               >
@@ -3091,11 +3317,13 @@ exports[`TS renders children 1`] = `
               <button
                 aria-disabled="false"
                 aria-label="June 24, 2021"
+                aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
                 data-col="4"
                 data-row="3"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="gridcell"
                 tabindex="-1"
                 type="button"
               >
@@ -3114,11 +3342,13 @@ exports[`TS renders children 1`] = `
               <button
                 aria-disabled="false"
                 aria-label="June 25, 2021"
+                aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
                 data-col="5"
                 data-row="3"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="gridcell"
                 tabindex="-1"
                 type="button"
               >
@@ -3137,11 +3367,13 @@ exports[`TS renders children 1`] = `
               <button
                 aria-disabled="false"
                 aria-label="June 26, 2021"
+                aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
                 data-col="6"
                 data-row="3"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="gridcell"
                 tabindex="-1"
                 type="button"
               >
@@ -3156,6 +3388,7 @@ exports[`TS renders children 1`] = `
           </div>
           <div
             class="Calendar-valueRow"
+            role="row"
           >
             <div
               class="Calendar-valueWrapper"
@@ -3164,11 +3397,13 @@ exports[`TS renders children 1`] = `
               <button
                 aria-disabled="false"
                 aria-label="June 27, 2021"
+                aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
                 data-col="0"
                 data-row="4"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="gridcell"
                 tabindex="-1"
                 type="button"
               >
@@ -3187,11 +3422,13 @@ exports[`TS renders children 1`] = `
               <button
                 aria-disabled="false"
                 aria-label="June 28, 2021"
+                aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
                 data-col="1"
                 data-row="4"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="gridcell"
                 tabindex="-1"
                 type="button"
               >
@@ -3210,11 +3447,13 @@ exports[`TS renders children 1`] = `
               <button
                 aria-disabled="false"
                 aria-label="June 29, 2021"
+                aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
                 data-col="2"
                 data-row="4"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="gridcell"
                 tabindex="-1"
                 type="button"
               >
@@ -3233,11 +3472,13 @@ exports[`TS renders children 1`] = `
               <button
                 aria-disabled="false"
                 aria-label="June 30, 2021"
+                aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
                 data-col="3"
                 data-row="4"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="gridcell"
                 tabindex="-1"
                 type="button"
               >
@@ -3256,11 +3497,13 @@ exports[`TS renders children 1`] = `
               <button
                 aria-disabled="false"
                 aria-label="July 1, 2021"
+                aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
                 data-col="4"
                 data-row="4"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="gridcell"
                 tabindex="-1"
                 type="button"
               >
@@ -3279,11 +3522,13 @@ exports[`TS renders children 1`] = `
               <button
                 aria-disabled="false"
                 aria-label="July 2, 2021"
+                aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
                 data-col="5"
                 data-row="4"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="gridcell"
                 tabindex="-1"
                 type="button"
               >
@@ -3302,11 +3547,13 @@ exports[`TS renders children 1`] = `
               <button
                 aria-disabled="false"
                 aria-label="July 3, 2021"
+                aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
                 data-col="6"
                 data-row="4"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="gridcell"
                 tabindex="-1"
                 type="button"
               >
@@ -3321,6 +3568,7 @@ exports[`TS renders children 1`] = `
           </div>
           <div
             class="Calendar-valueRow"
+            role="row"
           >
             <div
               class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
@@ -3329,11 +3577,13 @@ exports[`TS renders children 1`] = `
               <button
                 aria-disabled="false"
                 aria-label="July 4, 2021"
+                aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
                 data-col="0"
                 data-row="5"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="gridcell"
                 tabindex="-1"
                 type="button"
               >
@@ -3352,11 +3602,13 @@ exports[`TS renders children 1`] = `
               <button
                 aria-disabled="false"
                 aria-label="July 5, 2021"
+                aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
                 data-col="1"
                 data-row="5"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="gridcell"
                 tabindex="-1"
                 type="button"
               >
@@ -3375,11 +3627,13 @@ exports[`TS renders children 1`] = `
               <button
                 aria-disabled="false"
                 aria-label="July 6, 2021"
+                aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
                 data-col="2"
                 data-row="5"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="gridcell"
                 tabindex="-1"
                 type="button"
               >
@@ -3398,11 +3652,13 @@ exports[`TS renders children 1`] = `
               <button
                 aria-disabled="false"
                 aria-label="July 7, 2021"
+                aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
                 data-col="3"
                 data-row="5"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="gridcell"
                 tabindex="-1"
                 type="button"
               >
@@ -3421,11 +3677,13 @@ exports[`TS renders children 1`] = `
               <button
                 aria-disabled="false"
                 aria-label="July 8, 2021"
+                aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
                 data-col="4"
                 data-row="5"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="gridcell"
                 tabindex="-1"
                 type="button"
               >
@@ -3444,11 +3702,13 @@ exports[`TS renders children 1`] = `
               <button
                 aria-disabled="false"
                 aria-label="July 9, 2021"
+                aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
                 data-col="5"
                 data-row="5"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="gridcell"
                 tabindex="-1"
                 type="button"
               >
@@ -3467,11 +3727,13 @@ exports[`TS renders children 1`] = `
               <button
                 aria-disabled="false"
                 aria-label="July 10, 2021"
+                aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
                 data-col="6"
                 data-row="5"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="gridcell"
                 tabindex="-1"
                 type="button"
               >
