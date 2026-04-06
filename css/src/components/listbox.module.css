@@ -68,8 +68,8 @@
   position: absolute;
   top: var(--spacing-10);
   left: var(--spacing-10);
-  width: 8px;
-  height: 8px;
+  width: var(--spacing-20);
+  height: var(--spacing-20);
   background-color: var(--primary);
   clip-path: polygon(0 0, 100% 0, 0 100%);
 }
@@ -116,8 +116,8 @@
   position: absolute;
   top: var(--spacing-10);
   left: var(--spacing-10);
-  width: 8px;
-  height: 8px;
+  width: var(--spacing-20);
+  height: var(--spacing-20);
   background-color: var(--primary);
   clip-path: polygon(0 0, 100% 0, 0 100%);
 }
