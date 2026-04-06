@@ -40,7 +40,7 @@ export const Pagination = (props: PaginationProps) => {
   const [descriptionId, setDescriptionId] = React.useState<string | undefined>();
 
   React.useEffect(() => {
-    setDescriptionId(`mds-Pagination-pageTotalDesc-${uidGenerator()}`);
+    setDescriptionId(`DesignSystem-Pagination-totalPage-${uidGenerator()}`);
   }, []);
 
   const [page, setPage] = React.useState<number>(props.page);
