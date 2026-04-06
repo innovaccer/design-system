@@ -106,3 +106,9 @@ docs/cypress/videos
 docs/cypress/screenshots
 .env
 .vscode
+
+# --------------------
+# Claude Code
+# --------------------
+.claude/settings.json
+.claude/settings.local.json

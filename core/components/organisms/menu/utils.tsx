@@ -50,13 +50,19 @@ export const handleKeyDown = (
   }
 };
 
+const MENU_LIST_ITEM_SELECTOR = '[data-test="DesignSystem-Menu-ListItem"]';
+
 const navigateOptions = (
   direction: string,
   focusedOption: Element | undefined,
   setFocusedOption?: React.Dispatch<React.SetStateAction<HTMLElement | undefined>>,
   listRef?: any
 ) => {
-  const listItems = listRef.current?.querySelectorAll('[data-test="DesignSystem-Listbox-ItemWrapper"]');
+  const listItems = listRef.current?.querySelectorAll(MENU_LIST_ITEM_SELECTOR);
+  if (!listItems?.length) {
+    return;
+  }
+
   let index = Array.from(listItems).findIndex((item) => {
     return item == focusedOption;
   });
@@ -67,8 +73,8 @@ const navigateOptions = (
     index = direction === 'up' ? (index - 1 + listItems.length) % listItems.length : (index + 1) % listItems.length;
   }
 
-  const targetOption = listItems[index];
-  (targetOption as HTMLElement).focus();
+  const targetOption = listItems[index] as HTMLElement | undefined;
+  targetOption?.focus();
   setFocusedOption && setFocusedOption(targetOption);
   targetOption?.scrollIntoView?.({ block: 'center' });
 };
@@ -89,8 +95,8 @@ const navigateSubMenu = (
       (direction === 'right' && menuPlacement?.includes('right')) ||
       (direction === 'left' && menuPlacement?.includes('left'))
     ) {
-      const listItems = subListRef?.current?.querySelectorAll('[data-test="DesignSystem-Listbox-ItemWrapper"]');
-      (listItems?.[0] as HTMLElement).focus();
+      const listItems = subListRef?.current?.querySelectorAll(MENU_LIST_ITEM_SELECTOR);
+      (listItems?.[0] as HTMLElement | undefined)?.focus();
     }
   } else if (
     (direction === 'left' && menuPlacement?.includes('right')) ||

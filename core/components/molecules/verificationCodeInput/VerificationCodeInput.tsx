@@ -73,6 +73,7 @@ const VerificationCodeInput = (props: VerificationCodeInputProps) => {
     onBlur,
     className,
     value,
+    id,
     ...rest
   } = props;
 
@@ -227,6 +228,7 @@ const VerificationCodeInput = (props: VerificationCodeInputProps) => {
           onKeyDown={onKeyDown}
           onFocus={onFocusHandler}
           onBlur={onBlurHandler}
+          id={id ? `${id}-${index}` : undefined}
           data-id={index}
           ref={refs[index]}
           type={type}

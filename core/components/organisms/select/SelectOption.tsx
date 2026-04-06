@@ -6,6 +6,7 @@ import { BaseProps } from '@/utils/types';
 import { handleKeyDown, elementExist, removeOrAddToList } from './utils';
 import classNames from 'classnames';
 import styles from '@css/components/select.module.css';
+import uidGenerator from '@/utils/uidGenerator';
 
 type checkedType = 'checked' | 'unchecked' | 'indeterminate';
 
@@ -45,10 +46,14 @@ export interface SelectOptionProps extends BaseProps {
    * Aria label for the `SelectOption`
    */
   'aria-label'?: string;
+  /**
+   * Index in the list (injected by Select.List for roving tabindex).
+   */
+  index?: number;
 }
 
 export const SelectOption = (props: SelectOptionProps) => {
-  const { children, option, checkedState, onClick, withCheckbox = true, disabled, ...rest } = props;
+  const { children, option, checkedState, onClick, withCheckbox = true, disabled, index, ...rest } = props;
   const contextProp = React.useContext(SelectContext);
   const {
     onOptionClick,
@@ -65,7 +70,11 @@ export const SelectOption = (props: SelectOptionProps) => {
     setOpenPopover,
     triggerRef,
     size,
+    rovingIndex,
+    listboxId,
   } = contextProp;
+
+  const isRovingTabstop = typeof index === 'number' && rovingIndex === index;
 
   const onClickHandler = () => {
     if (disabled) return;
@@ -114,6 +123,16 @@ export const SelectOption = (props: SelectOptionProps) => {
     );
   };
 
+  const idSuffix = typeof index === 'number' ? String(index) : uidGenerator();
+  const idPrefix = listboxId ? `${listboxId}-` : '';
+  const optionLabelId = `${idPrefix}DesignSystem-SelectOption-label-${idSuffix}`;
+  const checkboxInputId = `${idPrefix}DesignSystem-SelectOption-checkbox-${idSuffix}`;
+
+  const childCount = React.Children.count(children);
+  const optionLabelString = typeof option.label === 'string' ? option.label.trim() : '';
+  const checkboxFallbackAriaLabel = props['aria-label'] ?? (optionLabelString || undefined);
+  const associateCheckboxWithOptionLabel = childCount > 0;
+
   return (
     <Listbox.Item
       role="option"
@@ -121,8 +140,9 @@ export const SelectOption = (props: SelectOptionProps) => {
       aria-selected={checked}
       aria-label={props['aria-label'] || 'option item'}
       onKeyDown={(event) => onKeyDownHandler(event)}
+      onFocus={(e) => setFocusedOption?.(e.currentTarget)}
       selected={checked}
-      tabIndex={-1}
+      tabIndex={isRovingTabstop ? 0 : -1}
       disabled={disabled}
       data-test="DesignSystem-Select-Option"
       className={SelectOptionClass}
@@ -131,13 +151,19 @@ export const SelectOption = (props: SelectOptionProps) => {
       <div className={optionItemClass}>
         {multiSelect && withCheckbox && (
           <Checkbox
+            id={checkboxInputId}
             tabIndex={-1}
             aria-checked={indeterminate ? 'mixed' : checked}
             checked={checked}
             indeterminate={indeterminate}
+            {...(associateCheckboxWithOptionLabel
+              ? { 'aria-labelledby': optionLabelId }
+              : { 'aria-label': checkboxFallbackAriaLabel })}
           />
         )}
-        <div className={textClass}>{children}</div>
+        <div id={optionLabelId} className={textClass}>
+          {children}
+        </div>
       </div>
     </Listbox.Item>
   );
