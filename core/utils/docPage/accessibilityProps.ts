@@ -391,7 +391,7 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
         type: 'string',
         description:
           'Visible label for the slider. When provided, each handle (role="slider") is automatically linked to it via aria-labelledby so screen readers announce the label with the current value.',
-      }
+      },
     ],
   },
 
