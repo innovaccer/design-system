@@ -68,12 +68,12 @@ export const Label = (props: LabelProps) => {
 
   const renderInfo = (isRequired = false, isOptional?: boolean) => {
     if (isRequired) {
+      const requiredIndicator = classNames({
+        [styles['Label-requiredIndicator']]: true,
+        'mb-3-5 mt-2': size && size === 'small',
+      });
       return (
-        <span
-          className={styles['Label-requiredIndicator']}
-          aria-label="required"
-          data-test="DesignSystem-Label--RequiredIndicator"
-        />
+        <span className={requiredIndicator} aria-label="required" data-test="DesignSystem-Label--RequiredIndicator" />
       );
     }
 
@@ -88,6 +88,14 @@ export const Label = (props: LabelProps) => {
   };
 
   const renderIndicator = (info: string) => {
+    const iconClass = classNames({
+      'ml-3': true,
+      'cursor-pointer': true,
+      'd-flex': true,
+      'align-items-center': true,
+      'mb-3-5': size && size === 'small',
+    });
+
     return (
       <Tooltip tooltip={info}>
         <Icon
@@ -96,7 +104,7 @@ export const Label = (props: LabelProps) => {
           size={12}
           appearance="subtle"
           aria-label={info}
-          className="ml-3 cursor-pointer d-flex align-items-center"
+          className={iconClass}
         />
       </Tooltip>
     );
