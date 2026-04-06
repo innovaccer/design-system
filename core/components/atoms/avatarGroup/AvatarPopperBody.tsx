@@ -20,7 +20,6 @@ interface AvatarPopperProps {
   size?: AvatarData['size'];
   onClose?: () => void;
   onTabOut?: (e: React.KeyboardEvent, container: HTMLElement) => void;
-  triggerRef?: React.RefObject<HTMLElement>;
 }
 
 const AvatarPopperBody = (props: AvatarPopperProps) => {
@@ -37,7 +36,6 @@ const AvatarPopperBody = (props: AvatarPopperProps) => {
     size,
     onClose,
     onTabOut,
-    triggerRef,
   } = props;
 
   const [searchValue, setSearchValue] = React.useState<string>('');
@@ -56,7 +54,6 @@ const AvatarPopperBody = (props: AvatarPopperProps) => {
       }
     });
   }, [rovingIndex, searchList]);
-
 
   const onSearchHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     const inputValue = event.target.value;

@@ -27,6 +27,18 @@ const AvatarCount = React.forwardRef<HTMLDivElement, any>((props, ref) => {
       e.stopPropagation();
       if (!isOpen) {
         e.currentTarget.click();
+
+        // Wait for popover to render, then focus first item
+        requestAnimationFrame(() => {
+          const popoverId = e.currentTarget.getAttribute('aria-controls');
+          if (popoverId) {
+            const popoverEl = document.getElementById(popoverId);
+            const firstFocusable = popoverEl?.querySelector<HTMLElement>(
+              'input, [data-test="DesignSystem-AvatarGroup--Item"]:not([data-disabled="true"])'
+            );
+            firstFocusable?.focus({ preventScroll: true });
+          }
+        });
       }
     }
   };
