@@ -4,7 +4,7 @@ import { Text } from '@/index';
 import FileUploaderFormat, { FileUploaderFormatProps } from './FileUploaderFormat';
 import FileUploaderButton, { FileUploaderButtonProps } from './FileUploaderButton';
 import { BaseProps, extractBaseProps } from '@/utils/types';
-import uidGenerator from '@/utils/uidGenerator';
+import { useStableDomId } from '@/utils/useStableDomId';
 import styles from '@css/components/fileUploader.module.css';
 
 export interface FileUploaderProps extends FileUploaderButtonProps, FileUploaderFormatProps, BaseProps {
@@ -39,11 +39,7 @@ export const FileUploader = (props: FileUploaderProps) => {
   } = props;
 
   const baseProps = extractBaseProps(props);
-  const baseIdRef = React.useRef<string | null>(null);
-  if (!baseIdRef.current) {
-    baseIdRef.current = `file-uploader-${uidGenerator()}`;
-  }
-  const baseId = baseIdRef.current;
+  const baseId = useStableDomId('file-uploader');
   const titleId = `${baseId}-title`;
   const sizeLabelId = `${baseId}-size`;
 
