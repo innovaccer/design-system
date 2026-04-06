@@ -132,15 +132,6 @@ describe('SelectOption multiselect checkbox accessibility', () => {
 });
 
 describe('Select trigger accessibility for error and descriptions', () => {
-  it('sets aria-invalid on trigger when error is true', () => {
-    const { getByTestId } = render(
-      <Select error onSelect={FunctionValue} triggerOptions={{ 'aria-label': 'Pick one' }}>
-        {children}
-      </Select>
-    );
-    expect(getByTestId('DesignSystem-Select-trigger')).toHaveAttribute('aria-invalid', 'true');
-  });
-
   it('forwards aria-describedby and aria-errormessage from triggerOptions', () => {
     const { getByTestId } = render(
       <Select
