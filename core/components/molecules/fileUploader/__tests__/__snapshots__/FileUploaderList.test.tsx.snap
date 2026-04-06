@@ -5,6 +5,8 @@ exports[`FileUploaderList component
  1`] = `
 <DocumentFragment>
   <div
+    aria-atomic="false"
+    aria-live="polite"
     class="FileUploaderList"
     data-test="DesignSystem-FileUploader--List"
   >
