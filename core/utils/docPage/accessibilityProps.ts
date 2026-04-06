@@ -371,29 +371,27 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
     ],
   },
 
-  // Slider: each handle renders as role="slider" and is labelled by the Slider's label prop via aria-labelledby
-  Slider: {
-    htmlElement: 'custom',
-    customProps: [
-      {
-        name: 'label',
-        type: 'string',
-        description:
-          'Visible label for the slider. When provided, each handle (role="slider") is automatically linked to it via aria-labelledby so screen readers announce the label with the current value.',
-      },
-    ],
-  },
-
-  // Spinner: only accepts aria-label (role="status" and aria-live="polite" are hardcoded internally)
+  // Spinner: accepts aria-label and aria-labelledby (role="status" and aria-live="polite" are hardcoded internally)
   Spinner: {
     htmlElement: 'custom',
     customProps: [
       {
         name: 'aria-label',
         type: 'string',
-        description: 'Describes the loading action for screen readers.',
+        description: 'Describes the loading action for screen readers. Ignored when aria-labelledby is provided.',
         defaultValue: '"Loading"',
       },
+      {
+        name: 'aria-labelledby',
+        type: 'string',
+        description: 'ID of an external element that labels the spinner. When set, aria-label is suppressed.',
+      },
+      {
+        name: 'label',
+        type: 'string',
+        description:
+          'Visible label for the slider. When provided, each handle (role="slider") is automatically linked to it via aria-labelledby so screen readers announce the label with the current value.',
+      }
     ],
   },
 
