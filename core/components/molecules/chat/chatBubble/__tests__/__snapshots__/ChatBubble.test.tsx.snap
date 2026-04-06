@@ -70,7 +70,7 @@ Object {
               data-test="DesignSystem-IncomingChatBubble-ChatBoxWrapper"
             >
               <span
-                class="position-relative d-inline-flex"
+                class="position-relative d-inline-flex mr-4"
               >
                 <span
                   class="Avatar-wrapper"
@@ -78,7 +78,7 @@ Object {
                 >
                   <span
                     aria-label="Avatar of John Doe"
-                    class="Avatar Avatar--regular Avatar--accent1 Avatar--noInitials Avatar--default mr-4"
+                    class="Avatar Avatar--regular Avatar--accent1 Avatar--noInitials Avatar--default"
                     data-test="DesignSystem-IncomingChatBubble-Avatar"
                     role="img"
                     tabindex="0"
@@ -172,7 +172,7 @@ Object {
             data-test="DesignSystem-IncomingChatBubble-ChatBoxWrapper"
           >
             <span
-              class="position-relative d-inline-flex"
+              class="position-relative d-inline-flex mr-4"
             >
               <span
                 class="Avatar-wrapper"
@@ -180,7 +180,7 @@ Object {
               >
                 <span
                   aria-label="Avatar of John Doe"
-                  class="Avatar Avatar--regular Avatar--accent1 Avatar--noInitials Avatar--default mr-4"
+                  class="Avatar Avatar--regular Avatar--accent1 Avatar--noInitials Avatar--default"
                   data-test="DesignSystem-IncomingChatBubble-Avatar"
                   role="img"
                   tabindex="0"
