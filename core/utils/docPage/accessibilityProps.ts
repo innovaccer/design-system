@@ -371,6 +371,19 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
     ],
   },
 
+  // Slider: each handle renders as role="slider" and is labelled by the Slider's label prop via aria-labelledby
+  Slider: {
+    htmlElement: 'custom',
+    customProps: [
+      {
+        name: 'label',
+        type: 'string',
+        description:
+          'Visible label for the slider. When provided, an id is generated and passed to each handle via aria-labelledby so screen readers announce the label with the value.',
+      },
+    ],
+  },
+
   // Spinner: only accepts aria-label (role="status" and aria-live="polite" are hardcoded internally)
   Spinner: {
     htmlElement: 'custom',
