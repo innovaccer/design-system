@@ -351,7 +351,7 @@ describe('Modal focus trap', () => {
     jest.useRealTimers();
   });
 
-  it('focuses first focusable element when modal opens', async () => {
+  it('focuses the heading (aria-labelledby target) when modal opens so VoiceOver announces the dialog title', async () => {
     const { getByTestId } = render(
       <Modal
         open={true}
@@ -370,8 +370,9 @@ describe('Modal focus trap', () => {
 
     await flushRAF();
 
-    const closeButton = getByTestId('DesignSystem-Modal--CloseButton');
-    expect(document.activeElement).toBe(closeButton);
+    const heading = getByTestId('DesignSystem-OverlayHeader--heading');
+    expect(document.activeElement).toBe(heading);
+    expect(heading).toHaveAttribute('tabindex', '-1');
   });
 
   it('focuses container when modal has no focusable elements (content-only)', async () => {
@@ -478,7 +479,9 @@ describe('Modal focus trap', () => {
 
     await flushRAF();
 
+    // Move focus to the close button (first interactive element) before testing the wrap
     const closeButton = getByTestId('DesignSystem-Modal--CloseButton');
+    closeButton.focus();
     expect(document.activeElement).toBe(closeButton);
 
     fireEvent.keyDown(document, { key: 'Tab', shiftKey: true });
@@ -620,7 +623,7 @@ describe('Modal focus trap', () => {
     expect(onClose).toHaveBeenCalled();
   });
 
-  it('focuses first focusable in DOM order (header, body, footer)', async () => {
+  it('focuses heading (aria-labelledby target) over first interactive element when heading is present', async () => {
     const { getByTestId } = render(
       <Modal
         open={true}
@@ -639,7 +642,16 @@ describe('Modal focus trap', () => {
 
     await flushRAF();
 
-    const closeButton = getByTestId('DesignSystem-Modal--CloseButton');
-    expect(document.activeElement).toBe(closeButton);
+    const heading = getByTestId('DesignSystem-OverlayHeader--heading');
+    expect(document.activeElement).toBe(heading);
+    expect(heading).toHaveAttribute('tabindex', '-1');
+  });
+
+  it('uses aria-labelledby value as heading id when headerOptions.heading is provided without headingId', () => {
+    const { getByTestId } = render(
+      <Modal open={true} headerOptions={{ heading: 'Dialog Title' }} aria-labelledby="dialog-heading" />
+    );
+    expect(getByTestId('DesignSystem-Modal')).toHaveAttribute('aria-labelledby', 'dialog-heading');
+    expect(getByTestId('DesignSystem-OverlayHeader--heading')).toHaveAttribute('id', 'dialog-heading');
   });
 });
