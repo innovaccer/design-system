@@ -198,6 +198,7 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
   );
 
   const avatarPopperBodyProps = {
+    triggerRef,
     hiddenAvatarList: [...list].slice(max, list.length),
     popperRenderer,
     maxHeight,

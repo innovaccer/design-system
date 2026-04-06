@@ -20,6 +20,7 @@ interface AvatarPopperProps {
   size?: AvatarData['size'];
   onClose?: () => void;
   onTabOut?: (e: React.KeyboardEvent, container: HTMLElement) => void;
+  triggerRef?: React.RefObject<HTMLElement>;
 }
 
 const AvatarPopperBody = (props: AvatarPopperProps) => {
@@ -36,6 +37,7 @@ const AvatarPopperBody = (props: AvatarPopperProps) => {
     size,
     onClose,
     onTabOut,
+    triggerRef,
   } = props;
 
   const [searchValue, setSearchValue] = React.useState<string>('');
@@ -55,22 +57,6 @@ const AvatarPopperBody = (props: AvatarPopperProps) => {
     });
   }, [rovingIndex, searchList]);
 
-  // Focus first interactive element on mount (works for both mouse and keyboard open)
-  React.useEffect(() => {
-    if (!containerRef.current) return;
-    requestAnimationFrame(() => {
-      if (!containerRef.current) return;
-      const input = containerRef.current.querySelector<HTMLElement>('input');
-      if (input) {
-        input.focus({ preventScroll: true });
-        return;
-      }
-      const firstItem = containerRef.current.querySelector<HTMLElement>(
-        '[data-test="DesignSystem-AvatarGroup--Item"]:not([data-disabled="true"])'
-      );
-      if (firstItem) firstItem.focus({ preventScroll: true });
-    });
-  }, []);
 
   const onSearchHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     const inputValue = event.target.value;

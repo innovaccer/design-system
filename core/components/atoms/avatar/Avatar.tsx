@@ -160,18 +160,15 @@ export const Avatar = (props: AvatarProps) => {
     presence && !disabled && size !== 'micro' && shape === 'round' && (presence === 'active' || presence === 'away');
   const showStatus = status && size !== 'micro' && size === 'regular' && shape === 'round';
 
-  const AvatarClassNames = classNames(
-    {
-      [styles.Avatar]: true,
-      [styles['Avatar--square']]: shape === 'square',
-      [styles[`Avatar--${size}`]]: shape !== 'square',
-      [styles[`Avatar--${AvatarAppearance}`]]: AvatarAppearance,
-      [styles['Avatar--noInitials']]: !initials || !withTooltip,
-      [styles['Avatar--disabled']]: disabled,
-      [styles['Avatar--default']]: !disabled,
-    },
-    className
-  );
+  const AvatarClassNames = classNames({
+    [styles.Avatar]: true,
+    [styles['Avatar--square']]: shape === 'square',
+    [styles[`Avatar--${size}`]]: shape !== 'square',
+    [styles[`Avatar--${AvatarAppearance}`]]: AvatarAppearance,
+    [styles['Avatar--noInitials']]: !initials || !withTooltip,
+    [styles['Avatar--disabled']]: disabled,
+    [styles['Avatar--default']]: !disabled,
+  });
 
   const AvatarWrapperClassNames = classNames({
     [styles['Avatar-wrapper']]: true,
@@ -267,7 +264,7 @@ export const Avatar = (props: AvatarProps) => {
   };
 
   const renderTooltip = () => (
-    <span className="position-relative d-inline-flex">
+    <span className={classNames('position-relative d-inline-flex', className)}>
       {withTooltip && initials ? (
         <Tooltip tooltip={getTooltipName()} position={tooltipPosition} triggerClass="flex-grow-0">
           {renderAvatar()}

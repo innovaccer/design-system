@@ -24,7 +24,7 @@ Object {
             tabindex="0"
           >
             <span
-              class="position-relative d-inline-flex"
+              class="position-relative d-inline-flex cursor-pointer"
             >
               
               <div
@@ -36,7 +36,7 @@ Object {
                 >
                   <span
                     aria-label="John Doe"
-                    class="Avatar Avatar--regular Avatar--accent1 Avatar--default cursor-pointer"
+                    class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
                     data-test="DesignSystem-Avatar"
                     role="img"
                     tabindex="-1"
@@ -65,7 +65,7 @@ Object {
             tabindex="-1"
           >
             <span
-              class="position-relative d-inline-flex"
+              class="position-relative d-inline-flex cursor-pointer"
             >
               
               <div
@@ -77,7 +77,7 @@ Object {
                 >
                   <span
                     aria-label="Steven Packton"
-                    class="Avatar Avatar--regular Avatar--alert Avatar--default cursor-pointer"
+                    class="Avatar Avatar--regular Avatar--alert Avatar--default"
                     data-test="DesignSystem-Avatar"
                     role="img"
                     tabindex="-1"
@@ -106,7 +106,7 @@ Object {
             tabindex="-1"
           >
             <span
-              class="position-relative d-inline-flex"
+              class="position-relative d-inline-flex cursor-pointer"
             >
               
               <div
@@ -118,7 +118,7 @@ Object {
                 >
                   <span
                     aria-label="Nancy Wheeler"
-                    class="Avatar Avatar--regular Avatar--warning Avatar--default cursor-pointer"
+                    class="Avatar Avatar--regular Avatar--warning Avatar--default"
                     data-test="DesignSystem-Avatar"
                     role="img"
                     tabindex="-1"
@@ -147,7 +147,7 @@ Object {
             tabindex="-1"
           >
             <span
-              class="position-relative d-inline-flex"
+              class="position-relative d-inline-flex cursor-pointer"
             >
               
               <div
@@ -159,7 +159,7 @@ Object {
                 >
                   <span
                     aria-label="Monica Geller"
-                    class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
+                    class="Avatar Avatar--regular Avatar--accent2 Avatar--default"
                     data-test="DesignSystem-Avatar"
                     role="img"
                     tabindex="-1"
@@ -188,7 +188,7 @@ Object {
             tabindex="-1"
           >
             <span
-              class="position-relative d-inline-flex"
+              class="position-relative d-inline-flex cursor-pointer"
             >
               
               <div
@@ -200,7 +200,7 @@ Object {
                 >
                   <span
                     aria-label="Arya Stark"
-                    class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
+                    class="Avatar Avatar--regular Avatar--accent2 Avatar--default"
                     data-test="DesignSystem-Avatar"
                     role="img"
                     tabindex="-1"
@@ -232,7 +232,7 @@ Object {
             tabindex="-1"
           >
             <span
-              class="position-relative d-inline-flex"
+              class="position-relative d-inline-flex SelectionAvatarCount cursor-pointer"
             >
               <span
                 class="Avatar-wrapper"
@@ -240,7 +240,7 @@ Object {
               >
                 <span
                   aria-label="Avatar"
-                  class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
+                  class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default"
                   data-test="DesignSystem-Avatar"
                   role="img"
                   tabindex="-1"
@@ -277,7 +277,7 @@ Object {
           tabindex="0"
         >
           <span
-            class="position-relative d-inline-flex"
+            class="position-relative d-inline-flex cursor-pointer"
           >
             
             <div
@@ -289,7 +289,7 @@ Object {
               >
                 <span
                   aria-label="John Doe"
-                  class="Avatar Avatar--regular Avatar--accent1 Avatar--default cursor-pointer"
+                  class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
                   data-test="DesignSystem-Avatar"
                   role="img"
                   tabindex="-1"
@@ -318,7 +318,7 @@ Object {
           tabindex="-1"
         >
           <span
-            class="position-relative d-inline-flex"
+            class="position-relative d-inline-flex cursor-pointer"
           >
             
             <div
@@ -330,7 +330,7 @@ Object {
               >
                 <span
                   aria-label="Steven Packton"
-                  class="Avatar Avatar--regular Avatar--alert Avatar--default cursor-pointer"
+                  class="Avatar Avatar--regular Avatar--alert Avatar--default"
                   data-test="DesignSystem-Avatar"
                   role="img"
                   tabindex="-1"
@@ -359,7 +359,7 @@ Object {
           tabindex="-1"
         >
           <span
-            class="position-relative d-inline-flex"
+            class="position-relative d-inline-flex cursor-pointer"
           >
             
             <div
@@ -371,7 +371,7 @@ Object {
               >
                 <span
                   aria-label="Nancy Wheeler"
-                  class="Avatar Avatar--regular Avatar--warning Avatar--default cursor-pointer"
+                  class="Avatar Avatar--regular Avatar--warning Avatar--default"
                   data-test="DesignSystem-Avatar"
                   role="img"
                   tabindex="-1"
@@ -400,7 +400,7 @@ Object {
           tabindex="-1"
         >
           <span
-            class="position-relative d-inline-flex"
+            class="position-relative d-inline-flex cursor-pointer"
           >
             
             <div
@@ -412,7 +412,7 @@ Object {
               >
                 <span
                   aria-label="Monica Geller"
-                  class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
+                  class="Avatar Avatar--regular Avatar--accent2 Avatar--default"
                   data-test="DesignSystem-Avatar"
                   role="img"
                   tabindex="-1"
@@ -441,7 +441,7 @@ Object {
           tabindex="-1"
         >
           <span
-            class="position-relative d-inline-flex"
+            class="position-relative d-inline-flex cursor-pointer"
           >
             
             <div
@@ -453,7 +453,7 @@ Object {
               >
                 <span
                   aria-label="Arya Stark"
-                  class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
+                  class="Avatar Avatar--regular Avatar--accent2 Avatar--default"
                   data-test="DesignSystem-Avatar"
                   role="img"
                   tabindex="-1"
@@ -485,7 +485,7 @@ Object {
           tabindex="-1"
         >
           <span
-            class="position-relative d-inline-flex"
+            class="position-relative d-inline-flex SelectionAvatarCount cursor-pointer"
           >
             <span
               class="Avatar-wrapper"
@@ -493,7 +493,7 @@ Object {
             >
               <span
                 aria-label="Avatar"
-                class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
+                class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default"
                 data-test="DesignSystem-Avatar"
                 role="img"
                 tabindex="-1"
@@ -589,7 +589,7 @@ Object {
             tabindex="0"
           >
             <span
-              class="position-relative d-inline-flex"
+              class="position-relative d-inline-flex cursor-pointer"
             >
               
               <div
@@ -601,7 +601,7 @@ Object {
                 >
                   <span
                     aria-label="John Doe"
-                    class="Avatar Avatar--regular Avatar--accent1 Avatar--default cursor-pointer"
+                    class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
                     data-test="DesignSystem-Avatar"
                     role="img"
                     tabindex="-1"
@@ -630,7 +630,7 @@ Object {
             tabindex="-1"
           >
             <span
-              class="position-relative d-inline-flex"
+              class="position-relative d-inline-flex cursor-pointer"
             >
               
               <div
@@ -642,7 +642,7 @@ Object {
                 >
                   <span
                     aria-label="Steven Packton"
-                    class="Avatar Avatar--regular Avatar--alert Avatar--default cursor-pointer"
+                    class="Avatar Avatar--regular Avatar--alert Avatar--default"
                     data-test="DesignSystem-Avatar"
                     role="img"
                     tabindex="-1"
@@ -671,7 +671,7 @@ Object {
             tabindex="-1"
           >
             <span
-              class="position-relative d-inline-flex"
+              class="position-relative d-inline-flex cursor-pointer"
             >
               
               <div
@@ -683,7 +683,7 @@ Object {
                 >
                   <span
                     aria-label="Nancy Wheeler"
-                    class="Avatar Avatar--regular Avatar--warning Avatar--default cursor-pointer"
+                    class="Avatar Avatar--regular Avatar--warning Avatar--default"
                     data-test="DesignSystem-Avatar"
                     role="img"
                     tabindex="-1"
@@ -712,7 +712,7 @@ Object {
             tabindex="-1"
           >
             <span
-              class="position-relative d-inline-flex"
+              class="position-relative d-inline-flex cursor-pointer"
             >
               
               <div
@@ -724,7 +724,7 @@ Object {
                 >
                   <span
                     aria-label="Monica Geller"
-                    class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
+                    class="Avatar Avatar--regular Avatar--accent2 Avatar--default"
                     data-test="DesignSystem-Avatar"
                     role="img"
                     tabindex="-1"
@@ -753,7 +753,7 @@ Object {
             tabindex="-1"
           >
             <span
-              class="position-relative d-inline-flex"
+              class="position-relative d-inline-flex cursor-pointer"
             >
               
               <div
@@ -765,7 +765,7 @@ Object {
                 >
                   <span
                     aria-label="Arya Stark"
-                    class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
+                    class="Avatar Avatar--regular Avatar--accent2 Avatar--default"
                     data-test="DesignSystem-Avatar"
                     role="img"
                     tabindex="-1"
@@ -797,7 +797,7 @@ Object {
             tabindex="-1"
           >
             <span
-              class="position-relative d-inline-flex"
+              class="position-relative d-inline-flex SelectionAvatarCount cursor-pointer"
             >
               <span
                 class="Avatar-wrapper"
@@ -805,7 +805,7 @@ Object {
               >
                 <span
                   aria-label="Avatar"
-                  class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
+                  class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default"
                   data-test="DesignSystem-Avatar"
                   role="img"
                   tabindex="-1"
@@ -842,7 +842,7 @@ Object {
           tabindex="0"
         >
           <span
-            class="position-relative d-inline-flex"
+            class="position-relative d-inline-flex cursor-pointer"
           >
             
             <div
@@ -854,7 +854,7 @@ Object {
               >
                 <span
                   aria-label="John Doe"
-                  class="Avatar Avatar--regular Avatar--accent1 Avatar--default cursor-pointer"
+                  class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
                   data-test="DesignSystem-Avatar"
                   role="img"
                   tabindex="-1"
@@ -883,7 +883,7 @@ Object {
           tabindex="-1"
         >
           <span
-            class="position-relative d-inline-flex"
+            class="position-relative d-inline-flex cursor-pointer"
           >
             
             <div
@@ -895,7 +895,7 @@ Object {
               >
                 <span
                   aria-label="Steven Packton"
-                  class="Avatar Avatar--regular Avatar--alert Avatar--default cursor-pointer"
+                  class="Avatar Avatar--regular Avatar--alert Avatar--default"
                   data-test="DesignSystem-Avatar"
                   role="img"
                   tabindex="-1"
@@ -924,7 +924,7 @@ Object {
           tabindex="-1"
         >
           <span
-            class="position-relative d-inline-flex"
+            class="position-relative d-inline-flex cursor-pointer"
           >
             
             <div
@@ -936,7 +936,7 @@ Object {
               >
                 <span
                   aria-label="Nancy Wheeler"
-                  class="Avatar Avatar--regular Avatar--warning Avatar--default cursor-pointer"
+                  class="Avatar Avatar--regular Avatar--warning Avatar--default"
                   data-test="DesignSystem-Avatar"
                   role="img"
                   tabindex="-1"
@@ -965,7 +965,7 @@ Object {
           tabindex="-1"
         >
           <span
-            class="position-relative d-inline-flex"
+            class="position-relative d-inline-flex cursor-pointer"
           >
             
             <div
@@ -977,7 +977,7 @@ Object {
               >
                 <span
                   aria-label="Monica Geller"
-                  class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
+                  class="Avatar Avatar--regular Avatar--accent2 Avatar--default"
                   data-test="DesignSystem-Avatar"
                   role="img"
                   tabindex="-1"
@@ -1006,7 +1006,7 @@ Object {
           tabindex="-1"
         >
           <span
-            class="position-relative d-inline-flex"
+            class="position-relative d-inline-flex cursor-pointer"
           >
             
             <div
@@ -1018,7 +1018,7 @@ Object {
               >
                 <span
                   aria-label="Arya Stark"
-                  class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
+                  class="Avatar Avatar--regular Avatar--accent2 Avatar--default"
                   data-test="DesignSystem-Avatar"
                   role="img"
                   tabindex="-1"
@@ -1050,7 +1050,7 @@ Object {
           tabindex="-1"
         >
           <span
-            class="position-relative d-inline-flex"
+            class="position-relative d-inline-flex SelectionAvatarCount cursor-pointer"
           >
             <span
               class="Avatar-wrapper"
@@ -1058,7 +1058,7 @@ Object {
             >
               <span
                 aria-label="Avatar"
-                class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
+                class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default"
                 data-test="DesignSystem-Avatar"
                 role="img"
                 tabindex="-1"
@@ -1154,7 +1154,7 @@ Object {
             tabindex="0"
           >
             <span
-              class="position-relative d-inline-flex"
+              class="position-relative d-inline-flex cursor-pointer"
             >
               
               <div
@@ -1166,7 +1166,7 @@ Object {
                 >
                   <span
                     aria-label="John Doe"
-                    class="Avatar Avatar--tiny Avatar--accent1 Avatar--default cursor-pointer"
+                    class="Avatar Avatar--tiny Avatar--accent1 Avatar--default"
                     data-test="DesignSystem-Avatar"
                     role="img"
                     tabindex="-1"
@@ -1195,7 +1195,7 @@ Object {
             tabindex="-1"
           >
             <span
-              class="position-relative d-inline-flex"
+              class="position-relative d-inline-flex cursor-pointer"
             >
               
               <div
@@ -1207,7 +1207,7 @@ Object {
                 >
                   <span
                     aria-label="Steven Packton"
-                    class="Avatar Avatar--tiny Avatar--alert Avatar--default cursor-pointer"
+                    class="Avatar Avatar--tiny Avatar--alert Avatar--default"
                     data-test="DesignSystem-Avatar"
                     role="img"
                     tabindex="-1"
@@ -1236,7 +1236,7 @@ Object {
             tabindex="-1"
           >
             <span
-              class="position-relative d-inline-flex"
+              class="position-relative d-inline-flex cursor-pointer"
             >
               
               <div
@@ -1248,7 +1248,7 @@ Object {
                 >
                   <span
                     aria-label="Nancy Wheeler"
-                    class="Avatar Avatar--tiny Avatar--warning Avatar--default cursor-pointer"
+                    class="Avatar Avatar--tiny Avatar--warning Avatar--default"
                     data-test="DesignSystem-Avatar"
                     role="img"
                     tabindex="-1"
@@ -1277,7 +1277,7 @@ Object {
             tabindex="-1"
           >
             <span
-              class="position-relative d-inline-flex"
+              class="position-relative d-inline-flex cursor-pointer"
             >
               
               <div
@@ -1289,7 +1289,7 @@ Object {
                 >
                   <span
                     aria-label="Monica Geller"
-                    class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
+                    class="Avatar Avatar--tiny Avatar--accent2 Avatar--default"
                     data-test="DesignSystem-Avatar"
                     role="img"
                     tabindex="-1"
@@ -1318,7 +1318,7 @@ Object {
             tabindex="-1"
           >
             <span
-              class="position-relative d-inline-flex"
+              class="position-relative d-inline-flex cursor-pointer"
             >
               
               <div
@@ -1330,7 +1330,7 @@ Object {
                 >
                   <span
                     aria-label="Arya Stark"
-                    class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
+                    class="Avatar Avatar--tiny Avatar--accent2 Avatar--default"
                     data-test="DesignSystem-Avatar"
                     role="img"
                     tabindex="-1"
@@ -1362,7 +1362,7 @@ Object {
             tabindex="-1"
           >
             <span
-              class="position-relative d-inline-flex"
+              class="position-relative d-inline-flex SelectionAvatarCount cursor-pointer"
             >
               <span
                 class="Avatar-wrapper"
@@ -1370,7 +1370,7 @@ Object {
               >
                 <span
                   aria-label="Avatar"
-                  class="Avatar Avatar--tiny Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
+                  class="Avatar Avatar--tiny Avatar--secondary Avatar--noInitials Avatar--default"
                   data-test="DesignSystem-Avatar"
                   role="img"
                   tabindex="-1"
@@ -1407,7 +1407,7 @@ Object {
           tabindex="0"
         >
           <span
-            class="position-relative d-inline-flex"
+            class="position-relative d-inline-flex cursor-pointer"
           >
             
             <div
@@ -1419,7 +1419,7 @@ Object {
               >
                 <span
                   aria-label="John Doe"
-                  class="Avatar Avatar--tiny Avatar--accent1 Avatar--default cursor-pointer"
+                  class="Avatar Avatar--tiny Avatar--accent1 Avatar--default"
                   data-test="DesignSystem-Avatar"
                   role="img"
                   tabindex="-1"
@@ -1448,7 +1448,7 @@ Object {
           tabindex="-1"
         >
           <span
-            class="position-relative d-inline-flex"
+            class="position-relative d-inline-flex cursor-pointer"
           >
             
             <div
@@ -1460,7 +1460,7 @@ Object {
               >
                 <span
                   aria-label="Steven Packton"
-                  class="Avatar Avatar--tiny Avatar--alert Avatar--default cursor-pointer"
+                  class="Avatar Avatar--tiny Avatar--alert Avatar--default"
                   data-test="DesignSystem-Avatar"
                   role="img"
                   tabindex="-1"
@@ -1489,7 +1489,7 @@ Object {
           tabindex="-1"
         >
           <span
-            class="position-relative d-inline-flex"
+            class="position-relative d-inline-flex cursor-pointer"
           >
             
             <div
@@ -1501,7 +1501,7 @@ Object {
               >
                 <span
                   aria-label="Nancy Wheeler"
-                  class="Avatar Avatar--tiny Avatar--warning Avatar--default cursor-pointer"
+                  class="Avatar Avatar--tiny Avatar--warning Avatar--default"
                   data-test="DesignSystem-Avatar"
                   role="img"
                   tabindex="-1"
@@ -1530,7 +1530,7 @@ Object {
           tabindex="-1"
         >
           <span
-            class="position-relative d-inline-flex"
+            class="position-relative d-inline-flex cursor-pointer"
           >
             
             <div
@@ -1542,7 +1542,7 @@ Object {
               >
                 <span
                   aria-label="Monica Geller"
-                  class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
+                  class="Avatar Avatar--tiny Avatar--accent2 Avatar--default"
                   data-test="DesignSystem-Avatar"
                   role="img"
                   tabindex="-1"
@@ -1571,7 +1571,7 @@ Object {
           tabindex="-1"
         >
           <span
-            class="position-relative d-inline-flex"
+            class="position-relative d-inline-flex cursor-pointer"
           >
             
             <div
@@ -1583,7 +1583,7 @@ Object {
               >
                 <span
                   aria-label="Arya Stark"
-                  class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
+                  class="Avatar Avatar--tiny Avatar--accent2 Avatar--default"
                   data-test="DesignSystem-Avatar"
                   role="img"
                   tabindex="-1"
@@ -1615,7 +1615,7 @@ Object {
           tabindex="-1"
         >
           <span
-            class="position-relative d-inline-flex"
+            class="position-relative d-inline-flex SelectionAvatarCount cursor-pointer"
           >
             <span
               class="Avatar-wrapper"
@@ -1623,7 +1623,7 @@ Object {
             >
               <span
                 aria-label="Avatar"
-                class="Avatar Avatar--tiny Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
+                class="Avatar Avatar--tiny Avatar--secondary Avatar--noInitials Avatar--default"
                 data-test="DesignSystem-Avatar"
                 role="img"
                 tabindex="-1"
@@ -1719,7 +1719,7 @@ Object {
             tabindex="0"
           >
             <span
-              class="position-relative d-inline-flex"
+              class="position-relative d-inline-flex cursor-pointer"
             >
               
               <div
@@ -1731,7 +1731,7 @@ Object {
                 >
                   <span
                     aria-label="John Doe"
-                    class="Avatar Avatar--regular Avatar--accent1 Avatar--default cursor-pointer"
+                    class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
                     data-test="DesignSystem-Avatar"
                     role="img"
                     tabindex="-1"
@@ -1760,7 +1760,7 @@ Object {
             tabindex="-1"
           >
             <span
-              class="position-relative d-inline-flex"
+              class="position-relative d-inline-flex cursor-pointer"
             >
               
               <div
@@ -1772,7 +1772,7 @@ Object {
                 >
                   <span
                     aria-label="Steven Packton"
-                    class="Avatar Avatar--regular Avatar--alert Avatar--default cursor-pointer"
+                    class="Avatar Avatar--regular Avatar--alert Avatar--default"
                     data-test="DesignSystem-Avatar"
                     role="img"
                     tabindex="-1"
@@ -1801,7 +1801,7 @@ Object {
             tabindex="-1"
           >
             <span
-              class="position-relative d-inline-flex"
+              class="position-relative d-inline-flex cursor-pointer"
             >
               
               <div
@@ -1813,7 +1813,7 @@ Object {
                 >
                   <span
                     aria-label="Nancy Wheeler"
-                    class="Avatar Avatar--regular Avatar--warning Avatar--default cursor-pointer"
+                    class="Avatar Avatar--regular Avatar--warning Avatar--default"
                     data-test="DesignSystem-Avatar"
                     role="img"
                     tabindex="-1"
@@ -1842,7 +1842,7 @@ Object {
             tabindex="-1"
           >
             <span
-              class="position-relative d-inline-flex"
+              class="position-relative d-inline-flex cursor-pointer"
             >
               
               <div
@@ -1854,7 +1854,7 @@ Object {
                 >
                   <span
                     aria-label="Monica Geller"
-                    class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
+                    class="Avatar Avatar--regular Avatar--accent2 Avatar--default"
                     data-test="DesignSystem-Avatar"
                     role="img"
                     tabindex="-1"
@@ -1883,7 +1883,7 @@ Object {
             tabindex="-1"
           >
             <span
-              class="position-relative d-inline-flex"
+              class="position-relative d-inline-flex cursor-pointer"
             >
               
               <div
@@ -1895,7 +1895,7 @@ Object {
                 >
                   <span
                     aria-label="Arya Stark"
-                    class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
+                    class="Avatar Avatar--regular Avatar--accent2 Avatar--default"
                     data-test="DesignSystem-Avatar"
                     role="img"
                     tabindex="-1"
@@ -1927,7 +1927,7 @@ Object {
             tabindex="-1"
           >
             <span
-              class="position-relative d-inline-flex"
+              class="position-relative d-inline-flex SelectionAvatarCount SelectionAvatarCount--open cursor-pointer"
             >
               <span
                 class="Avatar-wrapper"
@@ -1935,7 +1935,7 @@ Object {
               >
                 <span
                   aria-label="Avatar"
-                  class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount SelectionAvatarCount--open cursor-pointer"
+                  class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default"
                   data-test="DesignSystem-Avatar"
                   role="img"
                   tabindex="-1"
@@ -2014,7 +2014,7 @@ Object {
             tabindex="-1"
           >
             <span
-              class="position-relative d-inline-flex"
+              class="position-relative d-inline-flex SelectionAvatarCount cursor-pointer"
             >
               <span
                 class="Avatar-wrapper"
@@ -2022,7 +2022,7 @@ Object {
               >
                 <span
                   aria-label="Avatar"
-                  class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
+                  class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default"
                   data-test="DesignSystem-Avatar"
                   role="img"
                   tabindex="-1"
@@ -2058,7 +2058,7 @@ Object {
             tabindex="0"
           >
             <span
-              class="position-relative d-inline-flex"
+              class="position-relative d-inline-flex cursor-pointer"
             >
               
               <div
@@ -2070,7 +2070,7 @@ Object {
                 >
                   <span
                     aria-label="John Doe"
-                    class="Avatar Avatar--tiny Avatar--accent1 Avatar--default cursor-pointer"
+                    class="Avatar Avatar--tiny Avatar--accent1 Avatar--default"
                     data-test="DesignSystem-Avatar"
                     role="img"
                     tabindex="-1"
@@ -2099,7 +2099,7 @@ Object {
             tabindex="-1"
           >
             <span
-              class="position-relative d-inline-flex"
+              class="position-relative d-inline-flex cursor-pointer"
             >
               
               <div
@@ -2111,7 +2111,7 @@ Object {
                 >
                   <span
                     aria-label="Steven Packton"
-                    class="Avatar Avatar--tiny Avatar--alert Avatar--default cursor-pointer"
+                    class="Avatar Avatar--tiny Avatar--alert Avatar--default"
                     data-test="DesignSystem-Avatar"
                     role="img"
                     tabindex="-1"
@@ -2140,7 +2140,7 @@ Object {
             tabindex="-1"
           >
             <span
-              class="position-relative d-inline-flex"
+              class="position-relative d-inline-flex cursor-pointer"
             >
               
               <div
@@ -2152,7 +2152,7 @@ Object {
                 >
                   <span
                     aria-label="Nancy Wheeler"
-                    class="Avatar Avatar--tiny Avatar--warning Avatar--default cursor-pointer"
+                    class="Avatar Avatar--tiny Avatar--warning Avatar--default"
                     data-test="DesignSystem-Avatar"
                     role="img"
                     tabindex="-1"
@@ -2181,7 +2181,7 @@ Object {
             tabindex="-1"
           >
             <span
-              class="position-relative d-inline-flex"
+              class="position-relative d-inline-flex cursor-pointer"
             >
               
               <div
@@ -2193,7 +2193,7 @@ Object {
                 >
                   <span
                     aria-label="Monica Geller"
-                    class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
+                    class="Avatar Avatar--tiny Avatar--accent2 Avatar--default"
                     data-test="DesignSystem-Avatar"
                     role="img"
                     tabindex="-1"
@@ -2222,7 +2222,7 @@ Object {
             tabindex="-1"
           >
             <span
-              class="position-relative d-inline-flex"
+              class="position-relative d-inline-flex cursor-pointer"
             >
               
               <div
@@ -2234,7 +2234,7 @@ Object {
                 >
                   <span
                     aria-label="Arya Stark"
-                    class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
+                    class="Avatar Avatar--tiny Avatar--accent2 Avatar--default"
                     data-test="DesignSystem-Avatar"
                     role="img"
                     tabindex="-1"
@@ -2266,7 +2266,7 @@ Object {
             tabindex="-1"
           >
             <span
-              class="position-relative d-inline-flex"
+              class="position-relative d-inline-flex SelectionAvatarCount cursor-pointer"
             >
               <span
                 class="Avatar-wrapper"
@@ -2274,7 +2274,7 @@ Object {
               >
                 <span
                   aria-label="Avatar"
-                  class="Avatar Avatar--tiny Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
+                  class="Avatar Avatar--tiny Avatar--secondary Avatar--noInitials Avatar--default"
                   data-test="DesignSystem-Avatar"
                   role="img"
                   tabindex="-1"
@@ -2311,7 +2311,7 @@ Object {
           tabindex="0"
         >
           <span
-            class="position-relative d-inline-flex"
+            class="position-relative d-inline-flex cursor-pointer"
           >
             
             <div
@@ -2323,7 +2323,7 @@ Object {
               >
                 <span
                   aria-label="John Doe"
-                  class="Avatar Avatar--tiny Avatar--accent1 Avatar--default cursor-pointer"
+                  class="Avatar Avatar--tiny Avatar--accent1 Avatar--default"
                   data-test="DesignSystem-Avatar"
                   role="img"
                   tabindex="-1"
@@ -2352,7 +2352,7 @@ Object {
           tabindex="-1"
         >
           <span
-            class="position-relative d-inline-flex"
+            class="position-relative d-inline-flex cursor-pointer"
           >
             
             <div
@@ -2364,7 +2364,7 @@ Object {
               >
                 <span
                   aria-label="Steven Packton"
-                  class="Avatar Avatar--tiny Avatar--alert Avatar--default cursor-pointer"
+                  class="Avatar Avatar--tiny Avatar--alert Avatar--default"
                   data-test="DesignSystem-Avatar"
                   role="img"
                   tabindex="-1"
@@ -2393,7 +2393,7 @@ Object {
           tabindex="-1"
         >
           <span
-            class="position-relative d-inline-flex"
+            class="position-relative d-inline-flex cursor-pointer"
           >
             
             <div
@@ -2405,7 +2405,7 @@ Object {
               >
                 <span
                   aria-label="Nancy Wheeler"
-                  class="Avatar Avatar--tiny Avatar--warning Avatar--default cursor-pointer"
+                  class="Avatar Avatar--tiny Avatar--warning Avatar--default"
                   data-test="DesignSystem-Avatar"
                   role="img"
                   tabindex="-1"
@@ -2434,7 +2434,7 @@ Object {
           tabindex="-1"
         >
           <span
-            class="position-relative d-inline-flex"
+            class="position-relative d-inline-flex cursor-pointer"
           >
             
             <div
@@ -2446,7 +2446,7 @@ Object {
               >
                 <span
                   aria-label="Monica Geller"
-                  class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
+                  class="Avatar Avatar--tiny Avatar--accent2 Avatar--default"
                   data-test="DesignSystem-Avatar"
                   role="img"
                   tabindex="-1"
@@ -2475,7 +2475,7 @@ Object {
           tabindex="-1"
         >
           <span
-            class="position-relative d-inline-flex"
+            class="position-relative d-inline-flex cursor-pointer"
           >
             
             <div
@@ -2487,7 +2487,7 @@ Object {
               >
                 <span
                   aria-label="Arya Stark"
-                  class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
+                  class="Avatar Avatar--tiny Avatar--accent2 Avatar--default"
                   data-test="DesignSystem-Avatar"
                   role="img"
                   tabindex="-1"
@@ -2519,7 +2519,7 @@ Object {
           tabindex="-1"
         >
           <span
-            class="position-relative d-inline-flex"
+            class="position-relative d-inline-flex SelectionAvatarCount cursor-pointer"
           >
             <span
               class="Avatar-wrapper"
@@ -2527,7 +2527,7 @@ Object {
             >
               <span
                 aria-label="Avatar"
-                class="Avatar Avatar--tiny Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
+                class="Avatar Avatar--tiny Avatar--secondary Avatar--noInitials Avatar--default"
                 data-test="DesignSystem-Avatar"
                 role="img"
                 tabindex="-1"
