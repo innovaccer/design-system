@@ -3,11 +3,10 @@ import { debounce } from 'throttle-debounce';
 import { Text, MetricInput, Button } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { isNaturalNumber } from '@/utils/validators';
+import uidGenerator from '@/utils/uidGenerator';
 import styles from '@css/components/pagination.module.css';
 
 import classNames from 'classnames';
-
-let paginationPageTotalDescriptionUid = 0;
 
 export type PaginationType = 'basic' | 'jump';
 
@@ -38,11 +37,11 @@ export const Pagination = (props: PaginationProps) => {
   const { type, totalPages, onPageChange, className, pageJumpDebounceDuration } = props;
 
   const baseProps = extractBaseProps(props);
-  const pageTotalDescriptionIdRef = React.useRef<string>();
-  if (type === 'jump' && !pageTotalDescriptionIdRef.current) {
-    pageTotalDescriptionIdRef.current = `mds-Pagination-pageTotalDesc-${++paginationPageTotalDescriptionUid}`;
-  }
-  const pageTotalDescriptionId = type === 'jump' ? pageTotalDescriptionIdRef.current : undefined;
+  const [descriptionId, setDescriptionId] = React.useState<string | undefined>();
+
+  React.useEffect(() => {
+    setDescriptionId(`mds-Pagination-pageTotalDesc-${uidGenerator()}`);
+  }, []);
 
   const [page, setPage] = React.useState<number>(props.page);
   const [init, setInit] = React.useState<boolean>(false);
@@ -159,9 +158,9 @@ export const Pagination = (props: PaginationProps) => {
             data-test="DesignSystem-Pagination--Input"
             onKeyPress={onKeyPressHandler}
             aria-label="Current page"
-            aria-describedby={pageTotalDescriptionId}
+            aria-describedby={descriptionId}
           />
-          <Text id={pageTotalDescriptionId}>{` of ${totalPages} pages`}</Text>
+          <Text id={descriptionId}>{` of ${totalPages} pages`}</Text>
         </div>
       )}
       <div className={nextButtonWrapperClass}>

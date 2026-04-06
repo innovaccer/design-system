@@ -155,7 +155,7 @@ exports[`Pagination component
         role="presentation"
       >
         <input
-          aria-describedby="mds-Pagination-pageTotalDesc-1"
+          aria-describedby="mds-Pagination-pageTotalDesc-Test-uid"
           aria-label="Current page"
           class="MetricInput-input MetricInput-input--regular"
           data-test="DesignSystem-Pagination--Input"
@@ -199,7 +199,7 @@ exports[`Pagination component
       <span
         class="Text Text--default Text--regular"
         data-test="DesignSystem-Text"
-        id="mds-Pagination-pageTotalDesc-1"
+        id="mds-Pagination-pageTotalDesc-Test-uid"
       >
          of 50 pages
       </span>
