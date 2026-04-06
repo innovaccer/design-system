@@ -102,13 +102,6 @@ export const Toast = (props: ToastProps) => {
     [styles[`Toast-heading--${appearance}`]]: appearance,
   });
 
-  const handleCloseKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
-    if (e.key === 'Escape') {
-      e.preventDefault();
-      onClose!();
-    }
-  };
-
   return (
     <div
       {...baseProps}
@@ -127,7 +120,6 @@ export const Toast = (props: ToastProps) => {
               type="button"
               className={iconClass('right')}
               onClick={onClose}
-              onKeyDown={handleCloseKeyDown}
               aria-label="Close"
             >
               <Icon name={'close'} appearance={appearance !== 'warning' ? 'white' : 'default'} aria-hidden="true" />
