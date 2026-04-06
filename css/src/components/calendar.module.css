@@ -208,7 +208,6 @@
   border: var(--border-width-2-5) solid transparent;
   transition: var(--duration--fast-01) var(--standard-productive-curve);
 
-
   /* Button reset (used on <button> for a11y) */
   background: transparent;
   padding: 0;
