@@ -337,10 +337,10 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
               'align-items-center',
               'flex-shrink-0'
             )}
-            tabIndex={0}
             role="button"
-            aria-label="Clear all"
             onClick={onDeleteAllHandler}
+            tabIndex={disabled ? -1 : 0}
+            aria-label="Clear all options"
             onKeyDown={(e) => {
               if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
