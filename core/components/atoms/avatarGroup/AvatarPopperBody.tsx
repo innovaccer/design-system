@@ -197,7 +197,9 @@ const AvatarPopperBody = (props: AvatarPopperProps) => {
   };
 
   return (
+    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div
+      /* eslint-disable-next-line jsx-a11y/no-static-element-interactions */
       style={{ width: customStyle.width }}
       data-test="DesignSystem-AvatarGroup--Popover"
       ref={containerRef}

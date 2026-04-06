@@ -184,14 +184,6 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
 
   const hasCounter = list.length - max > 0 && list.length !== 3;
 
-  React.useEffect(() => {
-    const items = hasCounter ? [...avatarList, { disabled: false }] : avatarList;
-    if (items[rovingIndex]?.disabled) {
-      const firstEnabled = items.findIndex((item) => !item.disabled);
-      if (firstEnabled !== -1) setRovingIndex(firstEnabled);
-    }
-  }, [avatarList, rovingIndex, hasCounter]);
-
   const avatarsWithTabIndex = avatarList.map((item, index) => ({
     ...item,
     tabIndex: index === rovingIndex ? 0 : -1,
@@ -242,7 +234,7 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
     if ((e.target as HTMLElement).closest('[data-test="DesignSystem-Popover"]')) return;
 
     const items = hasCounter ? [...avatarList, { disabled: false }] : avatarList;
-    const validIndices = items.map((item, i) => (item.disabled ? -1 : i)).filter((i) => i !== -1);
+    const validIndices = items.map((item, i) => i);
 
     if (validIndices.length === 0) return;
 
@@ -277,7 +269,9 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
   };
 
   return (
+    // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
     <div
+      /* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */
       data-test="DesignSystem-AvatarGroup"
       {...baseProps}
       className={AvatarGroupClass}

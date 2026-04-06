@@ -165,17 +165,8 @@ export const AvatarSelection = (props: AvatarSelectionProps) => {
   const listRef = React.useRef<HTMLDivElement>(null);
   const triggerRef = React.useRef<HTMLDivElement>(null);
 
-  const visibleAvatars = list.slice(0, max);
   const hiddenAvatarCount = list.length - max;
   const hasCounter = hiddenAvatarCount > 0 || (children && hiddenAvatarCount > 0);
-
-  React.useEffect(() => {
-    const items = hasCounter ? [...visibleAvatars, { disabled: false }] : visibleAvatars;
-    if (items[rovingIndex]?.disabled) {
-      const firstEnabled = items.findIndex((item) => !item.disabled);
-      if (firstEnabled !== -1) setRovingIndex(firstEnabled);
-    }
-  }, [list, rovingIndex, hasCounter, max]);
 
   React.useEffect(() => {
     const selectedList: AvatarData[] = [];
@@ -269,7 +260,7 @@ export const AvatarSelection = (props: AvatarSelectionProps) => {
 
     const visibleAvatars = list.slice(0, max);
     const items = hasCounter ? [...visibleAvatars, { disabled: false }] : visibleAvatars;
-    const validIndices = items.map((item, i) => (item.disabled ? -1 : i)).filter((i) => i !== -1);
+    const validIndices = items.map((item, i) => i);
 
     if (validIndices.length === 0) return;
 
@@ -324,6 +315,7 @@ export const AvatarSelection = (props: AvatarSelectionProps) => {
 
   return (
     <AvatarSelectionContext.Provider value={contextProp}>
+      {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */}
       <div
         data-test="DesignSystem-AvatarSelection"
         {...baseProps}

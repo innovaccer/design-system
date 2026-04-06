@@ -142,7 +142,7 @@ export const Avatar = (props: AvatarProps) => {
   const isDecorative = ariaHidden === true;
   const resolvedRole = isDecorative ? 'presentation' : role ?? (isInteractive ? 'button' : 'img');
   const ariaLabel = isDecorative ? undefined : ariaLabelProp || getTooltipName().trim() || initials || 'Avatar';
-  const resolvedTabIndex = isDecorative || disabled ? -1 : tabIndex !== undefined ? tabIndex : 0;
+  const resolvedTabIndex = isDecorative ? -1 : tabIndex !== undefined ? tabIndex : disabled ? -1 : 0;
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLSpanElement>) => {
     if (onKeyDown) onKeyDown(e);
@@ -227,6 +227,7 @@ export const Avatar = (props: AvatarProps) => {
               role={resolvedRole}
               aria-label={ariaLabel}
               aria-hidden={ariaHidden}
+              aria-disabled={disabled}
               tabIndex={resolvedTabIndex}
               onClick={onClick}
               onKeyDown={handleKeyDown}
@@ -247,6 +248,7 @@ export const Avatar = (props: AvatarProps) => {
           role={resolvedRole}
           aria-label={ariaLabel}
           aria-hidden={ariaHidden}
+          aria-disabled={disabled}
           tabIndex={resolvedTabIndex}
           onClick={onClick}
           onKeyDown={handleKeyDown}

@@ -88,6 +88,7 @@ export const SelectionAvatarsWrapper = (props: SelectionAvatarsWrapperProps) => 
               className={GroupClass}
               data-test="DesignSystem-AvatarSelection--Avatar"
               aria-checked={selectedItems && selectedItems.includes(avatarItem)}
+              aria-disabled={disabled}
               onClick={() => onClickHandler(avatarItem)}
               onKeyDown={(event: React.KeyboardEvent) => handleKeyDown(event, avatarItem)}
             >
