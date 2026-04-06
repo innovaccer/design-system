@@ -3,6 +3,7 @@ import { Listbox } from '@/index';
 import { SelectContext } from './SelectContext';
 import { TListboxSize } from '@/common.type';
 import { BaseProps } from '@/utils/types';
+import SelectOption from './SelectOption';
 
 type TagType = 'ul' | 'ol' | 'div' | 'nav';
 
@@ -31,9 +32,33 @@ export interface SelectListProps extends BaseProps {
 
 export const SelectList = (props: SelectListProps) => {
   const contextProp = React.useContext(SelectContext);
-  const { withSearch, minHeight, maxHeight, multiSelect } = contextProp;
+  const { withSearch, minHeight, maxHeight, multiSelect, listboxId } = contextProp;
   const { children, size, ...rest } = props;
   const searchInputHeight = 33;
+
+  let optionIndex = 0;
+
+  const injectIndexToOptions = (nodes: React.ReactNode): React.ReactNode => {
+    return React.Children.map(nodes, (child) => {
+      if (!React.isValidElement(child)) return child;
+
+      // Recursively traverse fragments
+      if (child.type === React.Fragment) {
+        return React.cloneElement(child, child.props, injectIndexToOptions(child.props.children));
+      }
+
+      // Inject sequential index into actual SelectOptions
+      if (child.type === SelectOption) {
+        return React.cloneElement(child as React.ReactElement<{ index?: number }>, {
+          index: optionIndex++,
+        });
+      }
+
+      return child;
+    });
+  };
+
+  const childrenWithIndex = injectIndexToOptions(children);
 
   const wrapperStyle: React.CSSProperties = {
     maxHeight: withSearch ? maxHeight! - searchInputHeight : maxHeight,
@@ -49,14 +74,17 @@ export const SelectList = (props: SelectListProps) => {
   return (
     <SelectContext.Provider value={updatedContextProp}>
       <Listbox
+        role="listbox"
+        id={listboxId}
         style={wrapperStyle}
         aria-label={props['aria-label'] || 'Options item list'}
         aria-multiselectable={multiSelect}
         className="my-3"
         size={size}
         {...rest}
+        customFocusManagement
       >
-        {children}
+        {childrenWithIndex}
       </Listbox>
     </SelectContext.Provider>
   );

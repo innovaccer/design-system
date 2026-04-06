@@ -250,6 +250,7 @@ Object {
         data-test="DesignSystem-MetaList"
       >
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon Icon--disabled MetaList-seperator MetaList-seperator--left"
           data-test="DesignSystem-MetaList--Seperator"
           style="font-size: 8px; width: 8px;"
@@ -287,6 +288,7 @@ Object {
       data-test="DesignSystem-MetaList"
     >
       <i
+        aria-hidden="true"
         class="material-symbols material-symbols-rounded Icon Icon--disabled MetaList-seperator MetaList-seperator--left"
         data-test="DesignSystem-MetaList--Seperator"
         style="font-size: 8px; width: 8px;"
@@ -383,6 +385,7 @@ Object {
         data-test="DesignSystem-MetaList"
       >
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon Icon--disabled MetaList-seperator MetaList-seperator--left"
           data-test="DesignSystem-MetaList--Seperator"
           style="font-size: 8px; width: 8px;"
@@ -420,6 +423,7 @@ Object {
       data-test="DesignSystem-MetaList"
     >
       <i
+        aria-hidden="true"
         class="material-symbols material-symbols-rounded Icon Icon--disabled MetaList-seperator MetaList-seperator--left"
         data-test="DesignSystem-MetaList--Seperator"
         style="font-size: 8px; width: 8px;"

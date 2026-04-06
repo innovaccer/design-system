@@ -20,6 +20,7 @@
   z-index: 5;
   overflow-x: hidden;
   -ms-overflow-style: none;
+  scrollbar-width: none;
   border-right: var(--border-width-7-5) solid var(--secondary);
 }
 
@@ -71,6 +72,8 @@
   display: flex;
   flex: 0 0 auto;
   overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
   border-bottom: var(--border);
 }
 
@@ -102,7 +105,7 @@
   flex-direction: column;
   flex-grow: 1;
   overflow-x: auto;
-  overflow-y: overlay;
+  overflow-y: auto;
 }
 
 .Grid-rowWrapper {
