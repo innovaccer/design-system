@@ -94,14 +94,14 @@ exports[`ChipInput component
         </div>
         <div
           aria-label="Clear all"
-          class="ChipInput-iconWrapper"
-          data-test="DesignSystem-ChipInput--IconWrapper"
+          class="Input-icon Input-iconWrapper--right align-self-center flex-shrink-0"
+          data-test="DesignSystem-ChipInput--Icon"
           role="button"
           tabindex="0"
         >
           <i
-            class="material-symbols material-symbols-rounded Icon Icon--subtle ChipInput-icon"
-            data-test="DesignSystem-ChipInput--Icon"
+            class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
+            data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             close
@@ -208,15 +208,16 @@ exports[`ChipInput component
           />
         </div>
         <div
+          aria-disabled="true"
           aria-label="Clear all"
-          class="ChipInput-iconWrapper"
-          data-test="DesignSystem-ChipInput--IconWrapper"
+          class="Input-icon Input-iconWrapper--right align-self-center flex-shrink-0"
+          data-test="DesignSystem-ChipInput--Icon"
           role="button"
           tabindex="-1"
         >
           <i
-            class="material-symbols material-symbols-rounded Icon Icon--disabled ChipInput-icon"
-            data-test="DesignSystem-ChipInput--Icon"
+            class="material-symbols material-symbols-rounded Icon Icon--disabled p-3"
+            data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             close
@@ -322,14 +323,14 @@ exports[`ChipInput component
         </div>
         <div
           aria-label="Clear all"
-          class="ChipInput-iconWrapper"
-          data-test="DesignSystem-ChipInput--IconWrapper"
+          class="Input-icon Input-iconWrapper--right align-self-center flex-shrink-0"
+          data-test="DesignSystem-ChipInput--Icon"
           role="button"
           tabindex="0"
         >
           <i
-            class="material-symbols material-symbols-rounded Icon Icon--subtle ChipInput-icon"
-            data-test="DesignSystem-ChipInput--Icon"
+            class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
+            data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             close

@@ -108,6 +108,7 @@ exports[`Button component
 <body>
   <div>
     <button
+      aria-pressed="true"
       class="Button Button--regular Button--alert Button--iconAlign-left"
       data-test="DesignSystem-Button"
       tabindex="0"
@@ -230,6 +231,7 @@ exports[`Button component
 <body>
   <div>
     <button
+      aria-pressed="true"
       class="Button Button--regular Button--basic Button--selected Button--iconAlign-left"
       data-test="DesignSystem-Button"
       tabindex="0"
@@ -352,6 +354,7 @@ exports[`Button component
 <body>
   <div>
     <button
+      aria-pressed="true"
       class="Button Button--regular Button--primary Button--iconAlign-left"
       data-test="DesignSystem-Button"
       tabindex="0"
@@ -474,6 +477,7 @@ exports[`Button component
 <body>
   <div>
     <button
+      aria-pressed="true"
       class="Button Button--regular Button--transparent Button--selected Button--iconAlign-left"
       data-test="DesignSystem-Button"
       tabindex="0"

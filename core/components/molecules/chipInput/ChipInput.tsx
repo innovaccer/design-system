@@ -3,7 +3,9 @@ import classNames from 'classnames';
 import { Chip, Icon } from '@/index';
 import { ChipProps } from '@/index.type';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import { isSpaceKey } from '@/accessibility/utils';
 import styles from '@css/components/chipInput.module.css';
+import inputStyles from '@css/components/input.module.css';
 
 const keyCodes = {
   BACKSPACE: 'Backspace',
@@ -176,6 +178,15 @@ export const ChipInput = (props: ChipInputProps) => {
 
   const IconClass = classNames({
     [styles['ChipInput-icon']]: true,
+  const iconWrapperClass = classNames({
+    [inputStyles['Input-icon']]: true,
+    [inputStyles['Input-iconWrapper--right']]: true,
+  });
+
+  const iconClass = classNames({
+    [inputStyles['Input-icon--right']]: !disabled,
+    ['p-3-5']: size === 'small',
+    ['p-3']: size === 'regular',
   });
 
   const onUpdateChips = (updatedChips: string[]) => {
@@ -334,27 +345,25 @@ export const ChipInput = (props: ChipInputProps) => {
         </div>
         {chips.length > 0 && (
           <div
-            data-test="DesignSystem-ChipInput--IconWrapper"
-            className={IconWrapperClass}
-            onClick={onDeleteAllHandler}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                onDeleteAllHandler();
-                inputRef.current?.focus();
-              }
-            }}
+            data-test="DesignSystem-ChipInput--Icon"
+            className={classNames(iconWrapperClass, 'align-self-center', 'flex-shrink-0')}
             tabIndex={disabled ? -1 : 0}
             role="button"
             aria-label="Clear all"
+            aria-disabled={disabled || undefined}
+            onClick={disabled ? undefined : onDeleteAllHandler}
+            onKeyDown={
+              disabled
+                ? undefined
+                : (e) => {
+                    if (e.key === 'Enter' || isSpaceKey(e)) {
+                      e.preventDefault();
+                      onDeleteAllHandler();
+                    }
+                  }
+            }
           >
-            <Icon
-              data-test="DesignSystem-ChipInput--Icon"
-              name="close"
-              size={iconSize}
-              appearance={disabled ? 'disabled' : 'subtle'}
-              className={IconClass}
-            />
+            <Icon name="close" size={iconSize} appearance={disabled ? 'disabled' : undefined} className={iconClass} />
           </div>
         )}
       </div>
