@@ -177,15 +177,15 @@ export const EditableDropdown = (props: EditableDropdownProps) => {
           data-test="DesignSystem-EditableDropdown--Dropdown"
         />
         <div className={DefaultCompClass} data-test="DesignSystem-EditableDropdown--Default">
-          <div className={styles['EditableDropdown-wrapper']}>
-            {customTriggerRenderer ? (
-              <div className={textClass}>{labelContent}</div>
-            ) : (
-              <span className={textClass}>{labelContent}</span>
-            )}
-          </div>
-          {!customTriggerRenderer && (
-            <Icon appearance="default" name="keyboard_arrow_down" className={styles['EditableDropdown-icon']} />
+          {customTriggerRenderer ? (
+            labelContent
+          ) : (
+            <>
+              <div className={styles['EditableDropdown-wrapper']}>
+                <span className={textClass}>{labelContent}</span>
+              </div>
+              <Icon appearance="default" name="keyboard_arrow_down" className={styles['EditableDropdown-icon']} />
+            </>
           )}
         </div>
       </Editable>

@@ -63,12 +63,10 @@
   padding-left: var(--spacing-20);
 }
 
-/* Mirrors my-2 mx-2 utilities for regular chips */
 .EditableChipInput-chip--regular {
   margin: var(--spacing-05);
 }
 
-/* Small chips (20px): no vertical margin so row fits --spacing-60 with flex alignment */
 .EditableChipInput-chip--small {
   margin-left: var(--spacing-05);
   margin-right: var(--spacing-05);

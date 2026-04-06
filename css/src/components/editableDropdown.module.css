@@ -2,7 +2,6 @@
   width: 100%;
 }
 
-/* Outer div is tabbable; suppress its ring so only .EditableDropdown-default shows one ring */
 .EditableDropdown:focus-visible {
   outline: none;
 }
@@ -57,7 +56,6 @@
   background: var(--secondary);
 }
 
-/* Ring on default surface so it follows border-radius (outer div is focus target when collapsed) */
 .EditableDropdown:focus-visible .EditableDropdown-default {
   background: var(--secondary-light);
   outline: var(--border-width-05) solid var(--primary-focus);

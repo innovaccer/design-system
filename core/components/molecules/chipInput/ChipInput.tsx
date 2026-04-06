@@ -6,14 +6,13 @@ import { BaseProps, extractBaseProps } from '@/utils/types';
 import { isSpaceKey } from '@/accessibility/utils';
 import styles from '@css/components/chipInput.module.css';
 import inputStyles from '@css/components/input.module.css';
+import { ChipInputBorderFocusRegion, getChipInputBorderFocusRegion } from './utils';
 
 const keyCodes = {
   BACKSPACE: 'Backspace',
   DELETE: 'Delete',
   ENTER: 'Enter',
 };
-
-import { ChipInputBorderFocusRegion, getChipInputBorderFocusRegion } from './utils';
 
 type ChipOptions = {
   icon?: ChipProps['icon'];
