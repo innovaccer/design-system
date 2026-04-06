@@ -156,6 +156,7 @@ exports[`Navigation component
                     </span>
                   </span>
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--disabled MetaList-seperator"
                     data-test="DesignSystem-MetaList--rightSeperator"
                     style="font-size: 8px; width: 8px;"
@@ -520,6 +521,7 @@ exports[`Navigation component
                     </span>
                   </span>
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--disabled MetaList-seperator"
                     data-test="DesignSystem-MetaList--rightSeperator"
                     style="font-size: 8px; width: 8px;"
@@ -811,6 +813,7 @@ exports[`Navigation component
                     </span>
                   </span>
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--disabled MetaList-seperator"
                     data-test="DesignSystem-MetaList--rightSeperator"
                     style="font-size: 8px; width: 8px;"
@@ -1184,6 +1187,7 @@ exports[`Navigation component
                     role="group"
                   >
                     <div
+                      aria-label="Step 1: Step 1, current"
                       class="Step Stepper-animate Step--active"
                       data-test="DesignSystem-Step"
                       role="button"
@@ -1205,6 +1209,7 @@ exports[`Navigation component
                     </div>
                     <div
                       aria-disabled="true"
+                      aria-label="Step 2: Step 2"
                       class="Step Stepper-animate Step--disabled"
                       data-test="DesignSystem-Step"
                       role="button"
@@ -1226,6 +1231,7 @@ exports[`Navigation component
                     </div>
                     <div
                       aria-disabled="true"
+                      aria-label="Step 3: Step 3"
                       class="Step Stepper-animate Step--disabled"
                       data-test="DesignSystem-Step"
                       role="button"
@@ -1775,6 +1781,7 @@ exports[`Navigation component
                     </span>
                   </span>
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--disabled MetaList-seperator"
                     data-test="DesignSystem-MetaList--rightSeperator"
                     style="font-size: 8px; width: 8px;"

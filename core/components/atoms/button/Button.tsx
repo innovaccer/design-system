@@ -187,6 +187,7 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
       tabIndex={tabIndex}
       aria-busy={loading || undefined}
       aria-label={props['aria-label'] || (!children && tooltip ? tooltip : undefined)}
+      aria-pressed={selected}
       {...rest}
     >
       {loading ? (

@@ -2,11 +2,11 @@ import React from 'react';
 import { extractBaseProps } from '@/utils/types';
 import Draggable from './Draggable';
 import { arrayMove } from './utils';
-import { ListboxProps } from '@/index.type';
+import { ListboxInternalProps } from '../Listbox';
 import classNames from 'classnames';
 import styles from '@css/components/listbox.module.css';
 
-export const DraggableList = (props: ListboxProps) => {
+export const DraggableList = (props: ListboxInternalProps) => {
   const { children, className, tagName: Tag, size, type, draggable, showDivider, ...rest } = props;
   const baseProps = extractBaseProps(props);
 
@@ -38,7 +38,7 @@ export const DraggableList = (props: ListboxProps) => {
         );
       }}
       renderList={({ children, props: dragProps }) => (
-        <Tag data-test="DesignSystem-Listbox" {...baseProps} className={classes} {...rest} {...dragProps}>
+        <Tag data-test="DesignSystem-Listbox" {...baseProps} className={classes} tabIndex={-1} {...rest} {...dragProps}>
           {children}
         </Tag>
       )}

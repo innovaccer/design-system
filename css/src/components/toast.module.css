@@ -68,6 +68,13 @@
   color: var(--warning-darker);
 }
 
+.Toast-closeButton {
+  background: transparent;
+  border: none;
+  color: inherit;
+  padding: 0;
+}
+
 .Toast-close-icon:focus,
 .Toast-close-icon:focus-visible {
   outline: none;
