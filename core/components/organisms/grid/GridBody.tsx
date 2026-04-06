@@ -144,6 +144,7 @@ export const GridBody = (props: GridBodyProps) => {
         setError(true);
       } finally {
         setIsLoadingMore(false);
+        endReached.current = false;
       }
     }
   }, [isLoadingMore, hasMoreData, currentPage, fetchRowsCount, error]);

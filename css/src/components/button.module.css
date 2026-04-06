@@ -128,11 +128,6 @@
   background: var(--secondary-dark);
 }
 
-.Button--basic:focus {
-  outline: var(--border-width-05) solid var(--primary-focus);
-  outline-offset: var(--spacing-05);
-}
-
 .Button--basic:disabled {
   background: var(--secondary-lighter);
   color: var(--inverse-lightest);
@@ -148,11 +143,6 @@
 
 .Button--primary:active {
   background: var(--primary-darker);
-}
-
-.Button--primary:focus {
-  outline: var(--border-width-05) solid var(--primary-focus);
-  outline-offset: var(--spacing-05);
 }
 
 .Button--primary:disabled {
@@ -171,11 +161,6 @@
   background: var(--primary-darker);
 }
 
-.Button--success:focus {
-  outline: var(--border-width-05) solid var(--primary-focus);
-  outline-offset: var(--spacing-05);
-}
-
 .Button--success:disabled {
   background: var(--primary-lighter);
 }
@@ -192,11 +177,6 @@
   background: var(--alert-darker);
 }
 
-.Button--alert:focus {
-  outline: var(--border-width-05) solid var(--primary-focus);
-  outline-offset: var(--spacing-05);
-}
-
 .Button--alert:disabled {
   background: var(--alert-lighter);
 }
@@ -208,11 +188,6 @@
 
 .Button--transparent:hover {
   background: var(--secondary);
-}
-
-.Button--transparent:focus {
-  outline: var(--border-width-05) solid var(--primary-focus);
-  outline-offset: var(--spacing-05);
 }
 
 .Button--transparent:active {
@@ -254,11 +229,14 @@
   background: var(--primary-ultra-light);
   outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: var(--spacing-05);
+  box-shadow: inset 0 0 0 var(--border-width-05) var(--primary);
 }
 
 .Button--selected:focus:active {
   background: var(--primary-lighter);
-  box-shadow: inset 0 0 0 2px var(--primary-dark);
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-05);
+  box-shadow: inset 0 0 0 var(--border-width-05) var(--primary-dark);
 }
 
 .Button--selected:disabled {
@@ -298,6 +276,7 @@
 .Button-outlined--basic:focus {
   outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: var(--spacing-05);
+  box-shadow: inset 0 0 0 var(--border-width-2-5) var(--secondary);
 }
 
 .Button-outlined--basic:disabled {
@@ -327,13 +306,15 @@
   color: var(--primary-dark);
   outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: var(--spacing-05);
-  box-shadow: inset 0 0 0 2px var(--primary);
+  box-shadow: inset 0 0 0 var(--border-width-05) var(--primary);
 }
 
 .Button-outlined--selected:focus:active {
   background: var(--primary-lighter);
   color: var(--primary-darker);
-  box-shadow: inset 0 0 0 2px var(--primary-dark);
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-05);
+  box-shadow: inset 0 0 0 var(--border-width-05) var(--primary-dark);
 }
 
 .Button-outlined--selected:disabled {
@@ -361,9 +342,9 @@
 }
 
 .Button-outlined--primary:focus {
-  box-shadow: inset 0 0 0 1px var(--primary);
   outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: var(--spacing-05);
+  box-shadow: inset 0 0 0 var(--border-width-2-5) var(--primary);
 }
 
 .Button-outlined--primary:disabled {
@@ -391,9 +372,9 @@
 }
 
 .Button-outlined--alert:focus {
-  box-shadow: inset 0 0 0 1px var(--alert);
   outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: var(--spacing-05);
+  box-shadow: inset 0 0 0 var(--border-width-2-5) var(--alert);
 }
 
 .Button-outlined--alert:disabled {
