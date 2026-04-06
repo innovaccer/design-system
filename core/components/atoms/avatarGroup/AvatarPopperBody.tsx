@@ -8,6 +8,7 @@ import AvatarInput from './AvatarInput';
 import AvatarOptionItem from './AvatarOptionItem';
 
 interface AvatarPopperProps {
+  id?: string;
   popperRenderer?: (names: AvatarData[]) => JSX.Element;
   maxHeight?: number | string;
   minHeight?: number | string;
@@ -24,6 +25,7 @@ interface AvatarPopperProps {
 
 const AvatarPopperBody = (props: AvatarPopperProps) => {
   const {
+    id,
     hiddenAvatarList,
     popperRenderer,
     maxHeight,
@@ -183,6 +185,7 @@ const AvatarPopperBody = (props: AvatarPopperProps) => {
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div
       /* eslint-disable-next-line jsx-a11y/no-static-element-interactions */
+      id={id}
       style={{ width: customStyle.width }}
       data-test="DesignSystem-AvatarGroup--Popover"
       ref={containerRef}

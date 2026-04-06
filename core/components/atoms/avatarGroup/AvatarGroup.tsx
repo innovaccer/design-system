@@ -9,6 +9,7 @@ import Avatars from './Avatars';
 import AvatarPopperBody from './AvatarPopperBody';
 import styles from '@css/components/avatarGroup.module.css';
 import { getNextFocusableAfterTrigger } from '@/components/organisms/select/utils';
+import uidGenerator from '@/utils/uidGenerator';
 
 export interface AvatarData extends Record<string, any> {
   firstName?: string;
@@ -134,10 +135,31 @@ export interface AvatarGroupProps extends BaseProps {
 
 export const AvatarGroup = (props: AvatarGroupProps) => {
   const [openPopover, setOpenPopover] = React.useState(false);
+  const [highlightFirstItem, setHighlightFirstItem] = React.useState(false);
   const [rovingIndex, setRovingIndex] = React.useState(0);
   const containerRef = React.useRef<HTMLDivElement>(null);
+  const [popoverId] = React.useState(`AvatarGroup-Popover-${uidGenerator()}`);
 
   const triggerRef = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    if (!openPopover) {
+      setHighlightFirstItem(false);
+    }
+  }, [openPopover]);
+
+  React.useEffect(() => {
+    if (highlightFirstItem && openPopover) {
+      requestAnimationFrame(() => {
+        const popoverEl = document.getElementById(popoverId);
+        const firstFocusable = popoverEl?.querySelector<HTMLElement>(
+          'input, [data-test="DesignSystem-AvatarGroup--Item"]:not([data-disabled="true"])'
+        );
+        firstFocusable?.focus({ preventScroll: true });
+        setHighlightFirstItem(false);
+      });
+    }
+  }, [highlightFirstItem, openPopover, popoverId]);
 
   const {
     max,
@@ -302,13 +324,18 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
               avatarStyle={avatarStyle}
               isOpen={openPopover}
               tabIndex={avatarList.length === rovingIndex ? 0 : -1}
+              aria-controls={popoverId}
+              onKeyboardOpen={() => {
+                setOpenPopover(true);
+                setHighlightFirstItem(true);
+              }}
             />
           }
           position={position}
           appendToBody={appendToBody}
           offset="medium"
         >
-          <AvatarPopperBody {...avatarPopperBodyProps} />
+          <AvatarPopperBody id={popoverId} {...avatarPopperBodyProps} />
         </Popover>
       )}
     </div>

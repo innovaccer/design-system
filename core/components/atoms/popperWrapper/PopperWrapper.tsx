@@ -311,6 +311,13 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
     const { on } = this.props;
     if (on === 'hover') {
       const { hoverable, onToggle } = this.props;
+
+      // Do not close if focus is currently inside the popover
+      const popoverEl = this.popupRef.current;
+      if (popoverEl && popoverEl.contains(document.activeElement)) {
+        return;
+      }
+
       if (hoverable) {
         this.mouseMoveHandler();
       } else {

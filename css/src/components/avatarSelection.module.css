@@ -142,15 +142,16 @@
   margin-right: 0;
 }
 
-.SelectionAvatarCount:hover {
+/* Hover/active/open on inner circular surface (not the Avatar outer flex wrapper). */
+.SelectionAvatarCount-wrapper:hover [data-test='DesignSystem-Avatar'] {
   background: var(--secondary);
 }
 
-.SelectionAvatarCount:active {
+.SelectionAvatarCount-wrapper [data-test='DesignSystem-Avatar']:active {
   background: var(--secondary-dark);
 }
 
-.SelectionAvatarCount--open {
+.SelectionAvatarCount-wrapper:has(.SelectionAvatarCount--open) [data-test='DesignSystem-Avatar'] {
   background: var(--secondary-dark) !important;
 }
 

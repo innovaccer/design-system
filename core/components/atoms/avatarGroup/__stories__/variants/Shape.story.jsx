@@ -23,7 +23,7 @@ export const Shape = () => {
     },
   ];
 
-  return <AvatarGroup size="regular" list={list} popoverOptions={{ on: 'hover' }} />;
+  return <AvatarGroup size="regular" list={list} />;
 };
 
 const customCode = `() => {
@@ -48,7 +48,7 @@ const customCode = `() => {
     },
   ];
 
-  return <AvatarGroup size="regular" list={list} popoverOptions={{ on: 'hover' }} />;
+  return <AvatarGroup size="regular" list={list} />;
 }`;
 
 export default {
