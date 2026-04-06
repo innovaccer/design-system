@@ -33,6 +33,7 @@ exports[`Toast component
           <button
             aria-label="Close"
             class="Toast-icon Toast-icon--right Toast-icon--alert Toast-close-icon Toast-close-icon--alert"
+            type="button"
           >
             <i
               aria-hidden="true"
@@ -83,6 +84,7 @@ exports[`Toast component
           <button
             aria-label="Close"
             class="Toast-icon Toast-icon--right Toast-icon--info Toast-close-icon Toast-close-icon--info"
+            type="button"
           >
             <i
               aria-hidden="true"
@@ -133,6 +135,7 @@ exports[`Toast component
           <button
             aria-label="Close"
             class="Toast-icon Toast-icon--right Toast-icon--success Toast-close-icon Toast-close-icon--success"
+            type="button"
           >
             <i
               aria-hidden="true"
@@ -183,6 +186,7 @@ exports[`Toast component
           <button
             aria-label="Close"
             class="Toast-icon Toast-icon--right Toast-icon--warning Toast-close-icon Toast-close-icon--warning"
+            type="button"
           >
             <i
               aria-hidden="true"
@@ -233,6 +237,7 @@ exports[`Toast component
           <button
             aria-label="Close"
             class="Toast-icon Toast-icon--right Toast-icon--alert Toast-close-icon Toast-close-icon--alert"
+            type="button"
           >
             <i
               aria-hidden="true"
@@ -289,6 +294,7 @@ exports[`Toast component
           <button
             aria-label="Close"
             class="Toast-icon Toast-icon--right Toast-icon--alert Toast-close-icon Toast-close-icon--alert"
+            type="button"
           >
             <i
               aria-hidden="true"
@@ -360,6 +366,7 @@ exports[`Toast component
           <button
             aria-label="Close"
             class="Toast-icon Toast-icon--right Toast-icon--info Toast-close-icon Toast-close-icon--info"
+            type="button"
           >
             <i
               aria-hidden="true"
@@ -416,6 +423,7 @@ exports[`Toast component
           <button
             aria-label="Close"
             class="Toast-icon Toast-icon--right Toast-icon--info Toast-close-icon Toast-close-icon--info"
+            type="button"
           >
             <i
               aria-hidden="true"
@@ -487,6 +495,7 @@ exports[`Toast component
           <button
             aria-label="Close"
             class="Toast-icon Toast-icon--right Toast-icon--success Toast-close-icon Toast-close-icon--success"
+            type="button"
           >
             <i
               aria-hidden="true"
@@ -543,6 +552,7 @@ exports[`Toast component
           <button
             aria-label="Close"
             class="Toast-icon Toast-icon--right Toast-icon--success Toast-close-icon Toast-close-icon--success"
+            type="button"
           >
             <i
               aria-hidden="true"
@@ -614,6 +624,7 @@ exports[`Toast component
           <button
             aria-label="Close"
             class="Toast-icon Toast-icon--right Toast-icon--warning Toast-close-icon Toast-close-icon--warning"
+            type="button"
           >
             <i
               aria-hidden="true"
@@ -670,6 +681,7 @@ exports[`Toast component
           <button
             aria-label="Close"
             class="Toast-icon Toast-icon--right Toast-icon--warning Toast-close-icon Toast-close-icon--warning"
+            type="button"
           >
             <i
               aria-hidden="true"
