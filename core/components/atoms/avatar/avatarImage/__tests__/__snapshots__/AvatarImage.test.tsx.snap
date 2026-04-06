@@ -26,7 +26,7 @@ Object {
               tabindex="0"
             >
               <img
-                alt="John"
+                alt=""
                 data-test="DesignSystem-Image"
                 height="32"
                 src="https://design.innovaccer.com/images/withoutType.png"
@@ -53,6 +53,7 @@ Object {
             tabindex="0"
           >
             <img
+              alt=""
               data-test="DesignSystem-Image"
               height="32"
               src="https://design.innovaccer.com/images/withoutType.png"
@@ -79,6 +80,7 @@ Object {
           tabindex="0"
         >
           <img
+            alt=""
             data-test="DesignSystem-Image"
             height="32"
             src="https://design.innovaccer.com/images/withoutType.png"
