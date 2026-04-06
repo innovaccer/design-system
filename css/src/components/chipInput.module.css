@@ -30,8 +30,6 @@
 
 .ChipInput:focus-within {
   background: var(--white);
-  outline: var(--border-width-05) solid var(--primary-focus);
-  outline-offset: var(--spacing-05);
 }
 
 .ChipInput--disabled {
