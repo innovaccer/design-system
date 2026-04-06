@@ -378,8 +378,13 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
       {
         name: 'label',
         type: 'string',
+        description: 'Visible label for the slider. When provided, an id is auto-generated on the label element.',
+      },
+      {
+        name: 'aria-labelledby',
+        type: 'string',
         description:
-          'Visible label for the slider. When provided, an id is generated and passed to each handle via aria-labelledby so screen readers announce the label with the value.',
+          'Automatically set on each slider handle (role="slider") pointing to the generated label id. Ensures screen readers announce the label alongside the current value. Applied internally when the label prop is provided.',
       },
     ],
   },
