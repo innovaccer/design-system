@@ -87,7 +87,7 @@ export const Dropzone = (props: DropzoneProps) => {
             >
               browse files
             </Text>
-            <input {...getInputProps()} />
+            <input {...getInputProps()} aria-label="Upload files" />
           </span>
           {formatLabel && <Text appearance={disabled ? 'disabled' : 'subtle'}>{formatLabel}</Text>}
           {sizeLabel && <Text appearance={disabled ? 'disabled' : 'subtle'}>{sizeLabel}</Text>}

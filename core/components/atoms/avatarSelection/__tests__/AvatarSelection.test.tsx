@@ -350,7 +350,7 @@ describe('AvatarSelection component with prop:withSearch', () => {
     if (searchInput) {
       fireEvent.keyDown(searchInput, { key: 'ArrowUp' });
     }
-    const optionList = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+    const optionList = getAllByTestId('DesignSystem-AvatarSelection--Option');
     expect(optionList[0]).toHaveFocus();
 
     fireEvent.keyDown(optionList[0], { key: 'ArrowUp' });

@@ -49,7 +49,7 @@
   color: var(--text);
 }
 
-.Select-trigger--filled:focus {
+.Select-trigger--filled:focus-visible {
   background-color: var(--secondary-light);
 }
 
@@ -152,10 +152,11 @@
   cursor: pointer;
   border-radius: var(--border-radius-full);
   padding: var(--spacing-05);
+  border: none;
+  background: transparent;
 }
 
-.Select-crossButton:focus-visible,
-.Select-crossButton:focus {
+.Select-crossButton:focus-visible {
   outline: var(--spacing-05) solid var(--primary-focus);
 }
 

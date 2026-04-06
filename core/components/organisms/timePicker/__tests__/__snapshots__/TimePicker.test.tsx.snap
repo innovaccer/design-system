@@ -45,6 +45,7 @@ exports[`TimePicker component prop:error snapshot
         style="min-width: 256px;"
       >
         <input
+          aria-invalid="true"
           autocomplete="off"
           class="Input-input Input-input--regular mr-4"
           data-test="DesignSystem-Input"
