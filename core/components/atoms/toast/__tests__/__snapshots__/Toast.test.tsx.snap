@@ -37,7 +37,7 @@ exports[`Toast component
           >
             <i
               aria-hidden="true"
-              class="material-symbols material-symbols-rounded Icon Icon--white"
+              class="material-symbols material-symbols-rounded Icon"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
             >
@@ -88,7 +88,7 @@ exports[`Toast component
           >
             <i
               aria-hidden="true"
-              class="material-symbols material-symbols-rounded Icon Icon--white"
+              class="material-symbols material-symbols-rounded Icon"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
             >
@@ -139,7 +139,7 @@ exports[`Toast component
           >
             <i
               aria-hidden="true"
-              class="material-symbols material-symbols-rounded Icon Icon--white"
+              class="material-symbols material-symbols-rounded Icon"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
             >
@@ -190,7 +190,7 @@ exports[`Toast component
           >
             <i
               aria-hidden="true"
-              class="material-symbols material-symbols-rounded Icon Icon--default"
+              class="material-symbols material-symbols-rounded Icon"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
             >
@@ -241,7 +241,7 @@ exports[`Toast component
           >
             <i
               aria-hidden="true"
-              class="material-symbols material-symbols-rounded Icon Icon--white"
+              class="material-symbols material-symbols-rounded Icon"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
             >
@@ -298,7 +298,7 @@ exports[`Toast component
           >
             <i
               aria-hidden="true"
-              class="material-symbols material-symbols-rounded Icon Icon--white"
+              class="material-symbols material-symbols-rounded Icon"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
             >
@@ -370,7 +370,7 @@ exports[`Toast component
           >
             <i
               aria-hidden="true"
-              class="material-symbols material-symbols-rounded Icon Icon--white"
+              class="material-symbols material-symbols-rounded Icon"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
             >
@@ -427,7 +427,7 @@ exports[`Toast component
           >
             <i
               aria-hidden="true"
-              class="material-symbols material-symbols-rounded Icon Icon--white"
+              class="material-symbols material-symbols-rounded Icon"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
             >
@@ -499,7 +499,7 @@ exports[`Toast component
           >
             <i
               aria-hidden="true"
-              class="material-symbols material-symbols-rounded Icon Icon--white"
+              class="material-symbols material-symbols-rounded Icon"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
             >
@@ -556,7 +556,7 @@ exports[`Toast component
           >
             <i
               aria-hidden="true"
-              class="material-symbols material-symbols-rounded Icon Icon--white"
+              class="material-symbols material-symbols-rounded Icon"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
             >
@@ -628,7 +628,7 @@ exports[`Toast component
           >
             <i
               aria-hidden="true"
-              class="material-symbols material-symbols-rounded Icon Icon--default"
+              class="material-symbols material-symbols-rounded Icon"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
             >
@@ -685,7 +685,7 @@ exports[`Toast component
           >
             <i
               aria-hidden="true"
-              class="material-symbols material-symbols-rounded Icon Icon--default"
+              class="material-symbols material-symbols-rounded Icon"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
             >

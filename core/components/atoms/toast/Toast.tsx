@@ -116,13 +116,8 @@ export const Toast = (props: ToastProps) => {
             {title}
           </Heading>
           {onClose && (
-            <button
-              type="button"
-              className={iconClass('right')}
-              onClick={onClose}
-              aria-label="Close"
-            >
-              <Icon name={'close'} appearance={appearance !== 'warning' ? 'white' : 'default'} aria-hidden="true" />
+            <button type="button" className={iconClass('right')} onClick={onClose} aria-label="Close">
+              <Icon name={'close'} aria-hidden="true" />
             </button>
           )}
         </div>
