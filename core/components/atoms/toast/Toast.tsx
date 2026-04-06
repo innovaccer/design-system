@@ -108,10 +108,6 @@ export const Toast = (props: ToastProps) => {
     [styles[`Toast-heading--${appearance}`]]: appearance,
   });
 
-  const onCloseHandler = () => {
-    if (onClose) onClose();
-  };
-
   return (
     <div
       {...baseProps}
@@ -125,14 +121,16 @@ export const Toast = (props: ToastProps) => {
           <Heading size="s" className={headingClass} appearance={appearance !== 'warning' ? 'white' : 'default'}>
             {title}
           </Heading>
-          <Button
-            appearance="transparent"
-            icon="close"
-            aria-label="Close"
-            onClick={onCloseHandler}
-            data-test="DesignSystem-Toast--CloseButton"
-            className={closeButtonClass}
-          />
+          {onClose && (
+            <Button
+              appearance="transparent"
+              icon="close"
+              aria-label="Close"
+              onClick={onClose}
+              data-test="DesignSystem-Toast--CloseButton"
+              className={closeButtonClass}
+            />
+          )}
         </div>
         {message && (
           <Text appearance={appearance !== 'warning' ? 'white' : 'default'} className={textClass}>
