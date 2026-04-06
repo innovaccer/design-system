@@ -162,6 +162,38 @@ describe('renders Popover component with prop: closeOnBackdropClick', () => {
   });
 });
 
+describe('renders Popover component keyboard accessibility', () => {
+  it('should close popover when Escape key is pressed', () => {
+    const { getByTestId } = render(
+      <Popover trigger={trigger} appendToBody={false}>
+        Popover
+      </Popover>
+    );
+
+    const popoverTrigger = getByTestId('DesignSystem-PopoverTrigger');
+    fireEvent.click(popoverTrigger);
+    expect(getByTestId('DesignSystem-Popover')).toHaveAttribute('data-opened', 'true');
+
+    fireEvent.keyDown(document, { key: 'Escape' });
+    expect(getByTestId('DesignSystem-Popover')).toHaveAttribute('data-opened', 'false');
+  });
+
+  it('should not close popover on Escape when closeOnEscape is false', () => {
+    const { getByTestId } = render(
+      <Popover trigger={trigger} closeOnEscape={false} appendToBody={false}>
+        Popover
+      </Popover>
+    );
+
+    const popoverTrigger = getByTestId('DesignSystem-PopoverTrigger');
+    fireEvent.click(popoverTrigger);
+    expect(getByTestId('DesignSystem-Popover')).toHaveAttribute('data-opened', 'true');
+
+    fireEvent.keyDown(document, { key: 'Escape' });
+    expect(getByTestId('DesignSystem-Popover')).toHaveAttribute('data-opened', 'true');
+  });
+});
+
 describe('renders Popover component with prop: open and onToggle', () => {
   it('Popover component with open: false', () => {
     const { queryByTestId } = render(

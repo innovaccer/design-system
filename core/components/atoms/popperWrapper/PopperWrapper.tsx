@@ -8,6 +8,7 @@ import {
   hide,
   useClick,
   useHover,
+  useFocus,
   useDismiss,
   useRole,
   useInteractions,
@@ -115,6 +116,10 @@ export function usePopover({
     },
   });
 
+  const focus = useFocus(context, {
+    enabled: triggerMethod === 'hover',
+  });
+
   const clientPoint = useClientPoint(context, {
     x: triggerCoordinates?.x,
     y: triggerCoordinates?.y,
@@ -130,7 +135,7 @@ export function usePopover({
     close: closeStyle,
   });
 
-  const interactions = useInteractions([click, dismiss, role, hover, clientPoint]);
+  const interactions = useInteractions([click, dismiss, role, hover, focus, clientPoint]);
 
   return React.useMemo(
     () => ({
@@ -144,8 +149,21 @@ export function usePopover({
       animationClass,
       portalRoot,
       appendToBody,
+      triggerMethod,
     }),
-    [open, setOpen, interactions, data, modal, isMounted, styles, animationClass, portalRoot, appendToBody]
+    [
+      open,
+      setOpen,
+      interactions,
+      data,
+      modal,
+      isMounted,
+      styles,
+      animationClass,
+      portalRoot,
+      appendToBody,
+      triggerMethod,
+    ]
   );
 }
 
@@ -235,7 +253,7 @@ export const PopoverContent = React.forwardRef<HTMLDivElement, React.HTMLProps<H
 
   // if (!floatingContext.open) return null;
 
-  const { isMounted, styles, portalRoot, appendToBody } = context;
+  const { isMounted, styles, portalRoot, appendToBody, triggerMethod } = context;
 
   const boundaryElement = appendToBody !== false && document ? document.body : portalRoot;
 
@@ -263,8 +281,11 @@ export const PopoverContent = React.forwardRef<HTMLDivElement, React.HTMLProps<H
     hasValidPositionRef.current = false;
   }
 
-  // Integrate with OverlayManager for proper layering with other components
+  const isHoverTrigger = triggerMethod === 'hover';
+
   React.useEffect(() => {
+    if (isHoverTrigger) return;
+
     if (!context.open || !popoverRef.current) {
       if (popoverRef.current) {
         OverlayManager.remove(popoverRef.current);
@@ -311,7 +332,7 @@ export const PopoverContent = React.forwardRef<HTMLDivElement, React.HTMLProps<H
         OverlayManager.remove(popoverRef.current);
       }
     };
-  }, [context.open]);
+  }, [context.open, isHoverTrigger]);
 
   // Determine if we should show the content
   const canShow = hasReference && ((isValidPosition && hasCalculatedPosition) || hasValidPositionRef.current);

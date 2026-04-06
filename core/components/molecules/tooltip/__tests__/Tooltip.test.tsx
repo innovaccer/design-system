@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, act } from '@testing-library/react';
 import { Tooltip, Button } from '@/index';
 import { TooltipProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -127,36 +127,51 @@ describe('Tooltip component with text overflow', () => {
 //   });
 // });
 
-// describe('Tooltip component keyboard accessibility', () => {
-//   it('should close tooltip when Escape key is pressed', async () => {
-//     const { getByRole, queryByText } = render(
-//       <Tooltip tooltip="A tooltip">
-//         <Button>Hover over me</Button>
-//       </Tooltip>
-//     );
-//     const button = getByRole('button');
-//     fireEvent.mouseOver(button);
-//     expect(queryByText('A tooltip')).toBeInTheDocument();
+describe('Tooltip component keyboard accessibility', () => {
+  // `fireEvent.focus` dispatches a synthetic FocusEvent but does not actually focus the
+  // element, so `:focus-visible` stays false and useFocus doesn't trigger.
+  // `act(() => button.focus())` genuinely focuses the element in jsdom.
+  it('should show tooltip when trigger receives keyboard focus', () => {
+    const { getByRole, queryByText } = render(
+      <Tooltip tooltip="A tooltip">
+        <Button>Hover over me</Button>
+      </Tooltip>
+    );
+    const button = getByRole('button');
+    act(() => button.focus());
+    expect(queryByText('A tooltip')).toBeInTheDocument();
+  });
 
-//     await new Promise((resolve) => setTimeout(resolve, 0));
-//     fireEvent.keyDown(document, { key: 'Escape' });
-//     expect(queryByText('A tooltip')).not.toBeInTheDocument();
-//   });
+  it('should close tooltip when Escape key is pressed', () => {
+    const { getByRole, getByTestId } = render(
+      <Tooltip tooltip="A tooltip">
+        <Button>Hover over me</Button>
+      </Tooltip>
+    );
+    const button = getByRole('button');
+    act(() => button.focus());
+    expect(getByTestId('DesignSystem-Tooltip-Wrapper')).toBeInTheDocument();
 
-//   it('should not close tooltip when other keys are pressed', () => {
-//     const { getByRole, queryByText } = render(
-//       <Tooltip tooltip="A tooltip">
-//         <Button>Hover over me</Button>
-//       </Tooltip>
-//     );
-//     const button = getByRole('button');
-//     fireEvent.mouseOver(button);
-//     expect(queryByText('A tooltip')).toBeInTheDocument();
+    fireEvent.keyDown(document, { key: 'Escape' });
+    // After Escape, the popover closes: data-opened flips to false
+    const popover = getByTestId('DesignSystem-Popover');
+    expect(popover).toHaveAttribute('data-opened', 'false');
+  });
 
-//     fireEvent.keyDown(document, { key: 'Enter' });
-//     expect(queryByText('A tooltip')).toBeInTheDocument();
+  it('should not close tooltip when other keys are pressed', () => {
+    const { getByRole, getByTestId } = render(
+      <Tooltip tooltip="A tooltip">
+        <Button>Hover over me</Button>
+      </Tooltip>
+    );
+    const button = getByRole('button');
+    act(() => button.focus());
+    expect(getByTestId('DesignSystem-Tooltip-Wrapper')).toBeInTheDocument();
 
-//     fireEvent.keyDown(document, { key: 'a' });
-//     expect(queryByText('A tooltip')).toBeInTheDocument();
-//   });
-// });
+    fireEvent.keyDown(document, { key: 'Enter' });
+    expect(getByTestId('DesignSystem-Popover')).toHaveAttribute('data-opened', 'true');
+
+    fireEvent.keyDown(document, { key: 'a' });
+    expect(getByTestId('DesignSystem-Popover')).toHaveAttribute('data-opened', 'true');
+  });
+});
