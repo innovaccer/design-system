@@ -39,7 +39,11 @@ export const FileUploader = (props: FileUploaderProps) => {
   } = props;
 
   const baseProps = extractBaseProps(props);
-  const baseId = React.useRef(`file-uploader-${uidGenerator()}`).current;
+  const baseIdRef = React.useRef<string | null>(null);
+  if (!baseIdRef.current) {
+    baseIdRef.current = `file-uploader-${uidGenerator()}`;
+  }
+  const baseId = baseIdRef.current;
   const titleId = `${baseId}-title`;
   const sizeLabelId = `${baseId}-size`;
 
