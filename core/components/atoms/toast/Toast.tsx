@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import Heading from '@/components/atoms/heading';
 import Text from '@/components/atoms/text';
 import Icon from '@/components/atoms/icon';
+import Button from '@/components/atoms/button';
 import ActionButton from './ActionButton';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { MessageAppearance } from '@/common.type';
@@ -88,9 +89,14 @@ export const Toast = (props: ToastProps) => {
       [styles['Toast-icon']]: true,
       [styles[`Toast-icon--${align}`]]: align,
       [styles[`Toast-icon--${appearance}`]]: appearance,
-      [styles['Toast-close-icon']]: align === 'right',
-      [styles[`Toast-close-icon--${appearance}`]]: appearance && align === 'right',
     });
+
+  const closeButtonClass = classNames({
+    [styles['Toast-icon--right']]: true,
+    [styles['Toast-close-icon']]: true,
+    [styles[`Toast-close-icon--${appearance}`]]: appearance,
+    [styles[`Toast-icon--${appearance}`]]: appearance,
+  });
 
   const textClass = classNames({
     [styles['Toast-text']]: true,
@@ -116,9 +122,14 @@ export const Toast = (props: ToastProps) => {
             {title}
           </Heading>
           {onClose && (
-            <button type="button" className={iconClass('right')} onClick={onClose} aria-label="Close">
-              <Icon name={'close'} aria-hidden="true" />
-            </button>
+            <Button
+              appearance="transparent"
+              icon="close"
+              aria-label="Close"
+              onClick={onClose}
+              data-test="DesignSystem-Toast--CloseButton"
+              className={closeButtonClass}
+            />
           )}
         </div>
         {message && (
