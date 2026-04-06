@@ -32,18 +32,22 @@ exports[`Toast component
           </h5>
           <button
             aria-label="Close"
-            class="Toast-closeButton Toast-icon--right Toast-close-icon Toast-close-icon--alert"
+            class="Button Button--regular Button--regularSquare Button--transparent Toast-icon--right Toast-close-icon Toast-close-icon--alert Toast-icon--alert"
             data-test="DesignSystem-Toast--CloseButton"
-            type="button"
+            tabindex="0"
           >
-            <i
-              aria-hidden="true"
-              class="material-symbols material-symbols-rounded Icon Icon--white"
-              data-test="DesignSystem-Icon"
-              style="font-size: 16px; width: 16px;"
+            <div
+              class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
             >
-              close
-            </i>
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                style="font-size: 16px; width: 16px;"
+              >
+                close
+              </i>
+            </div>
           </button>
         </div>
       </div>
@@ -84,18 +88,22 @@ exports[`Toast component
           </h5>
           <button
             aria-label="Close"
-            class="Toast-closeButton Toast-icon--right Toast-close-icon Toast-close-icon--info"
+            class="Button Button--regular Button--regularSquare Button--transparent Toast-icon--right Toast-close-icon Toast-close-icon--info Toast-icon--info"
             data-test="DesignSystem-Toast--CloseButton"
-            type="button"
+            tabindex="0"
           >
-            <i
-              aria-hidden="true"
-              class="material-symbols material-symbols-rounded Icon Icon--white"
-              data-test="DesignSystem-Icon"
-              style="font-size: 16px; width: 16px;"
+            <div
+              class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
             >
-              close
-            </i>
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                style="font-size: 16px; width: 16px;"
+              >
+                close
+              </i>
+            </div>
           </button>
         </div>
       </div>
@@ -136,18 +144,22 @@ exports[`Toast component
           </h5>
           <button
             aria-label="Close"
-            class="Toast-closeButton Toast-icon--right Toast-close-icon Toast-close-icon--success"
+            class="Button Button--regular Button--regularSquare Button--transparent Toast-icon--right Toast-close-icon Toast-close-icon--success Toast-icon--success"
             data-test="DesignSystem-Toast--CloseButton"
-            type="button"
+            tabindex="0"
           >
-            <i
-              aria-hidden="true"
-              class="material-symbols material-symbols-rounded Icon Icon--white"
-              data-test="DesignSystem-Icon"
-              style="font-size: 16px; width: 16px;"
+            <div
+              class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
             >
-              close
-            </i>
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                style="font-size: 16px; width: 16px;"
+              >
+                close
+              </i>
+            </div>
           </button>
         </div>
       </div>
@@ -188,18 +200,22 @@ exports[`Toast component
           </h5>
           <button
             aria-label="Close"
-            class="Toast-closeButton Toast-icon--right Toast-close-icon Toast-close-icon--warning"
+            class="Button Button--regular Button--regularSquare Button--transparent Toast-icon--right Toast-close-icon Toast-close-icon--warning Toast-icon--warning"
             data-test="DesignSystem-Toast--CloseButton"
-            type="button"
+            tabindex="0"
           >
-            <i
-              aria-hidden="true"
-              class="material-symbols material-symbols-rounded Icon Icon--default"
-              data-test="DesignSystem-Icon"
-              style="font-size: 16px; width: 16px;"
+            <div
+              class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
             >
-              close
-            </i>
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                style="font-size: 16px; width: 16px;"
+              >
+                close
+              </i>
+            </div>
           </button>
         </div>
       </div>
@@ -240,18 +256,22 @@ exports[`Toast component
           </h5>
           <button
             aria-label="Close"
-            class="Toast-closeButton Toast-icon--right Toast-close-icon Toast-close-icon--alert"
+            class="Button Button--regular Button--regularSquare Button--transparent Toast-icon--right Toast-close-icon Toast-close-icon--alert Toast-icon--alert"
             data-test="DesignSystem-Toast--CloseButton"
-            type="button"
+            tabindex="0"
           >
-            <i
-              aria-hidden="true"
-              class="material-symbols material-symbols-rounded Icon Icon--white"
-              data-test="DesignSystem-Icon"
-              style="font-size: 16px; width: 16px;"
+            <div
+              class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
             >
-              close
-            </i>
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                style="font-size: 16px; width: 16px;"
+              >
+                close
+              </i>
+            </div>
           </button>
         </div>
         <span
@@ -298,18 +318,22 @@ exports[`Toast component
           </h5>
           <button
             aria-label="Close"
-            class="Toast-closeButton Toast-icon--right Toast-close-icon Toast-close-icon--alert"
+            class="Button Button--regular Button--regularSquare Button--transparent Toast-icon--right Toast-close-icon Toast-close-icon--alert Toast-icon--alert"
             data-test="DesignSystem-Toast--CloseButton"
-            type="button"
+            tabindex="0"
           >
-            <i
-              aria-hidden="true"
-              class="material-symbols material-symbols-rounded Icon Icon--white"
-              data-test="DesignSystem-Icon"
-              style="font-size: 16px; width: 16px;"
+            <div
+              class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
             >
-              close
-            </i>
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                style="font-size: 16px; width: 16px;"
+              >
+                close
+              </i>
+            </div>
           </button>
         </div>
         <span
@@ -371,18 +395,22 @@ exports[`Toast component
           </h5>
           <button
             aria-label="Close"
-            class="Toast-closeButton Toast-icon--right Toast-close-icon Toast-close-icon--info"
+            class="Button Button--regular Button--regularSquare Button--transparent Toast-icon--right Toast-close-icon Toast-close-icon--info Toast-icon--info"
             data-test="DesignSystem-Toast--CloseButton"
-            type="button"
+            tabindex="0"
           >
-            <i
-              aria-hidden="true"
-              class="material-symbols material-symbols-rounded Icon Icon--white"
-              data-test="DesignSystem-Icon"
-              style="font-size: 16px; width: 16px;"
+            <div
+              class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
             >
-              close
-            </i>
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                style="font-size: 16px; width: 16px;"
+              >
+                close
+              </i>
+            </div>
           </button>
         </div>
         <span
@@ -429,18 +457,22 @@ exports[`Toast component
           </h5>
           <button
             aria-label="Close"
-            class="Toast-closeButton Toast-icon--right Toast-close-icon Toast-close-icon--info"
+            class="Button Button--regular Button--regularSquare Button--transparent Toast-icon--right Toast-close-icon Toast-close-icon--info Toast-icon--info"
             data-test="DesignSystem-Toast--CloseButton"
-            type="button"
+            tabindex="0"
           >
-            <i
-              aria-hidden="true"
-              class="material-symbols material-symbols-rounded Icon Icon--white"
-              data-test="DesignSystem-Icon"
-              style="font-size: 16px; width: 16px;"
+            <div
+              class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
             >
-              close
-            </i>
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                style="font-size: 16px; width: 16px;"
+              >
+                close
+              </i>
+            </div>
           </button>
         </div>
         <span
@@ -502,18 +534,22 @@ exports[`Toast component
           </h5>
           <button
             aria-label="Close"
-            class="Toast-closeButton Toast-icon--right Toast-close-icon Toast-close-icon--success"
+            class="Button Button--regular Button--regularSquare Button--transparent Toast-icon--right Toast-close-icon Toast-close-icon--success Toast-icon--success"
             data-test="DesignSystem-Toast--CloseButton"
-            type="button"
+            tabindex="0"
           >
-            <i
-              aria-hidden="true"
-              class="material-symbols material-symbols-rounded Icon Icon--white"
-              data-test="DesignSystem-Icon"
-              style="font-size: 16px; width: 16px;"
+            <div
+              class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
             >
-              close
-            </i>
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                style="font-size: 16px; width: 16px;"
+              >
+                close
+              </i>
+            </div>
           </button>
         </div>
         <span
@@ -560,18 +596,22 @@ exports[`Toast component
           </h5>
           <button
             aria-label="Close"
-            class="Toast-closeButton Toast-icon--right Toast-close-icon Toast-close-icon--success"
+            class="Button Button--regular Button--regularSquare Button--transparent Toast-icon--right Toast-close-icon Toast-close-icon--success Toast-icon--success"
             data-test="DesignSystem-Toast--CloseButton"
-            type="button"
+            tabindex="0"
           >
-            <i
-              aria-hidden="true"
-              class="material-symbols material-symbols-rounded Icon Icon--white"
-              data-test="DesignSystem-Icon"
-              style="font-size: 16px; width: 16px;"
+            <div
+              class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
             >
-              close
-            </i>
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                style="font-size: 16px; width: 16px;"
+              >
+                close
+              </i>
+            </div>
           </button>
         </div>
         <span
@@ -633,18 +673,22 @@ exports[`Toast component
           </h5>
           <button
             aria-label="Close"
-            class="Toast-closeButton Toast-icon--right Toast-close-icon Toast-close-icon--warning"
+            class="Button Button--regular Button--regularSquare Button--transparent Toast-icon--right Toast-close-icon Toast-close-icon--warning Toast-icon--warning"
             data-test="DesignSystem-Toast--CloseButton"
-            type="button"
+            tabindex="0"
           >
-            <i
-              aria-hidden="true"
-              class="material-symbols material-symbols-rounded Icon Icon--default"
-              data-test="DesignSystem-Icon"
-              style="font-size: 16px; width: 16px;"
+            <div
+              class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
             >
-              close
-            </i>
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                style="font-size: 16px; width: 16px;"
+              >
+                close
+              </i>
+            </div>
           </button>
         </div>
         <span
@@ -691,18 +735,22 @@ exports[`Toast component
           </h5>
           <button
             aria-label="Close"
-            class="Toast-closeButton Toast-icon--right Toast-close-icon Toast-close-icon--warning"
+            class="Button Button--regular Button--regularSquare Button--transparent Toast-icon--right Toast-close-icon Toast-close-icon--warning Toast-icon--warning"
             data-test="DesignSystem-Toast--CloseButton"
-            type="button"
+            tabindex="0"
           >
-            <i
-              aria-hidden="true"
-              class="material-symbols material-symbols-rounded Icon Icon--default"
-              data-test="DesignSystem-Icon"
-              style="font-size: 16px; width: 16px;"
+            <div
+              class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
             >
-              close
-            </i>
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                style="font-size: 16px; width: 16px;"
+              >
+                close
+              </i>
+            </div>
           </button>
         </div>
         <span

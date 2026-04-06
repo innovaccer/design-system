@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import Heading from '@/components/atoms/heading';
 import Text from '@/components/atoms/text';
 import Icon from '@/components/atoms/icon';
+import Button from '@/components/atoms/button';
 import ActionButton from './ActionButton';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { MessageAppearance } from '@/common.type';
@@ -91,10 +92,10 @@ export const Toast = (props: ToastProps) => {
     });
 
   const closeButtonClass = classNames({
-    [styles['Toast-closeButton']]: true,
     [styles['Toast-icon--right']]: true,
     [styles['Toast-close-icon']]: true,
     [styles[`Toast-close-icon--${appearance}`]]: appearance,
+    [styles[`Toast-icon--${appearance}`]]: appearance,
   });
 
   const textClass = classNames({
@@ -124,15 +125,14 @@ export const Toast = (props: ToastProps) => {
           <Heading size="s" className={headingClass} appearance={appearance !== 'warning' ? 'white' : 'default'}>
             {title}
           </Heading>
-          <button
-            type="button"
-            className={closeButtonClass}
-            onClick={onCloseHandler}
+          <Button
+            appearance="transparent"
+            icon="close"
             aria-label="Close"
+            onClick={onCloseHandler}
             data-test="DesignSystem-Toast--CloseButton"
-          >
-            <Icon name="close" appearance={appearance !== 'warning' ? 'white' : 'default'} aria-hidden="true" />
-          </button>
+            className={closeButtonClass}
+          />
         </div>
         {message && (
           <Text appearance={appearance !== 'warning' ? 'white' : 'default'} className={textClass}>
