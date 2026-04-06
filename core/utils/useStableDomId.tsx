@@ -3,17 +3,19 @@ import uidGenerator from '@/utils/uidGenerator';
 
 const reactUseId = (React as { useId?: () => string }).useId;
 
-function useStableDomIdWithReactUseId(prefix: string): string {
+function useStableDomIdWithReactUseId(prefix: string): string | undefined {
   const generated = reactUseId!();
   return `${prefix}-${generated}`;
 }
 
-function useStableDomIdWithUidFallback(prefix: string): string {
-  const ref = React.useRef<string | null>(null);
-  if (ref.current === null) {
-    ref.current = `${prefix}-${uidGenerator()}`;
-  }
-  return ref.current;
+function useStableDomIdWithUidFallback(prefix: string): string | undefined {
+  const [id, setId] = React.useState<string>();
+
+  React.useEffect(() => {
+    setId(`${prefix}-${uidGenerator()}`);
+  }, [prefix]);
+
+  return id;
 }
 
 /**
