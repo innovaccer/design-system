@@ -158,7 +158,7 @@ export const VerticalNavigation = (props: VerticalNavigationProps) => {
           role="button"
           tabIndex={menu.disabled ? -1 : 0}
           aria-disabled={menu.disabled || undefined}
-          aria-current={isMenuActive(menus, menu, active) ? 'page' : undefined}
+          aria-current={active?.name === menu.name || (active?.link && active.link === menu.link) ? 'page' : undefined}
         >
           {menu.icon && (
             <Icon
@@ -216,7 +216,7 @@ export const VerticalNavigation = (props: VerticalNavigationProps) => {
                   role="button"
                   tabIndex={subMenu.disabled ? -1 : 0}
                   aria-disabled={subMenu.disabled || undefined}
-                  aria-current={isActive ? 'page' : undefined}
+                  aria-current={active?.name === subMenu.name || (active?.link && active.link === subMenu.link) ? 'page' : undefined}
                 >
                   <Text appearance={getTextAppearance(isActive, subMenu.disabled)} className="ellipsis--noWrap">
                     {subMenu.label}

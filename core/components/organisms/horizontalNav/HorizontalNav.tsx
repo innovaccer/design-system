@@ -118,7 +118,7 @@ export const HorizontalNav = (props: HorizontalNavProps) => {
           key={index}
           {...commonProps}
           href={menu.link}
-          aria-current={isActive ? 'page' : undefined}
+          aria-current={active?.name === menu.name || (active?.link && active.link === menu.link) ? 'page' : undefined}
           onClick={(event) => onClickHandler(event, menu)}
         >
           {content}
@@ -131,7 +131,7 @@ export const HorizontalNav = (props: HorizontalNavProps) => {
         type="button"
         key={index}
         {...commonProps}
-        aria-current={isActive ? 'page' : undefined}
+        aria-current={active?.name === menu.name || (active?.link && active.link === menu.link) ? 'page' : undefined}
         onClick={(event) => onClickHandler(event, menu)}
       >
         {content}
