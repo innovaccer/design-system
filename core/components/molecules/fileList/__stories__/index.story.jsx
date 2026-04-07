@@ -121,7 +121,7 @@ const customCode = `() => {
                 size="regular"
                 onClick={() => onClick(fileItem)}
                 className={'cursor-pointer'}
-                aria-label={\`Retry \${fileItem.file?.name}\`}
+                aria-label={\`Retry \${fileItem.file.name}\`}
               />
               <Button
                 appearance="transparent"
@@ -129,7 +129,7 @@ const customCode = `() => {
                 size="regular"
                 onClick={() => onClick(fileItem)}
                 className={'cursor-pointer ml-2'}
-                aria-label={\`Remove \${fileItem.file?.name}\`}
+                aria-label={\`Remove \${fileItem.file.name}\`}
               />
             </>
             );
@@ -141,7 +141,7 @@ const customCode = `() => {
               size="regular"
               onClick={() => {}}
               className={'cursor-pointer'}
-              aria-label={\`Remove \${fileItem.file?.name}\`}
+              aria-label={\`Remove \${fileItem.file.name}\`}
             />
           );
         }
