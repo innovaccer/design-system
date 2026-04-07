@@ -4,6 +4,7 @@ import { PopoverProps } from '@/index.type';
 import { BaseProps, filterProps } from '@/utils/types';
 import styles from '@css/components/tooltip.module.css';
 import classNames from 'classnames';
+import uidGenerator from '@/utils/uidGenerator';
 
 type Position = 'top-start' | 'top' | 'top-end' | 'right' | 'bottom-end' | 'bottom' | 'bottom-start' | 'left';
 
@@ -93,8 +94,6 @@ export const detectTruncation = (boundaryRef: React.RefObject<HTMLElement>) => {
   return isTruncated;
 };
 
-let tooltipCounter = 0;
-
 export const Tooltip = (props: TooltipProps) => {
   const {
     children,
@@ -105,13 +104,23 @@ export const Tooltip = (props: TooltipProps) => {
     className,
     size = 'regular',
     'aria-describedby': ariaDescribedBy,
+    open: openProp,
     ...rest
   } = props;
   const childrenRef = React.useRef(null);
   const [isTruncated, setIsTruncated] = React.useState(false);
-  const tooltipId = React.useMemo(() => `Tooltip-${++tooltipCounter}`, []);
+  const [isOpen, setIsOpen] = React.useState(!!openProp);
+  const tooltipIdRef = React.useRef<string | null>(null);
+  if (tooltipIdRef.current === null) {
+    tooltipIdRef.current = `Tooltip-${uidGenerator()}`;
+  }
+  const tooltipId = tooltipIdRef.current;
 
-  const mergedDescribedBy = [ariaDescribedBy, tooltipId].filter(Boolean).join(' ');
+  React.useEffect(() => {
+    if (openProp !== undefined) setIsOpen(openProp);
+  }, [openProp]);
+
+  const mergedDescribedBy = isOpen ? [ariaDescribedBy, tooltipId].filter(Boolean).join(' ') : ariaDescribedBy;
 
   React.useEffect(() => {
     const element = elementRef ? elementRef : childrenRef;
@@ -152,9 +161,7 @@ export const Tooltip = (props: TooltipProps) => {
 
     const truncationTrigger = React.isValidElement(renderChildren)
       ? React.cloneElement(renderChildren as React.ReactElement<any>, {
-          'aria-describedby': [(children as React.ReactElement<any>).props['aria-describedby'], mergedDescribedBy]
-            .filter(Boolean)
-            .join(' '),
+          'aria-describedby': mergedDescribedBy || undefined,
         })
       : renderChildren;
 
@@ -168,6 +175,8 @@ export const Tooltip = (props: TooltipProps) => {
           close: styles[`Tooltip-animation-close-${positionValue[props.position]}`],
         }}
         className={classes}
+        open={isOpen}
+        onToggle={setIsOpen}
         {...rest}
       >
         {tooltipWrapper}
@@ -177,7 +186,7 @@ export const Tooltip = (props: TooltipProps) => {
 
   const triggerWithA11y = React.isValidElement(children)
     ? React.cloneElement(children as React.ReactElement<any>, {
-        'aria-describedby': [children.props['aria-describedby'], mergedDescribedBy].filter(Boolean).join(' '),
+        'aria-describedby': mergedDescribedBy || undefined,
       })
     : children;
 
@@ -191,6 +200,8 @@ export const Tooltip = (props: TooltipProps) => {
         close: styles[`Tooltip-animation-close-${positionValue[props.position]}`],
       }}
       className={classes}
+      open={isOpen}
+      onToggle={setIsOpen}
       {...rest}
     >
       {tooltipWrapper}
