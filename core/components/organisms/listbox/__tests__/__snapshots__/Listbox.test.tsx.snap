@@ -2612,6 +2612,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </div>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -2666,6 +2671,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </div>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -2714,6 +2724,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </nav>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -2768,6 +2783,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </nav>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -2816,6 +2836,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </ol>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -2870,6 +2895,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </ol>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -2918,6 +2948,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </ul>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -2972,6 +3007,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </ul>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -3020,6 +3060,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </div>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -3074,6 +3119,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </div>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -3122,6 +3172,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </nav>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -3176,6 +3231,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </nav>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -3224,6 +3284,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </ol>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -3278,6 +3343,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </ol>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -3326,6 +3396,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </ul>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -3380,6 +3455,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </ul>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -3428,6 +3508,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </div>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -3482,6 +3567,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </div>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -3530,6 +3620,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </nav>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -3584,6 +3679,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </nav>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -3632,6 +3732,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </ol>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -3686,6 +3791,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </ol>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -3734,6 +3844,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </ul>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -3788,6 +3903,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </ul>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -3836,6 +3956,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </div>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -3890,6 +4015,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </div>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -3938,6 +4068,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </nav>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -3992,6 +4127,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </nav>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -4040,6 +4180,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </ol>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -4094,6 +4239,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </ol>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -4142,6 +4292,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </ul>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -4196,6 +4351,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </ul>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -4244,6 +4404,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </div>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -4298,6 +4463,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </div>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -4346,6 +4516,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </nav>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -4400,6 +4575,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </nav>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -4448,6 +4628,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </ol>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -4530,6 +4715,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </ul>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
   <div>
     <ol
@@ -4577,6 +4767,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </ol>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -4625,6 +4820,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </ul>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -4679,6 +4879,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </ul>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -4727,6 +4932,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </div>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -4781,6 +4991,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </div>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -4829,6 +5044,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </nav>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -4883,6 +5103,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </nav>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -4931,6 +5156,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </ol>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -4985,6 +5215,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </ol>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -5033,6 +5268,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </ul>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -5087,6 +5327,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </ul>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -5135,6 +5380,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </div>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -5189,6 +5439,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </div>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -5237,6 +5492,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </nav>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -5291,6 +5551,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </nav>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -5339,6 +5604,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </ol>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -5393,6 +5663,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </ol>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -5441,6 +5716,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </ul>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -5495,6 +5775,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </ul>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -5543,6 +5828,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </div>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -5597,6 +5887,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </div>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -5645,6 +5940,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </nav>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -5699,6 +5999,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </nav>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -5747,6 +6052,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </ol>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -5801,6 +6111,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </ol>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -5849,6 +6164,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </ul>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -5903,6 +6223,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </ul>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -5951,6 +6276,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </div>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -6005,6 +6335,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </div>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -6053,6 +6388,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </nav>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -6107,6 +6447,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </nav>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -6155,6 +6500,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </ol>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -6209,6 +6559,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </ol>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -6257,6 +6612,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </ul>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;
@@ -6311,6 +6671,11 @@ exports[`Listbox component snapshot
         </li>
       </div>
     </ul>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+    />
   </div>
 </body>
 `;

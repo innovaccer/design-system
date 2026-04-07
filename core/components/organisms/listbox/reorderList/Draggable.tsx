@@ -32,6 +32,11 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
     targetWidth: 0,
     scrollingSpeed: 0,
     scrollWindow: false,
+    mouseDownX: 0,
+    mouseDownY: 0,
+    hasDragStarted: false,
+    isClickAndFollow: false,
+    ariaMessage: '',
   };
   schdOnMouseMove: { (e: MouseEvent): void; cancel(): void };
   schdOnTouchMove: { (e: TouchEvent): void; cancel(): void };
@@ -115,12 +120,25 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
     }
     const isTouch = isTouchEvent(e);
     if (!isTouch && e.button !== 0) return;
+
+    if (this.state.isClickAndFollow) {
+      e.preventDefault();
+      // Second click in Click-and-Follow mode commits the drop via onEnd
+      return;
+    }
+
     const index = this.getTargetIndex(e as any);
 
     const listItemTouched = this.getChildren()[index] as HTMLElement;
     const isValidDragHandle = (e.target as Element)?.classList.contains(styles['Listbox-item--drag-icon']);
     if (!isValidDragHandle) return;
     e.preventDefault();
+
+    this.setState({
+      mouseDownX: isTouch ? e.touches[0].clientX : e.clientX,
+      mouseDownY: isTouch ? e.touches[0].clientY : e.clientY,
+      hasDragStarted: false,
+    });
 
     if (isTouch) {
       const opts = { passive: false };
@@ -174,11 +192,29 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
 
   onMouseMove = (e: MouseEvent) => {
     e.cancelable && e.preventDefault();
+    if (!this.state.hasDragStarted) {
+      const dx = Math.abs(e.clientX - this.state.mouseDownX);
+      const dy = Math.abs(e.clientY - this.state.mouseDownY);
+      if (dy + dx * 0.5 >= 5) {
+        this.setState({ hasDragStarted: true });
+      } else {
+        return;
+      }
+    }
     this.onMove(e.clientX, e.clientY);
   };
 
   onTouchMove = (e: TouchEvent) => {
     e.cancelable && e.preventDefault();
+    if (!this.state.hasDragStarted) {
+      const dx = Math.abs(e.touches[0].clientX - this.state.mouseDownX);
+      const dy = Math.abs(e.touches[0].clientY - this.state.mouseDownY);
+      if (dy + dx * 0.5 >= 5) {
+        this.setState({ hasDragStarted: true });
+      } else {
+        return;
+      }
+    }
     this.onMove(e.touches[0].clientX, e.touches[0].clientY);
   };
 
@@ -293,6 +329,21 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
 
   onEnd = (e: TouchEvent & MouseEvent) => {
     e.cancelable && e.preventDefault();
+
+    if (!this.state.hasDragStarted) {
+      if (!this.state.isClickAndFollow) {
+        // First click -> start Click-and-Follow
+        this.setState({
+          isClickAndFollow: true,
+          ariaMessage: 'Item grabbed. Move focus to choose a destination, then click or press Space to drop.',
+        });
+        return; // Keep listeners alive
+      } else {
+        // Second click -> end Click-and-Follow
+        this.setState({ isClickAndFollow: false });
+      }
+    }
+
     document.removeEventListener('mousemove', this.schdOnMouseMove);
     document.removeEventListener('touchmove', this.schdOnTouchMove);
     document.removeEventListener('mouseup', this.schdOnEnd);
@@ -345,7 +396,13 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
       transformItem(item, null);
       (item as HTMLElement).style.touchAction = '';
     });
-    this.setState({ itemDragged: -1, scrollingSpeed: 0 });
+    this.setState({
+      itemDragged: -1,
+      scrollingSpeed: 0,
+      isClickAndFollow: false,
+      hasDragStarted: false,
+      ariaMessage: `Item dropped at position ${Math.max(this.afterIndex, 0) + 1}.`,
+    });
     this.afterIndex = -2;
     // sometimes the scroll gets messed up after the drop, fix:
     if (this.lastScroll > 0) {
@@ -357,6 +414,29 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
   onKeyDown = (e: React.KeyboardEvent) => {
     const selectedItem = this.state.selectedItem;
     const index = this.getTargetIndex(e);
+
+    if (e.key === 'Escape' && this.state.itemDragged > -1) {
+      this.getChildren().forEach((item) => {
+        setItemTransition(item, 0);
+        transformItem(item, null);
+        (item as HTMLElement).style.touchAction = '';
+      });
+      this.setState({
+        itemDragged: -1,
+        scrollingSpeed: 0,
+        isClickAndFollow: false,
+        hasDragStarted: false,
+        ariaMessage: 'Reorder cancelled. Item returned to its original position.',
+      });
+      this.afterIndex = -2;
+      if (this.dropTimeout) window.clearTimeout(this.dropTimeout);
+      document.removeEventListener('mousemove', this.schdOnMouseMove);
+      document.removeEventListener('touchmove', this.schdOnTouchMove);
+      document.removeEventListener('mouseup', this.schdOnEnd);
+      document.removeEventListener('touchup', this.schdOnEnd);
+      document.removeEventListener('touchcancel', this.schdOnEnd);
+      return;
+    }
 
     if (index === -1 || (this.props.values[index] && this.props.values[index].props.disabled)) {
       return;
@@ -521,12 +601,29 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
                 onWheel: this.onWheel,
               },
               index: this.state.itemDragged,
-              isDragged: true,
-              isSelected: false,
+              isDragged: !this.state.isClickAndFollow,
+              isSelected: this.state.isClickAndFollow,
               isOutOfBounds: this.state.itemDraggedOutOfBounds > -1,
             }),
             document.body
           )}
+        <div
+          aria-live="assertive"
+          aria-atomic="true"
+          style={{
+            position: 'absolute',
+            width: 1,
+            height: 1,
+            padding: 0,
+            margin: -1,
+            overflow: 'hidden',
+            clip: 'rect(0, 0, 0, 0)',
+            whiteSpace: 'nowrap',
+            border: 0,
+          }}
+        >
+          {this.state.ariaMessage}
+        </div>
       </React.Fragment>
     );
   }
