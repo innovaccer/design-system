@@ -313,10 +313,10 @@ export const ChipInput = (props: ChipInputProps) => {
       onBlurCapture={handleBorderFocusOut}
     >
       <div data-test="DesignSystem-ChipInput" {...baseProps} className={ChipInputClass}>
-        {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
         <div
           className={styles['ChipInput-wrapper']}
           ref={customRef}
+          role="presentation"
           onClick={(e) => {
             if (e.target === e.currentTarget) {
               inputRef.current?.focus();

@@ -15,6 +15,7 @@ exports[`ChipInput component
       >
         <div
           class="ChipInput-wrapper"
+          role="presentation"
         >
           <div
             class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular mr-3 my-3"
@@ -126,6 +127,7 @@ exports[`ChipInput component
       >
         <div
           class="ChipInput-wrapper"
+          role="presentation"
         >
           <div
             class="Chip-wrapper Chip Chip-input--disabled Chip-icon--clear Chip-size--regular mr-3 my-3"
@@ -239,6 +241,7 @@ exports[`ChipInput component
       >
         <div
           class="ChipInput-wrapper"
+          role="presentation"
         >
           <div
             class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular mr-3 my-3"
