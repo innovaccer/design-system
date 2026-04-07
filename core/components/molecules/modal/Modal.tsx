@@ -201,15 +201,16 @@ class Modal extends React.Component<ModalProps, ModalState> {
     });
 
     document.addEventListener('keydown', this.onFocusTrapKeyDown, true);
-    container.addEventListener('keydown', this.onCloseHandler);
+    document.addEventListener('keydown', this.onCloseHandler, true);
   };
 
   deactivateFocusTrap = () => {
     document.removeEventListener('keydown', this.onFocusTrapKeyDown, true);
 
+    document.removeEventListener('keydown', this.onCloseHandler, true);
+
     const container = this.modalContentRef.current;
     if (container) {
-      container.removeEventListener('keydown', this.onCloseHandler);
       container.removeAttribute('tabindex');
     }
 
