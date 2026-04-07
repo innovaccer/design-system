@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { Chip, Icon } from '@/index';
+import { Button, Chip } from '@/index';
 import { ChipProps } from '@/index.type';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { isSpaceKey } from '@/accessibility/utils';
@@ -303,8 +303,6 @@ export const ChipInput = (props: ChipInputProps) => {
     );
   });
 
-  const iconSize = size === 'small' ? 12 : 16;
-
   return (
     <div
       data-test="DesignSystem-ChipInput--Border"
@@ -342,16 +340,17 @@ export const ChipInput = (props: ChipInputProps) => {
           />
         </div>
         {chips.length > 0 && (
-          <button
+          <Button
             data-test="DesignSystem-ChipInput--Icon"
-            className={IconClass}
+            type="button"
+            appearance="transparent"
+            icon="close"
+            size={size === 'small' ? 'tiny' : 'regular'}
+            className={classNames(iconWrapperClass, 'align-self-center', 'flex-shrink-0')}
             onClick={onDeleteAllHandler}
-            tabIndex={disabled ? -1 : 0}
             aria-label="Clear all"
             disabled={disabled}
-          >
-            <Icon name="close" size={iconSize} appearance={disabled ? 'disabled' : 'subtle'} aria-hidden="true" />
-          </button>
+          />
         )}
       </div>
     </div>

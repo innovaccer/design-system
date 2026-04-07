@@ -93,18 +93,23 @@ exports[`ChipInput component
         </div>
         <button
           aria-label="Clear all"
-          class="ChipInput-icon ChipInput-icon--regular"
+          class="Button Button--regular Button--regularSquare Button--transparent Input-icon Input-iconWrapper--right align-self-center flex-shrink-0"
           data-test="DesignSystem-ChipInput--Icon"
           tabindex="0"
+          type="button"
         >
-          <i
-            aria-hidden="true"
-            class="material-symbols material-symbols-rounded Icon Icon--subtle"
-            data-test="DesignSystem-Icon"
-            style="font-size: 16px; width: 16px;"
+          <div
+            class="Button-icon"
+            data-test="DesignSystem-Button--Icon-Wrapper"
           >
-            close
-          </i>
+            <i
+              class="material-symbols material-symbols-rounded Icon"
+              data-test="DesignSystem-Button--Icon"
+              style="font-size: 16px; width: 16px;"
+            >
+              close
+            </i>
+          </div>
         </button>
       </div>
     </div>
@@ -206,19 +211,24 @@ exports[`ChipInput component
         </div>
         <button
           aria-label="Clear all"
-          class="ChipInput-icon ChipInput-icon--regular"
+          class="Button Button--regular Button--regularSquare Button--transparent Input-icon Input-iconWrapper--right align-self-center flex-shrink-0"
           data-test="DesignSystem-ChipInput--Icon"
           disabled=""
-          tabindex="-1"
+          tabindex="0"
+          type="button"
         >
-          <i
-            aria-hidden="true"
-            class="material-symbols material-symbols-rounded Icon Icon--disabled"
-            data-test="DesignSystem-Icon"
-            style="font-size: 16px; width: 16px;"
+          <div
+            class="Button-icon"
+            data-test="DesignSystem-Button--Icon-Wrapper"
           >
-            close
-          </i>
+            <i
+              class="material-symbols material-symbols-rounded Icon"
+              data-test="DesignSystem-Button--Icon"
+              style="font-size: 16px; width: 16px;"
+            >
+              close
+            </i>
+          </div>
         </button>
       </div>
     </div>
@@ -319,18 +329,23 @@ exports[`ChipInput component
         </div>
         <button
           aria-label="Clear all"
-          class="ChipInput-icon ChipInput-icon--regular"
+          class="Button Button--regular Button--regularSquare Button--transparent Input-icon Input-iconWrapper--right align-self-center flex-shrink-0"
           data-test="DesignSystem-ChipInput--Icon"
           tabindex="0"
+          type="button"
         >
-          <i
-            aria-hidden="true"
-            class="material-symbols material-symbols-rounded Icon Icon--subtle"
-            data-test="DesignSystem-Icon"
-            style="font-size: 16px; width: 16px;"
+          <div
+            class="Button-icon"
+            data-test="DesignSystem-Button--Icon-Wrapper"
           >
-            close
-          </i>
+            <i
+              class="material-symbols material-symbols-rounded Icon"
+              data-test="DesignSystem-Button--Icon"
+              style="font-size: 16px; width: 16px;"
+            >
+              close
+            </i>
+          </div>
         </button>
       </div>
     </div>
