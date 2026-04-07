@@ -46,7 +46,7 @@
 }
 
 .DropdownButton--placeholder {
-  color: var(--text-subtle);
+  color: var(--text);
 }
 
 .DropdownButton:hover {

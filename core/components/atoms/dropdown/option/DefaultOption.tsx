@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text } from '@/index';
+import { Text, Icon } from '@/index';
 import { OptionTypeProps } from './index';
 import styles from '@css/components/dropdown.module.css';
 
@@ -10,6 +10,7 @@ const DefaultOption = (props: OptionTypeProps) => {
     onClickHandler,
     optionData,
     color,
+    appearance,
     onUpdateActiveOption,
     dataTest,
     selected,
@@ -45,6 +46,15 @@ const DefaultOption = (props: OptionTypeProps) => {
           {label}
         </Text>
       </div>
+      {selected && !menu && (
+        <Icon
+          name="check"
+          appearance={appearance}
+          className={styles['Option-checkIcon']}
+          size={16}
+          data-test="DesignSystem-DropdownOption--checkIcon"
+        />
+      )}
     </div>
   );
 };
