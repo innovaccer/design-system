@@ -216,7 +216,11 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
     }
   }, [type]);
 
-  const resolvedClearButtonAriaLabel = placeholder ? `Clear ${placeholder}` : 'Clear input';
+  const resolvedClearButtonAriaLabel = props['aria-label']
+    ? `Clear ${props['aria-label']}`
+    : placeholder
+    ? `Clear ${placeholder}`
+    : 'Clear input';
 
   const baseProps = extractBaseProps(props);
 
@@ -337,7 +341,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
               onClear(e);
             }}
             onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
+              if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
                 e.preventDefault();
                 ref.current?.focus({ preventScroll: true });
                 onClear(e);

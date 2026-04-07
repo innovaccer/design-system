@@ -444,6 +444,32 @@ describe('Input Component - Comprehensive Behavior Tests', () => {
       expect(onClearMock).toHaveBeenCalledTimes(1);
       expect(input.focus).toHaveBeenCalledWith({ preventScroll: true });
     });
+
+    it('calls onClear and focuses input when clear button receives Spacebar key', () => {
+      const onClearMock = jest.fn();
+      const { getByRole, getByTestId } = render(
+        <Input name="test" placeholder="Name" value="test value" onClear={onClearMock} />
+      );
+
+      const input = getByTestId('DesignSystem-Input') as HTMLInputElement;
+      const clearButton = getByRole('button', { name: 'Clear Name' });
+
+      input.focus = jest.fn();
+      fireEvent.keyDown(clearButton, { key: 'Spacebar' });
+
+      expect(onClearMock).toHaveBeenCalledTimes(1);
+      expect(input.focus).toHaveBeenCalledWith({ preventScroll: true });
+    });
+
+    it('prefers aria-label over placeholder in clear button aria-label', () => {
+      const onClearMock = jest.fn();
+      const { getByRole } = render(
+        <Input name="test" aria-label="Email address" placeholder="Enter email" value="test" onClear={onClearMock} />
+      );
+
+      const clearButton = getByRole('button', { name: 'Clear Email address' });
+      expect(clearButton).toBeInTheDocument();
+    });
   });
 
   describe('Input Component - Custom Action Icon Functionality', () => {
