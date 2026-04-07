@@ -174,7 +174,7 @@ describe('Sidesheet component with prop: open', () => {
     expect(getByTestId('DesignSystem-Sidesheet')).toHaveClass('Sidesheet-animation--close');
   });
 
-  it('focuses first focusable element when Sidesheet opens', async () => {
+  it('focuses heading (aria-labelledby target) when Sidesheet opens so VoiceOver announces the dialog title', async () => {
     jest.useRealTimers();
     const flushRAF = () => act(() => new Promise((resolve) => requestAnimationFrame(() => resolve())));
 
@@ -186,8 +186,9 @@ describe('Sidesheet component with prop: open', () => {
 
     await flushRAF();
 
-    const closeButton = getByTestId('DesignSystem-Sidesheet--CloseButton');
-    expect(document.activeElement).toBe(closeButton);
+    const heading = getByTestId('DesignSystem-OverlayHeader--heading');
+    expect(document.activeElement).toBe(heading);
+    expect(heading).toHaveAttribute('tabindex', '-1');
     jest.useFakeTimers();
   });
 
@@ -237,6 +238,32 @@ describe('Sidesheet component with prop: open', () => {
     fireEvent.keyDown(sidesheetContainer, { key: 'Escape' });
 
     expect(onClose).toHaveBeenCalled();
+  });
+
+  it('Escape closes Sidesheet even when closeOnEscape={false} to prevent keyboard trap (WCAG 2.2.1)', async () => {
+    jest.useRealTimers();
+    const flushRAF = () => act(() => new Promise((resolve) => requestAnimationFrame(() => resolve())));
+    const onClose = jest.fn();
+
+    render(
+      <Sidesheet
+        dimension="large"
+        headerOptions={headerOptions}
+        open={true}
+        footer={footer}
+        onClose={onClose}
+        closeOnEscape={false}
+      >
+        <Text>Body</Text>
+      </Sidesheet>
+    );
+
+    await flushRAF();
+
+    fireEvent.keyDown(document, { key: 'Escape' });
+
+    expect(onClose).toHaveBeenCalled();
+    jest.useFakeTimers();
   });
 
   it('renders Sidesheet with toggle of open', () => {

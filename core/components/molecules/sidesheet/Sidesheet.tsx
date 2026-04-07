@@ -11,7 +11,6 @@ import {
   getWrapperElement,
   getUpdatedZIndex,
   closeOnEscapeKeypress,
-  getFocusableElements,
   handleFocusTrapKeyDown,
   restoreFocusToElementIfConnected,
 } from '@/utils/overlayHelper';
@@ -135,6 +134,7 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
   sidesheetRef = React.createRef<HTMLDivElement>();
   sidesheetContentRef = React.createRef<HTMLDivElement>();
   previousActiveElement: HTMLElement | null = null;
+  staticFocusTarget: HTMLElement | null = null;
   autofocusRAF: number | null = null;
   autoHeadingId: string;
 
@@ -172,17 +172,21 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
     handleFocusTrapKeyDown(event, container);
   };
 
-  focusFirstFocusable = () => {
+  focusOnOpen = () => {
     const container = this.sidesheetContentRef.current;
     if (!container || !this.props.open) return;
 
-    const focusable = getFocusableElements(container);
-    if (focusable.length > 0) {
-      focusable[0].focus({ preventScroll: true });
-    } else {
-      container.setAttribute('tabindex', '-1');
-      container.focus({ preventScroll: true });
-    }
+    // Per WAI-ARIA APG: focus the element named by aria-labelledby (the heading)
+    // so VoiceOver announces the dialog title before the user tabs to interactive
+    // elements. Fall back to the dialog container if no internal heading is found.
+    const labelledById = container.getAttribute('aria-labelledby');
+    const candidateEl = labelledById ? document.getElementById(labelledById) : null;
+    const headingEl = candidateEl && container.contains(candidateEl) ? candidateEl : null;
+
+    const target = headingEl ?? container;
+    target.setAttribute('tabindex', '-1');
+    target.focus({ preventScroll: true });
+    this.staticFocusTarget = target;
   };
 
   onOpenAnimationStart = (event: React.AnimationEvent<HTMLDivElement>) => {
@@ -191,7 +195,7 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
       window.cancelAnimationFrame(this.autofocusRAF);
       this.autofocusRAF = null;
     }
-    this.focusFirstFocusable();
+    this.focusOnOpen();
   };
 
   activateFocusTrap = () => {
@@ -201,11 +205,11 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
 
     this.autofocusRAF = window.requestAnimationFrame(() => {
       this.autofocusRAF = null;
-      this.focusFirstFocusable();
+      this.focusOnOpen();
     });
 
     document.addEventListener('keydown', this.onFocusTrapKeyDown, true);
-    container.addEventListener('keydown', this.onCloseHandler);
+    document.addEventListener('keydown', this.onCloseHandler, true);
   };
 
   deactivateFocusTrap = () => {
@@ -215,11 +219,17 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
     }
     document.removeEventListener('keydown', this.onFocusTrapKeyDown, true);
 
+    document.removeEventListener('keydown', this.onCloseHandler, true);
+
     const container = this.sidesheetContentRef.current;
     if (container) {
-      container.removeEventListener('keydown', this.onCloseHandler);
       container.removeAttribute('tabindex');
     }
+
+    if (this.staticFocusTarget && this.staticFocusTarget !== container) {
+      this.staticFocusTarget.removeAttribute('tabindex');
+    }
+    this.staticFocusTarget = null;
 
     const elementToFocus = this.previousActiveElement;
     this.previousActiveElement = null;
@@ -313,7 +323,10 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
       'aria-labelledby': ariaLabelledBy,
     } = this.props;
     const shouldUseAutoHeadingId = !ariaLabelledBy && !header && Boolean(headerOptions?.heading);
-    const resolvedHeadingId = headerOptions?.headingId || (shouldUseAutoHeadingId ? this.autoHeadingId : undefined);
+    const resolvedHeadingId =
+      headerOptions?.headingId ||
+      (ariaLabelledBy && !header && Boolean(headerOptions?.heading) ? ariaLabelledBy : undefined) ||
+      (shouldUseAutoHeadingId ? this.autoHeadingId : undefined);
     const resolvedAriaLabelledBy = ariaLabelledBy || resolvedHeadingId;
 
     const BackdropZIndex: number = zIndex ? zIndex - 1 : 1000;

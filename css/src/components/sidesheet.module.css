@@ -108,3 +108,13 @@
 .Sidesheet-body--firstPage {
   animation: fadeIn var(--duration--fast-02) var(--standard-expressive-curve);
 }
+
+/* Suppress focus ring on programmatic-only focus targets (tabindex="-1") —
+   the dialog container and heading receive focus via .focus() on open, not keyboard navigation. */
+.Sidesheet:focus {
+  outline: none;
+}
+
+.Sidesheet-header [tabindex='-1']:focus {
+  outline: none;
+}
