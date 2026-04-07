@@ -548,7 +548,7 @@ describe('ChipInput Component - Size Variants and Icon Alignment', () => {
       const icon = getByTestId('DesignSystem-ChipInput--Icon');
 
       expect(container).not.toHaveAttribute('tabIndex');
-      expect(icon).toHaveAttribute('tabIndex', '0');
+      expect(icon).not.toBeDisabled();
     });
 
     it('should omit wrapper tabIndex and set clear icon tabIndex -1 when disabled', () => {
@@ -560,7 +560,7 @@ describe('ChipInput Component - Size Variants and Icon Alignment', () => {
       const icon = getByTestId('DesignSystem-ChipInput--Icon');
 
       expect(container).not.toHaveAttribute('tabIndex');
-      expect(icon).toHaveAttribute('tabIndex', '-1');
+      expect(icon).toBeDisabled();
     });
 
     it('should not focus input when outer container is clicked', () => {
