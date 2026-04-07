@@ -7,6 +7,7 @@ import { AutoComplete, IconType } from '@/common.type';
 import ActionButton from './actionButton';
 import styles from '@css/components/input.module.css';
 import verificationCodeStyles from '@css/components/verificationCodeInput.module.css';
+import uidGenerator from '@/utils/uidGenerator';
 
 export type InputType = 'text' | 'password' | 'number' | 'email' | 'tel' | 'url';
 export type InputSize = 'tiny' | 'regular' | 'large';
@@ -189,6 +190,11 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
 
   const ref = React.useRef<HTMLInputElement>(null);
   const [isInputBlank, setIsInputBlank] = React.useState<boolean>(!value);
+  const inlineLabelIdRef = React.useRef<string | null>(null);
+  if (inlineLabelIdRef.current === null) {
+    inlineLabelIdRef.current = `Input-inlineLabel-${uidGenerator()}`;
+  }
+  const inlineLabelId = inlineLabelIdRef.current;
 
   React.useImperativeHandle(forwardedRef, (): HTMLInputElement => {
     return ref.current as HTMLInputElement;
@@ -270,7 +276,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
       onBlur={() => setIsInputBlank(!ref.current?.value)}
     >
       {inlineLabel && (
-        <div className={styles['Input-inlineLabel']}>
+        <div className={styles['Input-inlineLabel']} id={inlineLabelId}>
           <Text appearance="subtle">{inlineLabel}</Text>
         </div>
       )}
@@ -298,6 +304,9 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
         onClick={onClick}
         onFocus={onFocus}
         onPaste={onPaste}
+        aria-describedby={
+          [rest['aria-describedby'], inlineLabel ? inlineLabelId : undefined].filter(Boolean).join(' ') || undefined
+        }
         /**
          *for readOnly: true, tab focus from input element is removed. Hence, its tabIndex is set to -1.
          *For rest, "undefined" lets user agent(browser) use the default tabIndex.
