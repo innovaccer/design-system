@@ -17,7 +17,7 @@ exports[`Sidesheet component
       style="z-index: 1001;"
     >
       <div
-        aria-labelledby="sidesheet-title-2"
+        aria-labelledby="sidesheet-title-Test-uid"
         aria-modal="true"
         class="Col Col--10 Sidesheet Sidesheet--open Sidesheet-animation--open"
         data-test="DesignSystem-Sidesheet"
@@ -40,7 +40,7 @@ exports[`Sidesheet component
                 <h4
                   class="Heading Heading--m Heading--default Sidesheet-header--shiftLeft"
                   data-test="DesignSystem-OverlayHeader--heading"
-                  id="sidesheet-title-2"
+                  id="sidesheet-title-Test-uid"
                 >
                   Heading
                 </h4>
@@ -118,7 +118,7 @@ exports[`Sidesheet component
       style="z-index: 1001;"
     >
       <div
-        aria-labelledby="sidesheet-title-1"
+        aria-labelledby="sidesheet-title-Test-uid"
         aria-modal="true"
         class="Col Col--6 Sidesheet Sidesheet--open Sidesheet-animation--open"
         data-test="DesignSystem-Sidesheet"
@@ -141,7 +141,7 @@ exports[`Sidesheet component
                 <h4
                   class="Heading Heading--m Heading--default Sidesheet-header--shiftLeft"
                   data-test="DesignSystem-OverlayHeader--heading"
-                  id="sidesheet-title-1"
+                  id="sidesheet-title-Test-uid"
                 >
                   Heading
                 </h4>

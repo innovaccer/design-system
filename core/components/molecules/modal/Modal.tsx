@@ -19,6 +19,7 @@ import OverlayManager from '@/utils/OverlayManager';
 import { FooterOptions } from '@/common.type';
 import styles from '@css/components/modal.module.css';
 import rowStyles from '@css/components/column.module.css';
+import uidGenerator from '@/utils/uidGenerator';
 
 export type ModalDimension = 'small' | 'medium' | 'large';
 
@@ -134,8 +135,6 @@ interface ModalState {
   zIndex?: number;
 }
 
-let modalInstanceCounter = 0;
-
 /**
  * ** NOTE: Use `headerOptions`, `header`, `footerOptions`, `footer`, `onClose` and `backdropClose`(boolean). **
  * ** Support for composition using `ModalHeader`, `ModalBody` and `ModalFooter` will be deprecated soon. **
@@ -162,8 +161,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
       open: props.open,
       animate: props.open,
     };
-    modalInstanceCounter += 1;
-    this.autoHeadingId = `modal-title-${modalInstanceCounter}`;
+    this.autoHeadingId = `modal-title-${uidGenerator()}`;
 
     this.onOutsideClickHandler = this.onOutsideClickHandler.bind(this);
   }

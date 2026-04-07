@@ -5,6 +5,7 @@ import { BaseProps, extractBaseProps, SingleOrArray } from '@/utils/types';
 import { IconType, TTabSize } from '@/common.type';
 import styles from '@css/components/tabs.module.css';
 import pageHeaderStyles from '@css/components/pageHeader.module.css';
+import uidGenerator from '@/utils/uidGenerator';
 
 type Tab = React.ReactElement | TabConfig;
 type noop = (tabInfo: TabInfo) => void;
@@ -110,22 +111,19 @@ const filterInlineComponent = (children: SingleOrArray<React.ReactElement>) => {
   return inlineComponent;
 };
 
-let tabsInstanceCounter = 0;
-
 export const Tabs = (props: TabsProps) => {
   const { children, withSeparator, onTabChange, className, headerClassName, size, maxWidth } = props;
 
   const baseProps = extractBaseProps(props);
   const tabRefs: HTMLDivElement[] = [];
-  const tabsInstanceIdRef = React.useRef<string>('');
+  const tabsInstanceIdRef = React.useRef<string | null>(null);
+  if (tabsInstanceIdRef.current === null) {
+    tabsInstanceIdRef.current = `tabs-${uidGenerator()}`;
+  }
 
   const tabs: Tab[] = children ? filterTabs(children) : props.tabs;
   const inlineComponent = children ? filterInlineComponent(children) : <></>;
   const totalTabs = tabs.length;
-  if (!tabsInstanceIdRef.current) {
-    tabsInstanceCounter += 1;
-    tabsInstanceIdRef.current = `tabs-${tabsInstanceCounter}`;
-  }
   const panelId = `${tabsInstanceIdRef.current}-panel`;
 
   const [activeIndex, setActiveTab] = React.useState(

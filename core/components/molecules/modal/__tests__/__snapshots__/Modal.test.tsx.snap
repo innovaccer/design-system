@@ -531,7 +531,7 @@ exports[`Modal component
       style="z-index: 1011;"
     >
       <div
-        aria-labelledby="modal-title-17"
+        aria-labelledby="modal-title-Test-uid"
         aria-modal="true"
         class="Col Col--6 Col--xs-10 Col--m-8 Col--l-8 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Modal"
@@ -554,7 +554,7 @@ exports[`Modal component
                 <h4
                   class="Heading Heading--m Heading--default"
                   data-test="DesignSystem-OverlayHeader--heading"
-                  id="modal-title-17"
+                  id="modal-title-Test-uid"
                 >
                   this is heading
                 </h4>
@@ -692,7 +692,7 @@ exports[`Modal component
         style="z-index: 1011;"
       >
         <div
-          aria-labelledby="modal-title-18"
+          aria-labelledby="modal-title-Test-uid"
           aria-modal="true"
           class="Col Col--6 Col--xs-10 Col--m-8 Col--l-8 Modal Modal--open Modal-animation--open"
           data-test="DesignSystem-Modal"
@@ -715,7 +715,7 @@ exports[`Modal component
                   <h4
                     class="Heading Heading--m Heading--default"
                     data-test="DesignSystem-OverlayHeader--heading"
-                    id="modal-title-18"
+                    id="modal-title-Test-uid"
                   >
                     this is heading
                   </h4>
@@ -1365,7 +1365,7 @@ exports[`Modal component
       style="z-index: 1011;"
     >
       <div
-        aria-labelledby="modal-title-15"
+        aria-labelledby="modal-title-Test-uid"
         aria-modal="true"
         class="Col Col--4 Col--xs-10 Col--m-6 Col--l-6 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Modal"
@@ -1388,7 +1388,7 @@ exports[`Modal component
                 <h4
                   class="Heading Heading--m Heading--default"
                   data-test="DesignSystem-OverlayHeader--heading"
-                  id="modal-title-15"
+                  id="modal-title-Test-uid"
                 >
                   this is heading
                 </h4>
@@ -1526,7 +1526,7 @@ exports[`Modal component
         style="z-index: 1011;"
       >
         <div
-          aria-labelledby="modal-title-16"
+          aria-labelledby="modal-title-Test-uid"
           aria-modal="true"
           class="Col Col--4 Col--xs-10 Col--m-6 Col--l-6 Modal Modal--open Modal-animation--open"
           data-test="DesignSystem-Modal"
@@ -1549,7 +1549,7 @@ exports[`Modal component
                   <h4
                     class="Heading Heading--m Heading--default"
                     data-test="DesignSystem-OverlayHeader--heading"
-                    id="modal-title-16"
+                    id="modal-title-Test-uid"
                   >
                     this is heading
                   </h4>
@@ -2199,7 +2199,7 @@ exports[`Modal component
       style="z-index: 1011;"
     >
       <div
-        aria-labelledby="modal-title-13"
+        aria-labelledby="modal-title-Test-uid"
         aria-modal="true"
         class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Modal"
@@ -2222,7 +2222,7 @@ exports[`Modal component
                 <h4
                   class="Heading Heading--m Heading--default"
                   data-test="DesignSystem-OverlayHeader--heading"
-                  id="modal-title-13"
+                  id="modal-title-Test-uid"
                 >
                   this is heading
                 </h4>
@@ -2360,7 +2360,7 @@ exports[`Modal component
         style="z-index: 1011;"
       >
         <div
-          aria-labelledby="modal-title-14"
+          aria-labelledby="modal-title-Test-uid"
           aria-modal="true"
           class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
           data-test="DesignSystem-Modal"
@@ -2383,7 +2383,7 @@ exports[`Modal component
                   <h4
                     class="Heading Heading--m Heading--default"
                     data-test="DesignSystem-OverlayHeader--heading"
-                    id="modal-title-14"
+                    id="modal-title-Test-uid"
                   >
                     this is heading
                   </h4>

@@ -18,7 +18,7 @@ exports[`Tabs component
         aria-selected="true"
         class="Tab Tab--active Tab-selected align-items-center Tab--withDismissIcon"
         data-test="DesignSystem-Tabs--Tab"
-        id="tabs-3-tab-0"
+        id="tabs-Test-uid-tab-0"
         role="tab"
         tabindex="0"
       >
@@ -55,7 +55,7 @@ exports[`Tabs component
         aria-selected="false"
         class="Tab align-items-center"
         data-test="DesignSystem-Tabs--Tab"
-        id="tabs-3-tab-1"
+        id="tabs-Test-uid-tab-1"
         role="tab"
         tabindex="0"
       >
@@ -85,7 +85,7 @@ exports[`Tabs component
         aria-selected="false"
         class="Tab Tab--disabled align-items-center"
         data-test="DesignSystem-Tabs--Tab"
-        id="tabs-3-tab-2"
+        id="tabs-Test-uid-tab-2"
         role="tab"
         tabindex="-1"
       >
@@ -131,7 +131,7 @@ exports[`Tabs component
         aria-selected="true"
         class="Tab Tab--active Tab-selected align-items-center Tab--withDismissIcon"
         data-test="DesignSystem-Tabs--Tab"
-        id="tabs-4-tab-0"
+        id="tabs-Test-uid-tab-0"
         role="tab"
         tabindex="0"
       >
@@ -168,7 +168,7 @@ exports[`Tabs component
         aria-selected="false"
         class="Tab align-items-center"
         data-test="DesignSystem-Tabs--Tab"
-        id="tabs-4-tab-1"
+        id="tabs-Test-uid-tab-1"
         role="tab"
         tabindex="0"
       >
@@ -198,7 +198,7 @@ exports[`Tabs component
         aria-selected="false"
         class="Tab Tab--disabled align-items-center"
         data-test="DesignSystem-Tabs--Tab"
-        id="tabs-4-tab-2"
+        id="tabs-Test-uid-tab-2"
         role="tab"
         tabindex="-1"
       >
@@ -244,7 +244,7 @@ exports[`Tabs component
         aria-selected="true"
         class="Tab Tab--active Tab-selected align-items-center Tab--withDismissIcon"
         data-test="DesignSystem-Tabs--Tab"
-        id="tabs-1-tab-0"
+        id="tabs-Test-uid-tab-0"
         role="tab"
         tabindex="0"
       >
@@ -281,7 +281,7 @@ exports[`Tabs component
         aria-selected="false"
         class="Tab align-items-center"
         data-test="DesignSystem-Tabs--Tab"
-        id="tabs-1-tab-1"
+        id="tabs-Test-uid-tab-1"
         role="tab"
         tabindex="0"
       >
@@ -311,7 +311,7 @@ exports[`Tabs component
         aria-selected="false"
         class="Tab Tab--disabled align-items-center"
         data-test="DesignSystem-Tabs--Tab"
-        id="tabs-1-tab-2"
+        id="tabs-Test-uid-tab-2"
         role="tab"
         tabindex="-1"
       >
@@ -357,7 +357,7 @@ exports[`Tabs component
         aria-selected="true"
         class="Tab Tab--active Tab-selected align-items-center Tab--withDismissIcon"
         data-test="DesignSystem-Tabs--Tab"
-        id="tabs-2-tab-0"
+        id="tabs-Test-uid-tab-0"
         role="tab"
         tabindex="0"
       >
@@ -394,7 +394,7 @@ exports[`Tabs component
         aria-selected="false"
         class="Tab align-items-center"
         data-test="DesignSystem-Tabs--Tab"
-        id="tabs-2-tab-1"
+        id="tabs-Test-uid-tab-1"
         role="tab"
         tabindex="0"
       >
@@ -424,7 +424,7 @@ exports[`Tabs component
         aria-selected="false"
         class="Tab Tab--disabled align-items-center"
         data-test="DesignSystem-Tabs--Tab"
-        id="tabs-2-tab-2"
+        id="tabs-Test-uid-tab-2"
         role="tab"
         tabindex="-1"
       >

@@ -18,6 +18,7 @@ import {
 import OverlayManager from '@/utils/OverlayManager';
 import { FooterOptions } from '@/common.type';
 import styles from '@css/components/sidesheet.module.css';
+import uidGenerator from '@/utils/uidGenerator';
 
 export type SidesheetDimension = 'regular' | 'large';
 
@@ -129,7 +130,6 @@ const sidesheetWidth: Record<SidesheetDimension, ColumnProps['size']> = {
 };
 
 const SIDESHEET_OPEN_ANIMATION = 'sidesheet-open';
-let sidesheetInstanceCounter = 0;
 
 class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
   sidesheetRef = React.createRef<HTMLDivElement>();
@@ -156,8 +156,7 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
       open: props.open,
       animate: props.open,
     };
-    sidesheetInstanceCounter += 1;
-    this.autoHeadingId = `sidesheet-title-${sidesheetInstanceCounter}`;
+    this.autoHeadingId = `sidesheet-title-${uidGenerator()}`;
 
     this.onOutsideClickHandler = this.onOutsideClickHandler.bind(this);
   }

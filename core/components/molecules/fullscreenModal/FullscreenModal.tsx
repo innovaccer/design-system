@@ -11,6 +11,7 @@ import { getWrapperElement, getUpdatedZIndex, closeOnEscapeKeypress } from '@/ut
 import OverlayManager from '@/utils/OverlayManager';
 import { FooterOptions } from '@/common.type';
 import styles from '@css/components/fullscreenModal.module.css';
+import uidGenerator from '@/utils/uidGenerator';
 
 export type FullScreenDimension = 'medium' | 'large';
 
@@ -113,8 +114,6 @@ interface ModalState {
   zIndex?: number;
 }
 
-let fullscreenModalInstanceCounter = 0;
-
 class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> {
   modalRef = React.createRef<HTMLDivElement>();
   autoHeadingId: string;
@@ -133,8 +132,7 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
       open: props.open,
       animate: props.open,
     };
-    fullscreenModalInstanceCounter += 1;
-    this.autoHeadingId = `fullscreen-modal-title-${fullscreenModalInstanceCounter}`;
+    this.autoHeadingId = `fullscreen-modal-title-${uidGenerator()}`;
   }
 
   onOutsideClickHandler = (event: Event) => {
