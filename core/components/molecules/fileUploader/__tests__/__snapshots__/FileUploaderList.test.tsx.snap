@@ -5,6 +5,8 @@ exports[`FileUploaderList component
  1`] = `
 <DocumentFragment>
   <div
+    aria-atomic="false"
+    aria-live="polite"
     class="FileUploaderList"
     data-test="DesignSystem-FileUploader--List"
   >
@@ -27,8 +29,13 @@ exports[`FileUploaderList component
           class="d-flex align-items-center"
         >
           <svg
+            aria-label="Progress Ring"
+            aria-valuemax="100"
+            aria-valuemin="0"
+            aria-valuenow="45"
             class="Ring Ring--small mr-4"
             data-test="DesignSystem-ProgressRing"
+            role="progressbar"
             viewBox="0 0 50 50"
           >
             <circle

@@ -11,6 +11,7 @@ import classNames from 'classnames';
 import MenuContext from './MenuContext';
 import { focusListItem } from './trigger/utils';
 import SubMenuContext from './SubMenuContext';
+import uidGenerator from '@/utils/uidGenerator';
 import styles from '@css/components/menu.module.css';
 
 export interface MenuProps extends BaseProps {
@@ -87,6 +88,7 @@ export const Menu = (props: MenuProps) => {
   const listRef = React.createRef<HTMLDivElement>();
   const menuTriggerRef = React.useRef<HTMLButtonElement>(null);
   const subMenuContextProp = React.useContext(SubMenuContext);
+  const generatedMenuId = React.useRef(`menu-${uidGenerator()}`).current;
 
   const { menuID } = subMenuContextProp;
 
@@ -129,6 +131,7 @@ export const Menu = (props: MenuProps) => {
     setFocusedOption,
     menuTriggerRef,
     listRef,
+    menuId: generatedMenuId,
   };
 
   return (
@@ -143,6 +146,7 @@ export const Menu = (props: MenuProps) => {
         onToggle={onToggleHandler}
       >
         <div
+          id={generatedMenuId}
           ref={listRef}
           role="menu"
           aria-label={ariaLabel}

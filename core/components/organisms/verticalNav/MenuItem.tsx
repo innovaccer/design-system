@@ -90,29 +90,32 @@ export const MenuItem = (props: MenuItemProps) => {
 
   const [isTextTruncated, setIsTextTruncated] = React.useState(false);
   const { detectTruncation } = Tooltip.useAutoTooltip();
-  const contentRef = React.createRef<HTMLElement>();
+  const contentRef = React.useRef<HTMLElement>(null);
 
   React.useEffect(() => {
     const isTruncated = detectTruncation(contentRef);
     setIsTextTruncated(isTruncated);
-  }, [contentRef]);
+  }, [menu.label, expanded, menu.count, hasSubmenu, menu.icon]);
 
-  const MenuLabel = (props: MenuLabelProps) => {
-    const { label, labelColor } = props;
+  const MenuLabel = React.useCallback(
+    (props: MenuLabelProps) => {
+      const { label, labelColor } = props;
 
-    const labelClass = classNames({
-      [styles['MenuItem-Text']]: true,
-      [styles['MenuItem--overflow']]: true,
-      ['mr-5']: !hasSubmenu && menu.count,
-      ['ellipsis--noWrap']: true,
-    });
+      const labelClass = classNames({
+        [styles['MenuItem-Text']]: true,
+        [styles['MenuItem--overflow']]: true,
+        ['mr-5']: !hasSubmenu && menu.count,
+        ['ellipsis--noWrap']: true,
+      });
 
-    return (
-      <Text data-test="DesignSystem-VerticalNav--Text" ref={contentRef} color={labelColor} className={labelClass}>
-        {label}
-      </Text>
-    );
-  };
+      return (
+        <Text data-test="DesignSystem-VerticalNav--Text" ref={contentRef} color={labelColor} className={labelClass}>
+          {label}
+        </Text>
+      );
+    },
+    [hasSubmenu, menu.count]
+  );
 
   const onClickHandler = (ev: { preventDefault: () => void }) => {
     ev.preventDefault();
@@ -162,16 +165,30 @@ export const MenuItem = (props: MenuItemProps) => {
     return null;
   };
 
+  const MenuIconFn = React.useCallback(() => MenuIcon({ isChildrenVisible }), [isChildrenVisible]);
+
+  const MenuLabelFn = React.useCallback(
+    () => MenuLabel({ label: menu.label, labelColor: itemColor }),
+    [MenuLabel, menu.label, itemColor]
+  );
+
+  const MenuWrapperFn = React.useCallback((wrapperProps: any) => MenuWrapper(wrapperProps), []);
+
+  const MenuPillsFn = React.useCallback(
+    () =>
+      menu.count !== undefined ? MenuPills({ disabled: menu.disabled, isActive: isActive, count: menu.count }) : <></>,
+    [menu.count, menu.disabled, isActive]
+  );
+
   if (!expanded && !menu.icon) return null;
 
   const customItemProps = {
     ...props,
     contentRef,
-    MenuIcon: () => MenuIcon({ isChildrenVisible }),
-    MenuLabel: () => MenuLabel({ label: menu.label, labelColor: itemColor }),
-    MenuWrapper: (props: any) => MenuWrapper(props),
-    MenuPills: () =>
-      menu.count !== undefined ? MenuPills({ disabled: menu.disabled, isActive: isActive, count: menu.count }) : <></>,
+    MenuIcon: MenuIconFn,
+    MenuLabel: MenuLabelFn,
+    MenuWrapper: MenuWrapperFn,
+    MenuPills: MenuPillsFn,
   };
 
   return customItemRenderer ? (
