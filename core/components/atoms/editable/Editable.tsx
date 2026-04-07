@@ -7,7 +7,7 @@ export interface EditableProps extends BaseProps {
   children: React.ReactNode;
   onChange: (eventType: string) => void;
   /**
-   * Accessible label for the edit trigger button
+   * Describes the edit trigger button for screen readers
    */
   'aria-label'?: string;
 }

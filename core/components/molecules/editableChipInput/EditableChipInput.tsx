@@ -33,7 +33,7 @@ export interface EditableChipInputProps extends BaseProps {
    */
   chipInputOptions: Omit<ChipInputProps, 'placeholder' | 'value' | 'defaultValue'>;
   /**
-   * Accessible label for the edit trigger button
+   * Describes the editable chip input for screen readers
    */
   'aria-label'?: string;
 }
