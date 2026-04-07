@@ -400,6 +400,7 @@ Object {
             data-test="DesignSystem-Navigation-VerticalNavigation--menuWrapper"
           >
             <div
+              aria-label="Tab #1"
               class="Navigation-menu Navigation-menu--vertical"
               data-test="DesignSystem-Navigation-VerticalNavigation--menuItem"
               role="button"
@@ -459,6 +460,7 @@ Object {
           data-test="DesignSystem-Navigation-VerticalNavigation--menuWrapper"
         >
           <div
+            aria-label="Tab #1"
             class="Navigation-menu Navigation-menu--vertical"
             data-test="DesignSystem-Navigation-VerticalNavigation--menuItem"
             role="button"
