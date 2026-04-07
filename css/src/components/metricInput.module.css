@@ -6,43 +6,42 @@
   display: flex;
   width: 100%;
   flex-direction: row;
-  align-items: center;
+  align-items: stretch;
+  position: relative;
   box-sizing: border-box;
   border-radius: var(--border-radius-10);
   border: var(--border);
   background: var(--white);
-  overflow: hidden;
+  overflow: visible;
   transition: var(--duration--fast-01) var(--standard-productive-curve);
 }
 
 .MetricInput--regular {
   height: var(--spacing-80);
-  padding-left: var(--spacing-30);
 }
 
 .MetricInput--large {
   height: 40px;
-  padding-left: var(--spacing-40);
 }
 
 .MetricInput--small {
   height: var(--spacing-60);
-  padding-left: var(--spacing-20);
 }
 
 .MetricInput:hover {
-  background: var(--secondary-lightest);
   cursor: text;
 }
 
-.MetricInput:focus-within {
+.MetricInput--wrapperFocused,
+.MetricInput[role='presentation']:focus-within {
   background: var(--white);
   border-color: var(--secondary);
   outline: var(--border-width-05) solid var(--primary-focus);
-  outline-offset: var(--spacing-2-5);
+  outline-offset: var(--spacing-05);
 }
 
-.MetricInput:focus-within .MetricInput-icon {
+.MetricInput--wrapperFocused .MetricInput-icon,
+.MetricInput[role='presentation']:focus-within .MetricInput-icon {
   color: var(--primary);
 }
 
@@ -68,19 +67,56 @@
   border-color: var(--alert);
 }
 
-.MetricInput--error:focus-within {
-  border-color: var(--secondary);
+.MetricInput--error.MetricInput--wrapperFocused,
+.MetricInput--error[role='presentation']:focus-within {
+  border-color: var(--alert);
   outline: var(--border-width-05) solid var(--alert);
-  outline-offset: var(--spacing-2-5);
+  outline-offset: var(--spacing-05);
 }
 
-.MetricInput--error:focus-within .MetricInput-icon {
+.MetricInput--error.MetricInput--wrapperFocused .MetricInput-icon,
+.MetricInput--error[role='presentation']:focus-within .MetricInput-icon {
   color: var(--alert);
+}
+
+.MetricInput-content {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  align-items: center;
+  gap: var(--spacing-s);
+  overflow: hidden;
+  white-space: nowrap;
+  border-radius: var(--border-radius-10);
+}
+
+.MetricInput-content > i {
+  flex-shrink: 0;
+}
+
+.MetricInput-content--regular {
+  padding: var(--spacing-15);
+}
+
+.MetricInput-content--large {
+  gap: var(--spacing-15);
+  padding: var(--spacing-20) var(--spacing-15);
+}
+
+.MetricInput-content--small {
+  padding: var(--spacing-s) var(--spacing-15);
+}
+
+.MetricInput-content:focus-within .MetricInput-icon {
+  color: var(--primary);
 }
 
 .MetricInput-input {
   display: flex;
   width: 100%;
+  min-width: 0;
+  flex: 1 1 0;
+  box-sizing: border-box;
   font-family: var(--font-family);
   font-weight: var(--font-weight-normal);
   font-size: var(--font-size);
@@ -89,22 +125,28 @@
   padding: 0;
   border: none;
   background: transparent;
+  text-align: left;
 }
 
 .MetricInput-input--large {
+  height: var(--font-height-m);
   line-height: var(--font-height-m);
   font-size: var(--font-size-m);
 }
 
 .MetricInput-input--regular {
+  height: var(--font-height);
   line-height: var(--font-height);
   font-size: var(--font-size);
 }
 
 .MetricInput-input--small {
+  height: var(--font-height);
   line-height: var(--font-height-s);
   font-size: var(--font-size-s);
   font-weight: var(--font-weight-medium);
+  padding-top: var(--spacing-s);
+  padding-bottom: var(--spacing-s);
 }
 
 .MetricInput-input::placeholder {
@@ -115,22 +157,43 @@
   outline: 0;
 }
 
+.MetricInput-input--overflowing {
+  direction: rtl;
+  text-align: right;
+  unicode-bidi: plaintext;
+}
+
 .MetricInput-input:disabled .MetricInput-input::placeholder {
   color: var(--inverse-lighter);
 }
 
 .MetricInput-icon--regular {
-  margin-right: var(--spacing-20);
-  line-height: var(--font-height-s);
+  line-height: var(--font-height);
 }
 
 .MetricInput-icon--large {
-  margin-right: var(--spacing-30);
   line-height: var(--font-height-m);
 }
 
 .MetricInput-icon--small {
-  margin-right: var(--spacing-10);
+  line-height: var(--font-height-s);
+}
+
+.MetricInput-text {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.MetricInput-text--regular {
+  line-height: var(--font-height);
+}
+
+.MetricInput-text--large {
+  line-height: var(--font-height-m);
+}
+
+.MetricInput-text--small {
+  line-height: var(--font-height-s);
 }
 
 .MetricInput-input::-webkit-inner-spin-button,
@@ -141,51 +204,59 @@
   margin: 0;
 }
 
-.MetricInput-arrowIcons {
-  border-left: var(--border);
-  box-sizing: border-box;
-  border-radius: 0;
-  background: transparent;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  flex-shrink: 0;
-  overflow: hidden;
-}
-
-.MetricInput-arrowButton {
-  height: 50%;
+.MetricInput-actionButtons {
+  background: var(--secondary-lighter);
   border: none;
-  background: var(--secondary-light);
-  color: var(--inverse);
-  cursor: pointer;
+  border-top: var(--border);
+  border-bottom: var(--border);
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  overflow: hidden;
+  padding: 0;
+  transition: background var(--duration--fast-01) var(--standard-productive-curve);
+  width: var(--spacing-60);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0;
-  margin: 0;
+  min-width: var(--spacing-60);
+  height: calc(100% + var(--border-width-05));
+  margin-top: calc(-1 * var(--border-width-2-5));
+  margin-bottom: calc(-1 * var(--border-width-2-5));
+  color: var(--inverse);
+  cursor: pointer;
   user-select: none;
-  overflow: hidden;
 }
 
-.MetricInput-arrowButton:hover {
+.MetricInput-actionButtons--left {
+  border-right: var(--border);
+  border-top-left-radius: var(--border-radius-10);
+  border-bottom-left-radius: var(--border-radius-10);
+}
+
+.MetricInput-actionButtons--right {
+  border-left: var(--border);
+  order: 1;
+  border-top-right-radius: var(--border-radius-10);
+  border-bottom-right-radius: var(--border-radius-10);
+}
+
+.MetricInput-actionButtons:hover {
+  background: var(--secondary-lightest);
+}
+
+.MetricInput-actionButtons:active {
   background: var(--secondary);
 }
 
-.MetricInput-arrowButton:active {
-  background: var(--secondary-dark);
+.MetricInput-actionButtons:focus,
+.MetricInput-actionButtons:focus-visible {
+  position: relative;
+  z-index: 2;
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-05);
 }
 
-.MetricInput-arrowButton:focus {
-  outline: 0;
-  box-shadow: var(--shadow-spread) var(--secondary-shadow);
-}
-
-.MetricInput-arrowIcons--small,
-.MetricInput-arrowIcons--regular {
-  width: 20px;
-}
-
-.MetricInput-arrowIcons--large {
-  width: var(--spacing-60);
+.MetricInput--error .MetricInput-actionButtons:focus,
+.MetricInput--error .MetricInput-actionButtons:focus-visible {
+  outline-color: var(--alert);
 }

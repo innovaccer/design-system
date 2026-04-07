@@ -7,9 +7,9 @@ export const controlledMetricInput = () => {
 
   return (
     <Row>
-      <Column size={1}>
+      <Column size={2}>
         <MetricInput
-          aria-label="Metric Input Label"
+          aria-label="Quantity"
           value={value}
           onChange={(e) => {
             setValue(e.target.value);
@@ -25,9 +25,9 @@ const customCode = `() => {
 
   return (
     <Row>
-      <Column size={1}>
+      <Column size={2}>
         <MetricInput
-          aria-label="Metric Input Label"
+          aria-label="Quantity"
           value={value}
           onChange={(e) => { setValue(e.target.value) }}
         />

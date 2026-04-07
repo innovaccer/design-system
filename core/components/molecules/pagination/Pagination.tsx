@@ -159,6 +159,7 @@ export const Pagination = (props: PaginationProps) => {
             onKeyPress={onKeyPressHandler}
             aria-label="Current page"
             aria-describedby={descriptionId}
+            showActionButton={false}
           />
           <Text id={descriptionId}>{` of ${totalPages} pages`}</Text>
         </div>

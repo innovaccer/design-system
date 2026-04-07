@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, waitFor } from '@testing-library/react';
 import { MetricInput } from '@/index';
 import { MetricInputProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -315,9 +315,9 @@ describe('MetricInput Keyboard Event Handling - Tests comprehensive keyboard int
   it('calls custom onKeyDown handler when provided', () => {
     const customKeyDownHandler = jest.fn();
     const { getByTestId } = render(<MetricInput onKeyDown={customKeyDownHandler} showActionButton={true} />);
-    const wrapper = getByTestId('DesignSystem-MetricInputWrapper');
+    const input = getByTestId('DesignSystem-MetricInput');
 
-    fireEvent.keyDown(wrapper, { key: 'Enter' });
+    fireEvent.keyDown(input, { key: 'ArrowUp' });
     expect(customKeyDownHandler).toHaveBeenCalled();
   });
 });
@@ -577,7 +577,38 @@ describe('MetricInput Accessibility Features - Tests ARIA labels, focus manageme
     const { getByTestId } = render(<MetricInput />);
     const wrapper = getByTestId('DesignSystem-MetricInputWrapper');
 
-    expect(wrapper).toHaveAttribute('role', 'presentation');
+    expect(wrapper).toHaveAttribute('role', 'group');
+  });
+
+  it('inherits aria-label on the wrapper when composite navigation is enabled', () => {
+    const { getByTestId } = render(<MetricInput aria-label="Metric Input Label" />);
+    const wrapper = getByTestId('DesignSystem-MetricInputWrapper');
+
+    expect(wrapper).toHaveAttribute('aria-label', 'Metric Input Label');
+  });
+
+  it('derives aria-labelledby for the wrapper from the associated label', () => {
+    const { getByTestId, getByText } = render(
+      <>
+        <label htmlFor="metric-input">Cost</label>
+        <MetricInput id="metric-input" />
+      </>
+    );
+
+    const wrapper = getByTestId('DesignSystem-MetricInputWrapper');
+    const input = getByTestId('DesignSystem-MetricInput');
+    const label = getByText('Cost');
+
+    expect(label).toHaveAttribute('id');
+    expect(wrapper).toHaveAttribute('aria-labelledby', label.getAttribute('id'));
+    expect(input).toHaveAttribute('aria-labelledby', label.getAttribute('id'));
+  });
+
+  it('moves autoFocus to the wrapper when action buttons are enabled', () => {
+    const { getByTestId } = render(<MetricInput autoFocus aria-label="Metric Input Label" />);
+    const wrapper = getByTestId('DesignSystem-MetricInputWrapper');
+
+    expect(wrapper).toHaveFocus();
   });
 
   it('maintains proper input type', () => {
@@ -585,6 +616,13 @@ describe('MetricInput Accessibility Features - Tests ARIA labels, focus manageme
     const input = getByTestId('DesignSystem-MetricInput');
 
     expect(input).toHaveAttribute('type', 'number');
+  });
+
+  it('mirrors aria-invalid on the input when error is true', () => {
+    const { getByTestId } = render(<MetricInput error={true} />);
+    const input = getByTestId('DesignSystem-MetricInput');
+
+    expect(input).toHaveAttribute('aria-invalid', 'true');
   });
 });
 
@@ -643,110 +681,94 @@ describe('MetricInput CSS Classes and Styling - Tests proper CSS class applicati
   it('applies proper spacing classes for prefix - small size', () => {
     const { getByTestId } = render(<MetricInput prefix="USD" size="small" />);
     const prefix = getByTestId('DesignSystem-MetricInput--prefix');
-    expect(prefix).toHaveClass('mr-4');
+    expect(prefix).toHaveClass('MetricInput-text', 'MetricInput-text--small');
   });
 
   it('applies proper spacing classes for prefix - regular size', () => {
     const { getByTestId } = render(<MetricInput prefix="USD" size="regular" />);
     const prefix = getByTestId('DesignSystem-MetricInput--prefix');
-    expect(prefix).toHaveClass('mr-4');
+    expect(prefix).toHaveClass('MetricInput-text', 'MetricInput-text--regular');
   });
 
   it('applies proper spacing classes for prefix - large size', () => {
     const { getByTestId } = render(<MetricInput prefix="USD" size="large" />);
     const prefix = getByTestId('DesignSystem-MetricInput--prefix');
-    expect(prefix).toHaveClass('mr-5');
+    expect(prefix).toHaveClass('MetricInput-text', 'MetricInput-text--large');
   });
 
   it('applies proper spacing classes for suffix - small size', () => {
     const { getByTestId } = render(<MetricInput suffix="kg" size="small" />);
     const suffix = getByTestId('DesignSystem-MetricInput--suffix');
-    expect(suffix).toHaveClass('ml-4 mr-4');
+    expect(suffix).toHaveClass('MetricInput-text', 'MetricInput-text--small');
   });
 
   it('applies proper spacing classes for suffix - regular size', () => {
     const { getByTestId } = render(<MetricInput suffix="kg" size="regular" />);
     const suffix = getByTestId('DesignSystem-MetricInput--suffix');
-    expect(suffix).toHaveClass('ml-4 mr-4');
+    expect(suffix).toHaveClass('MetricInput-text', 'MetricInput-text--regular');
   });
 
   it('applies proper spacing classes for suffix - large size', () => {
     const { getByTestId } = render(<MetricInput suffix="kg" size="large" />);
     const suffix = getByTestId('DesignSystem-MetricInput--suffix');
-    expect(suffix).toHaveClass('mx-5');
+    expect(suffix).toHaveClass('MetricInput-text', 'MetricInput-text--large');
   });
 
-  it('applies margin class when action button is present and no suffix', () => {
-    const { container } = render(<MetricInput showActionButton={true} />);
-    const arrowIconsContainer = container.querySelector('.MetricInput-arrowIcons');
+  it('renders action button groups when action buttons are enabled', () => {
+    const { getByTestId } = render(<MetricInput showActionButton={true} />);
+    const downButton = getByTestId('DesignSystem-MetricInput--downIcon');
+    const upButton = getByTestId('DesignSystem-MetricInput--upIcon');
 
-    expect(arrowIconsContainer).toHaveClass('ml-3');
+    expect(downButton).toBeInTheDocument();
+    expect(upButton).toBeInTheDocument();
   });
 
-  it('applies mr-4 when no suffix, no action button, and size is small', () => {
-    const { getByTestId } = render(<MetricInput showActionButton={false} size="small" />);
+  it('applies the Figma content spacing classes for regular size', () => {
+    const { getByTestId } = render(<MetricInput size="regular" />);
+    const content = getByTestId('DesignSystem-MetricInput').parentElement;
+
+    expect(content).toHaveClass('MetricInput-content', 'MetricInput-content--regular');
+  });
+
+  it('applies the Figma content spacing classes for small size', () => {
+    const { getByTestId } = render(<MetricInput size="small" />);
+    const content = getByTestId('DesignSystem-MetricInput').parentElement;
+
+    expect(content).toHaveClass('MetricInput-content', 'MetricInput-content--small');
+  });
+
+  it('applies the Figma content spacing classes for large size', () => {
+    const { getByTestId } = render(<MetricInput size="large" />);
+    const content = getByTestId('DesignSystem-MetricInput').parentElement;
+
+    expect(content).toHaveClass('MetricInput-content', 'MetricInput-content--large');
+  });
+
+  it('does not apply legacy margin utility classes to the input', () => {
+    const { getByTestId, rerender } = render(<MetricInput showActionButton={false} size="small" />);
     const input = getByTestId('DesignSystem-MetricInput');
 
-    expect(input).toHaveClass('mr-4');
-    expect(input).not.toHaveClass('mr-3');
-    expect(input).not.toHaveClass('mr-5');
-    expect(input).not.toHaveClass('mr-6');
+    expect(input).not.toHaveClass('mr-4', 'mr-5', 'mr-6');
+
+    rerender(<MetricInput showActionButton={false} size="regular" suffix="kg" />);
+    expect(input).not.toHaveClass('mr-4', 'mr-5', 'mr-6');
+
+    rerender(<MetricInput showActionButton={true} size="large" />);
+    expect(input).not.toHaveClass('mr-4', 'mr-5', 'mr-6');
   });
 
-  it('applies mr-5 when no suffix, no action button, and size is regular', () => {
-    const { getByTestId } = render(<MetricInput showActionButton={false} size="regular" />);
+  it('right aligns the value when the input content overflows', async () => {
+    const { getByTestId } = render(<MetricInput prefix="$" suffix="USD" value={622122} />);
     const input = getByTestId('DesignSystem-MetricInput');
 
-    expect(input).toHaveClass('mr-5');
-    expect(input).not.toHaveClass('mr-3');
-    expect(input).not.toHaveClass('mr-4');
-    expect(input).not.toHaveClass('mr-6');
-  });
+    Object.defineProperty(input, 'clientWidth', { configurable: true, value: 40 });
+    Object.defineProperty(input, 'scrollWidth', { configurable: true, value: 80 });
 
-  it('applies mr-6 when no suffix, no action button, and size is large', () => {
-    const { getByTestId } = render(<MetricInput showActionButton={false} size="large" />);
-    const input = getByTestId('DesignSystem-MetricInput');
+    fireEvent(window, new Event('resize'));
 
-    expect(input).toHaveClass('mr-6');
-    expect(input).not.toHaveClass('mr-3');
-    expect(input).not.toHaveClass('mr-4');
-    expect(input).not.toHaveClass('mr-5');
-  });
-
-  it('does not apply mr-4 when suffix is present - small size', () => {
-    const { getByTestId } = render(<MetricInput showActionButton={false} size="small" suffix="kg" />);
-    const input = getByTestId('DesignSystem-MetricInput');
-    expect(input).not.toHaveClass('mr-4');
-  });
-
-  it('does not apply mr-5 when suffix is present - regular size', () => {
-    const { getByTestId } = render(<MetricInput showActionButton={false} size="regular" suffix="kg" />);
-    const input = getByTestId('DesignSystem-MetricInput');
-    expect(input).not.toHaveClass('mr-5');
-  });
-
-  it('does not apply mr-6 when suffix is present - large size', () => {
-    const { getByTestId } = render(<MetricInput showActionButton={false} size="large" suffix="kg" />);
-    const input = getByTestId('DesignSystem-MetricInput');
-    expect(input).not.toHaveClass('mr-6');
-  });
-
-  it('does not apply mr-4 when action button is present - small size', () => {
-    const { getByTestId } = render(<MetricInput showActionButton={true} size="small" />);
-    const input = getByTestId('DesignSystem-MetricInput');
-    expect(input).not.toHaveClass('mr-4');
-  });
-
-  it('does not apply mr-5 when action button is present - regular size', () => {
-    const { getByTestId } = render(<MetricInput showActionButton={true} size="regular" />);
-    const input = getByTestId('DesignSystem-MetricInput');
-    expect(input).not.toHaveClass('mr-5');
-  });
-
-  it('does not apply mr-6 when action button is present - large size', () => {
-    const { getByTestId } = render(<MetricInput showActionButton={true} size="large" />);
-    const input = getByTestId('DesignSystem-MetricInput');
-    expect(input).not.toHaveClass('mr-6');
+    await waitFor(() => {
+      expect(input).toHaveClass('MetricInput-input--overflowing');
+    });
   });
 });
 
@@ -785,34 +807,71 @@ describe('MetricInput Pagination Styles Integration - Tests that pagination styl
   });
 });
 
-describe('MetricInput Action Button Styling - Tests action button border and styling classes', () => {
+describe('MetricInput Action Button Styling - Tests action button styling classes', () => {
   beforeEach(() => {
     jest.clearAllMocks();
   });
 
-  it('applies border-bottom class to up arrow button', () => {
-    const { getByTestId } = render(<MetricInput showActionButton={true} />);
-    const upButton = getByTestId('DesignSystem-MetricInput--upIcon');
-
-    expect(upButton).toHaveClass('border-bottom');
-    expect(upButton).not.toHaveClass('border-bottom-0');
-  });
-
-  it('applies border-bottom-0 class to down arrow button', () => {
+  it('applies left action button classes by default', () => {
     const { getByTestId } = render(<MetricInput showActionButton={true} />);
     const downButton = getByTestId('DesignSystem-MetricInput--downIcon');
 
-    expect(downButton).toHaveClass('border-bottom-0');
-    expect(downButton).not.toHaveClass('border-bottom');
+    expect(downButton).toHaveClass('MetricInput-actionButtons', 'MetricInput-actionButtons--left');
   });
 
-  it('applies base arrow button class to both buttons', () => {
+  it('applies right action button classes by default', () => {
+    const { getByTestId } = render(<MetricInput showActionButton={true} />);
+    const upButton = getByTestId('DesignSystem-MetricInput--upIcon');
+
+    expect(upButton).toHaveClass('MetricInput-actionButtons', 'MetricInput-actionButtons--right');
+  });
+
+  it('keeps left and right action button classes on input focus', () => {
+    const { getByTestId } = render(<MetricInput showActionButton={true} />);
+    const input = getByTestId('DesignSystem-MetricInput');
+
+    (input as HTMLInputElement).focus();
+
+    const downButton = getByTestId('DesignSystem-MetricInput--downIcon');
+    const upButton = getByTestId('DesignSystem-MetricInput--upIcon');
+
+    expect(input).toHaveFocus();
+    expect(downButton).toHaveClass('MetricInput-actionButtons', 'MetricInput-actionButtons--left');
+    expect(upButton).toHaveClass('MetricInput-actionButtons', 'MetricInput-actionButtons--right');
+  });
+
+  it('uses the wrapper as the initial tab stop when action buttons are enabled', () => {
+    const { getByTestId } = render(<MetricInput showActionButton={true} />);
+    const wrapper = getByTestId('DesignSystem-MetricInputWrapper');
+
+    expect(wrapper).toHaveAttribute('tabindex', '0');
+  });
+
+  it('applies base action button class to both buttons', () => {
     const { getByTestId } = render(<MetricInput showActionButton={true} />);
     const upButton = getByTestId('DesignSystem-MetricInput--upIcon');
     const downButton = getByTestId('DesignSystem-MetricInput--downIcon');
 
-    expect(upButton).toHaveClass('MetricInput-arrowButton');
-    expect(downButton).toHaveClass('MetricInput-arrowButton');
+    expect(upButton).toHaveClass('MetricInput-actionButtons');
+    expect(downButton).toHaveClass('MetricInput-actionButtons');
+  });
+
+  it('allows the decrement button to receive focus directly', () => {
+    const { getByTestId } = render(<MetricInput showActionButton={true} />);
+    const downButton = getByTestId('DesignSystem-MetricInput--downIcon');
+
+    (downButton as HTMLButtonElement).focus();
+
+    expect(downButton).toHaveFocus();
+  });
+
+  it('allows the increment button to receive focus directly', () => {
+    const { getByTestId } = render(<MetricInput showActionButton={true} />);
+    const upButton = getByTestId('DesignSystem-MetricInput--upIcon');
+
+    (upButton as HTMLButtonElement).focus();
+
+    expect(upButton).toHaveFocus();
   });
 
   it('does not render action button classes when showActionButton is false', () => {
@@ -823,59 +882,172 @@ describe('MetricInput Action Button Styling - Tests action button border and sty
   });
 });
 
-describe('MetricInput Arrow Icons Container Styling - Tests arrow icons container and margin classes', () => {
+describe('MetricInput Action Button Layout - Tests action button rendering and grouping', () => {
   beforeEach(() => {
     jest.clearAllMocks();
   });
 
-  it('applies base arrow icons classes when action button is enabled', () => {
+  it('renders both side action buttons when action button is enabled', () => {
     const { container } = render(<MetricInput showActionButton={true} />);
-    const arrowIconsContainer = container.querySelector('.MetricInput-arrowIcons');
+    const actionButtons = container.querySelectorAll('.MetricInput-actionButtons');
 
-    expect(arrowIconsContainer).toBeInTheDocument();
-    expect(arrowIconsContainer).toHaveClass('MetricInput-arrowIcons');
+    expect(actionButtons).toHaveLength(2);
   });
 
-  it('applies size-specific arrow icons classes - small', () => {
-    const { container } = render(<MetricInput showActionButton={true} size="small" />);
-    const arrowIconsContainer = container.querySelector('.MetricInput-arrowIcons');
+  it('does not render side action buttons when action button is disabled', () => {
+    const { queryByTestId } = render(<MetricInput showActionButton={false} />);
 
-    expect(arrowIconsContainer).toHaveClass('MetricInput-arrowIcons--small');
+    expect(queryByTestId('DesignSystem-MetricInput--downIcon')).not.toBeInTheDocument();
+    expect(queryByTestId('DesignSystem-MetricInput--upIcon')).not.toBeInTheDocument();
   });
 
-  it('applies size-specific arrow icons classes - regular', () => {
-    const { container } = render(<MetricInput showActionButton={true} size="regular" />);
-    const arrowIconsContainer = container.querySelector('.MetricInput-arrowIcons');
+  it('keeps both side action buttons visible on input focus', () => {
+    const { getByTestId, container } = render(<MetricInput showActionButton={true} />);
+    const input = getByTestId('DesignSystem-MetricInput');
 
-    expect(arrowIconsContainer).toHaveClass('MetricInput-arrowIcons--regular');
+    fireEvent.focus(input);
+
+    const actionButtons = container.querySelectorAll('.MetricInput-actionButtons');
+    expect(actionButtons).toHaveLength(2);
   });
 
-  it('applies size-specific arrow icons classes - large', () => {
-    const { container } = render(<MetricInput showActionButton={true} size="large" />);
-    const arrowIconsContainer = container.querySelector('.MetricInput-arrowIcons');
+  it('renders keyboard traversal order as left button, input, then right button', () => {
+    const { getByTestId } = render(<MetricInput showActionButton={true} />);
+    const downButton = getByTestId('DesignSystem-MetricInput--downIcon');
+    const input = getByTestId('DesignSystem-MetricInput');
+    const upButton = getByTestId('DesignSystem-MetricInput--upIcon');
 
-    expect(arrowIconsContainer).toHaveClass('MetricInput-arrowIcons--large');
+    expect(downButton.compareDocumentPosition(input) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    expect(input.compareDocumentPosition(upButton) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
   });
 
-  it('applies ml-3 class when action button is present and no suffix', () => {
-    const { container } = render(<MetricInput showActionButton={true} />);
-    const arrowIconsContainer = container.querySelector('.MetricInput-arrowIcons');
+  it('activates internal tab stops after Enter is pressed on the wrapper', () => {
+    const { getByTestId } = render(<MetricInput showActionButton={true} />);
+    const wrapper = getByTestId('DesignSystem-MetricInputWrapper');
+    const downButton = getByTestId('DesignSystem-MetricInput--downIcon');
+    const input = getByTestId('DesignSystem-MetricInput');
+    const upButton = getByTestId('DesignSystem-MetricInput--upIcon');
 
-    expect(arrowIconsContainer).toHaveClass('ml-3');
+    expect(wrapper).toHaveAttribute('tabindex', '0');
+    expect(downButton).toHaveAttribute('tabindex', '-1');
+    expect(input).toHaveAttribute('tabindex', '-1');
+    expect(upButton).toHaveAttribute('tabindex', '-1');
+
+    (wrapper as HTMLDivElement).focus();
+    fireEvent.keyDown(wrapper, { key: 'Enter' });
+
+    expect(document.activeElement).toBe(input);
+    expect(wrapper).toHaveAttribute('tabindex', '-1');
+    expect(downButton).toHaveAttribute('tabindex', '0');
+    expect(input).not.toHaveAttribute('tabindex');
+    expect(upButton).toHaveAttribute('tabindex', '0');
   });
 
-  it('does not apply ml-3 class when suffix is present', () => {
-    const { container } = render(<MetricInput showActionButton={true} suffix="kg" />);
-    const arrowIconsContainer = container.querySelector('.MetricInput-arrowIcons');
+  it('resets to the wrapper tab stop after focus leaves the component', () => {
+    const { getByTestId } = render(
+      <>
+        <MetricInput showActionButton={true} />
+        <button data-test="outside-button" type="button">
+          Next
+        </button>
+      </>
+    );
+    const wrapper = getByTestId('DesignSystem-MetricInputWrapper');
+    const downButton = getByTestId('DesignSystem-MetricInput--downIcon');
+    const input = getByTestId('DesignSystem-MetricInput');
+    const upButton = getByTestId('DesignSystem-MetricInput--upIcon');
+    const outsideButton = getByTestId('outside-button');
 
-    expect(arrowIconsContainer).not.toHaveClass('ml-3');
+    (wrapper as HTMLDivElement).focus();
+    fireEvent.keyDown(wrapper, { key: 'Enter' });
+
+    expect(wrapper).toHaveAttribute('tabindex', '-1');
+    expect(upButton).toHaveAttribute('tabindex', '0');
+
+    (upButton as HTMLButtonElement).focus();
+    fireEvent.blur(upButton, { relatedTarget: outsideButton });
+    (outsideButton as HTMLButtonElement).focus();
+
+    expect(wrapper).toHaveAttribute('tabindex', '0');
+    expect(downButton).toHaveAttribute('tabindex', '-1');
+    expect(input).toHaveAttribute('tabindex', '-1');
+    expect(upButton).toHaveAttribute('tabindex', '-1');
   });
 
-  it('does not apply ml-3 class when action button is disabled', () => {
-    const { container } = render(<MetricInput showActionButton={false} />);
-    const arrowIconsContainer = container.querySelector('.MetricInput-arrowIcons');
+  it('keeps internal traversal inside the component until focus leaves it', () => {
+    const handleBlur = jest.fn();
+    const { getByTestId } = render(<MetricInput showActionButton={true} onBlur={handleBlur} />);
+    const wrapper = getByTestId('DesignSystem-MetricInputWrapper');
+    const input = getByTestId('DesignSystem-MetricInput');
+    const upButton = getByTestId('DesignSystem-MetricInput--upIcon');
 
-    expect(arrowIconsContainer).not.toBeInTheDocument();
+    (wrapper as HTMLDivElement).focus();
+    fireEvent.keyDown(wrapper, { key: 'Enter' });
+    fireEvent.blur(input, { relatedTarget: upButton });
+
+    expect(handleBlur).not.toHaveBeenCalled();
+  });
+
+  it('moves focus to the input when the content area is clicked', () => {
+    const { getByTestId } = render(<MetricInput showActionButton={true} prefix="USD" />);
+    const wrapper = getByTestId('DesignSystem-MetricInputWrapper');
+    const input = getByTestId('DesignSystem-MetricInput');
+
+    fireEvent.click(wrapper);
+
+    expect(document.activeElement).toBe(input);
+  });
+
+  it('keeps caret navigation in the input when ArrowLeft is pressed', () => {
+    const { getByTestId } = render(<MetricInput showActionButton={true} defaultValue={1234} />);
+    const input = getByTestId('DesignSystem-MetricInput');
+
+    (input as HTMLInputElement).focus();
+    fireEvent.keyDown(input, { key: 'ArrowLeft' });
+
+    expect(document.activeElement).toBe(input);
+  });
+
+  it('keeps caret navigation in the input when ArrowRight is pressed', () => {
+    const { getByTestId } = render(<MetricInput showActionButton={true} defaultValue={1234} />);
+    const input = getByTestId('DesignSystem-MetricInput');
+
+    (input as HTMLInputElement).focus();
+    fireEvent.keyDown(input, { key: 'ArrowRight' });
+
+    expect(document.activeElement).toBe(input);
+  });
+
+  it('does not remap ArrowRight when the decrement button is focused', () => {
+    const { getByTestId } = render(<MetricInput showActionButton={true} />);
+    const downButton = getByTestId('DesignSystem-MetricInput--downIcon');
+
+    (downButton as HTMLButtonElement).focus();
+    fireEvent.keyDown(downButton, { key: 'ArrowRight' });
+
+    expect(document.activeElement).toBe(downButton);
+  });
+
+  it('does not remap ArrowLeft when the increment button is focused', () => {
+    const { getByTestId } = render(<MetricInput showActionButton={true} />);
+    const upButton = getByTestId('DesignSystem-MetricInput--upIcon');
+
+    (upButton as HTMLButtonElement).focus();
+    fireEvent.keyDown(upButton, { key: 'ArrowLeft' });
+
+    expect(document.activeElement).toBe(upButton);
+  });
+
+  it('blurs the focused input on wheel to avoid accidental value changes', () => {
+    const { getByTestId } = render(<MetricInput showActionButton={true} defaultValue={12} />);
+    const input = getByTestId('DesignSystem-MetricInput') as HTMLInputElement;
+
+    input.focus();
+    expect(input).toHaveFocus();
+
+    fireEvent.wheel(input);
+
+    expect(input).not.toHaveFocus();
   });
 });
 
@@ -902,15 +1074,14 @@ describe('MetricInput Complex Styling Combinations - Tests edge cases and comple
     const prefix = getByTestId('DesignSystem-MetricInput--prefix');
     const suffix = getByTestId('DesignSystem-MetricInput--suffix');
     const icon = getByTestId('DesignSystem-MetricInput--icon');
-    const arrowIconsContainer = container.querySelector('.MetricInput-arrowIcons');
+    const actionButtons = container.querySelectorAll('.MetricInput-actionButtons');
 
     expect(wrapper).toHaveClass('MetricInput--large', 'MetricInput--error');
     expect(input).toHaveClass('MetricInput-input--large');
-    expect(prefix).toHaveClass('mr-5');
-    expect(suffix).toHaveClass('mx-5');
+    expect(prefix).toHaveClass('MetricInput-text', 'MetricInput-text--large');
+    expect(suffix).toHaveClass('MetricInput-text', 'MetricInput-text--large');
     expect(icon).toHaveClass('MetricInput-icon--large');
-    expect(arrowIconsContainer).toHaveClass('MetricInput-arrowIcons--large');
-    expect(arrowIconsContainer).not.toHaveClass('ml-3'); // suffix present
+    expect(actionButtons).toHaveLength(2);
   });
 
   it('applies correct classes when action button disabled with suffix', () => {
@@ -920,19 +1091,19 @@ describe('MetricInput Complex Styling Combinations - Tests edge cases and comple
     const suffix = getByTestId('DesignSystem-MetricInput--suffix');
 
     expect(input).toHaveClass('MetricInput-input--small');
-    expect(input).not.toHaveClass('mr-4'); // suffix present
-    expect(suffix).toHaveClass('ml-4', 'mr-4');
+    expect(input).not.toHaveClass('mr-4', 'mr-5', 'mr-6');
+    expect(suffix).toHaveClass('MetricInput-text', 'MetricInput-text--small');
   });
 
   it('applies correct classes when action button enabled without suffix', () => {
     const { getByTestId, container } = render(<MetricInput size="regular" showActionButton={true} />);
 
     const input = getByTestId('DesignSystem-MetricInput');
-    const arrowIconsContainer = container.querySelector('.MetricInput-arrowIcons');
+    const actionButtons = container.querySelectorAll('.MetricInput-actionButtons');
 
     expect(input).toHaveClass('MetricInput-input--regular');
-    expect(input).not.toHaveClass('mr-5'); // action button present
-    expect(arrowIconsContainer).toHaveClass('ml-3'); // no suffix
+    expect(input).not.toHaveClass('mr-4', 'mr-5', 'mr-6');
+    expect(actionButtons).toHaveLength(2);
   });
 
   it('handles disabled state with all styling elements', () => {
@@ -942,12 +1113,11 @@ describe('MetricInput Complex Styling Combinations - Tests edge cases and comple
 
     const wrapper = getByTestId('DesignSystem-MetricInputWrapper');
     const input = getByTestId('DesignSystem-MetricInput');
-    const arrowIconsContainer = container.querySelector('.MetricInput-arrowIcons');
+    const actionButtons = container.querySelectorAll('.MetricInput-actionButtons');
 
     expect(wrapper).toHaveClass('MetricInput--disabled', 'MetricInput--large');
     expect(input).toHaveClass('MetricInput-input--large');
-    expect(arrowIconsContainer).toHaveClass('MetricInput-arrowIcons--large');
-    expect(arrowIconsContainer).not.toHaveClass('ml-3'); // suffix present
+    expect(actionButtons).toHaveLength(2);
   });
 
   it('handles readOnly state with proper styling', () => {
@@ -957,7 +1127,8 @@ describe('MetricInput Complex Styling Combinations - Tests edge cases and comple
     const input = getByTestId('DesignSystem-MetricInput');
 
     expect(wrapper).toHaveClass('MetricInput--readOnly', 'MetricInput--small');
-    expect(input).toHaveClass('MetricInput-input--small', 'mr-4'); // no suffix, no action button
+    expect(input).toHaveClass('MetricInput-input--small');
+    expect(input).not.toHaveClass('mr-4', 'mr-5', 'mr-6');
   });
 });
 
@@ -984,6 +1155,29 @@ describe('MetricInput Event Handlers - Tests all event handler props and their p
     expect(handleFocus).toHaveBeenCalled();
   });
 
+  it('calls onFocus when the wrapper tab stop gains focus before the input is activated', () => {
+    const handleFocus = jest.fn((e) => e.target.value);
+    const { getByTestId } = render(<MetricInput defaultValue={626} onFocus={handleFocus} />);
+    const wrapper = getByTestId('DesignSystem-MetricInputWrapper');
+    const input = getByTestId('DesignSystem-MetricInput');
+
+    (wrapper as HTMLDivElement).focus();
+
+    expect(handleFocus).toHaveBeenCalledTimes(1);
+    expect(handleFocus.mock.calls[0][0].target).toBe(input);
+  });
+
+  it('does not call onFocus again when focus moves from the wrapper tab stop to the input', () => {
+    const handleFocus = jest.fn();
+    const { getByTestId } = render(<MetricInput onFocus={handleFocus} />);
+    const wrapper = getByTestId('DesignSystem-MetricInputWrapper');
+
+    (wrapper as HTMLDivElement).focus();
+    fireEvent.keyDown(wrapper, { key: 'Enter' });
+
+    expect(handleFocus).toHaveBeenCalledTimes(1);
+  });
+
   it('calls onBlur handler when input loses focus', () => {
     const handleBlur = jest.fn();
     const { getByTestId } = render(<MetricInput onBlur={handleBlur} />);
@@ -991,6 +1185,67 @@ describe('MetricInput Event Handlers - Tests all event handler props and their p
 
     fireEvent.blur(input);
     expect(handleBlur).toHaveBeenCalled();
+  });
+
+  it('does not call onBlur while focus moves to an internal action button', () => {
+    const handleBlur = jest.fn();
+    const { getByTestId } = render(<MetricInput onBlur={handleBlur} />);
+    const wrapper = getByTestId('DesignSystem-MetricInputWrapper');
+    const input = getByTestId('DesignSystem-MetricInput');
+    const downButton = getByTestId('DesignSystem-MetricInput--downIcon');
+
+    (wrapper as HTMLDivElement).focus();
+    fireEvent.keyDown(wrapper, { key: 'Enter' });
+    fireEvent.blur(input, { relatedTarget: downButton });
+
+    expect(handleBlur).not.toHaveBeenCalled();
+  });
+
+  it('calls onBlur when the wrapper tab stop loses focus before the input is activated', () => {
+    const handleBlur = jest.fn((e) => e.target.value);
+    const { getByTestId } = render(
+      <>
+        <MetricInput defaultValue={626} onBlur={handleBlur} />
+        <button data-test="outside-button" type="button">
+          Next
+        </button>
+      </>
+    );
+    const wrapper = getByTestId('DesignSystem-MetricInputWrapper');
+    const input = getByTestId('DesignSystem-MetricInput');
+    const outsideButton = getByTestId('outside-button');
+
+    (wrapper as HTMLDivElement).focus();
+    fireEvent.blur(wrapper, { relatedTarget: outsideButton });
+
+    expect(handleBlur).toHaveBeenCalledTimes(1);
+    expect(handleBlur.mock.calls[0][0].target).toBe(input);
+  });
+
+  it('calls onBlur once with the input target when focus leaves after moving to an internal action button', () => {
+    const handleBlur = jest.fn((e) => e.target.value);
+    const { getByTestId } = render(
+      <>
+        <MetricInput defaultValue={626} onBlur={handleBlur} />
+        <button data-test="outside-button" type="button">
+          Next
+        </button>
+      </>
+    );
+    const wrapper = getByTestId('DesignSystem-MetricInputWrapper');
+    const input = getByTestId('DesignSystem-MetricInput');
+    const upButton = getByTestId('DesignSystem-MetricInput--upIcon');
+    const outsideButton = getByTestId('outside-button');
+
+    (wrapper as HTMLDivElement).focus();
+    fireEvent.keyDown(wrapper, { key: 'Enter' });
+    fireEvent.blur(input, { relatedTarget: upButton });
+    fireEvent.focus(upButton);
+    fireEvent.blur(wrapper, { relatedTarget: outsideButton });
+
+    expect(handleBlur).toHaveBeenCalledTimes(1);
+    expect(handleBlur.mock.calls[0][0].target).toBe(input);
+    expect(handleBlur.mock.calls[0][0].relatedTarget).toBe(outsideButton);
   });
 
   it('calls onClick handler when input is clicked', () => {
@@ -1002,12 +1257,12 @@ describe('MetricInput Event Handlers - Tests all event handler props and their p
     expect(handleClick).toHaveBeenCalled();
   });
 
-  it('calls onKeyDown handler from wrapper when key is pressed', () => {
+  it('calls onKeyDown handler from input when key is pressed', () => {
     const handleKeyDown = jest.fn();
     const { getByTestId } = render(<MetricInput onKeyDown={handleKeyDown} />);
-    const wrapper = getByTestId('DesignSystem-MetricInputWrapper');
+    const input = getByTestId('DesignSystem-MetricInput');
 
-    fireEvent.keyDown(wrapper, { key: 'Enter' });
+    fireEvent.keyDown(input, { key: 'ArrowUp' });
     expect(handleKeyDown).toHaveBeenCalled();
   });
 
@@ -1201,7 +1456,7 @@ describe('MetricInput CSS Integration and Cross-Module Dependencies - Tests inte
 
     expect(wrapper).toHaveClass('MetricInput--large', 'custom-class');
     expect(input).toHaveClass('MetricInput-input', 'MetricInput-input--large');
-    expect(input).not.toHaveClass('mr-6'); // suffix present
+    expect(input).not.toHaveClass('mr-4', 'mr-5', 'mr-6');
   });
 
   it('applies correct styles when all optional elements are present', () => {
@@ -1224,15 +1479,14 @@ describe('MetricInput CSS Integration and Cross-Module Dependencies - Tests inte
     const icon = getByTestId('DesignSystem-MetricInput--icon');
     const prefix = getByTestId('DesignSystem-MetricInput--prefix');
     const suffix = getByTestId('DesignSystem-MetricInput--suffix');
-    const arrowContainer = container.querySelector('.MetricInput-arrowIcons');
+    const actionButtons = container.querySelectorAll('.MetricInput-actionButtons');
 
     expect(wrapper).toHaveClass('MetricInput', 'MetricInput--large');
     expect(input).toHaveClass('MetricInput-input', 'MetricInput-input--large');
     expect(icon).toHaveClass('MetricInput-icon--large');
-    expect(prefix).toHaveClass('mr-5');
-    expect(suffix).toHaveClass('mx-5');
-    expect(arrowContainer).toHaveClass('MetricInput-arrowIcons--large');
-    expect(arrowContainer).not.toHaveClass('ml-3'); // suffix present
+    expect(prefix).toHaveClass('MetricInput-text', 'MetricInput-text--large');
+    expect(suffix).toHaveClass('MetricInput-text', 'MetricInput-text--large');
+    expect(actionButtons).toHaveLength(2);
   });
 
   it('applies minimal styles when no optional elements are present', () => {
@@ -1242,7 +1496,8 @@ describe('MetricInput CSS Integration and Cross-Module Dependencies - Tests inte
     const input = getByTestId('DesignSystem-MetricInput');
 
     expect(wrapper).toHaveClass('MetricInput', 'MetricInput--regular');
-    expect(input).toHaveClass('MetricInput-input', 'MetricInput-input--regular', 'mr-5');
+    expect(input).toHaveClass('MetricInput-input', 'MetricInput-input--regular');
+    expect(input).not.toHaveClass('mr-4', 'mr-5', 'mr-6');
   });
 });
 
@@ -1257,7 +1512,7 @@ describe('MetricInput Action Button Size Mapping - Tests action button icon size
     const downButton = container.querySelector('[data-test="DesignSystem-MetricInput--downIcon"] .Icon');
 
     if (upButton && downButton) {
-      // Size should be 12 for small according to actionButtonIconSizeMapping
+      // Size should be 14 for small according to actionButtonIconSizeMapping
       expect(upButton).toBeInTheDocument();
       expect(downButton).toBeInTheDocument();
     }
@@ -1281,7 +1536,7 @@ describe('MetricInput Action Button Size Mapping - Tests action button icon size
     const downButton = container.querySelector('[data-test="DesignSystem-MetricInput--downIcon"] .Icon');
 
     if (upButton && downButton) {
-      // Size should be 16 for large according to actionButtonIconSizeMapping
+      // Size should be 14 for large according to actionButtonIconSizeMapping
       expect(upButton).toBeInTheDocument();
       expect(downButton).toBeInTheDocument();
     }

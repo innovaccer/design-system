@@ -29,7 +29,7 @@ export const all = () => {
         onChange={action('on-change')}
         onClick={action('on-click')}
         placeholder={placeholder}
-        aria-label="Metric input example"
+        aria-label="Quantity"
         prefix={prefix}
         suffix={suffix}
         size={size}

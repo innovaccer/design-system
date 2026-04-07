@@ -10,7 +10,7 @@ export const defaultMetric = () => {
       <Label htmlFor="metric-input" className="mr-5">
         No. of Days
       </Label>
-      <Column size={1}>
+      <Column size={2}>
         <MetricInput
           id="metric-input"
           name="metric-input"
@@ -31,7 +31,7 @@ const customCode = `() => {
   return (
     <Row className="align-items-center">
       <Label htmlFor="metric-input" className="mr-5">  No. of Days </Label>
-      <Column size={1}>
+      <Column size={2}>
         <MetricInput
           id="metric-input"
           name="metric-input"

@@ -154,46 +154,18 @@ exports[`Pagination component
         data-test="DesignSystem-MetricInputWrapper"
         role="presentation"
       >
-        <input
-          aria-describedby="DesignSystem-Pagination-totalPage-Test-uid"
-          aria-label="Current page"
-          class="MetricInput-input MetricInput-input--regular"
-          data-test="DesignSystem-Pagination--Input"
-          name="page"
-          type="number"
-          value="10"
-        />
         <div
-          class="MetricInput-arrowIcons MetricInput-arrowIcons--regular ml-3"
+          class="MetricInput-content MetricInput-content--regular"
         >
-          <button
-            aria-label="Increment value"
-            class="MetricInput-arrowButton border-bottom"
-            data-test="DesignSystem-MetricInput--upIcon"
-            type="button"
-          >
-            <i
-              class="material-symbols material-symbols-rounded Icon"
-              data-test="DesignSystem-Icon"
-              style="font-size: 14px; width: 14px;"
-            >
-              keyboard_arrow_up
-            </i>
-          </button>
-          <button
-            aria-label="Decrement value"
-            class="MetricInput-arrowButton border-bottom-0"
-            data-test="DesignSystem-MetricInput--downIcon"
-            type="button"
-          >
-            <i
-              class="material-symbols material-symbols-rounded Icon"
-              data-test="DesignSystem-Icon"
-              style="font-size: 14px; width: 14px;"
-            >
-              keyboard_arrow_down
-            </i>
-          </button>
+          <input
+            aria-describedby="DesignSystem-Pagination-totalPage-Test-uid"
+            aria-label="Current page"
+            class="MetricInput-input MetricInput-input--regular"
+            data-test="DesignSystem-Pagination--Input"
+            name="page"
+            type="number"
+            value="10"
+          />
         </div>
       </div>
       <span

@@ -35,7 +35,7 @@
 .Pagination-MetricInput .MetricInput-input {
   text-align: center;
 }
-.Pagination-MetricInput .MetricInput-arrowIcons {
+.Pagination-MetricInput .MetricInput-actionButtons {
   display: none;
 }
 
