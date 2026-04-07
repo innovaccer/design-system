@@ -36,7 +36,7 @@
 }
 
 .ChipInput--withChips {
-  padding-right: var(--spacing-20);
+  padding-right: 0;
 }
 
 .ChipInput--error {

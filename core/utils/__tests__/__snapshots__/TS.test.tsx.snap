@@ -3926,6 +3926,7 @@ exports[`TS renders children 1`] = `
     />
   </div>
   <div
+    aria-label="Click to edit. Chip input"
     class="EditableChipInput"
     data-test="DesignSystem-EditableChipInput"
     role="button"
