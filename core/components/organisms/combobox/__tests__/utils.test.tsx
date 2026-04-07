@@ -1,48 +1,62 @@
 import { focusListItem, handleKeyDown } from '../trigger/utils';
 
-describe('Combobox component focusListItem utility test', () => {
-  // Create reusable mock references to the list and the setState function
-  const mockSetFocusedOption = jest.fn();
-  const mockListItems = [document.createElement('div'), document.createElement('div')];
-  mockListItems.forEach((item) => item.setAttribute('data-test', 'DesignSystem-Listbox-ItemWrapper'));
+function mountListboxWithOptions(count: number) {
+  const root = document.createElement('div');
+  const ul = document.createElement('ul');
+  ul.setAttribute('role', 'listbox');
+  const options: HTMLElement[] = [];
+  for (let i = 0; i < count; i++) {
+    const li = document.createElement('li');
+    li.setAttribute('role', 'option');
+    li.setAttribute('tabindex', '-1');
+    const inner = document.createElement('div');
+    inner.setAttribute('data-test', 'DesignSystem-Listbox-ItemWrapper');
+    inner.setAttribute('data-disabled', 'false');
+    li.appendChild(inner);
+    ul.appendChild(li);
+    options.push(li);
+  }
+  root.appendChild(ul);
+  document.body.appendChild(root);
+  return { root, options };
+}
 
-  const mockListRef = {
-    current: {
-      querySelectorAll: jest.fn(() => mockListItems),
-    },
-  };
+describe('Combobox component focusListItem utility test', () => {
+  let mockSetFocusedOption: jest.Mock;
 
   beforeEach(() => {
-    mockSetFocusedOption.mockClear();
-    mockListRef.current.querySelectorAll.mockClear();
+    mockSetFocusedOption = jest.fn();
+    document.body.innerHTML = '';
   });
 
-  afterAll(() => {
-    jest.restoreAllMocks();
+  afterEach(() => {
+    document.body.innerHTML = '';
   });
 
-  it('should focus on the first item when position is "down"', () => {
-    jest.spyOn(mockListItems[0], 'focus');
+  it('should focus on the first option host when position is "down"', () => {
+    const { root, options } = mountListboxWithOptions(2);
+    const listRef = { current: root };
+    const focusSpy = jest.spyOn(options[0], 'focus');
 
-    focusListItem('down', mockSetFocusedOption, mockListRef);
+    focusListItem('down', mockSetFocusedOption, listRef);
 
-    expect(mockListRef.current.querySelectorAll).toHaveBeenCalledWith('[data-test="DesignSystem-Listbox-ItemWrapper"]');
-    expect(mockSetFocusedOption).toHaveBeenCalledWith(mockListItems[0]);
-    expect(mockListItems[0].focus).toHaveBeenCalled();
+    expect(mockSetFocusedOption).toHaveBeenCalledWith(options[0]);
+    expect(focusSpy).toHaveBeenCalled();
   });
 
-  it('should focus on the last item when position is not "down"', () => {
-    jest.spyOn(mockListItems[1], 'focus');
+  it('should focus on the last option host when position is not "down"', () => {
+    const { root, options } = mountListboxWithOptions(2);
+    const listRef = { current: root };
+    const focusSpy = jest.spyOn(options[1], 'focus');
 
-    focusListItem('up', mockSetFocusedOption, mockListRef);
+    focusListItem('up', mockSetFocusedOption, listRef);
 
-    expect(mockListRef.current.querySelectorAll).toHaveBeenCalledWith('[data-test="DesignSystem-Listbox-ItemWrapper"]');
-    expect(mockSetFocusedOption).toHaveBeenCalledWith(mockListItems[1]);
-    expect(mockListItems[1].focus).toHaveBeenCalled();
+    expect(mockSetFocusedOption).toHaveBeenCalledWith(options[1]);
+    expect(focusSpy).toHaveBeenCalled();
   });
 });
 
-describe('Combobox component focusListItem utility test', () => {
+describe('Combobox trigger handleKeyDown', () => {
   let setOpenPopover: jest.Mock;
   let setHighlightFirstItem: jest.Mock;
   let setHighlightLastItem: jest.Mock;

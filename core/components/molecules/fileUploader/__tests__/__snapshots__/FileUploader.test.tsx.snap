@@ -11,6 +11,7 @@ exports[`FileUploader component
     <span
       class="Text Text--default Text--medium Text--regular"
       data-test="DesignSystem-Text"
+      id="file-uploader-Test-uid-title"
     >
       File Uploader Title
     </span>
@@ -23,6 +24,7 @@ exports[`FileUploader component
     <span
       class="Text Text--subtle Text--small"
       data-test="DesignSystem-Text"
+      id="file-uploader-Test-uid-size"
     >
       Maximum size: 30 MB
     </span>
@@ -54,6 +56,8 @@ exports[`FileUploader component
         </span>
       </button>
       <input
+        aria-describedby="file-uploader-Test-uid-size"
+        aria-labelledby="file-uploader-Test-uid-title"
         class="FileUploaderButton-input"
         data-test="DesignSystem-FileUploaderButton--Input"
         tabindex="-1"
@@ -75,12 +79,14 @@ exports[`FileUploader component prop:accept snapshot
     <span
       class="Text Text--default Text--medium Text--regular"
       data-test="DesignSystem-Text"
+      id="file-uploader-Test-uid-title"
     >
       Upload files
     </span>
     <span
       class="Text Text--subtle Text--small mt-4"
       data-test="DesignSystem-Text"
+      id="file-uploader-Test-uid-size"
     >
       Maximum size: 25 MB
     </span>
@@ -113,6 +119,8 @@ exports[`FileUploader component prop:accept snapshot
       </button>
       <input
         accept="jpg, pdf, png"
+        aria-describedby="file-uploader-Test-uid-size"
+        aria-labelledby="file-uploader-Test-uid-title"
         class="FileUploaderButton-input"
         data-test="DesignSystem-FileUploaderButton--Input"
         tabindex="-1"
@@ -134,12 +142,14 @@ exports[`FileUploader component prop:disabled snapshot
     <span
       class="Text Text--default Text--medium Text--regular"
       data-test="DesignSystem-Text"
+      id="file-uploader-Test-uid-title"
     >
       Upload files
     </span>
     <span
       class="Text Text--subtle Text--small mt-4"
       data-test="DesignSystem-Text"
+      id="file-uploader-Test-uid-size"
     >
       Maximum size: 25 MB
     </span>
@@ -171,6 +181,8 @@ exports[`FileUploader component prop:disabled snapshot
         </span>
       </button>
       <input
+        aria-describedby="file-uploader-Test-uid-size"
+        aria-labelledby="file-uploader-Test-uid-title"
         class="FileUploaderButton-input"
         data-test="DesignSystem-FileUploaderButton--Input"
         tabindex="-1"
@@ -192,12 +204,14 @@ exports[`FileUploader component prop:disabled snapshot
     <span
       class="Text Text--default Text--medium Text--regular"
       data-test="DesignSystem-Text"
+      id="file-uploader-Test-uid-title"
     >
       Upload files
     </span>
     <span
       class="Text Text--subtle Text--small mt-4"
       data-test="DesignSystem-Text"
+      id="file-uploader-Test-uid-size"
     >
       Maximum size: 25 MB
     </span>
@@ -230,6 +244,8 @@ exports[`FileUploader component prop:disabled snapshot
         </span>
       </button>
       <input
+        aria-describedby="file-uploader-Test-uid-size"
+        aria-labelledby="file-uploader-Test-uid-title"
         class="FileUploaderButton-input"
         data-test="DesignSystem-FileUploaderButton--Input"
         disabled=""
@@ -252,12 +268,14 @@ exports[`FileUploader component prop:multiple snapshot
     <span
       class="Text Text--default Text--medium Text--regular"
       data-test="DesignSystem-Text"
+      id="file-uploader-Test-uid-title"
     >
       Upload files
     </span>
     <span
       class="Text Text--subtle Text--small mt-4"
       data-test="DesignSystem-Text"
+      id="file-uploader-Test-uid-size"
     >
       Maximum size: 25 MB
     </span>
@@ -289,6 +307,8 @@ exports[`FileUploader component prop:multiple snapshot
         </span>
       </button>
       <input
+        aria-describedby="file-uploader-Test-uid-size"
+        aria-labelledby="file-uploader-Test-uid-title"
         class="FileUploaderButton-input"
         data-test="DesignSystem-FileUploaderButton--Input"
         tabindex="-1"
@@ -310,12 +330,14 @@ exports[`FileUploader component prop:multiple snapshot
     <span
       class="Text Text--default Text--medium Text--regular"
       data-test="DesignSystem-Text"
+      id="file-uploader-Test-uid-title"
     >
       Upload files
     </span>
     <span
       class="Text Text--subtle Text--small mt-4"
       data-test="DesignSystem-Text"
+      id="file-uploader-Test-uid-size"
     >
       Maximum size: 25 MB
     </span>
@@ -347,6 +369,8 @@ exports[`FileUploader component prop:multiple snapshot
         </span>
       </button>
       <input
+        aria-describedby="file-uploader-Test-uid-size"
+        aria-labelledby="file-uploader-Test-uid-title"
         class="FileUploaderButton-input"
         data-test="DesignSystem-FileUploaderButton--Input"
         multiple=""

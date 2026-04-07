@@ -13,7 +13,7 @@ describe('Menu Utils - handleKeyDown function for Menu component keyboard naviga
 
   const mockListItems = [document.createElement('div'), document.createElement('div'), document.createElement('div')];
   mockListItems.forEach((item, index) => {
-    item.setAttribute('data-test', 'DesignSystem-Listbox-ItemWrapper');
+    item.setAttribute('data-test', 'DesignSystem-Menu-ListItem');
     item.focus = jest.fn();
     item.scrollIntoView = jest.fn();
     item.setAttribute('data-index', index.toString());
@@ -21,7 +21,7 @@ describe('Menu Utils - handleKeyDown function for Menu component keyboard naviga
 
   const mockSubListItems = [document.createElement('div'), document.createElement('div')];
   mockSubListItems.forEach((item) => {
-    item.setAttribute('data-test', 'DesignSystem-Listbox-ItemWrapper');
+    item.setAttribute('data-test', 'DesignSystem-Menu-ListItem');
     item.focus = jest.fn();
   });
 
@@ -428,8 +428,6 @@ describe('Menu Utils - handleKeyDown function for Menu component keyboard naviga
       const event = new KeyboardEvent('keydown', { key: 'ArrowDown' }) as any;
       event.preventDefault = jest.fn();
 
-      // The function should handle null listRef without throwing
-      // but it currently doesn't, so we expect it to throw for now
       expect(() => {
         handleKeyDown(
           event,
@@ -441,7 +439,7 @@ describe('Menu Utils - handleKeyDown function for Menu component keyboard naviga
           subListRef,
           false
         );
-      }).toThrow();
+      }).not.toThrow();
     });
 
     it('should handle empty list items', () => {
@@ -449,8 +447,6 @@ describe('Menu Utils - handleKeyDown function for Menu component keyboard naviga
       const event = new KeyboardEvent('keydown', { key: 'ArrowDown' }) as any;
       event.preventDefault = jest.fn();
 
-      // The function should handle empty list without throwing
-      // but it currently doesn't, so we expect it to throw for now
       expect(() => {
         handleKeyDown(
           event,
@@ -462,7 +458,7 @@ describe('Menu Utils - handleKeyDown function for Menu component keyboard naviga
           subListRef,
           false
         );
-      }).toThrow();
+      }).not.toThrow();
     });
 
     it('should handle unknown key gracefully', () => {
@@ -566,7 +562,7 @@ describe('MenuTrigger Utils - focusListItem utility for programmatic focus manag
     mockListItems = [document.createElement('div'), document.createElement('div'), document.createElement('div')];
 
     mockListItems.forEach((item, index) => {
-      item.setAttribute('data-test', 'DesignSystem-Listbox-ItemWrapper');
+      item.setAttribute('data-test', 'DesignSystem-Menu-ListItem');
       item.focus = jest.fn();
       item.scrollIntoView = jest.fn();
       item.setAttribute('data-index', index.toString());
@@ -611,7 +607,7 @@ describe('MenuTrigger Utils - focusListItem utility for programmatic focus manag
         focusListItem('down', setFocusedOption, listRef);
       }).not.toThrow();
 
-      expect(setFocusedOption).toHaveBeenCalledWith(undefined);
+      expect(setFocusedOption).not.toHaveBeenCalled();
     });
 
     it('should handle missing listRef gracefully', () => {

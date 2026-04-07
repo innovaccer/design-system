@@ -72,6 +72,7 @@
 
   /* Focus */
   --primary-focus: var(--primary-dark);
+  --inverse-focus: var(--night);
 
   /* Ultra Light */
   --primary-ultra-light: var(--color-blue-100);

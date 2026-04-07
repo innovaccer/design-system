@@ -16,6 +16,7 @@ exports[`MultiSlider component
         <label
           class="Label-text"
           data-test="DesignSystem-Label--Text"
+          id="slider-label-Test-uid"
         >
           MultiSlider
         </label>
