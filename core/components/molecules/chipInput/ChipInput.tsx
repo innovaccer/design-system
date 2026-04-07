@@ -3,7 +3,10 @@ import classNames from 'classnames';
 import { Chip, Icon } from '@/index';
 import { ChipProps } from '@/index.type';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import { isSpaceKey } from '@/accessibility/utils';
 import styles from '@css/components/chipInput.module.css';
+import inputStyles from '@css/components/input.module.css';
+import { ChipInputBorderFocusRegion, getChipInputBorderFocusRegion } from './utils';
 
 const keyCodes = {
   BACKSPACE: 'Backspace',
@@ -67,9 +70,9 @@ export interface ChipInputProps extends BaseProps {
    */
   defaultValue: string[];
   /**
-   * Adds autoFocus to input
+   * Focuses the text input on mount. Defaults to `false` when using `ChipInput` directly.
    */
-  autoFocus: boolean;
+  autoFocus?: boolean;
   /**
    * Callback function that is called when the chips change.
    */
@@ -126,6 +129,17 @@ export const ChipInput = (props: ChipInputProps) => {
 
   const [chips, setChips] = React.useState(value || defaultValue);
   const [inputValue, setInputValue] = React.useState('');
+  const [borderFocusRegion, setBorderFocusRegion] = React.useState<ChipInputBorderFocusRegion>(null);
+
+  const handleBorderFocusIn = React.useCallback((e: React.FocusEvent<HTMLDivElement>) => {
+    setBorderFocusRegion(getChipInputBorderFocusRegion(e.target, styles['ChipInput-input']));
+  }, []);
+
+  const handleBorderFocusOut = React.useCallback((e: React.FocusEvent<HTMLDivElement>) => {
+    const next = e.relatedTarget;
+    if (next instanceof Node && e.currentTarget.contains(next)) return;
+    setBorderFocusRegion(null);
+  }, []);
 
   const baseProps = extractBaseProps(props);
 
@@ -142,9 +156,12 @@ export const ChipInput = (props: ChipInputProps) => {
     }
   }, [inputValue]);
 
+  const showBorderFocusRing = borderFocusRegion === 'input' || borderFocusRegion === 'fieldChrome';
+
   const ChipInputBorderClass = classNames({
     [styles['ChipInput-border']]: true,
     [styles['ChipInput-border--error']]: error,
+    [styles['ChipInput-border--focusRing']]: showBorderFocusRing,
   });
 
   const ChipInputClass = classNames(
@@ -170,9 +187,15 @@ export const ChipInput = (props: ChipInputProps) => {
     ['my-3']: size === 'regular',
   });
 
-  const IconClass = classNames({
-    [styles['ChipInput-icon']]: true,
-    [styles[`ChipInput-icon--${size}`]]: size,
+  const iconWrapperClass = classNames({
+    [inputStyles['Input-icon']]: true,
+    [inputStyles['Input-iconWrapper--right']]: true,
+  });
+
+  const iconClass = classNames({
+    [inputStyles['Input-icon--right']]: !disabled,
+    ['p-3-5']: size === 'small',
+    ['p-3']: size === 'regular',
   });
 
   const onUpdateChips = (updatedChips: string[]) => {
@@ -260,10 +283,6 @@ export const ChipInput = (props: ChipInputProps) => {
     setInputValue(e.target.value);
   };
 
-  const onClickHandler = () => {
-    inputRef.current?.focus();
-  };
-
   const chipComponents = chips.map((chip, index) => {
     const { type = 'input', onClick, ...rest } = chipOptions;
 
@@ -285,31 +304,25 @@ export const ChipInput = (props: ChipInputProps) => {
   });
 
   const iconSize = size === 'small' ? 12 : 16;
-  const handleWrapperKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
-    if (disabled || event.currentTarget !== event.target) return;
-
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault();
-      onClickHandler();
-    }
-  };
 
   return (
-    <div data-test="DesignSystem-ChipInput--Border" className={ChipInputBorderClass}>
-      <div
-        data-test="DesignSystem-ChipInput"
-        {...baseProps}
-        className={ChipInputClass}
-        onClick={onClickHandler}
-        onKeyDown={handleWrapperKeyDown}
-        tabIndex={disabled ? -1 : 0}
-        role="button"
-        aria-label={ariaLabel}
-        aria-labelledby={ariaLabelledBy}
-        aria-describedby={ariaDescribedBy}
-        aria-disabled={disabled || undefined}
-      >
-        <div className={styles['ChipInput-wrapper']} ref={customRef}>
+    <div
+      data-test="DesignSystem-ChipInput--Border"
+      className={ChipInputBorderClass}
+      onFocusCapture={handleBorderFocusIn}
+      onBlurCapture={handleBorderFocusOut}
+    >
+      <div data-test="DesignSystem-ChipInput" {...baseProps} className={ChipInputClass}>
+        <div
+          className={styles['ChipInput-wrapper']}
+          ref={customRef}
+          role="presentation"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) {
+              inputRef.current?.focus();
+            }
+          }}
+        >
           {chips && chips.length > 0 && chipComponents}
           <input
             data-test="DesignSystem-ChipInput--Input"
@@ -327,18 +340,29 @@ export const ChipInput = (props: ChipInputProps) => {
             aria-labelledby={ariaLabelledBy}
             aria-describedby={ariaDescribedBy}
           />
-          {/* eslint-enable */}
         </div>
         {chips.length > 0 && (
-          <Icon
+          <div
             data-test="DesignSystem-ChipInput--Icon"
-            name="close"
-            size={iconSize}
-            appearance={disabled ? 'disabled' : 'subtle'}
-            className={IconClass}
-            onClick={onDeleteAllHandler}
+            className={classNames(iconWrapperClass, 'align-self-start', 'flex-shrink-0')}
             tabIndex={disabled ? -1 : 0}
-          />
+            role="button"
+            aria-label="Clear all"
+            aria-disabled={disabled || undefined}
+            onClick={disabled ? undefined : onDeleteAllHandler}
+            onKeyDown={
+              disabled
+                ? undefined
+                : (e) => {
+                    if (e.key === 'Enter' || isSpaceKey(e)) {
+                      e.preventDefault();
+                      onDeleteAllHandler();
+                    }
+                  }
+            }
+          >
+            <Icon name="close" size={iconSize} appearance={disabled ? 'disabled' : undefined} className={iconClass} />
+          </div>
         )}
       </div>
     </div>

@@ -150,6 +150,10 @@
   --accent4-shadow: rgba(130, 201, 30, 0.16);
   --inverse-shadow: rgba(31, 31, 31, 0.16);
 
+  /* Focus */
+  --primary-focus: var(--primary-dark);
+  --inverse-focus: var(--night);
+
   /* Text colors */
   --text: var(--night);
   --text-subtle: var(--night-lighter);
@@ -1021,7 +1025,7 @@ body {
 }
 
 .Badge--accent1 {
-  background: var(--accent1);
+  background: var(--accent1-dark);
   color: var(--white);
 }
 
@@ -4557,7 +4561,7 @@ body {
 
 .InlineMessage-text--warning,
 .InlineMessage-icon--warning {
-  color: var(--accent1);
+  color: var(--accent1-dark);
 }
 
 .InlineMessage-text--alert {
@@ -7455,10 +7459,10 @@ body {
   color: var(--warning-darker);
 }
 
-.Toast-close-icon--warning:focus,
-.Toast-close-icon--warning:focus-visible {
+.Toast-close-icon:focus,
+.Toast-close-icon:focus-visible {
   outline: none;
-  box-shadow: var(--shadow-spread) rgba(183, 135, 7, 0.16);
+  box-shadow: var(--shadow-spread) var(--inverse-focus);
 }
 
 .Toast-close-icon--warning:hover,
@@ -7466,32 +7470,14 @@ body {
   background: var(--warning-dark);
 }
 
-.Toast-close-icon--success:focus,
-.Toast-close-icon--success:focus-visible {
-  outline: none;
-  box-shadow: var(--shadow-spread) rgba(34, 121, 52, 0.16);
-}
-
 .Toast-close-icon--success:hover,
 .Toast-close-icon--success:active {
   background: var(--success-dark);
 }
 
-.Toast-close-icon--info:focus,
-.Toast-close-icon--info:focus-visible {
-  outline: none;
-  box-shadow: var(--shadow-spread) rgba(0, 80, 159, 0.16);
-}
-
 .Toast-close-icon--info:hover,
 .Toast-close-icon--info:active {
   background: var(--primary-dark);
-}
-
-.Toast-close-icon--alert:focus,
-.Toast-close-icon--alert:focus-visible {
-  outline: none;
-  box-shadow: var(--shadow-spread) rgba(156, 40, 40, 0.16);
 }
 
 .Toast-close-icon--alert:hover,
@@ -7533,8 +7519,17 @@ body {
   margin-right: var(--spacing);
 }
 
+.Toast-actionButton:focus {
+  outline: var(--spacing-s) solid var(--inverse-focus);
+  outline-offset: var(--spacing-s);
+}
+
 .Toast-actionButton:last-child {
   margin-right: 0;
+}
+
+.Toast-actionButton-label {
+  color: inherit;
 }
 
 .Toast-actionButton--default {
@@ -7546,10 +7541,6 @@ body {
   background: var(--inverse);
 }
 
-.Toast-actionButton--default:focus {
-  box-shadow: var(--shadow-spread) rgba(112, 112, 112, 0.16);
-}
-
 .Toast-actionButton--info {
   background: var(--primary-dark);
 }
@@ -7557,10 +7548,6 @@ body {
 .Toast-actionButton--info:hover,
 .Toast-actionButton--info:active {
   background: var(--primary-darker);
-}
-
-.Toast-actionButton--info:focus {
-  box-shadow: var(--shadow-spread) rgba(0, 80, 159, 0.16);
 }
 
 .Toast-actionButton--success {
@@ -7572,10 +7559,6 @@ body {
   background: var(--success-darker);
 }
 
-.Toast-actionButton--success:focus {
-  box-shadow: var(--shadow-spread) rgba(34, 121, 52, 0.16);
-}
-
 .Toast-actionButton--alert {
   background: var(--alert-dark);
 }
@@ -7585,21 +7568,15 @@ body {
   background: var(--alert-darker);
 }
 
-.Toast-actionButton--alert:focus {
-  box-shadow: var(--shadow-spread) var(--alert-shadow);
-}
-
 .Toast-actionButton--warning {
   background: var(--warning-dark);
+  color: var(--text);
 }
 
 .Toast-actionButton--warning:hover,
 .Toast-actionButton--warning:active {
   background: var(--warning-darker);
-}
-
-.Toast-actionButton--warning:focus {
-  box-shadow: var(--shadow-spread) var(--warning-shadow);
+  color: var(--text-white);
 }
 
 .Tooltip {

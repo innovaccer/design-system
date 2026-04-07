@@ -49,7 +49,6 @@
   background-color: var(--secondary-lightest);
 }
 
-.Listbox-item--option:focus,
 .Listbox-item--option:focus-visible {
   outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: calc(-1 * var(--border-width-05));
@@ -60,14 +59,25 @@
 }
 
 .Listbox-item--selected {
+  position: relative;
   background: color-mod(var(--primary-lightest) a(var(--opacity-12)));
+}
+
+.Listbox-item--selected::before {
+  content: '';
+  position: absolute;
+  top: var(--spacing-10);
+  left: var(--spacing-10);
+  width: var(--spacing-20);
+  height: var(--spacing-20);
+  background-color: var(--primary);
+  clip-path: polygon(0 0, 100% 0, 0 100%);
 }
 
 .Listbox-item--selected:hover {
   background: color-mod(var(--primary-lighter) a(var(--opacity-12)));
 }
 
-.Listbox-item--selected:focus,
 .Listbox-item--selected:focus-visible {
   outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: calc(-1 * var(--border-width-05));
@@ -87,7 +97,6 @@
   background-color: var(--secondary-lightest);
 }
 
-.Listbox-item--resource:focus,
 .Listbox-item--resource:focus-visible {
   outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: calc(-1 * var(--border-width-05));
@@ -98,12 +107,23 @@
 }
 
 .Listbox-item--activated {
+  position: relative;
   background: var(--primary-lightest);
+}
+
+.Listbox-item--activated::before {
+  content: '';
+  position: absolute;
+  top: var(--spacing-10);
+  left: var(--spacing-10);
+  width: var(--spacing-20);
+  height: var(--spacing-20);
+  background-color: var(--primary);
+  clip-path: polygon(0 0, 100% 0, 0 100%);
 }
 
 /* Listbox type - description  */
 
-.Listbox-item--description:focus,
 .Listbox-item--description:focus-visible {
   outline: none;
 }
@@ -117,7 +137,7 @@
 
 /* Listbox type - draggable  */
 
-.Listbox-item--draggable:focus {
+.Listbox-item--draggable:focus-visible {
   outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: calc(-1 * var(--border-width-05));
 }

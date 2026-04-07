@@ -56,7 +56,13 @@ export const FileUploaderList = (props: FileUploaderListProps) => {
   if (fileList.length === 0) return null;
 
   return (
-    <div {...baseProps} className={FileListClass} data-test="DesignSystem-FileUploader--List">
+    <div
+      {...baseProps}
+      className={FileListClass}
+      data-test="DesignSystem-FileUploader--List"
+      aria-live="polite"
+      aria-atomic="false"
+    >
       {fileList.map((fileName, i) => (
         <FileUploaderItem key={i} onDelete={onDelete} onRetry={onRetry} onClick={onClick} {...fileName} />
       ))}

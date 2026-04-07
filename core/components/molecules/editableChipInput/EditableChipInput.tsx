@@ -29,7 +29,8 @@ export interface EditableChipInputProps extends BaseProps {
    */
   disableSaveAction?: boolean;
   /**
-   * Props to be used for `ChipInput`
+   * Props for the inner `ChipInput`. Omits `placeholder`, `value`, and `defaultValue` (set by this component).
+   * If `autoFocus` is omitted, it defaults to `true` when edit mode opens so the field can be typed into immediately; pass `false` to opt out.
    */
   chipInputOptions: Omit<ChipInputProps, 'placeholder' | 'value' | 'defaultValue'>;
   /**
@@ -49,7 +50,13 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
     'aria-label': ariaLabel,
   } = props;
 
-  const { onChange: onChipInputChange, chipOptions = {}, ...rest } = chipInputOptions;
+  const {
+    onChange: onChipInputChange,
+    chipOptions = {},
+    autoFocus: autoFocusOption,
+    disabled: chipInputDisabled,
+    ...rest
+  } = chipInputOptions;
   const { onClick, ...chipObject } = chipOptions;
 
   const [inputValue, setInputValue] = React.useState(props.value);
@@ -81,7 +88,12 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
   const defaultClasses = classNames({
     [styles['EditableChipInput-default']]: !isWithChips,
     [styles['EditableChipInput-defaultWithChips']]: isWithChips,
+    [styles['EditableChipInput-default--small']]: !isWithChips && size === 'small',
+    [styles['EditableChipInput-defaultWithChips--small']]: isWithChips && size === 'small',
   });
+
+  const chipMarginClass =
+    size === 'small' ? styles['EditableChipInput-chip--small'] : styles['EditableChipInput-chip--regular'];
 
   const inputClass = classNames({
     [styles['EditableChipInput-chipInput']]: true,
@@ -119,6 +131,21 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
     }
   };
 
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (chipInputDisabled) return;
+    if (!showComponent && (event.key === 'Enter' || event.key === ' ')) {
+      if (event.currentTarget !== event.target) return;
+      event.preventDefault();
+      if (event.repeat) return;
+      onChangeHandler('edit');
+    }
+  };
+
+  const handleClick = () => {
+    if (chipInputDisabled || showComponent) return;
+    onChangeHandler('edit');
+  };
+
   const onChipDelete = (index: number) => {
     if (value) {
       const updatedValue = [...value];
@@ -142,7 +169,7 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
             name={val}
             label={val}
             size={size}
-            className="my-2 mx-2"
+            className={chipMarginClass}
             {...chipObject}
             onClose={() => onChipDelete(index)}
             onClick={() => onClick && onClick(val, index)}
@@ -150,7 +177,14 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
         );
       });
     }
-    return <Text className="pt-1">{placeholder}</Text>;
+    return (
+      <Text
+        className={size === 'small' ? styles['EditableChipInput-placeholder--small'] : 'pt-1'}
+        size={size === 'small' ? 'small' : 'regular'}
+      >
+        {placeholder}
+      </Text>
+    );
   };
 
   const renderChildren = () => {
@@ -163,7 +197,9 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
             onChange={onChipInputChangeHandler}
             value={inputValue}
             size={size}
+            disabled={chipInputDisabled}
             chipOptions={chipOptions}
+            autoFocus={autoFocusOption ?? true}
             {...rest}
             className={inputClass}
           />
@@ -176,6 +212,14 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
       </div>
     );
   };
+
+  const ariaLabel = (props as any)['aria-label'];
+  const hasChips = inputValue && inputValue.length > 0;
+  const computedAriaLabel =
+    ariaLabel ||
+    (hasChips
+      ? `Click to edit. Current chips: ${inputValue.join(', ')}`
+      : `Click to edit. ${placeholder || 'Chip input'}`);
 
   return (
     <div className={classes} data-test="DesignSystem-EditableChipInput" {...baseProps}>
@@ -197,7 +241,9 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
             onClick={() => {
               setDefaultComponent(value);
             }}
-          />
+          >
+            Cancel
+          </Button>
           <Button
             data-test="DesignSystem-EditableChipInput--SaveButton"
             icon="check"
@@ -206,7 +252,9 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
             size="tiny"
             disabled={disableSaveAction}
             onClick={onSaveChanges}
-          />
+          >
+            Save
+          </Button>
         </div>
       )}
     </div>
