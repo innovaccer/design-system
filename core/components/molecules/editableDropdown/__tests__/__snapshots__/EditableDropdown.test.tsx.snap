@@ -5,8 +5,11 @@ exports[`EditableDropdown component
  1`] = `
 <DocumentFragment>
   <div
+    aria-label="Click to edit. "
     class="EditableDropdown"
     data-test="DesignSystem-EditableDropdown"
+    role="button"
+    tabindex="0"
   >
     <div
       class="Editable"
@@ -14,8 +17,6 @@ exports[`EditableDropdown component
     >
       <div
         data-test="DesignSystem-EditableWrapper"
-        role="button"
-        tabindex="0"
       >
         <div
           class="Dropdown d-none"
@@ -49,7 +50,22 @@ exports[`EditableDropdown component
         <div
           class="EditableDropdown-default"
           data-test="DesignSystem-EditableDropdown--Default"
-        />
+        >
+          <div
+            class="EditableDropdown-wrapper"
+          >
+            <span
+              class="EditableDropdown-text EditableDropdown-text--subtle"
+            />
+          </div>
+          <i
+            class="material-symbols material-symbols-rounded Icon Icon--default EditableDropdown-icon"
+            data-test="DesignSystem-Icon"
+            style="font-size: 16px; width: 16px;"
+          >
+            keyboard_arrow_down
+          </i>
+        </div>
       </div>
     </div>
   </div>

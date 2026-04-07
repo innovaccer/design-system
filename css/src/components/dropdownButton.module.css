@@ -56,6 +56,9 @@
 
 .DropdownButton:focus-visible {
   background-color: var(--secondary-light);
+  box-shadow: none;
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-05);
 }
 
 .DropdownButton:active,
