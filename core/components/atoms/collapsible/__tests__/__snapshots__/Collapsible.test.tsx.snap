@@ -24,6 +24,8 @@ exports[`Collapsible component
           </div>
         </div>
         <div
+          aria-expanded="false"
+          aria-label="Expand panel"
           class="Collapsible-footer"
           data-test="DesignSystem-Collapsible--Footer"
           role="button"
@@ -67,6 +69,8 @@ exports[`Collapsible component
           </div>
         </div>
         <div
+          aria-expanded="false"
+          aria-label="Expand panel"
           class="Collapsible-footer"
           data-test="DesignSystem-Collapsible--Footer"
           role="button"
@@ -111,6 +115,8 @@ exports[`Collapsible component
           </div>
         </div>
         <div
+          aria-expanded="true"
+          aria-label="Collapse panel"
           class="Collapsible-footer"
           data-test="DesignSystem-Collapsible--Footer"
           role="button"
@@ -155,6 +161,8 @@ exports[`Collapsible component
           </div>
         </div>
         <div
+          aria-expanded="true"
+          aria-label="Collapse panel"
           class="Collapsible-footer"
           data-test="DesignSystem-Collapsible--Footer"
           role="button"
