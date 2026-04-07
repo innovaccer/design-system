@@ -99,8 +99,8 @@ describe('MultiSlider handle aria-labels', () => {
   it('renders custom aria-labels when provided', () => {
     const { getAllByRole } = render(
       <MultiSlider min={0} max={10} stepSize={1}>
-        <MultiSlider.Handle value={2} ariaLabel="Start price" />
-        <MultiSlider.Handle value={8} ariaLabel="End price" />
+        <MultiSlider.Handle value={2} aria-label="Start price" />
+        <MultiSlider.Handle value={8} aria-label="End price" />
       </MultiSlider>
     );
     const sliders = getAllByRole('slider');
