@@ -208,12 +208,45 @@ describe('AvatarSelection component', () => {
 
     expect(getByTestId('DesignSystem-AvatarSelection--TriggerAvatar').textContent).toMatch(`+${extraAvatar}`);
   });
+
+  it('marks popover list avatars as decorative', () => {
+    const { getByTestId, getAllByTestId } = render(<AvatarSelection list={list} max={3} withSearch={true} />);
+
+    const trigger = getByTestId('DesignSystem-AvatarSelection--TriggerAvatar');
+    fireEvent.click(trigger);
+
+    const optionList = getAllByTestId('DesignSystem-AvatarSelection--Option');
+    optionList.forEach((option) => {
+      const avatarElement = option.querySelector('[data-test="DesignSystem-Avatar"]');
+      expect(avatarElement).toHaveAttribute('role', 'presentation');
+      expect(avatarElement).toHaveAttribute('aria-hidden', 'true');
+      expect(avatarElement).toHaveAttribute('tabindex', '-1');
+    });
+  });
 });
 
 describe('AvatarSelection component with overwrite class', () => {
   it('overwrite Avatar class', () => {
     const { getByTestId } = render(<AvatarSelection className="AvatarSelectionClass" list={list} />);
     expect(getByTestId('DesignSystem-AvatarSelection')).toHaveClass('AvatarSelectionClass');
+  });
+
+  it('has group semantics on root wrapper', () => {
+    const { getByTestId } = render(<AvatarSelection list={list} />);
+    expect(getByTestId('DesignSystem-AvatarSelection')).toHaveAttribute('role', 'group');
+  });
+
+  it('supports aria-label and aria-labelledby on root wrapper', () => {
+    const { getByTestId } = render(
+      <>
+        <span id="avatar-selection-label">Selected Users</span>
+        <AvatarSelection list={list} aria-label="Assignees" aria-labelledby="avatar-selection-label" />
+      </>
+    );
+
+    const avatarSelection = getByTestId('DesignSystem-AvatarSelection');
+    expect(avatarSelection).toHaveAttribute('aria-label', 'Assignees');
+    expect(avatarSelection).toHaveAttribute('aria-labelledby', 'avatar-selection-label');
   });
 });
 
@@ -317,7 +350,7 @@ describe('AvatarSelection component with prop:withSearch', () => {
     if (searchInput) {
       fireEvent.keyDown(searchInput, { key: 'ArrowUp' });
     }
-    const optionList = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+    const optionList = getAllByTestId('DesignSystem-AvatarSelection--Option');
     expect(optionList[0]).toHaveFocus();
 
     fireEvent.keyDown(optionList[0], { key: 'ArrowUp' });
@@ -618,6 +651,26 @@ describe('AvatarSelection component with prop:size and selected state outline', 
     const selectedAvatar = getAllByTestId('DesignSystem-AvatarSelection--Avatar')[0];
     expect(selectedAvatar).toHaveClass('SelectionAvatarGroup-item--selected');
     expect(selectedAvatar).not.toHaveClass('SelectionAvatarGroup-item--selected-regular');
+  });
+});
+
+describe('AvatarSelection component with size based spacing', () => {
+  it('applies tiny spacing class on selected avatars and count trigger', () => {
+    const { getAllByTestId, getByTestId } = render(<AvatarSelection list={list} size="tiny" max={3} />);
+    const avatars = getAllByTestId('DesignSystem-AvatarSelection--Avatar');
+    const countAvatar = getByTestId('DesignSystem-AvatarSelection--TriggerAvatar');
+
+    expect(avatars[0]).toHaveClass('SelectionAvatarGroup-item--tiny');
+    expect(countAvatar).toHaveClass('SelectionAvatarGroup-item--tiny');
+  });
+
+  it('applies micro spacing class on selected avatars and count trigger', () => {
+    const { getAllByTestId, getByTestId } = render(<AvatarSelection list={list} size="micro" max={3} />);
+    const avatars = getAllByTestId('DesignSystem-AvatarSelection--Avatar');
+    const countAvatar = getByTestId('DesignSystem-AvatarSelection--TriggerAvatar');
+
+    expect(avatars[0]).toHaveClass('SelectionAvatarGroup-item--micro');
+    expect(countAvatar).toHaveClass('SelectionAvatarGroup-item--micro');
   });
 });
 

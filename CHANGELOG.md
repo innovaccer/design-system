@@ -1,3 +1,154 @@
+## 4.22.0 (2026-03-30)
+
+### Highlights
+
+- feat(colors): introduced primitive color scale tokens.
+- Extended WCAG 2.2 AA accessibility coverage across Table, FileList, Breadcrumbs, Pagination, ProgressRing, Modal, Calendar, Tooltip, Slider, and Avatar; 
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(Table): add aria-labels to column filter and menu icon buttons (e56f9a4d6)
+- feat(fileList): enhance accessibility with aria-labels for file items (fd42fdbab)
+- feat(breadcrumbs): enhance accessibility by adding aria-labels and changing div to nav (293c1be80)
+- feat(pagination): add aria-labels for accessibility on pagination buttons (0e3897481)
+- feat(progressRing): add accessibility attributes for progress indication (5169b0b8e)
+- feat(modal): add aria-label for close button to improve accessibility (66f22a52a)
+- feat(a11y): add accessibility prop table (159bcebfc)
+- feat(calendar): add keyboard navigation (730dd9339)
+- feat(tooltip): close tooltip on Escape key for WCAG (48aee979d)
+- feat(slider): improve keyboard navigation and story updates (7233a83c0)
+- feat(avatar): add accessibility support in avatar family components (040a32c00)
+- feat(tokens): introduce primitive color scale and update palette (339e8d307)
+
+### Fixes
+
+- fix(combobox): update multiselect clear icon to match Input clear icon pattern (3d48abbb7)
+- fix(chatInput): update focus state to outline-based ring per design spec (a5309c8d8)
+- fix(chipInput): update focus ring to outline-based style, remove error halo (040f94e1f)
+- fix(button): revert focus ring to primary-focus, keep inverse-focus only for toast (bfd4fca54)
+- fix(colors): replace hardcoded colors with design tokens and update focus styles (5b3677350)
+- fix(table): update infinite scroll fetch rows issue (03855578a)
+- fix(button): remove blend mode from outlined variants (9364aa673)
+
+### Improvements
+
+- chore: fix synk vulnerability badge link (12e3ae1f4)
+- chore: add mkdirp dependencies for docs site (135834ae8)
+
+---
+
+## 4.21.0 (2026-03-19)
+
+### Highlights
+
+- feat: add accessibility in design system components based on WCAG 2.2 AA guidelines
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(slider): add keyboard navigation (0e88dab18)
+- feat(stepper): keyboard accessibility — Arrow navigation, Home/End (8c3c67b48)
+- feat(chip): update action icon button in chip component (ddc4dc716)
+- feat(select): add wrap behavior story (7f9aec6b9)
+- feat(VerticalNav): add Tree View keyboard accessibility (WAI-ARIA) (14def7ce5)
+- feat(chatInput): fixed the bg color on hover to fix placeholder contrast issue (e6d709f44)
+- feat(verticalNav): enhance focus and active states for menu items (c983af292)
+- feat(calendar): update calendar colors for WCAG 2.2 compliance (817f71c25)
+- feat(stories): add a11y props in all component stories (1c84fdc52)
+- feat(chip): add ally props in chip family components (cf1f72971)
+- feat(styles): update focus states across multiple components to use consistent outline styling (500957700)
+- feat(select): update touchpoint of action icon button (8c0d3bc62)
+- feat(editableInput): update space key behavior (2a10d98b6)
+- feat(input): update focus state for input component (6bfa7abe0)
+- feat(input): update touchpoint area for icon in input component (e296a098c)
+- feat(tabs): update touchpoint area for icon in tabs component (7c773595c)
+- feat(AIChip): update focus ring to outline-based style (1ad88257b)
+- feat(textarea): update focus styles to use outline-based focus ring (bb815bb3e)
+- feat(metricInput): update focus style for metricInput (910096c2b)
+- feat(chip): updated focus states for chips and updated with new outline and background colors (ae4d60ebc)
+- feat(modal): add a11y (92e118fa6)
+- feat(verticalNav): add a11y support in vertical nav (6da6a6e10)
+- feat(horizontalNav): add a11y support in horizontal nav (77bbe047d)
+- feat(tabs): update a11y for tabs component (23d820fa9, abf9bccd4)
+- feat(modal): add aria-labelledBy prop in modal component (c8efaa73e)
+- feat(tabs): updated focus and tab click handler (30b800282)
+- feat(sidesheet): add focus trap support in sidesheet component (456df25eb)
+- feat(horizontalNav): update focus states for horizontal navigation (5b8607c79)
+- feat(listbox): update focus outlines for Listbox items to improve accessibility (e293273cb)
+- feat(modal): add focus trap support in modal component (1445837fa)
+- feat(switch): enhance focus and existing states with outlines and border adjustments (a10d42af4)
+- feat(link): enhance focus state for Link (0e0baa513)
+- feat(linkButton): update focus styles for LinkButton (116dcf924)
+- feat(ai button): updated focus styles for ai buttons (1840940ce)
+- feat(AI Response): made accessibility changes to AI Response Component (b1b2b36a7)
+
+### Fixes
+
+- fix(docs): update wcag a11y images in docs (607d58c09)
+- fix(select): fixes custom trigger story in select (47901c265)
+- fix(chip): update selected chip states visually (ca2d7af71)
+- fix(patterns): fixed a11y issues in patterns example (e7cc0273d)
+- fix(link): update border styles for default and subtle link states (b3574c909)
+- fix(checkbox, radio): gap between label and radio, checkbox interactive (d86404727)
+- fix(icons): prevent role/tabIndex to non-interactive icons to avoid nested controls (dc8ad26a5)
+- fix(patterns): update patterns stories with a11y issues (fda590a69)
+- fix(dropzone): keyboard accessibility improvements (b33dbd385)
+- fix(switch,selectionCard): keyboard accessibility improvements (78193e55d)
+- fix(segmentedControl): update border style for improved visual consistency (a721a8c61)
+
+### Improvements
+
+- style(stepper): add stroke to the activated and activated completed state (fda7b585a)
+- style(horizontalNav): update states visually for improving accessibility (2b28ebb76)
+- style(button): enhance box-shadow for selected button states on focus and active (16027e831)
+- style(button): update box-shadow for selected active button states (7115dd870)
+- style: update hexcode with color tokens (52f2a4d13)
+- refactor: remove design token usage rules file (7d40eee00)
+- chore(deps-dev): bump svgo from 2.8.0 to 2.8.2 (4f8dba124)
+- chore(deps-dev): bump minimatch from 3.1.2 to 3.1.5 (4d064aa84)
+- chore(deps-dev): bump rollup from 2.79.2 to 2.80.0 (dde5b8c3b)
+
+### Documentation
+
+- docs(linkButton): add a11y guidelines for link button (e092dafe2)
+- chore(images): add an accessibility tab in Input and a guideline (cd2b298e5)
+- feat(inputs): add 'Accessibility' tab to inputs documentation and guidelines (8d5973d45)
+- feat(linkButton): add Accessibility tab to usage documentation and a guideline inside it (5f38dc9c8)
+- feat(icons): add 'Accessibility' tab to icon usage documentation and a guideline for accessibility (edc440eb4)
+- feat(select): add Accessibility tab to usage documentation and a guideline (653fde909)
+- feat(radio): add Accessibility tab to radio usage documentation and a guidline inside it (fd9ed4c8e)
+- feat(badges): add Accessibility tab to badges usage documentation and a guideline for accessibility (55a0ff9fb)
+- feat(links): add Accessibility tab to links usage documentation and a guideline inside it (c2cce3ecc)
+- feat(chips): add Accessibility tab to usage documentation and a guideline inside it (3a6f036c8)
+- feat(usage): add Accessibility tab to inline editable fields documentation and a guideline inside it (0138cddfa)
+- feat(breadcrumbs): add Accessibility tab to usage documentation and a guideline inside (7296f92a0)
+- feat(checkbox): add 'Accessibility' tab to usage documentation and an error guideline (789fceb26)
+
+---
+
 ## 4.20.0 (2026-02-24)
 
 ### Highlights

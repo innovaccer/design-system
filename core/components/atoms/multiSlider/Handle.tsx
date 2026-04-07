@@ -17,6 +17,7 @@ export interface InternalHandleProps extends HandleProps {
   disabled?: boolean;
   isCurrentLabelHovered?: boolean;
   label: string;
+  labelId?: string;
   max: number;
   min: number;
   stepSize: number;
@@ -28,12 +29,14 @@ export interface InternalHandleProps extends HandleProps {
 export interface HandleState {
   isHandleMoving?: boolean;
   isHandleHovered?: boolean;
+  isHandleFocused?: boolean;
 }
 
 export class Handle extends React.Component<InternalHandleProps, HandleState> {
   state = {
     isHandleMoving: false,
     isHandleHovered: false,
+    isHandleFocused: false,
   };
 
   handleElement: HTMLElement | null = null;
@@ -56,7 +59,7 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
   };
 
   clientToValue = (clientPixel: number) => {
-    const { stepSize, tickSize, value } = this.props;
+    const { tickSize, value } = this.props;
     if (this.handleElement == null) {
       return value;
     }
@@ -70,7 +73,7 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
       return value;
     }
 
-    return value + Math.round(pixelDelta / (tickSize * stepSize)) * stepSize;
+    return value + pixelDelta / tickSize;
   };
 
   changeValue = (newValue: number, callback = this.props.onChange, isDirectionalUpdate = false) => {
@@ -266,11 +269,23 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
     });
   };
 
-  render() {
-    const { min, tickSizeRatio, value, disabled, label, isCurrentLabelHovered } = this.props;
-    const { isHandleMoving, isHandleHovered } = this.state;
+  handleFocus = () => {
+    this.setState({
+      isHandleFocused: true,
+    });
+  };
 
-    const showTootlip = isHandleMoving || isHandleHovered || isCurrentLabelHovered;
+  handleBlur = () => {
+    this.setState({
+      isHandleFocused: false,
+    });
+  };
+
+  render() {
+    const { min, tickSizeRatio, value, disabled, label, labelId, isCurrentLabelHovered } = this.props;
+    const { isHandleMoving, isHandleHovered, isHandleFocused } = this.state;
+
+    const showTootlip = isHandleMoving || isHandleHovered || isHandleFocused || isCurrentLabelHovered;
 
     const { handleMidpoint } = this.getHandleMidpointAndOffset(this.handleElement, true);
     const offsetRatio = (value - min) * tickSizeRatio;
@@ -295,9 +310,9 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
         <div
           className={className}
           onMouseOver={this.handleMouseOver}
-          onFocus={this.handleMouseOver}
+          onFocus={this.handleFocus}
           onMouseLeave={this.handleMouseLeave}
-          onBlur={this.handleMouseLeave}
+          onBlur={this.handleBlur}
           onMouseDown={this.beginHandleMovement}
           onKeyDown={this.handleKeyDown}
           onKeyUp={this.handleKeyUp}
@@ -310,6 +325,7 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
           aria-valuemax={this.props.max}
           aria-valuenow={value}
           aria-valuetext={label}
+          aria-labelledby={labelId}
           aria-disabled={disabled || undefined}
         />
         {/* eslint-enable  */}

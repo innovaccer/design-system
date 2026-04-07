@@ -316,6 +316,30 @@ describe('Stepper component keyboard accessibility', () => {
     expect(stepNodes[3]).toHaveAttribute('tabIndex', '-1');
   });
 
+  it('each step has an aria-label with step number and label', () => {
+    const active = 1;
+    const completed = 0;
+    const { getAllByTestId } = render(<Stepper steps={steps} active={active} completed={completed} />);
+    const stepNodes = getAllByTestId('DesignSystem-Step');
+
+    expect(stepNodes[0]).toHaveAttribute('aria-label', 'Step 1: Step A, completed');
+    expect(stepNodes[1]).toHaveAttribute('aria-label', 'Step 2: Step B, current');
+    expect(stepNodes[2]).toHaveAttribute('aria-label', 'Step 3: Step C');
+    expect(stepNodes[3]).toHaveAttribute('aria-label', 'Step 4: Step D');
+  });
+
+  it('generates fallback aria-label when label is empty', () => {
+    const emptySteps = [
+      { label: '', value: 'v1' },
+      { label: 'Step B', value: 'v2' },
+    ];
+    const { getAllByTestId } = render(<Stepper steps={emptySteps} active={0} completed={-1} />);
+    const stepNodes = getAllByTestId('DesignSystem-Step');
+
+    expect(stepNodes[0]).toHaveAttribute('aria-label', 'Step 1: Step 1, current');
+    expect(stepNodes[1]).toHaveAttribute('aria-label', 'Step 2: Step B');
+  });
+
   it('calls preventDefault on ArrowLeft and ArrowRight at boundaries to prevent scroll', () => {
     const active = 0;
     const completed = 3;

@@ -14,6 +14,11 @@
 
 .AvatarGroup-item--tiny {
   height: var(--spacing-60);
+  margin-right: 0;
+}
+
+.AvatarGroup-item--micro {
+  margin-right: var(--spacing-10);
 }
 
 .AvatarGroup-Popper {
@@ -35,10 +40,20 @@
   align-items: center;
 }
 
-.AvatarCount-wrapper:focus,
 .AvatarCount-wrapper:focus-visible {
-  outline: 3px solid var(--primary-shadow);
-  outline-offset: 3px;
+  outline: none;
+}
+
+.AvatarCount-wrapper:focus-visible::after {
+  content: '';
+  position: absolute;
+  top: calc(-1 * var(--spacing-20));
+  bottom: calc(-1 * var(--spacing-20));
+  left: calc(-1 * var(--spacing-10));
+  right: calc(-1 * var(--spacing-10));
+  border: var(--border-width-05) solid var(--primary-focus);
+  border-radius: var(--border-radius-10);
+  pointer-events: none;
 }
 
 .AvatarGroup-inputWrapper {

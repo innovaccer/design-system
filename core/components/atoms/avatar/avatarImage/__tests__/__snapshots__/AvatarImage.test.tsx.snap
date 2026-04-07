@@ -15,7 +15,7 @@ Object {
           class="PopperWrapper-trigger flex-grow-0"
         >
           <span
-            class=""
+            class="Avatar-wrapper"
             data-test="DesignSystem-AvatarWrapper"
           >
             <span
@@ -26,7 +26,7 @@ Object {
               tabindex="0"
             >
               <img
-                alt="John"
+                alt=""
                 data-test="DesignSystem-Image"
                 height="32"
                 src="https://design.innovaccer.com/images/withoutType.png"
@@ -42,7 +42,7 @@ Object {
         class="position-relative d-inline-flex"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -53,6 +53,7 @@ Object {
             tabindex="0"
           >
             <img
+              alt=""
               data-test="DesignSystem-Image"
               height="32"
               src="https://design.innovaccer.com/images/withoutType.png"
@@ -68,7 +69,7 @@ Object {
       class="position-relative d-inline-flex"
     >
       <span
-        class=""
+        class="Avatar-wrapper"
         data-test="DesignSystem-AvatarWrapper"
       >
         <span
@@ -79,6 +80,7 @@ Object {
           tabindex="0"
         >
           <img
+            alt=""
             data-test="DesignSystem-Image"
             height="32"
             src="https://design.innovaccer.com/images/withoutType.png"
@@ -153,7 +155,7 @@ Object {
         class="position-relative d-inline-flex"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -188,7 +190,7 @@ Object {
       class="position-relative d-inline-flex"
     >
       <span
-        class=""
+        class="Avatar-wrapper"
         data-test="DesignSystem-AvatarWrapper"
       >
         <span

@@ -9,4 +9,15 @@ export const all = () => {
 export default {
   title: 'Components/Progress Indicators/Spinner/All',
   component: Spinner,
+  parameters: {
+    docs: {
+      docPage: {
+        a11yProps: `
+**aria-label:** Use \`aria-label\` to describe the loading action for screen readers (e.g. \`aria-label="Loading patient records"\`). Defaults to \`"Loading"\`.
+
+**aria-labelledby:** Use \`aria-labelledby\` to reference the ID of an existing visible element that labels the spinner. When provided, \`aria-label\` is suppressed.
+        `,
+      },
+    },
+  },
 };

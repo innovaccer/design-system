@@ -10,6 +10,7 @@ Object {
       <div
         class="AvatarGroup d-inline-flex"
         data-test="DesignSystem-AvatarGroup"
+        role="group"
       >
         <div
           class="AvatarGroup-item AvatarGroup-item--regular"
@@ -24,7 +25,7 @@ Object {
               class="PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -59,7 +60,7 @@ Object {
               class="PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -88,6 +89,7 @@ Object {
     <div
       class="AvatarGroup d-inline-flex"
       data-test="DesignSystem-AvatarGroup"
+      role="group"
     >
       <div
         class="AvatarGroup-item AvatarGroup-item--regular"
@@ -102,7 +104,7 @@ Object {
             class="PopperWrapper-trigger flex-grow-0"
           >
             <span
-              class=""
+              class="Avatar-wrapper"
               data-test="DesignSystem-AvatarWrapper"
             >
               <span
@@ -137,7 +139,7 @@ Object {
             class="PopperWrapper-trigger flex-grow-0"
           >
             <span
-              class=""
+              class="Avatar-wrapper"
               data-test="DesignSystem-AvatarWrapper"
             >
               <span
@@ -225,6 +227,7 @@ Object {
       <div
         class="AvatarGroup d-inline-flex"
         data-test="DesignSystem-AvatarGroup"
+        role="group"
       >
         <div
           class="AvatarGroup-item AvatarGroup-item--regular"
@@ -239,7 +242,7 @@ Object {
               class="PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -274,7 +277,7 @@ Object {
               class="PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -303,6 +306,7 @@ Object {
     <div
       class="AvatarGroup d-inline-flex"
       data-test="DesignSystem-AvatarGroup"
+      role="group"
     >
       <div
         class="AvatarGroup-item AvatarGroup-item--regular"
@@ -317,7 +321,7 @@ Object {
             class="PopperWrapper-trigger flex-grow-0"
           >
             <span
-              class=""
+              class="Avatar-wrapper"
               data-test="DesignSystem-AvatarWrapper"
             >
               <span
@@ -352,7 +356,7 @@ Object {
             class="PopperWrapper-trigger flex-grow-0"
           >
             <span
-              class=""
+              class="Avatar-wrapper"
               data-test="DesignSystem-AvatarWrapper"
             >
               <span
@@ -440,6 +444,7 @@ Object {
       <div
         class="AvatarGroup d-inline-flex"
         data-test="DesignSystem-AvatarGroup"
+        role="group"
       >
         <div
           class="AvatarGroup-item AvatarGroup-item--tiny"
@@ -454,7 +459,7 @@ Object {
               class="PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -489,7 +494,7 @@ Object {
               class="PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -518,6 +523,7 @@ Object {
     <div
       class="AvatarGroup d-inline-flex"
       data-test="DesignSystem-AvatarGroup"
+      role="group"
     >
       <div
         class="AvatarGroup-item AvatarGroup-item--tiny"
@@ -532,7 +538,7 @@ Object {
             class="PopperWrapper-trigger flex-grow-0"
           >
             <span
-              class=""
+              class="Avatar-wrapper"
               data-test="DesignSystem-AvatarWrapper"
             >
               <span
@@ -567,7 +573,7 @@ Object {
             class="PopperWrapper-trigger flex-grow-0"
           >
             <span
-              class=""
+              class="Avatar-wrapper"
               data-test="DesignSystem-AvatarWrapper"
             >
               <span
@@ -655,6 +661,7 @@ Object {
       <div
         class="AvatarGroup d-inline-flex"
         data-test="DesignSystem-AvatarGroup"
+        role="group"
       >
         <div
           class="AvatarGroup-item AvatarGroup-item--tiny"
@@ -669,7 +676,7 @@ Object {
               class="PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -704,7 +711,7 @@ Object {
               class="PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class=""
+                class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
@@ -733,6 +740,7 @@ Object {
     <div
       class="AvatarGroup d-inline-flex"
       data-test="DesignSystem-AvatarGroup"
+      role="group"
     >
       <div
         class="AvatarGroup-item AvatarGroup-item--tiny"
@@ -747,7 +755,7 @@ Object {
             class="PopperWrapper-trigger flex-grow-0"
           >
             <span
-              class=""
+              class="Avatar-wrapper"
               data-test="DesignSystem-AvatarWrapper"
             >
               <span
@@ -782,7 +790,7 @@ Object {
             class="PopperWrapper-trigger flex-grow-0"
           >
             <span
-              class=""
+              class="Avatar-wrapper"
               data-test="DesignSystem-AvatarWrapper"
             >
               <span

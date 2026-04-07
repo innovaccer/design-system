@@ -300,6 +300,7 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
                     <Button
                       icon="close"
                       appearance="transparent"
+                      aria-label="Close"
                       data-test="DesignSystem-FullscreenModal--CloseButton"
                       onClick={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
                         if (onClose) onClose(event, 'IconClick');

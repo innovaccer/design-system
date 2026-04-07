@@ -1,4 +1,5 @@
 import React from 'react';
+import { getAllFocusableElements } from '@/utils/overlayHelper';
 
 export const handleKeyDown = (
   event: React.KeyboardEvent,
@@ -29,18 +30,18 @@ export const focusListItem = (
   setFocusedOption?: React.Dispatch<React.SetStateAction<HTMLElement | undefined>>,
   listRef?: any
 ) => {
-  const listItems = listRef.current?.querySelectorAll('[data-test="DesignSystem-Listbox-ItemWrapper"]');
-  let targetOption;
+  const container = listRef?.current as HTMLElement | undefined;
+  if (!container) return;
 
-  if (position === 'down') {
-    targetOption = listItems?.[0];
-  } else {
-    targetOption = listItems[listItems.length - 1];
-  }
-  (targetOption as HTMLElement)?.focus();
+  // Match `navigateOptions` in combobox/utils.tsx: focus `[role="option"]` hosts, not the inner row
+  // wrapper. Otherwise the first ArrowDown from an option hits index -1 and re-focuses the first element again.
+  const options = getAllFocusableElements(container, 'listbox');
+  if (options.length === 0) return;
 
-  if (targetOption && typeof targetOption.scrollIntoView === 'function') {
-    (targetOption as HTMLElement)?.scrollIntoView({ block: 'center', behavior: 'smooth' });
+  const targetOption = position === 'down' ? options[0] : options[options.length - 1];
+  targetOption.focus({ preventScroll: true });
+  if (typeof targetOption.scrollIntoView === 'function') {
+    targetOption.scrollIntoView({ block: 'center', behavior: 'smooth' });
   }
-  setFocusedOption && setFocusedOption(targetOption);
+  setFocusedOption?.(targetOption);
 };

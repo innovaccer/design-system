@@ -26,19 +26,6 @@
   flex-wrap: wrap;
 }
 
-.AIResponse-button {
-  opacity: var(--opacity-12);
-}
-
-.AIResponse-box:hover .AIResponse-button,
-.AIResponse-box--glow:hover .AIResponse-button {
-  opacity: 1;
-}
-
-.AIResponse-button--selected {
-  opacity: 1;
-}
-
 .AIResponse-metaData {
   margin-left: calc(var(--spacing-80) + var(--spacing-20));
 }
