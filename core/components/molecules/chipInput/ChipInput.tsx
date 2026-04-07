@@ -3,7 +3,6 @@ import classNames from 'classnames';
 import { Button, Chip } from '@/index';
 import { ChipProps } from '@/index.type';
 import { BaseProps, extractBaseProps } from '@/utils/types';
-import { isSpaceKey } from '@/accessibility/utils';
 import styles from '@css/components/chipInput.module.css';
 import inputStyles from '@css/components/input.module.css';
 import { ChipInputBorderFocusRegion, getChipInputBorderFocusRegion } from './utils';
@@ -190,12 +189,6 @@ export const ChipInput = (props: ChipInputProps) => {
   const iconWrapperClass = classNames({
     [inputStyles['Input-icon']]: true,
     [inputStyles['Input-iconWrapper--right']]: true,
-  });
-
-  const iconClass = classNames({
-    [inputStyles['Input-icon--right']]: !disabled,
-    ['p-3-5']: size === 'small',
-    ['p-3']: size === 'regular',
   });
 
   const onUpdateChips = (updatedChips: string[]) => {
