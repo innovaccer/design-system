@@ -2,10 +2,63 @@
   width: 100%;
 }
 
+.EditableDropdown:focus-visible {
+  outline: none;
+}
+
 .EditableDropdown-default {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   box-sizing: border-box;
   height: var(--spacing-80);
   padding-left: var(--spacing-30);
+  padding-right: var(--spacing-20);
+  border-radius: var(--border-radius-10);
+  transition: var(--duration--fast-01) var(--standard-productive-curve);
+  cursor: pointer;
+  border: var(--border-width-2-5) solid transparent;
+}
+
+.EditableDropdown-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  align-items: center;
+}
+
+.EditableDropdown-text {
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--text);
+  font-size: var(--font-size);
+  line-height: var(--font-height);
+  font-weight: var(--font-weight-normal);
+}
+
+.EditableDropdown-text--subtle {
+  color: var(--text-subtle);
+}
+
+.EditableDropdown-icon {
+  visibility: hidden;
+}
+
+.EditableDropdown-default:hover .EditableDropdown-icon,
+.EditableDropdown:focus-visible .EditableDropdown-icon {
+  visibility: visible;
+}
+
+.EditableDropdown-default:hover {
+  background: var(--secondary);
+}
+
+.EditableDropdown:focus-visible .EditableDropdown-default {
+  background: var(--secondary-light);
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-05);
+  border-radius: var(--border-radius-10);
 }

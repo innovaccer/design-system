@@ -160,8 +160,7 @@
   background: var(--secondary);
 }
 
-.Chip--input:focus-visible,
-.Chip--input:focus {
+.Chip--input:focus-visible {
   outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: var(--spacing-05);
 }
@@ -178,7 +177,8 @@
 }
 
 .Chip-icon--right:focus-visible {
-  outline: var(--spacing-05) solid var(--primary-focus);
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-05);
 }
 
 .Chip-icon--right:hover {
@@ -198,7 +198,8 @@
 }
 
 .Chip-icon--selected:focus-visible {
-  outline: var(--spacing-05) solid var(--primary-focus);
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-05);
 }
 
 .Chip-icon--selected:hover {
