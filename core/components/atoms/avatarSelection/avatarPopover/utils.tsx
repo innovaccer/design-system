@@ -39,6 +39,8 @@ const handleEnterKey = (focusedOption: Element | undefined) => {
   (focusedOption as HTMLElement)?.click();
 };
 
+const AVATAR_SELECTION_OPTION_SELECTOR = '[data-test="DesignSystem-AvatarSelection--Option"]';
+
 const navigateOptions = (
   direction: string,
   focusedOption: Element | undefined,
@@ -46,7 +48,11 @@ const navigateOptions = (
   listRef?: any,
   withSearch?: boolean
 ) => {
-  const listItems = listRef?.current.querySelectorAll('[data-test="DesignSystem-Listbox-ItemWrapper"]');
+  const listItems = listRef?.current?.querySelectorAll(AVATAR_SELECTION_OPTION_SELECTOR);
+  if (!listItems?.length) {
+    return;
+  }
+
   let index = Array.from(listItems).findIndex((item) => {
     return item == focusedOption;
   });
@@ -57,17 +63,17 @@ const navigateOptions = (
     (withSearch && index === 0 && direction === 'up') ||
     (withSearch && index === listItems.length - 1 && direction === 'down')
   ) {
-    const searchInput = listRef.current.querySelector('[data-test="DesignSystem-AvatarSelection--Input"]');
-    searchInput.focus();
-    setFocusedOption && setFocusedOption(searchInput);
+    const searchInput = listRef.current?.querySelector('[data-test="DesignSystem-AvatarSelection--Input"]');
+    (searchInput as HTMLElement | undefined)?.focus();
+    setFocusedOption && setFocusedOption(searchInput as HTMLElement | undefined);
   } else {
     index = direction === 'up' ? (index - 1 + listItems.length) % listItems.length : (index + 1) % listItems.length;
 
-    const targetOption = listItems[index];
+    const targetOption = listItems[index] as HTMLElement | undefined;
 
-    (targetOption as HTMLElement).focus();
+    targetOption?.focus();
     setFocusedOption && setFocusedOption(targetOption);
-    targetOption.scrollIntoView({ block: 'center' });
+    targetOption?.scrollIntoView?.({ block: 'center' });
   }
 };
 
@@ -78,17 +84,17 @@ export const handleInputKeyDown = (
   setOpenPopover?: React.Dispatch<React.SetStateAction<boolean>>,
   triggerRef?: any
 ) => {
-  const listItems = listRef.current?.querySelectorAll('[data-test="DesignSystem-Listbox-ItemWrapper"]');
-  let targetOption;
+  const listItems = listRef.current?.querySelectorAll(AVATAR_SELECTION_OPTION_SELECTOR);
+  let targetOption: Element | undefined;
 
   switch (event.key) {
     case 'ArrowUp':
       event.preventDefault();
-      targetOption = listItems[listItems.length - 1];
+      targetOption = listItems?.length ? listItems[listItems.length - 1] : undefined;
       break;
     case 'ArrowDown':
       event.preventDefault();
-      targetOption = listItems[0];
+      targetOption = listItems?.length ? listItems[0] : undefined;
       break;
     case 'Escape':
       setOpenPopover?.(false);
