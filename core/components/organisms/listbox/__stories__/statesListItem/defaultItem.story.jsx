@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Listbox, Card, Heading, Text, Icon } from '@/index';
+import { Listbox, Card, Heading, Text } from '@/index';
 import { ListboxItem } from '../../listboxItem';
 
 export const defaultItem = () => {
