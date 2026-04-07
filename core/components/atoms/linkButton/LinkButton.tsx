@@ -40,7 +40,7 @@ export interface LinkButtonProps extends BaseProps, BaseHtmlProps<HTMLButtonElem
   /**
    * Text to be added inside `Button`
    */
-  children: React.ReactText;
+  children?: React.ReactText;
   /**
    * Specifies tab index of `Button`
    * @default 0
@@ -99,6 +99,7 @@ export const LinkButton = React.forwardRef<HTMLButtonElement, LinkButtonProps>((
       disabled={disabled}
       tabIndex={tabIndex}
       {...rest}
+      aria-label={rest['aria-label'] || (!children && icon ? icon : undefined)}
     >
       <>
         {icon && (

@@ -4,6 +4,7 @@ import { Listbox } from '@/index';
 import { BaseProps } from '@/utils/types';
 import { OptionType } from '@/common.type';
 import { handleKeyDown } from './utils';
+import { resolveListboxOptionFromEvent } from '../listbox/utils';
 
 type ItemTagType = 'li' | 'div';
 
@@ -47,7 +48,7 @@ export interface ComboboxOptionProps extends BaseProps {
 }
 
 export const ComboboxOption = (props: ComboboxOptionProps) => {
-  const { children, option, onClick, ...rest } = props;
+  const { children, option, onClick, onFocus, onBlur, ...rest } = props;
 
   const contextProp = React.useContext(ComboboxContext);
 
@@ -64,12 +65,20 @@ export const ComboboxOption = (props: ComboboxOptionProps) => {
     listRef,
   } = contextProp;
 
-  const onClickHandler = () => {
+  const onClickHandler = (e: React.MouseEvent) => {
+    const optionEl = resolveListboxOptionFromEvent(e, e.currentTarget as HTMLElement);
+    setFocusedOption?.(optionEl);
     if (onClick) {
       return onClick(option);
     }
 
     return onOptionClick && onOptionClick({ ...option, isSelectedOption: true });
+  };
+
+  const handleFocus = (event: React.FocusEvent) => {
+    const optionEl = resolveListboxOptionFromEvent(event, event.currentTarget as HTMLElement);
+    setFocusedOption?.(optionEl);
+    onFocus?.(event);
   };
 
   const onKeyDownHandler = (event: React.KeyboardEvent) => {
@@ -88,13 +97,15 @@ export const ComboboxOption = (props: ComboboxOptionProps) => {
 
   return (
     <Listbox.Item
+      {...rest}
       onClick={onClickHandler}
       selected={option.label === inputValue?.label}
+      onFocus={handleFocus}
+      onBlur={onBlur}
       onKeyDown={onKeyDownHandler}
       tabIndex={-1}
       role="option"
       data-test="DesignSystem-Combobox-Option"
-      {...rest}
     >
       {children}
     </Listbox.Item>

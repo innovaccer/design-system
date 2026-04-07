@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { Text, Label } from '@/index';
 import Handle, { HandleProps } from './Handle';
+import uidGenerator from '@/utils/uidGenerator';
 import {
   approxEqual,
   formatPercentage,
@@ -87,6 +88,7 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
 
   handleElements: Handle[] = [];
   trackElement: HTMLElement | null = null;
+  labelId = `slider-label-${uidGenerator()}`;
 
   constructor(props: InternalMultiSliderProps) {
     super(props);
@@ -308,6 +310,7 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
           value={value}
           isCurrentLabelHovered={isCurrentLabelHovered}
           ariaLabel={ariaLabel || `Slider handle ${index + 1} on ${this.formatLabel(value)}`}
+          labelId={this.props.label ? this.labelId : undefined}
         />
       );
     });
@@ -373,7 +376,11 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
           {/* eslint-enable  */}
           <span className={SliderTicksClass} />
           {labelRenderer !== false && (
-            <Text size="small" appearance={disabled ? 'disabled' : active ? 'default' : 'subtle'}>
+            <Text
+              size="small"
+              appearance={disabled ? 'disabled' : active ? 'default' : 'subtle'}
+              weight={!disabled && active ? 'strong' : undefined}
+            >
               {this.formatLabel(i)}
             </Text>
           )}
@@ -451,7 +458,11 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
 
     return (
       <div {...baseProps} className={SliderClass} data-test="DesignSystem-MultiSlider">
-        {label && <Label withInput={true}>{label}</Label>}
+        {label && (
+          <Label withInput={true} id={this.labelId}>
+            {label}
+          </Label>
+        )}
         <div className={WrapperClass}>
           {/* TODO(a11y): fix accessibility  */}
           {/* eslint-disable */}

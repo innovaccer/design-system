@@ -22,6 +22,7 @@ export interface InternalHandleProps extends HandleProps {
   disabled?: boolean;
   isCurrentLabelHovered?: boolean;
   label: string;
+  labelId?: string;
   max: number;
   min: number;
   stepSize: number;
@@ -289,7 +290,7 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
   };
 
   render() {
-    const { min, tickSizeRatio, value, disabled, label, isCurrentLabelHovered } = this.props;
+    const { min, tickSizeRatio, value, disabled, label, labelId, isCurrentLabelHovered } = this.props;
     const { isHandleMoving, isHandleHovered, isHandleFocused } = this.state;
 
     const showTootlip = isHandleMoving || isHandleHovered || isHandleFocused || isCurrentLabelHovered;
@@ -332,6 +333,7 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
           aria-valuemax={this.props.max}
           aria-valuenow={value}
           aria-valuetext={label}
+          aria-labelledby={labelId}
           aria-disabled={disabled || undefined}
           aria-label={this.props.ariaLabel}
         />

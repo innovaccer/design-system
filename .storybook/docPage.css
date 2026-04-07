@@ -62,3 +62,98 @@ table.docblock-argstable tbody {
   box-shadow: none !important;
   border-top: var(--border-width-2-5) solid var(--secondary-light);
 }
+
+/* Accessibility Prop Table */
+.a11y-prop-table-wrapper {
+  border: 1px solid var(--secondary-light);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.a11y-prop-table-trigger {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 12px 16px;
+  background: var(--secondary-lightest, #f4f4f4);
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s ease;
+}
+
+.a11y-prop-table-trigger:hover {
+  background: var(--secondary-lighter, #ebebeb);
+}
+
+.a11y-prop-table-trigger:focus-visible {
+  outline: 2px solid var(--primary, #0070d2);
+  outline-offset: -2px;
+}
+
+table.a11y-prop-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 0;
+  border-style: none;
+  box-shadow: none;
+  margin: 0;
+  border-top: 1px solid var(--secondary-light);
+}
+
+.a11y-prop-table-head th {
+  text-align: left;
+  padding: 10px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--inverse-lighter, #666);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: var(--secondary-lightest, #f4f4f4);
+  border-bottom: 1px solid var(--secondary-light);
+}
+
+.a11y-prop-table-body tr {
+  border-bottom: 1px solid var(--secondary-light);
+}
+
+.a11y-prop-table-body tr:last-child {
+  border-bottom: none;
+}
+
+.a11y-prop-table-body td {
+  padding: 10px 16px;
+  font-size: 13px;
+  vertical-align: top;
+  color: var(--inverse, #333);
+}
+
+td.a11y-prop-name code {
+  color: var(--primary-dark, #0054B6);
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+td.a11y-prop-type code {
+  color: var(--inverse-lighter, #666);
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 11px;
+  background: var(--secondary-lightest, #f4f4f4);
+  padding: 2px 6px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+td.a11y-prop-description {
+  color: var(--inverse-light, #555);
+  line-height: 1.5;
+  max-width: 400px;
+}
+
+td.a11y-prop-default code {
+  color: var(--inverse-lighter, #666);
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 12px;
+}

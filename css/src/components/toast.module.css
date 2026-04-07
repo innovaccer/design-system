@@ -55,6 +55,8 @@
   padding-left: var(--spacing-10);
   height: var(--spacing-60);
   box-sizing: initial;
+  background: transparent;
+  border: none;
 }
 
 .Toast-icon--info,
@@ -68,10 +70,17 @@
   color: var(--warning-darker);
 }
 
-.Toast-close-icon--warning:focus,
-.Toast-close-icon--warning:focus-visible {
+.Toast-closeButton {
+  background: transparent;
+  border: none;
+  color: inherit;
+  padding: 0;
+}
+
+.Toast-close-icon:focus,
+.Toast-close-icon:focus-visible {
   outline: none;
-  box-shadow: var(--shadow-spread) color-mod(var(--warning-dark) a(var(--opacity-4)));
+  box-shadow: var(--shadow-spread) var(--inverse-focus);
 }
 
 .Toast-close-icon--warning:hover,
@@ -79,32 +88,14 @@
   background: var(--warning-dark);
 }
 
-.Toast-close-icon--success:focus,
-.Toast-close-icon--success:focus-visible {
-  outline: none;
-  box-shadow: var(--shadow-spread) color-mod(var(--success-dark) a(var(--opacity-4)));
-}
-
 .Toast-close-icon--success:hover,
 .Toast-close-icon--success:active {
   background: var(--success-dark);
 }
 
-.Toast-close-icon--info:focus,
-.Toast-close-icon--info:focus-visible {
-  outline: none;
-  box-shadow: var(--shadow-spread) color-mod(var(--primary-dark) a(var(--opacity-4)));
-}
-
 .Toast-close-icon--info:hover,
 .Toast-close-icon--info:active {
   background: var(--primary-dark);
-}
-
-.Toast-close-icon--alert:focus,
-.Toast-close-icon--alert:focus-visible {
-  outline: none;
-  box-shadow: var(--shadow-spread) color-mod(var(--alert-dark) a(var(--opacity-4)));
 }
 
 .Toast-close-icon--alert:hover,
@@ -146,8 +137,17 @@
   margin-right: var(--spacing-20);
 }
 
+.Toast-actionButton:focus {
+  outline: var(--border-width-05) solid var(--inverse-focus);
+  outline-offset: var(--spacing-05);
+}
+
 .Toast-actionButton:last-child {
   margin-right: 0;
+}
+
+.Toast-actionButton-label {
+  color: inherit;
 }
 
 .Toast-actionButton--default {
@@ -159,10 +159,6 @@
   background: var(--inverse);
 }
 
-.Toast-actionButton--default:focus {
-  box-shadow: var(--shadow-spread) color-mod(var(--inverse-lighter) a(var(--opacity-4)));
-}
-
 .Toast-actionButton--info {
   background: var(--primary-dark);
 }
@@ -170,10 +166,6 @@
 .Toast-actionButton--info:hover,
 .Toast-actionButton--info:active {
   background: var(--primary-darker);
-}
-
-.Toast-actionButton--info:focus {
-  box-shadow: var(--shadow-spread) color-mod(var(--primary-dark) a(var(--opacity-4)));
 }
 
 .Toast-actionButton--success {
@@ -185,10 +177,6 @@
   background: var(--success-darker);
 }
 
-.Toast-actionButton--success:focus {
-  box-shadow: var(--shadow-spread) color-mod(var(--success-dark) a(var(--opacity-4)));
-}
-
 .Toast-actionButton--alert {
   background: var(--alert-dark);
 }
@@ -198,19 +186,13 @@
   background: var(--alert-darker);
 }
 
-.Toast-actionButton--alert:focus {
-  box-shadow: var(--shadow-spread) var(--alert-shadow);
-}
-
 .Toast-actionButton--warning {
   background: var(--warning-dark);
+  color: var(--text);
 }
 
 .Toast-actionButton--warning:hover,
 .Toast-actionButton--warning:active {
   background: var(--warning-darker);
-}
-
-.Toast-actionButton--warning:focus {
-  box-shadow: var(--shadow-spread) var(--warning-shadow);
+  color: var(--text-white);
 }
