@@ -389,6 +389,67 @@ describe('Modal focus trap', () => {
     expect(modalContainer).toHaveAttribute('tabindex', '-1');
   });
 
+  it('focuses container (not body children) when no header is present but body has focusable elements', async () => {
+    const { getByTestId } = render(
+      <Modal open={true} onClose={jest.fn()}>
+        <Button data-test="body-btn">Action</Button>
+      </Modal>
+    );
+
+    await flushRAF();
+
+    const modalContainer = getByTestId('DesignSystem-Modal');
+    expect(document.activeElement).toBe(modalContainer);
+    expect(modalContainer).toHaveAttribute('tabindex', '-1');
+  });
+
+  it('focuses dialog container when aria-labelledby is set but no headerOptions (no matching heading in DOM)', async () => {
+    const { getByTestId } = render(
+      <Modal
+        open={true}
+        onClose={jest.fn()}
+        aria-labelledby="modal-a11y-heading"
+        footer={
+          <>
+            <Button appearance="basic">Basic</Button>
+            <Button appearance="primary">Primary</Button>
+          </>
+        }
+      >
+        <Text>Modal Body</Text>
+      </Modal>
+    );
+
+    await flushRAF();
+
+    const modalContainer = getByTestId('DesignSystem-Modal');
+    expect(document.activeElement).toBe(modalContainer);
+    expect(modalContainer).toHaveAttribute('tabindex', '-1');
+  });
+
+  it('legacy ModalFooter open={open}: OverlayFooter focuses last secondary button (known limitation — use headerOptions + footer props for correct focus management)', async () => {
+    const { getByTestId } = render(
+      <Modal open={true} onClose={jest.fn()} aria-labelledby="legacy-heading">
+        <ModalHeader heading="Heading" headingId="legacy-heading" onClose={jest.fn()} />
+        <ModalBody>
+          <Text>Body</Text>
+        </ModalBody>
+        <ModalFooter open={true}>
+          <Button appearance="basic" data-test="basic-btn">
+            Cancel
+          </Button>
+          <Button appearance="primary">Confirm</Button>
+        </ModalFooter>
+      </Modal>
+    );
+
+    await flushRAF();
+    await flushRAF();
+
+    const cancelButton = getByTestId('basic-btn');
+    expect(document.activeElement).toBe(cancelButton);
+  });
+
   it('prevents Tab from escaping content-only modal', async () => {
     const { getByTestId } = render(
       <Modal open={true} onClose={jest.fn()}>
