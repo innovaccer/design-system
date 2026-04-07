@@ -313,7 +313,16 @@ export const ChipInput = (props: ChipInputProps) => {
       onBlurCapture={handleBorderFocusOut}
     >
       <div data-test="DesignSystem-ChipInput" {...baseProps} className={ChipInputClass}>
-        <div className={styles['ChipInput-wrapper']} ref={customRef}>
+        {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
+        <div
+          className={styles['ChipInput-wrapper']}
+          ref={customRef}
+          onClick={(e) => {
+            if (e.target === e.currentTarget) {
+              inputRef.current?.focus();
+            }
+          }}
+        >
           {chips && chips.length > 0 && chipComponents}
           <input
             data-test="DesignSystem-ChipInput--Input"

@@ -201,6 +201,14 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
     );
   };
 
+  const ariaLabel = (props as any)['aria-label'];
+  const hasChips = inputValue && inputValue.length > 0;
+  const computedAriaLabel =
+    ariaLabel ||
+    (hasChips
+      ? `Click to edit. Current chips: ${inputValue.join(', ')}`
+      : `Click to edit. ${placeholder || 'Chip input'}`);
+
   return (
     <div
       className={classes}
@@ -211,6 +219,7 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
       role={showComponent ? undefined : 'button'}
       tabIndex={chipInputDisabled ? -1 : showComponent ? -1 : 0}
       aria-disabled={chipInputDisabled || undefined}
+      aria-label={showComponent ? undefined : computedAriaLabel}
     >
       <Editable onChange={onChangeHandler} editing={showComponent}>
         {renderChildren()}

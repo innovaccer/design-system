@@ -5,6 +5,7 @@ exports[`EditableChipInput component
  1`] = `
 <DocumentFragment>
   <div
+    aria-label="Click to edit. Current chips: Chip1, Chip2"
     class="EditableChipInput"
     data-test="DesignSystem-EditableChipInput"
     role="button"
@@ -99,6 +100,7 @@ exports[`EditableChipInput component
  1`] = `
 <DocumentFragment>
   <div
+    aria-label="Click to edit. Current chips: Chip1, Chip2"
     class="EditableChipInput"
     data-test="DesignSystem-EditableChipInput"
     role="button"
@@ -193,6 +195,7 @@ exports[`EditableChipInput component
  1`] = `
 <DocumentFragment>
   <div
+    aria-label="Click to edit. Current chips: Chip1, Chip2"
     class="EditableChipInput"
     data-test="DesignSystem-EditableChipInput"
     role="button"
@@ -287,6 +290,7 @@ exports[`EditableChipInput component
  1`] = `
 <DocumentFragment>
   <div
+    aria-label="Click to edit. Current chips: Chip1, Chip2"
     class="EditableChipInput"
     data-test="DesignSystem-EditableChipInput"
     role="button"
@@ -381,6 +385,7 @@ exports[`EditableChipInput component
  1`] = `
 <DocumentFragment>
   <div
+    aria-label="Click to edit. Current chips: Chip1, Chip2"
     class="EditableChipInput"
     data-test="DesignSystem-EditableChipInput"
     role="button"
@@ -475,6 +480,7 @@ exports[`EditableChipInput component
  1`] = `
 <DocumentFragment>
   <div
+    aria-label="Click to edit. Current chips: Chip1, Chip2"
     class="EditableChipInput"
     data-test="DesignSystem-EditableChipInput"
     role="button"
