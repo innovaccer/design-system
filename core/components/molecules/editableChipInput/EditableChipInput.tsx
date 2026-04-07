@@ -32,10 +32,22 @@ export interface EditableChipInputProps extends BaseProps {
    * Props to be used for `ChipInput`
    */
   chipInputOptions: Omit<ChipInputProps, 'placeholder' | 'value' | 'defaultValue'>;
+  /**
+   * Accessible label for the edit trigger button
+   */
+  'aria-label'?: string;
 }
 
 export const EditableChipInput = (props: EditableChipInputProps) => {
-  const { placeholder, onChange, className, disableSaveAction, chipInputOptions, size = 'regular' } = props;
+  const {
+    placeholder,
+    onChange,
+    className,
+    disableSaveAction,
+    chipInputOptions,
+    size = 'regular',
+    'aria-label': ariaLabel,
+  } = props;
 
   const { onChange: onChipInputChange, chipOptions = {}, ...rest } = chipInputOptions;
   const { onClick, ...chipObject } = chipOptions;
@@ -167,7 +179,11 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
 
   return (
     <div className={classes} data-test="DesignSystem-EditableChipInput" {...baseProps}>
-      <Editable onChange={onChangeHandler} editing={showComponent} aria-label={placeholder || 'Edit chips'}>
+      <Editable
+        onChange={onChangeHandler}
+        editing={showComponent}
+        aria-label={ariaLabel || placeholder || 'Edit chips'}
+      >
         {renderChildren()}
       </Editable>
       {showComponent && (
