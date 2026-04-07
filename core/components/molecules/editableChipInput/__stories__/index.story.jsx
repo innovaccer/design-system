@@ -81,6 +81,7 @@ export default {
     docs: {
       docPage: {
         customCode,
+        a11yProps: `Use \`aria-label\` on \`EditableChipInput\` to provide an accessible name for the edit trigger button when no visible label is present.`,
       },
     },
   },
