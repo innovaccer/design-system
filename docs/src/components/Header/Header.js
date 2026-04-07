@@ -19,7 +19,7 @@ const Header = ({ relativePagePath }) => {
   const itemRefs = useRef([]);
   const allItems = useHeaderItems();
   const [visibleCount, setVisibleCount] = useState(Infinity);
-  const [measured, setMeasured] = useState(false);
+  const [measured, setMeasured] = useState(true);
   const [moreOpen, setMoreOpen] = useState(false);
   const moreRef = useRef(null);
 
@@ -100,18 +100,28 @@ const Header = ({ relativePagePath }) => {
     let usedWidth = 0;
     let count = 0;
 
+    // First pass: try to fit all items without reserving More button space
     for (let i = 0; i < cachedWidths.current.length; i++) {
       const itemWidth = cachedWidths.current[i];
       if (!itemWidth) continue;
       const tentative = usedWidth + itemWidth;
-
-      if (i < navItems.length - 1) {
-        if (tentative + MORE_BTN_WIDTH > availableWidth) break;
-      } else {
-        if (tentative > availableWidth) break;
-      }
+      if (tentative > availableWidth) break;
       usedWidth = tentative;
       count++;
+    }
+
+    // Second pass: if overflow is detected, re-calculate with More button space reserved
+    if (count < navItems.length) {
+      usedWidth = 0;
+      count = 0;
+      for (let i = 0; i < cachedWidths.current.length; i++) {
+        const itemWidth = cachedWidths.current[i];
+        if (!itemWidth) continue;
+        const tentative = usedWidth + itemWidth;
+        if (tentative + MORE_BTN_WIDTH > availableWidth) break;
+        usedWidth = tentative;
+        count++;
+      }
     }
 
     setVisibleCount(count);
@@ -157,6 +167,12 @@ const Header = ({ relativePagePath }) => {
 
   const visibleItems = navItems.slice(0, visibleCount);
   const overflowItems = navItems.slice(visibleCount);
+
+  useEffect(() => {
+    if (overflowItems.length === 0 && moreOpen) {
+      setMoreOpen(false);
+    }
+  }, [overflowItems.length, moreOpen]);
 
   return (
     <div id="mainHeader" ref={headerRef} className="header bg-light d-flex w-100 position-sticky px-5">
