@@ -33,6 +33,7 @@ exports[`Menu component snapshot
     <div
       class="Menu"
       data-test="DesignSystem-Menu-Wrapper"
+      id="menu-Test-uid"
       role="menu"
       style="max-height: 256px;"
     >
@@ -42,14 +43,13 @@ exports[`Menu component snapshot
       >
         <a
           class="Listbox-item-wrapper"
-          data-test="DesignSystem-Menu-ListItem"
-          role="menuitem"
-          tabindex="-1"
+          data-test="DesignSystem-Listbox-Item"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--compressed Listbox-item--option Menu-Item"
-            data-test="DesignSystem-Listbox-ItemWrapper"
-            role="tablist"
+            data-test="DesignSystem-Menu-ListItem"
+            role="menuitem"
             tabindex="-1"
           >
             Menu Item 1
@@ -57,14 +57,13 @@ exports[`Menu component snapshot
         </a>
         <a
           class="Listbox-item-wrapper"
-          data-test="DesignSystem-Menu-ListItem"
-          role="menuitem"
-          tabindex="-1"
+          data-test="DesignSystem-Listbox-Item"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--compressed Listbox-item--option Menu-Item"
-            data-test="DesignSystem-Listbox-ItemWrapper"
-            role="tablist"
+            data-test="DesignSystem-Menu-ListItem"
+            role="menuitem"
             tabindex="-1"
           >
             Menu Item 2
@@ -109,6 +108,7 @@ exports[`Menu component with Nesting snapshot
     <div
       class="Menu"
       data-test="DesignSystem-Menu-Wrapper"
+      id="menu-Test-uid"
       role="menu"
       style="max-height: 256px;"
     >
@@ -118,14 +118,13 @@ exports[`Menu component with Nesting snapshot
       >
         <a
           class="Listbox-item-wrapper"
-          data-test="DesignSystem-Menu-ListItem"
-          role="menuitem"
-          tabindex="-1"
+          data-test="DesignSystem-Listbox-Item"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--compressed Listbox-item--option Menu-Item"
-            data-test="DesignSystem-Listbox-ItemWrapper"
-            role="tablist"
+            data-test="DesignSystem-Menu-ListItem"
+            role="menuitem"
             tabindex="-1"
           >
             Menu Item 1
@@ -133,14 +132,13 @@ exports[`Menu component with Nesting snapshot
         </a>
         <a
           class="Listbox-item-wrapper"
-          data-test="DesignSystem-Menu-ListItem"
-          role="menuitem"
-          tabindex="-1"
+          data-test="DesignSystem-Listbox-Item"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--compressed Listbox-item--option Menu-Item"
-            data-test="DesignSystem-Listbox-ItemWrapper"
-            role="tablist"
+            data-test="DesignSystem-Menu-ListItem"
+            role="menuitem"
             tabindex="-1"
           >
             Menu Item 2
@@ -151,19 +149,18 @@ exports[`Menu component with Nesting snapshot
           class="PopperWrapper-trigger"
         >
           <a
-            aria-controls="DesignSystem-Menu--Popover-Test-uid"
-            aria-expanded="false"
-            aria-haspopup="menu"
             class="Listbox-item-wrapper"
-            data-test="DesignSystem-Menu-ListItem"
-            id="DesignSystem-Menu--Trigger-Test-uid"
-            role="menuitem"
-            tabindex="-1"
+            data-test="DesignSystem-Listbox-Item"
+            role="presentation"
           >
             <div
+              aria-controls="DesignSystem-Menu--Popover-Test-uid"
+              aria-expanded="false"
+              aria-haspopup="menu"
               class="Listbox-item Listbox-item--compressed Listbox-item--option Menu-Item d-flex align-items-center justify-content-between w-100"
-              data-test="DesignSystem-Listbox-ItemWrapper"
-              role="tablist"
+              data-test="DesignSystem-Menu-ListItem"
+              id="DesignSystem-Menu--Trigger-Test-uid"
+              role="menuitem"
               tabindex="-1"
             >
               Menu Item 3
@@ -193,6 +190,7 @@ exports[`Menu component with Trigger snapshot
       class="PopperWrapper-trigger"
     >
       <button
+        aria-controls="menu-Test-uid"
         aria-expanded="false"
         aria-haspopup="true"
         aria-label="Open menu"
@@ -228,6 +226,7 @@ exports[`Menu component with Trigger snapshot
       class="PopperWrapper-trigger"
     >
       <button
+        aria-controls="menu-Test-uid"
         aria-expanded="true"
         aria-haspopup="true"
         aria-label="Open menu"
@@ -260,6 +259,7 @@ exports[`Menu component with Trigger snapshot
     <div
       class="Menu"
       data-test="DesignSystem-Menu-Wrapper"
+      id="menu-Test-uid"
       role="menu"
       style="max-height: 256px;"
     >
@@ -269,14 +269,13 @@ exports[`Menu component with Trigger snapshot
       >
         <a
           class="Listbox-item-wrapper"
-          data-test="DesignSystem-Menu-ListItem"
-          role="menuitem"
-          tabindex="-1"
+          data-test="DesignSystem-Listbox-Item"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--compressed Listbox-item--option Menu-Item"
-            data-test="DesignSystem-Listbox-ItemWrapper"
-            role="tablist"
+            data-test="DesignSystem-Menu-ListItem"
+            role="menuitem"
             tabindex="-1"
           >
             Menu Item 1
@@ -284,14 +283,13 @@ exports[`Menu component with Trigger snapshot
         </a>
         <a
           class="Listbox-item-wrapper"
-          data-test="DesignSystem-Menu-ListItem"
-          role="menuitem"
-          tabindex="-1"
+          data-test="DesignSystem-Listbox-Item"
+          role="presentation"
         >
           <div
             class="Listbox-item Listbox-item--compressed Listbox-item--option Menu-Item"
-            data-test="DesignSystem-Listbox-ItemWrapper"
-            role="tablist"
+            data-test="DesignSystem-Menu-ListItem"
+            role="menuitem"
             tabindex="-1"
           >
             Menu Item 2

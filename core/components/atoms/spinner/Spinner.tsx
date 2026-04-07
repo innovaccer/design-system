@@ -20,10 +20,14 @@ export interface SpinnerProps extends DecorativeProps {
    * @default "Loading"
    */
   'aria-label'?: string;
+  /**
+   * ID of the element that labels the spinner
+   */
+  'aria-labelledby'?: string;
 }
 
 export const Spinner = (props: SpinnerProps) => {
-  const { appearance, size, className, 'aria-label': ariaLabel = 'Loading' } = props;
+  const { appearance, size, className, 'aria-label': ariaLabel = 'Loading', 'aria-labelledby': ariaLabelledBy } = props;
 
   const { role: roleOverride, ...restBaseProps } = extractBaseProps(props);
   const effectiveRole = roleOverride ?? 'status';
