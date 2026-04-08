@@ -224,7 +224,7 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
     const elementToFocus = this.previousActiveElement;
     this.previousActiveElement = null;
 
-    restoreFocusToElementIfConnected(elementToFocus);
+    restoreFocusToElementIfConnected(elementToFocus, this.sidesheetContentRef.current);
   };
 
   componentDidMount() {
@@ -397,6 +397,7 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
                   icon="close"
                   appearance="transparent"
                   data-test="DesignSystem-Sidesheet--CloseButton"
+                  aria-label="Close"
                   largeIcon={true}
                   onClick={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
                     if (onClose) onClose(event, 'IconClick');
