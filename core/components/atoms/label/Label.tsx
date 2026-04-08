@@ -73,7 +73,10 @@ export const Label = (props: LabelProps) => {
         'mb-3-5 mt-2': size && size === 'small',
       });
       return (
-        <span className={requiredIndicator} aria-label="required" data-test="DesignSystem-Label--RequiredIndicator" />
+        <>
+          <span className={requiredIndicator} aria-hidden="true" data-test="DesignSystem-Label--RequiredIndicator" />
+          <span className={styles['Label-srOnly']}>(required)</span>
+        </>
       );
     }
 
