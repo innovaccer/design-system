@@ -262,7 +262,6 @@ const DropdownList = (props: OptionsProps) => {
   const dropdownTriggerRef = React.createRef<HTMLButtonElement>();
   const dropdownCancelButtonRef = React.createRef<HTMLButtonElement>();
   const dropdownApplyButtonRef = React.createRef<HTMLButtonElement>();
-  /** Stable prefix so checkbox ids do not change every render (avoids unchecking / label churn when cursor moves). */
   const dropdownFieldIdsPrefixRef = React.useRef(`ds-dropdown-${uidGenerator()}`);
 
   const enableSearch = withSearch || props.async;
@@ -581,11 +580,6 @@ const DropdownList = (props: OptionsProps) => {
   };
 
   const renderOptions = (item: OptionSchema, index: number) => {
-    // const selectAllPresent = withCheckbox
-    //   && remainingOptions === 0
-    //   && searchTerm === ''
-    //   && withSelectAll;
-
     const selectAllPresent = _isSelectAllPresent(searchTerm, remainingOptions, withSelectAll, withCheckbox);
 
     const active = selectAllPresent ? index + 1 === cursor : index === cursor;
@@ -666,7 +660,7 @@ const DropdownList = (props: OptionsProps) => {
           {selected.map((option, index) => renderOptions(option, index))}
           {selected.length > 0 &&
             listOptions.length - selected.length > 0 &&
-            !listOptions[0].group?.trim() && // allItemsSectionLabel is displayed only when there are no groups
+            !listOptions[0].group?.trim() &&
             renderGroups(allItemsSectionLabel, false, true)}
           {groupedListOptions.map((option, index) => {
             const prevGroup =
@@ -869,10 +863,6 @@ const DropdownList = (props: OptionsProps) => {
   };
 
   const onPopoverKeyDown = (event: React.KeyboardEvent) => {
-    // stopPropagation is critical: React synthetic events bubble through the React
-    // component tree (not DOM tree), so even with portals the event reaches the
-    // container's onkeydown handler. Without stopping, ArrowDown/Up fires focusOption
-    // twice per keypress, causing every second option to be skipped.
     const optionClass = '.OptionWrapper';
     switch (event.key) {
       case 'ArrowDown':
@@ -1024,8 +1014,7 @@ const DropdownList = (props: OptionsProps) => {
         {...popoverOptions}
         data-test="DesignSystem-Dropdown--Popover"
       >
-        {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
-        <div onKeyDown={onPopoverKeyDown} ref={popoverContentRef}>
+        <div onKeyDown={onPopoverKeyDown} ref={popoverContentRef} role="presentation">
           {enableSearch && renderSearch()}
           {renderDropdownSection()}
           {showApplyButton && withCheckbox && renderApplyButton()}
