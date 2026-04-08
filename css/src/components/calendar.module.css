@@ -311,24 +311,6 @@
   width: var(--spacing-80);
 }
 
-.Calendar-valueWrapper--active-dummy .Calendar-value {
-  border: none;
-}
-
-.Calendar-valueWrapper--active-dummy .Calendar-value--active {
-  background: var(--primary-lighter);
-}
-
-.Calendar-valueWrapper--active-dummy .Calendar-value--active:hover {
-  background: var(--primary-light);
-  color: var(--inverse);
-}
-
-.Calendar-valueWrapper--active-dummy .Calendar-value--active:active {
-  background: var(--primary-dark);
-  color: var(--white);
-}
-
 .Calendar-valueWrapper--active-dummy .Calendar-value--startError,
 .Calendar-valueWrapper--active-dummy .Calendar-value--endError {
   background: var(--alert-lightest);
