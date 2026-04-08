@@ -154,9 +154,18 @@ export const getAllFocusableElements = (container: HTMLElement, roleHint?: strin
 
 /**
  * Handles Tab/Shift+Tab to trap focus within the container.
+ *
+ * @param staticFocusTarget - Optional non-tabbable element (tabindex="-1") that received
+ *   focus on overlay open (e.g. the dialog heading). It is not in the tabbable focusable
+ *   list, so without this parameter Shift+Tab from it would escape the trap.
+ *
  * Returns true if the event was handled (focus was redirected or prevented).
  */
-export const handleFocusTrapKeyDown = (event: KeyboardEvent, container: HTMLElement): boolean => {
+export const handleFocusTrapKeyDown = (
+  event: KeyboardEvent,
+  container: HTMLElement,
+  staticFocusTarget?: HTMLElement | null
+): boolean => {
   if (event.key !== 'Tab') return false;
 
   const focusable = getFocusableElements(container);
@@ -176,7 +185,11 @@ export const handleFocusTrapKeyDown = (event: KeyboardEvent, container: HTMLElem
   const last = focusable[focusable.length - 1];
 
   if (event.shiftKey) {
-    if (activeElement === first) {
+    const staticTargetPrecedesFirst =
+      !!staticFocusTarget &&
+      activeElement === staticFocusTarget &&
+      !!(staticFocusTarget.compareDocumentPosition(first) & Node.DOCUMENT_POSITION_FOLLOWING);
+    if (activeElement === first || staticTargetPrecedesFirst) {
       event.preventDefault();
       last.focus({ preventScroll: true });
       return true;
