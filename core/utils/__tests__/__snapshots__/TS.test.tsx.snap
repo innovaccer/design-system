@@ -1413,6 +1413,7 @@ exports[`TS renders children 1`] = `
       class="PopperWrapper-trigger w-100"
     >
       <button
+        aria-haspopup="listbox"
         class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
         data-test="DesignSystem-DropdownTrigger"
         tabindex="0"
@@ -1439,8 +1440,11 @@ exports[`TS renders children 1`] = `
     </div>
   </div>
   <div
+    aria-label="Click to edit. "
     class="EditableDropdown"
     data-test="DesignSystem-EditableDropdown"
+    role="button"
+    tabindex="0"
   >
     <div
       class="Editable"
@@ -1448,8 +1452,6 @@ exports[`TS renders children 1`] = `
     >
       <div
         data-test="DesignSystem-EditableWrapper"
-        role="button"
-        tabindex="0"
       >
         <div
           class="Dropdown d-none"
@@ -1460,6 +1462,8 @@ exports[`TS renders children 1`] = `
             class="PopperWrapper-trigger w-100"
           >
             <button
+              aria-expanded="false"
+              aria-haspopup="listbox"
               class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
               data-test="DesignSystem-DropdownTrigger"
               tabindex="0"
@@ -1482,14 +1486,30 @@ exports[`TS renders children 1`] = `
         <div
           class="EditableDropdown-default"
           data-test="DesignSystem-EditableDropdown--Default"
-        />
+        >
+          <div
+            class="EditableDropdown-wrapper"
+          >
+            <span
+              class="EditableDropdown-text EditableDropdown-text--subtle"
+            />
+          </div>
+          <i
+            class="material-symbols material-symbols-rounded Icon Icon--default EditableDropdown-icon"
+            data-test="DesignSystem-Icon"
+            style="font-size: 16px; width: 16px;"
+          >
+            keyboard_arrow_down
+          </i>
+        </div>
       </div>
     </div>
   </div>
   <div
     class="EditableInput"
     data-test="DesignSystem-EditableInput"
-    role="presentation"
+    role="button"
+    tabindex="0"
   >
     <div
       class="Editable"
@@ -1497,8 +1517,6 @@ exports[`TS renders children 1`] = `
     >
       <div
         data-test="DesignSystem-EditableWrapper"
-        role="button"
-        tabindex="0"
       >
         <div
           class="EditableInput-default EditableInput-default--regular"
@@ -3936,8 +3954,11 @@ exports[`TS renders children 1`] = `
     />
   </div>
   <div
+    aria-label="Click to edit. Chip input"
     class="EditableChipInput"
     data-test="DesignSystem-EditableChipInput"
+    role="button"
+    tabindex="0"
   >
     <div
       class="Editable"
@@ -3945,8 +3966,6 @@ exports[`TS renders children 1`] = `
     >
       <div
         data-test="DesignSystem-EditableWrapper"
-        role="button"
-        tabindex="0"
       >
         <div
           class="EditableChipInput-default"

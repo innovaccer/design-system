@@ -50,7 +50,7 @@
 .HorizontalNav-menu--active:focus {
   background-color: var(--primary-ultra-light);
   outline: var(--border-width-05) solid var(--primary-focus);
-  outline-offset: var(--spacing-05);
+  outline-offset: var(--spacing-10);
 }
 
 .HorizontalNav-menu--active:hover {
