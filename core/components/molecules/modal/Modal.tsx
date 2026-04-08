@@ -322,9 +322,9 @@ class Modal extends React.Component<ModalProps, ModalState> {
     const shouldUseAutoHeadingId = !ariaLabelledBy && !header && Boolean(headerOptions?.heading);
     const resolvedHeadingId =
       headerOptions?.headingId ||
-      // When aria-labelledby is provided explicitly and the heading comes from headerOptions,
-      // use that value as the heading's id so the reference actually resolves in the DOM.
-      (ariaLabelledBy && !header && Boolean(headerOptions?.heading) ? ariaLabelledBy : undefined) ||
+      (ariaLabelledBy && !ariaLabelledBy.includes(' ') && !header && Boolean(headerOptions?.heading)
+        ? ariaLabelledBy
+        : undefined) ||
       (shouldUseAutoHeadingId ? this.autoHeadingId : undefined);
     const resolvedAriaLabelledBy = ariaLabelledBy || resolvedHeadingId;
 

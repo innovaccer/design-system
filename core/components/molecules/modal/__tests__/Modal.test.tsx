@@ -716,6 +716,16 @@ describe('Modal focus trap', () => {
     expect(getByTestId('DesignSystem-OverlayHeader--heading')).toHaveAttribute('id', 'dialog-heading');
   });
 
+  it('does not write a multi-token aria-labelledby as heading id', () => {
+    // aria-labelledby can be a space-separated list of IDs. Writing that list as a
+    // single id attribute is invalid HTML. The heading must not receive an id in this case.
+    const { getByTestId } = render(
+      <Modal open={true} headerOptions={{ heading: 'Dialog Title' }} aria-labelledby="label-a label-b" />
+    );
+    expect(getByTestId('DesignSystem-Modal')).toHaveAttribute('aria-labelledby', 'label-a label-b');
+    expect(getByTestId('DesignSystem-OverlayHeader--heading')).not.toHaveAttribute('id');
+  });
+
   it('inner widget can stop Escape propagation to prevent modal from closing', async () => {
     const onClose = jest.fn();
     const { getByTestId } = render(

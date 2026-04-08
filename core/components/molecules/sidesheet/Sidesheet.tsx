@@ -325,7 +325,9 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
     const shouldUseAutoHeadingId = !ariaLabelledBy && !header && Boolean(headerOptions?.heading);
     const resolvedHeadingId =
       headerOptions?.headingId ||
-      (ariaLabelledBy && !header && Boolean(headerOptions?.heading) ? ariaLabelledBy : undefined) ||
+      (ariaLabelledBy && !ariaLabelledBy.includes(' ') && !header && Boolean(headerOptions?.heading)
+        ? ariaLabelledBy
+        : undefined) ||
       (shouldUseAutoHeadingId ? this.autoHeadingId : undefined);
     const resolvedAriaLabelledBy = ariaLabelledBy || resolvedHeadingId;
 
