@@ -63,7 +63,10 @@ export interface LinkProps extends BaseProps, OmitNativeProps<HTMLLinkElement, '
  */
 
 export const Link = (props: LinkProps) => {
-  const { children, className, appearance, size, disabled, ...rest } = props;
+  const { children, className, appearance, size, disabled, href, target, rel, download, hreflang, onClick, ...rest } =
+    props;
+
+  const isAnchor = !!href;
 
   const classes = classNames(
     {
@@ -71,17 +74,23 @@ export const Link = (props: LinkProps) => {
       [styles[`Link--${size}`]]: size,
       [styles[`Link--${appearance}`]]: appearance,
       [styles[`Link--${appearance}-disabled`]]: disabled,
+      [styles['Link--button-reset']]: !isAnchor,
     },
     className
   );
+
+  const elementProps = isAnchor
+    ? { componentType: 'a', href, target, rel, download, hreflang }
+    : { componentType: 'button', type: 'button', disabled };
 
   return (
     <GenericText
       data-test="DesignSystem-Link"
       className={classes}
-      componentType="a"
       tabIndex={disabled ? -1 : 0}
       aria-disabled={disabled}
+      onClick={disabled ? undefined : onClick}
+      {...elementProps}
       {...rest}
     >
       {children}

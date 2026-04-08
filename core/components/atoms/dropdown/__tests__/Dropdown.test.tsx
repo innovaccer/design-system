@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render, fireEvent, waitFor, screen } from '@testing-library/react';
+import { render, fireEvent, waitFor, screen, within } from '@testing-library/react';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { Dropdown, Text } from '@/index';
 import { DropdownProps as Props } from '@/index.type';
@@ -353,6 +353,69 @@ describe('Dropdown component', () => {
     fireEvent.mouseEnter(optionList[1]);
     expect(optionList[1]).toHaveClass('Option-checkbox--active');
   });
+
+  it('keeps checkbox checked when active option changes after selection', () => {
+    const { getByTestId, getAllByTestId } = render(
+      <Dropdown options={storyOptions} showApplyButton={true} withCheckbox={true} withSearch={false} />
+    );
+    fireEvent.click(getByTestId(trigger));
+    const rows = getAllByTestId('DesignSystem-DropdownOption--WITH_CHECKBOX');
+
+    fireEvent.click(getAllByTestId('DesignSystem-Checkbox-InputBox')[1]);
+    expect(getAllByTestId('DesignSystem-Checkbox-InputBox')[1]).toBeChecked();
+
+    fireEvent.mouseEnter(rows[3]);
+
+    expect(getAllByTestId('DesignSystem-Checkbox-InputBox')[1]).toBeChecked();
+  });
+
+  it('returns focus to the trigger when tabbing past Cancel and Apply is disabled', async () => {
+    const { getByTestId } = render(
+      <Dropdown options={storyOptions} showApplyButton={true} withCheckbox={true} withSearch={false} />
+    );
+
+    const dropdownTrigger = getByTestId(trigger);
+    fireEvent.click(dropdownTrigger);
+
+    const cancelButton = getByTestId('DesignSystem-Dropdown-CancelButton');
+    const applyButton = getByTestId('DesignSystem-Dropdown-ApplyButton');
+
+    expect(applyButton).toHaveAttribute('disabled');
+
+    cancelButton.focus();
+    fireEvent.keyDown(cancelButton, { key: 'Tab' });
+
+    await waitFor(() => {
+      expect(dropdownTrigger).toHaveFocus();
+      expect(getByTestId('DesignSystem-Popover')).toHaveAttribute('data-opened', 'false');
+    });
+  });
+
+  it('renders Select All inside the listbox', () => {
+    const { getByTestId } = render(<Dropdown options={storyOptions} withCheckbox={true} withSearch={false} />);
+    const dropdownTrigger = getByTestId(trigger);
+
+    fireEvent.click(dropdownTrigger);
+
+    const listbox = screen.getByRole('listbox');
+    expect(within(listbox).getByText('Select All')).toBeInTheDocument();
+    expect(screen.getAllByRole('option')[0]).toHaveTextContent('Select All');
+  });
+
+  it('toggles checkbox option with keyboard when option wrapper has focus', () => {
+    const { getByTestId, getAllByTestId } = render(
+      <Dropdown options={storyOptions} withCheckbox={true} withSearch={false} />
+    );
+    const dropdownTrigger = getByTestId(trigger);
+
+    fireEvent.click(dropdownTrigger);
+
+    const option = getAllByTestId('DesignSystem-DropdownOption--WITH_CHECKBOX')[0];
+    option.focus();
+    fireEvent.keyDown(option, { key: ' ' });
+
+    expect(within(option).getByTestId('DesignSystem-Checkbox-InputBox')).toHaveClass('Checkbox-input--checked');
+  });
 });
 
 describe('renders dropdown component onKeyDown Handler', () => {
@@ -504,6 +567,31 @@ describe('Dropdown component with search', () => {
     await waitFor(() => {
       expect(getAllByTestId('DesignSystem-Dropdown--errorWrapper')).toHaveLength(1);
       expect(searchInput).toBeInTheDocument();
+    });
+  });
+
+  it('selects the active search result when Enter is pressed in the search input', async () => {
+    const onChange = jest.fn();
+    const { getByTestId, getAllByTestId } = render(
+      <Dropdown options={storyOptions} withSearch={true} onChange={onChange} />
+    );
+
+    const dropdownTrigger = getByTestId(trigger);
+    fireEvent.click(dropdownTrigger);
+
+    const searchInput = getByTestId('DesignSystem-Input');
+    fireEvent.change(searchInput, { target: { value: 'Option 3' } });
+
+    await waitFor(() => {
+      const optionList = getAllByTestId('DesignSystem-DropdownOption--DEFAULT');
+      expect(optionList[0]).toHaveClass('Option--active');
+      expect(optionList[0]).toHaveTextContent('Option 3');
+    });
+
+    fireEvent.keyDown(searchInput, { key: 'Enter' });
+
+    await waitFor(() => {
+      expect(onChange).toHaveBeenCalledWith('Option 3', undefined);
     });
   });
 });
@@ -828,5 +916,53 @@ describe('Dropdown errorTemplate', () => {
       expect(getAllByTestId('DesignSystem-Text')[0].textContent).toMatch('Failed to fetch data');
       expect(getAllByTestId('DesignSystem-Text')[1].textContent).toMatch("We couldn't load the data, try reloading.");
     });
+  });
+});
+
+describe('Dropdown trigger accessibility and visual parity with Select', () => {
+  it('renders aria-haspopup="listbox" on trigger button', () => {
+    const { getByTestId } = render(<Dropdown options={storyOptions} />);
+    const dropdownTrigger = getByTestId(trigger);
+    expect(dropdownTrigger).toHaveAttribute('aria-haspopup', 'listbox');
+  });
+
+  it('renders aria-haspopup="menu" on menu trigger button', () => {
+    const { getByTestId } = render(<Dropdown options={storyOptions} menu={true} />);
+    const dropdownTrigger = getByTestId(trigger);
+    expect(dropdownTrigger).toHaveAttribute('aria-haspopup', 'menu');
+  });
+
+  it('renders aria-expanded as false when dropdown is closed', () => {
+    const { getByTestId } = render(<Dropdown options={storyOptions} />);
+    const dropdownTrigger = getByTestId(trigger);
+    expect(dropdownTrigger).not.toHaveAttribute('aria-expanded', 'true');
+  });
+
+  it('shows keyboard_arrow_up icon when dropdown is open', () => {
+    const { getByTestId } = render(<Dropdown options={storyOptions} />);
+    const dropdownTrigger = getByTestId(trigger);
+
+    // Before opening - should show down arrow
+    expect(dropdownTrigger.textContent).toContain('keyboard_arrow_down');
+
+    fireEvent.click(dropdownTrigger);
+
+    // After opening - should show up arrow
+    expect(dropdownTrigger.textContent).toContain('keyboard_arrow_up');
+  });
+
+  it('shows keyboard_arrow_down icon when dropdown is closed', () => {
+    const { getByTestId } = render(<Dropdown options={storyOptions} />);
+    const dropdownTrigger = getByTestId(trigger);
+    expect(dropdownTrigger.textContent).toContain('keyboard_arrow_down');
+  });
+
+  it('option elements have tabIndex for focus support', () => {
+    const { getByTestId, getAllByTestId } = render(<Dropdown options={storyOptions} />);
+    const dropdownTrigger = getByTestId(trigger);
+    fireEvent.click(dropdownTrigger);
+
+    const options = getAllByTestId('DesignSystem-DropdownOption--DEFAULT');
+    expect(options[0]).toHaveAttribute('tabindex', '0');
   });
 });
