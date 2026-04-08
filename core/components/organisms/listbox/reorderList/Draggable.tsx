@@ -69,6 +69,7 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
     document.removeEventListener('mousedown', this.onMouseOrTouchStart as any);
     if (this.dropTimeout) {
       window.clearTimeout(this.dropTimeout);
+      this.dropTimeout = undefined;
     }
     this.schdOnMouseMove.cancel();
     this.schdOnTouchMove.cancel();
@@ -139,6 +140,7 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
   onMouseOrTouchStart = (e: MouseEvent & TouchEvent) => {
     if (this.dropTimeout && this.state.itemDragged > -1) {
       window.clearTimeout(this.dropTimeout);
+      this.dropTimeout = undefined;
       this.finishDrop();
     }
     const isTouch = isTouchEvent(e);
@@ -368,7 +370,7 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
     document.removeEventListener('mousemove', this.schdOnMouseMove);
     document.removeEventListener('touchmove', this.schdOnTouchMove);
     document.removeEventListener('mouseup', this.schdOnEnd);
-    document.removeEventListener('touchup', this.schdOnEnd);
+    document.removeEventListener('touchend', this.schdOnEnd);
     document.removeEventListener('touchcancel', this.schdOnEnd);
 
     const removeItem = this.props.removableByMove && this.isDraggedItemOutOfBounds();
@@ -404,6 +406,7 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
   };
 
   finishDrop = () => {
+    this.dropTimeout = undefined;
     const removeItem = this.props.removableByMove && this.isDraggedItemOutOfBounds();
     if (removeItem || (this.afterIndex > -2 && this.state.itemDragged !== this.afterIndex)) {
       this.props.onChange({
@@ -450,11 +453,14 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
         ariaMessage: 'Reorder cancelled. Item returned to its original position.',
       });
       this.afterIndex = -2;
-      if (this.dropTimeout) window.clearTimeout(this.dropTimeout);
+      if (this.dropTimeout) {
+        window.clearTimeout(this.dropTimeout);
+        this.dropTimeout = undefined;
+      }
       document.removeEventListener('mousemove', this.schdOnMouseMove);
       document.removeEventListener('touchmove', this.schdOnTouchMove);
       document.removeEventListener('mouseup', this.schdOnEnd);
-      document.removeEventListener('touchup', this.schdOnEnd);
+      document.removeEventListener('touchend', this.schdOnEnd);
       document.removeEventListener('touchcancel', this.schdOnEnd);
       return;
     }
