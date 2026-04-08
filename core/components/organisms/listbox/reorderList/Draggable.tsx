@@ -16,6 +16,9 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
   lastScroll = 0;
   lastYOffset = 0;
   lastListYOffset = 0;
+  mouseDownX = 0;
+  mouseDownY = 0;
+  hasDragStarted = false;
   dropTimeout?: number;
   needle = -1;
   afterIndex = -2;
@@ -32,9 +35,6 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
     targetWidth: 0,
     scrollingSpeed: 0,
     scrollWindow: false,
-    mouseDownX: 0,
-    mouseDownY: 0,
-    hasDragStarted: false,
     isClickAndFollow: false,
     ariaMessage: '',
   };
@@ -157,11 +157,9 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
     if (!isValidDragHandle) return;
     e.preventDefault();
 
-    this.setState({
-      mouseDownX: isTouch ? e.touches[0].clientX : e.clientX,
-      mouseDownY: isTouch ? e.touches[0].clientY : e.clientY,
-      hasDragStarted: false,
-    });
+    this.mouseDownX = isTouch ? e.touches[0].clientX : e.clientX;
+    this.mouseDownY = isTouch ? e.touches[0].clientY : e.clientY;
+    this.hasDragStarted = false;
 
     if (isTouch) {
       const opts = { passive: false };
@@ -215,11 +213,11 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
 
   onMouseMove = (e: MouseEvent) => {
     e.cancelable && e.preventDefault();
-    if (!this.state.hasDragStarted) {
-      const dx = Math.abs(e.clientX - this.state.mouseDownX);
-      const dy = Math.abs(e.clientY - this.state.mouseDownY);
+    if (!this.hasDragStarted) {
+      const dx = Math.abs(e.clientX - this.mouseDownX);
+      const dy = Math.abs(e.clientY - this.mouseDownY);
       if (dy + dx * 0.5 >= 5) {
-        this.setState({ hasDragStarted: true });
+        this.hasDragStarted = true;
       } else {
         return;
       }
@@ -229,11 +227,11 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
 
   onTouchMove = (e: TouchEvent) => {
     e.cancelable && e.preventDefault();
-    if (!this.state.hasDragStarted) {
-      const dx = Math.abs(e.touches[0].clientX - this.state.mouseDownX);
-      const dy = Math.abs(e.touches[0].clientY - this.state.mouseDownY);
+    if (!this.hasDragStarted) {
+      const dx = Math.abs(e.touches[0].clientX - this.mouseDownX);
+      const dy = Math.abs(e.touches[0].clientY - this.mouseDownY);
       if (dy + dx * 0.5 >= 5) {
-        this.setState({ hasDragStarted: true });
+        this.hasDragStarted = true;
       } else {
         return;
       }
@@ -353,7 +351,7 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
   onEnd = (e: TouchEvent & MouseEvent) => {
     e.cancelable && e.preventDefault();
 
-    if (!this.state.hasDragStarted) {
+    if (!this.hasDragStarted) {
       if (!this.state.isClickAndFollow) {
         // First click -> start Click-and-Follow
         this.setState({
@@ -419,11 +417,11 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
       transformItem(item, null);
       (item as HTMLElement).style.touchAction = '';
     });
+    this.hasDragStarted = false;
     this.setState({
       itemDragged: -1,
       scrollingSpeed: 0,
       isClickAndFollow: false,
-      hasDragStarted: false,
       ariaMessage: `Item dropped at position ${Math.max(this.afterIndex, 0) + 1}.`,
     });
     this.afterIndex = -2;
@@ -444,11 +442,11 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
         transformItem(item, null);
         (item as HTMLElement).style.touchAction = '';
       });
+      this.hasDragStarted = false;
       this.setState({
         itemDragged: -1,
         scrollingSpeed: 0,
         isClickAndFollow: false,
-        hasDragStarted: false,
         ariaMessage: 'Reorder cancelled. Item returned to its original position.',
       });
       this.afterIndex = -2;
