@@ -509,9 +509,8 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
         targetRect: this.getChildren()[this.needle].getBoundingClientRect(),
       });
 
-      const wrapper = this.getChildren()[this.needle] as HTMLElement;
-      const focusTarget = (wrapper.querySelector('[tabindex]') || wrapper) as HTMLElement;
-      focusTarget.focus();
+      const rowEl = this.getChildren()[this.needle] as HTMLElement;
+      rowEl.focus();
     }
     this.setState({
       selectedItem: -1,
@@ -613,9 +612,7 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
       }
       if (nextIndex < this.props.values.length) {
         this.setState({ focusedIndex: nextIndex });
-        const wrapper = this.getChildren()[nextIndex] as HTMLElement;
-        const focusTarget = (wrapper.querySelector('[tabindex]') || wrapper) as HTMLElement;
-        focusTarget.focus();
+        (this.getChildren()[nextIndex] as HTMLElement).focus();
       }
     }
     if ((e.key === 'ArrowUp' || e.key === 'k') && selectedItem > -1 && this.needle > 0) {
@@ -632,9 +629,7 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
       }
       if (nextIndex >= 0) {
         this.setState({ focusedIndex: nextIndex });
-        const wrapper = this.getChildren()[nextIndex] as HTMLElement;
-        const focusTarget = (wrapper.querySelector('[tabindex]') || wrapper) as HTMLElement;
-        focusTarget.focus();
+        (this.getChildren()[nextIndex] as HTMLElement).focus();
       }
     }
     if (e.key === 'Escape' && selectedItem > -1) {
