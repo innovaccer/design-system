@@ -6,6 +6,11 @@ import styles from '@css/components/listbox.module.css';
 
 const AUTOSCROLL_ACTIVE_OFFSET = 200;
 const AUTOSCROLL_SPEED_RATIO = 10;
+/** Min gap between list edge and picked / drop slot while keyboard reordering (px). */
+const KEYBOARD_REORDER_SCROLL_PADDING = 8;
+
+const TAB_FOCUSABLE_SELECTOR =
+  'a[href], button:not([disabled]), input:not([disabled]):not([type="hidden"]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
 class Draggable<Value = string> extends React.Component<IProps<Value>> {
   listRef = React.createRef<HTMLElement>();
@@ -76,27 +81,44 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
     this.schdOnEnd.cancel();
   }
 
-  ensureVisible = (index: number) => {
+  /**
+   * Keeps the keyboard-reordered row (CSS transform) and the needle slot in view.
+   * Uses bounding rects (transform-aware); only adjusts listRef scroll, not ancestors.
+   */
+  ensureKeyboardReorderVisible = (pickedIndex: number, needleIndex: number) => {
     const listEl = this.listRef.current;
-    const targetEl = this.getChildren()[index] as HTMLElement;
-    if (!listEl || !targetEl) return;
+    if (!listEl) return;
+    const children = this.getChildren();
+    const picked = children[pickedIndex] as HTMLElement | undefined;
+    if (!picked) return;
 
-    let top = 0;
-    let current: HTMLElement | null = targetEl;
-    while (current && current !== listEl && current !== document.body) {
-      top += current.offsetTop;
-      current = current.offsetParent as HTMLElement;
-    }
+    const apply = () => {
+      const pad = KEYBOARD_REORDER_SCROLL_PADDING;
+      for (let pass = 0; pass < 2; pass++) {
+        const listRect = listEl.getBoundingClientRect();
+        const pr = picked.getBoundingClientRect();
+        let top = pr.top;
+        let bottom = pr.bottom;
+        const slot = children[needleIndex] as HTMLElement | undefined;
+        if (slot && needleIndex !== pickedIndex) {
+          const sr = slot.getBoundingClientRect();
+          top = Math.min(top, sr.top);
+          bottom = Math.max(bottom, sr.bottom);
+        }
 
-    const bottom = top + targetEl.offsetHeight;
-    const listScrollTop = listEl.scrollTop;
-    const listHeight = listEl.clientHeight;
+        let delta = 0;
+        if (top < listRect.top + pad) {
+          delta = top - listRect.top - pad;
+        } else if (bottom > listRect.bottom - pad) {
+          delta = bottom - listRect.bottom + pad;
+        }
+        if (delta === 0) break;
+        listEl.scrollTop += delta;
+      }
+    };
 
-    if (bottom > listScrollTop + listHeight) {
-      listEl.scrollTop = bottom - listHeight;
-    } else if (top < listScrollTop) {
-      listEl.scrollTop = top;
-    }
+    apply();
+    window.requestAnimationFrame(apply);
   };
 
   doScrolling = () => {
@@ -149,6 +171,29 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
     if (this.state.isClickAndFollow) {
       e.preventDefault();
       // Second click in Click-and-Follow mode commits the drop via onEnd
+      return;
+    }
+
+    const targetNode = (isTouch ? (e as TouchEvent).touches[0]?.target : (e as MouseEvent).target) as Node | null;
+    const listEl = this.listRef.current;
+
+    if (this.state.selectedItem > -1) {
+      if (!listEl || !targetNode) {
+        return;
+      }
+      if (!listEl.contains(targetNode)) {
+        this.cancelKeyboardPick();
+        return;
+      }
+      const pickedIndex = this.getTargetIndex(e as any);
+      const rowInvalid =
+        pickedIndex < 0 || !!(this.props.values[pickedIndex] && this.props.values[pickedIndex].props.disabled);
+      if (rowInvalid) {
+        this.cancelKeyboardPick();
+        return;
+      }
+      e.cancelable && e.preventDefault();
+      this.commitKeyboardReorder();
       return;
     }
 
@@ -435,6 +480,63 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
     }
   };
 
+  /** Cancel keyboard pick without applying reorder (Escape, pointer outside list, or non-row hit inside list). */
+  cancelKeyboardPick = () => {
+    this.getChildren().forEach((item) => {
+      setItemTransition(item, 0);
+      transformItem(item, null);
+    });
+    this.setState({
+      selectedItem: -1,
+      ariaMessage: 'Reorder cancelled. Item returned to its original position.',
+    });
+    this.needle = -1;
+  };
+
+  /** Commit keyboard reorder (Space / Enter / Tab): apply move if needle differs, then clear pick state. */
+  commitKeyboardReorder = () => {
+    const selectedItem = this.state.selectedItem;
+    if (selectedItem < 0) return;
+
+    if (selectedItem !== this.needle) {
+      this.getChildren().forEach((item) => {
+        setItemTransition(item, 0);
+        transformItem(item, null);
+      });
+      this.props.onChange({
+        oldIndex: selectedItem,
+        newIndex: this.needle,
+        targetRect: this.getChildren()[this.needle].getBoundingClientRect(),
+      });
+
+      const wrapper = this.getChildren()[this.needle] as HTMLElement;
+      const focusTarget = (wrapper.querySelector('[tabindex]') || wrapper) as HTMLElement;
+      focusTarget.focus();
+    }
+    this.setState({
+      selectedItem: -1,
+    });
+    this.needle = -1;
+  };
+
+  /** After Tab commits keyboard reorder, move focus like native Tab (document order). */
+  advanceTabFocusFromActiveElement = (shiftKey: boolean) => {
+    const active = document.activeElement;
+    if (!(active instanceof HTMLElement) || !document.body) return;
+
+    const nodes = Array.from(document.body.querySelectorAll<HTMLElement>(TAB_FOCUSABLE_SELECTOR)).filter((el) => {
+      if (el.getAttribute('aria-hidden') === 'true') return false;
+      const style = window.getComputedStyle(el);
+      if (style.visibility === 'hidden' || style.display === 'none') return false;
+      return !(el as HTMLInputElement).disabled;
+    });
+
+    const idx = nodes.indexOf(active);
+    if (idx === -1) return;
+    const next = shiftKey ? nodes[idx - 1] : nodes[idx + 1];
+    next?.focus();
+  };
+
   onKeyDown = (e: React.KeyboardEvent) => {
     const selectedItem = this.state.selectedItem;
     const index = this.getTargetIndex(e);
@@ -472,25 +574,7 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
     if (e.key === ' ') {
       e.preventDefault();
       if (selectedItem === index) {
-        if (selectedItem !== this.needle) {
-          this.getChildren().forEach((item) => {
-            setItemTransition(item, 0);
-            transformItem(item, null);
-          });
-          this.props.onChange({
-            oldIndex: selectedItem,
-            newIndex: this.needle,
-            targetRect: this.getChildren()[this.needle].getBoundingClientRect(),
-          });
-
-          const wrapper = this.getChildren()[this.needle] as HTMLElement;
-          const focusTarget = (wrapper.querySelector('[tabindex]') || wrapper) as HTMLElement;
-          focusTarget.focus();
-        }
-        this.setState({
-          selectedItem: -1,
-        });
-        this.needle = -1;
+        this.commitKeyboardReorder();
       } else {
         this.setState({
           selectedItem: index,
@@ -499,12 +583,24 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
         this.calculateOffsets();
       }
     }
+
+    if (e.key === 'Enter' && selectedItem > -1 && selectedItem === index) {
+      e.preventDefault();
+      this.commitKeyboardReorder();
+    }
+
+    if (e.key === 'Tab' && selectedItem > -1 && selectedItem === index) {
+      e.preventDefault();
+      const shiftKey = e.shiftKey;
+      this.commitKeyboardReorder();
+      queueMicrotask(() => this.advanceTabFocusFromActiveElement(shiftKey));
+    }
     if ((e.key === 'ArrowDown' || e.key === 'j') && selectedItem > -1 && this.needle < this.props.values.length - 1) {
       e.preventDefault();
       const offset = getTranslateOffset(this.getChildren()[selectedItem]);
       this.needle++;
       this.animateItems(this.needle, selectedItem, offset, true);
-      this.ensureVisible(this.needle);
+      this.ensureKeyboardReorderVisible(selectedItem, this.needle);
     } else if ((e.key === 'ArrowDown' || e.key === 'j') && selectedItem === -1) {
       e.preventDefault();
       let nextIndex = this.state.focusedIndex + 1;
@@ -527,7 +623,7 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
       const offset = getTranslateOffset(this.getChildren()[selectedItem]);
       this.needle--;
       this.animateItems(this.needle, selectedItem, offset, true);
-      this.ensureVisible(this.needle);
+      this.ensureKeyboardReorderVisible(selectedItem, this.needle);
     } else if ((e.key === 'ArrowUp' || e.key === 'k') && selectedItem === -1) {
       e.preventDefault();
       let nextIndex = this.state.focusedIndex - 1;
@@ -542,17 +638,8 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
       }
     }
     if (e.key === 'Escape' && selectedItem > -1) {
-      this.getChildren().forEach((item) => {
-        setItemTransition(item, 0);
-        transformItem(item, null);
-      });
-      this.setState({
-        selectedItem: -1,
-      });
-      this.needle = -1;
-    }
-    if ((e.key === 'Tab' || e.key === 'Enter') && selectedItem > -1) {
       e.preventDefault();
+      this.cancelKeyboardPick();
     }
   };
 
