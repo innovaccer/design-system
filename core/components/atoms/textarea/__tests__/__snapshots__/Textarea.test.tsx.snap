@@ -105,6 +105,7 @@ exports[`Textarea component size prop snapshot validation matches snapshot for s
     data-test="DesignSystem-Textarea"
     name="complex-textarea"
     placeholder="Complex small textarea"
+    readonly=""
     rows="4"
   />
 </DocumentFragment>
