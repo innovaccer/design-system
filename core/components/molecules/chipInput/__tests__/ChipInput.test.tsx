@@ -513,7 +513,7 @@ describe('ChipInput Component - Size Variants and Icon Alignment', () => {
 
       expect(container).toHaveClass('ChipInput--small');
       expect(input).toHaveClass('ChipInput-input--small');
-      expect(icon).toHaveClass('Input-icon');
+      expect(iconWrapper).toHaveClass('ChipInput-iconWrapper');
       expect(chip).toHaveClass('my-2');
 
       rerender(<ChipInput {...defaultProps} size="regular" defaultValue={['test']} />);
@@ -525,7 +525,7 @@ describe('ChipInput Component - Size Variants and Icon Alignment', () => {
 
       expect(container).toHaveClass('ChipInput--regular');
       expect(input).toHaveClass('ChipInput-input--regular');
-      expect(icon).toHaveClass('Input-icon');
+      expect(iconWrapper).toHaveClass('ChipInput-iconWrapper');
       expect(chip).toHaveClass('my-3');
     });
 

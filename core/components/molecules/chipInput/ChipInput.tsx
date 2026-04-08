@@ -172,12 +172,6 @@ export const ChipInput = (props: ChipInputProps) => {
     ['my-3']: size === 'regular',
   });
 
-  const IconWrapperClass = classNames({
-    [styles['ChipInput-iconWrapper']]: true,
-  });
-
-  const IconClass = classNames({
-    [styles['ChipInput-icon']]: true,
   const iconWrapperClass = classNames({
     [inputStyles['Input-icon']]: true,
     [inputStyles['Input-iconWrapper--right']]: true,
@@ -345,8 +339,13 @@ export const ChipInput = (props: ChipInputProps) => {
         </div>
         {chips.length > 0 && (
           <div
-            data-test="DesignSystem-ChipInput--Icon"
-            className={classNames(iconWrapperClass, 'align-self-center', 'flex-shrink-0')}
+            data-test="DesignSystem-ChipInput--IconWrapper"
+            className={classNames(
+              styles['ChipInput-iconWrapper'],
+              iconWrapperClass,
+              'align-self-center',
+              'flex-shrink-0'
+            )}
             tabIndex={disabled ? -1 : 0}
             role="button"
             aria-label="Clear all"
@@ -363,7 +362,13 @@ export const ChipInput = (props: ChipInputProps) => {
                   }
             }
           >
-            <Icon name="close" size={iconSize} appearance={disabled ? 'disabled' : undefined} className={iconClass} />
+            <Icon
+              data-test="DesignSystem-ChipInput--Icon"
+              name="close"
+              size={iconSize}
+              appearance={disabled ? 'disabled' : undefined}
+              className={iconClass}
+            />
           </div>
         )}
       </div>
