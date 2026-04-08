@@ -31,16 +31,26 @@ export interface CustomOptionRendererParams {
   selected: boolean;
   active?: boolean;
   index: number;
-  /** Same handler as built-in options: use for row `onClick` (esp. custom checkbox layouts). */
   onClick?: () => void;
   onChange?: (event: ChangeEvent) => void;
-  /** Pass to `Checkbox` `id` so the wrapping `<label htmlFor>` in the list can activate it. */
   id?: string;
 }
 
 export interface OptionRendererProps {
   /**
    * Adds custom option
+   *
+   * <pre className="DocPage-codeBlock">
+   * CustomOptionRendererParams: {
+   *   optionData: OptionSchema;
+   *   selected: boolean;
+   *   active?: boolean;
+   *   index: number;
+   *   onClick?: () => void;
+   *   onChange?: (event: ChangeEvent) => void;
+   *   id?: string;
+   * }
+   * </pre>
    */
   optionRenderer?: (props: CustomOptionRendererParams) => React.ReactElement;
   /**
