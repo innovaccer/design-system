@@ -50,18 +50,18 @@
 }
 
 .Listbox-item--option:focus-visible,
-.Listbox-item[data-force-state="focus"] {
+.Listbox-item[data-force-state='focus'] {
   outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: calc(-1 * var(--border-width-05));
 }
 
 .Listbox-item--option:active,
-.Listbox-item[data-force-state="active"] {
+.Listbox-item[data-force-state='active'] {
   background: var(--secondary-lighter);
 }
 
 .Listbox-item--selected,
-.Listbox-item[data-force-state="selected"] {
+.Listbox-item[data-force-state='selected'] {
   position: relative;
   background: color-mod(var(--primary-lightest) a(var(--opacity-12)));
 }
@@ -115,7 +115,7 @@
 }
 
 .Listbox-item--activated,
-.Listbox-item[data-force-state="activated"] {
+.Listbox-item[data-force-state='activated'] {
   position: relative;
   background: var(--primary-lightest);
 }
@@ -152,7 +152,7 @@
 /* Listbox type - draggable  */
 
 .Listbox-item--draggable:hover,
-.Listbox-item[data-force-state="hover"] {
+.Listbox-item[data-force-state='hover'] {
   background-color: var(--secondary-lightest);
 }
 
@@ -173,19 +173,19 @@
 }
 
 .Listbox-item--drag-icon:focus-visible,
-.Listbox-item[data-force-state="focus-icon"] .Listbox-item--drag-icon {
+.Listbox-item[data-force-state='focus-icon'] .Listbox-item--drag-icon {
   outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: var(--spacing-05);
 }
 
 .Listbox-item--drag-icon:hover,
-.Listbox-item[data-force-state="hover-icon"] .Listbox-item--drag-icon {
+.Listbox-item[data-force-state='hover-icon'] .Listbox-item--drag-icon {
   background-color: var(--secondary);
   color: var(--inverse);
 }
 
 .Listbox-item--drag-icon:active,
-.Listbox-item[data-force-state="active-icon"] .Listbox-item--drag-icon {
+.Listbox-item[data-force-state='active-icon'] .Listbox-item--drag-icon {
   background-color: var(--secondary-dark);
   color: var(--primary);
 }
@@ -193,9 +193,9 @@
 /* Drag and reorder interaction states */
 
 .Listbox-item--sticky-picked,
-.Listbox-item[data-force-state="sticky-picked"],
+.Listbox-item[data-force-state='sticky-picked'],
 .Listbox-item--drag-picked,
-.Listbox-item[data-force-state="drag-picked"] {
+.Listbox-item[data-force-state='drag-picked'] {
   background-color: var(--text-white);
   box-shadow: var(--shadow-l);
   rotate: 0.5deg;
@@ -204,36 +204,36 @@
   position: relative;
 }
 
-.Listbox-item--sticky-picked.Listbox-item--selected,
-.Listbox-item[data-force-state="sticky-picked"].Listbox-item--selected,
-.Listbox-item--drag-picked.Listbox-item--selected,
-.Listbox-item[data-force-state="drag-picked"].Listbox-item--selected {
+.Listbox-item--sticky-picked .Listbox-item--selected,
+.Listbox-item[data-force-state='sticky-picked'].Listbox-item--selected,
+.Listbox-item--drag-picked .Listbox-item--selected,
+.Listbox-item[data-force-state='drag-picked'].Listbox-item--selected {
   background-color: color-mod(var(--primary-lightest) a(var(--opacity-12)));
 }
 
 .Listbox-item--sticky-picked .Listbox-item--drag-icon,
-.Listbox-item[data-force-state="sticky-picked"] .Listbox-item--drag-icon {
+.Listbox-item[data-force-state='sticky-picked'] .Listbox-item--drag-icon {
   background-color: var(--primary);
   color: var(--text-white);
 }
 
-.Listbox-item[data-force-state="disabled"] {
+.Listbox-item[data-force-state='disabled'] {
   opacity: var(--opacity-10);
   pointer-events: none;
 }
 
-.Listbox-item--drag-icon[data-force-state="grabbing"],
-.Listbox-item[data-force-state="sticky-picked"] .Listbox-item--drag-icon,
-.Listbox-item[data-force-state="drag-picked"] .Listbox-item--drag-icon {
+.Listbox-item--drag-icon[data-force-state='grabbing'],
+.Listbox-item[data-force-state='sticky-picked'] .Listbox-item--drag-icon,
+.Listbox-item[data-force-state='drag-picked'] .Listbox-item--drag-icon {
   cursor: grabbing;
 }
 
-.Listbox-item--drag-icon[data-force-state="grabbing"] {
+.Listbox-item--drag-icon[data-force-state='grabbing'] {
   color: var(--primary);
 }
 
 .Listbox-item--drag-picked .Listbox-item--drag-icon,
-.Listbox-item[data-force-state="drag-picked"] .Listbox-item--drag-icon {
+.Listbox-item[data-force-state='drag-picked'] .Listbox-item--drag-icon {
   background-color: var(--primary-ultra-light);
   color: var(--primary);
   box-shadow: inset 0 0 0 var(--border-width-2-5) var(--primary);
