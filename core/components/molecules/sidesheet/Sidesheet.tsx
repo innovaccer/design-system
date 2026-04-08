@@ -223,15 +223,10 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
     const elementToFocus = this.previousActiveElement;
     this.previousActiveElement = null;
 
-    // Restore focus unless another dialog-level overlay is stacked above this one.
-    // Tooltips and other non-dialog overlays in OverlayManager do not block restoration.
-    const ref = this.sidesheetRef.current;
-    const myIdx = ref ? OverlayManager.overlays.indexOf(ref) : -1;
-    const hasHigherDialog =
-      myIdx >= 0 && OverlayManager.overlays.slice(myIdx + 1).some((el) => el?.getAttribute('role') === 'dialog');
-    if (!hasHigherDialog) {
-      restoreFocusToElementIfConnected(elementToFocus);
-    }
+    // Always attempt restoration — restoreFocusToElementIfConnected checks isConnected so detached
+    // elements are safely ignored. If a higher dialog is still open its focus trap will recapture
+    // focus, providing a fallback path when nested dialogs close in unusual order.
+    restoreFocusToElementIfConnected(elementToFocus);
   };
 
   componentDidMount() {
