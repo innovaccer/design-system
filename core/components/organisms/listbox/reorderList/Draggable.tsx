@@ -75,6 +75,29 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
     this.schdOnEnd.cancel();
   }
 
+  ensureVisible = (index: number) => {
+    const listEl = this.listRef.current;
+    const targetEl = this.getChildren()[index] as HTMLElement;
+    if (!listEl || !targetEl) return;
+
+    let top = 0;
+    let current: HTMLElement | null = targetEl;
+    while (current && current !== listEl && current !== document.body) {
+      top += current.offsetTop;
+      current = current.offsetParent as HTMLElement;
+    }
+
+    const bottom = top + targetEl.offsetHeight;
+    const listScrollTop = listEl.scrollTop;
+    const listHeight = listEl.clientHeight;
+
+    if (bottom > listScrollTop + listHeight) {
+      listEl.scrollTop = bottom - listHeight;
+    } else if (top < listScrollTop) {
+      listEl.scrollTop = top;
+    }
+  };
+
   doScrolling = () => {
     const { scrollingSpeed, scrollWindow } = this.state;
     const listEl = this.listRef.current!;
@@ -477,6 +500,7 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
       const offset = getTranslateOffset(this.getChildren()[selectedItem]);
       this.needle++;
       this.animateItems(this.needle, selectedItem, offset, true);
+      this.ensureVisible(this.needle);
     } else if ((e.key === 'ArrowDown' || e.key === 'j') && selectedItem === -1) {
       e.preventDefault();
       let nextIndex = this.state.focusedIndex + 1;
@@ -499,6 +523,7 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
       const offset = getTranslateOffset(this.getChildren()[selectedItem]);
       this.needle--;
       this.animateItems(this.needle, selectedItem, offset, true);
+      this.ensureVisible(this.needle);
     } else if ((e.key === 'ArrowUp' || e.key === 'k') && selectedItem === -1) {
       e.preventDefault();
       let nextIndex = this.state.focusedIndex - 1;
