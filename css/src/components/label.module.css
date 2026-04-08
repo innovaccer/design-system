@@ -33,6 +33,18 @@
   color: var(--text-disabled);
 }
 
+.Label-srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .Label-requiredIndicator {
   height: var(--spacing-15);
   width: var(--spacing-15);
