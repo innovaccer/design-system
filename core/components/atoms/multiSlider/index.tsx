@@ -310,7 +310,6 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
           value={value}
           isCurrentLabelHovered={isCurrentLabelHovered}
           aria-label={ariaLabel || `Slider handle ${index + 1} on ${this.formatLabel(value)}`}
-          labelId={!ariaLabel && this.props.label ? this.labelId : undefined}
         />
       );
     });
