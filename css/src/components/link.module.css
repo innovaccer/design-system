@@ -52,6 +52,16 @@
   border-bottom: var(--border-width-2-5) solid transparent;
 }
 
+.Link--button-reset {
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+}
+
 .Link--default-disabled {
   color: var(--primary-lighter);
   pointer-events: none;

@@ -1,9 +1,8 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { Chip, Icon } from '@/index';
+import { Button, Chip } from '@/index';
 import { ChipProps } from '@/index.type';
 import { BaseProps, extractBaseProps } from '@/utils/types';
-import { isSpaceKey } from '@/accessibility/utils';
 import styles from '@css/components/chipInput.module.css';
 import inputStyles from '@css/components/input.module.css';
 import { ChipInputBorderFocusRegion, getChipInputBorderFocusRegion } from './utils';
@@ -192,12 +191,6 @@ export const ChipInput = (props: ChipInputProps) => {
     [inputStyles['Input-iconWrapper--right']]: true,
   });
 
-  const iconClass = classNames({
-    [inputStyles['Input-icon--right']]: !disabled,
-    ['p-3-5']: size === 'small',
-    ['p-3']: size === 'regular',
-  });
-
   const onUpdateChips = (updatedChips: string[]) => {
     if (onChange) onChange(updatedChips);
   };
@@ -303,8 +296,6 @@ export const ChipInput = (props: ChipInputProps) => {
     );
   });
 
-  const iconSize = size === 'small' ? 12 : 16;
-
   return (
     <div
       data-test="DesignSystem-ChipInput--Border"
@@ -342,27 +333,17 @@ export const ChipInput = (props: ChipInputProps) => {
           />
         </div>
         {chips.length > 0 && (
-          <div
+          <Button
             data-test="DesignSystem-ChipInput--Icon"
-            className={classNames(iconWrapperClass, 'align-self-start', 'flex-shrink-0')}
-            tabIndex={disabled ? -1 : 0}
-            role="button"
+            type="button"
+            appearance="transparent"
+            icon="close"
+            size={size === 'small' ? 'tiny' : 'regular'}
+            className={classNames(iconWrapperClass, 'align-self-center', 'flex-shrink-0')}
+            onClick={onDeleteAllHandler}
             aria-label="Clear all"
-            aria-disabled={disabled || undefined}
-            onClick={disabled ? undefined : onDeleteAllHandler}
-            onKeyDown={
-              disabled
-                ? undefined
-                : (e) => {
-                    if (e.key === 'Enter' || isSpaceKey(e)) {
-                      e.preventDefault();
-                      onDeleteAllHandler();
-                    }
-                  }
-            }
-          >
-            <Icon name="close" size={iconSize} appearance={disabled ? 'disabled' : undefined} className={iconClass} />
-          </div>
+            disabled={disabled}
+          />
         )}
       </div>
     </div>

@@ -1413,6 +1413,7 @@ exports[`TS renders children 1`] = `
       class="PopperWrapper-trigger w-100"
     >
       <button
+        aria-haspopup="listbox"
         class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
         data-test="DesignSystem-DropdownTrigger"
         tabindex="0"
@@ -1461,6 +1462,8 @@ exports[`TS renders children 1`] = `
             class="PopperWrapper-trigger w-100"
           >
             <button
+              aria-expanded="false"
+              aria-haspopup="listbox"
               class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
               data-test="DesignSystem-DropdownTrigger"
               tabindex="0"
@@ -1603,14 +1606,15 @@ exports[`TS renders children 1`] = `
       Hello World!
     </span>
   </div>
-  <a
+  <button
     aria-disabled="false"
-    class="Link Link--regular Link--default"
+    class="Link Link--regular Link--default Link--button-reset"
     data-test="DesignSystem-Link"
     tabindex="0"
+    type="button"
   >
     Hello World!
-  </a>
+  </button>
   <div
     class="Message Message--info"
     data-test="DesignSystem-Message"
@@ -1701,9 +1705,10 @@ exports[`TS renders children 1`] = `
     data-test="DesignSystem-StatusHint"
   >
     <span
-      aria-hidden="true"
+      aria-label="default status"
       class="StatusHint-icon StatusHint--default mr-4"
       data-test="DesignSystem-StatusHint--Icon"
+      role="img"
     />
     <span
       class="Text Text--default Text--medium Text--regular"
@@ -2432,15 +2437,18 @@ exports[`TS renders children 1`] = `
     </div>
   </div>
   <div
+    aria-hidden="true"
     class="Placeholder"
     data-test="DesignSystem-Placeholder"
   >
     <span
+      aria-hidden="true"
       class="PlaceholderImage Placeholder--animation PlaceholderImage--small"
       data-test="DesignSystem-Placeholder--Image"
     />
   </div>
   <div
+    aria-hidden="true"
     class="PlaceholderParagraph-wrapper PlaceholderParagraph-wrapper--length-medium"
   >
     <span
