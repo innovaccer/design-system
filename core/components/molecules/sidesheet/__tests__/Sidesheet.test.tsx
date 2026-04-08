@@ -304,4 +304,68 @@ describe('Sidesheet component with prop: open', () => {
     jest.runOnlyPendingTimers();
     jest.useRealTimers();
   });
+
+  it('inner widget can stop Escape propagation to prevent sidesheet from closing', async () => {
+    jest.useRealTimers();
+    const flushRAF = () => act(() => new Promise((resolve) => requestAnimationFrame(() => resolve())));
+    const onClose = jest.fn();
+
+    const { getByTestId } = render(
+      <Sidesheet dimension="large" headerOptions={headerOptions} open={true} onClose={onClose}>
+        <button data-test="inner-widget">Inner</button>
+      </Sidesheet>
+    );
+
+    await flushRAF();
+
+    const innerWidget = getByTestId('inner-widget');
+    innerWidget.focus();
+
+    const stopEscape = (e: Event) => {
+      if ((e as KeyboardEvent).key === 'Escape') e.stopPropagation();
+    };
+    innerWidget.addEventListener('keydown', stopEscape);
+    fireEvent.keyDown(innerWidget, { key: 'Escape' });
+    innerWidget.removeEventListener('keydown', stopEscape);
+
+    expect(onClose).not.toHaveBeenCalled();
+    jest.useFakeTimers();
+  });
+
+  it('Shift+Tab from heading (initial static focus target) wraps to last focusable', async () => {
+    jest.useRealTimers();
+    const flushRAF = () => act(() => new Promise((resolve) => requestAnimationFrame(() => resolve())));
+
+    const footerWithLastBtn = (
+      <>
+        <Button appearance="basic">Basic</Button>
+        <Button appearance="primary" data-test="last-btn">
+          Primary
+        </Button>
+      </>
+    );
+
+    const { getByTestId } = render(
+      <Sidesheet
+        dimension="large"
+        headerOptions={headerOptions}
+        open={true}
+        footer={footerWithLastBtn}
+        onClose={jest.fn()}
+      >
+        <Text>Body</Text>
+      </Sidesheet>
+    );
+
+    await flushRAF();
+
+    const heading = getByTestId('DesignSystem-OverlayHeader--heading');
+    expect(document.activeElement).toBe(heading);
+
+    fireEvent.keyDown(document, { key: 'Tab', shiftKey: true });
+
+    const lastButton = getByTestId('last-btn');
+    expect(document.activeElement).toBe(lastButton);
+    jest.useFakeTimers();
+  });
 });

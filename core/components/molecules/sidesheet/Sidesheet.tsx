@@ -169,7 +169,7 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
   onFocusTrapKeyDown = (event: KeyboardEvent) => {
     const container = this.sidesheetContentRef.current;
     if (!container) return;
-    handleFocusTrapKeyDown(event, container);
+    handleFocusTrapKeyDown(event, container, this.staticFocusTarget);
   };
 
   focusOnOpen = () => {
@@ -209,7 +209,7 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
     });
 
     document.addEventListener('keydown', this.onFocusTrapKeyDown, true);
-    document.addEventListener('keydown', this.onCloseHandler, true);
+    document.addEventListener('keydown', this.onCloseHandler);
   };
 
   deactivateFocusTrap = () => {
@@ -219,7 +219,7 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
     }
     document.removeEventListener('keydown', this.onFocusTrapKeyDown, true);
 
-    document.removeEventListener('keydown', this.onCloseHandler, true);
+    document.removeEventListener('keydown', this.onCloseHandler);
 
     const container = this.sidesheetContentRef.current;
     if (container) {

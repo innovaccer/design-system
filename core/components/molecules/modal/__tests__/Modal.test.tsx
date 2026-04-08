@@ -715,4 +715,57 @@ describe('Modal focus trap', () => {
     expect(getByTestId('DesignSystem-Modal')).toHaveAttribute('aria-labelledby', 'dialog-heading');
     expect(getByTestId('DesignSystem-OverlayHeader--heading')).toHaveAttribute('id', 'dialog-heading');
   });
+
+  it('inner widget can stop Escape propagation to prevent modal from closing', async () => {
+    const onClose = jest.fn();
+    const { getByTestId } = render(
+      <Modal open={true} onClose={onClose} headerOptions={{ heading: 'Heading' }}>
+        <button data-test="inner-widget">Inner</button>
+      </Modal>
+    );
+
+    await flushRAF();
+
+    const innerWidget = getByTestId('inner-widget');
+    innerWidget.focus();
+
+    const stopEscape = (e: Event) => {
+      if ((e as KeyboardEvent).key === 'Escape') e.stopPropagation();
+    };
+    innerWidget.addEventListener('keydown', stopEscape);
+    fireEvent.keyDown(innerWidget, { key: 'Escape' });
+    innerWidget.removeEventListener('keydown', stopEscape);
+
+    expect(onClose).not.toHaveBeenCalled();
+  });
+
+  it('Shift+Tab from heading (initial static focus target) wraps to last focusable', async () => {
+    const { getByTestId } = render(
+      <Modal
+        open={true}
+        onClose={jest.fn()}
+        headerOptions={{ heading: 'Heading' }}
+        footer={
+          <>
+            <Button appearance="basic">Basic</Button>
+            <Button appearance="primary" data-test="last-btn">
+              Primary
+            </Button>
+          </>
+        }
+      >
+        <Text>Body</Text>
+      </Modal>
+    );
+
+    await flushRAF();
+
+    const heading = getByTestId('DesignSystem-OverlayHeader--heading');
+    expect(document.activeElement).toBe(heading);
+
+    fireEvent.keyDown(document, { key: 'Tab', shiftKey: true });
+
+    const lastButton = getByTestId('last-btn');
+    expect(document.activeElement).toBe(lastButton);
+  });
 });

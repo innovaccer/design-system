@@ -175,7 +175,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
   onFocusTrapKeyDown = (event: KeyboardEvent) => {
     const container = this.modalContentRef.current;
     if (!container) return;
-    handleFocusTrapKeyDown(event, container);
+    handleFocusTrapKeyDown(event, container, this.staticFocusTarget);
   };
 
   activateFocusTrap = () => {
@@ -201,13 +201,13 @@ class Modal extends React.Component<ModalProps, ModalState> {
     });
 
     document.addEventListener('keydown', this.onFocusTrapKeyDown, true);
-    document.addEventListener('keydown', this.onCloseHandler, true);
+    document.addEventListener('keydown', this.onCloseHandler);
   };
 
   deactivateFocusTrap = () => {
     document.removeEventListener('keydown', this.onFocusTrapKeyDown, true);
 
-    document.removeEventListener('keydown', this.onCloseHandler, true);
+    document.removeEventListener('keydown', this.onCloseHandler);
 
     const container = this.modalContentRef.current;
     if (container) {
