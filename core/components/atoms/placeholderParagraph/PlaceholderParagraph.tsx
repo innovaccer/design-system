@@ -56,7 +56,7 @@ export const PlaceholderParagraph = (props: PlaceholderParagraphProps) => {
   );
 
   return (
-    <div {...baseProps} className={wrapperClass}>
+    <div {...baseProps} className={wrapperClass} aria-hidden="true">
       <span className={classes} />
     </div>
   );

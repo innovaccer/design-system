@@ -1705,9 +1705,10 @@ exports[`TS renders children 1`] = `
     data-test="DesignSystem-StatusHint"
   >
     <span
-      aria-hidden="true"
+      aria-label="default status"
       class="StatusHint-icon StatusHint--default mr-4"
       data-test="DesignSystem-StatusHint--Icon"
+      role="img"
     />
     <span
       class="Text Text--default Text--medium Text--regular"
@@ -2436,15 +2437,18 @@ exports[`TS renders children 1`] = `
     </div>
   </div>
   <div
+    aria-hidden="true"
     class="Placeholder"
     data-test="DesignSystem-Placeholder"
   >
     <span
+      aria-hidden="true"
       class="PlaceholderImage Placeholder--animation PlaceholderImage--small"
       data-test="DesignSystem-Placeholder--Image"
     />
   </div>
   <div
+    aria-hidden="true"
     class="PlaceholderParagraph-wrapper PlaceholderParagraph-wrapper--length-medium"
   >
     <span
