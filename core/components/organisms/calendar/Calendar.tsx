@@ -411,7 +411,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
         } else {
           // Fallback 2: Focus calendar header
           const headerBtn = this.calendarWrapperRef.current.querySelector<HTMLElement>(
-            '[class*="Calendar-headerButton"]:not([disabled]), [class*="Calendar-headerIcon"]:not([disabled])'
+            '[class*="Calendar-headerButton"]:not([disabled]), [class*="Calendar-headerIcon"] button:not([disabled])'
           );
           if (headerBtn) {
             headerBtn.focus({ preventScroll: true });
@@ -428,7 +428,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
       prevState.yearBlockNav !== this.state.yearBlockNav;
     if (navChanged && document.activeElement === document.body && this.calendarWrapperRef.current) {
       const headerBtn = this.calendarWrapperRef.current.querySelector<HTMLElement>(
-        '[class*="Calendar-headerButton"]:not([disabled]), [class*="Calendar-headerIcon"]:not([disabled])'
+        '[class*="Calendar-headerButton"]:not([disabled]), [class*="Calendar-headerIcon"] button:not([disabled])'
       );
       if (headerBtn) {
         headerBtn.focus({ preventScroll: true });
