@@ -4,6 +4,7 @@ import { PopoverProps } from '@/index.type';
 import { BaseProps, filterProps } from '@/utils/types';
 import styles from '@css/components/tooltip.module.css';
 import classNames from 'classnames';
+import uidGenerator from '@/utils/uidGenerator';
 
 type Position = 'top-start' | 'top' | 'top-end' | 'right' | 'bottom-end' | 'bottom' | 'bottom-start' | 'left';
 
@@ -82,8 +83,6 @@ export interface TooltipProps extends Omit<PopoverProps, TooltipPopperProps>, Ba
   openDelay?: number;
 }
 
-let tooltipIdCounter = 0;
-
 export const detectTruncation = (boundaryRef: React.RefObject<HTMLElement>) => {
   const element = boundaryRef?.current;
   const isTruncated = element ? element.scrollWidth > element.clientWidth : false;
@@ -95,7 +94,7 @@ export const Tooltip = (props: TooltipProps) => {
   const { children, tooltip, showTooltip, showOnTruncation, elementRef, className, size = 'regular', ...rest } = props;
   const childrenRef = React.useRef(null);
   const [isTruncated, setIsTruncated] = React.useState(false);
-  const [tooltipId] = React.useState(() => `mds-tooltip-${++tooltipIdCounter}`);
+  const [tooltipId] = React.useState(() => `mds-tooltip-${uidGenerator()}`);
 
   React.useEffect(() => {
     const element = elementRef ? elementRef : childrenRef;
@@ -158,17 +157,9 @@ export const Tooltip = (props: TooltipProps) => {
     );
   }
 
-  const triggerWithA11y = React.isValidElement(children)
-    ? React.cloneElement(children as React.ReactElement<any>, {
-        'aria-describedby':
-          [(children as React.ReactElement<any>).props['aria-describedby'], tooltipId].filter(Boolean).join(' ') ||
-          undefined,
-      })
-    : children;
-
   return (
     <Popover
-      trigger={triggerWithA11y}
+      trigger={children}
       on={'hover'}
       offset={'medium'}
       animationClass={{

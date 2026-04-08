@@ -141,18 +141,6 @@ describe('Tooltip component ARIA attributes', () => {
     expect(tooltipEl).toHaveTextContent('A tooltip');
   });
 
-  it('should link trigger to tooltip via aria-describedby', () => {
-    const { getByRole } = render(
-      <Tooltip tooltip="A tooltip" position="bottom">
-        <Button>Hover over me</Button>
-      </Tooltip>
-    );
-    const button = getByRole('button');
-    fireEvent.mouseOver(button);
-    const tooltipEl = getByRole('tooltip');
-    expect(button).toHaveAttribute('aria-describedby', tooltipEl.id);
-  });
-
   it('should not add aria-describedby when showTooltip is false', () => {
     const { getByRole } = render(
       <Tooltip showTooltip={false} tooltip="A tooltip" position="top">
