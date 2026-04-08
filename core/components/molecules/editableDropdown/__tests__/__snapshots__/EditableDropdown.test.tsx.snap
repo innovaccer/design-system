@@ -27,6 +27,8 @@ exports[`EditableDropdown component
             class="PopperWrapper-trigger w-100"
           >
             <button
+              aria-expanded="false"
+              aria-haspopup="listbox"
               class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
               data-test="DesignSystem-DropdownTrigger"
               tabindex="0"

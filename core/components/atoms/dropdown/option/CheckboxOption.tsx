@@ -50,7 +50,8 @@ const CheckboxOption = (props: OptionTypeProps) => {
 
     if (event.key === 'Enter' || event.key === ' ') {
       event.preventDefault();
-      event.currentTarget.click();
+      const checkboxInput = event.currentTarget.querySelector('input[type="checkbox"]') as HTMLInputElement | null;
+      checkboxInput?.click();
     }
   };
 

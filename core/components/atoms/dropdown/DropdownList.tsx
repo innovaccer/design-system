@@ -7,11 +7,11 @@ import Option, { OptionRendererProps, OptionSchema } from './option';
 import classNames from 'classnames';
 import Loading from './Loading';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import uidGenerator from '@/utils/uidGenerator';
 import { ChangeEvent } from '@/common.type';
 import { ErrorTemplate } from './ErrorTemplate';
 import { ErrorType } from './Dropdown';
 import dropdownStyles from '@css/components/dropdown.module.css';
-import checkboxStyles from '@css/components/checkbox.module.css';
 
 export type DropdownAlign = 'left' | 'right';
 export type OptionType = 'DEFAULT' | 'WITH_ICON' | 'WITH_META' | 'ICON_WITH_META';
@@ -258,9 +258,14 @@ const DropdownList = (props: OptionsProps) => {
 
   const dropdownRef = React.createRef<HTMLDivElement>();
   const triggerRef = React.createRef<HTMLDivElement>();
+  const popoverContentRef = React.createRef<HTMLDivElement>();
   const dropdownTriggerRef = React.createRef<HTMLButtonElement>();
   const dropdownCancelButtonRef = React.createRef<HTMLButtonElement>();
   const dropdownApplyButtonRef = React.createRef<HTMLButtonElement>();
+  /** Stable prefix so checkbox ids do not change every render (avoids unchecking / label churn when cursor moves). */
+  const dropdownFieldIdsPrefixRef = React.useRef(`ds-dropdown-${uidGenerator()}`);
+
+  const enableSearch = withSearch || props.async;
 
   const [popoverStyle, setPopoverStyle] = React.useState<PopoverProps['customStyle']>();
   const [cursor, setCursor] = React.useState(firstEnabledOption);
@@ -296,6 +301,12 @@ const DropdownList = (props: OptionsProps) => {
         timer = setTimeout(() => {
           scrollToOptionIndex(scrollIndex, listOptions);
         }, 100);
+      }
+
+      if (!enableSearch) {
+        requestAnimationFrame(() => {
+          focusFirstOption();
+        });
       }
     }
 
@@ -390,6 +401,7 @@ const DropdownList = (props: OptionsProps) => {
     [dropdownStyles['Option-checkbox--active']]: cursor === 0,
     [dropdownStyles['Option-checkboxWrapper']]: true,
     [dropdownStyles['Option-checkbox']]: true,
+    [dropdownStyles['Option-checkbox--interactive']]: true,
     ['OptionWrapper']: true,
   });
 
@@ -511,6 +523,7 @@ const DropdownList = (props: OptionsProps) => {
           onClear={searchClearHandler}
           ref={inputRef}
           autoComplete={'off'}
+          aria-label={resolvedOptionsAriaLabel ? `Search ${resolvedOptionsAriaLabel}` : 'Search options'}
           className={dropdownStyles['Dropdown-input']}
         />
       </div>
@@ -533,10 +546,25 @@ const DropdownList = (props: OptionsProps) => {
     const { selectAllLabel = 'Select All', selectAll, onSelectAll } = props;
 
     const label = selectAllLabel.trim() ? selectAllLabel.trim() : 'Select All';
-    const id = `Checkbox-option-${label.toLowerCase().replace(/\s+/g, '')}-${new Date().getTime()}`;
+    const id = `${dropdownFieldIdsPrefixRef.current}-select-all`;
+
+    const onSelectAllKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        const checkboxInput = event.currentTarget.querySelector('input[type="checkbox"]') as HTMLInputElement;
+        if (checkboxInput) checkboxInput.click();
+      }
+    };
 
     return (
-      <div className={SelectAllClass} onMouseEnter={() => updateActiveOption(0, true)}>
+      <div
+        className={SelectAllClass}
+        onMouseEnter={() => updateActiveOption(0, true)}
+        onKeyDown={onSelectAllKeyDown}
+        tabIndex={0}
+        role="option"
+        aria-selected={selectAll.checked}
+      >
         <label htmlFor={id} className={dropdownStyles['Checkbox-label']}>
           <Checkbox
             label={label}
@@ -562,7 +590,7 @@ const DropdownList = (props: OptionsProps) => {
 
     const active = selectAllPresent ? index + 1 === cursor : index === cursor;
     const optionIsSelected = tempSelected.findIndex((option) => option.value === item.value) !== -1;
-    const id = `Checkbox-option-${index}-${item.value}-${new Date().getTime()}`;
+    const id = `${dropdownFieldIdsPrefixRef.current}-option-${index}`;
 
     return (
       <label htmlFor={id} key={index} role="presentation">
@@ -627,14 +655,14 @@ const DropdownList = (props: OptionsProps) => {
 
     return (
       <div className={dropdownWrapperClass} style={dropdownStyle} ref={dropdownRef}>
-        {selectAllPresent && renderSelectAll()}
-        {selected.length > 0 && renderGroups(selectedSectionLabel, true)}
         <div
           role={menu ? 'menu' : 'listbox'}
           aria-label={resolvedOptionsAriaLabel}
           aria-labelledby={triggerAriaLabelledBy}
           aria-multiselectable={!menu && withCheckbox ? true : undefined}
         >
+          {selectAllPresent && renderSelectAll()}
+          {selected.length > 0 && renderGroups(selectedSectionLabel, true, true)}
           {selected.map((option, index) => renderOptions(option, index))}
           {selected.length > 0 &&
             listOptions.length - selected.length > 0 &&
@@ -660,29 +688,124 @@ const DropdownList = (props: OptionsProps) => {
     );
   };
 
+  const isFocusableOption = (node: Element): boolean => {
+    if (!node || node.getAttribute('data-disabled') === 'true') return false;
+    return (node as HTMLElement).tabIndex >= 0;
+  };
+
   const focusOption = (direction: string, classes: string) => {
-    const elements = document.querySelectorAll(classes);
+    const container = popoverContentRef.current || document;
+    const elements = container.querySelectorAll(classes);
+    if (!elements.length) return;
 
-    const updatedCursor = direction === 'down' ? cursor + 1 : cursor - 1;
-    let startIndex = updatedCursor;
-    const endIndex = direction === 'down' ? elements.length : -1;
+    // Determine current position from actual DOM focus, not cursor state
+    const activeEl = document.activeElement;
+    let currentIndex = -1;
 
-    while (startIndex !== endIndex) {
-      const node = elements[startIndex];
+    // Check if focus is currently on the search input
+    const isSearchFocused =
+      enableSearch && inputRef.current && (activeEl === inputRef.current || inputRef.current.contains(activeEl));
 
-      if (node.getAttribute('data-disabled') !== 'true') {
-        const element: HTMLElement = elements[startIndex] as HTMLElement;
-        if (element) scrollIntoView(dropdownRef.current, element);
-        if (element !== undefined) setCursor(startIndex);
-        break;
+    if (isSearchFocused) {
+      if (direction === 'up') return; // Already at the top, nothing above search
+      currentIndex = -1; // From search, down goes to first option
+    } else {
+      for (let i = 0; i < elements.length; i++) {
+        if (elements[i] === activeEl || elements[i].contains(activeEl)) {
+          currentIndex = i;
+          break;
+        }
       }
-
-      if (direction === 'down') {
-        startIndex++;
-      } else {
-        startIndex--;
+      // If no option focused, start from edge
+      if (currentIndex === -1) {
+        currentIndex = direction === 'down' ? -1 : elements.length;
       }
     }
+
+    const startIndex = direction === 'down' ? currentIndex + 1 : currentIndex - 1;
+    const endIndex = direction === 'down' ? elements.length : -1;
+    let i = startIndex;
+
+    let found = false;
+    while (i !== endIndex) {
+      if (isFocusableOption(elements[i])) {
+        const element = elements[i] as HTMLElement;
+        if (dropdownRef.current) scrollIntoView(dropdownRef.current, element);
+        element.focus();
+        found = true;
+        break;
+      }
+      i += direction === 'down' ? 1 : -1;
+    }
+
+    // If going up and no option found above, focus the search input
+    if (!found && direction === 'up' && enableSearch && inputRef.current) {
+      inputRef.current.focus();
+    }
+  };
+
+  const focusFirstOption = () => {
+    const container = popoverContentRef.current || document;
+    const optionClass = '.OptionWrapper';
+    const elements = container.querySelectorAll(optionClass);
+    if (!elements.length) return;
+
+    for (let i = 0; i < elements.length; i++) {
+      if (isFocusableOption(elements[i])) {
+        const element = elements[i] as HTMLElement;
+        if (dropdownRef.current) scrollIntoView(dropdownRef.current, element);
+        element.focus();
+        break;
+      }
+    }
+  };
+
+  const focusEdgeOption = (position: 'first' | 'last') => {
+    const container = popoverContentRef.current || document;
+    const elements = container.querySelectorAll('.OptionWrapper');
+    if (!elements.length) return;
+
+    if (position === 'first') {
+      for (let i = 0; i < elements.length; i++) {
+        if (isFocusableOption(elements[i])) {
+          (elements[i] as HTMLElement).focus();
+          break;
+        }
+      }
+    } else {
+      for (let i = elements.length - 1; i >= 0; i--) {
+        if (isFocusableOption(elements[i])) {
+          (elements[i] as HTMLElement).focus();
+          break;
+        }
+      }
+    }
+  };
+
+  const getActiveOptionElement = () => {
+    const container = popoverContentRef.current;
+    if (!container) return null;
+
+    const activeOption = container.querySelector(
+      `.${dropdownStyles['Option--active']}, .${dropdownStyles['Option-checkbox--active']}`
+    );
+
+    if (activeOption && isFocusableOption(activeOption)) return activeOption as HTMLElement;
+
+    const allOptions = Array.from(container.querySelectorAll('.OptionWrapper'));
+    return (allOptions.find((option) => isFocusableOption(option)) as HTMLElement | undefined) || null;
+  };
+
+  const activateOptionElement = (element: HTMLElement | null) => {
+    if (!element || !isFocusableOption(element)) return;
+
+    const checkboxInput = element.querySelector('input[type="checkbox"]') as HTMLInputElement | null;
+    if (checkboxInput) {
+      checkboxInput.click();
+      return;
+    }
+
+    element.click();
   };
 
   const onkeydown = (event: any) => {
@@ -697,17 +820,18 @@ const DropdownList = (props: OptionsProps) => {
         dropdownOpen ? focusOption('up', optionClass) : onToggleDropdown(!dropdownOpen);
         break;
       case 'Enter': {
-        const activeElement = document.activeElement;
-        if (dropdownOpen && (inputRef.current === activeElement || dropdownTriggerRef.current === activeElement)) {
+        if (!dropdownOpen) {
           event.preventDefault();
-          const classes = withCheckbox ? `${optionClass} .${checkboxStyles['Checkbox-input']}` : optionClass;
-          const elements = document.querySelectorAll(classes);
-          const element = elements[cursor] as HTMLElement;
-          if (element) element.click();
+          onToggleDropdown(true);
         }
-        if (!dropdownOpen) onToggleDropdown(!dropdownOpen);
         break;
       }
+      case 'Escape':
+        if (dropdownOpen) {
+          event.preventDefault();
+          onToggleDropdown(false, 'onClick');
+        }
+        break;
       case 'Tab': {
         if (!showApplyButton && dropdownOpen) {
           event.preventDefault();
@@ -744,7 +868,149 @@ const DropdownList = (props: OptionsProps) => {
     }
   };
 
-  const enableSearch = withSearch || props.async;
+  const onPopoverKeyDown = (event: React.KeyboardEvent) => {
+    // stopPropagation is critical: React synthetic events bubble through the React
+    // component tree (not DOM tree), so even with portals the event reaches the
+    // container's onkeydown handler. Without stopping, ArrowDown/Up fires focusOption
+    // twice per keypress, causing every second option to be skipped.
+    const optionClass = '.OptionWrapper';
+    switch (event.key) {
+      case 'ArrowDown':
+        event.preventDefault();
+        event.stopPropagation();
+        focusOption('down', optionClass);
+        break;
+      case 'ArrowUp':
+        event.preventDefault();
+        event.stopPropagation();
+        focusOption('up', optionClass);
+        break;
+      case 'Home': {
+        // Let Home/End work normally in the search input for text cursor movement
+        const homeTarget = document.activeElement;
+        const isInputFocused =
+          enableSearch &&
+          inputRef.current &&
+          (homeTarget === inputRef.current || inputRef.current.contains(homeTarget));
+        if (!isInputFocused) {
+          event.preventDefault();
+          event.stopPropagation();
+          focusEdgeOption('first');
+        }
+        break;
+      }
+      case 'End': {
+        const endTarget = document.activeElement;
+        const isInputFocusedEnd =
+          enableSearch && inputRef.current && (endTarget === inputRef.current || inputRef.current.contains(endTarget));
+        if (!isInputFocusedEnd) {
+          event.preventDefault();
+          event.stopPropagation();
+          focusEdgeOption('last');
+        }
+        break;
+      }
+      case 'Enter': {
+        const enterTarget = document.activeElement;
+        const isInputFocused =
+          enableSearch &&
+          inputRef.current &&
+          (enterTarget === inputRef.current || inputRef.current.contains(enterTarget));
+
+        if (isInputFocused) {
+          event.preventDefault();
+          event.stopPropagation();
+          activateOptionElement(getActiveOptionElement());
+        }
+        break;
+      }
+      case 'Escape':
+        event.preventDefault();
+        event.stopPropagation();
+        onToggleDropdown(false, 'onClick');
+        break;
+      case 'Tab': {
+        event.preventDefault();
+        event.stopPropagation();
+
+        // Tab order: [non-option focusables before options] → option list → [non-option focusables after options] → close
+        // The option list is a single tab stop; arrow keys navigate within it.
+        const container = popoverContentRef.current;
+        if (!container) {
+          onToggleDropdown(false, 'onClick');
+          return;
+        }
+
+        const currentEl = document.activeElement;
+        const isOnOption = currentEl && currentEl.closest('.OptionWrapper');
+
+        // Collect all non-option focusable elements in the popover
+        const focusableSelector = 'button:not([disabled]), input:not([disabled]), [tabindex="0"]';
+        const nonOptionFocusables = Array.from(container.querySelectorAll(focusableSelector)).filter((el) => {
+          if ((el as HTMLButtonElement | HTMLInputElement).disabled) return false;
+          if (el.getAttribute('aria-disabled') === 'true') return false;
+          if (el.closest('.OptionWrapper')) return false;
+          if ((el as HTMLElement).closest('[data-test="DesignSystem-Checkbox"]')) return false;
+          return true;
+        }) as HTMLElement[];
+
+        // Split into before-options and after-options using first OptionWrapper position
+        const firstOption = container.querySelector('.OptionWrapper');
+        const before: HTMLElement[] = [];
+        const after: HTMLElement[] = [];
+        nonOptionFocusables.forEach((el) => {
+          if (!firstOption) {
+            before.push(el);
+          } else if (el.compareDocumentPosition(firstOption) & Node.DOCUMENT_POSITION_FOLLOWING) {
+            before.push(el);
+          } else {
+            after.push(el);
+          }
+        });
+
+        // Build the full tab stops: [...before, OPTION_LIST, ...after]
+        const hasOptions = !!firstOption;
+        const tabStops: (HTMLElement | null)[] = [...before, ...(hasOptions ? [null] : []), ...after];
+
+        // Determine current position in tab stops
+        let currentStop = -1;
+        if (isOnOption) {
+          currentStop = tabStops.indexOf(null);
+        } else {
+          for (let idx = 0; idx < tabStops.length; idx++) {
+            const stop = tabStops[idx];
+            if (stop && (stop === currentEl || stop.contains(currentEl))) {
+              currentStop = idx;
+              break;
+            }
+          }
+        }
+
+        if (event.shiftKey) {
+          const prev = currentStop > 0 ? currentStop - 1 : -1;
+          if (prev === -1) {
+            onToggleDropdown(false, 'onClick');
+          } else if (tabStops[prev] === null) {
+            focusEdgeOption('last');
+          } else {
+            (tabStops[prev] as HTMLElement).focus();
+          }
+        } else {
+          const next = currentStop !== -1 && currentStop < tabStops.length - 1 ? currentStop + 1 : -1;
+          if (next === -1) {
+            onToggleDropdown(false, 'onClick');
+          } else if (tabStops[next] === null) {
+            focusEdgeOption('first');
+          } else {
+            (tabStops[next] as HTMLElement).focus();
+          }
+        }
+        break;
+      }
+      default:
+        break;
+    }
+  };
 
   return (
     <div {...baseProps} className={dropdownClass} ref={triggerRef} onKeyDown={onkeydown} role="presentation">
@@ -758,9 +1024,12 @@ const DropdownList = (props: OptionsProps) => {
         {...popoverOptions}
         data-test="DesignSystem-Dropdown--Popover"
       >
-        {enableSearch && renderSearch()}
-        {renderDropdownSection()}
-        {showApplyButton && withCheckbox && renderApplyButton()}
+        {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
+        <div onKeyDown={onPopoverKeyDown} ref={popoverContentRef}>
+          {enableSearch && renderSearch()}
+          {renderDropdownSection()}
+          {showApplyButton && withCheckbox && renderApplyButton()}
+        </div>
       </Popover>
     </div>
   );
