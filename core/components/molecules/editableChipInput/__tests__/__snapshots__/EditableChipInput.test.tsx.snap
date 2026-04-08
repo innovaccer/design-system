@@ -5,8 +5,11 @@ exports[`EditableChipInput component
  1`] = `
 <DocumentFragment>
   <div
+    aria-label="Click to edit. Current chips: Chip1, Chip2"
     class="EditableChipInput"
     data-test="DesignSystem-EditableChipInput"
+    role="button"
+    tabindex="0"
   >
     <div
       class="Editable"
@@ -14,15 +17,13 @@ exports[`EditableChipInput component
     >
       <div
         data-test="DesignSystem-EditableWrapper"
-        role="button"
-        tabindex="0"
       >
         <div
           class="EditableChipInput-defaultWithChips"
           data-test="DesignSystem-EditableChipInput--Default"
         >
           <div
-            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular my-2 mx-2"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular EditableChipInput-chip--regular"
             data-test="DesignSystem-EditableChipInput--Chip"
             role="button"
             style="max-width: 256px;"
@@ -55,7 +56,7 @@ exports[`EditableChipInput component
             </div>
           </div>
           <div
-            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular my-2 mx-2"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular EditableChipInput-chip--regular"
             data-test="DesignSystem-EditableChipInput--Chip"
             role="button"
             style="max-width: 256px;"
@@ -99,8 +100,11 @@ exports[`EditableChipInput component
  1`] = `
 <DocumentFragment>
   <div
+    aria-label="Click to edit. Current chips: Chip1, Chip2"
     class="EditableChipInput"
     data-test="DesignSystem-EditableChipInput"
+    role="button"
+    tabindex="0"
   >
     <div
       class="Editable"
@@ -108,15 +112,13 @@ exports[`EditableChipInput component
     >
       <div
         data-test="DesignSystem-EditableWrapper"
-        role="button"
-        tabindex="0"
       >
         <div
           class="EditableChipInput-defaultWithChips"
           data-test="DesignSystem-EditableChipInput--Default"
         >
           <div
-            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular my-2 mx-2"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular EditableChipInput-chip--regular"
             data-test="DesignSystem-EditableChipInput--Chip"
             role="button"
             style="max-width: 256px;"
@@ -149,7 +151,7 @@ exports[`EditableChipInput component
             </div>
           </div>
           <div
-            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular my-2 mx-2"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular EditableChipInput-chip--regular"
             data-test="DesignSystem-EditableChipInput--Chip"
             role="button"
             style="max-width: 256px;"
@@ -193,8 +195,11 @@ exports[`EditableChipInput component
  1`] = `
 <DocumentFragment>
   <div
+    aria-label="Click to edit. Current chips: Chip1, Chip2"
     class="EditableChipInput"
     data-test="DesignSystem-EditableChipInput"
+    role="button"
+    tabindex="0"
   >
     <div
       class="Editable"
@@ -202,15 +207,13 @@ exports[`EditableChipInput component
     >
       <div
         data-test="DesignSystem-EditableWrapper"
-        role="button"
-        tabindex="0"
       >
         <div
-          class="EditableChipInput-defaultWithChips"
+          class="EditableChipInput-defaultWithChips EditableChipInput-defaultWithChips--small"
           data-test="DesignSystem-EditableChipInput--Default"
         >
           <div
-            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--small my-2 mx-2"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--small EditableChipInput-chip--small"
             data-test="DesignSystem-EditableChipInput--Chip"
             role="button"
             style="max-width: 256px;"
@@ -243,7 +246,7 @@ exports[`EditableChipInput component
             </div>
           </div>
           <div
-            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--small my-2 mx-2"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--small EditableChipInput-chip--small"
             data-test="DesignSystem-EditableChipInput--Chip"
             role="button"
             style="max-width: 256px;"
@@ -287,8 +290,11 @@ exports[`EditableChipInput component
  1`] = `
 <DocumentFragment>
   <div
+    aria-label="Click to edit. Current chips: Chip1, Chip2"
     class="EditableChipInput"
     data-test="DesignSystem-EditableChipInput"
+    role="button"
+    tabindex="0"
   >
     <div
       class="Editable"
@@ -296,15 +302,13 @@ exports[`EditableChipInput component
     >
       <div
         data-test="DesignSystem-EditableWrapper"
-        role="button"
-        tabindex="0"
       >
         <div
           class="EditableChipInput-defaultWithChips"
           data-test="DesignSystem-EditableChipInput--Default"
         >
           <div
-            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular my-2 mx-2"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular EditableChipInput-chip--regular"
             data-test="DesignSystem-EditableChipInput--Chip"
             role="button"
             style="max-width: 256px;"
@@ -337,7 +341,7 @@ exports[`EditableChipInput component
             </div>
           </div>
           <div
-            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular my-2 mx-2"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular EditableChipInput-chip--regular"
             data-test="DesignSystem-EditableChipInput--Chip"
             role="button"
             style="max-width: 256px;"
@@ -381,8 +385,11 @@ exports[`EditableChipInput component
  1`] = `
 <DocumentFragment>
   <div
+    aria-label="Click to edit. Current chips: Chip1, Chip2"
     class="EditableChipInput"
     data-test="DesignSystem-EditableChipInput"
+    role="button"
+    tabindex="0"
   >
     <div
       class="Editable"
@@ -390,15 +397,13 @@ exports[`EditableChipInput component
     >
       <div
         data-test="DesignSystem-EditableWrapper"
-        role="button"
-        tabindex="0"
       >
         <div
           class="EditableChipInput-defaultWithChips"
           data-test="DesignSystem-EditableChipInput--Default"
         >
           <div
-            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular my-2 mx-2"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular EditableChipInput-chip--regular"
             data-test="DesignSystem-EditableChipInput--Chip"
             role="button"
             style="max-width: 256px;"
@@ -431,7 +436,7 @@ exports[`EditableChipInput component
             </div>
           </div>
           <div
-            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular my-2 mx-2"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular EditableChipInput-chip--regular"
             data-test="DesignSystem-EditableChipInput--Chip"
             role="button"
             style="max-width: 256px;"
@@ -475,8 +480,11 @@ exports[`EditableChipInput component
  1`] = `
 <DocumentFragment>
   <div
+    aria-label="Click to edit. Current chips: Chip1, Chip2"
     class="EditableChipInput"
     data-test="DesignSystem-EditableChipInput"
+    role="button"
+    tabindex="0"
   >
     <div
       class="Editable"
@@ -484,15 +492,13 @@ exports[`EditableChipInput component
     >
       <div
         data-test="DesignSystem-EditableWrapper"
-        role="button"
-        tabindex="0"
       >
         <div
-          class="EditableChipInput-defaultWithChips"
+          class="EditableChipInput-defaultWithChips EditableChipInput-defaultWithChips--small"
           data-test="DesignSystem-EditableChipInput--Default"
         >
           <div
-            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--small my-2 mx-2"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--small EditableChipInput-chip--small"
             data-test="DesignSystem-EditableChipInput--Chip"
             role="button"
             style="max-width: 256px;"
@@ -525,7 +531,7 @@ exports[`EditableChipInput component
             </div>
           </div>
           <div
-            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--small my-2 mx-2"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--small EditableChipInput-chip--small"
             data-test="DesignSystem-EditableChipInput--Chip"
             role="button"
             style="max-width: 256px;"

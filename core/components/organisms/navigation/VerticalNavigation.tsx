@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { Text, Icon } from '@/index';
+import { Button, Icon, Text } from '@/index';
 import {
   getTextAppearance,
   getIconAppearance,
@@ -158,6 +158,7 @@ export const VerticalNavigation = (props: VerticalNavigationProps) => {
           role="button"
           tabIndex={menu.disabled ? -1 : 0}
           aria-disabled={menu.disabled || undefined}
+          aria-label={!expanded && menu.icon ? menu.label : undefined}
         >
           {menu.icon && (
             <Icon
@@ -229,8 +230,6 @@ export const VerticalNavigation = (props: VerticalNavigationProps) => {
 
   const footerClasses = classNames(styles['Navigation-footer'], styles['Navigation-footer--border']);
 
-  const IconClassName = classNames(styles['Navigation-menuIcon'], styles['Navigation-menuIcon--footer']);
-
   return (
     <>
       <nav className={styles['Navigation-body']} aria-label={ariaLabel}>
@@ -238,7 +237,15 @@ export const VerticalNavigation = (props: VerticalNavigationProps) => {
       </nav>
       {footer && (
         <div className={footerClasses}>
-          <Icon className={IconClassName} name="menu_open" size={16} onClick={() => onToggle && onToggle(!expanded)} />
+          <Button
+            type="button"
+            appearance="transparent"
+            icon="menu_open"
+            className={styles['Navigation-footerButton']}
+            onClick={() => onToggle && onToggle(!expanded)}
+            aria-label={expanded ? 'Collapse navigation' : 'Expand navigation'}
+            aria-expanded={expanded}
+          />
         </div>
       )}
     </>
