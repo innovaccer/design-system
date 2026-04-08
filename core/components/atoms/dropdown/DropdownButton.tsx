@@ -77,7 +77,7 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
   const buttonDisabled = disabled ? 'disabled' : 'default';
   const trimmedPlaceholder = placeholder.trim();
   const value = children ? children : trimmedPlaceholder;
-  const iconName = !menu ? 'keyboard_arrow_down' : icon ? icon : 'more_horiz';
+  const iconName = !menu ? (open ? 'keyboard_arrow_up' : 'keyboard_arrow_down') : icon ? icon : 'more_horiz';
 
   const buttonClass = classNames({
     [buttonStyles['Button']]: true,
@@ -104,6 +104,8 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
       className={buttonClass}
       disabled={disabled}
       tabIndex={0}
+      aria-haspopup={menu ? 'menu' : 'listbox'}
+      aria-expanded={open}
       data-test="DesignSystem-DropdownTrigger"
       {...rest}
     >

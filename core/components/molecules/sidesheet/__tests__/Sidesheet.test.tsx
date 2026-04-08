@@ -100,6 +100,13 @@ describe('sidesheet component', () => {
     expect(getByTestId('DesignSystem-Sidesheet--Header')?.parentNode).toHaveClass('Sidesheet-header--withSeperator');
   });
 
+  it('close button has accessible aria-label', () => {
+    const { getByTestId } = render(<Sidesheet dimension="regular" headerOptions={headerOptions} open={true} />);
+
+    const closeButton = getByTestId('DesignSystem-Sidesheet--CloseButton');
+    expect(closeButton).toHaveAttribute('aria-label', 'Close');
+  });
+
   it('calls onClose function with backdropClose being true', () => {
     const { getByTestId } = render(
       <>
