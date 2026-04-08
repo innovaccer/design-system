@@ -739,7 +739,9 @@ describe('Modal focus trap', () => {
     expect(onClose).not.toHaveBeenCalled();
   });
 
-  it('Shift+Tab from heading (initial static focus target) wraps to last focusable', async () => {
+  it('Shift+Tab from heading (initial static focus target) wraps to last focusable when no back button', async () => {
+    // No back button: DOM order is [heading][closeButton…][footer buttons].
+    // Heading precedes first tabbable (close button), so Shift+Tab must wrap to last.
     const { getByTestId } = render(
       <Modal
         open={true}
@@ -767,5 +769,43 @@ describe('Modal focus trap', () => {
 
     const lastButton = getByTestId('last-btn');
     expect(document.activeElement).toBe(lastButton);
+  });
+
+  it('Shift+Tab from heading falls through to back button when back button precedes heading in DOM', async () => {
+    // Back button present: DOM order is [backButton][heading][closeButton…][footer].
+    // Back button is first tabbable and comes before the heading, so Shift+Tab from the
+    // heading should NOT wrap — the browser's natural reverse-tab lands on the back button.
+    const { getByTestId } = render(
+      <Modal
+        open={true}
+        onClose={jest.fn()}
+        headerOptions={{ heading: 'Heading', backButton: true, backButtonCallback: jest.fn() }}
+        footer={
+          <>
+            <Button appearance="basic">Basic</Button>
+            <Button appearance="primary" data-test="last-btn">
+              Primary
+            </Button>
+          </>
+        }
+      >
+        <Text>Body</Text>
+      </Modal>
+    );
+
+    await flushRAF();
+
+    const heading = getByTestId('DesignSystem-OverlayHeader--heading');
+    expect(document.activeElement).toBe(heading);
+
+    // Shift+Tab should NOT wrap to last; the trap should not intercept this case.
+    // After the keydown the focus stays on the heading because jsdom doesn't do
+    // real tab navigation — what matters is that preventDefault was NOT called
+    // (the trap did not hijack the event).
+    const shiftTabEvent = new KeyboardEvent('keydown', { key: 'Tab', shiftKey: true, bubbles: true });
+    const preventDefaultSpy = jest.spyOn(shiftTabEvent, 'preventDefault');
+    document.dispatchEvent(shiftTabEvent);
+
+    expect(preventDefaultSpy).not.toHaveBeenCalled();
   });
 });

@@ -332,7 +332,9 @@ describe('Sidesheet component with prop: open', () => {
     jest.useFakeTimers();
   });
 
-  it('Shift+Tab from heading (initial static focus target) wraps to last focusable', async () => {
+  it('Shift+Tab from heading (initial static focus target) wraps to last focusable when no back button', async () => {
+    // No back button: DOM order is [heading][closeButton…][footer buttons].
+    // Heading precedes first tabbable (close button), so Shift+Tab must wrap to last.
     jest.useRealTimers();
     const flushRAF = () => act(() => new Promise((resolve) => requestAnimationFrame(() => resolve())));
 
@@ -366,6 +368,48 @@ describe('Sidesheet component with prop: open', () => {
 
     const lastButton = getByTestId('last-btn');
     expect(document.activeElement).toBe(lastButton);
+    jest.useFakeTimers();
+  });
+
+  it('Shift+Tab from heading falls through to back button when back button precedes heading in DOM', async () => {
+    // Back button present: DOM order is [backButton][heading][closeButton…][footer].
+    // Back button is first tabbable and comes before the heading, so Shift+Tab from the
+    // heading should NOT wrap — the browser's natural reverse-tab lands on the back button.
+    jest.useRealTimers();
+    const flushRAF = () => act(() => new Promise((resolve) => requestAnimationFrame(() => resolve())));
+
+    const footerWithLastBtn = (
+      <>
+        <Button appearance="basic">Basic</Button>
+        <Button appearance="primary" data-test="last-btn">
+          Primary
+        </Button>
+      </>
+    );
+
+    const { getByTestId } = render(
+      <Sidesheet
+        dimension="large"
+        headerOptions={{ ...headerOptions, backButton: true, backButtonCallback: jest.fn() }}
+        open={true}
+        footer={footerWithLastBtn}
+        onClose={jest.fn()}
+      >
+        <Text>Body</Text>
+      </Sidesheet>
+    );
+
+    await flushRAF();
+
+    const heading = getByTestId('DesignSystem-OverlayHeader--heading');
+    expect(document.activeElement).toBe(heading);
+
+    // Shift+Tab should NOT wrap; the trap should not intercept (no preventDefault).
+    const shiftTabEvent = new KeyboardEvent('keydown', { key: 'Tab', shiftKey: true, bubbles: true });
+    const preventDefaultSpy = jest.spyOn(shiftTabEvent, 'preventDefault');
+    document.dispatchEvent(shiftTabEvent);
+
+    expect(preventDefaultSpy).not.toHaveBeenCalled();
     jest.useFakeTimers();
   });
 });

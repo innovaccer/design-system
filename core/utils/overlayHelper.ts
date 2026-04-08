@@ -185,7 +185,11 @@ export const handleFocusTrapKeyDown = (
   const last = focusable[focusable.length - 1];
 
   if (event.shiftKey) {
-    if (activeElement === first || (staticFocusTarget && activeElement === staticFocusTarget)) {
+    const staticTargetPrecedesFirst =
+      !!staticFocusTarget &&
+      activeElement === staticFocusTarget &&
+      !!(staticFocusTarget.compareDocumentPosition(first) & Node.DOCUMENT_POSITION_FOLLOWING);
+    if (activeElement === first || staticTargetPrecedesFirst) {
       event.preventDefault();
       last.focus({ preventScroll: true });
       return true;
