@@ -1,7 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import Editable from '@/components/atoms/editable';
-import { Input, Button, Popover, InlineMessage } from '@/index';
+import { Input, Button, Popover, InlineMessage, Icon } from '@/index';
 import { InputProps } from '@/index.type';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import styles from '@css/components/editableInput.module.css';
@@ -44,7 +44,7 @@ export interface EditableInputProps extends BaseProps {
 export const EditableInput = (props: EditableInputProps) => {
   const { error, size, errorMessage, placeholder, inputOptions, disableSaveAction, onChange, className } = props;
 
-  const { onChange: onInputChange, ...rest } = inputOptions;
+  const { onChange: onInputChange, icon: inputIcon, disabled: inputDisabled, ...rest } = inputOptions;
 
   const [inputValue, setInputValue] = React.useState(props.value);
   const [value, setValue] = React.useState(props.value);
@@ -75,6 +75,10 @@ export const EditableInput = (props: EditableInputProps) => {
   const EditableDefaultClass = classNames({
     [styles['EditableInput-default']]: true,
     [styles[`EditableInput-default--${size}`]]: size,
+  });
+
+  const ErrorIconClass = classNames({
+    [styles[`EditableInput-errorIcon--${size}`]]: size,
   });
 
   const InputClass = classNames({
@@ -111,13 +115,41 @@ export const EditableInput = (props: EditableInputProps) => {
         break;
       }
       case 'hover': {
-        setShowComponent(true);
+        // Do not set showComponent to true on hover to avoid keyboard focus interference
         break;
       }
       case 'default': {
         setShowComponent(false);
       }
     }
+  };
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (inputDisabled) return;
+    // When not editing, Enter/Space enters edit mode
+    if (!editing && (event.key === 'Enter' || event.key === ' ')) {
+      if (event.currentTarget !== event.target) return;
+      event.preventDefault();
+      if (event.repeat) return;
+      onChangeHandler('edit');
+      return;
+    }
+
+    // When editing and focus is on input, handle save/cancel
+    if (editing && document.activeElement === inputRef.current) {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        onSaveChanges();
+      } else if (event.key === 'Escape') {
+        event.preventDefault();
+        setDefaultComponent(value);
+      }
+    }
+  };
+
+  const handleClick = () => {
+    if (inputDisabled || editing) return;
+    onChangeHandler('edit');
   };
 
   const inputComponent = (
@@ -128,29 +160,18 @@ export const EditableInput = (props: EditableInputProps) => {
       autoFocus={editing}
       size={size}
       onChange={onInputChangeHandler}
-      error={error && editing}
+      error={error}
+      disabled={inputDisabled}
+      icon={error ? 'error' : inputIcon}
       ref={inputRef}
       data-test="DesignSystem-EditableInput--Input"
       {...rest}
     />
   );
 
-  const onKeyDown = (event: any) => {
-    if (document.activeElement === inputRef.current) {
-      switch (event.key) {
-        case 'Enter':
-          onSaveChanges();
-          break;
-        case 'Escape':
-          setDefaultComponent(value);
-          break;
-      }
-    }
-  };
-
   const renderChildren = () => {
     if (showComponent) {
-      return error && errorMessage && editing ? (
+      return error && errorMessage ? (
         <Popover trigger={inputComponent} position="right" className="px-6 py-6 d-flex align-items-center" on="hover">
           <InlineMessage appearance="alert" description={errorMessage} />
         </Popover>
@@ -159,8 +180,19 @@ export const EditableInput = (props: EditableInputProps) => {
       );
     }
 
+    const iconSize = size === 'tiny' ? 14 : 16;
+
     return (
       <div className={EditableDefaultClass} data-test="DesignSystem-EditableInput--Default">
+        {error && (
+          <Icon
+            name="error"
+            appearance="alert"
+            size={iconSize}
+            className={classNames('d-flex align-items-center', ErrorIconClass)}
+            aria-hidden
+          />
+        )}
         {value || placeholder}
       </div>
     );
@@ -171,8 +203,11 @@ export const EditableInput = (props: EditableInputProps) => {
       data-test="DesignSystem-EditableInput"
       {...baseProps}
       className={EditableInputClass}
-      onKeyDown={onKeyDown}
-      role="presentation"
+      onKeyDown={handleKeyDown}
+      onClick={handleClick}
+      role={editing ? undefined : 'button'}
+      tabIndex={inputDisabled ? -1 : editing ? -1 : 0}
+      aria-disabled={inputDisabled || undefined}
     >
       <Editable onChange={onChangeHandler} editing={editing}>
         {renderChildren()}
@@ -180,24 +215,24 @@ export const EditableInput = (props: EditableInputProps) => {
       {editing && (
         <div className={ActionClass} data-test="DesignSystem-EditableInput--Actions">
           <Button
-            icon="clear"
             className="mr-3"
-            largeIcon={true}
             size="tiny"
             onClick={() => {
               setDefaultComponent(value);
             }}
             data-test="DesignSystem-EditableInput--Discard"
-          />
+          >
+            Cancel
+          </Button>
           <Button
-            icon="check"
             appearance="primary"
-            largeIcon={true}
             size="tiny"
             disabled={disableSaveAction}
             onClick={onSaveChanges}
             data-test="DesignSystem-EditableInput--Save"
-          />
+          >
+            Save
+          </Button>
         </div>
       )}
     </div>
