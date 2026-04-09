@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import { BaseProps, BaseHtmlProps } from '@/utils/types';
 import { IconType } from '@/common.type';
 import styles from '@css/components/button.module.css';
+import uidGenerator from '@/utils/uidGenerator';
 
 export type ButtonType = 'button' | 'submit' | 'reset';
 export type ButtonAppearance = 'basic' | 'primary' | 'success' | 'alert' | 'transparent';
@@ -130,11 +131,20 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
     iconType,
     onClick,
     onKeyDown,
+    'aria-describedby': ariaDescribedBy,
     ...rest
   } = props;
 
   const buttonLabel = children ? String(children) : undefined;
   const isIconOnly = icon && !children;
+
+  const tooltipIdRef = React.useRef<string | null>(null);
+  if (tooltipIdRef.current === null && tooltip && !isIconOnly) {
+    tooltipIdRef.current = `Button-tooltip-${uidGenerator()}`;
+  }
+
+  const computedAriaDescribedBy =
+    [ariaDescribedBy, tooltip && !isIconOnly ? tooltipIdRef.current : undefined].filter(Boolean).join(' ') || undefined;
 
   const computedAriaLabel =
     props['aria-label'] ||
@@ -223,6 +233,7 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
       className={buttonClass}
       disabled={nativeDisabled}
       aria-disabled={useAriaDisabled ? true : undefined}
+      aria-describedby={computedAriaDescribedBy}
       tabIndex={tabIndex}
       aria-busy={loading || undefined}
       aria-label={computedAriaLabel}
@@ -280,6 +291,11 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
             />
           )}
         </>
+      )}
+      {tooltip && !isIconOnly && (
+        <span id={tooltipIdRef.current as string} className={styles['Button-srOnly']}>
+          {tooltip}
+        </span>
       )}
     </button>
   );
