@@ -30,6 +30,10 @@ export interface SelectTriggerProps extends BaseProps {
    */
   'aria-invalid'?: boolean | 'true' | 'false' | 'grammar' | 'spelling';
   /**
+   * Id of the listbox element controlled by this combobox trigger.
+   */
+  'aria-controls'?: string;
+  /**
    * Specifies the size of the Select trigger button.
    * @default "regular"
    */
@@ -96,6 +100,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
     minWidth,
     maxWidth,
     'aria-invalid': ariaInvalid,
+    'aria-controls': ariaControls,
     ...rest
   } = props;
 
@@ -184,8 +189,10 @@ const SelectTrigger = (props: SelectTriggerProps) => {
         disabled={disabled}
         tabIndex={0}
         style={triggerStyle}
-        aria-haspopup="listbox"
+        role="combobox"
+        aria-controls={ariaControls}
         aria-expanded={openPopover}
+        aria-haspopup="listbox"
         aria-label={ariaLabel}
         data-test="DesignSystem-Select-trigger"
         {...rest}
