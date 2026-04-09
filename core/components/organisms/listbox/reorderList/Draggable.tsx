@@ -176,6 +176,10 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
     if (this.state.isClickAndFollow) {
       e.preventDefault();
       // Second click in Click-and-Follow mode commits the drop via onEnd
+      const clickedIndex = this.getTargetIndex(e as any);
+      if (clickedIndex > -1) {
+        this.afterIndex = clickedIndex;
+      }
       return;
     }
 
