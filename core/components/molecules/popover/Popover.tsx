@@ -152,6 +152,24 @@ export const Popover = (props: PopoverProps) => {
     className
   );
 
+  const {
+    appendToBody,
+    trigger,
+    hoverable,
+    on,
+    open: openProp,
+    closeOnBackdropClick,
+    offset,
+    closeOnScroll,
+    animationClass,
+    triggerCoordinates,
+    computeStyles,
+    disabled,
+    openDelay,
+    triggerClass,
+    ...wrapperProps
+  } = rest;
+
   const PopoverWrapper = (
     <div
       data-test="DesignSystem-Popover"
@@ -159,7 +177,7 @@ export const Popover = (props: PopoverProps) => {
       data-layer={true}
       data-opened={open}
       data-name={name}
-      {...rest}
+      {...wrapperProps}
     >
       {children}
     </div>

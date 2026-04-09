@@ -50,11 +50,11 @@
   color: var(--primary);
 }
 
-.LinkButton--default:hover {
+.LinkButton--default:hover:not(:disabled):not([aria-disabled='true']) {
   color: var(--primary-dark);
 }
 
-.LinkButton--default:active {
+.LinkButton--default:active:not(:disabled):not([aria-disabled='true']) {
   color: var(--primary-darker);
 }
 
@@ -81,11 +81,11 @@
   color: var(--inverse-lighter);
 }
 
-.LinkButton--subtle:hover {
+.LinkButton--subtle:hover:not(:disabled):not([aria-disabled='true']) {
   color: var(--inverse-light);
 }
 
-.LinkButton--subtle:active {
+.LinkButton--subtle:active:not(:disabled):not([aria-disabled='true']) {
   color: var(--inverse);
 }
 
