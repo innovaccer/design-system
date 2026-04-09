@@ -108,7 +108,8 @@ const LinkButtonElement = React.forwardRef<HTMLButtonElement, LinkButtonProps>((
   const computedAriaDescribedBy =
     [ariaDescribedBy, tooltip && !isIconOnly ? tooltipIdRef.current : undefined].filter(Boolean).join(' ') || undefined;
 
-  const computedAriaLabel = props['aria-label'] || (!children && icon ? icon : undefined) || (isIconOnly && tooltip ? tooltip : undefined);
+  const computedAriaLabel =
+    props['aria-label'] || (!children && icon ? icon : undefined) || (isIconOnly && tooltip ? tooltip : undefined);
 
   const useAriaDisabled = Boolean(disabled && tooltip);
   const nativeDisabled = useAriaDisabled ? undefined : disabled;
@@ -180,12 +181,7 @@ const LinkButtonElement = React.forwardRef<HTMLButtonElement, LinkButtonProps>((
         )}
         {icon && (
           <div className={iconClass}>
-            <Icon
-              data-test="DesignSystem-LinkButton--Icon"
-              name={icon}
-              type={iconType}
-              size={iconSize}
-            />
+            <Icon data-test="DesignSystem-LinkButton--Icon" name={icon} type={iconType} size={iconSize} />
           </div>
         )}
         {children}

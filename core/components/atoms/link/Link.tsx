@@ -179,6 +179,8 @@ const LinkElement = React.forwardRef<HTMLAnchorElement | HTMLButtonElement, Link
   );
 });
 
+LinkElement.displayName = 'LinkElement';
+
 export const Link = React.forwardRef<HTMLAnchorElement | HTMLButtonElement, LinkProps>((props, ref) => {
   const { tooltip } = props;
 
