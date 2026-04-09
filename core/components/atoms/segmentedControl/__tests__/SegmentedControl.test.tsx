@@ -777,7 +777,7 @@ describe('SegmentedControl Component - Keyboard Navigation Tests', () => {
     });
   });
 
-  it('sets tabIndex to -1 for selected segment and 0 for non-selected segments', () => {
+  it('sets tabIndex to 0 for selected segment and -1 for non-selected segments', () => {
     const { getAllByTestId } = render(
       <SegmentedControl>
         <SegmentedControl.Item label="Day" />
@@ -785,8 +785,8 @@ describe('SegmentedControl Component - Keyboard Navigation Tests', () => {
       </SegmentedControl>
     );
     const segments = getAllByTestId('DesignSystem-SegmentedControl-Item');
-    expect(segments[0]).toHaveAttribute('tabIndex', '-1');
-    expect(segments[1]).toHaveAttribute('tabIndex', '0');
+    expect(segments[0]).toHaveAttribute('tabIndex', '0');
+    expect(segments[1]).toHaveAttribute('tabIndex', '-1');
   });
 });
 

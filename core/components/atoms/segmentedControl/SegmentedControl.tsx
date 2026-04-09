@@ -51,6 +51,14 @@ export interface SegmentedControlProps extends BaseProps {
    * Child segments (SegmentedControl.Item components)
    */
   children: React.ReactElement<SegmentedControlItemProps> | React.ReactElement<SegmentedControlItemProps>[];
+  /**
+   * Accessible name for the segment group. Required if not labelled by an external element.
+   */
+  'aria-label'?: string;
+  /**
+   * Associates the segment group with an external label element.
+   */
+  'aria-labelledby'?: string;
 }
 
 export const SegmentedControl = (props: SegmentedControlProps) => {
@@ -182,6 +190,63 @@ export const SegmentedControl = (props: SegmentedControlProps) => {
     return () => window.removeEventListener('resize', handleResize);
   }, [selectedIndex, totalChildren]);
 
+  const handleKeyDown = React.useCallback(
+    (event: React.KeyboardEvent<HTMLDivElement>) => {
+      if (disabled) return;
+
+      const enabledIndices = validChildren
+        .map((child, idx) => ({ child, idx }))
+        .filter(({ child }) => !child.props.disabled)
+        .map(({ idx }) => idx);
+
+      if (enabledIndices.length === 0) return;
+
+      let nextIndex = selectedIndex;
+      const currentEnabledIdx = enabledIndices.indexOf(selectedIndex);
+
+      switch (event.key) {
+        case 'ArrowRight':
+        case 'ArrowDown':
+          event.preventDefault();
+          if (currentEnabledIdx === -1) {
+            nextIndex = enabledIndices[0];
+          } else {
+            nextIndex = enabledIndices[(currentEnabledIdx + 1) % enabledIndices.length];
+          }
+          break;
+        case 'ArrowLeft':
+        case 'ArrowUp':
+          event.preventDefault();
+          if (currentEnabledIdx === -1) {
+            nextIndex = enabledIndices[enabledIndices.length - 1];
+          } else {
+            nextIndex = enabledIndices[(currentEnabledIdx - 1 + enabledIndices.length) % enabledIndices.length];
+          }
+          break;
+        case 'Home':
+          event.preventDefault();
+          nextIndex = enabledIndices[0];
+          break;
+        case 'End':
+          event.preventDefault();
+          nextIndex = enabledIndices[enabledIndices.length - 1];
+          break;
+        default:
+          return;
+      }
+
+      if (nextIndex !== selectedIndex) {
+        const nextValue = validChildren[nextIndex]?.props.value;
+        emitChange(nextIndex, nextValue);
+        // Focus the button after setting state so it receives the new tabIndex=0
+        requestAnimationFrame(() => {
+          buttonRefs.current[nextIndex]?.focus();
+        });
+      }
+    },
+    [selectedIndex, disabled, validChildren]
+  );
+
   const emitChange = (index: number, value?: SegmentedControlValue) => {
     if (disabled || index < 0 || index >= totalChildren) return;
     const child = validChildren[index];
@@ -234,7 +299,10 @@ export const SegmentedControl = (props: SegmentedControlProps) => {
       className={controlClass}
       style={containerStyle}
       ref={containerRef}
+      role="radiogroup"
+      tabIndex={-1}
       data-test="DesignSystem-SegmentedControl"
+      onKeyDown={handleKeyDown}
       {...baseProps}
     >
       <div
