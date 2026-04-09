@@ -179,6 +179,8 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
       const clickedIndex = this.getTargetIndex(e as any);
       if (clickedIndex > -1) {
         this.afterIndex = clickedIndex;
+      } else {
+        this.afterIndex = -2;
       }
       return;
     }
@@ -480,7 +482,10 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
       itemDragged: -1,
       scrollingSpeed: 0,
       isClickAndFollow: false,
-      ariaMessage: `Item dropped at position ${Math.max(this.afterIndex, 0) + 1}.`,
+      ariaMessage:
+        this.afterIndex === -2
+          ? 'Reorder cancelled. Item returned to its original position.'
+          : `Item dropped at position ${Math.max(this.afterIndex, 0) + 1}.`,
     });
     this.afterIndex = -2;
     // sometimes the scroll gets messed up after the drop, fix:
@@ -540,9 +545,20 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
       return !(el as HTMLInputElement).disabled;
     });
 
-    const idx = nodes.indexOf(active);
-    if (idx === -1) return;
-    const next = shiftKey ? nodes[idx - 1] : nodes[idx + 1];
+    let currentIdx = nodes.indexOf(active);
+    if (currentIdx === -1) {
+      const insertIdx = nodes.findIndex(
+        (node) => active.compareDocumentPosition(node) & Node.DOCUMENT_POSITION_FOLLOWING
+      );
+      if (insertIdx !== -1) {
+        nodes.splice(insertIdx, 0, active);
+        currentIdx = insertIdx;
+      } else {
+        nodes.push(active);
+        currentIdx = nodes.length - 1;
+      }
+    }
+    const next = shiftKey ? nodes[currentIdx - 1] : nodes[currentIdx + 1];
     next?.focus();
   };
 
