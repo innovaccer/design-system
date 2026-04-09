@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu, getMenu } from '@/utils/navigationHelper';
+import { Menu, ActiveMenu, getMenu } from '@/utils/navigationHelper';
 
 const VERTICAL_NAV_ITEM_SELECTOR = '[data-menu-name]';
 
@@ -234,7 +234,7 @@ export const getInitialFocusedItemName = (
   if (!active) return null;
 
   // Use getMenu to support both active.name and active.link
-  const activeMenu = getMenu(menus, active);
+  const activeMenu = getMenu(menus, active as ActiveMenu);
   if (!activeMenu) return null;
 
   // Skip disabled items - they can't be keyboard navigated

@@ -206,7 +206,7 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
   const computedAriaLabel =
     ariaLabel ||
     (hasChips
-      ? `Click to edit. Current chips: ${inputValue.join(', ')}`
+      ? `Click to edit. Current chips: ${inputValue!.join(', ')}`
       : `Click to edit. ${placeholder || 'Chip input'}`);
 
   return (
