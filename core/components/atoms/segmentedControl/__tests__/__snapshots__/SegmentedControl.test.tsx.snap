@@ -6,7 +6,7 @@ exports[`SegmentedControl Component - Custom Content Snapshot Tests matches snap
     <div
       class="SegmentedControl SegmentedControl--regular SegmentedControl--equalWidth SegmentedControl--twoSegments"
       data-test="DesignSystem-SegmentedControl"
-      role="radiogroup"
+      role="group"
       style="max-width: 100%; --segment-max-width: 256px;"
       tabindex="-1"
     >
@@ -15,10 +15,9 @@ exports[`SegmentedControl Component - Custom Content Snapshot Tests matches snap
         style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
       />
       <button
-        aria-checked="true"
+        aria-pressed="true"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--equalWidth SegmentedControl-segment--twoSegmentsSelected SegmentedControl-segment--customContent"
         data-test="DesignSystem-SegmentedControl-Item"
-        role="radio"
         tabindex="0"
         type="button"
       >
@@ -30,10 +29,9 @@ exports[`SegmentedControl Component - Custom Content Snapshot Tests matches snap
         class="SegmentedControl-divider SegmentedControl-divider--regular SegmentedControl-divider--hidden"
       />
       <button
-        aria-checked="false"
+        aria-pressed="false"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
-        role="radio"
         tabindex="-1"
         type="button"
       >
@@ -1361,7 +1359,7 @@ exports[`SegmentedControl Component - Two Segments Snapshot Tests matches snapsh
     <div
       class="SegmentedControl SegmentedControl--regular SegmentedControl--equalWidth SegmentedControl--twoSegments"
       data-test="DesignSystem-SegmentedControl"
-      role="radiogroup"
+      role="group"
       style="max-width: 100%; --segment-max-width: 256px;"
       tabindex="-1"
     >
@@ -1370,10 +1368,9 @@ exports[`SegmentedControl Component - Two Segments Snapshot Tests matches snapsh
         style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
       />
       <button
-        aria-checked="true"
+        aria-pressed="true"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--equalWidth SegmentedControl-segment--twoSegmentsSelected"
         data-test="DesignSystem-SegmentedControl-Item"
-        role="radio"
         tabindex="0"
         type="button"
       >
@@ -1387,10 +1384,9 @@ exports[`SegmentedControl Component - Two Segments Snapshot Tests matches snapsh
         class="SegmentedControl-divider SegmentedControl-divider--regular SegmentedControl-divider--hidden"
       />
       <button
-        aria-checked="false"
+        aria-pressed="false"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
-        role="radio"
         tabindex="-1"
         type="button"
       >
