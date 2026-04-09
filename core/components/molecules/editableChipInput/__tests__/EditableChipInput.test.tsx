@@ -87,6 +87,41 @@ describe('EditableChipInput component', () => {
     expect(getByTestId(chipInputTestId)).toBeInTheDocument();
     expect(getByTestId('DesignSystem-EditableChipInput--Actions')).toBeInTheDocument();
   });
+
+  it('focuses the inner input when edit opens if autoFocus is omitted from chipInputOptions', () => {
+    const { getByTestId } = render(
+      <EditableChipInput
+        value={value}
+        onChange={onChange}
+        size="regular"
+        chipInputOptions={{
+          chipOptions,
+          allowDuplicates: false,
+        }}
+      />
+    );
+
+    fireEvent.click(getByTestId(editableWrapperTestId));
+    expect(getByTestId('DesignSystem-ChipInput--Input')).toHaveFocus();
+  });
+
+  it('does not auto-focus the inner input when chipInputOptions.autoFocus is false', () => {
+    const { getByTestId } = render(
+      <EditableChipInput
+        value={value}
+        onChange={onChange}
+        size="regular"
+        chipInputOptions={{
+          chipOptions,
+          allowDuplicates: false,
+          autoFocus: false,
+        }}
+      />
+    );
+
+    fireEvent.click(getByTestId(editableWrapperTestId));
+    expect(getByTestId('DesignSystem-ChipInput--Input')).not.toHaveFocus();
+  });
 });
 
 describe('Chip component', () => {

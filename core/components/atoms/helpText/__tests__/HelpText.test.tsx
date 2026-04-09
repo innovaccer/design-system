@@ -25,6 +25,19 @@ describe('HelpText component snapshot', () => {
   testHelper(mapper, testFunc);
 });
 
+describe('HelpText id for aria associations', () => {
+  it('uses explicit id on the message container when provided', () => {
+    const { container } = render(<HelpText id="my-field-help" message={message} />);
+    expect(container.querySelector('#my-field-help')).toBeInTheDocument();
+  });
+
+  it('renders generated id on the message container when id is omitted', () => {
+    const { container } = render(<HelpText message={message} />);
+    const el = container.querySelector('[id^="HelpText-"]');
+    expect(el).toBeInTheDocument();
+  });
+});
+
 describe('HelpText component prop:error', () => {
   it('check for message when error=true', () => {
     const { getByTestId } = render(<HelpText error={true} message={message} />);

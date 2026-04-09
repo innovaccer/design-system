@@ -165,6 +165,16 @@ describe('Checkbox component accessibility', () => {
     const { getByTestId } = render(<Checkbox label={StringValue} indeterminate={true} />);
     expect(getByTestId('DesignSystem-Checkbox-InputBox')).toHaveAttribute('aria-checked', 'mixed');
   });
+
+  it('forwards aria-label to the input element', () => {
+    const { getByTestId } = render(<Checkbox aria-label="Accept terms" />);
+    expect(getByTestId('DesignSystem-Checkbox-InputBox')).toHaveAttribute('aria-label', 'Accept terms');
+  });
+
+  it('forwards aria-labelledby to the input element', () => {
+    const { getByTestId } = render(<Checkbox aria-labelledby="external-label" />);
+    expect(getByTestId('DesignSystem-Checkbox-InputBox')).toHaveAttribute('aria-labelledby', 'external-label');
+  });
 });
 
 describe('Checkbox component a11y', () => {

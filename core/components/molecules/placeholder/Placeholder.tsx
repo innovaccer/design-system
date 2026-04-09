@@ -42,7 +42,7 @@ export const Placeholder = (props: PlaceholderProps) => {
   );
 
   return (
-    <div data-test="DesignSystem-Placeholder" {...baseProps} className={classes}>
+    <div data-test="DesignSystem-Placeholder" {...baseProps} className={classes} aria-hidden="true">
       {withImage && <PlaceholderImage round={round} size={imageSize} data-test="DesignSystem-Placeholder--Image" />}
       {children && (
         <div className={paragraphClasses} data-test="DesignSystem-Placeholder--Paragraph">

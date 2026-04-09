@@ -199,3 +199,17 @@ describe('Radio component a11y', () => {
     expect(results).toHaveNoViolations();
   });
 });
+
+describe('Radio accessibility', () => {
+  it('sets aria-label on the input element', () => {
+    const { getByTestId } = render(<Radio aria-label="Option A" name={StringValue} value={StringValue} />);
+    expect(getByTestId('DesignSystem-Radio-Input')).toHaveAttribute('aria-label', 'Option A');
+  });
+
+  it('sets aria-labelledby on the input element', () => {
+    const { getByTestId } = render(
+      <Radio aria-labelledby="external-label-id" name={StringValue} value={StringValue} />
+    );
+    expect(getByTestId('DesignSystem-Radio-Input')).toHaveAttribute('aria-labelledby', 'external-label-id');
+  });
+});

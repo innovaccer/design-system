@@ -252,8 +252,8 @@ describe('AvatarGroup component', () => {
     fireEvent.click(extraAvatar);
     const listItem = getAllByTestId('DesignSystem-AvatarGroup--Item');
 
-    expect(listItem[0]).toHaveAttribute('disabled');
-    expect(listItem[1]).not.toHaveAttribute('disabled');
+    expect(listItem[0]).toHaveAttribute('data-disabled', 'true');
+    expect(listItem[1]).not.toHaveAttribute('data-disabled', 'true');
   });
 
   it('renders avatars with status', () => {

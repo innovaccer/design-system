@@ -290,6 +290,29 @@ describe('TimePicker Event Handlers', () => {
       expect(FunctionValue).toHaveBeenCalled();
     });
   });
+
+  it('selects the active time when Enter is pressed from the search input', async () => {
+    const onChange = jest.fn();
+    const { getByTestId, getAllByTestId } = render(<TimePicker onChange={onChange} withSearch={true} />);
+    const dropdownTrigger = getByTestId(trigger);
+
+    fireEvent.click(dropdownTrigger);
+
+    const searchInput = getByTestId('DesignSystem-Input');
+    fireEvent.input(searchInput, { target: { value: '20' } });
+
+    await waitFor(() => {
+      const optionList = getAllByTestId(optionID);
+      expect(optionList[80]).toHaveTextContent('08:00 PM');
+      expect(optionList[80]).toHaveClass(activeOptionClass);
+    });
+
+    fireEvent.keyDown(searchInput, { key: 'Enter' });
+
+    await waitFor(() => {
+      expect(onChange).toHaveBeenCalledWith('08:00 PM');
+    });
+  });
 });
 
 describe('TimePicker Search Error Handlers', () => {

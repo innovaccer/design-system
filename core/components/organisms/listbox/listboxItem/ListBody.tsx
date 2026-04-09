@@ -3,11 +3,10 @@ import classNames from 'classnames';
 import { Icon } from '@/index';
 import { ListboxItemProps } from './ListboxItem';
 import { ListboxContext } from '../Listbox';
-import { onKeyDown } from '../utils';
 import styles from '@css/components/listbox.module.css';
 
-export const ListBody = (props: ListboxItemProps) => {
-  const { children, className, disabled, selected, activated, tabIndex } = props;
+export const ListBody = (props: ListboxItemProps & React.HTMLAttributes<HTMLDivElement>) => {
+  const { children, className, disabled, selected, activated, ...rest } = props;
 
   const contextProp = React.useContext(ListboxContext);
   const { size, type, draggable } = contextProp;
@@ -24,14 +23,17 @@ export const ListBody = (props: ListboxItemProps) => {
     className
   );
 
+  const role = rest.role ?? 'option';
+  const defaultAriaSelected = role === 'option' ? Boolean(selected) : undefined;
+
   return (
     <div
       data-disabled={disabled}
       data-test="DesignSystem-Listbox-ItemWrapper"
-      tabIndex={draggable ? -1 : tabIndex || 0}
       className={itemClass}
-      onKeyDown={onKeyDown}
-      role="presentation"
+      aria-selected={rest['aria-selected'] ?? defaultAriaSelected}
+      {...rest}
+      aria-disabled={disabled ? true : undefined}
     >
       {draggable && (
         <Icon

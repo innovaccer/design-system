@@ -465,7 +465,7 @@ export const GridCell = (props: GridCellProps) => {
 
     case 'STATUS_HINT':
       return (
-        <div className={statusHintCellClass}>
+        <div className={statusHintCellClass} aria-busy={loading || undefined}>
           {loading ? (
             <Placeholder className="w-75 flex-grow-0" imageSize={'small'} round={true}>
               <PlaceholderParagraph length="large" />

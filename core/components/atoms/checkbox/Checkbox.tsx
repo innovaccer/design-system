@@ -95,6 +95,8 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
     labelRef,
     wrapLabel,
     ['aria-describedby']: ariaDescribedby,
+    ['aria-label']: ariaLabel,
+    ['aria-labelledby']: ariaLabelledBy,
     ...rest
   } = props;
 
@@ -198,6 +200,8 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
             aria-invalid={error || undefined}
             aria-checked={indeterminate ? 'mixed' : undefined}
             aria-describedby={describedBy}
+            aria-label={ariaLabel}
+            aria-labelledby={ariaLabelledBy}
           />
           <span className={CheckboxWrapper} data-test="DesignSystem-Checkbox-Icon">
             {IconMapper && <CheckboxIcon name={IconMapper} />}

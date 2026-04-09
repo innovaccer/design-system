@@ -11,7 +11,6 @@ import {
   getWrapperElement,
   getUpdatedZIndex,
   closeOnEscapeKeypress,
-  getFocusableElements,
   handleFocusTrapKeyDown,
   restoreFocusToElementIfConnected,
 } from '@/utils/overlayHelper';
@@ -144,6 +143,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
   modalRef = React.createRef<HTMLDivElement>();
   modalContentRef = React.createRef<HTMLDivElement>();
   previousActiveElement: HTMLElement | null = null;
+  staticFocusTarget: HTMLElement | null = null;
   autoHeadingId: string;
 
   element: Element;
@@ -175,7 +175,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
   onFocusTrapKeyDown = (event: KeyboardEvent) => {
     const container = this.modalContentRef.current;
     if (!container) return;
-    handleFocusTrapKeyDown(event, container);
+    handleFocusTrapKeyDown(event, container, this.staticFocusTarget);
   };
 
   activateFocusTrap = () => {
@@ -186,33 +186,45 @@ class Modal extends React.Component<ModalProps, ModalState> {
     if (!container) return;
 
     window.requestAnimationFrame(() => {
-      const focusable = getFocusableElements(container);
-      if (focusable.length > 0) {
-        focusable[0].focus({ preventScroll: true });
-      } else {
-        container.setAttribute('tabindex', '-1');
-        container.focus({ preventScroll: true });
-      }
+      // Per WAI-ARIA APG: for dialogs with semantic content (heading + body + footer),
+      // focus the element named by aria-labelledby (the heading) with tabindex="-1" so
+      // VoiceOver announces the dialog title before the user tabs to interactive elements.
+      // Fall back to the dialog container if no internal heading is found.
+      const labelledById = container.getAttribute('aria-labelledby');
+      const candidateEl = labelledById ? document.getElementById(labelledById) : null;
+      const headingEl = candidateEl && container.contains(candidateEl) ? candidateEl : null;
+
+      const target = headingEl ?? container;
+      target.setAttribute('tabindex', '-1');
+      target.focus({ preventScroll: true });
+      this.staticFocusTarget = target;
     });
 
     document.addEventListener('keydown', this.onFocusTrapKeyDown, true);
-    container.addEventListener('keydown', this.onCloseHandler);
+    document.addEventListener('keydown', this.onCloseHandler);
   };
 
   deactivateFocusTrap = () => {
     document.removeEventListener('keydown', this.onFocusTrapKeyDown, true);
 
+    document.removeEventListener('keydown', this.onCloseHandler);
+
     const container = this.modalContentRef.current;
     if (container) {
-      container.removeEventListener('keydown', this.onCloseHandler);
       container.removeAttribute('tabindex');
     }
+
+    // Remove tabindex from whichever static element was focused on open (heading or container).
+    if (this.staticFocusTarget && this.staticFocusTarget !== container) {
+      this.staticFocusTarget.removeAttribute('tabindex');
+    }
+    this.staticFocusTarget = null;
 
     // Capture in variable so RAF callback has stable reference (previousActiveElement is cleared below)
     const elementToFocus = this.previousActiveElement;
     this.previousActiveElement = null;
 
-    restoreFocusToElementIfConnected(elementToFocus);
+    restoreFocusToElementIfConnected(elementToFocus, this.modalContentRef.current);
   };
 
   componentDidMount() {
@@ -308,7 +320,12 @@ class Modal extends React.Component<ModalProps, ModalState> {
       'aria-labelledby': ariaLabelledBy,
     } = this.props;
     const shouldUseAutoHeadingId = !ariaLabelledBy && !header && Boolean(headerOptions?.heading);
-    const resolvedHeadingId = headerOptions?.headingId || (shouldUseAutoHeadingId ? this.autoHeadingId : undefined);
+    const resolvedHeadingId =
+      headerOptions?.headingId ||
+      (ariaLabelledBy && !ariaLabelledBy.includes(' ') && !header && Boolean(headerOptions?.heading)
+        ? ariaLabelledBy
+        : undefined) ||
+      (shouldUseAutoHeadingId ? this.autoHeadingId : undefined);
     const resolvedAriaLabelledBy = ariaLabelledBy || resolvedHeadingId;
 
     const BackdropZIndex: number = zIndex ? zIndex - 1 : 1000;
@@ -407,6 +424,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
                   <Button
                     icon="close"
                     appearance="transparent"
+                    aria-label="Close"
                     data-test="DesignSystem-Modal--CloseButton"
                     onClick={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
                       if (onClose) onClose(event, 'IconClick');

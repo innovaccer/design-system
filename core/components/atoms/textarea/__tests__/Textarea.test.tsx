@@ -49,6 +49,12 @@ describe('Textarea component', () => {
     expect(getByTestId(dataTestId)).toHaveClass('Textarea--error');
   });
 
+  it('renders readonly textarea with readOnly attribute on DOM', () => {
+    const { getByTestId } = render(<Textarea readOnly={true} />);
+    expect(getByTestId(dataTestId)).toHaveAttribute('readonly');
+    expect(getByTestId(dataTestId)).toHaveClass('Textarea--readOnly');
+  });
+
   it('renders textarea with placeholder', () => {
     const { getByTestId } = render(<Textarea placeholder={placeholder} />);
     expect(getByTestId(dataTestId)).toHaveAttribute('placeholder', placeholder);

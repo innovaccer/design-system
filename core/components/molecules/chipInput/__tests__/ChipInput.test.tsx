@@ -289,8 +289,8 @@ describe('ChipInput Component - Size Variants and Icon Alignment', () => {
       const { getByTestId } = render(<ChipInput {...defaultProps} size="small" defaultValue={['chip1', 'chip2']} />);
 
       const icon = getByTestId('DesignSystem-ChipInput--Icon');
-      expect(icon).toHaveClass('ChipInput-icon--small');
-      expect(icon).not.toHaveClass('ChipInput-icon--regular');
+      expect(icon).toHaveClass('Input-icon');
+      expect(icon).toHaveClass('Input-iconWrapper--right');
     });
 
     it('should maintain consistent height behavior when transitioning from empty to filled state', () => {
@@ -336,8 +336,8 @@ describe('ChipInput Component - Size Variants and Icon Alignment', () => {
       const { getByTestId } = render(<ChipInput {...defaultProps} size="regular" defaultValue={['chip1', 'chip2']} />);
 
       const icon = getByTestId('DesignSystem-ChipInput--Icon');
-      expect(icon).toHaveClass('ChipInput-icon--regular');
-      expect(icon).not.toHaveClass('ChipInput-icon--small');
+      expect(icon).toHaveClass('Input-icon');
+      expect(icon).toHaveClass('Input-iconWrapper--right');
     });
   });
 
@@ -363,7 +363,7 @@ describe('ChipInput Component - Size Variants and Icon Alignment', () => {
       const { getByTestId } = render(<ChipInput {...defaultProps} defaultValue={['chip1']} />);
 
       const icon = getByTestId('DesignSystem-ChipInput--Icon');
-      expect(icon).toHaveClass('ChipInput-icon--regular');
+      expect(icon).toHaveClass('Input-icon');
     });
   });
 
@@ -373,7 +373,7 @@ describe('ChipInput Component - Size Variants and Icon Alignment', () => {
 
       const icon = getByTestId('DesignSystem-ChipInput--Icon');
       expect(icon).toBeInTheDocument();
-      expect(icon).toHaveClass('ChipInput-icon--small');
+      expect(icon).toHaveClass('Input-icon');
     });
 
     it('should render appropriate icon container for regular ChipInput (16px icon in centered container)', () => {
@@ -381,19 +381,19 @@ describe('ChipInput Component - Size Variants and Icon Alignment', () => {
 
       const icon = getByTestId('DesignSystem-ChipInput--Icon');
       expect(icon).toBeInTheDocument();
-      expect(icon).toHaveClass('ChipInput-icon--regular');
+      expect(icon).toHaveClass('Input-icon');
     });
 
     it('should maintain consistent icon positioning across size changes', () => {
       const { rerender, getByTestId } = render(<ChipInput {...defaultProps} size="small" defaultValue={['test']} />);
 
       let icon = getByTestId('DesignSystem-ChipInput--Icon');
-      expect(icon).toHaveClass('ChipInput-icon--small');
+      expect(icon).toHaveClass('Input-icon');
 
       rerender(<ChipInput {...defaultProps} size="regular" defaultValue={['test']} />);
 
       icon = getByTestId('DesignSystem-ChipInput--Icon');
-      expect(icon).toHaveClass('ChipInput-icon--regular');
+      expect(icon).toHaveClass('Input-icon');
     });
 
     it('should not render clear icon when no chips are present regardless of size', () => {
@@ -488,8 +488,8 @@ describe('ChipInput Component - Size Variants and Icon Alignment', () => {
       const { getByTestId } = render(<ChipInput {...defaultProps} size="small" defaultValue={['test']} />);
 
       const icon = getByTestId('DesignSystem-ChipInput--Icon');
-      expect(icon).toHaveClass('ChipInput-icon');
-      expect(icon).toHaveClass('ChipInput-icon--small');
+      expect(icon).toHaveClass('Input-icon');
+      expect(icon).toHaveClass('Input-iconWrapper--right');
     });
   });
 
@@ -504,7 +504,7 @@ describe('ChipInput Component - Size Variants and Icon Alignment', () => {
 
       expect(container).toHaveClass('ChipInput--small');
       expect(input).toHaveClass('ChipInput-input--small');
-      expect(icon).toHaveClass('ChipInput-icon--small');
+      expect(icon).toHaveClass('Input-icon');
       expect(chip).toHaveClass('my-2');
 
       rerender(<ChipInput {...defaultProps} size="regular" defaultValue={['test']} />);
@@ -516,7 +516,7 @@ describe('ChipInput Component - Size Variants and Icon Alignment', () => {
 
       expect(container).toHaveClass('ChipInput--regular');
       expect(input).toHaveClass('ChipInput-input--regular');
-      expect(icon).toHaveClass('ChipInput-icon--regular');
+      expect(icon).toHaveClass('Input-icon');
       expect(chip).toHaveClass('my-3');
     });
 
@@ -542,17 +542,17 @@ describe('ChipInput Component - Size Variants and Icon Alignment', () => {
   });
 
   describe('Focus and Accessibility with Size Variants', () => {
-    it('should maintain proper tabIndex for interactive elements across sizes', () => {
+    it('should keep wrapper out of tab order and tabIndex on clear icon when enabled', () => {
       const { getByTestId } = render(<ChipInput {...defaultProps} size="small" defaultValue={['chip1']} />);
 
       const container = getByTestId('DesignSystem-ChipInput');
       const icon = getByTestId('DesignSystem-ChipInput--Icon');
 
-      expect(container).toHaveAttribute('tabIndex', '0');
-      expect(icon).toHaveAttribute('tabIndex', '0');
+      expect(container).not.toHaveAttribute('tabIndex');
+      expect(icon).not.toBeDisabled();
     });
 
-    it('should set proper tabIndex when disabled regardless of size', () => {
+    it('should omit wrapper tabIndex and set clear icon tabIndex -1 when disabled', () => {
       const { getByTestId } = render(
         <ChipInput {...defaultProps} size="small" defaultValue={['chip1']} disabled={true} />
       );
@@ -560,18 +560,18 @@ describe('ChipInput Component - Size Variants and Icon Alignment', () => {
       const container = getByTestId('DesignSystem-ChipInput');
       const icon = getByTestId('DesignSystem-ChipInput--Icon');
 
-      expect(container).toHaveAttribute('tabIndex', '-1');
-      expect(icon).toHaveAttribute('tabIndex', '-1');
+      expect(container).not.toHaveAttribute('tabIndex');
+      expect(icon).toBeDisabled();
     });
 
-    it('should focus input when container is clicked regardless of size', () => {
+    it('should not focus input when outer container is clicked', () => {
       const { getByTestId } = render(<ChipInput {...defaultProps} size="small" />);
 
       const container = getByTestId('DesignSystem-ChipInput');
       const input = getByTestId('DesignSystem-ChipInput--Input');
 
       fireEvent.click(container);
-      expect(input).toHaveFocus();
+      expect(input).not.toHaveFocus();
     });
   });
 });

@@ -48,3 +48,25 @@ describe('Spinner component a11y', () => {
     expect(results).toHaveNoViolations();
   });
 });
+
+describe('Spinner accessibility props', () => {
+  it('renders with default aria-label "Loading"', () => {
+    const { getByRole } = render(<Spinner appearance="primary" size="medium" />);
+    const spinner = getByRole('status');
+    expect(spinner).toHaveAttribute('aria-label', 'Loading');
+    expect(spinner).not.toHaveAttribute('aria-labelledby');
+  });
+
+  it('renders with custom aria-label', () => {
+    const { getByRole } = render(<Spinner appearance="primary" size="medium" aria-label="Saving data" />);
+    const spinner = getByRole('status');
+    expect(spinner).toHaveAttribute('aria-label', 'Saving data');
+  });
+
+  it('renders with aria-labelledby and omits aria-label', () => {
+    const { getByRole } = render(<Spinner appearance="primary" size="medium" aria-labelledby="spinner-label" />);
+    const spinner = getByRole('status');
+    expect(spinner).toHaveAttribute('aria-labelledby', 'spinner-label');
+    expect(spinner).not.toHaveAttribute('aria-label');
+  });
+});

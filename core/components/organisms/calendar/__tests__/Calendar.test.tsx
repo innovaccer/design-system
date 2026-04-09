@@ -272,7 +272,7 @@ describe('text color for different states', () => {
     expect(textEl).toHaveClass('color-white');
   });
 
-  it('should have the text appearance as disabled when the state is disabled', () => {
+  it('should have the text appearance as subtle when the state is disabled', () => {
     const { getAllByTestId } = render(
       <Calendar
         date={new Date('2020-03-14T18:30:00.000Z')}
@@ -280,7 +280,7 @@ describe('text color for different states', () => {
         view="year"
       />
     );
-    expect(getAllByTestId('DesignSystem-Text')[3]).toHaveClass('Text--disabled');
+    expect(getAllByTestId('DesignSystem-Text')[3]).toHaveClass('Text--subtle');
   });
 
   it('should have the text color as primary-dark for current date ', () => {
@@ -290,9 +290,9 @@ describe('text color for different states', () => {
     expect(textEl).toHaveClass('color-primary-dark');
   });
 
-  it('should have the text appearance as disabled when the state is disabled but with current year', () => {
+  it('should have the text color as primary-dark when the state is disabled but with current year', () => {
     const { getAllByTestId } = render(<Calendar disabledBefore={new Date('2022-01-20T18:30:00.000Z')} view="year" />);
-    expect(getAllByTestId('DesignSystem-Text')[5]).toHaveClass('Text--disabled');
+    expect(getAllByTestId('DesignSystem-Text')[5]).toHaveClass('color-primary-dark');
   });
 });
 

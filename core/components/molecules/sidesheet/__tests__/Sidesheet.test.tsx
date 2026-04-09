@@ -101,6 +101,13 @@ describe('sidesheet component', () => {
     expect(getByTestId('DesignSystem-Sidesheet--Header')?.parentNode).toHaveClass('Sidesheet-header--withSeperator');
   });
 
+  it('close button has accessible aria-label', () => {
+    const { getByTestId } = render(<Sidesheet dimension="regular" headerOptions={headerOptions} open={true} />);
+
+    const closeButton = getByTestId('DesignSystem-Sidesheet--CloseButton');
+    expect(closeButton).toHaveAttribute('aria-label', 'Close');
+  });
+
   it('calls onClose function with backdropClose being true', () => {
     const { getByTestId } = render(
       <>
@@ -168,7 +175,7 @@ describe('Sidesheet component with prop: open', () => {
     expect(getByTestId('DesignSystem-Sidesheet')).toHaveClass('Sidesheet-animation--close');
   });
 
-  it('focuses first focusable element when Sidesheet opens', async () => {
+  it('focuses heading (aria-labelledby target) when Sidesheet opens so VoiceOver announces the dialog title', async () => {
     jest.useRealTimers();
     const flushRAF = () => act(() => new Promise((resolve) => requestAnimationFrame(() => resolve())));
 
@@ -180,8 +187,9 @@ describe('Sidesheet component with prop: open', () => {
 
     await flushRAF();
 
-    const closeButton = getByTestId('DesignSystem-Sidesheet--CloseButton');
-    expect(document.activeElement).toBe(closeButton);
+    const heading = getByTestId('DesignSystem-OverlayHeader--heading');
+    expect(document.activeElement).toBe(heading);
+    expect(heading).toHaveAttribute('tabindex', '-1');
     jest.useFakeTimers();
   });
 
@@ -233,6 +241,32 @@ describe('Sidesheet component with prop: open', () => {
     expect(onClose).toHaveBeenCalled();
   });
 
+  it('Escape closes Sidesheet even when closeOnEscape={false} to prevent keyboard trap (WCAG 2.2.1)', async () => {
+    jest.useRealTimers();
+    const flushRAF = () => act(() => new Promise((resolve) => requestAnimationFrame(() => resolve())));
+    const onClose = jest.fn();
+
+    render(
+      <Sidesheet
+        dimension="large"
+        headerOptions={headerOptions}
+        open={true}
+        footer={footer}
+        onClose={onClose}
+        closeOnEscape={false}
+      >
+        <Text>Body</Text>
+      </Sidesheet>
+    );
+
+    await flushRAF();
+
+    fireEvent.keyDown(document, { key: 'Escape' });
+
+    expect(onClose).toHaveBeenCalled();
+    jest.useFakeTimers();
+  });
+
   it('renders Sidesheet with toggle of open', () => {
     const { getByTestId, rerender } = render(
       <Sidesheet
@@ -270,6 +304,114 @@ describe('Sidesheet component with prop: open', () => {
 
     jest.runOnlyPendingTimers();
     jest.useRealTimers();
+  });
+
+  it('inner widget can stop Escape propagation to prevent sidesheet from closing', async () => {
+    jest.useRealTimers();
+    const flushRAF = () => act(() => new Promise((resolve) => requestAnimationFrame(() => resolve())));
+    const onClose = jest.fn();
+
+    const { getByTestId } = render(
+      <Sidesheet dimension="large" headerOptions={headerOptions} open={true} onClose={onClose}>
+        <button data-test="inner-widget">Inner</button>
+      </Sidesheet>
+    );
+
+    await flushRAF();
+
+    const innerWidget = getByTestId('inner-widget');
+    innerWidget.focus();
+
+    const stopEscape = (e: Event) => {
+      if ((e as KeyboardEvent).key === 'Escape') e.stopPropagation();
+    };
+    innerWidget.addEventListener('keydown', stopEscape);
+    fireEvent.keyDown(innerWidget, { key: 'Escape' });
+    innerWidget.removeEventListener('keydown', stopEscape);
+
+    expect(onClose).not.toHaveBeenCalled();
+    jest.useFakeTimers();
+  });
+
+  it('Shift+Tab from heading (initial static focus target) wraps to last focusable when no back button', async () => {
+    // No back button: DOM order is [heading][closeButton…][footer buttons].
+    // Heading precedes first tabbable (close button), so Shift+Tab must wrap to last.
+    jest.useRealTimers();
+    const flushRAF = () => act(() => new Promise((resolve) => requestAnimationFrame(() => resolve())));
+
+    const footerWithLastBtn = (
+      <>
+        <Button appearance="basic">Basic</Button>
+        <Button appearance="primary" data-test="last-btn">
+          Primary
+        </Button>
+      </>
+    );
+
+    const { getByTestId } = render(
+      <Sidesheet
+        dimension="large"
+        headerOptions={headerOptions}
+        open={true}
+        footer={footerWithLastBtn}
+        onClose={jest.fn()}
+      >
+        <Text>Body</Text>
+      </Sidesheet>
+    );
+
+    await flushRAF();
+
+    const heading = getByTestId('DesignSystem-OverlayHeader--heading');
+    expect(document.activeElement).toBe(heading);
+
+    fireEvent.keyDown(document, { key: 'Tab', shiftKey: true });
+
+    const lastButton = getByTestId('last-btn');
+    expect(document.activeElement).toBe(lastButton);
+    jest.useFakeTimers();
+  });
+
+  it('Shift+Tab from heading falls through to back button when back button precedes heading in DOM', async () => {
+    // Back button present: DOM order is [backButton][heading][closeButton…][footer].
+    // Back button is first tabbable and comes before the heading, so Shift+Tab from the
+    // heading should NOT wrap — the browser's natural reverse-tab lands on the back button.
+    jest.useRealTimers();
+    const flushRAF = () => act(() => new Promise((resolve) => requestAnimationFrame(() => resolve())));
+
+    const footerWithLastBtn = (
+      <>
+        <Button appearance="basic">Basic</Button>
+        <Button appearance="primary" data-test="last-btn">
+          Primary
+        </Button>
+      </>
+    );
+
+    const { getByTestId } = render(
+      <Sidesheet
+        dimension="large"
+        headerOptions={{ ...headerOptions, backButton: true, backButtonCallback: jest.fn() }}
+        open={true}
+        footer={footerWithLastBtn}
+        onClose={jest.fn()}
+      >
+        <Text>Body</Text>
+      </Sidesheet>
+    );
+
+    await flushRAF();
+
+    const heading = getByTestId('DesignSystem-OverlayHeader--heading');
+    expect(document.activeElement).toBe(heading);
+
+    // Shift+Tab should NOT wrap; the trap should not intercept (no preventDefault).
+    const shiftTabEvent = new KeyboardEvent('keydown', { key: 'Tab', shiftKey: true, bubbles: true });
+    const preventDefaultSpy = jest.spyOn(shiftTabEvent, 'preventDefault');
+    document.dispatchEvent(shiftTabEvent);
+
+    expect(preventDefaultSpy).not.toHaveBeenCalled();
+    jest.useFakeTimers();
   });
 });
 

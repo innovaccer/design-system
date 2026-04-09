@@ -107,7 +107,12 @@ export const StatusHint = (props: StatusHintProps) => {
       tabIndex={isClickable ? 0 : undefined}
     >
       {/* eslint-enable */}
-      <span data-test="DesignSystem-StatusHint--Icon" aria-hidden="true" className={StatusHintIconClass} />
+      <span
+        data-test="DesignSystem-StatusHint--Icon"
+        role="img"
+        aria-label={`${appearance} status`}
+        className={StatusHintIconClass}
+      />
       {renderChildren()}
     </div>
   );

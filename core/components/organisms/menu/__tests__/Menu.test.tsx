@@ -306,8 +306,8 @@ describe('Menu Component - MenuItem functionality and interaction handling', () 
       </Menu>
     );
 
-    // The Menu-Item classes are applied to the ListBody wrapper, not the outer element
-    const menuItemWrapper = getByTestId('DesignSystem-Listbox-ItemWrapper');
+    // Menu-Item classes apply to the inner row (`data-test` from MenuItem overrides ListBody default)
+    const menuItemWrapper = getByTestId('DesignSystem-Menu-ListItem');
     expect(menuItemWrapper).toHaveClass('Menu-Item--tight');
   });
 
@@ -487,7 +487,7 @@ describe('Menu Component - MenuList size variants and styling behavior', () => {
       </Menu>
     );
 
-    const menuItemWrapper = getByTestId('DesignSystem-Listbox-ItemWrapper');
+    const menuItemWrapper = getByTestId('DesignSystem-Menu-ListItem');
     expect(menuItemWrapper).not.toHaveClass('Menu-Item--tight');
   });
 
@@ -500,7 +500,7 @@ describe('Menu Component - MenuList size variants and styling behavior', () => {
       </Menu>
     );
 
-    const menuItemWrapper = getByTestId('DesignSystem-Listbox-ItemWrapper');
+    const menuItemWrapper = getByTestId('DesignSystem-Menu-ListItem');
     expect(menuItemWrapper).toHaveClass('Menu-Item--tight');
   });
 });

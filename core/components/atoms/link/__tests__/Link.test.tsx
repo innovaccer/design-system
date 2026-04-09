@@ -38,9 +38,15 @@ describe('Link component', () => {
     expect(getByTestId('DesignSystem-Link').textContent).toMatch('Click on Link');
   });
 
-  it('renders tag name', () => {
-    const { getByTestId } = render(<Link>Click on Link</Link>);
+  it('renders as anchor tag when href is provided', () => {
+    const { getByTestId } = render(<Link href="/page">Click on Link</Link>);
     expect(getByTestId('DesignSystem-Link').tagName).toMatch('A');
+  });
+
+  it('renders as button tag when href is not provided', () => {
+    const { getByTestId } = render(<Link onClick={jest.fn()}>Click on Link</Link>);
+    expect(getByTestId('DesignSystem-Link').tagName).toMatch('BUTTON');
+    expect(getByTestId('DesignSystem-Link')).toHaveAttribute('type', 'button');
   });
 
   it('renders default props', () => {

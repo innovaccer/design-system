@@ -21,6 +21,7 @@ exports[`TextField component matches snapshot when input exceeds maximum charact
       style="min-width: 256px;"
     >
       <input
+        aria-invalid="true"
         class="Input-input Input-input--regular"
         data-test="DesignSystem-Input"
         label="Test Label"
@@ -38,6 +39,7 @@ exports[`TextField component matches snapshot when input exceeds maximum charact
       <div
         class="InlineMessage mt-3 d-flex"
         data-test="DesignSystem-InlineMessage"
+        id="HelpText-Test-uid"
       >
         <i
           aria-hidden="true"
@@ -106,6 +108,7 @@ exports[`textfield component
       >
         <div
           class="mt-3 d-flex"
+          id="HelpText-Test-uid"
         >
           <span
             class="Text Text--subtle Text--medium Text--small"
@@ -167,6 +170,7 @@ exports[`textfield component
       >
         <div
           class="mt-3 d-flex"
+          id="HelpText-Test-uid"
         >
           <span
             class="Text Text--subtle Text--medium Text--small"
@@ -243,6 +247,7 @@ exports[`textfield component
       >
         <div
           class="mt-3 d-flex"
+          id="HelpText-Test-uid"
         >
           <span
             class="Text Text--subtle Text--medium Text--small"
@@ -312,6 +317,7 @@ exports[`textfield component
       >
         <div
           class="mt-3 d-flex"
+          id="HelpText-Test-uid"
         >
           <span
             class="Text Text--subtle Text--medium Text--small"
@@ -382,6 +388,7 @@ exports[`textfield component
       >
         <div
           class="mt-3 d-flex"
+          id="HelpText-Test-uid"
         >
           <span
             class="Text Text--subtle Text--medium Text--small"

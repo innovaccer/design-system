@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Text } from '@/index';
 import { SelectContext } from './SelectContext';
 import { BaseProps } from '@/utils/types';
+import uidGenerator from '@/utils/uidGenerator';
 
 interface SelectEmptyTemplateProps extends BaseProps {
   /**
@@ -31,27 +32,30 @@ export const SelectEmptyTemplate = (props: SelectEmptyTemplateProps) => {
     minHeight: withSearch ? maxHeight! - searchInputHeight : maxHeight,
   };
 
+  const titleId = React.useMemo(() => `empty-title-${uidGenerator()}`, []);
+  const descId = React.useMemo(() => `empty-desc-${uidGenerator()}`, []);
+
   return (
     <div
       className="px-7 d-flex justify-content-center align-items-center"
       style={wrapperStyle}
       data-test="DesignSystem-Select-EmptyState--wrapper"
       aria-live="polite"
-      role="alert"
+      role="status"
       {...rest}
     >
       <div
-        aria-labelledby={title}
-        aria-describedby={description}
+        aria-labelledby={title ? titleId : undefined}
+        aria-describedby={description ? descId : undefined}
         className="d-flex flex-column justify-content-center align-items-center"
       >
         {title && (
-          <Text id={title} role="heading" aria-level={2} className="text-align-center mb-3" weight="strong">
+          <Text id={titleId} role="heading" aria-level={2} className="text-align-center mb-3" weight="strong">
             {title}
           </Text>
         )}
         {description && (
-          <Text id={description} className="text-align-center mb-6" weight="medium" size="small" appearance="subtle">
+          <Text id={descId} className="text-align-center mb-6" weight="medium" size="small" appearance="subtle">
             {description}
           </Text>
         )}

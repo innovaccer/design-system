@@ -23,7 +23,6 @@ const dropdownOptions = {
 };
 
 const dropdownOptionTestId = `DesignSystem-DropdownOption--${optionType}`;
-const dropdownTriggerTestId = 'DesignSystem-DropdownTrigger';
 const editableWrapperTestId = 'DesignSystem-EditableWrapper';
 
 describe('EditableDropdown component', () => {
@@ -59,26 +58,53 @@ describe('EditableDropdown component', () => {
     expect(getByTestId('DesignSystem-EditableDropdown--Dropdown')).toHaveClass('d-none');
   });
 
-  it('renders dropdown on hover', () => {
+  it('does not render dropdown on hover', () => {
     const { getByTestId } = render(<EditableDropdown placeholder={placeholder} dropdownOptions={dropdownOptions} />);
 
     const editableWrapper = getByTestId(editableWrapperTestId);
     fireEvent.mouseEnter(editableWrapper);
+
+    expect(getByTestId('DesignSystem-EditableDropdown--Default')).not.toHaveClass('d-none');
+    expect(getByTestId('DesignSystem-EditableDropdown--Dropdown')).toHaveClass('d-none');
+  });
+
+  it('renders dropdown on click', () => {
+    const { getByTestId } = render(<EditableDropdown placeholder={placeholder} dropdownOptions={dropdownOptions} />);
+
+    const editableWrapper = getByTestId('DesignSystem-EditableDropdown');
+    fireEvent.click(editableWrapper);
 
     expect(getByTestId('DesignSystem-EditableDropdown--Default')).toHaveClass('d-none');
     expect(getByTestId('DesignSystem-EditableDropdown--Dropdown')).not.toHaveClass('d-none');
   });
 
-  it('renders default div on mouseLeave', () => {
-    const { getByTestId } = render(<EditableDropdown placeholder={placeholder} dropdownOptions={dropdownOptions} />);
+  it('does not enter edit mode when dropdownOptions.disabled is true', () => {
+    const { getByTestId } = render(
+      <EditableDropdown placeholder={placeholder} dropdownOptions={{ ...dropdownOptions, disabled: true }} />
+    );
 
-    const editableWrapper = getByTestId(editableWrapperTestId);
+    const root = getByTestId('DesignSystem-EditableDropdown');
+    fireEvent.click(root);
 
-    fireEvent.mouseEnter(editableWrapper);
-    expect(getByTestId('DesignSystem-EditableDropdown--Dropdown')).not.toHaveClass('d-none');
-
-    fireEvent.mouseLeave(editableWrapper);
+    expect(getByTestId('DesignSystem-EditableDropdown--Default')).not.toHaveClass('d-none');
     expect(getByTestId('DesignSystem-EditableDropdown--Dropdown')).toHaveClass('d-none');
+    expect(root).toHaveAttribute('aria-disabled', 'true');
+    expect(root).toHaveAttribute('tabIndex', '-1');
+  });
+
+  it('ignores consumer open and onPopperToggle so internal edit state controls the menu', () => {
+    const onPopperToggle = jest.fn();
+    const { getByTestId } = render(
+      <EditableDropdown
+        placeholder={placeholder}
+        dropdownOptions={{ ...dropdownOptions, open: true, onPopperToggle }}
+      />
+    );
+
+    expect(getByTestId('DesignSystem-EditableDropdown--Dropdown')).toHaveClass('d-none');
+
+    fireEvent.click(getByTestId('DesignSystem-EditableDropdown'));
+    expect(getByTestId('DesignSystem-EditableDropdown--Dropdown')).not.toHaveClass('d-none');
   });
 
   it('updates label and renders default div on selecting an option', () => {
@@ -89,11 +115,8 @@ describe('EditableDropdown component', () => {
       <EditableDropdown placeholder={placeholder} dropdownOptions={dropdownOptions} />
     );
 
-    const editableWrapper = getByTestId(editableWrapperTestId);
-    fireEvent.mouseEnter(editableWrapper);
-
-    const dropdownTrigger = getByTestId(dropdownTriggerTestId);
-    fireEvent.click(dropdownTrigger);
+    const editableWrapper = getByTestId('DesignSystem-EditableDropdown');
+    fireEvent.click(editableWrapper);
 
     const option = getAllByTestId(dropdownOptionTestId);
     fireEvent.click(option[clickedOption]);
@@ -102,9 +125,9 @@ describe('EditableDropdown component', () => {
     expect(getByTestId('DesignSystem-EditableDropdown--Default').textContent).toMatch(label);
     expect(onChange).toHaveBeenCalled();
 
-    fireEvent.mouseEnter(editableWrapper);
-    expect(getByTestId('DesignSystem-EditableDropdown--Dropdown')).not.toHaveClass('d-none');
-    expect(getByTestId('DesignSystem-EditableDropdown--Dropdown').textContent).toMatch(label);
+    const editableInnerWrapper = getByTestId(editableWrapperTestId);
+    fireEvent.mouseEnter(editableInnerWrapper);
+    expect(getByTestId('DesignSystem-EditableDropdown--Dropdown')).toHaveClass('d-none');
   });
 });
 

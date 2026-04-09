@@ -42,6 +42,7 @@ exports[`ChipGroup component
         class="ChipGroup-item"
       >
         <div
+          aria-label="Input"
           class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular"
           data-test="DesignSystem-ChipGroup--Chip"
           role="button"
@@ -66,7 +67,7 @@ exports[`ChipGroup component
             </span>
           </div>
           <div
-            aria-label="Remove"
+            aria-label="Remove Input"
             class="Chip-icon Chip-icon--right cursor-pointer p-3"
             data-test="DesignSystem-GenericChip--clearButton"
             role="button"
@@ -86,6 +87,7 @@ exports[`ChipGroup component
         class="ChipGroup-item"
       >
         <div
+          aria-label="Selection"
           aria-pressed="true"
           class="Chip-wrapper Chip Chip--selection Chip-selection--selected Chip-icon--clear Chip-size--regular"
           data-test="DesignSystem-ChipGroup--Chip"
@@ -111,7 +113,7 @@ exports[`ChipGroup component
             </span>
           </div>
           <div
-            aria-label="Remove"
+            aria-label="Remove Selection"
             class="Chip-icon Chip-icon--right cursor-pointer Chip-icon--selected p-3"
             data-test="DesignSystem-GenericChip--clearButton"
             role="button"
@@ -131,6 +133,7 @@ exports[`ChipGroup component
         class="ChipGroup-item"
       >
         <div
+          aria-label="Selection"
           aria-pressed="false"
           class="Chip-wrapper Chip Chip--selection Chip-icon--clear Chip-size--regular"
           data-test="DesignSystem-ChipGroup--Chip"
@@ -156,7 +159,7 @@ exports[`ChipGroup component
             </span>
           </div>
           <div
-            aria-label="Remove"
+            aria-label="Remove Selection"
             class="Chip-icon Chip-icon--right cursor-pointer p-3"
             data-test="DesignSystem-GenericChip--clearButton"
             role="button"

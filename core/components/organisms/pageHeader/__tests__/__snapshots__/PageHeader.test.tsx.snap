@@ -15,7 +15,8 @@ exports[`Navigation component
           class="pl-6"
           data-test="DesignSystem-PageHeader--Breadcrumbs"
         >
-          <div
+          <nav
+            aria-label="Breadcrumb"
             class="Breadcrumbs"
             data-test="DesignSystem-Breadcrumbs"
           >
@@ -38,7 +39,7 @@ exports[`Navigation component
                 /
               </span>
             </div>
-          </div>
+          </nav>
         </div>
         <div
           class="d-flex pl-6"
@@ -125,9 +126,10 @@ exports[`Navigation component
                 data-test="DesignSystem-StatusHint"
               >
                 <span
-                  aria-hidden="true"
+                  aria-label="default status"
                   class="StatusHint-icon StatusHint--default mr-4"
                   data-test="DesignSystem-StatusHint--Icon"
+                  role="img"
                 />
                 <span
                   class="Text Text--default Text--medium Text--regular"
@@ -155,6 +157,7 @@ exports[`Navigation component
                     </span>
                   </span>
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--disabled MetaList-seperator"
                     data-test="DesignSystem-MetaList--rightSeperator"
                     style="font-size: 8px; width: 8px;"
@@ -339,7 +342,8 @@ exports[`Navigation component
           class="pl-6"
           data-test="DesignSystem-PageHeader--Breadcrumbs"
         >
-          <div
+          <nav
+            aria-label="Breadcrumb"
             class="Breadcrumbs"
             data-test="DesignSystem-Breadcrumbs"
           >
@@ -362,7 +366,7 @@ exports[`Navigation component
                 /
               </span>
             </div>
-          </div>
+          </nav>
         </div>
         <div
           class="d-flex pl-6"
@@ -488,9 +492,10 @@ exports[`Navigation component
                 data-test="DesignSystem-StatusHint"
               >
                 <span
-                  aria-hidden="true"
+                  aria-label="default status"
                   class="StatusHint-icon StatusHint--default mr-4"
                   data-test="DesignSystem-StatusHint--Icon"
+                  role="img"
                 />
                 <span
                   class="Text Text--default Text--medium Text--regular"
@@ -518,6 +523,7 @@ exports[`Navigation component
                     </span>
                   </span>
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--disabled MetaList-seperator"
                     data-test="DesignSystem-MetaList--rightSeperator"
                     style="font-size: 8px; width: 8px;"
@@ -668,7 +674,8 @@ exports[`Navigation component
           class="pl-6"
           data-test="DesignSystem-PageHeader--Breadcrumbs"
         >
-          <div
+          <nav
+            aria-label="Breadcrumb"
             class="Breadcrumbs"
             data-test="DesignSystem-Breadcrumbs"
           >
@@ -691,7 +698,7 @@ exports[`Navigation component
                 /
               </span>
             </div>
-          </div>
+          </nav>
         </div>
         <div
           class="d-flex pl-6"
@@ -778,9 +785,10 @@ exports[`Navigation component
                 data-test="DesignSystem-StatusHint"
               >
                 <span
-                  aria-hidden="true"
+                  aria-label="default status"
                   class="StatusHint-icon StatusHint--default mr-4"
                   data-test="DesignSystem-StatusHint--Icon"
+                  role="img"
                 />
                 <span
                   class="Text Text--default Text--medium Text--regular"
@@ -808,6 +816,7 @@ exports[`Navigation component
                     </span>
                   </span>
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--disabled MetaList-seperator"
                     data-test="DesignSystem-MetaList--rightSeperator"
                     style="font-size: 8px; width: 8px;"
@@ -1181,6 +1190,7 @@ exports[`Navigation component
                     role="group"
                   >
                     <div
+                      aria-label="Step 1: Step 1, current"
                       class="Step Stepper-animate Step--active"
                       data-test="DesignSystem-Step"
                       role="button"
@@ -1202,6 +1212,7 @@ exports[`Navigation component
                     </div>
                     <div
                       aria-disabled="true"
+                      aria-label="Step 2: Step 2"
                       class="Step Stepper-animate Step--disabled"
                       data-test="DesignSystem-Step"
                       role="button"
@@ -1223,6 +1234,7 @@ exports[`Navigation component
                     </div>
                     <div
                       aria-disabled="true"
+                      aria-label="Step 3: Step 3"
                       class="Step Stepper-animate Step--disabled"
                       data-test="DesignSystem-Step"
                       role="button"
@@ -1345,7 +1357,8 @@ exports[`Navigation component
           class="pl-6"
           data-test="DesignSystem-PageHeader--Breadcrumbs"
         >
-          <div
+          <nav
+            aria-label="Breadcrumb"
             class="Breadcrumbs"
             data-test="DesignSystem-Breadcrumbs"
           >
@@ -1368,7 +1381,7 @@ exports[`Navigation component
                 /
               </span>
             </div>
-          </div>
+          </nav>
         </div>
         <div
           class="d-flex pl-6"
@@ -1591,7 +1604,8 @@ exports[`Navigation component
           class="pl-6"
           data-test="DesignSystem-PageHeader--Breadcrumbs"
         >
-          <div
+          <nav
+            aria-label="Breadcrumb"
             class="Breadcrumbs"
             data-test="DesignSystem-Breadcrumbs"
           >
@@ -1614,7 +1628,7 @@ exports[`Navigation component
                 /
               </span>
             </div>
-          </div>
+          </nav>
         </div>
         <div
           class="d-flex pl-6"
@@ -1740,9 +1754,10 @@ exports[`Navigation component
                 data-test="DesignSystem-StatusHint"
               >
                 <span
-                  aria-hidden="true"
+                  aria-label="default status"
                   class="StatusHint-icon StatusHint--default mr-4"
                   data-test="DesignSystem-StatusHint--Icon"
+                  role="img"
                 />
                 <span
                   class="Text Text--default Text--medium Text--regular"
@@ -1770,6 +1785,7 @@ exports[`Navigation component
                     </span>
                   </span>
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--disabled MetaList-seperator"
                     data-test="DesignSystem-MetaList--rightSeperator"
                     style="font-size: 8px; width: 8px;"

@@ -12,13 +12,13 @@ exports[`ChipInput component
       <div
         class="ChipInput ChipInput--withChips ChipInput--regular"
         data-test="DesignSystem-ChipInput"
-        role="button"
-        tabindex="0"
       >
         <div
           class="ChipInput-wrapper"
+          role="presentation"
         >
           <div
+            aria-label="1020"
             class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular mr-3 my-3"
             data-test="DesignSystem-ChipInput--Chip"
             role="button"
@@ -36,7 +36,7 @@ exports[`ChipInput component
               </span>
             </div>
             <div
-              aria-label="Remove"
+              aria-label="Remove 1020"
               class="Chip-icon Chip-icon--right cursor-pointer p-3"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
@@ -52,6 +52,7 @@ exports[`ChipInput component
             </div>
           </div>
           <div
+            aria-label="80"
             class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular mr-3 my-3"
             data-test="DesignSystem-ChipInput--Chip"
             role="button"
@@ -69,7 +70,7 @@ exports[`ChipInput component
               </span>
             </div>
             <div
-              aria-label="Remove"
+              aria-label="Remove 80"
               class="Chip-icon Chip-icon--right cursor-pointer p-3"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
@@ -92,15 +93,26 @@ exports[`ChipInput component
             value=""
           />
         </div>
-        <i
-          class="material-symbols material-symbols-rounded Icon Icon--subtle ChipInput-icon ChipInput-icon--regular"
+        <button
+          aria-label="Clear all"
+          class="Button Button--regular Button--regularSquare Button--transparent Input-icon Input-iconWrapper--right align-self-center flex-shrink-0"
           data-test="DesignSystem-ChipInput--Icon"
-          role="button"
-          style="font-size: 16px; width: 16px;"
           tabindex="0"
+          type="button"
         >
-          close
-        </i>
+          <div
+            class="Button-icon"
+            data-test="DesignSystem-Button--Icon-Wrapper"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon"
+              data-test="DesignSystem-Button--Icon"
+              style="font-size: 16px; width: 16px;"
+            >
+              close
+            </i>
+          </div>
+        </button>
       </div>
     </div>
   </div>
@@ -117,16 +129,15 @@ exports[`ChipInput component
       data-test="DesignSystem-ChipInput--Border"
     >
       <div
-        aria-disabled="true"
         class="ChipInput ChipInput--disabled ChipInput--withChips ChipInput--regular"
         data-test="DesignSystem-ChipInput"
-        role="button"
-        tabindex="-1"
       >
         <div
           class="ChipInput-wrapper"
+          role="presentation"
         >
           <div
+            aria-label="1020"
             class="Chip-wrapper Chip Chip-input--disabled Chip-icon--clear Chip-size--regular mr-3 my-3"
             data-test="DesignSystem-ChipInput--Chip"
             role="button"
@@ -144,7 +155,7 @@ exports[`ChipInput component
               </span>
             </div>
             <div
-              aria-label="Remove"
+              aria-label="Remove 1020"
               class="Chip-icon Chip-icon--right Chip-icon-disabled--right p-3"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
@@ -160,6 +171,7 @@ exports[`ChipInput component
             </div>
           </div>
           <div
+            aria-label="80"
             class="Chip-wrapper Chip Chip-input--disabled Chip-icon--clear Chip-size--regular mr-3 my-3"
             data-test="DesignSystem-ChipInput--Chip"
             role="button"
@@ -177,7 +189,7 @@ exports[`ChipInput component
               </span>
             </div>
             <div
-              aria-label="Remove"
+              aria-label="Remove 80"
               class="Chip-icon Chip-icon--right Chip-icon-disabled--right p-3"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
@@ -201,15 +213,27 @@ exports[`ChipInput component
             value=""
           />
         </div>
-        <i
-          class="material-symbols material-symbols-rounded Icon Icon--disabled ChipInput-icon ChipInput-icon--regular"
+        <button
+          aria-label="Clear all"
+          class="Button Button--regular Button--regularSquare Button--transparent Input-icon Input-iconWrapper--right align-self-center flex-shrink-0"
           data-test="DesignSystem-ChipInput--Icon"
-          role="button"
-          style="font-size: 16px; width: 16px;"
-          tabindex="-1"
+          disabled=""
+          tabindex="0"
+          type="button"
         >
-          close
-        </i>
+          <div
+            class="Button-icon"
+            data-test="DesignSystem-Button--Icon-Wrapper"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon"
+              data-test="DesignSystem-Button--Icon"
+              style="font-size: 16px; width: 16px;"
+            >
+              close
+            </i>
+          </div>
+        </button>
       </div>
     </div>
   </div>
@@ -228,13 +252,13 @@ exports[`ChipInput component
       <div
         class="ChipInput ChipInput--withChips ChipInput--error ChipInput--regular"
         data-test="DesignSystem-ChipInput"
-        role="button"
-        tabindex="0"
       >
         <div
           class="ChipInput-wrapper"
+          role="presentation"
         >
           <div
+            aria-label="1020"
             class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular mr-3 my-3"
             data-test="DesignSystem-ChipInput--Chip"
             role="button"
@@ -252,7 +276,7 @@ exports[`ChipInput component
               </span>
             </div>
             <div
-              aria-label="Remove"
+              aria-label="Remove 1020"
               class="Chip-icon Chip-icon--right cursor-pointer p-3"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
@@ -268,6 +292,7 @@ exports[`ChipInput component
             </div>
           </div>
           <div
+            aria-label="80"
             class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular mr-3 my-3"
             data-test="DesignSystem-ChipInput--Chip"
             role="button"
@@ -285,7 +310,7 @@ exports[`ChipInput component
               </span>
             </div>
             <div
-              aria-label="Remove"
+              aria-label="Remove 80"
               class="Chip-icon Chip-icon--right cursor-pointer p-3"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
@@ -308,15 +333,26 @@ exports[`ChipInput component
             value=""
           />
         </div>
-        <i
-          class="material-symbols material-symbols-rounded Icon Icon--subtle ChipInput-icon ChipInput-icon--regular"
+        <button
+          aria-label="Clear all"
+          class="Button Button--regular Button--regularSquare Button--transparent Input-icon Input-iconWrapper--right align-self-center flex-shrink-0"
           data-test="DesignSystem-ChipInput--Icon"
-          role="button"
-          style="font-size: 16px; width: 16px;"
           tabindex="0"
+          type="button"
         >
-          close
-        </i>
+          <div
+            class="Button-icon"
+            data-test="DesignSystem-Button--Icon-Wrapper"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon"
+              data-test="DesignSystem-Button--Icon"
+              style="font-size: 16px; width: 16px;"
+            >
+              close
+            </i>
+          </div>
+        </button>
       </div>
     </div>
   </div>

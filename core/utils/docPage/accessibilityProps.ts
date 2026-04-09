@@ -371,15 +371,26 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
     ],
   },
 
-  // Spinner: only accepts aria-label (role="status" and aria-live="polite" are hardcoded internally)
+  // Spinner: accepts aria-label and aria-labelledby (role="status" and aria-live="polite" are hardcoded internally)
   Spinner: {
     htmlElement: 'custom',
     customProps: [
       {
         name: 'aria-label',
         type: 'string',
-        description: 'Describes the loading action for screen readers.',
+        description: 'Describes the loading action for screen readers. Ignored when aria-labelledby is provided.',
         defaultValue: '"Loading"',
+      },
+      {
+        name: 'aria-labelledby',
+        type: 'string',
+        description: 'ID of an external element that labels the spinner. When set, aria-label is suppressed.',
+      },
+      {
+        name: 'label',
+        type: 'string',
+        description:
+          'Visible label for the slider. When provided, each handle (role="slider") is automatically linked to it via aria-labelledby so screen readers announce the label with the current value.',
       },
     ],
   },
@@ -483,12 +494,17 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
     ],
   },
 
-  // List: accepts aria-label, aria-labelledby
+  // List: accepts aria-label, aria-labelledby (mapped to Listbox component in codebase)
   List: {
     htmlElement: 'custom',
     customProps: [
       { name: 'aria-label', type: 'string', description: 'Accessible label for list container.' },
       { name: 'aria-labelledby', type: 'string', description: 'Associates list with an external label element.' },
+      {
+        name: 'aria-multiselectable',
+        type: 'boolean',
+        description: 'Indicates whether multiple items can be selected.',
+      },
     ],
   },
 
@@ -623,7 +639,7 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
     ],
   },
 
-  // ChoiceList: accepts aria-label and aria-labelledby on the component
+  // ChoiceList: accepts aria-label and aria-labelledby on the component; choices items accept a11y props
   ChoiceList: {
     htmlElement: 'custom',
     customProps: [
@@ -635,14 +651,51 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
           'References the ID of element(s) that label the choice list group. Use when the group is labelled by another element on the page.',
       },
     ],
+    nestedComponents: [
+      {
+        name: 'choices',
+        config: {
+          htmlElement: 'custom',
+          customProps: [
+            {
+              name: 'aria-label',
+              type: 'string',
+              description: 'Accessible label for the underlying input when no visible label is present.',
+            },
+            {
+              name: 'aria-labelledby',
+              type: 'string',
+              description: 'ID of the element that labels the underlying input.',
+            },
+            {
+              name: 'aria-describedby',
+              type: 'string',
+              description: 'ID of the element(s) that describe the underlying input.',
+            },
+          ],
+        },
+      },
+    ],
   },
 
-  // Combobox: accepts aria-label, aria-labelledby
+  // Combobox: accepts aria-label, aria-labelledby, aria-describedby, aria-errormessage
   Combobox: {
     htmlElement: 'custom',
     customProps: [
       { name: 'aria-label', type: 'string', description: 'Accessible label for the combobox input.' },
       { name: 'aria-labelledby', type: 'string', description: 'Points to element(s) that label the combobox input.' },
+      {
+        name: 'aria-describedby',
+        type: 'string',
+        description:
+          'Element ids (space-separated) for supplementary help or description regions (e.g. sibling HelpText).',
+      },
+      {
+        name: 'aria-errormessage',
+        type: 'string',
+        description:
+          'Id of the live error message element (e.g. HelpText with error); pair with aria-invalid when in error.',
+      },
     ],
   },
 
@@ -789,9 +842,28 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
     ],
   },
 
-  // Select: nested triggerOptions
+  // Select: accepts aria-labelledby, aria-describedby, aria-errormessage, nested triggerOptions, Select.List, Select.Option
   Select: {
     htmlElement: 'custom',
+    customProps: [
+      {
+        name: 'aria-labelledby',
+        type: 'string',
+        description: 'Associates select trigger with an external label.',
+      },
+      {
+        name: 'aria-describedby',
+        type: 'string',
+        description:
+          'Element ids (space-separated) for supplementary help or description regions (e.g. sibling HelpText).',
+      },
+      {
+        name: 'aria-errormessage',
+        type: 'string',
+        description:
+          'Id of the live error message element (e.g. HelpText with error); pair with aria-invalid when in error.',
+      },
+    ],
     nestedComponents: [
       {
         name: 'triggerOptions',
@@ -804,6 +876,38 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
               description:
                 'Accessible label for the Select trigger button. Applied to the built-in trigger only; not forwarded when using customTrigger.',
               defaultValue: '"Select trigger"',
+            },
+            {
+              name: 'aria-labelledby',
+              type: 'string',
+              description:
+                'References the ID of element(s) that label the Select trigger button. Applied to the built-in trigger only.',
+            },
+          ],
+        },
+      },
+      {
+        name: 'Select.List',
+        config: {
+          htmlElement: 'custom',
+          customProps: [
+            {
+              name: 'aria-label',
+              type: 'string',
+              description: 'Accessible label for the options list container.',
+            },
+          ],
+        },
+      },
+      {
+        name: 'Select.Option',
+        config: {
+          htmlElement: 'custom',
+          customProps: [
+            {
+              name: 'aria-label',
+              type: 'string',
+              description: 'Accessible label for the select option.',
             },
           ],
         },
@@ -848,9 +952,34 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
     ],
   },
 
+  // SegmentedControl: parent has no passable a11y props; Item accepts aria-label, aria-labelledby
+  SegmentedControl: {
+    htmlElement: 'custom',
+    nestedComponents: [
+      {
+        name: 'SegmentedControl.Item',
+        config: {
+          htmlElement: 'custom',
+          customProps: [
+            {
+              name: 'aria-label',
+              type: 'string',
+              description: 'Accessible name for icon-only or custom content segments.',
+            },
+            {
+              name: 'aria-labelledby',
+              type: 'string',
+              description: 'Associates segment with an external label element.',
+            },
+          ],
+        },
+      },
+    ],
+  },
+
   // ========================================================================
   // NOT INCLUDED (BaseProps only, NO passable a11y props):
-  // SegmentedControl, ProgressBar, ProgressRing, Toast,
+  // ProgressBar, ProgressRing, Toast,
   // Message, Collapsible, HelpText, Dialog, Tooltip, Popover,
   // Dropzone, Stepper,
   // VerticalNav,

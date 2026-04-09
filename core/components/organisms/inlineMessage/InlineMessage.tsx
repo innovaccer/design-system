@@ -16,6 +16,10 @@ export type MessageSize = 'regular' | 'small';
 
 export interface InlineMessageProps extends BaseProps, BaseHtmlProps<HTMLDivElement> {
   /**
+   * Optional DOM id (e.g. for `aria-describedby` / `aria-errormessage` on a related control).
+   */
+  id?: string;
+  /**
    * Color of `Inline Message`
    *
    * `default` appearance is soon to be deprecated

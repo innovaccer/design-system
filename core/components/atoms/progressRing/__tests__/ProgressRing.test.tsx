@@ -40,6 +40,24 @@ describe('ProgressRing component', () => {
     });
   });
 
+  describe('ProgressRing component with progressbar role', () => {
+    it('should have role="progressbar" with aria-valuemin, aria-valuemax, and aria-valuenow', () => {
+      const { getByTestId } = render(<ProgressRing value={30} max={100} size="regular" />);
+      const ring = getByTestId('DesignSystem-ProgressRing');
+      expect(ring).toHaveAttribute('role', 'progressbar');
+      expect(ring).toHaveAttribute('aria-valuemin', '0');
+      expect(ring).toHaveAttribute('aria-valuemax', '100');
+      expect(ring).toHaveAttribute('aria-valuenow', '30');
+      expect(ring).toHaveAttribute('aria-label', 'Progress Ring');
+    });
+
+    it('should clamp aria-valuenow to max when value exceeds max', () => {
+      const { getByTestId } = render(<ProgressRing value={150} max={100} size="regular" />);
+      const ring = getByTestId('DesignSystem-ProgressRing');
+      expect(ring).toHaveAttribute('aria-valuenow', '100');
+    });
+  });
+
   describe('ProgressRing component with prop: size', () => {
     it('should have the Ring--regular class when size={regular}', () => {
       const { getByTestId } = render(<ProgressRing value={50} max={100} size="regular" />);
