@@ -283,6 +283,9 @@ export const Avatar = (props: AvatarProps) => {
           aria-label={ariaLabel}
           aria-hidden={ariaHidden}
           tabIndex={resolvedTabIndex}
+          onClick={handleClick}
+          onKeyDown={handleKeyDown}
+          aria-disabled={ariaDisabled}
         >
           <>
             {initials && (
