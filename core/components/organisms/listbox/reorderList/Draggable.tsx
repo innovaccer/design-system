@@ -72,6 +72,11 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
   componentWillUnmount() {
     document.removeEventListener('touchstart', this.onMouseOrTouchStart as any);
     document.removeEventListener('mousedown', this.onMouseOrTouchStart as any);
+    document.removeEventListener('mousemove', this.schdOnMouseMove);
+    document.removeEventListener('touchmove', this.schdOnTouchMove);
+    document.removeEventListener('mouseup', this.schdOnEnd);
+    document.removeEventListener('touchend', this.schdOnEnd);
+    document.removeEventListener('touchcancel', this.schdOnEnd);
     if (this.dropTimeout) {
       window.clearTimeout(this.dropTimeout);
       this.dropTimeout = undefined;
@@ -193,6 +198,7 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
         return;
       }
       e.cancelable && e.preventDefault();
+      this.needle = pickedIndex;
       this.commitKeyboardReorder();
       return;
     }
