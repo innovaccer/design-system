@@ -163,14 +163,6 @@
     "Innovaccer"
   ],
   "repository": "github:innovaccer/design-system",
-  "lint-staged": {
-    "core/**/*.{tx,tsx,js,jsx}": [
-      "npm run lint:check"
-    ],
-    "css/src/**/*.css": [
-      "npm run prettier:check"
-    ]
-  },
   "files": [
     "dist",
     "css",
