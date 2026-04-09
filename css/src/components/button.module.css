@@ -273,20 +273,14 @@
   right: 0;
 }
 
-.Button-infoIcon--left {
+.Button-infoIcon--left,
+.Button-infoIcon--right {
   margin-left: var(--spacing-15);
 }
 
-.Button-infoIcon--right {
-  margin-right: var(--spacing-15);
-}
-
-.Button--tiny .Button-infoIcon--left {
-  margin-left: var(--spacing-10);
-}
-
+.Button--tiny .Button-infoIcon--left,
 .Button--tiny .Button-infoIcon--right {
-  margin-right: var(--spacing-10);
+  margin-left: var(--spacing-10);
 }
 
 /* outlined button styles */

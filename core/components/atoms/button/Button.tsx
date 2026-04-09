@@ -238,6 +238,7 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
           {showInfoAffordance && children && iconAlign === 'right' && (
             <Icon
               name="info_outline"
+              type="outlined"
               size={iconSize}
               className={classNames(styles['Button-infoIcon'], styles['Button-infoIcon--right'])}
               aria-hidden="true"
@@ -253,6 +254,7 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
           {showInfoAffordance && children && iconAlign === 'left' && (
             <Icon
               name="info_outline"
+              type="outlined"
               size={iconSize}
               className={classNames(styles['Button-infoIcon'], styles['Button-infoIcon--left'])}
               aria-hidden="true"
@@ -262,6 +264,7 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
           {showInfoAffordance && !children && (
             <Icon
               name="info_outline"
+              type="outlined"
               size={12}
               className={classNames(styles['Button-infoIcon'], styles['Button-infoIcon--iconOnly'])}
               aria-hidden="true"
@@ -278,7 +281,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
   const { tooltip } = props;
 
   return tooltip ? (
-    <Tooltip tooltip={tooltip}>
+    <Tooltip tooltip={tooltip} aria-hidden="true">
       <ButtonElement {...props} ref={ref} />
     </Tooltip>
   ) : (
