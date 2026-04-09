@@ -1319,6 +1319,38 @@ describe('MetricInput Event Handlers - Tests all event handler props and their p
     expect(handleKeyDown).toHaveBeenCalled();
   });
 
+  it('calls onKeyDown when the wrapper tab stop receives a key before input activation', () => {
+    const handleKeyDown = jest.fn((e) => e.target.value);
+    const { getByTestId } = render(<MetricInput onKeyDown={handleKeyDown} showActionButton={true} />);
+    const wrapper = getByTestId('DesignSystem-MetricInputWrapper');
+    const input = getByTestId('DesignSystem-MetricInput');
+
+    (wrapper as HTMLDivElement).focus();
+    fireEvent.keyDown(wrapper, { key: 'Enter' });
+
+    expect(handleKeyDown).toHaveBeenCalledTimes(1);
+    expect(handleKeyDown.mock.calls[0][0].target).toBe(input);
+  });
+
+  it('respects preventDefault from onKeyDown before activating the input from the wrapper', () => {
+    const handleKeyDown = jest.fn((e) => e.preventDefault());
+    const { getByTestId } = render(<MetricInput onKeyDown={handleKeyDown} showActionButton={true} />);
+    const wrapper = getByTestId('DesignSystem-MetricInputWrapper');
+    const downButton = getByTestId('DesignSystem-MetricInput--downIcon');
+    const input = getByTestId('DesignSystem-MetricInput');
+    const upButton = getByTestId('DesignSystem-MetricInput--upIcon');
+
+    (wrapper as HTMLDivElement).focus();
+    fireEvent.keyDown(wrapper, { key: 'Enter' });
+
+    expect(handleKeyDown).toHaveBeenCalledTimes(1);
+    expect(document.activeElement).toBe(wrapper);
+    expect(wrapper).toHaveAttribute('tabindex', '0');
+    expect(downButton).toHaveAttribute('tabindex', '-1');
+    expect(input).toHaveAttribute('tabindex', '-1');
+    expect(upButton).toHaveAttribute('tabindex', '-1');
+  });
+
   it('calls onChange with synthetic event when action buttons are clicked', () => {
     const handleChange = jest.fn();
     const { getByTestId } = render(<MetricInput defaultValue={5} onChange={handleChange} />);

@@ -487,6 +487,28 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
     }) as React.FocusEvent<HTMLInputElement>;
   };
 
+  const createSyntheticInputKeyboardEvent = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (!ref.current) return null;
+
+    const syntheticKeyboardEvent = Object.create(e, {
+      target: {
+        value: ref.current,
+      },
+      currentTarget: {
+        value: ref.current,
+      },
+    }) as React.KeyboardEvent<HTMLInputElement>;
+
+    const originalPreventDefault = syntheticKeyboardEvent.preventDefault.bind(syntheticKeyboardEvent);
+
+    syntheticKeyboardEvent.preventDefault = () => {
+      originalPreventDefault();
+      e.preventDefault();
+    };
+
+    return syntheticKeyboardEvent;
+  };
+
   const handleWrapperBlur = (e: React.FocusEvent<HTMLDivElement>) => {
     if (!e.currentTarget.contains(e.relatedTarget as Node | null)) {
       const shouldForwardBlurEvent = !blurHandledRef.current && (hasDeferredBlurRef.current || focusedSection !== null);
@@ -509,6 +531,18 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
     if (!isCompositeNavigationEnabled) return;
 
     if (e.target !== e.currentTarget) return;
+
+    if (onKeyDown) {
+      const syntheticKeyboardEvent = createSyntheticInputKeyboardEvent(e);
+
+      if (syntheticKeyboardEvent) {
+        onKeyDown(syntheticKeyboardEvent);
+
+        if (syntheticKeyboardEvent.defaultPrevented || syntheticKeyboardEvent.isDefaultPrevented()) {
+          return;
+        }
+      }
+    }
 
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
