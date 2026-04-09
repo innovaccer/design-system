@@ -592,7 +592,7 @@ describe('Listbox component test for Nested Row', () => {
 describe('Listbox component a11y', () => {
   it('has no detectable a11y violations', async () => {
     const { container } = render(
-      <Listbox>
+      <Listbox aria-label="Items">
         <Listbox.Item id="item-1">
           <div>list item</div>
         </Listbox.Item>
@@ -606,7 +606,7 @@ describe('Listbox component a11y', () => {
 describe('Listbox.Item component a11y', () => {
   it('has no detectable a11y violations with nestedBody', async () => {
     const { container } = render(
-      <Listbox>
+      <Listbox aria-label="Items">
         <Listbox.Item id="item-1" nestedBody={<div>Nested content</div>} expanded={true}>
           <div>Item 1</div>
         </Listbox.Item>

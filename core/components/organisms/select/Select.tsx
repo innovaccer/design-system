@@ -486,7 +486,6 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
     styleType,
     error,
     rovingIndex,
-    listboxId,
   };
 
   return (
