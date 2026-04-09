@@ -22,7 +22,7 @@
     "pre-commit": "lint-staged",
     "lint:types": "tsc -p './tsconfig.lint.json' --noEmit",
     "lint:check": "eslint ./core --ext .tsx,.ts,.js,.jsx && npm run lint:types",
-    "lint": "npm run lint:check -- --fix",
+    "lint": "eslint ./core --ext .tsx,.ts,.js,.jsx --fix && npm run lint:types",
     "prettier:check": "prettier --config ./.prettierrc --check",
     "prettier": "prettier --config ./.prettierrc --write 'css/src/**/*.css'",
     "build-css": "gulp --gulpfile css/gulpfile.js build",
