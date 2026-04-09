@@ -116,6 +116,11 @@ const actionButtonIconSizeMapping = {
 const averageCharacterWidthMultiplier = 0.6;
 let metricInputGeneratedLabelId = 0;
 
+const isMetricInputPrintableKey = (e: React.KeyboardEvent<HTMLElement>) =>
+  !e.altKey && !e.ctrlKey && !e.metaKey && e.key.length === 1;
+
+const isBlockedMetricInputKey = (key: string) => key === 'e' || key === 'E';
+
 const getMeasuredTextWidth = (input: HTMLInputElement, renderedValue: string) => {
   const computedStyle = window.getComputedStyle(input);
   const fontSize = Number.parseFloat(computedStyle.fontSize) || 0;
@@ -285,7 +290,7 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
 
   React.useEffect(() => {
     syncOverflowState();
-  }, [syncOverflowState, value, prefix, suffix, size, showActionButton]);
+  }, [syncOverflowState, value, prefix, suffix, size, showActionButton, icon, placeholder]);
 
   React.useEffect(() => {
     const handleResize = () => syncOverflowState();
@@ -503,8 +508,20 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
   const handleWrapperKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
     if (!isCompositeNavigationEnabled) return;
 
-    if (e.target === e.currentTarget && (e.key === 'Enter' || e.key === ' ')) {
+    if (e.target !== e.currentTarget) return;
+
+    if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
+      activateCompositeNavigation('input');
+      ref.current?.focus({ preventScroll: true });
+      return;
+    }
+
+    if (isMetricInputPrintableKey(e)) {
+      if (isBlockedMetricInputKey(e.key)) {
+        e.preventDefault();
+      }
+
       activateCompositeNavigation('input');
       ref.current?.focus({ preventScroll: true });
     }

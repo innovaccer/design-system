@@ -770,6 +770,42 @@ describe('MetricInput CSS Classes and Styling - Tests proper CSS class applicati
       expect(input).toHaveClass('MetricInput-input--overflowing');
     });
   });
+
+  it('recomputes overflow when placeholder text changes', async () => {
+    const { getByTestId, rerender } = render(<MetricInput placeholder="1" showActionButton={false} />);
+    const input = getByTestId('DesignSystem-MetricInput');
+    let scrollWidth = 20;
+
+    Object.defineProperty(input, 'clientWidth', { configurable: true, get: () => 40 });
+    Object.defineProperty(input, 'scrollWidth', { configurable: true, get: () => scrollWidth });
+
+    expect(input).not.toHaveClass('MetricInput-input--overflowing');
+
+    scrollWidth = 80;
+    rerender(<MetricInput placeholder="1234567890" showActionButton={false} />);
+
+    await waitFor(() => {
+      expect(input).toHaveClass('MetricInput-input--overflowing');
+    });
+  });
+
+  it('recomputes overflow when icon changes the available input width', async () => {
+    const { getByTestId, rerender } = render(<MetricInput value={622122} showActionButton={false} />);
+    const input = getByTestId('DesignSystem-MetricInput');
+    let clientWidth = 80;
+
+    Object.defineProperty(input, 'clientWidth', { configurable: true, get: () => clientWidth });
+    Object.defineProperty(input, 'scrollWidth', { configurable: true, get: () => 60 });
+
+    expect(input).not.toHaveClass('MetricInput-input--overflowing');
+
+    clientWidth = 40;
+    rerender(<MetricInput icon="events" value={622122} showActionButton={false} />);
+
+    await waitFor(() => {
+      expect(input).toHaveClass('MetricInput-input--overflowing');
+    });
+  });
 });
 
 describe('MetricInput Pagination Styles Integration - Tests that pagination styles are properly applied alongside component styles', () => {
@@ -935,6 +971,23 @@ describe('MetricInput Action Button Layout - Tests action button rendering and g
 
     (wrapper as HTMLDivElement).focus();
     fireEvent.keyDown(wrapper, { key: 'Enter' });
+
+    expect(document.activeElement).toBe(input);
+    expect(wrapper).toHaveAttribute('tabindex', '-1');
+    expect(downButton).toHaveAttribute('tabindex', '0');
+    expect(input).not.toHaveAttribute('tabindex');
+    expect(upButton).toHaveAttribute('tabindex', '0');
+  });
+
+  it('activates the input when a printable key is pressed on the wrapper', () => {
+    const { getByTestId } = render(<MetricInput showActionButton={true} />);
+    const wrapper = getByTestId('DesignSystem-MetricInputWrapper');
+    const downButton = getByTestId('DesignSystem-MetricInput--downIcon');
+    const input = getByTestId('DesignSystem-MetricInput');
+    const upButton = getByTestId('DesignSystem-MetricInput--upIcon');
+
+    (wrapper as HTMLDivElement).focus();
+    fireEvent.keyDown(wrapper, { key: '1', code: 'Digit1' });
 
     expect(document.activeElement).toBe(input);
     expect(wrapper).toHaveAttribute('tabindex', '-1');
