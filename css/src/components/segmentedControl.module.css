@@ -97,7 +97,7 @@
   outline: none;
 }
 
-.SegmentedControl-segment:focus-visible:not(.SegmentedControl-segment--selected) {
+.SegmentedControl-segment:focus-visible {
   outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: var(--spacing-05);
   border-radius: var(--border-radius-10);
