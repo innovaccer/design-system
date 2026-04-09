@@ -97,7 +97,6 @@ export const StatusHint = (props: StatusHintProps) => {
     <div
       data-test="DesignSystem-StatusHint"
       {...baseProps}
-      {...rest}
       className={StatusHintClass}
       onClick={(e) => onClick && onClick(e)}
       onKeyDown={handleKeyDown}
@@ -105,8 +104,8 @@ export const StatusHint = (props: StatusHintProps) => {
       onMouseLeave={(e) => onMouseLeave && onMouseLeave(e)}
       role={isClickable ? 'button' : undefined}
       tabIndex={isClickable ? 0 : undefined}
+      {...rest}
     >
-      {/* eslint-enable */}
       <span
         data-test="DesignSystem-StatusHint--Icon"
         role="img"
