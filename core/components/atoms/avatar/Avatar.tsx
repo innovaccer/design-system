@@ -83,6 +83,8 @@ export interface AvatarProps extends BaseProps {
    * Internally sets role to `presentation`, removes `aria-label`, and applies `tabIndex={-1}`.
    */
   'aria-hidden'?: boolean;
+  onClick?: (e: React.MouseEvent<HTMLSpanElement>) => void;
+  onKeyDown?: (e: React.KeyboardEvent<HTMLSpanElement>) => void;
 }
 
 const initialsLength = 2;
@@ -109,6 +111,8 @@ export const Avatar = (props: AvatarProps) => {
     role,
     'aria-hidden': ariaHidden,
     'aria-label': ariaLabelProp,
+    onClick,
+    onKeyDown,
   } = props;
 
   const baseProps = extractBaseProps(props);
@@ -126,17 +130,59 @@ export const Avatar = (props: AvatarProps) => {
     return `${firstName || ''} ${lastName || ''} ${tooltipSuffix || ''}` || '';
   };
 
+  const tooltipText = getTooltipName().trim();
+  const hasValidTooltip = Boolean(withTooltip && tooltipText);
+
   const AvatarAppearance =
     appearance || colors[(initials.charCodeAt(0) + (initials.charCodeAt(1) || 0)) % 8] || DefaultAppearance;
   const isDecorative = ariaHidden === true;
+  const useAriaDisabled = Boolean(disabled && hasValidTooltip);
   const resolvedRole = isDecorative ? 'presentation' : role ?? (tabIndex !== undefined ? 'button' : 'img');
-  const ariaLabel = isDecorative ? undefined : ariaLabelProp || getTooltipName().trim() || initials || 'Avatar';
-  const resolvedTabIndex = isDecorative ? -1 : disabled ? -1 : tabIndex !== undefined ? tabIndex : 0;
+  const ariaLabel = isDecorative ? undefined : ariaLabelProp || tooltipText || initials || 'Avatar';
+  const resolvedTabIndex = isDecorative
+    ? -1
+    : disabled && !hasValidTooltip
+    ? -1
+    : tabIndex !== undefined
+    ? tabIndex
+    : 0;
+  const ariaDisabled = useAriaDisabled ? true : undefined;
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLSpanElement>) => {
+    if (disabled && (event.key === 'Enter' || event.key === ' ')) {
+      event.preventDefault();
+      event.stopPropagation();
+      return;
+    }
+    if (onKeyDown) {
+      onKeyDown(event);
+    }
+  };
+
+  const handleClick = (event: React.MouseEvent<HTMLSpanElement>) => {
+    if (disabled) {
+      event.preventDefault();
+      event.stopPropagation();
+      return;
+    }
+    if (onClick) {
+      onClick(event);
+    }
+  };
 
   const darkAppearance = ['secondary', 'success', 'warning', 'accent1', 'accent4'];
   const showPresence =
     presence && !disabled && size !== 'micro' && shape === 'round' && (presence === 'active' || presence === 'away');
-  const showStatus = status && size !== 'micro' && size === 'regular' && shape === 'round';
+
+  const defaultStatusIndicator =
+    disabled && hasValidTooltip && !status ? (
+      <Icon name="info_outline" type="outlined" appearance="subtle" size={12} aria-hidden="true" />
+    ) : null;
+  const activeStatus = status || defaultStatusIndicator;
+
+  const showStatus =
+    activeStatus &&
+    ((status && size !== 'micro' && size === 'regular' && shape === 'round') || (!status && defaultStatusIndicator));
 
   const AvatarClassNames = classNames(
     {
@@ -172,6 +218,16 @@ export const Avatar = (props: AvatarProps) => {
     boxShadow: `0 0 0 var(--spacing-05) ${strokeColor}`,
   };
 
+  const defaultStatusStyle =
+    size === 'regular'
+      ? {
+          ...borderStyle,
+          backgroundColor: strokeColor,
+        }
+      : {
+          backgroundColor: strokeColor,
+        };
+
   const sharedProp = {
     size,
     firstName,
@@ -206,6 +262,9 @@ export const Avatar = (props: AvatarProps) => {
               aria-label={ariaLabel}
               aria-hidden={ariaHidden}
               tabIndex={resolvedTabIndex}
+              onClick={handleClick}
+              onKeyDown={handleKeyDown}
+              aria-disabled={ariaDisabled}
             >
               {children}
             </span>
@@ -240,8 +299,8 @@ export const Avatar = (props: AvatarProps) => {
 
   const renderTooltip = () => (
     <span className="position-relative d-inline-flex">
-      {withTooltip && initials ? (
-        <Tooltip tooltip={getTooltipName()} position={tooltipPosition} triggerClass="flex-grow-0">
+      {hasValidTooltip ? (
+        <Tooltip tooltip={tooltipText} position={tooltipPosition} triggerClass="flex-grow-0">
           {renderAvatar()}
         </Tooltip>
       ) : (
@@ -251,8 +310,12 @@ export const Avatar = (props: AvatarProps) => {
         <span data-test="DesignSystem-Avatar--Presence" className={presenceClassNames} style={borderStyle} />
       )}
       {showStatus && (
-        <span data-test="DesignSystem-Avatar--Status" className={styles['Avatar-status']} style={borderStyle}>
-          {status}
+        <span
+          data-test="DesignSystem-Avatar--Status"
+          className={classNames(styles['Avatar-status'], { [styles['Avatar-status--disabled']]: disabled })}
+          style={!status && defaultStatusIndicator ? defaultStatusStyle : borderStyle}
+        >
+          {activeStatus}
         </span>
       )}
     </span>

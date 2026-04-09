@@ -144,7 +144,7 @@ Object {
               class="Avatar Avatar--regular Avatar--accent1 Avatar--disabled"
               data-test="DesignSystem-Avatar"
               role="img"
-              tabindex="-1"
+              tabindex="0"
             >
               <span
                 class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
@@ -155,6 +155,20 @@ Object {
             </span>
           </span>
         </div>
+        <span
+          class="Avatar-status Avatar-status--disabled"
+          data-test="DesignSystem-Avatar--Status"
+          style="box-shadow: 0 0 0 var(--spacing-05) var(--white);"
+        >
+          <i
+            aria-hidden="true"
+            class="material-symbols material-symbols-outlined Icon Icon--subtle"
+            data-test="DesignSystem-Icon"
+            style="font-size: 12px; width: 12px;"
+          >
+            info_outline
+          </i>
+        </span>
       </span>
     </div>
   </body>,
@@ -175,7 +189,7 @@ Object {
             class="Avatar Avatar--regular Avatar--accent1 Avatar--disabled"
             data-test="DesignSystem-Avatar"
             role="img"
-            tabindex="-1"
+            tabindex="0"
           >
             <span
               class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
@@ -186,6 +200,20 @@ Object {
           </span>
         </span>
       </div>
+      <span
+        class="Avatar-status Avatar-status--disabled"
+        data-test="DesignSystem-Avatar--Status"
+        style="box-shadow: 0 0 0 var(--spacing-05) var(--white);"
+      >
+        <i
+          aria-hidden="true"
+          class="material-symbols material-symbols-outlined Icon Icon--subtle"
+          data-test="DesignSystem-Icon"
+          style="font-size: 12px; width: 12px;"
+        >
+          info_outline
+        </i>
+      </span>
     </span>
   </div>,
   "debug": [Function],
@@ -386,7 +414,7 @@ Object {
               class="Avatar Avatar--regular Avatar--accent2 Avatar--disabled"
               data-test="DesignSystem-Avatar"
               role="img"
-              tabindex="-1"
+              tabindex="0"
             >
               <span
                 class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
@@ -397,6 +425,20 @@ Object {
             </span>
           </span>
         </div>
+        <span
+          class="Avatar-status Avatar-status--disabled"
+          data-test="DesignSystem-Avatar--Status"
+          style="box-shadow: 0 0 0 var(--spacing-05) var(--white);"
+        >
+          <i
+            aria-hidden="true"
+            class="material-symbols material-symbols-outlined Icon Icon--subtle"
+            data-test="DesignSystem-Icon"
+            style="font-size: 12px; width: 12px;"
+          >
+            info_outline
+          </i>
+        </span>
       </span>
     </div>
   </body>,
@@ -417,7 +459,7 @@ Object {
             class="Avatar Avatar--regular Avatar--accent2 Avatar--disabled"
             data-test="DesignSystem-Avatar"
             role="img"
-            tabindex="-1"
+            tabindex="0"
           >
             <span
               class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
@@ -428,6 +470,20 @@ Object {
           </span>
         </span>
       </div>
+      <span
+        class="Avatar-status Avatar-status--disabled"
+        data-test="DesignSystem-Avatar--Status"
+        style="box-shadow: 0 0 0 var(--spacing-05) var(--white);"
+      >
+        <i
+          aria-hidden="true"
+          class="material-symbols material-symbols-outlined Icon Icon--subtle"
+          data-test="DesignSystem-Icon"
+          style="font-size: 12px; width: 12px;"
+        >
+          info_outline
+        </i>
+      </span>
     </span>
   </div>,
   "debug": [Function],
@@ -628,7 +684,7 @@ Object {
               class="Avatar Avatar--regular Avatar--accent3 Avatar--disabled"
               data-test="DesignSystem-Avatar"
               role="img"
-              tabindex="-1"
+              tabindex="0"
             >
               <span
                 class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent3"
@@ -639,6 +695,20 @@ Object {
             </span>
           </span>
         </div>
+        <span
+          class="Avatar-status Avatar-status--disabled"
+          data-test="DesignSystem-Avatar--Status"
+          style="box-shadow: 0 0 0 var(--spacing-05) var(--white);"
+        >
+          <i
+            aria-hidden="true"
+            class="material-symbols material-symbols-outlined Icon Icon--subtle"
+            data-test="DesignSystem-Icon"
+            style="font-size: 12px; width: 12px;"
+          >
+            info_outline
+          </i>
+        </span>
       </span>
     </div>
   </body>,
@@ -659,7 +729,7 @@ Object {
             class="Avatar Avatar--regular Avatar--accent3 Avatar--disabled"
             data-test="DesignSystem-Avatar"
             role="img"
-            tabindex="-1"
+            tabindex="0"
           >
             <span
               class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent3"
@@ -670,6 +740,20 @@ Object {
           </span>
         </span>
       </div>
+      <span
+        class="Avatar-status Avatar-status--disabled"
+        data-test="DesignSystem-Avatar--Status"
+        style="box-shadow: 0 0 0 var(--spacing-05) var(--white);"
+      >
+        <i
+          aria-hidden="true"
+          class="material-symbols material-symbols-outlined Icon Icon--subtle"
+          data-test="DesignSystem-Icon"
+          style="font-size: 12px; width: 12px;"
+        >
+          info_outline
+        </i>
+      </span>
     </span>
   </div>,
   "debug": [Function],
@@ -870,7 +954,7 @@ Object {
               class="Avatar Avatar--regular Avatar--accent4 Avatar--disabled"
               data-test="DesignSystem-Avatar"
               role="img"
-              tabindex="-1"
+              tabindex="0"
             >
               <span
                 class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent4"
@@ -881,6 +965,20 @@ Object {
             </span>
           </span>
         </div>
+        <span
+          class="Avatar-status Avatar-status--disabled"
+          data-test="DesignSystem-Avatar--Status"
+          style="box-shadow: 0 0 0 var(--spacing-05) var(--white);"
+        >
+          <i
+            aria-hidden="true"
+            class="material-symbols material-symbols-outlined Icon Icon--subtle"
+            data-test="DesignSystem-Icon"
+            style="font-size: 12px; width: 12px;"
+          >
+            info_outline
+          </i>
+        </span>
       </span>
     </div>
   </body>,
@@ -901,7 +999,7 @@ Object {
             class="Avatar Avatar--regular Avatar--accent4 Avatar--disabled"
             data-test="DesignSystem-Avatar"
             role="img"
-            tabindex="-1"
+            tabindex="0"
           >
             <span
               class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent4"
@@ -912,6 +1010,20 @@ Object {
           </span>
         </span>
       </div>
+      <span
+        class="Avatar-status Avatar-status--disabled"
+        data-test="DesignSystem-Avatar--Status"
+        style="box-shadow: 0 0 0 var(--spacing-05) var(--white);"
+      >
+        <i
+          aria-hidden="true"
+          class="material-symbols material-symbols-outlined Icon Icon--subtle"
+          data-test="DesignSystem-Icon"
+          style="font-size: 12px; width: 12px;"
+        >
+          info_outline
+        </i>
+      </span>
     </span>
   </div>,
   "debug": [Function],
@@ -1112,7 +1224,7 @@ Object {
               class="Avatar Avatar--regular Avatar--alert Avatar--disabled"
               data-test="DesignSystem-Avatar"
               role="img"
-              tabindex="-1"
+              tabindex="0"
             >
               <span
                 class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--alert"
@@ -1123,6 +1235,20 @@ Object {
             </span>
           </span>
         </div>
+        <span
+          class="Avatar-status Avatar-status--disabled"
+          data-test="DesignSystem-Avatar--Status"
+          style="box-shadow: 0 0 0 var(--spacing-05) var(--white);"
+        >
+          <i
+            aria-hidden="true"
+            class="material-symbols material-symbols-outlined Icon Icon--subtle"
+            data-test="DesignSystem-Icon"
+            style="font-size: 12px; width: 12px;"
+          >
+            info_outline
+          </i>
+        </span>
       </span>
     </div>
   </body>,
@@ -1143,7 +1269,7 @@ Object {
             class="Avatar Avatar--regular Avatar--alert Avatar--disabled"
             data-test="DesignSystem-Avatar"
             role="img"
-            tabindex="-1"
+            tabindex="0"
           >
             <span
               class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--alert"
@@ -1154,6 +1280,20 @@ Object {
           </span>
         </span>
       </div>
+      <span
+        class="Avatar-status Avatar-status--disabled"
+        data-test="DesignSystem-Avatar--Status"
+        style="box-shadow: 0 0 0 var(--spacing-05) var(--white);"
+      >
+        <i
+          aria-hidden="true"
+          class="material-symbols material-symbols-outlined Icon Icon--subtle"
+          data-test="DesignSystem-Icon"
+          style="font-size: 12px; width: 12px;"
+        >
+          info_outline
+        </i>
+      </span>
     </span>
   </div>,
   "debug": [Function],
@@ -1354,7 +1494,7 @@ Object {
               class="Avatar Avatar--regular Avatar--primary Avatar--disabled"
               data-test="DesignSystem-Avatar"
               role="img"
-              tabindex="-1"
+              tabindex="0"
             >
               <span
                 class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--primary"
@@ -1365,6 +1505,20 @@ Object {
             </span>
           </span>
         </div>
+        <span
+          class="Avatar-status Avatar-status--disabled"
+          data-test="DesignSystem-Avatar--Status"
+          style="box-shadow: 0 0 0 var(--spacing-05) var(--white);"
+        >
+          <i
+            aria-hidden="true"
+            class="material-symbols material-symbols-outlined Icon Icon--subtle"
+            data-test="DesignSystem-Icon"
+            style="font-size: 12px; width: 12px;"
+          >
+            info_outline
+          </i>
+        </span>
       </span>
     </div>
   </body>,
@@ -1385,7 +1539,7 @@ Object {
             class="Avatar Avatar--regular Avatar--primary Avatar--disabled"
             data-test="DesignSystem-Avatar"
             role="img"
-            tabindex="-1"
+            tabindex="0"
           >
             <span
               class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--primary"
@@ -1396,6 +1550,20 @@ Object {
           </span>
         </span>
       </div>
+      <span
+        class="Avatar-status Avatar-status--disabled"
+        data-test="DesignSystem-Avatar--Status"
+        style="box-shadow: 0 0 0 var(--spacing-05) var(--white);"
+      >
+        <i
+          aria-hidden="true"
+          class="material-symbols material-symbols-outlined Icon Icon--subtle"
+          data-test="DesignSystem-Icon"
+          style="font-size: 12px; width: 12px;"
+        >
+          info_outline
+        </i>
+      </span>
     </span>
   </div>,
   "debug": [Function],
@@ -1596,7 +1764,7 @@ Object {
               class="Avatar Avatar--regular Avatar--success Avatar--disabled"
               data-test="DesignSystem-Avatar"
               role="img"
-              tabindex="-1"
+              tabindex="0"
             >
               <span
                 class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--success"
@@ -1607,6 +1775,20 @@ Object {
             </span>
           </span>
         </div>
+        <span
+          class="Avatar-status Avatar-status--disabled"
+          data-test="DesignSystem-Avatar--Status"
+          style="box-shadow: 0 0 0 var(--spacing-05) var(--white);"
+        >
+          <i
+            aria-hidden="true"
+            class="material-symbols material-symbols-outlined Icon Icon--subtle"
+            data-test="DesignSystem-Icon"
+            style="font-size: 12px; width: 12px;"
+          >
+            info_outline
+          </i>
+        </span>
       </span>
     </div>
   </body>,
@@ -1627,7 +1809,7 @@ Object {
             class="Avatar Avatar--regular Avatar--success Avatar--disabled"
             data-test="DesignSystem-Avatar"
             role="img"
-            tabindex="-1"
+            tabindex="0"
           >
             <span
               class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--success"
@@ -1638,6 +1820,20 @@ Object {
           </span>
         </span>
       </div>
+      <span
+        class="Avatar-status Avatar-status--disabled"
+        data-test="DesignSystem-Avatar--Status"
+        style="box-shadow: 0 0 0 var(--spacing-05) var(--white);"
+      >
+        <i
+          aria-hidden="true"
+          class="material-symbols material-symbols-outlined Icon Icon--subtle"
+          data-test="DesignSystem-Icon"
+          style="font-size: 12px; width: 12px;"
+        >
+          info_outline
+        </i>
+      </span>
     </span>
   </div>,
   "debug": [Function],
@@ -1838,7 +2034,7 @@ Object {
               class="Avatar Avatar--regular Avatar--warning Avatar--disabled"
               data-test="DesignSystem-Avatar"
               role="img"
-              tabindex="-1"
+              tabindex="0"
             >
               <span
                 class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--warning"
@@ -1849,6 +2045,20 @@ Object {
             </span>
           </span>
         </div>
+        <span
+          class="Avatar-status Avatar-status--disabled"
+          data-test="DesignSystem-Avatar--Status"
+          style="box-shadow: 0 0 0 var(--spacing-05) var(--white);"
+        >
+          <i
+            aria-hidden="true"
+            class="material-symbols material-symbols-outlined Icon Icon--subtle"
+            data-test="DesignSystem-Icon"
+            style="font-size: 12px; width: 12px;"
+          >
+            info_outline
+          </i>
+        </span>
       </span>
     </div>
   </body>,
@@ -1869,7 +2079,7 @@ Object {
             class="Avatar Avatar--regular Avatar--warning Avatar--disabled"
             data-test="DesignSystem-Avatar"
             role="img"
-            tabindex="-1"
+            tabindex="0"
           >
             <span
               class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--warning"
@@ -1880,6 +2090,20 @@ Object {
           </span>
         </span>
       </div>
+      <span
+        class="Avatar-status Avatar-status--disabled"
+        data-test="DesignSystem-Avatar--Status"
+        style="box-shadow: 0 0 0 var(--spacing-05) var(--white);"
+      >
+        <i
+          aria-hidden="true"
+          class="material-symbols material-symbols-outlined Icon Icon--subtle"
+          data-test="DesignSystem-Icon"
+          style="font-size: 12px; width: 12px;"
+        >
+          info_outline
+        </i>
+      </span>
     </span>
   </div>,
   "debug": [Function],

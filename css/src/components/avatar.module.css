@@ -199,3 +199,7 @@
   cursor: pointer;
   overflow: hidden;
 }
+
+.Avatar-status--disabled {
+  cursor: not-allowed;
+}
