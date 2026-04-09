@@ -1,18 +1,20 @@
 import * as React from 'react';
-import { Avatar, Row, Column, Text, Chip, Icon } from '@/index';
+import { Avatar, Row, Column, Text, Chip, Icon, Tooltip } from '@/index';
+import StatusImage from './assets/status-image.png';
 
-export const States = () => {
+export const Disabled = () => {
   const [showSuffix, setShowSuffix] = React.useState(false);
   const [showStatus, setShowStatus] = React.useState(false);
-  const [showPresence, setShowPresence] = React.useState(false);
 
   const handleSuffixToggle = () => setShowSuffix(!showSuffix);
   const handleStatusToggle = () => setShowStatus(!showStatus);
-  const handlePresenceToggle = () => setShowPresence(!showPresence);
 
   const suffix = showSuffix ? '(Deactivated)' : undefined;
-  const presence = showPresence ? 'active' : undefined;
-  const statusNode = showStatus ? <Icon name="check" appearance="white" size={12} /> : undefined;
+  const statusNode = showStatus ? (
+    <Tooltip tooltip="DND" position="top">
+      <img width="14px" alt="DND" src={StatusImage} />
+    </Tooltip>
+  ) : undefined;
 
   return (
     <div className="d-flex flex-column" style={{ gap: '32px' }}>
@@ -58,13 +60,6 @@ export const States = () => {
             selected={showStatus}
             onClick={handleStatusToggle}
           />
-          <Chip
-            label="Toggle Presence"
-            name="presence"
-            type="selection"
-            selected={showPresence}
-            onClick={handlePresenceToggle}
-          />
         </div>
 
         <Row>
@@ -74,7 +69,6 @@ export const States = () => {
               firstName="John"
               lastName="Doe"
               tooltipSuffix={suffix}
-              presence={presence}
               status={statusNode}
             />
             <Text appearance="subtle" className="mt-6">
@@ -88,7 +82,6 @@ export const States = () => {
               lastName="Doe"
               shape="square"
               tooltipSuffix={suffix}
-              presence={presence}
               status={statusNode}
             />
             <Text appearance="subtle" className="mt-6">
@@ -96,7 +89,7 @@ export const States = () => {
             </Text>
           </Column>
           <Column className="d-flex align-items-center flex-column">
-            <Avatar disabled={true} tooltipSuffix={suffix} presence={presence} status={statusNode}>
+            <Avatar disabled={true} tooltipSuffix={suffix} status={statusNode}>
               <Avatar.Icon name="person" />
             </Avatar>
             <Text appearance="subtle" className="mt-6">
@@ -104,7 +97,7 @@ export const States = () => {
             </Text>
           </Column>
           <Column className="d-flex align-items-center flex-column">
-            <Avatar disabled={true} shape="square" tooltipSuffix={suffix} presence={presence} status={statusNode}>
+            <Avatar disabled={true} shape="square" tooltipSuffix={suffix} status={statusNode}>
               <Avatar.Icon name="person" />
             </Avatar>
             <Text appearance="subtle" className="mt-6">
@@ -118,11 +111,24 @@ export const States = () => {
               firstName="John"
               lastName="Doe"
               tooltipSuffix={suffix}
-              presence={presence}
               status={statusNode}
             />
             <Text appearance="subtle" className="mt-6">
               Micro Round
+            </Text>
+          </Column>
+          <Column className="d-flex align-items-center flex-column">
+            <Avatar
+              disabled={true}
+              size="micro"
+              shape="square"
+              firstName="John"
+              lastName="Doe"
+              tooltipSuffix={suffix}
+              status={statusNode}
+            />
+            <Text appearance="subtle" className="mt-6">
+              Micro Square
             </Text>
           </Column>
         </Row>
@@ -134,15 +140,16 @@ export const States = () => {
 const customCode = `() => {
   const [showSuffix, setShowSuffix] = React.useState(false);
   const [showStatus, setShowStatus] = React.useState(false);
-  const [showPresence, setShowPresence] = React.useState(false);
 
   const handleSuffixToggle = () => setShowSuffix(!showSuffix);
   const handleStatusToggle = () => setShowStatus(!showStatus);
-  const handlePresenceToggle = () => setShowPresence(!showPresence);
 
   const suffix = showSuffix ? '(Deactivated)' : undefined;
-  const presence = showPresence ? 'active' : undefined;
-  const statusNode = showStatus ? <Icon name="check" appearance="white" size={12} /> : undefined;
+  const statusNode = showStatus ? (
+    <Tooltip tooltip="DND" position="top">
+      <img width="14px" alt="DND" src="static/media/core/components/atoms/avatar/__stories__/assets/status-image.png" />
+    </Tooltip>
+  ) : undefined;
 
   return (
     <div className="d-flex flex-column" style={{ gap: '32px' }}>
@@ -188,13 +195,6 @@ const customCode = `() => {
             selected={showStatus}
             onClick={handleStatusToggle}
           />
-          <Chip
-            label="Toggle Presence"
-            name="presence"
-            type="selection"
-            selected={showPresence}
-            onClick={handlePresenceToggle}
-          />
         </div>
 
         <Row>
@@ -204,7 +204,6 @@ const customCode = `() => {
               firstName="John"
               lastName="Doe"
               tooltipSuffix={suffix}
-              presence={presence}
               status={statusNode}
             />
             <Text appearance="subtle" className="mt-6">
@@ -218,7 +217,6 @@ const customCode = `() => {
               lastName="Doe"
               shape="square"
               tooltipSuffix={suffix}
-              presence={presence}
               status={statusNode}
             />
             <Text appearance="subtle" className="mt-6">
@@ -226,7 +224,7 @@ const customCode = `() => {
             </Text>
           </Column>
           <Column className="d-flex align-items-center flex-column">
-            <Avatar disabled={true} tooltipSuffix={suffix} presence={presence} status={statusNode}>
+            <Avatar disabled={true} tooltipSuffix={suffix} status={statusNode}>
               <Avatar.Icon name="person" />
             </Avatar>
             <Text appearance="subtle" className="mt-6">
@@ -234,7 +232,7 @@ const customCode = `() => {
             </Text>
           </Column>
           <Column className="d-flex align-items-center flex-column">
-            <Avatar disabled={true} shape="square" tooltipSuffix={suffix} presence={presence} status={statusNode}>
+            <Avatar disabled={true} shape="square" tooltipSuffix={suffix} status={statusNode}>
               <Avatar.Icon name="person" />
             </Avatar>
             <Text appearance="subtle" className="mt-6">
@@ -248,11 +246,24 @@ const customCode = `() => {
               firstName="John"
               lastName="Doe"
               tooltipSuffix={suffix}
-              presence={presence}
               status={statusNode}
             />
             <Text appearance="subtle" className="mt-6">
               Micro Round
+            </Text>
+          </Column>
+          <Column className="d-flex align-items-center flex-column">
+            <Avatar
+              disabled={true}
+              size="micro"
+              shape="square"
+              firstName="John"
+              lastName="Doe"
+              tooltipSuffix={suffix}
+              status={statusNode}
+            />
+            <Text appearance="subtle" className="mt-6">
+              Micro Square
             </Text>
           </Column>
         </Row>
@@ -262,7 +273,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Avatar/Avatar/States',
+  title: 'Components/Avatar/Avatar/Disabled',
   component: Avatar,
   parameters: {
     docs: {

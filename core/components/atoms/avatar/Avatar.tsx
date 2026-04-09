@@ -174,15 +174,16 @@ export const Avatar = (props: AvatarProps) => {
   const showPresence =
     presence && !disabled && size !== 'micro' && shape === 'round' && (presence === 'active' || presence === 'away');
 
+  const isCustomStatusAllowed = size === 'regular' && shape === 'round';
+  const customStatus = isCustomStatusAllowed ? status : undefined;
+
   const defaultStatusIndicator =
-    disabled && hasValidTooltip && !status ? (
+    disabled && hasValidTooltip && !customStatus ? (
       <Icon name="info_outline" type="outlined" appearance="subtle" size={12} aria-hidden="true" />
     ) : null;
-  const activeStatus = status || defaultStatusIndicator;
+  const activeStatus = customStatus || defaultStatusIndicator;
 
-  const showStatus =
-    activeStatus &&
-    ((status && size !== 'micro' && size === 'regular' && shape === 'round') || (!status && defaultStatusIndicator));
+  const showStatus = !!activeStatus;
 
   const AvatarClassNames = classNames(
     {
@@ -316,7 +317,7 @@ export const Avatar = (props: AvatarProps) => {
         <span
           data-test="DesignSystem-Avatar--Status"
           className={classNames(styles['Avatar-status'], { [styles['Avatar-status--disabled']]: disabled })}
-          style={!status && defaultStatusIndicator ? defaultStatusStyle : borderStyle}
+          style={!customStatus && defaultStatusIndicator ? defaultStatusStyle : borderStyle}
         >
           {activeStatus}
         </span>
