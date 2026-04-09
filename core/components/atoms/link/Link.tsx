@@ -2,7 +2,9 @@ import * as React from 'react';
 import GenericText from '../_text';
 import classNames from 'classnames';
 import { BaseProps, OmitNativeProps } from '@/utils/types';
+import { Icon, Tooltip } from '@/index';
 import styles from '@css/components/link.module.css';
+import uidGenerator from '@/utils/uidGenerator';
 
 type LinkTarget = '_blank' | '_self' | '_parent' | '_top';
 type LinkAppearance = 'default' | 'subtle';
@@ -48,7 +50,15 @@ export interface LinkProps extends BaseProps, OmitNativeProps<HTMLLinkElement, '
   /**
    * Handler to be called when `Link` is clicked
    */
-  onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void;
+  onClick?: (event: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => void;
+  /**
+   * Handler to be called when key is pressed on `Link`
+   */
+  onKeyDown?: (event: React.KeyboardEvent<HTMLAnchorElement | HTMLButtonElement>) => void;
+  /**
+   * Adds title to `Link`
+   */
+  tooltip?: string;
   /**
    * Element to be rendered
    */
@@ -62,11 +72,58 @@ export interface LinkProps extends BaseProps, OmitNativeProps<HTMLLinkElement, '
  * - In contrast, the **LinkButton** component is an action component. Action components use "boolean props" to indicate variations in their behavior and appearance. Therefore, the **LinkButton** uses the `subtle` boolean prop to signify a specific visual style that aligns with other button components.
  */
 
-export const Link = (props: LinkProps) => {
-  const { children, className, appearance, size, disabled, href, target, rel, download, hreflang, onClick, ...rest } =
-    props;
+const LinkElement = React.forwardRef<HTMLAnchorElement | HTMLButtonElement, LinkProps>((props, ref) => {
+  const {
+    children,
+    className,
+    appearance,
+    size,
+    disabled,
+    href,
+    target,
+    rel,
+    download,
+    hreflang,
+    onClick,
+    onKeyDown,
+    tooltip,
+    'aria-describedby': ariaDescribedBy,
+    ...rest
+  } = props;
 
   const isAnchor = !!href;
+
+  const tooltipIdRef = React.useRef<string | null>(null);
+  if (tooltipIdRef.current === null && tooltip) {
+    tooltipIdRef.current = `Link-tooltip-${uidGenerator()}`;
+  }
+
+  const computedAriaDescribedBy =
+    [ariaDescribedBy, tooltip ? tooltipIdRef.current : undefined].filter(Boolean).join(' ') || undefined;
+
+  const computedAriaLabel = props['aria-label'] || undefined;
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLAnchorElement | HTMLButtonElement>) => {
+    if (disabled && (event.key === 'Enter' || event.key === ' ')) {
+      event.preventDefault();
+      event.stopPropagation();
+      return;
+    }
+    if (onKeyDown) {
+      onKeyDown(event);
+    }
+  };
+
+  const handleClick = (event: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => {
+    if (disabled) {
+      event.preventDefault();
+      event.stopPropagation();
+      return;
+    }
+    if (onClick) {
+      onClick(event);
+    }
+  };
 
   const classes = classNames(
     {
@@ -81,22 +138,58 @@ export const Link = (props: LinkProps) => {
 
   const elementProps = isAnchor
     ? { componentType: 'a', href, target, rel, download, hreflang }
-    : { componentType: 'button', type: 'button', disabled };
+    : { componentType: 'button', type: 'button' };
+
+  const iconSize = size === 'tiny' ? 12 : 16;
+  const showInfoAffordance = disabled && tooltip;
 
   return (
     <GenericText
       data-test="DesignSystem-Link"
+      ref={ref}
       className={classes}
-      tabIndex={disabled ? -1 : 0}
+      tabIndex={disabled && !tooltip ? -1 : 0}
       aria-disabled={disabled}
-      onClick={disabled ? undefined : onClick}
+      aria-describedby={computedAriaDescribedBy}
+      aria-label={computedAriaLabel}
+      onClick={handleClick}
+      onKeyDown={handleKeyDown}
       {...elementProps}
       {...rest}
     >
-      {children}
+      <>
+        {children}
+        {showInfoAffordance && (
+          <Icon
+            name="info_outline"
+            type="outlined"
+            size={iconSize}
+            className={classNames(styles['Link-infoIcon'], styles['Link-infoIcon--right'])}
+            aria-hidden="true"
+            data-test="DesignSystem-Link--Info-Icon"
+          />
+        )}
+      </>
+      {tooltip && (
+        <span id={tooltipIdRef.current as string} className={styles['Link-srOnly']}>
+          {tooltip}
+        </span>
+      )}
     </GenericText>
   );
-};
+});
+
+export const Link = React.forwardRef<HTMLAnchorElement | HTMLButtonElement, LinkProps>((props, ref) => {
+  const { tooltip } = props;
+
+  return tooltip ? (
+    <Tooltip tooltip={tooltip} aria-hidden="true">
+      <LinkElement {...props} ref={ref} />
+    </Tooltip>
+  ) : (
+    <LinkElement {...props} ref={ref} />
+  );
+});
 
 Link.displayName = 'Link';
 

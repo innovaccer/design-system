@@ -1,9 +1,10 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, BaseHtmlProps } from '@/utils/types';
-import { Icon } from '@/index';
+import { Icon, Tooltip } from '@/index';
 import { IconType } from '@/common.type';
 import styles from '@css/components/linkButton.module.css';
+import uidGenerator from '@/utils/uidGenerator';
 
 export type ButtonType = 'button' | 'submit' | 'reset';
 export type LinkButtonSize = 'tiny' | 'regular';
@@ -23,6 +24,10 @@ export interface LinkButtonProps extends BaseProps, BaseHtmlProps<HTMLButtonElem
    * Disables the `Button`, making it unable to be pressed
    */
   disabled?: boolean;
+  /**
+   * Adds title to `Button` when only icon is present
+   */
+  tooltip?: string;
   /**
    * Name of icon that is to be added inside `Button`
    * Material icon name
@@ -73,8 +78,62 @@ const sizeMapping: Record<LinkButtonSize, number> = {
   regular: 16,
 };
 
-export const LinkButton = React.forwardRef<HTMLButtonElement, LinkButtonProps>((props, ref) => {
-  const { children, type, className, disabled, tabIndex, icon, subtle, size, iconAlign, iconType, ...rest } = props;
+// eslint-disable-next-line react/display-name
+const LinkButtonElement = React.forwardRef<HTMLButtonElement, LinkButtonProps>((props, ref) => {
+  const {
+    children,
+    type,
+    className,
+    disabled,
+    tabIndex,
+    icon,
+    subtle,
+    size,
+    iconAlign,
+    iconType,
+    tooltip,
+    onClick,
+    onKeyDown,
+    'aria-describedby': ariaDescribedBy,
+    ...rest
+  } = props;
+
+  const isIconOnly = icon && !children;
+
+  const tooltipIdRef = React.useRef<string | null>(null);
+  if (tooltipIdRef.current === null && tooltip && !isIconOnly) {
+    tooltipIdRef.current = `LinkButton-tooltip-${uidGenerator()}`;
+  }
+
+  const computedAriaDescribedBy =
+    [ariaDescribedBy, tooltip && !isIconOnly ? tooltipIdRef.current : undefined].filter(Boolean).join(' ') || undefined;
+
+  const computedAriaLabel = props['aria-label'] || (!children && icon ? icon : undefined) || (isIconOnly && tooltip ? tooltip : undefined);
+
+  const useAriaDisabled = Boolean(disabled && tooltip);
+  const nativeDisabled = useAriaDisabled ? undefined : disabled;
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>) => {
+    if (useAriaDisabled && (event.key === 'Enter' || event.key === ' ')) {
+      event.preventDefault();
+      event.stopPropagation();
+      return;
+    }
+    if (onKeyDown) {
+      onKeyDown(event);
+    }
+  };
+
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    if (useAriaDisabled) {
+      event.preventDefault();
+      event.stopPropagation();
+      return;
+    }
+    if (onClick) {
+      onClick(event);
+    }
+  };
 
   const buttonClass = classNames({
     [styles['LinkButton']]: true,
@@ -90,31 +149,85 @@ export const LinkButton = React.forwardRef<HTMLButtonElement, LinkButtonProps>((
     [styles[`LinkButton-icon--${iconAlign}`]]: children && iconAlign,
   });
 
+  const iconSize = size && sizeMapping[size];
+  const showInfoAffordance = disabled && tooltip;
+
   return (
     <button
       ref={ref}
       type={type}
       data-test="DesignSystem-LinkButton"
       className={buttonClass}
-      disabled={disabled}
+      disabled={nativeDisabled}
+      aria-disabled={useAriaDisabled ? true : undefined}
+      aria-describedby={computedAriaDescribedBy}
       tabIndex={tabIndex}
       {...rest}
-      aria-label={rest['aria-label'] || (!children && icon ? icon : undefined)}
+      aria-label={computedAriaLabel}
+      onClick={handleClick}
+      onKeyDown={handleKeyDown}
     >
       <>
+        {showInfoAffordance && children && iconAlign === 'right' && (
+          <Icon
+            name="info_outline"
+            type="outlined"
+            size={iconSize}
+            className={classNames(styles['LinkButton-infoIcon'], styles['LinkButton-infoIcon--right'])}
+            aria-hidden="true"
+            data-test="DesignSystem-LinkButton--Info-Icon"
+          />
+        )}
         {icon && (
           <div className={iconClass}>
             <Icon
               data-test="DesignSystem-LinkButton--Icon"
               name={icon}
               type={iconType}
-              size={size && sizeMapping[size]}
+              size={iconSize}
             />
           </div>
         )}
         {children}
+        {showInfoAffordance && children && iconAlign === 'left' && (
+          <Icon
+            name="info_outline"
+            type="outlined"
+            size={iconSize}
+            className={classNames(styles['LinkButton-infoIcon'], styles['LinkButton-infoIcon--left'])}
+            aria-hidden="true"
+            data-test="DesignSystem-LinkButton--Info-Icon"
+          />
+        )}
+        {showInfoAffordance && !children && (
+          <Icon
+            name="info_outline"
+            type="outlined"
+            size={12}
+            className={classNames(styles['LinkButton-infoIcon'], styles['LinkButton-infoIcon--iconOnly'])}
+            aria-hidden="true"
+            data-test="DesignSystem-LinkButton--Info-Icon"
+          />
+        )}
       </>
+      {tooltip && !isIconOnly && (
+        <span id={tooltipIdRef.current as string} className={styles['LinkButton-srOnly']}>
+          {tooltip}
+        </span>
+      )}
     </button>
+  );
+});
+
+export const LinkButton = React.forwardRef<HTMLButtonElement, LinkButtonProps>((props, ref) => {
+  const { tooltip } = props;
+
+  return tooltip ? (
+    <Tooltip tooltip={tooltip} aria-hidden="true">
+      <LinkButtonElement {...props} ref={ref} />
+    </Tooltip>
+  ) : (
+    <LinkButtonElement {...props} ref={ref} />
   );
 });
 

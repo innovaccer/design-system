@@ -64,10 +64,15 @@
   outline-offset: var(--spacing-05);
 }
 
-.LinkButton--default:disabled {
+.LinkButton--default:disabled,
+.LinkButton--default[aria-disabled='true'] {
   cursor: not-allowed;
-  pointer-events: none;
   color: var(--primary-lighter);
+}
+
+.LinkButton--default:disabled .LinkButton-infoIcon,
+.LinkButton--default[aria-disabled='true'] .LinkButton-infoIcon {
+  color: var(--primary);
 }
 
 /* Subtle Appearance */
@@ -90,8 +95,46 @@
   outline-offset: var(--spacing-05);
 }
 
-.LinkButton--subtle:disabled {
+.LinkButton--subtle:disabled,
+.LinkButton--subtle[aria-disabled='true'] {
   cursor: not-allowed;
-  pointer-events: none;
   color: var(--inverse-lightest);
+}
+
+.LinkButton--subtle:disabled .LinkButton-infoIcon,
+.LinkButton--subtle[aria-disabled='true'] .LinkButton-infoIcon {
+  color: var(--inverse-light); /* Or appropriate subtle icon color */
+}
+
+.LinkButton-infoIcon {
+  color: var(--text-subtle);
+  pointer-events: none;
+}
+
+.LinkButton-infoIcon--iconOnly {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.LinkButton-infoIcon--left,
+.LinkButton-infoIcon--right {
+  margin-left: var(--spacing-10);
+}
+
+.LinkButton--tiny .LinkButton-infoIcon--left,
+.LinkButton--tiny .LinkButton-infoIcon--right {
+  margin-left: var(--spacing-10);
+}
+
+.LinkButton-srOnly {
+  position: absolute;
+  width: var(--spacing-2-5);
+  height: var(--spacing-2-5);
+  padding: 0;
+  margin: calc(-1 * var(--spacing-2-5));
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
