@@ -57,6 +57,7 @@ exports[`FileUploader component
       </button>
       <input
         aria-describedby="file-uploader-Test-uid-size"
+        aria-label="Upload documents"
         aria-labelledby="file-uploader-Test-uid-title"
         class="FileUploaderButton-input"
         data-test="DesignSystem-FileUploaderButton--Input"
@@ -120,6 +121,7 @@ exports[`FileUploader component prop:accept snapshot
       <input
         accept="jpg, pdf, png"
         aria-describedby="file-uploader-Test-uid-size"
+        aria-label="Upload files"
         aria-labelledby="file-uploader-Test-uid-title"
         class="FileUploaderButton-input"
         data-test="DesignSystem-FileUploaderButton--Input"
@@ -182,6 +184,7 @@ exports[`FileUploader component prop:disabled snapshot
       </button>
       <input
         aria-describedby="file-uploader-Test-uid-size"
+        aria-label="Upload files"
         aria-labelledby="file-uploader-Test-uid-title"
         class="FileUploaderButton-input"
         data-test="DesignSystem-FileUploaderButton--Input"
@@ -245,6 +248,7 @@ exports[`FileUploader component prop:disabled snapshot
       </button>
       <input
         aria-describedby="file-uploader-Test-uid-size"
+        aria-label="Upload files"
         aria-labelledby="file-uploader-Test-uid-title"
         class="FileUploaderButton-input"
         data-test="DesignSystem-FileUploaderButton--Input"
@@ -308,6 +312,7 @@ exports[`FileUploader component prop:multiple snapshot
       </button>
       <input
         aria-describedby="file-uploader-Test-uid-size"
+        aria-label="Upload files"
         aria-labelledby="file-uploader-Test-uid-title"
         class="FileUploaderButton-input"
         data-test="DesignSystem-FileUploaderButton--Input"
@@ -370,6 +375,7 @@ exports[`FileUploader component prop:multiple snapshot
       </button>
       <input
         aria-describedby="file-uploader-Test-uid-size"
+        aria-label="Upload files"
         aria-labelledby="file-uploader-Test-uid-title"
         class="FileUploaderButton-input"
         data-test="DesignSystem-FileUploaderButton--Input"

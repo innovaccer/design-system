@@ -71,6 +71,7 @@ export const SelectionAvatarsWrapper = (props: SelectionAvatarsWrapperProps) => 
         });
 
         const newAvatarStyle = { ...avatarStyle, zIndex: avatarList.length - index };
+        const checkboxLabel = [firstName, lastName].filter(Boolean).join(' ').trim() || tooltipSuffix || 'Avatar';
 
         if (avatarRenderer) {
           return avatarRenderer(avatarItem);
@@ -84,7 +85,9 @@ export const SelectionAvatarsWrapper = (props: SelectionAvatarsWrapperProps) => 
               style={newAvatarStyle}
               className={GroupClass}
               data-test="DesignSystem-AvatarSelection--Avatar"
+              aria-label={checkboxLabel}
               aria-checked={selectedItems && selectedItems.includes(avatarItem)}
+              aria-disabled={disabled}
               onClick={() => onClickHandler(avatarItem)}
               onKeyDown={(event: React.KeyboardEvent) => handleKeyDown(event, avatarItem)}
             >

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import Legend, { LegendProps as IProps } from '../Legend';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
@@ -71,4 +72,12 @@ describe('Legend component', () => {
   };
 
   testHelper(mapper, testFunc);
+});
+
+describe('Legend component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<Legend label={label}>{label}</Legend>);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
 });

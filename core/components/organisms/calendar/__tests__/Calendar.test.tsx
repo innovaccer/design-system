@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { Calendar } from '@/index';
 import { CalendarProps as Props } from '@/index.type';
@@ -432,5 +433,13 @@ describe('Calendar keyboard navigation', () => {
         expect(getAllByTestId('DesignSystem-Calendar--monthValue').length).toBeGreaterThan(0);
       }
     });
+  });
+});
+
+describe('Calendar component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<Calendar date={new Date(2020, 2, 15)} />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

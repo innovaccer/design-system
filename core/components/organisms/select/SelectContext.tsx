@@ -2,6 +2,7 @@ import * as React from 'react';
 import { OptionType, TListboxSize, SelectStyleType } from '@/common.type';
 
 export type ContextProps = {
+  listboxId?: string;
   openPopover?: boolean;
   setOpenPopover?: React.Dispatch<React.SetStateAction<boolean>>;
   selectValue?: OptionType | OptionType[];

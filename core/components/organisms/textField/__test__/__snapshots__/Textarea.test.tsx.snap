@@ -42,6 +42,7 @@ exports[`TextField component matches snapshot when input exceeds maximum charact
         id="HelpText-Test-uid"
       >
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon Icon--alert InlineMessage-icon--small"
           data-test="DesignSystem-InlineMessage--Icon"
           style="font-size: 14px; width: 14px;"

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { testHelper, filterUndefined, testMessageHelper } from '@/utils/testHelper';
 import { OverlayBody, OverlayBodyProps as Props } from '../OverlayBody';
 
@@ -31,5 +32,17 @@ describe('OverlayBody with overwrite class', () => {
       </OverlayBody>
     );
     expect(getByTestId('DesignSystem-OverlayBody')).toHaveClass(className);
+  });
+});
+
+describe('OverlayBody component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(
+      <OverlayBody>
+        <div>Overlay Body</div>
+      </OverlayBody>
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

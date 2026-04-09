@@ -743,7 +743,7 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
     ],
   },
 
-  // Dropdown: accepts aria-label, aria-labelledby (forwarded to built-in trigger only), optionsAriaLabel, tabIndex
+  // Dropdown: accepts aria-label, aria-labelledby (forwarded to built-in trigger only), optionsAriaLabel, inert
   Dropdown: {
     htmlElement: 'custom',
     customProps: [
@@ -763,6 +763,12 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
         name: 'optionsAriaLabel',
         type: 'string',
         description: 'Accessible name for the options list container. Defaults to "{aria-label} options" or "Options".',
+      },
+      {
+        name: 'inert',
+        type: 'string',
+        description:
+          'Makes the dropdown and all its descendants non-interactive and non-focusable. Pass an empty string ("") to activate.',
       },
     ],
   },

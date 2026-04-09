@@ -80,6 +80,7 @@ export const FileUploaderButton = (props: FileUploaderButtonProps) => {
         disabled={disabled}
         type="file"
         tabIndex={-1}
+        aria-label={uploadButtonLabel}
         className={styles['FileUploaderButton-input']}
         aria-labelledby={ariaLabelledBy}
         aria-describedby={ariaDescribedBy}

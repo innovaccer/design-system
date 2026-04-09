@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import ChatInput, { ChatInputProps as Props } from '../ChatInput';
 
@@ -162,5 +163,13 @@ describe('ChatInput component', () => {
       expect(textarea).toBeInTheDocument();
       expect(textarea).toHaveClass('ChatInput-textarea');
     });
+  });
+});
+
+describe('ChatInput component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<ChatInput placeholder="Start typing..." />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

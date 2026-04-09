@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { Chat } from '@/index';
 import { ChatBubbleProps as Props } from '../ChatBubble';
 import { IncomingOptionProps } from '../IncomingBubble';
@@ -180,5 +181,19 @@ describe('ChatBubble Component type: Outgoing', () => {
     );
 
     expect(screen.getByTestId('DesignSystem-ChatBubble-OutgoingWrapper')).toHaveClass('custom-class');
+  });
+});
+
+describe('ChatBubble component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(
+      <Chat>
+        <Chat.ChatBubble type="incoming" incomingOptions={incomingOptions}>
+          {chatMessage}
+        </Chat.ChatBubble>
+      </Chat>
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

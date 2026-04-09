@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { BaseProps, extractBaseProps } from '@/utils/types';
+import { BaseProps, BaseHtmlProps, extractBaseProps } from '@/utils/types';
 import { useAccessibilityProps } from '@/accessibility/utils';
 import iconStyles from '@css/components/icon.module.css';
 
@@ -47,7 +47,7 @@ export type IconAppearance =
 
 export type IconType = 'filled' | 'outlined' | 'outline' | 'rounded' | 'round' | 'two-tone' | 'sharp'; // 'outline', 'rounded' to be deprecated soon.
 
-export interface IconProps extends BaseProps {
+export interface IconProps extends BaseProps, BaseHtmlProps<HTMLElement> {
   /**
    * Material icon name
    */
@@ -85,10 +85,6 @@ export interface IconProps extends BaseProps {
    * where it participates in sequential keyboard navigation.
    */
   tabIndex?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>['tabIndex'];
-  /**
-   * Hides the icon from assistive technologies when used as decorative.
-   */
-  'aria-hidden'?: React.AriaAttributes['aria-hidden'];
 }
 
 const iconTypeMapper: Record<string, string> = {
@@ -132,8 +128,8 @@ const iconTypeMapper: Record<string, string> = {
  */
 
 export const Icon = (props: IconProps) => {
-  const { appearance, className, name, size, children } = props;
-  const accessibilityProps = useAccessibilityProps(props);
+  const { appearance, className, name, size, children, type: propsType, ...rest } = props;
+  const accessibilityProps = useAccessibilityProps(rest);
 
   const baseProps = extractBaseProps(props);
 
@@ -145,7 +141,7 @@ export const Icon = (props: IconProps) => {
     'two-tone': 'rounded',
   };
 
-  const type = (props.type && mapper[props.type]) || props.type || (name && iconTypeMapper[name]) || 'rounded';
+  const type = (propsType && mapper[propsType]) || propsType || (name && iconTypeMapper[name]) || 'rounded';
 
   const getIconAppearance = (iconColor: string) => {
     const x = iconColor.indexOf('_');

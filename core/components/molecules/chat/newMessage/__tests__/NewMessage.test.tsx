@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { Chat } from '@/index';
 import { ChatProps as Props } from '@/index.type';
@@ -57,5 +58,17 @@ describe('Chat New Message component', () => {
 
     const messageElement = getByTestId(testDataValue);
     expect(messageElement.getAttribute('data-test')).toBe(testDataValue);
+  });
+});
+
+describe('Chat NewMessage component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(
+      <Chat>
+        <Chat.NewMessage text={text} />
+      </Chat>
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

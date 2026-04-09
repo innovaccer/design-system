@@ -23,10 +23,14 @@ export interface ProgressBarProps extends BaseProps {
    * State of `Progress Bar`
    */
   state?: ProgressBarState;
+  /**
+   * Accessible name for screen readers.
+   */
+  'aria-label'?: string;
 }
 
 export const ProgressBar = (props: ProgressBarProps) => {
-  const { max, value, className, size, state } = props;
+  const { max, value, className, size, state, ['aria-label']: ariaLabel } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -59,6 +63,7 @@ export const ProgressBar = (props: ProgressBarProps) => {
     <div
       data-test="DesignSystem-ProgressBar"
       role="progressbar"
+      aria-label={ariaLabel}
       aria-valuemin={0}
       aria-valuemax={max}
       aria-valuenow={clampedValue}

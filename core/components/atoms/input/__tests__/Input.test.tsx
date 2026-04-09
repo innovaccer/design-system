@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import Input, { InputProps as Props } from '../Input';
 
@@ -1081,5 +1082,13 @@ describe('Input Component - Comprehensive Behavior Tests', () => {
       expect(regularContainer.querySelector('.Input-icon--left')).toBeInTheDocument();
       expect(largeContainer.querySelector('.Input-icon--left')).toBeInTheDocument();
     });
+  });
+});
+
+describe('Input component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<Input name={nameValue} aria-label="Input field" />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });
