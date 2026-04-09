@@ -4,8 +4,8 @@ import { Text } from '@/index';
 import styles from '@css/components/avatar.module.css';
 import avatarGroupStyles from '@css/components/avatarGroup.module.css';
 
-const AvatarCount = (props: any) => {
-  const { hiddenAvatarCount, avatarStyle, size = 'regular', on } = props;
+const AvatarCount = React.forwardRef<HTMLDivElement, any>((props, ref) => {
+  const { hiddenAvatarCount, avatarStyle, size = 'regular', on, isOpen, tabIndex = 0, onKeyboardOpen, ...rest } = props;
 
   const ContentClass = classNames({
     [styles['Avatar-content']]: true,
@@ -21,20 +21,45 @@ const AvatarCount = (props: any) => {
     ['cursor-pointer']: on === 'click',
   });
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === 'Enter' || e.key === ' ' || e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+      e.preventDefault();
+      e.stopPropagation();
+      if (!isOpen) {
+        e.currentTarget.click();
+      }
+
+      if (onKeyboardOpen) {
+        onKeyboardOpen();
+      }
+    }
+  };
+
+  const wrapperClass = classNames(avatarGroupStyles['AvatarCount-wrapper'], {
+    [avatarGroupStyles['AvatarCount-wrapper--click']]: on === 'click',
+    [avatarGroupStyles['AvatarCount-wrapper--open']]: on === 'click' && isOpen,
+  });
+
   return (
     <div
+      {...rest}
+      ref={ref}
       data-test="DesignSystem-AvatarGroup--TriggerAvatar"
-      className={avatarGroupStyles['AvatarCount-wrapper']}
+      className={wrapperClass}
       style={avatarStyle}
-      tabIndex={0}
+      tabIndex={tabIndex}
       role="button"
-      aria-haspopup="listbox"
+      aria-haspopup="dialog"
+      aria-expanded={isOpen}
+      onKeyDown={handleKeyDown}
     >
       <span data-test="DesignSystem-AvatarGroup--TriggerAvatarVariants" className={AvatarVariantsClass}>
         <Text className={ContentClass}>{`+${hiddenAvatarCount}`}</Text>
       </span>
     </div>
   );
-};
+});
+
+AvatarCount.displayName = 'AvatarCount';
 
 export default AvatarCount;

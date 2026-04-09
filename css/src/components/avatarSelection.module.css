@@ -23,10 +23,24 @@
   margin-right: var(--spacing-10);
 }
 
-.SelectionAvatarGroup-item--active:focus,
+.SelectionAvatarGroup-item--active:focus {
+  outline: none;
+}
+
 .SelectionAvatarGroup-item--active:focus-visible {
-  outline: 3px solid var(--primary-shadow);
-  outline-offset: 3px;
+  outline: none;
+}
+
+.SelectionAvatarGroup-item--active:focus-visible::after {
+  content: '';
+  position: absolute;
+  top: calc(-1 * var(--spacing-20));
+  bottom: calc(-1 * var(--spacing-20));
+  left: calc(-1 * var(--spacing-10));
+  right: calc(-1 * var(--spacing-10));
+  border: var(--border-width-05) solid var(--primary-focus);
+  border-radius: var(--border-radius-10);
+  pointer-events: none;
 }
 
 .SelectionAvatarGroup-item--active:active {
@@ -128,15 +142,16 @@
   margin-right: 0;
 }
 
-.SelectionAvatarCount:hover {
+/* Hover/active/open on inner circular surface (not the Avatar outer flex wrapper). */
+.SelectionAvatarCount-wrapper:hover [data-test='DesignSystem-Avatar'] {
   background: var(--secondary);
 }
 
-.SelectionAvatarCount:active {
+.SelectionAvatarCount-wrapper [data-test='DesignSystem-Avatar']:active {
   background: var(--secondary-dark);
 }
 
-.SelectionAvatarCount--open {
+.SelectionAvatarCount-wrapper:has(.SelectionAvatarCount--open) [data-test='DesignSystem-Avatar'] {
   background: var(--secondary-dark) !important;
 }
 

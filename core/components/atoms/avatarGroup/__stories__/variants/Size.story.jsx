@@ -26,19 +26,19 @@ export const Size = () => {
       <div className="flex-column mr-9 ">
         <Text weight="strong">Regular</Text>
         <div className="mt-4">
-          <AvatarGroup size="regular" list={list} popoverOptions={{ on: 'hover' }} />
+          <AvatarGroup size="regular" list={list} />
         </div>
       </div>
       <div className="flex-column mr-9">
         <Text weight="strong">Tiny</Text>
         <div className="mt-4">
-          <AvatarGroup size="tiny" list={list} popoverOptions={{ on: 'hover' }} />
+          <AvatarGroup size="tiny" list={list} />
         </div>
       </div>
       <div className="flex-column">
         <Text weight="strong">Micro</Text>
         <div className="mt-4">
-          <AvatarGroup size="micro" list={list} popoverOptions={{ on: 'hover' }} />
+          <AvatarGroup size="micro" list={list} />
         </div>
       </div>
     </div>
@@ -70,19 +70,19 @@ const customCode = `() => {
       <div className="flex-column mr-9">
         <Text weight="strong">Regular</Text>
         <div className="mt-4">
-          <AvatarGroup size="regular" list={list} popoverOptions={{ on: 'hover' }} />
+          <AvatarGroup size="regular" list={list} />
         </div>
       </div>
       <div className="flex-column mr-9">
         <Text weight="strong">Tiny</Text>
         <div className="mt-4">
-          <AvatarGroup size="tiny" list={list} popoverOptions={{ on: 'hover' }} />
+          <AvatarGroup size="tiny" list={list} />
         </div>
       </div>
       <div className="flex-column">
         <Text weight="strong">Micro</Text>
         <div className="mt-4">
-          <AvatarGroup size="micro" list={list} popoverOptions={{ on: 'hover' }} />
+          <AvatarGroup size="micro" list={list} />
         </div>
       </div>
     </div>

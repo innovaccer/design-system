@@ -25,7 +25,12 @@ export interface SelectionListProps extends BaseProps {
 }
 
 export const AvatarSelectionList = (props: SelectionListProps) => {
-  return <Listbox {...props}>{props.children}</Listbox>;
+  return (
+    // @ts-expect-error customFocusManagement is intentionally not exported in ListboxProps
+    <Listbox role="listbox" {...props} customFocusManagement>
+      {props.children}
+    </Listbox>
+  );
 };
 
 AvatarSelectionList.defaultProps = {

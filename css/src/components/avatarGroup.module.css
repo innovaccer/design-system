@@ -40,6 +40,18 @@
   align-items: center;
 }
 
+.AvatarCount-wrapper--click:hover [data-test='DesignSystem-AvatarGroup--TriggerAvatarVariants'] {
+  background: var(--secondary);
+}
+
+.AvatarCount-wrapper--click [data-test='DesignSystem-AvatarGroup--TriggerAvatarVariants']:active {
+  background: var(--secondary-dark);
+}
+
+.AvatarCount-wrapper--click.AvatarCount-wrapper--open [data-test='DesignSystem-AvatarGroup--TriggerAvatarVariants'] {
+  background: var(--secondary-dark) !important;
+}
+
 .AvatarCount-wrapper:focus-visible {
   outline: none;
 }

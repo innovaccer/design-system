@@ -13,10 +13,11 @@ interface CountAvatarProp {
   hiddenAvatarCount?: number;
   hiddenAvatarList: AvatarData[];
   avatarStyle?: { backgroundColor?: string; boxShadow?: string };
+  tabIndex?: number;
 }
 
 export const AvatarSelectionCount = (props: CountAvatarProp) => {
-  const { hiddenAvatarCount, avatarStyle, size, hiddenAvatarList } = props;
+  const { hiddenAvatarCount, avatarStyle, size, hiddenAvatarList, tabIndex = 0 } = props;
 
   const contextProp = React.useContext(AvatarSelectionContext);
   const {
@@ -67,9 +68,9 @@ export const AvatarSelectionCount = (props: CountAvatarProp) => {
       className={wrapperClassName}
       onKeyDown={(event) => handleKeyDown(event, setOpenPopover, setHighlightFirstItem, setHighlightLastItem)}
       style={avatarStyle}
-      tabIndex={0}
+      tabIndex={tabIndex}
       role="button"
-      aria-haspopup="listbox"
+      aria-haspopup="dialog"
       aria-expanded={openPopover}
       aria-controls={popoverId}
       ref={triggerRef}

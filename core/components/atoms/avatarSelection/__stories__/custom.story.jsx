@@ -124,7 +124,7 @@ export const custom = () => {
   return (
     <AvatarSelection size="tiny" list={avatarList} onSelect={onSelectHandler}>
       <div className="AvatarSelection-wrapper">
-        <AvatarSelection.Input placeholder="Search user" onChange={onSearchHandler} />
+        <AvatarSelection.Input autoFocus placeholder="Search user" onChange={onSearchHandler} />
 
         {searchList.length === 0 && (
           <AvatarSelection.EmptyState
@@ -273,7 +273,7 @@ const customCode = `() => {
   return (
     <AvatarSelection size="tiny" list={avatarList} onSelect={onSelectHandler}>
       <div className="AvatarSelection-wrapper">
-        <AvatarSelection.Input placeholder="Search user" onChange={onSearchHandler} />
+        <AvatarSelection.Input autoFocus placeholder="Search user" onChange={onSearchHandler} />
 
         {searchList.length === 0 && (
           <AvatarSelection.EmptyState

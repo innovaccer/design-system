@@ -159,9 +159,14 @@ export const AvatarSelection = (props: AvatarSelectionProps) => {
   const [focusedOption, setFocusedOption] = React.useState<HTMLElement | undefined>();
   const [highlightFirstItem, setHighlightFirstItem] = React.useState<boolean>(false);
   const [highlightLastItem, setHighlightLastItem] = React.useState<boolean>(false);
+  const [rovingIndex, setRovingIndex] = React.useState(0);
+  const containerRef = React.useRef<HTMLDivElement>(null);
 
-  const listRef = React.createRef<HTMLDivElement>();
-  const triggerRef = React.createRef<HTMLDivElement>();
+  const listRef = React.useRef<HTMLDivElement>(null);
+  const triggerRef = React.useRef<HTMLDivElement>(null);
+
+  const hiddenAvatarCount = list.length - max;
+  const hasCounter = hiddenAvatarCount > 0 || (children && hiddenAvatarCount > 0);
 
   React.useEffect(() => {
     const selectedList: AvatarData[] = [];
@@ -177,8 +182,6 @@ export const AvatarSelection = (props: AvatarSelectionProps) => {
     if (!openPopover) {
       setHighlightFirstItem(false);
       setHighlightLastItem(false);
-    } else {
-      setHighlightFirstItem(true);
     }
   }, [openPopover]);
 
@@ -195,8 +198,6 @@ export const AvatarSelection = (props: AvatarSelectionProps) => {
   }, [highlightLastItem]);
 
   const baseProps = extractBaseProps(props);
-
-  const hiddenAvatarCount = list.length - max;
 
   const style = {
     backgroundColor: `${borderColor}`,
@@ -226,7 +227,7 @@ export const AvatarSelection = (props: AvatarSelectionProps) => {
   };
 
   const hiddenAvatarList = list.slice(max, list.length);
-  const popoverId = `DesignSystem-AvatarSelection-Popover-${uidGenerator()}`;
+  const popoverId = React.useMemo(() => `DesignSystem-AvatarSelection-Popover-${uidGenerator()}`, []);
 
   const popoverProps = {
     hiddenAvatarList,
@@ -245,7 +246,55 @@ export const AvatarSelection = (props: AvatarSelectionProps) => {
   };
 
   const onToggleHandler = (open: boolean) => {
-    open ? setOpenPopover(true) : setOpenPopover(false);
+    if (open) {
+      setOpenPopover(true);
+      setHighlightFirstItem(true);
+    } else {
+      setOpenPopover(false);
+    }
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    // If the event comes from inside the popover, ignore it here
+    if ((e.target as HTMLElement).closest('[data-test="DesignSystem-AvatarSelection--Popover"]')) return;
+
+    const visibleAvatars = list.slice(0, max);
+    const items = hasCounter ? [...visibleAvatars, { disabled: false }] : visibleAvatars;
+    const validIndices = items.map((item, i) => i);
+
+    if (validIndices.length === 0) return;
+
+    let currentValidPos = validIndices.indexOf(rovingIndex);
+    if (currentValidPos === -1) {
+      currentValidPos = 0;
+      setRovingIndex(validIndices[0]);
+    }
+
+    let nextValidPos = currentValidPos;
+
+    const isCounterFocused = hasCounter && currentValidPos === validIndices.length - 1;
+
+    if (e.key === 'ArrowRight' || (!isCounterFocused && e.key === 'ArrowDown')) {
+      e.preventDefault();
+      nextValidPos = currentValidPos === validIndices.length - 1 ? 0 : currentValidPos + 1;
+    } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+      e.preventDefault();
+      nextValidPos = currentValidPos === 0 ? validIndices.length - 1 : currentValidPos - 1;
+    }
+
+    if (nextValidPos !== currentValidPos) {
+      const newRovingIndex = validIndices[nextValidPos];
+      setRovingIndex(newRovingIndex);
+
+      requestAnimationFrame(() => {
+        const els = containerRef.current?.querySelectorAll<HTMLElement>(
+          ':scope > * > [data-test="DesignSystem-AvatarSelection--Avatar"], :scope > * > [data-test="DesignSystem-AvatarSelection--TriggerAvatar"]'
+        );
+        if (els && els[newRovingIndex]) {
+          els[newRovingIndex].focus();
+        }
+      });
+    }
   };
 
   const contextProp = {
@@ -266,6 +315,7 @@ export const AvatarSelection = (props: AvatarSelectionProps) => {
 
   return (
     <AvatarSelectionContext.Provider value={contextProp}>
+      {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */}
       <div
         data-test="DesignSystem-AvatarSelection"
         {...baseProps}
@@ -273,6 +323,8 @@ export const AvatarSelection = (props: AvatarSelectionProps) => {
         role="group"
         aria-label={ariaLabel}
         aria-labelledby={ariaLabelledBy}
+        ref={containerRef}
+        onKeyDown={handleKeyDown}
       >
         <SelectionAvatarsWrapper
           size={size}
@@ -280,12 +332,15 @@ export const AvatarSelection = (props: AvatarSelectionProps) => {
           avatarList={list.slice(0, max)}
           avatarRenderer={avatarRenderer}
           tooltipPosition={tooltipPosition}
+          rovingIndex={rovingIndex}
         />
-        {(hiddenAvatarCount > 0 || (children && hiddenAvatarCount > 0)) && (
+        {hasCounter && (
           <Popover
             open={openPopover}
             position="bottom-end"
-            trigger={<AvatarSelectionCount {...triggerProps} />}
+            trigger={
+              <AvatarSelectionCount {...triggerProps} tabIndex={list.slice(0, max).length === rovingIndex ? 0 : -1} />
+            }
             triggerClass="flex-grow-0"
             onToggle={onToggleHandler}
           >
