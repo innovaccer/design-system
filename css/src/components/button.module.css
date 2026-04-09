@@ -255,6 +255,33 @@
   text-overflow: ellipsis;
 }
 
+.Button-infoIcon {
+  color: var(--text-subtle);
+  pointer-events: none;
+}
+
+.Button-infoIcon--iconOnly {
+  position: absolute;
+  top: var(--spacing-10);
+  right: var(--spacing-10);
+}
+
+.Button-infoIcon--left {
+  margin-left: var(--spacing-15);
+}
+
+.Button-infoIcon--right {
+  margin-right: var(--spacing-15);
+}
+
+.Button--tiny .Button-infoIcon--left {
+  margin-left: var(--spacing-10);
+}
+
+.Button--tiny .Button-infoIcon--right {
+  margin-right: var(--spacing-10);
+}
+
 /* outlined button styles */
 
 .Button-outlined--basic {

@@ -128,6 +128,8 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
     className,
     tooltip,
     iconType,
+    onClick,
+    onKeyDown,
     ...rest
   } = props;
 
@@ -174,8 +176,36 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
     [styles['Button-text--hidden']]: true,
   });
 
+  const isDisabledProp = disabled || loading;
+  const useAriaDisabled = Boolean(isDisabledProp && tooltip);
+  const nativeDisabled = useAriaDisabled ? undefined : isDisabledProp;
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>) => {
+    if (useAriaDisabled && (event.key === 'Enter' || event.key === ' ')) {
+      event.preventDefault();
+      event.stopPropagation();
+      return;
+    }
+    if (onKeyDown) {
+      onKeyDown(event);
+    }
+  };
+
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    if (useAriaDisabled) {
+      event.preventDefault();
+      event.stopPropagation();
+      return;
+    }
+    if (onClick) {
+      onClick(event);
+    }
+  };
+
   const spinnerSize = size === 'large' && children ? 'small' : 'xsmall';
   const iconSize = size === 'tiny' ? 14 : largeIcon && !children ? sizeMapping[size] + 4 : sizeMapping[size];
+
+  const showInfoAffordance = disabled && tooltip && !loading;
 
   return (
     <button
@@ -183,11 +213,14 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
       ref={ref}
       type={type}
       className={buttonClass}
-      disabled={disabled || loading}
+      disabled={nativeDisabled}
+      aria-disabled={useAriaDisabled ? true : undefined}
       tabIndex={tabIndex}
       aria-busy={loading || undefined}
       aria-label={props['aria-label'] || (!children && tooltip ? tooltip : undefined)}
       aria-pressed={selected}
+      onClick={handleClick}
+      onKeyDown={handleKeyDown}
       {...rest}
     >
       {loading ? (
@@ -202,12 +235,39 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
         </>
       ) : (
         <>
+          {showInfoAffordance && children && iconAlign === 'right' && (
+            <Icon
+              name="info_outline"
+              size={iconSize}
+              className={classNames(styles['Button-infoIcon'], styles['Button-infoIcon--right'])}
+              aria-hidden="true"
+              data-test="DesignSystem-Button--Info-Icon"
+            />
+          )}
           {icon && (
             <div className={iconClass} data-test="DesignSystem-Button--Icon-Wrapper">
               <Icon data-test="DesignSystem-Button--Icon" name={icon} type={iconType} size={iconSize} />
             </div>
           )}
           {children && <span className={styles['Button-text']}>{children}</span>}
+          {showInfoAffordance && children && iconAlign === 'left' && (
+            <Icon
+              name="info_outline"
+              size={iconSize}
+              className={classNames(styles['Button-infoIcon'], styles['Button-infoIcon--left'])}
+              aria-hidden="true"
+              data-test="DesignSystem-Button--Info-Icon"
+            />
+          )}
+          {showInfoAffordance && !children && (
+            <Icon
+              name="info_outline"
+              size={12}
+              className={classNames(styles['Button-infoIcon'], styles['Button-infoIcon--iconOnly'])}
+              aria-hidden="true"
+              data-test="DesignSystem-Button--Info-Icon"
+            />
+          )}
         </>
       )}
     </button>
@@ -215,9 +275,9 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
 });
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
-  const { icon, tooltip, children } = props;
+  const { tooltip } = props;
 
-  return icon && tooltip && !children ? (
+  return tooltip ? (
     <Tooltip tooltip={tooltip}>
       <ButtonElement {...props} ref={ref} />
     </Tooltip>
