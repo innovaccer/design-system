@@ -260,7 +260,7 @@ const DropdownList = (props: OptionsProps) => {
 
   const baseProps = extractBaseProps(props);
   const ariaProps = (Object.keys(props) as (keyof typeof props)[])
-    .filter((key) => key.startsWith('aria-') || key === 'inert')
+    .filter((key) => key === 'inert')
     .reduce((acc: Record<string, any>, key) => {
       acc[key] = props[key];
       return acc;

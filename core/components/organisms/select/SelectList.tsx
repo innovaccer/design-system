@@ -79,7 +79,6 @@ export const SelectList = (props: SelectListProps) => {
         style={wrapperStyle}
         aria-label={props['aria-label'] || 'Options item list'}
         aria-multiselectable={multiSelect}
-        tabIndex={0}
         className="my-3"
         size={size}
         {...rest}

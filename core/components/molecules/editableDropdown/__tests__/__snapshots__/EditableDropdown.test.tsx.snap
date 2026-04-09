@@ -19,7 +19,6 @@ exports[`EditableDropdown component
         data-test="DesignSystem-EditableWrapper"
       >
         <div
-          aria-hidden="true"
           class="Dropdown d-none"
           data-test="DesignSystem-EditableDropdown--Dropdown"
           inert=""
