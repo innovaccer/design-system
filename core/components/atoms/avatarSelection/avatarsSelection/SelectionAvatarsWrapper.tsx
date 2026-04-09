@@ -80,7 +80,7 @@ export const SelectionAvatarsWrapper = (props: SelectionAvatarsWrapperProps) => 
         return (
           <span key={index} className={styles['SelectionAvatarGroup-wrapper']}>
             <div
-              tabIndex={disabled ? -1 : 0}
+              tabIndex={-1}
               role="checkbox"
               style={newAvatarStyle}
               className={GroupClass}
