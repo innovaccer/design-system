@@ -123,8 +123,10 @@ export const Tooltip = (props: TooltipProps) => {
   React.useEffect(() => {
     if (!showTooltip && isOpen) {
       setIsOpen(false);
+    } else if (showTooltip && openProp !== undefined && isOpen !== openProp) {
+      setIsOpen(openProp);
     }
-  }, [showTooltip, isOpen]);
+  }, [showTooltip, isOpen, openProp]);
 
   const mergedDescribedBy = isOpen ? [ariaDescribedBy, tooltipId].filter(Boolean).join(' ') : ariaDescribedBy;
 

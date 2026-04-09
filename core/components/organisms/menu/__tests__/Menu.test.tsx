@@ -111,7 +111,7 @@ describe('Menu component with Grouping', () => {
     const trigger = getByTestId('DesignSystem-Menu-Trigger');
 
     fireEvent.click(trigger);
-    const popover = getByTestId('DesignSystem-Popover');
+    const popover = getByTestId('DesignSystem-Menu');
     const groupLabel = getAllByTestId('DesignSystem-Menu-Group-Label')[0];
     const menuGroup = getAllByTestId('DesignSystem-Menu-Group');
 
@@ -132,7 +132,7 @@ describe('Menu component with Grouping', () => {
     const trigger = getByTestId('DesignSystem-Menu-Trigger');
 
     fireEvent.click(trigger);
-    const popover = getByTestId('DesignSystem-Popover');
+    const popover = getByTestId('DesignSystem-Menu');
     const divider = getByTestId('DesignSystem-Divider');
 
     expect(popover).toBeInTheDocument();
@@ -196,7 +196,7 @@ describe('Menu component with Nesting', () => {
 
     const triggerItem = getByTestId('Menu-Item');
     fireEvent.mouseOver(triggerItem);
-    expect(getAllByTestId('DesignSystem-Popover')).toHaveLength(2);
+    expect(getAllByTestId('DesignSystem-Menu')).toHaveLength(2);
   });
 });
 
@@ -211,7 +211,7 @@ describe('Menu component keyboard interactions', () => {
     );
     const trigger = getByTestId('DesignSystem-Menu-Trigger');
     fireEvent.keyDown(trigger, { key: 'ArrowDown' });
-    const popover = getByTestId('DesignSystem-Popover');
+    const popover = getByTestId('DesignSystem-Menu');
     expect(popover).toBeInTheDocument();
   });
 
@@ -225,7 +225,7 @@ describe('Menu component keyboard interactions', () => {
     );
     const trigger = getByTestId('DesignSystem-Menu-Trigger');
     fireEvent.keyDown(trigger, { key: 'ArrowUp' });
-    const popover = getByTestId('DesignSystem-Popover');
+    const popover = getByTestId('DesignSystem-Menu');
     expect(popover).toBeInTheDocument();
   });
 });
@@ -242,7 +242,7 @@ describe('Menu component with prop:disabled', () => {
 
     const trigger = getByTestId('DesignSystem-Menu-Trigger');
     fireEvent.click(trigger);
-    const popover = queryByTestId('DesignSystem-Popover');
+    const popover = queryByTestId('DesignSystem-Menu');
     expect(popover).not.toBeInTheDocument();
   });
 
@@ -257,7 +257,7 @@ describe('Menu component with prop:disabled', () => {
 
     const trigger = getByTestId('DesignSystem-Menu-Trigger');
     fireEvent.click(trigger);
-    const popover = getByTestId('DesignSystem-Popover');
+    const popover = getByTestId('DesignSystem-Menu');
     expect(popover).toBeInTheDocument();
   });
 });
@@ -325,7 +325,7 @@ describe('Menu Component - MenuItem functionality and interaction handling', () 
     fireEvent.keyDown(menuItems[0], { key: 'ArrowDown' });
 
     // The menu should still be open after navigation
-    const popover = getByTestId('DesignSystem-Popover');
+    const popover = getByTestId('DesignSystem-Menu');
     expect(popover).toBeInTheDocument();
   });
 });
@@ -384,7 +384,7 @@ describe('Menu Component - SubMenu nested menu functionality and accessibility',
     fireEvent.mouseOver(subMenuTrigger);
 
     // Should have two popovers now (main menu + submenu)
-    const popovers = getAllByTestId('DesignSystem-Popover');
+    const popovers = getAllByTestId('DesignSystem-Menu');
     expect(popovers).toHaveLength(2);
   });
 

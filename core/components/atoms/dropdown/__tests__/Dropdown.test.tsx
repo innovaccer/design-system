@@ -267,7 +267,7 @@ describe('renders dropdown', () => {
     const dropdownTrigger = getByTestId(trigger);
     fireEvent.click(dropdownTrigger);
 
-    expect(getByTestId('DesignSystem-Popover')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-Dropdown--Popover')).toBeInTheDocument();
   });
 });
 
@@ -388,7 +388,7 @@ describe('Dropdown component', () => {
 
     await waitFor(() => {
       expect(dropdownTrigger).toHaveFocus();
-      expect(getByTestId('DesignSystem-Popover')).toHaveAttribute('data-opened', 'false');
+      expect(getByTestId('DesignSystem-Dropdown--Popover')).toHaveAttribute('data-opened', 'false');
     });
   });
 
@@ -435,7 +435,7 @@ describe('renders dropdown component onKeyDown Handler', () => {
       const dropdownTrigger = getByTestId(trigger);
       fireEvent.click(dropdownTrigger);
       fireEvent.keyDown(getByTestId(dropdownListId), { key: action });
-      expect(getByTestId('DesignSystem-Popover')).toBeInTheDocument();
+      expect(getByTestId('DesignSystem-Dropdown--Popover')).toBeInTheDocument();
     });
 
     it(`checks for keyDown ${action} event with dropdownOpen set as false `, () => {
@@ -460,7 +460,7 @@ describe('renders dropdown component onKeyDown Handler', () => {
     const dropdownTrigger = getByTestId(trigger);
     fireEvent.click(dropdownTrigger);
     fireEvent.keyDown(getByTestId(dropdownListId), { key: 'Tab' });
-    expect(screen.queryByText('DesignSystem-Popover')).not.toBeInTheDocument();
+    expect(screen.queryByText('DesignSystem-Dropdown--Popover')).not.toBeInTheDocument();
   });
 
   it('checks for keyDown Tab event with showApplyButton as false', () => {
@@ -476,7 +476,7 @@ describe('renders dropdown component onKeyDown Handler', () => {
     const dropdownTrigger = getByTestId(trigger);
     fireEvent.click(dropdownTrigger);
     fireEvent.keyDown(getByTestId(dropdownListId), { key: 'Tab' });
-    expect(screen.queryByText('DesignSystem-Popover')).not.toBeInTheDocument();
+    expect(screen.queryByText('DesignSystem-Dropdown--Popover')).not.toBeInTheDocument();
   });
 });
 
@@ -542,7 +542,7 @@ describe('Dropdown component action buttons', () => {
     expect(getByTestId('DesignSystem-Dropdown-CancelButton')).toHaveTextContent('Cancel');
     fireEvent.click(getAllByTestId('DesignSystem-DropdownOption--WITH_CHECKBOX')[1]);
     fireEvent.click(getByTestId('DesignSystem-Dropdown-CancelButton'));
-    expect(screen.queryByText('DesignSystem-Popover')).not.toBeInTheDocument();
+    expect(screen.queryByText('DesignSystem-Dropdown--Popover')).not.toBeInTheDocument();
   });
 });
 

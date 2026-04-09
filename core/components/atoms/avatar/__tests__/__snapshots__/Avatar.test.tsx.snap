@@ -140,6 +140,7 @@ Object {
             data-test="DesignSystem-AvatarWrapper"
           >
             <span
+              aria-disabled="true"
               aria-label="JD"
               class="Avatar Avatar--regular Avatar--accent1 Avatar--disabled"
               data-test="DesignSystem-Avatar"
@@ -185,6 +186,7 @@ Object {
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
+            aria-disabled="true"
             aria-label="JD"
             class="Avatar Avatar--regular Avatar--accent1 Avatar--disabled"
             data-test="DesignSystem-Avatar"
@@ -410,6 +412,7 @@ Object {
             data-test="DesignSystem-AvatarWrapper"
           >
             <span
+              aria-disabled="true"
               aria-label="JD"
               class="Avatar Avatar--regular Avatar--accent2 Avatar--disabled"
               data-test="DesignSystem-Avatar"
@@ -455,6 +458,7 @@ Object {
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
+            aria-disabled="true"
             aria-label="JD"
             class="Avatar Avatar--regular Avatar--accent2 Avatar--disabled"
             data-test="DesignSystem-Avatar"
@@ -680,6 +684,7 @@ Object {
             data-test="DesignSystem-AvatarWrapper"
           >
             <span
+              aria-disabled="true"
               aria-label="JD"
               class="Avatar Avatar--regular Avatar--accent3 Avatar--disabled"
               data-test="DesignSystem-Avatar"
@@ -725,6 +730,7 @@ Object {
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
+            aria-disabled="true"
             aria-label="JD"
             class="Avatar Avatar--regular Avatar--accent3 Avatar--disabled"
             data-test="DesignSystem-Avatar"
@@ -950,6 +956,7 @@ Object {
             data-test="DesignSystem-AvatarWrapper"
           >
             <span
+              aria-disabled="true"
               aria-label="JD"
               class="Avatar Avatar--regular Avatar--accent4 Avatar--disabled"
               data-test="DesignSystem-Avatar"
@@ -995,6 +1002,7 @@ Object {
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
+            aria-disabled="true"
             aria-label="JD"
             class="Avatar Avatar--regular Avatar--accent4 Avatar--disabled"
             data-test="DesignSystem-Avatar"
@@ -1220,6 +1228,7 @@ Object {
             data-test="DesignSystem-AvatarWrapper"
           >
             <span
+              aria-disabled="true"
               aria-label="JD"
               class="Avatar Avatar--regular Avatar--alert Avatar--disabled"
               data-test="DesignSystem-Avatar"
@@ -1265,6 +1274,7 @@ Object {
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
+            aria-disabled="true"
             aria-label="JD"
             class="Avatar Avatar--regular Avatar--alert Avatar--disabled"
             data-test="DesignSystem-Avatar"
@@ -1490,6 +1500,7 @@ Object {
             data-test="DesignSystem-AvatarWrapper"
           >
             <span
+              aria-disabled="true"
               aria-label="JD"
               class="Avatar Avatar--regular Avatar--primary Avatar--disabled"
               data-test="DesignSystem-Avatar"
@@ -1535,6 +1546,7 @@ Object {
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
+            aria-disabled="true"
             aria-label="JD"
             class="Avatar Avatar--regular Avatar--primary Avatar--disabled"
             data-test="DesignSystem-Avatar"
@@ -1760,6 +1772,7 @@ Object {
             data-test="DesignSystem-AvatarWrapper"
           >
             <span
+              aria-disabled="true"
               aria-label="JD"
               class="Avatar Avatar--regular Avatar--success Avatar--disabled"
               data-test="DesignSystem-Avatar"
@@ -1805,6 +1818,7 @@ Object {
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
+            aria-disabled="true"
             aria-label="JD"
             class="Avatar Avatar--regular Avatar--success Avatar--disabled"
             data-test="DesignSystem-Avatar"
@@ -2030,6 +2044,7 @@ Object {
             data-test="DesignSystem-AvatarWrapper"
           >
             <span
+              aria-disabled="true"
               aria-label="JD"
               class="Avatar Avatar--regular Avatar--warning Avatar--disabled"
               data-test="DesignSystem-Avatar"
@@ -2075,6 +2090,7 @@ Object {
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
+            aria-disabled="true"
             aria-label="JD"
             class="Avatar Avatar--regular Avatar--warning Avatar--disabled"
             data-test="DesignSystem-Avatar"

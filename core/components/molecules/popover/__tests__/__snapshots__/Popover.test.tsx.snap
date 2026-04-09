@@ -24,7 +24,12 @@ exports[`Popover component
     data-layer="true"
     data-opened="true"
     data-test="DesignSystem-Popover"
+    offset="large"
+    on="click"
+    open=""
     style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; z-index: 501;"
+    trigger="[object Object]"
+    verticaloffset="10"
   >
     Popover
   </div>
@@ -77,7 +82,12 @@ exports[`Popover component
     data-layer="true"
     data-opened="true"
     data-test="DesignSystem-Popover"
+    offset="large"
+    on="click"
+    open=""
     style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; z-index: 501;"
+    trigger="[object Object]"
+    verticaloffset="10"
   >
     Popover
   </div>
@@ -130,7 +140,12 @@ exports[`Popover component
     data-layer="true"
     data-opened="true"
     data-test="DesignSystem-Popover"
+    offset="large"
+    on="click"
+    open=""
     style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; z-index: 501;"
+    trigger="[object Object]"
+    verticaloffset="10"
   >
     Popover
   </div>
@@ -161,7 +176,12 @@ exports[`Popover component
     data-layer="true"
     data-opened="true"
     data-test="DesignSystem-Popover"
+    offset="large"
+    on="click"
+    open=""
     style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; z-index: 501;"
+    trigger="[object Object]"
+    verticaloffset="10"
   >
     Popover
   </div>
@@ -192,7 +212,12 @@ exports[`Popover component
     data-layer="true"
     data-opened="true"
     data-test="DesignSystem-Popover"
+    offset="large"
+    on="click"
+    open=""
     style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; z-index: 501;"
+    trigger="[object Object]"
+    verticaloffset="10"
   >
     Popover
   </div>
@@ -223,7 +248,12 @@ exports[`Popover component
     data-layer="true"
     data-opened="true"
     data-test="DesignSystem-Popover"
+    offset="large"
+    on="click"
+    open=""
     style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; z-index: 501;"
+    trigger="[object Object]"
+    verticaloffset="10"
   >
     Popover
   </div>
@@ -254,7 +284,12 @@ exports[`Popover component
     data-layer="true"
     data-opened="true"
     data-test="DesignSystem-Popover"
+    offset="large"
+    on="click"
+    open=""
     style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; z-index: 501;"
+    trigger="[object Object]"
+    verticaloffset="10"
   >
     Popover
   </div>
@@ -285,7 +320,12 @@ exports[`Popover component
     data-layer="true"
     data-opened="true"
     data-test="DesignSystem-Popover"
+    offset="large"
+    on="click"
+    open=""
     style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; z-index: 501;"
+    trigger="[object Object]"
+    verticaloffset="10"
   >
     Popover
   </div>

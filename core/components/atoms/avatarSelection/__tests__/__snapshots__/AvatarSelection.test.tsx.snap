@@ -1995,7 +1995,11 @@ Object {
       data-opened="true"
       data-placement="bottom-end"
       data-test="DesignSystem-Popover"
+      offset="large"
+      on="click"
+      open=""
       style="position: absolute; z-index: 501; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; top: 0px; left: 0px; transform: translate3d(NaNpx, NaNpx, 0); will-change: transform; margin-top: 8px;"
+      trigger="[object Object]"
       triggerclass="flex-grow-0"
     >
       <div
