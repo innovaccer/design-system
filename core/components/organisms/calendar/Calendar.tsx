@@ -1111,9 +1111,9 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
   handleDateCellKeyDown = (
     ev: React.KeyboardEvent,
     index: number,
-    row: number,
-    col: number,
-    noOfRows: number,
+    _row: number,
+    _col: number,
+    _noOfRows: number,
     date: number,
     prevMonthDayRange: number,
     dayRange: number,

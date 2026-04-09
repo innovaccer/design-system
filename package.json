@@ -20,9 +20,9 @@
     "deploy-storybook": "storybook-to-aws-s3",
     "setup-css-dev": "./scripts/setup-local-css.sh",
     "pre-commit": "lint-staged",
-    "lint:types": "tsc -p '.' --noEmit",
-    "lint:check": "eslint ./core --ext .tsx,.ts,.js,.jsx",
-    "lint": "npm run lint:check -- --fix",
+    "lint:types": "tsc -p './tsconfig.lint.json' --noEmit",
+    "lint:check": "eslint ./core --ext .tsx,.ts,.js,.jsx && npm run lint:types",
+    "lint": "eslint ./core --ext .tsx,.ts,.js,.jsx --fix && npm run lint:types",
     "prettier:check": "prettier --config ./.prettierrc --check",
     "prettier": "prettier --config ./.prettierrc --write 'css/src/**/*.css'",
     "build-css": "gulp --gulpfile css/gulpfile.js build",
@@ -163,14 +163,6 @@
     "Innovaccer"
   ],
   "repository": "github:innovaccer/design-system",
-  "lint-staged": {
-    "core/**/*.{tx,tsx,js,jsx}": [
-      "npm run lint:check"
-    ],
-    "css/src/**/*.css": [
-      "npm run prettier:check"
-    ]
-  },
   "files": [
     "dist",
     "css",

@@ -80,7 +80,7 @@ export const groupListOptions = (listOptions: Option[]): Option[] => {
     return acc;
   }, {} as { [key: string]: Option[] });
 
-  const flattenedGroupList = Object.values(groupList).flatMap((item) => [...item]);
+  const flattenedGroupList = ([] as Option[]).concat(...Object.values(groupList));
 
   return flattenedGroupList;
 };
