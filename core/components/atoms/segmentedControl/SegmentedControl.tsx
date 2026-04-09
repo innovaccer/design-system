@@ -299,7 +299,7 @@ export const SegmentedControl = (props: SegmentedControlProps) => {
       className={controlClass}
       style={containerStyle}
       ref={containerRef}
-      role="radiogroup"
+      role={totalChildren === 2 ? 'group' : 'radiogroup'}
       tabIndex={-1}
       data-test="DesignSystem-SegmentedControl"
       onKeyDown={handleKeyDown}

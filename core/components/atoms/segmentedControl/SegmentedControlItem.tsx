@@ -147,14 +147,15 @@ export const SegmentedControlItem = (props: SegmentedControlItemProps) => {
         registerButtonRef?.(index, node);
       }}
       type="button"
-      role="radio"
+      role={isTwoSegments ? undefined : 'radio'}
       className={segmentClass}
       disabled={isDisabled}
       tabIndex={isDisabled ? -1 : isSelected ? 0 : -1}
       data-test="DesignSystem-SegmentedControl-Item"
       aria-label={ariaLabel || (isIconOnly && tooltip ? tooltip : undefined)}
       aria-labelledby={ariaLabelledBy}
-      aria-checked={isSelected}
+      aria-checked={isTwoSegments ? undefined : isSelected}
+      aria-pressed={isTwoSegments ? isSelected : undefined}
       {...baseProps}
       onClick={() => {
         if (!isDisabled && onSelect) {
