@@ -110,6 +110,8 @@ export const Collapsible = (props: CollapsibleProps) => {
             tabIndex={0}
             className={FooterClass}
             data-test="DesignSystem-Collapsible--Footer"
+            aria-label={expanded ? 'Collapse panel' : 'Expand panel'}
+            aria-expanded={expanded}
             onClick={onToggleHandler(!expanded, 'click')}
             onKeyDown={(e: React.KeyboardEvent) => {
               if (isSpaceKey(e) || isEnterKey(e)) {

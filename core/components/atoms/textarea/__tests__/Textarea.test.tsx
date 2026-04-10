@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import Textarea, { TextareaProps as Props } from '../Textarea';
 
@@ -46,6 +47,12 @@ describe('Textarea component', () => {
   it('renders textarea with error', () => {
     const { getByTestId } = render(<Textarea error={true} />);
     expect(getByTestId(dataTestId)).toHaveClass('Textarea--error');
+  });
+
+  it('renders readonly textarea with readOnly attribute on DOM', () => {
+    const { getByTestId } = render(<Textarea readOnly={true} />);
+    expect(getByTestId(dataTestId)).toHaveAttribute('readonly');
+    expect(getByTestId(dataTestId)).toHaveClass('Textarea--readOnly');
   });
 
   it('renders textarea with placeholder', () => {
@@ -572,5 +579,13 @@ describe('Textarea component with prop: onChange', () => {
     rerender(<Textarea size="small" value={newValue} onChange={onChange} />);
     expect(getByTestId(dataTestId)).toHaveValue(newValue);
     expect(getByTestId(dataTestId)).toHaveClass('Textarea--small');
+  });
+});
+
+describe('Textarea component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<Textarea aria-label="Textarea field" />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

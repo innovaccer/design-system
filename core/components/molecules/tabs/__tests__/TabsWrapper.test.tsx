@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { Tab, TabsWrapper, Text } from '@/index';
 import { TabsWrapperProps as Props } from '@/index.type';
@@ -147,5 +148,18 @@ describe('TabsWrapper component with prop:size', () => {
       );
       expect(getByTestId('DesignSystem-Tabs--Header')).toHaveClass(`Tab--${size}`);
     });
+  });
+});
+
+describe('TabsWrapper component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(
+      <TabsWrapper active={0} onTabChange={jest.fn()}>
+        <Tab label={<Text>Tab 1</Text>}>Tab 1 content</Tab>
+        <Tab label={<Text>Tab 2</Text>}>Tab 2 content</Tab>
+      </TabsWrapper>
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

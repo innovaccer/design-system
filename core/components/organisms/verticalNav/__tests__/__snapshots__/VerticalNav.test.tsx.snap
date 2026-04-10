@@ -16,6 +16,7 @@ exports[`Vertical Navigation component
         class="PopperWrapper-trigger"
       >
         <a
+          aria-label="Patient 360"
           aria-level="1"
           class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
           data-menu-name="patient_360"
@@ -43,6 +44,7 @@ exports[`Vertical Navigation component
       >
         <a
           aria-expanded="true"
+          aria-label="Care Management and Resources"
           aria-level="1"
           class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
           data-menu-name="care_management"
@@ -68,6 +70,7 @@ exports[`Vertical Navigation component
         class="PopperWrapper-trigger"
       >
         <a
+          aria-label="Timeline"
           aria-level="2"
           class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem--active color-primary-dark"
           data-menu-name="care_management.timeline"
@@ -92,6 +95,7 @@ exports[`Vertical Navigation component
         class="PopperWrapper-trigger"
       >
         <a
+          aria-label="Care Plans"
           aria-level="2"
           class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
           data-menu-name="care_management.care_plans"
@@ -116,6 +120,7 @@ exports[`Vertical Navigation component
         class="PopperWrapper-trigger"
       >
         <a
+          aria-label="Episodes"
           aria-level="1"
           class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem--disabled color-inverse-lightest"
           data-disabled="true"
@@ -143,6 +148,7 @@ exports[`Vertical Navigation component
       >
         <a
           aria-expanded="false"
+          aria-label="Risk"
           aria-level="1"
           class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
           data-menu-name="risk"

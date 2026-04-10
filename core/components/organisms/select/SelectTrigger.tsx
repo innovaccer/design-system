@@ -18,6 +18,22 @@ export interface SelectTriggerProps extends BaseProps {
    */
   'aria-label'?: string;
   /**
+   * Ids of supplementary description or help text (space-separated).
+   */
+  'aria-describedby'?: string;
+  /**
+   * Id of the element that describes the validation error for this control.
+   */
+  'aria-errormessage'?: string;
+  /**
+   * Invalid state for assistive tech; when context `error` is true this becomes `true` automatically.
+   */
+  'aria-invalid'?: boolean | 'true' | 'false' | 'grammar' | 'spelling';
+  /**
+   * Id of the listbox element controlled by this combobox trigger.
+   */
+  'aria-controls'?: string;
+  /**
    * Specifies the size of the Select trigger button.
    * @default "regular"
    */
@@ -83,6 +99,8 @@ const SelectTrigger = (props: SelectTriggerProps) => {
     setLabel,
     minWidth,
     maxWidth,
+    'aria-invalid': ariaInvalid,
+    'aria-controls': ariaControls,
     ...rest
   } = props;
 
@@ -124,6 +142,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
     if (onClear) {
       onClear(event);
     }
+    triggerRef?.current?.focus({ preventScroll: true });
   };
 
   const buttonClass = classNames({
@@ -163,15 +182,17 @@ const SelectTrigger = (props: SelectTriggerProps) => {
       triggerClass="w-100"
     >
       <button
-        ref={triggerRef}
+        ref={triggerRef as React.RefObject<HTMLButtonElement>}
         onKeyDown={(event) => handleKeyDownTrigger(event, setOpenPopover, setHighlightFirstItem, setHighlightLastItem)}
         type="button"
         className={buttonClass}
         disabled={disabled}
         tabIndex={0}
         style={triggerStyle}
-        aria-haspopup="listbox"
+        role="combobox"
+        aria-controls={ariaControls}
         aria-expanded={openPopover}
+        aria-haspopup="listbox"
         aria-label={ariaLabel}
         data-test="DesignSystem-Select-trigger"
         {...rest}
@@ -200,16 +221,16 @@ const SelectTrigger = (props: SelectTriggerProps) => {
           </div>
         }
         {isOptionSelected && withClearButton && (
-          <Icon
-            appearance={buttonDisabled}
-            onClick={onClearHandler}
+          <button
+            type="button"
             className={iconClass}
-            size={12}
-            name="close"
+            onClick={onClearHandler}
+            onKeyDown={(e) => e.stopPropagation()}
             aria-label="clear selected"
-            type={iconType}
             data-test="DesignSystem-Select--closeIcon"
-          />
+          >
+            <Icon appearance={buttonDisabled} size={12} name="close" type={iconType} aria-hidden={true} />
+          </button>
         )}
 
         <Icon appearance={buttonDisabled} name={iconName} type={iconType} />
@@ -217,6 +238,8 @@ const SelectTrigger = (props: SelectTriggerProps) => {
     </Tooltip>
   );
 };
+
+/* eslint-enable jsx-a11y/role-supports-aria-props */
 
 SelectTrigger.defaultProps = {
   triggerSize: 'regular',

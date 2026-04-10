@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { fireEvent, render } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { LinkButton } from '@/index';
 import { LinkButtonProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -99,6 +100,23 @@ describe('Link Button component Event Handlers', () => {
   });
 });
 
+describe('Link Button component accessibility', () => {
+  it('uses icon name as aria-label for icon-only button', () => {
+    const { getByTestId } = render(<LinkButton icon="events" />);
+    expect(getByTestId('DesignSystem-LinkButton')).toHaveAttribute('aria-label', 'events');
+  });
+
+  it('uses explicit aria-label over icon name', () => {
+    const { getByTestId } = render(<LinkButton icon="events" aria-label="View events" />);
+    expect(getByTestId('DesignSystem-LinkButton')).toHaveAttribute('aria-label', 'View events');
+  });
+
+  it('does not add aria-label when children are present', () => {
+    const { getByTestId } = render(<LinkButton icon="events">LinkButton</LinkButton>);
+    expect(getByTestId('DesignSystem-LinkButton')).not.toHaveAttribute('aria-label');
+  });
+});
+
 describe('Link Button component appearance', () => {
   it('check for subtle class in link button', () => {
     const { getByTestId } = render(<LinkButton subtle={true}>LinkButton</LinkButton>);
@@ -110,5 +128,13 @@ describe('Link Button component appearance', () => {
     const { getByTestId } = render(<LinkButton>LinkButton</LinkButton>);
     expect(getByTestId('DesignSystem-LinkButton')).not.toHaveClass('LinkButton--subtle');
     expect(getByTestId('DesignSystem-LinkButton')).toHaveClass('LinkButton--default');
+  });
+});
+
+describe('LinkButton component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<LinkButton>LinkButton</LinkButton>);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

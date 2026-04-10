@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { fireEvent, render } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { ActionCard } from '@/index';
 import { ActionCardProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -77,5 +78,13 @@ describe('Action Card component disabled state', () => {
     const { getByTestId } = render(<ActionCard disabled={true}>{children}</ActionCard>);
     const overlayElement = getByTestId('DesignSystem-ActionCard-Overlay');
     expect(overlayElement).toBeInTheDocument();
+  });
+});
+
+describe('ActionCard component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<ActionCard>{children}</ActionCard>);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

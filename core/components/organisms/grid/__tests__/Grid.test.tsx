@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent, cleanup } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { Grid } from '@/index';
 import { GridProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -1388,5 +1389,13 @@ describe('render Grid with filterType feature', () => {
       const applyButton2 = getAllByTestId('DesignSystem-FilterSelect--ApplyButton');
       expect(applyButton2.length).toBeGreaterThan(0);
     });
+  });
+});
+
+describe('Grid component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<Grid />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

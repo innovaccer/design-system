@@ -1,5 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
+import SaraIconDefault from '../AIIconButton/icons/SaraIconDefault';
+import SaraIconDisabled from '../AIIconButton/icons/SaraIconDisabled';
 import styles from '@css/ai-components/chip.module.css';
 
 export interface AIChipProps extends React.ComponentProps<'button'> {
@@ -57,6 +59,11 @@ export const AIChip = (props: AIChipProps) => {
       <span data-test="DesignSystem-AI-Chip-Text" className={TextClassNames}>
         {label}
       </span>
+      {disabled ? (
+        <SaraIconDisabled className={styles['AIChip-AIIcon']} />
+      ) : (
+        <SaraIconDefault className={styles['AIChip-AIIcon']} />
+      )}
     </button>
   );
 };

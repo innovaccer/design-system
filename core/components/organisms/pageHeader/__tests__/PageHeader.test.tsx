@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import PageHeader, { PageHeaderProps as Props } from '../PageHeader';
 import { Stepper, Button, Tabs, Breadcrumbs, Badge, MetaList, StatusHint, HorizontalNav } from '@/index';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -142,4 +143,12 @@ describe('PageHeader Component with separator', () => {
 describe('PageHeader Component with button', () => {
   const { getByTestId } = render(<PageHeader title={title} button={button} />);
   expect(getByTestId('DesignSystem-PageHeader--Button')).toBeInTheDocument();
+});
+
+describe('PageHeader component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<PageHeader title={title} />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
 });

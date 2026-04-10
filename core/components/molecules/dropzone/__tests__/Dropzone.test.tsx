@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent, act } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import Dropzone, { DropzoneProps as Props, DropZoneType } from '../Dropzone';
 import Link from '@/components/atoms/link';
@@ -327,5 +328,13 @@ describe('dropzone component prop:getFilesFromEvent', () => {
     fireEvent.drop(getByTestId('DesignSystem-Dropzone'), fileData);
     expect(getByTestId('DesignSystem-Dropzone')).toBeInTheDocument();
     expect(FunctionValue).toHaveBeenCalled();
+  });
+});
+
+describe('Dropzone component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<Dropzone />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

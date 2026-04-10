@@ -129,11 +129,10 @@ export const formatDateAriaLabel = (d: Date): string => {
 export interface HandleDateViewKeyDownParams {
   event: React.KeyboardEvent;
   container: HTMLElement;
-  focusedRow: number;
-  focusedCol: number;
-  totalRows: number;
-  monthIndex: number;
-  onNavigate: (row: number, col: number) => void;
+  focusedDate: Date;
+  startOfWeekIndex?: number;
+  isDateDisabled?: (d: Date) => boolean;
+  onNavigate: (newDate: Date) => void;
   onSelect: () => void;
   onPageUp: () => void;
   onPageDown: () => void;
@@ -143,15 +142,15 @@ export interface HandleDateViewKeyDownParams {
 }
 
 /**
- * Handle keyboard events in the date view grid.
+ * Handle keyboard events in the date view grid using Date Math.
  * Returns true if the key was handled (caller should preventDefault).
  */
 export const handleDateViewKeyDown = (params: HandleDateViewKeyDownParams): boolean => {
   const {
     event,
-    focusedRow,
-    focusedCol,
-    totalRows,
+    focusedDate,
+    startOfWeekIndex = 0,
+    isDateDisabled,
     onNavigate,
     onSelect,
     onPageUp,
@@ -161,51 +160,35 @@ export const handleDateViewKeyDown = (params: HandleDateViewKeyDownParams): bool
     onEscape,
   } = params;
 
+  let newDate: Date | null = null;
+  const currentDayIndex = focusedDate.getDay();
+  const visualColumnIndex = (currentDayIndex - startOfWeekIndex + 7) % 7;
+
   switch (event.key) {
-    case 'ArrowUp': {
-      const up = navigateDateGrid('up', focusedRow, focusedCol, totalRows);
-      if (up) {
-        event.preventDefault();
-        onNavigate(up.row, up.col);
-        return true;
-      }
+    case 'ArrowUp':
+      newDate = new Date(focusedDate);
+      newDate.setDate(focusedDate.getDate() - 7);
       break;
-    }
-    case 'ArrowDown': {
-      const down = navigateDateGrid('down', focusedRow, focusedCol, totalRows);
-      if (down) {
-        event.preventDefault();
-        onNavigate(down.row, down.col);
-        return true;
-      }
+    case 'ArrowDown':
+      newDate = new Date(focusedDate);
+      newDate.setDate(focusedDate.getDate() + 7);
       break;
-    }
-    case 'ArrowLeft': {
-      const left = navigateDateGrid('left', focusedRow, focusedCol, totalRows);
-      if (left) {
-        event.preventDefault();
-        onNavigate(left.row, left.col);
-        return true;
-      }
+    case 'ArrowLeft':
+      newDate = new Date(focusedDate);
+      newDate.setDate(focusedDate.getDate() - 1);
       break;
-    }
-    case 'ArrowRight': {
-      const right = navigateDateGrid('right', focusedRow, focusedCol, totalRows);
-      if (right) {
-        event.preventDefault();
-        onNavigate(right.row, right.col);
-        return true;
-      }
+    case 'ArrowRight':
+      newDate = new Date(focusedDate);
+      newDate.setDate(focusedDate.getDate() + 1);
       break;
-    }
     case 'Home':
-      event.preventDefault();
-      onNavigate(focusedRow, 0);
-      return true;
+      newDate = new Date(focusedDate);
+      newDate.setDate(focusedDate.getDate() - visualColumnIndex);
+      break;
     case 'End':
-      event.preventDefault();
-      onNavigate(focusedRow, daysInRow - 1);
-      return true;
+      newDate = new Date(focusedDate);
+      newDate.setDate(focusedDate.getDate() + (6 - visualColumnIndex));
+      break;
     case 'PageUp':
       event.preventDefault();
       if (event.shiftKey) {
@@ -223,16 +206,11 @@ export const handleDateViewKeyDown = (params: HandleDateViewKeyDownParams): bool
       }
       return true;
     case 'Enter':
-      event.preventDefault();
-      // Prevent auto-repeat: only process first keydown
-      if (event.repeat) return true;
-      onSelect();
-      return true;
     case ' ':
     case 'Spacebar':
       event.preventDefault();
-      // Prevent auto-repeat: only process first keydown
       if (event.repeat) return true;
+      if (isDateDisabled && isDateDisabled(focusedDate)) return true;
       onSelect();
       return true;
     case 'Escape':
@@ -243,8 +221,27 @@ export const handleDateViewKeyDown = (params: HandleDateViewKeyDownParams): bool
       }
       break;
     default:
-      break;
+      return false;
   }
+
+  if (newDate) {
+    if (isNaN(newDate.getTime())) {
+      return false;
+    }
+
+    // Check if newDate exceeds minDate or maxDate limits
+    if (isDateDisabled && isDateDisabled(newDate)) {
+      event.preventDefault();
+      return true;
+    }
+
+    if (newDate) {
+      event.preventDefault();
+      onNavigate(newDate);
+      return true;
+    }
+  }
+
   return false;
 };
 
@@ -252,6 +249,7 @@ export interface HandleMonthViewKeyDownParams {
   event: React.KeyboardEvent;
   container: HTMLElement;
   focusedMonth: number;
+  isMonthDisabled?: (month: number) => boolean;
   onNavigate: (month: number) => void;
   onSelect: (month: number) => void;
   onEscape?: () => void;
@@ -261,53 +259,37 @@ export interface HandleMonthViewKeyDownParams {
  * Handle keyboard events in the month view grid (3x4).
  */
 export const handleMonthViewKeyDown = (params: HandleMonthViewKeyDownParams): boolean => {
-  const { event, focusedMonth, onNavigate, onSelect, onEscape } = params;
+  const { event, focusedMonth, isMonthDisabled, onNavigate, onSelect, onEscape } = params;
 
   const row = Math.floor(focusedMonth / monthsInRow);
   const col = focusedMonth % monthsInRow;
   const totalRows = Math.ceil(monthBlock / monthsInRow);
 
+  let nextMonth: number | null = null;
+
   switch (event.key) {
     case 'ArrowUp': {
-      if (row > 0) {
-        event.preventDefault();
-        onNavigate(focusedMonth - monthsInRow);
-        return true;
-      }
+      if (row > 0) nextMonth = focusedMonth - monthsInRow;
       break;
     }
     case 'ArrowDown': {
-      if (row < totalRows - 1) {
-        event.preventDefault();
-        onNavigate(focusedMonth + monthsInRow);
-        return true;
-      }
+      if (row < totalRows - 1) nextMonth = focusedMonth + monthsInRow;
       break;
     }
     case 'ArrowLeft': {
-      if (col > 0) {
-        event.preventDefault();
-        onNavigate(focusedMonth - 1);
-        return true;
-      }
+      if (col > 0) nextMonth = focusedMonth - 1;
       break;
     }
     case 'ArrowRight': {
-      if (col < monthsInRow - 1) {
-        event.preventDefault();
-        onNavigate(focusedMonth + 1);
-        return true;
-      }
+      if (col < monthsInRow - 1) nextMonth = focusedMonth + 1;
       break;
     }
     case 'Home':
-      event.preventDefault();
-      onNavigate(0);
-      return true;
+      nextMonth = 0;
+      break;
     case 'End':
-      event.preventDefault();
-      onNavigate(11);
-      return true;
+      nextMonth = 11;
+      break;
     case 'Enter':
     case ' ':
     case 'Spacebar':
@@ -326,6 +308,17 @@ export const handleMonthViewKeyDown = (params: HandleMonthViewKeyDownParams): bo
     default:
       break;
   }
+
+  if (nextMonth !== null) {
+    if (isMonthDisabled && isMonthDisabled(nextMonth)) {
+      event.preventDefault();
+      return true;
+    }
+    event.preventDefault();
+    onNavigate(nextMonth);
+    return true;
+  }
+
   return false;
 };
 
@@ -334,6 +327,7 @@ export interface HandleYearViewKeyDownParams {
   container: HTMLElement;
   focusedYearIndex: number;
   yearBlockStart: number;
+  isYearDisabled?: (year: number) => boolean;
   onNavigate: (yearIndex: number) => void;
   onSelect: (year: number) => void;
   onPageUp: () => void;
@@ -346,53 +340,47 @@ export interface HandleYearViewKeyDownParams {
  * focusedYearIndex is the offset within the current 12-year block (0-11).
  */
 export const handleYearViewKeyDown = (params: HandleYearViewKeyDownParams): boolean => {
-  const { event, focusedYearIndex, onNavigate, onSelect, onPageUp, onPageDown, onEscape } = params;
+  const {
+    event,
+    focusedYearIndex,
+    yearBlockStart,
+    isYearDisabled,
+    onNavigate,
+    onSelect,
+    onPageUp,
+    onPageDown,
+    onEscape,
+  } = params;
 
   const row = Math.floor(focusedYearIndex / yearsInRow);
   const col = focusedYearIndex % yearsInRow;
   const totalRows = Math.ceil(yearBlockRange / yearsInRow);
 
+  let nextYearIndex: number | null = null;
+
   switch (event.key) {
     case 'ArrowUp': {
-      if (row > 0) {
-        event.preventDefault();
-        onNavigate(focusedYearIndex - yearsInRow);
-        return true;
-      }
+      if (row > 0) nextYearIndex = focusedYearIndex - yearsInRow;
       break;
     }
     case 'ArrowDown': {
-      if (row < totalRows - 1) {
-        event.preventDefault();
-        onNavigate(focusedYearIndex + yearsInRow);
-        return true;
-      }
+      if (row < totalRows - 1) nextYearIndex = focusedYearIndex + yearsInRow;
       break;
     }
     case 'ArrowLeft': {
-      if (col > 0) {
-        event.preventDefault();
-        onNavigate(focusedYearIndex - 1);
-        return true;
-      }
+      if (col > 0) nextYearIndex = focusedYearIndex - 1;
       break;
     }
     case 'ArrowRight': {
-      if (col < yearsInRow - 1) {
-        event.preventDefault();
-        onNavigate(focusedYearIndex + 1);
-        return true;
-      }
+      if (col < yearsInRow - 1) nextYearIndex = focusedYearIndex + 1;
       break;
     }
     case 'Home':
-      event.preventDefault();
-      onNavigate(0);
-      return true;
+      nextYearIndex = 0;
+      break;
     case 'End':
-      event.preventDefault();
-      onNavigate(yearBlockRange - 1);
-      return true;
+      nextYearIndex = yearBlockRange - 1;
+      break;
     case 'PageUp':
       event.preventDefault();
       onPageUp();
@@ -407,7 +395,7 @@ export const handleYearViewKeyDown = (params: HandleYearViewKeyDownParams): bool
       event.preventDefault();
       // Prevent auto-repeat: only process first keydown
       if (event.repeat) return true;
-      onSelect(params.yearBlockStart + focusedYearIndex);
+      onSelect(yearBlockStart + focusedYearIndex);
       return true;
     case 'Escape':
       if (onEscape) {
@@ -419,5 +407,16 @@ export const handleYearViewKeyDown = (params: HandleYearViewKeyDownParams): bool
     default:
       break;
   }
+
+  if (nextYearIndex !== null) {
+    if (isYearDisabled && isYearDisabled(yearBlockStart + nextYearIndex)) {
+      event.preventDefault();
+      return true;
+    }
+    event.preventDefault();
+    onNavigate(nextYearIndex);
+    return true;
+  }
+
   return false;
 };

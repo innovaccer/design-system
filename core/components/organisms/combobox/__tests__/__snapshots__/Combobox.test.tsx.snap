@@ -18,6 +18,7 @@ exports[`Combobox component snapshots
             style="min-width: 256px;"
           >
             <input
+              aria-autocomplete="list"
               aria-controls="DesignSystem-Combobox--Popover-Test-uid"
               aria-expanded="false"
               aria-haspopup="listbox"
@@ -55,6 +56,7 @@ exports[`Combobox component snapshots
             style="min-width: 256px;"
           >
             <input
+              aria-autocomplete="list"
               aria-controls="DesignSystem-Combobox--Popover-Test-uid"
               aria-expanded="false"
               aria-haspopup="listbox"
@@ -92,6 +94,7 @@ exports[`Combobox component snapshots
             style="min-width: 256px;"
           >
             <input
+              aria-autocomplete="list"
               aria-controls="DesignSystem-Combobox--Popover-Test-uid"
               aria-expanded="false"
               aria-haspopup="listbox"
@@ -136,6 +139,7 @@ exports[`Combobox component snapshots
                 class="ChipInput-wrapper"
               >
                 <input
+                  aria-autocomplete="list"
                   aria-controls="DesignSystem-Combobox--Popover-Test-uid"
                   aria-expanded="false"
                   aria-haspopup="listbox"
@@ -182,6 +186,7 @@ exports[`Combobox component snapshots
                 class="ChipInput-wrapper"
               >
                 <input
+                  aria-autocomplete="list"
                   aria-controls="DesignSystem-Combobox--Popover-Test-uid"
                   aria-expanded="false"
                   aria-haspopup="listbox"
@@ -228,6 +233,7 @@ exports[`Combobox component snapshots
                 class="ChipInput-wrapper"
               >
                 <input
+                  aria-autocomplete="list"
                   aria-controls="DesignSystem-Combobox--Popover-Test-uid"
                   aria-expanded="false"
                   aria-haspopup="listbox"

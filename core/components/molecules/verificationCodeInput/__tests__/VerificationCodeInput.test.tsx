@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { VerificationCodeInput } from '@/index';
 import { VerificationCodeInputProps as Props } from '@/index.type';
 import { valueHelper, testHelper, filterUndefined, testMessageHelper } from '@/utils/testHelper';
@@ -283,5 +284,13 @@ describe('VerificationCodeInput component types', () => {
     fireEvent.change(input1, { target: { value: '1' } });
     expect(input0).toHaveValue('a');
     expect(input1).toHaveValue('1');
+  });
+});
+
+describe('VerificationCodeInput component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<VerificationCodeInput />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

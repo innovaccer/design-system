@@ -87,6 +87,7 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
     className,
     id,
     helpText,
+    label,
     ...rest
   } = props;
 
@@ -391,6 +392,8 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
   return (
     <div className={classes} data-test="DesignSystem-InputMask--Wrapper">
       <Input
+        label={label}
+        aria-label={label}
         {...rest}
         id={id !== 'parent-TimePicker' && id !== 'parent-DatePicker' ? id : undefined}
         value={value}
@@ -398,10 +401,6 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
         required={required}
         onFocus={onFocusHandler}
         onChange={onChangeHandler}
-        /**
-         * input right cross icon should be visible only
-         * when user provides value
-         */
         onClear={!isValueEqualPlaceholder ? onClearHandler : undefined}
         onBlur={onBlurHandler}
         onPaste={onPasteHandler}

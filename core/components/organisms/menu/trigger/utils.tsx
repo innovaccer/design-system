@@ -31,18 +31,22 @@ export const focusListItem = (
   setFocusedOption?: React.Dispatch<React.SetStateAction<HTMLElement | undefined>>,
   listRef?: any
 ) => {
-  const listItems = listRef.current?.querySelectorAll('[data-test="DesignSystem-Listbox-ItemWrapper"]');
-  let targetOption;
+  const listItems = listRef.current?.querySelectorAll('[data-test="DesignSystem-Menu-ListItem"]');
+  if (!listItems?.length) {
+    return;
+  }
+
+  let targetOption: Element | undefined;
 
   if (position === 'down') {
-    targetOption = listItems?.[0];
+    targetOption = listItems[0];
   } else {
-    targetOption = listItems?.[listItems.length - 1];
+    targetOption = listItems[listItems.length - 1];
   }
   (targetOption as HTMLElement)?.focus();
 
   if (targetOption && typeof targetOption.scrollIntoView === 'function') {
     (targetOption as HTMLElement)?.scrollIntoView({ block: 'end' });
   }
-  setFocusedOption && setFocusedOption(targetOption);
+  setFocusedOption && setFocusedOption(targetOption as HTMLElement | undefined);
 };

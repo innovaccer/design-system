@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { SegmentedControl, Heading, Text } from '@/index';
 import { SegmentedControlProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -1091,5 +1092,19 @@ describe('SegmentedControl Component - Truncation Tests', () => {
     labels.forEach((label) => {
       expect(label).not.toHaveClass('SegmentedControl-segmentLabel--constrained');
     });
+  });
+});
+
+describe('SegmentedControl component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(
+      <SegmentedControl>
+        <SegmentedControl.Item label="Day" />
+        <SegmentedControl.Item label="Week" />
+        <SegmentedControl.Item label="Month" />
+      </SegmentedControl>
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

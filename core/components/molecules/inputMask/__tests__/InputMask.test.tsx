@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { InputMaskProps as Props } from '@/index.type';
 import { InputMask } from '@/index';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -135,5 +136,13 @@ describe('Input Mask component prop: onClearHandler', () => {
     expect(closeIcon).toBeInTheDocument();
     fireEvent.click(closeIcon);
     expect(closeIcon).not.toBeInTheDocument();
+  });
+});
+
+describe('InputMask component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<InputMask mask={mask} label="Card Number" />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

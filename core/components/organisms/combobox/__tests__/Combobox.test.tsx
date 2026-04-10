@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { Combobox } from '@/index';
 import { ComboboxProps as Props } from '@/index.type';
@@ -92,6 +93,53 @@ describe('Combobox component single input trigger tests', () => {
     fireEvent.click(closeIcon);
     expect(FunctionValue).toHaveBeenCalled();
     expect(inputTrigger).toHaveValue('');
+  });
+
+  it('sets aria-invalid on single-select combobox input when error is true', () => {
+    const { getByTestId } = render(
+      <Combobox error={true} onChange={FunctionValue}>
+        {children}
+      </Combobox>
+    );
+    expect(getByTestId('DesignSystem-Combobox-Input')).toHaveAttribute('aria-invalid', 'true');
+  });
+
+  it('forwards aria-describedby and aria-errormessage to combobox input', () => {
+    const { getByTestId } = render(
+      <Combobox onChange={FunctionValue} aria-describedby="hint-id" aria-errormessage="err-id">
+        {children}
+      </Combobox>
+    );
+    const input = getByTestId('DesignSystem-Combobox-Input');
+    expect(input).toHaveAttribute('aria-describedby', 'hint-id');
+    expect(input).toHaveAttribute('aria-errormessage', 'err-id');
+  });
+
+  it('sets aria-invalid on multiselect combobox input when error is true', () => {
+    const { getByTestId } = render(
+      <Combobox multiSelect={true} error={true} onChange={FunctionValue}>
+        {children}
+      </Combobox>
+    );
+    expect(getByTestId('DesignSystem-MultiSelectTrigger--Input')).toHaveAttribute('aria-invalid', 'true');
+  });
+
+  it('closes list and returns focus to input when Tab is pressed on inner list row (capture)', async () => {
+    const { getByTestId } = render(<Combobox onChange={FunctionValue}>{children}</Combobox>);
+    const inputTrigger = getByTestId('DesignSystem-Combobox-Input');
+    fireEvent.click(inputTrigger);
+    const popover = getByTestId('DesignSystem-Popover');
+    expect(popover).toHaveAttribute('data-opened', 'true');
+
+    const innerRow = getByTestId('DesignSystem-Combobox-Option');
+    innerRow.focus();
+    fireEvent.keyDown(innerRow, { key: 'Tab', shiftKey: true });
+
+    expect(popover).toHaveAttribute('data-opened', 'false');
+
+    // allow async import resolution
+    await new Promise(process.nextTick);
+    expect(inputTrigger).toHaveFocus();
   });
 });
 
@@ -186,5 +234,31 @@ describe('Combobox component multiple select trigger tests', () => {
     fireEvent.click(closeIcon);
 
     expect(FunctionValue).toHaveBeenCalled();
+  });
+
+  it('uses distinct accessible names for chip remove and clear-all when clearButton is enabled', () => {
+    const { getByTestId } = render(
+      <Combobox multiSelect={true} chipValue={defaultChipValue} clearButton={true}>
+        {children}
+      </Combobox>
+    );
+
+    expect(getByTestId('DesignSystem-GenericChip--clearButton')).toHaveAttribute('aria-label', 'Remove Option 1');
+    expect(getByTestId('DesignSystem-MultiSelectTrigger--Icon')).toHaveAttribute('aria-label', 'Clear all options');
+    expect(getByTestId('DesignSystem-MultiSelectTrigger--Chip')).toHaveAttribute('tabIndex', '-1');
+  });
+});
+
+describe('Combobox component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(
+      <Combobox placeholder="select an option">
+        <Combobox.List>
+          <Combobox.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Combobox.Option>
+        </Combobox.List>
+      </Combobox>
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

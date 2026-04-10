@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { TimePicker } from '@/index';
 import { render, fireEvent, waitFor } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { TimePickerProps as Props } from '@/index.type';
 import { convert12To24HourFormat } from '../utility/timePickerUtility';
@@ -289,6 +290,29 @@ describe('TimePicker Event Handlers', () => {
       expect(FunctionValue).toHaveBeenCalled();
     });
   });
+
+  it('selects the active time when Enter is pressed from the search input', async () => {
+    const onChange = jest.fn();
+    const { getByTestId, getAllByTestId } = render(<TimePicker onChange={onChange} withSearch={true} />);
+    const dropdownTrigger = getByTestId(trigger);
+
+    fireEvent.click(dropdownTrigger);
+
+    const searchInput = getByTestId('DesignSystem-Input');
+    fireEvent.input(searchInput, { target: { value: '20' } });
+
+    await waitFor(() => {
+      const optionList = getAllByTestId(optionID);
+      expect(optionList[80]).toHaveTextContent('08:00 PM');
+      expect(optionList[80]).toHaveClass(activeOptionClass);
+    });
+
+    fireEvent.keyDown(searchInput, { key: 'Enter' });
+
+    await waitFor(() => {
+      expect(onChange).toHaveBeenCalledWith('08:00 PM');
+    });
+  });
 });
 
 describe('TimePicker Search Error Handlers', () => {
@@ -469,5 +493,13 @@ describe('TimePicker Search with error state true', () => {
   it('renders with DropdownButton--error class', () => {
     const { getByTestId } = render(<TimePicker withSearch={true} error={true} />);
     expect(getByTestId('DesignSystem-DropdownTrigger')).toHaveClass('DropdownButton--error');
+  });
+});
+
+describe('TimePicker with search a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<TimePicker withSearch={true} />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

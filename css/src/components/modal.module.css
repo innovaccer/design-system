@@ -87,3 +87,11 @@
 .Modal-body--withPadding {
   padding-bottom: var(--spacing-40);
 }
+
+.Modal:focus {
+  outline: none;
+}
+
+.Modal-header [tabindex='-1']:focus {
+  outline: none;
+}
