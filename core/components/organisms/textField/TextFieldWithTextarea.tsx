@@ -49,11 +49,8 @@ export const TextFieldWithTextarea = (props: TextFieldTextareaProps) => {
   const [inputText, setInputText] = React.useState<string>(value);
   const [helptextWidth, setHelptextWidth] = React.useState(0);
 
-  const fieldIdRef = React.useRef<string | null>(null);
-  if (fieldIdRef.current === null) {
-    fieldIdRef.current = props.id || `TextField-textarea-${uidGenerator()}`;
-  }
-  const fieldId = fieldIdRef.current;
+  const fieldIdRef = React.useRef<string>(`TextField-textarea-${uidGenerator()}`);
+  const fieldId = props.id || fieldIdRef.current;
 
   const helpTextIdRef = React.useRef<string | null>(null);
   if (helpTextIdRef.current === null) {

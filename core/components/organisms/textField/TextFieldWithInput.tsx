@@ -25,11 +25,8 @@ export const TextFieldWithInput = (props: TextFieldInputProps) => {
 
   const [inputText, setInputText] = React.useState<string>(value);
 
-  const fieldIdRef = React.useRef<string | null>(null);
-  if (fieldIdRef.current === null) {
-    fieldIdRef.current = props.id || `TextField-input-${uidGenerator()}`;
-  }
-  const fieldId = fieldIdRef.current;
+  const fieldIdRef = React.useRef<string>(`TextField-input-${uidGenerator()}`);
+  const fieldId = props.id || fieldIdRef.current;
 
   const helpTextIdRef = React.useRef<string | null>(null);
   if (helpTextIdRef.current === null) {
