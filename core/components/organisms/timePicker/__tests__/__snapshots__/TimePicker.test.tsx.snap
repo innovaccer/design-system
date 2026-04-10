@@ -16,6 +16,8 @@ exports[`TimePicker component prop:error snapshot
         style="min-width: 256px;"
       >
         <input
+          aria-describedby="InputMask-helpText-Test-uid"
+          aria-label="Time input"
           autocomplete="off"
           class="Input-input Input-input--regular mr-4"
           data-test="DesignSystem-Input"
@@ -45,7 +47,9 @@ exports[`TimePicker component prop:error snapshot
         style="min-width: 256px;"
       >
         <input
+          aria-describedby="InputMask-helpText-Test-uid"
           aria-invalid="true"
+          aria-label="Time input"
           autocomplete="off"
           class="Input-input Input-input--regular mr-4"
           data-test="DesignSystem-Input"
@@ -75,6 +79,8 @@ exports[`TimePicker component prop:inputFormat snapshot
         style="min-width: 256px;"
       >
         <input
+          aria-describedby="InputMask-helpText-Test-uid"
+          aria-label="Time input"
           autocomplete="off"
           class="Input-input Input-input--regular mr-4"
           data-test="DesignSystem-Input"
@@ -104,6 +110,8 @@ exports[`TimePicker component prop:inputFormat snapshot
         style="min-width: 256px;"
       >
         <input
+          aria-describedby="InputMask-helpText-Test-uid"
+          aria-label="Time input"
           autocomplete="off"
           class="Input-input Input-input--regular mr-4"
           data-test="DesignSystem-Input"
@@ -133,6 +141,8 @@ exports[`TimePicker component prop:outputFormat snapshot
         style="min-width: 256px;"
       >
         <input
+          aria-describedby="InputMask-helpText-Test-uid"
+          aria-label="Time input"
           autocomplete="off"
           class="Input-input Input-input--regular mr-4"
           data-test="DesignSystem-Input"
@@ -162,6 +172,8 @@ exports[`TimePicker component prop:outputFormat snapshot
         style="min-width: 256px;"
       >
         <input
+          aria-describedby="InputMask-helpText-Test-uid"
+          aria-label="Time input"
           autocomplete="off"
           class="Input-input Input-input--regular mr-4"
           data-test="DesignSystem-Input"
@@ -191,6 +203,8 @@ exports[`TimePicker component prop:time snapshot
         style="min-width: 256px;"
       >
         <input
+          aria-describedby="InputMask-helpText-Test-uid"
+          aria-label="Time input"
           autocomplete="off"
           class="Input-input Input-input--regular mr-4"
           data-test="DesignSystem-Input"
@@ -199,7 +213,7 @@ exports[`TimePicker component prop:time snapshot
           value="3:30 AM"
         />
         <div
-          aria-label="Clear --:-- AM"
+          aria-label="Clear Time input"
           class="Input-icon Input-iconWrapper--right"
           role="button"
           tabindex="0"
@@ -235,6 +249,8 @@ exports[`TimePicker component prop:time snapshot
         style="min-width: 256px;"
       >
         <input
+          aria-describedby="InputMask-helpText-Test-uid"
+          aria-label="Time input"
           autocomplete="off"
           class="Input-input Input-input--regular mr-4"
           data-test="DesignSystem-Input"
@@ -243,7 +259,7 @@ exports[`TimePicker component prop:time snapshot
           value="08:44 PM"
         />
         <div
-          aria-label="Clear --:-- AM"
+          aria-label="Clear Time input"
           class="Input-icon Input-iconWrapper--right"
           role="button"
           tabindex="0"
@@ -279,6 +295,8 @@ exports[`TimePicker component prop:validators snapshot
         style="min-width: 256px;"
       >
         <input
+          aria-describedby="InputMask-helpText-Test-uid"
+          aria-label="Time input"
           autocomplete="off"
           class="Input-input Input-input--regular mr-4"
           data-test="DesignSystem-Input"
@@ -308,6 +326,8 @@ exports[`TimePicker component prop:validators snapshot
         style="min-width: 256px;"
       >
         <input
+          aria-describedby="InputMask-helpText-Test-uid"
+          aria-label="Time input"
           autocomplete="off"
           class="Input-input Input-input--regular mr-4"
           data-test="DesignSystem-Input"

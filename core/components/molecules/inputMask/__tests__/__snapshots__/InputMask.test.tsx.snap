@@ -16,6 +16,7 @@ exports[`Input Mask component
         style="min-width: 256px;"
       >
         <input
+          aria-describedby="InputMask-helpText-Test-uid"
           autocomplete="off"
           class="Input-input Input-input--regular mr-4"
           data-test="DesignSystem-Input"

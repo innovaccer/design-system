@@ -6,6 +6,7 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
@@ -16,6 +17,7 @@ exports[`ChoiceList component
         <label
           class="Label-text"
           data-test="DesignSystem-Label--Text"
+          id="ChoiceList-title-Test-uid"
         >
           ChoiceList
         </label>
@@ -111,6 +113,7 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
@@ -121,6 +124,7 @@ exports[`ChoiceList component
         <label
           class="Label-text"
           data-test="DesignSystem-Label--Text"
+          id="ChoiceList-title-Test-uid"
         >
           ChoiceList
         </label>
@@ -216,6 +220,7 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
@@ -226,6 +231,7 @@ exports[`ChoiceList component
         <label
           class="Label-text"
           data-test="DesignSystem-Label--Text"
+          id="ChoiceList-title-Test-uid"
         >
           ChoiceList
         </label>
@@ -323,6 +329,7 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
@@ -333,6 +340,7 @@ exports[`ChoiceList component
         <label
           class="Label-text"
           data-test="DesignSystem-Label--Text"
+          id="ChoiceList-title-Test-uid"
         >
           ChoiceList
         </label>
@@ -430,6 +438,7 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
@@ -440,6 +449,7 @@ exports[`ChoiceList component
         <label
           class="Label-text"
           data-test="DesignSystem-Label--Text"
+          id="ChoiceList-title-Test-uid"
         >
           ChoiceList
         </label>
@@ -537,6 +547,7 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
@@ -547,6 +558,7 @@ exports[`ChoiceList component
         <label
           class="Label-text"
           data-test="DesignSystem-Label--Text"
+          id="ChoiceList-title-Test-uid"
         >
           ChoiceList
         </label>
@@ -644,6 +656,7 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
@@ -654,6 +667,7 @@ exports[`ChoiceList component
         <label
           class="Label-text"
           data-test="DesignSystem-Label--Text"
+          id="ChoiceList-title-Test-uid"
         >
           ChoiceList
         </label>
@@ -753,6 +767,7 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
@@ -763,6 +778,7 @@ exports[`ChoiceList component
         <label
           class="Label-text"
           data-test="DesignSystem-Label--Text"
+          id="ChoiceList-title-Test-uid"
         >
           ChoiceList
         </label>
@@ -862,6 +878,7 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
@@ -872,6 +889,7 @@ exports[`ChoiceList component
         <label
           class="Label-text"
           data-test="DesignSystem-Label--Text"
+          id="ChoiceList-title-Test-uid"
         >
           ChoiceList
         </label>
@@ -967,6 +985,7 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
@@ -977,6 +996,7 @@ exports[`ChoiceList component
         <label
           class="Label-text"
           data-test="DesignSystem-Label--Text"
+          id="ChoiceList-title-Test-uid"
         >
           ChoiceList
         </label>
@@ -1072,6 +1092,7 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
@@ -1082,6 +1103,7 @@ exports[`ChoiceList component
         <label
           class="Label-text"
           data-test="DesignSystem-Label--Text"
+          id="ChoiceList-title-Test-uid"
         >
           ChoiceList
         </label>
@@ -1179,6 +1201,7 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
@@ -1189,6 +1212,7 @@ exports[`ChoiceList component
         <label
           class="Label-text"
           data-test="DesignSystem-Label--Text"
+          id="ChoiceList-title-Test-uid"
         >
           ChoiceList
         </label>
@@ -1286,6 +1310,7 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
@@ -1296,6 +1321,7 @@ exports[`ChoiceList component
         <label
           class="Label-text"
           data-test="DesignSystem-Label--Text"
+          id="ChoiceList-title-Test-uid"
         >
           ChoiceList
         </label>
@@ -1393,6 +1419,7 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
@@ -1403,6 +1430,7 @@ exports[`ChoiceList component
         <label
           class="Label-text"
           data-test="DesignSystem-Label--Text"
+          id="ChoiceList-title-Test-uid"
         >
           ChoiceList
         </label>
@@ -1500,6 +1528,7 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
@@ -1510,6 +1539,7 @@ exports[`ChoiceList component
         <label
           class="Label-text"
           data-test="DesignSystem-Label--Text"
+          id="ChoiceList-title-Test-uid"
         >
           ChoiceList
         </label>
@@ -1609,6 +1639,7 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
@@ -1619,6 +1650,7 @@ exports[`ChoiceList component
         <label
           class="Label-text"
           data-test="DesignSystem-Label--Text"
+          id="ChoiceList-title-Test-uid"
         >
           ChoiceList
         </label>
@@ -1718,6 +1750,7 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
@@ -1728,6 +1761,7 @@ exports[`ChoiceList component
         <label
           class="Label-text"
           data-test="DesignSystem-Label--Text"
+          id="ChoiceList-title-Test-uid"
         >
           ChoiceList
         </label>
@@ -1823,6 +1857,7 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
@@ -1833,6 +1868,7 @@ exports[`ChoiceList component
         <label
           class="Label-text"
           data-test="DesignSystem-Label--Text"
+          id="ChoiceList-title-Test-uid"
         >
           ChoiceList
         </label>
@@ -1928,6 +1964,7 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
@@ -1938,6 +1975,7 @@ exports[`ChoiceList component
         <label
           class="Label-text"
           data-test="DesignSystem-Label--Text"
+          id="ChoiceList-title-Test-uid"
         >
           ChoiceList
         </label>
@@ -2035,6 +2073,7 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
@@ -2045,6 +2084,7 @@ exports[`ChoiceList component
         <label
           class="Label-text"
           data-test="DesignSystem-Label--Text"
+          id="ChoiceList-title-Test-uid"
         >
           ChoiceList
         </label>
@@ -2142,6 +2182,7 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
@@ -2152,6 +2193,7 @@ exports[`ChoiceList component
         <label
           class="Label-text"
           data-test="DesignSystem-Label--Text"
+          id="ChoiceList-title-Test-uid"
         >
           ChoiceList
         </label>
@@ -2249,6 +2291,7 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
@@ -2259,6 +2302,7 @@ exports[`ChoiceList component
         <label
           class="Label-text"
           data-test="DesignSystem-Label--Text"
+          id="ChoiceList-title-Test-uid"
         >
           ChoiceList
         </label>
@@ -2356,6 +2400,7 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
@@ -2366,6 +2411,7 @@ exports[`ChoiceList component
         <label
           class="Label-text"
           data-test="DesignSystem-Label--Text"
+          id="ChoiceList-title-Test-uid"
         >
           ChoiceList
         </label>
@@ -2465,6 +2511,7 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
@@ -2475,6 +2522,7 @@ exports[`ChoiceList component
         <label
           class="Label-text"
           data-test="DesignSystem-Label--Text"
+          id="ChoiceList-title-Test-uid"
         >
           ChoiceList
         </label>
@@ -2574,6 +2622,7 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
@@ -2584,6 +2633,7 @@ exports[`ChoiceList component
         <label
           class="Label-text"
           data-test="DesignSystem-Label--Text"
+          id="ChoiceList-title-Test-uid"
         >
           ChoiceList
         </label>
@@ -2679,6 +2729,7 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
@@ -2689,6 +2740,7 @@ exports[`ChoiceList component
         <label
           class="Label-text"
           data-test="DesignSystem-Label--Text"
+          id="ChoiceList-title-Test-uid"
         >
           ChoiceList
         </label>
@@ -2784,6 +2836,7 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
@@ -2794,6 +2847,7 @@ exports[`ChoiceList component
         <label
           class="Label-text"
           data-test="DesignSystem-Label--Text"
+          id="ChoiceList-title-Test-uid"
         >
           ChoiceList
         </label>
@@ -2891,6 +2945,7 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
@@ -2901,6 +2956,7 @@ exports[`ChoiceList component
         <label
           class="Label-text"
           data-test="DesignSystem-Label--Text"
+          id="ChoiceList-title-Test-uid"
         >
           ChoiceList
         </label>
@@ -2998,6 +3054,7 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
@@ -3008,6 +3065,7 @@ exports[`ChoiceList component
         <label
           class="Label-text"
           data-test="DesignSystem-Label--Text"
+          id="ChoiceList-title-Test-uid"
         >
           ChoiceList
         </label>
@@ -3105,6 +3163,7 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
@@ -3115,6 +3174,7 @@ exports[`ChoiceList component
         <label
           class="Label-text"
           data-test="DesignSystem-Label--Text"
+          id="ChoiceList-title-Test-uid"
         >
           ChoiceList
         </label>
@@ -3212,6 +3272,7 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
@@ -3222,6 +3283,7 @@ exports[`ChoiceList component
         <label
           class="Label-text"
           data-test="DesignSystem-Label--Text"
+          id="ChoiceList-title-Test-uid"
         >
           ChoiceList
         </label>
@@ -3321,6 +3383,7 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
@@ -3331,6 +3394,7 @@ exports[`ChoiceList component
         <label
           class="Label-text"
           data-test="DesignSystem-Label--Text"
+          id="ChoiceList-title-Test-uid"
         >
           ChoiceList
         </label>

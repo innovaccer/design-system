@@ -322,6 +322,7 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
             onChange={onInputChangeHandler}
             onKeyDown={onKeyDownHandler}
             role={role}
+            tabIndex={tabIndex}
             aria-label={ariaLabel}
             aria-labelledby={ariaLabelledBy}
             aria-invalid={error === true ? true : ariaInvalid}

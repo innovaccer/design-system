@@ -94,6 +94,12 @@ export const ListboxItem = (props: ListboxItemProps) => {
   const contextProp = React.useContext(ListboxContext);
   const { showDivider, draggable, customFocusManagement, setRovingIndex } = contextProp;
 
+  const { 'aria-expanded': ariaExpandedProp, 'aria-controls': ariaControlsProp, ...restWithoutAriaProps } = rest;
+  const effectiveRole = role ?? 'option';
+  const resolvedAriaExpanded =
+    effectiveRole !== 'option' ? (nestedBody !== undefined ? expanded : ariaExpandedProp) : undefined;
+  const resolvedAriaControls = nestedBody !== undefined && nestedListId ? nestedListId : ariaControlsProp;
+
   const tagClass = classNames({
     [styles['Listbox-item-wrapper']]: !draggable,
   });
@@ -150,7 +156,7 @@ export const ListboxItem = (props: ListboxItemProps) => {
       download={download}
     >
       <ListBody
-        {...rest}
+        {...restWithoutAriaProps}
         className={props.className}
         selected={props.selected}
         activated={props.activated}
@@ -161,9 +167,9 @@ export const ListboxItem = (props: ListboxItemProps) => {
         onFocus={handleFocus}
         tabIndex={tabIndexProps.tabIndex ?? -1}
         onKeyDown={keyDownHandler}
-        role={role ?? 'option'}
-        aria-expanded={nestedBody !== undefined ? expanded : undefined}
-        aria-controls={nestedBody !== undefined && nestedListId ? nestedListId : undefined}
+        role={effectiveRole}
+        aria-expanded={resolvedAriaExpanded}
+        aria-controls={resolvedAriaControls}
       >
         {children}
       </ListBody>

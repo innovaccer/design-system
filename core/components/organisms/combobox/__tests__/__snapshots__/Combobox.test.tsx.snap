@@ -129,11 +129,10 @@ exports[`Combobox component snapshots
             class="ChipInput-border"
             data-test="DesignSystem-MultiSelectTrigger--Border"
           >
-            <div
+            <label
               class="ChipInput"
               data-test="DesignSystem-Combobox-ChipInput"
-              role="button"
-              tabindex="-1"
+              for="MultiSelectTrigger-input-Test-uid"
             >
               <div
                 class="ChipInput-wrapper"
@@ -146,13 +145,15 @@ exports[`Combobox component snapshots
                   aria-label=",s,e,l,e,c,t, ,a,n, ,o,p,t,i,o,n"
                   class="ChipInput-input"
                   data-test="DesignSystem-MultiSelectTrigger--Input"
+                  id="MultiSelectTrigger-input-Test-uid"
                   placeholder=",s,e,l,e,c,t, ,a,n, ,o,p,t,i,o,n"
                   role="combobox"
                   style="flex-basis: 0px;"
+                  tabindex="-1"
                   value=""
                 />
               </div>
-            </div>
+            </label>
           </div>
         </div>
       </div>
@@ -176,11 +177,10 @@ exports[`Combobox component snapshots
             class="ChipInput-border"
             data-test="DesignSystem-MultiSelectTrigger--Border"
           >
-            <div
+            <label
               class="ChipInput"
               data-test="DesignSystem-Combobox-ChipInput"
-              role="button"
-              tabindex="-1"
+              for="MultiSelectTrigger-input-Test-uid"
             >
               <div
                 class="ChipInput-wrapper"
@@ -193,13 +193,15 @@ exports[`Combobox component snapshots
                   aria-label=",s,e,l,e,c,t, ,a,n, ,o,p,t,i,o,n"
                   class="ChipInput-input"
                   data-test="DesignSystem-MultiSelectTrigger--Input"
+                  id="MultiSelectTrigger-input-Test-uid"
                   placeholder=",s,e,l,e,c,t, ,a,n, ,o,p,t,i,o,n"
                   role="combobox"
                   style="flex-basis: 0px;"
+                  tabindex="-1"
                   value=""
                 />
               </div>
-            </div>
+            </label>
           </div>
         </div>
       </div>
@@ -223,11 +225,10 @@ exports[`Combobox component snapshots
             class="ChipInput-border"
             data-test="DesignSystem-MultiSelectTrigger--Border"
           >
-            <div
+            <label
               class="ChipInput"
               data-test="DesignSystem-Combobox-ChipInput"
-              role="button"
-              tabindex="-1"
+              for="MultiSelectTrigger-input-Test-uid"
             >
               <div
                 class="ChipInput-wrapper"
@@ -240,13 +241,15 @@ exports[`Combobox component snapshots
                   aria-label=",s,e,l,e,c,t, ,a,n, ,o,p,t,i,o,n"
                   class="ChipInput-input"
                   data-test="DesignSystem-MultiSelectTrigger--Input"
+                  id="MultiSelectTrigger-input-Test-uid"
                   placeholder=",s,e,l,e,c,t, ,a,n, ,o,p,t,i,o,n"
                   role="combobox"
                   style="flex-basis: 0px;"
+                  tabindex="-1"
                   value=""
                 />
               </div>
-            </div>
+            </label>
           </div>
         </div>
       </div>
