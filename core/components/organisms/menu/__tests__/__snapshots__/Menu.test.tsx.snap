@@ -28,9 +28,6 @@ exports[`Menu component snapshot
     data-layer="true"
     data-opened="true"
     data-test="DesignSystem-Menu"
-    offset="medium"
-    on="click"
-    open=""
     style="width: 176px; position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; z-index: 501;"
   >
     <div
@@ -106,9 +103,6 @@ exports[`Menu component with Nesting snapshot
     data-layer="true"
     data-opened="true"
     data-test="DesignSystem-Menu"
-    offset="medium"
-    on="click"
-    open=""
     style="width: 176px; position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; z-index: 501;"
   >
     <div
@@ -260,11 +254,7 @@ exports[`Menu component with Trigger snapshot
     data-layer="true"
     data-opened="true"
     data-test="DesignSystem-Menu"
-    offset="medium"
-    on="click"
-    open=""
     style="width: 176px; position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; z-index: 501;"
-    trigger="[object Object]"
   >
     <div
       class="Menu"
