@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Avatar, Row, Column, Text, Chip, Icon, Tooltip } from '@/index';
+import { Avatar, Row, Column, Text, Chip, Tooltip } from '@/index';
 import StatusImage from './assets/status-image.png';
 
 export const Disabled = () => {
@@ -64,13 +64,7 @@ export const Disabled = () => {
 
         <Row>
           <Column className="d-flex align-items-center flex-column">
-            <Avatar
-              disabled={true}
-              firstName="John"
-              lastName="Doe"
-              tooltipSuffix={suffix}
-              status={statusNode}
-            />
+            <Avatar disabled={true} firstName="John" lastName="Doe" tooltipSuffix={suffix} status={statusNode} />
             <Text appearance="subtle" className="mt-6">
               Initials Round
             </Text>
