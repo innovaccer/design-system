@@ -190,6 +190,8 @@ export const ChipInput = (props: ChipInputProps) => {
   const iconWrapperClass = classNames({
     [inputStyles['Input-icon']]: true,
     [inputStyles['Input-iconWrapper--right']]: true,
+    ['pr-3']: size === 'small',
+    ['pr-3-5']: size === 'regular',
   });
 
   const iconClass = classNames({
@@ -344,7 +346,7 @@ export const ChipInput = (props: ChipInputProps) => {
         {chips.length > 0 && (
           <div
             data-test="DesignSystem-ChipInput--Icon"
-            className={classNames(iconWrapperClass, 'align-self-start', 'flex-shrink-0')}
+            className={classNames(iconWrapperClass, 'align-self-center', 'flex-shrink-0')}
             tabIndex={disabled ? -1 : 0}
             role="button"
             aria-label="Clear all"

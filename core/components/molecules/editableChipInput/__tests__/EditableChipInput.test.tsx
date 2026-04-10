@@ -122,6 +122,26 @@ describe('EditableChipInput component', () => {
     fireEvent.click(getByTestId(editableWrapperTestId));
     expect(getByTestId('DesignSystem-ChipInput--Input')).not.toHaveFocus();
   });
+
+  it('keeps the clear action centered in edit mode across size variants', () => {
+    const { getByTestId, rerender } = render(
+      <EditableChipInput value={value} onChange={onChange} size="regular" chipInputOptions={chipInputOptions} />
+    );
+
+    fireEvent.click(getByTestId(editableWrapperTestId));
+
+    let clearAction = getByTestId('DesignSystem-ChipInput--Icon');
+    expect(clearAction).toHaveClass('align-self-center');
+    expect(clearAction).not.toHaveClass('align-self-start');
+
+    rerender(<EditableChipInput value={value} onChange={onChange} size="small" chipInputOptions={chipInputOptions} />);
+
+    fireEvent.click(getByTestId(editableWrapperTestId));
+
+    clearAction = getByTestId('DesignSystem-ChipInput--Icon');
+    expect(clearAction).toHaveClass('align-self-center');
+    expect(clearAction).not.toHaveClass('align-self-start');
+  });
 });
 
 describe('Chip component', () => {

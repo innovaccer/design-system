@@ -95,7 +95,7 @@ exports[`ChipInput component
         </div>
         <div
           aria-label="Clear all"
-          class="Input-icon Input-iconWrapper--right align-self-start flex-shrink-0"
+          class="Input-icon Input-iconWrapper--right pr-3-5 align-self-center flex-shrink-0"
           data-test="DesignSystem-ChipInput--Icon"
           role="button"
           tabindex="0"
@@ -211,7 +211,7 @@ exports[`ChipInput component
         <div
           aria-disabled="true"
           aria-label="Clear all"
-          class="Input-icon Input-iconWrapper--right align-self-start flex-shrink-0"
+          class="Input-icon Input-iconWrapper--right pr-3-5 align-self-center flex-shrink-0"
           data-test="DesignSystem-ChipInput--Icon"
           role="button"
           tabindex="-1"
@@ -325,7 +325,7 @@ exports[`ChipInput component
         </div>
         <div
           aria-label="Clear all"
-          class="Input-icon Input-iconWrapper--right align-self-start flex-shrink-0"
+          class="Input-icon Input-iconWrapper--right pr-3-5 align-self-center flex-shrink-0"
           data-test="DesignSystem-ChipInput--Icon"
           role="button"
           tabindex="0"
