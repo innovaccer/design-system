@@ -230,7 +230,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
             onKeyDown={(e) => {
               if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
-                onClearHandler(e as unknown as React.MouseEvent<HTMLElement>);
+                (e.currentTarget as HTMLElement).click();
               }
               e.stopPropagation();
             }}
