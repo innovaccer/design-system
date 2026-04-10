@@ -168,7 +168,6 @@ export const ChipInput = (props: ChipInputProps) => {
     {
       [styles.ChipInput]: true,
       [styles['ChipInput--disabled']]: disabled,
-      [styles['ChipInput--withChips']]: chips && chips.length > 0,
       [styles['ChipInput--error']]: error,
       [styles[`ChipInput--${size}`]]: size,
     },

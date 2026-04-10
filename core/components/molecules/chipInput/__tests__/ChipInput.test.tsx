@@ -317,17 +317,17 @@ describe('ChipInput Component - Size Variants and Icon Alignment', () => {
     });
 
     it('should maintain consistent height behavior when transitioning from empty to filled state', () => {
-      const { rerender, getByTestId } = render(<ChipInput {...defaultProps} size="small" value={[]} />);
+      const { rerender, getByTestId, queryByTestId } = render(<ChipInput {...defaultProps} size="small" value={[]} />);
 
       let container = getByTestId('DesignSystem-ChipInput');
       expect(container).toHaveClass('ChipInput--small');
-      expect(container).not.toHaveClass('ChipInput--withChips');
+      expect(queryByTestId('DesignSystem-ChipInput--Icon')).not.toBeInTheDocument();
 
       rerender(<ChipInput {...defaultProps} size="small" value={['chip1']} />);
 
       container = getByTestId('DesignSystem-ChipInput');
       expect(container).toHaveClass('ChipInput--small');
-      expect(container).toHaveClass('ChipInput--withChips');
+      expect(getByTestId('DesignSystem-ChipInput--Icon')).toBeInTheDocument();
     });
   });
 
@@ -429,11 +429,10 @@ describe('ChipInput Component - Size Variants and Icon Alignment', () => {
   });
 
   describe('Height Consistency and Border Handling Tests', () => {
-    it('should apply withChips class when chips are present regardless of size', () => {
+    it('should render the clear action when chips are present regardless of size', () => {
       const { getByTestId } = render(<ChipInput {...defaultProps} size="small" defaultValue={['test']} />);
 
-      const container = getByTestId('DesignSystem-ChipInput');
-      expect(container).toHaveClass('ChipInput--withChips');
+      expect(getByTestId('DesignSystem-ChipInput--Icon')).toBeInTheDocument();
     });
 
     it('should handle multiple chips without breaking size constraints for small variant', () => {
@@ -482,7 +481,6 @@ describe('ChipInput Component - Size Variants and Icon Alignment', () => {
       const container = getByTestId('DesignSystem-ChipInput');
       expect(container).toHaveClass('ChipInput');
       expect(container).toHaveClass('ChipInput--small');
-      expect(container).toHaveClass('ChipInput--withChips');
       expect(container).toHaveClass('ChipInput--error');
     });
 
@@ -494,7 +492,6 @@ describe('ChipInput Component - Size Variants and Icon Alignment', () => {
       const container = getByTestId('DesignSystem-ChipInput');
       expect(container).toHaveClass('ChipInput');
       expect(container).toHaveClass('ChipInput--regular');
-      expect(container).toHaveClass('ChipInput--withChips');
       expect(container).toHaveClass('ChipInput--disabled');
     });
 
@@ -544,23 +541,23 @@ describe('ChipInput Component - Size Variants and Icon Alignment', () => {
     });
 
     it('should maintain size classes when transitioning between empty and filled states', () => {
-      const { rerender, getByTestId } = render(<ChipInput {...defaultProps} size="small" value={[]} />);
+      const { rerender, getByTestId, queryByTestId } = render(<ChipInput {...defaultProps} size="small" value={[]} />);
 
       let container = getByTestId('DesignSystem-ChipInput');
       expect(container).toHaveClass('ChipInput--small');
-      expect(container).not.toHaveClass('ChipInput--withChips');
+      expect(queryByTestId('DesignSystem-ChipInput--Icon')).not.toBeInTheDocument();
 
       rerender(<ChipInput {...defaultProps} size="small" value={['new-chip']} />);
 
       container = getByTestId('DesignSystem-ChipInput');
       expect(container).toHaveClass('ChipInput--small');
-      expect(container).toHaveClass('ChipInput--withChips');
+      expect(getByTestId('DesignSystem-ChipInput--Icon')).toBeInTheDocument();
 
       rerender(<ChipInput {...defaultProps} size="small" value={[]} />);
 
       container = getByTestId('DesignSystem-ChipInput');
       expect(container).toHaveClass('ChipInput--small');
-      expect(container).not.toHaveClass('ChipInput--withChips');
+      expect(queryByTestId('DesignSystem-ChipInput--Icon')).not.toBeInTheDocument();
     });
   });
 
