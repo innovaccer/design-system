@@ -491,7 +491,7 @@ describe('Button component with styleType prop', () => {
       expect(circle).toHaveClass('Circle--primary');
     });
 
-    it('should use white spinner for filled primary button (backward compatibility)', () => {
+    it('should use primary spinner for filled primary button (better contrast)', () => {
       const { getByTestId } = render(
         <Button appearance="primary" loading={true}>
           Button
@@ -499,7 +499,7 @@ describe('Button component with styleType prop', () => {
       );
       const spinner = getByTestId('DesignSystem-Button--Spinner');
       const circle = spinner.querySelector('circle');
-      expect(circle).toHaveClass('Circle--white');
+      expect(circle).toHaveClass('Circle--primary');
     });
   });
 });

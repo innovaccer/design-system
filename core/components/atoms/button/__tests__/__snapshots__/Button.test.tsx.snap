@@ -83,7 +83,7 @@ exports[`Button component
         viewBox="0 0 50 50"
       >
         <circle
-          class="Circle Circle--white"
+          class="Circle Circle--alert"
           cx="25"
           cy="25"
           fill="none"
@@ -330,7 +330,7 @@ exports[`Button component
         viewBox="0 0 50 50"
       >
         <circle
-          class="Circle Circle--white"
+          class="Circle Circle--primary"
           cx="25"
           cy="25"
           fill="none"
@@ -926,7 +926,7 @@ exports[`Button component with no children
         viewBox="0 0 50 50"
       >
         <circle
-          class="Circle Circle--white"
+          class="Circle Circle--alert"
           cx="25"
           cy="25"
           fill="none"
@@ -1004,7 +1004,7 @@ exports[`Button component with no children
         viewBox="0 0 50 50"
       >
         <circle
-          class="Circle Circle--white"
+          class="Circle Circle--primary"
           cx="25"
           cy="25"
           fill="none"
