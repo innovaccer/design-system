@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { BaseProps, Validators, Mask } from '@/utils/types';
 import { Input, Utils, HelpText } from '@/index';
 import { InputProps } from '@/index.type';
+import uidGenerator from '@/utils/uidGenerator';
 import { getDefaultValue } from './utilites';
 
 export interface MaskProps extends BaseProps {
@@ -127,6 +128,11 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
 
   const ref = React.useRef<HTMLInputElement>(null);
   const deferId = React.useRef<number | undefined>();
+  const helpTextIdRef = React.useRef<string | null>(null);
+  if (helpTextIdRef.current === null) {
+    helpTextIdRef.current = `InputMask-helpText-${uidGenerator()}`;
+  }
+  const helpTextId = helpTextIdRef.current;
   const selectionPos = React.useRef<SelectionPos>(defaultSelection);
   const newSelectionPos = React.useRef<number>(0);
 
@@ -389,6 +395,9 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
 
   const isValueEqualPlaceholder = value === defaultPlaceholderValue;
 
+  const existingDescribedBy = rest['aria-describedby'];
+  const resolvedDescribedBy = [existingDescribedBy, helpTextId].filter(Boolean).join(' ') || undefined;
+
   return (
     <div className={classes} data-test="DesignSystem-InputMask--Wrapper">
       <Input
@@ -406,8 +415,9 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
         onPaste={onPasteHandler}
         autoComplete={'off'}
         ref={ref}
+        aria-describedby={resolvedDescribedBy}
       />
-      <HelpText message={error ? caption : helpText} error={error} />
+      <HelpText id={helpTextId} message={error ? caption : helpText} error={error} />
     </div>
   );
 });

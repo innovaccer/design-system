@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Input, Label } from '@/index';
 import { InputProps } from '@/index.type';
 import { BaseProps } from '@/utils/types';
+import uidGenerator from '@/utils/uidGenerator';
 import { RenderHelpText, RenderCounter } from './TextFieldCommon';
 
 export interface TextFieldWithInputProps extends BaseProps {
@@ -24,6 +25,18 @@ export const TextFieldWithInput = (props: TextFieldInputProps) => {
 
   const [inputText, setInputText] = React.useState<string>(value);
 
+  const fieldIdRef = React.useRef<string | null>(null);
+  if (fieldIdRef.current === null) {
+    fieldIdRef.current = props.id || `TextField-input-${uidGenerator()}`;
+  }
+  const fieldId = fieldIdRef.current;
+
+  const helpTextIdRef = React.useRef<string | null>(null);
+  if (helpTextIdRef.current === null) {
+    helpTextIdRef.current = `TextField-helpText-${uidGenerator()}`;
+  }
+  const helpTextId = helpTextIdRef.current;
+
   const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputText(event.target.value);
     if (onChange) onChange(event);
@@ -33,16 +46,25 @@ export const TextFieldWithInput = (props: TextFieldInputProps) => {
 
   const labelSize = size === 'tiny' ? 'small' : 'regular';
 
+  const existingDescribedBy = props['aria-describedby'];
+  const resolvedDescribedBy = [existingDescribedBy, helpTextId].filter(Boolean).join(' ') || undefined;
+
   return (
     <div>
       {label && (
-        <Label required={required} withInput={true} size={labelSize}>
+        <Label required={required} withInput={true} size={labelSize} htmlFor={fieldId}>
           {label}
         </Label>
       )}
-      <Input {...props} error={inputError} onChange={onChangeHandler} />
+      <Input
+        {...props}
+        id={fieldId}
+        error={inputError}
+        onChange={onChangeHandler}
+        aria-describedby={resolvedDescribedBy}
+      />
       <div className="d-flex justify-content-between" style={{ minWidth }}>
-        <RenderHelpText helpText={helpText} error={inputError} />
+        <RenderHelpText helpText={helpText} error={inputError} id={helpTextId} />
         <RenderCounter inputText={inputText} max={max} />
       </div>
     </div>

@@ -162,6 +162,8 @@ export const ListboxItem = (props: ListboxItemProps) => {
         tabIndex={tabIndexProps.tabIndex ?? -1}
         onKeyDown={keyDownHandler}
         role={role ?? 'option'}
+        aria-expanded={nestedBody !== undefined ? expanded : undefined}
+        aria-controls={nestedBody !== undefined && nestedListId ? nestedListId : undefined}
       >
         {children}
       </ListBody>

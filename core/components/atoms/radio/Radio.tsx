@@ -65,12 +65,26 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forw
     className,
     helpText,
     error,
+    id: idProp,
     'aria-label': ariaLabel,
     'aria-labelledby': ariaLabelledBy,
+    'aria-describedby': ariaDescribedBy,
     ...rest
   } = props;
 
   const ref = React.useRef<HTMLInputElement>(null);
+
+  const generatedIdRef = React.useRef<string | null>(null);
+  if (generatedIdRef.current === null) {
+    generatedIdRef.current = `${name}-${label}-${uidGenerator()}`;
+  }
+  const resolvedId = idProp || generatedIdRef.current;
+
+  const helpTextIdRef = React.useRef<string | null>(null);
+  if (helpTextIdRef.current === null) {
+    helpTextIdRef.current = `Radio-helpText-${uidGenerator()}`;
+  }
+  const helpTextId = helpTextIdRef.current;
 
   React.useImperativeHandle(forwardedRef, (): HTMLInputElement => {
     return ref.current as HTMLInputElement;
@@ -100,7 +114,8 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forw
     [styles['Radio-Label']]: true,
   });
 
-  const id = `${name}-${label}-${uidGenerator()}`;
+  const describedBy = [ariaDescribedBy, helpText ? helpTextId : undefined].filter(Boolean).join(' ') || undefined;
+
   return (
     <div className={RadioClass} data-test="DesignSystem-Radio">
       <div className={RadioOuterWrapper} data-test="DesignSystem-Radio-OuterWrapper">
@@ -115,24 +130,31 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forw
           value={value}
           onChange={onChange}
           className={styles['Radio-input']}
-          id={id}
+          id={resolvedId}
           data-test="DesignSystem-Radio-Input"
           aria-label={ariaLabel}
           aria-labelledby={ariaLabelledBy}
+          aria-invalid={error ? true : undefined}
+          aria-describedby={describedBy}
           {...rest}
         />
         <span data-test="DesignSystem-Radio-wrapper" className={RadioWrapper} />
       </div>
       <div className={styles['Radio-labelWrapper']}>
         {label && (
-          <label className={RadioLabelClass} htmlFor={id} data-test="DesignSystem-Radio-Label">
+          <label className={RadioLabelClass} htmlFor={resolvedId} data-test="DesignSystem-Radio-Label">
             <Text size={size === 'tiny' ? 'small' : 'regular'} appearance={disabled ? 'disabled' : 'default'}>
               {label}
             </Text>
           </label>
         )}
         {helpText && (
-          <Text data-test="DesignSystem-Radio-HelpText" size="small" appearance={disabled ? 'disabled' : 'subtle'}>
+          <Text
+            id={helpTextId}
+            data-test="DesignSystem-Radio-HelpText"
+            size="small"
+            appearance={disabled ? 'disabled' : 'subtle'}
+          >
             {helpText.trim()}
           </Text>
         )}

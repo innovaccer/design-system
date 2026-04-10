@@ -7,6 +7,8 @@ import styles from '@css/components/selectionCard.module.css';
 
 type ClickEventType = React.MouseEvent<HTMLDivElement> | React.KeyboardEvent;
 
+export type SelectionCardMode = 'single' | 'multiple';
+
 export interface SelectionCardProps extends BaseProps, BaseHtmlProps<HTMLDivElement> {
   /**
    * Element to be render inside card
@@ -36,10 +38,28 @@ export interface SelectionCardProps extends BaseProps, BaseHtmlProps<HTMLDivElem
    * Defines if card is selected
    */
   selected?: boolean;
+  /**
+   * Controls the ARIA role of the card.
+   * Use `'single'` for mutually exclusive selection (exposes `role="radio"`)
+   * and `'multiple'` for independent selection (exposes `role="checkbox"`).
+   * @default "multiple"
+   */
+  selectionMode?: SelectionCardMode;
 }
 
 export const SelectionCard = (props: SelectionCardProps) => {
-  const { children, onClick, disabled, id, cardValue, overlayZIndex, selected, className, ...rest } = props;
+  const {
+    children,
+    onClick,
+    disabled,
+    id,
+    cardValue,
+    overlayZIndex,
+    selected,
+    className,
+    selectionMode = 'multiple',
+    ...rest
+  } = props;
 
   const classes = classNames(
     {
@@ -69,7 +89,7 @@ export const SelectionCard = (props: SelectionCardProps) => {
 
   return (
     <div
-      role="checkbox"
+      role={selectionMode === 'single' ? 'radio' : 'checkbox'}
       aria-checked={selected}
       tabIndex={disabled ? -1 : 0}
       onKeyDown={onKeyDownHandler}

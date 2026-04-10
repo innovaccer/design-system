@@ -88,7 +88,7 @@ export interface SelectTriggerProps extends BaseProps {
 const SelectTrigger = (props: SelectTriggerProps) => {
   const {
     triggerSize = 'regular',
-    'aria-label': ariaLabel = 'Select trigger',
+    'aria-label': ariaLabel,
     placeholder,
     withClearButton,
     icon,
@@ -194,6 +194,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
         aria-expanded={openPopover}
         aria-haspopup="listbox"
         aria-label={ariaLabel}
+        aria-invalid={ariaInvalid ?? (error ? true : undefined)}
         data-test="DesignSystem-Select-trigger"
         {...rest}
       >
@@ -221,16 +222,23 @@ const SelectTrigger = (props: SelectTriggerProps) => {
           </div>
         }
         {isOptionSelected && withClearButton && (
-          <button
-            type="button"
+          <div
+            role="button"
+            tabIndex={0}
             className={iconClass}
             onClick={onClearHandler}
-            onKeyDown={(e) => e.stopPropagation()}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                onClearHandler(e as unknown as React.MouseEvent<HTMLElement>);
+              }
+              e.stopPropagation();
+            }}
             aria-label="clear selected"
             data-test="DesignSystem-Select--closeIcon"
           >
             <Icon appearance={buttonDisabled} size={12} name="close" type={iconType} aria-hidden={true} />
-          </button>
+          </div>
         )}
 
         <Icon appearance={buttonDisabled} name={iconName} type={iconType} />
@@ -239,10 +247,9 @@ const SelectTrigger = (props: SelectTriggerProps) => {
   );
 };
 
-/* eslint-enable jsx-a11y/role-supports-aria-props */
-
 SelectTrigger.defaultProps = {
   triggerSize: 'regular',
+  'aria-label': undefined,
   placeholder: 'Select',
   withClearButton: true,
 };

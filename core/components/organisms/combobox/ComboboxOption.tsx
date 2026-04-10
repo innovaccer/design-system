@@ -55,6 +55,7 @@ export const ComboboxOption = (props: ComboboxOptionProps) => {
   const {
     onOptionClick,
     inputValue,
+    chipInputValue,
     focusedOption,
     setFocusedOption,
     setOpenPopover,
@@ -95,11 +96,15 @@ export const ComboboxOption = (props: ComboboxOptionProps) => {
     );
   };
 
+  const isSelected = multiSelect
+    ? chipInputValue?.some((chip) => chip.label === option.label) ?? false
+    : option.label === inputValue?.label;
+
   return (
     <Listbox.Item
       {...rest}
       onClick={onClickHandler}
-      selected={option.label === inputValue?.label}
+      selected={isSelected}
       onFocus={handleFocus}
       onBlur={onBlur}
       onKeyDown={onKeyDownHandler}

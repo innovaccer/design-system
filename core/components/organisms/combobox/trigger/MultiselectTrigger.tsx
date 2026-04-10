@@ -4,6 +4,7 @@ import { Chip, Icon } from '@/index';
 import { ChipProps } from '@/index.type';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { OptionType } from '@/common.type';
+import uidGenerator from '@/utils/uidGenerator';
 import styles from '@css/components/chipInput.module.css';
 import inputStyles from '@css/components/input.module.css';
 
@@ -142,6 +143,12 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
   const customRef = React.useRef<any>();
   const inputElementRef = (forwardedInputRef || localInputRef) as React.RefObject<HTMLInputElement>;
 
+  const inputIdRef = React.useRef<string | null>(null);
+  if (inputIdRef.current === null) {
+    inputIdRef.current = `MultiSelectTrigger-input-${uidGenerator()}`;
+  }
+  const inputId = inputIdRef.current;
+
   const [chips, setChips] = React.useState<OptionType[]>(value || defaultValue);
   const [inputValue, setInputValue] = React.useState('');
 
@@ -267,18 +274,6 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
     onInputChange && onInputChange(event);
   };
 
-  const onClickHandler = () => {
-    inputElementRef.current?.focus();
-  };
-  const handleTriggerKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
-    if (disabled || event.currentTarget !== event.target) return;
-
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault();
-      onClickHandler();
-    }
-  };
-
   const chipComponents = chips.map((chip, index) => {
     const { type = 'input', onClick, clearButton, ...rest } = chipOptions;
 
@@ -307,20 +302,14 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
 
   return (
     <div data-test="DesignSystem-MultiSelectTrigger--Border" className={ChipInputBorderClass}>
-      <div
-        data-test="DesignSystem-MultiSelectTrigger"
-        {...baseProps}
-        className={ChipInputClass}
-        onClick={onClickHandler}
-        onKeyDown={handleTriggerKeyDown}
-        tabIndex={disabled ? -1 : tabIndex !== undefined ? tabIndex : 0}
-        role="button"
-        aria-disabled={disabled || undefined}
-      >
+      {/* Native <label> forwards clicks anywhere in the chip area to the inner input
+          without needing an onClick handler or keyboard listener on the wrapper */}
+      <label data-test="DesignSystem-MultiSelectTrigger" {...baseProps} htmlFor={inputId} className={ChipInputClass}>
         <div className={styles['ChipInput-wrapper']} ref={customRef}>
           {chips && chips.length > 0 && chipComponents}
           <input
             {...rest}
+            id={inputId}
             data-test="DesignSystem-MultiSelectTrigger--Input"
             ref={inputElementRef}
             className={styles['ChipInput-input']}
@@ -361,7 +350,7 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
             <Icon name="close" size={16} className={classNames(inputStyles['Input-icon--right'], 'p-3')} />
           </div>
         )}
-      </div>
+      </label>
     </div>
   );
 });

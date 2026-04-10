@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { Checkbox, Radio, Label } from '@/index';
 import { BaseProps } from '@/utils/types';
 import { ChangeEvent } from '@/common.type';
+import uidGenerator from '@/utils/uidGenerator';
 import styles from '@css/components/choiceList.module.css';
 
 export type ChoiceListAlignment = 'horizontal' | 'vertical';
@@ -234,6 +235,13 @@ export const ChoiceList = (props: ChoiceListProps) => {
   } = props;
   const { selected = [] } = props;
   let selectedChoiceValue = (selected && selected) || [];
+
+  const titleIdRef = React.useRef<string | null>(null);
+  if (titleIdRef.current === null) {
+    titleIdRef.current = `ChoiceList-title-${uidGenerator()}`;
+  }
+  const titleId = titleIdRef.current;
+
   const ChoiceListClass = classNames(
     {
       [styles['ChoiceList']]: true,
@@ -272,9 +280,13 @@ export const ChoiceList = (props: ChoiceListProps) => {
         className={ChoiceListClass}
         data-test="DesignSystem-ChoiceList-Wrapper"
         aria-label={ariaLabel}
-        aria-labelledby={ariaLabelledBy}
+        aria-labelledby={ariaLabelledBy || (title && title.trim() && !ariaLabel ? titleId : undefined)}
       >
-        {title && title.trim() && <Label withInput={true}>{title.trim()}</Label>}
+        {title && title.trim() && (
+          <Label id={titleId} withInput={true}>
+            {title.trim()}
+          </Label>
+        )}
         {allowMultiple ? (
           <div className={`${alignment === 'horizontal' ? ChoiceHorizontalClass : ChoiceListVerticalClass}`}>
             {renderCheckbox(choices, handleOnChange, disabled, size, alignment, selected, wrapLabel)}

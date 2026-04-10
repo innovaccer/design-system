@@ -38,7 +38,15 @@ export const DraggableList = (props: ListboxInternalProps) => {
         );
       }}
       renderList={({ children, props: dragProps }) => (
-        <Tag data-test="DesignSystem-Listbox" {...baseProps} className={classes} tabIndex={-1} {...rest} {...dragProps}>
+        <Tag
+          data-test="DesignSystem-Listbox"
+          {...baseProps}
+          className={classes}
+          tabIndex={-1}
+          role={rest.role ?? 'listbox'}
+          {...rest}
+          {...dragProps}
+        >
           {children}
         </Tag>
       )}
