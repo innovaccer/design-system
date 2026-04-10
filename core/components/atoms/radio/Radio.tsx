@@ -134,7 +134,6 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forw
           data-test="DesignSystem-Radio-Input"
           aria-label={ariaLabel}
           aria-labelledby={ariaLabelledBy}
-          aria-invalid={error ? true : undefined}
           aria-describedby={describedBy}
           {...rest}
         />
