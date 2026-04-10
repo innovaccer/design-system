@@ -70,9 +70,8 @@
   color: var(--primary-lighter);
 }
 
-.LinkButton--default:disabled .LinkButton-infoIcon,
-.LinkButton--default[aria-disabled='true'] .LinkButton-infoIcon {
-  color: var(--primary);
+.LinkButton--default .LinkButton-infoIcon {
+  color: var(--text-link);
 }
 
 /* Subtle Appearance */
@@ -101,30 +100,62 @@
   color: var(--inverse-lightest);
 }
 
-.LinkButton--subtle:disabled .LinkButton-infoIcon,
-.LinkButton--subtle[aria-disabled='true'] .LinkButton-infoIcon {
+.LinkButton--subtle .LinkButton-infoIcon {
   color: var(--inverse-light); /* Or appropriate subtle icon color */
 }
 
-.LinkButton-infoIcon {
-  color: var(--text-subtle);
+/* Disabled + tooltip info affordance — matches Figma 01 Link (node 85848:11523) */
+.LinkButton-infoIconWrapper {
+  position: absolute;
+  top: -5px;
+  right: -11px;
+  width: 12px;
+  height: 12px;
+  box-sizing: border-box;
+  border-radius: var(--border-radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: none;
+  background: transparent;
   pointer-events: none;
 }
 
-.LinkButton-infoIcon--iconOnly {
-  position: absolute;
-  top: 0;
-  right: 0;
+.LinkButton-infoIconWrapper--iconOnly {
+  top: -3px;
+  right: -3px;
 }
 
-.LinkButton-infoIcon--left,
-.LinkButton-infoIcon--right {
-  margin-left: var(--spacing-10);
+.LinkButton--tiny .LinkButton-infoIconWrapper:not(.LinkButton-infoIconWrapper--iconOnly) {
+  top: -4px;
+  right: -11px;
 }
 
-.LinkButton--tiny .LinkButton-infoIcon--left,
-.LinkButton--tiny .LinkButton-infoIcon--right {
-  margin-left: var(--spacing-10);
+.LinkButton--tiny .LinkButton-infoIconWrapper--iconOnly {
+  top: -2px;
+  right: -2px;
+}
+
+/* Reserve space for protruding info affordance; shift icon left by same amount to keep visual position */
+.LinkButton--withInfoAffordance {
+  padding-right: var(--spacing-20);
+}
+
+.LinkButton--withInfoAffordance .LinkButton-infoIconWrapper:not(.LinkButton-infoIconWrapper--iconOnly) {
+  right: calc(-11px + var(--spacing-20));
+}
+
+.LinkButton--withInfoAffordance .LinkButton-infoIconWrapper--iconOnly {
+  right: calc(-3px + var(--spacing-20));
+}
+
+.LinkButton--withInfoAffordance.LinkButton--tiny .LinkButton-infoIconWrapper--iconOnly {
+  right: calc(-2px + var(--spacing-20));
+}
+
+.LinkButton-infoIcon {
+  color: inherit;
 }
 
 .LinkButton-srOnly {

@@ -254,41 +254,27 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
         </>
       ) : (
         <>
-          {showInfoAffordance && children && iconAlign === 'right' && (
-            <Icon
-              name="info_outline"
-              type="outlined"
-              size={iconSize}
-              className={classNames(styles['Button-infoIcon'], styles['Button-infoIcon--right'])}
-              aria-hidden="true"
-              data-test="DesignSystem-Button--Info-Icon"
-            />
-          )}
           {icon && (
             <div className={iconClass} data-test="DesignSystem-Button--Icon-Wrapper">
               <Icon data-test="DesignSystem-Button--Icon" name={icon} type={iconType} size={iconSize} />
             </div>
           )}
           {children && <span className={styles['Button-text']}>{children}</span>}
-          {showInfoAffordance && children && iconAlign === 'left' && (
-            <Icon
-              name="info_outline"
-              type="outlined"
-              size={iconSize}
-              className={classNames(styles['Button-infoIcon'], styles['Button-infoIcon--left'])}
-              aria-hidden="true"
-              data-test="DesignSystem-Button--Info-Icon"
-            />
-          )}
-          {showInfoAffordance && !children && (
-            <Icon
-              name="info_outline"
-              type="outlined"
-              size={12}
-              className={classNames(styles['Button-infoIcon'], styles['Button-infoIcon--iconOnly'])}
-              aria-hidden="true"
-              data-test="DesignSystem-Button--Info-Icon"
-            />
+          {showInfoAffordance && (
+            <span
+              className={classNames(styles['Button-infoIconWrapper'], {
+                [styles['Button-infoIconWrapper--iconOnly']]: !children,
+              })}
+            >
+              <Icon
+                name="info_outline"
+                type="outlined"
+                size={12}
+                className={styles['Button-infoIcon']}
+                aria-hidden="true"
+                data-test="DesignSystem-Button--Info-Icon"
+              />
+            </span>
           )}
         </>
       )}
@@ -305,7 +291,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
   const { tooltip } = props;
 
   return tooltip ? (
-    <Tooltip tooltip={tooltip} aria-hidden="true">
+    <Tooltip tooltip={tooltip} aria-hidden="true" triggerClass="flex-grow-0">
       <ButtonElement {...props} ref={ref} />
     </Tooltip>
   ) : (

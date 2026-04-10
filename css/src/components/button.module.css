@@ -152,9 +152,8 @@
   background: var(--primary-lighter);
 }
 
-.Button--primary:disabled .Button-infoIcon,
-.Button--primary[aria-disabled='true'] .Button-infoIcon {
-  color: var(--primary);
+.Button--primary .Button-infoIcon {
+  color: var(--text-link);
 }
 
 .Button--success {
@@ -174,9 +173,8 @@
   background: var(--primary-lighter);
 }
 
-.Button--success:disabled .Button-infoIcon,
-.Button--success[aria-disabled='true'] .Button-infoIcon {
-  color: var(--primary);
+.Button--success .Button-infoIcon {
+  color: var(--text-link);
 }
 
 .Button--alert {
@@ -196,9 +194,8 @@
   background: var(--alert-lighter);
 }
 
-.Button--alert:disabled .Button-infoIcon,
-.Button--alert[aria-disabled='true'] .Button-infoIcon {
-  color: var(--alert-dark);
+.Button--alert .Button-infoIcon {
+  color: var(--alert);
 }
 
 .Button--transparent {
@@ -277,25 +274,63 @@
   text-overflow: ellipsis;
 }
 
-.Button-infoIcon {
-  color: var(--text-subtle);
+.Button-infoIconWrapper {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  width: 12px;
+  height: 12px;
+  box-sizing: border-box;
+  border-radius: var(--border-radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: var(--border-width-2-5) solid var(--secondary-lightest);
   pointer-events: none;
 }
 
-.Button-infoIcon--iconOnly {
-  position: absolute;
-  top: 0;
-  right: 0;
+/* No background, no border for transparent */
+.Button--transparent .Button-infoIconWrapper {
+  border: none;
+  background: transparent;
+  top: 1px;
+  right: 1px;
 }
 
-.Button-infoIcon--left,
-.Button-infoIcon--right {
-  margin-left: var(--spacing-15);
+.Button--transparent .Button-infoIconWrapper--iconOnly {
+  top: 1px;
+  right: 1px;
 }
 
-.Button--tiny .Button-infoIcon--left,
-.Button--tiny .Button-infoIcon--right {
-  margin-left: var(--spacing-10);
+/* Solid fill masks button outline */
+.Button-outlined--basic .Button-infoIconWrapper {
+  background: var(--secondary-lightest);
+}
+
+.Button-outlined--primary .Button-infoIconWrapper {
+  background: var(--primary-ultra-light);
+}
+
+.Button-outlined--alert .Button-infoIconWrapper {
+  background: var(--alert-ultra-light);
+}
+
+.Button--basic .Button-infoIconWrapper {
+  background: var(--secondary-lighter);
+}
+
+.Button--primary .Button-infoIconWrapper,
+.Button--success .Button-infoIconWrapper {
+  background: var(--primary-lightest);
+}
+
+.Button--alert .Button-infoIconWrapper {
+  background: var(--alert-lightest);
+}
+
+.Button-infoIcon {
+  color: var(--text-subtle);
 }
 
 /* outlined button styles */
@@ -399,9 +434,8 @@
   box-shadow: inset 0 0 0 1px var(--primary-lighter);
 }
 
-.Button-outlined--primary:disabled .Button-infoIcon,
-.Button-outlined--primary[aria-disabled='true'] .Button-infoIcon {
-  color: var(--primary);
+.Button-outlined--primary .Button-infoIcon {
+  color: var(--text-link);
 }
 
 .Button-outlined--alert {
@@ -435,9 +469,8 @@
   box-shadow: inset 0 0 0 1px var(--alert-lighter);
 }
 
-.Button-outlined--alert:disabled .Button-infoIcon,
-.Button-outlined--alert[aria-disabled='true'] .Button-infoIcon {
-  color: var(--alert-dark);
+.Button-outlined--alert .Button-infoIcon {
+  color: var(--alert);
 }
 
 .Button-srOnly {

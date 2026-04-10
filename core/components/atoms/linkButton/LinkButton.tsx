@@ -136,12 +136,15 @@ const LinkButtonElement = React.forwardRef<HTMLButtonElement, LinkButtonProps>((
     }
   };
 
+  const showInfoAffordance = disabled && tooltip;
+
   const buttonClass = classNames({
     [styles['LinkButton']]: true,
     [styles[`LinkButton--${size}`]]: size,
     [styles['LinkButton--default']]: !subtle,
     [styles['LinkButton--subtle']]: subtle,
     [styles[`LinkButton--iconAlign-${iconAlign}`]]: children && iconAlign,
+    [styles['LinkButton--withInfoAffordance']]: showInfoAffordance,
     [`${className}`]: className,
   });
 
@@ -151,7 +154,6 @@ const LinkButtonElement = React.forwardRef<HTMLButtonElement, LinkButtonProps>((
   });
 
   const iconSize = size && sizeMapping[size];
-  const showInfoAffordance = disabled && tooltip;
 
   return (
     <button
@@ -169,41 +171,27 @@ const LinkButtonElement = React.forwardRef<HTMLButtonElement, LinkButtonProps>((
       onKeyDown={handleKeyDown}
     >
       <>
-        {showInfoAffordance && children && iconAlign === 'right' && (
-          <Icon
-            name="info_outline"
-            type="outlined"
-            size={iconSize}
-            className={classNames(styles['LinkButton-infoIcon'], styles['LinkButton-infoIcon--right'])}
-            aria-hidden="true"
-            data-test="DesignSystem-LinkButton--Info-Icon"
-          />
-        )}
         {icon && (
           <div className={iconClass}>
             <Icon data-test="DesignSystem-LinkButton--Icon" name={icon} type={iconType} size={iconSize} />
           </div>
         )}
         {children}
-        {showInfoAffordance && children && iconAlign === 'left' && (
-          <Icon
-            name="info_outline"
-            type="outlined"
-            size={iconSize}
-            className={classNames(styles['LinkButton-infoIcon'], styles['LinkButton-infoIcon--left'])}
-            aria-hidden="true"
-            data-test="DesignSystem-LinkButton--Info-Icon"
-          />
-        )}
-        {showInfoAffordance && !children && (
-          <Icon
-            name="info_outline"
-            type="outlined"
-            size={12}
-            className={classNames(styles['LinkButton-infoIcon'], styles['LinkButton-infoIcon--iconOnly'])}
-            aria-hidden="true"
-            data-test="DesignSystem-LinkButton--Info-Icon"
-          />
+        {showInfoAffordance && (
+          <span
+            className={classNames(styles['LinkButton-infoIconWrapper'], {
+              [styles['LinkButton-infoIconWrapper--iconOnly']]: !children,
+            })}
+          >
+            <Icon
+              name="info_outline"
+              type="outlined"
+              size={12}
+              className={styles['LinkButton-infoIcon']}
+              aria-hidden="true"
+              data-test="DesignSystem-LinkButton--Info-Icon"
+            />
+          </span>
         )}
       </>
       {tooltip && !isIconOnly && (
@@ -219,7 +207,7 @@ export const LinkButton = React.forwardRef<HTMLButtonElement, LinkButtonProps>((
   const { tooltip } = props;
 
   return tooltip ? (
-    <Tooltip tooltip={tooltip} aria-hidden="true">
+    <Tooltip tooltip={tooltip} aria-hidden="true" triggerClass="flex-grow-0">
       <LinkButtonElement {...props} ref={ref} />
     </Tooltip>
   ) : (
