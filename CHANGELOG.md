@@ -1,3 +1,84 @@
+## 4.23.0 (2026-04-10)
+
+### Highlights
+
+- Extended WCAG 2.2 AA accessibility coverage across Dropdown, ChipInput, Input, Navigation, Editable, Listbox, Radio, Calendar, Select, Combobox, and Menu with comprehensive keyboard accessibility and ARIA attributes; 
+- introduced jest-axe testing tool for automated accessibility validation.
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat: add jest-axe testing tool for wcag accessibility (cf86684b8)
+- feat(Sidesheet, Modal): add aria-label to close button for accessibility (8566c13be)
+- feat(Dropdown): enhance Dropdown Accessibility and Visual Feedback (cc553f989)
+- feat(input): add clearButtonAriaLabel prop and related tests (0a457efa5)
+- feat(navigation): enhance accessibility with aria attributes and improve footer button accessibility (50bea9370)
+- feat(editable): keyboard axe for Editable family (a935362e5)
+- feat(listbox): add visual indicator for selected items (92c7e6662)
+- feat(radio): add accessibility warnings and aria attributes for Radio component (47c9f5862)
+- feat(a11y): add a11y prop table for ChoiceList, Select, and Segmented Control components (82b08dc62)
+- feat(Calendar): add a11y support in Calendar component (b2ec1a0d4)
+- feat(select, listbox, combobox, menu): add comprehensive keyboard accessibility (320ff2563)
+- feat(label): small size padding update (cde54effe)
+
+### Fixes
+
+- fix(chip-input): align clear action button (4730bedd8)
+- fix(AIChip): add sara sparkle for a11y (bae7fbc1e)
+- fix(chip): add aria attributes for close icon in chip (47ff27f2d)
+- fix(modal): update keyboard navigation (d3c43feef)
+- fix(Label): add aria-hidden to required dot and sr-only text for screen (3fd16946c)
+- fix(Textarea): forward readOnly prop to native textarea DOM element (d277e9c8c)
+- fix(StatusHint): add aria-label to status icon, hide skeletons from AT (0c2bd0d03)
+- fix(Link): render as button when href is not provided (f0d7e6a26)
+- fix(dropdown): update prop table for dropdown (e94a7f728)
+- fix(horizontalNav): adjust outline offset for active navigational item focus state (02db6a2a2)
+- fix(input): add aria attributes for error handling and inline label association (ecf9f09fe)
+- fix(Slider): add aria-labelledby to associate label with slider controls (b5c88df37)
+- fix(Checkbox): add accessible name requirement with aria-label & aria-labelledby support (181b4e865)
+- fix(Toast): use semantic button for close & fix keyboard accessibility (7a1f29dc4)
+- fix(Spinner): add aria-labelledby prop for accessible naming (acc7ef20f)
+- fix(Avatar): remove duplicate image semantics (78eabaf23)
+- fix(caption): add aria props support (374b18695)
+- fix(Pagination): accessible name and description for jump input (0f9f082ff)
+- fix(FileUploader): associate file input with descriptive text and announce dynamic updates (350ea2414)
+- fix(Toast): replace raw button with Button component for close icon (0a2f6ff49)
+- fix(metalist): add aria-hidden is true (0f728ae28)
+- fix(dropzone): add arial label for file input (ca94a69c1)
+- fix(Stepper): add aria-labels to step buttons for accessibility (852017173)
+- fix(linkbutton): add aria label to icon (8b34bd2f8)
+- fix(VerificationCodeInput): generate unique IDs per input field (8fa826c0c)
+- fix(Calendar): prevent selection of disabled values and fix keyboard boundaries (b3573369e)
+- fix(VerticalNav): resolve click regression and focus visibility (d7032a2c6)
+- fix(scrollbar): use native browser scrollbar (4a14c1cfd)
+- fix(chipInput): update clear icon to match Input component pattern (d2e2411a3)
+
+### Improvements
+
+- chore: update security vulnerabilities (8e5bd3998)
+- chore: update contributor list (8de7b068f)
+- chore: update lint rules & types checking (356707105)
+- chore: update test cases (80f814599)
+- chore: remove eslint warnings (a921e3ab9)
+- style(editableChipInput): update clear icon and remove error focus halo (897e264dd)
+
+### Documentation
+
+- docs(contributors): add contributor entries (2ae760dbb)
+
+---
+
 ## 4.22.0 (2026-03-30)
 
 ### Highlights
