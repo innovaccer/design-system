@@ -1564,7 +1564,6 @@ exports[`TS renders children 1`] = `
       style="min-width: 256px;"
     >
       <input
-        aria-describedby="InputMask-helpText-Test-uid"
         autocomplete="off"
         class="Input-input Input-input--regular"
         data-test="DesignSystem-Input"

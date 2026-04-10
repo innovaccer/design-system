@@ -149,7 +149,6 @@ exports[`Combobox component snapshots
                   placeholder=",s,e,l,e,c,t, ,a,n, ,o,p,t,i,o,n"
                   role="combobox"
                   style="flex-basis: 0px;"
-                  tabindex="-1"
                   value=""
                 />
               </div>
@@ -197,7 +196,6 @@ exports[`Combobox component snapshots
                   placeholder=",s,e,l,e,c,t, ,a,n, ,o,p,t,i,o,n"
                   role="combobox"
                   style="flex-basis: 0px;"
-                  tabindex="-1"
                   value=""
                 />
               </div>
@@ -245,7 +243,6 @@ exports[`Combobox component snapshots
                   placeholder=",s,e,l,e,c,t, ,a,n, ,o,p,t,i,o,n"
                   role="combobox"
                   style="flex-basis: 0px;"
-                  tabindex="-1"
                   value=""
                 />
               </div>
