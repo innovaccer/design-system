@@ -168,6 +168,7 @@ export const ChipInput = (props: ChipInputProps) => {
     {
       [styles.ChipInput]: true,
       [styles['ChipInput--disabled']]: disabled,
+      [styles['ChipInput--withChips']]: chips && chips.length > 0,
       [styles['ChipInput--error']]: error,
       [styles[`ChipInput--${size}`]]: size,
     },
@@ -189,6 +190,8 @@ export const ChipInput = (props: ChipInputProps) => {
   const iconWrapperClass = classNames({
     [inputStyles['Input-icon']]: true,
     [inputStyles['Input-iconWrapper--right']]: true,
+    ['pr-3']: size === 'small',
+    ['pr-3-5']: size === 'regular',
   });
 
   const iconClass = classNames({

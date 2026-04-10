@@ -10,7 +10,7 @@ exports[`ChipInput component
       data-test="DesignSystem-ChipInput--Border"
     >
       <div
-        class="ChipInput ChipInput--regular"
+        class="ChipInput ChipInput--withChips ChipInput--regular"
         data-test="DesignSystem-ChipInput"
       >
         <div
@@ -95,7 +95,7 @@ exports[`ChipInput component
         </div>
         <div
           aria-label="Clear all"
-          class="Input-icon Input-iconWrapper--right align-self-center flex-shrink-0"
+          class="Input-icon Input-iconWrapper--right pr-3-5 align-self-center flex-shrink-0"
           data-test="DesignSystem-ChipInput--Icon"
           role="button"
           tabindex="0"
@@ -124,7 +124,7 @@ exports[`ChipInput component
       data-test="DesignSystem-ChipInput--Border"
     >
       <div
-        class="ChipInput ChipInput--disabled ChipInput--regular"
+        class="ChipInput ChipInput--disabled ChipInput--withChips ChipInput--regular"
         data-test="DesignSystem-ChipInput"
       >
         <div
@@ -211,7 +211,7 @@ exports[`ChipInput component
         <div
           aria-disabled="true"
           aria-label="Clear all"
-          class="Input-icon Input-iconWrapper--right align-self-center flex-shrink-0"
+          class="Input-icon Input-iconWrapper--right pr-3-5 align-self-center flex-shrink-0"
           data-test="DesignSystem-ChipInput--Icon"
           role="button"
           tabindex="-1"
@@ -240,7 +240,7 @@ exports[`ChipInput component
       data-test="DesignSystem-ChipInput--Border"
     >
       <div
-        class="ChipInput ChipInput--error ChipInput--regular"
+        class="ChipInput ChipInput--withChips ChipInput--error ChipInput--regular"
         data-test="DesignSystem-ChipInput"
       >
         <div
@@ -325,7 +325,7 @@ exports[`ChipInput component
         </div>
         <div
           aria-label="Clear all"
-          class="Input-icon Input-iconWrapper--right align-self-center flex-shrink-0"
+          class="Input-icon Input-iconWrapper--right pr-3-5 align-self-center flex-shrink-0"
           data-test="DesignSystem-ChipInput--Icon"
           role="button"
           tabindex="0"
