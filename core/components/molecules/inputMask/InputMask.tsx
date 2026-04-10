@@ -396,7 +396,9 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
   const isValueEqualPlaceholder = value === defaultPlaceholderValue;
 
   const existingDescribedBy = rest['aria-describedby'];
-  const resolvedDescribedBy = [existingDescribedBy, helpTextId].filter(Boolean).join(' ') || undefined;
+  const helpMessage = error ? caption : helpText;
+  const resolvedDescribedBy =
+    [existingDescribedBy, helpMessage ? helpTextId : undefined].filter(Boolean).join(' ') || undefined;
 
   return (
     <div className={classes} data-test="DesignSystem-InputMask--Wrapper">

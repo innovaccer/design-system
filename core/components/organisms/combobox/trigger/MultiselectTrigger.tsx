@@ -362,7 +362,6 @@ MultiSelectTrigger.defaultProps = {
   defaultValue: [],
   allowDuplicates: false,
   autoFocus: false,
-  tabIndex: -1,
 };
 
 export default MultiSelectTrigger;
