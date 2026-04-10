@@ -54,7 +54,7 @@ export interface ButtonProps extends BaseProps, BaseHtmlProps<HTMLButtonElement>
    */
   loading?: boolean;
   /**
-   * Adds title to `Button` when only icon is present
+   * Text to be displayed in the tooltip. For disabled buttons, it additionally renders an info affordance icon. For icon-only buttons, it serves as the accessible label.
    */
   tooltip?: string;
   /**

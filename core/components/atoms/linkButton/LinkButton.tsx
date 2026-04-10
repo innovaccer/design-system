@@ -25,7 +25,7 @@ export interface LinkButtonProps extends BaseProps, BaseHtmlProps<HTMLButtonElem
    */
   disabled?: boolean;
   /**
-   * Adds title to `Button` when only icon is present
+   * Text to be displayed in the tooltip. For disabled buttons, it additionally renders an affordance icon.
    */
   tooltip?: string;
   /**
