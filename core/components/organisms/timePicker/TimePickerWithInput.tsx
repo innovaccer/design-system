@@ -117,7 +117,7 @@ export const TimePickerWithInput = (props: TimePickerInputProps) => {
       onClear={onClearHandler}
       onBlur={onBlurHandler}
       error={error}
-      aria-label={inputOptions['aria-label'] || props['aria-label'] || 'Time input'}
+      aria-label={inputOptions['aria-label'] || props['aria-label']}
       id="parent-TimePicker"
     />
   );

@@ -96,9 +96,12 @@ export const ComboboxOption = (props: ComboboxOptionProps) => {
     );
   };
 
-  const isSelected = multiSelect
-    ? chipInputValue?.some((chip) => chip.label === option.label) ?? false
-    : option.label === inputValue?.label;
+  const matchesOption = (chip: OptionType) => {
+    if (option.id !== undefined && chip.id !== undefined) return chip.id === option.id;
+    return chip.value === option.value;
+  };
+
+  const isSelected = multiSelect ? chipInputValue?.some(matchesOption) ?? false : option.value === inputValue?.value;
 
   return (
     <Listbox.Item

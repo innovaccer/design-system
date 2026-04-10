@@ -215,7 +215,7 @@ describe('TimePicker component with error state true', () => {
 
 describe('TimePicker component a11y', () => {
   it('has no detectable a11y violations', async () => {
-    const { container } = render(<TimePicker />);
+    const { container } = render(<TimePicker aria-label="Time" />);
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
