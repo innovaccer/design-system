@@ -113,6 +113,7 @@ const LinkButtonElement = React.forwardRef<HTMLButtonElement, LinkButtonProps>((
 
   const useAriaDisabled = Boolean(disabled && tooltip);
   const nativeDisabled = useAriaDisabled ? undefined : disabled;
+  const renderedType = useAriaDisabled && type === 'submit' ? 'button' : type;
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>) => {
     if (useAriaDisabled && (event.key === 'Enter' || event.key === ' ')) {
@@ -158,7 +159,7 @@ const LinkButtonElement = React.forwardRef<HTMLButtonElement, LinkButtonProps>((
   return (
     <button
       ref={ref}
-      type={type}
+      type={renderedType}
       data-test="DesignSystem-LinkButton"
       className={buttonClass}
       disabled={nativeDisabled}

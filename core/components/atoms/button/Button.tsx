@@ -194,6 +194,7 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
   const isDisabledProp = disabled || loading;
   const useAriaDisabled = Boolean(isDisabledProp && tooltip);
   const nativeDisabled = useAriaDisabled ? undefined : isDisabledProp;
+  const renderedType = useAriaDisabled && type === 'submit' ? 'button' : type;
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>) => {
     if (useAriaDisabled && (event.key === 'Enter' || event.key === ' ')) {
@@ -226,7 +227,7 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
     <button
       data-test="DesignSystem-Button"
       ref={ref}
-      type={type}
+      type={renderedType}
       className={buttonClass}
       disabled={nativeDisabled}
       aria-disabled={useAriaDisabled ? true : undefined}
@@ -285,10 +286,11 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
 });
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
-  const { tooltip } = props;
+  const { tooltip, expanded } = props;
+  const triggerClass = expanded ? 'w-100' : 'flex-grow-0';
 
   return tooltip ? (
-    <Tooltip tooltip={tooltip} aria-hidden="true" triggerClass="flex-grow-0">
+    <Tooltip tooltip={tooltip} aria-hidden="true" triggerClass={triggerClass}>
       <ButtonElement {...props} ref={ref} />
     </Tooltip>
   ) : (
