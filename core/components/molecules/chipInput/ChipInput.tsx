@@ -344,7 +344,7 @@ export const ChipInput = (props: ChipInputProps) => {
         {chips.length > 0 && (
           <div
             data-test="DesignSystem-ChipInput--Icon"
-            className={classNames(iconWrapperClass, 'align-self-start', 'flex-shrink-0')}
+            className={classNames(iconWrapperClass, 'align-self-center', 'flex-shrink-0')}
             tabIndex={disabled ? -1 : 0}
             role="button"
             aria-label="Clear all"

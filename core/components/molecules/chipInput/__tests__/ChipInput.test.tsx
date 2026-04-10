@@ -187,6 +187,29 @@ describe('Uncontrolled ChipInput component', () => {
     expect(FunctionValue).toHaveBeenCalled();
     expect(queryAllByTestId('DesignSystem-ChipInput--Chip')).toHaveLength(newValue.length);
   });
+
+  it('keeps the clear action centered across visual states', () => {
+    const { getByTestId, rerender } = render(<ChipInput defaultValue={value} />);
+
+    let clearAction = getByTestId('DesignSystem-ChipInput--Icon');
+    expect(clearAction).toHaveClass('align-self-center');
+    expect(clearAction).not.toHaveClass('align-self-start');
+
+    rerender(<ChipInput defaultValue={value} size="small" />);
+    clearAction = getByTestId('DesignSystem-ChipInput--Icon');
+    expect(clearAction).toHaveClass('align-self-center');
+    expect(clearAction).not.toHaveClass('align-self-start');
+
+    rerender(<ChipInput defaultValue={value} error={true} />);
+    clearAction = getByTestId('DesignSystem-ChipInput--Icon');
+    expect(clearAction).toHaveClass('align-self-center');
+    expect(clearAction).not.toHaveClass('align-self-start');
+
+    rerender(<ChipInput defaultValue={value} disabled={true} />);
+    clearAction = getByTestId('DesignSystem-ChipInput--Icon');
+    expect(clearAction).toHaveClass('align-self-center');
+    expect(clearAction).not.toHaveClass('align-self-start');
+  });
 });
 
 describe('ChipInput component text transform', () => {
