@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { EditableInput } from '@/index';
 import { EditableInputProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -51,16 +52,15 @@ describe('EditableInput component', () => {
     expect(queryByTestId('DesignSystem-EditableInput--Actions')).not.toBeInTheDocument();
   });
 
-  it('renders input on hover', () => {
+  it('does not render input on hover', () => {
     const { getByTestId, queryByTestId } = render(<EditableInput placeholder={StringValue} onChange={onChange} />);
 
     const editableWrapper = getByTestId(editableWrapperTestId);
     fireEvent.mouseEnter(editableWrapper);
 
-    expect(queryByTestId(defaultCompTestId)).not.toBeInTheDocument();
-    expect(getByTestId(inputCompTestId)).toBeInTheDocument();
+    expect(getByTestId(defaultCompTestId)).toBeInTheDocument();
+    expect(queryByTestId(inputCompTestId)).not.toBeInTheDocument();
     expect(queryByTestId('DesignSystem-EditableInput--Actions')).not.toBeInTheDocument();
-    expect(queryByTestId(inputCompTestId)).toHaveAttribute('placeholder', StringValue);
   });
 
   it('renders default div on mouseLeave', () => {
@@ -69,8 +69,8 @@ describe('EditableInput component', () => {
     const editableWrapper = getByTestId(editableWrapperTestId);
 
     fireEvent.mouseEnter(editableWrapper);
-    expect(queryByTestId(defaultCompTestId)).not.toBeInTheDocument();
-    expect(getByTestId(inputCompTestId)).toBeInTheDocument();
+    expect(getByTestId(defaultCompTestId)).toBeInTheDocument();
+    expect(queryByTestId(inputCompTestId)).not.toBeInTheDocument();
 
     fireEvent.mouseLeave(editableWrapper);
     expect(getByTestId(defaultCompTestId)).toBeInTheDocument();
@@ -105,7 +105,7 @@ describe('EditableInput component with prop: size', () => {
     expect(getByTestId(defaultCompTestId)).toHaveClass('EditableInput-default--tiny');
 
     const editableWrapper = getByTestId(editableWrapperTestId);
-    fireEvent.mouseEnter(editableWrapper);
+    fireEvent.click(editableWrapper);
     expect(getByTestId(inputTestId)).toHaveClass('EditableInput-Input--tiny');
   });
 });
@@ -187,6 +187,43 @@ describe('EditableInput component with prop: error and errorMessage', () => {
     expect(getByTestId('DesignSystem-InlineMessage')).toBeInTheDocument();
     expect(queryByTestId('DesignSystem-InlineMessage--Description')).toHaveClass('InlineMessage-text--alert');
   });
+
+  it('renders error icon in default state when not editing', () => {
+    const { getByTestId, queryByTestId } = render(
+      <EditableInput placeholder={StringValue} onChange={onChange} error={true} value="Test Value" />
+    );
+
+    const defaultComp = getByTestId(defaultCompTestId);
+    const errorIcon = queryByTestId('DesignSystem-Icon');
+
+    expect(errorIcon).toBeInTheDocument();
+    expect(errorIcon).toHaveClass('Icon--alert');
+    expect(defaultComp).toContainElement(errorIcon);
+  });
+
+  it('does not render error icon when error is false', () => {
+    const { getByTestId, queryByTestId } = render(
+      <EditableInput placeholder={StringValue} onChange={onChange} error={false} value="Test Value" />
+    );
+
+    expect(getByTestId(defaultCompTestId)).toBeInTheDocument();
+    expect(queryByTestId('DesignSystem-Icon')).not.toBeInTheDocument();
+  });
+
+  it('shows error icon in input prefix when in edit mode with error', () => {
+    const { getByTestId, queryByTestId } = render(
+      <EditableInput placeholder={StringValue} onChange={onChange} error={true} value="Test Value" />
+    );
+
+    expect(queryByTestId('DesignSystem-Icon')).toBeInTheDocument();
+
+    const editableWrapper = getByTestId(editableWrapperTestId);
+    fireEvent.click(editableWrapper);
+
+    expect(queryByTestId(defaultCompTestId)).not.toBeInTheDocument();
+    expect(getByTestId(inputCompTestId)).toBeInTheDocument();
+    expect(queryByTestId('DesignSystem-Icon')).toBeInTheDocument();
+  });
 });
 
 describe('EditableInput Component with overwrite class', () => {
@@ -248,7 +285,7 @@ describe('EditableInput Component CSS Styling Tests - Size-specific Padding and 
       expect(defaultElement).toHaveClass('EditableInput-default--regular');
 
       const editableWrapper = getByTestId(editableWrapperTestId);
-      fireEvent.mouseEnter(editableWrapper);
+      fireEvent.click(editableWrapper);
 
       const inputWrapper = getByTestId(inputTestId);
       expect(inputWrapper).toBeInTheDocument();
@@ -262,7 +299,7 @@ describe('EditableInput Component CSS Styling Tests - Size-specific Padding and 
       expect(defaultElement).toHaveClass('EditableInput-default--tiny');
 
       const editableWrapper = getByTestId(editableWrapperTestId);
-      fireEvent.mouseEnter(editableWrapper);
+      fireEvent.click(editableWrapper);
 
       const inputWrapper = getByTestId(inputTestId);
       expect(inputWrapper).toBeInTheDocument();
@@ -305,7 +342,7 @@ describe('EditableInput Component CSS Styling Tests - Size-specific Padding and 
       expect(defaultElement.textContent).toBe('Test Value');
 
       const editableWrapper = getByTestId(editableWrapperTestId);
-      fireEvent.mouseEnter(editableWrapper);
+      fireEvent.click(editableWrapper);
 
       const inputWrapper = getByTestId(inputTestId);
       expect(inputWrapper).toHaveClass('EditableInput-Input--tiny');
@@ -323,7 +360,7 @@ describe('EditableInput Component CSS Styling Tests - Size-specific Padding and 
       expect(defaultElement.textContent).toBe('Test Value');
 
       const editableWrapper = getByTestId(editableWrapperTestId);
-      fireEvent.mouseEnter(editableWrapper);
+      fireEvent.click(editableWrapper);
 
       const inputWrapper = getByTestId(inputTestId);
       expect(inputWrapper).toBeInTheDocument();
@@ -346,5 +383,13 @@ describe('EditableInput Component CSS Styling Tests - Size-specific Padding and 
       expect(defaultElement).toHaveClass('EditableInput-default--tiny');
       expect(defaultElement).not.toHaveClass('EditableInput-default--regular');
     });
+  });
+});
+
+describe('EditableInput component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<EditableInput placeholder="Enter value" onChange={jest.fn()} />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

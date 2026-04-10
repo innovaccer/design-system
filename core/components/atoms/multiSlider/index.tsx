@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { Text, Label } from '@/index';
 import Handle, { HandleProps } from './Handle';
+import uidGenerator from '@/utils/uidGenerator';
 import {
   approxEqual,
   formatPercentage,
@@ -87,6 +88,7 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
 
   handleElements: Handle[] = [];
   trackElement: HTMLElement | null = null;
+  labelId = `slider-label-${uidGenerator()}`;
 
   constructor(props: InternalMultiSliderProps) {
     super(props);
@@ -281,6 +283,18 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
     return labelValue;
   };
 
+  getHandleAriaLabel = (index: number, totalHandles: number): string => {
+    const sliderLabel = this.props.label;
+    if (totalHandles === 1) {
+      return sliderLabel || 'Value';
+    }
+    if (totalHandles === 2) {
+      if (index === 0) return sliderLabel ? `Minimum ${sliderLabel}` : 'Minimum';
+      return sliderLabel ? `Maximum ${sliderLabel}` : 'Maximum';
+    }
+    return sliderLabel ? `${sliderLabel} handle ${index + 1}` : `Handle ${index + 1}`;
+  };
+
   renderHandles = () => {
     const { disabled, max, min, stepSize } = this.props;
     const handleProps = this.getHandleValues(this.props);
@@ -301,6 +315,7 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
           onRelease={(newValue) => this.onReleaseHandler(newValue, index)}
           onChange={(newValue) => this.onChangeHandler(newValue, index)}
           label={this.formatLabel(value)}
+          ariaLabel={this.getHandleAriaLabel(index, handleProps.length)}
           ref={this.addHandleRef}
           stepSize={stepSize}
           tickSize={this.state.tickSize}
@@ -453,7 +468,11 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
 
     return (
       <div {...baseProps} className={SliderClass} data-test="DesignSystem-MultiSlider">
-        {label && <Label withInput={true}>{label}</Label>}
+        {label && (
+          <Label withInput={true} id={this.labelId}>
+            {label}
+          </Label>
+        )}
         <div className={WrapperClass}>
           {/* TODO(a11y): fix accessibility  */}
           {/* eslint-disable */}
@@ -469,6 +488,7 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
             }}
             data-test="DesignSystem-MultiSlider-Slider-Track"
             role="button"
+            aria-label={label || 'Slider track'}
             // tabIndex={this.props.disabled ? -1 : 0}
             aria-disabled={this.props.disabled || undefined}
           >

@@ -26,6 +26,15 @@ export interface GenericChipProps extends BaseProps {
   role?: string;
   'aria-label'?: string;
   'aria-labelledby'?: string;
+  /**
+   * Accessible name for the per-chip remove control (icon-only).
+   * @default 'Remove'
+   */
+  clearButtonAriaLabel?: string;
+  /**
+   * Overrides the chip wrapper `tabIndex` (e.g. `-1` when the remove control is the only keyboard target).
+   */
+  tabIndex?: number;
 }
 
 export const GenericChip = (props: GenericChipProps) => {
@@ -156,6 +165,18 @@ export const GenericChip = (props: GenericChipProps) => {
     return labelText;
   };
 
+  const computedTabIndex = props.tabIndex !== undefined ? (disabled ? -1 : props.tabIndex) : disabled ? -1 : 0;
+
+  const clearButtonAriaAttr = props.clearButtonAriaLabel ?? (typeof label === 'string' ? `Remove ${label}` : 'Remove');
+
+  const computedAriaLabel = (() => {
+    if (props['aria-label']) return props['aria-label'];
+    if (clearButton && typeof label === 'string') {
+      return labelPrefix ? `${labelPrefix} ${label}` : label;
+    }
+    return undefined;
+  })();
+
   const getAriaProps = () => {
     const effectiveRole = props.role || 'button';
     const ariaProps: React.HTMLAttributes<HTMLDivElement> = {};
@@ -181,11 +202,11 @@ export const GenericChip = (props: GenericChipProps) => {
       triggerClass="flex-grow-0"
     >
       <div
-        tabIndex={disabled ? -1 : 0}
+        tabIndex={computedTabIndex}
         style={wrapperStyle}
         data-test="DesignSystem-GenericChip--Wrapper"
         role={props.role || 'button'}
-        aria-label={props['aria-label']}
+        aria-label={computedAriaLabel}
         aria-labelledby={props['aria-labelledby']}
         {...getAriaProps()}
         onKeyDown={onChipKeyDownHandler}
@@ -207,7 +228,7 @@ export const GenericChip = (props: GenericChipProps) => {
         {clearButton && (
           <div
             role="button"
-            aria-label="Remove"
+            aria-label={clearButtonAriaAttr}
             onClick={onCloseHandler}
             tabIndex={disabled ? -1 : 0}
             onKeyDown={onKeyDownHandler}

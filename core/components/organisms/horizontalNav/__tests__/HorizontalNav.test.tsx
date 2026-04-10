@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { HorizontalNavProps as Props } from '@/index.type';
 import { HorizontalNav } from '@/index';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -266,5 +267,13 @@ describe('Horizontal Navigation component prop: aria-label', () => {
   it('applies a custom aria-label to nav landmark', () => {
     const { getByRole } = render(<HorizontalNav menus={menus} aria-label="Primary Section Navigation" />);
     expect(getByRole('navigation', { name: 'Primary Section Navigation' })).toBeInTheDocument();
+  });
+});
+
+describe('HorizontalNav component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<HorizontalNav menus={menus} />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

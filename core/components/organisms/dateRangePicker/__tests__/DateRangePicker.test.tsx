@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { DateRangePicker } from '@/index';
 import { DateRangePickerProps as Props } from '@/index.type';
@@ -1021,5 +1022,13 @@ describe('DateRangePicker component prop:allowReverseSelection', () => {
     fireEvent.mouseOver(endSelection);
 
     expect(InputTestId[0]).toHaveAttribute('value', '__/__/____ - 09/12/2021');
+  });
+});
+
+describe('DateRangePicker component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<DateRangePicker startDate={startDate} endDate={endDate} />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

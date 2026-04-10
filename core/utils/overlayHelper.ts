@@ -63,15 +63,109 @@ export const getFocusableElements = (container: HTMLElement): HTMLElement[] => {
     const isAriaHidden = el.getAttribute('aria-hidden') === 'true';
     const isAriaDisabled = el.getAttribute('aria-disabled') === 'true';
     const isInert = el.closest('[inert]') !== null;
-    return isVisible && !isAriaHidden && !isAriaDisabled && !isInert;
+    const isExplicitlyNonFocusable = el.getAttribute('tabindex') === '-1';
+    return isVisible && !isAriaHidden && !isAriaDisabled && !isInert && !isExplicitlyNonFocusable;
   });
+};
+
+const LISTBOX_OPTION_SELECTOR = '[role="option"]';
+
+/**
+ * Returns enabled, visible listbox options (`[role="option"]`) under a listbox root, in DOM order.
+ * Matches combobox items that use roving `tabIndex={-1}` (excluded by {@link getFocusableElements}).
+ */
+const getListboxOptionElements = (listboxRoot: HTMLElement): HTMLElement[] => {
+  const options: HTMLElement[] = [];
+
+  for (const node of Array.from(listboxRoot.children)) {
+    if (!(node instanceof HTMLElement)) continue;
+
+    let optionNode: HTMLElement | null = null;
+    if (node.matches(LISTBOX_OPTION_SELECTOR)) {
+      optionNode = node;
+    } else {
+      for (const child of Array.from(node.children)) {
+        if (child.matches(LISTBOX_OPTION_SELECTOR) || child.matches('[data-test="DesignSystem-Listbox-ItemWrapper"]')) {
+          optionNode = child as HTMLElement;
+          break;
+        }
+      }
+    }
+
+    if (!optionNode) continue;
+
+    const styleOuter = window.getComputedStyle(node);
+    const styleInner = optionNode !== node ? window.getComputedStyle(optionNode) : styleOuter;
+
+    const isVisible =
+      styleOuter.visibility !== 'hidden' &&
+      styleOuter.display !== 'none' &&
+      styleInner.visibility !== 'hidden' &&
+      styleInner.display !== 'none';
+    const isAriaHidden =
+      node.getAttribute('aria-hidden') === 'true' || optionNode.getAttribute('aria-hidden') === 'true';
+    const isAriaDisabled =
+      node.getAttribute('aria-disabled') === 'true' || optionNode.getAttribute('aria-disabled') === 'true';
+    const isInert = optionNode.closest('[inert]') !== null;
+    const isDataDisabled =
+      optionNode.getAttribute('data-disabled') === 'true' || node.getAttribute('data-disabled') === 'true';
+
+    if (isVisible && !isAriaHidden && !isAriaDisabled && !isInert && !isDataDisabled) {
+      options.push(optionNode);
+    }
+  }
+
+  return options;
+};
+
+/**
+ * Focusable/interactive list descendants for keyboard navigation.
+ * With `roleHint` `"listbox"`, returns `[role="option"]` elements under the listbox root(s), not generic tabbables
+ * (listbox options often use `tabindex="-1"`).
+ */
+export const getAllFocusableElements = (container: HTMLElement, roleHint?: string): HTMLElement[] => {
+  if (roleHint !== 'listbox') {
+    return getFocusableElements(container);
+  }
+
+  const roots: HTMLElement[] = [];
+  if (container.getAttribute('role') === 'listbox') {
+    roots.push(container);
+  } else {
+    roots.push(...Array.from(container.querySelectorAll<HTMLElement>('[role="listbox"]')));
+  }
+
+  if (roots.length === 0) {
+    return [];
+  }
+
+  const seen = new Set<HTMLElement>();
+  const out: HTMLElement[] = [];
+  for (const root of roots) {
+    for (const el of getListboxOptionElements(root)) {
+      if (!seen.has(el)) {
+        seen.add(el);
+        out.push(el);
+      }
+    }
+  }
+  return out;
 };
 
 /**
  * Handles Tab/Shift+Tab to trap focus within the container.
+ *
+ * @param staticFocusTarget - Optional non-tabbable element (tabindex="-1") that received
+ *   focus on overlay open (e.g. the dialog heading). It is not in the tabbable focusable
+ *   list, so without this parameter Shift+Tab from it would escape the trap.
+ *
  * Returns true if the event was handled (focus was redirected or prevented).
  */
-export const handleFocusTrapKeyDown = (event: KeyboardEvent, container: HTMLElement): boolean => {
+export const handleFocusTrapKeyDown = (
+  event: KeyboardEvent,
+  container: HTMLElement,
+  staticFocusTarget?: HTMLElement | null
+): boolean => {
   if (event.key !== 'Tab') return false;
 
   const focusable = getFocusableElements(container);
@@ -91,7 +185,11 @@ export const handleFocusTrapKeyDown = (event: KeyboardEvent, container: HTMLElem
   const last = focusable[focusable.length - 1];
 
   if (event.shiftKey) {
-    if (activeElement === first) {
+    const staticTargetPrecedesFirst =
+      !!staticFocusTarget &&
+      activeElement === staticFocusTarget &&
+      !!(staticFocusTarget.compareDocumentPosition(first) & Node.DOCUMENT_POSITION_FOLLOWING);
+    if (activeElement === first || staticTargetPrecedesFirst) {
       event.preventDefault();
       last.focus({ preventScroll: true });
       return true;
@@ -109,14 +207,26 @@ export const handleFocusTrapKeyDown = (event: KeyboardEvent, container: HTMLElem
 
 /**
  * Returns focus to a previously focused element after an overlay closes.
- * Does not consult overlay stacking order — dismissal priority and focus restoration are separate concerns.
+ * When {@link closingOverlay} is provided, restoration is skipped if focus
+ * is currently inside a *different* dialog — preventing a background
+ * overlay from stealing focus away from the topmost focus-trapping dialog.
  */
-export const restoreFocusToElementIfConnected = (element: HTMLElement | null | undefined): void => {
+export const restoreFocusToElementIfConnected = (
+  element: HTMLElement | null | undefined,
+  closingOverlay?: HTMLElement | null
+): void => {
   if (!element?.focus || !element.isConnected) return;
 
   window.requestAnimationFrame(() => {
-    if (element.isConnected) {
-      element.focus({ preventScroll: true });
+    if (!element.isConnected) return;
+
+    if (closingOverlay) {
+      const activeDialog = document.activeElement?.closest('[role="dialog"]');
+      if (activeDialog && activeDialog !== closingOverlay) {
+        return;
+      }
     }
+
+    element.focus({ preventScroll: true });
   });
 };

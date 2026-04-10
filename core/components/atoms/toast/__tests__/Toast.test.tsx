@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { testHelper, filterUndefined, valueHelper, arrayHelper, testMessageHelper } from '@/utils/testHelper';
 import Toast, { ToastProps as Props } from '../Toast';
 
@@ -51,4 +52,12 @@ describe('Toast component', () => {
   };
 
   testHelper(mapper, testFunc);
+});
+
+describe('Toast component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<Toast title="Sample Toast" onClose={FunctionValue} />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
 });

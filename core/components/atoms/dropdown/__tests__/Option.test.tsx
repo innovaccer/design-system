@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent, waitFor } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { Dropdown } from '@/index';
 
 import {
@@ -22,7 +23,7 @@ describe('renders different options', () => {
     fireEvent.click(dropdownTrigger);
     expect(getAllByTestId('DesignSystem-DropdownOption--DEFAULT')).toHaveLength(storyOptions.length);
     expect(getAllByTestId('DesignSystem-DropdownOption--DEFAULT')[0].textContent).toMatch(storyOptions[0].label);
-    expect(getAllByTestId('DesignSystem-DropdownOption--DEFAULT')[0]).toHaveClass('color-inverse');
+    expect(getAllByTestId('DesignSystem-DropdownOption--DEFAULT')[0]).not.toHaveClass('color-inverse');
   });
 
   it('renders WITH_ICON options', () => {
@@ -32,7 +33,7 @@ describe('renders different options', () => {
     expect(getAllByTestId('DesignSystem-DropdownOption--WITH_ICON')).toHaveLength(iconOptions.length);
     expect(getAllByTestId('DesignSystem-DropdownOption--WITH_ICON')[0].textContent).toMatch(iconOptions[0].label);
     expect(getAllByTestId('DesignSystem-DropdownOption--WITH_ICON--Icon')[0].textContent).toMatch(iconOptions[0].icon);
-    expect(getAllByTestId('DesignSystem-DropdownOption--WITH_ICON')[0]).toHaveClass('color-inverse');
+    expect(getAllByTestId('DesignSystem-DropdownOption--WITH_ICON')[0]).not.toHaveClass('color-inverse');
   });
 
   it('renders WITH_META options', () => {
@@ -44,7 +45,7 @@ describe('renders different options', () => {
     expect(getAllByTestId('DesignSystem-DropdownOption--WITH_META--Meta')[0].textContent).toMatch(
       subInfoOptions[0].subInfo
     );
-    expect(getAllByTestId('DesignSystem-DropdownOption--WITH_META')[0]).toHaveClass('color-inverse');
+    expect(getAllByTestId('DesignSystem-DropdownOption--WITH_META')[0]).not.toHaveClass('color-inverse');
   });
 
   it('renders WITH_CHECKBOX options', () => {
@@ -71,7 +72,7 @@ describe('renders different options', () => {
     expect(getAllByTestId('DesignSystem-DropdownOption--ICON_WITH_META')[0].textContent).toMatch(
       iconWithSubinfoOptions[0].subInfo
     );
-    expect(getAllByTestId('DesignSystem-DropdownOption--ICON_WITH_META')[0]).toHaveClass('color-inverse');
+    expect(getAllByTestId('DesignSystem-DropdownOption--ICON_WITH_META')[0]).not.toHaveClass('color-inverse');
   });
 });
 
@@ -83,6 +84,34 @@ describe('renders custom option', () => {
     expect(getAllByTestId('DesignSystem-DropdownOption--Custom')).toHaveLength(storyOptions.length);
     expect(getAllByTestId('DesignSystem-DropdownOption--Custom')[0]).toHaveClass('OptionWrapper');
     expect(FunctionValue).toHaveBeenCalled();
+  });
+
+  it('custom option row is focusable for roving tabindex and selects on Enter', () => {
+    const optionRenderer = () => <div>Custom row</div>;
+    const onChange = jest.fn();
+    const { getAllByTestId, getByTestId } = render(
+      <Dropdown options={storyOptions} optionRenderer={optionRenderer} onChange={onChange} />
+    );
+    fireEvent.click(getByTestId(trigger));
+    const firstCustom = getAllByTestId('DesignSystem-DropdownOption--Custom')[0];
+    expect(firstCustom).toHaveAttribute('tabindex', '0');
+    firstCustom.focus();
+    fireEvent.keyDown(firstCustom, { key: 'Enter' });
+    expect(onChange).toHaveBeenCalled();
+  });
+
+  it('passes id and onClick to custom optionRenderer params', () => {
+    const optionRenderer = jest.fn(() => <div>Custom</div>);
+    const { getByTestId } = render(
+      <Dropdown options={storyOptions} withCheckbox={true} optionRenderer={optionRenderer} />
+    );
+    fireEvent.click(getByTestId(trigger));
+    expect(optionRenderer).toHaveBeenCalled();
+    const params = optionRenderer.mock.calls[0][0];
+    expect(params).toHaveProperty('id');
+    expect(typeof params.id).toBe('string');
+    expect(params).toHaveProperty('onClick');
+    expect(params).toHaveProperty('onChange');
   });
 });
 
@@ -140,7 +169,7 @@ describe('renders active option', () => {
     const option = getAllByTestId('DesignSystem-DropdownOption--DEFAULT')[0];
     fireEvent.mouseEnter(option);
     expect(option).toHaveClass('Option--active');
-    expect(option).toHaveClass('color-inverse');
+    expect(option).not.toHaveClass('color-inverse');
   });
 
   it('with checkbox', () => {
@@ -172,7 +201,29 @@ describe('renders selected option', () => {
     const selectedOption = getAllByTestId('DesignSystem-DropdownOption--DEFAULT')[0];
     fireEvent.click(selectedOption);
     expect(selectedOption).toHaveClass('Option--selected');
-    expect(selectedOption).toHaveClass('color-primary-dark');
+    expect(selectedOption).not.toHaveClass('color-primary-dark');
+  });
+
+  it('shows check icon on selected DEFAULT option', () => {
+    const { getAllByTestId, getByTestId } = render(<Dropdown options={storyOptions} />);
+    const dropdownTrigger = getByTestId(trigger);
+    fireEvent.click(dropdownTrigger);
+
+    const selectedOption = getAllByTestId('DesignSystem-DropdownOption--DEFAULT')[0];
+    fireEvent.click(selectedOption);
+    expect(getAllByTestId('DesignSystem-DropdownOption--checkIcon')).toHaveLength(1);
+  });
+
+  it('does not show check icon on menu options', () => {
+    const { getAllByTestId, getByTestId, queryAllByTestId } = render(
+      <Dropdown options={storyOptions} menu={true} onChange={FunctionValue} />
+    );
+    const dropdownTrigger = getByTestId(trigger);
+    fireEvent.click(dropdownTrigger);
+
+    const option = getAllByTestId('DesignSystem-DropdownOption--DEFAULT')[0];
+    fireEvent.click(option);
+    expect(queryAllByTestId('DesignSystem-DropdownOption--checkIcon')).toHaveLength(0);
   });
 
   it('WITH_ICON options', () => {
@@ -183,7 +234,7 @@ describe('renders selected option', () => {
     const selectedOption = getAllByTestId('DesignSystem-DropdownOption--WITH_ICON')[0];
     fireEvent.click(selectedOption);
     expect(selectedOption).toHaveClass('Option--selected');
-    expect(selectedOption).toHaveClass('color-primary-dark');
+    expect(selectedOption).not.toHaveClass('color-primary-dark');
   });
 
   it('WITH_META options', () => {
@@ -194,7 +245,7 @@ describe('renders selected option', () => {
     const selectedOption = getAllByTestId('DesignSystem-DropdownOption--WITH_META')[0];
     fireEvent.click(selectedOption);
     expect(selectedOption).toHaveClass('Option--selected');
-    expect(selectedOption).toHaveClass('color-primary-dark');
+    expect(selectedOption).not.toHaveClass('color-primary-dark');
   });
 
   it('with All Items label', async () => {
@@ -239,6 +290,7 @@ describe('renders disabled option', () => {
     const dropdownTrigger = getByTestId(trigger);
     fireEvent.click(dropdownTrigger);
     expect(getAllByTestId('DesignSystem-DropdownOption--WITH_CHECKBOX')[1]).toHaveAttribute('data-disabled');
+    expect(getAllByTestId('DesignSystem-DropdownOption--WITH_CHECKBOX')[1]).toHaveClass('OptionWrapper--disabled');
   });
 
   it('WITH_ICON options', () => {
@@ -272,5 +324,13 @@ describe('renders grouped option', () => {
       const count = labels.filter((label) => label.textContent === 'Group 2').length;
       expect(count).toBe(1);
     });
+  });
+});
+
+describe('Dropdown Option component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<Dropdown options={storyOptions} />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

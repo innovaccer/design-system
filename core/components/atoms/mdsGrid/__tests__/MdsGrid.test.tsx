@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import MdsGrid, { GridGap, GridJustifyItems, GridAlignItems, GridAutoFlow } from '../MdsGrid';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
@@ -226,5 +227,18 @@ describe('MdsGrid component specifics', () => {
         expect(getByTestId('DesignSystem-MdsGrid')).toHaveClass(`MdsGrid-autoFlow--${flow}`);
       });
     });
+  });
+});
+
+describe('MdsGrid component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(
+      <MdsGrid>
+        <div>Grid Item 1</div>
+        <div>Grid Item 2</div>
+      </MdsGrid>
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

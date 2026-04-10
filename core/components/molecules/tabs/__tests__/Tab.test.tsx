@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { Tab, Text } from '@/index';
 import { TabProps as Props } from '@/index.type';
@@ -44,5 +45,17 @@ describe('Tab component', () => {
     const { asFragment } = render(<Tab label={Label} />);
 
     expect(asFragment()).toMatchSnapshot();
+  });
+});
+
+describe('Tab component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(
+      <Tab label={<Text>Tab</Text>}>
+        <div>Tab content</div>
+      </Tab>
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

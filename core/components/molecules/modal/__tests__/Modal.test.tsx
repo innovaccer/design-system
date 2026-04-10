@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent, act } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { ModalProps as Props } from '@/index.type';
 import { ModalHeader, Modal, ModalBody, ModalFooter, Button, Text } from '@/index';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -351,7 +352,7 @@ describe('Modal focus trap', () => {
     jest.useRealTimers();
   });
 
-  it('focuses first focusable element when modal opens', async () => {
+  it('focuses the heading (aria-labelledby target) when modal opens so VoiceOver announces the dialog title', async () => {
     const { getByTestId } = render(
       <Modal
         open={true}
@@ -370,8 +371,9 @@ describe('Modal focus trap', () => {
 
     await flushRAF();
 
-    const closeButton = getByTestId('DesignSystem-Modal--CloseButton');
-    expect(document.activeElement).toBe(closeButton);
+    const heading = getByTestId('DesignSystem-OverlayHeader--heading');
+    expect(document.activeElement).toBe(heading);
+    expect(heading).toHaveAttribute('tabindex', '-1');
   });
 
   it('focuses container when modal has no focusable elements (content-only)', async () => {
@@ -386,6 +388,67 @@ describe('Modal focus trap', () => {
     const modalContainer = getByTestId('DesignSystem-Modal');
     expect(document.activeElement).toBe(modalContainer);
     expect(modalContainer).toHaveAttribute('tabindex', '-1');
+  });
+
+  it('focuses container (not body children) when no header is present but body has focusable elements', async () => {
+    const { getByTestId } = render(
+      <Modal open={true} onClose={jest.fn()}>
+        <Button data-test="body-btn">Action</Button>
+      </Modal>
+    );
+
+    await flushRAF();
+
+    const modalContainer = getByTestId('DesignSystem-Modal');
+    expect(document.activeElement).toBe(modalContainer);
+    expect(modalContainer).toHaveAttribute('tabindex', '-1');
+  });
+
+  it('focuses dialog container when aria-labelledby is set but no headerOptions (no matching heading in DOM)', async () => {
+    const { getByTestId } = render(
+      <Modal
+        open={true}
+        onClose={jest.fn()}
+        aria-labelledby="modal-a11y-heading"
+        footer={
+          <>
+            <Button appearance="basic">Basic</Button>
+            <Button appearance="primary">Primary</Button>
+          </>
+        }
+      >
+        <Text>Modal Body</Text>
+      </Modal>
+    );
+
+    await flushRAF();
+
+    const modalContainer = getByTestId('DesignSystem-Modal');
+    expect(document.activeElement).toBe(modalContainer);
+    expect(modalContainer).toHaveAttribute('tabindex', '-1');
+  });
+
+  it('legacy ModalFooter open={open}: OverlayFooter focuses last secondary button (known limitation — use headerOptions + footer props for correct focus management)', async () => {
+    const { getByTestId } = render(
+      <Modal open={true} onClose={jest.fn()} aria-labelledby="legacy-heading">
+        <ModalHeader heading="Heading" headingId="legacy-heading" onClose={jest.fn()} />
+        <ModalBody>
+          <Text>Body</Text>
+        </ModalBody>
+        <ModalFooter open={true}>
+          <Button appearance="basic" data-test="basic-btn">
+            Cancel
+          </Button>
+          <Button appearance="primary">Confirm</Button>
+        </ModalFooter>
+      </Modal>
+    );
+
+    await flushRAF();
+    await flushRAF();
+
+    const cancelButton = getByTestId('basic-btn');
+    expect(document.activeElement).toBe(cancelButton);
   });
 
   it('prevents Tab from escaping content-only modal', async () => {
@@ -478,7 +541,9 @@ describe('Modal focus trap', () => {
 
     await flushRAF();
 
+    // Move focus to the close button (first interactive element) before testing the wrap
     const closeButton = getByTestId('DesignSystem-Modal--CloseButton');
+    closeButton.focus();
     expect(document.activeElement).toBe(closeButton);
 
     fireEvent.keyDown(document, { key: 'Tab', shiftKey: true });
@@ -620,7 +685,7 @@ describe('Modal focus trap', () => {
     expect(onClose).toHaveBeenCalled();
   });
 
-  it('focuses first focusable in DOM order (header, body, footer)', async () => {
+  it('focuses heading (aria-labelledby target) over first interactive element when heading is present', async () => {
     const { getByTestId } = render(
       <Modal
         open={true}
@@ -639,7 +704,127 @@ describe('Modal focus trap', () => {
 
     await flushRAF();
 
-    const closeButton = getByTestId('DesignSystem-Modal--CloseButton');
-    expect(document.activeElement).toBe(closeButton);
+    const heading = getByTestId('DesignSystem-OverlayHeader--heading');
+    expect(document.activeElement).toBe(heading);
+    expect(heading).toHaveAttribute('tabindex', '-1');
+  });
+
+  it('uses aria-labelledby value as heading id when headerOptions.heading is provided without headingId', () => {
+    const { getByTestId } = render(
+      <Modal open={true} headerOptions={{ heading: 'Dialog Title' }} aria-labelledby="dialog-heading" />
+    );
+    expect(getByTestId('DesignSystem-Modal')).toHaveAttribute('aria-labelledby', 'dialog-heading');
+    expect(getByTestId('DesignSystem-OverlayHeader--heading')).toHaveAttribute('id', 'dialog-heading');
+  });
+
+  it('does not write a multi-token aria-labelledby as heading id', () => {
+    // aria-labelledby can be a space-separated list of IDs. Writing that list as a
+    // single id attribute is invalid HTML. The heading must not receive an id in this case.
+    const { getByTestId } = render(
+      <Modal open={true} headerOptions={{ heading: 'Dialog Title' }} aria-labelledby="label-a label-b" />
+    );
+    expect(getByTestId('DesignSystem-Modal')).toHaveAttribute('aria-labelledby', 'label-a label-b');
+    expect(getByTestId('DesignSystem-OverlayHeader--heading')).not.toHaveAttribute('id');
+  });
+
+  it('inner widget can stop Escape propagation to prevent modal from closing', async () => {
+    const onClose = jest.fn();
+    const { getByTestId } = render(
+      <Modal open={true} onClose={onClose} headerOptions={{ heading: 'Heading' }}>
+        <button data-test="inner-widget">Inner</button>
+      </Modal>
+    );
+
+    await flushRAF();
+
+    const innerWidget = getByTestId('inner-widget');
+    innerWidget.focus();
+
+    const stopEscape = (e: Event) => {
+      if ((e as KeyboardEvent).key === 'Escape') e.stopPropagation();
+    };
+    innerWidget.addEventListener('keydown', stopEscape);
+    fireEvent.keyDown(innerWidget, { key: 'Escape' });
+    innerWidget.removeEventListener('keydown', stopEscape);
+
+    expect(onClose).not.toHaveBeenCalled();
+  });
+
+  it('Shift+Tab from heading (initial static focus target) wraps to last focusable when no back button', async () => {
+    // No back button: DOM order is [heading][closeButton…][footer buttons].
+    // Heading precedes first tabbable (close button), so Shift+Tab must wrap to last.
+    const { getByTestId } = render(
+      <Modal
+        open={true}
+        onClose={jest.fn()}
+        headerOptions={{ heading: 'Heading' }}
+        footer={
+          <>
+            <Button appearance="basic">Basic</Button>
+            <Button appearance="primary" data-test="last-btn">
+              Primary
+            </Button>
+          </>
+        }
+      >
+        <Text>Body</Text>
+      </Modal>
+    );
+
+    await flushRAF();
+
+    const heading = getByTestId('DesignSystem-OverlayHeader--heading');
+    expect(document.activeElement).toBe(heading);
+
+    fireEvent.keyDown(document, { key: 'Tab', shiftKey: true });
+
+    const lastButton = getByTestId('last-btn');
+    expect(document.activeElement).toBe(lastButton);
+  });
+
+  it('Shift+Tab from heading falls through to back button when back button precedes heading in DOM', async () => {
+    // Back button present: DOM order is [backButton][heading][closeButton…][footer].
+    // Back button is first tabbable and comes before the heading, so Shift+Tab from the
+    // heading should NOT wrap — the browser's natural reverse-tab lands on the back button.
+    const { getByTestId } = render(
+      <Modal
+        open={true}
+        onClose={jest.fn()}
+        headerOptions={{ heading: 'Heading', backButton: true, backButtonCallback: jest.fn() }}
+        footer={
+          <>
+            <Button appearance="basic">Basic</Button>
+            <Button appearance="primary" data-test="last-btn">
+              Primary
+            </Button>
+          </>
+        }
+      >
+        <Text>Body</Text>
+      </Modal>
+    );
+
+    await flushRAF();
+
+    const heading = getByTestId('DesignSystem-OverlayHeader--heading');
+    expect(document.activeElement).toBe(heading);
+
+    // Shift+Tab should NOT wrap to last; the trap should not intercept this case.
+    // After the keydown the focus stays on the heading because jsdom doesn't do
+    // real tab navigation — what matters is that preventDefault was NOT called
+    // (the trap did not hijack the event).
+    const shiftTabEvent = new KeyboardEvent('keydown', { key: 'Tab', shiftKey: true, bubbles: true });
+    const preventDefaultSpy = jest.spyOn(shiftTabEvent, 'preventDefault');
+    document.dispatchEvent(shiftTabEvent);
+
+    expect(preventDefaultSpy).not.toHaveBeenCalled();
+  });
+});
+
+describe('Modal component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    render(<Modal open={true} headerOptions={{ heading: 'Test Modal' }} />);
+    const results = await axe(document.body);
+    expect(results).toHaveNoViolations();
   });
 });

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { Link } from '@/index';
 import { LinkProps } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -37,9 +38,15 @@ describe('Link component', () => {
     expect(getByTestId('DesignSystem-Link').textContent).toMatch('Click on Link');
   });
 
-  it('renders tag name', () => {
-    const { getByTestId } = render(<Link>Click on Link</Link>);
+  it('renders as anchor tag when href is provided', () => {
+    const { getByTestId } = render(<Link href="/page">Click on Link</Link>);
     expect(getByTestId('DesignSystem-Link').tagName).toMatch('A');
+  });
+
+  it('renders as button tag when href is not provided', () => {
+    const { getByTestId } = render(<Link onClick={jest.fn()}>Click on Link</Link>);
+    expect(getByTestId('DesignSystem-Link').tagName).toMatch('BUTTON');
+    expect(getByTestId('DesignSystem-Link')).toHaveAttribute('type', 'button');
   });
 
   it('renders default props', () => {
@@ -100,5 +107,13 @@ describe('Link component', () => {
       );
       expect(getByTestId('DesignSystem-Link')).toHaveClass('Link--subtle-disabled');
     });
+  });
+});
+
+describe('Link component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<Link>Click on Link</Link>);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

@@ -5,6 +5,8 @@ exports[`FileUploaderList component
  1`] = `
 <DocumentFragment>
   <div
+    aria-atomic="false"
+    aria-live="polite"
     class="FileUploaderList"
     data-test="DesignSystem-FileUploader--List"
   >
@@ -178,6 +180,7 @@ exports[`FileUploaderList component
         data-test="DesignSystem-InlineMessage"
       >
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon Icon--alert InlineMessage-icon--small"
           data-test="DesignSystem-InlineMessage--Icon"
           style="font-size: 14px; width: 14px;"

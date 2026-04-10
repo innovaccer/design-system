@@ -2,10 +2,10 @@ import * as React from 'react';
 import Text from '@/components/atoms/text';
 import Icon from '@/components/atoms/icon';
 import classNames from 'classnames';
-import { BaseProps, extractBaseProps } from '@/utils/types';
+import { BaseHtmlProps, BaseProps } from '@/utils/types';
 import styles from '@css/components/caption.module.css';
 
-export interface CaptionProps extends BaseProps {
+export interface CaptionProps extends BaseProps, BaseHtmlProps<HTMLDivElement> {
   /**
    * Text to be rendered
    */
@@ -25,9 +25,7 @@ export interface CaptionProps extends BaseProps {
 }
 
 export const Caption = (props: CaptionProps) => {
-  const { error, hide, withInput, children, className } = props;
-
-  const baseProps = extractBaseProps(props);
+  const { error, hide, withInput, children, className, ...rest } = props;
 
   const classes = classNames(
     {
@@ -43,13 +41,15 @@ export const Caption = (props: CaptionProps) => {
   });
 
   return (
-    <div {...baseProps} className={classes} data-test="DesignSystem-Caption">
+    <div {...rest} className={classes} data-test="DesignSystem-Caption">
       {error && (
         <div className={errorIconClass}>
           <Icon size={14} name={'error'} appearance={'alert'} />
         </div>
       )}
-      <Text appearance={error ? 'destructive' : 'subtle'} size="small" weight="medium">{`${children}`}</Text>
+      <Text appearance={error ? 'destructive' : 'subtle'} size="small" weight="medium">
+        {children as React.ReactText}
+      </Text>
     </div>
   );
 };

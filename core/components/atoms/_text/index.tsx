@@ -4,6 +4,7 @@ interface Props {
   children: React.ReactNode;
   componentType: string;
   className?: string;
+  [key: string]: any;
 }
 
 const GenericText: React.ForwardRefRenderFunction<HTMLElement, Props> = (

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, screen } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { InlineMessage } from '../InlineMessage';
 import { InlineMessageProps as Props } from '@/index.type';
@@ -102,5 +103,13 @@ describe('InlineMessage component with prop:size', () => {
   it('check for icon size with prop size=regular', () => {
     const { getByTestId } = render(<InlineMessage appearance="info" size="regular" description={description} />);
     expect(getByTestId('DesignSystem-InlineMessage--Icon')).toHaveStyle('font-size: 16px ');
+  });
+});
+
+describe('InlineMessage component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<InlineMessage appearance="info" description="Inline Message here." />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

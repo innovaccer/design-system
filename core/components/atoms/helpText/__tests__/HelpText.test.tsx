@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import HelpText, { HelpTextProps as Props } from '../HelpText';
 
@@ -22,6 +23,19 @@ describe('HelpText component snapshot', () => {
   };
 
   testHelper(mapper, testFunc);
+});
+
+describe('HelpText id for aria associations', () => {
+  it('uses explicit id on the message container when provided', () => {
+    const { container } = render(<HelpText id="my-field-help" message={message} />);
+    expect(container.querySelector('#my-field-help')).toBeInTheDocument();
+  });
+
+  it('renders generated id on the message container when id is omitted', () => {
+    const { container } = render(<HelpText message={message} />);
+    const el = container.querySelector('[id^="HelpText-"]');
+    expect(el).toBeInTheDocument();
+  });
 });
 
 describe('HelpText component prop:error', () => {
@@ -47,5 +61,13 @@ describe('HelpText component prop:error', () => {
     const { getByTestId } = render(<HelpText error={false} message={message} />);
     expect(getByTestId('DesignSystem-Text')).toBeInTheDocument();
     expect(getByTestId('DesignSystem-Text')).toHaveClass('Text--small Text--medium Text--subtle');
+  });
+});
+
+describe('HelpText component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<HelpText message={message}>HelpText</HelpText>);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

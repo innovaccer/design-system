@@ -17,6 +17,7 @@ Object {
         >
           <div
             aria-checked="false"
+            aria-label="John Doe"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
@@ -58,6 +59,7 @@ Object {
         >
           <div
             aria-checked="false"
+            aria-label="Steven Packton"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
@@ -99,6 +101,7 @@ Object {
         >
           <div
             aria-checked="false"
+            aria-label="Nancy Wheeler"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
@@ -140,6 +143,7 @@ Object {
         >
           <div
             aria-checked="false"
+            aria-label="Monica Geller"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
@@ -181,6 +185,7 @@ Object {
         >
           <div
             aria-checked="false"
+            aria-label="Arya Stark"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
@@ -242,7 +247,7 @@ Object {
                   aria-label="Avatar"
                   class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
                   data-test="DesignSystem-Avatar"
-                  role="button"
+                  role="presentation"
                   tabindex="-1"
                 >
                   <span
@@ -270,6 +275,7 @@ Object {
       >
         <div
           aria-checked="false"
+          aria-label="John Doe"
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
@@ -311,6 +317,7 @@ Object {
       >
         <div
           aria-checked="false"
+          aria-label="Steven Packton"
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
@@ -352,6 +359,7 @@ Object {
       >
         <div
           aria-checked="false"
+          aria-label="Nancy Wheeler"
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
@@ -393,6 +401,7 @@ Object {
       >
         <div
           aria-checked="false"
+          aria-label="Monica Geller"
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
@@ -434,6 +443,7 @@ Object {
       >
         <div
           aria-checked="false"
+          aria-label="Arya Stark"
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
@@ -495,7 +505,7 @@ Object {
                 aria-label="Avatar"
                 class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
                 data-test="DesignSystem-Avatar"
-                role="button"
+                role="presentation"
                 tabindex="-1"
               >
                 <span
@@ -582,6 +592,7 @@ Object {
         >
           <div
             aria-checked="false"
+            aria-label="John Doe"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
@@ -623,6 +634,7 @@ Object {
         >
           <div
             aria-checked="false"
+            aria-label="Steven Packton"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
@@ -664,6 +676,7 @@ Object {
         >
           <div
             aria-checked="false"
+            aria-label="Nancy Wheeler"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
@@ -705,6 +718,7 @@ Object {
         >
           <div
             aria-checked="false"
+            aria-label="Monica Geller"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
@@ -746,6 +760,7 @@ Object {
         >
           <div
             aria-checked="false"
+            aria-label="Arya Stark"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
@@ -807,7 +822,7 @@ Object {
                   aria-label="Avatar"
                   class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
                   data-test="DesignSystem-Avatar"
-                  role="button"
+                  role="presentation"
                   tabindex="-1"
                 >
                   <span
@@ -835,6 +850,7 @@ Object {
       >
         <div
           aria-checked="false"
+          aria-label="John Doe"
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
@@ -876,6 +892,7 @@ Object {
       >
         <div
           aria-checked="false"
+          aria-label="Steven Packton"
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
@@ -917,6 +934,7 @@ Object {
       >
         <div
           aria-checked="false"
+          aria-label="Nancy Wheeler"
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
@@ -958,6 +976,7 @@ Object {
       >
         <div
           aria-checked="false"
+          aria-label="Monica Geller"
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
@@ -999,6 +1018,7 @@ Object {
       >
         <div
           aria-checked="false"
+          aria-label="Arya Stark"
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
@@ -1060,7 +1080,7 @@ Object {
                 aria-label="Avatar"
                 class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
                 data-test="DesignSystem-Avatar"
-                role="button"
+                role="presentation"
                 tabindex="-1"
               >
                 <span
@@ -1147,6 +1167,7 @@ Object {
         >
           <div
             aria-checked="false"
+            aria-label="John Doe"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
@@ -1188,6 +1209,7 @@ Object {
         >
           <div
             aria-checked="false"
+            aria-label="Steven Packton"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
@@ -1229,6 +1251,7 @@ Object {
         >
           <div
             aria-checked="false"
+            aria-label="Nancy Wheeler"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
@@ -1270,6 +1293,7 @@ Object {
         >
           <div
             aria-checked="false"
+            aria-label="Monica Geller"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
@@ -1311,6 +1335,7 @@ Object {
         >
           <div
             aria-checked="false"
+            aria-label="Arya Stark"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
@@ -1372,7 +1397,7 @@ Object {
                   aria-label="Avatar"
                   class="Avatar Avatar--tiny Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
                   data-test="DesignSystem-Avatar"
-                  role="button"
+                  role="presentation"
                   tabindex="-1"
                 >
                   <span
@@ -1400,6 +1425,7 @@ Object {
       >
         <div
           aria-checked="false"
+          aria-label="John Doe"
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
@@ -1441,6 +1467,7 @@ Object {
       >
         <div
           aria-checked="false"
+          aria-label="Steven Packton"
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
@@ -1482,6 +1509,7 @@ Object {
       >
         <div
           aria-checked="false"
+          aria-label="Nancy Wheeler"
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
@@ -1523,6 +1551,7 @@ Object {
       >
         <div
           aria-checked="false"
+          aria-label="Monica Geller"
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
@@ -1564,6 +1593,7 @@ Object {
       >
         <div
           aria-checked="false"
+          aria-label="Arya Stark"
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
@@ -1625,7 +1655,7 @@ Object {
                 aria-label="Avatar"
                 class="Avatar Avatar--tiny Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
                 data-test="DesignSystem-Avatar"
-                role="button"
+                role="presentation"
                 tabindex="-1"
               >
                 <span
@@ -1712,6 +1742,7 @@ Object {
         >
           <div
             aria-checked="false"
+            aria-label="John Doe"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
@@ -1753,6 +1784,7 @@ Object {
         >
           <div
             aria-checked="false"
+            aria-label="Steven Packton"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
@@ -1794,6 +1826,7 @@ Object {
         >
           <div
             aria-checked="false"
+            aria-label="Nancy Wheeler"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
@@ -1835,6 +1868,7 @@ Object {
         >
           <div
             aria-checked="false"
+            aria-label="Monica Geller"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
@@ -1876,6 +1910,7 @@ Object {
         >
           <div
             aria-checked="false"
+            aria-label="Arya Stark"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
@@ -1937,7 +1972,7 @@ Object {
                   aria-label="Avatar"
                   class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount SelectionAvatarCount--open cursor-pointer"
                   data-test="DesignSystem-Avatar"
-                  role="button"
+                  role="presentation"
                   tabindex="-1"
                 >
                   <span
@@ -2024,7 +2059,7 @@ Object {
                   aria-label="Avatar"
                   class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
                   data-test="DesignSystem-Avatar"
-                  role="button"
+                  role="presentation"
                   tabindex="-1"
                 >
                   <span
@@ -2051,6 +2086,7 @@ Object {
         >
           <div
             aria-checked="false"
+            aria-label="John Doe"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
@@ -2092,6 +2128,7 @@ Object {
         >
           <div
             aria-checked="false"
+            aria-label="Steven Packton"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
@@ -2133,6 +2170,7 @@ Object {
         >
           <div
             aria-checked="false"
+            aria-label="Nancy Wheeler"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
@@ -2174,6 +2212,7 @@ Object {
         >
           <div
             aria-checked="false"
+            aria-label="Monica Geller"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
@@ -2215,6 +2254,7 @@ Object {
         >
           <div
             aria-checked="false"
+            aria-label="Arya Stark"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
@@ -2276,7 +2316,7 @@ Object {
                   aria-label="Avatar"
                   class="Avatar Avatar--tiny Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
                   data-test="DesignSystem-Avatar"
-                  role="button"
+                  role="presentation"
                   tabindex="-1"
                 >
                   <span
@@ -2304,6 +2344,7 @@ Object {
       >
         <div
           aria-checked="false"
+          aria-label="John Doe"
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
@@ -2345,6 +2386,7 @@ Object {
       >
         <div
           aria-checked="false"
+          aria-label="Steven Packton"
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
@@ -2386,6 +2428,7 @@ Object {
       >
         <div
           aria-checked="false"
+          aria-label="Nancy Wheeler"
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
@@ -2427,6 +2470,7 @@ Object {
       >
         <div
           aria-checked="false"
+          aria-label="Monica Geller"
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
@@ -2468,6 +2512,7 @@ Object {
       >
         <div
           aria-checked="false"
+          aria-label="Arya Stark"
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
@@ -2529,7 +2574,7 @@ Object {
                 aria-label="Avatar"
                 class="Avatar Avatar--tiny Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
                 data-test="DesignSystem-Avatar"
-                role="button"
+                role="presentation"
                 tabindex="-1"
               >
                 <span

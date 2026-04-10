@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { FullscreenModalProps as Props } from '@/index.type';
 import { FullscreenModal, Button, Text } from '@/index';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -263,5 +264,17 @@ describe('FullscreenModal Component with overwrite className', () => {
     const { getByTestId } = render(<FullscreenModal open={true} className={className} />);
 
     expect(getByTestId('DesignSystem-FullscreenModal')).toHaveClass(className);
+  });
+});
+
+describe('FullscreenModal component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    render(
+      <FullscreenModal open={true} aria-label="Fullscreen modal">
+        this is modal body
+      </FullscreenModal>
+    );
+    const results = await axe(document.body);
+    expect(results).toHaveNoViolations();
   });
 });

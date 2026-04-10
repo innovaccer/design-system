@@ -7,6 +7,7 @@
   cursor: pointer;
   width: fit-content;
   border: 0;
+  position: relative;
   background: linear-gradient(
     274deg,
     rgba(231, 56, 79, 0.24) 0%,
@@ -84,4 +85,10 @@
     rgba(231, 56, 79, 0.24) 19.79%,
     rgba(240, 125, 0, 0.24) 100%
   );
+}
+
+.AIChip-AIIcon {
+  position: absolute;
+  top: calc(-1 * var(--spacing-05));
+  right: calc(-1 * var(--spacing-05));
 }

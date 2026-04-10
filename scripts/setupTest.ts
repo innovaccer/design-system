@@ -1,4 +1,5 @@
 import '@testing-library/jest-dom';
+import 'jest-axe/extend-expect';
 const ReactTestingLibrary = require('@testing-library/react');
 
 // Configure React Testing Library
