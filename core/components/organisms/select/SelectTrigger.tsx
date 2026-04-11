@@ -88,7 +88,7 @@ export interface SelectTriggerProps extends BaseProps {
 const SelectTrigger = (props: SelectTriggerProps) => {
   const {
     triggerSize = 'regular',
-    'aria-label': ariaLabel = 'Select trigger',
+    'aria-label': ariaLabel,
     placeholder,
     withClearButton,
     icon,
@@ -181,23 +181,26 @@ const SelectTrigger = (props: SelectTriggerProps) => {
       elementRef={elementRef}
       triggerClass="w-100"
     >
-      <button
-        ref={triggerRef as React.RefObject<HTMLButtonElement>}
-        onKeyDown={(event) => handleKeyDownTrigger(event, setOpenPopover, setHighlightFirstItem, setHighlightLastItem)}
-        type="button"
-        className={buttonClass}
-        disabled={disabled}
-        tabIndex={0}
-        style={triggerStyle}
-        role="combobox"
-        aria-controls={ariaControls}
-        aria-expanded={openPopover}
-        aria-haspopup="listbox"
-        aria-label={ariaLabel}
-        data-test="DesignSystem-Select-trigger"
-        {...rest}
-      >
-        {
+      <div className="d-flex align-items-center">
+        <button
+          ref={triggerRef as React.RefObject<HTMLButtonElement>}
+          onKeyDown={(event) =>
+            handleKeyDownTrigger(event, setOpenPopover, setHighlightFirstItem, setHighlightLastItem)
+          }
+          type="button"
+          className={buttonClass}
+          disabled={disabled}
+          tabIndex={0}
+          style={triggerStyle}
+          role="combobox"
+          aria-controls={ariaControls}
+          aria-expanded={openPopover}
+          aria-haspopup="listbox"
+          aria-label={ariaLabel || value || trimmedPlaceholder || undefined}
+          aria-invalid={ariaInvalid ?? (error ? true : undefined)}
+          data-test="DesignSystem-Select-trigger"
+          {...rest}
+        >
           <div className={triggerClass}>
             {inlineLabel && (
               <Text appearance="subtle" className={`${inlineLabelClass} mr-4`} size={triggerTextSize}>
@@ -219,7 +222,8 @@ const SelectTrigger = (props: SelectTriggerProps) => {
               </span>
             )}
           </div>
-        }
+          <Icon appearance={buttonDisabled} name={iconName} type={iconType} />
+        </button>
         {isOptionSelected && withClearButton && (
           <button
             type="button"
@@ -228,13 +232,12 @@ const SelectTrigger = (props: SelectTriggerProps) => {
             onKeyDown={(e) => e.stopPropagation()}
             aria-label="clear selected"
             data-test="DesignSystem-Select--closeIcon"
+            disabled={disabled}
           >
             <Icon appearance={buttonDisabled} size={12} name="close" type={iconType} aria-hidden={true} />
           </button>
         )}
-
-        <Icon appearance={buttonDisabled} name={iconName} type={iconType} />
-      </button>
+      </div>
     </Tooltip>
   );
 };
