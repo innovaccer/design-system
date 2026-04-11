@@ -9,17 +9,19 @@ exports[`ChoiceList component
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <div
-        class="Label Label--withInput"
-        data-test="DesignSystem-Label"
-      >
-        <label
-          class="Label-text"
-          data-test="DesignSystem-Label--Text"
+      <legend>
+        <div
+          class="Label Label--withInput"
+          data-test="DesignSystem-Label"
         >
-          ChoiceList
-        </label>
-      </div>
+          <label
+            class="Label-text"
+            data-test="DesignSystem-Label--Text"
+          >
+            ChoiceList
+          </label>
+        </div>
+      </legend>
       <div
         class="ChoiceList--alignHorizontal"
       >
@@ -114,17 +116,19 @@ exports[`ChoiceList component
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <div
-        class="Label Label--withInput"
-        data-test="DesignSystem-Label"
-      >
-        <label
-          class="Label-text"
-          data-test="DesignSystem-Label--Text"
+      <legend>
+        <div
+          class="Label Label--withInput"
+          data-test="DesignSystem-Label"
         >
-          ChoiceList
-        </label>
-      </div>
+          <label
+            class="Label-text"
+            data-test="DesignSystem-Label--Text"
+          >
+            ChoiceList
+          </label>
+        </div>
+      </legend>
       <div
         class="ChoiceList--alignHorizontal"
       >
@@ -219,17 +223,19 @@ exports[`ChoiceList component
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <div
-        class="Label Label--withInput"
-        data-test="DesignSystem-Label"
-      >
-        <label
-          class="Label-text"
-          data-test="DesignSystem-Label--Text"
+      <legend>
+        <div
+          class="Label Label--withInput"
+          data-test="DesignSystem-Label"
         >
-          ChoiceList
-        </label>
-      </div>
+          <label
+            class="Label-text"
+            data-test="DesignSystem-Label--Text"
+          >
+            ChoiceList
+          </label>
+        </div>
+      </legend>
       <div
         class="ChoiceList--alignHorizontal"
       >
@@ -326,17 +332,19 @@ exports[`ChoiceList component
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <div
-        class="Label Label--withInput"
-        data-test="DesignSystem-Label"
-      >
-        <label
-          class="Label-text"
-          data-test="DesignSystem-Label--Text"
+      <legend>
+        <div
+          class="Label Label--withInput"
+          data-test="DesignSystem-Label"
         >
-          ChoiceList
-        </label>
-      </div>
+          <label
+            class="Label-text"
+            data-test="DesignSystem-Label--Text"
+          >
+            ChoiceList
+          </label>
+        </div>
+      </legend>
       <div
         class="ChoiceList--alignHorizontal"
       >
@@ -433,17 +441,19 @@ exports[`ChoiceList component
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <div
-        class="Label Label--withInput"
-        data-test="DesignSystem-Label"
-      >
-        <label
-          class="Label-text"
-          data-test="DesignSystem-Label--Text"
+      <legend>
+        <div
+          class="Label Label--withInput"
+          data-test="DesignSystem-Label"
         >
-          ChoiceList
-        </label>
-      </div>
+          <label
+            class="Label-text"
+            data-test="DesignSystem-Label--Text"
+          >
+            ChoiceList
+          </label>
+        </div>
+      </legend>
       <div
         class="ChoiceList--alignHorizontal"
       >
@@ -540,17 +550,19 @@ exports[`ChoiceList component
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <div
-        class="Label Label--withInput"
-        data-test="DesignSystem-Label"
-      >
-        <label
-          class="Label-text"
-          data-test="DesignSystem-Label--Text"
+      <legend>
+        <div
+          class="Label Label--withInput"
+          data-test="DesignSystem-Label"
         >
-          ChoiceList
-        </label>
-      </div>
+          <label
+            class="Label-text"
+            data-test="DesignSystem-Label--Text"
+          >
+            ChoiceList
+          </label>
+        </div>
+      </legend>
       <div
         class="ChoiceList--alignHorizontal"
       >
@@ -647,17 +659,19 @@ exports[`ChoiceList component
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <div
-        class="Label Label--withInput"
-        data-test="DesignSystem-Label"
-      >
-        <label
-          class="Label-text"
-          data-test="DesignSystem-Label--Text"
+      <legend>
+        <div
+          class="Label Label--withInput"
+          data-test="DesignSystem-Label"
         >
-          ChoiceList
-        </label>
-      </div>
+          <label
+            class="Label-text"
+            data-test="DesignSystem-Label--Text"
+          >
+            ChoiceList
+          </label>
+        </div>
+      </legend>
       <div
         class="ChoiceList--alignHorizontal"
       >
@@ -756,17 +770,19 @@ exports[`ChoiceList component
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <div
-        class="Label Label--withInput"
-        data-test="DesignSystem-Label"
-      >
-        <label
-          class="Label-text"
-          data-test="DesignSystem-Label--Text"
+      <legend>
+        <div
+          class="Label Label--withInput"
+          data-test="DesignSystem-Label"
         >
-          ChoiceList
-        </label>
-      </div>
+          <label
+            class="Label-text"
+            data-test="DesignSystem-Label--Text"
+          >
+            ChoiceList
+          </label>
+        </div>
+      </legend>
       <div
         class="ChoiceList--alignHorizontal"
       >
@@ -865,17 +881,19 @@ exports[`ChoiceList component
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <div
-        class="Label Label--withInput"
-        data-test="DesignSystem-Label"
-      >
-        <label
-          class="Label-text"
-          data-test="DesignSystem-Label--Text"
+      <legend>
+        <div
+          class="Label Label--withInput"
+          data-test="DesignSystem-Label"
         >
-          ChoiceList
-        </label>
-      </div>
+          <label
+            class="Label-text"
+            data-test="DesignSystem-Label--Text"
+          >
+            ChoiceList
+          </label>
+        </div>
+      </legend>
       <div
         class="ChoiceList--alignVertical"
       >
@@ -970,17 +988,19 @@ exports[`ChoiceList component
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <div
-        class="Label Label--withInput"
-        data-test="DesignSystem-Label"
-      >
-        <label
-          class="Label-text"
-          data-test="DesignSystem-Label--Text"
+      <legend>
+        <div
+          class="Label Label--withInput"
+          data-test="DesignSystem-Label"
         >
-          ChoiceList
-        </label>
-      </div>
+          <label
+            class="Label-text"
+            data-test="DesignSystem-Label--Text"
+          >
+            ChoiceList
+          </label>
+        </div>
+      </legend>
       <div
         class="ChoiceList--alignVertical"
       >
@@ -1075,17 +1095,19 @@ exports[`ChoiceList component
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <div
-        class="Label Label--withInput"
-        data-test="DesignSystem-Label"
-      >
-        <label
-          class="Label-text"
-          data-test="DesignSystem-Label--Text"
+      <legend>
+        <div
+          class="Label Label--withInput"
+          data-test="DesignSystem-Label"
         >
-          ChoiceList
-        </label>
-      </div>
+          <label
+            class="Label-text"
+            data-test="DesignSystem-Label--Text"
+          >
+            ChoiceList
+          </label>
+        </div>
+      </legend>
       <div
         class="ChoiceList--alignVertical"
       >
@@ -1182,17 +1204,19 @@ exports[`ChoiceList component
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <div
-        class="Label Label--withInput"
-        data-test="DesignSystem-Label"
-      >
-        <label
-          class="Label-text"
-          data-test="DesignSystem-Label--Text"
+      <legend>
+        <div
+          class="Label Label--withInput"
+          data-test="DesignSystem-Label"
         >
-          ChoiceList
-        </label>
-      </div>
+          <label
+            class="Label-text"
+            data-test="DesignSystem-Label--Text"
+          >
+            ChoiceList
+          </label>
+        </div>
+      </legend>
       <div
         class="ChoiceList--alignVertical"
       >
@@ -1289,17 +1313,19 @@ exports[`ChoiceList component
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <div
-        class="Label Label--withInput"
-        data-test="DesignSystem-Label"
-      >
-        <label
-          class="Label-text"
-          data-test="DesignSystem-Label--Text"
+      <legend>
+        <div
+          class="Label Label--withInput"
+          data-test="DesignSystem-Label"
         >
-          ChoiceList
-        </label>
-      </div>
+          <label
+            class="Label-text"
+            data-test="DesignSystem-Label--Text"
+          >
+            ChoiceList
+          </label>
+        </div>
+      </legend>
       <div
         class="ChoiceList--alignVertical"
       >
@@ -1396,17 +1422,19 @@ exports[`ChoiceList component
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <div
-        class="Label Label--withInput"
-        data-test="DesignSystem-Label"
-      >
-        <label
-          class="Label-text"
-          data-test="DesignSystem-Label--Text"
+      <legend>
+        <div
+          class="Label Label--withInput"
+          data-test="DesignSystem-Label"
         >
-          ChoiceList
-        </label>
-      </div>
+          <label
+            class="Label-text"
+            data-test="DesignSystem-Label--Text"
+          >
+            ChoiceList
+          </label>
+        </div>
+      </legend>
       <div
         class="ChoiceList--alignVertical"
       >
@@ -1503,17 +1531,19 @@ exports[`ChoiceList component
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <div
-        class="Label Label--withInput"
-        data-test="DesignSystem-Label"
-      >
-        <label
-          class="Label-text"
-          data-test="DesignSystem-Label--Text"
+      <legend>
+        <div
+          class="Label Label--withInput"
+          data-test="DesignSystem-Label"
         >
-          ChoiceList
-        </label>
-      </div>
+          <label
+            class="Label-text"
+            data-test="DesignSystem-Label--Text"
+          >
+            ChoiceList
+          </label>
+        </div>
+      </legend>
       <div
         class="ChoiceList--alignVertical"
       >
@@ -1612,17 +1642,19 @@ exports[`ChoiceList component
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <div
-        class="Label Label--withInput"
-        data-test="DesignSystem-Label"
-      >
-        <label
-          class="Label-text"
-          data-test="DesignSystem-Label--Text"
+      <legend>
+        <div
+          class="Label Label--withInput"
+          data-test="DesignSystem-Label"
         >
-          ChoiceList
-        </label>
-      </div>
+          <label
+            class="Label-text"
+            data-test="DesignSystem-Label--Text"
+          >
+            ChoiceList
+          </label>
+        </div>
+      </legend>
       <div
         class="ChoiceList--alignVertical"
       >
@@ -1721,17 +1753,19 @@ exports[`ChoiceList component
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <div
-        class="Label Label--withInput"
-        data-test="DesignSystem-Label"
-      >
-        <label
-          class="Label-text"
-          data-test="DesignSystem-Label--Text"
+      <legend>
+        <div
+          class="Label Label--withInput"
+          data-test="DesignSystem-Label"
         >
-          ChoiceList
-        </label>
-      </div>
+          <label
+            class="Label-text"
+            data-test="DesignSystem-Label--Text"
+          >
+            ChoiceList
+          </label>
+        </div>
+      </legend>
       <div
         class="ChoiceList--alignHorizontal"
       >
@@ -1826,17 +1860,19 @@ exports[`ChoiceList component
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <div
-        class="Label Label--withInput"
-        data-test="DesignSystem-Label"
-      >
-        <label
-          class="Label-text"
-          data-test="DesignSystem-Label--Text"
+      <legend>
+        <div
+          class="Label Label--withInput"
+          data-test="DesignSystem-Label"
         >
-          ChoiceList
-        </label>
-      </div>
+          <label
+            class="Label-text"
+            data-test="DesignSystem-Label--Text"
+          >
+            ChoiceList
+          </label>
+        </div>
+      </legend>
       <div
         class="ChoiceList--alignHorizontal"
       >
@@ -1931,17 +1967,19 @@ exports[`ChoiceList component
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <div
-        class="Label Label--withInput"
-        data-test="DesignSystem-Label"
-      >
-        <label
-          class="Label-text"
-          data-test="DesignSystem-Label--Text"
+      <legend>
+        <div
+          class="Label Label--withInput"
+          data-test="DesignSystem-Label"
         >
-          ChoiceList
-        </label>
-      </div>
+          <label
+            class="Label-text"
+            data-test="DesignSystem-Label--Text"
+          >
+            ChoiceList
+          </label>
+        </div>
+      </legend>
       <div
         class="ChoiceList--alignHorizontal"
       >
@@ -2038,17 +2076,19 @@ exports[`ChoiceList component
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <div
-        class="Label Label--withInput"
-        data-test="DesignSystem-Label"
-      >
-        <label
-          class="Label-text"
-          data-test="DesignSystem-Label--Text"
+      <legend>
+        <div
+          class="Label Label--withInput"
+          data-test="DesignSystem-Label"
         >
-          ChoiceList
-        </label>
-      </div>
+          <label
+            class="Label-text"
+            data-test="DesignSystem-Label--Text"
+          >
+            ChoiceList
+          </label>
+        </div>
+      </legend>
       <div
         class="ChoiceList--alignHorizontal"
       >
@@ -2145,17 +2185,19 @@ exports[`ChoiceList component
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <div
-        class="Label Label--withInput"
-        data-test="DesignSystem-Label"
-      >
-        <label
-          class="Label-text"
-          data-test="DesignSystem-Label--Text"
+      <legend>
+        <div
+          class="Label Label--withInput"
+          data-test="DesignSystem-Label"
         >
-          ChoiceList
-        </label>
-      </div>
+          <label
+            class="Label-text"
+            data-test="DesignSystem-Label--Text"
+          >
+            ChoiceList
+          </label>
+        </div>
+      </legend>
       <div
         class="ChoiceList--alignHorizontal"
       >
@@ -2252,17 +2294,19 @@ exports[`ChoiceList component
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <div
-        class="Label Label--withInput"
-        data-test="DesignSystem-Label"
-      >
-        <label
-          class="Label-text"
-          data-test="DesignSystem-Label--Text"
+      <legend>
+        <div
+          class="Label Label--withInput"
+          data-test="DesignSystem-Label"
         >
-          ChoiceList
-        </label>
-      </div>
+          <label
+            class="Label-text"
+            data-test="DesignSystem-Label--Text"
+          >
+            ChoiceList
+          </label>
+        </div>
+      </legend>
       <div
         class="ChoiceList--alignHorizontal"
       >
@@ -2359,17 +2403,19 @@ exports[`ChoiceList component
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <div
-        class="Label Label--withInput"
-        data-test="DesignSystem-Label"
-      >
-        <label
-          class="Label-text"
-          data-test="DesignSystem-Label--Text"
+      <legend>
+        <div
+          class="Label Label--withInput"
+          data-test="DesignSystem-Label"
         >
-          ChoiceList
-        </label>
-      </div>
+          <label
+            class="Label-text"
+            data-test="DesignSystem-Label--Text"
+          >
+            ChoiceList
+          </label>
+        </div>
+      </legend>
       <div
         class="ChoiceList--alignHorizontal"
       >
@@ -2468,17 +2514,19 @@ exports[`ChoiceList component
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <div
-        class="Label Label--withInput"
-        data-test="DesignSystem-Label"
-      >
-        <label
-          class="Label-text"
-          data-test="DesignSystem-Label--Text"
+      <legend>
+        <div
+          class="Label Label--withInput"
+          data-test="DesignSystem-Label"
         >
-          ChoiceList
-        </label>
-      </div>
+          <label
+            class="Label-text"
+            data-test="DesignSystem-Label--Text"
+          >
+            ChoiceList
+          </label>
+        </div>
+      </legend>
       <div
         class="ChoiceList--alignHorizontal"
       >
@@ -2577,17 +2625,19 @@ exports[`ChoiceList component
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <div
-        class="Label Label--withInput"
-        data-test="DesignSystem-Label"
-      >
-        <label
-          class="Label-text"
-          data-test="DesignSystem-Label--Text"
+      <legend>
+        <div
+          class="Label Label--withInput"
+          data-test="DesignSystem-Label"
         >
-          ChoiceList
-        </label>
-      </div>
+          <label
+            class="Label-text"
+            data-test="DesignSystem-Label--Text"
+          >
+            ChoiceList
+          </label>
+        </div>
+      </legend>
       <div
         class="ChoiceList--alignVertical"
       >
@@ -2682,17 +2732,19 @@ exports[`ChoiceList component
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <div
-        class="Label Label--withInput"
-        data-test="DesignSystem-Label"
-      >
-        <label
-          class="Label-text"
-          data-test="DesignSystem-Label--Text"
+      <legend>
+        <div
+          class="Label Label--withInput"
+          data-test="DesignSystem-Label"
         >
-          ChoiceList
-        </label>
-      </div>
+          <label
+            class="Label-text"
+            data-test="DesignSystem-Label--Text"
+          >
+            ChoiceList
+          </label>
+        </div>
+      </legend>
       <div
         class="ChoiceList--alignVertical"
       >
@@ -2787,17 +2839,19 @@ exports[`ChoiceList component
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <div
-        class="Label Label--withInput"
-        data-test="DesignSystem-Label"
-      >
-        <label
-          class="Label-text"
-          data-test="DesignSystem-Label--Text"
+      <legend>
+        <div
+          class="Label Label--withInput"
+          data-test="DesignSystem-Label"
         >
-          ChoiceList
-        </label>
-      </div>
+          <label
+            class="Label-text"
+            data-test="DesignSystem-Label--Text"
+          >
+            ChoiceList
+          </label>
+        </div>
+      </legend>
       <div
         class="ChoiceList--alignVertical"
       >
@@ -2894,17 +2948,19 @@ exports[`ChoiceList component
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <div
-        class="Label Label--withInput"
-        data-test="DesignSystem-Label"
-      >
-        <label
-          class="Label-text"
-          data-test="DesignSystem-Label--Text"
+      <legend>
+        <div
+          class="Label Label--withInput"
+          data-test="DesignSystem-Label"
         >
-          ChoiceList
-        </label>
-      </div>
+          <label
+            class="Label-text"
+            data-test="DesignSystem-Label--Text"
+          >
+            ChoiceList
+          </label>
+        </div>
+      </legend>
       <div
         class="ChoiceList--alignVertical"
       >
@@ -3001,17 +3057,19 @@ exports[`ChoiceList component
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <div
-        class="Label Label--withInput"
-        data-test="DesignSystem-Label"
-      >
-        <label
-          class="Label-text"
-          data-test="DesignSystem-Label--Text"
+      <legend>
+        <div
+          class="Label Label--withInput"
+          data-test="DesignSystem-Label"
         >
-          ChoiceList
-        </label>
-      </div>
+          <label
+            class="Label-text"
+            data-test="DesignSystem-Label--Text"
+          >
+            ChoiceList
+          </label>
+        </div>
+      </legend>
       <div
         class="ChoiceList--alignVertical"
       >
@@ -3108,17 +3166,19 @@ exports[`ChoiceList component
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <div
-        class="Label Label--withInput"
-        data-test="DesignSystem-Label"
-      >
-        <label
-          class="Label-text"
-          data-test="DesignSystem-Label--Text"
+      <legend>
+        <div
+          class="Label Label--withInput"
+          data-test="DesignSystem-Label"
         >
-          ChoiceList
-        </label>
-      </div>
+          <label
+            class="Label-text"
+            data-test="DesignSystem-Label--Text"
+          >
+            ChoiceList
+          </label>
+        </div>
+      </legend>
       <div
         class="ChoiceList--alignVertical"
       >
@@ -3215,17 +3275,19 @@ exports[`ChoiceList component
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <div
-        class="Label Label--withInput"
-        data-test="DesignSystem-Label"
-      >
-        <label
-          class="Label-text"
-          data-test="DesignSystem-Label--Text"
+      <legend>
+        <div
+          class="Label Label--withInput"
+          data-test="DesignSystem-Label"
         >
-          ChoiceList
-        </label>
-      </div>
+          <label
+            class="Label-text"
+            data-test="DesignSystem-Label--Text"
+          >
+            ChoiceList
+          </label>
+        </div>
+      </legend>
       <div
         class="ChoiceList--alignVertical"
       >
@@ -3324,17 +3386,19 @@ exports[`ChoiceList component
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <div
-        class="Label Label--withInput"
-        data-test="DesignSystem-Label"
-      >
-        <label
-          class="Label-text"
-          data-test="DesignSystem-Label--Text"
+      <legend>
+        <div
+          class="Label Label--withInput"
+          data-test="DesignSystem-Label"
         >
-          ChoiceList
-        </label>
-      </div>
+          <label
+            class="Label-text"
+            data-test="DesignSystem-Label--Text"
+          >
+            ChoiceList
+          </label>
+        </div>
+      </legend>
       <div
         class="ChoiceList--alignVertical"
       >

@@ -271,10 +271,14 @@ export const ChoiceList = (props: ChoiceListProps) => {
       <fieldset
         className={ChoiceListClass}
         data-test="DesignSystem-ChoiceList-Wrapper"
-        aria-label={ariaLabel}
+        aria-label={!title ? ariaLabel : undefined}
         aria-labelledby={ariaLabelledBy}
       >
-        {title && title.trim() && <Label withInput={true}>{title.trim()}</Label>}
+        {title && title.trim() && (
+          <legend>
+            <Label withInput={true}>{title.trim()}</Label>
+          </legend>
+        )}
         {allowMultiple ? (
           <div className={`${alignment === 'horizontal' ? ChoiceHorizontalClass : ChoiceListVerticalClass}`}>
             {renderCheckbox(choices, handleOnChange, disabled, size, alignment, selected, wrapLabel)}
