@@ -193,7 +193,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
         aria-controls={ariaControls}
         aria-expanded={openPopover}
         aria-haspopup="listbox"
-        aria-label={ariaLabel || value || placeholder || undefined}
+        aria-label={ariaLabel || value || placeholder || 'Select trigger'}
         aria-invalid={ariaInvalid ?? (error ? true : undefined)}
         data-test="DesignSystem-Select-trigger"
         {...rest}
