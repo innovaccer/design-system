@@ -96,12 +96,14 @@ export const ComboboxOption = (props: ComboboxOptionProps) => {
     );
   };
 
-  const matchesOption = (chip: OptionType) => {
-    if (option.id !== undefined && chip.id !== undefined) return chip.id === option.id;
-    return chip.value === option.value;
+  const matchesOption = (candidate: OptionType) => {
+    if (option.id !== undefined && candidate.id !== undefined) return candidate.id === option.id;
+    return candidate.label === option.label;
   };
 
-  const isSelected = multiSelect ? chipInputValue?.some(matchesOption) ?? false : option.value === inputValue?.value;
+  const isSelected = multiSelect
+    ? chipInputValue?.some(matchesOption) ?? false
+    : inputValue !== undefined && matchesOption(inputValue);
 
   return (
     <Listbox.Item
