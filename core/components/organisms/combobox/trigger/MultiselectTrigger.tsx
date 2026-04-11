@@ -307,14 +307,14 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
 
   return (
     <div data-test="DesignSystem-MultiSelectTrigger--Border" className={ChipInputBorderClass}>
+      {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions -- click-to-focus convenience; inner <input role="combobox"> is the real interactive element */}
       <div
         data-test="DesignSystem-MultiSelectTrigger"
         {...baseProps}
         className={ChipInputClass}
         onClick={onClickHandler}
         onKeyDown={handleTriggerKeyDown}
-        tabIndex={disabled ? -1 : tabIndex !== undefined ? tabIndex : 0}
-        role="button"
+        tabIndex={-1}
         aria-disabled={disabled || undefined}
       >
         <div className={styles['ChipInput-wrapper']} ref={customRef}>
