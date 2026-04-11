@@ -181,24 +181,25 @@ const SelectTrigger = (props: SelectTriggerProps) => {
       elementRef={elementRef}
       triggerClass="w-100"
     >
-      <button
-        ref={triggerRef as React.RefObject<HTMLButtonElement>}
-        onKeyDown={(event) => handleKeyDownTrigger(event, setOpenPopover, setHighlightFirstItem, setHighlightLastItem)}
-        type="button"
-        className={buttonClass}
-        disabled={disabled}
-        tabIndex={0}
-        style={triggerStyle}
-        role="combobox"
-        aria-controls={ariaControls}
-        aria-expanded={openPopover}
-        aria-haspopup="listbox"
-        aria-label={ariaLabel || value || placeholder || 'Select trigger'}
-        aria-invalid={ariaInvalid ?? (error ? true : undefined)}
-        data-test="DesignSystem-Select-trigger"
-        {...rest}
-      >
-        {
+      <div className="d-flex align-items-center position-relative w-100" style={triggerStyle}>
+        <button
+          ref={triggerRef as React.RefObject<HTMLButtonElement>}
+          onKeyDown={(event) =>
+            handleKeyDownTrigger(event, setOpenPopover, setHighlightFirstItem, setHighlightLastItem)
+          }
+          type="button"
+          className={buttonClass}
+          disabled={disabled}
+          tabIndex={0}
+          role="combobox"
+          aria-controls={ariaControls}
+          aria-expanded={openPopover}
+          aria-haspopup="listbox"
+          aria-label={ariaLabel || value || placeholder || 'Select trigger'}
+          aria-invalid={ariaInvalid ?? (error ? true : undefined)}
+          data-test="DesignSystem-Select-trigger"
+          {...rest}
+        >
           <div className={triggerClass}>
             {inlineLabel && (
               <Text appearance="subtle" className={`${inlineLabelClass} mr-4`} size={triggerTextSize}>
@@ -220,29 +221,21 @@ const SelectTrigger = (props: SelectTriggerProps) => {
               </span>
             )}
           </div>
-        }
+          <Icon appearance={buttonDisabled} name={iconName} type={iconType} />
+        </button>
         {isOptionSelected && withClearButton && (
-          <div
-            role="button"
-            tabIndex={0}
+          <button
+            type="button"
             className={iconClass}
             onClick={onClearHandler}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                (e.currentTarget as HTMLElement).click();
-              }
-              e.stopPropagation();
-            }}
             aria-label="clear selected"
             data-test="DesignSystem-Select--closeIcon"
+            disabled={disabled}
           >
             <Icon appearance={buttonDisabled} size={12} name="close" type={iconType} aria-hidden={true} />
-          </div>
+          </button>
         )}
-
-        <Icon appearance={buttonDisabled} name={iconName} type={iconType} />
-      </button>
+      </div>
     </Tooltip>
   );
 };

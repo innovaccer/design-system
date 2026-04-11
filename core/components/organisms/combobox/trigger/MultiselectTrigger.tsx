@@ -302,9 +302,13 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
 
   return (
     <div data-test="DesignSystem-MultiSelectTrigger--Border" className={ChipInputBorderClass}>
-      {/* Native <label> forwards clicks anywhere in the chip area to the inner input
-          without needing an onClick handler or keyboard listener on the wrapper */}
-      <label data-test="DesignSystem-MultiSelectTrigger" {...baseProps} htmlFor={inputId} className={ChipInputClass}>
+      <div
+        data-test="DesignSystem-MultiSelectTrigger"
+        {...baseProps}
+        className={ChipInputClass}
+        onClick={() => inputElementRef.current?.focus()}
+        role="presentation"
+      >
         <div className={styles['ChipInput-wrapper']} ref={customRef}>
           {chips && chips.length > 0 && chipComponents}
           <input
@@ -338,7 +342,10 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
               'flex-shrink-0'
             )}
             role="button"
-            onClick={onDeleteAllHandler}
+            onClick={(e) => {
+              e.stopPropagation();
+              onDeleteAllHandler(e);
+            }}
             tabIndex={disabled ? -1 : 0}
             aria-label="Clear all options"
             onKeyDown={(e) => {
@@ -351,7 +358,7 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
             <Icon name="close" size={16} className={classNames(inputStyles['Input-icon--right'], 'p-3')} />
           </div>
         )}
-      </label>
+      </div>
     </div>
   );
 });
