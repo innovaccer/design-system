@@ -185,6 +185,8 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
     readOnly,
     iconType,
     'aria-invalid': ariaInvalid,
+    'aria-labelledby': ariaLabelledBy,
+    tabIndex: tabIndexProp,
     ...rest
   } = props;
 
@@ -310,14 +312,15 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
         onClick={onClick}
         onFocus={onFocus}
         onPaste={onPaste}
+        aria-labelledby={ariaLabelledBy || undefined}
         aria-describedby={
-          [rest['aria-describedby'], inlineLabel ? inlineLabelId : undefined].filter(Boolean).join(' ') || undefined
+          [inlineLabel ? inlineLabelId : undefined, rest['aria-describedby']].filter(Boolean).join(' ') || undefined
         }
         /**
          *for readOnly: true, tab focus from input element is removed. Hence, its tabIndex is set to -1.
          *For rest, "undefined" lets user agent(browser) use the default tabIndex.
          */
-        tabIndex={readOnly ? -1 : undefined}
+        tabIndex={tabIndexProp !== undefined ? tabIndexProp : readOnly ? -1 : undefined}
         aria-invalid={error === true ? true : ariaInvalid}
       />
       {disabled ? (
