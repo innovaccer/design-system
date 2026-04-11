@@ -44,7 +44,9 @@ export const TextFieldWithInput = (props: TextFieldInputProps) => {
   const labelSize = size === 'tiny' ? 'small' : 'regular';
 
   const existingDescribedBy = props['aria-describedby'];
-  const resolvedDescribedBy = [existingDescribedBy, helpTextId].filter(Boolean).join(' ') || undefined;
+  const hasHelpText = inputError || helpText.trim().length > 0;
+  const resolvedDescribedBy =
+    [existingDescribedBy, hasHelpText ? helpTextId : undefined].filter(Boolean).join(' ') || undefined;
 
   return (
     <div>

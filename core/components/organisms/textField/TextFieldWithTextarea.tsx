@@ -66,7 +66,9 @@ export const TextFieldWithTextarea = (props: TextFieldTextareaProps) => {
   const inputError = error || inputText.length > max;
 
   const existingDescribedBy = props['aria-describedby'];
-  const resolvedDescribedBy = [existingDescribedBy, helpTextId].filter(Boolean).join(' ') || undefined;
+  const hasHelpText = inputError || helpText.trim().length > 0;
+  const resolvedDescribedBy =
+    [existingDescribedBy, hasHelpText ? helpTextId : undefined].filter(Boolean).join(' ') || undefined;
 
   React.useEffect(() => {
     const textarea = textareaRef.current;
