@@ -46,6 +46,7 @@ export const FileUploader = (props: FileUploaderProps) => {
   const baseId = baseIdRef.current;
   const titleId = `${baseId}-title`;
   const sizeLabelId = `${baseId}-size`;
+  const formatLabelId = `${baseId}-format`;
 
   const FileUploaderClass = classNames(
     {
@@ -59,7 +60,7 @@ export const FileUploader = (props: FileUploaderProps) => {
       <Text weight="medium" id={titleId}>
         {title}
       </Text>
-      <FileUploaderFormat formatLabel={formatLabel} />
+      <FileUploaderFormat formatLabel={formatLabel} formatLabelId={formatLabelId} />
       <Text size="small" appearance="subtle" className={!formatLabel ? 'mt-4' : ''} id={sizeLabelId}>
         {sizeLabel}
       </Text>
@@ -74,7 +75,7 @@ export const FileUploader = (props: FileUploaderProps) => {
         onChange={onChange}
         className="mt-5"
         aria-labelledby={titleId}
-        aria-describedby={sizeLabelId}
+        aria-describedby={formatLabel ? `${formatLabelId} ${sizeLabelId}` : sizeLabelId}
       />
     </div>
   );

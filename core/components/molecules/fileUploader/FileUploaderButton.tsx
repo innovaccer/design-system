@@ -58,6 +58,7 @@ export const FileUploaderButton = (props: FileUploaderButtonProps) => {
   } = props;
 
   const baseProps = extractBaseProps(props);
+  const inputRef = React.useRef<HTMLInputElement>(null);
 
   const FileUploaderButtonClass = classNames(
     {
@@ -68,10 +69,11 @@ export const FileUploaderButton = (props: FileUploaderButtonProps) => {
 
   return (
     <div {...baseProps} className={FileUploaderButtonClass}>
-      <Button type="button" disabled={disabled} icon="backup">
+      <Button type="button" disabled={disabled} icon="backup" onClick={() => inputRef.current?.click()}>
         {uploadButtonLabel}
       </Button>
       <input
+        ref={inputRef}
         name={name}
         id={id}
         data-test="DesignSystem-FileUploaderButton--Input"

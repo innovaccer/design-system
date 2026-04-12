@@ -13,18 +13,22 @@ exports[`FileUploaderList component
     <div
       class="FileUploaderItem"
       data-test="DesignSystem-FileUploader--Item"
-      role="button"
-      tabindex="0"
     >
       <div
         class="FileUploaderItem-file"
       >
-        <span
-          class="Text Text--subtle Text--regular FileUploaderItem-text"
-          data-test="DesignSystem-Text"
+        <button
+          class="FileUploaderItem-text FileUploaderItem-nameButton"
+          data-test="DesignSystem-FileUploader--NameButton"
+          type="button"
         >
-          Audio File.mp3
-        </span>
+          <span
+            class="Text Text--subtle Text--regular"
+            data-test="DesignSystem-Text"
+          >
+            Audio File.mp3
+          </span>
+        </button>
         <div
           class="d-flex align-items-center"
         >
@@ -83,18 +87,22 @@ exports[`FileUploaderList component
     <div
       class="FileUploaderItem"
       data-test="DesignSystem-FileUploader--Item"
-      role="button"
-      tabindex="0"
     >
       <div
         class="FileUploaderItem-file"
       >
-        <span
-          class="Text Text--default Text--regular FileUploaderItem-text"
-          data-test="DesignSystem-Text"
+        <button
+          class="FileUploaderItem-text FileUploaderItem-nameButton"
+          data-test="DesignSystem-FileUploader--NameButton"
+          type="button"
         >
-          Video File.mp4
-        </span>
+          <span
+            class="Text Text--default Text--regular"
+            data-test="DesignSystem-Text"
+          >
+            Video File.mp4
+          </span>
+        </button>
         <div
           class="d-flex align-items-center"
         >
@@ -122,18 +130,22 @@ exports[`FileUploaderList component
     <div
       class="FileUploaderItem"
       data-test="DesignSystem-FileUploader--Item"
-      role="button"
-      tabindex="0"
     >
       <div
         class="FileUploaderItem-file"
       >
-        <span
-          class="Text Text--subtle Text--regular FileUploaderItem-text"
-          data-test="DesignSystem-Text"
+        <button
+          class="FileUploaderItem-text FileUploaderItem-nameButton"
+          data-test="DesignSystem-FileUploader--NameButton"
+          type="button"
         >
-          Image File.jpeg
-        </span>
+          <span
+            class="Text Text--subtle Text--regular"
+            data-test="DesignSystem-Text"
+          >
+            Image File.jpeg
+          </span>
+        </button>
         <div
           class="d-flex align-items-center"
         >

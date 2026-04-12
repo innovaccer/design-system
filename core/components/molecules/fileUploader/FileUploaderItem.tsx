@@ -46,14 +46,6 @@ export const FileUploaderItem = (props: FileUploaderItemProps) => {
 
   const baseProps = extractBaseProps(props);
   const isClickable = Boolean(onClick);
-  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
-    if (!isClickable) return;
-
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault();
-      onClick?.(file, id);
-    }
-  };
 
   const FileItemClass = classNames(
     {
@@ -63,19 +55,22 @@ export const FileUploaderItem = (props: FileUploaderItemProps) => {
   );
 
   return (
-    <div
-      {...baseProps}
-      data-test="DesignSystem-FileUploader--Item"
-      className={FileItemClass}
-      onClick={() => onClick && onClick(file, id)}
-      onKeyDown={handleKeyDown}
-      role={isClickable ? 'button' : undefined}
-      tabIndex={isClickable ? 0 : undefined}
-    >
+    <div {...baseProps} data-test="DesignSystem-FileUploader--Item" className={FileItemClass}>
       <div className={styles['FileUploaderItem-file']}>
-        <Text className={styles['FileUploaderItem-text']} appearance={status === 'completed' ? 'default' : 'subtle'}>
-          {name}
-        </Text>
+        {isClickable ? (
+          <button
+            type="button"
+            data-test="DesignSystem-FileUploader--NameButton"
+            className={classNames(styles['FileUploaderItem-text'], styles['FileUploaderItem-nameButton'])}
+            onClick={() => onClick?.(file, id)}
+          >
+            <Text appearance={status === 'completed' ? 'default' : 'subtle'}>{name}</Text>
+          </button>
+        ) : (
+          <Text className={styles['FileUploaderItem-text']} appearance={status === 'completed' ? 'default' : 'subtle'}>
+            {name}
+          </Text>
+        )}
         <div className="d-flex align-items-center">
           <FileUploaderStatus
             file={file}
@@ -88,7 +83,10 @@ export const FileUploaderItem = (props: FileUploaderItemProps) => {
             data-test="DesignSystem-FileUploader--CancelButton"
             appearance="transparent"
             size="regular"
-            onClick={() => onDelete && onDelete(file, id)}
+            onClick={(e) => {
+              e.stopPropagation();
+              onDelete && onDelete(file, id);
+            }}
             icon="close"
           />
         </div>
