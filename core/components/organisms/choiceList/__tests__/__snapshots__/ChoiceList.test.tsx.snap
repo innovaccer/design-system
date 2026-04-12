@@ -12,11 +12,11 @@ exports[`ChoiceList component
     >
       <div
         class="Label Label--withInput"
-        data-test="DesignSystem-ChoiceList-Title"
+        data-test="DesignSystem-Label"
       >
         <label
           class="Label-text"
-          data-test="DesignSystem-ChoiceList-Title"
+          data-test="DesignSystem-Label--Text"
           id="ChoiceList-title-Test-uid"
         >
           ChoiceList
@@ -119,11 +119,11 @@ exports[`ChoiceList component
     >
       <div
         class="Label Label--withInput"
-        data-test="DesignSystem-ChoiceList-Title"
+        data-test="DesignSystem-Label"
       >
         <label
           class="Label-text"
-          data-test="DesignSystem-ChoiceList-Title"
+          data-test="DesignSystem-Label--Text"
           id="ChoiceList-title-Test-uid"
         >
           ChoiceList
@@ -226,11 +226,11 @@ exports[`ChoiceList component
     >
       <div
         class="Label Label--withInput"
-        data-test="DesignSystem-ChoiceList-Title"
+        data-test="DesignSystem-Label"
       >
         <label
           class="Label-text"
-          data-test="DesignSystem-ChoiceList-Title"
+          data-test="DesignSystem-Label--Text"
           id="ChoiceList-title-Test-uid"
         >
           ChoiceList
@@ -335,11 +335,11 @@ exports[`ChoiceList component
     >
       <div
         class="Label Label--withInput"
-        data-test="DesignSystem-ChoiceList-Title"
+        data-test="DesignSystem-Label"
       >
         <label
           class="Label-text"
-          data-test="DesignSystem-ChoiceList-Title"
+          data-test="DesignSystem-Label--Text"
           id="ChoiceList-title-Test-uid"
         >
           ChoiceList
@@ -444,11 +444,11 @@ exports[`ChoiceList component
     >
       <div
         class="Label Label--withInput"
-        data-test="DesignSystem-ChoiceList-Title"
+        data-test="DesignSystem-Label"
       >
         <label
           class="Label-text"
-          data-test="DesignSystem-ChoiceList-Title"
+          data-test="DesignSystem-Label--Text"
           id="ChoiceList-title-Test-uid"
         >
           ChoiceList
@@ -553,11 +553,11 @@ exports[`ChoiceList component
     >
       <div
         class="Label Label--withInput"
-        data-test="DesignSystem-ChoiceList-Title"
+        data-test="DesignSystem-Label"
       >
         <label
           class="Label-text"
-          data-test="DesignSystem-ChoiceList-Title"
+          data-test="DesignSystem-Label--Text"
           id="ChoiceList-title-Test-uid"
         >
           ChoiceList
@@ -662,11 +662,11 @@ exports[`ChoiceList component
     >
       <div
         class="Label Label--withInput"
-        data-test="DesignSystem-ChoiceList-Title"
+        data-test="DesignSystem-Label"
       >
         <label
           class="Label-text"
-          data-test="DesignSystem-ChoiceList-Title"
+          data-test="DesignSystem-Label--Text"
           id="ChoiceList-title-Test-uid"
         >
           ChoiceList
@@ -773,11 +773,11 @@ exports[`ChoiceList component
     >
       <div
         class="Label Label--withInput"
-        data-test="DesignSystem-ChoiceList-Title"
+        data-test="DesignSystem-Label"
       >
         <label
           class="Label-text"
-          data-test="DesignSystem-ChoiceList-Title"
+          data-test="DesignSystem-Label--Text"
           id="ChoiceList-title-Test-uid"
         >
           ChoiceList
@@ -884,11 +884,11 @@ exports[`ChoiceList component
     >
       <div
         class="Label Label--withInput"
-        data-test="DesignSystem-ChoiceList-Title"
+        data-test="DesignSystem-Label"
       >
         <label
           class="Label-text"
-          data-test="DesignSystem-ChoiceList-Title"
+          data-test="DesignSystem-Label--Text"
           id="ChoiceList-title-Test-uid"
         >
           ChoiceList
@@ -991,11 +991,11 @@ exports[`ChoiceList component
     >
       <div
         class="Label Label--withInput"
-        data-test="DesignSystem-ChoiceList-Title"
+        data-test="DesignSystem-Label"
       >
         <label
           class="Label-text"
-          data-test="DesignSystem-ChoiceList-Title"
+          data-test="DesignSystem-Label--Text"
           id="ChoiceList-title-Test-uid"
         >
           ChoiceList
@@ -1098,11 +1098,11 @@ exports[`ChoiceList component
     >
       <div
         class="Label Label--withInput"
-        data-test="DesignSystem-ChoiceList-Title"
+        data-test="DesignSystem-Label"
       >
         <label
           class="Label-text"
-          data-test="DesignSystem-ChoiceList-Title"
+          data-test="DesignSystem-Label--Text"
           id="ChoiceList-title-Test-uid"
         >
           ChoiceList
@@ -1207,11 +1207,11 @@ exports[`ChoiceList component
     >
       <div
         class="Label Label--withInput"
-        data-test="DesignSystem-ChoiceList-Title"
+        data-test="DesignSystem-Label"
       >
         <label
           class="Label-text"
-          data-test="DesignSystem-ChoiceList-Title"
+          data-test="DesignSystem-Label--Text"
           id="ChoiceList-title-Test-uid"
         >
           ChoiceList
@@ -1316,11 +1316,11 @@ exports[`ChoiceList component
     >
       <div
         class="Label Label--withInput"
-        data-test="DesignSystem-ChoiceList-Title"
+        data-test="DesignSystem-Label"
       >
         <label
           class="Label-text"
-          data-test="DesignSystem-ChoiceList-Title"
+          data-test="DesignSystem-Label--Text"
           id="ChoiceList-title-Test-uid"
         >
           ChoiceList
@@ -1425,11 +1425,11 @@ exports[`ChoiceList component
     >
       <div
         class="Label Label--withInput"
-        data-test="DesignSystem-ChoiceList-Title"
+        data-test="DesignSystem-Label"
       >
         <label
           class="Label-text"
-          data-test="DesignSystem-ChoiceList-Title"
+          data-test="DesignSystem-Label--Text"
           id="ChoiceList-title-Test-uid"
         >
           ChoiceList
@@ -1534,11 +1534,11 @@ exports[`ChoiceList component
     >
       <div
         class="Label Label--withInput"
-        data-test="DesignSystem-ChoiceList-Title"
+        data-test="DesignSystem-Label"
       >
         <label
           class="Label-text"
-          data-test="DesignSystem-ChoiceList-Title"
+          data-test="DesignSystem-Label--Text"
           id="ChoiceList-title-Test-uid"
         >
           ChoiceList
@@ -1645,11 +1645,11 @@ exports[`ChoiceList component
     >
       <div
         class="Label Label--withInput"
-        data-test="DesignSystem-ChoiceList-Title"
+        data-test="DesignSystem-Label"
       >
         <label
           class="Label-text"
-          data-test="DesignSystem-ChoiceList-Title"
+          data-test="DesignSystem-Label--Text"
           id="ChoiceList-title-Test-uid"
         >
           ChoiceList
@@ -1756,11 +1756,11 @@ exports[`ChoiceList component
     >
       <div
         class="Label Label--withInput"
-        data-test="DesignSystem-ChoiceList-Title"
+        data-test="DesignSystem-Label"
       >
         <label
           class="Label-text"
-          data-test="DesignSystem-ChoiceList-Title"
+          data-test="DesignSystem-Label--Text"
           id="ChoiceList-title-Test-uid"
         >
           ChoiceList
@@ -1863,11 +1863,11 @@ exports[`ChoiceList component
     >
       <div
         class="Label Label--withInput"
-        data-test="DesignSystem-ChoiceList-Title"
+        data-test="DesignSystem-Label"
       >
         <label
           class="Label-text"
-          data-test="DesignSystem-ChoiceList-Title"
+          data-test="DesignSystem-Label--Text"
           id="ChoiceList-title-Test-uid"
         >
           ChoiceList
@@ -1970,11 +1970,11 @@ exports[`ChoiceList component
     >
       <div
         class="Label Label--withInput"
-        data-test="DesignSystem-ChoiceList-Title"
+        data-test="DesignSystem-Label"
       >
         <label
           class="Label-text"
-          data-test="DesignSystem-ChoiceList-Title"
+          data-test="DesignSystem-Label--Text"
           id="ChoiceList-title-Test-uid"
         >
           ChoiceList
@@ -2079,11 +2079,11 @@ exports[`ChoiceList component
     >
       <div
         class="Label Label--withInput"
-        data-test="DesignSystem-ChoiceList-Title"
+        data-test="DesignSystem-Label"
       >
         <label
           class="Label-text"
-          data-test="DesignSystem-ChoiceList-Title"
+          data-test="DesignSystem-Label--Text"
           id="ChoiceList-title-Test-uid"
         >
           ChoiceList
@@ -2188,11 +2188,11 @@ exports[`ChoiceList component
     >
       <div
         class="Label Label--withInput"
-        data-test="DesignSystem-ChoiceList-Title"
+        data-test="DesignSystem-Label"
       >
         <label
           class="Label-text"
-          data-test="DesignSystem-ChoiceList-Title"
+          data-test="DesignSystem-Label--Text"
           id="ChoiceList-title-Test-uid"
         >
           ChoiceList
@@ -2297,11 +2297,11 @@ exports[`ChoiceList component
     >
       <div
         class="Label Label--withInput"
-        data-test="DesignSystem-ChoiceList-Title"
+        data-test="DesignSystem-Label"
       >
         <label
           class="Label-text"
-          data-test="DesignSystem-ChoiceList-Title"
+          data-test="DesignSystem-Label--Text"
           id="ChoiceList-title-Test-uid"
         >
           ChoiceList
@@ -2406,11 +2406,11 @@ exports[`ChoiceList component
     >
       <div
         class="Label Label--withInput"
-        data-test="DesignSystem-ChoiceList-Title"
+        data-test="DesignSystem-Label"
       >
         <label
           class="Label-text"
-          data-test="DesignSystem-ChoiceList-Title"
+          data-test="DesignSystem-Label--Text"
           id="ChoiceList-title-Test-uid"
         >
           ChoiceList
@@ -2517,11 +2517,11 @@ exports[`ChoiceList component
     >
       <div
         class="Label Label--withInput"
-        data-test="DesignSystem-ChoiceList-Title"
+        data-test="DesignSystem-Label"
       >
         <label
           class="Label-text"
-          data-test="DesignSystem-ChoiceList-Title"
+          data-test="DesignSystem-Label--Text"
           id="ChoiceList-title-Test-uid"
         >
           ChoiceList
@@ -2628,11 +2628,11 @@ exports[`ChoiceList component
     >
       <div
         class="Label Label--withInput"
-        data-test="DesignSystem-ChoiceList-Title"
+        data-test="DesignSystem-Label"
       >
         <label
           class="Label-text"
-          data-test="DesignSystem-ChoiceList-Title"
+          data-test="DesignSystem-Label--Text"
           id="ChoiceList-title-Test-uid"
         >
           ChoiceList
@@ -2735,11 +2735,11 @@ exports[`ChoiceList component
     >
       <div
         class="Label Label--withInput"
-        data-test="DesignSystem-ChoiceList-Title"
+        data-test="DesignSystem-Label"
       >
         <label
           class="Label-text"
-          data-test="DesignSystem-ChoiceList-Title"
+          data-test="DesignSystem-Label--Text"
           id="ChoiceList-title-Test-uid"
         >
           ChoiceList
@@ -2842,11 +2842,11 @@ exports[`ChoiceList component
     >
       <div
         class="Label Label--withInput"
-        data-test="DesignSystem-ChoiceList-Title"
+        data-test="DesignSystem-Label"
       >
         <label
           class="Label-text"
-          data-test="DesignSystem-ChoiceList-Title"
+          data-test="DesignSystem-Label--Text"
           id="ChoiceList-title-Test-uid"
         >
           ChoiceList
@@ -2951,11 +2951,11 @@ exports[`ChoiceList component
     >
       <div
         class="Label Label--withInput"
-        data-test="DesignSystem-ChoiceList-Title"
+        data-test="DesignSystem-Label"
       >
         <label
           class="Label-text"
-          data-test="DesignSystem-ChoiceList-Title"
+          data-test="DesignSystem-Label--Text"
           id="ChoiceList-title-Test-uid"
         >
           ChoiceList
@@ -3060,11 +3060,11 @@ exports[`ChoiceList component
     >
       <div
         class="Label Label--withInput"
-        data-test="DesignSystem-ChoiceList-Title"
+        data-test="DesignSystem-Label"
       >
         <label
           class="Label-text"
-          data-test="DesignSystem-ChoiceList-Title"
+          data-test="DesignSystem-Label--Text"
           id="ChoiceList-title-Test-uid"
         >
           ChoiceList
@@ -3169,11 +3169,11 @@ exports[`ChoiceList component
     >
       <div
         class="Label Label--withInput"
-        data-test="DesignSystem-ChoiceList-Title"
+        data-test="DesignSystem-Label"
       >
         <label
           class="Label-text"
-          data-test="DesignSystem-ChoiceList-Title"
+          data-test="DesignSystem-Label--Text"
           id="ChoiceList-title-Test-uid"
         >
           ChoiceList
@@ -3278,11 +3278,11 @@ exports[`ChoiceList component
     >
       <div
         class="Label Label--withInput"
-        data-test="DesignSystem-ChoiceList-Title"
+        data-test="DesignSystem-Label"
       >
         <label
           class="Label-text"
-          data-test="DesignSystem-ChoiceList-Title"
+          data-test="DesignSystem-Label--Text"
           id="ChoiceList-title-Test-uid"
         >
           ChoiceList
@@ -3389,11 +3389,11 @@ exports[`ChoiceList component
     >
       <div
         class="Label Label--withInput"
-        data-test="DesignSystem-ChoiceList-Title"
+        data-test="DesignSystem-Label"
       >
         <label
           class="Label-text"
-          data-test="DesignSystem-ChoiceList-Title"
+          data-test="DesignSystem-Label--Text"
           id="ChoiceList-title-Test-uid"
         >
           ChoiceList

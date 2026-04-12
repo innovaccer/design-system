@@ -285,7 +285,7 @@ export const ChoiceList = (props: ChoiceListProps) => {
         aria-labelledby={effectiveLabelledBy}
       >
         {title && title.trim() && (
-          <Label id={titleId} withInput={true} data-test="DesignSystem-ChoiceList-Title">
+          <Label id={titleId} withInput={true}>
             {title.trim()}
           </Label>
         )}
