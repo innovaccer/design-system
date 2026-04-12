@@ -200,8 +200,11 @@ export const EditableInput = (props: EditableInputProps) => {
       icon={error ? 'error' : inputIcon}
       ref={inputRef}
       data-test="DesignSystem-EditableInput--Input"
-      aria-describedby={error && errorMessage ? errorDescId : undefined}
       {...rest}
+      aria-describedby={
+        [error && errorMessage ? errorDescId : undefined, rest['aria-describedby']].filter(Boolean).join(' ') ||
+        undefined
+      }
     />
   );
 
