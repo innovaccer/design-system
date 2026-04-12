@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Textarea, Label } from '@/index';
 import { BaseProps } from '@/utils/types';
 import { TextareaProps } from '@/index.type';
+import uidGenerator from '@/utils/uidGenerator';
 import { RenderHelpText, RenderCounter } from './TextFieldCommon';
 
 export interface TextFieldWithTextareaProps extends BaseProps {
@@ -48,12 +49,25 @@ export const TextFieldWithTextarea = (props: TextFieldTextareaProps) => {
   const [inputText, setInputText] = React.useState<string>(value);
   const [helptextWidth, setHelptextWidth] = React.useState(0);
 
+  const fieldIdRef = React.useRef<string>(`TextField-textarea-${uidGenerator()}`);
+  const fieldId = props.id || fieldIdRef.current;
+
+  const helpTextIdRef = React.useRef<string | null>(null);
+  if (helpTextIdRef.current === null) {
+    helpTextIdRef.current = `TextField-helpText-${uidGenerator()}`;
+  }
+  const helpTextId = helpTextIdRef.current;
+
   const onChangeHandler = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setInputText(e.target.value);
     if (onChange) onChange(e);
   };
 
   const inputError = error || inputText.length > max;
+
+  const hasHelpText = inputError || helpText.trim().length > 0;
+  const resolvedDescribedBy =
+    [props['aria-describedby'], hasHelpText ? helpTextId : undefined].filter(Boolean).join(' ') || undefined;
 
   React.useEffect(() => {
     const textarea = textareaRef.current;
@@ -75,20 +89,22 @@ export const TextFieldWithTextarea = (props: TextFieldTextareaProps) => {
   return (
     <div>
       {label && (
-        <Label required={required} withInput={true} size={size}>
+        <Label required={required} withInput={true} size={size} htmlFor={fieldId}>
           {label}
         </Label>
       )}
       <Textarea
         {...props}
+        id={fieldId}
         resize={resize}
         rows={rows}
         onChange={onChangeHandler}
         error={inputError}
+        aria-describedby={resolvedDescribedBy}
         ref={textareaRef}
       />
       <div className="d-flex justify-content-between" style={{ width: helptextWidth }}>
-        <RenderHelpText helpText={helpText} error={inputError} />
+        <RenderHelpText helpText={helpText} error={inputError} id={helpTextId} />
         <RenderCounter inputText={inputText} max={max} />
       </div>
     </div>
