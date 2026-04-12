@@ -43,6 +43,7 @@ export const EditableDropdown = (props: EditableDropdownProps) => {
 
   const containerRef = React.useRef<HTMLDivElement>(null);
   const focusDropdownTriggerAfterOpenRef = React.useRef(false);
+  const wasDropdownOpenRef = React.useRef(false);
 
   const CompClass = classNames(
     {
@@ -121,6 +122,20 @@ export const EditableDropdown = (props: EditableDropdownProps) => {
     });
     return () => cancelAnimationFrame(frame);
   }, [editing, dropdownOpen, isDropdownDisabled]);
+
+  // Return focus to the outer container when the dropdown closes, overriding
+  // DropdownList's internal focus call which would target the now-hidden trigger.
+  React.useEffect(() => {
+    const wasOpen = wasDropdownOpenRef.current;
+    wasDropdownOpenRef.current = dropdownOpen;
+    if (wasOpen && !dropdownOpen && !isDropdownDisabled) {
+      const frame = requestAnimationFrame(() => {
+        containerRef.current?.focus();
+      });
+      return () => cancelAnimationFrame(frame);
+    }
+    return undefined;
+  }, [dropdownOpen, isDropdownDisabled]);
 
   const displayText = label || placeholder;
   const textClass = classNames(styles['EditableDropdown-text'], {
