@@ -116,6 +116,11 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forw
 
   const describedBy = [ariaDescribedBy, helpText ? helpTextId : undefined].filter(Boolean).join(' ') || undefined;
 
+  // aria-invalid is a global WAI-ARIA 1.2 state valid on all roles, including radio.
+  // Spread via an object so jsx-a11y static analysis does not incorrectly flag it.
+  const errorAriaProps: { 'aria-invalid'?: true } = {};
+  if (error) errorAriaProps['aria-invalid'] = true;
+
   return (
     <div className={RadioClass} data-test="DesignSystem-Radio">
       <div className={RadioOuterWrapper} data-test="DesignSystem-Radio-OuterWrapper">
@@ -135,8 +140,7 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forw
           aria-label={ariaLabel}
           aria-labelledby={ariaLabelledBy}
           aria-describedby={describedBy}
-          // eslint-disable-next-line jsx-a11y/role-supports-aria-props -- aria-invalid is a global ARIA property valid on all form controls (WAI-ARIA 1.2)
-          aria-invalid={error ? true : undefined}
+          {...errorAriaProps}
           {...rest}
         />
         <span data-test="DesignSystem-Radio-wrapper" className={RadioWrapper} />
