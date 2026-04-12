@@ -313,9 +313,19 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
         onFocus={onFocus}
         onPaste={onPaste}
         aria-labelledby={
-          [inlineLabel ? inlineLabelId : undefined, ariaLabelledBy].filter(Boolean).join(' ') || undefined
+          // Merge inlineLabelId only when an explicit aria-labelledby is also provided so
+          // that a native <label htmlFor> association is not silently overridden.
+          // When aria-labelledby is absent, consumers rely on the native label; the
+          // inline token is then surfaced via aria-describedby as supplemental context.
+          inlineLabel && ariaLabelledBy
+            ? [inlineLabelId, ariaLabelledBy].filter(Boolean).join(' ')
+            : ariaLabelledBy || undefined
         }
-        aria-describedby={rest['aria-describedby'] || undefined}
+        aria-describedby={
+          [rest['aria-describedby'], inlineLabel && !ariaLabelledBy ? inlineLabelId : undefined]
+            .filter(Boolean)
+            .join(' ') || undefined
+        }
         /**
          *for readOnly: true, tab focus from input element is removed. Hence, its tabIndex is set to -1.
          *For rest, "undefined" lets user agent(browser) use the default tabIndex.

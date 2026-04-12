@@ -686,13 +686,29 @@ describe('Input Component - Comprehensive Behavior Tests', () => {
       expect(input).not.toHaveAttribute('aria-invalid');
     });
 
-    it('associates inline label with input via aria-labelledby', () => {
+    it('associates inline label via aria-describedby when no aria-labelledby is provided', () => {
       const { getByTestId, getByText } = render(<Input name="test" inlineLabel="USD" value="100" />);
 
       const input = getByTestId('DesignSystem-Input');
       const inlineLabelElement = getByText('USD').closest('[id]') as HTMLElement;
 
-      expect(input).toHaveAttribute('aria-labelledby', inlineLabelElement.id);
+      // Without an explicit aria-labelledby, inlineLabel is surfaced as supplemental
+      // description so that a native <label htmlFor> association is not overridden.
+      expect(input).toHaveAttribute('aria-describedby', inlineLabelElement.id);
+      expect(input).not.toHaveAttribute('aria-labelledby');
+    });
+
+    it('merges inline label id into aria-labelledby when aria-labelledby is explicitly provided', () => {
+      const { getByTestId, getByText } = render(
+        <Input name="test" inlineLabel="USD" value="100" aria-labelledby="external-label" />
+      );
+
+      const input = getByTestId('DesignSystem-Input');
+      const inlineLabelElement = getByText('USD').closest('[id]') as HTMLElement;
+
+      const labelledBy = input.getAttribute('aria-labelledby') ?? '';
+      expect(labelledBy).toContain(inlineLabelElement.id);
+      expect(labelledBy).toContain('external-label');
     });
 
     it('does not set aria-describedby when inlineLabel is not provided', () => {
