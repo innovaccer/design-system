@@ -6,22 +6,22 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <legend>
-        <div
-          class="Label Label--withInput"
-          data-test="DesignSystem-Label"
+      <div
+        class="Label Label--withInput"
+        data-test="DesignSystem-ChoiceList-Title"
+      >
+        <label
+          class="Label-text"
+          data-test="DesignSystem-ChoiceList-Title"
+          id="ChoiceList-title-Test-uid"
         >
-          <label
-            class="Label-text"
-            data-test="DesignSystem-Label--Text"
-          >
-            ChoiceList
-          </label>
-        </div>
-      </legend>
+          ChoiceList
+        </label>
+      </div>
       <div
         class="ChoiceList--alignHorizontal"
       >
@@ -113,22 +113,22 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <legend>
-        <div
-          class="Label Label--withInput"
-          data-test="DesignSystem-Label"
+      <div
+        class="Label Label--withInput"
+        data-test="DesignSystem-ChoiceList-Title"
+      >
+        <label
+          class="Label-text"
+          data-test="DesignSystem-ChoiceList-Title"
+          id="ChoiceList-title-Test-uid"
         >
-          <label
-            class="Label-text"
-            data-test="DesignSystem-Label--Text"
-          >
-            ChoiceList
-          </label>
-        </div>
-      </legend>
+          ChoiceList
+        </label>
+      </div>
       <div
         class="ChoiceList--alignHorizontal"
       >
@@ -220,22 +220,22 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <legend>
-        <div
-          class="Label Label--withInput"
-          data-test="DesignSystem-Label"
+      <div
+        class="Label Label--withInput"
+        data-test="DesignSystem-ChoiceList-Title"
+      >
+        <label
+          class="Label-text"
+          data-test="DesignSystem-ChoiceList-Title"
+          id="ChoiceList-title-Test-uid"
         >
-          <label
-            class="Label-text"
-            data-test="DesignSystem-Label--Text"
-          >
-            ChoiceList
-          </label>
-        </div>
-      </legend>
+          ChoiceList
+        </label>
+      </div>
       <div
         class="ChoiceList--alignHorizontal"
       >
@@ -329,22 +329,22 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <legend>
-        <div
-          class="Label Label--withInput"
-          data-test="DesignSystem-Label"
+      <div
+        class="Label Label--withInput"
+        data-test="DesignSystem-ChoiceList-Title"
+      >
+        <label
+          class="Label-text"
+          data-test="DesignSystem-ChoiceList-Title"
+          id="ChoiceList-title-Test-uid"
         >
-          <label
-            class="Label-text"
-            data-test="DesignSystem-Label--Text"
-          >
-            ChoiceList
-          </label>
-        </div>
-      </legend>
+          ChoiceList
+        </label>
+      </div>
       <div
         class="ChoiceList--alignHorizontal"
       >
@@ -438,22 +438,22 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <legend>
-        <div
-          class="Label Label--withInput"
-          data-test="DesignSystem-Label"
+      <div
+        class="Label Label--withInput"
+        data-test="DesignSystem-ChoiceList-Title"
+      >
+        <label
+          class="Label-text"
+          data-test="DesignSystem-ChoiceList-Title"
+          id="ChoiceList-title-Test-uid"
         >
-          <label
-            class="Label-text"
-            data-test="DesignSystem-Label--Text"
-          >
-            ChoiceList
-          </label>
-        </div>
-      </legend>
+          ChoiceList
+        </label>
+      </div>
       <div
         class="ChoiceList--alignHorizontal"
       >
@@ -547,22 +547,22 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <legend>
-        <div
-          class="Label Label--withInput"
-          data-test="DesignSystem-Label"
+      <div
+        class="Label Label--withInput"
+        data-test="DesignSystem-ChoiceList-Title"
+      >
+        <label
+          class="Label-text"
+          data-test="DesignSystem-ChoiceList-Title"
+          id="ChoiceList-title-Test-uid"
         >
-          <label
-            class="Label-text"
-            data-test="DesignSystem-Label--Text"
-          >
-            ChoiceList
-          </label>
-        </div>
-      </legend>
+          ChoiceList
+        </label>
+      </div>
       <div
         class="ChoiceList--alignHorizontal"
       >
@@ -656,22 +656,22 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <legend>
-        <div
-          class="Label Label--withInput"
-          data-test="DesignSystem-Label"
+      <div
+        class="Label Label--withInput"
+        data-test="DesignSystem-ChoiceList-Title"
+      >
+        <label
+          class="Label-text"
+          data-test="DesignSystem-ChoiceList-Title"
+          id="ChoiceList-title-Test-uid"
         >
-          <label
-            class="Label-text"
-            data-test="DesignSystem-Label--Text"
-          >
-            ChoiceList
-          </label>
-        </div>
-      </legend>
+          ChoiceList
+        </label>
+      </div>
       <div
         class="ChoiceList--alignHorizontal"
       >
@@ -767,22 +767,22 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <legend>
-        <div
-          class="Label Label--withInput"
-          data-test="DesignSystem-Label"
+      <div
+        class="Label Label--withInput"
+        data-test="DesignSystem-ChoiceList-Title"
+      >
+        <label
+          class="Label-text"
+          data-test="DesignSystem-ChoiceList-Title"
+          id="ChoiceList-title-Test-uid"
         >
-          <label
-            class="Label-text"
-            data-test="DesignSystem-Label--Text"
-          >
-            ChoiceList
-          </label>
-        </div>
-      </legend>
+          ChoiceList
+        </label>
+      </div>
       <div
         class="ChoiceList--alignHorizontal"
       >
@@ -878,22 +878,22 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <legend>
-        <div
-          class="Label Label--withInput"
-          data-test="DesignSystem-Label"
+      <div
+        class="Label Label--withInput"
+        data-test="DesignSystem-ChoiceList-Title"
+      >
+        <label
+          class="Label-text"
+          data-test="DesignSystem-ChoiceList-Title"
+          id="ChoiceList-title-Test-uid"
         >
-          <label
-            class="Label-text"
-            data-test="DesignSystem-Label--Text"
-          >
-            ChoiceList
-          </label>
-        </div>
-      </legend>
+          ChoiceList
+        </label>
+      </div>
       <div
         class="ChoiceList--alignVertical"
       >
@@ -985,22 +985,22 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <legend>
-        <div
-          class="Label Label--withInput"
-          data-test="DesignSystem-Label"
+      <div
+        class="Label Label--withInput"
+        data-test="DesignSystem-ChoiceList-Title"
+      >
+        <label
+          class="Label-text"
+          data-test="DesignSystem-ChoiceList-Title"
+          id="ChoiceList-title-Test-uid"
         >
-          <label
-            class="Label-text"
-            data-test="DesignSystem-Label--Text"
-          >
-            ChoiceList
-          </label>
-        </div>
-      </legend>
+          ChoiceList
+        </label>
+      </div>
       <div
         class="ChoiceList--alignVertical"
       >
@@ -1092,22 +1092,22 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <legend>
-        <div
-          class="Label Label--withInput"
-          data-test="DesignSystem-Label"
+      <div
+        class="Label Label--withInput"
+        data-test="DesignSystem-ChoiceList-Title"
+      >
+        <label
+          class="Label-text"
+          data-test="DesignSystem-ChoiceList-Title"
+          id="ChoiceList-title-Test-uid"
         >
-          <label
-            class="Label-text"
-            data-test="DesignSystem-Label--Text"
-          >
-            ChoiceList
-          </label>
-        </div>
-      </legend>
+          ChoiceList
+        </label>
+      </div>
       <div
         class="ChoiceList--alignVertical"
       >
@@ -1201,22 +1201,22 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <legend>
-        <div
-          class="Label Label--withInput"
-          data-test="DesignSystem-Label"
+      <div
+        class="Label Label--withInput"
+        data-test="DesignSystem-ChoiceList-Title"
+      >
+        <label
+          class="Label-text"
+          data-test="DesignSystem-ChoiceList-Title"
+          id="ChoiceList-title-Test-uid"
         >
-          <label
-            class="Label-text"
-            data-test="DesignSystem-Label--Text"
-          >
-            ChoiceList
-          </label>
-        </div>
-      </legend>
+          ChoiceList
+        </label>
+      </div>
       <div
         class="ChoiceList--alignVertical"
       >
@@ -1310,22 +1310,22 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <legend>
-        <div
-          class="Label Label--withInput"
-          data-test="DesignSystem-Label"
+      <div
+        class="Label Label--withInput"
+        data-test="DesignSystem-ChoiceList-Title"
+      >
+        <label
+          class="Label-text"
+          data-test="DesignSystem-ChoiceList-Title"
+          id="ChoiceList-title-Test-uid"
         >
-          <label
-            class="Label-text"
-            data-test="DesignSystem-Label--Text"
-          >
-            ChoiceList
-          </label>
-        </div>
-      </legend>
+          ChoiceList
+        </label>
+      </div>
       <div
         class="ChoiceList--alignVertical"
       >
@@ -1419,22 +1419,22 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <legend>
-        <div
-          class="Label Label--withInput"
-          data-test="DesignSystem-Label"
+      <div
+        class="Label Label--withInput"
+        data-test="DesignSystem-ChoiceList-Title"
+      >
+        <label
+          class="Label-text"
+          data-test="DesignSystem-ChoiceList-Title"
+          id="ChoiceList-title-Test-uid"
         >
-          <label
-            class="Label-text"
-            data-test="DesignSystem-Label--Text"
-          >
-            ChoiceList
-          </label>
-        </div>
-      </legend>
+          ChoiceList
+        </label>
+      </div>
       <div
         class="ChoiceList--alignVertical"
       >
@@ -1528,22 +1528,22 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <legend>
-        <div
-          class="Label Label--withInput"
-          data-test="DesignSystem-Label"
+      <div
+        class="Label Label--withInput"
+        data-test="DesignSystem-ChoiceList-Title"
+      >
+        <label
+          class="Label-text"
+          data-test="DesignSystem-ChoiceList-Title"
+          id="ChoiceList-title-Test-uid"
         >
-          <label
-            class="Label-text"
-            data-test="DesignSystem-Label--Text"
-          >
-            ChoiceList
-          </label>
-        </div>
-      </legend>
+          ChoiceList
+        </label>
+      </div>
       <div
         class="ChoiceList--alignVertical"
       >
@@ -1639,22 +1639,22 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <legend>
-        <div
-          class="Label Label--withInput"
-          data-test="DesignSystem-Label"
+      <div
+        class="Label Label--withInput"
+        data-test="DesignSystem-ChoiceList-Title"
+      >
+        <label
+          class="Label-text"
+          data-test="DesignSystem-ChoiceList-Title"
+          id="ChoiceList-title-Test-uid"
         >
-          <label
-            class="Label-text"
-            data-test="DesignSystem-Label--Text"
-          >
-            ChoiceList
-          </label>
-        </div>
-      </legend>
+          ChoiceList
+        </label>
+      </div>
       <div
         class="ChoiceList--alignVertical"
       >
@@ -1750,22 +1750,22 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <legend>
-        <div
-          class="Label Label--withInput"
-          data-test="DesignSystem-Label"
+      <div
+        class="Label Label--withInput"
+        data-test="DesignSystem-ChoiceList-Title"
+      >
+        <label
+          class="Label-text"
+          data-test="DesignSystem-ChoiceList-Title"
+          id="ChoiceList-title-Test-uid"
         >
-          <label
-            class="Label-text"
-            data-test="DesignSystem-Label--Text"
-          >
-            ChoiceList
-          </label>
-        </div>
-      </legend>
+          ChoiceList
+        </label>
+      </div>
       <div
         class="ChoiceList--alignHorizontal"
       >
@@ -1857,22 +1857,22 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <legend>
-        <div
-          class="Label Label--withInput"
-          data-test="DesignSystem-Label"
+      <div
+        class="Label Label--withInput"
+        data-test="DesignSystem-ChoiceList-Title"
+      >
+        <label
+          class="Label-text"
+          data-test="DesignSystem-ChoiceList-Title"
+          id="ChoiceList-title-Test-uid"
         >
-          <label
-            class="Label-text"
-            data-test="DesignSystem-Label--Text"
-          >
-            ChoiceList
-          </label>
-        </div>
-      </legend>
+          ChoiceList
+        </label>
+      </div>
       <div
         class="ChoiceList--alignHorizontal"
       >
@@ -1964,22 +1964,22 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <legend>
-        <div
-          class="Label Label--withInput"
-          data-test="DesignSystem-Label"
+      <div
+        class="Label Label--withInput"
+        data-test="DesignSystem-ChoiceList-Title"
+      >
+        <label
+          class="Label-text"
+          data-test="DesignSystem-ChoiceList-Title"
+          id="ChoiceList-title-Test-uid"
         >
-          <label
-            class="Label-text"
-            data-test="DesignSystem-Label--Text"
-          >
-            ChoiceList
-          </label>
-        </div>
-      </legend>
+          ChoiceList
+        </label>
+      </div>
       <div
         class="ChoiceList--alignHorizontal"
       >
@@ -2073,22 +2073,22 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <legend>
-        <div
-          class="Label Label--withInput"
-          data-test="DesignSystem-Label"
+      <div
+        class="Label Label--withInput"
+        data-test="DesignSystem-ChoiceList-Title"
+      >
+        <label
+          class="Label-text"
+          data-test="DesignSystem-ChoiceList-Title"
+          id="ChoiceList-title-Test-uid"
         >
-          <label
-            class="Label-text"
-            data-test="DesignSystem-Label--Text"
-          >
-            ChoiceList
-          </label>
-        </div>
-      </legend>
+          ChoiceList
+        </label>
+      </div>
       <div
         class="ChoiceList--alignHorizontal"
       >
@@ -2182,22 +2182,22 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <legend>
-        <div
-          class="Label Label--withInput"
-          data-test="DesignSystem-Label"
+      <div
+        class="Label Label--withInput"
+        data-test="DesignSystem-ChoiceList-Title"
+      >
+        <label
+          class="Label-text"
+          data-test="DesignSystem-ChoiceList-Title"
+          id="ChoiceList-title-Test-uid"
         >
-          <label
-            class="Label-text"
-            data-test="DesignSystem-Label--Text"
-          >
-            ChoiceList
-          </label>
-        </div>
-      </legend>
+          ChoiceList
+        </label>
+      </div>
       <div
         class="ChoiceList--alignHorizontal"
       >
@@ -2291,22 +2291,22 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <legend>
-        <div
-          class="Label Label--withInput"
-          data-test="DesignSystem-Label"
+      <div
+        class="Label Label--withInput"
+        data-test="DesignSystem-ChoiceList-Title"
+      >
+        <label
+          class="Label-text"
+          data-test="DesignSystem-ChoiceList-Title"
+          id="ChoiceList-title-Test-uid"
         >
-          <label
-            class="Label-text"
-            data-test="DesignSystem-Label--Text"
-          >
-            ChoiceList
-          </label>
-        </div>
-      </legend>
+          ChoiceList
+        </label>
+      </div>
       <div
         class="ChoiceList--alignHorizontal"
       >
@@ -2400,22 +2400,22 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <legend>
-        <div
-          class="Label Label--withInput"
-          data-test="DesignSystem-Label"
+      <div
+        class="Label Label--withInput"
+        data-test="DesignSystem-ChoiceList-Title"
+      >
+        <label
+          class="Label-text"
+          data-test="DesignSystem-ChoiceList-Title"
+          id="ChoiceList-title-Test-uid"
         >
-          <label
-            class="Label-text"
-            data-test="DesignSystem-Label--Text"
-          >
-            ChoiceList
-          </label>
-        </div>
-      </legend>
+          ChoiceList
+        </label>
+      </div>
       <div
         class="ChoiceList--alignHorizontal"
       >
@@ -2511,22 +2511,22 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <legend>
-        <div
-          class="Label Label--withInput"
-          data-test="DesignSystem-Label"
+      <div
+        class="Label Label--withInput"
+        data-test="DesignSystem-ChoiceList-Title"
+      >
+        <label
+          class="Label-text"
+          data-test="DesignSystem-ChoiceList-Title"
+          id="ChoiceList-title-Test-uid"
         >
-          <label
-            class="Label-text"
-            data-test="DesignSystem-Label--Text"
-          >
-            ChoiceList
-          </label>
-        </div>
-      </legend>
+          ChoiceList
+        </label>
+      </div>
       <div
         class="ChoiceList--alignHorizontal"
       >
@@ -2622,22 +2622,22 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <legend>
-        <div
-          class="Label Label--withInput"
-          data-test="DesignSystem-Label"
+      <div
+        class="Label Label--withInput"
+        data-test="DesignSystem-ChoiceList-Title"
+      >
+        <label
+          class="Label-text"
+          data-test="DesignSystem-ChoiceList-Title"
+          id="ChoiceList-title-Test-uid"
         >
-          <label
-            class="Label-text"
-            data-test="DesignSystem-Label--Text"
-          >
-            ChoiceList
-          </label>
-        </div>
-      </legend>
+          ChoiceList
+        </label>
+      </div>
       <div
         class="ChoiceList--alignVertical"
       >
@@ -2729,22 +2729,22 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <legend>
-        <div
-          class="Label Label--withInput"
-          data-test="DesignSystem-Label"
+      <div
+        class="Label Label--withInput"
+        data-test="DesignSystem-ChoiceList-Title"
+      >
+        <label
+          class="Label-text"
+          data-test="DesignSystem-ChoiceList-Title"
+          id="ChoiceList-title-Test-uid"
         >
-          <label
-            class="Label-text"
-            data-test="DesignSystem-Label--Text"
-          >
-            ChoiceList
-          </label>
-        </div>
-      </legend>
+          ChoiceList
+        </label>
+      </div>
       <div
         class="ChoiceList--alignVertical"
       >
@@ -2836,22 +2836,22 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <legend>
-        <div
-          class="Label Label--withInput"
-          data-test="DesignSystem-Label"
+      <div
+        class="Label Label--withInput"
+        data-test="DesignSystem-ChoiceList-Title"
+      >
+        <label
+          class="Label-text"
+          data-test="DesignSystem-ChoiceList-Title"
+          id="ChoiceList-title-Test-uid"
         >
-          <label
-            class="Label-text"
-            data-test="DesignSystem-Label--Text"
-          >
-            ChoiceList
-          </label>
-        </div>
-      </legend>
+          ChoiceList
+        </label>
+      </div>
       <div
         class="ChoiceList--alignVertical"
       >
@@ -2945,22 +2945,22 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <legend>
-        <div
-          class="Label Label--withInput"
-          data-test="DesignSystem-Label"
+      <div
+        class="Label Label--withInput"
+        data-test="DesignSystem-ChoiceList-Title"
+      >
+        <label
+          class="Label-text"
+          data-test="DesignSystem-ChoiceList-Title"
+          id="ChoiceList-title-Test-uid"
         >
-          <label
-            class="Label-text"
-            data-test="DesignSystem-Label--Text"
-          >
-            ChoiceList
-          </label>
-        </div>
-      </legend>
+          ChoiceList
+        </label>
+      </div>
       <div
         class="ChoiceList--alignVertical"
       >
@@ -3054,22 +3054,22 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <legend>
-        <div
-          class="Label Label--withInput"
-          data-test="DesignSystem-Label"
+      <div
+        class="Label Label--withInput"
+        data-test="DesignSystem-ChoiceList-Title"
+      >
+        <label
+          class="Label-text"
+          data-test="DesignSystem-ChoiceList-Title"
+          id="ChoiceList-title-Test-uid"
         >
-          <label
-            class="Label-text"
-            data-test="DesignSystem-Label--Text"
-          >
-            ChoiceList
-          </label>
-        </div>
-      </legend>
+          ChoiceList
+        </label>
+      </div>
       <div
         class="ChoiceList--alignVertical"
       >
@@ -3163,22 +3163,22 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <legend>
-        <div
-          class="Label Label--withInput"
-          data-test="DesignSystem-Label"
+      <div
+        class="Label Label--withInput"
+        data-test="DesignSystem-ChoiceList-Title"
+      >
+        <label
+          class="Label-text"
+          data-test="DesignSystem-ChoiceList-Title"
+          id="ChoiceList-title-Test-uid"
         >
-          <label
-            class="Label-text"
-            data-test="DesignSystem-Label--Text"
-          >
-            ChoiceList
-          </label>
-        </div>
-      </legend>
+          ChoiceList
+        </label>
+      </div>
       <div
         class="ChoiceList--alignVertical"
       >
@@ -3272,22 +3272,22 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <legend>
-        <div
-          class="Label Label--withInput"
-          data-test="DesignSystem-Label"
+      <div
+        class="Label Label--withInput"
+        data-test="DesignSystem-ChoiceList-Title"
+      >
+        <label
+          class="Label-text"
+          data-test="DesignSystem-ChoiceList-Title"
+          id="ChoiceList-title-Test-uid"
         >
-          <label
-            class="Label-text"
-            data-test="DesignSystem-Label--Text"
-          >
-            ChoiceList
-          </label>
-        </div>
-      </legend>
+          ChoiceList
+        </label>
+      </div>
       <div
         class="ChoiceList--alignVertical"
       >
@@ -3383,22 +3383,22 @@ exports[`ChoiceList component
 <body>
   <div>
     <fieldset
+      aria-labelledby="ChoiceList-title-Test-uid"
       class="ChoiceList"
       data-test="DesignSystem-ChoiceList-Wrapper"
     >
-      <legend>
-        <div
-          class="Label Label--withInput"
-          data-test="DesignSystem-Label"
+      <div
+        class="Label Label--withInput"
+        data-test="DesignSystem-ChoiceList-Title"
+      >
+        <label
+          class="Label-text"
+          data-test="DesignSystem-ChoiceList-Title"
+          id="ChoiceList-title-Test-uid"
         >
-          <label
-            class="Label-text"
-            data-test="DesignSystem-Label--Text"
-          >
-            ChoiceList
-          </label>
-        </div>
-      </legend>
+          ChoiceList
+        </label>
+      </div>
       <div
         class="ChoiceList--alignVertical"
       >
