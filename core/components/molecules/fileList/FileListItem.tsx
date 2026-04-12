@@ -87,16 +87,22 @@ export const FileListItem = (props: FileListItemProps) => {
     }
   };
 
+  const isClickable = !!onClick;
+
   return (
     <div
       {...baseProps}
       className={FileItemClass}
-      onClick={onClickHandler}
-      onKeyDown={handleKeyDown}
+      onClick={isClickable ? onClickHandler : undefined}
+      onKeyDown={isClickable ? handleKeyDown : undefined}
       data-test="DesignSystem-FileListItem"
-      role="button"
-      tabIndex={0}
-      aria-label={`${name}${status === 'error' ? ', upload failed' : status === 'uploading' ? ', uploading' : ''}`}
+      role={isClickable ? 'button' : undefined}
+      tabIndex={isClickable ? 0 : undefined}
+      aria-label={
+        isClickable
+          ? `${name}${status === 'error' ? ', upload failed' : status === 'uploading' ? ', uploading' : ''}`
+          : undefined
+      }
     >
       <div className={styles['FileItem-file']}>
         <div className={styles['FileItem-fileContent']}>
@@ -119,7 +125,11 @@ export const FileListItem = (props: FileListItemProps) => {
           >
             {fileSize || file.size}
           </Text>
-          {!!actions && actions}
+          {!!actions && (
+            // Stop propagation so action buttons don't bubble clicks up to the row handler
+            // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
+            <div onClick={(e) => e.stopPropagation()}>{actions}</div>
+          )}
         </div>
       </div>
       {status === 'error' && (
