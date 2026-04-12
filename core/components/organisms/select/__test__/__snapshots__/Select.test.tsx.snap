@@ -14,7 +14,7 @@ exports[`Select List component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -66,7 +66,7 @@ exports[`Select List component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -118,7 +118,7 @@ exports[`Select List component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -170,7 +170,7 @@ exports[`Select List component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -222,7 +222,7 @@ exports[`Select List component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -274,7 +274,7 @@ exports[`Select List component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -326,7 +326,7 @@ exports[`Select List component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -378,7 +378,7 @@ exports[`Select List component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -430,7 +430,7 @@ exports[`Select List component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -482,7 +482,7 @@ exports[`Select List component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -534,7 +534,7 @@ exports[`Select List component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -586,7 +586,7 @@ exports[`Select List component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -638,7 +638,7 @@ exports[`Select List component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -690,7 +690,7 @@ exports[`Select List component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -742,7 +742,7 @@ exports[`Select List component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -794,7 +794,7 @@ exports[`Select List component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -846,7 +846,7 @@ exports[`Select List component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -898,7 +898,7 @@ exports[`Select List component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -950,7 +950,7 @@ exports[`Select List component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -1002,7 +1002,7 @@ exports[`Select List component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -1054,7 +1054,7 @@ exports[`Select List component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -1106,7 +1106,7 @@ exports[`Select List component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -1158,7 +1158,7 @@ exports[`Select List component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -1210,7 +1210,7 @@ exports[`Select List component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -1262,7 +1262,7 @@ exports[`Select List component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -1314,7 +1314,7 @@ exports[`Select List component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -1366,7 +1366,7 @@ exports[`Select List component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -1418,7 +1418,7 @@ exports[`Select List component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -1470,7 +1470,7 @@ exports[`Select List component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -1522,7 +1522,7 @@ exports[`Select List component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -1574,7 +1574,7 @@ exports[`Select List component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -1626,7 +1626,7 @@ exports[`Select List component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -1678,7 +1678,7 @@ exports[`Select List component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -1730,7 +1730,7 @@ exports[`Select List component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -1782,7 +1782,7 @@ exports[`Select List component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -1834,7 +1834,7 @@ exports[`Select List component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -1886,7 +1886,7 @@ exports[`Select Option component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -1938,7 +1938,7 @@ exports[`Select Option component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -1990,7 +1990,7 @@ exports[`Select Option component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -2042,7 +2042,7 @@ exports[`Select Option component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -2094,7 +2094,7 @@ exports[`Select Option component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -2146,7 +2146,7 @@ exports[`Select Option component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -2198,7 +2198,7 @@ exports[`Select Option component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -2250,7 +2250,7 @@ exports[`Select Option component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -2302,7 +2302,7 @@ exports[`Select Option component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -2354,7 +2354,7 @@ exports[`Select Option component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -2406,7 +2406,7 @@ exports[`Select Option component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -2458,7 +2458,7 @@ exports[`Select Option component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -2510,7 +2510,7 @@ exports[`Select Option component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -2562,7 +2562,7 @@ exports[`Select Option component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -2614,7 +2614,7 @@ exports[`Select Option component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -2666,7 +2666,7 @@ exports[`Select Option component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -2718,7 +2718,7 @@ exports[`Select Option component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -2770,7 +2770,7 @@ exports[`Select Option component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -2822,7 +2822,7 @@ exports[`Select Option component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -2874,7 +2874,7 @@ exports[`Select Option component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -2926,7 +2926,7 @@ exports[`Select Option component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -2978,7 +2978,7 @@ exports[`Select Option component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -3030,7 +3030,7 @@ exports[`Select Option component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -3082,7 +3082,7 @@ exports[`Select Option component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -3134,7 +3134,7 @@ exports[`Select Option component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -3186,7 +3186,7 @@ exports[`Select Option component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -3238,7 +3238,7 @@ exports[`Select Option component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -3290,7 +3290,7 @@ exports[`Select Option component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -3342,7 +3342,7 @@ exports[`Select Option component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -3394,7 +3394,7 @@ exports[`Select Option component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -3446,7 +3446,7 @@ exports[`Select Option component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -3498,7 +3498,7 @@ exports[`Select Option component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -3550,7 +3550,7 @@ exports[`Select Option component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -3602,7 +3602,7 @@ exports[`Select Option component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -3654,7 +3654,7 @@ exports[`Select Option component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -3706,7 +3706,7 @@ exports[`Select Option component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -3758,7 +3758,7 @@ exports[`Select component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -3810,7 +3810,7 @@ exports[`Select component snapshots
         class="PopperWrapper-trigger d-block"
       >
         <div
-          class="d-flex align-items-center"
+          class="d-flex align-items-center w-100"
         >
           <button
             aria-controls="select-listbox-Test-uid"

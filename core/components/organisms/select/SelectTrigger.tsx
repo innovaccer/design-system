@@ -181,7 +181,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
       elementRef={elementRef}
       triggerClass="w-100"
     >
-      <div className="d-flex align-items-center">
+      <div className="d-flex align-items-center w-100">
         <button
           ref={triggerRef as React.RefObject<HTMLButtonElement>}
           onKeyDown={(event) =>
