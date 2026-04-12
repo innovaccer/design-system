@@ -15,11 +15,9 @@ exports[`Listbox component snapshot
         role="presentation"
       >
         <div
-          aria-selected="false"
           class="Listbox-item Listbox-item--compressed Listbox-item--description"
           data-test="DesignSystem-Listbox-ItemWrapper"
           id="list-item-id"
-          role="option"
           tabindex="-1"
         >
           <div>
@@ -47,11 +45,9 @@ exports[`Listbox component snapshot
         role="presentation"
       >
         <div
-          aria-selected="false"
           class="Listbox-item Listbox-item--compressed Listbox-item--description"
           data-test="DesignSystem-Listbox-ItemWrapper"
           id="list-item-id"
-          role="option"
           tabindex="-1"
         >
           <div>
@@ -85,11 +81,9 @@ exports[`Listbox component snapshot
         role="presentation"
       >
         <div
-          aria-selected="false"
           class="Listbox-item Listbox-item--compressed Listbox-item--description"
           data-test="DesignSystem-Listbox-ItemWrapper"
           id="list-item-id"
-          role="option"
           tabindex="-1"
         >
           <div>
@@ -117,11 +111,9 @@ exports[`Listbox component snapshot
         role="presentation"
       >
         <div
-          aria-selected="false"
           class="Listbox-item Listbox-item--compressed Listbox-item--description"
           data-test="DesignSystem-Listbox-ItemWrapper"
           id="list-item-id"
-          role="option"
           tabindex="-1"
         >
           <div>
@@ -155,11 +147,9 @@ exports[`Listbox component snapshot
         role="presentation"
       >
         <div
-          aria-selected="false"
           class="Listbox-item Listbox-item--compressed Listbox-item--description"
           data-test="DesignSystem-Listbox-ItemWrapper"
           id="list-item-id"
-          role="option"
           tabindex="-1"
         >
           <div>
@@ -187,11 +177,9 @@ exports[`Listbox component snapshot
         role="presentation"
       >
         <div
-          aria-selected="false"
           class="Listbox-item Listbox-item--compressed Listbox-item--description"
           data-test="DesignSystem-Listbox-ItemWrapper"
           id="list-item-id"
-          role="option"
           tabindex="-1"
         >
           <div>
@@ -225,11 +213,9 @@ exports[`Listbox component snapshot
         role="presentation"
       >
         <div
-          aria-selected="false"
           class="Listbox-item Listbox-item--compressed Listbox-item--description"
           data-test="DesignSystem-Listbox-ItemWrapper"
           id="list-item-id"
-          role="option"
           tabindex="-1"
         >
           <div>
@@ -257,11 +243,9 @@ exports[`Listbox component snapshot
         role="presentation"
       >
         <div
-          aria-selected="false"
           class="Listbox-item Listbox-item--compressed Listbox-item--description"
           data-test="DesignSystem-Listbox-ItemWrapper"
           id="list-item-id"
-          role="option"
           tabindex="-1"
         >
           <div>
@@ -871,11 +855,9 @@ exports[`Listbox component snapshot
         role="presentation"
       >
         <div
-          aria-selected="false"
           class="Listbox-item Listbox-item--standard Listbox-item--description"
           data-test="DesignSystem-Listbox-ItemWrapper"
           id="list-item-id"
-          role="option"
           tabindex="-1"
         >
           <div>
@@ -903,11 +885,9 @@ exports[`Listbox component snapshot
         role="presentation"
       >
         <div
-          aria-selected="false"
           class="Listbox-item Listbox-item--standard Listbox-item--description"
           data-test="DesignSystem-Listbox-ItemWrapper"
           id="list-item-id"
-          role="option"
           tabindex="-1"
         >
           <div>
@@ -941,11 +921,9 @@ exports[`Listbox component snapshot
         role="presentation"
       >
         <div
-          aria-selected="false"
           class="Listbox-item Listbox-item--standard Listbox-item--description"
           data-test="DesignSystem-Listbox-ItemWrapper"
           id="list-item-id"
-          role="option"
           tabindex="-1"
         >
           <div>
@@ -973,11 +951,9 @@ exports[`Listbox component snapshot
         role="presentation"
       >
         <div
-          aria-selected="false"
           class="Listbox-item Listbox-item--standard Listbox-item--description"
           data-test="DesignSystem-Listbox-ItemWrapper"
           id="list-item-id"
-          role="option"
           tabindex="-1"
         >
           <div>
@@ -1011,11 +987,9 @@ exports[`Listbox component snapshot
         role="presentation"
       >
         <div
-          aria-selected="false"
           class="Listbox-item Listbox-item--standard Listbox-item--description"
           data-test="DesignSystem-Listbox-ItemWrapper"
           id="list-item-id"
-          role="option"
           tabindex="-1"
         >
           <div>
@@ -1043,11 +1017,9 @@ exports[`Listbox component snapshot
         role="presentation"
       >
         <div
-          aria-selected="false"
           class="Listbox-item Listbox-item--standard Listbox-item--description"
           data-test="DesignSystem-Listbox-ItemWrapper"
           id="list-item-id"
-          role="option"
           tabindex="-1"
         >
           <div>
@@ -1081,11 +1053,9 @@ exports[`Listbox component snapshot
         role="presentation"
       >
         <div
-          aria-selected="false"
           class="Listbox-item Listbox-item--standard Listbox-item--description"
           data-test="DesignSystem-Listbox-ItemWrapper"
           id="list-item-id"
-          role="option"
           tabindex="-1"
         >
           <div>
@@ -1113,11 +1083,9 @@ exports[`Listbox component snapshot
         role="presentation"
       >
         <div
-          aria-selected="false"
           class="Listbox-item Listbox-item--standard Listbox-item--description"
           data-test="DesignSystem-Listbox-ItemWrapper"
           id="list-item-id"
-          role="option"
           tabindex="-1"
         >
           <div>
@@ -1727,11 +1695,9 @@ exports[`Listbox component snapshot
         role="presentation"
       >
         <div
-          aria-selected="false"
           class="Listbox-item Listbox-item--tight Listbox-item--description"
           data-test="DesignSystem-Listbox-ItemWrapper"
           id="list-item-id"
-          role="option"
           tabindex="-1"
         >
           <div>
@@ -1759,11 +1725,9 @@ exports[`Listbox component snapshot
         role="presentation"
       >
         <div
-          aria-selected="false"
           class="Listbox-item Listbox-item--tight Listbox-item--description"
           data-test="DesignSystem-Listbox-ItemWrapper"
           id="list-item-id"
-          role="option"
           tabindex="-1"
         >
           <div>
@@ -1797,11 +1761,9 @@ exports[`Listbox component snapshot
         role="presentation"
       >
         <div
-          aria-selected="false"
           class="Listbox-item Listbox-item--tight Listbox-item--description"
           data-test="DesignSystem-Listbox-ItemWrapper"
           id="list-item-id"
-          role="option"
           tabindex="-1"
         >
           <div>
@@ -1829,11 +1791,9 @@ exports[`Listbox component snapshot
         role="presentation"
       >
         <div
-          aria-selected="false"
           class="Listbox-item Listbox-item--tight Listbox-item--description"
           data-test="DesignSystem-Listbox-ItemWrapper"
           id="list-item-id"
-          role="option"
           tabindex="-1"
         >
           <div>
@@ -1867,11 +1827,9 @@ exports[`Listbox component snapshot
         role="presentation"
       >
         <div
-          aria-selected="false"
           class="Listbox-item Listbox-item--tight Listbox-item--description"
           data-test="DesignSystem-Listbox-ItemWrapper"
           id="list-item-id"
-          role="option"
           tabindex="-1"
         >
           <div>
@@ -1899,11 +1857,9 @@ exports[`Listbox component snapshot
         role="presentation"
       >
         <div
-          aria-selected="false"
           class="Listbox-item Listbox-item--tight Listbox-item--description"
           data-test="DesignSystem-Listbox-ItemWrapper"
           id="list-item-id"
-          role="option"
           tabindex="-1"
         >
           <div>
@@ -1937,11 +1893,9 @@ exports[`Listbox component snapshot
         role="presentation"
       >
         <div
-          aria-selected="false"
           class="Listbox-item Listbox-item--tight Listbox-item--description"
           data-test="DesignSystem-Listbox-ItemWrapper"
           id="list-item-id"
-          role="option"
           tabindex="-1"
         >
           <div>
@@ -1969,11 +1923,9 @@ exports[`Listbox component snapshot
         role="presentation"
       >
         <div
-          aria-selected="false"
           class="Listbox-item Listbox-item--tight Listbox-item--description"
           data-test="DesignSystem-Listbox-ItemWrapper"
           id="list-item-id"
-          role="option"
           tabindex="-1"
         >
           <div>
@@ -2591,12 +2543,10 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-selected="false"
             class="Listbox-item Listbox-item--compressed Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
             id="list-item-id"
             parentprops="[object Object]"
-            role="option"
             tabindex="-1"
           >
             <i
@@ -2640,12 +2590,10 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-selected="false"
             class="Listbox-item Listbox-item--compressed Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
             id="list-item-id"
             parentprops="[object Object]"
-            role="option"
             tabindex="-1"
           >
             <i
@@ -2695,12 +2643,10 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-selected="false"
             class="Listbox-item Listbox-item--compressed Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
             id="list-item-id"
             parentprops="[object Object]"
-            role="option"
             tabindex="-1"
           >
             <i
@@ -2744,12 +2690,10 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-selected="false"
             class="Listbox-item Listbox-item--compressed Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
             id="list-item-id"
             parentprops="[object Object]"
-            role="option"
             tabindex="-1"
           >
             <i
@@ -2799,12 +2743,10 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-selected="false"
             class="Listbox-item Listbox-item--compressed Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
             id="list-item-id"
             parentprops="[object Object]"
-            role="option"
             tabindex="-1"
           >
             <i
@@ -2848,12 +2790,10 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-selected="false"
             class="Listbox-item Listbox-item--compressed Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
             id="list-item-id"
             parentprops="[object Object]"
-            role="option"
             tabindex="-1"
           >
             <i
@@ -2903,12 +2843,10 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-selected="false"
             class="Listbox-item Listbox-item--compressed Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
             id="list-item-id"
             parentprops="[object Object]"
-            role="option"
             tabindex="-1"
           >
             <i
@@ -2952,12 +2890,10 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-selected="false"
             class="Listbox-item Listbox-item--compressed Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
             id="list-item-id"
             parentprops="[object Object]"
-            role="option"
             tabindex="-1"
           >
             <i
@@ -3839,12 +3775,10 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-selected="false"
             class="Listbox-item Listbox-item--standard Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
             id="list-item-id"
             parentprops="[object Object]"
-            role="option"
             tabindex="-1"
           >
             <i
@@ -3888,12 +3822,10 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-selected="false"
             class="Listbox-item Listbox-item--standard Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
             id="list-item-id"
             parentprops="[object Object]"
-            role="option"
             tabindex="-1"
           >
             <i
@@ -3943,12 +3875,10 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-selected="false"
             class="Listbox-item Listbox-item--standard Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
             id="list-item-id"
             parentprops="[object Object]"
-            role="option"
             tabindex="-1"
           >
             <i
@@ -3992,12 +3922,10 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-selected="false"
             class="Listbox-item Listbox-item--standard Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
             id="list-item-id"
             parentprops="[object Object]"
-            role="option"
             tabindex="-1"
           >
             <i
@@ -4047,12 +3975,10 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-selected="false"
             class="Listbox-item Listbox-item--standard Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
             id="list-item-id"
             parentprops="[object Object]"
-            role="option"
             tabindex="-1"
           >
             <i
@@ -4096,12 +4022,10 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-selected="false"
             class="Listbox-item Listbox-item--standard Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
             id="list-item-id"
             parentprops="[object Object]"
-            role="option"
             tabindex="-1"
           >
             <i
@@ -4151,12 +4075,10 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-selected="false"
             class="Listbox-item Listbox-item--standard Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
             id="list-item-id"
             parentprops="[object Object]"
-            role="option"
             tabindex="-1"
           >
             <i
@@ -4200,12 +4122,10 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-selected="false"
             class="Listbox-item Listbox-item--standard Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
             id="list-item-id"
             parentprops="[object Object]"
-            role="option"
             tabindex="-1"
           >
             <i
@@ -5163,12 +5083,10 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-selected="false"
             class="Listbox-item Listbox-item--tight Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
             id="list-item-id"
             parentprops="[object Object]"
-            role="option"
             tabindex="-1"
           >
             <i
@@ -5212,12 +5130,10 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-selected="false"
             class="Listbox-item Listbox-item--tight Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
             id="list-item-id"
             parentprops="[object Object]"
-            role="option"
             tabindex="-1"
           >
             <i
@@ -5267,12 +5183,10 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-selected="false"
             class="Listbox-item Listbox-item--tight Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
             id="list-item-id"
             parentprops="[object Object]"
-            role="option"
             tabindex="-1"
           >
             <i
@@ -5316,12 +5230,10 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-selected="false"
             class="Listbox-item Listbox-item--tight Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
             id="list-item-id"
             parentprops="[object Object]"
-            role="option"
             tabindex="-1"
           >
             <i
@@ -5371,12 +5283,10 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-selected="false"
             class="Listbox-item Listbox-item--tight Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
             id="list-item-id"
             parentprops="[object Object]"
-            role="option"
             tabindex="-1"
           >
             <i
@@ -5420,12 +5330,10 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-selected="false"
             class="Listbox-item Listbox-item--tight Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
             id="list-item-id"
             parentprops="[object Object]"
-            role="option"
             tabindex="-1"
           >
             <i
@@ -5475,12 +5383,10 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-selected="false"
             class="Listbox-item Listbox-item--tight Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
             id="list-item-id"
             parentprops="[object Object]"
-            role="option"
             tabindex="-1"
           >
             <i
@@ -5524,12 +5430,10 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-selected="false"
             class="Listbox-item Listbox-item--tight Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
             id="list-item-id"
             parentprops="[object Object]"
-            role="option"
             tabindex="-1"
           >
             <i

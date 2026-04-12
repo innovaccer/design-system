@@ -23,7 +23,7 @@ export const ListBody = (props: ListboxItemProps & React.HTMLAttributes<HTMLDivE
     className
   );
 
-  const role = rest.role ?? 'option';
+  const role = rest.role ?? (type === 'description' ? undefined : 'option');
   const defaultAriaSelected = role === 'option' ? Boolean(selected) : undefined;
 
   return (

@@ -161,12 +161,14 @@ export const ListboxItem = (props: ListboxItemProps) => {
         onFocus={handleFocus}
         tabIndex={tabIndexProps.tabIndex ?? -1}
         onKeyDown={keyDownHandler}
-        role={role ?? 'option'}
+        role={role}
         aria-controls={
-          nestedBody && (role ?? 'option') !== 'option' ? rest['aria-controls'] ?? nestedListId : rest['aria-controls']
+          nestedBody && role != null && role !== 'option'
+            ? rest['aria-controls'] ?? nestedListId
+            : rest['aria-controls']
         }
         aria-expanded={
-          nestedBody && (role ?? 'option') !== 'option' ? rest['aria-expanded'] ?? expanded : rest['aria-expanded']
+          nestedBody && role != null && role !== 'option' ? rest['aria-expanded'] ?? expanded : rest['aria-expanded']
         }
       >
         {children}
