@@ -271,7 +271,7 @@ export const ChoiceList = (props: ChoiceListProps) => {
       <fieldset
         className={ChoiceListClass}
         data-test="DesignSystem-ChoiceList-Wrapper"
-        aria-label={!title ? ariaLabel : undefined}
+        aria-label={!title || !title.trim() ? ariaLabel : undefined}
         aria-labelledby={ariaLabelledBy}
       >
         {title && title.trim() && (
