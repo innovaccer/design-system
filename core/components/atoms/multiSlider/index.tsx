@@ -360,17 +360,9 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
         ['bg-dark']: active,
       });
 
-      // TODO(a11y): fix accessibility
-      /* eslint-disable */
       labels.push(
         <div
           onClick={onClickHandler}
-          onKeyDown={(event: React.KeyboardEvent<HTMLDivElement>) => {
-            if (!this.props.disabled && (event.key === 'Enter' || event.key === ' ')) {
-              event.preventDefault();
-              onClickHandler(event as unknown as React.MouseEvent<HTMLElement>);
-            }
-          }}
           className={styles['Slider-label']}
           key={i}
           style={style}
@@ -379,11 +371,8 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
           onMouseLeave={this.handleLabelMouseLeave}
           onBlur={this.handleLabelMouseLeave}
           data-test="DesignSystem-MultiSlider-Label"
-          role="button"
-          // tabIndex={disabled ? -1 : 0}
-          aria-disabled={disabled || undefined}
+          aria-hidden="true"
         >
-          {/* eslint-enable  */}
           <span className={SliderTicksClass} />
           {labelRenderer !== false && (
             <Text
@@ -474,25 +463,13 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
           </Label>
         )}
         <div className={WrapperClass}>
-          {/* TODO(a11y): fix accessibility  */}
-          {/* eslint-disable */}
           <div
             className={styles['Slider-track']}
             ref={(ref) => (this.trackElement = ref)}
             onMouseDown={this.maybeHandleTrackClick}
-            onKeyDown={(event: React.KeyboardEvent<HTMLDivElement>) => {
-              if (!this.props.disabled && (event.key === 'Enter' || event.key === ' ')) {
-                event.preventDefault();
-                this.maybeHandleTrackClick(event as unknown as React.MouseEvent<HTMLDivElement>);
-              }
-            }}
             data-test="DesignSystem-MultiSlider-Slider-Track"
-            role="button"
-            aria-label={label || 'Slider track'}
-            // tabIndex={this.props.disabled ? -1 : 0}
-            aria-disabled={this.props.disabled || undefined}
+            aria-hidden="true"
           >
-            {/* eslint-enable */}
             {this.renderTracks()}
           </div>
           <div className={styles['Slider-axis']}>{this.renderLabels()}</div>
