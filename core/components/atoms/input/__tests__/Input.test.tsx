@@ -686,13 +686,13 @@ describe('Input Component - Comprehensive Behavior Tests', () => {
       expect(input).not.toHaveAttribute('aria-invalid');
     });
 
-    it('associates inline label with input via aria-describedby', () => {
+    it('associates inline label with input via aria-labelledby', () => {
       const { getByTestId, getByText } = render(<Input name="test" inlineLabel="USD" value="100" />);
 
       const input = getByTestId('DesignSystem-Input');
       const inlineLabelElement = getByText('USD').closest('[id]') as HTMLElement;
 
-      expect(input).toHaveAttribute('aria-describedby', inlineLabelElement.id);
+      expect(input).toHaveAttribute('aria-labelledby', inlineLabelElement.id);
     });
 
     it('does not set aria-describedby when inlineLabel is not provided', () => {

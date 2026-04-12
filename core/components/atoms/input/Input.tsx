@@ -312,10 +312,10 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
         onClick={onClick}
         onFocus={onFocus}
         onPaste={onPaste}
-        aria-labelledby={ariaLabelledBy || undefined}
-        aria-describedby={
-          [inlineLabel ? inlineLabelId : undefined, rest['aria-describedby']].filter(Boolean).join(' ') || undefined
+        aria-labelledby={
+          [inlineLabel ? inlineLabelId : undefined, ariaLabelledBy].filter(Boolean).join(' ') || undefined
         }
+        aria-describedby={rest['aria-describedby'] || undefined}
         /**
          *for readOnly: true, tab focus from input element is removed. Hence, its tabIndex is set to -1.
          *For rest, "undefined" lets user agent(browser) use the default tabIndex.
