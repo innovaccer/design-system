@@ -78,6 +78,11 @@
   padding-top: 0;
 }
 
+.EditableChipInput-editButton {
+  align-self: center;
+  margin-left: var(--spacing-10);
+}
+
 .EditableChipInput-actions {
   position: absolute;
   display: flex;

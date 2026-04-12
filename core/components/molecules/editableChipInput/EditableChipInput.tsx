@@ -149,21 +149,35 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
 
   const renderDefaultState = () => {
     if (inputValue && inputValue.length) {
-      return inputValue.map((val, index) => {
-        return (
-          <Chip
-            data-test="DesignSystem-EditableChipInput--Chip"
-            key={index}
-            name={val}
-            label={val}
-            size={size}
-            className={chipMarginClass}
-            {...chipObject}
-            onClose={() => onChipDelete(index)}
-            onClick={() => onClick && onClick(val, index)}
-          />
-        );
-      });
+      return (
+        <>
+          {inputValue.map((val, index) => (
+            <Chip
+              data-test="DesignSystem-EditableChipInput--Chip"
+              key={index}
+              name={val}
+              label={val}
+              size={size}
+              className={chipMarginClass}
+              {...chipObject}
+              onClose={() => onChipDelete(index)}
+              onClick={() => onClick && onClick(val, index)}
+            />
+          ))}
+          {!chipInputDisabled && (
+            <Button
+              type="button"
+              appearance="transparent"
+              size="tiny"
+              icon="edit"
+              aria-label="Edit"
+              data-test="DesignSystem-EditableChipInput--EditButton"
+              onClick={handleClick}
+              className={styles['EditableChipInput-editButton']}
+            />
+          )}
+        </>
+      );
     }
     return (
       <Text
@@ -205,20 +219,24 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
   const hasChips = inputValue && inputValue.length > 0;
   const computedAriaLabel =
     ariaLabel ||
-    (hasChips
-      ? `Click to edit. Current chips: ${inputValue!.join(', ')}`
-      : `Click to edit. ${placeholder || 'Chip input'}`);
+    (hasChips ? `Current chips: ${inputValue!.join(', ')}` : `Click to edit. ${placeholder || 'Chip input'}`);
+
+  // When chips are present, use role="group" so nested chip buttons are valid.
+  // The dedicated edit button inside the chip list handles keyboard activation.
+  // When no chips, the outer div is the sole interactive target (role="button").
+  const outerRole = showComponent ? undefined : hasChips ? 'group' : 'button';
+  const outerTabIndex = showComponent || hasChips ? undefined : chipInputDisabled ? -1 : 0;
 
   return (
     <div
       className={classes}
       data-test="DesignSystem-EditableChipInput"
       {...baseProps}
-      onKeyDown={handleKeyDown}
-      onClick={handleClick}
-      role={showComponent ? undefined : 'button'}
-      tabIndex={chipInputDisabled ? -1 : showComponent ? -1 : 0}
-      aria-disabled={chipInputDisabled || undefined}
+      onKeyDown={hasChips ? undefined : handleKeyDown}
+      onClick={hasChips ? undefined : handleClick}
+      role={outerRole}
+      tabIndex={outerTabIndex}
+      aria-disabled={!hasChips ? chipInputDisabled || undefined : undefined}
       aria-label={showComponent ? undefined : computedAriaLabel}
     >
       <Editable onChange={onChangeHandler} editing={showComponent}>
