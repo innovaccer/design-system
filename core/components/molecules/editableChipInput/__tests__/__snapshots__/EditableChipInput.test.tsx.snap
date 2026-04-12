@@ -5,11 +5,10 @@ exports[`EditableChipInput component
  1`] = `
 <DocumentFragment>
   <div
-    aria-label="Click to edit. Current chips: Chip1, Chip2"
+    aria-label="Current chips: Chip1, Chip2"
     class="EditableChipInput"
     data-test="DesignSystem-EditableChipInput"
-    role="button"
-    tabindex="0"
+    role="group"
   >
     <div
       class="Editable"
@@ -90,6 +89,26 @@ exports[`EditableChipInput component
               </i>
             </div>
           </div>
+          <button
+            aria-label="Edit"
+            class="Button Button--tiny Button--tinySquare Button--transparent EditableChipInput-editButton"
+            data-test="DesignSystem-EditableChipInput--EditButton"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                style="font-size: 14px; width: 14px;"
+              >
+                edit
+              </i>
+            </div>
+          </button>
         </div>
       </div>
     </div>
@@ -102,11 +121,10 @@ exports[`EditableChipInput component
  1`] = `
 <DocumentFragment>
   <div
-    aria-label="Click to edit. Current chips: Chip1, Chip2"
+    aria-label="Current chips: Chip1, Chip2"
     class="EditableChipInput"
     data-test="DesignSystem-EditableChipInput"
-    role="button"
-    tabindex="0"
+    role="group"
   >
     <div
       class="Editable"
@@ -187,6 +205,26 @@ exports[`EditableChipInput component
               </i>
             </div>
           </div>
+          <button
+            aria-label="Edit"
+            class="Button Button--tiny Button--tinySquare Button--transparent EditableChipInput-editButton"
+            data-test="DesignSystem-EditableChipInput--EditButton"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                style="font-size: 14px; width: 14px;"
+              >
+                edit
+              </i>
+            </div>
+          </button>
         </div>
       </div>
     </div>
@@ -199,11 +237,10 @@ exports[`EditableChipInput component
  1`] = `
 <DocumentFragment>
   <div
-    aria-label="Click to edit. Current chips: Chip1, Chip2"
+    aria-label="Current chips: Chip1, Chip2"
     class="EditableChipInput"
     data-test="DesignSystem-EditableChipInput"
-    role="button"
-    tabindex="0"
+    role="group"
   >
     <div
       class="Editable"
@@ -284,6 +321,26 @@ exports[`EditableChipInput component
               </i>
             </div>
           </div>
+          <button
+            aria-label="Edit"
+            class="Button Button--tiny Button--tinySquare Button--transparent EditableChipInput-editButton"
+            data-test="DesignSystem-EditableChipInput--EditButton"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                style="font-size: 14px; width: 14px;"
+              >
+                edit
+              </i>
+            </div>
+          </button>
         </div>
       </div>
     </div>
@@ -296,11 +353,10 @@ exports[`EditableChipInput component
  1`] = `
 <DocumentFragment>
   <div
-    aria-label="Click to edit. Current chips: Chip1, Chip2"
+    aria-label="Current chips: Chip1, Chip2"
     class="EditableChipInput"
     data-test="DesignSystem-EditableChipInput"
-    role="button"
-    tabindex="0"
+    role="group"
   >
     <div
       class="Editable"
@@ -381,6 +437,26 @@ exports[`EditableChipInput component
               </i>
             </div>
           </div>
+          <button
+            aria-label="Edit"
+            class="Button Button--tiny Button--tinySquare Button--transparent EditableChipInput-editButton"
+            data-test="DesignSystem-EditableChipInput--EditButton"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                style="font-size: 14px; width: 14px;"
+              >
+                edit
+              </i>
+            </div>
+          </button>
         </div>
       </div>
     </div>
@@ -393,11 +469,10 @@ exports[`EditableChipInput component
  1`] = `
 <DocumentFragment>
   <div
-    aria-label="Click to edit. Current chips: Chip1, Chip2"
+    aria-label="Current chips: Chip1, Chip2"
     class="EditableChipInput"
     data-test="DesignSystem-EditableChipInput"
-    role="button"
-    tabindex="0"
+    role="group"
   >
     <div
       class="Editable"
@@ -478,6 +553,26 @@ exports[`EditableChipInput component
               </i>
             </div>
           </div>
+          <button
+            aria-label="Edit"
+            class="Button Button--tiny Button--tinySquare Button--transparent EditableChipInput-editButton"
+            data-test="DesignSystem-EditableChipInput--EditButton"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                style="font-size: 14px; width: 14px;"
+              >
+                edit
+              </i>
+            </div>
+          </button>
         </div>
       </div>
     </div>
@@ -490,11 +585,10 @@ exports[`EditableChipInput component
  1`] = `
 <DocumentFragment>
   <div
-    aria-label="Click to edit. Current chips: Chip1, Chip2"
+    aria-label="Current chips: Chip1, Chip2"
     class="EditableChipInput"
     data-test="DesignSystem-EditableChipInput"
-    role="button"
-    tabindex="0"
+    role="group"
   >
     <div
       class="Editable"
@@ -575,6 +669,26 @@ exports[`EditableChipInput component
               </i>
             </div>
           </div>
+          <button
+            aria-label="Edit"
+            class="Button Button--tiny Button--tinySquare Button--transparent EditableChipInput-editButton"
+            data-test="DesignSystem-EditableChipInput--EditButton"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                style="font-size: 14px; width: 14px;"
+              >
+                edit
+              </i>
+            </div>
+          </button>
         </div>
       </div>
     </div>

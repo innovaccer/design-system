@@ -80,8 +80,7 @@ describe('EditableChipInput component', () => {
       <EditableChipInput value={value} onChange={onChange} size="regular" chipInputOptions={chipInputOptions} />
     );
 
-    const editableWrapper = getByTestId(editableWrapperTestId);
-    fireEvent.click(editableWrapper);
+    fireEvent.click(getByTestId('DesignSystem-EditableChipInput--EditButton'));
 
     expect(queryByTestId(defaultComponentTestId)).not.toBeInTheDocument();
     expect(getByTestId(chipInputTestId)).toBeInTheDocument();
@@ -101,7 +100,7 @@ describe('EditableChipInput component', () => {
       />
     );
 
-    fireEvent.click(getByTestId(editableWrapperTestId));
+    fireEvent.click(getByTestId('DesignSystem-EditableChipInput--EditButton'));
     expect(getByTestId('DesignSystem-ChipInput--Input')).toHaveFocus();
   });
 
@@ -119,7 +118,7 @@ describe('EditableChipInput component', () => {
       />
     );
 
-    fireEvent.click(getByTestId(editableWrapperTestId));
+    fireEvent.click(getByTestId('DesignSystem-EditableChipInput--EditButton'));
     expect(getByTestId('DesignSystem-ChipInput--Input')).not.toHaveFocus();
   });
 
@@ -128,15 +127,13 @@ describe('EditableChipInput component', () => {
       <EditableChipInput value={value} onChange={onChange} size="regular" chipInputOptions={chipInputOptions} />
     );
 
-    fireEvent.click(getByTestId(editableWrapperTestId));
+    fireEvent.click(getByTestId('DesignSystem-EditableChipInput--EditButton'));
 
     let clearAction = getByTestId('DesignSystem-ChipInput--Icon');
     expect(clearAction).toHaveClass('align-self-center');
     expect(clearAction).not.toHaveClass('align-self-start');
 
     rerender(<EditableChipInput value={value} onChange={onChange} size="small" chipInputOptions={chipInputOptions} />);
-
-    fireEvent.click(getByTestId(editableWrapperTestId));
 
     clearAction = getByTestId('DesignSystem-ChipInput--Icon');
     expect(clearAction).toHaveClass('align-self-center');
@@ -164,8 +161,7 @@ describe('EditableChipInput component with action buttons and props: value and c
       <EditableChipInput value={value} onChange={onChange} chipInputOptions={chipInputOptions} size="regular" />
     );
 
-    const editableWrapper = getByTestId(editableWrapperTestId);
-    fireEvent.click(editableWrapper);
+    fireEvent.click(getByTestId('DesignSystem-EditableChipInput--EditButton'));
 
     const inputTrigger = getByTestId(chipInputTestId);
     fireEvent.change(inputTrigger, { target: { ...newValue } });
@@ -184,8 +180,7 @@ describe('EditableChipInput component with action buttons and props: value and c
       <EditableChipInput value={value} onChange={onChange} chipInputOptions={chipInputOptions} size="regular" />
     );
 
-    const editableWrapper = getByTestId(editableWrapperTestId);
-    fireEvent.click(editableWrapper);
+    fireEvent.click(getByTestId('DesignSystem-EditableChipInput--EditButton'));
     const saveButton = getByTestId('DesignSystem-EditableChipInput--SaveButton');
     fireEvent.click(saveButton);
     expect(onChange).toHaveBeenCalled();
@@ -335,8 +330,7 @@ describe('EditableChipInput component - Size functionality', () => {
         />
       );
 
-      const editableWrapper = getByTestId(editableWrapperTestId);
-      fireEvent.click(editableWrapper);
+      fireEvent.click(getByTestId('DesignSystem-EditableChipInput--EditButton'));
 
       const chipInput = getByTestId(chipInputTestId);
       expect(chipInput).toHaveClass('ChipInput--regular');
@@ -354,8 +348,7 @@ describe('EditableChipInput component - Size functionality', () => {
         />
       );
 
-      const editableWrapper = getByTestId(editableWrapperTestId);
-      fireEvent.click(editableWrapper);
+      fireEvent.click(getByTestId('DesignSystem-EditableChipInput--EditButton'));
 
       const chipInput = getByTestId(chipInputTestId);
       expect(chipInput).toHaveClass('ChipInput--regular');
@@ -373,8 +366,7 @@ describe('EditableChipInput component - Size functionality', () => {
         />
       );
 
-      const editableWrapper = getByTestId(editableWrapperTestId);
-      fireEvent.click(editableWrapper);
+      fireEvent.click(getByTestId('DesignSystem-EditableChipInput--EditButton'));
 
       const chipInput = getByTestId(chipInputTestId);
       expect(chipInput).toHaveClass('ChipInput--small');
@@ -399,8 +391,7 @@ describe('EditableChipInput component - Size functionality', () => {
         expect(chip).toHaveClass('Chip-size--regular');
       });
 
-      const editableWrapper = getByTestId(editableWrapperTestId);
-      fireEvent.click(editableWrapper);
+      fireEvent.click(getByTestId('DesignSystem-EditableChipInput--EditButton'));
 
       const chipInput = getByTestId(chipInputTestId);
       expect(chipInput).toHaveClass('ChipInput--regular');
@@ -431,8 +422,7 @@ describe('EditableChipInput component - Size functionality', () => {
         expect(chip).toHaveClass('Chip-size--small');
       });
 
-      const editableWrapper = getByTestId(editableWrapperTestId);
-      fireEvent.click(editableWrapper);
+      fireEvent.click(getByTestId('DesignSystem-EditableChipInput--EditButton'));
 
       const chipInput = getByTestId(chipInputTestId);
       expect(chipInput).toHaveClass('ChipInput--small');
