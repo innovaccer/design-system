@@ -754,7 +754,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             type="button"
             className={styles['Calendar-headerButton']}
             onClick={this.onNavHeadingClickHandler(view)}
-            aria-label={view === 'year' ? 'Select date' : 'Select year'}
+            aria-label={view === 'year' ? `${headerContent}, select date` : `${headerContent}, select year`}
           >
             {renderHeading(headerContent)}
           </button>
@@ -766,7 +766,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
               type="button"
               className={styles['Calendar-headerButton']}
               onClick={this.onNavHeadingClickHandler(view)}
-              aria-label="Select month"
+              aria-label={`${months[monthNavVal]}, select month`}
             >
               {renderHeading(months[monthNavVal])}
             </button>
@@ -774,7 +774,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
               type="button"
               className={classNames(styles['Calendar-headerButton'], 'ml-4')}
               onClick={this.onNavHeadingClickHandler('month')}
-              aria-label="Select year"
+              aria-label={`${yearNavVal}, select year`}
             >
               {renderHeading(yearNavVal)}
             </button>
@@ -860,18 +860,21 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
           const isFocused = effectiveFocusedYearIndex === offset;
 
           return (
-            <div key={`${row}-${col}`} className={wrapperClass}>
+            <div
+              key={`${row}-${col}`}
+              className={wrapperClass}
+              role="gridcell"
+              aria-selected={active}
+              aria-disabled={disabled}
+            >
               <button
                 type="button"
-                role="gridcell"
                 data-test="DesignSystem-Calendar--yearValue"
                 data-calendar-year-cell
                 data-year-index={offset}
                 className={valueClass}
                 tabIndex={isFocused ? 0 : -1}
                 aria-label={year.toString()}
-                aria-disabled={disabled}
-                aria-selected={active}
                 onClick={this.selectYear(year, disabled)}
                 onKeyDown={(ev) => this.handleYearCellKeyDown(ev, year, offset, disabled)}
                 onFocus={() => this.setState({ focusedYearIndex: offset })}
@@ -965,18 +968,21 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
           const isFocused = effectiveFocusedMonth === month;
 
           return (
-            <div key={`${row}-${col}`} className={wrapperClass}>
+            <div
+              key={`${row}-${col}`}
+              className={wrapperClass}
+              role="gridcell"
+              aria-selected={active}
+              aria-disabled={disabled}
+            >
               <button
                 type="button"
-                role="gridcell"
                 data-test="DesignSystem-Calendar--monthValue"
                 data-calendar-month-cell
                 data-month={month}
                 className={valueClass}
                 tabIndex={isFocused ? 0 : -1}
                 aria-label={months[month]}
-                aria-disabled={disabled}
-                aria-selected={active}
                 onClick={this.selectMonth(month, disabled)}
                 onKeyDown={(ev) => this.handleMonthCellKeyDown(ev, month, disabled)}
                 onFocus={() => this.setState({ focusedMonth: month })}
@@ -1601,7 +1607,6 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
               <>
                 <button
                   type="button"
-                  role="gridcell"
                   data-calendar-date-cell
                   data-row={row}
                   data-col={colIndex}
@@ -1610,7 +1615,6 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                   tabIndex={isFocused ? 0 : -1}
                   aria-label={formatDateAriaLabel(fullDate)}
                   aria-disabled={disabled}
-                  aria-selected={Boolean(active || activeDate)}
                   onClick={onClickHandler(date, disabled)}
                   onKeyDown={(ev) =>
                     this.handleDateCellKeyDown(
@@ -1666,7 +1670,14 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             }
 
             return (
-              <div key={`${row}-${colIndex}`} className={wrapperClass} data-test="designSystem-Calendar-WrapperClass">
+              <div
+                key={`${row}-${colIndex}`}
+                className={wrapperClass}
+                data-test="designSystem-Calendar-WrapperClass"
+                role="gridcell"
+                aria-selected={shouldRenderDummy ? Boolean(active || activeDate) : undefined}
+                aria-disabled={shouldRenderDummy ? disabled : undefined}
+              >
                 {shouldRenderDummy && dateCellContent}
               </div>
             );
