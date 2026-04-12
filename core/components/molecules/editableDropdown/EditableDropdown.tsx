@@ -44,6 +44,17 @@ export const EditableDropdown = (props: EditableDropdownProps) => {
   const containerRef = React.useRef<HTMLDivElement>(null);
   const focusDropdownTriggerAfterOpenRef = React.useRef(false);
   const wasDropdownOpenRef = React.useRef(false);
+  // Track whether the most recent close was initiated by a pointer (outside-click).
+  // In that case we must NOT steal focus back, as the user clicked somewhere else.
+  const pointerClosedRef = React.useRef(false);
+
+  React.useEffect(() => {
+    const onPointerDown = () => {
+      if (dropdownOpen) pointerClosedRef.current = true;
+    };
+    document.addEventListener('pointerdown', onPointerDown, true);
+    return () => document.removeEventListener('pointerdown', onPointerDown, true);
+  }, [dropdownOpen]);
 
   const CompClass = classNames(
     {
@@ -123,12 +134,17 @@ export const EditableDropdown = (props: EditableDropdownProps) => {
     return () => cancelAnimationFrame(frame);
   }, [editing, dropdownOpen, isDropdownDisabled]);
 
-  // Return focus to the outer container when the dropdown closes, overriding
-  // DropdownList's internal focus call which would target the now-hidden trigger.
+  // Return focus to the outer container when the dropdown closes via keyboard/programmatic
+  // action. Skip focus restoration for pointer-initiated closes (outside-click) so we
+  // don't steal focus away from whatever the user clicked.
   React.useEffect(() => {
     const wasOpen = wasDropdownOpenRef.current;
     wasDropdownOpenRef.current = dropdownOpen;
     if (wasOpen && !dropdownOpen && !isDropdownDisabled) {
+      if (pointerClosedRef.current) {
+        pointerClosedRef.current = false;
+        return undefined;
+      }
       const frame = requestAnimationFrame(() => {
         containerRef.current?.focus();
       });
