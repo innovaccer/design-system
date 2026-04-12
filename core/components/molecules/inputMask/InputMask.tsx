@@ -4,6 +4,7 @@ import { BaseProps, Validators, Mask } from '@/utils/types';
 import { Input, Utils, HelpText } from '@/index';
 import { InputProps } from '@/index.type';
 import { getDefaultValue } from './utilites';
+import uidGenerator from '@/utils/uidGenerator';
 
 export interface MaskProps extends BaseProps {
   /**
@@ -88,8 +89,15 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
     id,
     helpText,
     label,
+    'aria-describedby': ariaDescribedBy,
     ...rest
   } = props;
+
+  const helpTextIdRef = React.useRef<string | null>(null);
+  if (helpTextIdRef.current === null) {
+    helpTextIdRef.current = `InputMask-helpText-${uidGenerator()}`;
+  }
+  const helpTextId = helpTextIdRef.current;
 
   const isEditable = React.useCallback((pos: number) => typeof mask[pos] === 'object', [mask]);
 
@@ -388,6 +396,9 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
   );
 
   const isValueEqualPlaceholder = value === defaultPlaceholderValue;
+  const helpMessage = error ? caption : helpText;
+  const resolvedDescribedBy =
+    [ariaDescribedBy, helpMessage ? helpTextId : undefined].filter(Boolean).join(' ') || undefined;
 
   return (
     <div className={classes} data-test="DesignSystem-InputMask--Wrapper">
@@ -406,8 +417,9 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
         onPaste={onPasteHandler}
         autoComplete={'off'}
         ref={ref}
+        aria-describedby={resolvedDescribedBy}
       />
-      <HelpText message={error ? caption : helpText} error={error} />
+      <HelpText id={helpTextId} message={helpMessage} error={error} />
     </div>
   );
 });
