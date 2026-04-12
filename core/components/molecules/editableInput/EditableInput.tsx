@@ -4,6 +4,7 @@ import Editable from '@/components/atoms/editable';
 import { Input, Button, Popover, InlineMessage, Icon } from '@/index';
 import { InputProps } from '@/index.type';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import uidGenerator from '@/utils/uidGenerator';
 import styles from '@css/components/editableInput.module.css';
 
 export interface EditableInputProps extends BaseProps {
@@ -39,10 +40,39 @@ export interface EditableInputProps extends BaseProps {
    * Callback function called on save action click
    */
   onChange?: (value: string) => void;
+  /**
+   * Accessible label for the collapsed edit trigger. Required when both `value` and `placeholder` may be empty.
+   */
+  'aria-label'?: string;
+  /**
+   * Id of an element whose text labels the collapsed edit trigger.
+   */
+  'aria-labelledby'?: string;
+  /**
+   * Id of an element that describes the collapsed edit trigger.
+   */
+  'aria-describedby'?: string;
+  /**
+   * Id forwarded to the root element.
+   */
+  id?: string;
 }
 
 export const EditableInput = (props: EditableInputProps) => {
-  const { error, size, errorMessage, placeholder, inputOptions, disableSaveAction, onChange, className } = props;
+  const {
+    error,
+    size,
+    errorMessage,
+    placeholder,
+    inputOptions,
+    disableSaveAction,
+    onChange,
+    className,
+    'aria-label': ariaLabel,
+    'aria-labelledby': ariaLabelledBy,
+    'aria-describedby': ariaDescribedBy,
+    id,
+  } = props;
 
   const { onChange: onInputChange, icon: inputIcon, disabled: inputDisabled, ...rest } = inputOptions;
 
@@ -53,6 +83,11 @@ export const EditableInput = (props: EditableInputProps) => {
 
   const inputRef = React.createRef<HTMLInputElement>();
   const baseProps = extractBaseProps(props);
+  const errorDescIdRef = React.useRef<string | null>(null);
+  if (!errorDescIdRef.current) {
+    errorDescIdRef.current = `editable-input-error-${uidGenerator()}`;
+  }
+  const errorDescId = errorDescIdRef.current;
   const isControlled = props.value !== undefined;
 
   React.useEffect(() => {
@@ -165,6 +200,7 @@ export const EditableInput = (props: EditableInputProps) => {
       icon={error ? 'error' : inputIcon}
       ref={inputRef}
       data-test="DesignSystem-EditableInput--Input"
+      aria-describedby={error && errorMessage ? errorDescId : undefined}
       {...rest}
     />
   );
@@ -172,9 +208,14 @@ export const EditableInput = (props: EditableInputProps) => {
   const renderChildren = () => {
     if (showComponent) {
       return error && errorMessage ? (
-        <Popover trigger={inputComponent} position="right" className="px-6 py-6 d-flex align-items-center" on="hover">
-          <InlineMessage appearance="alert" description={errorMessage} />
-        </Popover>
+        <>
+          <span id={errorDescId} className={styles['EditableInput-errorDescription']}>
+            {errorMessage}
+          </span>
+          <Popover trigger={inputComponent} position="right" className="px-6 py-6 d-flex align-items-center" on="hover">
+            <InlineMessage appearance="alert" description={errorMessage} />
+          </Popover>
+        </>
       ) : (
         inputComponent
       );
@@ -202,12 +243,16 @@ export const EditableInput = (props: EditableInputProps) => {
     <div
       data-test="DesignSystem-EditableInput"
       {...baseProps}
+      id={id}
       className={EditableInputClass}
       onKeyDown={handleKeyDown}
       onClick={handleClick}
       role={editing ? undefined : 'button'}
       tabIndex={inputDisabled ? -1 : editing ? -1 : 0}
       aria-disabled={inputDisabled || undefined}
+      aria-label={!editing ? ariaLabel : undefined}
+      aria-labelledby={!editing ? ariaLabelledBy : undefined}
+      aria-describedby={!editing ? ariaDescribedBy : undefined}
     >
       <Editable onChange={onChangeHandler} editing={editing}>
         {renderChildren()}

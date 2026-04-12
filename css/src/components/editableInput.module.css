@@ -81,3 +81,15 @@
   margin-top: var(--spacing-05);
   margin-bottom: var(--spacing-05);
 }
+
+.EditableInput-errorDescription {
+  position: absolute;
+  width: var(--spacing-2-5);
+  height: var(--spacing-2-5);
+  padding: 0;
+  margin: calc(-1 * var(--spacing-2-5));
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
