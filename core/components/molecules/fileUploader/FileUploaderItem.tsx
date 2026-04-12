@@ -55,14 +55,34 @@ export const FileUploaderItem = (props: FileUploaderItemProps) => {
   );
 
   return (
-    <div {...baseProps} data-test="DesignSystem-FileUploader--Item" className={FileItemClass}>
+    <div
+      {...baseProps}
+      data-test="DesignSystem-FileUploader--Item"
+      className={FileItemClass}
+      onClick={isClickable ? () => onClick?.(file, id) : undefined}
+      onKeyDown={
+        isClickable
+          ? (e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                onClick?.(file, id);
+              }
+            }
+          : undefined
+      }
+      role={isClickable ? 'button' : undefined}
+      tabIndex={isClickable ? 0 : undefined}
+    >
       <div className={styles['FileUploaderItem-file']}>
         {isClickable ? (
           <button
             type="button"
             data-test="DesignSystem-FileUploader--NameButton"
             className={classNames(styles['FileUploaderItem-text'], styles['FileUploaderItem-nameButton'])}
-            onClick={() => onClick?.(file, id)}
+            onClick={(e) => {
+              e.stopPropagation();
+              onClick?.(file, id);
+            }}
           >
             <Text appearance={status === 'completed' ? 'default' : 'subtle'}>{name}</Text>
           </button>

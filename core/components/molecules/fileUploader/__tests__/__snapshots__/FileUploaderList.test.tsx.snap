@@ -13,6 +13,8 @@ exports[`FileUploaderList component
     <div
       class="FileUploaderItem"
       data-test="DesignSystem-FileUploader--Item"
+      role="button"
+      tabindex="0"
     >
       <div
         class="FileUploaderItem-file"
@@ -87,6 +89,8 @@ exports[`FileUploaderList component
     <div
       class="FileUploaderItem"
       data-test="DesignSystem-FileUploader--Item"
+      role="button"
+      tabindex="0"
     >
       <div
         class="FileUploaderItem-file"
@@ -130,6 +134,8 @@ exports[`FileUploaderList component
     <div
       class="FileUploaderItem"
       data-test="DesignSystem-FileUploader--Item"
+      role="button"
+      tabindex="0"
     >
       <div
         class="FileUploaderItem-file"
