@@ -2628,7 +2628,6 @@ exports[`Listbox component snapshot
     <nav
       class="Listbox"
       data-test="DesignSystem-Listbox"
-      role="listbox"
       tabindex="-1"
     >
       <div
@@ -2675,7 +2674,6 @@ exports[`Listbox component snapshot
     <nav
       class="Listbox"
       data-test="DesignSystem-Listbox"
-      role="listbox"
       tabindex="-1"
     >
       <div
@@ -3032,7 +3030,6 @@ exports[`Listbox component snapshot
     <nav
       class="Listbox"
       data-test="DesignSystem-Listbox"
-      role="listbox"
       tabindex="-1"
     >
       <div
@@ -3081,7 +3078,6 @@ exports[`Listbox component snapshot
     <nav
       class="Listbox"
       data-test="DesignSystem-Listbox"
-      role="listbox"
       tabindex="-1"
     >
       <div
@@ -3448,7 +3444,6 @@ exports[`Listbox component snapshot
     <nav
       class="Listbox"
       data-test="DesignSystem-Listbox"
-      role="listbox"
       tabindex="-1"
     >
       <div
@@ -3497,7 +3492,6 @@ exports[`Listbox component snapshot
     <nav
       class="Listbox"
       data-test="DesignSystem-Listbox"
-      role="listbox"
       tabindex="-1"
     >
       <div
@@ -3860,7 +3854,6 @@ exports[`Listbox component snapshot
     <nav
       class="Listbox"
       data-test="DesignSystem-Listbox"
-      role="listbox"
       tabindex="-1"
     >
       <div
@@ -3907,7 +3900,6 @@ exports[`Listbox component snapshot
     <nav
       class="Listbox"
       data-test="DesignSystem-Listbox"
-      role="listbox"
       tabindex="-1"
     >
       <div
@@ -4264,7 +4256,6 @@ exports[`Listbox component snapshot
     <nav
       class="Listbox"
       data-test="DesignSystem-Listbox"
-      role="listbox"
       tabindex="-1"
     >
       <div
@@ -4313,7 +4304,6 @@ exports[`Listbox component snapshot
     <nav
       class="Listbox"
       data-test="DesignSystem-Listbox"
-      role="listbox"
       tabindex="-1"
     >
       <div
@@ -4756,7 +4746,6 @@ exports[`Listbox component snapshot
     <nav
       class="Listbox"
       data-test="DesignSystem-Listbox"
-      role="listbox"
       tabindex="-1"
     >
       <div
@@ -4805,7 +4794,6 @@ exports[`Listbox component snapshot
     <nav
       class="Listbox"
       data-test="DesignSystem-Listbox"
-      role="listbox"
       tabindex="-1"
     >
       <div
@@ -5168,7 +5156,6 @@ exports[`Listbox component snapshot
     <nav
       class="Listbox"
       data-test="DesignSystem-Listbox"
-      role="listbox"
       tabindex="-1"
     >
       <div
@@ -5215,7 +5202,6 @@ exports[`Listbox component snapshot
     <nav
       class="Listbox"
       data-test="DesignSystem-Listbox"
-      role="listbox"
       tabindex="-1"
     >
       <div
@@ -5572,7 +5558,6 @@ exports[`Listbox component snapshot
     <nav
       class="Listbox"
       data-test="DesignSystem-Listbox"
-      role="listbox"
       tabindex="-1"
     >
       <div
@@ -5621,7 +5606,6 @@ exports[`Listbox component snapshot
     <nav
       class="Listbox"
       data-test="DesignSystem-Listbox"
-      role="listbox"
       tabindex="-1"
     >
       <div
@@ -5988,7 +5972,6 @@ exports[`Listbox component snapshot
     <nav
       class="Listbox"
       data-test="DesignSystem-Listbox"
-      role="listbox"
       tabindex="-1"
     >
       <div
@@ -6037,7 +6020,6 @@ exports[`Listbox component snapshot
     <nav
       class="Listbox"
       data-test="DesignSystem-Listbox"
-      role="listbox"
       tabindex="-1"
     >
       <div

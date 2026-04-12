@@ -43,7 +43,7 @@ export const DraggableList = (props: ListboxInternalProps) => {
           {...baseProps}
           className={classes}
           tabIndex={-1}
-          role={rest.role ?? 'listbox'}
+          role={rest.role ?? (Tag === 'nav' ? undefined : 'listbox')}
           {...rest}
           {...dragProps}
         >
