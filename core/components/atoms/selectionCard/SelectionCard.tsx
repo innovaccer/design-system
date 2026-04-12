@@ -36,10 +36,28 @@ export interface SelectionCardProps extends BaseProps, BaseHtmlProps<HTMLDivElem
    * Defines if card is selected
    */
   selected?: boolean;
+  /**
+   * Selection mode for the card.
+   * Use `"single"` (renders `role="radio"`) when cards are mutually exclusive — wrap in a `role="radiogroup"` container.
+   * Use `"multiple"` (default, renders `role="checkbox"`) when multiple cards can be selected at once.
+   * @default "multiple"
+   */
+  selectionMode?: 'single' | 'multiple';
 }
 
 export const SelectionCard = (props: SelectionCardProps) => {
-  const { children, onClick, disabled, id, cardValue, overlayZIndex, selected, className, ...rest } = props;
+  const {
+    children,
+    onClick,
+    disabled,
+    id,
+    cardValue,
+    overlayZIndex,
+    selected,
+    selectionMode = 'multiple',
+    className,
+    ...rest
+  } = props;
 
   const classes = classNames(
     {
@@ -69,7 +87,7 @@ export const SelectionCard = (props: SelectionCardProps) => {
 
   return (
     <div
-      role="checkbox"
+      role={selectionMode === 'single' ? 'radio' : 'checkbox'}
       aria-checked={selected}
       tabIndex={disabled ? -1 : 0}
       onKeyDown={onKeyDownHandler}
@@ -91,6 +109,7 @@ export const SelectionCard = (props: SelectionCardProps) => {
 SelectionCard.defaultProps = {
   disabled: false,
   overlayZIndex: 2,
+  selectionMode: 'multiple',
 };
 
 SelectionCard.useMultiSelect = useMultiSelect;
