@@ -135,6 +135,8 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forw
           aria-label={ariaLabel}
           aria-labelledby={ariaLabelledBy}
           aria-describedby={describedBy}
+          // eslint-disable-next-line jsx-a11y/role-supports-aria-props -- aria-invalid is a global ARIA property valid on all form controls (WAI-ARIA 1.2)
+          aria-invalid={error ? true : undefined}
           {...rest}
         />
         <span data-test="DesignSystem-Radio-wrapper" className={RadioWrapper} />
