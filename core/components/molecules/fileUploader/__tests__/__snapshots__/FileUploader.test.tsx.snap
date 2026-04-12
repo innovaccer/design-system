@@ -18,6 +18,7 @@ exports[`FileUploader component
     <span
       class="Text Text--subtle Text--small mt-4"
       data-test="DesignSystem-Text"
+      id="file-uploader-Test-uid-format"
     >
       Accepted formats: PDF, jpg, png
     </span>
@@ -56,7 +57,7 @@ exports[`FileUploader component
         </span>
       </button>
       <input
-        aria-describedby="file-uploader-Test-uid-size"
+        aria-describedby="file-uploader-Test-uid-format file-uploader-Test-uid-size"
         aria-label="Upload documents"
         aria-labelledby="file-uploader-Test-uid-title"
         class="FileUploaderButton-input"

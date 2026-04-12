@@ -18,7 +18,18 @@ export const FileUploaderStatus = (props: FileUploaderStatusProps) => {
       return <ProgressRing size="small" value={progress} className="mr-4" />;
 
     case 'error':
-      return <Button appearance="transparent" size="regular" onClick={onRetry} icon="refresh" className="mr-2" />;
+      return (
+        <Button
+          appearance="transparent"
+          size="regular"
+          onClick={(e) => {
+            e.stopPropagation();
+            onRetry?.();
+          }}
+          icon="refresh"
+          className="mr-2"
+        />
+      );
 
     default:
       return null;

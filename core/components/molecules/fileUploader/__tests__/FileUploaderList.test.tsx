@@ -76,7 +76,7 @@ describe('FileUploaderList component prop:fileList', () => {
 describe('FileUploaderList component Event Handler', () => {
   it('check for onClick Event Handler', () => {
     const { getAllByTestId } = render(<FileUploaderList fileList={fileList} onClick={FunctionValue} />);
-    fireEvent.click(getAllByTestId('DesignSystem-FileUploader--Item')[0]);
+    fireEvent.click(getAllByTestId('DesignSystem-FileUploader--NameButton')[0]);
     expect(FunctionValue).toHaveBeenCalled();
   });
 

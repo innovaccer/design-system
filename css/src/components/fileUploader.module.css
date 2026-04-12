@@ -30,6 +30,14 @@
   text-overflow: ellipsis;
 }
 
+.FileUploaderItem-nameButton {
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+}
+
 .FileUploaderItem-file {
   display: flex;
   align-items: center;
