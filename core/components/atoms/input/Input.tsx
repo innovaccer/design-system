@@ -313,10 +313,6 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
         onFocus={onFocus}
         onPaste={onPaste}
         aria-labelledby={
-          // Merge inlineLabelId only when an explicit aria-labelledby is also provided so
-          // that a native <label htmlFor> association is not silently overridden.
-          // When aria-labelledby is absent, consumers rely on the native label; the
-          // inline token is then surfaced via aria-describedby as supplemental context.
           inlineLabel && ariaLabelledBy
             ? [inlineLabelId, ariaLabelledBy].filter(Boolean).join(' ')
             : ariaLabelledBy || undefined
