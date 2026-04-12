@@ -74,6 +74,7 @@ const VerificationCodeInput = (props: VerificationCodeInputProps) => {
     className,
     value,
     id,
+    'aria-label': groupAriaLabel,
     ...rest
   } = props;
 
@@ -232,8 +233,10 @@ const VerificationCodeInput = (props: VerificationCodeInputProps) => {
           data-id={index}
           ref={refs[index]}
           type={type}
-          aria-label={`Digit ${index + 1} of ${fields}`}
           {...rest}
+          aria-label={
+            groupAriaLabel ? `${groupAriaLabel}, digit ${index + 1} of ${fields}` : `Digit ${index + 1} of ${fields}`
+          }
         />
       ))}
     </div>
