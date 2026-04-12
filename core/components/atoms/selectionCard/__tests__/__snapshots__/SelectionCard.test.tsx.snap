@@ -75,6 +75,7 @@ exports[`selection card item component snapshot
   <div>
     <div
       class="Selection-card Selection-card--disabled Selection-card--default-disabled"
+      data-disabled="true"
       data-test="DesignSystem-SelectionCard"
       role="checkbox"
       tabindex="-1"
@@ -98,6 +99,7 @@ exports[`selection card item component snapshot
     <div
       aria-checked="false"
       class="Selection-card Selection-card--disabled Selection-card--default-disabled"
+      data-disabled="true"
       data-test="DesignSystem-SelectionCard"
       role="checkbox"
       tabindex="-1"
@@ -121,6 +123,7 @@ exports[`selection card item component snapshot
     <div
       aria-checked="true"
       class="Selection-card Selection-card--disabled Selection-card--selected-disabled"
+      data-disabled="true"
       data-test="DesignSystem-SelectionCard"
       role="checkbox"
       tabindex="-1"

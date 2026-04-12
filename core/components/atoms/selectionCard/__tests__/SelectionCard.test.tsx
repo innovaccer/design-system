@@ -322,6 +322,90 @@ describe('SelectionCard keyboard interactions', () => {
   });
 });
 
+describe('SelectionCard radio mode keyboard navigation', () => {
+  const RadioGroup = ({ onClick }: { onClick: jest.Mock }) => (
+    <div role="radiogroup" aria-label="Options">
+      <SelectionCard id="r1" data-test="card-1" selectionMode="single" selected={false} onClick={onClick}>
+        Option 1
+      </SelectionCard>
+      <SelectionCard id="r2" data-test="card-2" selectionMode="single" selected={false} onClick={onClick}>
+        Option 2
+      </SelectionCard>
+      <SelectionCard id="r3" data-test="card-3" selectionMode="single" selected={false} onClick={onClick}>
+        Option 3
+      </SelectionCard>
+    </div>
+  );
+
+  it('ArrowDown moves focus to the next card and triggers onClick', () => {
+    const onClick = jest.fn();
+    const { getByTestId } = render(<RadioGroup onClick={onClick} />);
+    const card1 = getByTestId('card-1');
+    fireEvent.keyDown(card1, { key: 'ArrowDown' });
+    expect(onClick).toHaveBeenCalledWith(expect.any(Object), 'r2', undefined);
+  });
+
+  it('ArrowRight moves focus to the next card', () => {
+    const onClick = jest.fn();
+    const { getByTestId } = render(<RadioGroup onClick={onClick} />);
+    const card1 = getByTestId('card-1');
+    fireEvent.keyDown(card1, { key: 'ArrowRight' });
+    expect(onClick).toHaveBeenCalledWith(expect.any(Object), 'r2', undefined);
+  });
+
+  it('ArrowUp moves focus to the previous card (wrapping)', () => {
+    const onClick = jest.fn();
+    const { getByTestId } = render(<RadioGroup onClick={onClick} />);
+    const card1 = getByTestId('card-1');
+    fireEvent.keyDown(card1, { key: 'ArrowUp' });
+    expect(onClick).toHaveBeenCalledWith(expect.any(Object), 'r3', undefined);
+  });
+
+  it('ArrowLeft moves focus to the previous card', () => {
+    const onClick = jest.fn();
+    const { getByTestId } = render(<RadioGroup onClick={onClick} />);
+    const card1 = getByTestId('card-1');
+    fireEvent.keyDown(card1, { key: 'ArrowLeft' });
+    expect(onClick).toHaveBeenCalledWith(expect.any(Object), 'r3', undefined);
+  });
+
+  it('selected card has tabIndex 0; unselected have tabIndex -1 in radio mode', () => {
+    const { getByTestId } = render(
+      <div role="radiogroup" aria-label="Options">
+        <SelectionCard id="r1" data-test="card-1" selectionMode="single" selected={true}>
+          Option 1
+        </SelectionCard>
+        <SelectionCard id="r2" data-test="card-2" selectionMode="single" selected={false}>
+          Option 2
+        </SelectionCard>
+      </div>
+    );
+    expect(getByTestId('card-1')).toHaveAttribute('tabindex', '0');
+    expect(getByTestId('card-2')).toHaveAttribute('tabindex', '-1');
+  });
+
+  it('disabled card is skipped during Arrow navigation', () => {
+    const onClick = jest.fn();
+    const { getByTestId } = render(
+      <div role="radiogroup" aria-label="Options">
+        <SelectionCard id="r1" data-test="card-1" selectionMode="single" selected={false} onClick={onClick}>
+          Option 1
+        </SelectionCard>
+        <SelectionCard id="r2" data-test="card-2" selectionMode="single" selected={false} disabled onClick={onClick}>
+          Option 2 (disabled)
+        </SelectionCard>
+        <SelectionCard id="r3" data-test="card-3" selectionMode="single" selected={false} onClick={onClick}>
+          Option 3
+        </SelectionCard>
+      </div>
+    );
+    const card1 = getByTestId('card-1');
+    fireEvent.keyDown(card1, { key: 'ArrowDown' });
+    // Disabled card is excluded from getGroupRadios, so jumps to card-3
+    expect(onClick).toHaveBeenCalledWith(expect.any(Object), 'r3', undefined);
+  });
+});
+
 describe('SelectionCard component a11y', () => {
   it('has no detectable a11y violations', async () => {
     const { container } = render(
