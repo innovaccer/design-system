@@ -314,7 +314,7 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
         className={ChipInputClass}
         onClick={onClickHandler}
         onKeyDown={handleTriggerKeyDown}
-        tabIndex={-1}
+        tabIndex={tabIndex ?? -1}
         aria-disabled={disabled || undefined}
       >
         <div className={styles['ChipInput-wrapper']} ref={customRef}>

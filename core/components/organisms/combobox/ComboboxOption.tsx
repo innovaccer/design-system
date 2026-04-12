@@ -96,8 +96,13 @@ export const ComboboxOption = (props: ComboboxOptionProps) => {
     );
   };
 
+  const isSameOption = (a: OptionType, b: OptionType) => {
+    if (a.id !== undefined && b.id !== undefined) return a.id === b.id;
+    return a.label === b.label && a.value === b.value;
+  };
+
   const isSelected = multiSelect
-    ? chipInputValue?.some((v) => v.label === option.label) ?? false
+    ? chipInputValue?.some((v) => isSameOption(v, option)) ?? false
     : option.label === inputValue?.label;
 
   return (
