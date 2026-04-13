@@ -23,9 +23,6 @@ export interface IncomingOptionProps extends BaseProps {
   urgentMessage?: () => JSX.Element;
   avatarData?: ChatAvatarProps;
   showAvatar?: boolean;
-  /**
-   * Accessible label for the incoming message article (SC 4.1.2)
-   */
   'aria-label'?: string;
 }
 

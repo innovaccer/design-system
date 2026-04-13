@@ -91,9 +91,18 @@ describe('Chat UnreadMessage component a11y', () => {
     fireEvent.keyDown(el, { key: 'Enter', repeat: true });
     expect(onClick).toHaveBeenCalledTimes(1);
 
-    // Space fires on keyup, not keydown
+    // Space fires on keyup only when keydown originated on this element
     fireEvent.keyDown(el, { key: ' ' });
     expect(onClick).toHaveBeenCalledTimes(1);
+    fireEvent.keyUp(el, { key: ' ' });
+    expect(onClick).toHaveBeenCalledTimes(2);
+
+    // Space keyup without prior keydown on this element must not activate
+    fireEvent.keyUp(el, { key: ' ' });
+    expect(onClick).toHaveBeenCalledTimes(2);
+
+    // Space held (repeat) should not register a second press
+    fireEvent.keyDown(el, { key: ' ', repeat: true });
     fireEvent.keyUp(el, { key: ' ' });
     expect(onClick).toHaveBeenCalledTimes(2);
   });

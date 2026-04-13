@@ -58,7 +58,7 @@ export interface ChatInputProps extends BaseProps {
    */
   onStopGenerating?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   /**
-   * Accessible label for the chat input textarea (SC 3.3.2 / 4.1.2)
+   * Accessible label for the chat input textarea
    */
   'aria-label'?: string;
 }

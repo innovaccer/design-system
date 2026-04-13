@@ -13,7 +13,7 @@ export interface ChatProps extends BaseProps {
    */
   children: React.ReactNode;
   /**
-   * Accessible label for the chat log region (SC 1.3.1)
+   * Accessible label for the chat log region
    */
   'aria-label'?: string;
 }
