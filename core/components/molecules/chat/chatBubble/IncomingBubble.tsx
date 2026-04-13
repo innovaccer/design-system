@@ -51,6 +51,17 @@ export const IncomingBubble = (props: IncomingOptionProps) => {
     [styles['ChatBubble-metaData--incoming']]: showAvatar,
   });
 
+  const handleMouseEnter = () => setShowActionBar(true);
+  const handleMouseLeave = () => setShowActionBar(false);
+  const handleFocus = actionBar ? () => setShowActionBar(true) : undefined;
+  const handleBlur = actionBar
+    ? (e: React.FocusEvent<HTMLElement>) => {
+        if (!e.currentTarget.contains(e.relatedTarget as Node)) {
+          setShowActionBar(false);
+        }
+      }
+    : undefined;
+
   return (
     <div data-test="DesignSystem-ChatBubble-IncomingWrapper" {...rest} role="article">
       {showMetaRow && (
@@ -106,15 +117,11 @@ export const IncomingBubble = (props: IncomingOptionProps) => {
         </Row>
       )}
       <Row
-        tabIndex={0}
-        onMouseEnter={() => setShowActionBar(true)}
-        onMouseLeave={() => setShowActionBar(false)}
-        onFocus={() => setShowActionBar(true)}
-        onBlur={(e) => {
-          if (!e.currentTarget.contains(e.relatedTarget as Node)) {
-            setShowActionBar(false);
-          }
-        }}
+        tabIndex={actionBar ? 0 : undefined}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
         data-test="DesignSystem-IncomingChatBubble-Wrapper"
       >
         <Column className={styles['ChatBubble-boxWrapper']} data-test="DesignSystem-IncomingChatBubble-ChatBoxWrapper">

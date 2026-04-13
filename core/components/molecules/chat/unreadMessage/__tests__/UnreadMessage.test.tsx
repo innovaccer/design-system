@@ -83,10 +83,18 @@ describe('Chat UnreadMessage component a11y', () => {
     expect(el).toHaveAttribute('role', 'button');
     expect(el).toHaveAttribute('tabindex', '0');
 
-    fireEvent.keyDown(el, { key: 'Enter' });
+    // Enter fires on keydown (non-repeat)
+    fireEvent.keyDown(el, { key: 'Enter', repeat: false });
     expect(onClick).toHaveBeenCalledTimes(1);
 
+    // Enter held down (repeat) must not fire again
+    fireEvent.keyDown(el, { key: 'Enter', repeat: true });
+    expect(onClick).toHaveBeenCalledTimes(1);
+
+    // Space fires on keyup, not keydown
     fireEvent.keyDown(el, { key: ' ' });
+    expect(onClick).toHaveBeenCalledTimes(1);
+    fireEvent.keyUp(el, { key: ' ' });
     expect(onClick).toHaveBeenCalledTimes(2);
   });
 

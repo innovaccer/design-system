@@ -68,7 +68,6 @@ Object {
           <div
             class="Row"
             data-test="DesignSystem-IncomingChatBubble-Wrapper"
-            tabindex="0"
           >
             <div
               class="Col ChatBubble-boxWrapper"
@@ -175,7 +174,6 @@ Object {
         <div
           class="Row"
           data-test="DesignSystem-IncomingChatBubble-Wrapper"
-          tabindex="0"
         >
           <div
             class="Col ChatBubble-boxWrapper"
@@ -334,7 +332,6 @@ Object {
             <div
               class="Row d-flex justify-content-end"
               data-test="DesignSystem-OutgoingChatBubble-Wrapper"
-              tabindex="0"
             >
               <div
                 class="Col ChatBubble-actionBarWrapper"
@@ -420,7 +417,6 @@ Object {
           <div
             class="Row d-flex justify-content-end"
             data-test="DesignSystem-OutgoingChatBubble-Wrapper"
-            tabindex="0"
           >
             <div
               class="Col ChatBubble-actionBarWrapper"

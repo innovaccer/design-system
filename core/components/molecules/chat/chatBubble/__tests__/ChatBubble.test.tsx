@@ -241,6 +241,24 @@ describe('ChatBubble component a11y', () => {
     expect(getByTestId('DesignSystem-ChatBubble-OutgoingWrapper')).toHaveAttribute('aria-label', 'Sent message');
   });
 
+  it('row has no tabindex when no actionBar is provided (incoming)', () => {
+    const { getByTestId } = render(
+      <Chat>
+        <Chat.ChatBubble type="incoming">{chatMessage}</Chat.ChatBubble>
+      </Chat>
+    );
+    expect(getByTestId('DesignSystem-IncomingChatBubble-Wrapper')).not.toHaveAttribute('tabindex');
+  });
+
+  it('row has no tabindex when no actionBar is provided (outgoing)', () => {
+    const { getByTestId } = render(
+      <Chat>
+        <Chat.ChatBubble type="outgoing">{chatMessage}</Chat.ChatBubble>
+      </Chat>
+    );
+    expect(getByTestId('DesignSystem-OutgoingChatBubble-Wrapper')).not.toHaveAttribute('tabindex');
+  });
+
   it('action bar is shown on focus and hidden only when focus leaves the row (incoming)', () => {
     const actionBar = () => <button data-test="DesignSystem-IncomingChatBubble-ActionButton">React</button>;
     const { getByTestId } = render(
