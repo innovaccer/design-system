@@ -32,7 +32,24 @@ const SaraIconDisabled = (props: SaraIconType) => {
         fill="url(#paint1_linear_63015_2821)"
         fillOpacity="0.24"
       />
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M0.75 6C3.6495 6 6 3.6495 6 0.75C6 3.6495 8.35051 6 11.25 6C8.35051 6 6 8.35051 6 11.25C6 8.35051 3.6495 6 0.75 6Z"
+        fill="none"
+        stroke="#DD2D38"
+        strokeWidth="1"
+        vectorEffect="non-scaling-stroke"
+        clipPath="url(#clip0_63015_2821)"
+      />
       <defs>
+        <clipPath id="clip0_63015_2821">
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M0.75 6C3.6495 6 6 3.6495 6 0.75C6 3.6495 8.35051 6 11.25 6C8.35051 6 6 8.35051 6 11.25C6 8.35051 3.6495 6 0.75 6Z"
+          />
+        </clipPath>
         <linearGradient
           id="paint0_linear_63015_2821"
           x1="2.57813"
