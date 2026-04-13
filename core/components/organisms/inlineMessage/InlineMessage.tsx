@@ -1,7 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { Icon, Text } from '@/index';
-import { BaseProps, extractBaseProps } from '@/utils/types';
+import { BaseProps, BaseHtmlProps, extractBaseProps } from '@/utils/types';
 import { MessageAppearance } from '@/common.type';
 import styles from '@css/components/inlineMessage.module.css';
 
@@ -14,7 +14,7 @@ const IconMapping = {
 
 export type MessageSize = 'regular' | 'small';
 
-export interface InlineMessageProps extends BaseProps {
+export interface InlineMessageProps extends BaseProps, BaseHtmlProps<HTMLDivElement> {
   /**
    * Optional DOM id (e.g. for `aria-describedby` / `aria-errormessage` on a related control).
    */
@@ -36,7 +36,7 @@ export interface InlineMessageProps extends BaseProps {
 }
 
 export const InlineMessage = (props: InlineMessageProps) => {
-  const { appearance, className, description, size, id } = props;
+  const { appearance, className, description, size, ...rest } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -61,7 +61,7 @@ export const InlineMessage = (props: InlineMessageProps) => {
   const TextWeight = size === 'small' ? 'medium' : undefined;
 
   return (
-    <div data-test="DesignSystem-InlineMessage" id={id} {...baseProps} className={InlineMessageClass}>
+    <div data-test="DesignSystem-InlineMessage" {...baseProps} {...rest} className={InlineMessageClass}>
       {appearance !== 'default' && (
         <Icon
           data-test="DesignSystem-InlineMessage--Icon"
@@ -69,6 +69,7 @@ export const InlineMessage = (props: InlineMessageProps) => {
           appearance={appearance}
           className={IconClass}
           size={IconSize}
+          aria-hidden="true"
         />
       )}
       <Text

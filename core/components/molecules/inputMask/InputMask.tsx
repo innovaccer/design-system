@@ -4,6 +4,7 @@ import { BaseProps, Validators, Mask } from '@/utils/types';
 import { Input, Utils, HelpText } from '@/index';
 import { InputProps } from '@/index.type';
 import { getDefaultValue } from './utilites';
+import uidGenerator from '@/utils/uidGenerator';
 
 export interface MaskProps extends BaseProps {
   /**
@@ -87,8 +88,16 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
     className,
     id,
     helpText,
+    label,
+    'aria-describedby': ariaDescribedBy,
     ...rest
   } = props;
+
+  const helpTextIdRef = React.useRef<string | null>(null);
+  if (helpTextIdRef.current === null) {
+    helpTextIdRef.current = `InputMask-helpText-${uidGenerator()}`;
+  }
+  const helpTextId = helpTextIdRef.current;
 
   const isEditable = React.useCallback((pos: number) => typeof mask[pos] === 'object', [mask]);
 
@@ -387,10 +396,15 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
   );
 
   const isValueEqualPlaceholder = value === defaultPlaceholderValue;
+  const helpMessage = error ? caption : helpText;
+  const resolvedDescribedBy =
+    [ariaDescribedBy, helpMessage ? helpTextId : undefined].filter(Boolean).join(' ') || undefined;
 
   return (
     <div className={classes} data-test="DesignSystem-InputMask--Wrapper">
       <Input
+        label={label}
+        aria-label={label}
         {...rest}
         id={id !== 'parent-TimePicker' && id !== 'parent-DatePicker' ? id : undefined}
         value={value}
@@ -398,17 +412,14 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
         required={required}
         onFocus={onFocusHandler}
         onChange={onChangeHandler}
-        /**
-         * input right cross icon should be visible only
-         * when user provides value
-         */
         onClear={!isValueEqualPlaceholder ? onClearHandler : undefined}
         onBlur={onBlurHandler}
         onPaste={onPasteHandler}
         autoComplete={'off'}
         ref={ref}
+        aria-describedby={resolvedDescribedBy}
       />
-      <HelpText message={error ? caption : helpText} error={error} />
+      <HelpText id={helpTextId} message={helpMessage} error={error} />
     </div>
   );
 });

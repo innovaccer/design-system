@@ -3,15 +3,11 @@ import * as React from 'react';
 type AriaRoleType = React.AriaRole;
 type KeyboardEventKeyType = KeyboardEvent['key'];
 
-interface IProps {
+interface IProps extends React.AriaAttributes {
   onClick?: (event: React.MouseEvent<HTMLElement>) => void;
   onKeyDown?: (event: React.KeyboardEvent<HTMLElement>) => void;
   role?: AriaRoleType;
   tabIndex?: number;
-  'aria-label'?: React.AriaAttributes['aria-label'];
-  'aria-labelledby'?: React.AriaAttributes['aria-labelledby'];
-  'aria-describedby'?: React.AriaAttributes['aria-describedby'];
-  'aria-hidden'?: React.AriaAttributes['aria-hidden'];
 }
 
 const allowed: Record<string, Set<KeyboardEventKeyType>> = {
@@ -32,27 +28,16 @@ const isKeyboardInteractionAllowed = (role: AriaRoleType, key: KeyboardEventKeyT
   return allowedKeys.has(key);
 };
 
-const useAccessibilityProps = ({ onClick, onKeyDown, role = 'button', tabIndex, ...rest }: IProps) => {
+const useAccessibilityProps = ({ onClick, onKeyDown, role = 'button', tabIndex, ...ariaProps }: IProps) => {
   // Only add interactive props when onClick is provided.
   if (!onClick) {
-    const {
-      'aria-label': ariaLabel,
-      'aria-labelledby': ariaLabelledBy,
-      'aria-describedby': ariaDescribedBy,
-      'aria-hidden': ariaHidden,
-    } = rest;
-    return {
-      ...(ariaLabel != null && { 'aria-label': ariaLabel }),
-      ...(ariaLabelledBy != null && { 'aria-labelledby': ariaLabelledBy }),
-      ...(ariaDescribedBy != null && { 'aria-describedby': ariaDescribedBy }),
-      ...(ariaHidden != null && { 'aria-hidden': ariaHidden }),
-    };
+    return { ...ariaProps };
   }
   return {
     onClick: onClick,
     role: role,
     tabIndex: tabIndex ?? 0,
-    'aria-label': rest['aria-label'],
+    ...ariaProps,
     onKeyDown: (e: React.SyntheticEvent<HTMLElement>) => {
       if (onKeyDown) {
         onKeyDown(e as React.KeyboardEvent<HTMLElement>);

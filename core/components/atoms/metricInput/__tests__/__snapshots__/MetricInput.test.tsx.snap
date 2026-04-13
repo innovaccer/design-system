@@ -139,6 +139,8 @@ exports[`MetricInput component
       <input
         class="MetricInput-input MetricInput-input--large"
         data-test="DesignSystem-MetricInput"
+        max="100"
+        min="0"
         name="name"
         type="number"
         value="10"
@@ -205,6 +207,8 @@ exports[`MetricInput component
       <input
         class="MetricInput-input MetricInput-input--regular"
         data-test="DesignSystem-MetricInput"
+        max="100"
+        min="0"
         name="name"
         type="number"
         value="10"
@@ -271,6 +275,8 @@ exports[`MetricInput component
       <input
         class="MetricInput-input MetricInput-input--small"
         data-test="DesignSystem-MetricInput"
+        max="100"
+        min="0"
         name="name"
         type="number"
         value="10"

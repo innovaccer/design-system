@@ -2,6 +2,7 @@ import * as React from 'react';
 import { OptionType, TListboxSize, SelectStyleType } from '@/common.type';
 
 export type ContextProps = {
+  listboxId?: string;
   openPopover?: boolean;
   setOpenPopover?: React.Dispatch<React.SetStateAction<boolean>>;
   selectValue?: OptionType | OptionType[];
@@ -26,7 +27,6 @@ export type ContextProps = {
   error?: boolean;
   /** Index of the option that has tabindex=0 (roving tabstop). -1 when none (e.g. search focused or empty list). */
   rovingIndex?: number;
-  listboxId?: string;
 };
 
 export const SelectContext = React.createContext<ContextProps>({});

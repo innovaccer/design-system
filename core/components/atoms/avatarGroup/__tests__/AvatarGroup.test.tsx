@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import AvatarGroup, { AvatarGroupProps as Props, AvatarData } from '../AvatarGroup';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { Avatar, Tooltip, Icon } from '@/index';
@@ -512,5 +513,13 @@ describe('AvatarGroup component with size based spacing', () => {
     const { getAllByTestId } = render(<AvatarGroup list={list} size="micro" max={3} />);
     const avatars = getAllByTestId('DesignSystem-AvatarGroup--Avatar');
     expect(avatars[0]).toHaveClass('AvatarGroup-item--micro');
+  });
+});
+
+describe('AvatarGroup component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<AvatarGroup list={list} />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

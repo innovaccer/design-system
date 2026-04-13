@@ -30,6 +30,13 @@
       "contributions": ["code", "doc", "review"]
     },
     {
+      "login": "anuradha9712",
+      "name": "Anuradha Aggarwal",
+      "avatar_url": "https://avatars.githubusercontent.com/u/46045493?v=4",
+      "profile": "https://github.com/anuradha9712",
+      "contributions": ["code", "doc", "review"]
+    },
+    {
       "login": "sandeshchoudhary",
       "name": "sandeshchoudhary",
       "avatar_url": "https://avatars.githubusercontent.com/u/11272274?v=4",
@@ -41,13 +48,6 @@
       "name": "adityajhajharia",
       "avatar_url": "https://avatars.githubusercontent.com/u/42600089?v=4",
       "profile": "https://github.com/adityajhajharia",
-      "contributions": ["code"]
-    },
-    {
-      "login": "anuradha9712",
-      "name": "Anuradha Aggarwal",
-      "avatar_url": "https://avatars.githubusercontent.com/u/46045493?v=4",
-      "profile": "https://github.com/anuradha9712",
       "contributions": ["code"]
     },
     {
@@ -160,28 +160,28 @@
       "name": "Atulya",
       "avatar_url": "https://avatars.githubusercontent.com/u/257970374?v=4",
       "profile": "https://github.com/atulya-innovaccer",
-      "contributions": ["code"]
+      "contributions": ["code", "design"]
     },
     {
       "login": "abhi-innovaccer",
       "name": "Abhiroop Chaudhuri",
       "avatar_url": "https://avatars.githubusercontent.com/u/221942494?v=4",
       "profile": "https://github.com/abhi-innovaccer",
-      "contributions": ["code"]
+      "contributions": ["code", "design"]
     },
     {
       "login": "grandhimanshu",
       "name": "Himanshu Jangir",
       "avatar_url": "https://avatars.githubusercontent.com/u/165885443?v=4",
       "profile": "https://github.com/grandhimanshu",
-      "contributions": ["code"]
+      "contributions": ["code", "design"]
     },
     {
       "login": "shivaanshsharmaInno",
       "name": "Shivaansh Sharma",
       "avatar_url": "https://avatars.githubusercontent.com/u/260635446?v=4",
       "profile": "https://github.com/shivaanshsharmaInno",
-      "contributions": ["code"]
+      "contributions": ["code", "design"]
     }
   ],
   "contributorsPerLine": 7

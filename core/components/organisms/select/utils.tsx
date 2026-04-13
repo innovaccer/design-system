@@ -185,7 +185,7 @@ export const focusListItem = (
 
 export const handleKeyDown = (
   event: React.KeyboardEvent,
-  focusedOption: Element | undefined,
+  _focusedOption: Element | undefined,
   setFocusedOption?: React.Dispatch<React.SetStateAction<HTMLElement | undefined>>,
   setHighlightFirstItem?: React.Dispatch<React.SetStateAction<boolean>>,
   setHighlightLastItem?: React.Dispatch<React.SetStateAction<boolean>>,

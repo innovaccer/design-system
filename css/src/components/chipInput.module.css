@@ -10,14 +10,14 @@
 
 .ChipInput--regular {
   padding-left: 10px;
-  padding-right: 10px;
+  padding-right: var(--spacing-15);
 }
 
 .ChipInput--small {
   align-items: center;
   min-height: var(--spacing-60);
   padding-left: var(--spacing-20);
-  padding-right: var(--spacing-20);
+  padding-right: var(--spacing-10);
 }
 
 .ChipInput:hover {
@@ -102,12 +102,6 @@
 .ChipInput-icon {
   cursor: pointer;
   border-radius: var(--border-radius-full);
-  border: none;
-  background: none;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .ChipInput-icon--small {

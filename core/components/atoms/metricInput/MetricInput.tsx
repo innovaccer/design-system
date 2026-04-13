@@ -277,6 +277,10 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
     }
   };
 
+  const numericValue = Number(value ?? 0);
+  const isAtMin = min !== undefined && numericValue <= min;
+  const isAtMax = max !== undefined && numericValue >= max;
+
   return (
     <div data-test="DesignSystem-MetricInputWrapper" className={classes} onKeyDown={onKeyDown} role="presentation">
       {icon && (
@@ -307,6 +311,8 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
         value={value}
         disabled={disabled}
         readOnly={readOnly}
+        min={min}
+        max={max}
         onChange={onChangeHandler}
         onBlur={onBlur}
         onClick={onClick}
@@ -326,6 +332,7 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
             onClick={(e) => onArrowClick(e, 'up')}
             aria-label="Increment value"
             data-test="DesignSystem-MetricInput--upIcon"
+            disabled={disabled || readOnly || isAtMax}
           >
             <Icon name="keyboard_arrow_up" size={actionButtonIconSize} />
           </button>
@@ -335,6 +342,7 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
             onClick={(e) => onArrowClick(e, 'down')}
             aria-label="Decrement value"
             data-test="DesignSystem-MetricInput--downIcon"
+            disabled={disabled || readOnly || isAtMin}
           >
             <Icon name="keyboard_arrow_down" size={actionButtonIconSize} />
           </button>

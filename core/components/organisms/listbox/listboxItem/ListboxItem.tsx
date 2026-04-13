@@ -168,7 +168,7 @@ export const ListboxItem = (props: ListboxItemProps) => {
       {nestedBody && (
         <NestedList expanded={expanded} nestedBody={nestedBody} id={nestedListId} aria-label={nestedListAriaLabel} />
       )}
-      {showDivider && <Divider className={styles['Listbox-divider']} />}
+      {showDivider && <Divider className={styles['Listbox-divider']} aria-hidden={true} />}
     </Tag>
   );
 };

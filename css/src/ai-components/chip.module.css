@@ -7,6 +7,7 @@
   cursor: pointer;
   width: fit-content;
   border: 0;
+  position: relative;
   background: linear-gradient(109deg, #fdead8 10.28%, #fbdfd5 32.82%, #f9d1d5 63.38%, #fad9e7 96.05%);
 }
 
@@ -59,4 +60,10 @@
 .AIChip:disabled {
   cursor: not-allowed;
   background: linear-gradient(109deg, #fdead8 10.28%, #fbdfd5 32.82%, #f9d1d5 63.38%, #fad9e7 96.05%);
+}
+
+.AIChip-AIIcon {
+  position: absolute;
+  top: calc(-1 * var(--spacing-05));
+  right: calc(-1 * var(--spacing-05));
 }

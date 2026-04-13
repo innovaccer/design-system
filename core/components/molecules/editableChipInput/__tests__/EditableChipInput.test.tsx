@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { EditableChipInput } from '@/index';
 import { EditableChipInputProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -120,6 +121,26 @@ describe('EditableChipInput component', () => {
 
     fireEvent.click(getByTestId(editableWrapperTestId));
     expect(getByTestId('DesignSystem-ChipInput--Input')).not.toHaveFocus();
+  });
+
+  it('keeps the clear action centered in edit mode across size variants', () => {
+    const { getByTestId, rerender } = render(
+      <EditableChipInput value={value} onChange={onChange} size="regular" chipInputOptions={chipInputOptions} />
+    );
+
+    fireEvent.click(getByTestId(editableWrapperTestId));
+
+    let clearAction = getByTestId('DesignSystem-ChipInput--Icon');
+    expect(clearAction).toHaveClass('align-self-center');
+    expect(clearAction).not.toHaveClass('align-self-start');
+
+    rerender(<EditableChipInput value={value} onChange={onChange} size="small" chipInputOptions={chipInputOptions} />);
+
+    fireEvent.click(getByTestId(editableWrapperTestId));
+
+    clearAction = getByTestId('DesignSystem-ChipInput--Icon');
+    expect(clearAction).toHaveClass('align-self-center');
+    expect(clearAction).not.toHaveClass('align-self-start');
   });
 });
 
@@ -448,5 +469,19 @@ describe('EditableChipInput component - Size functionality', () => {
       const chipInput = getByTestId(chipInputTestId);
       expect(chipInput).toHaveClass('ChipInput--small');
     });
+  });
+});
+
+describe('EditableChipInput component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(
+      <EditableChipInput
+        value={[]}
+        onChange={jest.fn()}
+        chipInputOptions={{ chipOptions: {}, allowDuplicates: false, defaultValue: [] }}
+      />
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

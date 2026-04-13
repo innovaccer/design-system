@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import FileUploader, { FileUploaderProps as Props } from '../FileUploader';
 import Link from '@/components/atoms/link';
@@ -194,5 +195,13 @@ describe('FileUploader component prop:sampleFileLink', () => {
       />
     );
     expect(getByTestId('DesignSystem-Link')).toBeInTheDocument();
+  });
+});
+
+describe('FileUploader component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<FileUploader />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

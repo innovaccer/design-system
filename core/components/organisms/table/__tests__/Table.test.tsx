@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent, waitFor, screen, cleanup } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { Table, Button } from '@/index';
 import { TableProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -2300,5 +2301,13 @@ describe('render table with pagination during loading', () => {
       const paginationDuringSearch = queryByTestId('DesignSystem-Pagination');
       expect(paginationDuringSearch).not.toBeInTheDocument();
     });
+  });
+});
+
+describe('Table component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<Table data={tableData} schema={tableSchema} />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

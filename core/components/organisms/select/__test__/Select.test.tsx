@@ -1,8 +1,11 @@
 import * as React from 'react';
+import { axe } from '@/utils/testAxe';
 import { render, fireEvent, waitFor, act } from '@testing-library/react';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { Select, AIIconButton } from '@/index';
 import { SelectProps as Props } from '@/index.type';
+
+window.HTMLElement.prototype.scrollIntoView = jest.fn();
 
 const BooleanValue = [true, false];
 const FunctionValue = jest.fn();
@@ -1807,5 +1810,46 @@ describe('Select component size functionality tests', () => {
       expect(triggerButton).toHaveClass('Select-trigger--error');
       expect(triggerButton).not.toHaveClass('Select-trigger--outlinedPlaceholder');
     });
+  });
+
+  describe('Select component a11y', () => {
+    it('has no detectable a11y violations', async () => {
+      const { container } = render(<Select onSelect={FunctionValue}>{children}</Select>);
+      const results = await axe(container);
+      expect(results).toHaveNoViolations();
+    });
+  });
+});
+
+describe('Select subcomponents a11y', () => {
+  it('Select.SearchInput, Select.List, Select.Option and Select.Footer have no detectable a11y violations when open', async () => {
+    const { getByTestId } = render(
+      <Select onSelect={FunctionValue}>
+        <Select.SearchInput placeholder="Search options" />
+        <Select.List>
+          <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          <Select.Option option={{ label: 'Option 2', value: 'Option 2' }}>Option 2</Select.Option>
+        </Select.List>
+        <Select.Footer>
+          <button>Apply</button>
+        </Select.Footer>
+      </Select>
+    );
+    fireEvent.click(getByTestId('DesignSystem-Select-trigger'));
+    const results = await axe(document.body);
+    expect(results).toHaveNoViolations();
+  });
+});
+
+describe('Select.EmptyTemplate a11y', () => {
+  it('has no detectable a11y violations when open', async () => {
+    const { getByTestId } = render(
+      <Select onSelect={FunctionValue}>
+        <Select.EmptyTemplate title="No results found" description="No options available." />
+      </Select>
+    );
+    fireEvent.click(getByTestId('DesignSystem-Select-trigger'));
+    const results = await axe(document.body);
+    expect(results).toHaveNoViolations();
   });
 });

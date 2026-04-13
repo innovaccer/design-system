@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import Breadcrumbs from '../Breadcrumbs';
 
 const list = [
@@ -97,5 +98,13 @@ describe('Breadcrumbs component with Tooltip', () => {
     fireEvent.mouseEnter(getAllByTestId('DesignSystem-Breadcrumbs-link')[0]);
     const tooltip = getAllByTestId('DesignSystem-Popover')[0].firstChild;
     expect(tooltip).toHaveClass('Tooltip');
+  });
+});
+
+describe('Breadcrumbs component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<Breadcrumbs list={list} onClick={onClick} />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

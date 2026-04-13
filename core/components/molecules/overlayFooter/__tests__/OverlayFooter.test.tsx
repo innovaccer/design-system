@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import OverlayFooter, { OverlayFooterProps as Props } from '../OverlayFooter';
 import { Button } from '@/index';
 import { testHelper, filterUndefined, testMessageHelper } from '@/utils/testHelper';
@@ -59,5 +60,18 @@ describe('OverlayFooter with overwrite class', () => {
     );
 
     expect(getByTestId('DesignSystem-OverlayFooter')).toHaveClass(className);
+  });
+});
+
+describe('OverlayFooter component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(
+      <OverlayFooter>
+        <Button appearance="basic">Basic</Button>
+        <Button appearance="primary">Primary</Button>
+      </OverlayFooter>
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

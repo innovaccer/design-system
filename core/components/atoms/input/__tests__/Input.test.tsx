@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import Input, { InputProps as Props } from '../Input';
 
@@ -685,13 +686,29 @@ describe('Input Component - Comprehensive Behavior Tests', () => {
       expect(input).not.toHaveAttribute('aria-invalid');
     });
 
-    it('associates inline label with input via aria-describedby', () => {
+    it('associates inline label via aria-describedby when no aria-labelledby is provided', () => {
       const { getByTestId, getByText } = render(<Input name="test" inlineLabel="USD" value="100" />);
 
       const input = getByTestId('DesignSystem-Input');
       const inlineLabelElement = getByText('USD').closest('[id]') as HTMLElement;
 
+      // Without an explicit aria-labelledby, inlineLabel is surfaced as supplemental
+      // description so that a native <label htmlFor> association is not overridden.
       expect(input).toHaveAttribute('aria-describedby', inlineLabelElement.id);
+      expect(input).not.toHaveAttribute('aria-labelledby');
+    });
+
+    it('merges inline label id into aria-labelledby when aria-labelledby is explicitly provided', () => {
+      const { getByTestId, getByText } = render(
+        <Input name="test" inlineLabel="USD" value="100" aria-labelledby="external-label" />
+      );
+
+      const input = getByTestId('DesignSystem-Input');
+      const inlineLabelElement = getByText('USD').closest('[id]') as HTMLElement;
+
+      const labelledBy = input.getAttribute('aria-labelledby') ?? '';
+      expect(labelledBy).toContain(inlineLabelElement.id);
+      expect(labelledBy).toContain('external-label');
     });
 
     it('does not set aria-describedby when inlineLabel is not provided', () => {
@@ -1081,5 +1098,13 @@ describe('Input Component - Comprehensive Behavior Tests', () => {
       expect(regularContainer.querySelector('.Input-icon--left')).toBeInTheDocument();
       expect(largeContainer.querySelector('.Input-icon--left')).toBeInTheDocument();
     });
+  });
+});
+
+describe('Input component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<Input name={nameValue} aria-label="Input field" />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });
