@@ -13,7 +13,17 @@ export interface ChatProps extends BaseProps {
    */
   children: React.ReactNode;
   /**
-   * Accessible label for the chat log region
+   * ARIA role for the Chat container.
+   * Use `"log"` when this element wraps only the message list to enable live-region announcements.
+   * Omit when the wrapper also contains input or other non-message UI to avoid noisy announcements.
+   */
+  role?: string;
+  /**
+   * ARIA live-region politeness. Only set when `role="log"` is provided.
+   */
+  'aria-live'?: 'polite' | 'assertive' | 'off';
+  /**
+   * Accessible label for the container.
    */
   'aria-label'?: string;
 }
@@ -21,7 +31,7 @@ export interface ChatProps extends BaseProps {
 export const Chat = (props: ChatProps) => {
   const { children, ...rest } = props;
   return (
-    <div data-test="DesignSystem-Chat" role="log" aria-live="polite" {...rest}>
+    <div data-test="DesignSystem-Chat" {...rest}>
       {children}
     </div>
   );

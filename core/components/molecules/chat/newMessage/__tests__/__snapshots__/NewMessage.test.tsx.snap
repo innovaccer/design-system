@@ -6,9 +6,7 @@ exports[`Chat New Message component snapshot
 <body>
   <div>
     <div
-      aria-live="polite"
       data-test="DesignSystem-Chat"
-      role="log"
     >
       <div
         aria-label="2 New Messages"

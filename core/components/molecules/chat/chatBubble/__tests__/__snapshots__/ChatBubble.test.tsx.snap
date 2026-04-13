@@ -8,9 +8,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        aria-live="polite"
         data-test="DesignSystem-Chat"
-        role="log"
       >
         <div
           data-test="DesignSystem-ChatBubble-IncomingWrapper"
@@ -114,9 +112,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      aria-live="polite"
       data-test="DesignSystem-Chat"
-      role="log"
     >
       <div
         data-test="DesignSystem-ChatBubble-IncomingWrapper"
@@ -279,9 +275,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        aria-live="polite"
         data-test="DesignSystem-Chat"
-        role="log"
       >
         <div
           class="d-flex align-items-end w-100"
@@ -364,9 +358,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      aria-live="polite"
       data-test="DesignSystem-Chat"
-      role="log"
     >
       <div
         class="d-flex align-items-end w-100"

@@ -22,6 +22,7 @@ export const all = () => {
   const incomingOptions = {
     time: '1:00 AM',
     metaData: 'Meta Data',
+    'aria-label': 'Message from Anuradha Aggarwal',
     avatarData: {
       firstName: 'Anuradha',
       lastName: 'Aggarwal',
@@ -42,7 +43,7 @@ export const all = () => {
   };
 
   return (
-    <Chat>
+    <Chat role="log" aria-live="polite" aria-label="Chat messages">
       <Chat.ChatBubble type="incoming" incomingOptions={incomingOptions}>
         <Text>Hello, I'd like to schedule an appointment with my cardiologist. Can you help me with that ? </Text>
       </Chat.ChatBubble>
@@ -64,6 +65,7 @@ const customCode = `() => {
   const incomingOptions = {
     time: '1:00 AM',
     metaData: 'Meta Data',
+    'aria-label': 'Message from Anuradha Aggarwal',
     avatarData: {
       firstName: 'Anuradha',
       lastName: 'Aggarwal',
@@ -84,7 +86,7 @@ const customCode = `() => {
   };
 
   return (
-    <Chat>
+    <Chat role="log" aria-live="polite" aria-label="Chat messages">
       <Chat.ChatBubble type="incoming" incomingOptions={incomingOptions}>
         <Text>Hello, I'd like to schedule an appointment with my cardiologist. Can you help me with that ? </Text>
       </Chat.ChatBubble>
