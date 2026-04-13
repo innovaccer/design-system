@@ -108,7 +108,7 @@
 .LinkButton-infoIconWrapper {
   position: absolute;
   top: -2px;
-  right: -11px;
+  right: -12px;
   width: var(--spacing-30);
   height: var(--spacing-30);
   box-sizing: border-box;
