@@ -96,6 +96,7 @@
 .Link-infoIconWrapper {
   display: inline-flex;
   vertical-align: middle;
+  transform: translateY(calc(-1 * var(--spacing-15)));
   margin-left: var(--spacing-xs);
   width: var(--spacing-30);
   height: var(--spacing-30);
