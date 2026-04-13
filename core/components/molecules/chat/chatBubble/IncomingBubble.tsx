@@ -106,6 +106,7 @@ export const IncomingBubble = (props: IncomingOptionProps) => {
         </Row>
       )}
       <Row
+        tabIndex={0}
         onMouseEnter={() => setShowActionBar(true)}
         onMouseLeave={() => setShowActionBar(false)}
         onFocus={() => setShowActionBar(true)}

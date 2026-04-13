@@ -21,6 +21,7 @@ const UnreadMessage: React.FC<UnreadMessageProps> = (props) => {
       e.preventDefault();
       e.currentTarget.click();
     }
+    (rest as React.HTMLAttributes<HTMLDivElement>).onKeyDown?.(e);
   };
 
   return (
@@ -30,8 +31,8 @@ const UnreadMessage: React.FC<UnreadMessageProps> = (props) => {
       role="button"
       tabIndex={0}
       aria-label={text}
-      onKeyDown={handleKeyDown}
       {...rest}
+      onKeyDown={handleKeyDown}
     >
       <span className={styles['Chat-UnreadMessage']}>
         <Icon appearance="white" name="arrow_Downward" className="mr-3" aria-hidden={true} />

@@ -250,10 +250,13 @@ describe('ChatBubble component a11y', () => {
         </Chat.ChatBubble>
       </Chat>
     );
-    fireEvent.focus(getByTestId('DesignSystem-IncomingChatBubble-Wrapper'));
+    const row = getByTestId('DesignSystem-IncomingChatBubble-Wrapper');
+    expect(row).toHaveAttribute('tabindex', '0');
+
+    fireEvent.focus(row);
     expect(getByTestId('DesignSystem-IncomingChatBubble-ActionBar')).toBeInTheDocument();
 
-    fireEvent.blur(getByTestId('DesignSystem-IncomingChatBubble-Wrapper'));
+    fireEvent.blur(row);
     expect(screen.queryByTestId('DesignSystem-IncomingChatBubble-ActionBar')).not.toBeInTheDocument();
   });
 
@@ -266,10 +269,13 @@ describe('ChatBubble component a11y', () => {
         </Chat.ChatBubble>
       </Chat>
     );
-    fireEvent.focus(getByTestId('DesignSystem-OutgoingChatBubble-Wrapper'));
+    const row = getByTestId('DesignSystem-OutgoingChatBubble-Wrapper');
+    expect(row).toHaveAttribute('tabindex', '0');
+
+    fireEvent.focus(row);
     expect(getByTestId('DesignSystem-OutgoingChatBubble-ActionBar')).toBeInTheDocument();
 
-    fireEvent.blur(getByTestId('DesignSystem-OutgoingChatBubble-Wrapper'));
+    fireEvent.blur(row);
     expect(screen.queryByTestId('DesignSystem-OutgoingChatBubble-ActionBar')).not.toBeInTheDocument();
   });
 });

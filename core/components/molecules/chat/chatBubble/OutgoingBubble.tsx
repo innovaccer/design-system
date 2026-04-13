@@ -117,6 +117,7 @@ export const OutgoingBubble = (props: OutgoingOptionProps) => {
         )}
         <Row
           className="d-flex justify-content-end"
+          tabIndex={0}
           onMouseEnter={() => setShowActionBar(true)}
           onMouseLeave={() => setShowActionBar(false)}
           onFocus={() => setShowActionBar(true)}
