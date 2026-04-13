@@ -2,6 +2,7 @@ import React from 'react';
 import { BaseProps } from '@/utils/types';
 import { Text, Divider } from '@/index';
 import styles from '@css/components/menu.module.css';
+import uidGenerator from '@/utils/uidGenerator';
 
 export interface MenuGroupProps extends BaseProps {
   /**
@@ -20,11 +21,19 @@ export interface MenuGroupProps extends BaseProps {
 
 export const MenuGroup = (props: MenuGroupProps) => {
   const { label, children, showDivider, ...rest } = props;
+  const labelId = React.useRef(`menu-group-label-${uidGenerator()}`).current;
 
   if (label) {
     return (
-      <div data-test="DesignSystem-Menu-Group" role="group" className={styles['Menu-Group']} {...rest}>
+      <div
+        data-test="DesignSystem-Menu-Group"
+        role="group"
+        aria-labelledby={labelId}
+        className={styles['Menu-Group']}
+        {...rest}
+      >
         <Text
+          id={labelId}
           data-test="DesignSystem-Menu-Group-Label"
           size="small"
           weight="medium"

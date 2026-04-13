@@ -24,6 +24,8 @@ export const handleKeyDown = (
       navigateOptions('down', focusedOption, setFocusedOption, listRef);
       break;
     case 'Enter':
+    case ' ':
+      event.preventDefault();
       (focusedOption as HTMLElement)?.click();
       setOpenPopover?.(false);
       break;

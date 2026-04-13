@@ -22,7 +22,7 @@ export interface MenuTriggerProps extends BaseProps {
 }
 
 export const MenuTrigger = (props: MenuTriggerProps) => {
-  const { className } = props;
+  const { className, 'aria-label': ariaLabel, ...rest } = props;
   const contextProp = React.useContext(MenuContext);
   const { openPopover, setOpenPopover, setHighlightFirstItem, setHighlightLastItem, menuTriggerRef, menuId } =
     contextProp;
@@ -43,11 +43,11 @@ export const MenuTrigger = (props: MenuTriggerProps) => {
       data-test="DesignSystem-Menu-Trigger"
       icon="more_horiz"
       ref={menuTriggerRef}
-      aria-label={props['aria-label'] || 'Open menu'}
-      aria-haspopup={true}
+      aria-haspopup="menu"
       aria-controls={menuId}
       aria-expanded={openPopover}
-      {...props}
+      {...rest}
+      aria-label={ariaLabel || 'Open menu'}
       className={triggerClassName}
       onKeyDown={onKeyDownHandler}
     />
