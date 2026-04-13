@@ -23,10 +23,18 @@ export interface IncomingOptionProps extends BaseProps {
   urgentMessage?: () => JSX.Element;
   avatarData?: ChatAvatarProps;
   showAvatar?: boolean;
+  /**
+   * Accessible label for the incoming message article (SC 4.1.2)
+   */
+  'aria-label'?: string;
 }
 
 const MetaSeparator = () => (
-  <span className={styles['ChatBubble-separator']} data-test="DesignSystem-IncomingChatBubble-Separator" />
+  <span
+    className={styles['ChatBubble-separator']}
+    data-test="DesignSystem-IncomingChatBubble-Separator"
+    aria-hidden={true}
+  />
 );
 
 export const IncomingBubble = (props: IncomingOptionProps) => {
@@ -44,12 +52,7 @@ export const IncomingBubble = (props: IncomingOptionProps) => {
   });
 
   return (
-    <div
-      data-test="DesignSystem-ChatBubble-IncomingWrapper"
-      {...rest}
-      role="group"
-      aria-labelledby="chat-bubble-header"
-    >
+    <div data-test="DesignSystem-ChatBubble-IncomingWrapper" {...rest} role="article">
       {showMetaRow && (
         <Row className={metaDataClass} data-test="DesignSystem-IncomingChatBubble-MetaDataWrapper">
           {[
@@ -105,6 +108,8 @@ export const IncomingBubble = (props: IncomingOptionProps) => {
       <Row
         onMouseEnter={() => setShowActionBar(true)}
         onMouseLeave={() => setShowActionBar(false)}
+        onFocus={() => setShowActionBar(true)}
+        onBlur={() => setShowActionBar(false)}
         data-test="DesignSystem-IncomingChatBubble-Wrapper"
       >
         <Column className={styles['ChatBubble-boxWrapper']} data-test="DesignSystem-IncomingChatBubble-ChatBoxWrapper">

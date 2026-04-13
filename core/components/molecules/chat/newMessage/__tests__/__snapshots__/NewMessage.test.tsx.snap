@@ -6,14 +6,16 @@ exports[`Chat New Message component snapshot
 <body>
   <div>
     <div
+      aria-live="polite"
       data-test="DesignSystem-Chat"
+      role="log"
     >
       <div
         aria-label="2 New Messages"
         aria-live="polite"
         class="py-6 d-flex justify-content-center align-items-center"
         data-test="DesignSystem-Chat-NewMessage"
-        role="button"
+        role="status"
       >
         <span
           class="NewMessage-Divider--left"

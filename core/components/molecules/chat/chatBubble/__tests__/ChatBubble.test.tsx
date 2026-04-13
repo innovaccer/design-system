@@ -196,4 +196,80 @@ describe('ChatBubble component a11y', () => {
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
+
+  it('incoming bubble has role="article"', () => {
+    const { getByTestId } = render(
+      <Chat>
+        <Chat.ChatBubble type="incoming" incomingOptions={incomingOptions}>
+          {chatMessage}
+        </Chat.ChatBubble>
+      </Chat>
+    );
+    expect(getByTestId('DesignSystem-ChatBubble-IncomingWrapper')).toHaveAttribute('role', 'article');
+  });
+
+  it('incoming bubble uses consumer-provided aria-label', () => {
+    const { getByTestId } = render(
+      <Chat>
+        <Chat.ChatBubble type="incoming" incomingOptions={{ ...incomingOptions, 'aria-label': 'Message from John' }}>
+          {chatMessage}
+        </Chat.ChatBubble>
+      </Chat>
+    );
+    expect(getByTestId('DesignSystem-ChatBubble-IncomingWrapper')).toHaveAttribute('aria-label', 'Message from John');
+  });
+
+  it('outgoing bubble has role="article"', () => {
+    const { getByTestId } = render(
+      <Chat>
+        <Chat.ChatBubble type="outgoing" outgoingOptions={outgoingOptions}>
+          {chatMessage}
+        </Chat.ChatBubble>
+      </Chat>
+    );
+    expect(getByTestId('DesignSystem-ChatBubble-OutgoingWrapper')).toHaveAttribute('role', 'article');
+  });
+
+  it('outgoing bubble uses consumer-provided aria-label', () => {
+    const { getByTestId } = render(
+      <Chat>
+        <Chat.ChatBubble type="outgoing" outgoingOptions={{ ...outgoingOptions, 'aria-label': 'Sent message' }}>
+          {chatMessage}
+        </Chat.ChatBubble>
+      </Chat>
+    );
+    expect(getByTestId('DesignSystem-ChatBubble-OutgoingWrapper')).toHaveAttribute('aria-label', 'Sent message');
+  });
+
+  it('action bar is visible on keyboard focus and hidden on blur for incoming bubble', () => {
+    const actionBar = () => <div>Action Bar</div>;
+    const { getByTestId } = render(
+      <Chat>
+        <Chat.ChatBubble type="incoming" incomingOptions={{ actionBar }}>
+          {chatMessage}
+        </Chat.ChatBubble>
+      </Chat>
+    );
+    fireEvent.focus(getByTestId('DesignSystem-IncomingChatBubble-Wrapper'));
+    expect(getByTestId('DesignSystem-IncomingChatBubble-ActionBar')).toBeInTheDocument();
+
+    fireEvent.blur(getByTestId('DesignSystem-IncomingChatBubble-Wrapper'));
+    expect(screen.queryByTestId('DesignSystem-IncomingChatBubble-ActionBar')).not.toBeInTheDocument();
+  });
+
+  it('action bar is visible on keyboard focus and hidden on blur for outgoing bubble', () => {
+    const actionBar = () => <div>Action Bar</div>;
+    const { getByTestId } = render(
+      <Chat>
+        <Chat.ChatBubble type="outgoing" outgoingOptions={{ actionBar }}>
+          {chatMessage}
+        </Chat.ChatBubble>
+      </Chat>
+    );
+    fireEvent.focus(getByTestId('DesignSystem-OutgoingChatBubble-Wrapper'));
+    expect(getByTestId('DesignSystem-OutgoingChatBubble-ActionBar')).toBeInTheDocument();
+
+    fireEvent.blur(getByTestId('DesignSystem-OutgoingChatBubble-Wrapper'));
+    expect(screen.queryByTestId('DesignSystem-OutgoingChatBubble-ActionBar')).not.toBeInTheDocument();
+  });
 });

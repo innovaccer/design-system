@@ -12,12 +12,16 @@ export interface ChatProps extends BaseProps {
    * React Node to be rendered inside `Chat`
    */
   children: React.ReactNode;
+  /**
+   * Accessible label for the chat log region (SC 1.3.1)
+   */
+  'aria-label'?: string;
 }
 
 export const Chat = (props: ChatProps) => {
   const { children, ...rest } = props;
   return (
-    <div data-test="DesignSystem-Chat" {...rest}>
+    <div data-test="DesignSystem-Chat" role="log" aria-live="polite" {...rest}>
       {children}
     </div>
   );

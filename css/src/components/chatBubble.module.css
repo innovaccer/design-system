@@ -9,7 +9,7 @@
   height: var(--spacing-10);
   border-radius: var(--border-radius-full);
   margin: 0 var(--spacing-20);
-  background: var(--inverse-lightest);
+  background: var(--inverse-lighter);
 }
 
 .ChatBubble-box--noSuccess {

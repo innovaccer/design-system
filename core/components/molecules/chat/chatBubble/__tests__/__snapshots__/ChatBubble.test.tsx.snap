@@ -8,12 +8,13 @@ Object {
   "baseElement": <body>
     <div>
       <div
+        aria-live="polite"
         data-test="DesignSystem-Chat"
+        role="log"
       >
         <div
-          aria-labelledby="chat-bubble-header"
           data-test="DesignSystem-ChatBubble-IncomingWrapper"
-          role="group"
+          role="article"
         >
           <div
             class="Row d-flex align-items-center mb-3 ChatBubble-metaData--incoming"
@@ -26,6 +27,7 @@ Object {
               John Doe
             </span>
             <span
+              aria-hidden="true"
               class="ChatBubble-separator"
               data-test="DesignSystem-IncomingChatBubble-Separator"
             />
@@ -37,6 +39,7 @@ Object {
               1:00 AM
             </span>
             <span
+              aria-hidden="true"
               class="ChatBubble-separator"
               data-test="DesignSystem-IncomingChatBubble-Separator"
             />
@@ -48,6 +51,7 @@ Object {
               Meta Data
             </span>
             <span
+              aria-hidden="true"
               class="ChatBubble-separator"
               data-test="DesignSystem-IncomingChatBubble-Separator"
             />
@@ -110,12 +114,13 @@ Object {
   </body>,
   "container": <div>
     <div
+      aria-live="polite"
       data-test="DesignSystem-Chat"
+      role="log"
     >
       <div
-        aria-labelledby="chat-bubble-header"
         data-test="DesignSystem-ChatBubble-IncomingWrapper"
-        role="group"
+        role="article"
       >
         <div
           class="Row d-flex align-items-center mb-3 ChatBubble-metaData--incoming"
@@ -128,6 +133,7 @@ Object {
             John Doe
           </span>
           <span
+            aria-hidden="true"
             class="ChatBubble-separator"
             data-test="DesignSystem-IncomingChatBubble-Separator"
           />
@@ -139,6 +145,7 @@ Object {
             1:00 AM
           </span>
           <span
+            aria-hidden="true"
             class="ChatBubble-separator"
             data-test="DesignSystem-IncomingChatBubble-Separator"
           />
@@ -150,6 +157,7 @@ Object {
             Meta Data
           </span>
           <span
+            aria-hidden="true"
             class="ChatBubble-separator"
             data-test="DesignSystem-IncomingChatBubble-Separator"
           />
@@ -271,13 +279,14 @@ Object {
   "baseElement": <body>
     <div>
       <div
+        aria-live="polite"
         data-test="DesignSystem-Chat"
+        role="log"
       >
         <div
-          aria-labelledby="chat-bubble-header"
           class="d-flex align-items-end w-100"
           data-test="DesignSystem-ChatBubble-OutgoingWrapper"
-          role="group"
+          role="article"
         >
           <div
             class="ChatBubble-box"
@@ -294,6 +303,7 @@ Object {
                 1:00 AM
               </span>
               <span
+                aria-hidden="true"
                 class="ChatBubble-separator"
                 data-test="DesignSystem-OutgoingChatBubble-Separator"
               />
@@ -305,6 +315,7 @@ Object {
                 Meta Data
               </span>
               <span
+                aria-hidden="true"
                 class="ChatBubble-separator"
                 data-test="DesignSystem-OutgoingChatBubble-Separator"
               />
@@ -353,13 +364,14 @@ Object {
   </body>,
   "container": <div>
     <div
+      aria-live="polite"
       data-test="DesignSystem-Chat"
+      role="log"
     >
       <div
-        aria-labelledby="chat-bubble-header"
         class="d-flex align-items-end w-100"
         data-test="DesignSystem-ChatBubble-OutgoingWrapper"
-        role="group"
+        role="article"
       >
         <div
           class="ChatBubble-box"
@@ -376,6 +388,7 @@ Object {
               1:00 AM
             </span>
             <span
+              aria-hidden="true"
               class="ChatBubble-separator"
               data-test="DesignSystem-OutgoingChatBubble-Separator"
             />
@@ -387,6 +400,7 @@ Object {
               Meta Data
             </span>
             <span
+              aria-hidden="true"
               class="ChatBubble-separator"
               data-test="DesignSystem-OutgoingChatBubble-Separator"
             />

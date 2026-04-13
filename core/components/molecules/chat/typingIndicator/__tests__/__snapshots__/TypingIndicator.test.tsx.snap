@@ -6,7 +6,9 @@ exports[`Chat Typing Indicator component snapshot
 <body>
   <div>
     <div
+      aria-live="polite"
       data-test="DesignSystem-Chat"
+      role="log"
     >
       <span
         aria-atomic="true"

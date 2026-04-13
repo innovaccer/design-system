@@ -6,7 +6,9 @@ exports[`Chat Date Separator component snapshot
 <body>
   <div>
     <div
+      aria-live="polite"
       data-test="DesignSystem-Chat"
+      role="log"
     >
       <span
         aria-label="01 Jan 2025"

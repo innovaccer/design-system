@@ -71,4 +71,16 @@ describe('Chat NewMessage component a11y', () => {
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
+
+  it('renders as a status region with aria-live', () => {
+    const { getByTestId } = render(
+      <Chat>
+        <Chat.NewMessage text={text} />
+      </Chat>
+    );
+    const el = getByTestId('DesignSystem-Chat-NewMessage');
+    expect(el).toHaveAttribute('role', 'status');
+    expect(el).toHaveAttribute('aria-live', 'polite');
+    expect(el).toHaveAttribute('aria-label', text);
+  });
 });
