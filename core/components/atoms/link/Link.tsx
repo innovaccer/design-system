@@ -145,7 +145,6 @@ const LinkElement = React.forwardRef<HTMLAnchorElement | HTMLButtonElement, Link
     ? { componentType: 'a', href: activeHref, target, rel, download, hreflang }
     : { componentType: 'button', type: 'button', disabled: nativeDisabled };
 
-  const iconSize = size === 'tiny' ? 12 : 16;
   const showInfoAffordance = disabled && tooltip;
 
   return (
@@ -170,7 +169,7 @@ const LinkElement = React.forwardRef<HTMLAnchorElement | HTMLButtonElement, Link
             <Icon
               name="info_outline"
               type="outlined"
-              size={iconSize}
+              size={12}
               className={styles['Link-infoIcon']}
               aria-hidden="true"
               data-test="DesignSystem-Link--Info-Icon"
