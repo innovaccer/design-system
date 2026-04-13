@@ -6,7 +6,7 @@
   border-bottom: var(--border-width-2-5) solid currentColor;
 }
 
-.Link:focus {
+.Link:focus-visible {
   outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: var(--spacing-05);
   border-radius: var(--border-radius-10);
@@ -32,22 +32,22 @@
   border-bottom-color: transparent;
 }
 
-.Link--default:hover {
+.Link--default:hover:not(:disabled):not([aria-disabled='true']) {
   border-bottom: var(--border-width-2-5) solid var(--primary-dark);
   color: var(--primary-dark);
 }
 
-.Link--subtle:hover {
+.Link--subtle:hover:not(:disabled):not([aria-disabled='true']) {
   border-bottom: var(--border-width-2-5) solid var(--inverse-light);
   color: var(--inverse-light);
 }
 
-.Link--default:active {
+.Link--default:active:not(:disabled):not([aria-disabled='true']) {
   color: var(--primary-darker);
   border-bottom: var(--border-width-2-5) solid currentColor;
 }
 
-.Link--subtle:active {
+.Link--subtle:active:not(:disabled):not([aria-disabled='true']) {
   color: var(--inverse);
   border-bottom: var(--border-width-2-5) solid transparent;
 }
@@ -64,10 +64,54 @@
 
 .Link--default-disabled {
   color: var(--primary-lighter);
-  pointer-events: none;
+}
+
+.Link--default-disabled .Link-infoIcon {
+  color: var(--primary);
 }
 
 .Link--subtle-disabled {
   color: var(--inverse-lightest);
+}
+
+.Link--subtle-disabled .Link-infoIcon {
+  color: var(--inverse-light);
+}
+
+.Link-wrapper {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+
+.Link-infoIconWrapper {
+  position: absolute;
+  top: calc(-1 * var(--spacing-05));
+  right: calc(-1 * var(--spacing-30));
+  width: var(--spacing-30);
+  height: var(--spacing-30);
+  box-sizing: border-box;
+  border-radius: var(--border-radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+}
+
+.Link-infoIcon {
+  color: var(--text-subtle);
   pointer-events: none;
+}
+
+.Link-srOnly {
+  position: absolute;
+  width: var(--spacing-2-5);
+  height: var(--spacing-2-5);
+  padding: 0;
+  margin: calc(-1 * var(--spacing-2-5));
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }

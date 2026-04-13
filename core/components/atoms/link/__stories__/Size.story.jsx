@@ -16,12 +16,15 @@ export const size = () => {
 };
 
 export default {
-  title: 'Components/Link/Variants/Size',
+  title: 'Components/Link/Size',
   component: Link,
   parameters: {
     docs: {
       docPage: {
         title: 'Link',
+        props: {
+          exclude: ['key'],
+        },
       },
     },
   },

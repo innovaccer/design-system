@@ -12,10 +12,15 @@ exports[`Link component
       href="Sample string"
       id="Sample string"
       rel="Sample string"
+      role="link"
       tabindex="0"
       target="_blank"
     >
-      Link
+      <span
+        class="Link-wrapper"
+      >
+        Link
+      </span>
     </a>
   </div>
 </body>
@@ -33,10 +38,15 @@ exports[`Link component
       href="Sample string"
       id="Sample string"
       rel="Sample string"
+      role="link"
       tabindex="0"
       target="_parent"
     >
-      Link
+      <span
+        class="Link-wrapper"
+      >
+        Link
+      </span>
     </a>
   </div>
 </body>
@@ -54,10 +64,15 @@ exports[`Link component
       href="Sample string"
       id="Sample string"
       rel="Sample string"
+      role="link"
       tabindex="0"
       target="_self"
     >
-      Link
+      <span
+        class="Link-wrapper"
+      >
+        Link
+      </span>
     </a>
   </div>
 </body>
@@ -75,10 +90,15 @@ exports[`Link component
       href="Sample string"
       id="Sample string"
       rel="Sample string"
+      role="link"
       tabindex="0"
       target="_top"
     >
-      Link
+      <span
+        class="Link-wrapper"
+      >
+        Link
+      </span>
     </a>
   </div>
 </body>

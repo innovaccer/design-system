@@ -16,12 +16,15 @@ export const appearance = () => {
 };
 
 export default {
-  title: 'Components/Link/Variants/Appearance',
+  title: 'Components/Link/Appearance',
   component: Link,
   parameters: {
     docs: {
       docPage: {
         title: 'Link',
+        props: {
+          exclude: ['key'],
+        },
       },
     },
   },

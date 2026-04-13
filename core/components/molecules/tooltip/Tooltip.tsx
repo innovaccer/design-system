@@ -4,6 +4,7 @@ import { PopoverProps } from '@/index.type';
 import { BaseProps, filterProps } from '@/utils/types';
 import styles from '@css/components/tooltip.module.css';
 import classNames from 'classnames';
+import uidGenerator from '@/utils/uidGenerator';
 
 type Position = 'top-start' | 'top' | 'top-end' | 'right' | 'bottom-end' | 'bottom' | 'bottom-start' | 'left';
 
@@ -80,6 +81,14 @@ export interface TooltipProps extends Omit<PopoverProps, TooltipPopperProps>, Ba
    * Add delay to the tooltip opening event
    */
   openDelay?: number;
+  /**
+   * Associates the trigger element with a description
+   */
+  'aria-describedby'?: string;
+  /**
+   * Hides the tooltip surface from assistive technologies when the trigger carries the description
+   */
+  'aria-hidden'?: boolean;
 }
 
 export const detectTruncation = (boundaryRef: React.RefObject<HTMLElement>) => {
@@ -90,9 +99,43 @@ export const detectTruncation = (boundaryRef: React.RefObject<HTMLElement>) => {
 };
 
 export const Tooltip = (props: TooltipProps) => {
-  const { children, tooltip, showTooltip, showOnTruncation, elementRef, className, size = 'regular', ...rest } = props;
+  const {
+    children,
+    tooltip,
+    showTooltip,
+    showOnTruncation,
+    elementRef,
+    className,
+    size = 'regular',
+    'aria-describedby': ariaDescribedBy,
+    'aria-hidden': ariaHidden,
+    open: openProp,
+    ...rest
+  } = props;
   const childrenRef = React.useRef(null);
   const [isTruncated, setIsTruncated] = React.useState(false);
+  const [isOpen, setIsOpen] = React.useState(!!openProp);
+  const tooltipIdRef = React.useRef<string | null>(null);
+  if (tooltipIdRef.current === null) {
+    tooltipIdRef.current = `Tooltip-${uidGenerator()}`;
+  }
+  const tooltipId = tooltipIdRef.current;
+
+  React.useEffect(() => {
+    if (openProp !== undefined) setIsOpen(openProp);
+  }, [openProp]);
+
+  React.useEffect(() => {
+    if (!showTooltip && isOpen) {
+      setIsOpen(false);
+    } else if (showTooltip && openProp !== undefined && isOpen !== openProp) {
+      setIsOpen(openProp);
+    }
+  }, [showTooltip, isOpen, openProp]);
+
+  const childDescribedBy = React.isValidElement(children) ? (children.props as any)['aria-describedby'] : undefined;
+  const mergedDescribedBy =
+    [childDescribedBy, ariaDescribedBy, isOpen ? tooltipId : undefined].filter(Boolean).join(' ') || undefined;
 
   React.useEffect(() => {
     const element = elementRef ? elementRef : childrenRef;
@@ -117,7 +160,13 @@ export const Tooltip = (props: TooltipProps) => {
   });
 
   const tooltipWrapper = (
-    <div role="tooltip" className={tooltipClass} data-test="DesignSystem-Tooltip-Wrapper">
+    <div
+      id={tooltipId}
+      role="tooltip"
+      className={tooltipClass}
+      data-test="DesignSystem-Tooltip-Wrapper"
+      aria-hidden={ariaHidden}
+    >
       <Text className={styles['Tooltip-text']} appearance="white" size={size}>
         {tooltip}
       </Text>
@@ -127,9 +176,19 @@ export const Tooltip = (props: TooltipProps) => {
   const classes = classNames(styles['Tooltip-container'], className);
 
   if (showOnTruncation) {
-    return isTruncated ? (
+    if (!isTruncated) {
+      return renderChildren;
+    }
+
+    const truncationTrigger = React.isValidElement(renderChildren)
+      ? React.cloneElement(renderChildren as React.ReactElement<any>, {
+          'aria-describedby': mergedDescribedBy || undefined,
+        })
+      : renderChildren;
+
+    return (
       <Popover
-        trigger={renderChildren}
+        trigger={truncationTrigger}
         on={'hover'}
         offset={'medium'}
         animationClass={{
@@ -137,18 +196,24 @@ export const Tooltip = (props: TooltipProps) => {
           close: styles[`Tooltip-animation-close-${positionValue[props.position]}`],
         }}
         className={classes}
+        open={isOpen}
+        onToggle={setIsOpen}
         {...rest}
       >
         {tooltipWrapper}
       </Popover>
-    ) : (
-      renderChildren
     );
   }
 
+  const triggerWithA11y = React.isValidElement(children)
+    ? React.cloneElement(children as React.ReactElement<any>, {
+        'aria-describedby': mergedDescribedBy || undefined,
+      })
+    : children;
+
   return (
     <Popover
-      trigger={children}
+      trigger={triggerWithA11y}
       on={'hover'}
       offset={'medium'}
       animationClass={{
@@ -156,6 +221,8 @@ export const Tooltip = (props: TooltipProps) => {
         close: styles[`Tooltip-animation-close-${positionValue[props.position]}`],
       }}
       className={classes}
+      open={isOpen}
+      onToggle={setIsOpen}
       {...rest}
     >
       {tooltipWrapper}

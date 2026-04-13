@@ -30,6 +30,9 @@ export default {
     docs: {
       docPage: {
         title: 'Link',
+        props: {
+          exclude: ['key'],
+        },
       },
     },
   },
