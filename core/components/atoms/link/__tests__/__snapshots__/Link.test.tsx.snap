@@ -19,7 +19,11 @@ exports[`Link component
       <span
         class="Link-wrapper"
       >
-        Link
+        <span
+          class="Link-text"
+        >
+          Link
+        </span>
       </span>
     </a>
   </div>
@@ -45,7 +49,11 @@ exports[`Link component
       <span
         class="Link-wrapper"
       >
-        Link
+        <span
+          class="Link-text"
+        >
+          Link
+        </span>
       </span>
     </a>
   </div>
@@ -71,7 +79,11 @@ exports[`Link component
       <span
         class="Link-wrapper"
       >
-        Link
+        <span
+          class="Link-text"
+        >
+          Link
+        </span>
       </span>
     </a>
   </div>
@@ -97,7 +109,11 @@ exports[`Link component
       <span
         class="Link-wrapper"
       >
-        Link
+        <span
+          class="Link-text"
+        >
+          Link
+        </span>
       </span>
     </a>
   </div>

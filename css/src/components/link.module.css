@@ -1,9 +1,14 @@
 .Link {
+  display: inline;
   text-decoration: none;
   font-weight: var(--font-weight-medium);
   transition: var(--duration--fast-01) var(--standard-productive-curve);
   box-sizing: border-box;
+}
+
+.Link-text {
   border-bottom: var(--border-width-2-5) solid currentColor;
+  transition: var(--duration--fast-01) var(--standard-productive-curve);
 }
 
 .Link:focus-visible {
@@ -14,12 +19,11 @@
 
 .Link--regular {
   font-size: var(--font-size);
-  height: var(--font-height);
+  line-height: var(--font-height);
 }
 
 .Link--tiny {
   font-size: var(--font-size-s);
-  height: var(--font-height-s);
   line-height: var(--font-height-s);
 }
 
@@ -29,27 +33,34 @@
 
 .Link--subtle {
   color: var(--inverse-lighter);
+}
+
+.Link--subtle .Link-text {
   border-bottom-color: transparent;
 }
 
 .Link--default:hover:not(:disabled):not([aria-disabled='true']) {
-  border-bottom: var(--border-width-2-5) solid var(--primary-dark);
   color: var(--primary-dark);
 }
 
 .Link--subtle:hover:not(:disabled):not([aria-disabled='true']) {
-  border-bottom: var(--border-width-2-5) solid var(--inverse-light);
   color: var(--inverse-light);
+}
+
+.Link--subtle:hover:not(:disabled):not([aria-disabled='true']) .Link-text {
+  border-bottom-color: currentColor;
 }
 
 .Link--default:active:not(:disabled):not([aria-disabled='true']) {
   color: var(--primary-darker);
-  border-bottom: var(--border-width-2-5) solid currentColor;
 }
 
 .Link--subtle:active:not(:disabled):not([aria-disabled='true']) {
   color: var(--inverse);
-  border-bottom: var(--border-width-2-5) solid transparent;
+}
+
+.Link--subtle:active:not(:disabled):not([aria-disabled='true']) .Link-text {
+  border-bottom-color: transparent;
 }
 
 .Link--button-reset {
@@ -79,20 +90,17 @@
 }
 
 .Link-wrapper {
-  display: inline-flex;
-  align-items: center;
-  position: relative;
+  display: inline;
 }
 
 .Link-infoIconWrapper {
-  position: absolute;
-  top: calc(-1 * var(--spacing-05));
-  right: calc(-1 * var(--spacing-30));
+  display: inline-flex;
+  vertical-align: middle;
+  margin-left: var(--spacing-xs);
   width: var(--spacing-30);
   height: var(--spacing-30);
   box-sizing: border-box;
   border-radius: var(--border-radius-full);
-  display: flex;
   align-items: center;
   justify-content: center;
   background: transparent;

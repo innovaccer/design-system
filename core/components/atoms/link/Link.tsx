@@ -163,7 +163,7 @@ const LinkElement = React.forwardRef<HTMLAnchorElement | HTMLButtonElement, Link
       {...elementProps}
     >
       <span className={styles['Link-wrapper']}>
-        {children}
+        <span className={styles['Link-text']}>{children}</span>
         {showInfoAffordance && (
           <span className={styles['Link-infoIconWrapper']}>
             <Icon
@@ -192,7 +192,7 @@ export const Link = React.forwardRef<HTMLAnchorElement | HTMLButtonElement, Link
   const { tooltip } = props;
 
   return tooltip ? (
-    <Tooltip tooltip={tooltip} aria-hidden={true} triggerClass="flex-grow-0">
+    <Tooltip tooltip={tooltip} aria-hidden={true} triggerClass="d-inline" wrapperType="span">
       <LinkElement {...props} ref={ref} />
     </Tooltip>
   ) : (

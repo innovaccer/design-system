@@ -23,6 +23,7 @@ const propsList = [
   'closeOnBackdropClick',
   'offset',
   'closeOnScroll',
+  'wrapperType',
 ] as const;
 type PopperProps = (typeof propsList)[number];
 

@@ -19,6 +19,7 @@ const tooltipPropsList = [
   'closeOnBackdropClick',
   'hideOnReferenceEscape',
   'closeOnScroll',
+  'wrapperType',
 ] as const;
 
 const positionValue = {

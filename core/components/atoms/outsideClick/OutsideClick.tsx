@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { BaseHtmlProps, BaseProps } from '@/utils/types';
 
-export interface OutsideClickProps extends BaseHtmlProps<HTMLDivElement>, BaseProps {
+export interface OutsideClickProps extends BaseHtmlProps<HTMLDivElement | HTMLSpanElement>, BaseProps {
   /**
    * Trigger the function on outside click
    */
@@ -10,12 +10,17 @@ export interface OutsideClickProps extends BaseHtmlProps<HTMLDivElement>, BasePr
    * Element to be rendered
    */
   children: React.ReactElement<any>;
+  /**
+   * Defines the HTML element used for the wrapper
+   * @default 'div'
+   */
+  wrapperType?: 'div' | 'span';
 }
 
-export const OutsideClick = React.forwardRef<HTMLDivElement, OutsideClickProps>((props, ref) => {
-  const { children, className, onOutsideClick, ...rest } = props;
+export const OutsideClick = React.forwardRef<HTMLDivElement | HTMLSpanElement, OutsideClickProps>((props, ref) => {
+  const { children, className, onOutsideClick, wrapperType = 'div', ...rest } = props;
 
-  const innerRef = React.useRef<HTMLDivElement>(null);
+  const innerRef = React.useRef<HTMLDivElement | HTMLSpanElement>(null);
 
   React.useImperativeHandle(ref, () => innerRef.current!, [innerRef]);
 
@@ -38,10 +43,12 @@ export const OutsideClick = React.forwardRef<HTMLDivElement, OutsideClickProps>(
     }
   }, []);
 
+  const Wrapper = wrapperType;
+
   return (
-    <div ref={innerRef} {...rest} className={className}>
+    <Wrapper ref={innerRef} {...(rest as any)} className={className}>
       {children}
-    </div>
+    </Wrapper>
   );
 });
 

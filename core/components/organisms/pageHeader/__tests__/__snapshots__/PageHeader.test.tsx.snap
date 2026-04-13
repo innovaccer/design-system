@@ -35,7 +35,11 @@ exports[`Navigation component
                 <span
                   class="Link-wrapper"
                 >
-                  Senders
+                  <span
+                    class="Link-text"
+                  >
+                    Senders
+                  </span>
                 </span>
               </a>
               <span
@@ -367,7 +371,11 @@ exports[`Navigation component
                 <span
                   class="Link-wrapper"
                 >
-                  Senders
+                  <span
+                    class="Link-text"
+                  >
+                    Senders
+                  </span>
                 </span>
               </a>
               <span
@@ -704,7 +712,11 @@ exports[`Navigation component
                 <span
                   class="Link-wrapper"
                 >
-                  Senders
+                  <span
+                    class="Link-text"
+                  >
+                    Senders
+                  </span>
                 </span>
               </a>
               <span
@@ -1392,7 +1404,11 @@ exports[`Navigation component
                 <span
                   class="Link-wrapper"
                 >
-                  Senders
+                  <span
+                    class="Link-text"
+                  >
+                    Senders
+                  </span>
                 </span>
               </a>
               <span
@@ -1644,7 +1660,11 @@ exports[`Navigation component
                 <span
                   class="Link-wrapper"
                 >
-                  Senders
+                  <span
+                    class="Link-text"
+                  >
+                    Senders
+                  </span>
                 </span>
               </a>
               <span

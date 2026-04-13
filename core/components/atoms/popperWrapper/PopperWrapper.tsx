@@ -103,6 +103,11 @@ export interface PopperWrapperProps {
    * Add delay to the popover opening event
    */
   openDelay?: number;
+  /**
+   * Defines the HTML element used for the wrapper
+   * @default 'div'
+   */
+  wrapperType?: 'div' | 'span';
 }
 
 interface PopperWrapperState {
@@ -385,7 +390,7 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
   };
 
   getTriggerElement(ref: React.Ref<any>) {
-    const { trigger, on, triggerClass, disabled } = this.props;
+    const { trigger, on, triggerClass, disabled, wrapperType } = this.props;
     const options =
       on === 'hover' && !disabled
         ? {
@@ -440,7 +445,7 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
     };
 
     return (
-      <OutsideClick className={classes} onOutsideClick={onOutsideClickHandler} {...options}>
+      <OutsideClick className={classes} onOutsideClick={onOutsideClickHandler} wrapperType={wrapperType} {...options}>
         {trigger}
       </OutsideClick>
     );

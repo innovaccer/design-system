@@ -1634,7 +1634,11 @@ exports[`TS renders children 1`] = `
     <span
       class="Link-wrapper"
     >
-      Hello World!
+      <span
+        class="Link-text"
+      >
+        Hello World!
+      </span>
     </span>
   </button>
   <div

@@ -35,7 +35,11 @@ exports[`Breadcrumbs component renders four links 1`] = `
           <span
             class="Link-wrapper"
           >
-            Level 0 check for truncate after 160px
+            <span
+              class="Link-text"
+            >
+              Level 0 check for truncate after 160px
+            </span>
           </span>
         </a>
         <span
@@ -59,7 +63,11 @@ exports[`Breadcrumbs component renders four links 1`] = `
           <span
             class="Link-wrapper"
           >
-            Level 1
+            <span
+              class="Link-text"
+            >
+              Level 1
+            </span>
           </span>
         </a>
         <span
@@ -83,7 +91,11 @@ exports[`Breadcrumbs component renders four links 1`] = `
           <span
             class="Link-wrapper"
           >
-            Level 2
+            <span
+              class="Link-text"
+            >
+              Level 2
+            </span>
           </span>
         </a>
         <span
@@ -107,7 +119,11 @@ exports[`Breadcrumbs component renders four links 1`] = `
           <span
             class="Link-wrapper"
           >
-            Level 3
+            <span
+              class="Link-text"
+            >
+              Level 3
+            </span>
           </span>
         </a>
         <span
