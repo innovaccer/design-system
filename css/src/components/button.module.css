@@ -278,8 +278,8 @@
   position: absolute;
   top: -3px;
   right: -3px;
-  width: 12px;
-  height: 12px;
+  width: var(--spacing-30);
+  height: var(--spacing-30);
   box-sizing: border-box;
   border-radius: var(--border-radius-full);
   display: flex;
@@ -294,13 +294,13 @@
 .Button--transparent .Button-infoIconWrapper {
   border: none;
   background: transparent;
-  top: 1px;
-  right: 1px;
+  top: var(--spacing-2-5);
+  right: var(--spacing-2-5);
 }
 
 .Button--transparent .Button-infoIconWrapper--iconOnly {
-  top: 1px;
-  right: 1px;
+  top: var(--spacing-2-5);
+  right: var(--spacing-2-5);
 }
 
 /* Solid fill masks button outline */

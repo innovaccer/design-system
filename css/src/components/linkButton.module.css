@@ -107,10 +107,10 @@
 /* Disabled + tooltip info affordance — matches Figma 01 Link (node 85848:11523) */
 .LinkButton-infoIconWrapper {
   position: absolute;
-  top: -5px;
+  top: -2px;
   right: -11px;
-  width: 12px;
-  height: 12px;
+  width: var(--spacing-30);
+  height: var(--spacing-30);
   box-sizing: border-box;
   border-radius: var(--border-radius-full);
   display: flex;
@@ -123,18 +123,18 @@
 }
 
 .LinkButton-infoIconWrapper--iconOnly {
-  top: -3px;
-  right: -3px;
+  top: 0px;
+  right: calc(-1 * var(--spacing-05));
 }
 
 .LinkButton--tiny .LinkButton-infoIconWrapper:not(.LinkButton-infoIconWrapper--iconOnly) {
-  top: -4px;
-  right: -11px;
+  top: -2px;
+  right: calc(-1 * var(--spacing-30));
 }
 
 .LinkButton--tiny .LinkButton-infoIconWrapper--iconOnly {
   top: -2px;
-  right: -2px;
+  right: calc(-1 * var(--spacing-05));
 }
 
 /* Reserve space for protruding info affordance; shift icon left by same amount to keep visual position */
@@ -143,15 +143,15 @@
 }
 
 .LinkButton--withInfoAffordance .LinkButton-infoIconWrapper:not(.LinkButton-infoIconWrapper--iconOnly) {
-  right: calc(-11px + var(--spacing-20));
+  right: calc(-1 * var(--spacing-30) + var(--spacing-20));
 }
 
 .LinkButton--withInfoAffordance .LinkButton-infoIconWrapper--iconOnly {
-  right: calc(-3px + var(--spacing-20));
+  right: calc(-4px + var(--spacing-20));
 }
 
 .LinkButton--withInfoAffordance.LinkButton--tiny .LinkButton-infoIconWrapper--iconOnly {
-  right: calc(-2px + var(--spacing-20));
+  right: calc(-1 * var(--spacing-05) + var(--spacing-20));
 }
 
 .LinkButton-infoIcon {
