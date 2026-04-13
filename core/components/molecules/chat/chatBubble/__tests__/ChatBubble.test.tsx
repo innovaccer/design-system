@@ -241,8 +241,8 @@ describe('ChatBubble component a11y', () => {
     expect(getByTestId('DesignSystem-ChatBubble-OutgoingWrapper')).toHaveAttribute('aria-label', 'Sent message');
   });
 
-  it('action bar is visible on keyboard focus and hidden on blur for incoming bubble', () => {
-    const actionBar = () => <div>Action Bar</div>;
+  it('action bar is shown on focus and hidden only when focus leaves the row (incoming)', () => {
+    const actionBar = () => <button data-test="DesignSystem-IncomingChatBubble-ActionButton">React</button>;
     const { getByTestId } = render(
       <Chat>
         <Chat.ChatBubble type="incoming" incomingOptions={{ actionBar }}>
@@ -253,15 +253,22 @@ describe('ChatBubble component a11y', () => {
     const row = getByTestId('DesignSystem-IncomingChatBubble-Wrapper');
     expect(row).toHaveAttribute('tabindex', '0');
 
+    // Focus the row — action bar appears
     fireEvent.focus(row);
     expect(getByTestId('DesignSystem-IncomingChatBubble-ActionBar')).toBeInTheDocument();
 
-    fireEvent.blur(row);
+    // Blur toward a child inside the row — action bar must stay mounted
+    const actionButton = getByTestId('DesignSystem-IncomingChatBubble-ActionButton');
+    fireEvent.blur(row, { relatedTarget: actionButton });
+    expect(getByTestId('DesignSystem-IncomingChatBubble-ActionBar')).toBeInTheDocument();
+
+    // Blur toward an element outside the row — action bar is hidden
+    fireEvent.blur(row, { relatedTarget: document.body });
     expect(screen.queryByTestId('DesignSystem-IncomingChatBubble-ActionBar')).not.toBeInTheDocument();
   });
 
-  it('action bar is visible on keyboard focus and hidden on blur for outgoing bubble', () => {
-    const actionBar = () => <div>Action Bar</div>;
+  it('action bar is shown on focus and hidden only when focus leaves the row (outgoing)', () => {
+    const actionBar = () => <button data-test="DesignSystem-OutgoingChatBubble-ActionButton">React</button>;
     const { getByTestId } = render(
       <Chat>
         <Chat.ChatBubble type="outgoing" outgoingOptions={{ actionBar }}>
@@ -272,10 +279,17 @@ describe('ChatBubble component a11y', () => {
     const row = getByTestId('DesignSystem-OutgoingChatBubble-Wrapper');
     expect(row).toHaveAttribute('tabindex', '0');
 
+    // Focus the row — action bar appears
     fireEvent.focus(row);
     expect(getByTestId('DesignSystem-OutgoingChatBubble-ActionBar')).toBeInTheDocument();
 
-    fireEvent.blur(row);
+    // Blur toward a child inside the row — action bar must stay mounted
+    const actionButton = getByTestId('DesignSystem-OutgoingChatBubble-ActionButton');
+    fireEvent.blur(row, { relatedTarget: actionButton });
+    expect(getByTestId('DesignSystem-OutgoingChatBubble-ActionBar')).toBeInTheDocument();
+
+    // Blur toward an element outside the row — action bar is hidden
+    fireEvent.blur(row, { relatedTarget: document.body });
     expect(screen.queryByTestId('DesignSystem-OutgoingChatBubble-ActionBar')).not.toBeInTheDocument();
   });
 });

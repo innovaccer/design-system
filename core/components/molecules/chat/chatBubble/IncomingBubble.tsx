@@ -110,7 +110,11 @@ export const IncomingBubble = (props: IncomingOptionProps) => {
         onMouseEnter={() => setShowActionBar(true)}
         onMouseLeave={() => setShowActionBar(false)}
         onFocus={() => setShowActionBar(true)}
-        onBlur={() => setShowActionBar(false)}
+        onBlur={(e) => {
+          if (!e.currentTarget.contains(e.relatedTarget as Node)) {
+            setShowActionBar(false);
+          }
+        }}
         data-test="DesignSystem-IncomingChatBubble-Wrapper"
       >
         <Column className={styles['ChatBubble-boxWrapper']} data-test="DesignSystem-IncomingChatBubble-ChatBoxWrapper">
