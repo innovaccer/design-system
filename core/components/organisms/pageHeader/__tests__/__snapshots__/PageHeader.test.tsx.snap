@@ -29,9 +29,14 @@ exports[`Navigation component
                 class="Link Link--tiny Link--subtle Breadcrumbs-link ellipsis--noWrap"
                 data-test="DesignSystem-Breadcrumbs-link"
                 href="/Senders"
+                role="link"
                 tabindex="0"
               >
-                Senders
+                <span
+                  class="Link-wrapper"
+                >
+                  Senders
+                </span>
               </a>
               <span
                 class="Breadcrumbs-itemSeparator"
@@ -356,9 +361,14 @@ exports[`Navigation component
                 class="Link Link--tiny Link--subtle Breadcrumbs-link ellipsis--noWrap"
                 data-test="DesignSystem-Breadcrumbs-link"
                 href="/Senders"
+                role="link"
                 tabindex="0"
               >
-                Senders
+                <span
+                  class="Link-wrapper"
+                >
+                  Senders
+                </span>
               </a>
               <span
                 class="Breadcrumbs-itemSeparator"
@@ -688,9 +698,14 @@ exports[`Navigation component
                 class="Link Link--tiny Link--subtle Breadcrumbs-link ellipsis--noWrap"
                 data-test="DesignSystem-Breadcrumbs-link"
                 href="/Senders"
+                role="link"
                 tabindex="0"
               >
-                Senders
+                <span
+                  class="Link-wrapper"
+                >
+                  Senders
+                </span>
               </a>
               <span
                 class="Breadcrumbs-itemSeparator"
@@ -1371,9 +1386,14 @@ exports[`Navigation component
                 class="Link Link--tiny Link--subtle Breadcrumbs-link ellipsis--noWrap"
                 data-test="DesignSystem-Breadcrumbs-link"
                 href="/Senders"
+                role="link"
                 tabindex="0"
               >
-                Senders
+                <span
+                  class="Link-wrapper"
+                >
+                  Senders
+                </span>
               </a>
               <span
                 class="Breadcrumbs-itemSeparator"
@@ -1618,9 +1638,14 @@ exports[`Navigation component
                 class="Link Link--tiny Link--subtle Breadcrumbs-link ellipsis--noWrap"
                 data-test="DesignSystem-Breadcrumbs-link"
                 href="/Senders"
+                role="link"
                 tabindex="0"
               >
-                Senders
+                <span
+                  class="Link-wrapper"
+                >
+                  Senders
+                </span>
               </a>
               <span
                 class="Breadcrumbs-itemSeparator"

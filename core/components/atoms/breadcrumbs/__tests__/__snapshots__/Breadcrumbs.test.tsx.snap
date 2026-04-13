@@ -29,9 +29,14 @@ exports[`Breadcrumbs component renders four links 1`] = `
           class="Link Link--tiny Link--subtle Breadcrumbs-link ellipsis--noWrap"
           data-test="DesignSystem-Breadcrumbs-link"
           href="/level0"
+          role="link"
           tabindex="0"
         >
-          Level 0 check for truncate after 160px
+          <span
+            class="Link-wrapper"
+          >
+            Level 0 check for truncate after 160px
+          </span>
         </a>
         <span
           class="Breadcrumbs-itemSeparator"
@@ -48,9 +53,14 @@ exports[`Breadcrumbs component renders four links 1`] = `
           class="Link Link--tiny Link--subtle Breadcrumbs-link ellipsis--noWrap"
           data-test="DesignSystem-Breadcrumbs-link"
           href="/level1"
+          role="link"
           tabindex="0"
         >
-          Level 1
+          <span
+            class="Link-wrapper"
+          >
+            Level 1
+          </span>
         </a>
         <span
           class="Breadcrumbs-itemSeparator"
@@ -67,9 +77,14 @@ exports[`Breadcrumbs component renders four links 1`] = `
           class="Link Link--tiny Link--subtle Breadcrumbs-link ellipsis--noWrap"
           data-test="DesignSystem-Breadcrumbs-link"
           href="/level2"
+          role="link"
           tabindex="0"
         >
-          Level 2
+          <span
+            class="Link-wrapper"
+          >
+            Level 2
+          </span>
         </a>
         <span
           class="Breadcrumbs-itemSeparator"
@@ -86,9 +101,14 @@ exports[`Breadcrumbs component renders four links 1`] = `
           class="Link Link--tiny Link--subtle Breadcrumbs-link ellipsis--noWrap"
           data-test="DesignSystem-Breadcrumbs-link"
           href="/level3"
+          role="link"
           tabindex="0"
         >
-          Level 3
+          <span
+            class="Link-wrapper"
+          >
+            Level 3
+          </span>
         </a>
         <span
           class="Breadcrumbs-itemSeparator"
