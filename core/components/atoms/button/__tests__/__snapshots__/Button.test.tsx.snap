@@ -68,7 +68,6 @@ exports[`Button component
   <div>
     <button
       aria-busy="true"
-      aria-label="Button"
       class="Button Button--regular Button--alert Button--iconAlign-left"
       data-test="DesignSystem-Button"
       disabled=""
@@ -109,6 +108,7 @@ exports[`Button component
 <body>
   <div>
     <button
+      aria-pressed="true"
       class="Button Button--regular Button--alert Button--iconAlign-left"
       data-test="DesignSystem-Button"
       tabindex="0"
@@ -191,7 +191,6 @@ exports[`Button component
   <div>
     <button
       aria-busy="true"
-      aria-label="Button"
       class="Button Button--regular Button--basic Button--iconAlign-left"
       data-test="DesignSystem-Button"
       disabled=""
@@ -315,7 +314,6 @@ exports[`Button component
   <div>
     <button
       aria-busy="true"
-      aria-label="Button"
       class="Button Button--regular Button--primary Button--iconAlign-left"
       data-test="DesignSystem-Button"
       disabled=""
@@ -356,6 +354,7 @@ exports[`Button component
 <body>
   <div>
     <button
+      aria-pressed="true"
       class="Button Button--regular Button--primary Button--iconAlign-left"
       data-test="DesignSystem-Button"
       tabindex="0"
@@ -438,7 +437,6 @@ exports[`Button component
   <div>
     <button
       aria-busy="true"
-      aria-label="Button"
       class="Button Button--regular Button--transparent Button--iconAlign-left"
       data-test="DesignSystem-Button"
       disabled=""
