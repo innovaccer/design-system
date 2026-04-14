@@ -164,3 +164,21 @@
 .Listbox-item--drag-icon:active {
   color: var(--primary);
 }
+
+@media (forced-colors: active) {
+  .Listbox-item--description:focus-visible {
+    outline: var(--border-width-05) solid Highlight;
+    outline-offset: calc(-1 * var(--border-width-05));
+  }
+
+  .Listbox-item--disabled {
+    opacity: 1;
+    color: GrayText;
+  }
+
+  /* Selected corner triangle: ensure it uses a system color */
+  .Listbox-item--selected::before,
+  .Listbox-item--activated::before {
+    background-color: Highlight;
+  }
+}
