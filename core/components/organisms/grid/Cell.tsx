@@ -263,8 +263,8 @@ const HeaderCell = (props: HeaderCellProps) => {
               event.preventDefault();
               const currentWidth = el.current?.getBoundingClientRect().width ?? 0;
               const delta = event.key === 'ArrowRight' ? RESIZE_STEP : -RESIZE_STEP;
-              const effectiveMinWidth =
-                (schema.minWidth as number) || getCellSize(schema.cellType || 'DEFAULT').minWidth || 96;
+              const schemaMin = typeof schema.minWidth === 'number' ? schema.minWidth : undefined;
+              const effectiveMinWidth = schemaMin || getCellSize(schema.cellType || 'DEFAULT').minWidth || 96;
               updateColumnSchema(name, { width: Math.max(currentWidth + delta, effectiveMinWidth) });
             }
           }}
