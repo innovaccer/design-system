@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, Checkbox, Popover, Icon } from '@/index';
+import { Button, Checkbox, Popover } from '@/index';
 import { DropdownProps } from '@/index.type';
 import { moveToIndex, getPluralSuffix } from '../grid/utility';
 import dropdownStyles from '@css/components/dropdown.module.css';
@@ -123,13 +123,12 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
                   checked={tempOptions[index].selected}
                   onChange={(e) => handleChildChange(e, index)}
                 />
-                <Icon
-                  name="drag_handle"
+                <Button
+                  icon="drag_handle"
+                  appearance="transparent"
                   className="mr-4"
-                  tabIndex={0}
-                  role="button"
                   aria-label={`Reorder ${option.label} column. Use arrow keys to move up or down.`}
-                  onKeyDown={(e: React.KeyboardEvent) => onReorderKeyDown(e, index)}
+                  onKeyDown={(e: React.KeyboardEvent<HTMLButtonElement>) => onReorderKeyDown(e, index)}
                 />
               </div>
             );
