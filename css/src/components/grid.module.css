@@ -245,7 +245,7 @@
 }
 
 .Grid-cell--head .Grid-cellContent:focus-visible {
-  outline: var(--border-width-05) solid var(--primary);
+  outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: calc(-1 * var(--spacing-05));
   border-radius: var(--border-radius-10);
 }
@@ -275,6 +275,11 @@
 
 .Grid-cellResize:hover {
   background: var(--primary);
+}
+
+.Grid-cellResize:focus-visible {
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: calc(-1 * var(--spacing-05));
 }
 
 .Grid-reorderHighlighter {
@@ -498,7 +503,7 @@
 
 .Grid--resource .Grid-row--body:focus-visible {
   box-shadow: var(--shadow-spread) color-mod(var(--secondary) a(var(--opacity-4)));
-  outline: var(--border-width-05) solid var(--primary);
+  outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: calc(-1 * var(--spacing-05));
 }
 
@@ -517,7 +522,7 @@
 }
 
 .Grid-row--selected:focus-visible {
-  outline: var(--border-width-05) solid var(--primary);
+  outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: calc(-1 * var(--spacing-05));
   box-shadow: var(--shadow-spread) color-mod(var(--primary) a(var(--opacity-4)));
 }
