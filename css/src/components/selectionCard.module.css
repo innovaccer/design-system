@@ -108,11 +108,16 @@
     box-shadow: none;
   }
 
+  /* Interactive selected states — use Highlight to signal selection */
   .Selection-card--selected,
   .Selection-card--selected:hover,
-  .Selection-card--selected:active,
-  .Selection-card--selected-disabled {
+  .Selection-card--selected:active {
     border: var(--border-width-2-5) solid Highlight;
+    box-shadow: none;
+  }
+
+  .Selection-card--selected-disabled {
+    border: var(--border-width-2-5) solid GrayText;
     box-shadow: none;
   }
 
