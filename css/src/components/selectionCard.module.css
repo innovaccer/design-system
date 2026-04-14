@@ -112,7 +112,7 @@
   .Selection-card--selected:hover,
   .Selection-card--selected:active,
   .Selection-card--selected-disabled {
-    border: var(--border-width-05) solid Highlight;
+    border: var(--border-width-2-5) solid Highlight;
     box-shadow: none;
   }
 
