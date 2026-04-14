@@ -124,6 +124,7 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
                   onChange={(e) => handleChildChange(e, index)}
                 />
                 <Button
+                  type="button"
                   icon="drag_handle"
                   appearance="transparent"
                   className="mr-4"

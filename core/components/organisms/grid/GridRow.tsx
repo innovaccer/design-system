@@ -175,7 +175,7 @@ export const GridRow = (props: GridRowProps) => {
         data-test="DesignSystem-Grid-row"
         className={rowClasses}
         role="row"
-        tabIndex={type === 'resource' && !loading && !data.disabled ? 0 : -1}
+        tabIndex={type === 'resource' && !loading && !data.disabled && !!onRowClick ? 0 : -1}
         onClick={onClickHandler}
         onKeyDown={onKeyDownHandler}
         ref={rowRef}
