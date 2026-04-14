@@ -49,7 +49,11 @@ export const GridHead = (props: GridHeadProps) => {
     if (!show || !withCheckbox) return null;
     return (
       <div className={CheckboxClass}>
-        {loading ? <Placeholder className="mr-4" /> : <Checkbox {...selectAll} onChange={onSelectAll} />}
+        {loading ? (
+          <Placeholder className="mr-4" />
+        ) : (
+          <Checkbox {...selectAll} onChange={onSelectAll} aria-label="Select all rows" />
+        )}
       </div>
     );
   };
