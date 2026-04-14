@@ -24,6 +24,7 @@ export interface ChatBubbleProps extends BaseProps {
    *   urgentMessage?: () => JSX.Element;
    *   avatarData?: ChatAvatarProps;
    *   showAvatar?: boolean;
+   *   'aria-label'?: string;
    * }
    *
    * ChatAvatarProps: {
@@ -51,6 +52,7 @@ export interface ChatBubbleProps extends BaseProps {
    *  actionBar?: () => JSX.Element;
    *  urgentMessage?: () => JSX.Element;
    *  failedMessage?: () => JSX.Element;
+   *  'aria-label'?: string;
    * }
    * </pre>
    */

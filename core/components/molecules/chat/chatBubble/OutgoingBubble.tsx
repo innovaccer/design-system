@@ -13,6 +13,10 @@ export interface OutgoingOptionProps extends BaseProps {
   actionBar?: () => JSX.Element;
   urgentMessage?: () => JSX.Element;
   failedMessage?: () => JSX.Element;
+  /**
+   * Accessible label for the outgoing message article (SC 4.1.2)
+   */
+  'aria-label'?: string;
 }
 
 const ChatBox = (props: { children: React.ReactNode }) => {
@@ -26,7 +30,11 @@ const ChatBox = (props: { children: React.ReactNode }) => {
 };
 
 const MetaSeparator = () => (
-  <span className={styles['ChatBubble-separator']} data-test="DesignSystem-OutgoingChatBubble-Separator" />
+  <span
+    className={styles['ChatBubble-separator']}
+    data-test="DesignSystem-OutgoingChatBubble-Separator"
+    aria-hidden={true}
+  />
 );
 
 export const OutgoingBubble = (props: OutgoingOptionProps) => {
@@ -34,6 +42,21 @@ export const OutgoingBubble = (props: OutgoingOptionProps) => {
     props;
 
   const [showActionBar, setShowActionBar] = React.useState(false);
+
+  const handleMouseEnter = () => setShowActionBar(true);
+  const handleMouseLeave = (e: React.MouseEvent<HTMLElement>) => {
+    if (!e.currentTarget.contains(document.activeElement)) {
+      setShowActionBar(false);
+    }
+  };
+  const handleFocus = actionBar ? () => setShowActionBar(true) : undefined;
+  const handleBlur = actionBar
+    ? (e: React.FocusEvent<HTMLElement>) => {
+        if (!e.currentTarget.contains(e.relatedTarget as Node)) {
+          setShowActionBar(false);
+        }
+      }
+    : undefined;
 
   const chatBoxClass = classNames({
     [styles['ChatBubble-box']]: true,
@@ -48,14 +71,13 @@ export const OutgoingBubble = (props: OutgoingOptionProps) => {
     ['d-flex justify-content-end align-items-center mb-3']: showMetaRow,
   });
 
+  const actionBarWrapperClass = classNames({
+    [styles['ChatBubble-actionBarWrapper']]: true,
+    [styles['ChatBubble-actionBarWrapper--hidden']]: !showActionBar,
+  });
+
   return (
-    <div
-      className={chatBoxWrapperClass}
-      data-test="DesignSystem-ChatBubble-OutgoingWrapper"
-      {...rest}
-      role="group"
-      aria-labelledby="chat-bubble-header"
-    >
+    <div className={chatBoxWrapperClass} data-test="DesignSystem-ChatBubble-OutgoingWrapper" {...rest} role="article">
       <div className={chatBoxClass}>
         {showMetaRow && (
           <Row className={metaRowClass}>
@@ -115,12 +137,14 @@ export const OutgoingBubble = (props: OutgoingOptionProps) => {
         )}
         <Row
           className="d-flex justify-content-end"
-          onMouseEnter={() => setShowActionBar(true)}
-          onMouseLeave={() => setShowActionBar(false)}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
           data-test="DesignSystem-OutgoingChatBubble-Wrapper"
         >
-          <Column className={styles['ChatBubble-actionBarWrapper']}>
-            {actionBar && showActionBar && (
+          <Column className={actionBarWrapperClass}>
+            {actionBar && (
               <div
                 className={styles['ChatBubble-actionBar--outgoing']}
                 data-test="DesignSystem-OutgoingChatBubble-ActionBar"

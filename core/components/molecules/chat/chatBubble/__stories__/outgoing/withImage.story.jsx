@@ -4,7 +4,7 @@ import Image from '../assets/media.png';
 
 export const withImage = () => {
   return (
-    <Chat>
+    <Chat role="log" aria-live="polite" aria-label="Chat messages">
       <Chat.ChatBubble type="outgoing">
         <Text>
           Acute sinusitis causes the spaces inside the nose, known as sinuses, to become inflamed and swollen. Acute

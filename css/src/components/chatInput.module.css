@@ -2,13 +2,15 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  border: var(--border-width-2-5) solid var(--secondary);
+  border: var(--border-width-2-5) solid var(--secondary-dark);
   padding: var(--spacing-20);
   border-radius: var(--border-radius-10);
   background: var(--white);
   max-width: 100%;
   min-width: var(--spacing-640);
-  transition: all var(--duration--slow-01) var(--standard-productive-curve);
+  transition: background-color var(--duration--slow-01) var(--standard-productive-curve),
+    border-color var(--duration--slow-01) var(--standard-productive-curve),
+    outline var(--duration--slow-01) var(--standard-productive-curve);
   max-height: var(--spacing-440);
   position: relative;
   box-sizing: border-box;
@@ -70,7 +72,8 @@
 .ChatInput-actions {
   display: flex;
   flex-shrink: 0;
-  transition: all var(--duration--slow-01) var(--standard-productive-curve);
+  transition: margin var(--duration--slow-01) var(--standard-productive-curve),
+    width var(--duration--slow-01) var(--standard-productive-curve);
   margin-left: var(--spacing-20);
   align-items: center;
 }
@@ -80,4 +83,12 @@
   justify-content: flex-end;
   margin-top: var(--spacing-20);
   margin-left: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ChatInput,
+  .ChatInput-actions,
+  .ChatInput-textarea {
+    transition: none;
+  }
 }
