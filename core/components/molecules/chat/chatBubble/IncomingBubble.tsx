@@ -48,8 +48,17 @@ export const IncomingBubble = (props: IncomingOptionProps) => {
     [styles['ChatBubble-metaData--incoming']]: showAvatar,
   });
 
+  const actionBarWrapperClass = classNames({
+    [styles['ChatBubble-actionBarWrapper']]: true,
+    [styles['ChatBubble-actionBarWrapper--hidden']]: !showActionBar,
+  });
+
   const handleMouseEnter = () => setShowActionBar(true);
-  const handleMouseLeave = () => setShowActionBar(false);
+  const handleMouseLeave = (e: React.MouseEvent<HTMLElement>) => {
+    if (!e.currentTarget.contains(document.activeElement)) {
+      setShowActionBar(false);
+    }
+  };
   const handleFocus = actionBar ? () => setShowActionBar(true) : undefined;
   const handleBlur = actionBar
     ? (e: React.FocusEvent<HTMLElement>) => {
@@ -114,7 +123,6 @@ export const IncomingBubble = (props: IncomingOptionProps) => {
         </Row>
       )}
       <Row
-        tabIndex={actionBar ? 0 : undefined}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         onFocus={handleFocus}
@@ -137,8 +145,8 @@ export const IncomingBubble = (props: IncomingOptionProps) => {
             {children}
           </div>
         </Column>
-        <Column className={styles['ChatBubble-actionBarWrapper']}>
-          {actionBar && showActionBar && (
+        <Column className={actionBarWrapperClass}>
+          {actionBar && (
             <div
               data-test="DesignSystem-IncomingChatBubble-ActionBar"
               className={styles['ChatBubble-actionBar--incoming']}

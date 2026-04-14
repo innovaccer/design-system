@@ -44,7 +44,11 @@ export const OutgoingBubble = (props: OutgoingOptionProps) => {
   const [showActionBar, setShowActionBar] = React.useState(false);
 
   const handleMouseEnter = () => setShowActionBar(true);
-  const handleMouseLeave = () => setShowActionBar(false);
+  const handleMouseLeave = (e: React.MouseEvent<HTMLElement>) => {
+    if (!e.currentTarget.contains(document.activeElement)) {
+      setShowActionBar(false);
+    }
+  };
   const handleFocus = actionBar ? () => setShowActionBar(true) : undefined;
   const handleBlur = actionBar
     ? (e: React.FocusEvent<HTMLElement>) => {
@@ -65,6 +69,11 @@ export const OutgoingBubble = (props: OutgoingOptionProps) => {
 
   const metaRowClass = classNames({
     ['d-flex justify-content-end align-items-center mb-3']: showMetaRow,
+  });
+
+  const actionBarWrapperClass = classNames({
+    [styles['ChatBubble-actionBarWrapper']]: true,
+    [styles['ChatBubble-actionBarWrapper--hidden']]: !showActionBar,
   });
 
   return (
@@ -128,15 +137,14 @@ export const OutgoingBubble = (props: OutgoingOptionProps) => {
         )}
         <Row
           className="d-flex justify-content-end"
-          tabIndex={actionBar ? 0 : undefined}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
           onFocus={handleFocus}
           onBlur={handleBlur}
           data-test="DesignSystem-OutgoingChatBubble-Wrapper"
         >
-          <Column className={styles['ChatBubble-actionBarWrapper']}>
-            {actionBar && showActionBar && (
+          <Column className={actionBarWrapperClass}>
+            {actionBar && (
               <div
                 className={styles['ChatBubble-actionBar--outgoing']}
                 data-test="DesignSystem-OutgoingChatBubble-ActionBar"

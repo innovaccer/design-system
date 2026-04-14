@@ -102,7 +102,7 @@ Object {
               </div>
             </div>
             <div
-              class="Col ChatBubble-actionBarWrapper"
+              class="Col ChatBubble-actionBarWrapper ChatBubble-actionBarWrapper--hidden"
               data-test="DesignSystem-Column"
             />
           </div>
@@ -206,7 +206,7 @@ Object {
             </div>
           </div>
           <div
-            class="Col ChatBubble-actionBarWrapper"
+            class="Col ChatBubble-actionBarWrapper ChatBubble-actionBarWrapper--hidden"
             data-test="DesignSystem-Column"
           />
         </div>
@@ -328,7 +328,7 @@ Object {
               data-test="DesignSystem-OutgoingChatBubble-Wrapper"
             >
               <div
-                class="Col ChatBubble-actionBarWrapper"
+                class="Col ChatBubble-actionBarWrapper ChatBubble-actionBarWrapper--hidden"
                 data-test="DesignSystem-Column"
               />
               <div
@@ -411,7 +411,7 @@ Object {
             data-test="DesignSystem-OutgoingChatBubble-Wrapper"
           >
             <div
-              class="Col ChatBubble-actionBarWrapper"
+              class="Col ChatBubble-actionBarWrapper ChatBubble-actionBarWrapper--hidden"
               data-test="DesignSystem-Column"
             />
             <div

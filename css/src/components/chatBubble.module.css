@@ -51,3 +51,8 @@
 .ChatBubble-actionBarWrapper {
   flex: 0 0 auto;
 }
+
+.ChatBubble-actionBarWrapper--hidden {
+  width: 0;
+  overflow: hidden;
+}
