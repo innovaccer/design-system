@@ -371,7 +371,7 @@ export const Cell = (props: CellProps) => {
   const { name, hidden, pinned, cellType = 'DEFAULT', sorting } = schema;
 
   const ariaSortValue: React.AriaAttributes['aria-sort'] = React.useMemo(() => {
-    if (!isHead || !sorting) return undefined;
+    if (!isHead || sorting === false) return undefined;
     const entry = sortingList.find((l) => l.name === name);
     if (entry?.type === 'asc') return 'ascending';
     if (entry?.type === 'desc') return 'descending';

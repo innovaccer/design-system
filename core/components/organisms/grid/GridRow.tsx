@@ -55,7 +55,7 @@ export const GridRow = (props: GridRowProps) => {
         onRowClick(data, rI);
       }
     }
-  }, [data, rI]);
+  }, [data, rI, type, loading, onRowClick]);
 
   const onKeyDownHandler = React.useCallback(
     (e: React.KeyboardEvent<HTMLDivElement>) => {
@@ -67,7 +67,7 @@ export const GridRow = (props: GridRowProps) => {
         }
       }
     },
-    [data, rI]
+    [data, rI, type, loading, onRowClick]
   );
 
   const pinnedSchema = schema.filter((s) => !s.hidden && s.pinned);
