@@ -50,15 +50,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .Table-Header-Label--hide {
-    animation: none;
-    opacity: 0;
-    visibility: hidden;
-  }
-
+  .Table-Header-Label--hide,
   .Table-Header-Label--show {
-    animation: none;
-    opacity: 1;
-    visibility: visible;
+    animation-duration: 0.001ms;
   }
 }

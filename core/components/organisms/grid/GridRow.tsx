@@ -60,7 +60,7 @@ export const GridRow = (props: GridRowProps) => {
   const onKeyDownHandler = React.useCallback(
     (e: React.KeyboardEvent<HTMLDivElement>) => {
       if (e.target !== e.currentTarget) return;
-      if (type === 'resource' && !loading && (e.key === 'Enter' || e.key === ' ')) {
+      if (type === 'resource' && !loading && !data.disabled && (e.key === 'Enter' || e.key === ' ')) {
         e.preventDefault();
         if (onRowClick) {
           onRowClick(data, rI);
@@ -175,7 +175,7 @@ export const GridRow = (props: GridRowProps) => {
         data-test="DesignSystem-Grid-row"
         className={rowClasses}
         role="row"
-        tabIndex={type === 'resource' && !loading ? 0 : -1}
+        tabIndex={type === 'resource' && !loading && !data.disabled ? 0 : -1}
         onClick={onClickHandler}
         onKeyDown={onKeyDownHandler}
         ref={rowRef}
