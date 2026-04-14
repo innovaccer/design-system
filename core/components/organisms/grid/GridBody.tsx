@@ -268,7 +268,7 @@ export const GridBody = (props: GridBodyProps) => {
   };
 
   return (
-    <div className={styles['Grid-body']} onScroll={(event) => handleOnScroll(event)} ref={listRef}>
+    <div className={styles['Grid-body']} role="rowgroup" onScroll={(event) => handleOnScroll(event)} ref={listRef}>
       {enableRowVirtualization
         ? memoizedVirtualScroll
         : getArrayList().map((item, i) => {

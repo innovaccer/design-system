@@ -49,6 +49,16 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
     if (onChange) onChange(tempOptions);
   };
 
+  const onReorderKeyDown = (e: React.KeyboardEvent, index: number) => {
+    if (e.key === 'ArrowUp' && index > 0) {
+      e.preventDefault();
+      setTempOptions(moveToIndex(tempOptions, index, index - 1));
+    } else if (e.key === 'ArrowDown' && index < tempOptions.length - 1) {
+      e.preventDefault();
+      setTempOptions(moveToIndex(tempOptions, index, index + 1));
+    }
+  };
+
   return (
     <div className={dropdownStyles['Dropdown']}>
       <Popover
@@ -113,7 +123,14 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
                   checked={tempOptions[index].selected}
                   onChange={(e) => handleChildChange(e, index)}
                 />
-                <Icon name="drag_handle" className="mr-4" />
+                <Icon
+                  name="drag_handle"
+                  className="mr-4"
+                  tabIndex={0}
+                  role="button"
+                  aria-label={`Reorder ${option.label} column. Use arrow keys to move up or down.`}
+                  onKeyDown={(e: React.KeyboardEvent) => onReorderKeyDown(e, index)}
+                />
               </div>
             );
           })}

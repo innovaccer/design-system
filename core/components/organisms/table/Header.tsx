@@ -323,11 +323,23 @@ export const Header = (props: HeaderProps) => {
           {
             <>
               {showSelectedLabel ? (
-                <span className={selectedRowLabelClass} onAnimationEnd={onSelectAnimationEnd}>
+                <span
+                  role="status"
+                  aria-live="polite"
+                  aria-atomic="true"
+                  className={selectedRowLabelClass}
+                  onAnimationEnd={onSelectAnimationEnd}
+                >
                   <Label>{customSelectedRowLabel ?? getSelectedRowLabel()}</Label>
                 </span>
               ) : (
-                <span className={unselectedRowLabelClass} onAnimationEnd={onUnSelectAnimationEnd}>
+                <span
+                  role="status"
+                  aria-live="polite"
+                  aria-atomic="true"
+                  className={unselectedRowLabelClass}
+                  onAnimationEnd={onUnSelectAnimationEnd}
+                >
                   <Label>{customUnSelectedRowLabel ?? getUnSelectedRowLabel()}</Label>
                 </span>
               )}

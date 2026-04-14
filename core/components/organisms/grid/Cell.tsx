@@ -132,7 +132,7 @@ const HeaderCell = (props: HeaderCellProps) => {
         {schema.displayName}
       </Text>
       {sorting && (
-        <div className={styles['Grid-sortingIcons']}>
+        <div className={styles['Grid-sortingIcons']} aria-hidden="true">
           {sorted ? (
             sorted === 'asc' ? (
               <Icon name="arrow_upward" />
@@ -258,15 +258,17 @@ const HeaderCell = (props: HeaderCellProps) => {
             setIsDragged(false);
           }}
           onKeyDown={(event: React.KeyboardEvent<HTMLSpanElement>) => {
-            if (event.key === 'Enter' || event.key === ' ') {
+            const RESIZE_STEP = 10;
+            if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
               event.preventDefault();
-              resizeCol({ updateColumnSchema }, name, el.current);
-              setIsDragged(false);
+              const currentWidth = el.current?.getBoundingClientRect().width ?? 0;
+              const delta = event.key === 'ArrowRight' ? RESIZE_STEP : -RESIZE_STEP;
+              updateColumnSchema(name, { width: Math.max(currentWidth + delta, (schema.minWidth as number) || 96) });
             }
           }}
           role="button"
           tabIndex={0}
-          aria-label={`Resize ${name} column`}
+          aria-label={`Resize ${schema.displayName} column. Use left and right arrow keys to resize.`}
         />
       )}
     </div>
@@ -362,9 +364,17 @@ export const Cell = (props: CellProps) => {
     nestedRowData,
   } = props as CellProps;
 
-  const { draggable, separator, nestedRows, ref, withCheckbox, showNestedRowTrigger } = context;
+  const { draggable, separator, nestedRows, ref, withCheckbox, showNestedRowTrigger, sortingList } = context;
 
-  const { name, hidden, pinned, cellType = 'DEFAULT' } = schema;
+  const { name, hidden, pinned, cellType = 'DEFAULT', sorting } = schema;
+
+  const ariaSortValue: React.AriaAttributes['aria-sort'] = React.useMemo(() => {
+    if (!isHead || !sorting) return undefined;
+    const entry = sortingList.find((l) => l.name === name);
+    if (entry?.type === 'asc') return 'ascending';
+    if (entry?.type === 'desc') return 'descending';
+    return 'none';
+  }, [isHead, sorting, sortingList, name]);
 
   const { width, minWidth = 96, maxWidth = 800 } = getCellSize(cellType);
 
@@ -385,6 +395,8 @@ export const Cell = (props: CellProps) => {
     <div
       key={`${rowIndex}-${colIndex}`}
       className={cellClass}
+      role={isHead ? 'columnheader' : 'gridcell'}
+      aria-sort={ariaSortValue}
       draggable={isHead && draggable}
       onDragStart={(e) => {
         if (draggable) {
