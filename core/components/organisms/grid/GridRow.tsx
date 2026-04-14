@@ -96,10 +96,6 @@ export const GridRow = (props: GridRowProps) => {
     });
 
     return (
-<<<<<<< HEAD
-      // eslint-disable-next-line
-      <div className={CheckboxClass} onClick={(e) => e.stopPropagation()} data-test="DesignSystem-Grid-cellCheckbox">
-=======
       <div
         className={CheckboxClass}
         role="gridcell"
@@ -108,17 +104,12 @@ export const GridRow = (props: GridRowProps) => {
         onKeyDown={(e) => e.stopPropagation()}
         data-test="DesignSystem-Grid-cellCheckbox"
       >
->>>>>>> 79f064520 (feat(table): add wcag 2.2 accessibility support)
         {loading ? (
           <Placeholder className="mr-4" />
         ) : (
           <Checkbox
             checked={!!data._selected}
-<<<<<<< HEAD
-            aria-label={`Select row ${rI + 1}`}
-=======
             aria-label={`Select ${rowLabel}`}
->>>>>>> 79f064520 (feat(table): add wcag 2.2 accessibility support)
             onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
               onSelect(rI, event.target.checked);
             }}
