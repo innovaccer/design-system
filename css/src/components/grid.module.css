@@ -108,6 +108,10 @@
   overflow-y: auto;
 }
 
+.Grid-rowGroup {
+  display: contents;
+}
+
 .Grid-rowWrapper {
   display: inline-flex;
   flex-direction: column;
@@ -564,7 +568,7 @@
 
 .Grid-row--head .Grid-cellGroup--pinned-left {
   border-style: inset;
-  border-right: var(--spacing-xs) solid rgba(213, 213, 213, var(--opacity-3));
+  border-right: var(--spacing-2-5) solid color-mod(var(--secondary-light) a(var(--opacity-3)));
   border-right-width: 4px;
   border-image: linear-gradient(
       to right,
@@ -578,7 +582,7 @@
 
 .Grid-row--head .Grid-cellGroup--pinned-right {
   border-style: inset;
-  border-left: var(--spacing-xs) solid rgba(213, 213, 213, var(--opacity-3));
+  border-left: var(--spacing-2-5) solid color-mod(var(--secondary-light) a(var(--opacity-3)));
   border-left-width: 4px;
   border-image: linear-gradient(
       to left,
@@ -594,7 +598,7 @@
 
 .Grid-cellWrapper--pinned-left {
   border-style: inset;
-  border-right: var(--spacing-xs) solid rgba(213, 213, 213, var(--opacity-3));
+  border-right: var(--spacing-2-5) solid color-mod(var(--secondary-light) a(var(--opacity-3)));
   border-right-width: 4px;
   border-image: linear-gradient(
       to right,
@@ -608,7 +612,7 @@
 
 .Grid-cellWrapper--pinned-right {
   border-style: inset;
-  border-left: var(--spacing-xs) solid rgba(213, 213, 213, var(--opacity-3));
+  border-left: var(--spacing-2-5) solid color-mod(var(--secondary-light) a(var(--opacity-3)));
   border-left-width: 4px;
   border-image: linear-gradient(
       to left,
