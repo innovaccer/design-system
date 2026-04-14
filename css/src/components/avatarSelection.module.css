@@ -211,6 +211,7 @@
 
   /* The inner search input uses outline:none !important — restore it in forced-colors mode */
   .SelectionAvatar-input:focus-within {
-    outline: revert !important;
+    outline: var(--border-width-05) solid Highlight !important;
+    outline-offset: var(--spacing-05);
   }
 }

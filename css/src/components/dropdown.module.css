@@ -204,6 +204,7 @@
 
 @media (forced-colors: active) {
   .Dropdown-input:focus-within {
-    outline: revert !important;
+    outline: var(--border-width-05) solid Highlight !important;
+    outline-offset: var(--spacing-05);
   }
 }

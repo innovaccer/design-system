@@ -241,10 +241,14 @@
     box-shadow: none;
   }
 
-  /* Disabled chips use opacity which breaks in forced-colors; use GrayText instead */
   .Chip-action--disabled,
-  .Chip-selection--disabled,
   .Chip-input--disabled {
+    opacity: 1;
+    color: GrayText;
+    border: var(--border-width-2-5) solid GrayText;
+  }
+
+  .Chip-selection--disabled {
     opacity: 1;
     color: GrayText;
     border-color: GrayText;
