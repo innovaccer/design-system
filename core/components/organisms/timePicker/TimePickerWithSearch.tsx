@@ -5,6 +5,7 @@ import { getScrollIndex } from './utility/searchUtils';
 import { OptionSchema } from '@/components/atoms/dropdown/option';
 import { scrollToOptionIndex } from '@/components/atoms/dropdown/utility';
 import { getDropdownOptionList, isFormat12Hour, convert24To12HourFormat } from './utility/timePickerUtility';
+import timePickerStyles from '@css/components/timePicker.module.css';
 
 type fetchOptionsFunction = (searchTerm: string) => Promise<{
   count: number;
@@ -203,6 +204,8 @@ export const TimePickerWithSearch = (props: TimePickerDropdownProps) => {
       error={error}
       aria-label={ariaLabel}
       optionsAriaLabel={optionsAriaLabel}
+      className={timePickerStyles['TimePicker-trigger']}
+      truncateOption={false}
     />
   );
 };
