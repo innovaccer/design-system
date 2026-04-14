@@ -87,3 +87,9 @@
   cursor: not-allowed;
   pointer-events: auto !important;
 }
+
+@media (forced-colors: active) {
+  .AvatarGroup-input:focus-within {
+    outline: revert !important;
+  }
+}

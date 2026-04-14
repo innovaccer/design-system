@@ -201,3 +201,9 @@
   height: fit-content;
   line-height: var(--font-height);
 }
+
+@media (forced-colors: active) {
+  .Dropdown-input:focus-within {
+    outline: revert !important;
+  }
+}

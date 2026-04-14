@@ -198,3 +198,9 @@
 .Select-trigger--error {
   border: var(--border-width-2-5) solid var(--alert) !important;
 }
+
+@media (forced-colors: active) {
+  .Select-input:focus-within {
+    outline: revert !important;
+  }
+}

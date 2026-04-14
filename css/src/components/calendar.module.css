@@ -392,3 +392,52 @@
   background: var(--primary-lighter);
   border-color: transparent;
 }
+
+@media (forced-colors: active) {
+  .Calendar-valueWrapper--start,
+  .Calendar-valueWrapper--end,
+  .Calendar-valueWrapper--hoverDate,
+  .Calendar-valueWrapper--hoverEndDate,
+  .Calendar-valueWrapper--inStartRange,
+  .Calendar-valueWrapper--inEndRange,
+  .Calendar-valueWrapper--inRange,
+  .Calendar-valueWrapper--inEdgeRange .Calendar-inRangeValue {
+    background: Highlight;
+  }
+
+  .Calendar-valueWrapper--startError,
+  .Calendar-valueWrapper--endError,
+  .Calendar-valueWrapper--inRangeError {
+    background: Mark;
+  }
+
+  /* Active/selected date cell */
+  .Calendar-value--active,
+  .Calendar-value--active:hover,
+  .Calendar-value--active:active {
+    forced-color-adjust: none;
+    background: Highlight;
+    color: HighlightText;
+    border-color: transparent;
+  }
+
+  /* Today's date marker ring */
+  .Calendar-value--currDateMonthYear {
+    border-color: ButtonText;
+  }
+
+  /* Event dot: use system color so it stays visible */
+  .Calendar-eventsIndicator {
+    background-color: ButtonText;
+  }
+
+  .Calendar-eventsIndicator--active {
+    background-color: HighlightText;
+  }
+
+  /* Disabled dates use opacity — switch to GrayText */
+  .Calendar-valueWrapper--disabled {
+    opacity: 1;
+    color: GrayText;
+  }
+}

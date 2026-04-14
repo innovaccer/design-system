@@ -182,3 +182,23 @@
   display: flex;
   box-sizing: border-box;
 }
+
+@media (forced-colors: active) {
+  /* Dismissible tab close icons have outline:none unconditionally — restore focus ring in forced-colors mode */
+  .DismissibleRegularTab-icon--right:focus-visible,
+  .DismissibleSmallTab-icon--right:focus-visible {
+    outline: var(--border-width-05) solid Highlight;
+  }
+
+  .Tab--active::after {
+    background-color: transparent;
+    border-top: var(--spacing-05) solid Highlight;
+    box-sizing: border-box;
+  }
+
+  /* Disabled tab pills use opacity — use GrayText instead */
+  .Tab-pills--disabled {
+    opacity: 1;
+    color: GrayText;
+  }
+}

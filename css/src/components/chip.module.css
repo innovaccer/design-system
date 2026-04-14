@@ -220,3 +220,33 @@
 .Chip-icon--clear {
   padding-right: 0;
 }
+
+@media (forced-colors: active) {
+  /* Action chips: border:0 makes them invisible — add a real border */
+  .Chip--action {
+    border: var(--border-width-2-5) solid ButtonText;
+  }
+
+  /* Input chips: border:0 makes them invisible — add a real border */
+  .Chip--input {
+    border: var(--border-width-2-5) solid ButtonText;
+  }
+
+  /* Selected state uses inset box-shadow as a double border on top of the existing border-color */
+  .Chip-selection--selected,
+  .Chip-selection--selected:hover,
+  .Chip-selection--selected:active,
+  .Chip-selection--selectedDisabled {
+    border-color: Highlight;
+    box-shadow: none;
+  }
+
+  /* Disabled chips use opacity which breaks in forced-colors; use GrayText instead */
+  .Chip-action--disabled,
+  .Chip-selection--disabled,
+  .Chip-input--disabled {
+    opacity: 1;
+    color: GrayText;
+    border-color: GrayText;
+  }
+}
