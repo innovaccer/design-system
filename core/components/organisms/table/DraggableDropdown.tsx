@@ -135,10 +135,22 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
           })}
         </div>
         <div className={dropdownStyles['Dropdown-buttonWrapper']}>
-          <Button type="button" className="mr-4" size="tiny" onClick={onCancelHandler}>
+          <Button
+            type="button"
+            className="mr-4"
+            size="tiny"
+            onClick={onCancelHandler}
+            data-test="DesignSystem-DraggableDropdown-cancelButton"
+          >
             Cancel
           </Button>
-          <Button type="button" appearance="primary" size="tiny" onClick={onApplyHandler}>
+          <Button
+            type="button"
+            appearance="primary"
+            size="tiny"
+            onClick={onApplyHandler}
+            data-test="DesignSystem-DraggableDropdown-applyButton"
+          >
             Apply
           </Button>
         </div>
