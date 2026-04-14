@@ -59,6 +59,7 @@ export const GridRow = (props: GridRowProps) => {
 
   const onKeyDownHandler = React.useCallback(
     (e: React.KeyboardEvent<HTMLDivElement>) => {
+      if (e.target !== e.currentTarget) return;
       if (type === 'resource' && !loading && (e.key === 'Enter' || e.key === ' ')) {
         e.preventDefault();
         if (onRowClick) {

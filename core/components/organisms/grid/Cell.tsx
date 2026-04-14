@@ -263,7 +263,9 @@ const HeaderCell = (props: HeaderCellProps) => {
               event.preventDefault();
               const currentWidth = el.current?.getBoundingClientRect().width ?? 0;
               const delta = event.key === 'ArrowRight' ? RESIZE_STEP : -RESIZE_STEP;
-              updateColumnSchema(name, { width: Math.max(currentWidth + delta, (schema.minWidth as number) || 96) });
+              const effectiveMinWidth =
+                (schema.minWidth as number) || getCellSize(schema.cellType || 'DEFAULT').minWidth || 96;
+              updateColumnSchema(name, { width: Math.max(currentWidth + delta, effectiveMinWidth) });
             }
           }}
           role="button"
