@@ -74,6 +74,11 @@
   clip-path: polygon(0 0, 100% 0, 0 100%);
 }
 
+.Listbox-item--tight.Listbox-item--selected::before {
+  top: var(--spacing-05);
+  left: var(--spacing-05);
+}
+
 .Listbox-item--selected:hover {
   background: color-mod(var(--primary-lighter) a(var(--opacity-12)));
 }
@@ -120,6 +125,11 @@
   height: var(--spacing-20);
   background-color: var(--primary);
   clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+.Listbox-item--tight.Listbox-item--activated::before {
+  top: var(--spacing-05);
+  left: var(--spacing-05);
 }
 
 /* Listbox type - description  */
