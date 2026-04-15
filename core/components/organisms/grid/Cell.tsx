@@ -63,6 +63,7 @@ const HeaderCell = (props: HeaderCellProps) => {
     mainRemainder,
     withCheckbox,
     ref: gridRef,
+    onResizeEnd,
   } = context;
 
   const {
@@ -300,7 +301,7 @@ const HeaderCell = (props: HeaderCellProps) => {
         <span
           className={styles['Grid-cellResize']}
           onMouseDown={() => {
-            resizeCol({ updateColumnSchema }, name, el.current);
+            resizeCol({ updateColumnSchema, onResizeEnd }, name, el.current);
             setIsDragged(false);
           }}
           onDoubleClick={autoFitColumn}
