@@ -261,7 +261,7 @@ const HeaderCell = (props: HeaderCellProps) => {
             const RESIZE_STEP = 10;
             if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
               event.preventDefault();
-              const currentWidth = el.current?.getBoundingClientRect().width ?? 0;
+              const currentWidth = el.current?.parentElement?.getBoundingClientRect().width ?? 0;
               const delta = event.key === 'ArrowRight' ? RESIZE_STEP : -RESIZE_STEP;
               const schemaMin = typeof schema.minWidth === 'number' ? schema.minWidth : undefined;
               const effectiveMinWidth = schemaMin || getCellSize(schema.cellType || 'DEFAULT').minWidth || 96;
