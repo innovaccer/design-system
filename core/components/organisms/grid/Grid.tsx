@@ -884,6 +884,7 @@ export class Grid extends React.Component<GridProps, GridState> {
               isSortingListUpdated: this.state.isSortingListUpdated,
               updateIsSortingListUpdated: this.updateIsSortingListUpdated.bind(this),
               mainRemainder: this.state.mainRemainder,
+              onResizeEnd: this.scheduleAutoUnpinLayoutCheck.bind(this),
             }}
           >
             {showHead && (
