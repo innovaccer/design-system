@@ -108,6 +108,10 @@
   overflow-y: auto;
 }
 
+.Grid-rowGroup {
+  display: contents;
+}
+
 .Grid-rowWrapper {
   display: inline-flex;
   flex-direction: column;
@@ -240,12 +244,20 @@
   overflow: hidden;
 }
 
+.Grid-cell--head .Grid-cellContent:focus-visible {
+  box-shadow: inset 0 0 0 var(--border-width-05) var(--primary-focus);
+  border-radius: var(--border-radius-10);
+}
+
 .Grid-cellResize {
   position: absolute;
   right: 0;
   width: var(--spacing-10);
   cursor: ew-resize;
   height: 100%;
+  padding-right: var(--spacing-60);
+  margin-right: calc(-1 * var(--spacing-60));
+  box-sizing: content-box;
 }
 
 .Grid-cellSortIcon {
@@ -260,6 +272,11 @@
 
 .Grid-cellResize:hover {
   background: var(--primary);
+}
+
+.Grid-cellResize:focus-visible {
+  background: var(--primary);
+  outline: none;
 }
 
 .Grid-reorderHighlighter {
@@ -481,9 +498,10 @@
   background: var(--secondary-lighter);
 }
 
-.Grid--resource .Grid-row--body:focus {
+.Grid--resource .Grid-row--body:focus-visible {
   box-shadow: var(--shadow-spread) color-mod(var(--secondary) a(var(--opacity-4)));
-  outline: none;
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: calc(-1 * var(--spacing-05));
 }
 
 /* Selected States */
@@ -500,8 +518,9 @@
   background: var(--primary-lighter) !important;
 }
 
-.Grid-row--selected:focus {
-  outline: none;
+.Grid-row--selected:focus-visible {
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: calc(-1 * var(--spacing-05));
   box-shadow: var(--shadow-spread) color-mod(var(--primary) a(var(--opacity-4)));
 }
 
@@ -522,9 +541,8 @@
   background: var(--secondary-lighter);
 }
 
-.Grid--resource .Grid-row--body:focus .Grid-cellWrapper--pinned {
+.Grid--resource .Grid-row--body:focus-visible .Grid-cellWrapper--pinned {
   box-shadow: var(--shadow-spread) color-mod(var(--secondary) a(var(--opacity-4)));
-  outline: none;
 }
 
 /* Pinned Columns Selected State */
@@ -541,8 +559,7 @@
   background: var(--primary-lighter) !important;
 }
 
-.Grid-row--selected:focus .Grid-cellWrapper--pinned {
-  outline: none;
+.Grid-row--selected:focus-visible .Grid-cellWrapper--pinned {
   box-shadow: var(--shadow-spread) color-mod(var(--primary) a(var(--opacity-4)));
 }
 
@@ -553,7 +570,7 @@
 
 .Grid-row--head .Grid-cellGroup--pinned-left {
   border-style: inset;
-  border-right: var(--spacing-xs) solid rgba(213, 213, 213, var(--opacity-3));
+  border-right: var(--spacing-2-5) solid color-mod(var(--secondary-light) a(var(--opacity-3)));
   border-right-width: 4px;
   border-image: linear-gradient(
       to right,
@@ -567,7 +584,7 @@
 
 .Grid-row--head .Grid-cellGroup--pinned-right {
   border-style: inset;
-  border-left: var(--spacing-xs) solid rgba(213, 213, 213, var(--opacity-3));
+  border-left: var(--spacing-2-5) solid color-mod(var(--secondary-light) a(var(--opacity-3)));
   border-left-width: 4px;
   border-image: linear-gradient(
       to left,
@@ -583,7 +600,7 @@
 
 .Grid-cellWrapper--pinned-left {
   border-style: inset;
-  border-right: var(--spacing-xs) solid rgba(213, 213, 213, var(--opacity-3));
+  border-right: var(--spacing-2-5) solid color-mod(var(--secondary-light) a(var(--opacity-3)));
   border-right-width: 4px;
   border-image: linear-gradient(
       to right,
@@ -597,7 +614,7 @@
 
 .Grid-cellWrapper--pinned-right {
   border-style: inset;
-  border-left: var(--spacing-xs) solid rgba(213, 213, 213, var(--opacity-3));
+  border-left: var(--spacing-2-5) solid color-mod(var(--secondary-light) a(var(--opacity-3)));
   border-left-width: 4px;
   border-image: linear-gradient(
       to left,

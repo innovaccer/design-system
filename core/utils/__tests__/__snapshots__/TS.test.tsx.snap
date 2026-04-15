@@ -3790,12 +3790,15 @@ exports[`TS renders children 1`] = `
     </div>
   </div>
   <div
+    aria-label="Data grid"
     class="Grid Grid--data Grid--standard"
     data-test="DesignSystem-Grid"
+    role="grid"
   >
     <div
       class="Grid-head"
       data-test="DesignSystem-GridHead-wrapper"
+      role="rowgroup"
     >
       <div
         class="Grid-row Grid-row--head"
@@ -3803,7 +3806,12 @@ exports[`TS renders children 1`] = `
     </div>
     <div
       class="Grid-body"
-    />
+    >
+      <div
+        class="Grid-rowGroup"
+        role="rowgroup"
+      />
+    </div>
   </div>
   <div
     class="Table"
@@ -3813,8 +3821,10 @@ exports[`TS renders children 1`] = `
       class="Table-grid"
     >
       <div
+        aria-label="Data grid"
         class="Grid Grid--data Grid--standard"
         data-test="DesignSystem-Grid"
+        role="grid"
       >
         <div
           class="d-flex justify-content-center align-item-center w-100 h-100"
@@ -3849,12 +3859,15 @@ exports[`TS renders children 1`] = `
       class="Table-grid"
     >
       <div
+        aria-label="Data grid"
         class="Grid Grid--data Grid--standard"
         data-test="DesignSystem-Grid"
+        role="grid"
       >
         <div
           class="Grid-head"
           data-test="DesignSystem-GridHead-wrapper"
+          role="rowgroup"
         >
           <div
             class="Grid-row Grid-row--head"

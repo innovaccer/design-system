@@ -45,10 +45,13 @@ export const GridHead = (props: GridHeadProps) => {
     [styles['Grid-row--head']]: true,
   });
 
+  const hasColumns =
+    leftPinnedSchema.length > 0 || unpinnedSchema.length > 0 || rightPinnedSchema.length > 0 || withCheckbox;
+
   const renderCheckbox = (show: boolean) => {
     if (!show || !withCheckbox) return null;
     return (
-      <div className={CheckboxClass}>
+      <div className={CheckboxClass} role="columnheader">
         {loading ? (
           <Placeholder className="mr-4" />
         ) : (
@@ -98,8 +101,8 @@ export const GridHead = (props: GridHeadProps) => {
   };
 
   return (
-    <div className={styles['Grid-head']} data-test="DesignSystem-GridHead-wrapper">
-      <div className={RowClass}>
+    <div className={styles['Grid-head']} role="rowgroup" data-test="DesignSystem-GridHead-wrapper">
+      <div className={RowClass} role={hasColumns ? 'row' : undefined}>
         {renderSchema(leftPinnedSchema, !!leftPinnedSchema.length, 'left')}
         {renderSchema(unpinnedSchema, !leftPinnedSchema.length && !!unpinnedSchema.length)}
         {renderSchema(rightPinnedSchema, false, 'right')}
