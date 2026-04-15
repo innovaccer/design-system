@@ -3951,12 +3951,10 @@ exports[`TS renders children 1`] = `
           class="PageHeader"
         >
           <div
-            class="Row w-100"
-            data-test="DesignSystem-Row"
+            class="PageHeader-row"
           >
             <div
-              class="Col Col--12 Col--m-12 Col--xl-12"
-              data-test="DesignSystem-Column"
+              class="PageHeader-group--title"
             >
               <div
                 class="PageHeader-titleWrapper"
@@ -3973,9 +3971,6 @@ exports[`TS renders children 1`] = `
           </div>
         </div>
       </div>
-      <div
-        class="pl-3"
-      />
     </div>
     <hr
       aria-orientation="horizontal"
