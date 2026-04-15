@@ -1,8 +1,54 @@
 import * as React from 'react';
-import { HorizontalNav, Breadcrumbs, Badge, MetaList, PageHeader, StatusHint, Row, Column } from '@/index';
+import {
+  HorizontalNav,
+  Breadcrumbs,
+  Badge,
+  MetaList,
+  PageHeader,
+  StatusHint,
+  Button,
+  AvatarGroup,
+  Text,
+  Menu,
+} from '@/index';
 import { action } from '@/utils/action';
+import '../../style.css';
 
 export const withNavigation = () => {
+  const options = [
+    {
+      label: 'Option 1',
+      value: 'Option 1',
+    },
+    {
+      label: 'Option 2',
+      value: 'Option 2',
+    },
+    {
+      label: 'Option 3',
+      value: 'Option 3',
+    },
+  ];
+
+  const list = [
+    {
+      firstName: 'John',
+      lastName: 'Doe',
+    },
+    {
+      firstName: 'Steven',
+      lastName: 'Packton',
+    },
+    {
+      firstName: 'Nancy',
+      lastName: 'Wheeler',
+    },
+    {
+      firstName: 'Monica',
+      lastName: 'Geller',
+    },
+  ];
+
   const navigationData = [
     {
       name: 'menu_1',
@@ -23,7 +69,31 @@ export const withNavigation = () => {
   };
 
   const navigation = <HorizontalNav menus={navigationData} onClick={onClickHandler} active={active} />;
-  const actions = <div className="d-flex justify-content-end align-items-center" />;
+  const actions = (
+    <div className="d-flex justify-content-end align-items-center">
+      <Text appearance="subtle" className="mr-4">
+        Few minutes ago
+      </Text>
+      <AvatarGroup
+        className="mr-4"
+        list={list}
+        borderColor="var(--secondary-lightest)"
+        popoverOptions={{ dark: true, on: 'hover', position: 'bottom' }}
+      />
+      <div className="mr-4">
+        <Menu trigger={<Menu.Trigger />}>
+          <Menu.List>
+            {options.map((item, key) => {
+              const { label } = item;
+              return <Menu.Item key={key}>{label}</Menu.Item>;
+            })}
+          </Menu.List>
+        </Menu>
+      </div>
+      <Button className="mr-4">Finish later</Button>
+      <Button appearance="primary">Next</Button>
+    </div>
+  );
   const breadcrumbs = (
     <Breadcrumbs
       list={[
@@ -45,27 +115,65 @@ export const withNavigation = () => {
   const status = <StatusHint appearance="info">Ongoing</StatusHint>;
 
   return (
-    <Row>
-      <Column size={11}>
-        <div className="bg-secondary-lightest">
-          <PageHeader
-            title="Covid-19"
-            separator={false}
-            navigationPosition="center"
-            navigation={navigation}
-            actions={actions}
-            breadcrumbs={breadcrumbs}
-            badge={badge}
-            status={status}
-            meta={meta}
-          />
-        </div>
-      </Column>
-    </Row>
+    <div className="bg-secondary-lightest Pageheader-longWrapper">
+      <PageHeader
+        title="Covid-19"
+        separator={false}
+        navigationPosition="center"
+        navigation={navigation}
+        actions={actions}
+        breadcrumbs={breadcrumbs}
+        badge={badge}
+        status={status}
+        meta={meta}
+      />
+    </div>
   );
 };
 
-const customCode = `() => {
+const customCode = `/*
+// style.css
+.Pageheader-longWrapper {
+    width: 1200px;
+}
+
+*/
+
+() => {
+  const options = [
+    {
+      label: 'Option 1',
+      value: 'Option 1',
+    },
+    {
+      label: 'Option 2',
+      value: 'Option 2',
+    },
+    {
+      label: 'Option 3',
+      value: 'Option 3',
+    },
+  ];
+
+  const list = [
+    {
+      firstName: 'John',
+      lastName: 'Doe',
+    },
+    {
+      firstName: 'Steven',
+      lastName: 'Packton',
+    },
+    {
+      firstName: 'Nancy',
+      lastName: 'Wheeler',
+    },
+    {
+      firstName: 'Monica',
+      lastName: 'Geller',
+    },
+  ];
+
   const navigationData = [
     {
       name: 'menu_1',
@@ -93,7 +201,28 @@ const customCode = `() => {
     />
   );
   const actions = (
-    <div className="d-flex justify-content-end align-items-center"/>
+    <div className="d-flex justify-content-end align-items-center">
+      <Text appearance="subtle" className="mr-4">Few minutes ago</Text>
+      <AvatarGroup borderColor="var(--secondary-lightest)" className="mr-4" list={list} popoverOptions={{ dark: true, on: 'hover', position: 'bottom' }} />
+      <div className="mr-4">
+        <Menu trigger={<Menu.Trigger />}>
+          <Menu.List>
+            {
+              options.map((item, key) => {
+                const { label } = item;
+                return (
+                  <Menu.Item key={key}>
+                    {label}
+                  </Menu.Item>
+                );
+              })
+            }
+          </Menu.List>
+        </Menu>
+      </div>
+      <Button className="mr-4">Finish later</Button>
+      <Button appearance="primary">Next</Button>
+    </div>
   );
   const breadcrumbs = (
     <Breadcrumbs
@@ -116,23 +245,19 @@ const customCode = `() => {
   const status = <StatusHint appearance="info">Ongoing</StatusHint>;
 
   return (
-    <Row>
-      <Column size={11}>
-        <div className="bg-secondary-lightest">
-          <PageHeader
-            title="Covid-19"
-            separator={false}
-            navigationPosition="center"
-            navigation={navigation}
-            actions={actions}
-            breadcrumbs={breadcrumbs}
-            badge={badge}
-            status={status}
-            meta={meta}
-          />
-        </div>
-      </Column>
-    </Row>
+    <div className="bg-secondary-lightest Pageheader-longWrapper">
+      <PageHeader
+        title="Covid-19"
+        separator={false}
+        navigationPosition="center"
+        navigation={navigation}
+        actions={actions}
+        breadcrumbs={breadcrumbs}
+        badge={badge}
+        status={status}
+        meta={meta}
+      />
+    </div>
   );
 }`;
 

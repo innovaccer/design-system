@@ -9,7 +9,7 @@ exports[`Navigation component
       data-test="DesignSystem-PageHeader"
     >
       <div
-        class="PageHeader-wrapper PageHeader-wrapper--withTabs"
+        class="PageHeader-wrapper PageHeader-wrapper--withTabs PageHeader-wrapper--level1 PageHeader-wrapper--withActions"
       >
         <div
           class="pl-6"
@@ -71,12 +71,10 @@ exports[`Navigation component
             class="PageHeader"
           >
             <div
-              class="Row w-100"
-              data-test="DesignSystem-Row"
+              class="PageHeader-row"
             >
               <div
-                class="Col Col--8 Col--m-8 Col--xl-8"
-                data-test="DesignSystem-Column"
+                class="PageHeader-group--title"
               >
                 <div
                   class="PageHeader-titleWrapper"
@@ -95,97 +93,93 @@ exports[`Navigation component
                     Sent
                   </span>
                 </div>
-              </div>
-              <div
-                class="Col Col--4 Col--m-4 Col--xl-4"
-                data-test="DesignSystem-PageHeader--Actions"
-              >
                 <div
-                  class="PageHeader-actionsWrapper"
+                  class="PageHeader-statusWrapper"
+                  data-test="DesignSystem-PageHeader--Status"
                 >
-                  <button
-                    class="Button Button--regular Button--basic Button--iconAlign-left"
-                    data-test="DesignSystem-Button"
-                    tabindex="0"
+                  <div
+                    class="StatusHint"
+                    data-test="DesignSystem-StatusHint"
                   >
                     <span
-                      class="Button-text"
+                      aria-label="default status"
+                      class="StatusHint-icon StatusHint--default mr-4"
+                      data-test="DesignSystem-StatusHint--Icon"
+                      role="img"
+                    />
+                    <span
+                      class="Text Text--default Text--medium Text--regular"
+                      data-test="DesignSystem-StatusHint--Text"
                     >
-                      Action Section
+                      Ongoing
                     </span>
-                  </button>
+                  </div>
+                  <div
+                    class="MetaList"
+                    data-test="DesignSystem-MetaList"
+                  >
+                    <span
+                      class="MetaList-item"
+                    >
+                      <span
+                        class="Meta"
+                        data-test="DesignSystem-MetaList--Meta"
+                      >
+                        <span
+                          class="Text Text--subtle Text--regular"
+                          data-test="DesignSystem-MetaList--MetaLabel"
+                        >
+                          Text
+                        </span>
+                      </span>
+                      <i
+                        aria-hidden="true"
+                        class="material-symbols material-symbols-rounded Icon Icon--disabled MetaList-seperator"
+                        data-test="DesignSystem-MetaList--rightSeperator"
+                        style="font-size: 8px; width: 8px;"
+                      >
+                        fiber_manual_record
+                      </i>
+                    </span>
+                    <span
+                      class="MetaList-item"
+                    >
+                      <span
+                        class="Meta"
+                        data-test="DesignSystem-MetaList--Meta"
+                      >
+                        <span
+                          class="Text Text--subtle Text--regular"
+                          data-test="DesignSystem-MetaList--MetaLabel"
+                        >
+                          Email
+                        </span>
+                      </span>
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div
-              class="PageHeader-statusWrapper mb-3"
-              data-test="DesignSystem-PageHeader--Status"
-            >
               <div
-                class="StatusHint"
-                data-test="DesignSystem-StatusHint"
+                class="PageHeader-group--actions"
+                data-test="DesignSystem-PageHeader--Actions"
               >
-                <span
-                  aria-label="default status"
-                  class="StatusHint-icon StatusHint--default mr-4"
-                  data-test="DesignSystem-StatusHint--Icon"
-                  role="img"
-                />
-                <span
-                  class="Text Text--default Text--medium Text--regular"
-                  data-test="DesignSystem-StatusHint--Text"
-                >
-                  Ongoing
-                </span>
-              </div>
-              <div
-                class="MetaList"
-                data-test="DesignSystem-MetaList"
-              >
-                <span
-                  class="MetaList-item"
+                <button
+                  class="Button Button--regular Button--basic Button--iconAlign-left"
+                  data-test="DesignSystem-Button"
+                  tabindex="0"
                 >
                   <span
-                    class="Meta"
-                    data-test="DesignSystem-MetaList--Meta"
+                    class="Button-text"
                   >
-                    <span
-                      class="Text Text--subtle Text--regular"
-                      data-test="DesignSystem-MetaList--MetaLabel"
-                    >
-                      Text
-                    </span>
+                    Action Section
                   </span>
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon Icon--disabled MetaList-seperator"
-                    data-test="DesignSystem-MetaList--rightSeperator"
-                    style="font-size: 8px; width: 8px;"
-                  >
-                    fiber_manual_record
-                  </i>
-                </span>
-                <span
-                  class="MetaList-item"
-                >
-                  <span
-                    class="Meta"
-                    data-test="DesignSystem-MetaList--Meta"
-                  >
-                    <span
-                      class="Text Text--subtle Text--regular"
-                      data-test="DesignSystem-MetaList--MetaLabel"
-                    >
-                      Email
-                    </span>
-                  </span>
-                </span>
+                </button>
               </div>
             </div>
           </div>
         </div>
         <div
-          class="pl-3"
+          class="pl-3 PageHeader-bottom"
         >
           <div
             class="PageHeader-navigationWrapper"
@@ -336,7 +330,7 @@ exports[`Navigation component
       data-test="DesignSystem-PageHeader"
     >
       <div
-        class="PageHeader-wrapper PageHeader-wrapper--withTabs"
+        class="PageHeader-wrapper PageHeader-wrapper--withTabs PageHeader-wrapper--level1 PageHeader-wrapper--withActions"
       >
         <div
           class="pl-6"
@@ -398,12 +392,10 @@ exports[`Navigation component
             class="PageHeader"
           >
             <div
-              class="Row w-100"
-              data-test="DesignSystem-Row"
+              class="PageHeader-row PageHeader-row--withCenter"
             >
               <div
-                class="Col Col--4 Col--m-4 Col--xl-4"
-                data-test="DesignSystem-Column"
+                class="PageHeader-group--title"
               >
                 <div
                   class="PageHeader-titleWrapper"
@@ -422,9 +414,74 @@ exports[`Navigation component
                     Sent
                   </span>
                 </div>
+                <div
+                  class="PageHeader-statusWrapper"
+                  data-test="DesignSystem-PageHeader--Status"
+                >
+                  <div
+                    class="StatusHint"
+                    data-test="DesignSystem-StatusHint"
+                  >
+                    <span
+                      aria-label="default status"
+                      class="StatusHint-icon StatusHint--default mr-4"
+                      data-test="DesignSystem-StatusHint--Icon"
+                      role="img"
+                    />
+                    <span
+                      class="Text Text--default Text--medium Text--regular"
+                      data-test="DesignSystem-StatusHint--Text"
+                    >
+                      Ongoing
+                    </span>
+                  </div>
+                  <div
+                    class="MetaList"
+                    data-test="DesignSystem-MetaList"
+                  >
+                    <span
+                      class="MetaList-item"
+                    >
+                      <span
+                        class="Meta"
+                        data-test="DesignSystem-MetaList--Meta"
+                      >
+                        <span
+                          class="Text Text--subtle Text--regular"
+                          data-test="DesignSystem-MetaList--MetaLabel"
+                        >
+                          Text
+                        </span>
+                      </span>
+                      <i
+                        aria-hidden="true"
+                        class="material-symbols material-symbols-rounded Icon Icon--disabled MetaList-seperator"
+                        data-test="DesignSystem-MetaList--rightSeperator"
+                        style="font-size: 8px; width: 8px;"
+                      >
+                        fiber_manual_record
+                      </i>
+                    </span>
+                    <span
+                      class="MetaList-item"
+                    >
+                      <span
+                        class="Meta"
+                        data-test="DesignSystem-MetaList--Meta"
+                      >
+                        <span
+                          class="Text Text--subtle Text--regular"
+                          data-test="DesignSystem-MetaList--MetaLabel"
+                        >
+                          Email
+                        </span>
+                      </span>
+                    </span>
+                  </div>
+                </div>
               </div>
               <div
-                class="Col Col--4 Col--m-4 Col--xl-4"
+                class="PageHeader-group--center"
                 data-test="DesignSystem-PageHeader--CenterNav"
               >
                 <div
@@ -463,95 +520,26 @@ exports[`Navigation component
                 </div>
               </div>
               <div
-                class="Col Col--4 Col--m-4 Col--xl-4"
+                class="PageHeader-group--actions"
                 data-test="DesignSystem-PageHeader--Actions"
               >
-                <div
-                  class="PageHeader-actionsWrapper"
-                >
-                  <button
-                    class="Button Button--regular Button--basic Button--iconAlign-left"
-                    data-test="DesignSystem-Button"
-                    tabindex="0"
-                  >
-                    <span
-                      class="Button-text"
-                    >
-                      Action Section
-                    </span>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div
-              class="PageHeader-statusWrapper mb-3"
-              data-test="DesignSystem-PageHeader--Status"
-            >
-              <div
-                class="StatusHint"
-                data-test="DesignSystem-StatusHint"
-              >
-                <span
-                  aria-label="default status"
-                  class="StatusHint-icon StatusHint--default mr-4"
-                  data-test="DesignSystem-StatusHint--Icon"
-                  role="img"
-                />
-                <span
-                  class="Text Text--default Text--medium Text--regular"
-                  data-test="DesignSystem-StatusHint--Text"
-                >
-                  Ongoing
-                </span>
-              </div>
-              <div
-                class="MetaList"
-                data-test="DesignSystem-MetaList"
-              >
-                <span
-                  class="MetaList-item"
+                <button
+                  class="Button Button--regular Button--basic Button--iconAlign-left"
+                  data-test="DesignSystem-Button"
+                  tabindex="0"
                 >
                   <span
-                    class="Meta"
-                    data-test="DesignSystem-MetaList--Meta"
+                    class="Button-text"
                   >
-                    <span
-                      class="Text Text--subtle Text--regular"
-                      data-test="DesignSystem-MetaList--MetaLabel"
-                    >
-                      Text
-                    </span>
+                    Action Section
                   </span>
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon Icon--disabled MetaList-seperator"
-                    data-test="DesignSystem-MetaList--rightSeperator"
-                    style="font-size: 8px; width: 8px;"
-                  >
-                    fiber_manual_record
-                  </i>
-                </span>
-                <span
-                  class="MetaList-item"
-                >
-                  <span
-                    class="Meta"
-                    data-test="DesignSystem-MetaList--Meta"
-                  >
-                    <span
-                      class="Text Text--subtle Text--regular"
-                      data-test="DesignSystem-MetaList--MetaLabel"
-                    >
-                      Email
-                    </span>
-                  </span>
-                </span>
+                </button>
               </div>
             </div>
           </div>
         </div>
         <div
-          class="pl-3"
+          class="pl-3 PageHeader-bottom"
         >
           <div
             data-test="DesignSystem-PageHeader--Tabs"
@@ -668,7 +656,7 @@ exports[`Navigation component
       data-test="DesignSystem-PageHeader"
     >
       <div
-        class="PageHeader-wrapper PageHeader-wrapper--withTabs"
+        class="PageHeader-wrapper PageHeader-wrapper--withTabs PageHeader-wrapper--level1 PageHeader-wrapper--withActions"
       >
         <div
           class="pl-6"
@@ -730,12 +718,10 @@ exports[`Navigation component
             class="PageHeader"
           >
             <div
-              class="Row w-100"
-              data-test="DesignSystem-Row"
+              class="PageHeader-row"
             >
               <div
-                class="Col Col--8 Col--m-8 Col--xl-8"
-                data-test="DesignSystem-Column"
+                class="PageHeader-group--title"
               >
                 <div
                   class="PageHeader-titleWrapper"
@@ -754,97 +740,93 @@ exports[`Navigation component
                     Sent
                   </span>
                 </div>
-              </div>
-              <div
-                class="Col Col--4 Col--m-4 Col--xl-4"
-                data-test="DesignSystem-PageHeader--Actions"
-              >
                 <div
-                  class="PageHeader-actionsWrapper"
+                  class="PageHeader-statusWrapper"
+                  data-test="DesignSystem-PageHeader--Status"
                 >
-                  <button
-                    class="Button Button--regular Button--basic Button--iconAlign-left"
-                    data-test="DesignSystem-Button"
-                    tabindex="0"
+                  <div
+                    class="StatusHint"
+                    data-test="DesignSystem-StatusHint"
                   >
                     <span
-                      class="Button-text"
+                      aria-label="default status"
+                      class="StatusHint-icon StatusHint--default mr-4"
+                      data-test="DesignSystem-StatusHint--Icon"
+                      role="img"
+                    />
+                    <span
+                      class="Text Text--default Text--medium Text--regular"
+                      data-test="DesignSystem-StatusHint--Text"
                     >
-                      Action Section
+                      Ongoing
                     </span>
-                  </button>
+                  </div>
+                  <div
+                    class="MetaList"
+                    data-test="DesignSystem-MetaList"
+                  >
+                    <span
+                      class="MetaList-item"
+                    >
+                      <span
+                        class="Meta"
+                        data-test="DesignSystem-MetaList--Meta"
+                      >
+                        <span
+                          class="Text Text--subtle Text--regular"
+                          data-test="DesignSystem-MetaList--MetaLabel"
+                        >
+                          Text
+                        </span>
+                      </span>
+                      <i
+                        aria-hidden="true"
+                        class="material-symbols material-symbols-rounded Icon Icon--disabled MetaList-seperator"
+                        data-test="DesignSystem-MetaList--rightSeperator"
+                        style="font-size: 8px; width: 8px;"
+                      >
+                        fiber_manual_record
+                      </i>
+                    </span>
+                    <span
+                      class="MetaList-item"
+                    >
+                      <span
+                        class="Meta"
+                        data-test="DesignSystem-MetaList--Meta"
+                      >
+                        <span
+                          class="Text Text--subtle Text--regular"
+                          data-test="DesignSystem-MetaList--MetaLabel"
+                        >
+                          Email
+                        </span>
+                      </span>
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div
-              class="PageHeader-statusWrapper mb-3"
-              data-test="DesignSystem-PageHeader--Status"
-            >
               <div
-                class="StatusHint"
-                data-test="DesignSystem-StatusHint"
+                class="PageHeader-group--actions"
+                data-test="DesignSystem-PageHeader--Actions"
               >
-                <span
-                  aria-label="default status"
-                  class="StatusHint-icon StatusHint--default mr-4"
-                  data-test="DesignSystem-StatusHint--Icon"
-                  role="img"
-                />
-                <span
-                  class="Text Text--default Text--medium Text--regular"
-                  data-test="DesignSystem-StatusHint--Text"
-                >
-                  Ongoing
-                </span>
-              </div>
-              <div
-                class="MetaList"
-                data-test="DesignSystem-MetaList"
-              >
-                <span
-                  class="MetaList-item"
+                <button
+                  class="Button Button--regular Button--basic Button--iconAlign-left"
+                  data-test="DesignSystem-Button"
+                  tabindex="0"
                 >
                   <span
-                    class="Meta"
-                    data-test="DesignSystem-MetaList--Meta"
+                    class="Button-text"
                   >
-                    <span
-                      class="Text Text--subtle Text--regular"
-                      data-test="DesignSystem-MetaList--MetaLabel"
-                    >
-                      Text
-                    </span>
+                    Action Section
                   </span>
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon Icon--disabled MetaList-seperator"
-                    data-test="DesignSystem-MetaList--rightSeperator"
-                    style="font-size: 8px; width: 8px;"
-                  >
-                    fiber_manual_record
-                  </i>
-                </span>
-                <span
-                  class="MetaList-item"
-                >
-                  <span
-                    class="Meta"
-                    data-test="DesignSystem-MetaList--Meta"
-                  >
-                    <span
-                      class="Text Text--subtle Text--regular"
-                      data-test="DesignSystem-MetaList--MetaLabel"
-                    >
-                      Email
-                    </span>
-                  </span>
-                </span>
+                </button>
               </div>
             </div>
           </div>
         </div>
         <div
-          class="pl-3"
+          class="pl-3 PageHeader-bottom"
         >
           <div
             class="PageHeader-navigationWrapper"
@@ -1009,12 +991,10 @@ exports[`Navigation component
             class="PageHeader"
           >
             <div
-              class="Row w-100"
-              data-test="DesignSystem-Row"
+              class="PageHeader-row"
             >
               <div
-                class="Col Col--12 Col--m-12 Col--xl-12"
-                data-test="DesignSystem-Column"
+                class="PageHeader-group--title"
               >
                 <div
                   class="PageHeader-titleWrapper"
@@ -1032,7 +1012,7 @@ exports[`Navigation component
           </div>
         </div>
         <div
-          class="pl-3"
+          class="pl-3 PageHeader-bottom"
         >
           <div
             data-test="DesignSystem-PageHeader--Tabs"
@@ -1156,12 +1136,10 @@ exports[`Navigation component
             class="PageHeader"
           >
             <div
-              class="Row w-100"
-              data-test="DesignSystem-Row"
+              class="PageHeader-row PageHeader-row--withCenter"
             >
               <div
-                class="Col Col--4 Col--m-4 Col--xl-4"
-                data-test="DesignSystem-Column"
+                class="PageHeader-group--title"
               >
                 <div
                   class="PageHeader-titleWrapper"
@@ -1176,7 +1154,7 @@ exports[`Navigation component
                 </div>
               </div>
               <div
-                class="Col Col--4 Col--m-4 Col--xl-4"
+                class="PageHeader-group--center"
                 data-test="DesignSystem-PageHeader--CenterNav"
               >
                 <div
@@ -1257,19 +1235,147 @@ exports[`Navigation component
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="pl-3 PageHeader-bottom"
+        />
+      </div>
+      <hr
+        aria-orientation="horizontal"
+        class="Divider Divider--horizontal Divider--header"
+        data-test="DesignSystem-Divider"
+      />
+    </div>
+  </div>
+  <div>
+    <div
+      data-test="DesignSystem-PageHeader"
+    >
+      <div
+        class="PageHeader-wrapper PageHeader-wrapper--withActions"
+      >
+        <div
+          class="d-flex pl-6"
+        >
+          <div
+            class="PageHeader"
+          >
+            <div
+              class="PageHeader-row"
+            >
               <div
-                class="Col Col--4 Col--m-4 Col--xl-4"
-                data-test="DesignSystem-PageHeader--Actions"
+                class="PageHeader-group--title"
               >
                 <div
-                  class="PageHeader-actionsWrapper"
-                />
+                  class="PageHeader-titleWrapper"
+                  data-test="DesignSystem-PageHeader--Title"
+                >
+                  <h4
+                    class="Heading Heading--m Heading--default PageHeader-title"
+                    data-test="DesignSystem-Heading"
+                  >
+                    PageHeader title
+                  </h4>
+                </div>
+              </div>
+              <div
+                class="PageHeader-group--actions"
+                data-test="DesignSystem-PageHeader--Actions"
+              >
+                <button
+                  class="Button Button--regular Button--basic Button--iconAlign-left"
+                  data-test="DesignSystem-Button"
+                  tabindex="0"
+                >
+                  <span
+                    class="Button-text"
+                  >
+                    Action Section
+                  </span>
+                </button>
               </div>
             </div>
           </div>
         </div>
         <div
-          class="pl-3"
+          class="pl-3 PageHeader-bottom"
+        />
+      </div>
+      <hr
+        aria-orientation="horizontal"
+        class="Divider Divider--horizontal Divider--header"
+        data-test="DesignSystem-Divider"
+      />
+    </div>
+  </div>
+  <div>
+    <div
+      data-test="DesignSystem-PageHeader"
+    >
+      <div
+        class="PageHeader-wrapper PageHeader-wrapper--level1"
+      >
+        <div
+          class="pl-6"
+          data-test="DesignSystem-PageHeader--Breadcrumbs"
+        >
+          <nav
+            aria-label="Breadcrumb"
+            class="Breadcrumbs"
+            data-test="DesignSystem-Breadcrumbs"
+          >
+            <div
+              class="Breadcrumbs-item"
+              data-test="DesignSystem-Breadcrumbs-item"
+            >
+              <a
+                aria-disabled="false"
+                class="Link Link--tiny Link--subtle Breadcrumbs-link ellipsis--noWrap"
+                data-test="DesignSystem-Breadcrumbs-link"
+                href="/Senders"
+                tabindex="0"
+              >
+                Senders
+              </a>
+              <span
+                class="Breadcrumbs-itemSeparator"
+              >
+                /
+              </span>
+            </div>
+          </nav>
+        </div>
+        <div
+          class="d-flex pl-6"
+        >
+          <div
+            class="PageHeader"
+          >
+            <div
+              class="PageHeader-row"
+            >
+              <div
+                class="PageHeader-group--title"
+              >
+                <div
+                  class="PageHeader-titleWrapper"
+                  data-test="DesignSystem-PageHeader--Title"
+                >
+                  <h4
+                    class="Heading Heading--m Heading--default PageHeader-title"
+                    data-test="DesignSystem-Heading"
+                  >
+                    PageHeader title
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="pl-3 PageHeader-bottom"
         />
       </div>
       <hr
@@ -1293,12 +1399,61 @@ exports[`Navigation component
             class="PageHeader"
           >
             <div
-              class="Row w-100"
-              data-test="DesignSystem-Row"
+              class="PageHeader-row"
             >
               <div
-                class="Col Col--8 Col--m-8 Col--xl-8"
-                data-test="DesignSystem-Column"
+                class="PageHeader-group--title"
+              >
+                <div
+                  class="PageHeader-titleWrapper"
+                  data-test="DesignSystem-PageHeader--Title"
+                >
+                  <h4
+                    class="Heading Heading--m Heading--default PageHeader-title"
+                    data-test="DesignSystem-Heading"
+                  >
+                    PageHeader title
+                  </h4>
+                  <span
+                    class="Badge Badge--secondary"
+                    data-test="DesignSystem-Badge"
+                  >
+                    Sent
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="pl-3 PageHeader-bottom"
+        />
+      </div>
+      <hr
+        aria-orientation="horizontal"
+        class="Divider Divider--horizontal Divider--header"
+        data-test="DesignSystem-Divider"
+      />
+    </div>
+  </div>
+  <div>
+    <div
+      data-test="DesignSystem-PageHeader"
+    >
+      <div
+        class="PageHeader-wrapper"
+      >
+        <div
+          class="d-flex pl-6"
+        >
+          <div
+            class="PageHeader"
+          >
+            <div
+              class="PageHeader-row"
+            >
+              <div
+                class="PageHeader-group--title"
               >
                 <div
                   class="PageHeader-titleWrapper"
@@ -1312,381 +1467,245 @@ exports[`Navigation component
                   </h4>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="pl-3 PageHeader-bottom"
+        />
+      </div>
+      <hr
+        aria-orientation="horizontal"
+        class="Divider Divider--horizontal Divider--header"
+        data-test="DesignSystem-Divider"
+      />
+    </div>
+  </div>
+  <div>
+    <div
+      data-test="DesignSystem-PageHeader"
+    >
+      <div
+        class="PageHeader-wrapper PageHeader-wrapper--level1"
+      >
+        <div
+          class="d-flex pl-6"
+        >
+          <div
+            class="mr-5 my-3"
+            data-test="DesignSystem-PageHeader--Button"
+          >
+            <button
+              class="Button Button--tiny Button--tinySquare Button--basic"
+              data-test="DesignSystem-Button"
+              tabindex="0"
+            >
               <div
-                class="Col Col--4 Col--m-4 Col--xl-4"
-                data-test="DesignSystem-PageHeader--Actions"
+                class="Button-icon"
+                data-test="DesignSystem-Button--Icon-Wrapper"
+              >
+                <i
+                  class="material-symbols material-symbols-rounded Icon"
+                  data-test="DesignSystem-Button--Icon"
+                  style="font-size: 14px; width: 14px;"
+                >
+                  arrow_back
+                </i>
+              </div>
+            </button>
+          </div>
+          <div
+            class="PageHeader"
+          >
+            <div
+              class="PageHeader-row"
+            >
+              <div
+                class="PageHeader-group--title"
               >
                 <div
-                  class="PageHeader-actionsWrapper"
+                  class="PageHeader-titleWrapper"
+                  data-test="DesignSystem-PageHeader--Title"
                 >
-                  <button
-                    class="Button Button--regular Button--basic Button--iconAlign-left"
-                    data-test="DesignSystem-Button"
-                    tabindex="0"
+                  <h4
+                    class="Heading Heading--m Heading--default PageHeader-title"
+                    data-test="DesignSystem-Heading"
+                  >
+                    PageHeader title
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="pl-3 PageHeader-bottom"
+        />
+      </div>
+      <hr
+        aria-orientation="horizontal"
+        class="Divider Divider--horizontal Divider--header"
+        data-test="DesignSystem-Divider"
+      />
+    </div>
+  </div>
+  <div>
+    <div
+      data-test="DesignSystem-PageHeader"
+    >
+      <div
+        class="PageHeader-wrapper PageHeader-wrapper--withTabs PageHeader-wrapper--level1 PageHeader-wrapper--withActions"
+      >
+        <div
+          class="pl-6"
+          data-test="DesignSystem-PageHeader--Breadcrumbs"
+        >
+          <nav
+            aria-label="Breadcrumb"
+            class="Breadcrumbs"
+            data-test="DesignSystem-Breadcrumbs"
+          >
+            <div
+              class="Breadcrumbs-item"
+              data-test="DesignSystem-Breadcrumbs-item"
+            >
+              <a
+                aria-disabled="false"
+                class="Link Link--tiny Link--subtle Breadcrumbs-link ellipsis--noWrap"
+                data-test="DesignSystem-Breadcrumbs-link"
+                href="/Senders"
+                tabindex="0"
+              >
+                Senders
+              </a>
+              <span
+                class="Breadcrumbs-itemSeparator"
+              >
+                /
+              </span>
+            </div>
+          </nav>
+        </div>
+        <div
+          class="d-flex pl-6"
+        >
+          <div
+            class="mr-5 my-3"
+            data-test="DesignSystem-PageHeader--Button"
+          >
+            <button
+              class="Button Button--tiny Button--tinySquare Button--basic"
+              data-test="DesignSystem-Button"
+              tabindex="0"
+            >
+              <div
+                class="Button-icon"
+                data-test="DesignSystem-Button--Icon-Wrapper"
+              >
+                <i
+                  class="material-symbols material-symbols-rounded Icon"
+                  data-test="DesignSystem-Button--Icon"
+                  style="font-size: 14px; width: 14px;"
+                >
+                  arrow_back
+                </i>
+              </div>
+            </button>
+          </div>
+          <div
+            class="PageHeader"
+          >
+            <div
+              class="PageHeader-row PageHeader-row--withCenter"
+            >
+              <div
+                class="PageHeader-group--title"
+              >
+                <div
+                  class="PageHeader-titleWrapper"
+                  data-test="DesignSystem-PageHeader--Title"
+                >
+                  <h4
+                    class="Heading Heading--m Heading--default PageHeader-title"
+                    data-test="DesignSystem-Heading"
+                  >
+                    PageHeader title
+                  </h4>
+                  <span
+                    class="Badge Badge--secondary"
+                    data-test="DesignSystem-Badge"
+                  >
+                    Sent
+                  </span>
+                </div>
+                <div
+                  class="PageHeader-statusWrapper"
+                  data-test="DesignSystem-PageHeader--Status"
+                >
+                  <div
+                    class="StatusHint"
+                    data-test="DesignSystem-StatusHint"
                   >
                     <span
-                      class="Button-text"
+                      aria-label="default status"
+                      class="StatusHint-icon StatusHint--default mr-4"
+                      data-test="DesignSystem-StatusHint--Icon"
+                      role="img"
+                    />
+                    <span
+                      class="Text Text--default Text--medium Text--regular"
+                      data-test="DesignSystem-StatusHint--Text"
                     >
-                      Action Section
+                      Ongoing
                     </span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="pl-3"
-        />
-      </div>
-      <hr
-        aria-orientation="horizontal"
-        class="Divider Divider--horizontal Divider--header"
-        data-test="DesignSystem-Divider"
-      />
-    </div>
-  </div>
-  <div>
-    <div
-      data-test="DesignSystem-PageHeader"
-    >
-      <div
-        class="PageHeader-wrapper"
-      >
-        <div
-          class="pl-6"
-          data-test="DesignSystem-PageHeader--Breadcrumbs"
-        >
-          <nav
-            aria-label="Breadcrumb"
-            class="Breadcrumbs"
-            data-test="DesignSystem-Breadcrumbs"
-          >
-            <div
-              class="Breadcrumbs-item"
-              data-test="DesignSystem-Breadcrumbs-item"
-            >
-              <a
-                aria-disabled="false"
-                class="Link Link--tiny Link--subtle Breadcrumbs-link ellipsis--noWrap"
-                data-test="DesignSystem-Breadcrumbs-link"
-                href="/Senders"
-                tabindex="0"
-              >
-                Senders
-              </a>
-              <span
-                class="Breadcrumbs-itemSeparator"
-              >
-                /
-              </span>
-            </div>
-          </nav>
-        </div>
-        <div
-          class="d-flex pl-6"
-        >
-          <div
-            class="PageHeader"
-          >
-            <div
-              class="Row w-100"
-              data-test="DesignSystem-Row"
-            >
-              <div
-                class="Col Col--12 Col--m-12 Col--xl-12"
-                data-test="DesignSystem-Column"
-              >
-                <div
-                  class="PageHeader-titleWrapper"
-                  data-test="DesignSystem-PageHeader--Title"
-                >
-                  <h4
-                    class="Heading Heading--m Heading--default PageHeader-title"
-                    data-test="DesignSystem-Heading"
+                  </div>
+                  <div
+                    class="MetaList"
+                    data-test="DesignSystem-MetaList"
                   >
-                    PageHeader title
-                  </h4>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="pl-3"
-        />
-      </div>
-      <hr
-        aria-orientation="horizontal"
-        class="Divider Divider--horizontal Divider--header"
-        data-test="DesignSystem-Divider"
-      />
-    </div>
-  </div>
-  <div>
-    <div
-      data-test="DesignSystem-PageHeader"
-    >
-      <div
-        class="PageHeader-wrapper"
-      >
-        <div
-          class="d-flex pl-6"
-        >
-          <div
-            class="PageHeader"
-          >
-            <div
-              class="Row w-100"
-              data-test="DesignSystem-Row"
-            >
-              <div
-                class="Col Col--12 Col--m-12 Col--xl-12"
-                data-test="DesignSystem-Column"
-              >
-                <div
-                  class="PageHeader-titleWrapper"
-                  data-test="DesignSystem-PageHeader--Title"
-                >
-                  <h4
-                    class="Heading Heading--m Heading--default PageHeader-title"
-                    data-test="DesignSystem-Heading"
-                  >
-                    PageHeader title
-                  </h4>
-                  <span
-                    class="Badge Badge--secondary"
-                    data-test="DesignSystem-Badge"
-                  >
-                    Sent
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="pl-3"
-        />
-      </div>
-      <hr
-        aria-orientation="horizontal"
-        class="Divider Divider--horizontal Divider--header"
-        data-test="DesignSystem-Divider"
-      />
-    </div>
-  </div>
-  <div>
-    <div
-      data-test="DesignSystem-PageHeader"
-    >
-      <div
-        class="PageHeader-wrapper"
-      >
-        <div
-          class="d-flex pl-6"
-        >
-          <div
-            class="PageHeader"
-          >
-            <div
-              class="Row w-100"
-              data-test="DesignSystem-Row"
-            >
-              <div
-                class="Col Col--12 Col--m-12 Col--xl-12"
-                data-test="DesignSystem-Column"
-              >
-                <div
-                  class="PageHeader-titleWrapper"
-                  data-test="DesignSystem-PageHeader--Title"
-                >
-                  <h4
-                    class="Heading Heading--m Heading--default PageHeader-title"
-                    data-test="DesignSystem-Heading"
-                  >
-                    PageHeader title
-                  </h4>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="pl-3"
-        />
-      </div>
-      <hr
-        aria-orientation="horizontal"
-        class="Divider Divider--horizontal Divider--header"
-        data-test="DesignSystem-Divider"
-      />
-    </div>
-  </div>
-  <div>
-    <div
-      data-test="DesignSystem-PageHeader"
-    >
-      <div
-        class="PageHeader-wrapper"
-      >
-        <div
-          class="d-flex pl-6"
-        >
-          <div
-            class="mr-5 my-3"
-            data-test="DesignSystem-PageHeader--Button"
-          >
-            <button
-              class="Button Button--tiny Button--tinySquare Button--basic"
-              data-test="DesignSystem-Button"
-              tabindex="0"
-            >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
-              >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 14px; width: 14px;"
-                >
-                  arrow_back
-                </i>
-              </div>
-            </button>
-          </div>
-          <div
-            class="PageHeader"
-          >
-            <div
-              class="Row w-100"
-              data-test="DesignSystem-Row"
-            >
-              <div
-                class="Col Col--12 Col--m-12 Col--xl-12"
-                data-test="DesignSystem-Column"
-              >
-                <div
-                  class="PageHeader-titleWrapper"
-                  data-test="DesignSystem-PageHeader--Title"
-                >
-                  <h4
-                    class="Heading Heading--m Heading--default PageHeader-title"
-                    data-test="DesignSystem-Heading"
-                  >
-                    PageHeader title
-                  </h4>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="pl-3"
-        />
-      </div>
-      <hr
-        aria-orientation="horizontal"
-        class="Divider Divider--horizontal Divider--header"
-        data-test="DesignSystem-Divider"
-      />
-    </div>
-  </div>
-  <div>
-    <div
-      data-test="DesignSystem-PageHeader"
-    >
-      <div
-        class="PageHeader-wrapper PageHeader-wrapper--withTabs"
-      >
-        <div
-          class="pl-6"
-          data-test="DesignSystem-PageHeader--Breadcrumbs"
-        >
-          <nav
-            aria-label="Breadcrumb"
-            class="Breadcrumbs"
-            data-test="DesignSystem-Breadcrumbs"
-          >
-            <div
-              class="Breadcrumbs-item"
-              data-test="DesignSystem-Breadcrumbs-item"
-            >
-              <a
-                aria-disabled="false"
-                class="Link Link--tiny Link--subtle Breadcrumbs-link ellipsis--noWrap"
-                data-test="DesignSystem-Breadcrumbs-link"
-                href="/Senders"
-                tabindex="0"
-              >
-                Senders
-              </a>
-              <span
-                class="Breadcrumbs-itemSeparator"
-              >
-                /
-              </span>
-            </div>
-          </nav>
-        </div>
-        <div
-          class="d-flex pl-6"
-        >
-          <div
-            class="mr-5 my-3"
-            data-test="DesignSystem-PageHeader--Button"
-          >
-            <button
-              class="Button Button--tiny Button--tinySquare Button--basic"
-              data-test="DesignSystem-Button"
-              tabindex="0"
-            >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
-              >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 14px; width: 14px;"
-                >
-                  arrow_back
-                </i>
-              </div>
-            </button>
-          </div>
-          <div
-            class="PageHeader"
-          >
-            <div
-              class="Row w-100"
-              data-test="DesignSystem-Row"
-            >
-              <div
-                class="Col Col--4 Col--m-4 Col--xl-4"
-                data-test="DesignSystem-Column"
-              >
-                <div
-                  class="PageHeader-titleWrapper"
-                  data-test="DesignSystem-PageHeader--Title"
-                >
-                  <h4
-                    class="Heading Heading--m Heading--default PageHeader-title"
-                    data-test="DesignSystem-Heading"
-                  >
-                    PageHeader title
-                  </h4>
-                  <span
-                    class="Badge Badge--secondary"
-                    data-test="DesignSystem-Badge"
-                  >
-                    Sent
-                  </span>
+                    <span
+                      class="MetaList-item"
+                    >
+                      <span
+                        class="Meta"
+                        data-test="DesignSystem-MetaList--Meta"
+                      >
+                        <span
+                          class="Text Text--subtle Text--regular"
+                          data-test="DesignSystem-MetaList--MetaLabel"
+                        >
+                          Text
+                        </span>
+                      </span>
+                      <i
+                        aria-hidden="true"
+                        class="material-symbols material-symbols-rounded Icon Icon--disabled MetaList-seperator"
+                        data-test="DesignSystem-MetaList--rightSeperator"
+                        style="font-size: 8px; width: 8px;"
+                      >
+                        fiber_manual_record
+                      </i>
+                    </span>
+                    <span
+                      class="MetaList-item"
+                    >
+                      <span
+                        class="Meta"
+                        data-test="DesignSystem-MetaList--Meta"
+                      >
+                        <span
+                          class="Text Text--subtle Text--regular"
+                          data-test="DesignSystem-MetaList--MetaLabel"
+                        >
+                          Email
+                        </span>
+                      </span>
+                    </span>
+                  </div>
                 </div>
               </div>
               <div
-                class="Col Col--4 Col--m-4 Col--xl-4"
+                class="PageHeader-group--center"
                 data-test="DesignSystem-PageHeader--CenterNav"
               >
                 <div
@@ -1725,95 +1744,26 @@ exports[`Navigation component
                 </div>
               </div>
               <div
-                class="Col Col--4 Col--m-4 Col--xl-4"
+                class="PageHeader-group--actions"
                 data-test="DesignSystem-PageHeader--Actions"
               >
-                <div
-                  class="PageHeader-actionsWrapper"
-                >
-                  <button
-                    class="Button Button--regular Button--basic Button--iconAlign-left"
-                    data-test="DesignSystem-Button"
-                    tabindex="0"
-                  >
-                    <span
-                      class="Button-text"
-                    >
-                      Action Section
-                    </span>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div
-              class="PageHeader-statusWrapper mb-3"
-              data-test="DesignSystem-PageHeader--Status"
-            >
-              <div
-                class="StatusHint"
-                data-test="DesignSystem-StatusHint"
-              >
-                <span
-                  aria-label="default status"
-                  class="StatusHint-icon StatusHint--default mr-4"
-                  data-test="DesignSystem-StatusHint--Icon"
-                  role="img"
-                />
-                <span
-                  class="Text Text--default Text--medium Text--regular"
-                  data-test="DesignSystem-StatusHint--Text"
-                >
-                  Ongoing
-                </span>
-              </div>
-              <div
-                class="MetaList"
-                data-test="DesignSystem-MetaList"
-              >
-                <span
-                  class="MetaList-item"
+                <button
+                  class="Button Button--regular Button--basic Button--iconAlign-left"
+                  data-test="DesignSystem-Button"
+                  tabindex="0"
                 >
                   <span
-                    class="Meta"
-                    data-test="DesignSystem-MetaList--Meta"
+                    class="Button-text"
                   >
-                    <span
-                      class="Text Text--subtle Text--regular"
-                      data-test="DesignSystem-MetaList--MetaLabel"
-                    >
-                      Text
-                    </span>
+                    Action Section
                   </span>
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon Icon--disabled MetaList-seperator"
-                    data-test="DesignSystem-MetaList--rightSeperator"
-                    style="font-size: 8px; width: 8px;"
-                  >
-                    fiber_manual_record
-                  </i>
-                </span>
-                <span
-                  class="MetaList-item"
-                >
-                  <span
-                    class="Meta"
-                    data-test="DesignSystem-MetaList--Meta"
-                  >
-                    <span
-                      class="Text Text--subtle Text--regular"
-                      data-test="DesignSystem-MetaList--MetaLabel"
-                    >
-                      Email
-                    </span>
-                  </span>
-                </span>
+                </button>
               </div>
             </div>
           </div>
         </div>
         <div
-          class="pl-3"
+          class="pl-3 PageHeader-bottom"
         >
           <div
             data-test="DesignSystem-PageHeader--Tabs"
