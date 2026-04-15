@@ -1238,9 +1238,6 @@ exports[`Navigation component
             </div>
           </div>
         </div>
-        <div
-          class="pl-3 PageHeader-bottom"
-        />
       </div>
       <hr
         aria-orientation="horizontal"
@@ -1299,9 +1296,6 @@ exports[`Navigation component
             </div>
           </div>
         </div>
-        <div
-          class="pl-3 PageHeader-bottom"
-        />
       </div>
       <hr
         aria-orientation="horizontal"
@@ -1374,9 +1368,6 @@ exports[`Navigation component
             </div>
           </div>
         </div>
-        <div
-          class="pl-3 PageHeader-bottom"
-        />
       </div>
       <hr
         aria-orientation="horizontal"
@@ -1425,9 +1416,6 @@ exports[`Navigation component
             </div>
           </div>
         </div>
-        <div
-          class="pl-3 PageHeader-bottom"
-        />
       </div>
       <hr
         aria-orientation="horizontal"
@@ -1470,9 +1458,6 @@ exports[`Navigation component
             </div>
           </div>
         </div>
-        <div
-          class="pl-3 PageHeader-bottom"
-        />
       </div>
       <hr
         aria-orientation="horizontal"
@@ -1538,9 +1523,6 @@ exports[`Navigation component
             </div>
           </div>
         </div>
-        <div
-          class="pl-3 PageHeader-bottom"
-        />
       </div>
       <hr
         aria-orientation="horizontal"
