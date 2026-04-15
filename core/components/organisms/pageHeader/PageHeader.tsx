@@ -127,10 +127,12 @@ export const PageHeader = (props: PageHeaderProps) => {
           </div>
         </div>
 
-        <div className={classNames('pl-3', styles['PageHeader-bottom'])}>
-          {navigationPosition === 'bottom' && <Nav navigation={navigation} stepper={stepper} />}
-          {tabs && <div data-test="DesignSystem-PageHeader--Tabs">{tabs}</div>}
-        </div>
+        {(tabs || navigationPosition === 'bottom') && (
+          <div className={classNames('pl-3', styles['PageHeader-bottom'])}>
+            {navigationPosition === 'bottom' && <Nav navigation={navigation} stepper={stepper} />}
+            {tabs && <div data-test="DesignSystem-PageHeader--Tabs">{tabs}</div>}
+          </div>
+        )}
       </div>
       {separator && <Divider appearance="header" />}
     </div>
