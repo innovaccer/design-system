@@ -158,7 +158,7 @@ const HeaderCell = (props: HeaderCellProps) => {
   const autoFitColumn = () => {
     const grid = el.current?.closest('[role="grid"]') as HTMLElement | null;
     if (!grid) return;
-    const cells = grid.querySelectorAll<HTMLElement>(`[data-col-id="${name}"]`);
+    const cells = grid.querySelectorAll<HTMLElement>(`[data-col-id="${CSS.escape(name)}"]`);
     let maxWidth = 0;
     cells.forEach((cell) => {
       maxWidth = Math.max(maxWidth, cell.scrollWidth);

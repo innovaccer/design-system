@@ -103,8 +103,6 @@ export const GridRow = (props: GridRowProps) => {
       ['align-items-end']: checkboxAlignment === 'bottom',
     });
 
-    const isRowTabStop = type === 'resource' && !loading && !data.disabled && !!onRowClick;
-
     return (
       <div
         className={CheckboxClass}
@@ -120,7 +118,6 @@ export const GridRow = (props: GridRowProps) => {
           <Checkbox
             checked={!!data._selected}
             aria-label={`Select ${rowLabel}`}
-            tabIndex={isRowTabStop ? -1 : 0}
             onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
               onSelect(rI, event.target.checked);
             }}
