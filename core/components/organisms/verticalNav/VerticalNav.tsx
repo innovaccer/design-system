@@ -75,6 +75,14 @@ export interface VerticalNavProps extends BaseProps {
    * **Please don't use this prop.**
    */
   showTooltip: boolean;
+  /**
+   * Accessible label for the navigation tree, announced by screen readers
+   */
+  'aria-label'?: string;
+  /**
+   * ID of an element whose text labels the navigation tree (e.g. an external heading)
+   */
+  'aria-labelledby'?: string;
 }
 
 /**
@@ -92,6 +100,8 @@ export const VerticalNav = (props: VerticalNavProps) => {
     className,
     customItemRenderer,
     customOptionRenderer,
+    'aria-label': ariaLabel,
+    'aria-labelledby': ariaLabelledby,
   } = props;
 
   const [subMenuExpandedState, setSubMenuExpandedState] = React.useState<Record<string, boolean>>({});
@@ -284,6 +294,8 @@ export const VerticalNav = (props: VerticalNavProps) => {
       className={classes}
       onKeyDown={handleKeyDown}
       onFocus={handleFocus}
+      aria-label={ariaLabel}
+      aria-labelledby={ariaLabelledby}
     >
       {renderList()}
     </div>
