@@ -39,10 +39,39 @@ export interface EditableInputProps extends BaseProps {
    * Callback function called on save action click
    */
   onChange?: (value: string) => void;
+  /**
+   * Accessible label for the editable field announced by screen readers
+   */
+  'aria-label'?: string;
+  /**
+   * ID of an element whose text labels the editable field (e.g. an external `<label>`)
+   */
+  'aria-labelledby'?: string;
+  /**
+   * ID of an element that provides additional description for the editable field
+   */
+  'aria-describedby'?: string;
+  /**
+   * HTML id for the editable field — use to associate an external `<label>` via `htmlFor`
+   */
+  id?: string;
 }
 
 export const EditableInput = (props: EditableInputProps) => {
-  const { error, size, errorMessage, placeholder, inputOptions, disableSaveAction, onChange, className } = props;
+  const {
+    error,
+    size,
+    errorMessage,
+    placeholder,
+    inputOptions,
+    disableSaveAction,
+    onChange,
+    className,
+    'aria-label': ariaLabel,
+    'aria-labelledby': ariaLabelledby,
+    'aria-describedby': ariaDescribedby,
+    id,
+  } = props;
 
   const { onChange: onInputChange, icon: inputIcon, disabled: inputDisabled, ...rest } = inputOptions;
 
@@ -202,12 +231,16 @@ export const EditableInput = (props: EditableInputProps) => {
     <div
       data-test="DesignSystem-EditableInput"
       {...baseProps}
+      id={id}
       className={EditableInputClass}
       onKeyDown={handleKeyDown}
       onClick={handleClick}
       role={editing ? undefined : 'button'}
       tabIndex={inputDisabled ? -1 : editing ? -1 : 0}
       aria-disabled={inputDisabled || undefined}
+      aria-label={ariaLabel}
+      aria-labelledby={ariaLabelledby}
+      aria-describedby={ariaDescribedby}
     >
       <Editable onChange={onChangeHandler} editing={editing}>
         {renderChildren()}
