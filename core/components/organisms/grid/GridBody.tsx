@@ -199,6 +199,7 @@ export const GridBody = (props: GridBodyProps) => {
   const memoizedVirtualScroll = React.useMemo(
     () => (
       <VirtualList
+        role="rowgroup"
         buffer={buffer}
         className={virtualListClassName}
         length={visibleRows}
@@ -269,13 +270,13 @@ export const GridBody = (props: GridBodyProps) => {
 
   return (
     <div className={styles['Grid-body']} onScroll={(event) => handleOnScroll(event)} ref={listRef}>
-      <div role="rowgroup" className={styles['Grid-rowGroup']}>
-        {enableRowVirtualization
-          ? memoizedVirtualScroll
-          : getArrayList().map((item, i) => {
-              return renderRow(i, item);
-            })}
-      </div>
+      {enableRowVirtualization ? (
+        memoizedVirtualScroll
+      ) : (
+        <div role="rowgroup" className={styles['Grid-rowGroup']}>
+          {getArrayList().map((item, i) => renderRow(i, item))}
+        </div>
+      )}
       {error && errorTemplate()}
       {retryDataFetch && retryFetchTemplate()}
       {isLoadingMore && <ProgressBar state="indeterminate" className="position-absolute bottom-0" size="small" />}

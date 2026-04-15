@@ -19,6 +19,7 @@ interface VirtualScrollProps extends BaseProps {
   totalLength: number;
   renderItem: (index: number, item?: object) => React.ReactElement;
   onScroll?: (event: Event, element: HTMLElement) => void;
+  role?: React.AriaRole;
 }
 
 const VirtualList = (props: VirtualScrollProps) => {

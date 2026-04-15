@@ -255,10 +255,8 @@
   width: var(--spacing-10);
   cursor: ew-resize;
   height: 100%;
-  /* Expand hit area to meet 24px minimum */
-  padding-left: var(--spacing-30);
-  padding-right: var(--spacing-30);
-  margin-right: calc(-1 * var(--spacing-30));
+  padding-right: var(--spacing-60);
+  margin-right: calc(-1 * var(--spacing-60));
   box-sizing: content-box;
 }
 
