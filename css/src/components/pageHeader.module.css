@@ -41,16 +41,12 @@
 }
 
 .PageHeader-navigationWrapper {
-  margin-top: var(--spacing-10);
+  margin-top: var(--spacing-30);
 }
 
+/* Zero out the top-margin when nav sits inside the main row (center position) */
 .PageHeader .PageHeader-navigationWrapper {
-  justify-content: center;
-  align-items: center;
-  margin-top: 0 !important;
-  padding-right: var(--spacing-20);
-  padding-left: var(--spacing-20);
-  display: flex;
+  margin-top: 0;
 }
 
 .PageHeader-title {
@@ -63,4 +59,132 @@
   display: flex;
   justify-content: flex-end;
   padding-left: var(--spacing-20);
+}
+
+/* =====================================================
+   Responsive main header row
+   ===================================================== */
+
+/* Base: flex layout — used by all variants */
+.PageHeader-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+}
+
+.PageHeader-group--title {
+  flex: 1 1 auto;
+  min-width: 0;
+  order: 1;
+}
+
+/* Center-nav group — navigation/stepper in center position */
+.PageHeader-group--center {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 var(--spacing-20);
+  min-width: 0;
+  order: 2;
+}
+
+/* Actions / right-side group */
+.PageHeader-group--actions {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-left: var(--spacing-20);
+  order: 3;
+}
+
+/* ≥ 768 px (center-nav variant): CSS Grid for true 3-col centering */
+@media (min-width: 768px) {
+  .PageHeader-row--withCenter {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+  }
+
+  .PageHeader-row--withCenter .PageHeader-group--title {
+    flex: none;
+    order: unset;
+    align-self: center;
+  }
+
+  .PageHeader-row--withCenter .PageHeader-group--center {
+    flex: none;
+    order: unset;
+  }
+
+  .PageHeader-row--withCenter .PageHeader-group--actions {
+    flex: none;
+    order: unset;
+    justify-content: flex-end;
+  }
+}
+
+/* 576 px – 767 px: collision reflow — center nav drops to its own row */
+@media (max-width: 767px) {
+  .PageHeader-row--withCenter .PageHeader-group--title {
+    flex: 1 1 auto;
+    min-width: 0;
+    order: 1;
+  }
+
+  .PageHeader-row--withCenter .PageHeader-group--actions {
+    flex: 0 0 auto;
+    order: 2;
+  }
+
+  .PageHeader-row--withCenter .PageHeader-group--center {
+    flex: 0 0 100%;
+    order: 3;
+    justify-content: flex-start;
+    padding: var(--spacing-30) 0 0;
+  }
+}
+
+/* < 576 px: stacked — Title+Status → Actions → Nav */
+@media (max-width: 575px) {
+  .PageHeader-row .PageHeader-group--title,
+  .PageHeader-row--withCenter .PageHeader-group--title {
+    flex: 0 0 100%;
+    order: 1;
+  }
+
+  .PageHeader-row .PageHeader-group--actions,
+  .PageHeader-row--withCenter .PageHeader-group--actions {
+    flex: 0 0 100%;
+    order: 2;
+    padding-left: 0;
+    padding-top: var(--spacing-10);
+    justify-content: flex-start;
+  }
+
+  .PageHeader-row--withCenter .PageHeader-group--center {
+    flex: 0 0 100%;
+    order: 3;
+    justify-content: flex-start;
+    padding: var(--spacing-30) 0 0;
+  }
+}
+
+/* =====================================================
+   Level 1: inter-section spacing when right group wraps
+   ===================================================== */
+
+/* At < 576 px, the actions group sits between title and nav/stepper/tabs.
+   For level 1 headers that have actions, increase the gap to 12 px so all
+   three sections (title, actions, nav) have consistent breathing room. */
+@media (max-width: 575px) {
+  .PageHeader-wrapper--level1.PageHeader-wrapper--withActions .PageHeader-group--actions {
+    padding-top: var(--spacing-30);
+  }
+
+  .PageHeader-wrapper--level1.PageHeader-wrapper--withActions .PageHeader-bottom {
+    margin-top: var(--spacing-30);
+  }
 }
