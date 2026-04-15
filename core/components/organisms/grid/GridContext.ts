@@ -8,6 +8,7 @@ type ContextProps = GridProps & {
   gridId: string;
   isSortingListUpdated: boolean;
   updateIsSortingListUpdated: () => void;
+  mainRemainder?: number | null;
 };
 const context = React.createContext<ContextProps>({
   ...defaultProps,
