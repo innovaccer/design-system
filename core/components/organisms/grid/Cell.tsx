@@ -6,6 +6,7 @@ import { DropdownProps, GridCellProps } from '@/index.type';
 import { isSpaceKey } from '@/accessibility/utils';
 import { resizeCol, hasSchema } from './utility';
 import { getCellSize, getWidth } from './columnUtility';
+import { AUTO_REPIN_BUFFER, AUTO_UNPIN_MAIN_REMAINDER_MAX } from './autoUnpinPinnedLayout';
 import { GridHeadProps } from './GridHead';
 import GridContext from './GridContext';
 import { FilterSelect } from '../table/FilterSelect';
@@ -59,6 +60,9 @@ const HeaderCell = (props: HeaderCellProps) => {
     headCellTooltip,
     showFilters,
     schema: schemaProp,
+    mainRemainder,
+    withCheckbox,
+    ref: gridRef,
   } = context;
 
   const {
@@ -93,13 +97,33 @@ const HeaderCell = (props: HeaderCellProps) => {
 
   const el = React.createRef<HTMLDivElement>();
 
+  let estimatedWidth = 176;
+  if (schema.width) {
+    const w = getWidth({ ref: gridRef, withCheckbox }, schema.width);
+    const parsed = typeof w === 'string' ? parseInt(w, 10) : w;
+    if (typeof parsed === 'number' && !isNaN(parsed)) estimatedWidth = parsed;
+  } else if (schema.minWidth) {
+    const mw = getWidth({ ref: gridRef, withCheckbox }, schema.minWidth);
+    const parsed = typeof mw === 'string' ? parseInt(mw, 10) : mw;
+    if (typeof parsed === 'number' && !isNaN(parsed)) estimatedWidth = Math.max(estimatedWidth, parsed);
+  }
+
+  // If the column is already pinned, its width is already subtracted from mainRemainder, 
+  // so we don't need to charge for it again when checking if it can be pinned to the other side.
+  const widthCost = pinned ? 0 : estimatedWidth;
+
+  const canPin =
+    mainRemainder === null ||
+    mainRemainder === undefined ||
+    mainRemainder >= AUTO_UNPIN_MAIN_REMAINDER_MAX + widthCost + AUTO_REPIN_BUFFER;
+
   const sortOptions: DropdownProps['options'] = [
     { label: 'Sort Ascending', value: 'sortAsc', icon: 'arrow_upward' },
     { label: 'Sort Descending', value: 'sortDesc', icon: 'arrow_downward' },
   ];
   const pinOptions: DropdownProps['options'] = [
-    { label: 'Pin Left', value: 'pinLeft', icon: 'skip_previous' },
-    { label: 'Pin Right', value: 'pinRight', icon: 'skip_next' },
+    { label: 'Pin Left', value: 'pinLeft', icon: 'skip_previous', disabled: !canPin },
+    { label: 'Pin Right', value: 'pinRight', icon: 'skip_next', disabled: !canPin },
   ];
   const unpinOption = { label: 'Unpin', value: 'unpin', icon: 'replay' };
   if (pinned === 'left') pinOptions[0] = unpinOption;
@@ -251,7 +275,7 @@ const HeaderCell = (props: HeaderCellProps) => {
           ) : (
             <div>
               <Dropdown
-                key={`${name}-${sorted}-${pinned}`}
+                key={`${name}-${sorted}-${pinned}-${canPin}`}
                 menu={true}
                 optionType="WITH_ICON"
                 triggerOptions={{

@@ -259,50 +259,53 @@ export const Header = (props: HeaderProps) => {
   return (
     <div className={gridStyles['Header']}>
       <div className={gridStyles['Header-content']}>
-        <div className="d-flex w-100">
-          {withSearch && (
-            <div className={gridStyles['Header-search']}>
-              <Input
-                data-test="DesignSystem-Table-Header--withSearch"
-                name="GridHeader-search"
-                icon="search"
-                placeholder={searchPlaceholder}
-                onChange={onSearchChange}
-                value={searchTerm}
-                onClear={() => updateSearchTerm && updateSearchTerm('')}
-                disabled={loading && !hasSchema(schema)}
-                autoComplete="off"
-              />
-            </div>
-          )}
-          {showFilters && filterSchema.length > 0 && (
-            <div className={gridStyles['Header-dropdown']}>
-              <div className={gridStyles['Header-filters']}>
-                {filterSchema.map((s) => {
-                  const { name, displayName, filters, filterType, filterOptions } = s;
+        <div className={gridStyles['Header-toolbar']}>
+          {(withSearch || (showFilters && filterSchema.length > 0)) && (
+            <div className={gridStyles['Header-searchFilters']}>
+              {withSearch && (
+                <div className={gridStyles['Header-search']}>
+                  <Input
+                    data-test="DesignSystem-Table-Header--withSearch"
+                    name="GridHeader-search"
+                    icon="search"
+                    placeholder={searchPlaceholder}
+                    onChange={onSearchChange}
+                    value={searchTerm}
+                    onClear={() => updateSearchTerm && updateSearchTerm('')}
+                    disabled={loading && !hasSchema(schema)}
+                    autoComplete="off"
+                  />
+                </div>
+              )}
+              {showFilters && filterSchema.length > 0 && (
+                <>
+                  {filterSchema.map((s) => {
+                    const { name, displayName, filters, filterType, filterOptions } = s;
 
-                  const selectFilters = filters
-                    ? filters.map((f) => ({
-                        label: f.label,
-                        value: f.value,
-                        id: f.value,
-                      }))
-                    : [];
+                    const selectFilters = filters
+                      ? filters.map((f) => ({
+                          label: f.label,
+                          value: f.value,
+                          id: f.value,
+                        }))
+                      : [];
 
-                  return (
-                    <FilterSelect
-                      key={name}
-                      name={name}
-                      displayName={displayName}
-                      filters={selectFilters}
-                      filterList={filterList}
-                      filterType={filterType}
-                      filterOptions={filterOptions}
-                      onChange={onFilterChange}
-                    />
-                  );
-                })}
-              </div>
+                    return (
+                      <FilterSelect
+                        key={name}
+                        name={name}
+                        displayName={displayName}
+                        filters={selectFilters}
+                        filterList={filterList}
+                        filterType={filterType}
+                        filterOptions={filterOptions}
+                        onChange={onFilterChange}
+                        className="my-0"
+                      />
+                    );
+                  })}
+                </>
+              )}
             </div>
           )}
           {children && <div className={gridStyles['Header-actions']}>{children}</div>}

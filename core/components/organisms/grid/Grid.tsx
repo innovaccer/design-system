@@ -3,7 +3,15 @@ import { DropdownProps, CheckboxProps, GridCellProps } from '@/index.type';
 import { GridHead } from './GridHead';
 import { GridBody } from './GridBody';
 import { HeaderCellRendererProps } from './Cell';
-import { sortColumn, pinColumn, hideColumn, moveToIndex, getSchema, isScrollAtTop } from './utility';
+import { sortColumn, pinColumn, hideColumn, moveToIndex, getSchema, isScrollAtTop, getWidth } from './utility';
+import {
+  AUTO_UNPIN_MAIN_REMAINDER_MAX,
+  AUTO_REPIN_BUFFER,
+  AutoUnpinStackEntry,
+  getNextAutoUnpinTarget,
+  pinnedLayoutSignature,
+  pruneAutoUnpinStack,
+} from './autoUnpinPinnedLayout';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { NestedRowProps } from './GridNestedRow';
 import classNames from 'classnames';
@@ -416,6 +424,7 @@ export interface GridState {
   init: boolean;
   prevPageInfo: PageInfo;
   isSortingListUpdated: boolean;
+  mainRemainder: number | null;
 }
 
 export class Grid extends React.Component<GridProps, GridState> {
@@ -424,6 +433,9 @@ export class Grid extends React.Component<GridProps, GridState> {
   gridId: string = uidGenerator();
   isHeadSyncing = false;
   isBodySyncing = false;
+  private autoUnpinStackRef: { current: AutoUnpinStackEntry[] } = { current: [] };
+  private autoUnpinResizeObserver: ResizeObserver | null = null;
+  private autoUnpinRafId: number | null = null;
 
   constructor(props: GridProps) {
     super(props);
@@ -434,6 +446,7 @@ export class Grid extends React.Component<GridProps, GridState> {
       init: false,
       prevPageInfo: pageInfo,
       isSortingListUpdated: false,
+      mainRemainder: null,
     };
   }
 
@@ -451,10 +464,12 @@ export class Grid extends React.Component<GridProps, GridState> {
 
   forceRerender() {
     this.forceUpdate();
+    this.scheduleAutoUnpinLayoutCheck();
   }
 
   componentWillUnmount() {
     this.removeScrollListeners();
+    this.teardownAutoUnpinObserver();
     window.removeEventListener('resize', this.forceRerender.bind(this));
   }
 
@@ -462,16 +477,30 @@ export class Grid extends React.Component<GridProps, GridState> {
     if (prevState.init !== this.state.init) {
       this.addScrollListeners();
       this.adjustPaddingRight();
+      if (this.state.init) {
+        this.setupAutoUnpinObserver();
+      }
     }
 
     if (prevProps.page !== this.props.page || prevProps.error !== this.props.error) {
       this.removeScrollListeners();
       this.addScrollListeners();
       this.adjustPaddingRight();
+      if (this.state.init) {
+        this.setupAutoUnpinObserver();
+      }
     }
 
     if (prevProps.data !== this.props.data) {
       this.adjustPaddingRight();
+    }
+
+    if (
+      this.state.init &&
+      (prevProps.loading !== this.props.loading ||
+        pinnedLayoutSignature(prevProps.schema) !== pinnedLayoutSignature(this.props.schema))
+    ) {
+      this.scheduleAutoUnpinLayoutCheck();
     }
   }
 
@@ -663,6 +692,141 @@ export class Grid extends React.Component<GridProps, GridState> {
     });
   };
 
+  getScrollContainer(): HTMLElement | null {
+    if (!this.gridRef) return null;
+    if (this.props.enableRowVirtualization) {
+      return this.gridRef.querySelector('.VS-container') as HTMLElement | null;
+    }
+    return this.gridRef.querySelector(`.${styles['Grid-body']}`) as HTMLElement | null;
+  }
+
+  getPinMeasurementElements(): { left: HTMLElement | null; right: HTMLElement | null } {
+    if (!this.gridRef) {
+      return { left: null, right: null };
+    }
+    if (this.props.showHead) {
+      const head = this.gridRef.querySelector(`.${styles['Grid-head']}`) as HTMLElement | null;
+      if (head) {
+        return {
+          left: head.querySelector(`.${styles['Grid-cellGroup--pinned-left']}`) as HTMLElement | null,
+          right: head.querySelector(`.${styles['Grid-cellGroup--pinned-right']}`) as HTMLElement | null,
+        };
+      }
+    }
+    const body = this.getScrollContainer();
+    if (!body) {
+      return { left: null, right: null };
+    }
+    const firstRowWrapper = body.querySelector(`.${styles['Grid-rowWrapper']}`) as HTMLElement | null;
+    if (!firstRowWrapper) {
+      return { left: null, right: null };
+    }
+    return {
+      left: firstRowWrapper.querySelector(`.${styles['Grid-cellGroup--pinned-left']}`) as HTMLElement | null,
+      right: firstRowWrapper.querySelector(`.${styles['Grid-cellGroup--pinned-right']}`) as HTMLElement | null,
+    };
+  }
+
+  measureMainRemainder(): number | null {
+    const scrollEl = this.getScrollContainer();
+    
+    if (!scrollEl) return null;
+    const { left, right } = this.getPinMeasurementElements();
+    const leftW = left?.getBoundingClientRect().width ?? 0;
+    const rightW = right?.getBoundingClientRect().width ?? 0;
+
+    return scrollEl.clientWidth - leftW - rightW;
+  }
+
+  scheduleAutoUnpinLayoutCheck(): void {
+    if (this.autoUnpinRafId !== null) return;
+    this.autoUnpinRafId = window.requestAnimationFrame(() => {
+      this.autoUnpinRafId = null;
+      this.runAutoUnpinLayoutCheck();
+    });
+  }
+
+  runAutoUnpinLayoutCheck(): void {
+    const { updateSchema, loading, error, schema, loaderSchema } = this.props;
+    if (!updateSchema || loading || error || !this.gridRef || !this.state.init) return;
+
+    const effectiveSchema = getSchema(schema, loading, loaderSchema);
+    const columnLike = effectiveSchema.map((s) => ({
+      name: s.name,
+      hidden: s.hidden,
+      pinned: s.pinned === 'left' || s.pinned === 'right' ? s.pinned : undefined,
+    }));
+
+    this.autoUnpinStackRef.current = pruneAutoUnpinStack(this.autoUnpinStackRef.current, columnLike);
+
+    const remainder = this.measureMainRemainder();
+
+    if (remainder === null) return;
+
+    if (this.state.mainRemainder !== remainder) {
+      this.setState({ mainRemainder: remainder });
+    }
+
+    if (this.autoUnpinStackRef.current.length > 0) {
+      const stack = this.autoUnpinStackRef.current;
+      const last = stack[stack.length - 1];
+      const col = effectiveSchema.find((s) => s.name === last.name);
+
+      let estimatedWidth = 176;
+      if (col) {
+        if (col.width) {
+          const w = getWidth({ ref: this.gridRef, withCheckbox: this.props.withCheckbox }, col.width);
+          const parsed = typeof w === 'string' ? parseInt(w, 10) : w;
+          if (typeof parsed === 'number' && !isNaN(parsed)) estimatedWidth = parsed;
+        } else if (col.minWidth) {
+          const mw = getWidth({ ref: this.gridRef, withCheckbox: this.props.withCheckbox }, col.minWidth);
+          const parsed = typeof mw === 'string' ? parseInt(mw, 10) : mw;
+          if (typeof parsed === 'number' && !isNaN(parsed)) estimatedWidth = Math.max(estimatedWidth, parsed);
+        }
+      }
+
+      const dynamicRepinThreshold = AUTO_UNPIN_MAIN_REMAINDER_MAX + estimatedWidth + AUTO_REPIN_BUFFER;
+
+      if (remainder >= dynamicRepinThreshold) {
+        this.autoUnpinStackRef.current = stack.slice(0, -1);
+        this.updateColumnSchema(last.name, { pinned: last.side });
+        return;
+      }
+    }
+
+    if (remainder < AUTO_UNPIN_MAIN_REMAINDER_MAX) {
+      const target = getNextAutoUnpinTarget(columnLike);
+      if (!target) return;
+      const col = effectiveSchema.find((s) => s.name === target.name);
+      if (!col || !(col.pinned === 'left' || col.pinned === 'right')) return;
+      this.updateColumnSchema(target.name, { pinned: undefined });
+      this.autoUnpinStackRef.current = [...this.autoUnpinStackRef.current, { name: target.name, side: target.side }];
+    }
+  }
+
+  setupAutoUnpinObserver(): void {
+    this.teardownAutoUnpinObserver();
+    const el = this.getScrollContainer();
+    if (!el || typeof ResizeObserver === 'undefined') {
+      this.scheduleAutoUnpinLayoutCheck();
+      return;
+    }
+    this.autoUnpinResizeObserver = new ResizeObserver(() => {
+      this.scheduleAutoUnpinLayoutCheck();
+    });
+    this.autoUnpinResizeObserver.observe(el);
+    this.scheduleAutoUnpinLayoutCheck();
+  }
+
+  teardownAutoUnpinObserver(): void {
+    this.autoUnpinResizeObserver?.disconnect();
+    this.autoUnpinResizeObserver = null;
+    if (this.autoUnpinRafId !== null) {
+      window.cancelAnimationFrame(this.autoUnpinRafId);
+      this.autoUnpinRafId = null;
+    }
+  }
+
   render() {
     const baseProps = extractBaseProps(this.props);
 
@@ -719,6 +883,7 @@ export class Grid extends React.Component<GridProps, GridState> {
               gridId: this.gridId,
               isSortingListUpdated: this.state.isSortingListUpdated,
               updateIsSortingListUpdated: this.updateIsSortingListUpdated.bind(this),
+              mainRemainder: this.state.mainRemainder,
             }}
           >
             {showHead && (
