@@ -466,7 +466,7 @@ export const Cell = (props: CellProps) => {
         isHead && draggable && reorderColumn
           ? (e: React.KeyboardEvent<HTMLDivElement>) => {
               if (!e.shiftKey || (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight')) return;
-              const visibleSchema = contextSchema.filter((s) => !s.hidden && (!pinned || s.pinned === pinned));
+              const visibleSchema = contextSchema.filter((s) => !s.hidden && s.pinned === pinned);
               const currentIdx = visibleSchema.findIndex((s) => s.name === name);
               if (currentIdx === -1) return;
               e.preventDefault();
