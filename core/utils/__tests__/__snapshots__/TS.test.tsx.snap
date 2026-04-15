@@ -3790,6 +3790,7 @@ exports[`TS renders children 1`] = `
     </div>
   </div>
   <div
+    aria-label="Data grid"
     class="Grid Grid--data Grid--standard"
     data-test="DesignSystem-Grid"
     role="grid"
@@ -3820,6 +3821,7 @@ exports[`TS renders children 1`] = `
       class="Table-grid"
     >
       <div
+        aria-label="Data grid"
         class="Grid Grid--data Grid--standard"
         data-test="DesignSystem-Grid"
         role="grid"
@@ -3857,6 +3859,7 @@ exports[`TS renders children 1`] = `
       class="Table-grid"
     >
       <div
+        aria-label="Data grid"
         class="Grid Grid--data Grid--standard"
         data-test="DesignSystem-Grid"
         role="grid"
