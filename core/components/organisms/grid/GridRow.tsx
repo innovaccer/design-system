@@ -79,7 +79,6 @@ export const GridRow = (props: GridRowProps) => {
     });
 
     return (
-      // TODO(a11y)
       // eslint-disable-next-line
       <div className={CheckboxClass} onClick={(e) => e.stopPropagation()} data-test="DesignSystem-Grid-cellCheckbox">
         {loading ? (
@@ -87,6 +86,7 @@ export const GridRow = (props: GridRowProps) => {
         ) : (
           <Checkbox
             checked={!!data._selected}
+            aria-label={`Select row ${rI + 1}`}
             onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
               onSelect(rI, event.target.checked);
             }}

@@ -177,3 +177,27 @@
 .Dropzone-icon--error {
   fill: var(--alert);
 }
+
+@media (forced-colors: active) {
+  .Dropzone {
+    border: var(--border-width-05) dashed ButtonText;
+    background-image: none;
+    background-color: Canvas;
+  }
+
+  .Dropzone--active {
+    border: var(--border-width-05) dashed Highlight;
+    background-image: none;
+    background-color: Canvas;
+  }
+
+  .Dropzone--error {
+    border: var(--border-width-05) dashed ButtonText;
+    background-image: none;
+  }
+
+  .Dropzone--disabled {
+    border: var(--border-width-05) dashed GrayText;
+    background-image: none;
+  }
+}
