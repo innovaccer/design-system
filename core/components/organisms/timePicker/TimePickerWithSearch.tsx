@@ -1,4 +1,5 @@
 import * as React from 'react';
+import classNames from 'classnames';
 import { Dropdown } from '@/index';
 import { BaseProps } from '@/utils/types';
 import { getScrollIndex } from './utility/searchUtils';
@@ -114,6 +115,7 @@ export const TimePickerWithSearch = (props: TimePickerDropdownProps) => {
     disabledSlotList,
     fetchTimeOptions,
     error,
+    className,
     'aria-label': ariaLabel,
     optionsAriaLabel,
   } = props;
@@ -204,7 +206,7 @@ export const TimePickerWithSearch = (props: TimePickerDropdownProps) => {
       error={error}
       aria-label={ariaLabel}
       optionsAriaLabel={optionsAriaLabel}
-      className={timePickerStyles['TimePicker-trigger']}
+      className={classNames(timePickerStyles['TimePicker-trigger'], className)}
       truncateOption={false}
     />
   );
