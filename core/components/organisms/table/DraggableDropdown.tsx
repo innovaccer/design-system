@@ -16,6 +16,8 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
   const [open, setOpen] = React.useState<boolean>(false);
   const [tempOptions, setTempOptions] = React.useState(options);
   const [triggerWidth, setTriggerWidth] = React.useState('var(--spacing-440)');
+  const triggerRef = React.useRef<HTMLButtonElement | null>(null);
+  const dropdownRef = React.useRef<HTMLDivElement | null>(null);
 
   React.useEffect(() => {
     setTempOptions(options);
@@ -59,6 +61,29 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
     }
   };
 
+  const onTriggerKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      setOpen(true);
+      requestAnimationFrame(() => {
+        const firstFocusable = dropdownRef.current?.querySelector<HTMLElement>('input[type="checkbox"], button');
+        firstFocusable?.focus();
+      });
+    }
+  };
+
+  React.useEffect(() => {
+    if (!open) return;
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setOpen(false);
+        triggerRef.current?.focus();
+      }
+    };
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [open]);
+
   return (
     <div className={dropdownStyles['Dropdown']}>
       <Popover
@@ -68,12 +93,16 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
           <Button
             type="button"
             ref={(el) => {
+              triggerRef.current = el;
               setTriggerWidth(`${el?.clientWidth}px`);
             }}
             size="tiny"
             appearance="transparent"
             icon="keyboard_arrow_down_filled"
             iconAlign="right"
+            aria-expanded={open}
+            aria-haspopup="dialog"
+            onKeyDown={onTriggerKeyDown}
           >
             {`Showing ${options.filter((option) => option.selected).length} of ${
               options.length
@@ -86,74 +115,76 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
         }}
         className={gridStyles['Header-draggableDropdown']}
       >
-        <div className={gridStyles['Dropdown-wrapper']}>
-          <div className="OptionWrapper">
-            <Checkbox
-              className={dropdownStyles['OptionCheckbox']}
-              label="Select All"
-              checked={tempOptions.every((option) => option.selected)}
-              indeterminate={
-                tempOptions.some((option) => option.selected) && tempOptions.some((option) => !option.selected)
-              }
-              onChange={handleParentChange}
-            />
-          </div>
-          {tempOptions.map((option, index) => {
-            return (
-              <div
-                data-test="DesignSystem-Table-Header--draggableDropdownOption"
-                key={option.value}
-                className="OptionWrapper d-flex flex-space-between align-items-center cursor-pointer"
-                draggable={true}
-                onDragStart={(e) => {
-                  e.dataTransfer.setData('index', `${index}`);
-                }}
-                onDragOver={(e) => e.preventDefault()}
-                onDrop={(e) => {
-                  const from = +e.dataTransfer.getData('index');
-                  const to = index;
+        <div ref={dropdownRef}>
+          <div className={gridStyles['Dropdown-wrapper']}>
+            <div className="OptionWrapper">
+              <Checkbox
+                className={dropdownStyles['OptionCheckbox']}
+                label="Select All"
+                checked={tempOptions.every((option) => option.selected)}
+                indeterminate={
+                  tempOptions.some((option) => option.selected) && tempOptions.some((option) => !option.selected)
+                }
+                onChange={handleParentChange}
+              />
+            </div>
+            {tempOptions.map((option, index) => {
+              return (
+                <div
+                  data-test="DesignSystem-Table-Header--draggableDropdownOption"
+                  key={option.value}
+                  className="OptionWrapper d-flex flex-space-between align-items-center cursor-pointer"
+                  draggable={true}
+                  onDragStart={(e) => {
+                    e.dataTransfer.setData('index', `${index}`);
+                  }}
+                  onDragOver={(e) => e.preventDefault()}
+                  onDrop={(e) => {
+                    const from = +e.dataTransfer.getData('index');
+                    const to = index;
 
-                  if (from !== to) setTempOptions(moveToIndex(tempOptions, from, to));
-                }}
-              >
-                <Checkbox
-                  className={dropdownStyles['OptionCheckbox']}
-                  name={option.value as string}
-                  label={option.label}
-                  checked={tempOptions[index].selected}
-                  onChange={(e) => handleChildChange(e, index)}
-                />
-                <Button
-                  type="button"
-                  icon="drag_handle"
-                  appearance="transparent"
-                  className="mr-4"
-                  aria-label={`Reorder ${option.label} column. Use arrow keys to move up or down.`}
-                  onKeyDown={(e: React.KeyboardEvent<HTMLButtonElement>) => onReorderKeyDown(e, index)}
-                />
-              </div>
-            );
-          })}
-        </div>
-        <div className={dropdownStyles['Dropdown-buttonWrapper']}>
-          <Button
-            type="button"
-            className="mr-4"
-            size="tiny"
-            onClick={onCancelHandler}
-            data-test="DesignSystem-DraggableDropdown-cancelButton"
-          >
-            Cancel
-          </Button>
-          <Button
-            type="button"
-            appearance="primary"
-            size="tiny"
-            onClick={onApplyHandler}
-            data-test="DesignSystem-DraggableDropdown-applyButton"
-          >
-            Apply
-          </Button>
+                    if (from !== to) setTempOptions(moveToIndex(tempOptions, from, to));
+                  }}
+                >
+                  <Checkbox
+                    className={dropdownStyles['OptionCheckbox']}
+                    name={option.value as string}
+                    label={option.label}
+                    checked={tempOptions[index].selected}
+                    onChange={(e) => handleChildChange(e, index)}
+                  />
+                  <Button
+                    type="button"
+                    icon="drag_handle"
+                    appearance="transparent"
+                    className="mr-4"
+                    aria-label={`Reorder ${option.label} column. Use arrow keys to move up or down.`}
+                    onKeyDown={(e: React.KeyboardEvent<HTMLButtonElement>) => onReorderKeyDown(e, index)}
+                  />
+                </div>
+              );
+            })}
+          </div>
+          <div className={dropdownStyles['Dropdown-buttonWrapper']}>
+            <Button
+              type="button"
+              className="mr-4"
+              size="tiny"
+              onClick={onCancelHandler}
+              data-test="DesignSystem-DraggableDropdown-cancelButton"
+            >
+              Cancel
+            </Button>
+            <Button
+              type="button"
+              appearance="primary"
+              size="tiny"
+              onClick={onApplyHandler}
+              data-test="DesignSystem-DraggableDropdown-applyButton"
+            >
+              Apply
+            </Button>
+          </div>
         </div>
       </Popover>
     </div>
