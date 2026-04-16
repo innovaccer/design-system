@@ -60,14 +60,21 @@ export const GridRow = (props: GridRowProps) => {
   const onKeyDownHandler = React.useCallback(
     (e: React.KeyboardEvent<HTMLDivElement>) => {
       if (e.target !== e.currentTarget) return;
-      if (type === 'resource' && !loading && !data.disabled && (e.key === 'Enter' || e.key === ' ')) {
-        e.preventDefault();
-        if (onRowClick) {
-          onRowClick(data, rI);
+      if (type === 'resource' && !loading && !data.disabled) {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          if (onRowClick) onRowClick(data, rI);
+        } else if (e.key === ' ') {
+          e.preventDefault();
+          if (withCheckbox) {
+            onSelect(rI, !data._selected);
+          } else if (onRowClick) {
+            onRowClick(data, rI);
+          }
         }
       }
     },
-    [data, rI, type, loading, onRowClick]
+    [data, rI, type, loading, onRowClick, withCheckbox, onSelect]
   );
 
   const pinnedSchema = schema.filter((s) => !s.hidden && s.pinned);
