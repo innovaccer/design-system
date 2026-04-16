@@ -6,6 +6,7 @@ exports[`SegmentedControl Component - Custom Content Snapshot Tests matches snap
     <div
       class="SegmentedControl SegmentedControl--regular SegmentedControl--equalWidth SegmentedControl--twoSegments"
       data-test="DesignSystem-SegmentedControl"
+      role="group"
       style="max-width: 100%; --segment-max-width: 256px;"
     >
       <div
@@ -48,6 +49,7 @@ exports[`SegmentedControl Component - Disabled States Snapshot Tests matches sna
     <div
       class="SegmentedControl SegmentedControl--regular SegmentedControl--equalWidth SegmentedControl--disabled"
       data-test="DesignSystem-SegmentedControl"
+      role="group"
       style="max-width: 100%; --segment-max-width: 256px;"
     >
       <div
@@ -110,6 +112,7 @@ exports[`SegmentedControl Component - Disabled States Snapshot Tests matches sna
     <div
       class="SegmentedControl SegmentedControl--regular SegmentedControl--equalWidth"
       data-test="DesignSystem-SegmentedControl"
+      role="group"
       style="max-width: 100%; --segment-max-width: 256px;"
     >
       <div
@@ -170,6 +173,7 @@ exports[`SegmentedControl Component - Disabled States Snapshot Tests matches sna
     <div
       class="SegmentedControl SegmentedControl--regular SegmentedControl--equalWidth"
       data-test="DesignSystem-SegmentedControl"
+      role="group"
       style="max-width: 100%; --segment-max-width: 256px;"
     >
       <div
@@ -232,6 +236,7 @@ exports[`SegmentedControl Component - Expanded Prop Snapshot Tests
     <div
       class="SegmentedControl SegmentedControl--regular SegmentedControl--equalWidth"
       data-test="DesignSystem-SegmentedControl"
+      role="group"
       style="max-width: 100%; --segment-max-width: 256px;"
     >
       <div
@@ -293,6 +298,7 @@ exports[`SegmentedControl Component - Expanded Prop Snapshot Tests
     <div
       class="SegmentedControl SegmentedControl--regular SegmentedControl--expanded"
       data-test="DesignSystem-SegmentedControl"
+      role="group"
       style="max-width: 100%;"
     >
       <div
@@ -352,6 +358,7 @@ exports[`SegmentedControl Component - Icon + Label Snapshot Tests matches snapsh
     <div
       class="SegmentedControl SegmentedControl--large SegmentedControl--equalWidth"
       data-test="DesignSystem-SegmentedControl"
+      role="group"
       style="max-width: 100%; --segment-max-width: 256px;"
     >
       <div
@@ -444,6 +451,7 @@ exports[`SegmentedControl Component - Icon + Label Snapshot Tests matches snapsh
     <div
       class="SegmentedControl SegmentedControl--regular SegmentedControl--equalWidth"
       data-test="DesignSystem-SegmentedControl"
+      role="group"
       style="max-width: 100%; --segment-max-width: 256px;"
     >
       <div
@@ -536,6 +544,7 @@ exports[`SegmentedControl Component - Icon + Label Snapshot Tests matches snapsh
     <div
       class="SegmentedControl SegmentedControl--small SegmentedControl--equalWidth"
       data-test="DesignSystem-SegmentedControl"
+      role="group"
       style="max-width: 100%; --segment-max-width: 256px;"
     >
       <div
@@ -628,6 +637,7 @@ exports[`SegmentedControl Component - Icon Only Snapshot Tests matches snapshot 
     <div
       class="SegmentedControl SegmentedControl--large SegmentedControl--equalWidth"
       data-test="DesignSystem-SegmentedControl"
+      role="group"
       style="max-width: 100%; --segment-max-width: 256px;"
     >
       <div
@@ -705,6 +715,7 @@ exports[`SegmentedControl Component - Icon Only Snapshot Tests matches snapshot 
     <div
       class="SegmentedControl SegmentedControl--regular SegmentedControl--equalWidth"
       data-test="DesignSystem-SegmentedControl"
+      role="group"
       style="max-width: 100%; --segment-max-width: 256px;"
     >
       <div
@@ -782,6 +793,7 @@ exports[`SegmentedControl Component - Icon Only Snapshot Tests matches snapshot 
     <div
       class="SegmentedControl SegmentedControl--small SegmentedControl--equalWidth"
       data-test="DesignSystem-SegmentedControl"
+      role="group"
       style="max-width: 100%; --segment-max-width: 256px;"
     >
       <div
@@ -859,6 +871,7 @@ exports[`SegmentedControl Component - Label Only Snapshot Tests matches snapshot
     <div
       class="SegmentedControl SegmentedControl--large SegmentedControl--equalWidth"
       data-test="DesignSystem-SegmentedControl"
+      role="group"
       style="max-width: 100%; --segment-max-width: 256px;"
     >
       <div
@@ -918,6 +931,7 @@ exports[`SegmentedControl Component - Label Only Snapshot Tests matches snapshot
     <div
       class="SegmentedControl SegmentedControl--regular SegmentedControl--equalWidth"
       data-test="DesignSystem-SegmentedControl"
+      role="group"
       style="max-width: 100%; --segment-max-width: 256px;"
     >
       <div
@@ -977,6 +991,7 @@ exports[`SegmentedControl Component - Label Only Snapshot Tests matches snapshot
     <div
       class="SegmentedControl SegmentedControl--small SegmentedControl--equalWidth"
       data-test="DesignSystem-SegmentedControl"
+      role="group"
       style="max-width: 100%; --segment-max-width: 256px;"
     >
       <div
@@ -1038,6 +1053,7 @@ exports[`SegmentedControl Component - Size Variants Snapshot Tests
     <div
       class="SegmentedControl SegmentedControl--large SegmentedControl--equalWidth"
       data-test="DesignSystem-SegmentedControl"
+      role="group"
       style="max-width: 100%; --segment-max-width: 256px;"
     >
       <div
@@ -1099,6 +1115,7 @@ exports[`SegmentedControl Component - Size Variants Snapshot Tests
     <div
       class="SegmentedControl SegmentedControl--regular SegmentedControl--equalWidth"
       data-test="DesignSystem-SegmentedControl"
+      role="group"
       style="max-width: 100%; --segment-max-width: 256px;"
     >
       <div
@@ -1160,6 +1177,7 @@ exports[`SegmentedControl Component - Size Variants Snapshot Tests
     <div
       class="SegmentedControl SegmentedControl--small SegmentedControl--equalWidth"
       data-test="DesignSystem-SegmentedControl"
+      role="group"
       style="max-width: 100%; --segment-max-width: 256px;"
     >
       <div
@@ -1219,6 +1237,7 @@ exports[`SegmentedControl Component - Two Segments Snapshot Tests matches snapsh
     <div
       class="SegmentedControl SegmentedControl--regular SegmentedControl--equalWidth SegmentedControl--twoSegments"
       data-test="DesignSystem-SegmentedControl"
+      role="group"
       style="max-width: 100%; --segment-max-width: 256px;"
     >
       <div
@@ -1263,6 +1282,7 @@ exports[`SegmentedControl Component - isEqualWidth Snapshot Tests matches snapsh
     <div
       class="SegmentedControl SegmentedControl--regular"
       data-test="DesignSystem-SegmentedControl"
+      role="group"
       style="max-width: 100%; --segment-max-width: 256px;"
     >
       <div
@@ -1322,6 +1342,7 @@ exports[`SegmentedControl Component - isEqualWidth Snapshot Tests matches snapsh
     <div
       class="SegmentedControl SegmentedControl--regular SegmentedControl--equalWidth"
       data-test="DesignSystem-SegmentedControl"
+      role="group"
       style="max-width: 100%; --segment-max-width: 256px;"
     >
       <div
@@ -1381,6 +1402,7 @@ exports[`SegmentedControl Component - maxWidth Snapshot Tests matches snapshot w
     <div
       class="SegmentedControl SegmentedControl--regular SegmentedControl--equalWidth"
       data-test="DesignSystem-SegmentedControl"
+      role="group"
       style="max-width: 100%; --segment-max-width: 150px;"
     >
       <div

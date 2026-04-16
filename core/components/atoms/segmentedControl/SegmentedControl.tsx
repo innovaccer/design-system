@@ -51,6 +51,14 @@ export interface SegmentedControlProps extends BaseProps {
    * Child segments (SegmentedControl.Item components)
    */
   children: React.ReactElement<SegmentedControlItemProps> | React.ReactElement<SegmentedControlItemProps>[];
+  /**
+   * Accessible label for the control group announced by screen readers
+   */
+  'aria-label'?: string;
+  /**
+   * ID of an element whose text labels the control group (e.g. an external heading)
+   */
+  'aria-labelledby'?: string;
 }
 
 export const SegmentedControl = (props: SegmentedControlProps) => {
@@ -64,6 +72,8 @@ export const SegmentedControl = (props: SegmentedControlProps) => {
     disabled = false,
     className,
     children,
+    'aria-label': ariaLabel,
+    'aria-labelledby': ariaLabelledby,
   } = props;
 
   const baseProps = extractBaseProps(props);
@@ -236,6 +246,9 @@ export const SegmentedControl = (props: SegmentedControlProps) => {
       ref={containerRef}
       data-test="DesignSystem-SegmentedControl"
       {...baseProps}
+      role="group"
+      aria-label={ariaLabel}
+      aria-labelledby={ariaLabelledby}
     >
       <div
         ref={indicatorRef}
