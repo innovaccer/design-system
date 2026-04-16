@@ -158,11 +158,15 @@ const HeaderCell = (props: HeaderCellProps) => {
   const autoFitColumn = () => {
     const grid = el.current?.closest('[role="grid"]') as HTMLElement | null;
     if (!grid) return;
-    const cells = grid.querySelectorAll<HTMLElement>(`[data-col-id="${CSS.escape(name)}"]`);
-    let maxWidth = 0;
-    cells.forEach((cell) => {
-      maxWidth = Math.max(maxWidth, cell.scrollWidth);
-    });
+    const cells = Array.from(grid.querySelectorAll<HTMLElement>(`[data-col-id="${CSS.escape(name)}"]`));
+    if (!cells.length) return;
+
+    // Save → expand → measure → restore (batched writes before reads to avoid layout thrash)
+    const saved = cells.map(({ style: { width, minWidth, maxWidth } }) => ({ width, minWidth, maxWidth }));
+    cells.forEach((c) => Object.assign(c.style, { width: 'max-content', minWidth: '0', maxWidth: 'none' }));
+    const maxWidth = cells.reduce((acc, c) => Math.max(acc, c.offsetWidth), 0);
+    cells.forEach((c, i) => Object.assign(c.style, saved[i]));
+
     if (maxWidth > 0) {
       const schemaMin = typeof schema.minWidth === 'number' ? schema.minWidth : undefined;
       const effectiveMinWidth = schemaMin || getCellSize(schema.cellType || 'DEFAULT').minWidth || 96;
