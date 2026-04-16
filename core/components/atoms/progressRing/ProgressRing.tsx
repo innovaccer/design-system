@@ -75,7 +75,7 @@ export const ProgressRing = (props: ProgressRingProps) => {
       aria-valuemin={0}
       aria-valuemax={max}
       aria-valuenow={Math.max(0, Math.min(value, max))}
-      aria-label={ariaLabel ?? 'Progress Ring'}
+      aria-label={ariaLabel || 'Progress Ring'}
       aria-labelledby={ariaLabelledby}
     >
       <circle className={styles['Ring-background']} {...circleProps} />
