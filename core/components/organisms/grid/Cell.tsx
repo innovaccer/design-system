@@ -158,7 +158,8 @@ const HeaderCell = (props: HeaderCellProps) => {
   const autoFitColumn = () => {
     const grid = el.current?.closest('[role="grid"]') as HTMLElement | null;
     if (!grid) return;
-    const cells = Array.from(grid.querySelectorAll<HTMLElement>(`[data-col-id="${CSS.escape(name)}"]`)).filter(
+    const escapedName = typeof CSS !== 'undefined' && CSS.escape ? CSS.escape(name) : name.replace(/([^\w-])/g, '\\$1');
+    const cells = Array.from(grid.querySelectorAll<HTMLElement>(`[data-col-id="${escapedName}"]`)).filter(
       (c) => c.closest('[role="grid"]') === grid
     );
     if (!cells.length) return;
@@ -472,6 +473,8 @@ export const Cell = (props: CellProps) => {
         isHead && draggable && reorderColumn
           ? (e: React.KeyboardEvent<HTMLDivElement>) => {
               if (!e.shiftKey || (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight')) return;
+              const target = e.target as HTMLElement;
+              if (target.isContentEditable || ['INPUT', 'TEXTAREA', 'SELECT'].includes(target.tagName)) return;
               const visibleSchema = contextSchema.filter((s) => !s.hidden && s.pinned === pinned);
               const currentIdx = visibleSchema.findIndex((s) => s.name === name);
               if (currentIdx === -1) return;
