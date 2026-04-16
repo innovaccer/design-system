@@ -158,7 +158,9 @@ const HeaderCell = (props: HeaderCellProps) => {
   const autoFitColumn = () => {
     const grid = el.current?.closest('[role="grid"]') as HTMLElement | null;
     if (!grid) return;
-    const cells = Array.from(grid.querySelectorAll<HTMLElement>(`[data-col-id="${CSS.escape(name)}"]`));
+    const cells = Array.from(grid.querySelectorAll<HTMLElement>(`[data-col-id="${CSS.escape(name)}"]`)).filter(
+      (c) => c.closest('[role="grid"]') === grid
+    );
     if (!cells.length) return;
 
     // Save → expand → measure → restore (batched writes before reads to avoid layout thrash)
