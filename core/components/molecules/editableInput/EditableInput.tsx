@@ -195,6 +195,10 @@ export const EditableInput = (props: EditableInputProps) => {
       ref={inputRef}
       data-test="DesignSystem-EditableInput--Input"
       {...rest}
+      id={id}
+      aria-label={ariaLabel}
+      aria-labelledby={ariaLabelledby}
+      aria-describedby={ariaDescribedby}
     />
   );
 
@@ -231,7 +235,6 @@ export const EditableInput = (props: EditableInputProps) => {
     <div
       data-test="DesignSystem-EditableInput"
       {...baseProps}
-      id={id}
       className={EditableInputClass}
       onKeyDown={handleKeyDown}
       onClick={handleClick}
