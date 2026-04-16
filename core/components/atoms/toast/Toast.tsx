@@ -52,10 +52,23 @@ export interface ToastProps extends BaseProps {
    * Callback for `Toast` close event
    */
   onClose?: () => void;
+  /**
+   * Accessible label for the toast live region announced by screen readers
+   */
+  'aria-label'?: string;
+  /**
+   * Controls whether the entire live region is read as a whole when its content changes
+   * @default "true"
+   */
+  'aria-atomic'?: 'true' | 'false' | boolean;
+  /**
+   * HTML id for the toast element — use to create stable references from other elements
+   */
+  id?: string;
 }
 
 export const Toast = (props: ToastProps) => {
-  const { title, message, actions, onClose, className } = props;
+  const { title, message, actions, onClose, className, 'aria-label': ariaLabel, 'aria-atomic': ariaAtomic, id } = props;
   let { appearance } = props;
   appearance = appearance === 'default' ? 'info' : appearance;
 
@@ -111,9 +124,12 @@ export const Toast = (props: ToastProps) => {
   return (
     <div
       {...baseProps}
+      id={id}
       className={wrapperClass}
       role={appearance === 'alert' || appearance === 'warning' ? 'alert' : 'status'}
       aria-live={appearance === 'alert' || appearance === 'warning' ? 'assertive' : 'polite'}
+      aria-label={ariaLabel}
+      aria-atomic={ariaAtomic}
     >
       {icon && <Icon name={icon} className={iconClass('left')} aria-hidden="true" />}
       <div className={styles['Toast-body']}>
