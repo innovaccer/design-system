@@ -50,6 +50,13 @@ export interface MaskProps extends BaseProps {
    * Add text below `input`
    */
   helpText?: string;
+  /**
+   * Use the default placeholder value as the base when old value is empty on change.
+   * Set internally by picker components (TimePicker, DatePicker) that initialize with an empty value.
+   * @default false
+   * @ignore
+   */
+  useDefaultValueOnEmpty?: boolean;
 }
 export type InputMaskProps = InputProps & MaskProps;
 type SelectionPos = {
@@ -75,6 +82,7 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
     placeholderChar = '_',
     validators = [],
     clearOnEmptyBlur = true,
+    useDefaultValueOnEmpty = false,
     defaultValue,
     mask,
     error,
@@ -86,7 +94,6 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
     onFocus,
     onClear,
     className,
-    id,
     helpText,
     label,
     'aria-describedby': ariaDescribedBy,
@@ -277,7 +284,7 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
       enteredVal = inputVal.slice(start, end);
       updatedVal = insertAtIndex(enteredVal, start);
       let oldValue = value;
-      if (oldValue.length === 0 && (id === 'parent-TimePicker' || id === 'parent-DatePicker')) {
+      if (oldValue.length === 0 && useDefaultValueOnEmpty) {
         oldValue = defaultPlaceholderValue;
       }
       insertedStringLength = updatedVal.length;
@@ -406,7 +413,6 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
         label={label}
         aria-label={label}
         {...rest}
-        id={id !== 'parent-TimePicker' && id !== 'parent-DatePicker' ? id : undefined}
         value={value}
         error={error}
         required={required}
