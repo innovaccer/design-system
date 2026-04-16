@@ -170,7 +170,7 @@ const renderTitle = (props: CellProps) => {
           <HighlightedText
             text={children}
             searchTerm={searchTerm}
-            className="w-100 ellipsis"
+            className="w-100 ellipsis white-space-pre"
             highlightRegex={highlightRegex}
             highlightCell={highlightCell}
           />
@@ -181,7 +181,7 @@ const renderTitle = (props: CellProps) => {
       <HighlightedText
         text={children}
         searchTerm={searchTerm}
-        className="w-100 ellipsis"
+        className="w-100 ellipsis white-space-pre"
         highlightRegex={highlightRegex}
         highlightCell={highlightCell}
       />
@@ -301,7 +301,7 @@ const renderStatusHint = (props: CellProps) => {
         <HighlightedText
           text={children}
           searchTerm={searchTerm}
-          className="w-100 ellipsis"
+          className="w-100 ellipsis white-space-pre"
           highlightRegex={highlightRegex}
           highlightCell={highlightCell}
         />
