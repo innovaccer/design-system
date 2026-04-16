@@ -18,27 +18,34 @@
       <th style={{width:"33%", textAlign: "left"}}>Final state</th>
     </tr>
     <tr style={{verticalAlign: "top"}}>
-      <td>Any segment is selected</td>
+      <td>Default state</td>
       <td>&#60;Tab&#62;</td>
-      <td>
-        <ul>
-          <li>Focuses on the first segment</li>
-          <li>Then cycles through the segments until the last segment</li>
-          <li>Skips the active and disabled segments</li>
-        </ul>
-      </td>
+      <td>Focus shifts to the selected segment or the first enabled segment if none are selected</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Focus is on a segment</td>
+      <td>&#60;Tab&#62;</td>
+      <td>Focus shifts to the next item in the page tab sequence</td>
     </tr>
     <tr style={{verticalAlign: "top"}}>
       <td></td>
-      <td>&#60;Enter&#62;</td>
-      <td>
-        Activates that segment
-      </td>
+      <td>&#60;Arrow Right&#62; / &#60;Arrow Down&#62;</td>
+      <td>Focus shifts to the next enabled segment and activates it (wraps to the first segment after the last)</td>
     </tr>
     <tr style={{verticalAlign: "top"}}>
       <td></td>
-      <td>&#60;Esc&#62;</td>
-      <td>Removes focus state</td>
+      <td>&#60;Arrow Left&#62; / &#60;Arrow Up&#62;</td>
+      <td>Focus shifts to the previous enabled segment and activates it (wraps to the last segment before the first)</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td></td>
+      <td>&#60;Home&#62;</td>
+      <td>Focus shifts to the first enabled segment and activates it</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td></td>
+      <td>&#60;End&#62;</td>
+      <td>Focus shifts to the last enabled segment and activates it</td>
     </tr>
   </tbody>
 </table>

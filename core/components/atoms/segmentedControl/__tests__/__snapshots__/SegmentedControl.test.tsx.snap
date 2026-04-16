@@ -8,15 +8,17 @@ exports[`SegmentedControl Component - Custom Content Snapshot Tests matches snap
       data-test="DesignSystem-SegmentedControl"
       role="group"
       style="max-width: 100%; --segment-max-width: 256px;"
+      tabindex="-1"
     >
       <div
         class="SegmentedControl-indicator"
         style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
       />
       <button
+        aria-pressed="true"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--equalWidth SegmentedControl-segment--twoSegmentsSelected SegmentedControl-segment--customContent"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="-1"
+        tabindex="0"
         type="button"
       >
         <div>
@@ -27,9 +29,10 @@ exports[`SegmentedControl Component - Custom Content Snapshot Tests matches snap
         class="SegmentedControl-divider SegmentedControl-divider--regular SegmentedControl-divider--hidden"
       />
       <button
+        aria-pressed="false"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="0"
+        tabindex="-1"
         type="button"
       >
         <span
@@ -49,17 +52,20 @@ exports[`SegmentedControl Component - Disabled States Snapshot Tests matches sna
     <div
       class="SegmentedControl SegmentedControl--regular SegmentedControl--equalWidth SegmentedControl--disabled"
       data-test="DesignSystem-SegmentedControl"
-      role="group"
+      role="radiogroup"
       style="max-width: 100%; --segment-max-width: 256px;"
+      tabindex="-1"
     >
       <div
         class="SegmentedControl-indicator"
         style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
       />
       <button
+        aria-checked="true"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--disabled SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         disabled=""
+        role="radio"
         tabindex="-1"
         type="button"
       >
@@ -73,9 +79,11 @@ exports[`SegmentedControl Component - Disabled States Snapshot Tests matches sna
         class="SegmentedControl-divider SegmentedControl-divider--regular SegmentedControl-divider--hidden"
       />
       <button
+        aria-checked="false"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--disabled SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         disabled=""
+        role="radio"
         tabindex="-1"
         type="button"
       >
@@ -89,9 +97,11 @@ exports[`SegmentedControl Component - Disabled States Snapshot Tests matches sna
         class="SegmentedControl-divider SegmentedControl-divider--regular"
       />
       <button
+        aria-checked="false"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--disabled SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         disabled=""
+        role="radio"
         tabindex="-1"
         type="button"
       >
@@ -112,17 +122,20 @@ exports[`SegmentedControl Component - Disabled States Snapshot Tests matches sna
     <div
       class="SegmentedControl SegmentedControl--regular SegmentedControl--equalWidth"
       data-test="DesignSystem-SegmentedControl"
-      role="group"
+      role="radiogroup"
       style="max-width: 100%; --segment-max-width: 256px;"
+      tabindex="-1"
     >
       <div
         class="SegmentedControl-indicator"
         style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
       />
       <button
+        aria-checked="true"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="-1"
+        role="radio"
+        tabindex="0"
         type="button"
       >
         <span
@@ -135,9 +148,11 @@ exports[`SegmentedControl Component - Disabled States Snapshot Tests matches sna
         class="SegmentedControl-divider SegmentedControl-divider--regular SegmentedControl-divider--hidden"
       />
       <button
+        aria-checked="false"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--disabled SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         disabled=""
+        role="radio"
         tabindex="-1"
         type="button"
       >
@@ -151,9 +166,11 @@ exports[`SegmentedControl Component - Disabled States Snapshot Tests matches sna
         class="SegmentedControl-divider SegmentedControl-divider--regular"
       />
       <button
+        aria-checked="false"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="0"
+        role="radio"
+        tabindex="-1"
         type="button"
       >
         <span
@@ -173,17 +190,20 @@ exports[`SegmentedControl Component - Disabled States Snapshot Tests matches sna
     <div
       class="SegmentedControl SegmentedControl--regular SegmentedControl--equalWidth"
       data-test="DesignSystem-SegmentedControl"
-      role="group"
+      role="radiogroup"
       style="max-width: 100%; --segment-max-width: 256px;"
+      tabindex="-1"
     >
       <div
         class="SegmentedControl-indicator"
         style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
       />
       <button
+        aria-checked="false"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="0"
+        role="radio"
+        tabindex="-1"
         type="button"
       >
         <span
@@ -196,9 +216,11 @@ exports[`SegmentedControl Component - Disabled States Snapshot Tests matches sna
         class="SegmentedControl-divider SegmentedControl-divider--regular SegmentedControl-divider--hidden"
       />
       <button
+        aria-checked="true"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--disabled SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         disabled=""
+        role="radio"
         tabindex="-1"
         type="button"
       >
@@ -212,9 +234,11 @@ exports[`SegmentedControl Component - Disabled States Snapshot Tests matches sna
         class="SegmentedControl-divider SegmentedControl-divider--regular SegmentedControl-divider--hidden"
       />
       <button
+        aria-checked="false"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="0"
+        role="radio"
+        tabindex="-1"
         type="button"
       >
         <span
@@ -236,17 +260,20 @@ exports[`SegmentedControl Component - Expanded Prop Snapshot Tests
     <div
       class="SegmentedControl SegmentedControl--regular SegmentedControl--equalWidth"
       data-test="DesignSystem-SegmentedControl"
-      role="group"
+      role="radiogroup"
       style="max-width: 100%; --segment-max-width: 256px;"
+      tabindex="-1"
     >
       <div
         class="SegmentedControl-indicator"
         style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
       />
       <button
+        aria-checked="true"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="-1"
+        role="radio"
+        tabindex="0"
         type="button"
       >
         <span
@@ -259,9 +286,11 @@ exports[`SegmentedControl Component - Expanded Prop Snapshot Tests
         class="SegmentedControl-divider SegmentedControl-divider--regular SegmentedControl-divider--hidden"
       />
       <button
+        aria-checked="false"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="0"
+        role="radio"
+        tabindex="-1"
         type="button"
       >
         <span
@@ -274,9 +303,11 @@ exports[`SegmentedControl Component - Expanded Prop Snapshot Tests
         class="SegmentedControl-divider SegmentedControl-divider--regular"
       />
       <button
+        aria-checked="false"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="0"
+        role="radio"
+        tabindex="-1"
         type="button"
       >
         <span
@@ -298,17 +329,20 @@ exports[`SegmentedControl Component - Expanded Prop Snapshot Tests
     <div
       class="SegmentedControl SegmentedControl--regular SegmentedControl--expanded"
       data-test="DesignSystem-SegmentedControl"
-      role="group"
+      role="radiogroup"
       style="max-width: 100%;"
+      tabindex="-1"
     >
       <div
         class="SegmentedControl-indicator"
         style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
       />
       <button
+        aria-checked="true"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--expanded"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="-1"
+        role="radio"
+        tabindex="0"
         type="button"
       >
         <span
@@ -321,9 +355,11 @@ exports[`SegmentedControl Component - Expanded Prop Snapshot Tests
         class="SegmentedControl-divider SegmentedControl-divider--regular SegmentedControl-divider--hidden"
       />
       <button
+        aria-checked="false"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--expanded"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="0"
+        role="radio"
+        tabindex="-1"
         type="button"
       >
         <span
@@ -336,9 +372,11 @@ exports[`SegmentedControl Component - Expanded Prop Snapshot Tests
         class="SegmentedControl-divider SegmentedControl-divider--regular"
       />
       <button
+        aria-checked="false"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--expanded"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="0"
+        role="radio"
+        tabindex="-1"
         type="button"
       >
         <span
@@ -358,17 +396,20 @@ exports[`SegmentedControl Component - Icon + Label Snapshot Tests matches snapsh
     <div
       class="SegmentedControl SegmentedControl--large SegmentedControl--equalWidth"
       data-test="DesignSystem-SegmentedControl"
-      role="group"
+      role="radiogroup"
       style="max-width: 100%; --segment-max-width: 256px;"
+      tabindex="-1"
     >
       <div
         class="SegmentedControl-indicator"
         style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
       />
       <button
+        aria-checked="true"
         class="SegmentedControl-segment SegmentedControl-segment--large SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="-1"
+        role="radio"
+        tabindex="0"
         type="button"
       >
         <div
@@ -392,9 +433,11 @@ exports[`SegmentedControl Component - Icon + Label Snapshot Tests matches snapsh
         class="SegmentedControl-divider SegmentedControl-divider--large SegmentedControl-divider--hidden"
       />
       <button
+        aria-checked="false"
         class="SegmentedControl-segment SegmentedControl-segment--large SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="0"
+        role="radio"
+        tabindex="-1"
         type="button"
       >
         <div
@@ -418,9 +461,11 @@ exports[`SegmentedControl Component - Icon + Label Snapshot Tests matches snapsh
         class="SegmentedControl-divider SegmentedControl-divider--large"
       />
       <button
+        aria-checked="false"
         class="SegmentedControl-segment SegmentedControl-segment--large SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="0"
+        role="radio"
+        tabindex="-1"
         type="button"
       >
         <div
@@ -451,17 +496,20 @@ exports[`SegmentedControl Component - Icon + Label Snapshot Tests matches snapsh
     <div
       class="SegmentedControl SegmentedControl--regular SegmentedControl--equalWidth"
       data-test="DesignSystem-SegmentedControl"
-      role="group"
+      role="radiogroup"
       style="max-width: 100%; --segment-max-width: 256px;"
+      tabindex="-1"
     >
       <div
         class="SegmentedControl-indicator"
         style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
       />
       <button
+        aria-checked="true"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="-1"
+        role="radio"
+        tabindex="0"
         type="button"
       >
         <div
@@ -485,9 +533,11 @@ exports[`SegmentedControl Component - Icon + Label Snapshot Tests matches snapsh
         class="SegmentedControl-divider SegmentedControl-divider--regular SegmentedControl-divider--hidden"
       />
       <button
+        aria-checked="false"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="0"
+        role="radio"
+        tabindex="-1"
         type="button"
       >
         <div
@@ -511,9 +561,11 @@ exports[`SegmentedControl Component - Icon + Label Snapshot Tests matches snapsh
         class="SegmentedControl-divider SegmentedControl-divider--regular"
       />
       <button
+        aria-checked="false"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="0"
+        role="radio"
+        tabindex="-1"
         type="button"
       >
         <div
@@ -544,17 +596,20 @@ exports[`SegmentedControl Component - Icon + Label Snapshot Tests matches snapsh
     <div
       class="SegmentedControl SegmentedControl--small SegmentedControl--equalWidth"
       data-test="DesignSystem-SegmentedControl"
-      role="group"
+      role="radiogroup"
       style="max-width: 100%; --segment-max-width: 256px;"
+      tabindex="-1"
     >
       <div
         class="SegmentedControl-indicator"
         style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
       />
       <button
+        aria-checked="true"
         class="SegmentedControl-segment SegmentedControl-segment--small SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="-1"
+        role="radio"
+        tabindex="0"
         type="button"
       >
         <div
@@ -578,9 +633,11 @@ exports[`SegmentedControl Component - Icon + Label Snapshot Tests matches snapsh
         class="SegmentedControl-divider SegmentedControl-divider--small SegmentedControl-divider--hidden"
       />
       <button
+        aria-checked="false"
         class="SegmentedControl-segment SegmentedControl-segment--small SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="0"
+        role="radio"
+        tabindex="-1"
         type="button"
       >
         <div
@@ -604,9 +661,11 @@ exports[`SegmentedControl Component - Icon + Label Snapshot Tests matches snapsh
         class="SegmentedControl-divider SegmentedControl-divider--small"
       />
       <button
+        aria-checked="false"
         class="SegmentedControl-segment SegmentedControl-segment--small SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="0"
+        role="radio"
+        tabindex="-1"
         type="button"
       >
         <div
@@ -637,17 +696,20 @@ exports[`SegmentedControl Component - Icon Only Snapshot Tests matches snapshot 
     <div
       class="SegmentedControl SegmentedControl--large SegmentedControl--equalWidth"
       data-test="DesignSystem-SegmentedControl"
-      role="group"
+      role="radiogroup"
       style="max-width: 100%; --segment-max-width: 256px;"
+      tabindex="-1"
     >
       <div
         class="SegmentedControl-indicator"
         style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
       />
       <button
+        aria-checked="true"
         class="SegmentedControl-segment SegmentedControl-segment--large SegmentedControl-segment--selected SegmentedControl-segment--iconOnly SegmentedControl-segment--equalWidth SegmentedControl-segment--largeIconOnly"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="-1"
+        role="radio"
+        tabindex="0"
         type="button"
       >
         <div
@@ -666,9 +728,11 @@ exports[`SegmentedControl Component - Icon Only Snapshot Tests matches snapshot 
         class="SegmentedControl-divider SegmentedControl-divider--large SegmentedControl-divider--hidden"
       />
       <button
+        aria-checked="false"
         class="SegmentedControl-segment SegmentedControl-segment--large SegmentedControl-segment--iconOnly SegmentedControl-segment--equalWidth SegmentedControl-segment--largeIconOnly"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="0"
+        role="radio"
+        tabindex="-1"
         type="button"
       >
         <div
@@ -687,9 +751,11 @@ exports[`SegmentedControl Component - Icon Only Snapshot Tests matches snapshot 
         class="SegmentedControl-divider SegmentedControl-divider--large"
       />
       <button
+        aria-checked="false"
         class="SegmentedControl-segment SegmentedControl-segment--large SegmentedControl-segment--iconOnly SegmentedControl-segment--equalWidth SegmentedControl-segment--largeIconOnly"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="0"
+        role="radio"
+        tabindex="-1"
         type="button"
       >
         <div
@@ -715,17 +781,20 @@ exports[`SegmentedControl Component - Icon Only Snapshot Tests matches snapshot 
     <div
       class="SegmentedControl SegmentedControl--regular SegmentedControl--equalWidth"
       data-test="DesignSystem-SegmentedControl"
-      role="group"
+      role="radiogroup"
       style="max-width: 100%; --segment-max-width: 256px;"
+      tabindex="-1"
     >
       <div
         class="SegmentedControl-indicator"
         style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
       />
       <button
+        aria-checked="true"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--iconOnly SegmentedControl-segment--equalWidth SegmentedControl-segment--regularIconOnly"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="-1"
+        role="radio"
+        tabindex="0"
         type="button"
       >
         <div
@@ -744,9 +813,11 @@ exports[`SegmentedControl Component - Icon Only Snapshot Tests matches snapshot 
         class="SegmentedControl-divider SegmentedControl-divider--regular SegmentedControl-divider--hidden"
       />
       <button
+        aria-checked="false"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--iconOnly SegmentedControl-segment--equalWidth SegmentedControl-segment--regularIconOnly"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="0"
+        role="radio"
+        tabindex="-1"
         type="button"
       >
         <div
@@ -765,9 +836,11 @@ exports[`SegmentedControl Component - Icon Only Snapshot Tests matches snapshot 
         class="SegmentedControl-divider SegmentedControl-divider--regular"
       />
       <button
+        aria-checked="false"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--iconOnly SegmentedControl-segment--equalWidth SegmentedControl-segment--regularIconOnly"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="0"
+        role="radio"
+        tabindex="-1"
         type="button"
       >
         <div
@@ -793,17 +866,20 @@ exports[`SegmentedControl Component - Icon Only Snapshot Tests matches snapshot 
     <div
       class="SegmentedControl SegmentedControl--small SegmentedControl--equalWidth"
       data-test="DesignSystem-SegmentedControl"
-      role="group"
+      role="radiogroup"
       style="max-width: 100%; --segment-max-width: 256px;"
+      tabindex="-1"
     >
       <div
         class="SegmentedControl-indicator"
         style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
       />
       <button
+        aria-checked="true"
         class="SegmentedControl-segment SegmentedControl-segment--small SegmentedControl-segment--selected SegmentedControl-segment--iconOnly SegmentedControl-segment--equalWidth SegmentedControl-segment--smallIconOnly"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="-1"
+        role="radio"
+        tabindex="0"
         type="button"
       >
         <div
@@ -822,9 +898,11 @@ exports[`SegmentedControl Component - Icon Only Snapshot Tests matches snapshot 
         class="SegmentedControl-divider SegmentedControl-divider--small SegmentedControl-divider--hidden"
       />
       <button
+        aria-checked="false"
         class="SegmentedControl-segment SegmentedControl-segment--small SegmentedControl-segment--iconOnly SegmentedControl-segment--equalWidth SegmentedControl-segment--smallIconOnly"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="0"
+        role="radio"
+        tabindex="-1"
         type="button"
       >
         <div
@@ -843,9 +921,11 @@ exports[`SegmentedControl Component - Icon Only Snapshot Tests matches snapshot 
         class="SegmentedControl-divider SegmentedControl-divider--small"
       />
       <button
+        aria-checked="false"
         class="SegmentedControl-segment SegmentedControl-segment--small SegmentedControl-segment--iconOnly SegmentedControl-segment--equalWidth SegmentedControl-segment--smallIconOnly"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="0"
+        role="radio"
+        tabindex="-1"
         type="button"
       >
         <div
@@ -871,17 +951,20 @@ exports[`SegmentedControl Component - Label Only Snapshot Tests matches snapshot
     <div
       class="SegmentedControl SegmentedControl--large SegmentedControl--equalWidth"
       data-test="DesignSystem-SegmentedControl"
-      role="group"
+      role="radiogroup"
       style="max-width: 100%; --segment-max-width: 256px;"
+      tabindex="-1"
     >
       <div
         class="SegmentedControl-indicator"
         style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
       />
       <button
+        aria-checked="true"
         class="SegmentedControl-segment SegmentedControl-segment--large SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="-1"
+        role="radio"
+        tabindex="0"
         type="button"
       >
         <span
@@ -894,9 +977,11 @@ exports[`SegmentedControl Component - Label Only Snapshot Tests matches snapshot
         class="SegmentedControl-divider SegmentedControl-divider--large SegmentedControl-divider--hidden"
       />
       <button
+        aria-checked="false"
         class="SegmentedControl-segment SegmentedControl-segment--large SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="0"
+        role="radio"
+        tabindex="-1"
         type="button"
       >
         <span
@@ -909,9 +994,11 @@ exports[`SegmentedControl Component - Label Only Snapshot Tests matches snapshot
         class="SegmentedControl-divider SegmentedControl-divider--large"
       />
       <button
+        aria-checked="false"
         class="SegmentedControl-segment SegmentedControl-segment--large SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="0"
+        role="radio"
+        tabindex="-1"
         type="button"
       >
         <span
@@ -931,17 +1018,20 @@ exports[`SegmentedControl Component - Label Only Snapshot Tests matches snapshot
     <div
       class="SegmentedControl SegmentedControl--regular SegmentedControl--equalWidth"
       data-test="DesignSystem-SegmentedControl"
-      role="group"
+      role="radiogroup"
       style="max-width: 100%; --segment-max-width: 256px;"
+      tabindex="-1"
     >
       <div
         class="SegmentedControl-indicator"
         style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
       />
       <button
+        aria-checked="true"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="-1"
+        role="radio"
+        tabindex="0"
         type="button"
       >
         <span
@@ -954,9 +1044,11 @@ exports[`SegmentedControl Component - Label Only Snapshot Tests matches snapshot
         class="SegmentedControl-divider SegmentedControl-divider--regular SegmentedControl-divider--hidden"
       />
       <button
+        aria-checked="false"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="0"
+        role="radio"
+        tabindex="-1"
         type="button"
       >
         <span
@@ -969,9 +1061,11 @@ exports[`SegmentedControl Component - Label Only Snapshot Tests matches snapshot
         class="SegmentedControl-divider SegmentedControl-divider--regular"
       />
       <button
+        aria-checked="false"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="0"
+        role="radio"
+        tabindex="-1"
         type="button"
       >
         <span
@@ -991,17 +1085,20 @@ exports[`SegmentedControl Component - Label Only Snapshot Tests matches snapshot
     <div
       class="SegmentedControl SegmentedControl--small SegmentedControl--equalWidth"
       data-test="DesignSystem-SegmentedControl"
-      role="group"
+      role="radiogroup"
       style="max-width: 100%; --segment-max-width: 256px;"
+      tabindex="-1"
     >
       <div
         class="SegmentedControl-indicator"
         style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
       />
       <button
+        aria-checked="true"
         class="SegmentedControl-segment SegmentedControl-segment--small SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="-1"
+        role="radio"
+        tabindex="0"
         type="button"
       >
         <span
@@ -1014,9 +1111,11 @@ exports[`SegmentedControl Component - Label Only Snapshot Tests matches snapshot
         class="SegmentedControl-divider SegmentedControl-divider--small SegmentedControl-divider--hidden"
       />
       <button
+        aria-checked="false"
         class="SegmentedControl-segment SegmentedControl-segment--small SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="0"
+        role="radio"
+        tabindex="-1"
         type="button"
       >
         <span
@@ -1029,9 +1128,11 @@ exports[`SegmentedControl Component - Label Only Snapshot Tests matches snapshot
         class="SegmentedControl-divider SegmentedControl-divider--small"
       />
       <button
+        aria-checked="false"
         class="SegmentedControl-segment SegmentedControl-segment--small SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="0"
+        role="radio"
+        tabindex="-1"
         type="button"
       >
         <span
@@ -1053,17 +1154,20 @@ exports[`SegmentedControl Component - Size Variants Snapshot Tests
     <div
       class="SegmentedControl SegmentedControl--large SegmentedControl--equalWidth"
       data-test="DesignSystem-SegmentedControl"
-      role="group"
+      role="radiogroup"
       style="max-width: 100%; --segment-max-width: 256px;"
+      tabindex="-1"
     >
       <div
         class="SegmentedControl-indicator"
         style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
       />
       <button
+        aria-checked="true"
         class="SegmentedControl-segment SegmentedControl-segment--large SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="-1"
+        role="radio"
+        tabindex="0"
         type="button"
       >
         <span
@@ -1076,9 +1180,11 @@ exports[`SegmentedControl Component - Size Variants Snapshot Tests
         class="SegmentedControl-divider SegmentedControl-divider--large SegmentedControl-divider--hidden"
       />
       <button
+        aria-checked="false"
         class="SegmentedControl-segment SegmentedControl-segment--large SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="0"
+        role="radio"
+        tabindex="-1"
         type="button"
       >
         <span
@@ -1091,9 +1197,11 @@ exports[`SegmentedControl Component - Size Variants Snapshot Tests
         class="SegmentedControl-divider SegmentedControl-divider--large"
       />
       <button
+        aria-checked="false"
         class="SegmentedControl-segment SegmentedControl-segment--large SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="0"
+        role="radio"
+        tabindex="-1"
         type="button"
       >
         <span
@@ -1115,17 +1223,20 @@ exports[`SegmentedControl Component - Size Variants Snapshot Tests
     <div
       class="SegmentedControl SegmentedControl--regular SegmentedControl--equalWidth"
       data-test="DesignSystem-SegmentedControl"
-      role="group"
+      role="radiogroup"
       style="max-width: 100%; --segment-max-width: 256px;"
+      tabindex="-1"
     >
       <div
         class="SegmentedControl-indicator"
         style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
       />
       <button
+        aria-checked="true"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="-1"
+        role="radio"
+        tabindex="0"
         type="button"
       >
         <span
@@ -1138,9 +1249,11 @@ exports[`SegmentedControl Component - Size Variants Snapshot Tests
         class="SegmentedControl-divider SegmentedControl-divider--regular SegmentedControl-divider--hidden"
       />
       <button
+        aria-checked="false"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="0"
+        role="radio"
+        tabindex="-1"
         type="button"
       >
         <span
@@ -1153,9 +1266,11 @@ exports[`SegmentedControl Component - Size Variants Snapshot Tests
         class="SegmentedControl-divider SegmentedControl-divider--regular"
       />
       <button
+        aria-checked="false"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="0"
+        role="radio"
+        tabindex="-1"
         type="button"
       >
         <span
@@ -1177,17 +1292,20 @@ exports[`SegmentedControl Component - Size Variants Snapshot Tests
     <div
       class="SegmentedControl SegmentedControl--small SegmentedControl--equalWidth"
       data-test="DesignSystem-SegmentedControl"
-      role="group"
+      role="radiogroup"
       style="max-width: 100%; --segment-max-width: 256px;"
+      tabindex="-1"
     >
       <div
         class="SegmentedControl-indicator"
         style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
       />
       <button
+        aria-checked="true"
         class="SegmentedControl-segment SegmentedControl-segment--small SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="-1"
+        role="radio"
+        tabindex="0"
         type="button"
       >
         <span
@@ -1200,9 +1318,11 @@ exports[`SegmentedControl Component - Size Variants Snapshot Tests
         class="SegmentedControl-divider SegmentedControl-divider--small SegmentedControl-divider--hidden"
       />
       <button
+        aria-checked="false"
         class="SegmentedControl-segment SegmentedControl-segment--small SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="0"
+        role="radio"
+        tabindex="-1"
         type="button"
       >
         <span
@@ -1215,9 +1335,11 @@ exports[`SegmentedControl Component - Size Variants Snapshot Tests
         class="SegmentedControl-divider SegmentedControl-divider--small"
       />
       <button
+        aria-checked="false"
         class="SegmentedControl-segment SegmentedControl-segment--small SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="0"
+        role="radio"
+        tabindex="-1"
         type="button"
       >
         <span
@@ -1239,15 +1361,17 @@ exports[`SegmentedControl Component - Two Segments Snapshot Tests matches snapsh
       data-test="DesignSystem-SegmentedControl"
       role="group"
       style="max-width: 100%; --segment-max-width: 256px;"
+      tabindex="-1"
     >
       <div
         class="SegmentedControl-indicator"
         style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
       />
       <button
+        aria-pressed="true"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--equalWidth SegmentedControl-segment--twoSegmentsSelected"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="-1"
+        tabindex="0"
         type="button"
       >
         <span
@@ -1260,9 +1384,10 @@ exports[`SegmentedControl Component - Two Segments Snapshot Tests matches snapsh
         class="SegmentedControl-divider SegmentedControl-divider--regular SegmentedControl-divider--hidden"
       />
       <button
+        aria-pressed="false"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="0"
+        tabindex="-1"
         type="button"
       >
         <span
@@ -1282,17 +1407,20 @@ exports[`SegmentedControl Component - isEqualWidth Snapshot Tests matches snapsh
     <div
       class="SegmentedControl SegmentedControl--regular"
       data-test="DesignSystem-SegmentedControl"
-      role="group"
+      role="radiogroup"
       style="max-width: 100%; --segment-max-width: 256px;"
+      tabindex="-1"
     >
       <div
         class="SegmentedControl-indicator"
         style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
       />
       <button
+        aria-checked="true"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="-1"
+        role="radio"
+        tabindex="0"
         type="button"
       >
         <span
@@ -1305,9 +1433,11 @@ exports[`SegmentedControl Component - isEqualWidth Snapshot Tests matches snapsh
         class="SegmentedControl-divider SegmentedControl-divider--regular SegmentedControl-divider--hidden"
       />
       <button
+        aria-checked="false"
         class="SegmentedControl-segment SegmentedControl-segment--regular"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="0"
+        role="radio"
+        tabindex="-1"
         type="button"
       >
         <span
@@ -1320,9 +1450,11 @@ exports[`SegmentedControl Component - isEqualWidth Snapshot Tests matches snapsh
         class="SegmentedControl-divider SegmentedControl-divider--regular"
       />
       <button
+        aria-checked="false"
         class="SegmentedControl-segment SegmentedControl-segment--regular"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="0"
+        role="radio"
+        tabindex="-1"
         type="button"
       >
         <span
@@ -1342,17 +1474,20 @@ exports[`SegmentedControl Component - isEqualWidth Snapshot Tests matches snapsh
     <div
       class="SegmentedControl SegmentedControl--regular SegmentedControl--equalWidth"
       data-test="DesignSystem-SegmentedControl"
-      role="group"
+      role="radiogroup"
       style="max-width: 100%; --segment-max-width: 256px;"
+      tabindex="-1"
     >
       <div
         class="SegmentedControl-indicator"
         style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
       />
       <button
+        aria-checked="true"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="-1"
+        role="radio"
+        tabindex="0"
         type="button"
       >
         <span
@@ -1365,9 +1500,11 @@ exports[`SegmentedControl Component - isEqualWidth Snapshot Tests matches snapsh
         class="SegmentedControl-divider SegmentedControl-divider--regular SegmentedControl-divider--hidden"
       />
       <button
+        aria-checked="false"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="0"
+        role="radio"
+        tabindex="-1"
         type="button"
       >
         <span
@@ -1380,9 +1517,11 @@ exports[`SegmentedControl Component - isEqualWidth Snapshot Tests matches snapsh
         class="SegmentedControl-divider SegmentedControl-divider--regular"
       />
       <button
+        aria-checked="false"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="0"
+        role="radio"
+        tabindex="-1"
         type="button"
       >
         <span
@@ -1402,17 +1541,20 @@ exports[`SegmentedControl Component - maxWidth Snapshot Tests matches snapshot w
     <div
       class="SegmentedControl SegmentedControl--regular SegmentedControl--equalWidth"
       data-test="DesignSystem-SegmentedControl"
-      role="group"
+      role="radiogroup"
       style="max-width: 100%; --segment-max-width: 150px;"
+      tabindex="-1"
     >
       <div
         class="SegmentedControl-indicator"
         style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
       />
       <button
+        aria-checked="true"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="-1"
+        role="radio"
+        tabindex="0"
         type="button"
       >
         <span
@@ -1425,9 +1567,11 @@ exports[`SegmentedControl Component - maxWidth Snapshot Tests matches snapshot w
         class="SegmentedControl-divider SegmentedControl-divider--regular SegmentedControl-divider--hidden"
       />
       <button
+        aria-checked="false"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="0"
+        role="radio"
+        tabindex="-1"
         type="button"
       >
         <span
@@ -1440,9 +1584,11 @@ exports[`SegmentedControl Component - maxWidth Snapshot Tests matches snapshot w
         class="SegmentedControl-divider SegmentedControl-divider--regular"
       />
       <button
+        aria-checked="false"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
-        tabindex="0"
+        role="radio"
+        tabindex="-1"
         type="button"
       >
         <span
