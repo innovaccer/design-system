@@ -42,10 +42,14 @@ export interface MessageProps extends BaseProps {
    * Action links to be added inside `Message`
    */
   actions?: React.ReactNode;
+  /**
+   * HTML id for the `Message` element
+   */
+  id?: string;
 }
 
 export const Message = (props: MessageProps) => {
-  const { actions, title, className, size = 'regular' } = props;
+  const { actions, title, className, size = 'regular', id } = props;
   let { appearance } = props;
   appearance = appearance === 'default' ? 'info' : appearance;
 
@@ -106,6 +110,7 @@ export const Message = (props: MessageProps) => {
       data-test="DesignSystem-Message"
       role={appearance === 'alert' || appearance === 'warning' ? 'alert' : 'status'}
       {...baseProps}
+      id={id}
       className={MessageClass}
     >
       <Icon
