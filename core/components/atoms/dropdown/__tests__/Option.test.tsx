@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent, waitFor } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { Dropdown } from '@/index';
 
 import {
@@ -323,5 +324,13 @@ describe('renders grouped option', () => {
       const count = labels.filter((label) => label.textContent === 'Group 2').length;
       expect(count).toBe(1);
     });
+  });
+});
+
+describe('Dropdown Option component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<Dropdown options={storyOptions} />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

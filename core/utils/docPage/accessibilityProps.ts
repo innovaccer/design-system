@@ -743,7 +743,7 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
     ],
   },
 
-  // Dropdown: accepts aria-label, aria-labelledby (forwarded to built-in trigger only), optionsAriaLabel, tabIndex
+  // Dropdown: accepts aria-label, aria-labelledby (forwarded to built-in trigger only), optionsAriaLabel, inert
   Dropdown: {
     htmlElement: 'custom',
     customProps: [
@@ -763,6 +763,12 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
         name: 'optionsAriaLabel',
         type: 'string',
         description: 'Accessible name for the options list container. Defaults to "{aria-label} options" or "Options".',
+      },
+      {
+        name: 'inert',
+        type: 'string',
+        description:
+          'Makes the dropdown and all its descendants non-interactive and non-focusable. Pass an empty string ("") to activate.',
       },
     ],
   },
@@ -972,12 +978,149 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
   },
 
   // ========================================================================
+  // Chat components
+  // ========================================================================
+
+  // Chat: root wrapper — accepts role, aria-live, aria-label as opt-in props.
+  // Nested options accept aria-label for individual bubble identification.
+  Chat: {
+    htmlElement: 'custom',
+    customProps: [
+      {
+        name: 'role',
+        type: 'string',
+        description:
+          'ARIA landmark role for the chat container. Use "log" on the message list to signal a live chat feed to screen readers.',
+      },
+      {
+        name: 'aria-live',
+        type: '"polite" | "assertive" | "off"',
+        description:
+          'Live-region politeness for new message announcements. Use "polite" on the message log; omit on wrappers that include input controls.',
+      },
+      {
+        name: 'aria-label',
+        type: 'string',
+        description: 'Accessible name for the chat container (e.g., "Chat messages").',
+      },
+    ],
+    nestedComponents: [
+      {
+        name: 'incomingOptions',
+        config: {
+          htmlElement: 'custom',
+          customProps: [
+            {
+              name: 'aria-label',
+              type: 'string',
+              description:
+                'Accessible label for an incoming chat bubble. Identifies the sender to screen readers (e.g., "Message from Jane Doe").',
+            },
+          ],
+        },
+      },
+      {
+        name: 'outgoingOptions',
+        config: {
+          htmlElement: 'custom',
+          customProps: [
+            {
+              name: 'aria-label',
+              type: 'string',
+              description:
+                'Accessible label for an outgoing chat bubble. Identifies the sender to screen readers (e.g., "Message from You").',
+            },
+          ],
+        },
+      },
+    ],
+  },
+
+  // ChatBubble: individual message unit (role="article").
+  // Passes through incomingOptions / outgoingOptions aria-label to the article element.
+  ChatBubble: {
+    htmlElement: 'custom',
+    customProps: [],
+    nestedComponents: [
+      {
+        name: 'incomingOptions',
+        config: {
+          htmlElement: 'custom',
+          customProps: [
+            {
+              name: 'aria-label',
+              type: 'string',
+              description:
+                'Accessible label applied to the article element for incoming bubbles (e.g., "Message from Jane Doe").',
+            },
+          ],
+        },
+      },
+      {
+        name: 'outgoingOptions',
+        config: {
+          htmlElement: 'custom',
+          customProps: [
+            {
+              name: 'aria-label',
+              type: 'string',
+              description:
+                'Accessible label applied to the article element for outgoing bubbles (e.g., "Message from You").',
+            },
+          ],
+        },
+      },
+    ],
+  },
+
+  // ChatInput: text composition area — exposes aria-label for the textarea.
+  ChatInput: {
+    htmlElement: 'custom',
+    customProps: [
+      {
+        name: 'aria-label',
+        type: 'string',
+        description:
+          'Accessible label for the chat textarea. Required when no visible label is present (e.g., "Type a message").',
+      },
+    ],
+  },
+
+  // UnreadMessage: button-like notification banner.
+  // Activated by click, Enter (keydown), or Space (keyup) following WAI-ARIA button pattern.
+  UnreadMessage: {
+    htmlElement: 'custom',
+    customProps: [
+      {
+        name: 'onClick',
+        type: 'React.MouseEventHandler<HTMLDivElement>',
+        description: 'Handler invoked when the unread-message banner is clicked.',
+      },
+      {
+        name: 'onKeyDown',
+        type: 'React.KeyboardEventHandler<HTMLDivElement>',
+        description:
+          'Additional keydown handler composed with the built-in Enter activation. The built-in handler always fires first.',
+      },
+      {
+        name: 'onKeyUp',
+        type: 'React.KeyboardEventHandler<HTMLDivElement>',
+        description:
+          'Additional keyup handler composed with the built-in Space activation. The built-in handler always fires first.',
+      },
+    ],
+  },
+
+  // ========================================================================
   // NOT INCLUDED (BaseProps only, NO passable a11y props):
   // ProgressBar, ProgressRing, Toast,
   // Message, Collapsible, HelpText, Dialog, Tooltip, Popover,
   // Dropzone, Stepper,
   // VerticalNav,
-  // InlineMessage
+  // InlineMessage,
+  // Chat.DateSeparator (decorative separator — aria-hidden internally),
+  // Chat.NewMessage (role="status" + aria-live="polite" hardcoded internally),
+  // Chat.TypingIndicator (manages a11y internally)
   // These components manage a11y internally and do not expose configurable
   // aria-* props to consumers.
   // ========================================================================

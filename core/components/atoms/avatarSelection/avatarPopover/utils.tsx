@@ -107,5 +107,5 @@ export const handleInputKeyDown = (
 
   (targetOption as HTMLElement)?.focus();
   targetOption?.scrollIntoView?.({ block: 'center' });
-  setFocusedOption && setFocusedOption(targetOption);
+  setFocusedOption && setFocusedOption(targetOption as HTMLElement | undefined);
 };

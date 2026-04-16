@@ -4,16 +4,28 @@ import { Textarea, Label } from '@/index';
 export const Size = () => (
   <div className="d-flex justify-content-between">
     <div className="w-50 pr-4">
-      <Label withInput={true} htmlFor="regular">
+      <Label id="label-regular" withInput={true} htmlFor="textarea-regular">
         Regular
       </Label>
-      <Textarea name="regular" size="regular" aria-labelledby="Regular" placeholder="Enter your comments here" />
+      <Textarea
+        id="textarea-regular"
+        name="regular"
+        size="regular"
+        aria-labelledby="label-regular"
+        placeholder="Enter your comments here"
+      />
     </div>
     <div className="w-50">
-      <Label withInput={true} size="small" htmlFor="small">
+      <Label id="label-small" withInput={true} size="small" htmlFor="textarea-small">
         Small
       </Label>
-      <Textarea name="small" size="small" aria-labelledby="Small" placeholder="Enter your comments here" />
+      <Textarea
+        id="textarea-small"
+        name="small"
+        size="small"
+        aria-labelledby="label-small"
+        placeholder="Enter your comments here"
+      />
     </div>
   </div>
 );

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { Chip, Text } from '@/index';
 import { ChipProps as Props } from '@/index.type';
@@ -257,5 +258,13 @@ describe('Chip component size functionality', () => {
     const { getByTestId } = render(<Chip label="Test" name="test" size="small" />);
     const text = getByTestId('DesignSystem-GenericChip--Text');
     expect(text).toHaveClass('Text--small');
+  });
+});
+
+describe('Chip component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<Chip label="Test" name="test" />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

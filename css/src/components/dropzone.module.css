@@ -1,3 +1,15 @@
+.Dropzone-srOnly {
+  position: absolute;
+  width: var(--spacing-2-5);
+  height: var(--spacing-2-5);
+  padding: 0;
+  margin: calc(-1 * var(--spacing-2-5));
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .Dropzone {
   display: flex;
   align-items: center;
@@ -176,4 +188,28 @@
 
 .Dropzone-icon--error {
   fill: var(--alert);
+}
+
+@media (forced-colors: active) {
+  .Dropzone {
+    border: var(--border-width-05) dashed ButtonText;
+    background-image: none;
+    background-color: Canvas;
+  }
+
+  .Dropzone--active {
+    border: var(--border-width-05) dashed Highlight;
+    background-image: none;
+    background-color: Canvas;
+  }
+
+  .Dropzone--error {
+    border: var(--border-width-05) dashed ButtonText;
+    background-image: none;
+  }
+
+  .Dropzone--disabled {
+    border: var(--border-width-05) dashed GrayText;
+    background-image: none;
+  }
 }

@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, act } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { Tooltip, Button } from '@/index';
 import { TooltipProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -127,8 +128,20 @@ describe('Tooltip component with size prop', () => {
   });
 });
 
+describe('Tooltip component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    render(
+      <Tooltip tooltip="Sample string">
+        <Button>Button</Button>
+      </Tooltip>
+    );
+    const results = await axe(document.body);
+    expect(results).toHaveNoViolations();
+  });
+});
+
 describe('Tooltip component keyboard accessibility', () => {
-  it('should close tooltip when Escape key is pressed', async () => {
+  it('should close tooltip when Escape key is pressed', () => {
     const { getByRole, queryByText } = render(
       <Tooltip tooltip="A tooltip">
         <Button>Hover over me</Button>
@@ -138,7 +151,9 @@ describe('Tooltip component keyboard accessibility', () => {
     fireEvent.mouseOver(button);
     expect(queryByText('A tooltip')).toBeInTheDocument();
 
-    await new Promise((resolve) => setTimeout(resolve, 0));
+    act(() => {
+      jest.runAllTimers();
+    });
     fireEvent.keyDown(document, { key: 'Escape' });
     expect(queryByText('A tooltip')).not.toBeInTheDocument();
   });

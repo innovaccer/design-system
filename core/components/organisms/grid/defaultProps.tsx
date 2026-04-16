@@ -1,6 +1,7 @@
 import { GridProps } from '@/index.type';
 
 export const defaultProps: GridProps = {
+  'aria-label': 'Data grid',
   showHead: true,
   loaderSchema: [],
   schema: [],

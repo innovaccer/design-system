@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { CardHeader, Text } from '@/index';
 import { CardHeaderProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, testMessageHelper } from '@/utils/testHelper';
@@ -33,5 +34,13 @@ describe('CardHeader component', () => {
   it('renders className', () => {
     const { getByTestId } = render(<CardHeader className="CardHeaderClass">{children}</CardHeader>);
     expect(getByTestId('DesignSystem-CardHeader')).toHaveClass('CardHeaderClass');
+  });
+});
+
+describe('CardHeader component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<CardHeader>{children}</CardHeader>);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

@@ -189,3 +189,12 @@
 .MetricInput-arrowIcons--large {
   width: var(--spacing-60);
 }
+
+@media (forced-colors: active) {
+  /* Arrow button focus ring is conveyed via box-shadow only — replace with outline */
+  .MetricInput-arrowButton:focus {
+    outline: var(--border-width-05) solid Highlight;
+    outline-offset: var(--spacing-05);
+    box-shadow: none;
+  }
+}

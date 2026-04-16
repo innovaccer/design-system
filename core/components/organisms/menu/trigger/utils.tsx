@@ -48,5 +48,5 @@ export const focusListItem = (
   if (targetOption && typeof targetOption.scrollIntoView === 'function') {
     (targetOption as HTMLElement)?.scrollIntoView({ block: 'end' });
   }
-  setFocusedOption && setFocusedOption(targetOption);
+  setFocusedOption && setFocusedOption(targetOption as HTMLElement | undefined);
 };

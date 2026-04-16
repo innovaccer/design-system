@@ -64,7 +64,7 @@ export interface SelectProps extends BaseProps {
   /**
    * width of the popover by default it will be equal to the width of trigger.
    */
-  popoverWidth?: number;
+  popoverWidth?: number | string;
   /**
    * The maximum height of the popover before scroll is enabled.
    */
@@ -463,6 +463,7 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
   };
 
   const contextProp = {
+    listboxId,
     openPopover,
     setOpenPopover,
     selectValue,
@@ -485,7 +486,6 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
     styleType,
     error,
     rovingIndex,
-    listboxId,
   };
 
   return (

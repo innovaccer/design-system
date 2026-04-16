@@ -74,7 +74,7 @@ export const AvatarSelectionCount = (props: CountAvatarProp) => {
       aria-controls={popoverId}
       ref={triggerRef}
     >
-      <Avatar tabIndex={-1} size={size} appearance="secondary" className={avatarClassName}>
+      <Avatar tabIndex={-1} role="presentation" size={size} appearance="secondary" className={avatarClassName}>
         <Text className={avatarTextClassName}>{`+${hiddenAvatarCount}`}</Text>
       </Avatar>
     </div>

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { EditableInput } from '@/index';
 import { EditableInputProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -382,5 +383,13 @@ describe('EditableInput Component CSS Styling Tests - Size-specific Padding and 
       expect(defaultElement).toHaveClass('EditableInput-default--tiny');
       expect(defaultElement).not.toHaveClass('EditableInput-default--regular');
     });
+  });
+});
+
+describe('EditableInput component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<EditableInput placeholder="Enter value" onChange={jest.fn()} />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

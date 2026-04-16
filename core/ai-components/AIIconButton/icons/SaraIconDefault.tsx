@@ -32,7 +32,24 @@ const SaraIconDefault = (props: SaraIconType) => {
         fill="url(#paint1_linear_54537_3573)"
         fillOpacity="0.24"
       />
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M6 0.75C6 3.6495 8.3505 6 11.25 6C8.3505 6 6 8.35051 6 11.25C6 8.35051 3.64949 6 0.75 6C3.64949 6 6 3.6495 6 0.75Z"
+        fill="none"
+        stroke="#DD2D38"
+        strokeWidth="1"
+        vectorEffect="non-scaling-stroke"
+        clipPath="url(#clip0_54537_3573)"
+      />
       <defs>
+        <clipPath id="clip0_54537_3573">
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M6 0.75C6 3.6495 8.3505 6 11.25 6C8.3505 6 6 8.35051 6 11.25C6 8.35051 3.64949 6 0.75 6C3.64949 6 6 3.6495 6 0.75Z"
+          />
+        </clipPath>
         <linearGradient
           id="paint0_linear_54537_3573"
           x1="10.1719"

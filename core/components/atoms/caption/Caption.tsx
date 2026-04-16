@@ -48,7 +48,7 @@ export const Caption = (props: CaptionProps) => {
         </div>
       )}
       <Text appearance={error ? 'destructive' : 'subtle'} size="small" weight="medium">
-        {children}
+        {children as React.ReactText}
       </Text>
     </div>
   );

@@ -382,3 +382,74 @@
   color: var(--alert-lighter);
   box-shadow: inset 0 0 0 1px var(--alert-lighter);
 }
+
+@media (forced-colors: active) {
+  /* Selected state: inset box-shadow acts as the visible border */
+  .Button--selected,
+  .Button--selected:hover,
+  .Button--selected:active,
+  .Button--selected:disabled {
+    border: var(--border-width-05) solid ButtonText;
+    box-shadow: none;
+  }
+
+  .Button--selected:focus-visible,
+  .Button--selected:focus-visible:active {
+    outline: var(--border-width-05) solid Highlight;
+    box-shadow: none;
+  }
+
+  /* Outlined variants: inset box-shadow is the only visible border */
+  .Button-outlined--basic,
+  .Button-outlined--basic:hover,
+  .Button-outlined--basic:active,
+  .Button-outlined--basic:disabled {
+    border: var(--border-width-2-5) solid ButtonText;
+    box-shadow: none;
+  }
+
+  .Button-outlined--basic:focus-visible {
+    outline: var(--border-width-05) solid Highlight;
+    box-shadow: none;
+  }
+
+  .Button-outlined--selected,
+  .Button-outlined--selected:hover,
+  .Button-outlined--selected:active,
+  .Button-outlined--selected:disabled {
+    border: var(--border-width-05) solid ButtonText;
+    box-shadow: none;
+  }
+
+  .Button-outlined--selected:focus-visible,
+  .Button-outlined--selected:focus-visible:active {
+    outline: var(--border-width-05) solid Highlight;
+    box-shadow: none;
+  }
+
+  .Button-outlined--primary,
+  .Button-outlined--primary:hover,
+  .Button-outlined--primary:active,
+  .Button-outlined--primary:disabled {
+    border: var(--border-width-2-5) solid ButtonText;
+    box-shadow: none;
+  }
+
+  .Button-outlined--primary:focus-visible {
+    outline: var(--border-width-05) solid Highlight;
+    box-shadow: none;
+  }
+
+  .Button-outlined--alert,
+  .Button-outlined--alert:hover,
+  .Button-outlined--alert:active,
+  .Button-outlined--alert:disabled {
+    border: var(--border-width-2-5) solid ButtonText;
+    box-shadow: none;
+  }
+
+  .Button-outlined--alert:focus-visible {
+    outline: var(--border-width-05) solid Highlight;
+    box-shadow: none;
+  }
+}

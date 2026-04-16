@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { Combobox } from '@/index';
 import { ComboboxProps as Props } from '@/index.type';
@@ -245,5 +246,19 @@ describe('Combobox component multiple select trigger tests', () => {
     expect(getByTestId('DesignSystem-GenericChip--clearButton')).toHaveAttribute('aria-label', 'Remove Option 1');
     expect(getByTestId('DesignSystem-MultiSelectTrigger--Icon')).toHaveAttribute('aria-label', 'Clear all options');
     expect(getByTestId('DesignSystem-MultiSelectTrigger--Chip')).toHaveAttribute('tabIndex', '-1');
+  });
+});
+
+describe('Combobox component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(
+      <Combobox placeholder="select an option">
+        <Combobox.List>
+          <Combobox.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Combobox.Option>
+        </Combobox.List>
+      </Combobox>
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

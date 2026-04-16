@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { axe } from '@/utils/testAxe';
 import { render, fireEvent, waitFor, screen, within } from '@testing-library/react';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { Dropdown, Text } from '@/index';
@@ -916,6 +917,14 @@ describe('Dropdown errorTemplate', () => {
       expect(getAllByTestId('DesignSystem-Text')[0].textContent).toMatch('Failed to fetch data');
       expect(getAllByTestId('DesignSystem-Text')[1].textContent).toMatch("We couldn't load the data, try reloading.");
     });
+  });
+});
+
+describe('Dropdown component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    render(<Dropdown options={storyOptions} />);
+    const results = await axe(document.body);
+    expect(results).toHaveNoViolations();
   });
 });
 

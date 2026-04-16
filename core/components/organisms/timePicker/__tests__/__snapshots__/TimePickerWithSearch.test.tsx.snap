@@ -6,7 +6,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
 <body>
   <div>
     <div
-      class="Dropdown"
+      class="Dropdown TimePicker-trigger"
       role="presentation"
     >
       
@@ -51,7 +51,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
 <body>
   <div>
     <div
-      class="Dropdown"
+      class="Dropdown TimePicker-trigger"
       role="presentation"
     >
       
@@ -96,7 +96,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
 <body>
   <div>
     <div
-      class="Dropdown"
+      class="Dropdown TimePicker-trigger"
       role="presentation"
     >
       
@@ -141,7 +141,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
 <body>
   <div>
     <div
-      class="Dropdown"
+      class="Dropdown TimePicker-trigger"
       role="presentation"
     >
       
@@ -186,7 +186,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
 <body>
   <div>
     <div
-      class="Dropdown"
+      class="Dropdown TimePicker-trigger"
       role="presentation"
     >
       
@@ -231,7 +231,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
 <body>
   <div>
     <div
-      class="Dropdown"
+      class="Dropdown TimePicker-trigger"
       role="presentation"
     >
       
@@ -276,7 +276,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
 <body>
   <div>
     <div
-      class="Dropdown"
+      class="Dropdown TimePicker-trigger"
       role="presentation"
     >
       
@@ -321,7 +321,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
 <body>
   <div>
     <div
-      class="Dropdown"
+      class="Dropdown TimePicker-trigger"
       role="presentation"
     >
       

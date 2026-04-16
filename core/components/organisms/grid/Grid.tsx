@@ -702,6 +702,7 @@ export class Grid extends React.Component<GridProps, GridState> {
         data-test="DesignSystem-Grid"
         {...baseProps}
         className={classes}
+        role="grid"
         aria-label={ariaLabel}
         aria-labelledby={ariaLabelledBy}
         ref={(el) => {

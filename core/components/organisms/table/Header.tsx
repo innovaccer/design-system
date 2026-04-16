@@ -322,15 +322,25 @@ export const Header = (props: HeaderProps) => {
           )}
           {
             <>
-              {showSelectedLabel ? (
-                <span className={selectedRowLabelClass} onAnimationEnd={onSelectAnimationEnd}>
-                  <Label>{customSelectedRowLabel ?? getSelectedRowLabel()}</Label>
-                </span>
-              ) : (
-                <span className={unselectedRowLabelClass} onAnimationEnd={onUnSelectAnimationEnd}>
-                  <Label>{customUnSelectedRowLabel ?? getUnSelectedRowLabel()}</Label>
-                </span>
-              )}
+              {/* Persistent live region: always in DOM so screen readers announce text changes */}
+              <span aria-live="polite" aria-atomic="true" className={tableStyles['Table-srOnly']}>
+                {showSelectedLabel
+                  ? customSelectedRowLabel ?? getSelectedRowLabel()
+                  : customUnSelectedRowLabel ?? getUnSelectedRowLabel()}
+              </span>
+
+              {/* Visual-only spans: aria-hidden on container so AT uses the live region above */}
+              <div aria-hidden="true">
+                {showSelectedLabel ? (
+                  <span className={selectedRowLabelClass} onAnimationEnd={onSelectAnimationEnd}>
+                    <Label>{customSelectedRowLabel ?? getSelectedRowLabel()}</Label>
+                  </span>
+                ) : (
+                  <span className={unselectedRowLabelClass} onAnimationEnd={onUnSelectAnimationEnd}>
+                    <Label>{customUnSelectedRowLabel ?? getUnSelectedRowLabel()}</Label>
+                  </span>
+                )}
+              </div>
 
               {selectedRowsCount > 0 && allowSelectAll && showSelectedLabel && (
                 <div className={selectedRowLabelClass}>

@@ -56,7 +56,7 @@ export interface SegmentedControlProps extends BaseProps {
    */
   'aria-label'?: string;
   /**
-   * Associates the segment group with an external label element.
+   * ID of an element whose text labels the control group (e.g. an external heading)
    */
   'aria-labelledby'?: string;
 }
@@ -72,6 +72,8 @@ export const SegmentedControl = (props: SegmentedControlProps) => {
     disabled = false,
     className,
     children,
+    'aria-label': ariaLabel,
+    'aria-labelledby': ariaLabelledby,
   } = props;
 
   const baseProps = extractBaseProps(props);
@@ -304,6 +306,9 @@ export const SegmentedControl = (props: SegmentedControlProps) => {
       data-test="DesignSystem-SegmentedControl"
       onKeyDown={handleKeyDown}
       {...baseProps}
+      role="group"
+      aria-label={ariaLabel}
+      aria-labelledby={ariaLabelledby}
     >
       <div
         ref={indicatorRef}

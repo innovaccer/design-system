@@ -170,6 +170,8 @@ export const EditableDropdown = (props: EditableDropdownProps) => {
           onChange={onChange}
           getLabel={getLabel}
           onClose={onClose}
+          aria-hidden={!showComponent ? true : undefined}
+          inert={!showComponent ? '' : undefined}
           open={dropdownOpen}
           onPopperToggle={onPopperToggle}
           disabled={isDropdownDisabled}

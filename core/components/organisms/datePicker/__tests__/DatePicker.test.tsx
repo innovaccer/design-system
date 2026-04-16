@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { DatePicker } from '@/index';
 import { DatePickerProps as Props } from '@/index.type';
@@ -207,5 +208,13 @@ describe('renders DatePicker component Event Handlers ', () => {
     const input = getByTestId('DesignSystem-Input');
     fireEvent.change(input, { target: { value: newDate } });
     expect(FunctionValue).toHaveBeenCalled();
+  });
+});
+
+describe('DatePicker component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<DatePicker date={newDate} />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });
