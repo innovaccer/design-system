@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { Row, Column, Divider } from '@/index';
+import { Divider } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { BackButton, Title, CenterNav, Nav, Action, Status } from './utils';
 import styles from '@css/components/pageHeader.module.css';
@@ -83,33 +83,27 @@ export const PageHeader = (props: PageHeaderProps) => {
   } = props;
   const baseProps = extractBaseProps(props);
 
+  const isLevel1 = !!(breadcrumbs || button);
+
   const wrapperClasses = classNames(
     {
       [styles['PageHeader-wrapper']]: true,
       [styles['PageHeader-wrapper--withTabs']]: tabs,
+      [styles['PageHeader-wrapper--level1']]: isLevel1,
+      [styles['PageHeader-wrapper--withActions']]: !!actions,
     },
     className
   );
 
+  const hasCenterNav = !!(navigation || stepper) && navigationPosition === 'center';
+
   const classes = classNames(styles.PageHeader);
 
-  const colSize = (navigation || stepper) && navigationPosition === 'center' ? '4' : actions ? '8' : '12';
+  const rowClasses = classNames(styles['PageHeader-row'], {
+    [styles['PageHeader-row--withCenter']]: hasCenterNav,
+  });
 
-  const centerNavProps = {
-    colSize,
-    breadcrumbs,
-    navigationPosition,
-    navigation,
-    stepper,
-  };
-
-  const statusProps = {
-    status,
-    meta,
-    navigationPosition,
-    navigation,
-    tabs,
-  };
+  const centerNavProps = { navigationPosition, navigation, stepper };
 
   return (
     <div data-test="DesignSystem-PageHeader">
@@ -122,21 +116,23 @@ export const PageHeader = (props: PageHeaderProps) => {
         <div className="d-flex pl-6">
           <BackButton button={button} />
           <div className={classes}>
-            <Row className="w-100">
-              <Column size={colSize} sizeXL={colSize} sizeM={colSize}>
+            <div className={rowClasses}>
+              <div className={styles['PageHeader-group--title']}>
                 <Title badge={badge} title={title} />
-              </Column>
+                <Status status={status} meta={meta} />
+              </div>
               <CenterNav {...centerNavProps} />
               <Action actions={actions} navigation={navigation} stepper={stepper} />
-            </Row>
-            <Status {...statusProps} />
+            </div>
           </div>
         </div>
 
-        <div className="pl-3">
-          {navigationPosition === 'bottom' && <Nav navigation={navigation} stepper={stepper} />}
-          {tabs && <div data-test="DesignSystem-PageHeader--Tabs">{tabs}</div>}
-        </div>
+        {(tabs || navigationPosition === 'bottom') && (
+          <div className={classNames('pl-3', styles['PageHeader-bottom'])}>
+            {navigationPosition === 'bottom' && <Nav navigation={navigation} stepper={stepper} />}
+            {tabs && <div data-test="DesignSystem-PageHeader--Tabs">{tabs}</div>}
+          </div>
+        )}
       </div>
       {separator && <Divider appearance="header" />}
     </div>
