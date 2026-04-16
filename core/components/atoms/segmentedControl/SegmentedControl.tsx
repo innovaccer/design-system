@@ -306,7 +306,6 @@ export const SegmentedControl = (props: SegmentedControlProps) => {
       data-test="DesignSystem-SegmentedControl"
       onKeyDown={handleKeyDown}
       {...baseProps}
-      role="group"
       aria-label={ariaLabel}
       aria-labelledby={ariaLabelledby}
     >
