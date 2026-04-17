@@ -46,10 +46,12 @@ export const resizeCol: resizeColFn = ({ updateColumnSchema, onResizeEnd }, name
   }
 
   window.addEventListener('mousemove', resizable);
-  window.addEventListener('mouseup', () => {
+  function handleMouseUp() {
     window.removeEventListener('mousemove', resizable);
+    window.removeEventListener('mouseup', handleMouseUp);
     if (onResizeEnd) onResizeEnd();
-  });
+  }
+  window.addEventListener('mouseup', handleMouseUp);
 };
 
 export const sortColumn: sortColumnFn = ({ sortingList, updateSortingList }, name, type) => {

@@ -109,7 +109,7 @@ const HeaderCell = (props: HeaderCellProps) => {
     if (typeof parsed === 'number' && !isNaN(parsed)) estimatedWidth = Math.max(estimatedWidth, parsed);
   }
 
-  // If the column is already pinned, its width is already subtracted from mainRemainder, 
+  // If the column is already pinned, its width is already subtracted from mainRemainder,
   // so we don't need to charge for it again when checking if it can be pinned to the other side.
   const widthCost = pinned ? 0 : estimatedWidth;
 
