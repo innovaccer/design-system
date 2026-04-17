@@ -23,7 +23,7 @@ const buildLoaderSchema = (isNarrow, showWideFilters) => {
   const tierOnly = showWideFilters ? [{ name: 'tier', displayName: 'Tier', width: isNarrow ? 96 : 120 }] : [];
   return [
     { name: 'id', displayName: 'ID', width: isNarrow ? 48 : 72 },
-    { name: 'member', displayName: 'Member', width: isNarrow ? 200 : 260 },
+    { name: 'member', displayName: 'Member', width: isNarrow ? 200 : 260, pinned: 'left' },
     { name: 'email', displayName: 'Email', width: isNarrow ? 240 : 300 },
     ...laneOnly,
     { name: 'department', displayName: 'Department', width: isNarrow ? 176 : 200 },
@@ -148,6 +148,7 @@ const buildViewportSchema = (isNarrow, showWideFilters) => {
       minWidth: isNarrow ? 188 : 228,
       maxWidth: isNarrow ? cap : 320,
       sorting: true,
+      pinned: 'left',
       cellType: 'AVATAR_WITH_TEXT',
       translate: (row) => ({
         title: `${row.firstName} ${row.lastName}`,
@@ -486,7 +487,7 @@ const customCode = `
     var tierOnly = showWide ? [{ name: 'tier', displayName: 'Tier', width: narrow ? 96 : 120 }] : [];
     return [
       { name: 'id', displayName: 'ID', width: narrow ? 48 : 72 },
-      { name: 'member', displayName: 'Member', width: narrow ? 200 : 260 },
+      { name: 'member', displayName: 'Member', width: narrow ? 200 : 260, pinned: 'left' },
       { name: 'email', displayName: 'Email', width: narrow ? 240 : 300 },
     ].concat(laneOnly).concat([
       { name: 'department', displayName: 'Department', width: narrow ? 176 : 200 },
@@ -590,6 +591,7 @@ const customCode = `
         minWidth: narrow ? 188 : 228,
         maxWidth: narrow ? cap : 320,
         sorting: true,
+        pinned: 'left',
         cellType: 'AVATAR_WITH_TEXT',
         translate: function (row) {
           return {
