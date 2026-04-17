@@ -11,6 +11,10 @@
   --accent2: var(--jamun);
   --accent3: var(--neel);
   --accent4: var(--nimbu);
+  --accent5: var(--color-cyan-1000);
+  --accent6: var(--color-magenta-1000);
+  --accent7: var(--color-sea-1000);
+  --accent8: var(--color-pink-1000);
   --inverse: var(--night);
 
   /* dark */
@@ -23,6 +27,10 @@
   --accent2-dark: var(--jamun-dark);
   --accent3-dark: var(--neel-dark);
   --accent4-dark: var(--nimbu-dark);
+  --accent5-dark: var(--color-cyan-1200);
+  --accent6-dark: var(--color-magenta-1200);
+  --accent7-dark: var(--color-sea-1200);
+  --accent8-dark: var(--color-pink-1200);
 
   /* darker */
   --primary-darker: var(--jal-darker);
@@ -33,6 +41,10 @@
   --accent2-darker: var(--jamun-darker);
   --accent3-darker: var(--neel-darker);
   --accent4-darker: var(--nimbu-darker);
+  --accent5-darker: var(--color-cyan-1300);
+  --accent6-darker: var(--color-magenta-1300);
+  --accent7-darker: var(--color-sea-1300);
+  --accent8-darker: var(--color-pink-1300);
 
   /* light */
   --primary-light: var(--jal-light);
@@ -44,6 +56,10 @@
   --accent2-light: var(--jamun-light);
   --accent3-light: var(--neel-light);
   --accent4-light: var(--nimbu-light);
+  --accent5-light: var(--color-cyan-700);
+  --accent6-light: var(--color-magenta-700);
+  --accent7-light: var(--color-sea-700);
+  --accent8-light: var(--color-pink-700);
   --inverse-light: var(--night-light);
 
   /* lighter */
@@ -56,6 +72,10 @@
   --accent2-lighter: var(--jamun-lighter);
   --accent3-lighter: var(--neel-lighter);
   --accent4-lighter: var(--nimbu-lighter);
+  --accent5-lighter: var(--color-cyan-500);
+  --accent6-lighter: var(--color-magenta-500);
+  --accent7-lighter: var(--color-sea-500);
+  --accent8-lighter: var(--color-pink-500);
   --inverse-lighter: var(--night-lighter);
 
   /* lightest */
@@ -68,6 +88,10 @@
   --accent2-lightest: var(--jamun-lightest);
   --accent3-lightest: var(--neel-lightest);
   --accent4-lightest: var(--nimbu-lightest);
+  --accent5-lightest: var(--color-cyan-200);
+  --accent6-lightest: var(--color-magenta-200);
+  --accent7-lightest: var(--color-sea-200);
+  --accent8-lightest: var(--color-pink-200);
   --inverse-lightest: var(--night-lightest);
 
   /* Focus */
@@ -83,16 +107,96 @@
   --accent2-ultra-light: var(--color-violet-100);
   --accent3-ultra-light: var(--color-indigo-100);
   --accent4-ultra-light: var(--color-lime-100);
+  --accent5-ultra-light: var(--color-cyan-100);
+  --accent6-ultra-light: var(--color-magenta-100);
+  --accent7-ultra-light: var(--color-sea-100);
+  --accent8-ultra-light: var(--color-pink-100);
 
-  /* Avatar specific color for the time being */
+  /* Numeric semantic steps */
   --primary-300: var(--color-blue-300);
+  --primary-400: var(--color-blue-400);
+  --primary-600: var(--color-blue-600);
+  --primary-800: var(--color-blue-800);
+  --primary-900: var(--color-blue-900);
+  --primary-1100: var(--color-blue-1100);
+  --primary-1400: var(--color-blue-1400);
   --success-300: var(--color-green-300);
+  --success-400: var(--color-green-400);
+  --success-600: var(--color-green-600);
+  --success-800: var(--color-green-800);
+  --success-900: var(--color-green-900);
+  --success-1100: var(--color-green-1100);
+  --success-1400: var(--color-green-1400);
   --alert-300: var(--color-red-300);
+  --alert-400: var(--color-red-400);
+  --alert-600: var(--color-red-600);
+  --alert-800: var(--color-red-800);
+  --alert-900: var(--color-red-900);
+  --alert-1100: var(--color-red-1100);
+  --alert-1400: var(--color-red-1400);
   --warning-300: var(--color-yellow-300);
+  --warning-400: var(--color-yellow-400);
+  --warning-600: var(--color-yellow-600);
+  --warning-800: var(--color-yellow-800);
+  --warning-1000: var(--color-yellow-1000);
+  --warning-1200: var(--color-yellow-1200);
+  --warning-1400: var(--color-yellow-1400);
   --accent1-300: var(--color-orange-300);
+  --accent1-400: var(--color-orange-400);
+  --accent1-600: var(--color-orange-600);
+  --accent1-800: var(--color-orange-800);
+  --accent1-900: var(--color-orange-900);
+  --accent1-1100: var(--color-orange-1100);
+  --accent1-1400: var(--color-orange-1400);
   --accent2-300: var(--color-violet-300);
+  --accent2-400: var(--color-violet-400);
+  --accent2-600: var(--color-violet-600);
+  --accent2-800: var(--color-violet-800);
+  --accent2-900: var(--color-violet-900);
+  --accent2-1100: var(--color-violet-1100);
+  --accent2-1400: var(--color-violet-1400);
   --accent3-300: var(--color-indigo-300);
+  --accent3-400: var(--color-indigo-400);
+  --accent3-600: var(--color-indigo-600);
+  --accent3-800: var(--color-indigo-800);
+  --accent3-900: var(--color-indigo-900);
+  --accent3-1100: var(--color-indigo-1100);
+  --accent3-1400: var(--color-indigo-1400);
   --accent4-300: var(--color-lime-300);
+  --accent4-400: var(--color-lime-400);
+  --accent4-600: var(--color-lime-600);
+  --accent4-800: var(--color-lime-800);
+  --accent4-900: var(--color-lime-900);
+  --accent4-1100: var(--color-lime-1100);
+  --accent4-1400: var(--color-lime-1400);
+  --accent5-300: var(--color-cyan-300);
+  --accent5-400: var(--color-cyan-400);
+  --accent5-600: var(--color-cyan-600);
+  --accent5-800: var(--color-cyan-800);
+  --accent5-900: var(--color-cyan-900);
+  --accent5-1100: var(--color-cyan-1100);
+  --accent5-1400: var(--color-cyan-1400);
+  --accent6-300: var(--color-magenta-300);
+  --accent6-400: var(--color-magenta-400);
+  --accent6-600: var(--color-magenta-600);
+  --accent6-800: var(--color-magenta-800);
+  --accent6-900: var(--color-magenta-900);
+  --accent6-1100: var(--color-magenta-1100);
+  --accent6-1400: var(--color-magenta-1400);
+  --accent7-300: var(--color-sea-300);
+  --accent7-400: var(--color-sea-400);
+  --accent7-600: var(--color-sea-600);
+  --accent7-800: var(--color-sea-800);
+  --accent7-900: var(--color-sea-900);
+  --accent7-1100: var(--color-sea-1100);
+  --accent7-1400: var(--color-sea-1400);
+  --accent8-300: var(--color-pink-300);
+  --accent8-400: var(--color-pink-400);
+  --accent8-600: var(--color-pink-600);
+  --accent8-800: var(--color-pink-800);
+  --accent8-900: var(--color-pink-900);
+  --accent8-1100: var(--color-pink-1100);
+  --accent8-1400: var(--color-pink-1400);
 
   /* shadow */
   --primary-shadow: color-mod(var(--primary) a(var(--opacity-4)));
@@ -104,6 +208,10 @@
   --accent2-shadow: color-mod(var(--accent2) a(var(--opacity-4)));
   --accent3-shadow: color-mod(var(--accent3) a(var(--opacity-4)));
   --accent4-shadow: color-mod(var(--accent4) a(var(--opacity-4)));
+  --accent5-shadow: color-mod(var(--accent5) a(var(--opacity-4)));
+  --accent6-shadow: color-mod(var(--accent6) a(var(--opacity-4)));
+  --accent7-shadow: color-mod(var(--accent7) a(var(--opacity-4)));
+  --accent8-shadow: color-mod(var(--accent8) a(var(--opacity-4)));
   --inverse-shadow: color-mod(var(--inverse) a(var(--opacity-4)));
 
   /* Text colors */
