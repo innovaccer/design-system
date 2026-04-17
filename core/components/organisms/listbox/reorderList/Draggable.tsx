@@ -407,23 +407,8 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
     return false;
   };
 
-  onEnd = (e: TouchEvent & MouseEvent) => {
-    e.cancelable && e.preventDefault();
-
-    if (!this.hasDragStarted) {
-      if (!this.state.isClickAndFollow) {
-        // First click -> start Click-and-Follow
-        this.setState({
-          isClickAndFollow: true,
-          ariaMessage: 'Item grabbed. Move focus to choose a destination, then click or press Space to drop.',
-        });
-        return; // Keep listeners alive
-      } else {
-        // Second click -> end Click-and-Follow
-        this.setState({ isClickAndFollow: false });
-      }
-    }
-
+  /** Shared tail of pointer drop: detach listeners, animate ghost, schedule {@link finishDrop}. */
+  finalizeActivePointerDrop = () => {
     document.removeEventListener('mousemove', this.schdOnMouseMove);
     document.removeEventListener('touchmove', this.schdOnTouchMove);
     document.removeEventListener('mouseup', this.schdOnEnd);
@@ -460,6 +445,34 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
       this.finishDrop,
       removeItem || this.afterIndex === -2 ? 0 : this.props.transitionDuration
     );
+  };
+
+  /** Space (or second click) during click-and-follow: drop at focused row, same as pointer second click. */
+  completeClickAndFollowDropAtFocusedIndex = (index: number) => {
+    this.afterIndex = index;
+    this.needle = -1;
+    this.setState({ isClickAndFollow: false, selectedItem: -1 });
+    this.finalizeActivePointerDrop();
+  };
+
+  onEnd = (e: TouchEvent & MouseEvent) => {
+    e.cancelable && e.preventDefault();
+
+    if (!this.hasDragStarted) {
+      if (!this.state.isClickAndFollow) {
+        // First click -> start Click-and-Follow
+        this.setState({
+          isClickAndFollow: true,
+          ariaMessage: 'Item grabbed. Move focus to choose a destination, then click or press Space to drop.',
+        });
+        return; // Keep listeners alive
+      } else {
+        // Second click -> end Click-and-Follow
+        this.setState({ isClickAndFollow: false });
+      }
+    }
+
+    this.finalizeActivePointerDrop();
   };
 
   finishDrop = () => {
@@ -598,6 +611,10 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
 
     if (e.key === ' ') {
       e.preventDefault();
+      if (this.state.itemDragged > -1 && this.state.isClickAndFollow) {
+        this.completeClickAndFollowDropAtFocusedIndex(index);
+        return;
+      }
       if (selectedItem === index) {
         this.commitKeyboardReorder();
       } else {
