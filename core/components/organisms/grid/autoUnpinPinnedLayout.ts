@@ -1,6 +1,6 @@
 /**
  * When the unpinned "main" region of the grid is narrower than AUTO_UNPIN_MAIN_REMAINDER_MAX,
- * the Grid may auto-unpin columns (one per layout pass). 
+ * the Grid may auto-unpin columns (one per layout pass).
  * When checking if a column should be repinned, it requires the unpin threshold PLUS the column width
  * PLUS this buffer, to prevent layout oscillation.
  */
@@ -17,7 +17,7 @@ export type AutoUnpinStackEntry = {
 type ColumnLike = {
   name: string;
   hidden?: boolean;
-  pinned?: PinnedSide;
+  pinned?: PinnedSide | 'unpin';
 };
 
 /**

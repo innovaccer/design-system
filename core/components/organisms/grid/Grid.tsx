@@ -434,7 +434,7 @@ export class Grid extends React.Component<GridProps, GridState> {
   isHeadSyncing = false;
   isBodySyncing = false;
   private autoUnpinStackRef: { current: AutoUnpinStackEntry[] } = { current: [] };
-  private autoUnpinResizeObserver: ResizeObserver | null = null;
+  private autoUnpinResizeObserver: any = null;
   private autoUnpinRafId: number | null = null;
 
   constructor(props: GridProps) {
@@ -729,7 +729,7 @@ export class Grid extends React.Component<GridProps, GridState> {
 
   measureMainRemainder(): number | null {
     const scrollEl = this.getScrollContainer();
-    
+
     if (!scrollEl) return null;
     const { left, right } = this.getPinMeasurementElements();
     const leftW = left?.getBoundingClientRect().width ?? 0;
@@ -785,7 +785,16 @@ export class Grid extends React.Component<GridProps, GridState> {
         }
       }
 
-      const dynamicRepinThreshold = AUTO_UNPIN_MAIN_REMAINDER_MAX + estimatedWidth + AUTO_REPIN_BUFFER;
+      let checkboxWidth = 0;
+      if (this.props.withCheckbox && last.side === 'left') {
+        const hasLeftPinned = effectiveSchema.some((s) => s.pinned === 'left' && !s.hidden);
+        if (!hasLeftPinned) {
+          const checkboxCell = this.gridRef?.querySelector(`.${styles['Grid-cell--checkbox']}`);
+          checkboxWidth = checkboxCell?.clientWidth || 28;
+        }
+      }
+
+      const dynamicRepinThreshold = AUTO_UNPIN_MAIN_REMAINDER_MAX + estimatedWidth + checkboxWidth + AUTO_REPIN_BUFFER;
 
       if (remainder >= dynamicRepinThreshold) {
         this.autoUnpinStackRef.current = stack.slice(0, -1);
@@ -807,11 +816,11 @@ export class Grid extends React.Component<GridProps, GridState> {
   setupAutoUnpinObserver(): void {
     this.teardownAutoUnpinObserver();
     const el = this.getScrollContainer();
-    if (!el || typeof ResizeObserver === 'undefined') {
+    if (!el || typeof (window as any).ResizeObserver === 'undefined') {
       this.scheduleAutoUnpinLayoutCheck();
       return;
     }
-    this.autoUnpinResizeObserver = new ResizeObserver(() => {
+    this.autoUnpinResizeObserver = new (window as any).ResizeObserver(() => {
       this.scheduleAutoUnpinLayoutCheck();
     });
     this.autoUnpinResizeObserver.observe(el);
