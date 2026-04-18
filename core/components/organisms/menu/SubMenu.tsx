@@ -97,11 +97,11 @@ export const SubMenu = (props: SubMenuProps) => {
   });
 
   if (React.isValidElement(submenuContent)) {
-    const { on, children, onToggle } = submenuContent?.props;
+    const { on, children, onToggle, open: consumerOpen } = submenuContent?.props;
     subMenuElement = React.cloneElement(submenuContent as React.ReactElement, {
       ...submenuContent.props,
       on: on || 'hover',
-      open: keyboardOpen || undefined,
+      open: keyboardOpen || consumerOpen,
       offset: 'small',
       children: <div ref={subListRef}>{children}</div>,
       trigger: triggerElement,
