@@ -28,6 +28,10 @@ export const handleKeyDown = (
       event.preventDefault();
       (focusedOption as HTMLElement)?.click();
       setOpenPopover?.(false);
+      if (!isSubMenuTrigger) {
+        menuTriggerRef?.current?.focus();
+      }
+      setFocusedOption?.(undefined);
       break;
     case 'Escape':
       setOpenPopover?.(false);
@@ -40,6 +44,15 @@ export const handleKeyDown = (
       break;
     case 'Tab':
       setOpenPopover?.(false);
+      setFocusedOption?.(undefined);
+      break;
+    case 'Home':
+      event.preventDefault();
+      navigateOptions('down', undefined, setFocusedOption, listRef);
+      break;
+    case 'End':
+      event.preventDefault();
+      navigateOptions('up', undefined, setFocusedOption, listRef);
       break;
     case 'ArrowRight':
       navigateSubMenu(isSubMenuTrigger, 'right', subListRef, menuID, triggerID, parentListRef);

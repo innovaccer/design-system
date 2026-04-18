@@ -228,6 +228,93 @@ describe('Menu component keyboard interactions', () => {
     const popover = getByTestId('DesignSystem-Popover');
     expect(popover).toBeInTheDocument();
   });
+
+  it('should return focus to trigger after pressing Enter on a menu item', () => {
+    const { getByTestId } = render(
+      <Menu trigger={<Menu.Trigger />} open={true}>
+        <Menu.List>
+          <Menu.Item>Menu Item 1</Menu.Item>
+        </Menu.List>
+      </Menu>
+    );
+    const trigger = getByTestId('DesignSystem-Menu-Trigger');
+    const menuItem = getByTestId('DesignSystem-Menu-ListItem');
+
+    fireEvent.focus(menuItem);
+    fireEvent.keyDown(menuItem, { key: 'Enter' });
+
+    expect(document.activeElement).toBe(trigger);
+  });
+
+  it('should return focus to trigger after pressing Space on a menu item', () => {
+    const { getByTestId } = render(
+      <Menu trigger={<Menu.Trigger />} open={true}>
+        <Menu.List>
+          <Menu.Item>Menu Item 1</Menu.Item>
+        </Menu.List>
+      </Menu>
+    );
+    const trigger = getByTestId('DesignSystem-Menu-Trigger');
+    const menuItem = getByTestId('DesignSystem-Menu-ListItem');
+
+    fireEvent.focus(menuItem);
+    fireEvent.keyDown(menuItem, { key: ' ' });
+
+    expect(document.activeElement).toBe(trigger);
+  });
+
+  it('should return focus to trigger after pressing Escape on a menu item', () => {
+    const { getByTestId } = render(
+      <Menu trigger={<Menu.Trigger />} open={true}>
+        <Menu.List>
+          <Menu.Item>Menu Item 1</Menu.Item>
+        </Menu.List>
+      </Menu>
+    );
+    const trigger = getByTestId('DesignSystem-Menu-Trigger');
+    const menuItem = getByTestId('DesignSystem-Menu-ListItem');
+
+    fireEvent.focus(menuItem);
+    fireEvent.keyDown(menuItem, { key: 'Escape' });
+
+    expect(document.activeElement).toBe(trigger);
+  });
+
+  it('should move focus to first item when Home key is pressed', () => {
+    const { getAllByTestId } = render(
+      <Menu trigger={<Menu.Trigger />} open={true}>
+        <Menu.List>
+          <Menu.Item>Menu Item 1</Menu.Item>
+          <Menu.Item>Menu Item 2</Menu.Item>
+          <Menu.Item>Menu Item 3</Menu.Item>
+        </Menu.List>
+      </Menu>
+    );
+    const menuItems = getAllByTestId('DesignSystem-Menu-ListItem');
+
+    fireEvent.focus(menuItems[2]);
+    fireEvent.keyDown(menuItems[2], { key: 'Home' });
+
+    expect(document.activeElement).toBe(menuItems[0]);
+  });
+
+  it('should move focus to last item when End key is pressed', () => {
+    const { getAllByTestId } = render(
+      <Menu trigger={<Menu.Trigger />} open={true}>
+        <Menu.List>
+          <Menu.Item>Menu Item 1</Menu.Item>
+          <Menu.Item>Menu Item 2</Menu.Item>
+          <Menu.Item>Menu Item 3</Menu.Item>
+        </Menu.List>
+      </Menu>
+    );
+    const menuItems = getAllByTestId('DesignSystem-Menu-ListItem');
+
+    fireEvent.focus(menuItems[0]);
+    fireEvent.keyDown(menuItems[0], { key: 'End' });
+
+    expect(document.activeElement).toBe(menuItems[2]);
+  });
 });
 
 describe('Menu component with prop:disabled', () => {
