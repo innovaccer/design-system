@@ -36,7 +36,12 @@ export const handleKeyDown = (
     case 'Escape':
       setOpenPopover?.(false);
       if (triggerRef && !isSubMenuTrigger) {
-        triggerRef?.current?.focus();
+        if (triggerRef.current) {
+          triggerRef.current.focus();
+        } else if (parentListRef?.current && triggerID) {
+          const triggerEl = parentListRef.current.querySelector(`#${triggerID}`) as HTMLElement | null;
+          triggerEl?.focus();
+        }
       } else {
         menuTriggerRef?.current?.focus();
       }
@@ -58,7 +63,14 @@ export const handleKeyDown = (
       navigateSubMenu(isSubMenuTrigger, 'right', subListRef, menuID, triggerID, parentListRef);
       break;
     case 'ArrowLeft':
-      navigateSubMenu(isSubMenuTrigger, 'left', subListRef, menuID, triggerID, parentListRef);
+      if (!isSubMenuTrigger && triggerID && parentListRef?.current) {
+        setOpenPopover?.(false);
+        const triggerEl = parentListRef.current.querySelector(`#${triggerID}`) as HTMLElement | null;
+        triggerEl?.focus();
+        setFocusedOption?.(undefined);
+      } else {
+        navigateSubMenu(isSubMenuTrigger, 'left', subListRef, menuID, triggerID, parentListRef);
+      }
       break;
     default:
       break;

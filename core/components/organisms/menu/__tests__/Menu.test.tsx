@@ -502,6 +502,124 @@ describe('Menu Component - SubMenu nested menu functionality and accessibility',
     // The submenu trigger should handle the keyboard event
     expect(subMenuTrigger).toBeInTheDocument();
   });
+
+  it('should open submenu on ArrowRight key press on submenu trigger', () => {
+    const { getAllByTestId } = render(
+      <Menu trigger={<Menu.Trigger />} open={true}>
+        <Menu.List>
+          <Menu.SubMenu>
+            <Menu.Item className="d-flex align-items-center justify-content-between w-100">
+              Menu Item with SubMenu
+              <Icon name="chevron_right" />
+            </Menu.Item>
+            <Menu position="right-start">
+              <Menu.List>
+                <Menu.Item>Sub Menu Item 1</Menu.Item>
+              </Menu.List>
+            </Menu>
+          </Menu.SubMenu>
+        </Menu.List>
+      </Menu>
+    );
+
+    const menuItems = getAllByTestId('DesignSystem-Menu-ListItem');
+    const subMenuTrigger = menuItems[0];
+
+    fireEvent.keyDown(subMenuTrigger, { key: 'ArrowRight' });
+
+    expect(getAllByTestId('DesignSystem-Popover')).toHaveLength(2);
+  });
+
+  it('should open submenu on Enter key press on submenu trigger', () => {
+    const { getAllByTestId } = render(
+      <Menu trigger={<Menu.Trigger />} open={true}>
+        <Menu.List>
+          <Menu.SubMenu>
+            <Menu.Item className="d-flex align-items-center justify-content-between w-100">
+              Menu Item with SubMenu
+              <Icon name="chevron_right" />
+            </Menu.Item>
+            <Menu position="right-start">
+              <Menu.List>
+                <Menu.Item>Sub Menu Item 1</Menu.Item>
+              </Menu.List>
+            </Menu>
+          </Menu.SubMenu>
+        </Menu.List>
+      </Menu>
+    );
+
+    const menuItems = getAllByTestId('DesignSystem-Menu-ListItem');
+    const subMenuTrigger = menuItems[0];
+
+    fireEvent.keyDown(subMenuTrigger, { key: 'Enter' });
+
+    expect(getAllByTestId('DesignSystem-Popover')).toHaveLength(2);
+  });
+
+  it('should return focus to submenu trigger on Escape inside submenu item', () => {
+    const { getAllByTestId } = render(
+      <Menu trigger={<Menu.Trigger />} open={true}>
+        <Menu.List>
+          <Menu.SubMenu>
+            <Menu.Item className="d-flex align-items-center justify-content-between w-100">
+              Menu Item with SubMenu
+              <Icon name="chevron_right" />
+            </Menu.Item>
+            <Menu position="right-start">
+              <Menu.List>
+                <Menu.Item>Sub Menu Item 1</Menu.Item>
+              </Menu.List>
+            </Menu>
+          </Menu.SubMenu>
+        </Menu.List>
+      </Menu>
+    );
+
+    // Open submenu via keyboard
+    const menuItemsBefore = getAllByTestId('DesignSystem-Menu-ListItem');
+    const subMenuTrigger = menuItemsBefore[0];
+    fireEvent.keyDown(subMenuTrigger, { key: 'ArrowRight' });
+
+    // Focus the submenu item and press Escape
+    const menuItemsAfter = getAllByTestId('DesignSystem-Menu-ListItem');
+    const subMenuItem = menuItemsAfter[menuItemsAfter.length - 1];
+    fireEvent.focus(subMenuItem);
+    fireEvent.keyDown(subMenuItem, { key: 'Escape' });
+
+    expect(document.activeElement).toBe(subMenuTrigger);
+  });
+
+  it('should return focus to submenu trigger on ArrowLeft inside submenu item', () => {
+    const { getAllByTestId } = render(
+      <Menu trigger={<Menu.Trigger />} open={true}>
+        <Menu.List>
+          <Menu.SubMenu>
+            <Menu.Item className="d-flex align-items-center justify-content-between w-100">
+              Menu Item with SubMenu
+              <Icon name="chevron_right" />
+            </Menu.Item>
+            <Menu position="right-start">
+              <Menu.List>
+                <Menu.Item>Sub Menu Item 1</Menu.Item>
+              </Menu.List>
+            </Menu>
+          </Menu.SubMenu>
+        </Menu.List>
+      </Menu>
+    );
+
+    const menuItemsBefore = getAllByTestId('DesignSystem-Menu-ListItem');
+    const subMenuTrigger = menuItemsBefore[0];
+    fireEvent.keyDown(subMenuTrigger, { key: 'ArrowRight' });
+
+    const menuItemsAfter = getAllByTestId('DesignSystem-Menu-ListItem');
+    const subMenuItem = menuItemsAfter[menuItemsAfter.length - 1];
+    fireEvent.focus(subMenuItem);
+    fireEvent.keyDown(subMenuItem, { key: 'ArrowLeft' });
+
+    expect(document.activeElement).toBe(subMenuTrigger);
+  });
 });
 
 describe('Menu Component - Context provider and state management for menu interactions', () => {

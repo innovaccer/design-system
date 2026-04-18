@@ -324,7 +324,7 @@ describe('Menu Utils - handleKeyDown function for Menu component keyboard naviga
 
     it('should navigate back to parent trigger from right-placed submenu', () => {
       const mockElement = { getAttribute: jest.fn().mockReturnValue('right-start') };
-      const mockTriggerElement = { firstChild: { focus: jest.fn() } };
+      const mockTriggerElement = { focus: jest.fn() };
 
       (document.querySelector as jest.Mock).mockReturnValue(mockElement);
       parentListRef.current.querySelector.mockReturnValue(mockTriggerElement);
@@ -347,7 +347,7 @@ describe('Menu Utils - handleKeyDown function for Menu component keyboard naviga
       );
 
       expect(parentListRef.current.querySelector).toHaveBeenCalledWith(`#${triggerID}`);
-      expect(mockTriggerElement.firstChild.focus).toHaveBeenCalled();
+      expect(mockTriggerElement.focus).toHaveBeenCalled();
     });
 
     it('should navigate back to parent trigger from left-placed submenu', () => {
