@@ -45,7 +45,11 @@ export const SubMenu = (props: SubMenuProps) => {
 
   const onTriggerBlur = (e: React.FocusEvent) => {
     if (keyboardOpen) {
-      e.stopPropagation();
+      if (subListRef.current?.contains(e.relatedTarget as Node)) {
+        e.stopPropagation();
+      } else {
+        setKeyboardOpen(false);
+      }
     }
     (submenuTrigger as React.ReactElement)?.props?.onBlur?.(e);
   };
