@@ -25,6 +25,7 @@ export const SubMenu = (props: SubMenuProps) => {
   const subListRef = React.useRef<HTMLDivElement>(null);
   const triggerRef = React.useRef<HTMLDivElement>(null);
   const isSubMenuTrigger = true;
+  const [isSubmenuOpen, setIsSubmenuOpen] = React.useState(false);
 
   let subMenuElement = <></>;
 
@@ -58,19 +59,23 @@ export const SubMenu = (props: SubMenuProps) => {
     onKeyDown: onKeyDownHandler,
     ref: triggerRef,
     'aria-haspopup': 'menu',
-    'aria-expanded': subListRef.current ? 'true' : 'false',
+    'aria-expanded': isSubmenuOpen,
     'aria-controls': menuID,
     id: triggerID,
   });
 
   if (React.isValidElement(submenuContent)) {
-    const { on, children } = submenuContent?.props;
+    const { on, children, onToggle } = submenuContent?.props;
     subMenuElement = React.cloneElement(submenuContent as React.ReactElement, {
       ...submenuContent.props,
       on: on || 'hover',
       offset: 'small',
       children: <div ref={subListRef}>{children}</div>,
       trigger: triggerElement,
+      onToggle: (open?: boolean) => {
+        setIsSubmenuOpen(open ?? false);
+        onToggle?.(open);
+      },
     });
   }
 
