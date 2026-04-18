@@ -54,11 +54,14 @@ export const SubMenu = (props: SubMenuProps) => {
     (submenuTrigger as React.ReactElement)?.props?.onBlur?.(e);
   };
 
+  const isTriggerDisabled = !!(submenuTrigger as React.ReactElement)?.props?.disabled;
+
   const onKeyDownHandler = (event: React.KeyboardEvent) => {
     switch (event.key) {
       case 'ArrowRight':
       case 'Enter':
       case ' ':
+        if (isTriggerDisabled) break;
         // Open the submenu and move focus into it rather than closing the root menu.
         event.preventDefault();
         setKeyboardOpen(true);
