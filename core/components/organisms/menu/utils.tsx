@@ -36,7 +36,12 @@ export const handleKeyDown = (
     case 'Escape':
       setOpenPopover?.(false);
       if (triggerRef && !isSubMenuTrigger) {
-        triggerRef?.current?.focus();
+        if (triggerRef.current) {
+          triggerRef.current.focus();
+        } else if (parentListRef?.current && triggerID) {
+          const triggerEl = parentListRef.current.querySelector(`#${triggerID}`) as HTMLElement | null;
+          triggerEl?.focus();
+        }
       } else {
         menuTriggerRef?.current?.focus();
       }
@@ -55,9 +60,31 @@ export const handleKeyDown = (
       navigateOptions('up', undefined, setFocusedOption, listRef);
       break;
     case 'ArrowRight':
+      if (!isSubMenuTrigger && triggerID && parentListRef?.current) {
+        // Inside a left-placed submenu ArrowRight is the close direction.
+        const placementR = document.querySelector(`[data-name="${menuID}"]`)?.getAttribute('data-placement');
+        if (placementR?.includes('left')) {
+          setOpenPopover?.(false);
+          const triggerEl = parentListRef.current.querySelector(`#${triggerID}`) as HTMLElement | null;
+          triggerEl?.focus();
+          setFocusedOption?.(undefined);
+          break;
+        }
+      }
       navigateSubMenu(isSubMenuTrigger, 'right', subListRef, menuID, triggerID, parentListRef);
       break;
     case 'ArrowLeft':
+      if (!isSubMenuTrigger && triggerID && parentListRef?.current) {
+        // Inside a right-placed submenu ArrowLeft is the close direction.
+        const placementL = document.querySelector(`[data-name="${menuID}"]`)?.getAttribute('data-placement');
+        if (!placementL || placementL.includes('right')) {
+          setOpenPopover?.(false);
+          const triggerEl = parentListRef.current.querySelector(`#${triggerID}`) as HTMLElement | null;
+          triggerEl?.focus();
+          setFocusedOption?.(undefined);
+          break;
+        }
+      }
       navigateSubMenu(isSubMenuTrigger, 'left', subListRef, menuID, triggerID, parentListRef);
       break;
     default:
