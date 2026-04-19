@@ -159,7 +159,7 @@ const LinkElement = (props: LinkProps) => {
 export const Link = (props: LinkProps) => {
   const { tooltip } = props;
   return tooltip ? (
-    <Tooltip tooltip={tooltip}>
+    <Tooltip tooltip={tooltip} triggerClass="flex-grow-0">
       <LinkElement {...props} />
     </Tooltip>
   ) : (
