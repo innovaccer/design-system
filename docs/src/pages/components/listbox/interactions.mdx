@@ -4,14 +4,97 @@ import CollapsingItem from './images/Collapsing-item.gif'
 
 ### Reordering List Items
 
-To reorder, pick the item to be reordered via the drag handle placed at the beginning. Items other than the picked item will reorder as soon as the picked item reaches the boundary of the adjacent item.
+Use the drag handle at the start of a row for pointer reordering, or use the keyboard interactions below. Items other than the picked item move aside as the picked item crosses the boundary of the next slot.
 
-**Note:** Reordering supports keyboard use as follows:
-- Tab and Shift Tab move focus between rows in the list.
-- Space picks up the focused row (lift) or drops it at the current position.
-- Arrow Down / Arrow Up move the lifted row down or up; when nothing is lifted, focus shifts to the next or previous row. The same applies to **j** and **k**.
-- Escape cancels the lift and the row returns to its original position.
-- While a row is lifted, Tab and Enter do not move focus out of the list (use Space to drop or Escape to cancel).
+<br />
+
+### Keyboard interactions
+
+#### Reorderable list
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%", textAlign: "left"}}>Initial state</th>
+      <th style={{width:"33%", textAlign: "left"}}>Keyboard Interaction</th>
+      <th style={{width:"33%", textAlign: "left"}}>Final state</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Focus is on a list option</td>
+      <td>&#60;Tab&#62; / &#60;Shift Tab&#62;</td>
+      <td>Focus shifts to the next/previous focusable in the page tab sequence</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td></td>
+      <td>&#60;Arrow Down&#62; / &#60;Arrow Up&#62;</td>
+      <td>Focus shifts to the next/previous list option</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td></td>
+      <td>&#60;Space&#62;</td>
+      <td>The focused row is picked up for reordering</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>A row is picked up</td>
+      <td>&#60;Arrow Down&#62; / &#60;Arrow Up&#62;</td>
+      <td>The drop position moves down/up one row</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td></td>
+      <td>&#60;Space&#62; / &#60;Enter&#62;</td>
+      <td>The row is placed at the current drop position</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td></td>
+      <td>&#60;Tab&#62; / &#60;Shift Tab&#62;</td>
+      <td>The row is placed at the current drop position and focus shifts to the next/previous focusable in the page tab sequence</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td></td>
+      <td>&#60;Escape&#62;</td>
+      <td>Reorder is cancelled and the row returns to its original position</td>
+    </tr>
+  </tbody>
+</table>
+
+<br />
+
+### Pointer interactions (drag and touch)
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%", textAlign: "left"}}>Initial state</th>
+      <th style={{width:"33%", textAlign: "left"}}>Pointer interaction</th>
+      <th style={{width:"33%", textAlign: "left"}}>Final state</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>No row is picked up</td>
+      <td>Press and drag on the drag handle</td>
+      <td>The row follows the pointer and releasing places the row at the drop position</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td></td>
+      <td>Click on the drag handle</td>
+      <td>The row is picked up for placement</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>A row is picked up</td>
+      <td>Click on a list row inside the list</td>
+      <td>The row is placed at the clicked position</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td></td>
+      <td>Press on the drag handle</td>
+      <td>The row is placed at the current drop position (a separate drag does not start on the same press)</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td></td>
+      <td>Press outside the list</td>
+      <td>Reorder is cancelled and the row returns to its original position</td>
+    </tr>
+  </tbody>
+</table>
 
 <br />
 
