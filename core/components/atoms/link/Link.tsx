@@ -117,6 +117,7 @@ const LinkElement = (props: LinkProps) => {
   const handleClick = (event: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => {
     if (disabled) {
       event.preventDefault();
+      event.stopPropagation();
       return;
     }
     onClick?.(event);

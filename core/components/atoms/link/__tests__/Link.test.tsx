@@ -252,6 +252,19 @@ describe('Link component SC 2.1.1 — disabled button with tooltip is keyboard-f
     fireEvent(getByTestId('DesignSystem-Link'), event);
     expect(event.defaultPrevented).toBe(true);
   });
+
+  it('stops click propagation on a disabled link with tooltip so ancestor handlers are not triggered', () => {
+    const ancestorClick = jest.fn();
+    const { getByTestId } = render(
+      <button type="button" onClick={ancestorClick}>
+        <Link disabled={true} tooltip="Reason">
+          Click on Link
+        </Link>
+      </button>
+    );
+    fireEvent.click(getByTestId('DesignSystem-Link'));
+    expect(ancestorClick).not.toHaveBeenCalled();
+  });
 });
 
 describe('Link component info icon accessibility', () => {
