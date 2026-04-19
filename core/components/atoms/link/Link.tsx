@@ -4,12 +4,13 @@ import classNames from 'classnames';
 import { BaseProps, OmitNativeProps } from '@/utils/types';
 import styles from '@css/components/link.module.css';
 import { Tooltip, Icon } from '@/index';
+import isSpaceKey from '@/accessibility/utils/isSpaceKey';
 
 type LinkTarget = '_blank' | '_self' | '_parent' | '_top';
 type LinkAppearance = 'default' | 'subtle';
 type LinkSize = 'regular' | 'tiny';
 
-export interface LinkProps extends BaseProps, OmitNativeProps<HTMLLinkElement, 'onClick'> {
+export interface LinkProps extends BaseProps, OmitNativeProps<HTMLAnchorElement, 'onClick'> {
   /**
    * HTML ID of `Link`
    */
@@ -49,7 +50,11 @@ export interface LinkProps extends BaseProps, OmitNativeProps<HTMLLinkElement, '
   /**
    * Handler to be called when `Link` is clicked
    */
-  onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void;
+  onClick?: (event: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => void;
+  /**
+   * Handler to be called when key is pressed on `Link`
+   */
+  onKeyDown?: React.KeyboardEventHandler<HTMLAnchorElement | HTMLButtonElement>;
   /**
    * Element to be rendered
    */
@@ -81,6 +86,7 @@ const LinkElement = (props: LinkProps) => {
     hreflang,
     onClick,
     tooltip,
+    onKeyDown,
     ...rest
   } = props;
 
@@ -101,12 +107,25 @@ const LinkElement = (props: LinkProps) => {
     ? { componentType: 'a', href, target, rel, download, hreflang }
     : { componentType: 'button', type: 'button', disabled };
 
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLAnchorElement | HTMLButtonElement>) => {
+    if (disabled && isAnchor && (event.key === 'Enter' || isSpaceKey(event))) {
+      event.preventDefault();
+    }
+    (onKeyDown as React.KeyboardEventHandler<HTMLAnchorElement | HTMLButtonElement> | undefined)?.(event);
+  };
+
   const showInfoAffordance = disabled && tooltip;
 
   const infoIconClass = classNames({
     [styles['Link-infoIcon']]: true,
     [styles['Link-infoIcon--default']]: appearance === 'default',
     [styles['Link-infoIcon--subtle']]: appearance === 'subtle',
+  });
+
+  const textClass = classNames({
+    [styles['Link-text']]: true,
+    [styles['Link-text--default']]: appearance === 'default',
+    [styles['Link-text--subtle']]: appearance === 'subtle',
   });
 
   return (
@@ -116,10 +135,11 @@ const LinkElement = (props: LinkProps) => {
       tabIndex={disabled && !tooltip ? -1 : 0}
       aria-disabled={disabled}
       onClick={disabled ? undefined : onClick}
+      onKeyDown={handleKeyDown}
       {...elementProps}
       {...rest}
     >
-      <span className={styles['Link-text']}>{children}</span>
+      <span className={textClass}>{children}</span>
       {showInfoAffordance && (
         <span className={styles['Link-infoIconWrapper']}>
           <Icon

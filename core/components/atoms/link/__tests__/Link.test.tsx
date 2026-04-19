@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render } from '@testing-library/react';
+import { render, createEvent, fireEvent } from '@testing-library/react';
 import { axe } from '@/utils/testAxe';
 import { Link } from '@/index';
 import { LinkProps } from '@/index.type';
@@ -107,6 +107,113 @@ describe('Link component', () => {
       );
       expect(getByTestId('DesignSystem-Link')).toHaveClass('Link--subtle-disabled');
     });
+  });
+});
+
+describe('Link component with prop:tooltip', () => {
+  it('renders info icon when disabled and tooltip are provided', () => {
+    const { getByTestId } = render(
+      <Link disabled={true} tooltip="This link is disabled">
+        Click on Link
+      </Link>
+    );
+    expect(getByTestId('DesignSystem-Link--Info-Icon')).toBeInTheDocument();
+  });
+
+  it('does not render info icon when not disabled even with tooltip', () => {
+    const { queryByTestId } = render(
+      <Link disabled={false} tooltip="Some tooltip">
+        Click on Link
+      </Link>
+    );
+    expect(queryByTestId('DesignSystem-Link--Info-Icon')).not.toBeInTheDocument();
+  });
+
+  it('does not render info icon when disabled but no tooltip', () => {
+    const { queryByTestId } = render(<Link disabled={true}>Click on Link</Link>);
+    expect(queryByTestId('DesignSystem-Link--Info-Icon')).not.toBeInTheDocument();
+  });
+});
+
+describe('Link component info icon with prop:appearance', () => {
+  it('info icon has Link-infoIcon--default class when appearance is default', () => {
+    const { getByTestId } = render(
+      <Link disabled={true} appearance="default" tooltip="Disabled reason">
+        Click on Link
+      </Link>
+    );
+    expect(getByTestId('DesignSystem-Link--Info-Icon')).toHaveClass('Link-infoIcon--default');
+  });
+
+  it('info icon has Link-infoIcon--subtle class when appearance is subtle', () => {
+    const { getByTestId } = render(
+      <Link disabled={true} appearance="subtle" tooltip="Disabled reason">
+        Click on Link
+      </Link>
+    );
+    expect(getByTestId('DesignSystem-Link--Info-Icon')).toHaveClass('Link-infoIcon--subtle');
+  });
+});
+
+describe('Link component keyboard behaviour when disabled', () => {
+  it('prevents Enter key navigation on a disabled anchor with tooltip', () => {
+    const { getByTestId } = render(
+      <Link href="/page" disabled={true} tooltip="Reason">
+        Click on Link
+      </Link>
+    );
+    const link = getByTestId('DesignSystem-Link');
+    const event = createEvent.keyDown(link, { key: 'Enter' });
+    fireEvent(link, event);
+    expect(event.defaultPrevented).toBe(true);
+  });
+
+  it('does not prevent Enter key on an enabled anchor', () => {
+    const { getByTestId } = render(
+      <Link href="/page" tooltip="Info">
+        Click on Link
+      </Link>
+    );
+    const link = getByTestId('DesignSystem-Link');
+    const event = createEvent.keyDown(link, { key: 'Enter' });
+    fireEvent(link, event);
+    expect(event.defaultPrevented).toBe(false);
+  });
+
+  it('calls user-provided onKeyDown alongside the internal handler', () => {
+    const onKeyDown = jest.fn();
+    const { getByTestId } = render(
+      <Link href="/page" disabled={true} tooltip="Reason" onKeyDown={onKeyDown}>
+        Click on Link
+      </Link>
+    );
+    fireEvent.keyDown(getByTestId('DesignSystem-Link'), { key: 'Enter' });
+    expect(onKeyDown).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('Link component info icon accessibility', () => {
+  it('info icon has aria-hidden set to true', () => {
+    const { getByTestId } = render(
+      <Link disabled={true} tooltip="Disabled reason">
+        Click on Link
+      </Link>
+    );
+    expect(getByTestId('DesignSystem-Link--Info-Icon')).toHaveAttribute('aria-hidden', 'true');
+  });
+
+  it('has tabIndex 0 when disabled with tooltip to allow keyboard access', () => {
+    const { getByTestId } = render(
+      <Link disabled={true} tooltip="Disabled reason">
+        Click on Link
+      </Link>
+    );
+    expect(getByTestId('DesignSystem-Link')).toHaveAttribute('tabindex', '0');
+  });
+
+  it('has tabIndex -1 when disabled without tooltip', () => {
+    const { getByTestId } = render(<Link disabled={true}>Click on Link</Link>);
+    expect(getByTestId('DesignSystem-Link')).toHaveAttribute('tabindex', '-1');
   });
 });
 

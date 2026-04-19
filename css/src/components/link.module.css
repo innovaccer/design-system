@@ -5,6 +5,12 @@
   box-sizing: border-box;
 }
 
+.Link-text {
+  display: inline-flex;
+  vertical-align: middle;
+  border-bottom: var(--border-width-2-5) solid currentColor;
+}
+
 .Link:focus-visible {
   outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: var(--spacing-05);
@@ -28,6 +34,10 @@
 
 .Link--subtle {
   color: var(--inverse-lighter);
+  border-bottom-color: transparent;
+}
+
+.Link-text--subtle {
   border-bottom-color: transparent;
 }
 
@@ -97,10 +107,4 @@
 
 .Link-infoIcon--subtle {
   color: var(--inverse-light);
-}
-
-.Link-text {
-  display: inline-flex;
-  vertical-align: middle;
-  border-bottom: var(--border-width-2-5) solid currentColor;
 }
