@@ -111,6 +111,7 @@ const LinkElement = (props: LinkProps) => {
   const handleKeyDown = (event: React.KeyboardEvent<HTMLAnchorElement | HTMLButtonElement>) => {
     if (disabled && (event.key === 'Enter' || isSpaceKey(event))) {
       event.preventDefault();
+      event.stopPropagation();
     }
     (onKeyDown as React.KeyboardEventHandler<HTMLAnchorElement | HTMLButtonElement> | undefined)?.(event);
   };

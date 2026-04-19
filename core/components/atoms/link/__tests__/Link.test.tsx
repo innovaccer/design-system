@@ -217,6 +217,30 @@ describe('Link component keyboard behaviour when disabled', () => {
     expect(event.defaultPrevented).toBe(true);
   });
 
+  it('calls stopPropagation on Enter key when disabled with tooltip', () => {
+    const { getByTestId } = render(
+      <Link disabled={true} tooltip="Reason">
+        Click on Link
+      </Link>
+    );
+    const event = createEvent.keyDown(getByTestId('DesignSystem-Link'), { key: 'Enter' });
+    const stopPropagationSpy = jest.spyOn(event, 'stopPropagation');
+    fireEvent(getByTestId('DesignSystem-Link'), event);
+    expect(stopPropagationSpy).toHaveBeenCalled();
+  });
+
+  it('calls stopPropagation on Space key when disabled with tooltip', () => {
+    const { getByTestId } = render(
+      <Link disabled={true} tooltip="Reason">
+        Click on Link
+      </Link>
+    );
+    const event = createEvent.keyDown(getByTestId('DesignSystem-Link'), { key: ' ' });
+    const stopPropagationSpy = jest.spyOn(event, 'stopPropagation');
+    fireEvent(getByTestId('DesignSystem-Link'), event);
+    expect(stopPropagationSpy).toHaveBeenCalled();
+  });
+
   it('does not prevent Enter key on an enabled anchor', () => {
     const { getByTestId } = render(
       <Link href="/page" tooltip="Info">
