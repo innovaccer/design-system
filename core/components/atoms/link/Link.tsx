@@ -3,6 +3,7 @@ import GenericText from '../_text';
 import classNames from 'classnames';
 import { BaseProps, OmitNativeProps } from '@/utils/types';
 import styles from '@css/components/link.module.css';
+import { Tooltip, Icon } from '@/index';
 
 type LinkTarget = '_blank' | '_self' | '_parent' | '_top';
 type LinkAppearance = 'default' | 'subtle';
@@ -53,6 +54,10 @@ export interface LinkProps extends BaseProps, OmitNativeProps<HTMLLinkElement, '
    * Element to be rendered
    */
   children: React.ReactNode;
+  /**
+   * Tooltip text for the `Link`
+   */
+  tooltip?: string;
 }
 
 /**
@@ -62,9 +67,22 @@ export interface LinkProps extends BaseProps, OmitNativeProps<HTMLLinkElement, '
  * - In contrast, the **LinkButton** component is an action component. Action components use "boolean props" to indicate variations in their behavior and appearance. Therefore, the **LinkButton** uses the `subtle` boolean prop to signify a specific visual style that aligns with other button components.
  */
 
-export const Link = (props: LinkProps) => {
-  const { children, className, appearance, size, disabled, href, target, rel, download, hreflang, onClick, ...rest } =
-    props;
+const LinkElement = (props: LinkProps) => {
+  const {
+    children,
+    className,
+    appearance,
+    size,
+    disabled,
+    href,
+    target,
+    rel,
+    download,
+    hreflang,
+    onClick,
+    tooltip,
+    ...rest
+  } = props;
 
   const isAnchor = !!href;
 
@@ -83,18 +101,49 @@ export const Link = (props: LinkProps) => {
     ? { componentType: 'a', href, target, rel, download, hreflang }
     : { componentType: 'button', type: 'button', disabled };
 
+  const showInfoAffordance = disabled && tooltip;
+
+  const infoIconClass = classNames({
+    [styles['Link-infoIcon']]: true,
+    [styles['Link-infoIcon--default']]: appearance === 'default',
+    [styles['Link-infoIcon--subtle']]: appearance === 'subtle',
+  });
+
   return (
     <GenericText
       data-test="DesignSystem-Link"
       className={classes}
-      tabIndex={disabled ? -1 : 0}
+      tabIndex={disabled && !tooltip ? -1 : 0}
       aria-disabled={disabled}
       onClick={disabled ? undefined : onClick}
       {...elementProps}
       {...rest}
     >
-      {children}
+      <span className={styles['Link-text']}>{children}</span>
+      {showInfoAffordance && (
+        <span className={styles['Link-infoIconWrapper']}>
+          <Icon
+            name="info_outline"
+            type="outlined"
+            size={12}
+            className={infoIconClass}
+            aria-hidden="true"
+            data-test="DesignSystem-Link--Info-Icon"
+          />
+        </span>
+      )}
     </GenericText>
+  );
+};
+
+export const Link = (props: LinkProps) => {
+  const { tooltip } = props;
+  return tooltip ? (
+    <Tooltip tooltip={tooltip}>
+      <LinkElement {...props} />
+    </Tooltip>
+  ) : (
+    <LinkElement {...props} />
   );
 };
 
