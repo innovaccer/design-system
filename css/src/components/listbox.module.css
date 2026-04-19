@@ -158,13 +158,13 @@
 
 .Listbox-item--drag-icon {
   cursor: grab;
-  /* Add padding to create 24x24 box from 16x16 icon */
   padding: var(--spacing-10);
-  /* Compensate margin to maintain exact position without drift */
   margin-right: calc(var(--spacing-20) - var(--spacing-10));
   margin-left: calc(-1 * var(--spacing-10));
   border-radius: var(--border-radius-10);
-  transition: background-color 200ms ease-in-out, color 200ms ease-in-out, box-shadow 200ms ease-in-out;
+  transition: background-color var(--duration--moderate-01) var(--standard-productive-curve),
+    color var(--duration--moderate-01) var(--standard-productive-curve),
+    box-shadow var(--duration--moderate-01) var(--standard-productive-curve);
 }
 
 .Listbox-item--drag-icon:focus-visible {
@@ -210,6 +210,18 @@
   box-shadow: inset 0 0 0 var(--border-width-2-5) var(--primary);
 }
 
+.Listbox-aria-live {
+  position: absolute;
+  width: var(--spacing-2-5);
+  height: var(--spacing-2-5);
+  padding: 0;
+  margin: calc(-1 * var(--spacing-2-5));
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 @media (forced-colors: active) {
   .Listbox-item--description:focus-visible {
     outline: var(--border-width-05) solid Highlight;
@@ -221,7 +233,6 @@
     color: GrayText;
   }
 
-  /* Selected corner triangle: ensure it uses a system color */
   .Listbox-item--selected::before,
   .Listbox-item--activated::before {
     background-color: Highlight;
