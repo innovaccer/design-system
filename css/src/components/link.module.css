@@ -1,12 +1,24 @@
 .Link {
   text-decoration: none;
   font-weight: var(--font-weight-medium);
-  transition: var(--duration--fast-01) var(--standard-productive-curve);
+  transition: color var(--duration--fast-01) var(--standard-productive-curve),
+    border-color var(--duration--fast-01) var(--standard-productive-curve);
   box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .Link {
+    transition: none;
+  }
+}
+
+.Link-text {
+  display: inline-flex;
+  vertical-align: middle;
   border-bottom: var(--border-width-2-5) solid currentColor;
 }
 
-.Link:focus {
+.Link:focus-visible {
   outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: var(--spacing-05);
   border-radius: var(--border-radius-10);
@@ -32,24 +44,32 @@
   border-bottom-color: transparent;
 }
 
+.Link-text--subtle {
+  border-bottom-color: transparent;
+}
+
 .Link--default:hover {
-  border-bottom: var(--border-width-2-5) solid var(--primary-dark);
   color: var(--primary-dark);
 }
 
 .Link--subtle:hover {
-  border-bottom: var(--border-width-2-5) solid var(--inverse-light);
   color: var(--inverse-light);
+}
+
+.Link--subtle:hover .Link-text--subtle {
+  border-bottom-color: currentColor;
 }
 
 .Link--default:active {
   color: var(--primary-darker);
-  border-bottom: var(--border-width-2-5) solid currentColor;
 }
 
 .Link--subtle:active {
   color: var(--inverse);
-  border-bottom: var(--border-width-2-5) solid transparent;
+}
+
+.Link--subtle:active .Link-text--subtle {
+  border-bottom-color: transparent;
 }
 
 .Link--button-reset {
@@ -70,4 +90,37 @@
 .Link--subtle-disabled {
   color: var(--inverse-lightest);
   pointer-events: none;
+}
+
+.Link-infoIconWrapper {
+  display: inline-flex;
+  vertical-align: middle;
+  transform: translateY(calc(-1 * var(--spacing-15)));
+  margin-left: var(--spacing-2-5);
+  width: var(--spacing-30);
+  height: var(--spacing-30);
+  box-sizing: border-box;
+  border-radius: var(--border-radius-full);
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+}
+
+.Link-infoIcon {
+  color: var(--text-subtle);
+  pointer-events: none;
+}
+
+.Link-infoIcon--default {
+  color: var(--primary);
+}
+
+.Link-infoIcon--subtle {
+  color: var(--inverse-light);
+}
+
+.Link-tooltip--disabled {
+  pointer-events: auto;
+  cursor: not-allowed;
 }

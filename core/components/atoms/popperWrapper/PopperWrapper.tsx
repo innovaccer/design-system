@@ -24,6 +24,11 @@ export interface PopperWrapperProps {
   trigger: React.ReactElement<any>;
   boundaryElement?: Element | null;
   triggerClass?: string;
+  /**
+   * HTML element to use as the trigger wrapper
+   * @default 'div'
+   */
+  wrapperElement?: 'div' | 'span';
   placement: PositionType;
   children: React.ReactElement<any>;
   style: React.CSSProperties;
@@ -385,7 +390,7 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
   };
 
   getTriggerElement(ref: React.Ref<any>) {
-    const { trigger, on, triggerClass, disabled } = this.props;
+    const { trigger, on, triggerClass, disabled, wrapperElement } = this.props;
     const options =
       on === 'hover' && !disabled
         ? {
@@ -440,7 +445,12 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
     };
 
     return (
-      <OutsideClick className={classes} onOutsideClick={onOutsideClickHandler} {...options}>
+      <OutsideClick
+        className={classes}
+        onOutsideClick={onOutsideClickHandler}
+        wrapperElement={wrapperElement}
+        {...options}
+      >
         {trigger}
       </OutsideClick>
     );
