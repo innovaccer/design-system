@@ -69,6 +69,11 @@ export interface PopoverProps extends Pick<PopperWrapperProps, PopperProps>, Bas
    */
   triggerClass?: string;
   /**
+   * HTML element to use as the trigger wrapper
+   * @default 'div'
+   */
+  wrapperElement?: 'div' | 'span';
+  /**
    * Hides the `Popover` when its reference element is outside of the `Popover` boundaries
    */
   hideOnReferenceEscape?: boolean;

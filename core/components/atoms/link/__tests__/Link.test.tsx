@@ -238,8 +238,19 @@ describe('Link component SC 2.1.1 — disabled button with tooltip is keyboard-f
         Click on Link
       </Link>
     );
-    getByTestId('DesignSystem-Link').click();
+    fireEvent.click(getByTestId('DesignSystem-Link'));
     expect(onClick).not.toHaveBeenCalled();
+  });
+
+  it('prevents default navigation on a disabled anchor with tooltip on click', () => {
+    const { getByTestId } = render(
+      <Link href="/page" disabled={true} tooltip="Reason">
+        Click on Link
+      </Link>
+    );
+    const event = createEvent.click(getByTestId('DesignSystem-Link'));
+    fireEvent(getByTestId('DesignSystem-Link'), event);
+    expect(event.defaultPrevented).toBe(true);
   });
 });
 

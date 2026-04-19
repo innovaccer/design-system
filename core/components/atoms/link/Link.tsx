@@ -114,6 +114,14 @@ const LinkElement = (props: LinkProps) => {
     (onKeyDown as React.KeyboardEventHandler<HTMLAnchorElement | HTMLButtonElement> | undefined)?.(event);
   };
 
+  const handleClick = (event: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => {
+    if (disabled) {
+      event.preventDefault();
+      return;
+    }
+    onClick?.(event);
+  };
+
   const showInfoAffordance = disabled && tooltip;
 
   const infoIconClass = classNames({
@@ -134,7 +142,7 @@ const LinkElement = (props: LinkProps) => {
       className={classes}
       tabIndex={disabled && !tooltip ? -1 : 0}
       aria-disabled={disabled}
-      onClick={disabled ? undefined : onClick}
+      onClick={handleClick}
       onKeyDown={handleKeyDown}
       {...elementProps}
       {...rest}
@@ -159,7 +167,7 @@ const LinkElement = (props: LinkProps) => {
 export const Link = (props: LinkProps) => {
   const { tooltip } = props;
   return tooltip ? (
-    <Tooltip tooltip={tooltip} triggerClass="flex-grow-0">
+    <Tooltip tooltip={tooltip} triggerClass="flex-grow-0" wrapperElement="span">
       <LinkElement {...props} />
     </Tooltip>
   ) : (
