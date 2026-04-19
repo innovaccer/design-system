@@ -98,6 +98,7 @@ const LinkElement = (props: LinkProps) => {
       [styles[`Link--${size}`]]: size,
       [styles[`Link--${appearance}`]]: appearance,
       [styles[`Link--${appearance}-disabled`]]: disabled,
+      [styles['Link-tooltip--disabled']]: disabled && !!tooltip,
       [styles['Link--button-reset']]: !isAnchor,
     },
     className

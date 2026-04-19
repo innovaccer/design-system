@@ -265,6 +265,20 @@ describe('Link component SC 2.1.1 — disabled button with tooltip is keyboard-f
     fireEvent.click(getByTestId('DesignSystem-Link'));
     expect(ancestorClick).not.toHaveBeenCalled();
   });
+
+  it('has Link-tooltip--disabled class when disabled with tooltip to allow handleClick to intercept mouse events', () => {
+    const { getByTestId } = render(
+      <Link disabled={true} tooltip="Reason">
+        Click on Link
+      </Link>
+    );
+    expect(getByTestId('DesignSystem-Link')).toHaveClass('Link-tooltip--disabled');
+  });
+
+  it('does not have Link-tooltip--disabled class when disabled without tooltip', () => {
+    const { getByTestId } = render(<Link disabled={true}>Click on Link</Link>);
+    expect(getByTestId('DesignSystem-Link')).not.toHaveClass('Link-tooltip--disabled');
+  });
 });
 
 describe('Link component info icon accessibility', () => {

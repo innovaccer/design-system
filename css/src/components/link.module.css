@@ -119,3 +119,8 @@
 .Link-infoIcon--subtle {
   color: var(--inverse-light);
 }
+
+.Link-tooltip--disabled {
+  pointer-events: auto;
+  cursor: not-allowed;
+}
