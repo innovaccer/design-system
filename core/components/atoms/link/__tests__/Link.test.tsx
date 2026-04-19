@@ -155,6 +155,31 @@ describe('Link component info icon with prop:appearance', () => {
   });
 });
 
+describe('Link component disabled anchor href removal', () => {
+  it('strips href from a disabled anchor with tooltip to block middle-click and context-menu navigation', () => {
+    const { getByTestId } = render(
+      <Link href="/page" disabled={true} tooltip="Reason">
+        Click on Link
+      </Link>
+    );
+    expect(getByTestId('DesignSystem-Link')).not.toHaveAttribute('href');
+  });
+
+  it('strips href from a disabled anchor without tooltip', () => {
+    const { getByTestId } = render(
+      <Link href="/page" disabled={true}>
+        Click on Link
+      </Link>
+    );
+    expect(getByTestId('DesignSystem-Link')).not.toHaveAttribute('href');
+  });
+
+  it('keeps href on an enabled anchor', () => {
+    const { getByTestId } = render(<Link href="/page">Click on Link</Link>);
+    expect(getByTestId('DesignSystem-Link')).toHaveAttribute('href', '/page');
+  });
+});
+
 describe('Link component keyboard behaviour when disabled', () => {
   it('prevents Enter key navigation on a disabled anchor with tooltip', () => {
     const { getByTestId } = render(
