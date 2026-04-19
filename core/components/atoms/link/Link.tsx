@@ -108,7 +108,7 @@ const LinkElement = (props: LinkProps) => {
     : { componentType: 'button', type: 'button', disabled: tooltip ? undefined : disabled };
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLAnchorElement | HTMLButtonElement>) => {
-    if (disabled && isAnchor && (event.key === 'Enter' || isSpaceKey(event))) {
+    if (disabled && (event.key === 'Enter' || isSpaceKey(event))) {
       event.preventDefault();
     }
     (onKeyDown as React.KeyboardEventHandler<HTMLAnchorElement | HTMLButtonElement> | undefined)?.(event);

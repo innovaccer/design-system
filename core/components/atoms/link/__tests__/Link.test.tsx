@@ -168,6 +168,30 @@ describe('Link component keyboard behaviour when disabled', () => {
     expect(event.defaultPrevented).toBe(true);
   });
 
+  it('prevents Enter key on a disabled button link with tooltip', () => {
+    const { getByTestId } = render(
+      <Link disabled={true} tooltip="Reason">
+        Click on Link
+      </Link>
+    );
+    const link = getByTestId('DesignSystem-Link');
+    const event = createEvent.keyDown(link, { key: 'Enter' });
+    fireEvent(link, event);
+    expect(event.defaultPrevented).toBe(true);
+  });
+
+  it('prevents Space key on a disabled button link with tooltip', () => {
+    const { getByTestId } = render(
+      <Link disabled={true} tooltip="Reason">
+        Click on Link
+      </Link>
+    );
+    const link = getByTestId('DesignSystem-Link');
+    const event = createEvent.keyDown(link, { key: ' ' });
+    fireEvent(link, event);
+    expect(event.defaultPrevented).toBe(true);
+  });
+
   it('does not prevent Enter key on an enabled anchor', () => {
     const { getByTestId } = render(
       <Link href="/page" tooltip="Info">

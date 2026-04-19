@@ -4,7 +4,6 @@ import { PopoverProps } from '@/index.type';
 import { BaseProps, filterProps } from '@/utils/types';
 import styles from '@css/components/tooltip.module.css';
 import classNames from 'classnames';
-import uidGenerator from '@/utils/uidGenerator';
 
 type Position = 'top-start' | 'top' | 'top-end' | 'right' | 'bottom-end' | 'bottom' | 'bottom-start' | 'left';
 
@@ -93,7 +92,6 @@ export const detectTruncation = (boundaryRef: React.RefObject<HTMLElement>) => {
 export const Tooltip = (props: TooltipProps) => {
   const { children, tooltip, showTooltip, showOnTruncation, elementRef, className, size = 'regular', ...rest } = props;
   const childrenRef = React.useRef(null);
-  const tooltipId = React.useRef(`DesignSystem-Tooltip-${uidGenerator()}`).current;
   const [isTruncated, setIsTruncated] = React.useState(false);
 
   React.useEffect(() => {
@@ -106,7 +104,6 @@ export const Tooltip = (props: TooltipProps) => {
       ? children
       : React.cloneElement(children as React.ReactElement<any>, {
           ref: childrenRef,
-          'aria-describedby': tooltipId,
         });
 
   if (!showTooltip) {
@@ -120,7 +117,7 @@ export const Tooltip = (props: TooltipProps) => {
   });
 
   const tooltipWrapper = (
-    <div id={tooltipId} role="tooltip" className={tooltipClass} data-test="DesignSystem-Tooltip-Wrapper">
+    <div role="tooltip" className={tooltipClass} data-test="DesignSystem-Tooltip-Wrapper">
       <Text className={styles['Tooltip-text']} appearance="white" size={size}>
         {tooltip}
       </Text>
