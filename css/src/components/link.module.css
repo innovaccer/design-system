@@ -1,8 +1,15 @@
 .Link {
   text-decoration: none;
   font-weight: var(--font-weight-medium);
-  transition: var(--duration--fast-01) var(--standard-productive-curve);
+  transition: color var(--duration--fast-01) var(--standard-productive-curve),
+    border-color var(--duration--fast-01) var(--standard-productive-curve);
   box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .Link {
+    transition: none;
+  }
 }
 
 .Link-text {
@@ -42,23 +49,27 @@
 }
 
 .Link--default:hover {
-  border-bottom: var(--border-width-2-5) solid var(--primary-dark);
   color: var(--primary-dark);
 }
 
 .Link--subtle:hover {
-  border-bottom: var(--border-width-2-5) solid var(--inverse-light);
   color: var(--inverse-light);
+}
+
+.Link--subtle:hover .Link-text--subtle {
+  border-bottom-color: currentColor;
 }
 
 .Link--default:active {
   color: var(--primary-darker);
-  border-bottom: var(--border-width-2-5) solid currentColor;
 }
 
 .Link--subtle:active {
   color: var(--inverse);
-  border-bottom: var(--border-width-2-5) solid transparent;
+}
+
+.Link--subtle:active .Link-text--subtle {
+  border-bottom-color: transparent;
 }
 
 .Link--button-reset {

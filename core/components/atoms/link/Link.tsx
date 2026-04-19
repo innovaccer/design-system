@@ -105,7 +105,7 @@ const LinkElement = (props: LinkProps) => {
 
   const elementProps = isAnchor
     ? { componentType: 'a', href, target, rel, download, hreflang }
-    : { componentType: 'button', type: 'button', disabled };
+    : { componentType: 'button', type: 'button', disabled: tooltip ? undefined : disabled };
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLAnchorElement | HTMLButtonElement>) => {
     if (disabled && isAnchor && (event.key === 'Enter' || isSpaceKey(event))) {

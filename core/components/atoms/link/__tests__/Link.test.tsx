@@ -192,6 +192,33 @@ describe('Link component keyboard behaviour when disabled', () => {
   });
 });
 
+describe('Link component SC 2.1.1 — disabled button with tooltip is keyboard-focusable', () => {
+  it('does not carry native disabled attribute on button when tooltip is set', () => {
+    const { getByTestId } = render(
+      <Link disabled={true} tooltip="Reason">
+        Click on Link
+      </Link>
+    );
+    expect(getByTestId('DesignSystem-Link')).not.toHaveAttribute('disabled');
+  });
+
+  it('carries native disabled attribute on button when no tooltip is set', () => {
+    const { getByTestId } = render(<Link disabled={true}>Click on Link</Link>);
+    expect(getByTestId('DesignSystem-Link')).toHaveAttribute('disabled');
+  });
+
+  it('still blocks click when tooltip is set and disabled', () => {
+    const onClick = jest.fn();
+    const { getByTestId } = render(
+      <Link disabled={true} tooltip="Reason" onClick={onClick}>
+        Click on Link
+      </Link>
+    );
+    getByTestId('DesignSystem-Link').click();
+    expect(onClick).not.toHaveBeenCalled();
+  });
+});
+
 describe('Link component info icon accessibility', () => {
   it('info icon has aria-hidden set to true', () => {
     const { getByTestId } = render(
