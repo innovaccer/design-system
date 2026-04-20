@@ -491,7 +491,7 @@ describe('Button component with styleType prop', () => {
       expect(circle).toHaveClass('Circle--primary');
     });
 
-    it('should use white spinner for filled primary button (backward compatibility)', () => {
+    it('should use primary spinner for filled primary button (better contrast', () => {
       const { getByTestId } = render(
         <Button appearance="primary" loading={true}>
           Button
@@ -499,7 +499,7 @@ describe('Button component with styleType prop', () => {
       );
       const spinner = getByTestId('DesignSystem-Button--Spinner');
       const circle = spinner.querySelector('circle');
-      expect(circle).toHaveClass('Circle--white');
+      expect(circle).toHaveClass('Circle--primary');
     });
   });
 });
@@ -509,5 +509,236 @@ describe('Button component a11y', () => {
     const { container } = render(<Button>Button</Button>);
     const results = await axe(container);
     expect(results).toHaveNoViolations();
+  });
+});
+
+describe('Button disabled info icon', () => {
+  const tooltip = 'Please fill all required fields';
+
+  describe('rendering conditions', () => {
+    it('renders info icon when disabled and tooltip are provided', () => {
+      const { getByTestId } = render(
+        <Button disabled tooltip={tooltip}>
+          Button
+        </Button>
+      );
+      expect(getByTestId('DesignSystem-Button--Info-Icon')).toBeInTheDocument();
+    });
+
+    it('does not render info icon when not disabled', () => {
+      const { queryByTestId } = render(<Button tooltip={tooltip}>Button</Button>);
+      expect(queryByTestId('DesignSystem-Button--Info-Icon')).not.toBeInTheDocument();
+    });
+
+    it('does not render info icon when disabled but no tooltip', () => {
+      const { queryByTestId } = render(<Button disabled>Button</Button>);
+      expect(queryByTestId('DesignSystem-Button--Info-Icon')).not.toBeInTheDocument();
+    });
+
+    it('does not render info icon when disabled, tooltip and loading are all true', () => {
+      const { queryByTestId } = render(
+        <Button disabled loading tooltip={tooltip}>
+          Button
+        </Button>
+      );
+      expect(queryByTestId('DesignSystem-Button--Info-Icon')).not.toBeInTheDocument();
+    });
+
+    it('renders info icon for icon-only button (icon without children)', () => {
+      const { getByTestId } = render(<Button icon="events" disabled tooltip={tooltip} />);
+      expect(getByTestId('DesignSystem-Button--Info-Icon')).toBeInTheDocument();
+    });
+  });
+
+  describe('info icon accessibility', () => {
+    it('info icon has aria-hidden="true"', () => {
+      const { getByTestId } = render(
+        <Button disabled tooltip={tooltip}>
+          Button
+        </Button>
+      );
+      expect(getByTestId('DesignSystem-Button--Info-Icon')).toHaveAttribute('aria-hidden', 'true');
+    });
+
+    it('button has aria-disabled when disabled with tooltip', () => {
+      const { getByTestId } = render(
+        <Button disabled tooltip={tooltip}>
+          Button
+        </Button>
+      );
+      expect(getByTestId('DesignSystem-Button')).toHaveAttribute('aria-disabled', 'true');
+    });
+
+    it('button is not natively disabled when tooltip is provided (uses aria-disabled instead)', () => {
+      const { getByTestId } = render(
+        <Button disabled tooltip={tooltip}>
+          Button
+        </Button>
+      );
+      expect(getByTestId('DesignSystem-Button')).not.toBeDisabled();
+    });
+
+    it('button has aria-describedby pointing to the tooltip text', () => {
+      const { getByTestId } = render(
+        <Button disabled tooltip={tooltip}>
+          Button
+        </Button>
+      );
+      const button = getByTestId('DesignSystem-Button');
+      const describedById = button.getAttribute('aria-describedby');
+      expect(describedById).toBeTruthy();
+      expect(document.getElementById(describedById as string)?.textContent).toBe(tooltip);
+    });
+
+    it('renders as type="button" when disabled with tooltip and no explicit type (prevents implicit form submit)', () => {
+      const { getByTestId } = render(
+        <Button disabled tooltip={tooltip}>
+          Button
+        </Button>
+      );
+      expect(getByTestId('DesignSystem-Button')).toHaveAttribute('type', 'button');
+    });
+
+    it('renders as type="button" when disabled with tooltip and explicit type="submit" (prevents explicit form submit)', () => {
+      const { getByTestId } = render(
+        <Button disabled tooltip={tooltip} type="submit">
+          Button
+        </Button>
+      );
+      expect(getByTestId('DesignSystem-Button')).toHaveAttribute('type', 'button');
+    });
+
+    it('preserves type="reset" when disabled with tooltip (reset cannot submit a form)', () => {
+      const { getByTestId } = render(
+        <Button disabled tooltip={tooltip} type="reset">
+          Button
+        </Button>
+      );
+      expect(getByTestId('DesignSystem-Button')).toHaveAttribute('type', 'reset');
+    });
+  });
+
+  describe('info icon CSS classes — filled appearances', () => {
+    const filledAppearances: Props['appearance'][] = ['basic', 'primary', 'alert', 'transparent'];
+
+    filledAppearances.forEach((app) => {
+      it(`applies Button-infoIcon--${app} class for ${app} filled button`, () => {
+        const { getByTestId } = render(
+          <Button disabled tooltip={tooltip} appearance={app}>
+            Button
+          </Button>
+        );
+        expect(getByTestId('DesignSystem-Button--Info-Icon')).toHaveClass(`Button-infoIcon--${app}`);
+      });
+
+      it(`applies Button-infoIconWrapper--${app} class for ${app} filled button`, () => {
+        const { getByTestId } = render(
+          <Button disabled tooltip={tooltip} appearance={app}>
+            Button
+          </Button>
+        );
+        const wrapper = getByTestId('DesignSystem-Button--Info-Icon').parentElement;
+        expect(wrapper).toHaveClass(`Button-infoIconWrapper--${app}`);
+      });
+    });
+  });
+
+  describe('info icon CSS classes — outlined appearances', () => {
+    const outlinedAppearances: Props['appearance'][] = ['basic', 'primary', 'alert'];
+
+    outlinedAppearances.forEach((app) => {
+      it(`applies Button-infoIcon-outlined--${app} class for ${app} outlined button`, () => {
+        const { getByTestId } = render(
+          <Button disabled tooltip={tooltip} appearance={app} styleType="outlined">
+            Button
+          </Button>
+        );
+        expect(getByTestId('DesignSystem-Button--Info-Icon')).toHaveClass(`Button-infoIcon-outlined--${app}`);
+      });
+
+      it(`applies Button-infoIconWrapper-outlined--${app} class for ${app} outlined button`, () => {
+        const { getByTestId } = render(
+          <Button disabled tooltip={tooltip} appearance={app} styleType="outlined">
+            Button
+          </Button>
+        );
+        const wrapper = getByTestId('DesignSystem-Button--Info-Icon').parentElement;
+        expect(wrapper).toHaveClass(`Button-infoIconWrapper-outlined--${app}`);
+      });
+
+      it(`does not apply filled class Button-infoIcon--${app} for ${app} outlined button`, () => {
+        const { getByTestId } = render(
+          <Button disabled tooltip={tooltip} appearance={app} styleType="outlined">
+            Button
+          </Button>
+        );
+        expect(getByTestId('DesignSystem-Button--Info-Icon')).not.toHaveClass(`Button-infoIcon--${app}`);
+      });
+    });
+  });
+
+  describe('info icon CSS classes — icon-only buttons', () => {
+    it('applies Button-infoIconWrapper--iconOnly class when there are no children', () => {
+      const { getByTestId } = render(<Button icon="events" disabled tooltip={tooltip} />);
+      const wrapper = getByTestId('DesignSystem-Button--Info-Icon').parentElement;
+      expect(wrapper).toHaveClass('Button-infoIconWrapper--iconOnly');
+    });
+
+    it('does not apply Button-infoIconWrapper--iconOnly class when button has children', () => {
+      const { getByTestId } = render(
+        <Button disabled tooltip={tooltip}>
+          Button
+        </Button>
+      );
+      const wrapper = getByTestId('DesignSystem-Button--Info-Icon').parentElement;
+      expect(wrapper).not.toHaveClass('Button-infoIconWrapper--iconOnly');
+    });
+
+    it('applies Button-infoIconWrapper--iconOnly-transparent class for transparent icon-only button', () => {
+      const { getByTestId } = render(<Button icon="events" disabled tooltip={tooltip} appearance="transparent" />);
+      const wrapper = getByTestId('DesignSystem-Button--Info-Icon').parentElement;
+      expect(wrapper).toHaveClass('Button-infoIconWrapper--iconOnly-transparent');
+    });
+
+    it('does not apply Button-infoIconWrapper--iconOnly-transparent for non-transparent icon-only button', () => {
+      const { getByTestId } = render(<Button icon="events" disabled tooltip={tooltip} appearance="primary" />);
+      const wrapper = getByTestId('DesignSystem-Button--Info-Icon').parentElement;
+      expect(wrapper).not.toHaveClass('Button-infoIconWrapper--iconOnly-transparent');
+    });
+  });
+
+  describe('keyboard interaction when disabled with tooltip', () => {
+    it('prevents click handler from firing on Enter key', () => {
+      const onClick = jest.fn();
+      const { getByTestId } = render(
+        <Button disabled tooltip={tooltip} onClick={onClick}>
+          Button
+        </Button>
+      );
+      fireEvent.keyDown(getByTestId('DesignSystem-Button'), { key: 'Enter' });
+      expect(onClick).not.toHaveBeenCalled();
+    });
+
+    it('prevents click handler from firing on Space key', () => {
+      const onClick = jest.fn();
+      const { getByTestId } = render(
+        <Button disabled tooltip={tooltip} onClick={onClick}>
+          Button
+        </Button>
+      );
+      fireEvent.keyDown(getByTestId('DesignSystem-Button'), { key: ' ' });
+      expect(onClick).not.toHaveBeenCalled();
+    });
+
+    it('prevents click handler from firing on mouse click', () => {
+      const onClick = jest.fn();
+      const { getByTestId } = render(
+        <Button disabled tooltip={tooltip} onClick={onClick}>
+          Button
+        </Button>
+      );
+      fireEvent.click(getByTestId('DesignSystem-Button'));
+      expect(onClick).not.toHaveBeenCalled();
+    });
   });
 });

@@ -6,7 +6,7 @@ exports[`Button component
 <body>
   <div>
     <button
-      class="Button Button--regular Button--alert Button--iconAlign-left"
+      class="Button Button--regular Button--alert-disabled Button--iconAlign-left Button--disabled"
       data-test="DesignSystem-Button"
       disabled=""
       tabindex="0"
@@ -68,7 +68,8 @@ exports[`Button component
   <div>
     <button
       aria-busy="true"
-      class="Button Button--regular Button--alert Button--iconAlign-left"
+      aria-label="Button"
+      class="Button Button--regular Button--alert-disabled Button--iconAlign-left Button--disabled"
       data-test="DesignSystem-Button"
       disabled=""
       tabindex="0"
@@ -82,7 +83,7 @@ exports[`Button component
         viewBox="0 0 50 50"
       >
         <circle
-          class="Circle Circle--white"
+          class="Circle Circle--alert"
           cx="25"
           cy="25"
           fill="none"
@@ -108,7 +109,6 @@ exports[`Button component
 <body>
   <div>
     <button
-      aria-pressed="true"
       class="Button Button--regular Button--alert Button--iconAlign-left"
       data-test="DesignSystem-Button"
       tabindex="0"
@@ -129,7 +129,7 @@ exports[`Button component
 <body>
   <div>
     <button
-      class="Button Button--regular Button--basic Button--iconAlign-left"
+      class="Button Button--regular Button--basic-disabled Button--iconAlign-left Button--disabled"
       data-test="DesignSystem-Button"
       disabled=""
       tabindex="0"
@@ -191,7 +191,8 @@ exports[`Button component
   <div>
     <button
       aria-busy="true"
-      class="Button Button--regular Button--basic Button--iconAlign-left"
+      aria-label="Button"
+      class="Button Button--regular Button--basic-disabled Button--iconAlign-left Button--disabled"
       data-test="DesignSystem-Button"
       disabled=""
       tabindex="0"
@@ -252,7 +253,7 @@ exports[`Button component
 <body>
   <div>
     <button
-      class="Button Button--regular Button--primary Button--iconAlign-left"
+      class="Button Button--regular Button--primary-disabled Button--iconAlign-left Button--disabled"
       data-test="DesignSystem-Button"
       disabled=""
       tabindex="0"
@@ -314,7 +315,8 @@ exports[`Button component
   <div>
     <button
       aria-busy="true"
-      class="Button Button--regular Button--primary Button--iconAlign-left"
+      aria-label="Button"
+      class="Button Button--regular Button--primary-disabled Button--iconAlign-left Button--disabled"
       data-test="DesignSystem-Button"
       disabled=""
       tabindex="0"
@@ -328,7 +330,7 @@ exports[`Button component
         viewBox="0 0 50 50"
       >
         <circle
-          class="Circle Circle--white"
+          class="Circle Circle--primary"
           cx="25"
           cy="25"
           fill="none"
@@ -354,7 +356,6 @@ exports[`Button component
 <body>
   <div>
     <button
-      aria-pressed="true"
       class="Button Button--regular Button--primary Button--iconAlign-left"
       data-test="DesignSystem-Button"
       tabindex="0"
@@ -375,7 +376,7 @@ exports[`Button component
 <body>
   <div>
     <button
-      class="Button Button--regular Button--transparent Button--iconAlign-left"
+      class="Button Button--regular Button--transparent-disabled Button--iconAlign-left Button--disabled"
       data-test="DesignSystem-Button"
       disabled=""
       tabindex="0"
@@ -437,7 +438,8 @@ exports[`Button component
   <div>
     <button
       aria-busy="true"
-      class="Button Button--regular Button--transparent Button--iconAlign-left"
+      aria-label="Button"
+      class="Button Button--regular Button--transparent-disabled Button--iconAlign-left Button--disabled"
       data-test="DesignSystem-Button"
       disabled=""
       tabindex="0"
@@ -755,7 +757,7 @@ exports[`Button component
       tabindex="0"
     >
       <div
-        class="Button-icon Button-icon--left"
+        class="Button-icon Button-icon--left mr-3"
         data-test="DesignSystem-Button--Icon-Wrapper"
       >
         <i
@@ -787,7 +789,7 @@ exports[`Button component
       tabindex="0"
     >
       <div
-        class="Button-icon Button-icon--right"
+        class="Button-icon Button-icon--right ml-3"
         data-test="DesignSystem-Button--Icon-Wrapper"
       >
         <i
@@ -819,7 +821,7 @@ exports[`Button component
       tabindex="0"
     >
       <div
-        class="Button-icon Button-icon--left"
+        class="Button-icon Button-icon--left mr-3"
         data-test="DesignSystem-Button--Icon-Wrapper"
       >
         <i
@@ -910,7 +912,7 @@ exports[`Button component with no children
   <div>
     <button
       aria-busy="true"
-      class="Button Button--regular Button--regularSquare Button--alert"
+      class="Button Button--regular Button--regularSquare Button--alert-disabled Button--disabled"
       data-test="DesignSystem-Button"
       disabled=""
       tabindex="0"
@@ -924,7 +926,7 @@ exports[`Button component with no children
         viewBox="0 0 50 50"
       >
         <circle
-          class="Circle Circle--white"
+          class="Circle Circle--alert"
           cx="25"
           cy="25"
           fill="none"
@@ -949,7 +951,7 @@ exports[`Button component with no children
   <div>
     <button
       aria-busy="true"
-      class="Button Button--regular Button--regularSquare Button--basic"
+      class="Button Button--regular Button--regularSquare Button--basic-disabled Button--disabled"
       data-test="DesignSystem-Button"
       disabled=""
       tabindex="0"
@@ -988,7 +990,7 @@ exports[`Button component with no children
   <div>
     <button
       aria-busy="true"
-      class="Button Button--regular Button--regularSquare Button--primary"
+      class="Button Button--regular Button--regularSquare Button--primary-disabled Button--disabled"
       data-test="DesignSystem-Button"
       disabled=""
       tabindex="0"
@@ -1002,7 +1004,7 @@ exports[`Button component with no children
         viewBox="0 0 50 50"
       >
         <circle
-          class="Circle Circle--white"
+          class="Circle Circle--primary"
           cx="25"
           cy="25"
           fill="none"
@@ -1027,7 +1029,7 @@ exports[`Button component with no children
   <div>
     <button
       aria-busy="true"
-      class="Button Button--regular Button--regularSquare Button--transparent"
+      class="Button Button--regular Button--regularSquare Button--transparent-disabled Button--disabled"
       data-test="DesignSystem-Button"
       disabled=""
       tabindex="0"
