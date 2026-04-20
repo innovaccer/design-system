@@ -145,7 +145,7 @@
 }
 
 .LinkButton-infoIconWrapper--iconOnly {
-  right: calc(-4px + var(--spacing-20));
+  right: calc(-1 * var(--spacing-10) + var(--spacing-20));
 }
 
 .LinkButton-infoIconWrapper--tinyIcon {

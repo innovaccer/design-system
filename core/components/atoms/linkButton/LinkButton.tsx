@@ -220,7 +220,7 @@ export const LinkButton = React.forwardRef<HTMLButtonElement, LinkButtonProps>((
   const { tooltip } = props;
 
   return tooltip ? (
-    <Tooltip tooltip={tooltip} aria-hidden="true" triggerClass="flex-grow-0">
+    <Tooltip tooltip={tooltip} aria-hidden="true" triggerClass="flex-grow-0" wrapperElement="span">
       <LinkButtonElement {...props} ref={ref} />
     </Tooltip>
   ) : (
