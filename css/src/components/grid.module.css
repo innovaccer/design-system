@@ -417,8 +417,12 @@
   display: flex;
   flex-wrap: wrap-reverse;
   justify-content: space-between;
-  margin-bottom: var(--spacing-40);
   gap: var(--spacing-20) var(--spacing-60);
+}
+
+/* Toolbar row only: space before summary/selection row. Do not apply to .Header-content--bottom. */
+.Header-content:not(.Header-content--bottom) {
+  margin-bottom: var(--spacing-40);
 }
 
 .Header-toolbar {
