@@ -168,7 +168,7 @@ exports[`Link Button component snapshots
 <body>
   <div>
     <button
-      class="LinkButton LinkButton--regular LinkButton--default LinkButton--iconAlign-left"
+      class="LinkButton LinkButton--regular LinkButton--default-disabled LinkButton--iconAlign-left"
       data-test="DesignSystem-LinkButton"
       disabled=""
       type="button"
@@ -196,7 +196,7 @@ exports[`Link Button component snapshots
 <body>
   <div>
     <button
-      class="LinkButton LinkButton--regular LinkButton--default LinkButton--iconAlign-left"
+      class="LinkButton LinkButton--regular LinkButton--default-disabled LinkButton--iconAlign-left"
       data-test="DesignSystem-LinkButton"
       disabled=""
       type="button"
@@ -224,7 +224,7 @@ exports[`Link Button component snapshots
 <body>
   <div>
     <button
-      class="LinkButton LinkButton--regular LinkButton--subtle LinkButton--iconAlign-left"
+      class="LinkButton LinkButton--regular LinkButton--subtle-disabled LinkButton--iconAlign-left"
       data-test="DesignSystem-LinkButton"
       disabled=""
       type="button"
@@ -252,7 +252,7 @@ exports[`Link Button component snapshots
 <body>
   <div>
     <button
-      class="LinkButton LinkButton--regular LinkButton--default LinkButton--iconAlign-right"
+      class="LinkButton LinkButton--regular LinkButton--default-disabled LinkButton--iconAlign-right"
       data-test="DesignSystem-LinkButton"
       disabled=""
       type="button"
@@ -280,7 +280,7 @@ exports[`Link Button component snapshots
 <body>
   <div>
     <button
-      class="LinkButton LinkButton--regular LinkButton--default LinkButton--iconAlign-right"
+      class="LinkButton LinkButton--regular LinkButton--default-disabled LinkButton--iconAlign-right"
       data-test="DesignSystem-LinkButton"
       disabled=""
       type="button"
@@ -308,7 +308,7 @@ exports[`Link Button component snapshots
 <body>
   <div>
     <button
-      class="LinkButton LinkButton--regular LinkButton--subtle LinkButton--iconAlign-right"
+      class="LinkButton LinkButton--regular LinkButton--subtle-disabled LinkButton--iconAlign-right"
       data-test="DesignSystem-LinkButton"
       disabled=""
       type="button"
@@ -498,7 +498,7 @@ exports[`Link Button component snapshots
 <body>
   <div>
     <button
-      class="LinkButton LinkButton--tiny LinkButton--default LinkButton--iconAlign-left"
+      class="LinkButton LinkButton--tiny LinkButton--default-disabled LinkButton--iconAlign-left"
       data-test="DesignSystem-LinkButton"
       disabled=""
       type="button"
@@ -526,7 +526,7 @@ exports[`Link Button component snapshots
 <body>
   <div>
     <button
-      class="LinkButton LinkButton--tiny LinkButton--default LinkButton--iconAlign-left"
+      class="LinkButton LinkButton--tiny LinkButton--default-disabled LinkButton--iconAlign-left"
       data-test="DesignSystem-LinkButton"
       disabled=""
       type="button"
@@ -554,7 +554,7 @@ exports[`Link Button component snapshots
 <body>
   <div>
     <button
-      class="LinkButton LinkButton--tiny LinkButton--subtle LinkButton--iconAlign-left"
+      class="LinkButton LinkButton--tiny LinkButton--subtle-disabled LinkButton--iconAlign-left"
       data-test="DesignSystem-LinkButton"
       disabled=""
       type="button"
@@ -582,7 +582,7 @@ exports[`Link Button component snapshots
 <body>
   <div>
     <button
-      class="LinkButton LinkButton--tiny LinkButton--default LinkButton--iconAlign-right"
+      class="LinkButton LinkButton--tiny LinkButton--default-disabled LinkButton--iconAlign-right"
       data-test="DesignSystem-LinkButton"
       disabled=""
       type="button"
@@ -610,7 +610,7 @@ exports[`Link Button component snapshots
 <body>
   <div>
     <button
-      class="LinkButton LinkButton--tiny LinkButton--default LinkButton--iconAlign-right"
+      class="LinkButton LinkButton--tiny LinkButton--default-disabled LinkButton--iconAlign-right"
       data-test="DesignSystem-LinkButton"
       disabled=""
       type="button"
@@ -638,7 +638,7 @@ exports[`Link Button component snapshots
 <body>
   <div>
     <button
-      class="LinkButton LinkButton--tiny LinkButton--subtle LinkButton--iconAlign-right"
+      class="LinkButton LinkButton--tiny LinkButton--subtle-disabled LinkButton--iconAlign-right"
       data-test="DesignSystem-LinkButton"
       disabled=""
       type="button"
@@ -828,7 +828,7 @@ exports[`Link Button component snapshots
 <body>
   <div>
     <button
-      class="LinkButton LinkButton--regular LinkButton--default LinkButton--iconAlign-left"
+      class="LinkButton LinkButton--regular LinkButton--default-disabled LinkButton--iconAlign-left"
       data-test="DesignSystem-LinkButton"
       disabled=""
       type="reset"
@@ -856,7 +856,7 @@ exports[`Link Button component snapshots
 <body>
   <div>
     <button
-      class="LinkButton LinkButton--regular LinkButton--default LinkButton--iconAlign-left"
+      class="LinkButton LinkButton--regular LinkButton--default-disabled LinkButton--iconAlign-left"
       data-test="DesignSystem-LinkButton"
       disabled=""
       type="reset"
@@ -884,7 +884,7 @@ exports[`Link Button component snapshots
 <body>
   <div>
     <button
-      class="LinkButton LinkButton--regular LinkButton--subtle LinkButton--iconAlign-left"
+      class="LinkButton LinkButton--regular LinkButton--subtle-disabled LinkButton--iconAlign-left"
       data-test="DesignSystem-LinkButton"
       disabled=""
       type="reset"
@@ -912,7 +912,7 @@ exports[`Link Button component snapshots
 <body>
   <div>
     <button
-      class="LinkButton LinkButton--regular LinkButton--default LinkButton--iconAlign-right"
+      class="LinkButton LinkButton--regular LinkButton--default-disabled LinkButton--iconAlign-right"
       data-test="DesignSystem-LinkButton"
       disabled=""
       type="reset"
@@ -940,7 +940,7 @@ exports[`Link Button component snapshots
 <body>
   <div>
     <button
-      class="LinkButton LinkButton--regular LinkButton--default LinkButton--iconAlign-right"
+      class="LinkButton LinkButton--regular LinkButton--default-disabled LinkButton--iconAlign-right"
       data-test="DesignSystem-LinkButton"
       disabled=""
       type="reset"
@@ -968,7 +968,7 @@ exports[`Link Button component snapshots
 <body>
   <div>
     <button
-      class="LinkButton LinkButton--regular LinkButton--subtle LinkButton--iconAlign-right"
+      class="LinkButton LinkButton--regular LinkButton--subtle-disabled LinkButton--iconAlign-right"
       data-test="DesignSystem-LinkButton"
       disabled=""
       type="reset"
@@ -1158,7 +1158,7 @@ exports[`Link Button component snapshots
 <body>
   <div>
     <button
-      class="LinkButton LinkButton--tiny LinkButton--default LinkButton--iconAlign-left"
+      class="LinkButton LinkButton--tiny LinkButton--default-disabled LinkButton--iconAlign-left"
       data-test="DesignSystem-LinkButton"
       disabled=""
       type="reset"
@@ -1186,7 +1186,7 @@ exports[`Link Button component snapshots
 <body>
   <div>
     <button
-      class="LinkButton LinkButton--tiny LinkButton--default LinkButton--iconAlign-left"
+      class="LinkButton LinkButton--tiny LinkButton--default-disabled LinkButton--iconAlign-left"
       data-test="DesignSystem-LinkButton"
       disabled=""
       type="reset"
@@ -1214,7 +1214,7 @@ exports[`Link Button component snapshots
 <body>
   <div>
     <button
-      class="LinkButton LinkButton--tiny LinkButton--subtle LinkButton--iconAlign-left"
+      class="LinkButton LinkButton--tiny LinkButton--subtle-disabled LinkButton--iconAlign-left"
       data-test="DesignSystem-LinkButton"
       disabled=""
       type="reset"
@@ -1242,7 +1242,7 @@ exports[`Link Button component snapshots
 <body>
   <div>
     <button
-      class="LinkButton LinkButton--tiny LinkButton--default LinkButton--iconAlign-right"
+      class="LinkButton LinkButton--tiny LinkButton--default-disabled LinkButton--iconAlign-right"
       data-test="DesignSystem-LinkButton"
       disabled=""
       type="reset"
@@ -1270,7 +1270,7 @@ exports[`Link Button component snapshots
 <body>
   <div>
     <button
-      class="LinkButton LinkButton--tiny LinkButton--default LinkButton--iconAlign-right"
+      class="LinkButton LinkButton--tiny LinkButton--default-disabled LinkButton--iconAlign-right"
       data-test="DesignSystem-LinkButton"
       disabled=""
       type="reset"
@@ -1298,7 +1298,7 @@ exports[`Link Button component snapshots
 <body>
   <div>
     <button
-      class="LinkButton LinkButton--tiny LinkButton--subtle LinkButton--iconAlign-right"
+      class="LinkButton LinkButton--tiny LinkButton--subtle-disabled LinkButton--iconAlign-right"
       data-test="DesignSystem-LinkButton"
       disabled=""
       type="reset"
@@ -1488,7 +1488,7 @@ exports[`Link Button component snapshots
 <body>
   <div>
     <button
-      class="LinkButton LinkButton--regular LinkButton--default LinkButton--iconAlign-left"
+      class="LinkButton LinkButton--regular LinkButton--default-disabled LinkButton--iconAlign-left"
       data-test="DesignSystem-LinkButton"
       disabled=""
       type="submit"
@@ -1516,7 +1516,7 @@ exports[`Link Button component snapshots
 <body>
   <div>
     <button
-      class="LinkButton LinkButton--regular LinkButton--default LinkButton--iconAlign-left"
+      class="LinkButton LinkButton--regular LinkButton--default-disabled LinkButton--iconAlign-left"
       data-test="DesignSystem-LinkButton"
       disabled=""
       type="submit"
@@ -1544,7 +1544,7 @@ exports[`Link Button component snapshots
 <body>
   <div>
     <button
-      class="LinkButton LinkButton--regular LinkButton--subtle LinkButton--iconAlign-left"
+      class="LinkButton LinkButton--regular LinkButton--subtle-disabled LinkButton--iconAlign-left"
       data-test="DesignSystem-LinkButton"
       disabled=""
       type="submit"
@@ -1572,7 +1572,7 @@ exports[`Link Button component snapshots
 <body>
   <div>
     <button
-      class="LinkButton LinkButton--regular LinkButton--default LinkButton--iconAlign-right"
+      class="LinkButton LinkButton--regular LinkButton--default-disabled LinkButton--iconAlign-right"
       data-test="DesignSystem-LinkButton"
       disabled=""
       type="submit"
@@ -1600,7 +1600,7 @@ exports[`Link Button component snapshots
 <body>
   <div>
     <button
-      class="LinkButton LinkButton--regular LinkButton--default LinkButton--iconAlign-right"
+      class="LinkButton LinkButton--regular LinkButton--default-disabled LinkButton--iconAlign-right"
       data-test="DesignSystem-LinkButton"
       disabled=""
       type="submit"
@@ -1628,7 +1628,7 @@ exports[`Link Button component snapshots
 <body>
   <div>
     <button
-      class="LinkButton LinkButton--regular LinkButton--subtle LinkButton--iconAlign-right"
+      class="LinkButton LinkButton--regular LinkButton--subtle-disabled LinkButton--iconAlign-right"
       data-test="DesignSystem-LinkButton"
       disabled=""
       type="submit"
@@ -1818,7 +1818,7 @@ exports[`Link Button component snapshots
 <body>
   <div>
     <button
-      class="LinkButton LinkButton--tiny LinkButton--default LinkButton--iconAlign-left"
+      class="LinkButton LinkButton--tiny LinkButton--default-disabled LinkButton--iconAlign-left"
       data-test="DesignSystem-LinkButton"
       disabled=""
       type="submit"
@@ -1846,7 +1846,7 @@ exports[`Link Button component snapshots
 <body>
   <div>
     <button
-      class="LinkButton LinkButton--tiny LinkButton--default LinkButton--iconAlign-left"
+      class="LinkButton LinkButton--tiny LinkButton--default-disabled LinkButton--iconAlign-left"
       data-test="DesignSystem-LinkButton"
       disabled=""
       type="submit"
@@ -1874,7 +1874,7 @@ exports[`Link Button component snapshots
 <body>
   <div>
     <button
-      class="LinkButton LinkButton--tiny LinkButton--subtle LinkButton--iconAlign-left"
+      class="LinkButton LinkButton--tiny LinkButton--subtle-disabled LinkButton--iconAlign-left"
       data-test="DesignSystem-LinkButton"
       disabled=""
       type="submit"
@@ -1902,7 +1902,7 @@ exports[`Link Button component snapshots
 <body>
   <div>
     <button
-      class="LinkButton LinkButton--tiny LinkButton--default LinkButton--iconAlign-right"
+      class="LinkButton LinkButton--tiny LinkButton--default-disabled LinkButton--iconAlign-right"
       data-test="DesignSystem-LinkButton"
       disabled=""
       type="submit"
@@ -1930,7 +1930,7 @@ exports[`Link Button component snapshots
 <body>
   <div>
     <button
-      class="LinkButton LinkButton--tiny LinkButton--default LinkButton--iconAlign-right"
+      class="LinkButton LinkButton--tiny LinkButton--default-disabled LinkButton--iconAlign-right"
       data-test="DesignSystem-LinkButton"
       disabled=""
       type="submit"
@@ -1958,7 +1958,7 @@ exports[`Link Button component snapshots
 <body>
   <div>
     <button
-      class="LinkButton LinkButton--tiny LinkButton--subtle LinkButton--iconAlign-right"
+      class="LinkButton LinkButton--tiny LinkButton--subtle-disabled LinkButton--iconAlign-right"
       data-test="DesignSystem-LinkButton"
       disabled=""
       type="submit"

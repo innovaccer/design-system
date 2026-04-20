@@ -138,3 +138,177 @@ describe('LinkButton component a11y', () => {
     expect(results).toHaveNoViolations();
   });
 });
+
+describe('LinkButton info icon (disabled + tooltip affordance)', () => {
+  it('renders info icon when disabled and tooltip are both provided', () => {
+    const { getByTestId } = render(
+      <LinkButton disabled={true} tooltip="Not available">
+        LinkButton
+      </LinkButton>
+    );
+    expect(getByTestId('DesignSystem-LinkButton--Info-Icon')).toBeInTheDocument();
+  });
+
+  it('does not render info icon when disabled without tooltip', () => {
+    const { queryByTestId } = render(<LinkButton disabled={true}>LinkButton</LinkButton>);
+    expect(queryByTestId('DesignSystem-LinkButton--Info-Icon')).not.toBeInTheDocument();
+  });
+
+  it('does not render info icon when tooltip is provided without disabled', () => {
+    const { queryByTestId } = render(<LinkButton tooltip="Info">LinkButton</LinkButton>);
+    expect(queryByTestId('DesignSystem-LinkButton--Info-Icon')).not.toBeInTheDocument();
+  });
+
+  it('does not render info icon when neither disabled nor tooltip are set', () => {
+    const { queryByTestId } = render(<LinkButton>LinkButton</LinkButton>);
+    expect(queryByTestId('DesignSystem-LinkButton--Info-Icon')).not.toBeInTheDocument();
+  });
+
+  it('adds LinkButton-withInfo class to button when info icon is shown', () => {
+    const { getByTestId } = render(
+      <LinkButton disabled={true} tooltip="Not available">
+        LinkButton
+      </LinkButton>
+    );
+    expect(getByTestId('DesignSystem-LinkButton')).toHaveClass('LinkButton-withInfo');
+  });
+
+  it('does not add LinkButton-withInfo class when disabled without tooltip', () => {
+    const { getByTestId } = render(<LinkButton disabled={true}>LinkButton</LinkButton>);
+    expect(getByTestId('DesignSystem-LinkButton')).not.toHaveClass('LinkButton-withInfo');
+  });
+
+  it('info icon has aria-hidden="true"', () => {
+    const { getByTestId } = render(
+      <LinkButton disabled={true} tooltip="Not available">
+        LinkButton
+      </LinkButton>
+    );
+    expect(getByTestId('DesignSystem-LinkButton--Info-Icon')).toHaveAttribute('aria-hidden', 'true');
+  });
+
+  it('applies LinkButton-infoIcon--default class when not subtle', () => {
+    const { getByTestId } = render(
+      <LinkButton disabled={true} tooltip="Not available">
+        LinkButton
+      </LinkButton>
+    );
+    expect(getByTestId('DesignSystem-LinkButton--Info-Icon')).toHaveClass('LinkButton-infoIcon--default');
+    expect(getByTestId('DesignSystem-LinkButton--Info-Icon')).not.toHaveClass('LinkButton-infoIcon--subtle');
+  });
+
+  it('applies LinkButton-infoIcon--subtle class when subtle', () => {
+    const { getByTestId } = render(
+      <LinkButton disabled={true} tooltip="Not available" subtle={true}>
+        LinkButton
+      </LinkButton>
+    );
+    expect(getByTestId('DesignSystem-LinkButton--Info-Icon')).toHaveClass('LinkButton-infoIcon--subtle');
+    expect(getByTestId('DesignSystem-LinkButton--Info-Icon')).not.toHaveClass('LinkButton-infoIcon--default');
+  });
+
+  it('applies LinkButton-infoIconWrapper--withChildren class when children are present', () => {
+    const { getByTestId } = render(
+      <LinkButton disabled={true} tooltip="Not available">
+        LinkButton
+      </LinkButton>
+    );
+    const infoIcon = getByTestId('DesignSystem-LinkButton--Info-Icon');
+    expect(infoIcon.closest('.LinkButton-infoIconWrapper')).toHaveClass('LinkButton-infoIconWrapper--withChildren');
+  });
+
+  it('applies LinkButton-infoIconWrapper--tiny class when size is tiny and children are present', () => {
+    const { getByTestId } = render(
+      <LinkButton disabled={true} tooltip="Not available" size="tiny">
+        LinkButton
+      </LinkButton>
+    );
+    const infoIcon = getByTestId('DesignSystem-LinkButton--Info-Icon');
+    expect(infoIcon.closest('.LinkButton-infoIconWrapper')).toHaveClass('LinkButton-infoIconWrapper--tiny');
+  });
+
+  it('applies LinkButton-infoIconWrapper--iconOnly class for icon-only button', () => {
+    const { getByTestId } = render(<LinkButton icon="events" disabled={true} tooltip="Not available" />);
+    const infoIcon = getByTestId('DesignSystem-LinkButton--Info-Icon');
+    expect(infoIcon.closest('.LinkButton-infoIconWrapper')).toHaveClass('LinkButton-infoIconWrapper--iconOnly');
+  });
+
+  it('applies LinkButton-infoIconWrapper--regularIcon class for regular icon-only button', () => {
+    const { getByTestId } = render(<LinkButton icon="events" disabled={true} tooltip="Not available" size="regular" />);
+    const infoIcon = getByTestId('DesignSystem-LinkButton--Info-Icon');
+    expect(infoIcon.closest('.LinkButton-infoIconWrapper')).toHaveClass('LinkButton-infoIconWrapper--regularIcon');
+  });
+
+  it('applies LinkButton-infoIconWrapper--tinyIcon class for tiny icon-only button', () => {
+    const { getByTestId } = render(<LinkButton icon="events" disabled={true} tooltip="Not available" size="tiny" />);
+    const infoIcon = getByTestId('DesignSystem-LinkButton--Info-Icon');
+    expect(infoIcon.closest('.LinkButton-infoIconWrapper')).toHaveClass('LinkButton-infoIconWrapper--tinyIcon');
+  });
+});
+
+describe('LinkButton aria-disabled behavior (disabled + tooltip)', () => {
+  it('sets aria-disabled="true" instead of native disabled when disabled and tooltip are provided', () => {
+    const { getByTestId } = render(
+      <LinkButton disabled={true} tooltip="Not available">
+        LinkButton
+      </LinkButton>
+    );
+    const btn = getByTestId('DesignSystem-LinkButton');
+    expect(btn).toHaveAttribute('aria-disabled', 'true');
+    expect(btn).not.toBeDisabled();
+  });
+
+  it('uses native disabled when disabled without tooltip', () => {
+    const { getByTestId } = render(<LinkButton disabled={true}>LinkButton</LinkButton>);
+    const btn = getByTestId('DesignSystem-LinkButton');
+    expect(btn).toBeDisabled();
+    expect(btn).not.toHaveAttribute('aria-disabled');
+  });
+
+  it('prevents onClick when aria-disabled is true', () => {
+    jest.resetAllMocks();
+    const { getByTestId } = render(
+      <LinkButton onClick={FunctionValue} disabled={true} tooltip="Not available">
+        LinkButton
+      </LinkButton>
+    );
+    fireEvent.click(getByTestId('DesignSystem-LinkButton'));
+    expect(FunctionValue).not.toHaveBeenCalled();
+  });
+
+  it('prevents Enter key action when aria-disabled is true', () => {
+    jest.resetAllMocks();
+    const { getByTestId } = render(
+      <LinkButton onClick={FunctionValue} disabled={true} tooltip="Not available">
+        LinkButton
+      </LinkButton>
+    );
+    fireEvent.keyDown(getByTestId('DesignSystem-LinkButton'), { key: 'Enter' });
+    expect(FunctionValue).not.toHaveBeenCalled();
+  });
+
+  it('prevents Space key action when aria-disabled is true', () => {
+    jest.resetAllMocks();
+    const { getByTestId } = render(
+      <LinkButton onClick={FunctionValue} disabled={true} tooltip="Not available">
+        LinkButton
+      </LinkButton>
+    );
+    fireEvent.keyDown(getByTestId('DesignSystem-LinkButton'), { key: ' ' });
+    expect(FunctionValue).not.toHaveBeenCalled();
+  });
+
+  it('does not set aria-disabled when only disabled (no tooltip)', () => {
+    const { getByTestId } = render(<LinkButton disabled={true}>LinkButton</LinkButton>);
+    expect(getByTestId('DesignSystem-LinkButton')).not.toHaveAttribute('aria-disabled');
+  });
+
+  it('changes submit type to button when aria-disabled is active', () => {
+    const { getByTestId } = render(
+      <LinkButton type="submit" disabled={true} tooltip="Not available">
+        LinkButton
+      </LinkButton>
+    );
+    expect(getByTestId('DesignSystem-LinkButton')).toHaveAttribute('type', 'button');
+  });
+});
