@@ -2377,7 +2377,7 @@ exports[`TS renders children 1`] = `
     >
       <button
         aria-label="First page"
-        class="Button Button--regular Button--regularSquare Button--transparent Pagination-button"
+        class="Button Button--regular Button--regularSquare Button--transparent-disabled Button--disabled Pagination-button"
         data-test="DesignSystem-Pagination--FirstButton"
         disabled=""
         tabindex="0"
@@ -2397,7 +2397,7 @@ exports[`TS renders children 1`] = `
       </button>
       <button
         aria-label="Previous page"
-        class="Button Button--regular Button--regularSquare Button--basic ml-4 mr-3 Pagination-button"
+        class="Button Button--regular Button--regularSquare Button--basic-disabled Button--disabled ml-4 mr-3 Pagination-button"
         data-test="DesignSystem-Pagination--PrevButton"
         disabled=""
         tabindex="0"
@@ -2421,7 +2421,7 @@ exports[`TS renders children 1`] = `
     >
       <button
         aria-label="Next page"
-        class="Button Button--regular Button--regularSquare Button--basic ml-3 mr-4 Pagination-button"
+        class="Button Button--regular Button--regularSquare Button--basic-disabled Button--disabled ml-3 mr-4 Pagination-button"
         data-test="DesignSystem-Pagination--NextButton"
         disabled=""
         tabindex="0"
@@ -2441,7 +2441,7 @@ exports[`TS renders children 1`] = `
       </button>
       <button
         aria-label="Last page"
-        class="Button Button--regular Button--regularSquare Button--transparent Pagination-button"
+        class="Button Button--regular Button--regularSquare Button--transparent-disabled Button--disabled Pagination-button"
         data-test="DesignSystem-Pagination--LastButton"
         disabled=""
         tabindex="0"

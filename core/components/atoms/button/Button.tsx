@@ -165,7 +165,7 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
   const isDisabledProp = disabled || loading;
   const useAriaDisabled = Boolean(isDisabledProp && tooltip);
   const nativeDisabled = useAriaDisabled ? undefined : isDisabledProp;
-  const renderedType = useAriaDisabled && type === 'submit' ? 'button' : type;
+  const renderedType = useAriaDisabled && (type === 'submit' || !type) ? 'button' : type;
   const isDisabled = nativeDisabled || useAriaDisabled;
 
   const buttonClass = classNames(
@@ -191,8 +191,8 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
   const iconClass = classNames({
     [styles['Button-icon']]: true,
     [styles[`Button-icon--${iconAlign}`]]: children && iconAlign,
-    [styles[`mr-3`]]: children && iconAlign === 'left' && size === 'tiny',
-    [styles[`ml-3`]]: children && iconAlign === 'right' && size === 'tiny',
+    [`mr-3`]: children && iconAlign === 'left' && size === 'tiny',
+    [`ml-3`]: children && iconAlign === 'right' && size === 'tiny',
 
     [styles[`Button-regularIcon--${iconAlign}`]]: children && iconAlign && size === 'regular' && !expanded,
   });

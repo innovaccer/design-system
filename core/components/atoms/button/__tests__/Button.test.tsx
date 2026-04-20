@@ -491,7 +491,7 @@ describe('Button component with styleType prop', () => {
       expect(circle).toHaveClass('Circle--primary');
     });
 
-    it('should use white spinner for filled primary button (backward compatibility)', () => {
+    it('should use primary spinner for filled primary button (better contrast', () => {
       const { getByTestId } = render(
         <Button appearance="primary" loading={true}>
           Button
@@ -499,7 +499,7 @@ describe('Button component with styleType prop', () => {
       );
       const spinner = getByTestId('DesignSystem-Button--Spinner');
       const circle = spinner.querySelector('circle');
-      expect(circle).toHaveClass('Circle--white');
+      expect(circle).toHaveClass('Circle--primary');
     });
   });
 });
@@ -588,6 +588,33 @@ describe('Button disabled info icon', () => {
       const describedById = button.getAttribute('aria-describedby');
       expect(describedById).toBeTruthy();
       expect(document.getElementById(describedById as string)?.textContent).toBe(tooltip);
+    });
+
+    it('renders as type="button" when disabled with tooltip and no explicit type (prevents implicit form submit)', () => {
+      const { getByTestId } = render(
+        <Button disabled tooltip={tooltip}>
+          Button
+        </Button>
+      );
+      expect(getByTestId('DesignSystem-Button')).toHaveAttribute('type', 'button');
+    });
+
+    it('renders as type="button" when disabled with tooltip and explicit type="submit" (prevents explicit form submit)', () => {
+      const { getByTestId } = render(
+        <Button disabled tooltip={tooltip} type="submit">
+          Button
+        </Button>
+      );
+      expect(getByTestId('DesignSystem-Button')).toHaveAttribute('type', 'button');
+    });
+
+    it('preserves type="reset" when disabled with tooltip (reset cannot submit a form)', () => {
+      const { getByTestId } = render(
+        <Button disabled tooltip={tooltip} type="reset">
+          Button
+        </Button>
+      );
+      expect(getByTestId('DesignSystem-Button')).toHaveAttribute('type', 'reset');
     });
   });
 
