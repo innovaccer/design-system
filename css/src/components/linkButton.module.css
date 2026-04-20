@@ -70,7 +70,7 @@
   color: var(--primary-lighter);
 }
 
-.LinkButton--default .LinkButton-infoIcon {
+.LinkButton-infoIcon--default {
   color: var(--text-link);
 }
 
@@ -100,14 +100,14 @@
   color: var(--inverse-lightest);
 }
 
-.LinkButton--subtle .LinkButton-infoIcon {
+.LinkButton-infoIcon--subtle {
   color: var(--inverse-light);
 }
 
 .LinkButton-infoIconWrapper {
   position: absolute;
-  top: -2px;
-  right: -12px;
+  top: calc(-1 * var(--spacing-05));
+  right: calc(-1 * var(--spacing-30));
   width: var(--spacing-30);
   height: var(--spacing-30);
   box-sizing: border-box;
@@ -122,7 +122,7 @@
 }
 
 .LinkButton-infoIconWrapper--tiny {
-  top: -2px;
+  top: calc(-1 * var(--spacing-05));
   right: calc(-1 * var(--spacing-30));
 }
 
@@ -132,7 +132,7 @@
 }
 
 .LinkButton-infoIconWrapper--tinyIcon {
-  top: -2px;
+  top: calc(-1 * var(--spacing-05));
   right: calc(-1 * var(--spacing-05));
 }
 
