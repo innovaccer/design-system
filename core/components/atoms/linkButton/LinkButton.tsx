@@ -1,9 +1,10 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, BaseHtmlProps } from '@/utils/types';
-import { Icon } from '@/index';
+import { Icon, Tooltip } from '@/index';
 import { IconType } from '@/common.type';
 import styles from '@css/components/linkButton.module.css';
+import uidGenerator from '@/utils/uidGenerator';
 
 export type ButtonType = 'button' | 'submit' | 'reset';
 export type LinkButtonSize = 'tiny' | 'regular';
@@ -23,6 +24,10 @@ export interface LinkButtonProps extends BaseProps, BaseHtmlProps<HTMLButtonElem
    * Disables the `Button`, making it unable to be pressed
    */
   disabled?: boolean;
+  /**
+   * Text to be displayed in the tooltip. For disabled buttons, it additionally renders an affordance icon.
+   */
+  tooltip?: string;
   /**
    * Name of icon that is to be added inside `Button`
    * Material icon name
@@ -73,15 +78,75 @@ const sizeMapping: Record<LinkButtonSize, number> = {
   regular: 16,
 };
 
-export const LinkButton = React.forwardRef<HTMLButtonElement, LinkButtonProps>((props, ref) => {
-  const { children, type, className, disabled, tabIndex, icon, subtle, size, iconAlign, iconType, ...rest } = props;
+const LinkButtonElement = React.forwardRef<HTMLButtonElement, LinkButtonProps>((props, ref) => {
+  const {
+    children,
+    type,
+    className,
+    disabled,
+    tabIndex,
+    icon,
+    subtle,
+    size,
+    iconAlign,
+    iconType,
+    tooltip,
+    onClick,
+    onKeyDown,
+    'aria-describedby': ariaDescribedBy,
+    ...rest
+  } = props;
+
+  const isIconOnly = icon && !children;
+
+  const tooltipIdRef = React.useRef<string | null>(null);
+  if (tooltipIdRef.current === null && tooltip && !isIconOnly) {
+    tooltipIdRef.current = `LinkButton-tooltip-${uidGenerator()}`;
+  }
+
+  const computedAriaDescribedBy =
+    [ariaDescribedBy, tooltip && !isIconOnly ? tooltipIdRef.current : undefined].filter(Boolean).join(' ') || undefined;
+
+  const computedAriaLabel =
+    props['aria-label'] || (isIconOnly && tooltip ? tooltip : undefined) || (!children && icon ? icon : undefined);
+
+  const useAriaDisabled = Boolean(disabled && tooltip);
+  const nativeDisabled = useAriaDisabled ? undefined : disabled;
+  const renderedType = useAriaDisabled && type === 'submit' ? 'button' : type;
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>) => {
+    if (useAriaDisabled && (event.key === 'Enter' || event.key === ' ')) {
+      event.preventDefault();
+      event.stopPropagation();
+      return;
+    }
+    if (onKeyDown) {
+      onKeyDown(event);
+    }
+  };
+
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    if (useAriaDisabled) {
+      event.preventDefault();
+      event.stopPropagation();
+      return;
+    }
+    if (onClick) {
+      onClick(event);
+    }
+  };
+
+  const showInfoAffordance = disabled && tooltip;
 
   const buttonClass = classNames({
     [styles['LinkButton']]: true,
     [styles[`LinkButton--${size}`]]: size,
-    [styles['LinkButton--default']]: !subtle,
-    [styles['LinkButton--subtle']]: subtle,
+    [styles['LinkButton--default']]: !subtle && !disabled,
+    [styles['LinkButton--subtle']]: subtle && !disabled,
+    [styles['LinkButton--default-disabled']]: !subtle && disabled,
+    [styles['LinkButton--subtle-disabled']]: subtle && disabled,
     [styles[`LinkButton--iconAlign-${iconAlign}`]]: children && iconAlign,
+    [styles['LinkButton-withInfo']]: showInfoAffordance,
     [`${className}`]: className,
   });
 
@@ -90,35 +155,82 @@ export const LinkButton = React.forwardRef<HTMLButtonElement, LinkButtonProps>((
     [styles[`LinkButton-icon--${iconAlign}`]]: children && iconAlign,
   });
 
+  const infoIconClass = classNames({
+    [styles['LinkButton-infoIcon']]: true,
+    [styles['LinkButton-infoIcon--default']]: !subtle,
+    [styles['LinkButton-infoIcon--subtle']]: subtle,
+  });
+
+  const infoIconWrapperClass = classNames({
+    [styles['LinkButton-infoIconWrapper']]: true,
+    [styles['LinkButton-infoIconWrapper--tiny']]: size === 'tiny' && children,
+    [styles['LinkButton-infoIconWrapper--withChildren']]: children,
+    [styles['LinkButton-infoIconWrapper--iconOnly']]: !children,
+    [styles['LinkButton-infoIconWrapper--regularIcon']]: !children && size !== 'tiny',
+    [styles['LinkButton-infoIconWrapper--tinyIcon']]: !children && size === 'tiny',
+  });
+
+  const iconSize = size && sizeMapping[size];
+
   return (
     <button
       ref={ref}
-      type={type}
+      type={renderedType}
       data-test="DesignSystem-LinkButton"
       className={buttonClass}
-      disabled={disabled}
+      disabled={nativeDisabled}
+      aria-disabled={useAriaDisabled ? true : undefined}
+      aria-describedby={computedAriaDescribedBy}
       tabIndex={tabIndex}
       {...rest}
-      aria-label={rest['aria-label'] || (!children && icon ? icon : undefined)}
+      aria-label={computedAriaLabel}
+      onClick={handleClick}
+      onKeyDown={handleKeyDown}
     >
       <>
         {icon && (
           <div className={iconClass}>
-            <Icon
-              data-test="DesignSystem-LinkButton--Icon"
-              name={icon}
-              type={iconType}
-              size={size && sizeMapping[size]}
-            />
+            <Icon data-test="DesignSystem-LinkButton--Icon" name={icon} type={iconType} size={iconSize} />
           </div>
         )}
         {children}
+        {showInfoAffordance && (
+          <span className={infoIconWrapperClass}>
+            <Icon
+              name="info_outline"
+              type="outlined"
+              size={12}
+              className={infoIconClass}
+              aria-hidden="true"
+              data-test="DesignSystem-LinkButton--Info-Icon"
+            />
+          </span>
+        )}
       </>
+      {tooltip && !isIconOnly && (
+        <span id={tooltipIdRef.current as string} className={styles['LinkButton-srOnly']}>
+          {tooltip}
+        </span>
+      )}
     </button>
   );
 });
 
+export const LinkButton = React.forwardRef<HTMLButtonElement, LinkButtonProps>((props, ref) => {
+  const { tooltip } = props;
+
+  return tooltip ? (
+    <Tooltip tooltip={tooltip} aria-hidden="true" triggerClass="flex-grow-0">
+      <LinkButtonElement {...props} ref={ref} />
+    </Tooltip>
+  ) : (
+    <LinkButtonElement {...props} ref={ref} />
+  );
+});
+
 LinkButton.displayName = 'LinkButton';
+LinkButtonElement.displayName = 'LinkButtonElement';
+
 LinkButton.defaultProps = {
   size: 'regular',
   type: 'button',
