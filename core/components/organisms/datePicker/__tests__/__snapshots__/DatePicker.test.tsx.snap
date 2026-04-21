@@ -1357,7 +1357,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                 >
                   <button
                     aria-label="Previous month"
-                    class="Button Button--regular Button--regularSquare Button--basic"
+                    class="Button Button--regular Button--regularSquare Button--basic-disabled Button--disabled"
                     data-test="DesignSystem-Button"
                     disabled=""
                     tabindex="0"
@@ -2684,7 +2684,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                 >
                   <button
                     aria-label="Previous month"
-                    class="Button Button--regular Button--regularSquare Button--basic"
+                    class="Button Button--regular Button--regularSquare Button--basic-disabled Button--disabled"
                     data-test="DesignSystem-Button"
                     disabled=""
                     tabindex="0"

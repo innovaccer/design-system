@@ -148,11 +148,11 @@ export interface SelectProps extends BaseProps {
 
   triggerOptions?: SelectTriggerProps;
   /**
-   * Merged into the default trigger (or custom `trigger`) when `triggerOptions` does not set the same attribute.
+   * Default aria-describedby for the Select trigger.
    */
   'aria-describedby'?: string;
   /**
-   * Merged into the default trigger (or custom `trigger`) when `triggerOptions` does not set the same attribute.
+   * default aria-errormessage for the Select trigger.
    */
   'aria-errormessage'?: string;
   /**

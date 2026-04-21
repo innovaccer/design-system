@@ -222,7 +222,7 @@ exports[`FileUploader component prop:disabled snapshot
       class="FileUploaderButton mt-5"
     >
       <button
-        class="Button Button--regular Button--basic Button--iconAlign-left"
+        class="Button Button--regular Button--basic-disabled Button--iconAlign-left Button--disabled"
         data-test="DesignSystem-Button"
         disabled=""
         tabindex="0"

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { LinkButton } from '@/index';
+import { LinkButton, Flex } from '@/index';
 
 // CSF format story
 export const disabled = () => {
@@ -8,20 +8,32 @@ export const disabled = () => {
   const children = 'more details';
 
   return (
-    <LinkButton icon={icon} iconAlign={iconAlign} aria-label="More Details" disabled={true}>
-      {children}
-    </LinkButton>
+    <Flex gap="spacing-120">
+      <LinkButton
+        icon={icon}
+        iconAlign={iconAlign}
+        aria-label="More Details"
+        disabled={true}
+        tooltip="This link is currently unavailable"
+      >
+        {children}
+      </LinkButton>
+
+      <LinkButton
+        icon={icon}
+        iconAlign={iconAlign}
+        aria-label="More Details"
+        disabled={true}
+        subtle={true}
+        tooltip="This link is currently unavailable"
+      >
+        {children}
+      </LinkButton>
+    </Flex>
   );
 };
 
 export default {
   title: 'Components/Button/LinkButton/Disabled',
   component: LinkButton,
-  parameters: {
-    docs: {
-      docPage: {
-        a11yProps: ` **aria-label:** Add \`aria-label='More Details'\` to describe the action of button `,
-      },
-    },
-  },
 };
