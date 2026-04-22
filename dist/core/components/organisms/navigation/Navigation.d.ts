@@ -1,0 +1,20 @@
+import * as React from 'react';
+import { BaseProps } from '@/utils/types';
+import { VerticalNavigationProps } from './VerticalNavigation';
+export type LayoutType = 'vertical' | 'horizontal';
+export type Align = 'left' | 'center';
+export type Menu = {
+    name: string;
+    label: string;
+    link?: string;
+    icon?: string;
+    count?: number;
+    disabled?: boolean;
+    subMenu?: Menu[];
+};
+export interface NavigationProps extends BaseProps, VerticalNavigationProps {
+    type?: LayoutType;
+    align?: Align;
+}
+export declare const Navigation: (props: NavigationProps) => React.JSX.Element;
+export default Navigation;
