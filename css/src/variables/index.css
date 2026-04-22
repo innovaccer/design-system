@@ -198,6 +198,13 @@
   --accent8-1100: var(--color-pink-1100);
   --accent8-1400: var(--color-pink-1400);
 
+  /* Neutral semantic steps */
+  --secondary-600: var(--color-gray-600);
+  --inverse-800: var(--color-gray-800);
+  --inverse-1000: var(--color-gray-1000);
+  --inverse-1200: var(--color-gray-1200);
+  --inverse-1300: var(--color-gray-1300);
+
   /* shadow */
   --primary-shadow: color-mod(var(--primary) a(var(--opacity-4)));
   --secondary-shadow: color-mod(var(--secondary) a(var(--opacity-4)));
