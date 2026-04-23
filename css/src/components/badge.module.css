@@ -47,7 +47,7 @@
 }
 
 .Badge--accent1 {
-  background: var(--accent1-dark);
+  background: var(--accent1);
   color: var(--white);
 }
 
@@ -63,7 +63,7 @@
 
 .Badge--accent4 {
   background: var(--accent4);
-  color: var(--accent4-darker);
+  color: var(--white);
 }
 
 .Badge--subtle-primary {
@@ -88,7 +88,7 @@
 
 .Badge--subtle-warning {
   color: var(--warning-darker);
-  background: var(--warning-lightest);
+  background: var(--warning-300);
 }
 
 .Badge--subtle-accent1 {
