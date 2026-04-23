@@ -154,47 +154,49 @@ exports[`Pagination component
         data-test="DesignSystem-MetricInputWrapper"
         role="presentation"
       >
-        <input
-          aria-describedby="DesignSystem-Pagination-totalPage-Test-uid"
-          aria-label="Current page"
-          class="MetricInput-input MetricInput-input--regular"
-          data-test="DesignSystem-Pagination--Input"
-          name="page"
-          type="number"
-          value="10"
-        />
-        <div
-          class="MetricInput-arrowIcons MetricInput-arrowIcons--regular ml-3"
+        <button
+          aria-label="Decrement value"
+          class="MetricInput-arrowButton MetricInput-arrowIcons MetricInput-arrowButton--left"
+          data-test="DesignSystem-MetricInput--downIcon"
+          tabindex="-1"
+          type="button"
         >
-          <button
-            aria-label="Increment value"
-            class="MetricInput-arrowButton border-bottom"
-            data-test="DesignSystem-MetricInput--upIcon"
-            type="button"
+          <i
+            class="material-symbols material-symbols-rounded Icon"
+            data-test="DesignSystem-Icon"
+            style="font-size: 14px; width: 14px;"
           >
-            <i
-              class="material-symbols material-symbols-rounded Icon"
-              data-test="DesignSystem-Icon"
-              style="font-size: 14px; width: 14px;"
-            >
-              keyboard_arrow_up
-            </i>
-          </button>
-          <button
-            aria-label="Decrement value"
-            class="MetricInput-arrowButton border-bottom-0"
-            data-test="DesignSystem-MetricInput--downIcon"
-            type="button"
-          >
-            <i
-              class="material-symbols material-symbols-rounded Icon"
-              data-test="DesignSystem-Icon"
-              style="font-size: 14px; width: 14px;"
-            >
-              keyboard_arrow_down
-            </i>
-          </button>
+            keyboard_arrow_left
+          </i>
+        </button>
+        <div
+          class="MetricInput-content MetricInput-content--regular"
+        >
+          <input
+            aria-describedby="DesignSystem-Pagination-totalPage-Test-uid"
+            aria-label="Current page"
+            class="MetricInput-input MetricInput-input--regular"
+            data-test="DesignSystem-Pagination--Input"
+            name="page"
+            type="number"
+            value="10"
+          />
         </div>
+        <button
+          aria-label="Increment value"
+          class="MetricInput-arrowButton MetricInput-arrowIcons MetricInput-arrowButton--right"
+          data-test="DesignSystem-MetricInput--upIcon"
+          tabindex="-1"
+          type="button"
+        >
+          <i
+            class="material-symbols material-symbols-rounded Icon"
+            data-test="DesignSystem-Icon"
+            style="font-size: 14px; width: 14px;"
+          >
+            keyboard_arrow_right
+          </i>
+        </button>
       </div>
       <span
         class="Text Text--default Text--regular"

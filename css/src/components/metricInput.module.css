@@ -9,25 +9,21 @@
   align-items: center;
   box-sizing: border-box;
   border-radius: var(--border-radius-10);
-  border: var(--border);
+  box-shadow: inset 0 0 0 var(--border-width-2-5) var(--secondary);
   background: var(--white);
-  overflow: hidden;
   transition: var(--duration--fast-01) var(--standard-productive-curve);
 }
 
 .MetricInput--regular {
   height: var(--spacing-80);
-  padding-left: var(--spacing-30);
 }
 
 .MetricInput--large {
   height: 40px;
-  padding-left: var(--spacing-40);
 }
 
 .MetricInput--small {
   height: var(--spacing-60);
-  padding-left: var(--spacing-20);
 }
 
 .MetricInput:hover {
@@ -37,9 +33,12 @@
 
 .MetricInput:focus-within {
   background: var(--white);
-  border-color: var(--secondary);
+  box-shadow: inset 0 0 0 var(--border-width-2-5) var(--secondary);
+}
+
+.MetricInput:focus-within:not(:has(.MetricInput-arrowButton:focus-visible)) {
   outline: var(--border-width-05) solid var(--primary-focus);
-  outline-offset: var(--spacing-2-5);
+  outline-offset: var(--spacing-05);
 }
 
 .MetricInput:focus-within .MetricInput-icon {
@@ -48,13 +47,13 @@
 
 .MetricInput--disabled {
   background: var(--secondary-lightest);
-  border-color: var(--secondary-light);
+  box-shadow: inset 0 0 0 var(--border-width-2-5) var(--secondary-light);
   pointer-events: none;
 }
 
 .MetricInput--readOnly {
   background: var(--secondary-lightest);
-  border-color: var(--secondary);
+  box-shadow: inset 0 0 0 var(--border-width-2-5) var(--secondary);
   pointer-events: none;
 }
 
@@ -65,17 +64,44 @@
 .MetricInput--error,
 .MetricInput--error:hover {
   background: var(--white);
-  border-color: var(--alert);
+  box-shadow: inset 0 0 0 var(--border-width-2-5) var(--alert);
 }
 
 .MetricInput--error:focus-within {
-  border-color: var(--secondary);
+  box-shadow: inset 0 0 0 var(--border-width-2-5) var(--secondary);
+}
+
+.MetricInput--error:focus-within:not(:has(.MetricInput-arrowButton:focus-visible)) {
   outline: var(--border-width-05) solid var(--alert);
-  outline-offset: var(--spacing-2-5);
+  outline-offset: var(--spacing-05);
 }
 
 .MetricInput--error:focus-within .MetricInput-icon {
   color: var(--alert);
+}
+
+/* Content wrapper — holds icon, prefix, input, suffix */
+.MetricInput-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.MetricInput-content--regular {
+  padding: var(--spacing-15) var(--spacing-15);
+  gap: var(--spacing-05);
+}
+
+.MetricInput-content--large {
+  padding: var(--spacing-20) var(--spacing-15);
+  gap: var(--spacing-15);
+}
+
+.MetricInput-content--small {
+  padding: var(--spacing-10) var(--spacing-15);
+  gap: var(--spacing-05);
 }
 
 .MetricInput-input {
@@ -141,23 +167,14 @@
   margin: 0;
 }
 
-.MetricInput-arrowIcons {
-  border-left: var(--border);
-  box-sizing: border-box;
-  border-radius: 0;
-  background: transparent;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  flex-shrink: 0;
-  overflow: hidden;
-}
-
+/* Arrow buttons (decrement on left, increment on right) */
 .MetricInput-arrowButton {
-  height: 50%;
-  border: none;
+  flex-shrink: 0;
+  align-self: stretch;
+  width: var(--spacing-60);
   background: var(--secondary-light);
   color: var(--inverse);
+  border: none;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -165,7 +182,16 @@
   padding: 0;
   margin: 0;
   user-select: none;
-  overflow: hidden;
+}
+
+.MetricInput-arrowButton--left {
+  border-right: var(--border);
+  border-radius: var(--border-radius-10) 0 0 var(--border-radius-10);
+}
+
+.MetricInput-arrowButton--right {
+  border-left: var(--border);
+  border-radius: 0 var(--border-radius-10) var(--border-radius-10) 0;
 }
 
 .MetricInput-arrowButton:hover {
@@ -178,23 +204,42 @@
 
 .MetricInput-arrowButton:focus {
   outline: 0;
-  box-shadow: var(--shadow-spread) var(--secondary-shadow);
 }
 
-.MetricInput-arrowIcons--small,
-.MetricInput-arrowIcons--regular {
-  width: 20px;
-}
-
-.MetricInput-arrowIcons--large {
-  width: var(--spacing-60);
+.MetricInput-arrowButton:focus-visible {
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-05);
 }
 
 @media (forced-colors: active) {
-  /* Arrow button focus ring is conveyed via box-shadow only — replace with outline */
-  .MetricInput-arrowButton:focus {
+  /* box-shadow is stripped — restore a real border for the wrapper boundary */
+  .MetricInput {
+    border: var(--border-width-2-5) solid ButtonText;
+    box-shadow: none;
+  }
+
+  .MetricInput--disabled {
+    border-color: GrayText;
+  }
+
+  /* Wrapper focus rings */
+  .MetricInput:focus-within:not(:has(.MetricInput-arrowButton:focus-visible)) {
     outline: var(--border-width-05) solid Highlight;
     outline-offset: var(--spacing-05);
-    box-shadow: none;
+  }
+
+  .MetricInput--error:focus-within:not(:has(.MetricInput-arrowButton:focus-visible)) {
+    outline: var(--border-width-05) solid Highlight;
+    outline-offset: var(--spacing-05);
+  }
+
+  /* Arrow button states */
+  .MetricInput-arrowButton:disabled {
+    color: GrayText;
+  }
+
+  .MetricInput-arrowButton:focus-visible {
+    outline: var(--border-width-05) solid Highlight;
+    outline-offset: var(--spacing-05);
   }
 }
