@@ -152,7 +152,15 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
   } = props;
 
   const ref = React.useRef<HTMLInputElement>(null);
+  const wrapperRef = React.useRef<HTMLDivElement>(null);
   const isUncontrolled = valueProp === undefined;
+  const [isFocused, setIsFocused] = React.useState(false);
+
+  const onWrapperBlur = (e: React.FocusEvent<HTMLDivElement>) => {
+    if (!wrapperRef.current?.contains(e.relatedTarget as Node)) {
+      setIsFocused(false);
+    }
+  };
 
   const [value, setValue] = React.useState(valueProp || defaultValue);
 
@@ -183,6 +191,11 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
     className
   );
 
+  const contentClass = classNames({
+    [styles['MetricInput-content']]: true,
+    [styles[`MetricInput-content--${size}`]]: size,
+  });
+
   const inputClass = classNames({
     [styles['MetricInput-input']]: true,
     [paginationStyles['MetricInput-input']]: true,
@@ -207,15 +220,7 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
     ['mx-5']: size === 'large',
   });
 
-  const arrowIconsClass = classNames({
-    [paginationStyles['MetricInput-arrowIcons']]: true,
-    [styles[`MetricInput-arrowIcons--${size}`]]: size,
-    ['ml-3']: showActionButton && !suffix,
-  });
-
-  const arrowButtonClass = classNames({
-    [styles['MetricInput-arrowButton']]: true,
-  });
+  const arrowButtonClass = classNames(styles['MetricInput-arrowButton'], paginationStyles['MetricInput-arrowIcons']);
 
   const actionButtonIconSize = actionButtonIconSizeMapping[size];
 
@@ -282,71 +287,84 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
   const isAtMax = max !== undefined && numericValue >= max;
 
   return (
-    <div data-test="DesignSystem-MetricInputWrapper" className={classes} onKeyDown={onKeyDown} role="presentation">
-      {icon && (
-        <Icon
-          data-test="DesignSystem-MetricInput--icon"
-          name={icon}
-          type={iconType}
-          size={sizeMapping[size]}
-          appearance={!value ? 'disabled' : 'subtle'}
-          className={iconClass}
-        />
-      )}
-      {prefix && (
-        <Text data-test="DesignSystem-MetricInput--prefix" className={prefixClass} size={size} appearance="subtle">
-          {prefix}
-        </Text>
-      )}
-      <input
-        data-test="DesignSystem-MetricInput"
-        {...baseProps}
-        {...rest}
-        type="number"
-        ref={ref}
-        name={name}
-        defaultValue={defaultValue}
-        placeholder={placeholder}
-        className={inputClass}
-        value={value}
-        disabled={disabled}
-        readOnly={readOnly}
-        min={min}
-        max={max}
-        onChange={onChangeHandler}
-        onBlur={onBlur}
-        onClick={onClick}
-        onFocus={onFocus}
-        onKeyDown={handleKeyDown}
-      />
-      {suffix && (
-        <Text data-test="DesignSystem-MetricInput--suffix" className={suffixClass} size={size} appearance="subtle">
-          {suffix}
-        </Text>
-      )}
+    <div
+      ref={wrapperRef}
+      data-test="DesignSystem-MetricInputWrapper"
+      className={classes}
+      onKeyDown={onKeyDown}
+      onFocus={() => setIsFocused(true)}
+      onBlur={onWrapperBlur}
+      role="presentation"
+    >
       {showActionButton && (
-        <div className={arrowIconsClass}>
-          <button
-            type="button"
-            className={`${arrowButtonClass} border-bottom`}
-            onClick={(e) => onArrowClick(e, 'up')}
-            aria-label="Increment value"
-            data-test="DesignSystem-MetricInput--upIcon"
-            disabled={disabled || readOnly || isAtMax}
-          >
-            <Icon name="keyboard_arrow_up" size={actionButtonIconSize} />
-          </button>
-          <button
-            type="button"
-            className={`${arrowButtonClass} border-bottom-0`}
-            onClick={(e) => onArrowClick(e, 'down')}
-            aria-label="Decrement value"
-            data-test="DesignSystem-MetricInput--downIcon"
-            disabled={disabled || readOnly || isAtMin}
-          >
-            <Icon name="keyboard_arrow_down" size={actionButtonIconSize} />
-          </button>
-        </div>
+        <button
+          type="button"
+          className={`${arrowButtonClass} ${styles['MetricInput-arrowButton--left']}`}
+          onClick={(e) => onArrowClick(e, 'down')}
+          aria-label="Decrement value"
+          data-test="DesignSystem-MetricInput--downIcon"
+          disabled={disabled || readOnly || isAtMin}
+          tabIndex={isFocused ? 0 : -1}
+        >
+          <Icon name="keyboard_arrow_left" size={actionButtonIconSize} />
+        </button>
+      )}
+      <div className={contentClass}>
+        {icon && (
+          <Icon
+            data-test="DesignSystem-MetricInput--icon"
+            name={icon}
+            type={iconType}
+            size={sizeMapping[size]}
+            appearance={!value ? 'disabled' : 'subtle'}
+            className={iconClass}
+          />
+        )}
+        {prefix && (
+          <Text data-test="DesignSystem-MetricInput--prefix" className={prefixClass} size={size} appearance="subtle">
+            {prefix}
+          </Text>
+        )}
+        <input
+          data-test="DesignSystem-MetricInput"
+          {...baseProps}
+          {...rest}
+          type="number"
+          ref={ref}
+          name={name}
+          defaultValue={defaultValue}
+          placeholder={placeholder}
+          className={inputClass}
+          value={value}
+          disabled={disabled}
+          readOnly={readOnly}
+          min={min}
+          max={max}
+          aria-invalid={error || undefined}
+          onChange={onChangeHandler}
+          onBlur={onBlur}
+          onClick={onClick}
+          onFocus={onFocus}
+          onKeyDown={handleKeyDown}
+        />
+        {suffix && (
+          <Text data-test="DesignSystem-MetricInput--suffix" className={suffixClass} size={size} appearance="subtle">
+            {suffix}
+          </Text>
+        )}
+      </div>
+      {showActionButton && (
+        <button
+          type="button"
+          className={`${arrowButtonClass} ${styles['MetricInput-arrowButton--right']}`}
+          onClick={(e) => onArrowClick(e, 'up')}
+          aria-label="Increment value"
+          data-test="DesignSystem-MetricInput--upIcon"
+          disabled={disabled || readOnly || isAtMax}
+          tabIndex={isFocused ? 0 : -1}
+        >
+          <Icon name="keyboard_arrow_right" size={actionButtonIconSize} />
+        </button>
       )}
     </div>
   );

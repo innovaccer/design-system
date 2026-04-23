@@ -11,23 +11,19 @@
   border-radius: var(--border-radius-10);
   border: var(--border);
   background: var(--white);
-  overflow: hidden;
   transition: var(--duration--fast-01) var(--standard-productive-curve);
 }
 
 .MetricInput--regular {
   height: var(--spacing-80);
-  padding-left: var(--spacing-30);
 }
 
 .MetricInput--large {
   height: 40px;
-  padding-left: var(--spacing-40);
 }
 
 .MetricInput--small {
   height: var(--spacing-60);
-  padding-left: var(--spacing-20);
 }
 
 .MetricInput:hover {
@@ -38,8 +34,11 @@
 .MetricInput:focus-within {
   background: var(--white);
   border-color: var(--secondary);
+}
+
+.MetricInput:focus-within:not(:has(.MetricInput-arrowButton:focus-visible)) {
   outline: var(--border-width-05) solid var(--primary-focus);
-  outline-offset: var(--spacing-2-5);
+  outline-offset: var(--spacing-05);
 }
 
 .MetricInput:focus-within .MetricInput-icon {
@@ -70,12 +69,39 @@
 
 .MetricInput--error:focus-within {
   border-color: var(--secondary);
+}
+
+.MetricInput--error:focus-within:not(:has(.MetricInput-arrowButton:focus-visible)) {
   outline: var(--border-width-05) solid var(--alert);
   outline-offset: var(--spacing-2-5);
 }
 
 .MetricInput--error:focus-within .MetricInput-icon {
   color: var(--alert);
+}
+
+/* Content wrapper — holds icon, prefix, input, suffix */
+.MetricInput-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.MetricInput-content--regular {
+  padding: 0 var(--spacing-15);
+  gap: var(--spacing-05);
+}
+
+.MetricInput-content--large {
+  padding: 0 var(--spacing-15);
+  gap: var(--spacing-15);
+}
+
+.MetricInput-content--small {
+  padding: 0 var(--spacing-15);
+  gap: var(--spacing-05);
 }
 
 .MetricInput-input {
@@ -141,23 +167,14 @@
   margin: 0;
 }
 
-.MetricInput-arrowIcons {
-  border-left: var(--border);
-  box-sizing: border-box;
-  border-radius: 0;
-  background: transparent;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  flex-shrink: 0;
-  overflow: hidden;
-}
-
+/* Arrow buttons (decrement on left, increment on right) */
 .MetricInput-arrowButton {
-  height: 50%;
-  border: none;
+  flex-shrink: 0;
+  align-self: stretch;
+  width: 20px;
   background: var(--secondary-light);
   color: var(--inverse);
+  border: none;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -166,6 +183,20 @@
   margin: 0;
   user-select: none;
   overflow: hidden;
+}
+
+.MetricInput--large .MetricInput-arrowButton {
+  width: var(--spacing-60);
+}
+
+.MetricInput-arrowButton--left {
+  border-right: var(--border);
+  border-radius: var(--border-radius-10) 0 0 var(--border-radius-10);
+}
+
+.MetricInput-arrowButton--right {
+  border-left: var(--border);
+  border-radius: 0 var(--border-radius-10) var(--border-radius-10) 0;
 }
 
 .MetricInput-arrowButton:hover {
@@ -181,18 +212,14 @@
   box-shadow: var(--shadow-spread) var(--secondary-shadow);
 }
 
-.MetricInput-arrowIcons--small,
-.MetricInput-arrowIcons--regular {
-  width: 20px;
-}
-
-.MetricInput-arrowIcons--large {
-  width: var(--spacing-60);
+.MetricInput-arrowButton:focus-visible {
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-05);
+  box-shadow: none;
 }
 
 @media (forced-colors: active) {
-  /* Arrow button focus ring is conveyed via box-shadow only — replace with outline */
-  .MetricInput-arrowButton:focus {
+  .MetricInput-arrowButton:focus-visible {
     outline: var(--border-width-05) solid Highlight;
     outline-offset: var(--spacing-05);
     box-shadow: none;
