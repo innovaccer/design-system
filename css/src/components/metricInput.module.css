@@ -9,7 +9,7 @@
   align-items: center;
   box-sizing: border-box;
   border-radius: var(--border-radius-10);
-  border: var(--border);
+  box-shadow: inset 0 0 0 var(--border-width-2-5) var(--secondary);
   background: var(--white);
   transition: var(--duration--fast-01) var(--standard-productive-curve);
 }
@@ -33,7 +33,7 @@
 
 .MetricInput:focus-within {
   background: var(--white);
-  border-color: var(--secondary);
+  box-shadow: inset 0 0 0 var(--border-width-2-5) var(--secondary);
 }
 
 .MetricInput:focus-within:not(:has(.MetricInput-arrowButton:focus-visible)) {
@@ -47,13 +47,13 @@
 
 .MetricInput--disabled {
   background: var(--secondary-lightest);
-  border-color: var(--secondary-light);
+  box-shadow: inset 0 0 0 var(--border-width-2-5) var(--secondary-light);
   pointer-events: none;
 }
 
 .MetricInput--readOnly {
   background: var(--secondary-lightest);
-  border-color: var(--secondary);
+  box-shadow: inset 0 0 0 var(--border-width-2-5) var(--secondary);
   pointer-events: none;
 }
 
@@ -64,16 +64,16 @@
 .MetricInput--error,
 .MetricInput--error:hover {
   background: var(--white);
-  border-color: var(--alert);
+  box-shadow: inset 0 0 0 var(--border-width-2-5) var(--alert);
 }
 
 .MetricInput--error:focus-within {
-  border-color: var(--secondary);
+  box-shadow: inset 0 0 0 var(--border-width-2-5) var(--secondary);
 }
 
 .MetricInput--error:focus-within:not(:has(.MetricInput-arrowButton:focus-visible)) {
   outline: var(--border-width-05) solid var(--alert);
-  outline-offset: var(--spacing-2-5);
+  outline-offset: var(--spacing-05);
 }
 
 .MetricInput--error:focus-within .MetricInput-icon {
@@ -90,17 +90,17 @@
 }
 
 .MetricInput-content--regular {
-  padding: 0 var(--spacing-15);
+  padding: var(--spacing-15) var(--spacing-15);
   gap: var(--spacing-05);
 }
 
 .MetricInput-content--large {
-  padding: 0 var(--spacing-15);
+  padding: var(--spacing-20) var(--spacing-15);
   gap: var(--spacing-15);
 }
 
 .MetricInput-content--small {
-  padding: 0 var(--spacing-15);
+  padding: var(--spacing-10) var(--spacing-15);
   gap: var(--spacing-05);
 }
 
@@ -171,7 +171,7 @@
 .MetricInput-arrowButton {
   flex-shrink: 0;
   align-self: stretch;
-  width: 20px;
+  width: var(--spacing-60);
   background: var(--secondary-light);
   color: var(--inverse);
   border: none;
@@ -182,11 +182,6 @@
   padding: 0;
   margin: 0;
   user-select: none;
-  overflow: hidden;
-}
-
-.MetricInput--large .MetricInput-arrowButton {
-  width: var(--spacing-60);
 }
 
 .MetricInput-arrowButton--left {
@@ -209,19 +204,42 @@
 
 .MetricInput-arrowButton:focus {
   outline: 0;
-  box-shadow: var(--shadow-spread) var(--secondary-shadow);
 }
 
 .MetricInput-arrowButton:focus-visible {
   outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: var(--spacing-05);
-  box-shadow: none;
 }
 
 @media (forced-colors: active) {
+  /* box-shadow is stripped — restore a real border for the wrapper boundary */
+  .MetricInput {
+    border: var(--border-width-2-5) solid ButtonText;
+    box-shadow: none;
+  }
+
+  .MetricInput--disabled {
+    border-color: GrayText;
+  }
+
+  /* Wrapper focus rings */
+  .MetricInput:focus-within:not(:has(.MetricInput-arrowButton:focus-visible)) {
+    outline: var(--border-width-05) solid Highlight;
+    outline-offset: var(--spacing-05);
+  }
+
+  .MetricInput--error:focus-within:not(:has(.MetricInput-arrowButton:focus-visible)) {
+    outline: var(--border-width-05) solid Highlight;
+    outline-offset: var(--spacing-05);
+  }
+
+  /* Arrow button states */
+  .MetricInput-arrowButton:disabled {
+    color: GrayText;
+  }
+
   .MetricInput-arrowButton:focus-visible {
     outline: var(--border-width-05) solid Highlight;
     outline-offset: var(--spacing-05);
-    box-shadow: none;
   }
 }
