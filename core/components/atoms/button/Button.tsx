@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Text, Icon, Spinner, Tooltip } from '@/index';
 import classNames from 'classnames';
 import { BaseProps, BaseHtmlProps } from '@/utils/types';
+import isSpaceKey from '@/accessibility/utils/isSpaceKey';
 import { IconType } from '@/common.type';
 import styles from '@css/components/button.module.css';
 import uidGenerator from '@/utils/uidGenerator';
@@ -217,7 +218,7 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
   });
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>) => {
-    if (useAriaDisabled && (event.key === 'Enter' || event.key === ' ')) {
+    if (useAriaDisabled && (event.key === 'Enter' || isSpaceKey(event))) {
       event.preventDefault();
       event.stopPropagation();
       return;

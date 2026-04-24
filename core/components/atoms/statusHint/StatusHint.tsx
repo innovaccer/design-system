@@ -2,6 +2,7 @@ import * as React from 'react';
 import Text from '@/components/atoms/text';
 import classNames from 'classnames';
 import { BaseProps, BaseHtmlProps, extractBaseProps } from '@/utils/types';
+import isSpaceKey from '@/accessibility/utils/isSpaceKey';
 import { MessageAppearance } from '@/common.type';
 import styles from '@css/components/statusHint.module.css';
 import pageHeaderStyles from '@css/components/pageHeader.module.css';
@@ -57,7 +58,7 @@ export const StatusHint = (props: StatusHintProps) => {
   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
     if (!isClickable) return;
 
-    if (event.key === 'Enter' || event.key === ' ') {
+    if (event.key === 'Enter' || isSpaceKey(event)) {
       event.preventDefault();
       onClick?.(event as unknown as React.MouseEvent<HTMLDivElement>);
     }

@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import Editable from '@/components/atoms/editable';
 import { Input, Button, Popover, InlineMessage, Icon } from '@/index';
+import isSpaceKey from '@/accessibility/utils/isSpaceKey';
 import { InputProps } from '@/index.type';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import styles from '@css/components/editableInput.module.css';
@@ -156,7 +157,7 @@ export const EditableInput = (props: EditableInputProps) => {
   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
     if (inputDisabled) return;
     // When not editing, Enter/Space enters edit mode
-    if (!editing && (event.key === 'Enter' || event.key === ' ')) {
+    if (!editing && (event.key === 'Enter' || isSpaceKey(event))) {
       if (event.currentTarget !== event.target) return;
       event.preventDefault();
       if (event.repeat) return;

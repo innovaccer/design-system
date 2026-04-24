@@ -6,6 +6,7 @@ import MetaOption from './MetaOption';
 import IconOption from './IconOption';
 import IconWithMetaOption from './IconWithMetaOption';
 import { MetaList, Text } from '@/index';
+import isSpaceKey from '@/accessibility/utils/isSpaceKey';
 import { MetaListProps, IconProps, TextProps } from '@/index.type';
 import { OptionType } from '../DropdownList';
 import { ChangeEvent, IconType } from '@/common.type';
@@ -170,7 +171,7 @@ const Option = (props: OptionProps) => {
   const handleCustomOptionKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
     if (disabled) return;
 
-    if (event.key === 'Enter' || event.key === ' ') {
+    if (event.key === 'Enter' || isSpaceKey(event)) {
       event.preventDefault();
       if (checkboxes) {
         const checkboxInput = event.currentTarget.querySelector('input[type="checkbox"]') as HTMLInputElement | null;

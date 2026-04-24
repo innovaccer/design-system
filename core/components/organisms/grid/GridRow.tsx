@@ -1,6 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { Checkbox, Placeholder } from '@/index';
+import isSpaceKey from '@/accessibility/utils/isSpaceKey';
 import { RowData, Schema, Pinned } from './Grid';
 import { GridNestedRow } from './GridNestedRow';
 import { Cell } from './Cell';
@@ -64,7 +65,7 @@ export const GridRow = (props: GridRowProps) => {
         if (e.key === 'Enter') {
           e.preventDefault();
           if (onRowClick) onRowClick(data, rI);
-        } else if (e.key === ' ') {
+        } else if (isSpaceKey(e)) {
           e.preventDefault();
           if (withCheckbox) {
             onSelect(rI, !data._selected);

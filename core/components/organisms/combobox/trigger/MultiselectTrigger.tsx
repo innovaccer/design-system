@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { Chip, Icon } from '@/index';
 import { ChipProps } from '@/index.type';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import isSpaceKey from '@/accessibility/utils/isSpaceKey';
 import { OptionType } from '@/common.type';
 import styles from '@css/components/chipInput.module.css';
 import inputStyles from '@css/components/input.module.css';
@@ -273,7 +274,7 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
   const handleTriggerKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
     if (disabled || event.currentTarget !== event.target) return;
 
-    if (event.key === 'Enter' || event.key === ' ') {
+    if (event.key === 'Enter' || isSpaceKey(event)) {
       event.preventDefault();
       onClickHandler();
     }
@@ -352,7 +353,7 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
             tabIndex={disabled ? -1 : 0}
             aria-label="Clear all options"
             onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
+              if (e.key === 'Enter' || isSpaceKey(e)) {
                 e.preventDefault();
                 onDeleteAllHandler(e as any);
               }

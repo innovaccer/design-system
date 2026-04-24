@@ -185,7 +185,7 @@ const HeaderCell = (props: HeaderCellProps) => {
         onClick={handleSortToggle}
         onKeyDown={(event: React.KeyboardEvent<HTMLDivElement>) => {
           if (!isSortable) return;
-          if (event.key === 'Enter' || event.key === ' ') {
+          if (event.key === 'Enter' || isSpaceKey(event)) {
             event.preventDefault();
             handleSortToggle();
           }

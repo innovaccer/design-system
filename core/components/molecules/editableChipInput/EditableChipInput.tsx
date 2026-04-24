@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import Editable from '@/components/atoms/editable';
 import { ChipInput, Button, Chip, Text } from '@/index';
+import isSpaceKey from '@/accessibility/utils/isSpaceKey';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { ChipInputProps } from '@/index.type';
 import styles from '@css/components/editableChipInput.module.css';
@@ -121,7 +122,7 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
     if (chipInputDisabled) return;
-    if (!showComponent && (event.key === 'Enter' || event.key === ' ')) {
+    if (!showComponent && (event.key === 'Enter' || isSpaceKey(event))) {
       if (event.currentTarget !== event.target) return;
       event.preventDefault();
       if (event.repeat) return;
