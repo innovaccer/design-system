@@ -27,7 +27,7 @@ export const GridHead = (props: GridHeadProps) => {
   const context = React.useContext(GridContext);
   const { schema, onSelectAll, onMenuChange, onFilterChange, updateColumnSchema, reorderColumn } = props;
 
-  const { withCheckbox, loading, selectAll } = context;
+  const { withCheckbox, loading, selectAll, gridId } = context;
 
   const pinnedSchema = schema.filter((s) => !s.hidden && s.pinned);
   const leftPinnedSchema = pinnedSchema.filter((s) => !s.hidden && s.pinned === 'left');
@@ -45,11 +45,18 @@ export const GridHead = (props: GridHeadProps) => {
     [styles['Grid-row--head']]: true,
   });
 
+  const hasColumns =
+    leftPinnedSchema.length > 0 || unpinnedSchema.length > 0 || rightPinnedSchema.length > 0 || withCheckbox;
+
   const renderCheckbox = (show: boolean) => {
     if (!show || !withCheckbox) return null;
     return (
-      <div className={CheckboxClass}>
-        {loading ? <Placeholder className="mr-4" /> : <Checkbox {...selectAll} onChange={onSelectAll} />}
+      <div className={CheckboxClass} role="columnheader">
+        {loading ? (
+          <Placeholder className="mr-4" />
+        ) : (
+          <Checkbox {...selectAll} id={`${gridId}-select-all`} onChange={onSelectAll} aria-label="Select all rows" />
+        )}
       </div>
     );
   };
@@ -94,8 +101,8 @@ export const GridHead = (props: GridHeadProps) => {
   };
 
   return (
-    <div className={styles['Grid-head']} data-test="DesignSystem-GridHead-wrapper">
-      <div className={RowClass}>
+    <div className={styles['Grid-head']} role="rowgroup" data-test="DesignSystem-GridHead-wrapper">
+      <div className={RowClass} role={hasColumns ? 'row' : undefined}>
         {renderSchema(leftPinnedSchema, !!leftPinnedSchema.length, 'left')}
         {renderSchema(unpinnedSchema, !leftPinnedSchema.length && !!unpinnedSchema.length)}
         {renderSchema(rightPinnedSchema, false, 'right')}

@@ -1,0 +1,4 @@
+.TimePicker-trigger {
+  width: calc(var(--spacing-40) * 20);
+  min-width: calc(var(--spacing-40) * 16);
+}

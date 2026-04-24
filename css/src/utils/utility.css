@@ -35,6 +35,10 @@
   white-space: pre;
 }
 
+.white-space-pre-wrap {
+  white-space: pre-wrap;
+}
+
 .bottom-0 {
   bottom: 0;
 }

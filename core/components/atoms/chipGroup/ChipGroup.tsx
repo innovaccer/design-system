@@ -55,20 +55,12 @@ export const ChipGroup = (props: ChipGroupProps) => {
   return (
     <div data-test="DesignSystem-ChipGroup" {...baseProps} className={ChipGroupClass}>
       {list.map((item, ind) => {
-        const { label = '', icon, type, disabled, selected, clearButton, name, iconType, role } = item;
+        const { onClick: _onClick, onClose: _onClose, ...chipProps } = item;
         return (
           <span key={ind} className={styles['ChipGroup-item']}>
             <Chip
               data-test="DesignSystem-ChipGroup--Chip"
-              name={name}
-              label={label}
-              selected={selected}
-              icon={icon}
-              disabled={disabled}
-              clearButton={clearButton}
-              iconType={iconType}
-              role={role}
-              type={type}
+              {...chipProps}
               onClick={() => onClickHandler(item)}
               onClose={() => onCloseHandler(item)}
             />

@@ -11,7 +11,7 @@ export const withSearch = () => {
 
   return (
     <Row>
-      <div className="w-25">
+      <div>
         <Label>12 Hour Format</Label>
         <TimePicker
           withSearch={true}
@@ -24,7 +24,7 @@ export const withSearch = () => {
           optionsAriaLabel="12 hour time options"
         />
       </div>
-      <div className="w-25 ml-7">
+      <div className="ml-7">
         <Label>24 Hour Format</Label>
         <TimePicker
           withSearch={true}
@@ -50,7 +50,7 @@ const customCode = `() => {
 
   return (
     <Row>
-      <div className="w-25">
+      <div>
         <Label>12 Hour Format</Label>
         <TimePicker 
           withSearch={true} 
@@ -63,7 +63,7 @@ const customCode = `() => {
           optionsAriaLabel="12 hour time options"
         />
       </div>
-      <div className="w-25 ml-7">
+      <div className="ml-7">
         <Label>24 Hour Format</Label>
         <TimePicker
           withSearch={true}

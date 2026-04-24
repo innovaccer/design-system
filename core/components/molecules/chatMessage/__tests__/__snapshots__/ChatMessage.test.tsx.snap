@@ -37,7 +37,7 @@ exports[`ChatMessage component prop:isTyping snapshot
  1`] = `
 <DocumentFragment>
   <div
-    class="Box Box--typing Box-undefined--withStatus"
+    class="Box Box--typing"
     data-test="DesignSystem-ChatMessage--Box"
   >
     <span

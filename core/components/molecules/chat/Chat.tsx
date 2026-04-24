@@ -12,6 +12,20 @@ export interface ChatProps extends BaseProps {
    * React Node to be rendered inside `Chat`
    */
   children: React.ReactNode;
+  /**
+   * ARIA role for the Chat container.
+   * Use `"log"` when this element wraps only the message list to enable live-region announcements.
+   * Omit when the wrapper also contains input or other non-message UI to avoid noisy announcements.
+   */
+  role?: string;
+  /**
+   * ARIA live-region politeness. Only set when `role="log"` is provided.
+   */
+  'aria-live'?: 'polite' | 'assertive' | 'off';
+  /**
+   * Accessible label for the container.
+   */
+  'aria-label'?: string;
 }
 
 export const Chat = (props: ChatProps) => {

@@ -9,6 +9,7 @@ import { NestedRowProps } from './GridNestedRow';
 import classNames from 'classnames';
 import { GridProvider } from './GridContext';
 import defaultProps from './defaultProps';
+import uidGenerator from '@/utils/uidGenerator';
 import styles from '@css/components/grid.module.css';
 
 export type SortType = 'asc' | 'desc' | 'unsort';
@@ -420,6 +421,7 @@ export interface GridState {
 export class Grid extends React.Component<GridProps, GridState> {
   static defaultProps: GridProps;
   gridRef: GridRef = null;
+  gridId: string = uidGenerator();
   isHeadSyncing = false;
   isBodySyncing = false;
 
@@ -702,6 +704,7 @@ export class Grid extends React.Component<GridProps, GridState> {
         data-test="DesignSystem-Grid"
         {...baseProps}
         className={classes}
+        role="grid"
         aria-label={ariaLabel}
         aria-labelledby={ariaLabelledBy}
         ref={(el) => {
@@ -713,6 +716,7 @@ export class Grid extends React.Component<GridProps, GridState> {
             value={{
               ...this.props,
               ref: this.gridRef,
+              gridId: this.gridId,
               isSortingListUpdated: this.state.isSortingListUpdated,
               updateIsSortingListUpdated: this.updateIsSortingListUpdated.bind(this),
             }}

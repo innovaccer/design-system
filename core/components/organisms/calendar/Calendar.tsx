@@ -1,7 +1,8 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { Button, Heading, Text, Icon } from '@/index';
+import { Button, Heading, Text, Icon, Tooltip } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import isSpaceKey from '@/accessibility/utils/isSpaceKey';
 import { TextColor } from '@/common.type';
 import styles from '@css/components/calendar.module.css';
 
@@ -411,7 +412,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
         } else {
           // Fallback 2: Focus calendar header
           const headerBtn = this.calendarWrapperRef.current.querySelector<HTMLElement>(
-            '[class*="Calendar-headerButton"]:not([disabled]), [class*="Calendar-headerIcon"]:not([disabled])'
+            '[class*="Calendar-headerButton"]:not([disabled]), [class*="Calendar-headerIcon"] button:not([disabled])'
           );
           if (headerBtn) {
             headerBtn.focus({ preventScroll: true });
@@ -428,7 +429,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
       prevState.yearBlockNav !== this.state.yearBlockNav;
     if (navChanged && document.activeElement === document.body && this.calendarWrapperRef.current) {
       const headerBtn = this.calendarWrapperRef.current.querySelector<HTMLElement>(
-        '[class*="Calendar-headerButton"]:not([disabled]), [class*="Calendar-headerIcon"]:not([disabled])'
+        '[class*="Calendar-headerButton"]:not([disabled]), [class*="Calendar-headerIcon"] button:not([disabled])'
       );
       if (headerBtn) {
         headerBtn.focus({ preventScroll: true });
@@ -679,16 +680,19 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     else if (view === 'year') ariaLabel = type === 'prev' ? 'Previous year block' : 'Next year block';
 
     return (
-      <Button
-        type="button"
-        className={headerIconClass}
-        appearance="basic"
-        icon={`arrow_${type === 'next' ? 'forward' : 'back'}`}
-        disabled={disabled}
-        size={size === 'small' ? 'tiny' : 'regular'}
-        onClick={this.onNavIconClickHandler(type)}
-        aria-label={ariaLabel}
-      />
+      <div className={headerIconClass}>
+        <Tooltip tooltip={ariaLabel} position="bottom">
+          <Button
+            type="button"
+            appearance="basic"
+            icon={`arrow_${type === 'next' ? 'forward' : 'back'}`}
+            disabled={disabled}
+            size={size === 'small' ? 'tiny' : 'regular'}
+            onClick={this.onNavIconClickHandler(type)}
+            aria-label={ariaLabel}
+          />
+        </Tooltip>
+      </div>
     );
   };
 
@@ -1011,7 +1015,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
 
   handleMonthCellKeyDown = (event: React.KeyboardEvent, _month: number, disabled: boolean) => {
     if (disabled) {
-      if (event.key === 'Enter' || event.key === ' ' || event.key === 'Spacebar') {
+      if (event.key === 'Enter' || isSpaceKey(event)) {
         event.preventDefault();
       }
       if (
@@ -1059,7 +1063,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
 
   handleYearCellKeyDown = (event: React.KeyboardEvent, _year: number, _offset: number, disabled: boolean) => {
     if (disabled) {
-      if (event.key === 'Enter' || event.key === ' ' || event.key === 'Spacebar') {
+      if (event.key === 'Enter' || isSpaceKey(event)) {
         event.preventDefault();
       }
       if (

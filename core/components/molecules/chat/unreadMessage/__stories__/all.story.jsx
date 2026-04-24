@@ -12,7 +12,7 @@ export const unreadMessage = () => {
 const customCode = `() => {
   return (
     <Chat>
-      <Chat.UnreadMessage text="2 Unread Messages" />
+      <Chat.UnreadMessage text="2 Unread Messages" onClick={() => alert('Scroll to unread messages')} />
     </Chat>
   )
 }`;

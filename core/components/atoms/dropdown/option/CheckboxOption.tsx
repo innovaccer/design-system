@@ -5,6 +5,7 @@ import { Text, MetaList } from '@/index';
 import { MetaListProps } from '@/index.type';
 import styles from '@css/components/dropdown.module.css';
 import classNames from 'classnames';
+import isSpaceKey from '@/accessibility/utils/isSpaceKey';
 
 const CheckboxOption = (props: OptionTypeProps) => {
   const { className, selected, optionData, onChangeHandler, onUpdateActiveOption, dataTest, id = '', menu } = props;
@@ -48,7 +49,7 @@ const CheckboxOption = (props: OptionTypeProps) => {
   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
     if (disabled) return;
 
-    if (event.key === 'Enter' || event.key === ' ') {
+    if (event.key === 'Enter' || isSpaceKey(event)) {
       event.preventDefault();
       const checkboxInput = event.currentTarget.querySelector('input[type="checkbox"]') as HTMLInputElement | null;
       checkboxInput?.click();

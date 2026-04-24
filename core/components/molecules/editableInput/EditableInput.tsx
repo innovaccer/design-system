@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import Editable from '@/components/atoms/editable';
 import { Input, Button, Popover, InlineMessage, Icon } from '@/index';
+import isSpaceKey from '@/accessibility/utils/isSpaceKey';
 import { InputProps } from '@/index.type';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import styles from '@css/components/editableInput.module.css';
@@ -39,10 +40,39 @@ export interface EditableInputProps extends BaseProps {
    * Callback function called on save action click
    */
   onChange?: (value: string) => void;
+  /**
+   * Accessible label for the editable field announced by screen readers
+   */
+  'aria-label'?: string;
+  /**
+   * ID of an element whose text labels the editable field (e.g. an external `<label>`)
+   */
+  'aria-labelledby'?: string;
+  /**
+   * ID of an element that provides additional description for the editable field
+   */
+  'aria-describedby'?: string;
+  /**
+   * HTML id for the editable field — use to associate an external `<label>` via `htmlFor`
+   */
+  id?: string;
 }
 
 export const EditableInput = (props: EditableInputProps) => {
-  const { error, size, errorMessage, placeholder, inputOptions, disableSaveAction, onChange, className } = props;
+  const {
+    error,
+    size,
+    errorMessage,
+    placeholder,
+    inputOptions,
+    disableSaveAction,
+    onChange,
+    className,
+    'aria-label': ariaLabel,
+    'aria-labelledby': ariaLabelledby,
+    'aria-describedby': ariaDescribedby,
+    id,
+  } = props;
 
   const { onChange: onInputChange, icon: inputIcon, disabled: inputDisabled, ...rest } = inputOptions;
 
@@ -127,7 +157,7 @@ export const EditableInput = (props: EditableInputProps) => {
   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
     if (inputDisabled) return;
     // When not editing, Enter/Space enters edit mode
-    if (!editing && (event.key === 'Enter' || event.key === ' ')) {
+    if (!editing && (event.key === 'Enter' || isSpaceKey(event))) {
       if (event.currentTarget !== event.target) return;
       event.preventDefault();
       if (event.repeat) return;
@@ -166,6 +196,10 @@ export const EditableInput = (props: EditableInputProps) => {
       ref={inputRef}
       data-test="DesignSystem-EditableInput--Input"
       {...rest}
+      id={id}
+      aria-label={ariaLabel}
+      aria-labelledby={ariaLabelledby}
+      aria-describedby={ariaDescribedby}
     />
   );
 
@@ -208,6 +242,9 @@ export const EditableInput = (props: EditableInputProps) => {
       role={editing ? undefined : 'button'}
       tabIndex={inputDisabled ? -1 : editing ? -1 : 0}
       aria-disabled={inputDisabled || undefined}
+      aria-label={ariaLabel}
+      aria-labelledby={ariaLabelledby}
+      aria-describedby={ariaDescribedby}
     >
       <Editable onChange={onChangeHandler} editing={editing}>
         {renderChildren()}

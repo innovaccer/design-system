@@ -134,3 +134,24 @@
   outline: none;
   box-shadow: none;
 }
+
+@media (forced-colors: active) {
+  /* Handle elevation comes from box-shadow only — add a real border so it stays visible */
+  .Slider-handle {
+    border: var(--border-width-05) solid ButtonText;
+    box-shadow: none;
+  }
+
+  /* Restore focus ring on the handle (outline:none is set unconditionally) */
+  .Slider-handle:focus,
+  .Slider-handle:focus-visible {
+    outline: var(--border-width-05) solid Highlight;
+    outline-offset: var(--spacing-05);
+  }
+
+  /* Filled portion of the track */
+  .Slider-progress--inRange {
+    forced-color-adjust: none;
+    background: Highlight;
+  }
+}

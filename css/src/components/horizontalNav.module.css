@@ -95,3 +95,18 @@
 .HorizontalNav-pills--disabled {
   opacity: var(--opacity-10);
 }
+
+@media (forced-colors: active) {
+  /* Active nav item uses box-shadow as its visible ring — replace with a real border */
+  .HorizontalNav-menu--active {
+    border: var(--border-width-2-5) solid Highlight;
+    box-shadow: none;
+  }
+
+  .HorizontalNav-menu--active:active,
+  .HorizontalNav-menu--active:focus-visible:active,
+  .HorizontalNav-menu--active:focus:active {
+    border-color: Highlight;
+    box-shadow: none;
+  }
+}

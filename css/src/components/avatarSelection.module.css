@@ -193,3 +193,25 @@
 .SelectionAvatarCount--selected:focus-visible {
   box-shadow: 0 0 0 var(--spacing-2-5) white, 0 0 0 3px var(--primary-dark), 0 0 0 3px var(--primary-shadow) !important;
 }
+
+@media (forced-colors: active) {
+  .SelectionAvatarGroup-item--selected:focus,
+  .SelectionAvatarGroup-item--selected:focus-visible {
+    outline: var(--border-width-05) solid Highlight !important;
+    outline-offset: var(--spacing-2-5);
+    box-shadow: none !important;
+  }
+
+  .SelectionAvatarCount--selected:focus,
+  .SelectionAvatarCount--selected:focus-visible {
+    outline: var(--border-width-05) solid Highlight !important;
+    outline-offset: var(--spacing-2-5);
+    box-shadow: none !important;
+  }
+
+  /* The inner search input uses outline:none !important — restore it in forced-colors mode */
+  .SelectionAvatar-input:focus-within {
+    outline: var(--border-width-05) solid Highlight !important;
+    outline-offset: var(--spacing-05);
+  }
+}

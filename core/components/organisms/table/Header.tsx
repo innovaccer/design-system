@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Checkbox, Label, Input, Button, Divider } from '@/index';
+import uidGenerator from '@/utils/uidGenerator';
 import {
   updateSchemaFunction,
   ColumnSchema,
@@ -64,6 +65,7 @@ export interface HeaderProps extends ExternalHeaderProps {
 }
 
 export const Header = (props: HeaderProps) => {
+  const headerIdRef = React.useRef(uidGenerator());
   const {
     loading,
     error,
@@ -314,7 +316,9 @@ export const Header = (props: HeaderProps) => {
           {!showHead && withCheckbox && !loading && (
             <Checkbox
               className="mr-4"
+              id={`${headerIdRef.current}-select-all`}
               {...selectAll}
+              aria-label="Select all"
               onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                 if (onSelectAll) onSelectAll(event.target.checked);
               }}
@@ -322,15 +326,25 @@ export const Header = (props: HeaderProps) => {
           )}
           {
             <>
-              {showSelectedLabel ? (
-                <span className={selectedRowLabelClass} onAnimationEnd={onSelectAnimationEnd}>
-                  <Label>{customSelectedRowLabel ?? getSelectedRowLabel()}</Label>
-                </span>
-              ) : (
-                <span className={unselectedRowLabelClass} onAnimationEnd={onUnSelectAnimationEnd}>
-                  <Label>{customUnSelectedRowLabel ?? getUnSelectedRowLabel()}</Label>
-                </span>
-              )}
+              {/* Persistent live region: always in DOM so screen readers announce text changes */}
+              <span aria-live="polite" aria-atomic="true" className={tableStyles['Table-srOnly']}>
+                {showSelectedLabel
+                  ? customSelectedRowLabel ?? getSelectedRowLabel()
+                  : customUnSelectedRowLabel ?? getUnSelectedRowLabel()}
+              </span>
+
+              {/* Visual-only spans: aria-hidden on container so AT uses the live region above */}
+              <div aria-hidden="true">
+                {showSelectedLabel ? (
+                  <span className={selectedRowLabelClass} onAnimationEnd={onSelectAnimationEnd}>
+                    <Label>{customSelectedRowLabel ?? getSelectedRowLabel()}</Label>
+                  </span>
+                ) : (
+                  <span className={unselectedRowLabelClass} onAnimationEnd={onUnSelectAnimationEnd}>
+                    <Label>{customUnSelectedRowLabel ?? getUnSelectedRowLabel()}</Label>
+                  </span>
+                )}
+              </div>
 
               {selectedRowsCount > 0 && allowSelectAll && showSelectedLabel && (
                 <div className={selectedRowLabelClass}>

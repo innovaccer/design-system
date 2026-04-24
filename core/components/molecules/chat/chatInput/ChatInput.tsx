@@ -57,6 +57,10 @@ export interface ChatInputProps extends BaseProps {
    * Callback function triggered when the `ChatInput` stop generating button is clicked
    */
   onStopGenerating?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  /**
+   * Accessible label for the chat input textarea
+   */
+  'aria-label'?: string;
 }
 
 const ChatInput: React.FC<ChatInputProps> = (props) => {
@@ -70,6 +74,7 @@ const ChatInput: React.FC<ChatInputProps> = (props) => {
     actionRenderer,
     onStopGenerating,
     className,
+    'aria-label': ariaLabel,
     ...rest
   } = props;
 
@@ -185,6 +190,7 @@ const ChatInput: React.FC<ChatInputProps> = (props) => {
         className={textareaClassNames}
         disabled={disabled}
         readOnly={readOnly}
+        aria-label={ariaLabel}
         data-test="DesignSystem-ChatInput-textarea"
         {...rest}
       />

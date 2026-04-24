@@ -10,7 +10,7 @@ export const withSearchErrorState = () => {
   };
 
   return (
-    <div className="w-25">
+    <div>
       <Label>Time</Label>
       <TimePicker
         withSearch={true}
@@ -35,7 +35,7 @@ const customCode = `() => {
   };
 
   return (
-    <div className="w-25">
+    <div>
       <Label>Time</Label>
       <TimePicker
         withSearch={true}

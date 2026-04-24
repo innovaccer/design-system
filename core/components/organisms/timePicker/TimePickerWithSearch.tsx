@@ -1,10 +1,12 @@
 import * as React from 'react';
+import classNames from 'classnames';
 import { Dropdown } from '@/index';
 import { BaseProps } from '@/utils/types';
 import { getScrollIndex } from './utility/searchUtils';
 import { OptionSchema } from '@/components/atoms/dropdown/option';
 import { scrollToOptionIndex } from '@/components/atoms/dropdown/utility';
 import { getDropdownOptionList, isFormat12Hour, convert24To12HourFormat } from './utility/timePickerUtility';
+import timePickerStyles from '@css/components/timePicker.module.css';
 
 type fetchOptionsFunction = (searchTerm: string) => Promise<{
   count: number;
@@ -113,6 +115,7 @@ export const TimePickerWithSearch = (props: TimePickerDropdownProps) => {
     disabledSlotList,
     fetchTimeOptions,
     error,
+    className,
     'aria-label': ariaLabel,
     optionsAriaLabel,
   } = props;
@@ -203,6 +206,8 @@ export const TimePickerWithSearch = (props: TimePickerDropdownProps) => {
       error={error}
       aria-label={ariaLabel}
       optionsAriaLabel={optionsAriaLabel}
+      className={classNames(timePickerStyles['TimePicker-trigger'], className)}
+      truncateOption={false}
     />
   );
 };
