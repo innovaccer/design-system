@@ -2,6 +2,7 @@ import * as React from 'react';
 import Text, { TextAppearance } from '@/components/atoms/text';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import isSpaceKey from '@/accessibility/utils/isSpaceKey';
 import legendStyles from '@css/components/legend.module.css';
 
 export interface LegendProps extends BaseProps {
@@ -60,7 +61,7 @@ export const Legend = (props: LegendProps) => {
       return;
     }
 
-    if (event.key === 'Enter' || event.key === ' ') {
+    if (event.key === 'Enter' || isSpaceKey(event)) {
       event.preventDefault();
       onClick?.(event);
     }

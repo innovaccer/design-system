@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { Tooltip, Icon, Text } from '@/index';
 import { IconProps } from '@/index.type';
 import { BaseHtmlProps, BaseProps, extractBaseProps } from '@/utils/types';
+import isSpaceKey from '@/accessibility/utils/isSpaceKey';
 import { AutoComplete, IconType } from '@/common.type';
 import ActionButton from './actionButton';
 import styles from '@css/components/input.module.css';
@@ -350,7 +351,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
               onClear(e);
             }}
             onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+              if (e.key === 'Enter' || isSpaceKey(e)) {
                 e.preventDefault();
                 ref.current?.focus({ preventScroll: true });
                 onClear(e);

@@ -2,6 +2,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { getTranslateOffset, transformItem, setItemTransition, binarySearch, schd, isTouchEvent } from './utils';
 import type { IItemProps, IProps, TEvent } from './types';
+import isSpaceKey from '@/accessibility/utils/isSpaceKey';
 import styles from '@css/components/listbox.module.css';
 
 const AUTOSCROLL_ACTIVE_OFFSET = 200;
@@ -609,7 +610,7 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
       return;
     }
 
-    if (e.key === ' ') {
+    if (isSpaceKey(e)) {
       e.preventDefault();
       if (this.state.itemDragged > -1 && this.state.isClickAndFollow) {
         this.completeClickAndFollowDropAtFocusedIndex(index);

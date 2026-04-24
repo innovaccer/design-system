@@ -3,6 +3,7 @@ import { OptionTypeProps } from './index';
 import { Icon, Text } from '@/index';
 import classNames from 'classnames';
 import styles from '@css/components/dropdown.module.css';
+import isSpaceKey from '@/accessibility/utils/isSpaceKey';
 
 const IconWithMetaOption = (props: OptionTypeProps) => {
   const {
@@ -33,7 +34,7 @@ const IconWithMetaOption = (props: OptionTypeProps) => {
   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
     if (disabled) return;
 
-    if (event.key === 'Enter' || event.key === ' ') {
+    if (event.key === 'Enter' || isSpaceKey(event)) {
       event.preventDefault();
       onClickHandler?.(event as unknown as React.MouseEvent<HTMLDivElement>);
     }

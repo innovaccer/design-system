@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, BaseHtmlProps } from '@/utils/types';
 import { Icon, Tooltip } from '@/index';
+import isSpaceKey from '@/accessibility/utils/isSpaceKey';
 import { IconType } from '@/common.type';
 import styles from '@css/components/linkButton.module.css';
 import uidGenerator from '@/utils/uidGenerator';
@@ -115,7 +116,7 @@ const LinkButtonElement = React.forwardRef<HTMLButtonElement, LinkButtonProps>((
   const renderedType = useAriaDisabled && type === 'submit' ? 'button' : type;
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>) => {
-    if (useAriaDisabled && (event.key === 'Enter' || event.key === ' ')) {
+    if (useAriaDisabled && (event.key === 'Enter' || isSpaceKey(event))) {
       event.preventDefault();
       event.stopPropagation();
       return;

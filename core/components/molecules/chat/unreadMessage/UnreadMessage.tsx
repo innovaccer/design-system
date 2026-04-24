@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Icon, Text } from '@/index';
 import styles from '@css/components/chatSeparator.module.css';
 import { BaseProps } from '@/utils/types';
+import isSpaceKey from '@/accessibility/utils/isSpaceKey';
 import classNames from 'classnames';
 
 export interface UnreadMessageProps extends BaseProps {
@@ -31,7 +32,7 @@ const UnreadMessage: React.FC<UnreadMessageProps> = (props) => {
   const spacePressed = React.useRef(false);
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
-    if (e.key === ' ') {
+    if (isSpaceKey(e)) {
       e.preventDefault();
       if (!e.repeat) {
         spacePressed.current = true;
@@ -44,7 +45,7 @@ const UnreadMessage: React.FC<UnreadMessageProps> = (props) => {
   };
 
   const handleKeyUp = (e: React.KeyboardEvent<HTMLDivElement>) => {
-    if (e.key === ' ') {
+    if (isSpaceKey(e)) {
       e.preventDefault();
       if (spacePressed.current) {
         spacePressed.current = false;

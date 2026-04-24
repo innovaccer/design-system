@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import Icon from '@/components/atoms/icon';
 import Text from '@/components/atoms/text';
 import { Name, ChipType } from '../chip/Chip';
+import isSpaceKey from '@/accessibility/utils/isSpaceKey';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { IconProps, TextProps } from '@/index.type';
 import { Tooltip } from '@/index';
@@ -89,14 +90,14 @@ export const GenericChip = (props: GenericChipProps) => {
   };
 
   const onKeyDownHandler = (event: React.KeyboardEvent) => {
-    if (event.key === 'Enter' || event.key === ' ' || event.key === 'Spacebar') {
+    if (event.key === 'Enter' || isSpaceKey(event)) {
       event.preventDefault();
       onCloseHandler(event);
     }
   };
 
   const onChipKeyDownHandler = (event: React.KeyboardEvent) => {
-    if (event.key === 'Enter' || event.key === ' ' || event.key === 'Spacebar') {
+    if (event.key === 'Enter' || isSpaceKey(event)) {
       event.preventDefault();
       onClickHandler();
     }
