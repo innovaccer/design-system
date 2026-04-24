@@ -154,6 +154,11 @@ const curatedElementProps: Record<HtmlElementType, AccessibilityPropDef[]> = {
     { name: 'aria-multiline', type: 'boolean', description: 'Indicates the text input accepts multiple lines.' },
     { name: 'aria-hidden', type: 'boolean', description: 'Hides the element from assistive technologies.' },
     { name: 'role', type: 'string', description: 'Overrides the implicit textbox role.' },
+    {
+      name: 'tabIndex',
+      type: 'number',
+      description: 'Controls focus order. Use -1 to remove from tab sequence, 0 for natural order.',
+    },
   ],
 
   /**
@@ -297,17 +302,10 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
   Radio: { htmlElement: 'radio' },
 
   // Textbox-like (BaseHtmlProps<HTMLInputElement/HTMLTextAreaElement>)
-  // Note: Input overrides tabIndex internally (readOnly ? -1 : undefined), so consumers cannot customise it.
   Input: { htmlElement: 'textbox' },
   TextField: { htmlElement: 'textbox' },
-  Textarea: {
-    htmlElement: 'textbox',
-    customProps: [{ name: 'tabIndex', type: 'number', description: 'Controls focus order.' }],
-  },
-  MetricInput: {
-    htmlElement: 'textbox',
-    customProps: [{ name: 'tabIndex', type: 'number', description: 'Controls focus order.' }],
-  },
+  Textarea: { htmlElement: 'textbox' },
+  MetricInput: { htmlElement: 'textbox' },
 
   // Link-like (OmitNativeProps<HTMLLinkElement> / BaseHtmlProps<HTMLDivElement>)
   Link: { htmlElement: 'link' },
@@ -330,6 +328,8 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
   Text: { htmlElement: 'generic' },
   AIResponse: { htmlElement: 'generic' },
   Badge: { htmlElement: 'generic' },
+  Caption: { htmlElement: 'generic' },
+  StatusHint: { htmlElement: 'generic' },
 
   // Meter (BaseProps + React.HTMLAttributes<HTMLDivElement>)
   Meter: { htmlElement: 'range' },
@@ -386,11 +386,43 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
         type: 'string',
         description: 'ID of an external element that labels the spinner. When set, aria-label is suppressed.',
       },
+    ],
+  },
+
+  // Slider / RangeSlider / MultiSlider: extend BaseProps only (extractBaseProps).
+  // aria-* are not forwarded to handles from the consumer — ARIA is wired internally
+  // from the `label` prop onto each role="slider" handle (aria-valuemin/max/now/text
+  // are computed from min/max/step/value). The only consumer-facing a11y control is `label`.
+  Slider: {
+    htmlElement: 'custom',
+    customProps: [
       {
         name: 'label',
         type: 'string',
         description:
-          'Visible label for the slider. When provided, each handle (role="slider") is automatically linked to it via aria-labelledby so screen readers announce the label with the current value.',
+          'Visible label for the slider. Also forwarded as aria-label on the role="slider" handle so screen readers announce it with the current value.',
+      },
+    ],
+  },
+  RangeSlider: {
+    htmlElement: 'custom',
+    customProps: [
+      {
+        name: 'label',
+        type: 'string',
+        description:
+          'Visible label for the slider. Also forwarded as aria-label on each role="slider" handle so screen readers announce it with the current value.',
+      },
+    ],
+  },
+  MultiSlider: {
+    htmlElement: 'custom',
+    customProps: [
+      {
+        name: 'label',
+        type: 'string',
+        description:
+          'Visible label for the slider group. Applied as aria-label on every role="slider" handle that does not define its own label.',
       },
     ],
   },
@@ -952,9 +984,21 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
     ],
   },
 
-  // SegmentedControl: parent has no passable a11y props; Item accepts aria-label, aria-labelledby
+  // SegmentedControl: accepts aria-label, aria-labelledby; Item accepts aria-label, aria-labelledby
   SegmentedControl: {
     htmlElement: 'custom',
+    customProps: [
+      {
+        name: 'aria-label',
+        type: 'string',
+        description: 'Accessible name for the segment group. Required if not labelled by an external element.',
+      },
+      {
+        name: 'aria-labelledby',
+        type: 'string',
+        description: 'ID of an element whose text labels the control group (e.g. an external heading).',
+      },
+    ],
     nestedComponents: [
       {
         name: 'SegmentedControl.Item',
@@ -1112,17 +1156,48 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
   },
 
   // ========================================================================
-  // NOT INCLUDED (BaseProps only, NO passable a11y props):
-  // ProgressBar, ProgressRing, Toast,
-  // Message, Collapsible, HelpText, Dialog, Tooltip, Popover,
-  // Dropzone, Stepper,
-  // VerticalNav,
-  // InlineMessage,
-  // Chat.DateSeparator (decorative separator — aria-hidden internally),
-  // Chat.NewMessage (role="status" + aria-live="polite" hardcoded internally),
-  // Chat.TypingIndicator (manages a11y internally)
-  // These components manage a11y internally and do not expose configurable
-  // aria-* props to consumers.
+  // NOT INCLUDED — no a11y prop table rendered for these components.
+  // All entries below extend BaseProps only and use extractBaseProps(),
+  // which does NOT forward aria-*. Any accessibility semantics are either
+  // hardcoded internally or inherited through composed children.
+  // ========================================================================
+  //
+  // Feedback & status (internal ARIA only):
+  //   ProgressBar, ProgressRing      — aria-value* computed from value/max
+  //   Toast, Message, InlineMessage  — role/aria-live managed internally
+  //   HelpText                       — presentational; consumers reference it via aria-describedby
+  //   Collapsible                    — aria-expanded managed internally via the trigger
+  //   StatusHint (moved to `generic` — extends BaseHtmlProps)
+  //
+  // Overlays (role/aria-modal hardcoded, consumer has no a11y knobs beyond
+  // what's exposed in the component-specific entries above):
+  //   Dialog, Tooltip, Popover, Dropzone, Stepper
+  //
+  // Chat internals:
+  //   Chat.DateSeparator             — decorative separator (aria-hidden)
+  //   Chat.NewMessage                — role="status" + aria-live="polite" hardcoded
+  //   Chat.TypingIndicator           — manages a11y internally
+  //
+  // Navigation:
+  //   VerticalNav                    — aria handled by composed Navigation items
+  //   Breadcrumbs                    — renders <nav aria-label="Breadcrumb"> internally; no passable a11y props
+  //   Pagination                     — internal aria on page buttons; consumers pass labels via structured props
+  //
+  // Static / layout primitives (no aria-* forwarded):
+  //   Divider, Backdrop,
+  //   PlaceholderImage, PlaceholderParagraph, Placeholder  — aria-hidden hardcoded
+  //   Legend, MetaList, Editable, ChipGroup,
+  //   CardHeader, CardBody, CardFooter,
+  //   ModalDescription,
+  //   OverlayHeader, OverlayBody, OverlayFooter,
+  //   KeyValuePair,
+  //   FileList, FileListItem,
+  //   FileUploader, FileUploaderButton, FileUploaderItem, FileUploaderFormat, FileUploaderStatus, FileUploaderList,
+  //   EmptyState, EmptyStateTitle, EmptyStateDescription, EmptyStateImage, EmptyStateActions,
+  //   ChatMessage, ChatMessage.Box, ChatMessage.Status, ChatMessage.MessageText
+  //
+  // Internal primitives (never rendered standalone in Storybook):
+  //   _chip, _text, popperWrapper
   // ========================================================================
 };
 
