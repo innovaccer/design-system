@@ -76,7 +76,7 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forw
 
   const generatedIdRef = React.useRef<string | null>(null);
   if (generatedIdRef.current === null) {
-    generatedIdRef.current = `${name}-${label}-${uidGenerator()}`;
+    generatedIdRef.current = [name, label, uidGenerator()].filter(Boolean).join('-');
   }
   const resolvedId = idProp || generatedIdRef.current;
 

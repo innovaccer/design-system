@@ -12,6 +12,7 @@ export const controlledCheckbox = () => {
 
   return (
     <Checkbox
+      id="innovaccer-checkbox"
       aria-label="Innovaccer"
       checked={checked}
       label={'Innovaccer'}
@@ -31,6 +32,7 @@ const customCode = `() => {
 
   return (
     <Checkbox
+      id="innovaccer-checkbox"
       aria-label="Innovaccer"
       checked={checked}
       label={'Innovaccer'}

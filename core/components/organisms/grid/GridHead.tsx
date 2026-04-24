@@ -27,7 +27,7 @@ export const GridHead = (props: GridHeadProps) => {
   const context = React.useContext(GridContext);
   const { schema, onSelectAll, onMenuChange, onFilterChange, updateColumnSchema, reorderColumn } = props;
 
-  const { withCheckbox, loading, selectAll } = context;
+  const { withCheckbox, loading, selectAll, gridId } = context;
 
   const pinnedSchema = schema.filter((s) => !s.hidden && s.pinned);
   const leftPinnedSchema = pinnedSchema.filter((s) => !s.hidden && s.pinned === 'left');
@@ -55,7 +55,7 @@ export const GridHead = (props: GridHeadProps) => {
         {loading ? (
           <Placeholder className="mr-4" />
         ) : (
-          <Checkbox {...selectAll} onChange={onSelectAll} aria-label="Select all rows" />
+          <Checkbox {...selectAll} id={`${gridId}-select-all`} onChange={onSelectAll} aria-label="Select all rows" />
         )}
       </div>
     );

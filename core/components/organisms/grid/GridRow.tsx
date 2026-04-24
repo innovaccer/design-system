@@ -20,7 +20,8 @@ export interface GridRowProps {
 export const GridRow = (props: GridRowProps) => {
   const context = React.useContext(GridContext);
 
-  const { type, onRowClick, loading, withCheckbox, nestedRows, checkboxAlignment, showNestedRowTrigger } = context;
+  const { type, onRowClick, loading, withCheckbox, nestedRows, checkboxAlignment, showNestedRowTrigger, gridId } =
+    context;
 
   const { schema, data, rowIndex: rI, onSelect, className } = props;
 
@@ -117,6 +118,7 @@ export const GridRow = (props: GridRowProps) => {
           <Placeholder className="mr-4" />
         ) : (
           <Checkbox
+            id={`${gridId}-select-row-${rI}`}
             checked={!!data._selected}
             aria-label={`Select ${rowLabel}`}
             onChange={(event: React.ChangeEvent<HTMLInputElement>) => {

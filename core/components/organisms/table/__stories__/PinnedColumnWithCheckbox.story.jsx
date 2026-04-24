@@ -101,6 +101,7 @@ export const pinnedColumnsWithCheckbox = () => {
   return (
     <Card className="overflow-hidden">
       <Table
+        aria-label="Patient data table"
         loaderSchema={loaderSchema}
         size="compressed"
         showMenu={false}
@@ -217,6 +218,7 @@ const customCode = `() => {
   return (
       <Card className="overflow-hidden">
         <Table
+          aria-label="Patient data table"
           showMenu={false}
           size="compressed"
           separator={false}
