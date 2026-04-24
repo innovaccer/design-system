@@ -134,12 +134,9 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
       const lowerStep = min + Math.floor(stepsFromMin) * stepSize;
       const upperStep = min + Math.ceil(stepsFromMin) * stepSize;
 
-      // Clean floating point artifacts and clamp to valid range
-      const rawLowerClean = Math.round(lowerStep * 1e10) / 1e10;
-      const rawUpperClean = Math.round(upperStep * 1e10) / 1e10;
-
-      const lowerClean = clamp(rawLowerClean, min, max);
-      const upperClean = clamp(rawUpperClean, min, max);
+      // Clean floating point artifacts
+      const lowerClean = Math.round(lowerStep * 1e10) / 1e10;
+      const upperClean = Math.round(upperStep * 1e10) / 1e10;
 
       // Pick nearest
       const distToLower = Math.abs(newValue - lowerClean);

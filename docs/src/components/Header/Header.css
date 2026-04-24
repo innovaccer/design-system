@@ -8,6 +8,38 @@
   justify-content: space-between;
 }
 
+.Header-left {
+  flex: 1 1 0%;
+  min-width: 0;
+}
+
+.Header-nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1 1 0%;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: visible;
+}
+
+.Header-nav--measuring {
+  visibility: hidden;
+}
+
+.Header-right {
+  flex-shrink: 0;
+  gap: var(--spacing-2);
+}
+
+.HeaderLink.Header-storybook {
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  line-height: 1.5;
+}
+
 .HeaderLink:hover {
   border-bottom: none !important;
 }
@@ -22,6 +54,8 @@
   padding: var(--spacing) 0;
   margin-left: var(--spacing-3);
   line-height: 0;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .HeaderLink--active {
@@ -33,5 +67,89 @@
 }
 
 .HeaderIcon {
-  top: 2px;
+  top: 0;
+}
+
+/* More button */
+.Header-more {
+  position: relative;
+  flex-shrink: 0;
+  margin-left: var(--spacing-3);
+}
+
+.Header-more-btn {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: var(--font-weight-normal);
+  color: var(--inverse);
+  padding: var(--spacing) 0;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.Header-more-btn:hover {
+  color: var(--text-link);
+}
+
+.Header-more-btn:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.Header-more-chevron {
+  transition: transform 150ms ease;
+}
+
+.Header-more-chevron--open {
+  transform: rotate(180deg);
+}
+
+.Header-more-dropdown {
+  position: absolute;
+  top: calc(100% + var(--spacing-s));
+  left: 0;
+  z-index: 1001;
+  min-width: 180px;
+  background: var(--white);
+  border: var(--border);
+  border-color: var(--secondary-dark);
+  border-radius: var(--spacing-s);
+  box-shadow: var(--shadow-l);
+  padding: var(--spacing-s) 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.Header-more-item {
+  display: block;
+  padding: var(--spacing) var(--spacing-l);
+  text-decoration: none;
+  color: var(--inverse);
+  font-weight: var(--font-weight-normal);
+  white-space: nowrap;
+  line-height: 1.5;
+}
+
+.Header-more-item:hover {
+  background: var(--secondary-lightest);
+  color: var(--text-link);
+  text-decoration: none;
+  border-bottom: none;
+}
+
+.Header-more-item--active {
+  color: var(--text-link);
+}
+
+.Header-more-item:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: -2px;
+  border-radius: 2px;
 }
