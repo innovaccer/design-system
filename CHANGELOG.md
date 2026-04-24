@@ -1,3 +1,79 @@
+## 4.24.0 (2026-04-24)
+
+### Highlights
+
+- Extended WCAG 2.2 AA accessibility coverage to Table, Grid, Menu, SegmentedControl, Calendar, Toast, ProgressBar, ProgressRing, Message, Dropzone, ChatInput, VerticalNav, EditableInput, and more;
+- Added disabled-state info affordance to Button, Avatar, Link, and LinkButton; 
+- Introduced Windows high contrast mode support.
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(a11y): add A11y Component Tracker and enhance accessibilityProp with tabIndex and aria (f88393781)
+- feat(metricInput): update arrow buttons touchpoint for a11y (e19affaef)
+- feat(button): add info icon for disabled state interaction (af245f892)
+- feat(avatar): update info icon for disabled state interaction (39ccf820b)
+- feat(linkbutton): add info icon on disabled interactions (494af8b52)
+- feat(Listbox): implement sticky-drag visual states and zero-drift UI (a7ca338cd)
+- feat(link): add disabled state info affordance (e8c4c897f)
+- feat(menu): add keyboard navigation for sub-menu trigger (1a1ffa0af)
+- feat(menu): add keyboard navigation for menu trigger (b09955c71)
+- feat(menu): add aria attributes for accessibility (dbe5fb67d)
+- feat(SegmentedControl): enhance accessibility with ARIA roles and roving tabindex (76caf0de6)
+- feat(dropzone): add accessibility attributes (feb6e0250)
+- feat(calendar): add tooltip and aria-label for prev/next navigation button (fbc21902c)
+- feat(segmentedControl): add aria attributes for accessibility (a3897b589)
+- feat(chipGroup): add a11y sttribute to chip component (e0631a7c4)
+- feat(toast): add aria attributes for accessibility (2732dd33a)
+- feat(progressRing): add aria attributes for accessibility (e3df442ff)
+- feat(progressBar): add aria attributes for accessibility (e2fe2ca21)
+- feat(message): add aria attributes for accessibility (bd78b15d0)
+- feat(editableInput): add aria attribute in editable input component (f407ff3d7)
+- feat(grid): add keyboard navigation support for accessibility (10ccb6af6)
+- feat(verticalNav): add aria attributes for accessibility (0e4d33d91)
+- feat(table): add aria attributes and keyboard a11y support in grid and table (5b073d599)
+- feat(grid): add aria attributes in grid component (d7db67be2)
+- feat: add windows high contrast mode support in component (ecf0cff4d)
+- feat(chatInput): add wcag a11y support in chatInput component (d2f63c7e1)
+
+### Fixes
+
+- fix(table): update id for checkboxes (f41eba735)
+- fix(spacekey): update keyboard events with space key utility (c718e9ea5)
+- fix(link): update disabled state (3b273ba1b)
+- fix(inputMask): update id attribute conflict in inputmask component (204d332e4)
+- fix(avatar): update role attribute for correct accessibility (3a06fe0ec)
+- fix(grid): fix whitespace issue is grid cell (f3499e85d)
+- fix(TimePicker): set 320px default width, 256px min-width, and wrap options text (104f60e32)
+- fix(Listbox): adjust position of selected and activated items in tight layout (04fec3ddd)
+- fix(MultiSlider): remove misleading role="button" from track and tick labels (6c2bf7185)
+- fix(MetricInput): resolve WCAG 2.2 AA a11y issues (ad75c0f57)
+- fix(VerificationCodeInput): prevent shared aria-label from overwriting per-digit labels (ae425fc5a)
+- fix(Input): forward aria-labelledby and honour consumer tabIndex (a7478ed1e)
+- fix(TextField): associate label with control and link helpText via aria-describedby (00b2444f7)
+- fix(InputMask): associate helpText/caption with input via aria-describedby (dc75c3dde)
+- fix(Radio): stable id, aria-label/labelledby/describedby, helpText association (5257f7665)
+- fix(Textarea): correct htmlFor/id pairing and aria-labelledby tokens in Size story (075b2303a)
+
+### Improvements
+
+- style(tokens): update semantic colors and ramps (d615dde03)
+- style(aicolor): update gradients and sara sparkle stroke (517554db8)
+- fix(contributors): update profile information (44bed37ec)
+
+---
+
 ## 4.23.0 (2026-04-10)
 
 ### Highlights
