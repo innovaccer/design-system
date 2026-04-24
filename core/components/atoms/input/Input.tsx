@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { Tooltip, Icon, Text } from '@/index';
 import { IconProps } from '@/index.type';
 import { BaseHtmlProps, BaseProps, extractBaseProps } from '@/utils/types';
+import isSpaceKey from '@/accessibility/utils/isSpaceKey';
 import { AutoComplete, IconType } from '@/common.type';
 import ActionButton from './actionButton';
 import styles from '@css/components/input.module.css';
@@ -185,6 +186,8 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
     readOnly,
     iconType,
     'aria-invalid': ariaInvalid,
+    'aria-labelledby': ariaLabelledBy,
+    tabIndex: tabIndexProp,
     ...rest
   } = props;
 
@@ -310,14 +313,21 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
         onClick={onClick}
         onFocus={onFocus}
         onPaste={onPaste}
+        aria-labelledby={
+          inlineLabel && ariaLabelledBy
+            ? [inlineLabelId, ariaLabelledBy].filter(Boolean).join(' ')
+            : ariaLabelledBy || undefined
+        }
         aria-describedby={
-          [rest['aria-describedby'], inlineLabel ? inlineLabelId : undefined].filter(Boolean).join(' ') || undefined
+          [rest['aria-describedby'], inlineLabel && !ariaLabelledBy ? inlineLabelId : undefined]
+            .filter(Boolean)
+            .join(' ') || undefined
         }
         /**
          *for readOnly: true, tab focus from input element is removed. Hence, its tabIndex is set to -1.
          *For rest, "undefined" lets user agent(browser) use the default tabIndex.
          */
-        tabIndex={readOnly ? -1 : undefined}
+        tabIndex={tabIndexProp !== undefined ? tabIndexProp : readOnly ? -1 : undefined}
         aria-invalid={error === true ? true : ariaInvalid}
       />
       {disabled ? (
@@ -341,7 +351,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
               onClear(e);
             }}
             onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+              if (e.key === 'Enter' || isSpaceKey(e)) {
                 e.preventDefault();
                 ref.current?.focus({ preventScroll: true });
                 onClear(e);

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { Checkbox, Placeholder } from '@/index';
+import isSpaceKey from '@/accessibility/utils/isSpaceKey';
 import { RowData, Schema, Pinned } from './Grid';
 import { GridNestedRow } from './GridNestedRow';
 import { Cell } from './Cell';
@@ -19,7 +20,8 @@ export interface GridRowProps {
 export const GridRow = (props: GridRowProps) => {
   const context = React.useContext(GridContext);
 
-  const { type, onRowClick, loading, withCheckbox, nestedRows, checkboxAlignment, showNestedRowTrigger } = context;
+  const { type, onRowClick, loading, withCheckbox, nestedRows, checkboxAlignment, showNestedRowTrigger, gridId } =
+    context;
 
   const { schema, data, rowIndex: rI, onSelect, className } = props;
 
@@ -55,7 +57,27 @@ export const GridRow = (props: GridRowProps) => {
         onRowClick(data, rI);
       }
     }
-  }, [data, rI]);
+  }, [data, rI, type, loading, onRowClick]);
+
+  const onKeyDownHandler = React.useCallback(
+    (e: React.KeyboardEvent<HTMLDivElement>) => {
+      if (e.target !== e.currentTarget) return;
+      if (type === 'resource' && !loading && !data.disabled) {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          if (onRowClick) onRowClick(data, rI);
+        } else if (isSpaceKey(e)) {
+          e.preventDefault();
+          if (withCheckbox) {
+            onSelect(rI, !data._selected);
+          } else if (onRowClick) {
+            onRowClick(data, rI);
+          }
+        }
+      }
+    },
+    [data, rI, type, loading, onRowClick, withCheckbox, onSelect]
+  );
 
   const pinnedSchema = schema.filter((s) => !s.hidden && s.pinned);
   const leftPinnedSchema = pinnedSchema.filter((s) => !s.hidden && s.pinned === 'left');
@@ -70,6 +92,11 @@ export const GridRow = (props: GridRowProps) => {
 
   const nestedRowData = GridNestedRow(nestedProps);
 
+  const rowLabel = React.useMemo(() => {
+    const firstTextCol = schema.find((s) => !s.hidden && typeof data[s.name] === 'string' && data[s.name]);
+    return firstTextCol ? String(data[firstTextCol.name]) : `Row ${rI + 1}`;
+  }, [schema, data, rI]);
+
   const renderCheckbox = (show: boolean) => {
     if (!show || !withCheckbox) return null;
 
@@ -79,14 +106,21 @@ export const GridRow = (props: GridRowProps) => {
     });
 
     return (
-      // TODO(a11y)
-      // eslint-disable-next-line
-      <div className={CheckboxClass} onClick={(e) => e.stopPropagation()} data-test="DesignSystem-Grid-cellCheckbox">
+      <div
+        className={CheckboxClass}
+        role="gridcell"
+        tabIndex={-1}
+        onClick={(e) => e.stopPropagation()}
+        onKeyDown={(e) => e.stopPropagation()}
+        data-test="DesignSystem-Grid-cellCheckbox"
+      >
         {loading ? (
           <Placeholder className="mr-4" />
         ) : (
           <Checkbox
+            id={`${gridId}-select-row-${rI}`}
             checked={!!data._selected}
+            aria-label={`Select ${rowLabel}`}
             onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
               onSelect(rI, event.target.checked);
             }}
@@ -147,9 +181,15 @@ export const GridRow = (props: GridRowProps) => {
 
   return (
     <div className={wrapperClasses} data-test="DesignSystem-Grid-rowWrapper">
-      {/* TODO(a11y)  */}
-      {/* eslint-disable-next-line */}
-      <div data-test="DesignSystem-Grid-row" className={rowClasses} onClick={onClickHandler} ref={rowRef}>
+      <div
+        data-test="DesignSystem-Grid-row"
+        className={rowClasses}
+        role="row"
+        tabIndex={type === 'resource' && !loading && !data.disabled && !!onRowClick ? 0 : -1}
+        onClick={onClickHandler}
+        onKeyDown={onKeyDownHandler}
+        ref={rowRef}
+      >
         {renderSchema(leftPinnedSchema, !!leftPinnedSchema.length, 'left')}
         {renderSchema(unpinnedSchema, !leftPinnedSchema.length && !!unpinnedSchema.length)}
         {renderSchema(rightPinnedSchema, false, 'right')}

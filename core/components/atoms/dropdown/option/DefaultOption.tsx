@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Text, Icon } from '@/index';
 import { OptionTypeProps } from './index';
 import styles from '@css/components/dropdown.module.css';
+import isSpaceKey from '@/accessibility/utils/isSpaceKey';
 
 const DefaultOption = (props: OptionTypeProps) => {
   const {
@@ -21,7 +22,7 @@ const DefaultOption = (props: OptionTypeProps) => {
   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
     if (disabled) return;
 
-    if (event.key === 'Enter' || event.key === ' ') {
+    if (event.key === 'Enter' || isSpaceKey(event)) {
       event.preventDefault();
       onClickHandler?.(event as unknown as React.MouseEvent<HTMLDivElement>);
     }

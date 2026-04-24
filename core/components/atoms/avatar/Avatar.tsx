@@ -129,7 +129,7 @@ export const Avatar = (props: AvatarProps) => {
   const AvatarAppearance =
     appearance || colors[(initials.charCodeAt(0) + (initials.charCodeAt(1) || 0)) % 8] || DefaultAppearance;
   const isDecorative = ariaHidden === true;
-  const resolvedRole = isDecorative ? 'presentation' : role ?? (tabIndex !== undefined ? 'button' : 'img');
+  const resolvedRole = isDecorative ? 'presentation' : role ?? 'img';
   const ariaLabel = isDecorative ? undefined : ariaLabelProp || getTooltipName().trim() || initials || 'Avatar';
   const resolvedTabIndex = isDecorative ? -1 : disabled ? -1 : tabIndex !== undefined ? tabIndex : 0;
 

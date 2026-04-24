@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import Editable from '@/components/atoms/editable';
 import { Dropdown, Icon } from '@/index';
+import isSpaceKey from '@/accessibility/utils/isSpaceKey';
 import { DropdownProps } from '@/index.type';
 import { BaseProps, extractBaseProps, MakeOptional } from '@/utils/types';
 import styles from '@css/components/editableDropdown.module.css';
@@ -129,7 +130,7 @@ export const EditableDropdown = (props: EditableDropdownProps) => {
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
     if (isDropdownDisabled) return;
-    if (!editing && (event.key === 'Enter' || event.key === ' ')) {
+    if (!editing && (event.key === 'Enter' || isSpaceKey(event))) {
       if (event.currentTarget !== event.target) return;
       event.preventDefault();
       if (event.repeat) return;

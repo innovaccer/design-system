@@ -132,7 +132,7 @@ const HeaderCell = (props: HeaderCellProps) => {
         {schema.displayName}
       </Text>
       {sorting && (
-        <div className={styles['Grid-sortingIcons']}>
+        <div className={styles['Grid-sortingIcons']} aria-hidden="true">
           {sorted ? (
             sorted === 'asc' ? (
               <Icon name="arrow_upward" />
@@ -155,6 +155,28 @@ const HeaderCell = (props: HeaderCellProps) => {
     if (!sorted) onMenuChange(name, 'sortAsc');
   };
 
+  const autoFitColumn = () => {
+    const grid = el.current?.closest('[role="grid"]') as HTMLElement | null;
+    if (!grid) return;
+    const escapedName = typeof CSS !== 'undefined' && CSS.escape ? CSS.escape(name) : name.replace(/([^\w-])/g, '\\$1');
+    const cells = Array.from(grid.querySelectorAll<HTMLElement>(`[data-col-id="${escapedName}"]`)).filter(
+      (c) => c.closest('[role="grid"]') === grid
+    );
+    if (!cells.length) return;
+
+    // Save → expand → measure → restore (batched writes before reads to avoid layout thrash)
+    const saved = cells.map(({ style: { width, minWidth, maxWidth } }) => ({ width, minWidth, maxWidth }));
+    cells.forEach((c) => Object.assign(c.style, { width: 'max-content', minWidth: '0', maxWidth: 'none' }));
+    const maxWidth = cells.reduce((acc, c) => Math.max(acc, c.offsetWidth), 0);
+    cells.forEach((c, i) => Object.assign(c.style, saved[i]));
+
+    if (maxWidth > 0) {
+      const schemaMin = typeof schema.minWidth === 'number' ? schema.minWidth : undefined;
+      const effectiveMinWidth = schemaMin || getCellSize(schema.cellType || 'DEFAULT').minWidth || 96;
+      updateColumnSchema(name, { width: Math.max(maxWidth, effectiveMinWidth) });
+    }
+  };
+
   return (
     <div key={name} className={classes} ref={el}>
       <div
@@ -163,7 +185,7 @@ const HeaderCell = (props: HeaderCellProps) => {
         onClick={handleSortToggle}
         onKeyDown={(event: React.KeyboardEvent<HTMLDivElement>) => {
           if (!isSortable) return;
-          if (event.key === 'Enter' || event.key === ' ') {
+          if (event.key === 'Enter' || isSpaceKey(event)) {
             event.preventDefault();
             handleSortToggle();
           }
@@ -257,16 +279,24 @@ const HeaderCell = (props: HeaderCellProps) => {
             resizeCol({ updateColumnSchema }, name, el.current);
             setIsDragged(false);
           }}
+          onDoubleClick={autoFitColumn}
           onKeyDown={(event: React.KeyboardEvent<HTMLSpanElement>) => {
-            if (event.key === 'Enter' || event.key === ' ') {
+            const RESIZE_STEP = 10;
+            if (!event.shiftKey && (event.key === 'ArrowRight' || event.key === 'ArrowLeft')) {
               event.preventDefault();
-              resizeCol({ updateColumnSchema }, name, el.current);
-              setIsDragged(false);
+              const currentWidth = el.current?.parentElement?.getBoundingClientRect().width ?? 0;
+              const delta = event.key === 'ArrowRight' ? RESIZE_STEP : -RESIZE_STEP;
+              const schemaMin = typeof schema.minWidth === 'number' ? schema.minWidth : undefined;
+              const effectiveMinWidth = schemaMin || getCellSize(schema.cellType || 'DEFAULT').minWidth || 96;
+              updateColumnSchema(name, { width: Math.max(currentWidth + delta, effectiveMinWidth) });
+            } else if (event.key === 'Enter') {
+              event.preventDefault();
+              autoFitColumn();
             }
           }}
           role="button"
           tabIndex={0}
-          aria-label={`Resize ${name} column`}
+          aria-label={`Resize ${schema.displayName} column. Arrow keys to resize, Enter or double-click to fit to content.`}
         />
       )}
     </div>
@@ -362,9 +392,26 @@ export const Cell = (props: CellProps) => {
     nestedRowData,
   } = props as CellProps;
 
-  const { draggable, separator, nestedRows, ref, withCheckbox, showNestedRowTrigger } = context;
+  const {
+    draggable,
+    separator,
+    nestedRows,
+    ref,
+    withCheckbox,
+    showNestedRowTrigger,
+    sortingList,
+    schema: contextSchema,
+  } = context;
 
-  const { name, hidden, pinned, cellType = 'DEFAULT' } = schema;
+  const { name, hidden, pinned, cellType = 'DEFAULT', sorting } = schema;
+
+  const ariaSortValue: React.AriaAttributes['aria-sort'] = React.useMemo(() => {
+    if (!isHead || sorting === false) return undefined;
+    const entry = sortingList.find((l) => l.name === name);
+    if (entry?.type === 'asc') return 'ascending';
+    if (entry?.type === 'desc') return 'descending';
+    return 'none';
+  }, [isHead, sorting, sortingList, name]);
 
   const { width, minWidth = 96, maxWidth = 800 } = getCellSize(cellType);
 
@@ -385,6 +432,9 @@ export const Cell = (props: CellProps) => {
     <div
       key={`${rowIndex}-${colIndex}`}
       className={cellClass}
+      role={isHead ? 'columnheader' : 'gridcell'}
+      aria-sort={ariaSortValue}
+      data-col-id={name}
       draggable={isHead && draggable}
       onDragStart={(e) => {
         if (draggable) {
@@ -419,6 +469,24 @@ export const Cell = (props: CellProps) => {
           if (from.type === to.type && reorderColumn) reorderColumn(from.name, to.name);
         }
       }}
+      onKeyDown={
+        isHead && draggable && reorderColumn
+          ? (e: React.KeyboardEvent<HTMLDivElement>) => {
+              if (!e.shiftKey || (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight')) return;
+              const target = e.target as HTMLElement;
+              if (target.isContentEditable || ['INPUT', 'TEXTAREA', 'SELECT'].includes(target.tagName)) return;
+              const visibleSchema = contextSchema.filter((s) => !s.hidden && s.pinned === pinned);
+              const currentIdx = visibleSchema.findIndex((s) => s.name === name);
+              if (currentIdx === -1) return;
+              e.preventDefault();
+              if (e.key === 'ArrowLeft' && currentIdx > 0) {
+                reorderColumn(name, visibleSchema[currentIdx - 1].name);
+              } else if (e.key === 'ArrowRight' && currentIdx < visibleSchema.length - 1) {
+                reorderColumn(name, visibleSchema[currentIdx + 1].name);
+              }
+            }
+          : undefined
+      }
       style={{
         width: getWidth({ ref, withCheckbox }, schema.width || width),
         minWidth: getWidth({ ref, withCheckbox }, schema.minWidth || minWidth),

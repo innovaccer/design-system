@@ -172,4 +172,14 @@ describe('ChatInput component a11y', () => {
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
+
+  it('textarea has no aria-label when none provided', () => {
+    const { getByTestId } = render(<ChatInput />);
+    expect(getByTestId('DesignSystem-ChatInput-textarea')).not.toHaveAttribute('aria-label');
+  });
+
+  it('textarea uses consumer-provided aria-label', () => {
+    const { getByTestId } = render(<ChatInput aria-label="Type your reply" />);
+    expect(getByTestId('DesignSystem-ChatInput-textarea')).toHaveAttribute('aria-label', 'Type your reply');
+  });
 });

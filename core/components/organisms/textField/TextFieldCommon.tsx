@@ -5,10 +5,12 @@ import { HelpText, Text } from '@/index';
 interface RenderHelpTextProps {
   helpText: string;
   error?: boolean;
+  id?: string;
 }
 
-export const RenderHelpText: React.FC<RenderHelpTextProps> = ({ helpText, error }) => (
+export const RenderHelpText: React.FC<RenderHelpTextProps> = ({ helpText, error, id }) => (
   <HelpText
+    id={id}
     className="d-flex"
     message={helpText.trim().length > 0 ? helpText : ' '}
     error={error ? error : undefined}

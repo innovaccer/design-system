@@ -63,7 +63,8 @@ export interface CheckboxProps extends BaseProps, OmitNativeProps<HTMLInputEleme
    */
   error?: boolean;
   /**
-   * htmlFor label id for checkbox
+   * `id` for the underlying `<input>` element. When omitted, an id is auto-generated
+   * from `name` and `label`.
    */
   id?: string;
   /**
@@ -91,7 +92,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
     className,
     checked: checkedProp,
     helpText,
-    id = `${name}-${label}-${uidGenerator()}`,
+    id = [name, label, uidGenerator()].filter(Boolean).join('-'),
     labelRef,
     wrapLabel,
     ['aria-describedby']: ariaDescribedby,

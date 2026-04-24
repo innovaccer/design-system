@@ -196,3 +196,13 @@
   background: var(--warning-darker);
   color: var(--text-white);
 }
+
+@media (forced-colors: active) {
+  /* Close icon focus ring is conveyed via box-shadow only — replace with outline */
+  .Toast-close-icon:focus,
+  .Toast-close-icon:focus-visible {
+    outline: var(--border-width-05) solid Highlight;
+    outline-offset: var(--spacing-05);
+    box-shadow: none;
+  }
+}

@@ -13,10 +13,9 @@ exports[`Slider component
         class="Slider-wrapper"
       >
         <div
-          aria-label="Slider track"
+          aria-hidden="true"
           class="Slider-track"
           data-test="DesignSystem-MultiSlider-Slider-Track"
-          role="button"
         >
           <div
             class="Slider-progress Slider-progress--inRange"
@@ -31,9 +30,9 @@ exports[`Slider component
           class="Slider-axis"
         >
           <div
+            aria-hidden="true"
             class="Slider-label"
             data-test="DesignSystem-MultiSlider-Label"
-            role="button"
             style="left: 0.00%;"
           >
             <span
@@ -47,9 +46,9 @@ exports[`Slider component
             </span>
           </div>
           <div
+            aria-hidden="true"
             class="Slider-label"
             data-test="DesignSystem-MultiSlider-Label"
-            role="button"
             style="left: 10.00%;"
           >
             <span
@@ -63,9 +62,9 @@ exports[`Slider component
             </span>
           </div>
           <div
+            aria-hidden="true"
             class="Slider-label"
             data-test="DesignSystem-MultiSlider-Label"
-            role="button"
             style="left: 20.00%;"
           >
             <span
@@ -79,9 +78,9 @@ exports[`Slider component
             </span>
           </div>
           <div
+            aria-hidden="true"
             class="Slider-label"
             data-test="DesignSystem-MultiSlider-Label"
-            role="button"
             style="left: 30.00%;"
           >
             <span
@@ -95,9 +94,9 @@ exports[`Slider component
             </span>
           </div>
           <div
+            aria-hidden="true"
             class="Slider-label"
             data-test="DesignSystem-MultiSlider-Label"
-            role="button"
             style="left: 40.00%;"
           >
             <span
@@ -111,9 +110,9 @@ exports[`Slider component
             </span>
           </div>
           <div
+            aria-hidden="true"
             class="Slider-label"
             data-test="DesignSystem-MultiSlider-Label"
-            role="button"
             style="left: 50.00%;"
           >
             <span
@@ -127,9 +126,9 @@ exports[`Slider component
             </span>
           </div>
           <div
+            aria-hidden="true"
             class="Slider-label"
             data-test="DesignSystem-MultiSlider-Label"
-            role="button"
             style="left: 60.00%;"
           >
             <span
@@ -143,9 +142,9 @@ exports[`Slider component
             </span>
           </div>
           <div
+            aria-hidden="true"
             class="Slider-label"
             data-test="DesignSystem-MultiSlider-Label"
-            role="button"
             style="left: 70.00%;"
           >
             <span
@@ -159,9 +158,9 @@ exports[`Slider component
             </span>
           </div>
           <div
+            aria-hidden="true"
             class="Slider-label"
             data-test="DesignSystem-MultiSlider-Label"
-            role="button"
             style="left: 80.00%;"
           >
             <span
@@ -175,9 +174,9 @@ exports[`Slider component
             </span>
           </div>
           <div
+            aria-hidden="true"
             class="Slider-label"
             data-test="DesignSystem-MultiSlider-Label"
-            role="button"
             style="left: 90.00%;"
           >
             <span
@@ -191,9 +190,9 @@ exports[`Slider component
             </span>
           </div>
           <div
+            aria-hidden="true"
             class="Slider-label"
             data-test="DesignSystem-MultiSlider-Label"
-            role="button"
             style="left: 100.00%;"
           >
             <span
@@ -244,10 +243,9 @@ exports[`Slider component
         class="Slider-wrapper"
       >
         <div
-          aria-label="Slider track"
+          aria-hidden="true"
           class="Slider-track"
           data-test="DesignSystem-MultiSlider-Slider-Track"
-          role="button"
         >
           <div
             class="Slider-progress Slider-progress--inRange"
@@ -262,9 +260,9 @@ exports[`Slider component
           class="Slider-axis"
         >
           <div
+            aria-hidden="true"
             class="Slider-label"
             data-test="DesignSystem-MultiSlider-Label"
-            role="button"
             style="left: 0.00%;"
           >
             <span
@@ -278,9 +276,9 @@ exports[`Slider component
             </span>
           </div>
           <div
+            aria-hidden="true"
             class="Slider-label"
             data-test="DesignSystem-MultiSlider-Label"
-            role="button"
             style="left: 10.00%;"
           >
             <span
@@ -294,9 +292,9 @@ exports[`Slider component
             </span>
           </div>
           <div
+            aria-hidden="true"
             class="Slider-label"
             data-test="DesignSystem-MultiSlider-Label"
-            role="button"
             style="left: 20.00%;"
           >
             <span
@@ -310,9 +308,9 @@ exports[`Slider component
             </span>
           </div>
           <div
+            aria-hidden="true"
             class="Slider-label"
             data-test="DesignSystem-MultiSlider-Label"
-            role="button"
             style="left: 30.00%;"
           >
             <span
@@ -326,9 +324,9 @@ exports[`Slider component
             </span>
           </div>
           <div
+            aria-hidden="true"
             class="Slider-label"
             data-test="DesignSystem-MultiSlider-Label"
-            role="button"
             style="left: 40.00%;"
           >
             <span
@@ -342,9 +340,9 @@ exports[`Slider component
             </span>
           </div>
           <div
+            aria-hidden="true"
             class="Slider-label"
             data-test="DesignSystem-MultiSlider-Label"
-            role="button"
             style="left: 50.00%;"
           >
             <span
@@ -358,9 +356,9 @@ exports[`Slider component
             </span>
           </div>
           <div
+            aria-hidden="true"
             class="Slider-label"
             data-test="DesignSystem-MultiSlider-Label"
-            role="button"
             style="left: 60.00%;"
           >
             <span
@@ -374,9 +372,9 @@ exports[`Slider component
             </span>
           </div>
           <div
+            aria-hidden="true"
             class="Slider-label"
             data-test="DesignSystem-MultiSlider-Label"
-            role="button"
             style="left: 70.00%;"
           >
             <span
@@ -390,9 +388,9 @@ exports[`Slider component
             </span>
           </div>
           <div
+            aria-hidden="true"
             class="Slider-label"
             data-test="DesignSystem-MultiSlider-Label"
-            role="button"
             style="left: 80.00%;"
           >
             <span
@@ -406,9 +404,9 @@ exports[`Slider component
             </span>
           </div>
           <div
+            aria-hidden="true"
             class="Slider-label"
             data-test="DesignSystem-MultiSlider-Label"
-            role="button"
             style="left: 90.00%;"
           >
             <span
@@ -422,9 +420,9 @@ exports[`Slider component
             </span>
           </div>
           <div
+            aria-hidden="true"
             class="Slider-label"
             data-test="DesignSystem-MultiSlider-Label"
-            role="button"
             style="left: 100.00%;"
           >
             <span

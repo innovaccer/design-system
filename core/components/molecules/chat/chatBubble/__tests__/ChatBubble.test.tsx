@@ -85,11 +85,15 @@ describe('ChatBubble Component type: Incoming', () => {
       </Chat>
     );
 
+    // Action bar is always in the DOM; wrapper collapses when hidden
+    const actionBarEl = getByTestId('DesignSystem-IncomingChatBubble-ActionBar');
+    expect(actionBarEl.parentElement).toHaveClass('ChatBubble-actionBarWrapper--hidden');
+
     fireEvent.mouseEnter(getByTestId('DesignSystem-IncomingChatBubble-Wrapper'));
-    expect(getByTestId('DesignSystem-IncomingChatBubble-ActionBar')).toBeInTheDocument();
+    expect(actionBarEl.parentElement).not.toHaveClass('ChatBubble-actionBarWrapper--hidden');
 
     fireEvent.mouseLeave(getByTestId('DesignSystem-IncomingChatBubble-Wrapper'));
-    expect(screen.queryByTestId('DesignSystem-IncomingChatBubble-ActionBar')).not.toBeInTheDocument();
+    expect(actionBarEl.parentElement).toHaveClass('ChatBubble-actionBarWrapper--hidden');
   });
 
   it('applies custom className to incoming chat bubble', () => {
@@ -140,11 +144,15 @@ describe('ChatBubble Component type: Outgoing', () => {
       </Chat>
     );
 
+    // Action bar is always in the DOM; wrapper collapses when hidden
+    const actionBarEl = getByTestId('DesignSystem-OutgoingChatBubble-ActionBar');
+    expect(actionBarEl.parentElement).toHaveClass('ChatBubble-actionBarWrapper--hidden');
+
     fireEvent.mouseEnter(getByTestId('DesignSystem-OutgoingChatBubble-Wrapper'));
-    expect(getByTestId('DesignSystem-OutgoingChatBubble-ActionBar')).toBeInTheDocument();
+    expect(actionBarEl.parentElement).not.toHaveClass('ChatBubble-actionBarWrapper--hidden');
 
     fireEvent.mouseLeave(getByTestId('DesignSystem-OutgoingChatBubble-Wrapper'));
-    expect(screen.queryByTestId('DesignSystem-OutgoingChatBubble-ActionBar')).not.toBeInTheDocument();
+    expect(actionBarEl.parentElement).toHaveClass('ChatBubble-actionBarWrapper--hidden');
   });
 
   it('renders outgoing chat bubble with failed message correctly', () => {
@@ -195,5 +203,131 @@ describe('ChatBubble component a11y', () => {
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
+  });
+
+  it('incoming bubble has role="article"', () => {
+    const { getByTestId } = render(
+      <Chat>
+        <Chat.ChatBubble type="incoming" incomingOptions={incomingOptions}>
+          {chatMessage}
+        </Chat.ChatBubble>
+      </Chat>
+    );
+    expect(getByTestId('DesignSystem-ChatBubble-IncomingWrapper')).toHaveAttribute('role', 'article');
+  });
+
+  it('incoming bubble uses consumer-provided aria-label', () => {
+    const { getByTestId } = render(
+      <Chat>
+        <Chat.ChatBubble type="incoming" incomingOptions={{ ...incomingOptions, 'aria-label': 'Message from John' }}>
+          {chatMessage}
+        </Chat.ChatBubble>
+      </Chat>
+    );
+    expect(getByTestId('DesignSystem-ChatBubble-IncomingWrapper')).toHaveAttribute('aria-label', 'Message from John');
+  });
+
+  it('outgoing bubble has role="article"', () => {
+    const { getByTestId } = render(
+      <Chat>
+        <Chat.ChatBubble type="outgoing" outgoingOptions={outgoingOptions}>
+          {chatMessage}
+        </Chat.ChatBubble>
+      </Chat>
+    );
+    expect(getByTestId('DesignSystem-ChatBubble-OutgoingWrapper')).toHaveAttribute('role', 'article');
+  });
+
+  it('outgoing bubble uses consumer-provided aria-label', () => {
+    const { getByTestId } = render(
+      <Chat>
+        <Chat.ChatBubble type="outgoing" outgoingOptions={{ ...outgoingOptions, 'aria-label': 'Sent message' }}>
+          {chatMessage}
+        </Chat.ChatBubble>
+      </Chat>
+    );
+    expect(getByTestId('DesignSystem-ChatBubble-OutgoingWrapper')).toHaveAttribute('aria-label', 'Sent message');
+  });
+
+  it('row has no tabindex when no actionBar is provided (incoming)', () => {
+    const { getByTestId } = render(
+      <Chat>
+        <Chat.ChatBubble type="incoming">{chatMessage}</Chat.ChatBubble>
+      </Chat>
+    );
+    expect(getByTestId('DesignSystem-IncomingChatBubble-Wrapper')).not.toHaveAttribute('tabindex');
+  });
+
+  it('row has no tabindex when no actionBar is provided (outgoing)', () => {
+    const { getByTestId } = render(
+      <Chat>
+        <Chat.ChatBubble type="outgoing">{chatMessage}</Chat.ChatBubble>
+      </Chat>
+    );
+    expect(getByTestId('DesignSystem-OutgoingChatBubble-Wrapper')).not.toHaveAttribute('tabindex');
+  });
+
+  it('action bar is shown on focus and hidden only when focus leaves the row (incoming)', () => {
+    const actionBar = () => <button data-test="DesignSystem-IncomingChatBubble-ActionButton">React</button>;
+    const { getByTestId } = render(
+      <Chat>
+        <Chat.ChatBubble type="incoming" incomingOptions={{ actionBar }}>
+          {chatMessage}
+        </Chat.ChatBubble>
+      </Chat>
+    );
+    const row = getByTestId('DesignSystem-IncomingChatBubble-Wrapper');
+    // Row is no longer a tab stop — action bar buttons are the tab stops
+    expect(row).not.toHaveAttribute('tabindex');
+
+    const actionBarEl = getByTestId('DesignSystem-IncomingChatBubble-ActionBar');
+
+    // Initially hidden (wrapper collapsed)
+    expect(actionBarEl.parentElement).toHaveClass('ChatBubble-actionBarWrapper--hidden');
+
+    // Focus the row — action bar becomes visible
+    fireEvent.focus(row);
+    expect(actionBarEl.parentElement).not.toHaveClass('ChatBubble-actionBarWrapper--hidden');
+
+    // Blur toward a child inside the row — action bar must stay visible
+    const actionButton = getByTestId('DesignSystem-IncomingChatBubble-ActionButton');
+    fireEvent.blur(row, { relatedTarget: actionButton });
+    expect(actionBarEl.parentElement).not.toHaveClass('ChatBubble-actionBarWrapper--hidden');
+
+    // Blur toward an element outside the row — action bar is hidden again
+    fireEvent.blur(row, { relatedTarget: document.body });
+    expect(actionBarEl.parentElement).toHaveClass('ChatBubble-actionBarWrapper--hidden');
+  });
+
+  it('action bar is shown on focus and hidden only when focus leaves the row (outgoing)', () => {
+    const actionBar = () => <button data-test="DesignSystem-OutgoingChatBubble-ActionButton">React</button>;
+    const { getByTestId } = render(
+      <Chat>
+        <Chat.ChatBubble type="outgoing" outgoingOptions={{ actionBar }}>
+          {chatMessage}
+        </Chat.ChatBubble>
+      </Chat>
+    );
+    const row = getByTestId('DesignSystem-OutgoingChatBubble-Wrapper');
+    // Row is no longer a tab stop — action bar buttons are the tab stops
+    expect(row).not.toHaveAttribute('tabindex');
+
+    const actionBarEl = getByTestId('DesignSystem-OutgoingChatBubble-ActionBar');
+
+    // Initially hidden (wrapper collapsed)
+    expect(actionBarEl.parentElement).toHaveClass('ChatBubble-actionBarWrapper--hidden');
+
+    // Focus the row — action bar becomes visible
+    fireEvent.focus(row);
+    expect(actionBarEl.parentElement).not.toHaveClass('ChatBubble-actionBarWrapper--hidden');
+
+    // Blur toward a child inside the row — action bar must stay visible
+    const actionButton = getByTestId('DesignSystem-OutgoingChatBubble-ActionButton');
+    fireEvent.blur(row, { relatedTarget: actionButton });
+    expect(actionBarEl.parentElement).not.toHaveClass('ChatBubble-actionBarWrapper--hidden');
+
+    // Blur toward an element outside the row — action bar is hidden again
+    fireEvent.blur(row, { relatedTarget: document.body });
+    expect(actionBarEl.parentElement).toHaveClass('ChatBubble-actionBarWrapper--hidden');
   });
 });

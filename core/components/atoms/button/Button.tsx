@@ -2,8 +2,10 @@ import * as React from 'react';
 import { Text, Icon, Spinner, Tooltip } from '@/index';
 import classNames from 'classnames';
 import { BaseProps, BaseHtmlProps } from '@/utils/types';
+import isSpaceKey from '@/accessibility/utils/isSpaceKey';
 import { IconType } from '@/common.type';
 import styles from '@css/components/button.module.css';
+import uidGenerator from '@/utils/uidGenerator';
 
 export type ButtonType = 'button' | 'submit' | 'reset';
 export type ButtonAppearance = 'basic' | 'primary' | 'success' | 'alert' | 'transparent';
@@ -53,7 +55,7 @@ export interface ButtonProps extends BaseProps, BaseHtmlProps<HTMLButtonElement>
    */
   loading?: boolean;
   /**
-   * Adds title to `Button` when only icon is present
+   * Text to be displayed in the tooltip. For disabled buttons, it additionally renders an info affordance icon. For icon-only buttons, it serves as the accessible label.
    */
   tooltip?: string;
   /**
@@ -128,27 +130,44 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
     className,
     tooltip,
     iconType,
+    onClick,
+    onKeyDown,
+    'aria-describedby': ariaDescribedBy,
     ...rest
   } = props;
+
+  const buttonLabel = children ? String(children) : undefined;
+  const isIconOnly = icon && !children;
+
+  const tooltipIdRef = React.useRef<string | null>(null);
+  if (tooltipIdRef.current === null && tooltip && !isIconOnly) {
+    tooltipIdRef.current = `Button-tooltip-${uidGenerator()}`;
+  }
+
+  const computedAriaDescribedBy =
+    [ariaDescribedBy, tooltip && !isIconOnly ? tooltipIdRef.current : undefined].filter(Boolean).join(' ') || undefined;
+
+  const computedAriaLabel =
+    props['aria-label'] ||
+    (loading && buttonLabel ? buttonLabel : undefined) ||
+    (isIconOnly && tooltip ? tooltip : undefined);
 
   const isOutlined = styleType === 'outlined' && appearance !== 'transparent';
   const isBasicOrTransparent = appearance === 'basic' || appearance === 'transparent';
 
-  const appearanceClass = isOutlined ? `Button-outlined--${appearance}` : `Button--${appearance}`;
-
   const getSpinnerAppearance = () => {
-    if (isOutlined) {
-      if (appearance === 'basic') return 'secondary';
-      if (appearance === 'alert') return 'alert';
-      return 'primary';
-    }
-    return isBasicOrTransparent ? 'secondary' : 'white';
+    if (appearance === 'alert') return 'alert';
+    if (appearance === 'primary' || appearance === 'success') return 'primary';
+    return 'secondary';
   };
 
   const spinnerAppearance = getSpinnerAppearance();
 
-  const selectedClass =
-    selected && isBasicOrTransparent ? (isOutlined ? 'Button-outlined--selected' : 'Button--selected') : '';
+  const isDisabledProp = disabled || loading;
+  const useAriaDisabled = Boolean(isDisabledProp && tooltip);
+  const nativeDisabled = useAriaDisabled ? undefined : isDisabledProp;
+  const renderedType = useAriaDisabled && (type === 'submit' || !type) ? 'button' : type;
+  const isDisabled = nativeDisabled || useAriaDisabled;
 
   const buttonClass = classNames(
     {
@@ -156,9 +175,16 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
       [styles['Button--expanded']]: expanded,
       [styles[`Button--${size}`]]: size,
       [styles[`Button--${size}Square`]]: !children,
-      [styles[appearanceClass]]: appearance,
-      [styles[selectedClass]]: selectedClass !== '',
+      [styles[`Button--${appearance}`]]: appearance && !isOutlined && !isDisabled,
+      [styles[`Button--${appearance}-disabled`]]: appearance && !isOutlined && isDisabled,
+      [styles['Button--selected']]: selected && isBasicOrTransparent && !isOutlined && !isDisabled,
+      [styles['Button--selected-disabled']]: selected && isBasicOrTransparent && !isOutlined && isDisabled,
       [styles[`Button--iconAlign-${iconAlign}`]]: children && iconAlign,
+      [styles['Button--disabled']]: isDisabled,
+      [styles[`Button-outlined--${appearance}`]]: appearance && isOutlined && !isDisabled,
+      [styles[`Button-outlined--${appearance}-disabled`]]: appearance && isOutlined && isDisabled,
+      [styles['Button-outlined--selected']]: selected && isBasicOrTransparent && isOutlined && !isDisabled,
+      [styles['Button-outlined--selected-disabled']]: selected && isBasicOrTransparent && isOutlined && isDisabled,
     },
     className
   );
@@ -166,6 +192,9 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
   const iconClass = classNames({
     [styles['Button-icon']]: true,
     [styles[`Button-icon--${iconAlign}`]]: children && iconAlign,
+    [`mr-3`]: children && iconAlign === 'left' && size === 'tiny',
+    [`ml-3`]: children && iconAlign === 'right' && size === 'tiny',
+
     [styles[`Button-regularIcon--${iconAlign}`]]: children && iconAlign && size === 'regular' && !expanded,
   });
 
@@ -174,20 +203,62 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
     [styles['Button-text--hidden']]: true,
   });
 
+  const infoIconClass = classNames({
+    [styles['Button-infoIcon']]: true,
+    [styles[`Button-infoIcon--${appearance}`]]: appearance && !isOutlined,
+    [styles[`Button-infoIcon-outlined--${appearance}`]]: appearance && isOutlined,
+  });
+
+  const infoIconWrapperClass = classNames({
+    [styles['Button-infoIconWrapper']]: true,
+    [styles[`Button-infoIconWrapper--${appearance}`]]: appearance && !isOutlined,
+    [styles[`Button-infoIconWrapper-outlined--${appearance}`]]: appearance && isOutlined,
+    [styles['Button-infoIconWrapper--iconOnly']]: !children,
+    [styles['Button-infoIconWrapper--iconOnly-transparent']]: !children && appearance === 'transparent',
+  });
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>) => {
+    if (useAriaDisabled && (event.key === 'Enter' || isSpaceKey(event))) {
+      event.preventDefault();
+      event.stopPropagation();
+      return;
+    }
+    if (onKeyDown) {
+      onKeyDown(event);
+    }
+  };
+
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    if (useAriaDisabled) {
+      event.preventDefault();
+      event.stopPropagation();
+      return;
+    }
+    if (onClick) {
+      onClick(event);
+    }
+  };
+
   const spinnerSize = size === 'large' && children ? 'small' : 'xsmall';
   const iconSize = size === 'tiny' ? 14 : largeIcon && !children ? sizeMapping[size] + 4 : sizeMapping[size];
+
+  const showInfoAffordance = disabled && tooltip && !loading;
 
   return (
     <button
       data-test="DesignSystem-Button"
       ref={ref}
-      type={type}
+      type={renderedType}
       className={buttonClass}
-      disabled={disabled || loading}
+      disabled={nativeDisabled}
+      aria-disabled={useAriaDisabled ? true : undefined}
+      aria-describedby={computedAriaDescribedBy}
       tabIndex={tabIndex}
       aria-busy={loading || undefined}
-      aria-label={props['aria-label'] || (!children && tooltip ? tooltip : undefined)}
-      aria-pressed={selected}
+      aria-label={computedAriaLabel}
+      aria-pressed={typeof selected === 'boolean' && isBasicOrTransparent ? selected : undefined}
+      onClick={handleClick}
+      onKeyDown={handleKeyDown}
       {...rest}
     >
       {loading ? (
@@ -208,17 +279,35 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
             </div>
           )}
           {children && <span className={styles['Button-text']}>{children}</span>}
+          {showInfoAffordance && (
+            <span className={infoIconWrapperClass}>
+              <Icon
+                name="info_outline"
+                type="outlined"
+                size={12}
+                className={infoIconClass}
+                aria-hidden="true"
+                data-test="DesignSystem-Button--Info-Icon"
+              />
+            </span>
+          )}
         </>
+      )}
+      {tooltip && !isIconOnly && (
+        <span id={tooltipIdRef.current as string} className={styles['Button-srOnly']}>
+          {tooltip}
+        </span>
       )}
     </button>
   );
 });
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
-  const { icon, tooltip, children } = props;
+  const { tooltip, expanded } = props;
+  const triggerClass = expanded ? 'w-100' : 'flex-grow-0';
 
-  return icon && tooltip && !children ? (
-    <Tooltip tooltip={tooltip}>
+  return tooltip ? (
+    <Tooltip tooltip={tooltip} aria-hidden="true" triggerClass={triggerClass}>
       <ButtonElement {...props} ref={ref} />
     </Tooltip>
   ) : (

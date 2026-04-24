@@ -91,7 +91,7 @@ exports[`TS renders children 1`] = `
       <input
         class="Checkbox-input"
         data-test="DesignSystem-Checkbox-InputBox"
-        id="undefined-undefined-Test-uid"
+        id="Test-uid"
         tabindex="0"
         type="checkbox"
         value=""
@@ -123,26 +123,34 @@ exports[`TS renders children 1`] = `
           <div
             class="Calendar-header--large"
           >
-            <button
-              aria-label="Previous month"
-              class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
-              data-test="DesignSystem-Button"
-              tabindex="0"
-              type="button"
+            <div
+              class="Calendar-headerIcon Calendar-headerIcon--prev"
             >
               <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
+                class="PopperWrapper-trigger"
               >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 16px; width: 16px;"
+                <button
+                  aria-label="Previous month"
+                  class="Button Button--regular Button--regularSquare Button--basic"
+                  data-test="DesignSystem-Button"
+                  tabindex="0"
+                  type="button"
                 >
-                  arrow_back
-                </i>
+                  <div
+                    class="Button-icon"
+                    data-test="DesignSystem-Button--Icon-Wrapper"
+                  >
+                    <i
+                      class="material-symbols material-symbols-rounded Icon"
+                      data-test="DesignSystem-Button--Icon"
+                      style="font-size: 16px; width: 16px;"
+                    >
+                      arrow_back
+                    </i>
+                  </div>
+                </button>
               </div>
-            </button>
+            </div>
             <div
               class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
             >
@@ -185,26 +193,34 @@ exports[`TS renders children 1`] = `
                 </i>
               </button>
             </div>
-            <button
-              aria-label="Next month"
-              class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
-              data-test="DesignSystem-Button"
-              tabindex="0"
-              type="button"
+            <div
+              class="Calendar-headerIcon Calendar-headerIcon--next"
             >
               <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
+                class="PopperWrapper-trigger"
               >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 16px; width: 16px;"
+                <button
+                  aria-label="Next month"
+                  class="Button Button--regular Button--regularSquare Button--basic"
+                  data-test="DesignSystem-Button"
+                  tabindex="0"
+                  type="button"
                 >
-                  arrow_forward
-                </i>
+                  <div
+                    class="Button-icon"
+                    data-test="DesignSystem-Button--Icon-Wrapper"
+                  >
+                    <i
+                      class="material-symbols material-symbols-rounded Icon"
+                      data-test="DesignSystem-Button--Icon"
+                      style="font-size: 16px; width: 16px;"
+                    >
+                      arrow_forward
+                    </i>
+                  </div>
+                </button>
               </div>
-            </button>
+            </div>
           </div>
           <div
             class="Calendar-body"
@@ -1615,7 +1631,11 @@ exports[`TS renders children 1`] = `
     tabindex="0"
     type="button"
   >
-    Hello World!
+    <span
+      class="Link-text Link-text--default"
+    >
+      Hello World!
+    </span>
   </button>
   <div
     class="Message Message--info"
@@ -1683,7 +1703,7 @@ exports[`TS renders children 1`] = `
       <input
         class="Radio-input"
         data-test="DesignSystem-Radio-Input"
-        id="Hello World!-undefined-Test-uid"
+        id="Hello World!-Test-uid"
         name="Hello World!"
         tabindex="0"
         type="radio"
@@ -1750,10 +1770,9 @@ exports[`TS renders children 1`] = `
       class="Slider-wrapper"
     >
       <div
-        aria-label="Slider track"
+        aria-hidden="true"
         class="Slider-track"
         data-test="DesignSystem-MultiSlider-Slider-Track"
-        role="button"
       >
         <div
           class="Slider-progress Slider-progress--inRange"
@@ -1768,9 +1787,9 @@ exports[`TS renders children 1`] = `
         class="Slider-axis"
       >
         <div
+          aria-hidden="true"
           class="Slider-label"
           data-test="DesignSystem-MultiSlider-Label"
-          role="button"
           style="left: 0.00%;"
         >
           <span
@@ -1784,9 +1803,9 @@ exports[`TS renders children 1`] = `
           </span>
         </div>
         <div
+          aria-hidden="true"
           class="Slider-label"
           data-test="DesignSystem-MultiSlider-Label"
-          role="button"
           style="left: 10.00%;"
         >
           <span
@@ -1800,9 +1819,9 @@ exports[`TS renders children 1`] = `
           </span>
         </div>
         <div
+          aria-hidden="true"
           class="Slider-label"
           data-test="DesignSystem-MultiSlider-Label"
-          role="button"
           style="left: 20.00%;"
         >
           <span
@@ -1816,9 +1835,9 @@ exports[`TS renders children 1`] = `
           </span>
         </div>
         <div
+          aria-hidden="true"
           class="Slider-label"
           data-test="DesignSystem-MultiSlider-Label"
-          role="button"
           style="left: 30.00%;"
         >
           <span
@@ -1832,9 +1851,9 @@ exports[`TS renders children 1`] = `
           </span>
         </div>
         <div
+          aria-hidden="true"
           class="Slider-label"
           data-test="DesignSystem-MultiSlider-Label"
-          role="button"
           style="left: 40.00%;"
         >
           <span
@@ -1848,9 +1867,9 @@ exports[`TS renders children 1`] = `
           </span>
         </div>
         <div
+          aria-hidden="true"
           class="Slider-label"
           data-test="DesignSystem-MultiSlider-Label"
-          role="button"
           style="left: 50.00%;"
         >
           <span
@@ -1864,9 +1883,9 @@ exports[`TS renders children 1`] = `
           </span>
         </div>
         <div
+          aria-hidden="true"
           class="Slider-label"
           data-test="DesignSystem-MultiSlider-Label"
-          role="button"
           style="left: 60.00%;"
         >
           <span
@@ -1880,9 +1899,9 @@ exports[`TS renders children 1`] = `
           </span>
         </div>
         <div
+          aria-hidden="true"
           class="Slider-label"
           data-test="DesignSystem-MultiSlider-Label"
-          role="button"
           style="left: 70.00%;"
         >
           <span
@@ -1896,9 +1915,9 @@ exports[`TS renders children 1`] = `
           </span>
         </div>
         <div
+          aria-hidden="true"
           class="Slider-label"
           data-test="DesignSystem-MultiSlider-Label"
-          role="button"
           style="left: 80.00%;"
         >
           <span
@@ -1912,9 +1931,9 @@ exports[`TS renders children 1`] = `
           </span>
         </div>
         <div
+          aria-hidden="true"
           class="Slider-label"
           data-test="DesignSystem-MultiSlider-Label"
-          role="button"
           style="left: 90.00%;"
         >
           <span
@@ -1928,9 +1947,9 @@ exports[`TS renders children 1`] = `
           </span>
         </div>
         <div
+          aria-hidden="true"
           class="Slider-label"
           data-test="DesignSystem-MultiSlider-Label"
-          role="button"
           style="left: 100.00%;"
         >
           <span
@@ -1972,10 +1991,9 @@ exports[`TS renders children 1`] = `
       class="Slider-wrapper"
     >
       <div
-        aria-label="Slider track"
+        aria-hidden="true"
         class="Slider-track"
         data-test="DesignSystem-MultiSlider-Slider-Track"
-        role="button"
       >
         <div
           class="Slider-progress"
@@ -1994,9 +2012,9 @@ exports[`TS renders children 1`] = `
         class="Slider-axis"
       >
         <div
+          aria-hidden="true"
           class="Slider-label"
           data-test="DesignSystem-MultiSlider-Label"
-          role="button"
           style="left: 0.00%;"
         >
           <span
@@ -2010,9 +2028,9 @@ exports[`TS renders children 1`] = `
           </span>
         </div>
         <div
+          aria-hidden="true"
           class="Slider-label"
           data-test="DesignSystem-MultiSlider-Label"
-          role="button"
           style="left: 10.00%;"
         >
           <span
@@ -2026,9 +2044,9 @@ exports[`TS renders children 1`] = `
           </span>
         </div>
         <div
+          aria-hidden="true"
           class="Slider-label"
           data-test="DesignSystem-MultiSlider-Label"
-          role="button"
           style="left: 20.00%;"
         >
           <span
@@ -2042,9 +2060,9 @@ exports[`TS renders children 1`] = `
           </span>
         </div>
         <div
+          aria-hidden="true"
           class="Slider-label"
           data-test="DesignSystem-MultiSlider-Label"
-          role="button"
           style="left: 30.00%;"
         >
           <span
@@ -2058,9 +2076,9 @@ exports[`TS renders children 1`] = `
           </span>
         </div>
         <div
+          aria-hidden="true"
           class="Slider-label"
           data-test="DesignSystem-MultiSlider-Label"
-          role="button"
           style="left: 40.00%;"
         >
           <span
@@ -2074,9 +2092,9 @@ exports[`TS renders children 1`] = `
           </span>
         </div>
         <div
+          aria-hidden="true"
           class="Slider-label"
           data-test="DesignSystem-MultiSlider-Label"
-          role="button"
           style="left: 50.00%;"
         >
           <span
@@ -2090,9 +2108,9 @@ exports[`TS renders children 1`] = `
           </span>
         </div>
         <div
+          aria-hidden="true"
           class="Slider-label"
           data-test="DesignSystem-MultiSlider-Label"
-          role="button"
           style="left: 60.00%;"
         >
           <span
@@ -2106,9 +2124,9 @@ exports[`TS renders children 1`] = `
           </span>
         </div>
         <div
+          aria-hidden="true"
           class="Slider-label"
           data-test="DesignSystem-MultiSlider-Label"
-          role="button"
           style="left: 70.00%;"
         >
           <span
@@ -2122,9 +2140,9 @@ exports[`TS renders children 1`] = `
           </span>
         </div>
         <div
+          aria-hidden="true"
           class="Slider-label"
           data-test="DesignSystem-MultiSlider-Label"
-          role="button"
           style="left: 80.00%;"
         >
           <span
@@ -2138,9 +2156,9 @@ exports[`TS renders children 1`] = `
           </span>
         </div>
         <div
+          aria-hidden="true"
           class="Slider-label"
           data-test="DesignSystem-MultiSlider-Label"
-          role="button"
           style="left: 90.00%;"
         >
           <span
@@ -2154,9 +2172,9 @@ exports[`TS renders children 1`] = `
           </span>
         </div>
         <div
+          aria-hidden="true"
           class="Slider-label"
           data-test="DesignSystem-MultiSlider-Label"
-          role="button"
           style="left: 100.00%;"
         >
           <span
@@ -2359,7 +2377,7 @@ exports[`TS renders children 1`] = `
     >
       <button
         aria-label="First page"
-        class="Button Button--regular Button--regularSquare Button--transparent Pagination-button"
+        class="Button Button--regular Button--regularSquare Button--transparent-disabled Button--disabled Pagination-button"
         data-test="DesignSystem-Pagination--FirstButton"
         disabled=""
         tabindex="0"
@@ -2379,7 +2397,7 @@ exports[`TS renders children 1`] = `
       </button>
       <button
         aria-label="Previous page"
-        class="Button Button--regular Button--regularSquare Button--basic ml-4 mr-3 Pagination-button"
+        class="Button Button--regular Button--regularSquare Button--basic-disabled Button--disabled ml-4 mr-3 Pagination-button"
         data-test="DesignSystem-Pagination--PrevButton"
         disabled=""
         tabindex="0"
@@ -2403,7 +2421,7 @@ exports[`TS renders children 1`] = `
     >
       <button
         aria-label="Next page"
-        class="Button Button--regular Button--regularSquare Button--basic ml-3 mr-4 Pagination-button"
+        class="Button Button--regular Button--regularSquare Button--basic-disabled Button--disabled ml-3 mr-4 Pagination-button"
         data-test="DesignSystem-Pagination--NextButton"
         disabled=""
         tabindex="0"
@@ -2423,7 +2441,7 @@ exports[`TS renders children 1`] = `
       </button>
       <button
         aria-label="Last page"
-        class="Button Button--regular Button--regularSquare Button--transparent Pagination-button"
+        class="Button Button--regular Button--regularSquare Button--transparent-disabled Button--disabled Pagination-button"
         data-test="DesignSystem-Pagination--LastButton"
         disabled=""
         tabindex="0"
@@ -2522,26 +2540,34 @@ exports[`TS renders children 1`] = `
       <div
         class="Calendar-header--large"
       >
-        <button
-          aria-label="Previous month"
-          class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
-          data-test="DesignSystem-Button"
-          tabindex="0"
-          type="button"
+        <div
+          class="Calendar-headerIcon Calendar-headerIcon--prev"
         >
           <div
-            class="Button-icon"
-            data-test="DesignSystem-Button--Icon-Wrapper"
+            class="PopperWrapper-trigger"
           >
-            <i
-              class="material-symbols material-symbols-rounded Icon"
-              data-test="DesignSystem-Button--Icon"
-              style="font-size: 16px; width: 16px;"
+            <button
+              aria-label="Previous month"
+              class="Button Button--regular Button--regularSquare Button--basic"
+              data-test="DesignSystem-Button"
+              tabindex="0"
+              type="button"
             >
-              arrow_back
-            </i>
+              <div
+                class="Button-icon"
+                data-test="DesignSystem-Button--Icon-Wrapper"
+              >
+                <i
+                  class="material-symbols material-symbols-rounded Icon"
+                  data-test="DesignSystem-Button--Icon"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  arrow_back
+                </i>
+              </div>
+            </button>
           </div>
-        </button>
+        </div>
         <div
           class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
         >
@@ -2570,26 +2596,34 @@ exports[`TS renders children 1`] = `
             </h5>
           </button>
         </div>
-        <button
-          aria-label="Next month"
-          class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
-          data-test="DesignSystem-Button"
-          tabindex="0"
-          type="button"
+        <div
+          class="Calendar-headerIcon Calendar-headerIcon--next"
         >
           <div
-            class="Button-icon"
-            data-test="DesignSystem-Button--Icon-Wrapper"
+            class="PopperWrapper-trigger"
           >
-            <i
-              class="material-symbols material-symbols-rounded Icon"
-              data-test="DesignSystem-Button--Icon"
-              style="font-size: 16px; width: 16px;"
+            <button
+              aria-label="Next month"
+              class="Button Button--regular Button--regularSquare Button--basic"
+              data-test="DesignSystem-Button"
+              tabindex="0"
+              type="button"
             >
-              arrow_forward
-            </i>
+              <div
+                class="Button-icon"
+                data-test="DesignSystem-Button--Icon-Wrapper"
+              >
+                <i
+                  class="material-symbols material-symbols-rounded Icon"
+                  data-test="DesignSystem-Button--Icon"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  arrow_forward
+                </i>
+              </div>
+            </button>
           </div>
-        </button>
+        </div>
       </div>
       <div
         class="Calendar-body"
@@ -3792,12 +3826,15 @@ exports[`TS renders children 1`] = `
     </div>
   </div>
   <div
+    aria-label="Data grid"
     class="Grid Grid--data Grid--standard"
     data-test="DesignSystem-Grid"
+    role="grid"
   >
     <div
       class="Grid-head"
       data-test="DesignSystem-GridHead-wrapper"
+      role="rowgroup"
     >
       <div
         class="Grid-row Grid-row--head"
@@ -3805,7 +3842,12 @@ exports[`TS renders children 1`] = `
     </div>
     <div
       class="Grid-body"
-    />
+    >
+      <div
+        class="Grid-rowGroup"
+        role="rowgroup"
+      />
+    </div>
   </div>
   <div
     class="Table"
@@ -3815,8 +3857,10 @@ exports[`TS renders children 1`] = `
       class="Table-grid"
     >
       <div
+        aria-label="Data grid"
         class="Grid Grid--data Grid--standard"
         data-test="DesignSystem-Grid"
+        role="grid"
       >
         <div
           class="d-flex justify-content-center align-item-center w-100 h-100"
@@ -3851,12 +3895,15 @@ exports[`TS renders children 1`] = `
       class="Table-grid"
     >
       <div
+        aria-label="Data grid"
         class="Grid Grid--data Grid--standard"
         data-test="DesignSystem-Grid"
+        role="grid"
       >
         <div
           class="Grid-head"
           data-test="DesignSystem-GridHead-wrapper"
+          role="rowgroup"
         >
           <div
             class="Grid-row Grid-row--head"

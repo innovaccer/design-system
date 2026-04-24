@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { Text, InlineMessage, Button } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import isSpaceKey from '@/accessibility/utils/isSpaceKey';
 import FileUploaderStatus from './FileUploaderStatus';
 import { FileStatus } from '@/common.type';
 import styles from '@css/components/fileUploader.module.css';
@@ -49,7 +50,7 @@ export const FileUploaderItem = (props: FileUploaderItemProps) => {
   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
     if (!isClickable) return;
 
-    if (event.key === 'Enter' || event.key === ' ') {
+    if (event.key === 'Enter' || isSpaceKey(event)) {
       event.preventDefault();
       onClick?.(file, id);
     }

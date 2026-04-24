@@ -192,7 +192,7 @@ exports[`Menu component with Trigger snapshot
       <button
         aria-controls="menu-Test-uid"
         aria-expanded="false"
-        aria-haspopup="true"
+        aria-haspopup="menu"
         aria-label="Open menu"
         class="Button Button--regular Button--regularSquare Button--basic"
         data-test="DesignSystem-Menu-Trigger"
@@ -228,7 +228,7 @@ exports[`Menu component with Trigger snapshot
       <button
         aria-controls="menu-Test-uid"
         aria-expanded="true"
-        aria-haspopup="true"
+        aria-haspopup="menu"
         aria-label="Open menu"
         class="Button Button--regular Button--regularSquare Button--basic Menu-Trigger--active"
         data-test="DesignSystem-Menu-Trigger"

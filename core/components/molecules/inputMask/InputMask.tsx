@@ -4,6 +4,7 @@ import { BaseProps, Validators, Mask } from '@/utils/types';
 import { Input, Utils, HelpText } from '@/index';
 import { InputProps } from '@/index.type';
 import { getDefaultValue } from './utilites';
+import uidGenerator from '@/utils/uidGenerator';
 
 export interface MaskProps extends BaseProps {
   /**
@@ -49,6 +50,13 @@ export interface MaskProps extends BaseProps {
    * Add text below `input`
    */
   helpText?: string;
+  /**
+   * Use the default placeholder value as the base when old value is empty on change.
+   * Set internally by picker components (TimePicker, DatePicker) that initialize with an empty value.
+   * @default false
+   * @ignore
+   */
+  useDefaultValueOnEmpty?: boolean;
 }
 export type InputMaskProps = InputProps & MaskProps;
 type SelectionPos = {
@@ -74,6 +82,7 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
     placeholderChar = '_',
     validators = [],
     clearOnEmptyBlur = true,
+    useDefaultValueOnEmpty = false,
     defaultValue,
     mask,
     error,
@@ -85,11 +94,17 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
     onFocus,
     onClear,
     className,
-    id,
     helpText,
     label,
+    'aria-describedby': ariaDescribedBy,
     ...rest
   } = props;
+
+  const helpTextIdRef = React.useRef<string | null>(null);
+  if (helpTextIdRef.current === null) {
+    helpTextIdRef.current = `InputMask-helpText-${uidGenerator()}`;
+  }
+  const helpTextId = helpTextIdRef.current;
 
   const isEditable = React.useCallback((pos: number) => typeof mask[pos] === 'object', [mask]);
 
@@ -269,7 +284,7 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
       enteredVal = inputVal.slice(start, end);
       updatedVal = insertAtIndex(enteredVal, start);
       let oldValue = value;
-      if (oldValue.length === 0 && (id === 'parent-TimePicker' || id === 'parent-DatePicker')) {
+      if (oldValue.length === 0 && useDefaultValueOnEmpty) {
         oldValue = defaultPlaceholderValue;
       }
       insertedStringLength = updatedVal.length;
@@ -388,6 +403,9 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
   );
 
   const isValueEqualPlaceholder = value === defaultPlaceholderValue;
+  const helpMessage = error ? caption : helpText;
+  const resolvedDescribedBy =
+    [ariaDescribedBy, helpMessage ? helpTextId : undefined].filter(Boolean).join(' ') || undefined;
 
   return (
     <div className={classes} data-test="DesignSystem-InputMask--Wrapper">
@@ -395,7 +413,6 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
         label={label}
         aria-label={label}
         {...rest}
-        id={id !== 'parent-TimePicker' && id !== 'parent-DatePicker' ? id : undefined}
         value={value}
         error={error}
         required={required}
@@ -406,8 +423,9 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
         onPaste={onPasteHandler}
         autoComplete={'off'}
         ref={ref}
+        aria-describedby={resolvedDescribedBy}
       />
-      <HelpText message={error ? caption : helpText} error={error} />
+      <HelpText id={helpTextId} message={helpMessage} error={error} />
     </div>
   );
 });

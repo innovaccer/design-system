@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { SharedProps } from './ChatMessage';
+import isSpaceKey from '@/accessibility/utils/isSpaceKey';
 import styles from '@css/components/chat.module.css';
 
 export interface BoxProps extends BaseProps {
@@ -26,7 +27,7 @@ export const Box = (props: InternalBoxProps) => {
   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
     if (!isClickable) return;
 
-    if (event.key === 'Enter' || event.key === ' ') {
+    if (event.key === 'Enter' || isSpaceKey(event)) {
       event.preventDefault();
       onClick?.(event as unknown as React.MouseEvent<HTMLDivElement>);
     }
@@ -38,7 +39,7 @@ export const Box = (props: InternalBoxProps) => {
       [styles[`Box--${type}`]]: type,
       [styles['Box--typing']]: isTyping,
       [styles['Box--urgent']]: statusType === 'urgent',
-      [styles[`Box-${type}--withStatus`]]: withStatus || isTyping,
+      [styles[`Box-${type}--withStatus`]]: type && (withStatus || isTyping),
     },
     className
   );

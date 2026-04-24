@@ -9,7 +9,7 @@
   height: var(--spacing-10);
   border-radius: var(--border-radius-full);
   margin: 0 var(--spacing-20);
-  background: var(--inverse-lightest);
+  background: var(--inverse-lighter);
 }
 
 .ChatBubble-box--noSuccess {
@@ -50,4 +50,9 @@
 
 .ChatBubble-actionBarWrapper {
   flex: 0 0 auto;
+}
+
+.ChatBubble-actionBarWrapper--hidden {
+  width: 0;
+  overflow: hidden;
 }

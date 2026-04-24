@@ -1,6 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { Button, Icon, Text } from '@/index';
+import isSpaceKey from '@/accessibility/utils/isSpaceKey';
 import {
   getTextAppearance,
   getIconAppearance,
@@ -142,7 +143,7 @@ export const VerticalNavigation = (props: VerticalNavigationProps) => {
     const handleMenuKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
       if (menu.disabled) return;
 
-      if (event.key === 'Enter' || event.key === ' ') {
+      if (event.key === 'Enter' || isSpaceKey(event)) {
         event.preventDefault();
         onClickHandler(menu);
       }
@@ -200,7 +201,7 @@ export const VerticalNavigation = (props: VerticalNavigationProps) => {
               const handleSubMenuKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
                 if (subMenu.disabled) return;
 
-                if (event.key === 'Enter' || event.key === ' ') {
+                if (event.key === 'Enter' || isSpaceKey(event)) {
                   event.preventDefault();
                   onClickHandler(subMenu);
                 }

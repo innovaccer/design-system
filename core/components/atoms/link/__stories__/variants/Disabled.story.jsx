@@ -1,23 +1,50 @@
 import * as React from 'react';
-import { Link } from '@/index';
+import { Link, Flex } from '@/index';
 
 // CSF format story
 export const disabled = () => {
   return (
-    <div className="d-flex">
-      <Link href="http://innovaccer.com" disabled={true} aria-label="Disabled link">
-        Link Disabled
-      </Link>
+    <Flex direction="column" gap="spacing-60" className="d-inline-flex">
       <Link
-        href="http://innovaccer.com"
-        appearance="subtle"
+        aria-label="Disabled link"
         disabled={true}
-        className="ml-7"
-        aria-label="Disabled subtle link"
+        href="http://innovaccer.com"
+        tooltip="You must save changes before proceeding"
       >
-        Link Disabled
+        Default Regular Link
       </Link>
-    </div>
+
+      <Link
+        aria-label="Disabled link"
+        disabled={true}
+        appearance="subtle"
+        href="http://innovaccer.com"
+        tooltip="You must save changes before proceeding"
+      >
+        Subtle Regular Link
+      </Link>
+
+      <Link
+        aria-label="Disabled link"
+        disabled={true}
+        size="tiny"
+        href="http://innovaccer.com"
+        tooltip="You must save changes before proceeding"
+      >
+        Default Tiny Link
+      </Link>
+
+      <Link
+        aria-label="Disabled link"
+        disabled={true}
+        appearance="subtle"
+        size="tiny"
+        href="http://innovaccer.com"
+        tooltip="You must save changes before proceeding"
+      >
+        Subtle Tiny Link
+      </Link>
+    </Flex>
   );
 };
 

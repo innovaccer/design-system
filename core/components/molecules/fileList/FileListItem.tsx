@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { Text, InlineMessage } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import isSpaceKey from '@/accessibility/utils/isSpaceKey';
 import FileIcon from './FileIcon';
 import { FileStatus } from '@/common.type';
 import styles from '@css/components/fileList.module.css';
@@ -81,7 +82,7 @@ export const FileListItem = (props: FileListItemProps) => {
   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
     if (!onClick) return;
 
-    if (event.key === 'Enter' || event.key === ' ') {
+    if (event.key === 'Enter' || isSpaceKey(event)) {
       event.preventDefault();
       onClickHandler();
     }

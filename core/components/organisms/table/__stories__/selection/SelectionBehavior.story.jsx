@@ -11,6 +11,7 @@ export const selectionBehavior = () => {
     <div>
       <Card className="h-100 overflow-hidden">
         <Table
+          aria-label="User data table"
           loaderSchema={loaderSchema}
           fetchData={fetchData}
           withHeader={true}
@@ -265,6 +266,7 @@ const customCode = `
     <div>
       <Card className="h-100 overflow-hidden">
         <Table
+          aria-label="User data table"
           loaderSchema={loaderSchema}
           fetchData={fetchData}
           withHeader={true}

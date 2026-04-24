@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { scrollIntoView, _isEqual, _isSelectAllPresent, scrollToOptionIndex, groupListOptions } from './utility';
 import { Popover, Checkbox, Button, Text, Input } from '@/index';
+import isSpaceKey from '@/accessibility/utils/isSpaceKey';
 import { PopoverProps } from '@/index.type';
 import DropdownButton, { TriggerProps } from './DropdownButton';
 import Option, { OptionRendererProps, OptionSchema } from './option';
@@ -558,7 +559,7 @@ const DropdownList = (props: OptionsProps) => {
     const id = `${dropdownFieldIdsPrefixRef.current}-select-all`;
 
     const onSelectAllKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
-      if (event.key === 'Enter' || event.key === ' ') {
+      if (event.key === 'Enter' || isSpaceKey(event)) {
         event.preventDefault();
         const checkboxInput = event.currentTarget.querySelector('input[type="checkbox"]') as HTMLInputElement;
         if (checkboxInput) checkboxInput.click();

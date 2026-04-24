@@ -29,10 +29,15 @@ export interface DropzoneProps extends BaseProps, DropzoneBaseProps {
    * Link component to download sample file
    */
   sampleFileLink?: React.ReactNode;
+  /**
+   * Accessible label for the file upload zone announced by screen readers
+   * @default "File upload"
+   */
+  'aria-label'?: string;
 }
 
 export const Dropzone = (props: DropzoneProps) => {
-  const { type, sizeLabel, className, formatLabel, sampleFileLink, disabled } = props;
+  const { type, sizeLabel, className, formatLabel, sampleFileLink, disabled, 'aria-label': ariaLabel } = props;
 
   const { open, getRootProps, getInputProps, isDragActive, isDragReject, fileError } = DropzoneBase(props);
 
@@ -66,7 +71,6 @@ export const Dropzone = (props: DropzoneProps) => {
 
     const buttonAccessibilityProps = useAccessibilityProps({
       onClick: open,
-      'aria-label': 'Drag your files here or click to select files',
     });
 
     return (
@@ -87,7 +91,7 @@ export const Dropzone = (props: DropzoneProps) => {
             >
               browse files
             </Text>
-            <input {...getInputProps()} aria-label="Upload files" />
+            <input {...getInputProps()} />
           </span>
           {formatLabel && <Text appearance={disabled ? 'disabled' : 'subtle'}>{formatLabel}</Text>}
           {sizeLabel && <Text appearance={disabled ? 'disabled' : 'subtle'}>{sizeLabel}</Text>}
@@ -98,7 +102,18 @@ export const Dropzone = (props: DropzoneProps) => {
   };
 
   return (
-    <div {...getRootProps()} {...baseProps} className={DropzoneClass} data-test="DesignSystem-Dropzone">
+    <div
+      {...getRootProps()}
+      {...baseProps}
+      className={DropzoneClass}
+      data-test="DesignSystem-Dropzone"
+      role="group"
+      aria-label={ariaLabel || 'File upload'}
+      aria-disabled={disabled || undefined}
+    >
+      <span role="status" className={styles['Dropzone-srOnly']}>
+        {isDragActive && !isDragReject ? 'Ready to drop files' : ''}
+      </span>
       {renderDropzone()}
     </div>
   );
