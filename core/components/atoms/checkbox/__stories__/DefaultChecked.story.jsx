@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Checkbox } from '@/index';
 
 export const defaultChecked = () => (
-  <Checkbox aria-label="Emergency contact" label="Emergency contact" defaultChecked={true} />
+  <Checkbox id="emergency-contact" aria-label="Emergency contact" label="Emergency contact" defaultChecked={true} />
 );
 
 export default {

@@ -63,7 +63,8 @@ export interface CheckboxProps extends BaseProps, OmitNativeProps<HTMLInputEleme
    */
   error?: boolean;
   /**
-   * htmlFor label id for checkbox
+   * `id` for the underlying `<input>` element. When omitted, an id is auto-generated
+   * from `name` and `label`.
    */
   id?: string;
   /**
