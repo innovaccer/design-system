@@ -91,7 +91,7 @@ exports[`TS renders children 1`] = `
       <input
         class="Checkbox-input"
         data-test="DesignSystem-Checkbox-InputBox"
-        id="undefined-undefined-Test-uid"
+        id="Test-uid"
         tabindex="0"
         type="checkbox"
         value=""
@@ -1703,7 +1703,7 @@ exports[`TS renders children 1`] = `
       <input
         class="Radio-input"
         data-test="DesignSystem-Radio-Input"
-        id="Hello World!-undefined-Test-uid"
+        id="Hello World!-Test-uid"
         name="Hello World!"
         tabindex="0"
         type="radio"

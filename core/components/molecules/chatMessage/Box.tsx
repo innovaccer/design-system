@@ -39,7 +39,7 @@ export const Box = (props: InternalBoxProps) => {
       [styles[`Box--${type}`]]: type,
       [styles['Box--typing']]: isTyping,
       [styles['Box--urgent']]: statusType === 'urgent',
-      [styles[`Box-${type}--withStatus`]]: withStatus || isTyping,
+      [styles[`Box-${type}--withStatus`]]: type && (withStatus || isTyping),
     },
     className
   );

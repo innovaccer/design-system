@@ -92,7 +92,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
     className,
     checked: checkedProp,
     helpText,
-    id = `${name}-${label}-${uidGenerator()}`,
+    id = [name, label, uidGenerator()].filter(Boolean).join('-'),
     labelRef,
     wrapLabel,
     ['aria-describedby']: ariaDescribedby,
