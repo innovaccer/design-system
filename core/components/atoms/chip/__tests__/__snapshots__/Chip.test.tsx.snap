@@ -8,9 +8,8 @@ exports[`Chip component
     <div
       class="Chip-wrapper Chip Chip--Action Chip-size--regular"
       data-test="DesignSystem-Chip--GenericChip"
-      role="button"
       style="max-width: var(--spacing-640);"
-      tabindex="0"
+      tabindex="-1"
     />
   </div>
 </body>
@@ -24,9 +23,8 @@ exports[`Chip component
     <div
       class="Chip-wrapper Chip Chip--Action Chip-size--regular"
       data-test="DesignSystem-Chip--GenericChip"
-      role="button"
       style="max-width: var(--spacing-640);"
-      tabindex="0"
+      tabindex="-1"
     />
   </div>
 </body>
@@ -40,7 +38,6 @@ exports[`Chip component
     <div
       class="Chip-wrapper Chip Chip-Action--disabled Chip-size--regular"
       data-test="DesignSystem-Chip--GenericChip"
-      role="button"
       style="max-width: var(--spacing-640);"
       tabindex="-1"
     />
@@ -56,9 +53,8 @@ exports[`Chip component
     <div
       class="Chip-wrapper Chip Chip--Input Chip-size--regular"
       data-test="DesignSystem-Chip--GenericChip"
-      role="button"
       style="max-width: var(--spacing-640);"
-      tabindex="0"
+      tabindex="-1"
     />
   </div>
 </body>
@@ -72,9 +68,8 @@ exports[`Chip component
     <div
       class="Chip-wrapper Chip Chip--Input Chip-size--regular"
       data-test="DesignSystem-Chip--GenericChip"
-      role="button"
       style="max-width: var(--spacing-640);"
-      tabindex="0"
+      tabindex="-1"
     />
   </div>
 </body>
@@ -88,7 +83,6 @@ exports[`Chip component
     <div
       class="Chip-wrapper Chip Chip-Input--disabled Chip-size--regular"
       data-test="DesignSystem-Chip--GenericChip"
-      role="button"
       style="max-width: var(--spacing-640);"
       tabindex="-1"
     />
@@ -104,9 +98,8 @@ exports[`Chip component
     <div
       class="Chip-wrapper Chip Chip--Selection Chip-size--regular"
       data-test="DesignSystem-Chip--GenericChip"
-      role="button"
       style="max-width: var(--spacing-640);"
-      tabindex="0"
+      tabindex="-1"
     />
   </div>
 </body>
@@ -120,9 +113,8 @@ exports[`Chip component
     <div
       class="Chip-wrapper Chip Chip--Selection Chip-size--regular"
       data-test="DesignSystem-Chip--GenericChip"
-      role="button"
       style="max-width: var(--spacing-640);"
-      tabindex="0"
+      tabindex="-1"
     />
   </div>
 </body>
@@ -136,7 +128,6 @@ exports[`Chip component
     <div
       class="Chip-wrapper Chip Chip-Selection--disabled Chip-size--regular"
       data-test="DesignSystem-Chip--GenericChip"
-      role="button"
       style="max-width: var(--spacing-640);"
       tabindex="-1"
     />
@@ -152,9 +143,8 @@ exports[`Chip component
     <div
       class="Chip-wrapper Chip Chip--Selection Chip-size--regular"
       data-test="DesignSystem-Chip--GenericChip"
-      role="button"
       style="max-width: var(--spacing-640);"
-      tabindex="0"
+      tabindex="-1"
     />
   </div>
 </body>
@@ -168,9 +158,8 @@ exports[`Chip component
     <div
       class="Chip-wrapper Chip Chip--Selection Chip-Selection--selected Chip-size--regular"
       data-test="DesignSystem-Chip--GenericChip"
-      role="button"
       style="max-width: var(--spacing-640);"
-      tabindex="0"
+      tabindex="-1"
     />
   </div>
 </body>

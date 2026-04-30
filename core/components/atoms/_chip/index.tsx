@@ -166,7 +166,10 @@ export const GenericChip = (props: GenericChipProps) => {
     return labelText;
   };
 
-  const computedTabIndex = props.tabIndex !== undefined ? (disabled ? -1 : props.tabIndex) : disabled ? -1 : 0;
+  const hasWrapperAction = !!onClick;
+  const wrapperRole = props.role || (hasWrapperAction ? 'button' : undefined);
+  const computedTabIndex =
+    props.tabIndex !== undefined ? (disabled ? -1 : props.tabIndex) : disabled || !hasWrapperAction ? -1 : 0;
 
   const clearButtonAriaAttr = props.clearButtonAriaLabel ?? (typeof label === 'string' ? `Remove ${label}` : 'Remove');
 
@@ -179,10 +182,10 @@ export const GenericChip = (props: GenericChipProps) => {
   })();
 
   const getAriaProps = () => {
-    const effectiveRole = props.role || 'button';
+    const effectiveRole = wrapperRole;
     const ariaProps: React.HTMLAttributes<HTMLDivElement> = {};
 
-    if (type === 'selection') {
+    if (type === 'selection' && effectiveRole) {
       if (effectiveRole === 'button') {
         ariaProps['aria-pressed'] = selected;
       } else if (effectiveRole === 'checkbox' || effectiveRole === 'menuitemcheckbox') {
@@ -206,14 +209,14 @@ export const GenericChip = (props: GenericChipProps) => {
         tabIndex={computedTabIndex}
         style={wrapperStyle}
         data-test="DesignSystem-GenericChip--Wrapper"
-        role={props.role || 'button'}
+        role={wrapperRole}
         aria-label={computedAriaLabel}
         aria-labelledby={props['aria-labelledby']}
         {...getAriaProps()}
-        onKeyDown={onChipKeyDownHandler}
+        onKeyDown={hasWrapperAction ? onChipKeyDownHandler : undefined}
         {...baseProps}
         className={chipWrapperClass}
-        onClick={onClickHandler}
+        onClick={hasWrapperAction ? onClickHandler : undefined}
       >
         {icon && (
           <Icon

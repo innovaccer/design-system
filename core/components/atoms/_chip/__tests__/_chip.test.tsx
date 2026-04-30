@@ -109,6 +109,52 @@ describe('Chip component with keyboard interaction', () => {
 
     expect(onClick).toHaveBeenCalledTimes(1);
   });
+
+  it('does not render a non-actionable chip wrapper as a button', () => {
+    const { getByTestId } = render(<GenericChip name="Chip" label="Test Chip" />);
+
+    const chipWrapper = getByTestId('DesignSystem-GenericChip--Wrapper');
+
+    expect(chipWrapper).toHaveAttribute('tabIndex', '-1');
+    expect(chipWrapper).not.toHaveAttribute('role');
+  });
+
+  it('keeps removable chip wrapper out of tab order when only clear button is actionable', () => {
+    const { getByTestId } = render(<GenericChip name="Chip" label="Test Chip" clearButton={true} />);
+
+    const chipWrapper = getByTestId('DesignSystem-GenericChip--Wrapper');
+    const clearButton = getByTestId('DesignSystem-GenericChip--clearButton');
+
+    expect(chipWrapper).toHaveAttribute('tabIndex', '-1');
+    expect(chipWrapper).not.toHaveAttribute('role');
+    expect(clearButton).toHaveAttribute('tabIndex', '0');
+    expect(clearButton).toHaveAttribute('role', 'button');
+  });
+
+  it('keeps chip wrapper focusable when onClick is provided', () => {
+    const { getByTestId } = render(
+      <GenericChip name="Chip" label="Test Chip" clearButton={true} onClick={jest.fn()} />
+    );
+
+    const chipWrapper = getByTestId('DesignSystem-GenericChip--Wrapper');
+
+    expect(chipWrapper).toHaveAttribute('tabIndex', '0');
+    expect(chipWrapper).toHaveAttribute('role', 'button');
+  });
+
+  it('preserves keyboard activation for actionable chips with custom interactive roles', () => {
+    const onClick = jest.fn();
+    const { getByTestId } = render(
+      <GenericChip name="Chip" label="Test Chip" type="selection" role="option" selected={true} onClick={onClick} />
+    );
+
+    const chipWrapper = getByTestId('DesignSystem-GenericChip--Wrapper');
+    fireEvent.keyDown(chipWrapper, { key: 'Enter', code: 'Enter' });
+
+    expect(chipWrapper).toHaveAttribute('role', 'option');
+    expect(chipWrapper).toHaveAttribute('aria-selected', 'true');
+    expect(onClick).toHaveBeenCalledTimes(1);
+  });
 });
 
 describe('GenericChip component size prop functionality', () => {
@@ -185,6 +231,12 @@ describe('GenericChip component icon size functionality based on chip size', () 
 describe('GenericChip component a11y', () => {
   it('has no detectable a11y violations', async () => {
     const { container } = render(<GenericChip label="ChipLabel" name="Chip" />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
+  it('has no detectable a11y violations when clear button is the only action', async () => {
+    const { container } = render(<GenericChip label="ChipLabel" name="Chip" clearButton={true} />);
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });

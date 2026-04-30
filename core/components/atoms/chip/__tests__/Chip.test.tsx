@@ -133,6 +133,27 @@ describe('Chip component', () => {
     expect(FunctionValue).toHaveBeenCalled();
   });
 
+  it('does not render a non-actionable chip wrapper as a button', () => {
+    const { getByTestId } = render(<Chip label="Chip" name="Chip" />);
+
+    const chipWrapper = getByTestId('DesignSystem-Chip--GenericChip');
+
+    expect(chipWrapper).toHaveAttribute('tabIndex', '-1');
+    expect(chipWrapper).not.toHaveAttribute('role');
+  });
+
+  it('keeps removable chip wrapper out of tab order without onClick', () => {
+    const { getByTestId } = render(<Chip label="Chip" name="Chip" onClose={FunctionValue} clearButton={true} />);
+
+    const chipWrapper = getByTestId('DesignSystem-Chip--GenericChip');
+    const clearButton = getByTestId('DesignSystem-GenericChip--clearButton');
+
+    expect(chipWrapper).toHaveAttribute('tabIndex', '-1');
+    expect(chipWrapper).not.toHaveAttribute('role');
+    expect(clearButton).toHaveAttribute('tabIndex', '0');
+    expect(clearButton).toHaveAttribute('role', 'button');
+  });
+
   it('renders chip component with prop: selected, disabled and type selection', () => {
     const { queryByTestId } = render(
       <Chip label="Chip" name="Chip" type="selection" disabled={true} selected={true} />
@@ -264,6 +285,12 @@ describe('Chip component size functionality', () => {
 describe('Chip component a11y', () => {
   it('has no detectable a11y violations', async () => {
     const { container } = render(<Chip label="Test" name="test" />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
+  it('has no detectable a11y violations when clear button is the only action', async () => {
+    const { container } = render(<Chip label="Test" name="test" clearButton={true} />);
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
