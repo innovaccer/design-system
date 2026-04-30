@@ -101,7 +101,8 @@ export const GridHead = (props: GridHeadProps) => {
   };
 
   return (
-    <div className={styles['Grid-head']} role="rowgroup" data-test="DesignSystem-GridHead-wrapper">
+    // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex -- Grid-head is horizontally scrollable.
+    <div className={styles['Grid-head']} role="rowgroup" tabIndex={0} data-test="DesignSystem-GridHead-wrapper">
       <div className={RowClass} role={hasColumns ? 'row' : undefined}>
         {renderSchema(leftPinnedSchema, !!leftPinnedSchema.length, 'left')}
         {renderSchema(unpinnedSchema, !leftPinnedSchema.length && !!unpinnedSchema.length)}

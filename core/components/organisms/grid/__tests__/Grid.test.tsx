@@ -67,6 +67,10 @@ describe('renders Grid with showHead true and false', () => {
     const { queryByTestId } = render(<Grid showHead={true} />);
     expect(queryByTestId('DesignSystem-GridHead-wrapper')).toBeInTheDocument();
   });
+  it('renders Grid head as a focusable scroll region', () => {
+    const { getByTestId } = render(<Grid showHead={true} />);
+    expect(getByTestId('DesignSystem-GridHead-wrapper')).toHaveAttribute('tabIndex', '0');
+  });
   it('renders Grid with showHead false', () => {
     const { queryByTestId } = render(<Grid showHead={false} />);
     expect(queryByTestId('DesignSystem-GridHead-wrapper')).not.toBeInTheDocument();
