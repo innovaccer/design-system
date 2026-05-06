@@ -23,6 +23,11 @@
 }
 
 @media (max-width: 576px) {
+  .DateRangePicker--left,
+  .DateRangePicker--right {
+    flex-direction: column;
+  }
+
   .DateRangePicker-input {
     padding: 0;
   }

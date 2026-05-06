@@ -8,6 +8,8 @@ import { convertToDate, translateToString, compareDate, getDateInfo } from '../c
 import { Trigger } from './Trigger';
 import config from '../calendar/config';
 import classNames from 'classnames';
+import PickerCustomContent, { hasRenderableChildren } from '../calendar/PickerCustomContent';
+import pickerContentStyles from '@css/components/pickerContent.module.css';
 
 export type DatePickerProps = SharedProps & {
   /**
@@ -283,19 +285,27 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
       'pt-3': size === 'large' && view === 'year',
     });
 
+    const hasCustomContent = hasRenderableChildren(children);
+    const pickerBodyClass = classNames('d-flex', {
+      [pickerContentStyles['PickerContentLayout']]: hasCustomContent,
+    });
+    const calendar = (
+      <Calendar
+        {...rest}
+        size={size}
+        date={currDate}
+        view={view}
+        disabledBefore={dateDisabledBefore}
+        disabledAfter={dateDisabledAfter}
+        onDateChange={this.onDateChangeHandler}
+      />
+    );
+
     return (
       <div>
-        <div className="d-flex">
-          {children}
-          <Calendar
-            {...rest}
-            size={size}
-            date={currDate}
-            view={view}
-            disabledBefore={dateDisabledBefore}
-            disabledAfter={dateDisabledAfter}
-            onDateChange={this.onDateChangeHandler}
-          />
+        <div className={pickerBodyClass}>
+          {hasCustomContent ? <PickerCustomContent>{children}</PickerCustomContent> : children}
+          {hasCustomContent ? <div className={pickerContentStyles['PickerCalendar']}>{calendar}</div> : calendar}
         </div>
         {showTodayDate && (
           <div className={todayChipClass} data-test="DesignSystem-Select--TodaysDate-wrapper">
