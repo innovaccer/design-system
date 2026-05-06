@@ -18,6 +18,8 @@ import {
   getCurrentYear,
   getCurrentMonth,
 } from './utilities';
+import PickerCustomContent, { hasRenderableChildren } from '../calendar/PickerCustomContent';
+import pickerContentStyles from '@css/components/pickerContent.module.css';
 
 export type InputOptions = Omit<InputMaskProps, 'mask' | 'value' | 'onChange' | 'onBlur' | 'onClick' | 'onClear'> & {
   label?: string;
@@ -414,10 +416,12 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
     } = this.props;
 
     const { open } = this.state;
+    const hasCustomContent = hasRenderableChildren(children);
 
     const RangePickerClass = classNames({
       [styles['DateRangePicker']]: true,
       [styles[`DateRangePicker--${contentAlign}`]]: contentAlign,
+      [pickerContentStyles['PickerContentLayout']]: hasCustomContent,
     });
 
     if (withInput) {
@@ -465,8 +469,12 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
           open={open}
           onToggle={this.onToggleHandler}
         >
-          {children}
-          {this.renderCalendar()}
+          {hasCustomContent ? <PickerCustomContent>{children}</PickerCustomContent> : children}
+          {hasCustomContent ? (
+            <div className={pickerContentStyles['PickerCalendar']}>{this.renderCalendar()}</div>
+          ) : (
+            this.renderCalendar()
+          )}
         </Popover>
       );
     }
