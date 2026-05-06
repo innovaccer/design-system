@@ -1,9 +1,9 @@
 import React from 'react';
 import classNames from 'classnames';
 import { BaseProps } from '@/utils/types';
-import { Heading } from '@/index';
+import { Heading, Text } from '@/index';
 import EmptyStateContext from './EmptyStateContext';
-import { HeadingSize } from './EmptyState';
+import { textSize } from './EmptyState';
 import styles from '@css/components/emptyState.module.css';
 
 export interface EmptyDescriptionProps extends BaseProps {
@@ -32,16 +32,25 @@ const EmptyStateTitle = (props: EmptyDescriptionProps) => {
     className
   );
 
+  if (size === 'standard') {
+    return (
+      <Heading data-test="DesignSystem-EmptyState--Heading" className={headingClass} as={as} {...rest}>
+        {children}
+      </Heading>
+    );
+  }
+
   return (
-    <Heading
+    <Text
       data-test="DesignSystem-EmptyState--Heading"
       className={headingClass}
-      size={HeadingSize[size]}
+      weight="medium"
+      size={textSize[size]}
       as={as}
       {...rest}
     >
       {children}
-    </Heading>
+    </Text>
   );
 };
 

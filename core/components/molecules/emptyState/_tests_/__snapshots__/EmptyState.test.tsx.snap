@@ -13,12 +13,12 @@ exports[`EmptyState component
         data-test="DesignSystem-EmptyState--Wrapper"
         style="max-width: 400px;"
       >
-        <h3
-          class="Heading Heading--l Heading--default EmptyState-text EmptyState-title--compressed"
+        <span
+          class="Text Text--default Text--medium Text--large EmptyState-text EmptyState-title--compressed"
           data-test="DesignSystem-EmptyState--Heading"
         >
           title must be passed here
-        </h3>
+        </span>
         <span
           class="Text Text--subtle Text--regular EmptyState-text mt-3"
           data-test="DesignSystem-EmptyState--Text"
@@ -136,12 +136,12 @@ exports[`EmptyState component
         data-test="DesignSystem-EmptyState--Wrapper"
         style="max-width: 480px;"
       >
-        <h3
-          class="Heading Heading--l Heading--default EmptyState-text EmptyState-title--standard"
+        <h4
+          class="Heading Heading--m Heading--default EmptyState-text EmptyState-title--standard"
           data-test="DesignSystem-EmptyState--Heading"
         >
           title must be passed here
-        </h3>
+        </h4>
         <span
           class="Text Text--subtle Text--regular EmptyState-text mt-3"
           data-test="DesignSystem-EmptyState--Text"
@@ -195,12 +195,12 @@ exports[`EmptyState component
         data-test="DesignSystem-EmptyState--Wrapper"
         style="max-width: 320px;"
       >
-        <h3
-          class="Heading Heading--l Heading--default EmptyState-text EmptyState-title--tight"
+        <span
+          class="Text Text--default Text--medium Text--regular EmptyState-text EmptyState-title--tight"
           data-test="DesignSystem-EmptyState--Heading"
         >
           title must be passed here
-        </h3>
+        </span>
         <span
           class="Text Text--subtle Text--small EmptyState-text mt-3"
           data-test="DesignSystem-EmptyState--Text"
