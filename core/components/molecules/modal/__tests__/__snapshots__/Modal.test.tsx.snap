@@ -36,12 +36,12 @@ exports[`Modal component
               <div
                 class="OverlayHeader-headerWrapper"
               >
-                <h4
+                <h2
                   class="Heading Heading--m Heading--default"
                   data-test="DesignSystem-OverlayHeader--heading"
                 >
                   Heading
-                </h4>
+                </h2>
               </div>
               <span
                 class="Text Text--subtle Text--regular OverlayHeader-subheading"
@@ -128,12 +128,12 @@ exports[`Modal component
                 <div
                   class="OverlayHeader-headerWrapper"
                 >
-                  <h4
+                  <h2
                     class="Heading Heading--m Heading--default"
                     data-test="DesignSystem-OverlayHeader--heading"
                   >
                     Heading
-                  </h4>
+                  </h2>
                 </div>
                 <span
                   class="Text Text--subtle Text--regular OverlayHeader-subheading"
@@ -266,12 +266,12 @@ exports[`Modal component
                 <div
                   class="OverlayHeader-headerWrapper"
                 >
-                  <h4
+                  <h2
                     class="Heading Heading--m Heading--default"
                     data-test="DesignSystem-OverlayHeader--heading"
                   >
                     Heading
-                  </h4>
+                  </h2>
                 </div>
                 <span
                   class="Text Text--subtle Text--regular OverlayHeader-subheading"
@@ -434,12 +434,12 @@ exports[`Modal component
                   <div
                     class="OverlayHeader-headerWrapper"
                   >
-                    <h4
+                    <h2
                       class="Heading Heading--m Heading--default"
                       data-test="DesignSystem-OverlayHeader--heading"
                     >
                       Heading
-                    </h4>
+                    </h2>
                   </div>
                   <span
                     class="Text Text--subtle Text--regular OverlayHeader-subheading"
@@ -553,13 +553,13 @@ exports[`Modal component
               <div
                 class="OverlayHeader-headerWrapper"
               >
-                <h4
+                <h2
                   class="Heading Heading--m Heading--default"
                   data-test="DesignSystem-OverlayHeader--heading"
                   id="modal-title-17"
                 >
                   this is heading
-                </h4>
+                </h2>
               </div>
               <span
                 class="Text Text--subtle Text--regular OverlayHeader-subheading"
@@ -617,12 +617,12 @@ exports[`Modal component
                 <div
                   class="OverlayHeader-headerWrapper"
                 >
-                  <h4
+                  <h2
                     class="Heading Heading--m Heading--default"
                     data-test="DesignSystem-OverlayHeader--heading"
                   >
                     Heading
-                  </h4>
+                  </h2>
                 </div>
                 <span
                   class="Text Text--subtle Text--regular OverlayHeader-subheading"
@@ -715,13 +715,13 @@ exports[`Modal component
                 <div
                   class="OverlayHeader-headerWrapper"
                 >
-                  <h4
+                  <h2
                     class="Heading Heading--m Heading--default"
                     data-test="DesignSystem-OverlayHeader--heading"
                     id="modal-title-18"
                   >
                     this is heading
-                  </h4>
+                  </h2>
                 </div>
                 <span
                   class="Text Text--subtle Text--regular OverlayHeader-subheading"
@@ -779,12 +779,12 @@ exports[`Modal component
                   <div
                     class="OverlayHeader-headerWrapper"
                   >
-                    <h4
+                    <h2
                       class="Heading Heading--m Heading--default"
                       data-test="DesignSystem-OverlayHeader--heading"
                     >
                       Heading
-                    </h4>
+                    </h2>
                   </div>
                   <span
                     class="Text Text--subtle Text--regular OverlayHeader-subheading"
@@ -874,12 +874,12 @@ exports[`Modal component
               <div
                 class="OverlayHeader-headerWrapper"
               >
-                <h4
+                <h2
                   class="Heading Heading--m Heading--default"
                   data-test="DesignSystem-OverlayHeader--heading"
                 >
                   Heading
-                </h4>
+                </h2>
               </div>
               <span
                 class="Text Text--subtle Text--regular OverlayHeader-subheading"
@@ -966,12 +966,12 @@ exports[`Modal component
                 <div
                   class="OverlayHeader-headerWrapper"
                 >
-                  <h4
+                  <h2
                     class="Heading Heading--m Heading--default"
                     data-test="DesignSystem-OverlayHeader--heading"
                   >
                     Heading
-                  </h4>
+                  </h2>
                 </div>
                 <span
                   class="Text Text--subtle Text--regular OverlayHeader-subheading"
@@ -1104,12 +1104,12 @@ exports[`Modal component
                 <div
                   class="OverlayHeader-headerWrapper"
                 >
-                  <h4
+                  <h2
                     class="Heading Heading--m Heading--default"
                     data-test="DesignSystem-OverlayHeader--heading"
                   >
                     Heading
-                  </h4>
+                  </h2>
                 </div>
                 <span
                   class="Text Text--subtle Text--regular OverlayHeader-subheading"
@@ -1272,12 +1272,12 @@ exports[`Modal component
                   <div
                     class="OverlayHeader-headerWrapper"
                   >
-                    <h4
+                    <h2
                       class="Heading Heading--m Heading--default"
                       data-test="DesignSystem-OverlayHeader--heading"
                     >
                       Heading
-                    </h4>
+                    </h2>
                   </div>
                   <span
                     class="Text Text--subtle Text--regular OverlayHeader-subheading"
@@ -1391,13 +1391,13 @@ exports[`Modal component
               <div
                 class="OverlayHeader-headerWrapper"
               >
-                <h4
+                <h2
                   class="Heading Heading--m Heading--default"
                   data-test="DesignSystem-OverlayHeader--heading"
                   id="modal-title-15"
                 >
                   this is heading
-                </h4>
+                </h2>
               </div>
               <span
                 class="Text Text--subtle Text--regular OverlayHeader-subheading"
@@ -1455,12 +1455,12 @@ exports[`Modal component
                 <div
                   class="OverlayHeader-headerWrapper"
                 >
-                  <h4
+                  <h2
                     class="Heading Heading--m Heading--default"
                     data-test="DesignSystem-OverlayHeader--heading"
                   >
                     Heading
-                  </h4>
+                  </h2>
                 </div>
                 <span
                   class="Text Text--subtle Text--regular OverlayHeader-subheading"
@@ -1553,13 +1553,13 @@ exports[`Modal component
                 <div
                   class="OverlayHeader-headerWrapper"
                 >
-                  <h4
+                  <h2
                     class="Heading Heading--m Heading--default"
                     data-test="DesignSystem-OverlayHeader--heading"
                     id="modal-title-16"
                   >
                     this is heading
-                  </h4>
+                  </h2>
                 </div>
                 <span
                   class="Text Text--subtle Text--regular OverlayHeader-subheading"
@@ -1617,12 +1617,12 @@ exports[`Modal component
                   <div
                     class="OverlayHeader-headerWrapper"
                   >
-                    <h4
+                    <h2
                       class="Heading Heading--m Heading--default"
                       data-test="DesignSystem-OverlayHeader--heading"
                     >
                       Heading
-                    </h4>
+                    </h2>
                   </div>
                   <span
                     class="Text Text--subtle Text--regular OverlayHeader-subheading"
@@ -1713,12 +1713,12 @@ exports[`Modal component
               <div
                 class="OverlayHeader-headerWrapper"
               >
-                <h4
+                <h2
                   class="Heading Heading--m Heading--default"
                   data-test="DesignSystem-OverlayHeader--heading"
                 >
                   Heading
-                </h4>
+                </h2>
               </div>
               <span
                 class="Text Text--subtle Text--regular OverlayHeader-subheading"
@@ -1804,12 +1804,12 @@ exports[`Modal component
                 <div
                   class="OverlayHeader-headerWrapper"
                 >
-                  <h4
+                  <h2
                     class="Heading Heading--m Heading--default"
                     data-test="DesignSystem-OverlayHeader--heading"
                   >
                     Heading
-                  </h4>
+                  </h2>
                 </div>
                 <span
                   class="Text Text--subtle Text--regular OverlayHeader-subheading"
@@ -1942,12 +1942,12 @@ exports[`Modal component
                 <div
                   class="OverlayHeader-headerWrapper"
                 >
-                  <h4
+                  <h2
                     class="Heading Heading--m Heading--default"
                     data-test="DesignSystem-OverlayHeader--heading"
                   >
                     Heading
-                  </h4>
+                  </h2>
                 </div>
                 <span
                   class="Text Text--subtle Text--regular OverlayHeader-subheading"
@@ -2110,12 +2110,12 @@ exports[`Modal component
                   <div
                     class="OverlayHeader-headerWrapper"
                   >
-                    <h4
+                    <h2
                       class="Heading Heading--m Heading--default"
                       data-test="DesignSystem-OverlayHeader--heading"
                     >
                       Heading
-                    </h4>
+                    </h2>
                   </div>
                   <span
                     class="Text Text--subtle Text--regular OverlayHeader-subheading"
@@ -2229,13 +2229,13 @@ exports[`Modal component
               <div
                 class="OverlayHeader-headerWrapper"
               >
-                <h4
+                <h2
                   class="Heading Heading--m Heading--default"
                   data-test="DesignSystem-OverlayHeader--heading"
                   id="modal-title-13"
                 >
                   this is heading
-                </h4>
+                </h2>
               </div>
               <span
                 class="Text Text--subtle Text--regular OverlayHeader-subheading"
@@ -2293,12 +2293,12 @@ exports[`Modal component
                 <div
                   class="OverlayHeader-headerWrapper"
                 >
-                  <h4
+                  <h2
                     class="Heading Heading--m Heading--default"
                     data-test="DesignSystem-OverlayHeader--heading"
                   >
                     Heading
-                  </h4>
+                  </h2>
                 </div>
                 <span
                   class="Text Text--subtle Text--regular OverlayHeader-subheading"
@@ -2391,13 +2391,13 @@ exports[`Modal component
                 <div
                   class="OverlayHeader-headerWrapper"
                 >
-                  <h4
+                  <h2
                     class="Heading Heading--m Heading--default"
                     data-test="DesignSystem-OverlayHeader--heading"
                     id="modal-title-14"
                   >
                     this is heading
-                  </h4>
+                  </h2>
                 </div>
                 <span
                   class="Text Text--subtle Text--regular OverlayHeader-subheading"
@@ -2455,12 +2455,12 @@ exports[`Modal component
                   <div
                     class="OverlayHeader-headerWrapper"
                   >
-                    <h4
+                    <h2
                       class="Heading Heading--m Heading--default"
                       data-test="DesignSystem-OverlayHeader--heading"
                     >
                       Heading
-                    </h4>
+                    </h2>
                   </div>
                   <span
                     class="Text Text--subtle Text--regular OverlayHeader-subheading"

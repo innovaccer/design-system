@@ -29,12 +29,12 @@ exports[`OverlayHeader component
           </i>
         </div>
       </button>
-      <h4
+      <h2
         class="Heading Heading--m Heading--default"
         data-test="DesignSystem-OverlayHeader--heading"
       >
         Modal header
-      </h4>
+      </h2>
     </div>
     <span
       class="Text Text--subtle Text--regular OverlayHeader-subheading OverlayHeader-subheading--withBackButton"

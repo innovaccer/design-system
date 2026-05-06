@@ -55,12 +55,12 @@ exports[`Calendar component
               class="Calendar-headerButton"
               type="button"
             >
-              <h5
+              <span
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               >
                 Mar
-              </h5>
+              </span>
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
@@ -74,12 +74,12 @@ exports[`Calendar component
               class="Calendar-headerButton ml-4"
               type="button"
             >
-              <h5
+              <span
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               >
                 2020
-              </h5>
+              </span>
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
@@ -1352,12 +1352,12 @@ exports[`Calendar component
               class="Calendar-headerButton"
               type="button"
             >
-              <h5
+              <span
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               >
                 Mar
-              </h5>
+              </span>
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
@@ -1371,12 +1371,12 @@ exports[`Calendar component
               class="Calendar-headerButton ml-4"
               type="button"
             >
-              <h5
+              <span
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               >
                 2020
-              </h5>
+              </span>
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
@@ -2651,12 +2651,12 @@ exports[`Calendar component
               class="Calendar-headerButton"
               type="button"
             >
-              <h5
+              <span
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               >
                 Mar
-              </h5>
+              </span>
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
@@ -2670,12 +2670,12 @@ exports[`Calendar component
               class="Calendar-headerButton ml-4"
               type="button"
             >
-              <h5
+              <span
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               >
                 2020
-              </h5>
+              </span>
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
@@ -3949,12 +3949,12 @@ exports[`Calendar component
               class="Calendar-headerButton"
               type="button"
             >
-              <h5
+              <span
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               >
                 Mar
-              </h5>
+              </span>
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
@@ -3968,12 +3968,12 @@ exports[`Calendar component
               class="Calendar-headerButton ml-4"
               type="button"
             >
-              <h5
+              <span
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               >
                 2020
-              </h5>
+              </span>
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
@@ -5247,12 +5247,12 @@ exports[`Calendar component
               class="Calendar-headerButton"
               type="button"
             >
-              <h5
+              <span
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               >
                 Mar
-              </h5>
+              </span>
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
@@ -5266,12 +5266,12 @@ exports[`Calendar component
               class="Calendar-headerButton ml-4"
               type="button"
             >
-              <h5
+              <span
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               >
                 2020
-              </h5>
+              </span>
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
@@ -6544,12 +6544,12 @@ exports[`Calendar component
               class="Calendar-headerButton"
               type="button"
             >
-              <h5
+              <span
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               >
                 Mar
-              </h5>
+              </span>
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
@@ -6563,12 +6563,12 @@ exports[`Calendar component
               class="Calendar-headerButton ml-4"
               type="button"
             >
-              <h5
+              <span
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               >
                 2020
-              </h5>
+              </span>
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
@@ -7841,12 +7841,12 @@ exports[`Calendar component
               class="Calendar-headerButton"
               type="button"
             >
-              <h5
+              <span
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               >
                 Mar
-              </h5>
+              </span>
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
@@ -7860,12 +7860,12 @@ exports[`Calendar component
               class="Calendar-headerButton ml-4"
               type="button"
             >
-              <h5
+              <span
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               >
                 2020
-              </h5>
+              </span>
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
@@ -9138,12 +9138,12 @@ exports[`Calendar component
               class="Calendar-headerButton"
               type="button"
             >
-              <h5
+              <span
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               >
                 Mar
-              </h5>
+              </span>
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
@@ -9157,12 +9157,12 @@ exports[`Calendar component
               class="Calendar-headerButton ml-4"
               type="button"
             >
-              <h5
+              <span
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               >
                 2020
-              </h5>
+              </span>
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
@@ -10435,12 +10435,12 @@ exports[`Calendar component
               class="Calendar-headerButton"
               type="button"
             >
-              <h5
+              <span
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               >
                 Mar
-              </h5>
+              </span>
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
@@ -10454,12 +10454,12 @@ exports[`Calendar component
               class="Calendar-headerButton ml-4"
               type="button"
             >
-              <h5
+              <span
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               >
                 2020
-              </h5>
+              </span>
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
@@ -11732,12 +11732,12 @@ exports[`Calendar component
               class="Calendar-headerButton"
               type="button"
             >
-              <h5
+              <span
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               >
                 Mar
-              </h5>
+              </span>
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
@@ -11751,12 +11751,12 @@ exports[`Calendar component
               class="Calendar-headerButton ml-4"
               type="button"
             >
-              <h5
+              <span
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               >
                 2020
-              </h5>
+              </span>
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
@@ -13029,12 +13029,12 @@ exports[`Calendar component
               class="Calendar-headerButton"
               type="button"
             >
-              <h5
+              <span
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               >
                 Mar
-              </h5>
+              </span>
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
@@ -13048,12 +13048,12 @@ exports[`Calendar component
               class="Calendar-headerButton ml-4"
               type="button"
             >
-              <h5
+              <span
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               >
                 2020
-              </h5>
+              </span>
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
@@ -14326,12 +14326,12 @@ exports[`Calendar component
               class="Calendar-headerButton"
               type="button"
             >
-              <h5
+              <span
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               >
                 Mar
-              </h5>
+              </span>
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
@@ -14345,12 +14345,12 @@ exports[`Calendar component
               class="Calendar-headerButton ml-4"
               type="button"
             >
-              <h5
+              <span
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               >
                 2020
-              </h5>
+              </span>
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
@@ -15623,12 +15623,12 @@ exports[`Calendar component
               class="Calendar-headerButton"
               type="button"
             >
-              <h5
+              <span
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               >
                 Mar
-              </h5>
+              </span>
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
@@ -15642,12 +15642,12 @@ exports[`Calendar component
               class="Calendar-headerButton ml-4"
               type="button"
             >
-              <h5
+              <span
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               >
                 2020
-              </h5>
+              </span>
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
@@ -16583,12 +16583,12 @@ exports[`Calendar component
               class="Calendar-headerButton"
               type="button"
             >
-              <h5
+              <span
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               >
                 Apr
-              </h5>
+              </span>
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
@@ -16602,12 +16602,12 @@ exports[`Calendar component
               class="Calendar-headerButton ml-4"
               type="button"
             >
-              <h5
+              <span
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               >
                 2020
-              </h5>
+              </span>
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
@@ -17637,12 +17637,12 @@ exports[`Calendar component
               class="Calendar-headerButton"
               type="button"
             >
-              <h5
+              <span
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               >
                 Mar
-              </h5>
+              </span>
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
@@ -17656,12 +17656,12 @@ exports[`Calendar component
               class="Calendar-headerButton ml-4"
               type="button"
             >
-              <h5
+              <span
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               >
                 2020
-              </h5>
+              </span>
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
@@ -18597,12 +18597,12 @@ exports[`Calendar component
               class="Calendar-headerButton"
               type="button"
             >
-              <h5
+              <span
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               >
                 Apr
-              </h5>
+              </span>
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
@@ -18616,12 +18616,12 @@ exports[`Calendar component
               class="Calendar-headerButton ml-4"
               type="button"
             >
-              <h5
+              <span
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               >
                 2020
-              </h5>
+              </span>
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
@@ -19536,12 +19536,12 @@ exports[`Calendar component
               class="Calendar-headerButton"
               type="button"
             >
-              <h5
+              <span
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               >
                 May
-              </h5>
+              </span>
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
@@ -19555,12 +19555,12 @@ exports[`Calendar component
               class="Calendar-headerButton ml-4"
               type="button"
             >
-              <h5
+              <span
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               >
                 2020
-              </h5>
+              </span>
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
@@ -20728,12 +20728,12 @@ exports[`Calendar component
               class="Calendar-headerButton"
               type="button"
             >
-              <h5
+              <span
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               >
                 Mar
-              </h5>
+              </span>
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
@@ -20747,12 +20747,12 @@ exports[`Calendar component
               class="Calendar-headerButton ml-4"
               type="button"
             >
-              <h5
+              <span
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               >
                 2020
-              </h5>
+              </span>
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
@@ -22025,12 +22025,12 @@ exports[`Calendar component
               class="Calendar-headerButton"
               type="button"
             >
-              <h5
+              <span
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               >
                 2020
-              </h5>
+              </span>
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
@@ -22432,12 +22432,12 @@ exports[`Calendar component
               class="Calendar-headerButton"
               type="button"
             >
-              <h5
+              <span
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               >
                 2016 - 2027
-              </h5>
+              </span>
             </button>
           </div>
           <div

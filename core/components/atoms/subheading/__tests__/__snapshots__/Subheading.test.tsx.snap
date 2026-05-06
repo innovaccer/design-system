@@ -6,7 +6,6 @@ exports[`Subheading component
 <body>
   <div>
     <h4
-      aria-level="4"
       class="Subheading Subheading--default"
       data-test="DesignSystem-Subheading"
     >
@@ -22,7 +21,6 @@ exports[`Subheading component
 <body>
   <div>
     <h4
-      aria-level="4"
       class="Subheading Subheading--disabled"
       data-test="DesignSystem-Subheading"
     >
@@ -38,7 +36,6 @@ exports[`Subheading component
 <body>
   <div>
     <h4
-      aria-level="4"
       class="Subheading Subheading--subtle"
       data-test="DesignSystem-Subheading"
     >
@@ -54,7 +51,6 @@ exports[`Subheading component
 <body>
   <div>
     <h4
-      aria-level="4"
       class="Subheading Subheading--white"
       data-test="DesignSystem-Subheading"
     >
