@@ -45,6 +45,10 @@ export interface EmptyStateProps extends BaseProps {
    * child component to be added inside `EmptyState`
    */
   children?: React.ReactNode;
+  /**
+   * HTML tag to render the heading as.
+   */
+  headingAs?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 }
 
 export const imageHeight = {
@@ -91,6 +95,7 @@ export const EmptyState = (props: EmptyStateProps) => {
     maxWidth,
     minWidth,
     width,
+    headingAs,
   } = props;
 
   const baseProps = extractBaseProps(props);
@@ -141,6 +146,7 @@ export const EmptyState = (props: EmptyStateProps) => {
             data-test="DesignSystem-EmptyState--Heading"
             size={HeadingSize[templateSize]}
             className={headingClasses}
+            as={headingAs}
           >
             {title}
           </Heading>
