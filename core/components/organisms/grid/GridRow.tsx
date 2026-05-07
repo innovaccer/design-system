@@ -84,6 +84,9 @@ export const GridRow = (props: GridRowProps) => {
   const rightPinnedSchema = pinnedSchema.filter((s) => !s.hidden && s.pinned === 'right');
   const unpinnedSchema = schema.filter((s) => !s.hidden && !s.pinned);
 
+  const visibleColumnsCount =
+    leftPinnedSchema.length + unpinnedSchema.length + rightPinnedSchema.length + (withCheckbox ? 1 : 0);
+
   const nestedProps = {
     data,
     rowIndex: rI,
@@ -147,8 +150,8 @@ export const GridRow = (props: GridRowProps) => {
       });
 
       return (
-        <div className={pinnedClasses}>
-          <div className={classes} data-test="DesignSystem-Grid-cellGroup">
+        <div className={pinnedClasses} role="presentation">
+          <div className={classes} data-test="DesignSystem-Grid-cellGroup" role="presentation">
             {renderCheckbox(shouldRenderCheckbox)}
             {currSchema.map((s, index) => {
               let cI = pinned === 'left' ? index : leftPinnedSchema.length + index;
@@ -180,7 +183,7 @@ export const GridRow = (props: GridRowProps) => {
   });
 
   return (
-    <div className={wrapperClasses} data-test="DesignSystem-Grid-rowWrapper">
+    <div className={wrapperClasses} data-test="DesignSystem-Grid-rowWrapper" role="presentation">
       <div
         data-test="DesignSystem-Grid-row"
         className={rowClasses}
@@ -194,7 +197,13 @@ export const GridRow = (props: GridRowProps) => {
         {renderSchema(unpinnedSchema, !leftPinnedSchema.length && !!unpinnedSchema.length)}
         {renderSchema(rightPinnedSchema, false, 'right')}
       </div>
-      {nestedRows && expanded && <div className={styles['Grid-nestedRow']}>{nestedRowData}</div>}
+      {nestedRows && expanded && (
+        <div className={styles['Grid-nestedRow']} role="row">
+          <div role="gridcell" aria-colspan={visibleColumnsCount} style={{ width: '100%' }}>
+            {nestedRowData}
+          </div>
+        </div>
+      )}
     </div>
   );
 };

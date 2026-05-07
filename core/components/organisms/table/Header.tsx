@@ -259,7 +259,7 @@ export const Header = (props: HeaderProps) => {
   return (
     <div className={gridStyles['Header']}>
       <div className={gridStyles['Header-content']}>
-        <div className="d-flex w-100">
+        <div className="d-flex flex-wrap" style={{ flexGrow: 1 }}>
           {withSearch && (
             <div className={gridStyles['Header-search']}>
               <Input
@@ -348,7 +348,7 @@ export const Header = (props: HeaderProps) => {
 
               {selectedRowsCount > 0 && allowSelectAll && showSelectedLabel && (
                 <div className={selectedRowLabelClass}>
-                  <div className="ml-4 d-flex">
+                  <div className="ml-4 d-flex flex-wrap align-items-center" style={{ gap: 'var(--spacing-20)' }}>
                     <Button
                       data-test="DesignSystem-Table-Header--selectAllItemsButton"
                       size="tiny"
