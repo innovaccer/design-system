@@ -3842,6 +3842,7 @@ exports[`TS renders children 1`] = `
     </div>
     <div
       class="Grid-body"
+      role="presentation"
     >
       <div
         class="Grid-rowGroup"
