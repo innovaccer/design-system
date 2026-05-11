@@ -42,6 +42,7 @@ export const ListBody = (props: ListboxItemProps & React.HTMLAttributes<HTMLDivE
           name="drag_indicator"
           className={styles['Listbox-item--drag-icon']}
           data-test="DesignSystem-Listbox-DragIcon"
+          aria-hidden="true"
         />
       )}
       {children}

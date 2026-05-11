@@ -58,7 +58,13 @@ export const DraggableList = (props: ListboxInternalProps) => {
           [styles['Listbox-item--sticky-picked']]: isSelected,
         });
         return (
-          <div {...props} className={itemClasses}>
+          <div
+            {...props}
+            className={itemClasses}
+            role="option"
+            aria-selected={isSelected}
+            aria-roledescription="draggable"
+          >
             {value}
           </div>
         );
