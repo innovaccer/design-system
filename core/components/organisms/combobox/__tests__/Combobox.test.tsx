@@ -245,7 +245,7 @@ describe('Combobox component multiple select trigger tests', () => {
 
     expect(getByTestId('DesignSystem-GenericChip--clearButton')).toHaveAttribute('aria-label', 'Remove Option 1');
     expect(getByTestId('DesignSystem-MultiSelectTrigger--Icon')).toHaveAttribute('aria-label', 'Clear all options');
-    expect(getByTestId('DesignSystem-MultiSelectTrigger--Chip')).toHaveAttribute('tabIndex', '-1');
+    expect(getByTestId('DesignSystem-GenericChip--Content')).toHaveAttribute('tabIndex', '-1');
   });
 });
 

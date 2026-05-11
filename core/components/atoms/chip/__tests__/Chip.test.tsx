@@ -119,7 +119,7 @@ describe('Chip component', () => {
     const { getByTestId } = render(
       <Chip label="Chip" name="Chip" type="action" disabled={false} selected={true} onClick={FunctionValue} />
     );
-    const onClick = getByTestId('DesignSystem-Chip--GenericChip');
+    const onClick = getByTestId('DesignSystem-GenericChip--Content');
     fireEvent.click(onClick);
     expect(FunctionValue).toHaveBeenCalled();
   });
@@ -184,7 +184,7 @@ describe('Chip component', () => {
         onClick={handleOnClick}
       />
     );
-    const onClick = getByTestId('DesignSystem-Chip--GenericChip');
+    const onClick = getByTestId('DesignSystem-GenericChip--Content');
     fireEvent.click(onClick);
     expect(handleOnClick.mock.calls[0][0]).toBe(nameObject);
   });
@@ -262,9 +262,69 @@ describe('Chip component size functionality', () => {
 });
 
 describe('Chip component a11y', () => {
-  it('has no detectable a11y violations', async () => {
-    const { container } = render(<Chip label="Test" name="test" />);
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
+  it('has no violations: chip without clearButton', async () => {
+    const { container } = render(<Chip label="Test" name="test" onClick={jest.fn()} />);
+    expect(await axe(container)).toHaveNoViolations();
+  });
+
+  it('has no violations: removable chip without onClick (only clear button is interactive)', async () => {
+    const { container } = render(<Chip label="Test" name="test" clearButton onClose={jest.fn()} />);
+    expect(await axe(container)).toHaveNoViolations();
+  });
+
+  it('has no violations: removable chip with onClick (chip content and clear button are siblings)', async () => {
+    const { container } = render(<Chip label="Test" name="test" clearButton onClick={jest.fn()} onClose={jest.fn()} />);
+    expect(await axe(container)).toHaveNoViolations();
+  });
+
+  it('has no violations: selection chip with clearButton and onClick (aria-pressed on inner content, not on wrapper containing clear button)', async () => {
+    const { container } = render(
+      <Chip
+        type="selection"
+        label="Filter"
+        name="filter"
+        clearButton
+        selected
+        onClick={jest.fn()}
+        onClose={jest.fn()}
+      />
+    );
+    expect(await axe(container)).toHaveNoViolations();
+  });
+
+  it('selection chip with clearButton: aria-pressed lives on the chip content div, not on the wrapper that also contains the clear button', () => {
+    const { getByTestId } = render(
+      <Chip
+        type="selection"
+        label="Filter"
+        name="filter"
+        clearButton
+        selected
+        onClick={jest.fn()}
+        onClose={jest.fn()}
+      />
+    );
+
+    const wrapper = getByTestId('DesignSystem-Chip--GenericChip');
+    const chipContentDiv = getByTestId('DesignSystem-GenericChip--Content');
+    const clearButton = getByTestId('DesignSystem-GenericChip--clearButton');
+
+    // Wrapper must not be interactive — it contains two sibling interactive elements
+    expect(wrapper).not.toHaveAttribute('role', 'button');
+    expect(wrapper).not.toHaveAttribute('aria-pressed');
+
+    // Both the chip content and the clear button must be direct children of the wrapper
+    expect(chipContentDiv.parentElement).toBe(wrapper);
+    expect(clearButton.parentElement).toBe(wrapper);
+
+    // aria-pressed must be on the chip content div, which is a sibling of the clear button
+    expect(chipContentDiv).toHaveAttribute('role', 'button');
+    expect(chipContentDiv).toHaveAttribute('aria-pressed', 'true');
+    expect(clearButton.previousElementSibling).toBe(chipContentDiv);
+  });
+
+  it('has no violations: selection chip without clearButton', async () => {
+    const { container } = render(<Chip type="selection" label="Filter" name="filter" selected onClick={jest.fn()} />);
+    expect(await axe(container)).toHaveNoViolations();
   });
 });
