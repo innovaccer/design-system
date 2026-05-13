@@ -164,12 +164,12 @@ exports[`TS renders children 1`] = `
                 class="Calendar-headerButton"
                 type="button"
               >
-                <h5
+                <span
                   class="Heading Heading--s Heading--default"
                   data-test="DesignSystem-Heading"
                 >
                   Jun
-                </h5>
+                </span>
                 <i
                   class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                   data-test="DesignSystem-Icon"
@@ -183,12 +183,12 @@ exports[`TS renders children 1`] = `
                 class="Calendar-headerButton ml-4"
                 type="button"
               >
-                <h5
+                <span
                   class="Heading Heading--s Heading--default"
                   data-test="DesignSystem-Heading"
                 >
                   2021
-                </h5>
+                </span>
                 <i
                   class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                   data-test="DesignSystem-Icon"
@@ -2237,7 +2237,6 @@ exports[`TS renders children 1`] = `
     </div>
   </div>
   <h4
-    aria-level="4"
     class="Subheading Subheading--default"
     data-test="DesignSystem-Subheading"
   >
@@ -2286,12 +2285,12 @@ exports[`TS renders children 1`] = `
       <div
         class="Toast-title"
       >
-        <h5
+        <span
           class="Heading Heading--s Heading--white Toast-heading Toast-heading--info"
           data-test="DesignSystem-Heading"
         >
           Hello World!
-        </h5>
+        </span>
       </div>
     </div>
   </div>
@@ -2319,12 +2318,12 @@ exports[`TS renders children 1`] = `
         <div
           class="OverlayHeader-headerWrapper"
         >
-          <h4
+          <h2
             class="Heading Heading--m Heading--default"
             data-test="DesignSystem-OverlayHeader--heading"
           >
             Hello World!
-          </h4>
+          </h2>
         </div>
       </div>
     </div>
@@ -2586,24 +2585,24 @@ exports[`TS renders children 1`] = `
             class="Calendar-headerButton"
             type="button"
           >
-            <h5
+            <span
               class="Heading Heading--s Heading--default"
               data-test="DesignSystem-Heading"
             >
               Jun
-            </h5>
+            </span>
           </button>
           <button
             aria-label="Select year"
             class="Calendar-headerButton ml-4"
             type="button"
           >
-            <h5
+            <span
               class="Heading Heading--s Heading--default"
               data-test="DesignSystem-Heading"
             >
               2021
-            </h5>
+            </span>
           </button>
         </div>
         <div
@@ -3976,12 +3975,12 @@ exports[`TS renders children 1`] = `
                 class="PageHeader-titleWrapper"
                 data-test="DesignSystem-PageHeader--Title"
               >
-                <h4
+                <h1
                   class="Heading Heading--m Heading--default PageHeader-title"
                   data-test="DesignSystem-Heading"
                 >
                   Hello World!
-                </h4>
+                </h1>
               </div>
             </div>
           </div>

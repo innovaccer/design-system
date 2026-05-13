@@ -46,10 +46,14 @@ export interface MessageProps extends BaseProps {
    * HTML id for the `Message` element
    */
   id?: string;
+  /**
+   * HTML tag to render the heading as.
+   */
+  headingAs?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span' | 'div';
 }
 
 export const Message = (props: MessageProps) => {
-  const { actions, title, className, size = 'regular', id } = props;
+  const { actions, title, className, size = 'regular', id, headingAs = 'h5' } = props;
   let { appearance } = props;
   appearance = appearance === 'default' ? 'info' : appearance;
 
@@ -123,7 +127,7 @@ export const Message = (props: MessageProps) => {
       />
       <div>
         {title && (
-          <Heading data-test="DesignSystem-Message--Title" size="s" className={TitleClass}>
+          <Heading data-test="DesignSystem-Message--Title" size="s" className={TitleClass} as={headingAs}>
             {title}
           </Heading>
         )}

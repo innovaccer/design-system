@@ -50,7 +50,7 @@ export const SelectEmptyTemplate = (props: SelectEmptyTemplateProps) => {
         className="d-flex flex-column justify-content-center align-items-center"
       >
         {title && (
-          <Text id={titleId} role="heading" aria-level={2} className="text-align-center mb-3" weight="strong">
+          <Text id={titleId} className="text-align-center mb-3" weight="strong">
             {title}
           </Text>
         )}

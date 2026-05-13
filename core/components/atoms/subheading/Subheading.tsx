@@ -19,10 +19,14 @@ export interface SubheadingProps extends BaseProps, BaseHtmlProps<HTMLHeadingEle
    * Color of `Subheading`
    */
   color?: TextColor;
+  /**
+   * HTML tag to render the subheading as.
+   */
+  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'div' | 'span';
 }
 
 export const Subheading = React.forwardRef<HTMLHeadingElement, SubheadingProps>((props, ref) => {
-  const { appearance = 'default', children, className, color, ...rest } = props;
+  const { appearance = 'default', as, children, className, color, ...rest } = props;
 
   const classes = classNames(
     {
@@ -33,14 +37,15 @@ export const Subheading = React.forwardRef<HTMLHeadingElement, SubheadingProps>(
     className
   );
 
+  const componentType = as || 'h4';
+
   return (
     <GenericText
       ref={ref}
       data-test="DesignSystem-Subheading"
       {...rest}
       className={classes}
-      componentType={'h4'}
-      aria-level={4}
+      componentType={componentType}
     >
       {children}
     </GenericText>

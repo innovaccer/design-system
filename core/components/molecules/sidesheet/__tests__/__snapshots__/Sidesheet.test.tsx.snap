@@ -37,13 +37,13 @@ exports[`Sidesheet component
               <div
                 class="OverlayHeader-headerWrapper"
               >
-                <h4
+                <h2
                   class="Heading Heading--m Heading--default Sidesheet-header--shiftLeft"
                   data-test="DesignSystem-OverlayHeader--heading"
                   id="sidesheet-title-2"
                 >
                   Heading
-                </h4>
+                </h2>
               </div>
               <span
                 class="Text Text--subtle Text--regular OverlayHeader-subheading"
@@ -139,13 +139,13 @@ exports[`Sidesheet component
               <div
                 class="OverlayHeader-headerWrapper"
               >
-                <h4
+                <h2
                   class="Heading Heading--m Heading--default Sidesheet-header--shiftLeft"
                   data-test="DesignSystem-OverlayHeader--heading"
                   id="sidesheet-title-1"
                 >
                   Heading
-                </h4>
+                </h2>
               </div>
               <span
                 class="Text Text--subtle Text--regular OverlayHeader-subheading"

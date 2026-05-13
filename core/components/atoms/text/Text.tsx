@@ -33,10 +33,14 @@ export interface TextProps extends BaseProps, BaseHtmlProps<HTMLSpanElement> {
    * Color of `Text`
    */
   color?: TextColor;
+  /**
+   * HTML tag to render the text as.
+   */
+  as?: string;
 }
 
 export const Text = React.forwardRef<HTMLSpanElement, TextProps>((props, ref) => {
-  const { appearance = 'default', size = 'regular', children, weight, small, className, color, ...rest } = props;
+  const { appearance = 'default', size = 'regular', children, weight, small, className, color, as, ...rest } = props;
 
   const classes = classNames(
     {
@@ -52,7 +56,7 @@ export const Text = React.forwardRef<HTMLSpanElement, TextProps>((props, ref) =>
   );
 
   return (
-    <GenericText ref={ref} data-test="DesignSystem-Text" {...rest} className={classes} componentType="span">
+    <GenericText ref={ref} data-test="DesignSystem-Text" {...rest} className={classes} componentType={as || 'span'}>
       {children}
     </GenericText>
   );

@@ -59,12 +59,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
                   class="Calendar-headerButton"
                   type="button"
                 >
-                  <h5
+                  <span
                     class="Heading Heading--s Heading--default"
                     data-test="DesignSystem-Heading"
                   >
                     Mar
-                  </h5>
+                  </span>
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
@@ -78,12 +78,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
                   class="Calendar-headerButton ml-4"
                   type="button"
                 >
-                  <h5
+                  <span
                     class="Heading Heading--s Heading--default"
                     data-test="DesignSystem-Heading"
                   >
                     2020
-                  </h5>
+                  </span>
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
@@ -1391,12 +1391,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                   class="Calendar-headerButton"
                   type="button"
                 >
-                  <h5
+                  <span
                     class="Heading Heading--s Heading--default"
                     data-test="DesignSystem-Heading"
                   >
                     Mar
-                  </h5>
+                  </span>
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
@@ -1410,12 +1410,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                   class="Calendar-headerButton ml-4"
                   type="button"
                 >
-                  <h5
+                  <span
                     class="Heading Heading--s Heading--default"
                     data-test="DesignSystem-Heading"
                   >
                     2020
-                  </h5>
+                  </span>
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
@@ -2723,12 +2723,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                   class="Calendar-headerButton"
                   type="button"
                 >
-                  <h5
+                  <span
                     class="Heading Heading--s Heading--default"
                     data-test="DesignSystem-Heading"
                   >
                     Mar
-                  </h5>
+                  </span>
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
@@ -2742,12 +2742,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                   class="Calendar-headerButton ml-4"
                   type="button"
                 >
-                  <h5
+                  <span
                     class="Heading Heading--s Heading--default"
                     data-test="DesignSystem-Heading"
                   >
                     2020
-                  </h5>
+                  </span>
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
@@ -4054,12 +4054,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                   class="Calendar-headerButton"
                   type="button"
                 >
-                  <h5
+                  <span
                     class="Heading Heading--s Heading--default"
                     data-test="DesignSystem-Heading"
                   >
                     Mar
-                  </h5>
+                  </span>
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
@@ -4073,12 +4073,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                   class="Calendar-headerButton ml-4"
                   type="button"
                 >
-                  <h5
+                  <span
                     class="Heading Heading--s Heading--default"
                     data-test="DesignSystem-Heading"
                   >
                     2020
-                  </h5>
+                  </span>
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
@@ -5385,12 +5385,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                   class="Calendar-headerButton"
                   type="button"
                 >
-                  <h5
+                  <span
                     class="Heading Heading--s Heading--default"
                     data-test="DesignSystem-Heading"
                   >
                     Mar
-                  </h5>
+                  </span>
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
@@ -5404,12 +5404,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                   class="Calendar-headerButton ml-4"
                   type="button"
                 >
-                  <h5
+                  <span
                     class="Heading Heading--s Heading--default"
                     data-test="DesignSystem-Heading"
                   >
                     2020
-                  </h5>
+                  </span>
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
@@ -6716,12 +6716,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                   class="Calendar-headerButton"
                   type="button"
                 >
-                  <h5
+                  <span
                     class="Heading Heading--s Heading--default"
                     data-test="DesignSystem-Heading"
                   >
                     Mar
-                  </h5>
+                  </span>
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
@@ -6735,12 +6735,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                   class="Calendar-headerButton ml-4"
                   type="button"
                 >
-                  <h5
+                  <span
                     class="Heading Heading--s Heading--default"
                     data-test="DesignSystem-Heading"
                   >
                     2020
-                  </h5>
+                  </span>
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
@@ -8047,12 +8047,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                   class="Calendar-headerButton"
                   type="button"
                 >
-                  <h5
+                  <span
                     class="Heading Heading--s Heading--default"
                     data-test="DesignSystem-Heading"
                   >
                     2020
-                  </h5>
+                  </span>
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
@@ -8488,12 +8488,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                   class="Calendar-headerButton"
                   type="button"
                 >
-                  <h5
+                  <span
                     class="Heading Heading--s Heading--default"
                     data-test="DesignSystem-Heading"
                   >
                     2016 - 2027
-                  </h5>
+                  </span>
                 </button>
               </div>
               <div
@@ -8922,12 +8922,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
                   class="Calendar-headerButton"
                   type="button"
                 >
-                  <h5
+                  <span
                     class="Heading Heading--s Heading--default"
                     data-test="DesignSystem-Heading"
                   >
                     Mar
-                  </h5>
+                  </span>
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
@@ -8941,12 +8941,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
                   class="Calendar-headerButton ml-4"
                   type="button"
                 >
-                  <h5
+                  <span
                     class="Heading Heading--s Heading--default"
                     data-test="DesignSystem-Heading"
                   >
                     2020
-                  </h5>
+                  </span>
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"

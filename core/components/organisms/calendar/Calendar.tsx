@@ -745,7 +745,9 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
       }
       return (
         <>
-          <Heading size="s">{content}</Heading>
+          <Heading size="s" as="span">
+            {content}
+          </Heading>
           {view !== 'year' && !rangePicker && <Icon appearance="inverse" className="pl-3" name="keyboard_arrow_down" />}
         </>
       );
