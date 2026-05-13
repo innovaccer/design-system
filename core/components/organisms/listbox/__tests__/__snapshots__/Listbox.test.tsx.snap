@@ -2590,7 +2590,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--compressed Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -2645,7 +2644,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--compressed Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -2706,7 +2704,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--compressed Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -2761,7 +2758,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--compressed Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -2822,7 +2818,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--compressed Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -2877,7 +2872,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--compressed Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -2938,7 +2932,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--compressed Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -2993,7 +2986,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--compressed Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -3054,7 +3046,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--compressed Listbox-item--option"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -3109,7 +3100,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--compressed Listbox-item--option"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -3170,7 +3160,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--compressed Listbox-item--option"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -3225,7 +3214,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--compressed Listbox-item--option"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -3286,7 +3274,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--compressed Listbox-item--option"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -3341,7 +3328,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--compressed Listbox-item--option"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -3402,7 +3388,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--compressed Listbox-item--option"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -3457,7 +3442,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--compressed Listbox-item--option"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -3518,7 +3502,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--compressed Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -3573,7 +3556,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--compressed Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -3634,7 +3616,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--compressed Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -3689,7 +3670,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--compressed Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -3750,7 +3730,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--compressed Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -3805,7 +3784,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--compressed Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -3866,7 +3844,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--compressed Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -3921,7 +3898,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--compressed Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -3982,7 +3958,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--standard Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -4037,7 +4012,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--standard Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -4098,7 +4072,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--standard Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -4153,7 +4126,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--standard Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -4214,7 +4186,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--standard Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -4269,7 +4240,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--standard Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -4330,7 +4300,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--standard Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -4385,7 +4354,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--standard Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -4446,7 +4414,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--standard Listbox-item--option"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -4501,7 +4468,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--standard Listbox-item--option"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -4562,7 +4528,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--standard Listbox-item--option"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -4617,7 +4582,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--standard Listbox-item--option"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -4678,7 +4642,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--standard Listbox-item--option"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -4761,7 +4724,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--standard Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -4815,7 +4777,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--standard Listbox-item--option"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -4876,7 +4837,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--standard Listbox-item--option"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -4931,7 +4891,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--standard Listbox-item--option"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -4992,7 +4951,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--standard Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -5047,7 +5005,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--standard Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -5108,7 +5065,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--standard Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -5163,7 +5119,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--standard Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -5224,7 +5179,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--standard Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -5279,7 +5233,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--standard Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -5340,7 +5293,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--standard Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -5395,7 +5347,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--standard Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -5456,7 +5407,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--tight Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -5511,7 +5461,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--tight Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -5572,7 +5521,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--tight Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -5627,7 +5575,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--tight Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -5688,7 +5635,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--tight Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -5743,7 +5689,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--tight Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -5804,7 +5749,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--tight Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -5859,7 +5803,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--tight Listbox-item--description"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -5920,7 +5863,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--tight Listbox-item--option"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -5975,7 +5917,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--tight Listbox-item--option"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -6036,7 +5977,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--tight Listbox-item--option"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -6091,7 +6031,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--tight Listbox-item--option"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -6152,7 +6091,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--tight Listbox-item--option"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -6207,7 +6145,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--tight Listbox-item--option"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -6268,7 +6205,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--tight Listbox-item--option"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -6323,7 +6259,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--tight Listbox-item--option"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -6384,7 +6319,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--tight Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -6439,7 +6373,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--tight Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -6500,7 +6433,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--tight Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -6555,7 +6487,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--tight Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -6616,7 +6547,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--tight Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -6671,7 +6601,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--tight Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -6732,7 +6661,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--tight Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"
@@ -6787,7 +6715,6 @@ exports[`Listbox component snapshot
           role="presentation"
         >
           <div
-            aria-roledescription="draggable"
             aria-selected="false"
             class="Listbox-item Listbox-item--tight Listbox-item--resource"
             data-test="DesignSystem-Listbox-ItemWrapper"

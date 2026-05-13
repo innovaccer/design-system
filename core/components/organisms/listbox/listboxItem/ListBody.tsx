@@ -32,7 +32,6 @@ export const ListBody = (props: ListboxItemProps & React.HTMLAttributes<HTMLDivE
       data-test="DesignSystem-Listbox-ItemWrapper"
       className={itemClass}
       aria-selected={rest['aria-selected'] ?? defaultAriaSelected}
-      aria-roledescription={draggable ? 'draggable' : undefined}
       {...rest}
       aria-disabled={disabled ? true : undefined}
     >
