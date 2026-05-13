@@ -29,7 +29,7 @@ exports[`EditableChipInput component
           >
             <div
               aria-label="Chip1"
-              class="Chip-content"
+              class="Chip-content Chip-content--regular"
               data-test="DesignSystem-GenericChip--Content"
               role="button"
               tabindex="0"
@@ -68,7 +68,7 @@ exports[`EditableChipInput component
           >
             <div
               aria-label="Chip2"
-              class="Chip-content"
+              class="Chip-content Chip-content--regular"
               data-test="DesignSystem-GenericChip--Content"
               role="button"
               tabindex="0"
@@ -136,7 +136,7 @@ exports[`EditableChipInput component
           >
             <div
               aria-label="Chip1"
-              class="Chip-content"
+              class="Chip-content Chip-content--regular"
               data-test="DesignSystem-GenericChip--Content"
               role="button"
               tabindex="0"
@@ -175,7 +175,7 @@ exports[`EditableChipInput component
           >
             <div
               aria-label="Chip2"
-              class="Chip-content"
+              class="Chip-content Chip-content--regular"
               data-test="DesignSystem-GenericChip--Content"
               role="button"
               tabindex="0"
@@ -243,7 +243,7 @@ exports[`EditableChipInput component
           >
             <div
               aria-label="Chip1"
-              class="Chip-content"
+              class="Chip-content Chip-content--small"
               data-test="DesignSystem-GenericChip--Content"
               role="button"
               tabindex="0"
@@ -282,7 +282,7 @@ exports[`EditableChipInput component
           >
             <div
               aria-label="Chip2"
-              class="Chip-content"
+              class="Chip-content Chip-content--small"
               data-test="DesignSystem-GenericChip--Content"
               role="button"
               tabindex="0"
@@ -350,7 +350,7 @@ exports[`EditableChipInput component
           >
             <div
               aria-label="Chip1"
-              class="Chip-content"
+              class="Chip-content Chip-content--regular"
               data-test="DesignSystem-GenericChip--Content"
               role="button"
               tabindex="0"
@@ -389,7 +389,7 @@ exports[`EditableChipInput component
           >
             <div
               aria-label="Chip2"
-              class="Chip-content"
+              class="Chip-content Chip-content--regular"
               data-test="DesignSystem-GenericChip--Content"
               role="button"
               tabindex="0"
@@ -457,7 +457,7 @@ exports[`EditableChipInput component
           >
             <div
               aria-label="Chip1"
-              class="Chip-content"
+              class="Chip-content Chip-content--regular"
               data-test="DesignSystem-GenericChip--Content"
               role="button"
               tabindex="0"
@@ -496,7 +496,7 @@ exports[`EditableChipInput component
           >
             <div
               aria-label="Chip2"
-              class="Chip-content"
+              class="Chip-content Chip-content--regular"
               data-test="DesignSystem-GenericChip--Content"
               role="button"
               tabindex="0"
@@ -564,7 +564,7 @@ exports[`EditableChipInput component
           >
             <div
               aria-label="Chip1"
-              class="Chip-content"
+              class="Chip-content Chip-content--small"
               data-test="DesignSystem-GenericChip--Content"
               role="button"
               tabindex="0"
@@ -603,7 +603,7 @@ exports[`EditableChipInput component
           >
             <div
               aria-label="Chip2"
-              class="Chip-content"
+              class="Chip-content Chip-content--small"
               data-test="DesignSystem-GenericChip--Content"
               role="button"
               tabindex="0"

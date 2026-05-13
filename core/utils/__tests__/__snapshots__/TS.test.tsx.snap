@@ -64,7 +64,7 @@ exports[`TS renders children 1`] = `
     style="max-width: var(--spacing-640);"
   >
     <div
-      class="Chip-content"
+      class="Chip-content Chip-content--regular"
       data-test="DesignSystem-GenericChip--Content"
       role="button"
       tabindex="0"
@@ -1412,7 +1412,7 @@ exports[`TS renders children 1`] = `
         style="max-width: var(--spacing-640);"
       >
         <div
-          class="Chip-content"
+          class="Chip-content Chip-content--regular"
           data-test="DesignSystem-GenericChip--Content"
           role="button"
           tabindex="0"
