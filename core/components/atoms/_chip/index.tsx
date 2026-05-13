@@ -122,13 +122,6 @@ export const GenericChip = (props: GenericChipProps) => {
     ['inverse']: !disabled && !selected,
   }) as TextProps['color'];
 
-  const chipWrapperClass = classNames(
-    {
-      [styles['Chip-wrapper']]: true,
-    },
-    className
-  );
-
   const renderLabel = () => {
     if (typeof label === 'string') {
       return (
@@ -195,6 +188,22 @@ export const GenericChip = (props: GenericChipProps) => {
     return ariaProps;
   };
 
+  const chipContent = (
+    <>
+      {icon && (
+        <Icon
+          data-test="DesignSystem-GenericChip--Icon"
+          name={icon}
+          type={iconType}
+          size={IconSize}
+          appearance={iconAppearance('left')}
+          className={iconClass('left')}
+        />
+      )}
+      {renderLabel()}
+    </>
+  );
+
   return (
     <Tooltip
       showTooltip={isTextTruncated}
@@ -203,29 +212,24 @@ export const GenericChip = (props: GenericChipProps) => {
       triggerClass="flex-grow-0"
     >
       <div
-        tabIndex={computedTabIndex}
         style={wrapperStyle}
         data-test="DesignSystem-GenericChip--Wrapper"
-        role={props.role || 'button'}
-        aria-label={computedAriaLabel}
-        aria-labelledby={props['aria-labelledby']}
-        {...getAriaProps()}
-        onKeyDown={onChipKeyDownHandler}
         {...baseProps}
-        className={chipWrapperClass}
-        onClick={onClickHandler}
+        className={classNames(styles['Chip-wrapper'], className)}
       >
-        {icon && (
-          <Icon
-            data-test="DesignSystem-GenericChip--Icon"
-            name={icon}
-            type={iconType}
-            size={IconSize}
-            appearance={iconAppearance('left')}
-            className={iconClass('left')}
-          />
-        )}
-        {renderLabel()}
+        <div
+          data-test="DesignSystem-GenericChip--Content"
+          role={props.role || 'button'}
+          tabIndex={computedTabIndex}
+          aria-label={computedAriaLabel}
+          aria-labelledby={props['aria-labelledby']}
+          className={classNames(styles['Chip-content'], styles[`Chip-content--${size}`])}
+          onClick={onClickHandler}
+          onKeyDown={onChipKeyDownHandler}
+          {...getAriaProps()}
+        >
+          {chipContent}
+        </div>
         {clearButton && (
           <div
             role="button"

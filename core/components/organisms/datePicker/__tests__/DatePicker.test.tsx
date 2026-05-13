@@ -84,7 +84,7 @@ describe('DatePicker component today date chip', () => {
 
   it('calls click handler', () => {
     const { getByTestId } = render(<DatePicker onDateChange={FunctionValue} date={newDate} />);
-    const chip = getByTestId('DesignSystem-Chip--GenericChip');
+    const chip = getByTestId('DesignSystem-GenericChip--Content');
     fireEvent.click(chip);
     expect(FunctionValue).toHaveBeenCalled();
   });
