@@ -84,7 +84,7 @@
 
 .PageHeader-group--title {
   flex: 1 1 auto;
-  min-width: 0;
+  min-width: 320px;
   order: 1;
 }
 
@@ -103,6 +103,7 @@
 .PageHeader-group--actions {
   flex: 0 0 auto;
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-end;
   align-items: center;
   padding-left: var(--spacing-20);
@@ -113,7 +114,7 @@
 .PageHeader-row--withCenter {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-  align-items: center;
+  align-items: start;
 }
 
 /* Center nav wraps to its own row */
@@ -124,7 +125,7 @@
 
 .PageHeader-row--withCenter.PageHeader-row--centerWrapped .PageHeader-group--title {
   flex: 1 1 auto;
-  min-width: 0;
+  min-width: 320px;
   order: 1;
 }
 

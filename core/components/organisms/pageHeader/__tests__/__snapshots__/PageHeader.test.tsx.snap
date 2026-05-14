@@ -535,6 +535,7 @@ exports[`Navigation component
                 class="PageHeader-group--actions"
                 data-group="actions"
                 data-test="DesignSystem-PageHeader--Actions"
+                style=""
               >
                 <button
                   class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -1767,6 +1768,7 @@ exports[`Navigation component
                 class="PageHeader-group--actions"
                 data-group="actions"
                 data-test="DesignSystem-PageHeader--Actions"
+                style=""
               >
                 <button
                   class="Button Button--regular Button--basic Button--iconAlign-left"
