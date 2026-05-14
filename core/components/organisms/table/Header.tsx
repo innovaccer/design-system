@@ -256,61 +256,69 @@ export const Header = (props: HeaderProps) => {
   const headerClasses = classNames(gridStyles['Header-content'], gridStyles['Header-content--bottom']);
   const tableDividerClasses = classNames(tableStyles['Table-Header--Divider'], 'mx-4');
 
+  const hasToolbarContent =
+    withSearch || (showFilters && filterSchema.length > 0) || !!children || !!globalActionRenderer;
+
   return (
     <div className={gridStyles['Header']}>
-      <div className={gridStyles['Header-content']}>
-        <div className="d-flex w-100">
-          {withSearch && (
-            <div className={gridStyles['Header-search']}>
-              <Input
-                data-test="DesignSystem-Table-Header--withSearch"
-                name="GridHeader-search"
-                icon="search"
-                placeholder={searchPlaceholder}
-                onChange={onSearchChange}
-                value={searchTerm}
-                onClear={() => updateSearchTerm && updateSearchTerm('')}
-                disabled={loading && !hasSchema(schema)}
-                autoComplete="off"
-              />
-            </div>
-          )}
-          {showFilters && filterSchema.length > 0 && (
-            <div className={gridStyles['Header-dropdown']}>
-              <div className={gridStyles['Header-filters']}>
-                {filterSchema.map((s) => {
-                  const { name, displayName, filters, filterType, filterOptions } = s;
-
-                  const selectFilters = filters
-                    ? filters.map((f) => ({
-                        label: f.label,
-                        value: f.value,
-                        id: f.value,
-                      }))
-                    : [];
-
-                  return (
-                    <FilterSelect
-                      key={name}
-                      name={name}
-                      displayName={displayName}
-                      filters={selectFilters}
-                      filterList={filterList}
-                      filterType={filterType}
-                      filterOptions={filterOptions}
-                      onChange={onFilterChange}
+      {hasToolbarContent && (
+        <div className={gridStyles['Header-content']}>
+          <div className={gridStyles['Header-toolbar']}>
+            {(withSearch || (showFilters && filterSchema.length > 0)) && (
+              <div className={gridStyles['Header-searchFilters']}>
+                {withSearch && (
+                  <div className={gridStyles['Header-search']}>
+                    <Input
+                      data-test="DesignSystem-Table-Header--withSearch"
+                      name="GridHeader-search"
+                      icon="search"
+                      placeholder={searchPlaceholder}
+                      onChange={onSearchChange}
+                      value={searchTerm}
+                      onClear={() => updateSearchTerm && updateSearchTerm('')}
+                      disabled={loading && !hasSchema(schema)}
+                      autoComplete="off"
                     />
-                  );
-                })}
+                  </div>
+                )}
+                {showFilters && filterSchema.length > 0 && (
+                  <>
+                    {filterSchema.map((s) => {
+                      const { name, displayName, filters, filterType, filterOptions } = s;
+
+                      const selectFilters = filters
+                        ? filters.map((f) => ({
+                            label: f.label,
+                            value: f.value,
+                            id: f.value,
+                          }))
+                        : [];
+
+                      return (
+                        <FilterSelect
+                          key={name}
+                          name={name}
+                          displayName={displayName}
+                          filters={selectFilters}
+                          filterList={filterList}
+                          filterType={filterType}
+                          filterOptions={filterOptions}
+                          onChange={onFilterChange}
+                          className="my-0"
+                        />
+                      );
+                    })}
+                  </>
+                )}
               </div>
-            </div>
+            )}
+            {children && <div className={gridStyles['Header-actions']}>{children}</div>}
+          </div>
+          {globalActionRenderer && (
+            <div className={gridStyles['Header-global-actions']}>{globalActionRenderer(displayData)}</div>
           )}
-          {children && <div className={gridStyles['Header-actions']}>{children}</div>}
         </div>
-        {globalActionRenderer && (
-          <div className={gridStyles['Header-global-actions']}>{globalActionRenderer(displayData)}</div>
-        )}
-      </div>
+      )}
       <div className={headerClasses}>
         <div className={gridStyles['Header-label']}>
           {!showHead && withCheckbox && !loading && (
