@@ -79,6 +79,7 @@ exports[`Navigation component
             >
               <div
                 class="PageHeader-group--title"
+                data-group="title"
               >
                 <div
                   class="PageHeader-titleWrapper"
@@ -165,6 +166,7 @@ exports[`Navigation component
               </div>
               <div
                 class="PageHeader-group--actions"
+                data-group="actions"
                 data-test="DesignSystem-PageHeader--Actions"
               >
                 <button
@@ -404,6 +406,7 @@ exports[`Navigation component
             >
               <div
                 class="PageHeader-group--title"
+                data-group="title"
               >
                 <div
                   class="PageHeader-titleWrapper"
@@ -490,6 +493,7 @@ exports[`Navigation component
               </div>
               <div
                 class="PageHeader-group--center"
+                data-group="center"
                 data-test="DesignSystem-PageHeader--CenterNav"
               >
                 <div
@@ -529,6 +533,7 @@ exports[`Navigation component
               </div>
               <div
                 class="PageHeader-group--actions"
+                data-group="actions"
                 data-test="DesignSystem-PageHeader--Actions"
               >
                 <button
@@ -734,6 +739,7 @@ exports[`Navigation component
             >
               <div
                 class="PageHeader-group--title"
+                data-group="title"
               >
                 <div
                   class="PageHeader-titleWrapper"
@@ -820,6 +826,7 @@ exports[`Navigation component
               </div>
               <div
                 class="PageHeader-group--actions"
+                data-group="actions"
                 data-test="DesignSystem-PageHeader--Actions"
               >
                 <button
@@ -1007,6 +1014,7 @@ exports[`Navigation component
             >
               <div
                 class="PageHeader-group--title"
+                data-group="title"
               >
                 <div
                   class="PageHeader-titleWrapper"
@@ -1152,6 +1160,7 @@ exports[`Navigation component
             >
               <div
                 class="PageHeader-group--title"
+                data-group="title"
               >
                 <div
                   class="PageHeader-titleWrapper"
@@ -1167,6 +1176,7 @@ exports[`Navigation component
               </div>
               <div
                 class="PageHeader-group--center"
+                data-group="center"
                 data-test="DesignSystem-PageHeader--CenterNav"
               >
                 <div
@@ -1276,6 +1286,7 @@ exports[`Navigation component
             >
               <div
                 class="PageHeader-group--title"
+                data-group="title"
               >
                 <div
                   class="PageHeader-titleWrapper"
@@ -1291,6 +1302,7 @@ exports[`Navigation component
               </div>
               <div
                 class="PageHeader-group--actions"
+                data-group="actions"
                 data-test="DesignSystem-PageHeader--Actions"
               >
                 <button
@@ -1368,6 +1380,7 @@ exports[`Navigation component
             >
               <div
                 class="PageHeader-group--title"
+                data-group="title"
               >
                 <div
                   class="PageHeader-titleWrapper"
@@ -1410,6 +1423,7 @@ exports[`Navigation component
             >
               <div
                 class="PageHeader-group--title"
+                data-group="title"
               >
                 <div
                   class="PageHeader-titleWrapper"
@@ -1458,6 +1472,7 @@ exports[`Navigation component
             >
               <div
                 class="PageHeader-group--title"
+                data-group="title"
               >
                 <div
                   class="PageHeader-titleWrapper"
@@ -1523,6 +1538,7 @@ exports[`Navigation component
             >
               <div
                 class="PageHeader-group--title"
+                data-group="title"
               >
                 <div
                   class="PageHeader-titleWrapper"
@@ -1622,6 +1638,7 @@ exports[`Navigation component
             >
               <div
                 class="PageHeader-group--title"
+                data-group="title"
               >
                 <div
                   class="PageHeader-titleWrapper"
@@ -1708,6 +1725,7 @@ exports[`Navigation component
               </div>
               <div
                 class="PageHeader-group--center"
+                data-group="center"
                 data-test="DesignSystem-PageHeader--CenterNav"
               >
                 <div
@@ -1747,6 +1765,7 @@ exports[`Navigation component
               </div>
               <div
                 class="PageHeader-group--actions"
+                data-group="actions"
                 data-test="DesignSystem-PageHeader--Actions"
               >
                 <button
