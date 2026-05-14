@@ -76,6 +76,7 @@ exports[`Navigation component
           >
             <div
               class="PageHeader-row"
+              style=""
             >
               <div
                 class="PageHeader-group--title"
@@ -737,6 +738,7 @@ exports[`Navigation component
           >
             <div
               class="PageHeader-row"
+              style=""
             >
               <div
                 class="PageHeader-group--title"
@@ -1012,6 +1014,7 @@ exports[`Navigation component
           >
             <div
               class="PageHeader-row"
+              style=""
             >
               <div
                 class="PageHeader-group--title"
@@ -1285,6 +1288,7 @@ exports[`Navigation component
           >
             <div
               class="PageHeader-row"
+              style=""
             >
               <div
                 class="PageHeader-group--title"
@@ -1379,6 +1383,7 @@ exports[`Navigation component
           >
             <div
               class="PageHeader-row"
+              style=""
             >
               <div
                 class="PageHeader-group--title"
@@ -1422,6 +1427,7 @@ exports[`Navigation component
           >
             <div
               class="PageHeader-row"
+              style=""
             >
               <div
                 class="PageHeader-group--title"
@@ -1471,6 +1477,7 @@ exports[`Navigation component
           >
             <div
               class="PageHeader-row"
+              style=""
             >
               <div
                 class="PageHeader-group--title"
@@ -1537,6 +1544,7 @@ exports[`Navigation component
           >
             <div
               class="PageHeader-row"
+              style=""
             >
               <div
                 class="PageHeader-group--title"

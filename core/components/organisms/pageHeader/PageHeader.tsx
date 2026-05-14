@@ -119,14 +119,20 @@ export const PageHeader = (props: PageHeaderProps) => {
       const actionsEl = row.querySelector<HTMLElement>('[data-group="actions"]');
       if (!titleEl) return;
 
-      // Strip stacked/wrapped classes to restore base layout before measuring —
-      // center-wrapped switches to flex (gridTemplateColumns becomes a no-op),
-      // all-stacked sets title to 100% width (offsetWidth would return rowWidth).
-      const cwClass = styles['PageHeader-row--centerWrapped'];
+      // Strip stacked classes before measuring so we read natural layout widths.
+      // Also temporarily restore the grid (withCenter) if not in full mode —
+      // grid is only applied in full mode now (center-wrapped uses flex), but we
+      // need it for the max-content column trick to work accurately.
+      const withCenterClass = styles['PageHeader-row--withCenter'];
       const asClass = styles['PageHeader-row--allStacked'];
-      const hadCW = row.classList.contains(cwClass);
+      const ghostClass = styles['PageHeader-group--center--ghost'];
       const hadAS = row.classList.contains(asClass);
-      row.classList.remove(cwClass, asClass);
+      const hadWithCenter = row.classList.contains(withCenterClass);
+      const hadGhost = centerEl?.classList.contains(ghostClass) ?? false;
+
+      row.classList.remove(asClass);
+      if (!hadWithCenter && hasCenterNav) row.classList.add(withCenterClass);
+      if (hadGhost && centerEl) centerEl.classList.remove(ghostClass);
 
       const rowWidth = row.offsetWidth;
 
@@ -141,7 +147,8 @@ export const PageHeader = (props: PageHeaderProps) => {
         const actionsDesired = actionsEl?.offsetWidth ?? 0;
 
         row.style.gridTemplateColumns = prevCols;
-        if (hadCW) row.classList.add(cwClass);
+        if (hadGhost && centerEl) centerEl.classList.add(ghostClass);
+        if (!hadWithCenter) row.classList.remove(withCenterClass);
         if (hadAS) row.classList.add(asClass);
 
         // Grid gives equal 1fr to title and actions columns. Check each half
@@ -160,17 +167,22 @@ export const PageHeader = (props: PageHeaderProps) => {
         }
       } else {
         // Bottom nav (consumer-set) or no nav — only check if actions fit on the
-        // title row. Row is flex here, so use width:max-content on each element.
-        const prevTitleW = titleEl.style.width;
-        const prevActionsW = actionsEl ? actionsEl.style.width : '';
-        titleEl.style.width = 'max-content';
-        if (actionsEl) actionsEl.style.width = 'max-content';
+        // title row. Temporarily reshape the row into a max-content grid so each
+        // element reports its natural width. Flex won't do here: flex-grow stretches
+        // the title past content, and once title+actions exceed rowWidth flex-wrap
+        // fires mid-measurement (title takes full row, actions onto next line),
+        // inflating offsetWidth so the sum spuriously exceeds rowWidth → false stack.
+        // The grid trick mirrors the hasCenterNav branch above.
+        const prevDisplay = row.style.display;
+        const prevCols = row.style.gridTemplateColumns;
+        row.style.display = 'grid';
+        row.style.gridTemplateColumns = actionsEl ? 'max-content max-content' : 'max-content';
 
         const titleDesired = Math.min(titleEl.offsetWidth, TITLE_CAP);
         const actionsDesired = actionsEl?.offsetWidth ?? 0;
 
-        titleEl.style.width = prevTitleW;
-        if (actionsEl) actionsEl.style.width = prevActionsW;
+        row.style.display = prevDisplay;
+        row.style.gridTemplateColumns = prevCols;
         if (hadAS) row.classList.add(asClass);
 
         if (actionsEl && titleDesired + actionsDesired > rowWidth) {
@@ -189,12 +201,18 @@ export const PageHeader = (props: PageHeaderProps) => {
   }, [hasCenterNav, navigation, stepper, actions]);
 
   const rowClasses = classNames(styles['PageHeader-row'], {
-    [styles['PageHeader-row--withCenter']]: hasCenterNav,
-    [styles['PageHeader-row--centerWrapped']]: hasCenterNav && stackedMode === 'center-wrapped',
+    // Grid only in full mode — center-wrapped uses flex so title/actions share naturally
+    [styles['PageHeader-row--withCenter']]: hasCenterNav && stackedMode === 'full',
     [styles['PageHeader-row--allStacked']]: stackedMode === 'all-stacked',
   });
 
-  const centerNavProps = { navigationPosition, navigation, stepper };
+  // When center nav is auto-moved to bottom, keep it ghost in the row for measurement
+  // (position:absolute, visibility:hidden) so recovery detection still works.
+  const centerNavGhost = hasCenterNav && stackedMode !== 'full';
+  const centerNavProps = { navigationPosition, navigation, stepper, ghost: centerNavGhost };
+
+  // Nav renders in PageHeader-bottom if: consumer set bottom, or collision moved it there
+  const showNavInBottom = !!(navigation || stepper) && (navigationPosition === 'bottom' || centerNavGhost);
 
   return (
     <div data-test="DesignSystem-PageHeader">
@@ -218,9 +236,9 @@ export const PageHeader = (props: PageHeaderProps) => {
           </div>
         </div>
 
-        {(tabs || (navigationPosition === 'bottom' && (navigation || stepper))) && (
+        {(tabs || showNavInBottom) && (
           <div className={classNames('pl-3', styles['PageHeader-bottom'])}>
-            {navigationPosition === 'bottom' && <Nav navigation={navigation} stepper={stepper} />}
+            {showNavInBottom && <Nav navigation={navigation} stepper={stepper} />}
             {tabs && <div data-test="DesignSystem-PageHeader--Tabs">{tabs}</div>}
           </div>
         )}

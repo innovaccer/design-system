@@ -1,4 +1,5 @@
 import * as React from 'react';
+import classNames from 'classnames';
 import { Heading } from '@/index';
 import { navigationPositionType } from './PageHeader';
 import styles from '@css/components/pageHeader.module.css';
@@ -40,18 +41,22 @@ export const CenterNav = (props: {
   navigationPosition: navigationPositionType;
   navigation: React.ReactNode;
   stepper: React.ReactNode;
+  ghost?: boolean;
 }) => {
-  const { navigationPosition, navigation, stepper } = props;
+  const { navigationPosition, navigation, stepper, ghost } = props;
   const showCenterNav = (navigation || stepper) && navigationPosition === 'center';
   return (
     <>
       {showCenterNav && (
         <div
-          className={styles['PageHeader-group--center']}
+          className={classNames(styles['PageHeader-group--center'], {
+            [styles['PageHeader-group--center--ghost']]: ghost,
+          })}
           data-group="center"
-          data-test="DesignSystem-PageHeader--CenterNav"
+          data-test={ghost ? undefined : 'DesignSystem-PageHeader--CenterNav'}
+          aria-hidden={ghost || undefined}
         >
-          <Nav {...props} />
+          <Nav navigation={navigation} stepper={stepper} />
         </div>
       )}
     </>
