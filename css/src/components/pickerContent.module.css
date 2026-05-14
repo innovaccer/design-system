@@ -1,0 +1,92 @@
+.PickerContentLayout {
+  display: flex;
+  align-items: stretch;
+}
+
+.PickerCalendar {
+  min-width: 0;
+}
+
+.PickerCustomContent {
+  display: flex;
+  align-items: stretch;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.PickerCustomContent-presetSelect,
+.PickerCustomContent-trigger {
+  display: none;
+  width: calc(100% - var(--spacing-60));
+  margin: var(--spacing-30) var(--spacing-30) 0;
+}
+
+.PickerCustomContent-mobileCustomContent {
+  display: none;
+}
+
+.PickerCustomContent-panel {
+  display: flex;
+  align-items: stretch;
+}
+
+.PickerCustomContent-triggerButton {
+  justify-content: space-between;
+}
+
+@media (max-width: 576px) {
+  .PickerContentLayout {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .PickerCalendar {
+    width: 100%;
+  }
+
+  .PickerCustomContent {
+    display: block;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .PickerCustomContent-presetSelect,
+  .PickerCustomContent-trigger {
+    display: block;
+  }
+
+  .PickerCustomContent-mobileCustomContent {
+    display: block;
+    width: calc(100% - var(--spacing-60));
+    margin: var(--spacing-20) var(--spacing-30) 0;
+  }
+
+  .PickerCustomContent--withPresetSelect .PickerCustomContent-panel {
+    display: none;
+  }
+
+  .PickerCustomContent-panel {
+    display: none;
+    position: absolute;
+    top: calc(100% + var(--spacing-10));
+    left: var(--spacing-30);
+    right: var(--spacing-30);
+    max-height: min(var(--spacing-640), 50vh);
+    overflow: auto;
+    flex-direction: column;
+    align-items: stretch;
+    padding: var(--spacing-10);
+    border-radius: var(--border-radius-10);
+    background: var(--white);
+    box-shadow: var(--shadow-l);
+    z-index: 500;
+  }
+
+  .PickerCustomContent-panel--open {
+    display: block;
+  }
+
+  .PickerCustomContent-panel [data-test='DesignSystem-Divider'] {
+    display: none;
+  }
+}
