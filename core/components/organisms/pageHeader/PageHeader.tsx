@@ -105,14 +105,13 @@ export const PageHeader = (props: PageHeaderProps) => {
   const rowRef = useRef<HTMLDivElement>(null);
   const [stackedMode, setStackedMode] = useState<StackedMode>('full');
 
-  useEffect(() => {
-    if (!hasCenterNav) {
-      setStackedMode('full');
-      return;
-    }
+  // Title is capped at 320px — beyond this it truncates with ellipsis so extra
+  // width doesn't buy anything meaningful for layout decisions.
+  const TITLE_CAP = 320;
 
+  useEffect(() => {
     const row = rowRef.current;
-    if (!row) return;
+    if (!row || !window.ResizeObserver) return;
 
     const measure = () => {
       const titleEl = row.querySelector<HTMLElement>('[data-group="title"]');
@@ -120,45 +119,67 @@ export const PageHeader = (props: PageHeaderProps) => {
       const actionsEl = row.querySelector<HTMLElement>('[data-group="actions"]');
       if (!titleEl) return;
 
-      // Strip stacked classes so elements return to natural grid positions for measurement
+      // Strip stacked/wrapped classes to restore base layout before measuring —
+      // center-wrapped switches to flex (gridTemplateColumns becomes a no-op),
+      // all-stacked sets title to 100% width (offsetWidth would return rowWidth).
       const cwClass = styles['PageHeader-row--centerWrapped'];
       const asClass = styles['PageHeader-row--allStacked'];
       const hadCW = row.classList.contains(cwClass);
       const hadAS = row.classList.contains(asClass);
       row.classList.remove(cwClass, asClass);
 
-      // Disable internal flex-wrap on actions so its bounding rect reflects natural unwrapped width.
-      // Without this, actions wraps silently inside its grid column and getBoundingClientRect never
-      // exceeds the column boundary, so overflow goes undetected.
-      if (actionsEl) actionsEl.style.flexWrap = 'nowrap';
+      const rowWidth = row.offsetWidth;
 
-      const rowRect = row.getBoundingClientRect();
-      const titleRect = titleEl.getBoundingClientRect();
-      const actionsRect = actionsEl?.getBoundingClientRect();
-      const centerRect = centerEl?.getBoundingClientRect();
+      if (hasCenterNav) {
+        // Grid layout — switch all columns to max-content so each element reports
+        // its natural unconstrained width (1fr columns otherwise clamp offsetWidth).
+        const prevCols = row.style.gridTemplateColumns;
+        row.style.gridTemplateColumns = 'max-content max-content max-content';
 
-      if (actionsEl) actionsEl.style.flexWrap = '';
+        const titleDesired = Math.min(titleEl.offsetWidth, TITLE_CAP);
+        const centerDesired = centerEl?.offsetWidth ?? 0;
+        const actionsDesired = actionsEl?.offsetWidth ?? 0;
 
-      // Restore immediately before any paint
-      if (hadCW) row.classList.add(cwClass);
-      if (hadAS) row.classList.add(asClass);
+        row.style.gridTemplateColumns = prevCols;
+        if (hadCW) row.classList.add(cwClass);
+        if (hadAS) row.classList.add(asClass);
 
-      const titleActionsCollide = !!actionsRect && titleRect.right > actionsRect.left;
-      // Actions wider than its grid column spills beyond the row boundary
-      const actionsOverflow = !!actionsRect && actionsRect.right > rowRect.right + 1;
-      const centerCollidesLeft = !!centerRect && centerRect.left < titleRect.right;
-      const centerCollidesRight = !!centerRect && !!actionsRect && centerRect.right > actionsRect.left;
+        // Grid gives equal 1fr to title and actions columns. Check each half
+        // independently: title must fit the left half, actions the right half.
+        const halfWidth = rowWidth / 2;
+        const leftOverflows = titleDesired + centerDesired / 2 > halfWidth;
+        const rightOverflows = actionsDesired + centerDesired / 2 > halfWidth;
+        const actionsWrap = titleDesired + actionsDesired > rowWidth;
 
-      if (titleActionsCollide) {
-        setStackedMode('all-stacked');
-      } else if (centerCollidesLeft || centerCollidesRight || actionsOverflow) {
-        setStackedMode('center-wrapped');
+        if (actionsWrap) {
+          setStackedMode('all-stacked');
+        } else if (leftOverflows || rightOverflows) {
+          setStackedMode('center-wrapped');
+        } else {
+          setStackedMode('full');
+        }
       } else {
-        setStackedMode('full');
+        // Bottom nav (consumer-set) or no nav — only check if actions fit on the
+        // title row. Row is flex here, so use width:max-content on each element.
+        const prevTitleW = titleEl.style.width;
+        const prevActionsW = actionsEl ? actionsEl.style.width : '';
+        titleEl.style.width = 'max-content';
+        if (actionsEl) actionsEl.style.width = 'max-content';
+
+        const titleDesired = Math.min(titleEl.offsetWidth, TITLE_CAP);
+        const actionsDesired = actionsEl?.offsetWidth ?? 0;
+
+        titleEl.style.width = prevTitleW;
+        if (actionsEl) actionsEl.style.width = prevActionsW;
+        if (hadAS) row.classList.add(asClass);
+
+        if (actionsEl && titleDesired + actionsDesired > rowWidth) {
+          setStackedMode('all-stacked');
+        } else {
+          setStackedMode('full');
+        }
       }
     };
-
-    if (!window.ResizeObserver) return;
 
     const observer = new window.ResizeObserver(measure);
     observer.observe(row);
