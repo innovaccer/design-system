@@ -3969,6 +3969,7 @@ exports[`TS renders children 1`] = `
           >
             <div
               class="PageHeader-group--title"
+              data-group="title"
             >
               <div
                 class="PageHeader-titleWrapper"

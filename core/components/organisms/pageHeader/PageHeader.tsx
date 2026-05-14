@@ -119,6 +119,26 @@ export const PageHeader = (props: PageHeaderProps) => {
       const actionsEl = row.querySelector<HTMLElement>('[data-group="actions"]');
       if (!titleEl) return;
 
+      // Measure title-heading and status/meta separately. Only the heading
+      // truncates past TITLE_CAP — status/meta wraps, so capping the combined
+      // group would under-report when meta is long and miss real overflow.
+      // Setting width:max-content on each child is required because, as
+      // block-level children of titleEl, they otherwise stretch to titleEl's
+      // own width rather than reporting their natural content widths.
+      const measureTitleDesired = () => {
+        const titleTextEl = titleEl.querySelector<HTMLElement>('[data-test="DesignSystem-PageHeader--Title"]');
+        const statusEl = titleEl.querySelector<HTMLElement>('[data-test="DesignSystem-PageHeader--Status"]');
+        const prevTitleW = titleTextEl?.style.width;
+        const prevStatusW = statusEl?.style.width;
+        if (titleTextEl) titleTextEl.style.width = 'max-content';
+        if (statusEl) statusEl.style.width = 'max-content';
+        const titleW = titleTextEl ? Math.min(titleTextEl.offsetWidth, TITLE_CAP) : 0;
+        const statusW = statusEl?.offsetWidth ?? 0;
+        if (titleTextEl && prevTitleW !== undefined) titleTextEl.style.width = prevTitleW;
+        if (statusEl && prevStatusW !== undefined) statusEl.style.width = prevStatusW;
+        return Math.max(titleW, statusW);
+      };
+
       // Strip stacked classes before measuring so we read natural layout widths.
       // Also temporarily restore the grid (withCenter) if not in full mode —
       // grid is only applied in full mode now (center-wrapped uses flex), but we
@@ -142,7 +162,7 @@ export const PageHeader = (props: PageHeaderProps) => {
         const prevCols = row.style.gridTemplateColumns;
         row.style.gridTemplateColumns = 'max-content max-content max-content';
 
-        const titleDesired = Math.min(titleEl.offsetWidth, TITLE_CAP);
+        const titleDesired = measureTitleDesired();
         const centerDesired = centerEl?.offsetWidth ?? 0;
         const actionsDesired = actionsEl?.offsetWidth ?? 0;
 
@@ -178,7 +198,7 @@ export const PageHeader = (props: PageHeaderProps) => {
         row.style.display = 'grid';
         row.style.gridTemplateColumns = actionsEl ? 'max-content max-content' : 'max-content';
 
-        const titleDesired = Math.min(titleEl.offsetWidth, TITLE_CAP);
+        const titleDesired = measureTitleDesired();
         const actionsDesired = actionsEl?.offsetWidth ?? 0;
 
         row.style.display = prevDisplay;

@@ -90,7 +90,7 @@ export const Responsiveness = () => {
 
   const actions =
     actionCount > 0 ? (
-      <div className="d-flex align-items-center justify-content-end">
+      <div className="d-flex flex-wrap align-items-center justify-content-end">
         {extraActionElements.slice(MAX_ACTIONS - actionCount)}
         <Button appearance="primary" onClick={action('save')} key="save">
           Save
@@ -371,7 +371,7 @@ const customCode = `() => {
   ];
 
   const actions = actionCount > 0 ? (
-    <div className="d-flex align-items-center justify-content-end">
+    <div className="d-flex flex-wrap align-items-center justify-content-end">
       {extraActionElements.slice(MAX_ACTIONS - actionCount)}
       <Button appearance="primary" key="save">Save</Button>
     </div>
