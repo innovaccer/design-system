@@ -15,7 +15,6 @@ import { action } from '@/utils/action';
 
 export const Responsiveness = () => {
   const [viewportPreset, setViewportPreset] = React.useState('full');
-  const [navPosition, setNavPosition] = React.useState('center');
   const [showActions, setShowActions] = React.useState(true);
   const [showBreadcrumb, setShowBreadcrumb] = React.useState(false);
 
@@ -100,22 +99,6 @@ export const Responsiveness = () => {
         />
         <Chip
           type="selection"
-          name="centerNav"
-          label="Center nav"
-          selected={navPosition === 'center'}
-          aria-label="Use center navigation position"
-          onClick={() => setNavPosition('center')}
-        />
-        <Chip
-          type="selection"
-          name="bottomNav"
-          label="Bottom nav"
-          selected={navPosition === 'bottom'}
-          aria-label="Use bottom navigation position"
-          onClick={() => setNavPosition('bottom')}
-        />
-        <Chip
-          type="selection"
           name="showActions"
           label="Actions"
           selected={showActions}
@@ -135,7 +118,7 @@ export const Responsiveness = () => {
       <div style={containerStyle} className="bg-secondary-lightest">
         <PageHeader
           title="Pac Follow-Up Protocol"
-          navigationPosition={navPosition}
+          navigationPosition="center"
           navigation={navigation}
           actions={actions}
           breadcrumbs={breadcrumbs}
@@ -151,7 +134,6 @@ export const Responsiveness = () => {
 
 const customCode = `() => {
   const [viewportPreset, setViewportPreset] = React.useState('full');
-  const [navPosition, setNavPosition] = React.useState('center');
   const [showActions, setShowActions] = React.useState(true);
   const [showBreadcrumb, setShowBreadcrumb] = React.useState(false);
 
@@ -213,10 +195,6 @@ const customCode = `() => {
           aria-label="Constrain header to 320px width" onClick={() => togglePreset('320')} />
         <Chip type="selection" name="viewport640" label="640px" selected={viewportPreset === '640'}
           aria-label="Constrain header to 640px width" onClick={() => togglePreset('640')} />
-        <Chip type="selection" name="centerNav" label="Center nav" selected={navPosition === 'center'}
-          aria-label="Use center navigation position" onClick={() => setNavPosition('center')} />
-        <Chip type="selection" name="bottomNav" label="Bottom nav" selected={navPosition === 'bottom'}
-          aria-label="Use bottom navigation position" onClick={() => setNavPosition('bottom')} />
         <Chip type="selection" name="showActions" label="Actions" selected={showActions}
           aria-label="Toggle action buttons" onClick={() => setShowActions((v) => !v)} />
         <Chip type="selection" name="showBreadcrumb" label="Breadcrumb" selected={showBreadcrumb}
@@ -226,7 +204,7 @@ const customCode = `() => {
       <div style={containerStyle} className="bg-secondary-lightest">
         <PageHeader
           title="Pac Follow-Up Protocol"
-          navigationPosition={navPosition}
+          navigationPosition="center"
           navigation={navigation}
           actions={actions}
           breadcrumbs={breadcrumbs}
