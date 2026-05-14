@@ -17,6 +17,7 @@ export const Responsiveness = () => {
   const [viewportPreset, setViewportPreset] = React.useState('full');
   const [showActions, setShowActions] = React.useState(true);
   const [showBreadcrumb, setShowBreadcrumb] = React.useState(false);
+  const [showBadge, setShowBadge] = React.useState(true);
 
   const navigationData = [
     { name: 'overview', label: 'Overview' },
@@ -113,6 +114,14 @@ export const Responsiveness = () => {
           aria-label="Toggle breadcrumb (level 1)"
           onClick={() => setShowBreadcrumb((v) => !v)}
         />
+        <Chip
+          type="selection"
+          name="showBadge"
+          label="Badge"
+          selected={showBadge}
+          aria-label="Toggle badge beside title"
+          onClick={() => setShowBadge((v) => !v)}
+        />
       </Flex>
 
       <div style={containerStyle} className="bg-secondary-lightest">
@@ -122,7 +131,7 @@ export const Responsiveness = () => {
           navigation={navigation}
           actions={actions}
           breadcrumbs={breadcrumbs}
-          badge={<Badge appearance="secondary">Draft</Badge>}
+          badge={showBadge ? <Badge appearance="secondary">Draft</Badge> : undefined}
           status={<StatusHint appearance="info">Ongoing</StatusHint>}
           separator={false}
           aria-label="Pac follow-up page header"
@@ -136,6 +145,7 @@ const customCode = `() => {
   const [viewportPreset, setViewportPreset] = React.useState('full');
   const [showActions, setShowActions] = React.useState(true);
   const [showBreadcrumb, setShowBreadcrumb] = React.useState(false);
+  const [showBadge, setShowBadge] = React.useState(true);
 
   const navigationData = [
     { name: 'overview', label: 'Overview' },
@@ -199,6 +209,8 @@ const customCode = `() => {
           aria-label="Toggle action buttons" onClick={() => setShowActions((v) => !v)} />
         <Chip type="selection" name="showBreadcrumb" label="Breadcrumb" selected={showBreadcrumb}
           aria-label="Toggle breadcrumb (level 1)" onClick={() => setShowBreadcrumb((v) => !v)} />
+        <Chip type="selection" name="showBadge" label="Badge" selected={showBadge}
+          aria-label="Toggle badge beside title" onClick={() => setShowBadge((v) => !v)} />
       </Flex>
 
       <div style={containerStyle} className="bg-secondary-lightest">
@@ -208,7 +220,7 @@ const customCode = `() => {
           navigation={navigation}
           actions={actions}
           breadcrumbs={breadcrumbs}
-          badge={<Badge appearance="secondary">Draft</Badge>}
+          badge={showBadge ? <Badge appearance="secondary">Draft</Badge> : undefined}
           status={<StatusHint appearance="info">Ongoing</StatusHint>}
           separator={false}
           aria-label="Pac follow-up page header"
