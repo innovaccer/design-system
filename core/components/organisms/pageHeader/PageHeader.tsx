@@ -127,21 +127,31 @@ export const PageHeader = (props: PageHeaderProps) => {
       const hadAS = row.classList.contains(asClass);
       row.classList.remove(cwClass, asClass);
 
+      // Disable internal flex-wrap on actions so its bounding rect reflects natural unwrapped width.
+      // Without this, actions wraps silently inside its grid column and getBoundingClientRect never
+      // exceeds the column boundary, so overflow goes undetected.
+      if (actionsEl) actionsEl.style.flexWrap = 'nowrap';
+
+      const rowRect = row.getBoundingClientRect();
       const titleRect = titleEl.getBoundingClientRect();
       const actionsRect = actionsEl?.getBoundingClientRect();
       const centerRect = centerEl?.getBoundingClientRect();
+
+      if (actionsEl) actionsEl.style.flexWrap = '';
 
       // Restore immediately before any paint
       if (hadCW) row.classList.add(cwClass);
       if (hadAS) row.classList.add(asClass);
 
       const titleActionsCollide = !!actionsRect && titleRect.right > actionsRect.left;
+      // Actions wider than its grid column spills beyond the row boundary
+      const actionsOverflow = !!actionsRect && actionsRect.right > rowRect.right + 1;
       const centerCollidesLeft = !!centerRect && centerRect.left < titleRect.right;
       const centerCollidesRight = !!centerRect && !!actionsRect && centerRect.right > actionsRect.left;
 
       if (titleActionsCollide) {
         setStackedMode('all-stacked');
-      } else if (centerCollidesLeft || centerCollidesRight) {
+      } else if (centerCollidesLeft || centerCollidesRight || actionsOverflow) {
         setStackedMode('center-wrapped');
       } else {
         setStackedMode('full');
@@ -155,7 +165,7 @@ export const PageHeader = (props: PageHeaderProps) => {
     measure();
 
     return () => observer.disconnect();
-  }, [hasCenterNav]);
+  }, [hasCenterNav, navigation, stepper, actions]);
 
   const rowClasses = classNames(styles['PageHeader-row'], {
     [styles['PageHeader-row--withCenter']]: hasCenterNav,
