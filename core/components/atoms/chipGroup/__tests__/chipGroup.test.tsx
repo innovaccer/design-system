@@ -75,7 +75,7 @@ describe('ChipGroup component', () => {
 
   it('renders ChipGroup component with prop onClick', () => {
     const { getAllByTestId } = render(<ChipGroup list={list} onClick={FunctionValue} />);
-    const onClickFunction = getAllByTestId('DesignSystem-ChipGroup--Chip')[0];
+    const onClickFunction = getAllByTestId('DesignSystem-GenericChip--Content')[0];
     fireEvent.click(onClickFunction);
     expect(FunctionValue).toHaveBeenCalled();
   });
