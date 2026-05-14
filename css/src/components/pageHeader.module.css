@@ -117,28 +117,12 @@
   align-items: start;
 }
 
-/* Center nav wraps to its own row */
-.PageHeader-row--withCenter.PageHeader-row--centerWrapped {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.PageHeader-row--withCenter.PageHeader-row--centerWrapped .PageHeader-group--title {
-  flex: 1 1 auto;
-  min-width: 0;
-  order: 1;
-}
-
-.PageHeader-row--withCenter.PageHeader-row--centerWrapped .PageHeader-group--actions {
-  flex: 0 0 auto;
-  order: 2;
-}
-
-.PageHeader-row--withCenter.PageHeader-row--centerWrapped .PageHeader-group--center {
-  flex: 0 0 100%;
-  order: 3;
-  justify-content: flex-start;
-  padding: var(--spacing-30) 0 0;
+/* Ghost: center nav stays in the grid for measurement but is invisible and out of flow.
+   Used when collision detection moves the nav to PageHeader-bottom. */
+.PageHeader-group--center--ghost {
+  position: absolute;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 /* All stacked */
@@ -160,13 +144,6 @@
   padding-left: 0;
   padding-top: var(--spacing-10);
   justify-content: flex-start;
-}
-
-.PageHeader-row--withCenter.PageHeader-row--allStacked .PageHeader-group--center {
-  flex: 0 0 100%;
-  order: 3;
-  justify-content: flex-start;
-  padding: var(--spacing-30) 0 0;
 }
 
 /* =====================================================
