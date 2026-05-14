@@ -120,6 +120,13 @@ describe('PageHeader Component with stepper', () => {
   expect(getByTestId('DesignSystem-PageHeader--Nav')).toBeInTheDocument();
 });
 
+describe('PageHeader Component with navigationPosition bottom and no nav/stepper', () => {
+  it('does not render bottom wrapper when no navigation or stepper is provided', () => {
+    const { queryByTestId } = render(<PageHeader title={title} navigationPosition="bottom" />);
+    expect(queryByTestId('DesignSystem-PageHeader--Nav')).not.toBeInTheDocument();
+  });
+});
+
 describe('PageHeader Component with actions', () => {
   const { getAllByTestId } = render(<PageHeader title={title} actions={actions} />);
   expect(getAllByTestId('DesignSystem-PageHeader--Actions')[0]).toBeInTheDocument();
