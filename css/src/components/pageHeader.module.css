@@ -18,6 +18,11 @@
   margin-top: var(--spacing-30);
 }
 
+/* When tabs and bottom nav coexist, PageHeader-bottom owns the gap — prevent nav wrapper from doubling it */
+.PageHeader-wrapper--withTabs .PageHeader-bottom .PageHeader-navigationWrapper {
+  margin-top: 0;
+}
+
 .PageHeader .Row {
   width: 100%;
 }
@@ -108,7 +113,7 @@
 @media (min-width: 768px) {
   .PageHeader-row--withCenter {
     display: grid;
-    grid-template-columns: 1fr auto 1fr;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
     align-items: center;
   }
 
