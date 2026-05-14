@@ -498,7 +498,8 @@ export class Grid extends React.Component<GridProps, GridState> {
     if (
       this.state.init &&
       (prevProps.loading !== this.props.loading ||
-        pinnedLayoutSignature(prevProps.schema) !== pinnedLayoutSignature(this.props.schema))
+        pinnedLayoutSignature(prevProps.schema) !== pinnedLayoutSignature(this.props.schema) ||
+        prevProps.withCheckbox !== this.props.withCheckbox)
     ) {
       this.scheduleAutoUnpinLayoutCheck();
     }
