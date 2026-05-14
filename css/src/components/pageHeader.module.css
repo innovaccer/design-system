@@ -14,6 +14,10 @@
   border-bottom: none;
 }
 
+.PageHeader-wrapper--withTabs .PageHeader-bottom {
+  margin-top: var(--spacing-30);
+}
+
 .PageHeader .Row {
   width: 100%;
 }
@@ -186,5 +190,10 @@
 
   .PageHeader-wrapper--level1.PageHeader-wrapper--withActions .PageHeader-bottom {
     margin-top: var(--spacing-30);
+  }
+
+  /* Bottom section already handles the gap; prevent nav wrapper from doubling it */
+  .PageHeader-wrapper--level1.PageHeader-wrapper--withActions .PageHeader-bottom .PageHeader-navigationWrapper {
+    margin-top: 0;
   }
 }
