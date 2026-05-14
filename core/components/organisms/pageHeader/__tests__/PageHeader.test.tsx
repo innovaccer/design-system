@@ -5,6 +5,20 @@ import PageHeader, { PageHeaderProps as Props } from '../PageHeader';
 import { Stepper, Button, Tabs, Breadcrumbs, Badge, MetaList, StatusHint, HorizontalNav } from '@/index';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
+declare global {
+  interface Window {
+    ResizeObserver: unknown;
+  }
+}
+
+const ResizeObserverMock = jest.fn().mockImplementation(() => ({
+  observe: jest.fn(),
+  unobserve: jest.fn(),
+  disconnect: jest.fn(),
+}));
+
+window.ResizeObserver = ResizeObserverMock;
+
 const BooleanValues = [true, false];
 const title = 'PageHeader title';
 const navPosition = ['center', 'bottom'];
@@ -118,6 +132,13 @@ describe('PageHeader Component with nav', () => {
 describe('PageHeader Component with stepper', () => {
   const { getByTestId } = render(<PageHeader title={title} stepper={stepper} />);
   expect(getByTestId('DesignSystem-PageHeader--Nav')).toBeInTheDocument();
+});
+
+describe('PageHeader Component with navigationPosition bottom and no nav/stepper', () => {
+  it('does not render bottom wrapper when no navigation or stepper is provided', () => {
+    const { queryByTestId } = render(<PageHeader title={title} navigationPosition="bottom" />);
+    expect(queryByTestId('DesignSystem-PageHeader--Nav')).not.toBeInTheDocument();
+  });
 });
 
 describe('PageHeader Component with actions', () => {

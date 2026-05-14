@@ -1,27 +1,16 @@
 import * as React from 'react';
 import classNames from 'classnames';
+import { Heading } from '@/index';
 import { navigationPositionType } from './PageHeader';
-import { Heading, Column } from '@/index';
 import styles from '@css/components/pageHeader.module.css';
 
-export const Status = (props: {
-  status: React.ReactNode;
-  meta: React.ReactNode;
-  navigationPosition: navigationPositionType;
-  navigation: React.ReactNode;
-  tabs: React.ReactNode;
-}) => {
-  const { status, meta, navigationPosition, navigation, tabs } = props;
-
-  const statusClasses = classNames({
-    [styles['PageHeader-statusWrapper']]: true,
-    'mb-3': (navigationPosition === 'bottom' && navigation) || tabs,
-  });
+export const Status = (props: { status: React.ReactNode; meta: React.ReactNode }) => {
+  const { status, meta } = props;
 
   return (
     <>
       {(status || meta) && (
-        <div className={statusClasses} data-test="DesignSystem-PageHeader--Status">
+        <div className={styles['PageHeader-statusWrapper']} data-test="DesignSystem-PageHeader--Status">
           {status}
           {meta}
         </div>
@@ -31,20 +20,44 @@ export const Status = (props: {
 };
 
 export const Action = (props: { actions: React.ReactNode; navigation: React.ReactNode; stepper: React.ReactNode }) => {
-  const { actions, navigation, stepper } = props;
+  const { actions } = props;
 
   return (
     <>
-      {actions ? (
-        <Column size="4" sizeXL="4" sizeM="4" data-test="DesignSystem-PageHeader--Actions">
-          <div className={styles['PageHeader-actionsWrapper']}>{actions}</div>
-        </Column>
-      ) : (
-        (navigation || stepper) && (
-          <Column size="4" sizeXL="4" sizeM="4" data-test="DesignSystem-PageHeader--Actions">
-            <div className={styles['PageHeader-actionsWrapper']}></div>
-          </Column>
-        )
+      {actions && (
+        <div
+          className={styles['PageHeader-group--actions']}
+          data-group="actions"
+          data-test="DesignSystem-PageHeader--Actions"
+        >
+          {actions}
+        </div>
+      )}
+    </>
+  );
+};
+
+export const CenterNav = (props: {
+  navigationPosition: navigationPositionType;
+  navigation: React.ReactNode;
+  stepper: React.ReactNode;
+  ghost?: boolean;
+}) => {
+  const { navigationPosition, navigation, stepper, ghost } = props;
+  const showCenterNav = (navigation || stepper) && navigationPosition === 'center';
+  return (
+    <>
+      {showCenterNav && (
+        <div
+          className={classNames(styles['PageHeader-group--center'], {
+            [styles['PageHeader-group--center--ghost']]: ghost,
+          })}
+          data-group="center"
+          data-test={ghost ? undefined : 'DesignSystem-PageHeader--CenterNav'}
+          aria-hidden={ghost || undefined}
+        >
+          <Nav navigation={navigation} stepper={stepper} />
+        </div>
       )}
     </>
   );
@@ -60,25 +73,6 @@ export const Nav = (props: { navigation: React.ReactNode; stepper: React.ReactNo
     <div className={styles['PageHeader-navigationWrapper']} data-test="DesignSystem-PageHeader--Nav">
       {navigation || stepper}
     </div>
-  );
-};
-
-export const CenterNav = (props: {
-  colSize: string;
-  breadcrumbs: React.ReactNode;
-  navigationPosition: navigationPositionType;
-  navigation: React.ReactNode;
-  stepper: React.ReactNode;
-}) => {
-  const { colSize, breadcrumbs, navigationPosition } = props;
-  return (
-    <>
-      {(!breadcrumbs || navigationPosition === 'center') && colSize === '4' && (
-        <Column size="4" sizeXL="4" sizeM="4" data-test="DesignSystem-PageHeader--CenterNav">
-          <Nav {...props} />
-        </Column>
-      )}
-    </>
   );
 };
 

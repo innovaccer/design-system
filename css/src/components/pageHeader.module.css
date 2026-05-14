@@ -14,6 +14,15 @@
   border-bottom: none;
 }
 
+.PageHeader-wrapper--withTabs .PageHeader-bottom {
+  margin-top: var(--spacing-30);
+}
+
+/* When tabs and bottom nav coexist, PageHeader-bottom owns the gap — prevent nav wrapper from doubling it */
+.PageHeader-wrapper--withTabs .PageHeader-bottom .PageHeader-navigationWrapper {
+  margin-top: 0;
+}
+
 .PageHeader .Row {
   width: 100%;
 }
@@ -41,16 +50,12 @@
 }
 
 .PageHeader-navigationWrapper {
-  margin-top: var(--spacing-10);
+  margin-top: var(--spacing-30);
 }
 
+/* Zero out the top-margin when nav sits inside the main row (center position) */
 .PageHeader .PageHeader-navigationWrapper {
-  justify-content: center;
-  align-items: center;
-  margin-top: 0 !important;
-  padding-right: var(--spacing-20);
-  padding-left: var(--spacing-20);
-  display: flex;
+  margin-top: 0;
 }
 
 .PageHeader-title {
@@ -63,4 +68,103 @@
   display: flex;
   justify-content: flex-end;
   padding-left: var(--spacing-20);
+}
+
+/* =====================================================
+   Responsive main header row
+   ===================================================== */
+
+/* Base: flex layout — used by all variants */
+.PageHeader-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  width: 100%;
+}
+
+.PageHeader-group--title {
+  flex: 1 1 auto;
+  min-width: 0;
+  order: 1;
+}
+
+/* Center-nav group — navigation/stepper in center position */
+.PageHeader-group--center {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 var(--spacing-20);
+  min-width: 0;
+  order: 2;
+}
+
+/* Actions / right-side group */
+.PageHeader-group--actions {
+  flex: 0 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  padding-left: var(--spacing-20);
+  row-gap: var(--spacing-30);
+  order: 3;
+}
+
+/* Default (full): CSS Grid for true 3-col centering */
+.PageHeader-row--withCenter {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: start;
+}
+
+/* Ghost: center nav stays in the grid for measurement but is invisible and out of flow.
+   Used when collision detection moves the nav to PageHeader-bottom. */
+.PageHeader-group--center--ghost {
+  position: absolute;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* All stacked */
+.PageHeader-row--withCenter.PageHeader-row--allStacked {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.PageHeader-row--allStacked .PageHeader-group--title,
+.PageHeader-row--withCenter.PageHeader-row--allStacked .PageHeader-group--title {
+  flex: 0 0 100%;
+  order: 1;
+}
+
+.PageHeader-row--allStacked .PageHeader-group--actions,
+.PageHeader-row--withCenter.PageHeader-row--allStacked .PageHeader-group--actions {
+  flex: 0 0 100%;
+  order: 2;
+  padding-left: 0;
+  padding-top: var(--spacing-10);
+  justify-content: flex-start;
+}
+
+/* =====================================================
+   Level 1: inter-section spacing when right group wraps
+   ===================================================== */
+
+/* At < 576 px, the actions group sits between title and nav/stepper/tabs.
+   For level 1 headers that have actions, increase the gap to 12 px so all
+   three sections (title, actions, nav) have consistent breathing room. */
+@media (max-width: 575px) {
+  .PageHeader-wrapper--level1.PageHeader-wrapper--withActions .PageHeader-group--actions {
+    padding-top: var(--spacing-30);
+  }
+
+  .PageHeader-wrapper--level1.PageHeader-wrapper--withActions .PageHeader-bottom {
+    margin-top: var(--spacing-30);
+  }
+
+  /* Bottom section already handles the gap; prevent nav wrapper from doubling it */
+  .PageHeader-wrapper--level1.PageHeader-wrapper--withActions .PageHeader-bottom .PageHeader-navigationWrapper {
+    margin-top: 0;
+  }
 }
