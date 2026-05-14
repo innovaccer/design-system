@@ -42,6 +42,10 @@ export const Responsiveness = () => {
   const [showButton, setShowButton] = React.useState(false);
   const [showBadge, setShowBadge] = React.useState(true);
 
+  const prevActionCount = React.useRef(MIN_ACTIONS);
+  const prevNavCount = React.useRef(MIN_NAV);
+  const prevTitleWordCount = React.useRef(3);
+
   const avatarList = [
     { firstName: 'John', lastName: 'Doe', appearance: 'accent2' },
     { firstName: 'Jane', lastName: 'Smith', appearance: 'accent3' },
@@ -180,7 +184,14 @@ export const Responsiveness = () => {
             label="Max"
             selected={actionCount >= MAX_ACTIONS}
             aria-label="Set actions to max or remove one"
-            onClick={() => setActionCount((c) => (c >= MAX_ACTIONS ? MAX_ACTIONS - 1 : MAX_ACTIONS))}
+            onClick={() => {
+              if (actionCount >= MAX_ACTIONS) {
+                setActionCount(prevActionCount.current);
+              } else {
+                prevActionCount.current = actionCount;
+                setActionCount(MAX_ACTIONS);
+              }
+            }}
           />
         </Flex>
 
@@ -214,7 +225,14 @@ export const Responsiveness = () => {
             label="Max"
             selected={navCount >= MAX_NAV}
             aria-label="Set nav to max or remove one"
-            onClick={() => setNavCount((c) => (c >= MAX_NAV ? MAX_NAV - 1 : MAX_NAV))}
+            onClick={() => {
+              if (navCount >= MAX_NAV) {
+                setNavCount(prevNavCount.current);
+              } else {
+                prevNavCount.current = navCount;
+                setNavCount(MAX_NAV);
+              }
+            }}
           />
         </Flex>
 
@@ -243,7 +261,14 @@ export const Responsiveness = () => {
             label="Max"
             selected={titleWordCount >= MAX_TITLE}
             aria-label="Set title to max length or shorten by one word"
-            onClick={() => setTitleWordCount((c) => (c >= MAX_TITLE ? MAX_TITLE - 1 : MAX_TITLE))}
+            onClick={() => {
+              if (titleWordCount >= MAX_TITLE) {
+                setTitleWordCount(prevTitleWordCount.current);
+              } else {
+                prevTitleWordCount.current = titleWordCount;
+                setTitleWordCount(MAX_TITLE);
+              }
+            }}
           />
           <Chip
             type="selection"
@@ -316,6 +341,10 @@ const customCode = `() => {
   const [showBreadcrumb, setShowBreadcrumb] = React.useState(false);
   const [showButton, setShowButton] = React.useState(false);
   const [showBadge, setShowBadge] = React.useState(true);
+
+  const prevActionCount = React.useRef(MIN_ACTIONS);
+  const prevNavCount = React.useRef(MIN_NAV);
+  const prevTitleWordCount = React.useRef(3);
 
   const avatarList = [
     { firstName: 'John', lastName: 'Doe', appearance: 'accent2' },
@@ -393,8 +422,8 @@ const customCode = `() => {
           <Button icon="add" size="tiny" aria-label="Add one action"
             disabled={actionCount >= MAX_ACTIONS} onClick={() => setActionCount((c) => Math.min(MAX_ACTIONS, c + 1))} />
           <Chip type="selection" name="actionsMax" label="Max" selected={actionCount >= MAX_ACTIONS}
-            aria-label="Set actions to max or remove one"
-            onClick={() => setActionCount((c) => (c >= MAX_ACTIONS ? MAX_ACTIONS - 1 : MAX_ACTIONS))} />
+            aria-label="Set actions to max or restore previous"
+            onClick={() => { if (actionCount >= MAX_ACTIONS) { setActionCount(prevActionCount.current); } else { prevActionCount.current = actionCount; setActionCount(MAX_ACTIONS); } }} />
         </Flex>
 
         <Flex direction="row" wrap="wrap" gap="spacing-40" className="align-items-center">
@@ -405,8 +434,8 @@ const customCode = `() => {
           <Button icon="add" size="tiny" aria-label="Add one nav item"
             disabled={navCount >= MAX_NAV} onClick={() => setNavCount((c) => Math.min(MAX_NAV, c + 1))} />
           <Chip type="selection" name="navMax" label="Max" selected={navCount >= MAX_NAV}
-            aria-label="Set nav to max or remove one"
-            onClick={() => setNavCount((c) => (c >= MAX_NAV ? MAX_NAV - 1 : MAX_NAV))} />
+            aria-label="Set nav to max or restore previous"
+            onClick={() => { if (navCount >= MAX_NAV) { setNavCount(prevNavCount.current); } else { prevNavCount.current = navCount; setNavCount(MAX_NAV); } }} />
         </Flex>
 
         <Flex direction="row" wrap="wrap" gap="spacing-40" className="align-items-center">
@@ -416,8 +445,8 @@ const customCode = `() => {
           <Button icon="add" size="tiny" aria-label="Lengthen title by one word"
             disabled={titleWordCount >= MAX_TITLE} onClick={() => setTitleWordCount((c) => Math.min(MAX_TITLE, c + 1))} />
           <Chip type="selection" name="titleMax" label="Max" selected={titleWordCount >= MAX_TITLE}
-            aria-label="Set title to max length or shorten by one word"
-            onClick={() => setTitleWordCount((c) => (c >= MAX_TITLE ? MAX_TITLE - 1 : MAX_TITLE))} />
+            aria-label="Set title to max or restore previous"
+            onClick={() => { if (titleWordCount >= MAX_TITLE) { setTitleWordCount(prevTitleWordCount.current); } else { prevTitleWordCount.current = titleWordCount; setTitleWordCount(MAX_TITLE); } }} />
           <Chip type="selection" name="showBreadcrumb" label="Breadcrumb" selected={showBreadcrumb}
             aria-label="Toggle breadcrumb (level 1)" onClick={() => setShowBreadcrumb((v) => !v)} />
           <Chip type="selection" name="showButton" label="Back button" selected={showButton}

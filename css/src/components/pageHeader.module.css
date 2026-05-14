@@ -78,13 +78,13 @@
 .PageHeader-row {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: start;
   width: 100%;
 }
 
 .PageHeader-group--title {
   flex: 1 1 auto;
-  min-width: 320px;
+  min-width: 0;
   order: 1;
 }
 
@@ -125,7 +125,7 @@
 
 .PageHeader-row--withCenter.PageHeader-row--centerWrapped .PageHeader-group--title {
   flex: 1 1 auto;
-  min-width: 320px;
+  min-width: 0;
   order: 1;
 }
 
