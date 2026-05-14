@@ -31,7 +31,11 @@ exports[`Navigation component
                 href="/Senders"
                 tabindex="0"
               >
-                Senders
+                <span
+                  class="Link-text Link-text--subtle"
+                >
+                  Senders
+                </span>
               </a>
               <span
                 class="Breadcrumbs-itemSeparator"
@@ -352,7 +356,11 @@ exports[`Navigation component
                 href="/Senders"
                 tabindex="0"
               >
-                Senders
+                <span
+                  class="Link-text Link-text--subtle"
+                >
+                  Senders
+                </span>
               </a>
               <span
                 class="Breadcrumbs-itemSeparator"
@@ -678,7 +686,11 @@ exports[`Navigation component
                 href="/Senders"
                 tabindex="0"
               >
-                Senders
+                <span
+                  class="Link-text Link-text--subtle"
+                >
+                  Senders
+                </span>
               </a>
               <span
                 class="Breadcrumbs-itemSeparator"
@@ -1331,7 +1343,11 @@ exports[`Navigation component
                 href="/Senders"
                 tabindex="0"
               >
-                Senders
+                <span
+                  class="Link-text Link-text--subtle"
+                >
+                  Senders
+                </span>
               </a>
               <span
                 class="Breadcrumbs-itemSeparator"
@@ -1558,7 +1574,11 @@ exports[`Navigation component
                 href="/Senders"
                 tabindex="0"
               >
-                Senders
+                <span
+                  class="Link-text Link-text--subtle"
+                >
+                  Senders
+                </span>
               </a>
               <span
                 class="Breadcrumbs-itemSeparator"
