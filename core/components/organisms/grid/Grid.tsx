@@ -499,7 +499,10 @@ export class Grid extends React.Component<GridProps, GridState> {
       this.state.init &&
       (prevProps.loading !== this.props.loading ||
         pinnedLayoutSignature(prevProps.schema) !== pinnedLayoutSignature(this.props.schema) ||
-        prevProps.withCheckbox !== this.props.withCheckbox)
+        prevProps.withCheckbox !== this.props.withCheckbox ||
+        // When showHead is false, pin widths are measured from the first body row.
+        // A data change can add/remove those DOM nodes, so re-check layout.
+        (!this.props.showHead && prevProps.data !== this.props.data))
     ) {
       this.scheduleAutoUnpinLayoutCheck();
     }
