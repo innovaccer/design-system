@@ -5,6 +5,20 @@ import PageHeader, { PageHeaderProps as Props } from '../PageHeader';
 import { Stepper, Button, Tabs, Breadcrumbs, Badge, MetaList, StatusHint, HorizontalNav } from '@/index';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
+declare global {
+  interface Window {
+    ResizeObserver: unknown;
+  }
+}
+
+const ResizeObserverMock = jest.fn().mockImplementation(() => ({
+  observe: jest.fn(),
+  unobserve: jest.fn(),
+  disconnect: jest.fn(),
+}));
+
+window.ResizeObserver = ResizeObserverMock;
+
 const BooleanValues = [true, false];
 const title = 'PageHeader title';
 const navPosition = ['center', 'bottom'];

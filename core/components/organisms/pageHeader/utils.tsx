@@ -24,7 +24,11 @@ export const Action = (props: { actions: React.ReactNode; navigation: React.Reac
   return (
     <>
       {actions && (
-        <div className={styles['PageHeader-group--actions']} data-test="DesignSystem-PageHeader--Actions">
+        <div
+          className={styles['PageHeader-group--actions']}
+          data-group="actions"
+          data-test="DesignSystem-PageHeader--Actions"
+        >
           {actions}
         </div>
       )}
@@ -42,7 +46,11 @@ export const CenterNav = (props: {
   return (
     <>
       {showCenterNav && (
-        <div className={styles['PageHeader-group--center']} data-test="DesignSystem-PageHeader--CenterNav">
+        <div
+          className={styles['PageHeader-group--center']}
+          data-group="center"
+          data-test="DesignSystem-PageHeader--CenterNav"
+        >
           <Nav {...props} />
         </div>
       )}

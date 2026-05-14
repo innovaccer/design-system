@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useRef, useState, useEffect } from 'react';
 import classNames from 'classnames';
 import { Divider } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
@@ -64,6 +65,8 @@ export interface PageHeaderProps extends BaseProps {
   'aria-label'?: string;
 }
 
+type StackedMode = 'full' | 'center-wrapped' | 'all-stacked';
+
 export const PageHeader = (props: PageHeaderProps) => {
   const {
     title,
@@ -99,8 +102,65 @@ export const PageHeader = (props: PageHeaderProps) => {
 
   const classes = classNames(styles.PageHeader);
 
+  const rowRef = useRef<HTMLDivElement>(null);
+  const [stackedMode, setStackedMode] = useState<StackedMode>('full');
+
+  useEffect(() => {
+    if (!hasCenterNav) {
+      setStackedMode('full');
+      return;
+    }
+
+    const row = rowRef.current;
+    if (!row) return;
+
+    const measure = () => {
+      const titleEl = row.querySelector<HTMLElement>('[data-group="title"]');
+      const centerEl = row.querySelector<HTMLElement>('[data-group="center"]');
+      const actionsEl = row.querySelector<HTMLElement>('[data-group="actions"]');
+      if (!titleEl) return;
+
+      // Strip stacked classes so elements return to natural grid positions for measurement
+      const cwClass = styles['PageHeader-row--centerWrapped'];
+      const asClass = styles['PageHeader-row--allStacked'];
+      const hadCW = row.classList.contains(cwClass);
+      const hadAS = row.classList.contains(asClass);
+      row.classList.remove(cwClass, asClass);
+
+      const titleRect = titleEl.getBoundingClientRect();
+      const actionsRect = actionsEl?.getBoundingClientRect();
+      const centerRect = centerEl?.getBoundingClientRect();
+
+      // Restore immediately before any paint
+      if (hadCW) row.classList.add(cwClass);
+      if (hadAS) row.classList.add(asClass);
+
+      const titleActionsCollide = !!actionsRect && titleRect.right > actionsRect.left;
+      const centerCollidesLeft = !!centerRect && centerRect.left < titleRect.right;
+      const centerCollidesRight = !!centerRect && !!actionsRect && centerRect.right > actionsRect.left;
+
+      if (titleActionsCollide) {
+        setStackedMode('all-stacked');
+      } else if (centerCollidesLeft || centerCollidesRight) {
+        setStackedMode('center-wrapped');
+      } else {
+        setStackedMode('full');
+      }
+    };
+
+    if (!window.ResizeObserver) return;
+
+    const observer = new window.ResizeObserver(measure);
+    observer.observe(row);
+    measure();
+
+    return () => observer.disconnect();
+  }, [hasCenterNav]);
+
   const rowClasses = classNames(styles['PageHeader-row'], {
     [styles['PageHeader-row--withCenter']]: hasCenterNav,
+    [styles['PageHeader-row--centerWrapped']]: hasCenterNav && stackedMode === 'center-wrapped',
+    [styles['PageHeader-row--allStacked']]: stackedMode === 'all-stacked',
   });
 
   const centerNavProps = { navigationPosition, navigation, stepper };
@@ -116,8 +176,8 @@ export const PageHeader = (props: PageHeaderProps) => {
         <div className="d-flex pl-6">
           <BackButton button={button} />
           <div className={classes}>
-            <div className={rowClasses}>
-              <div className={styles['PageHeader-group--title']}>
+            <div className={rowClasses} ref={rowRef}>
+              <div className={styles['PageHeader-group--title']} data-group="title">
                 <Title badge={badge} title={title} />
                 <Status status={status} meta={meta} />
               </div>
