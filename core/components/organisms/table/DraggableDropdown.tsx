@@ -16,11 +16,13 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
   const [open, setOpen] = React.useState<boolean>(false);
   const [tempOptions, setTempOptions] = React.useState(options);
   const [triggerWidth, setTriggerWidth] = React.useState('var(--spacing-440)');
+  const [pickedUpIndex, setPickedUpIndex] = React.useState<number | null>(null);
   const triggerRef = React.useRef<HTMLButtonElement | null>(null);
   const dropdownRef = React.useRef<HTMLDivElement | null>(null);
 
   React.useEffect(() => {
     setTempOptions(options);
+    setPickedUpIndex(null);
   }, [open]);
 
   const handleParentChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -49,6 +51,17 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
     setOpen(false);
 
     if (onChange) onChange(tempOptions);
+  };
+
+  const onReorderHandleClick = (index: number) => {
+    if (pickedUpIndex === null) {
+      setPickedUpIndex(index);
+    } else if (pickedUpIndex === index) {
+      setPickedUpIndex(null);
+    } else {
+      setTempOptions(moveToIndex(tempOptions, pickedUpIndex, index));
+      setPickedUpIndex(null);
+    }
   };
 
   const onReorderKeyDown = (e: React.KeyboardEvent, index: number) => {
@@ -156,9 +169,17 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
                   <Button
                     type="button"
                     icon="drag_handle"
-                    appearance="transparent"
+                    appearance={pickedUpIndex === index ? 'basic' : 'transparent'}
                     className="mr-4"
-                    aria-label={`Reorder ${option.label} column. Use arrow keys to move up or down.`}
+                    aria-pressed={pickedUpIndex === index}
+                    aria-label={
+                      pickedUpIndex === null
+                        ? `Reorder ${option.label} column. Press to pick up, then press another handle to drop. Or use arrow keys to move up or down.`
+                        : pickedUpIndex === index
+                        ? `${option.label} column picked up. Press another handle to drop, or press again to cancel.`
+                        : `Drop ${tempOptions[pickedUpIndex].label} column at ${option.label} position.`
+                    }
+                    onClick={() => onReorderHandleClick(index)}
                     onKeyDown={(e: React.KeyboardEvent<HTMLButtonElement>) => onReorderKeyDown(e, index)}
                   />
                 </div>
