@@ -92,8 +92,6 @@ export const PageHeader = (props: PageHeaderProps) => {
     {
       [styles['PageHeader-wrapper']]: true,
       [styles['PageHeader-wrapper--withTabs']]: tabs,
-      [styles['PageHeader-wrapper--level1']]: isLevel1,
-      [styles['PageHeader-wrapper--withActions']]: !!actions,
     },
     className
   );
@@ -146,13 +144,22 @@ export const PageHeader = (props: PageHeaderProps) => {
       const withCenterClass = styles['PageHeader-row--withCenter'];
       const asClass = styles['PageHeader-row--allStacked'];
       const ghostClass = styles['PageHeader-group--center--ghost'];
+      // Stacked styling lives on the children themselves (flat modifier classes),
+      // so resetting the row alone is not enough — strip the child modifiers too,
+      // otherwise the title/actions stay flex:0 0 100% and measurement oscillates.
+      const titleStackedClass = styles['PageHeader-group--title--stacked'];
+      const actionsStackedClass = styles['PageHeader-group--actions--stacked'];
       const hadAS = row.classList.contains(asClass);
       const hadWithCenter = row.classList.contains(withCenterClass);
       const hadGhost = centerEl?.classList.contains(ghostClass) ?? false;
+      const hadTitleStacked = titleEl.classList.contains(titleStackedClass);
+      const hadActionsStacked = actionsEl?.classList.contains(actionsStackedClass) ?? false;
 
       row.classList.remove(asClass);
       if (!hadWithCenter && hasCenterNav) row.classList.add(withCenterClass);
       if (hadGhost && centerEl) centerEl.classList.remove(ghostClass);
+      titleEl.classList.remove(titleStackedClass);
+      actionsEl?.classList.remove(actionsStackedClass);
 
       const rowWidth = row.offsetWidth;
 
@@ -170,6 +177,8 @@ export const PageHeader = (props: PageHeaderProps) => {
         if (hadGhost && centerEl) centerEl.classList.add(ghostClass);
         if (!hadWithCenter) row.classList.remove(withCenterClass);
         if (hadAS) row.classList.add(asClass);
+        if (hadTitleStacked) titleEl.classList.add(titleStackedClass);
+        if (hadActionsStacked && actionsEl) actionsEl.classList.add(actionsStackedClass);
 
         // Grid gives equal 1fr to title and actions columns. Check each half
         // independently: title must fit the left half, actions the right half.
@@ -204,6 +213,8 @@ export const PageHeader = (props: PageHeaderProps) => {
         row.style.display = prevDisplay;
         row.style.gridTemplateColumns = prevCols;
         if (hadAS) row.classList.add(asClass);
+        if (hadTitleStacked) titleEl.classList.add(titleStackedClass);
+        if (hadActionsStacked && actionsEl) actionsEl.classList.add(actionsStackedClass);
 
         if (actionsEl && titleDesired + actionsDesired > rowWidth) {
           setStackedMode('all-stacked');
@@ -220,10 +231,22 @@ export const PageHeader = (props: PageHeaderProps) => {
     return () => observer.disconnect();
   }, [hasCenterNav, navigation, stepper, actions]);
 
+  const isStacked = stackedMode === 'all-stacked';
+  const isLevel1WithActions = isLevel1 && !!actions;
+
   const rowClasses = classNames(styles['PageHeader-row'], {
     // Grid only in full mode — center-wrapped uses flex so title/actions share naturally
     [styles['PageHeader-row--withCenter']]: hasCenterNav && stackedMode === 'full',
-    [styles['PageHeader-row--allStacked']]: stackedMode === 'all-stacked',
+    [styles['PageHeader-row--allStacked']]: isStacked,
+  });
+
+  const titleGroupClasses = classNames(styles['PageHeader-group--title'], {
+    [styles['PageHeader-group--title--stacked']]: isStacked,
+  });
+
+  const bottomClasses = classNames('pl-3', styles['PageHeader-bottom'], {
+    [styles['PageHeader-bottom--withTabs']]: !!tabs,
+    [styles['PageHeader-bottom--level1Responsive']]: isLevel1WithActions,
   });
 
   // When center nav is auto-moved to bottom, keep it ghost in the row for measurement
@@ -246,19 +269,32 @@ export const PageHeader = (props: PageHeaderProps) => {
           <BackButton button={button} />
           <div className={classes}>
             <div className={rowClasses} ref={rowRef}>
-              <div className={styles['PageHeader-group--title']} data-group="title">
+              <div className={titleGroupClasses} data-group="title">
                 <Title badge={badge} title={title} />
                 <Status status={status} meta={meta} />
               </div>
               <CenterNav {...centerNavProps} />
-              <Action actions={actions} navigation={navigation} stepper={stepper} />
+              <Action
+                actions={actions}
+                navigation={navigation}
+                stepper={stepper}
+                stacked={isStacked}
+                level1Responsive={isLevel1WithActions}
+              />
             </div>
           </div>
         </div>
 
         {(tabs || showNavInBottom) && (
-          <div className={classNames('pl-3', styles['PageHeader-bottom'])}>
-            {showNavInBottom && <Nav navigation={navigation} stepper={stepper} />}
+          <div className={bottomClasses}>
+            {showNavInBottom && (
+              <Nav
+                navigation={navigation}
+                stepper={stepper}
+                noMargin={!!tabs}
+                responsiveNoMargin={isLevel1WithActions}
+              />
+            )}
             {tabs && <div data-test="DesignSystem-PageHeader--Tabs">{tabs}</div>}
           </div>
         )}

@@ -14,13 +14,8 @@
   border-bottom: none;
 }
 
-.PageHeader-wrapper--withTabs .PageHeader-bottom {
+.PageHeader-bottom--withTabs {
   margin-top: var(--spacing-30);
-}
-
-/* When tabs and bottom nav coexist, PageHeader-bottom owns the gap — prevent nav wrapper from doubling it */
-.PageHeader-wrapper--withTabs .PageHeader-bottom .PageHeader-navigationWrapper {
-  margin-top: 0;
 }
 
 .PageHeader .Row {
@@ -53,8 +48,7 @@
   margin-top: var(--spacing-30);
 }
 
-/* Zero out the top-margin when nav sits inside the main row (center position) */
-.PageHeader .PageHeader-navigationWrapper {
+.PageHeader-navigationWrapper--noMargin {
   margin-top: 0;
 }
 
@@ -126,20 +120,18 @@
   pointer-events: none;
 }
 
-/* All stacked */
-.PageHeader-row--withCenter.PageHeader-row--allStacked {
+/* All stacked: flex marker on the row + full-width children */
+.PageHeader-row--allStacked {
   display: flex;
   flex-wrap: wrap;
 }
 
-.PageHeader-row--allStacked .PageHeader-group--title,
-.PageHeader-row--withCenter.PageHeader-row--allStacked .PageHeader-group--title {
+.PageHeader-group--title--stacked {
   flex: 0 0 100%;
   order: 1;
 }
 
-.PageHeader-row--allStacked .PageHeader-group--actions,
-.PageHeader-row--withCenter.PageHeader-row--allStacked .PageHeader-group--actions {
+.PageHeader-group--actions--stacked {
   flex: 0 0 100%;
   order: 2;
   padding-left: 0;
@@ -155,16 +147,15 @@
    For level 1 headers that have actions, increase the gap to 12 px so all
    three sections (title, actions, nav) have consistent breathing room. */
 @media (max-width: 575px) {
-  .PageHeader-wrapper--level1.PageHeader-wrapper--withActions .PageHeader-group--actions {
+  .PageHeader-group--actions--level1Responsive {
     padding-top: var(--spacing-30);
   }
 
-  .PageHeader-wrapper--level1.PageHeader-wrapper--withActions .PageHeader-bottom {
+  .PageHeader-bottom--level1Responsive {
     margin-top: var(--spacing-30);
   }
 
-  /* Bottom section already handles the gap; prevent nav wrapper from doubling it */
-  .PageHeader-wrapper--level1.PageHeader-wrapper--withActions .PageHeader-bottom .PageHeader-navigationWrapper {
+  .PageHeader-navigationWrapper--noMarginSm {
     margin-top: 0;
   }
 }

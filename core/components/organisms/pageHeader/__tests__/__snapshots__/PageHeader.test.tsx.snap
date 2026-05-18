@@ -9,7 +9,7 @@ exports[`Navigation component
       data-test="DesignSystem-PageHeader"
     >
       <div
-        class="PageHeader-wrapper PageHeader-wrapper--withTabs PageHeader-wrapper--level1 PageHeader-wrapper--withActions"
+        class="PageHeader-wrapper PageHeader-wrapper--withTabs"
       >
         <div
           class="pl-6"
@@ -166,7 +166,7 @@ exports[`Navigation component
                 </div>
               </div>
               <div
-                class="PageHeader-group--actions"
+                class="PageHeader-group--actions PageHeader-group--actions--level1Responsive"
                 data-group="actions"
                 data-test="DesignSystem-PageHeader--Actions"
               >
@@ -186,10 +186,10 @@ exports[`Navigation component
           </div>
         </div>
         <div
-          class="pl-3 PageHeader-bottom"
+          class="pl-3 PageHeader-bottom PageHeader-bottom--withTabs PageHeader-bottom--level1Responsive"
         >
           <div
-            class="PageHeader-navigationWrapper"
+            class="PageHeader-navigationWrapper PageHeader-navigationWrapper--noMargin PageHeader-navigationWrapper--noMarginSm"
             data-test="DesignSystem-PageHeader--Nav"
           >
             <nav
@@ -337,7 +337,7 @@ exports[`Navigation component
       data-test="DesignSystem-PageHeader"
     >
       <div
-        class="PageHeader-wrapper PageHeader-wrapper--withTabs PageHeader-wrapper--level1 PageHeader-wrapper--withActions"
+        class="PageHeader-wrapper PageHeader-wrapper--withTabs"
       >
         <div
           class="pl-6"
@@ -499,7 +499,7 @@ exports[`Navigation component
                 data-test="DesignSystem-PageHeader--CenterNav"
               >
                 <div
-                  class="PageHeader-navigationWrapper"
+                  class="PageHeader-navigationWrapper PageHeader-navigationWrapper--noMargin"
                   data-test="DesignSystem-PageHeader--Nav"
                 >
                   <nav
@@ -534,7 +534,7 @@ exports[`Navigation component
                 </div>
               </div>
               <div
-                class="PageHeader-group--actions"
+                class="PageHeader-group--actions PageHeader-group--actions--level1Responsive"
                 data-group="actions"
                 data-test="DesignSystem-PageHeader--Actions"
               >
@@ -554,7 +554,7 @@ exports[`Navigation component
           </div>
         </div>
         <div
-          class="pl-3 PageHeader-bottom"
+          class="pl-3 PageHeader-bottom PageHeader-bottom--withTabs PageHeader-bottom--level1Responsive"
         >
           <div
             data-test="DesignSystem-PageHeader--Tabs"
@@ -671,7 +671,7 @@ exports[`Navigation component
       data-test="DesignSystem-PageHeader"
     >
       <div
-        class="PageHeader-wrapper PageHeader-wrapper--withTabs PageHeader-wrapper--level1 PageHeader-wrapper--withActions"
+        class="PageHeader-wrapper PageHeader-wrapper--withTabs"
       >
         <div
           class="pl-6"
@@ -828,7 +828,7 @@ exports[`Navigation component
                 </div>
               </div>
               <div
-                class="PageHeader-group--actions"
+                class="PageHeader-group--actions PageHeader-group--actions--level1Responsive"
                 data-group="actions"
                 data-test="DesignSystem-PageHeader--Actions"
               >
@@ -848,10 +848,10 @@ exports[`Navigation component
           </div>
         </div>
         <div
-          class="pl-3 PageHeader-bottom"
+          class="pl-3 PageHeader-bottom PageHeader-bottom--withTabs PageHeader-bottom--level1Responsive"
         >
           <div
-            class="PageHeader-navigationWrapper"
+            class="PageHeader-navigationWrapper PageHeader-navigationWrapper--noMargin PageHeader-navigationWrapper--noMarginSm"
             data-test="DesignSystem-PageHeader--Nav"
           >
             <nav
@@ -1036,7 +1036,7 @@ exports[`Navigation component
           </div>
         </div>
         <div
-          class="pl-3 PageHeader-bottom"
+          class="pl-3 PageHeader-bottom PageHeader-bottom--withTabs"
         >
           <div
             data-test="DesignSystem-PageHeader--Tabs"
@@ -1185,7 +1185,7 @@ exports[`Navigation component
                 data-test="DesignSystem-PageHeader--CenterNav"
               >
                 <div
-                  class="PageHeader-navigationWrapper"
+                  class="PageHeader-navigationWrapper PageHeader-navigationWrapper--noMargin"
                   data-test="DesignSystem-PageHeader--Nav"
                 >
                   <div
@@ -1278,7 +1278,7 @@ exports[`Navigation component
       data-test="DesignSystem-PageHeader"
     >
       <div
-        class="PageHeader-wrapper PageHeader-wrapper--withActions"
+        class="PageHeader-wrapper"
       >
         <div
           class="d-flex pl-6"
@@ -1339,7 +1339,7 @@ exports[`Navigation component
       data-test="DesignSystem-PageHeader"
     >
       <div
-        class="PageHeader-wrapper PageHeader-wrapper--level1"
+        class="PageHeader-wrapper"
       >
         <div
           class="pl-6"
@@ -1511,7 +1511,7 @@ exports[`Navigation component
       data-test="DesignSystem-PageHeader"
     >
       <div
-        class="PageHeader-wrapper PageHeader-wrapper--level1"
+        class="PageHeader-wrapper"
       >
         <div
           class="d-flex pl-6"
@@ -1578,7 +1578,7 @@ exports[`Navigation component
       data-test="DesignSystem-PageHeader"
     >
       <div
-        class="PageHeader-wrapper PageHeader-wrapper--withTabs PageHeader-wrapper--level1 PageHeader-wrapper--withActions"
+        class="PageHeader-wrapper PageHeader-wrapper--withTabs"
       >
         <div
           class="pl-6"
@@ -2105,7 +2105,7 @@ exports[`Navigation component
                 data-test="DesignSystem-PageHeader--CenterNav"
               >
                 <div
-                  class="PageHeader-navigationWrapper"
+                  class="PageHeader-navigationWrapper PageHeader-navigationWrapper--noMargin"
                   data-test="DesignSystem-PageHeader--Nav"
                 >
                   <nav
@@ -2140,7 +2140,7 @@ exports[`Navigation component
                 </div>
               </div>
               <div
-                class="PageHeader-group--actions"
+                class="PageHeader-group--actions PageHeader-group--actions--level1Responsive"
                 data-group="actions"
                 data-test="DesignSystem-PageHeader--Actions"
               >
@@ -2160,7 +2160,7 @@ exports[`Navigation component
           </div>
         </div>
         <div
-          class="pl-3 PageHeader-bottom"
+          class="pl-3 PageHeader-bottom PageHeader-bottom--withTabs PageHeader-bottom--level1Responsive"
         >
           <div
             data-test="DesignSystem-PageHeader--Tabs"

@@ -19,17 +19,24 @@ export const Status = (props: { status: React.ReactNode; meta: React.ReactNode }
   );
 };
 
-export const Action = (props: { actions: React.ReactNode; navigation: React.ReactNode; stepper: React.ReactNode }) => {
-  const { actions } = props;
+export const Action = (props: {
+  actions: React.ReactNode;
+  navigation: React.ReactNode;
+  stepper: React.ReactNode;
+  stacked?: boolean;
+  level1Responsive?: boolean;
+}) => {
+  const { actions, stacked, level1Responsive } = props;
+
+  const classes = classNames(styles['PageHeader-group--actions'], {
+    [styles['PageHeader-group--actions--stacked']]: stacked,
+    [styles['PageHeader-group--actions--level1Responsive']]: level1Responsive,
+  });
 
   return (
     <>
       {actions && (
-        <div
-          className={styles['PageHeader-group--actions']}
-          data-group="actions"
-          data-test="DesignSystem-PageHeader--Actions"
-        >
+        <div className={classes} data-group="actions" data-test="DesignSystem-PageHeader--Actions">
           {actions}
         </div>
       )}
@@ -56,21 +63,32 @@ export const CenterNav = (props: {
           data-test={ghost ? undefined : 'DesignSystem-PageHeader--CenterNav'}
           aria-hidden={ghost || undefined}
         >
-          <Nav navigation={navigation} stepper={stepper} />
+          <Nav navigation={navigation} stepper={stepper} noMargin />
         </div>
       )}
     </>
   );
 };
 
-export const Nav = (props: { navigation: React.ReactNode; stepper: React.ReactNode }) => {
-  const { navigation, stepper } = props;
+export const Nav = (props: {
+  navigation: React.ReactNode;
+  stepper: React.ReactNode;
+  noMargin?: boolean;
+  responsiveNoMargin?: boolean;
+}) => {
+  const { navigation, stepper, noMargin, responsiveNoMargin } = props;
 
   if (!navigation && !stepper) {
     return null;
   }
+
+  const classes = classNames(styles['PageHeader-navigationWrapper'], {
+    [styles['PageHeader-navigationWrapper--noMargin']]: noMargin,
+    [styles['PageHeader-navigationWrapper--noMarginSm']]: responsiveNoMargin,
+  });
+
   return (
-    <div className={styles['PageHeader-navigationWrapper']} data-test="DesignSystem-PageHeader--Nav">
+    <div className={classes} data-test="DesignSystem-PageHeader--Nav">
       {navigation || stepper}
     </div>
   );
