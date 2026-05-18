@@ -134,7 +134,12 @@ export const Toast = (props: ToastProps) => {
       {icon && <Icon name={icon} className={iconClass('left')} aria-hidden="true" />}
       <div className={styles['Toast-body']}>
         <div className={titleClass}>
-          <Heading size="s" className={headingClass} appearance={appearance !== 'warning' ? 'white' : 'default'}>
+          <Heading
+            size="s"
+            className={headingClass}
+            appearance={appearance !== 'warning' ? 'white' : 'default'}
+            as="span"
+          >
             {title}
           </Heading>
           {onClose && (

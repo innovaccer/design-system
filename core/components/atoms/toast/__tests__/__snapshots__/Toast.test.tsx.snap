@@ -24,12 +24,12 @@ exports[`Toast component
         <div
           class="Toast-title"
         >
-          <h5
+          <span
             class="Heading Heading--s Heading--white Toast-heading Toast-heading--alert"
             data-test="DesignSystem-Heading"
           >
             Sample Toast
-          </h5>
+          </span>
           <button
             aria-label="Close"
             class="Button Button--regular Button--regularSquare Button--transparent Toast-icon--right Toast-close-icon Toast-close-icon--alert Toast-icon--alert"
@@ -80,12 +80,12 @@ exports[`Toast component
         <div
           class="Toast-title"
         >
-          <h5
+          <span
             class="Heading Heading--s Heading--white Toast-heading Toast-heading--info"
             data-test="DesignSystem-Heading"
           >
             Sample Toast
-          </h5>
+          </span>
           <button
             aria-label="Close"
             class="Button Button--regular Button--regularSquare Button--transparent Toast-icon--right Toast-close-icon Toast-close-icon--info Toast-icon--info"
@@ -136,12 +136,12 @@ exports[`Toast component
         <div
           class="Toast-title"
         >
-          <h5
+          <span
             class="Heading Heading--s Heading--white Toast-heading Toast-heading--success"
             data-test="DesignSystem-Heading"
           >
             Sample Toast
-          </h5>
+          </span>
           <button
             aria-label="Close"
             class="Button Button--regular Button--regularSquare Button--transparent Toast-icon--right Toast-close-icon Toast-close-icon--success Toast-icon--success"
@@ -192,12 +192,12 @@ exports[`Toast component
         <div
           class="Toast-title"
         >
-          <h5
+          <span
             class="Heading Heading--s Heading--default Toast-heading Toast-heading--warning"
             data-test="DesignSystem-Heading"
           >
             Sample Toast
-          </h5>
+          </span>
           <button
             aria-label="Close"
             class="Button Button--regular Button--regularSquare Button--transparent Toast-icon--right Toast-close-icon Toast-close-icon--warning Toast-icon--warning"
@@ -248,12 +248,12 @@ exports[`Toast component
         <div
           class="Toast-title Toast-title--withMessage"
         >
-          <h5
+          <span
             class="Heading Heading--s Heading--white Toast-heading Toast-heading--alert"
             data-test="DesignSystem-Heading"
           >
             Sample Toast
-          </h5>
+          </span>
           <button
             aria-label="Close"
             class="Button Button--regular Button--regularSquare Button--transparent Toast-icon--right Toast-close-icon Toast-close-icon--alert Toast-icon--alert"
@@ -310,12 +310,12 @@ exports[`Toast component
         <div
           class="Toast-title Toast-title--withMessage"
         >
-          <h5
+          <span
             class="Heading Heading--s Heading--white Toast-heading Toast-heading--alert"
             data-test="DesignSystem-Heading"
           >
             Sample Toast
-          </h5>
+          </span>
           <button
             aria-label="Close"
             class="Button Button--regular Button--regularSquare Button--transparent Toast-icon--right Toast-close-icon Toast-close-icon--alert Toast-icon--alert"
@@ -387,12 +387,12 @@ exports[`Toast component
         <div
           class="Toast-title Toast-title--withMessage"
         >
-          <h5
+          <span
             class="Heading Heading--s Heading--white Toast-heading Toast-heading--info"
             data-test="DesignSystem-Heading"
           >
             Sample Toast
-          </h5>
+          </span>
           <button
             aria-label="Close"
             class="Button Button--regular Button--regularSquare Button--transparent Toast-icon--right Toast-close-icon Toast-close-icon--info Toast-icon--info"
@@ -449,12 +449,12 @@ exports[`Toast component
         <div
           class="Toast-title Toast-title--withMessage"
         >
-          <h5
+          <span
             class="Heading Heading--s Heading--white Toast-heading Toast-heading--info"
             data-test="DesignSystem-Heading"
           >
             Sample Toast
-          </h5>
+          </span>
           <button
             aria-label="Close"
             class="Button Button--regular Button--regularSquare Button--transparent Toast-icon--right Toast-close-icon Toast-close-icon--info Toast-icon--info"
@@ -526,12 +526,12 @@ exports[`Toast component
         <div
           class="Toast-title Toast-title--withMessage"
         >
-          <h5
+          <span
             class="Heading Heading--s Heading--white Toast-heading Toast-heading--success"
             data-test="DesignSystem-Heading"
           >
             Sample Toast
-          </h5>
+          </span>
           <button
             aria-label="Close"
             class="Button Button--regular Button--regularSquare Button--transparent Toast-icon--right Toast-close-icon Toast-close-icon--success Toast-icon--success"
@@ -588,12 +588,12 @@ exports[`Toast component
         <div
           class="Toast-title Toast-title--withMessage"
         >
-          <h5
+          <span
             class="Heading Heading--s Heading--white Toast-heading Toast-heading--success"
             data-test="DesignSystem-Heading"
           >
             Sample Toast
-          </h5>
+          </span>
           <button
             aria-label="Close"
             class="Button Button--regular Button--regularSquare Button--transparent Toast-icon--right Toast-close-icon Toast-close-icon--success Toast-icon--success"
@@ -665,12 +665,12 @@ exports[`Toast component
         <div
           class="Toast-title Toast-title--withMessage"
         >
-          <h5
+          <span
             class="Heading Heading--s Heading--default Toast-heading Toast-heading--warning"
             data-test="DesignSystem-Heading"
           >
             Sample Toast
-          </h5>
+          </span>
           <button
             aria-label="Close"
             class="Button Button--regular Button--regularSquare Button--transparent Toast-icon--right Toast-close-icon Toast-close-icon--warning Toast-icon--warning"
@@ -727,12 +727,12 @@ exports[`Toast component
         <div
           class="Toast-title Toast-title--withMessage"
         >
-          <h5
+          <span
             class="Heading Heading--s Heading--default Toast-heading Toast-heading--warning"
             data-test="DesignSystem-Heading"
           >
             Sample Toast
-          </h5>
+          </span>
           <button
             aria-label="Close"
             class="Button Button--regular Button--regularSquare Button--transparent Toast-icon--right Toast-close-icon Toast-close-icon--warning Toast-icon--warning"
