@@ -16,11 +16,13 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
   const [open, setOpen] = React.useState<boolean>(false);
   const [tempOptions, setTempOptions] = React.useState(options);
   const [triggerWidth, setTriggerWidth] = React.useState('var(--spacing-440)');
+  const [pickedUpValue, setPickedUpValue] = React.useState<React.ReactText | null>(null);
   const triggerRef = React.useRef<HTMLButtonElement | null>(null);
   const dropdownRef = React.useRef<HTMLDivElement | null>(null);
 
   React.useEffect(() => {
     setTempOptions(options);
+    setPickedUpValue(null);
   }, [open]);
 
   const handleParentChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -49,6 +51,22 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
     setOpen(false);
 
     if (onChange) onChange(tempOptions);
+  };
+
+  const onReorderHandleClick = (index: number) => {
+    const currentValue = tempOptions[index].value;
+
+    if (pickedUpValue === null) {
+      setPickedUpValue(currentValue);
+    } else if (pickedUpValue === currentValue) {
+      setPickedUpValue(null);
+    } else {
+      const from = tempOptions.findIndex((opt) => opt.value === pickedUpValue);
+      if (from !== -1 && from !== index) {
+        setTempOptions(moveToIndex(tempOptions, from, index));
+      }
+      setPickedUpValue(null);
+    }
   };
 
   const onReorderKeyDown = (e: React.KeyboardEvent, index: number) => {
@@ -156,9 +174,19 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
                   <Button
                     type="button"
                     icon="drag_handle"
-                    appearance="transparent"
+                    appearance={pickedUpValue === option.value ? 'basic' : 'transparent'}
                     className="mr-4"
-                    aria-label={`Reorder ${option.label} column. Use arrow keys to move up or down.`}
+                    aria-pressed={pickedUpValue === option.value}
+                    aria-label={
+                      pickedUpValue === null
+                        ? `Reorder ${option.label} column. Press to pick up, then press another handle to drop. Or use arrow keys to move up or down.`
+                        : pickedUpValue === option.value
+                        ? `${option.label} column picked up. Press another handle to drop, or press again to cancel.`
+                        : `Drop ${tempOptions.find((opt) => opt.value === pickedUpValue)?.label ?? ''} column at ${
+                            option.label
+                          } position.`
+                    }
+                    onClick={() => onReorderHandleClick(index)}
                     onKeyDown={(e: React.KeyboardEvent<HTMLButtonElement>) => onReorderKeyDown(e, index)}
                   />
                 </div>
