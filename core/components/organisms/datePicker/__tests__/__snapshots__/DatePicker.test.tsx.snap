@@ -7,7 +7,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
   <div>
     <div>
       <div
-        class="d-flex"
+        class="DatePicker-content"
       >
         <div
           aria-label="Calendar"
@@ -1338,7 +1338,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
   <div>
     <div>
       <div
-        class="d-flex"
+        class="DatePicker-content"
       >
         <div
           aria-label="Calendar"
@@ -2670,7 +2670,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
   <div>
     <div>
       <div
-        class="d-flex"
+        class="DatePicker-content"
       >
         <div
           aria-label="Calendar"
@@ -4002,7 +4002,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
   <div>
     <div>
       <div
-        class="d-flex"
+        class="DatePicker-content"
       >
         <div
           aria-label="Calendar"
@@ -5333,7 +5333,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
   <div>
     <div>
       <div
-        class="d-flex"
+        class="DatePicker-content"
       >
         <div
           aria-label="Calendar"
@@ -6664,7 +6664,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
   <div>
     <div>
       <div
-        class="d-flex"
+        class="DatePicker-content"
       >
         <div
           aria-label="Calendar"
@@ -7995,7 +7995,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
   <div>
     <div>
       <div
-        class="d-flex"
+        class="DatePicker-content"
       >
         <div
           aria-label="Calendar"
@@ -8436,7 +8436,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
   <div>
     <div>
       <div
-        class="d-flex"
+        class="DatePicker-content"
       >
         <div
           aria-label="Calendar"
@@ -8870,7 +8870,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
   <div>
     <div>
       <div
-        class="d-flex"
+        class="DatePicker-content"
       >
         <div
           aria-label="Calendar"
