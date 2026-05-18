@@ -1298,12 +1298,12 @@ exports[`Navigation component
                   class="PageHeader-titleWrapper"
                   data-test="DesignSystem-PageHeader--Title"
                 >
-                  <h4
+                  <h1
                     class="Heading Heading--m Heading--default PageHeader-title"
                     data-test="DesignSystem-Heading"
                   >
                     PageHeader title
-                  </h4>
+                  </h1>
                 </div>
               </div>
               <div
@@ -1393,12 +1393,12 @@ exports[`Navigation component
                   class="PageHeader-titleWrapper"
                   data-test="DesignSystem-PageHeader--Title"
                 >
-                  <h4
+                  <h1
                     class="Heading Heading--m Heading--default PageHeader-title"
                     data-test="DesignSystem-Heading"
                   >
                     PageHeader title
-                  </h4>
+                  </h1>
                 </div>
               </div>
             </div>
@@ -1437,12 +1437,12 @@ exports[`Navigation component
                   class="PageHeader-titleWrapper"
                   data-test="DesignSystem-PageHeader--Title"
                 >
-                  <h4
+                  <h1
                     class="Heading Heading--m Heading--default PageHeader-title"
                     data-test="DesignSystem-Heading"
                   >
                     PageHeader title
-                  </h4>
+                  </h1>
                   <span
                     class="Badge Badge--secondary"
                     data-test="DesignSystem-Badge"
@@ -1554,12 +1554,12 @@ exports[`Navigation component
                   class="PageHeader-titleWrapper"
                   data-test="DesignSystem-PageHeader--Title"
                 >
-                  <h4
+                  <h1
                     class="Heading Heading--m Heading--default PageHeader-title"
                     data-test="DesignSystem-Heading"
                   >
                     PageHeader title
-                  </h4>
+                  </h1>
                 </div>
               </div>
             </div>
@@ -1655,12 +1655,12 @@ exports[`Navigation component
                   class="PageHeader-titleWrapper"
                   data-test="DesignSystem-PageHeader--Title"
                 >
-                  <h4
+                  <h1
                     class="Heading Heading--m Heading--default PageHeader-title"
                     data-test="DesignSystem-Heading"
                   >
                     PageHeader title
-                  </h4>
+                  </h1>
                   <span
                     class="Badge Badge--secondary"
                     data-test="DesignSystem-Badge"
@@ -1688,370 +1688,6 @@ exports[`Navigation component
                     >
                       Ongoing
                     </span>
-<<<<<<< HEAD
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="pl-3"
-        />
-      </div>
-      <hr
-        aria-orientation="horizontal"
-        class="Divider Divider--horizontal Divider--header"
-        data-test="DesignSystem-Divider"
-      />
-    </div>
-  </div>
-  <div>
-    <div
-      data-test="DesignSystem-PageHeader"
-    >
-      <div
-        class="PageHeader-wrapper"
-      >
-        <div
-          class="pl-6"
-          data-test="DesignSystem-PageHeader--Breadcrumbs"
-        >
-          <nav
-            aria-label="Breadcrumb"
-            class="Breadcrumbs"
-            data-test="DesignSystem-Breadcrumbs"
-          >
-            <div
-              class="Breadcrumbs-item"
-              data-test="DesignSystem-Breadcrumbs-item"
-            >
-              <a
-                aria-disabled="false"
-                class="Link Link--tiny Link--subtle Breadcrumbs-link ellipsis--noWrap"
-                data-test="DesignSystem-Breadcrumbs-link"
-                href="/Senders"
-                tabindex="0"
-              >
-                <span
-                  class="Link-text Link-text--subtle"
-                >
-                  Senders
-                </span>
-              </a>
-              <span
-                class="Breadcrumbs-itemSeparator"
-              >
-                /
-              </span>
-            </div>
-          </nav>
-        </div>
-        <div
-          class="d-flex pl-6"
-        >
-          <div
-            class="PageHeader"
-          >
-            <div
-              class="Row w-100"
-              data-test="DesignSystem-Row"
-            >
-              <div
-                class="Col Col--12 Col--m-12 Col--xl-12"
-                data-test="DesignSystem-Column"
-              >
-                <div
-                  class="PageHeader-titleWrapper"
-                  data-test="DesignSystem-PageHeader--Title"
-                >
-                  <h1
-                    class="Heading Heading--m Heading--default PageHeader-title"
-                    data-test="DesignSystem-Heading"
-                  >
-                    PageHeader title
-                  </h1>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="pl-3"
-        />
-      </div>
-      <hr
-        aria-orientation="horizontal"
-        class="Divider Divider--horizontal Divider--header"
-        data-test="DesignSystem-Divider"
-      />
-    </div>
-  </div>
-  <div>
-    <div
-      data-test="DesignSystem-PageHeader"
-    >
-      <div
-        class="PageHeader-wrapper"
-      >
-        <div
-          class="d-flex pl-6"
-        >
-          <div
-            class="PageHeader"
-          >
-            <div
-              class="Row w-100"
-              data-test="DesignSystem-Row"
-            >
-              <div
-                class="Col Col--12 Col--m-12 Col--xl-12"
-                data-test="DesignSystem-Column"
-              >
-                <div
-                  class="PageHeader-titleWrapper"
-                  data-test="DesignSystem-PageHeader--Title"
-                >
-                  <h1
-                    class="Heading Heading--m Heading--default PageHeader-title"
-                    data-test="DesignSystem-Heading"
-                  >
-                    PageHeader title
-                  </h1>
-                  <span
-                    class="Badge Badge--secondary"
-                    data-test="DesignSystem-Badge"
-                  >
-                    Sent
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="pl-3"
-        />
-      </div>
-      <hr
-        aria-orientation="horizontal"
-        class="Divider Divider--horizontal Divider--header"
-        data-test="DesignSystem-Divider"
-      />
-    </div>
-  </div>
-  <div>
-    <div
-      data-test="DesignSystem-PageHeader"
-    >
-      <div
-        class="PageHeader-wrapper"
-      >
-        <div
-          class="d-flex pl-6"
-        >
-          <div
-            class="PageHeader"
-          >
-            <div
-              class="Row w-100"
-              data-test="DesignSystem-Row"
-            >
-              <div
-                class="Col Col--12 Col--m-12 Col--xl-12"
-                data-test="DesignSystem-Column"
-              >
-                <div
-                  class="PageHeader-titleWrapper"
-                  data-test="DesignSystem-PageHeader--Title"
-                >
-                  <h1
-                    class="Heading Heading--m Heading--default PageHeader-title"
-                    data-test="DesignSystem-Heading"
-                  >
-                    PageHeader title
-                  </h1>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="pl-3"
-        />
-      </div>
-      <hr
-        aria-orientation="horizontal"
-        class="Divider Divider--horizontal Divider--header"
-        data-test="DesignSystem-Divider"
-      />
-    </div>
-  </div>
-  <div>
-    <div
-      data-test="DesignSystem-PageHeader"
-    >
-      <div
-        class="PageHeader-wrapper"
-      >
-        <div
-          class="d-flex pl-6"
-        >
-          <div
-            class="mr-5 my-3"
-            data-test="DesignSystem-PageHeader--Button"
-          >
-            <button
-              class="Button Button--tiny Button--tinySquare Button--basic"
-              data-test="DesignSystem-Button"
-              tabindex="0"
-            >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
-              >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 14px; width: 14px;"
-                >
-                  arrow_back
-                </i>
-              </div>
-            </button>
-          </div>
-          <div
-            class="PageHeader"
-          >
-            <div
-              class="Row w-100"
-              data-test="DesignSystem-Row"
-            >
-              <div
-                class="Col Col--12 Col--m-12 Col--xl-12"
-                data-test="DesignSystem-Column"
-              >
-                <div
-                  class="PageHeader-titleWrapper"
-                  data-test="DesignSystem-PageHeader--Title"
-                >
-                  <h1
-                    class="Heading Heading--m Heading--default PageHeader-title"
-                    data-test="DesignSystem-Heading"
-                  >
-                    PageHeader title
-                  </h1>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="pl-3"
-        />
-      </div>
-      <hr
-        aria-orientation="horizontal"
-        class="Divider Divider--horizontal Divider--header"
-        data-test="DesignSystem-Divider"
-      />
-    </div>
-  </div>
-  <div>
-    <div
-      data-test="DesignSystem-PageHeader"
-    >
-      <div
-        class="PageHeader-wrapper PageHeader-wrapper--withTabs"
-      >
-        <div
-          class="pl-6"
-          data-test="DesignSystem-PageHeader--Breadcrumbs"
-        >
-          <nav
-            aria-label="Breadcrumb"
-            class="Breadcrumbs"
-            data-test="DesignSystem-Breadcrumbs"
-          >
-            <div
-              class="Breadcrumbs-item"
-              data-test="DesignSystem-Breadcrumbs-item"
-            >
-              <a
-                aria-disabled="false"
-                class="Link Link--tiny Link--subtle Breadcrumbs-link ellipsis--noWrap"
-                data-test="DesignSystem-Breadcrumbs-link"
-                href="/Senders"
-                tabindex="0"
-              >
-                <span
-                  class="Link-text Link-text--subtle"
-                >
-                  Senders
-                </span>
-              </a>
-              <span
-                class="Breadcrumbs-itemSeparator"
-              >
-                /
-              </span>
-            </div>
-          </nav>
-        </div>
-        <div
-          class="d-flex pl-6"
-        >
-          <div
-            class="mr-5 my-3"
-            data-test="DesignSystem-PageHeader--Button"
-          >
-            <button
-              class="Button Button--tiny Button--tinySquare Button--basic"
-              data-test="DesignSystem-Button"
-              tabindex="0"
-            >
-              <div
-                class="Button-icon"
-                data-test="DesignSystem-Button--Icon-Wrapper"
-              >
-                <i
-                  class="material-symbols material-symbols-rounded Icon"
-                  data-test="DesignSystem-Button--Icon"
-                  style="font-size: 14px; width: 14px;"
-                >
-                  arrow_back
-                </i>
-              </div>
-            </button>
-          </div>
-          <div
-            class="PageHeader"
-          >
-            <div
-              class="Row w-100"
-              data-test="DesignSystem-Row"
-            >
-              <div
-                class="Col Col--4 Col--m-4 Col--xl-4"
-                data-test="DesignSystem-Column"
-              >
-                <div
-                  class="PageHeader-titleWrapper"
-                  data-test="DesignSystem-PageHeader--Title"
-                >
-                  <h1
-                    class="Heading Heading--m Heading--default PageHeader-title"
-                    data-test="DesignSystem-Heading"
-                  >
-                    PageHeader title
-                  </h1>
-                  <span
-                    class="Badge Badge--secondary"
-                    data-test="DesignSystem-Badge"
-                  >
-                    Sent
-                  </span>
-=======
                   </div>
                   <div
                     class="MetaList"
@@ -2096,7 +1732,6 @@ exports[`Navigation component
                       </span>
                     </span>
                   </div>
->>>>>>> 12062be0b (fix(PageHeader): refactor layout to flex/grid and fix responsive spacing)
                 </div>
               </div>
               <div
