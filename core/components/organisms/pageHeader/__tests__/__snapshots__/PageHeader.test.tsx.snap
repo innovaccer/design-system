@@ -86,12 +86,12 @@ exports[`Navigation component
                   class="PageHeader-titleWrapper"
                   data-test="DesignSystem-PageHeader--Title"
                 >
-                  <h4
+                  <h1
                     class="Heading Heading--m Heading--default PageHeader-title"
                     data-test="DesignSystem-Heading"
                   >
                     PageHeader title
-                  </h4>
+                  </h1>
                   <span
                     class="Badge Badge--secondary"
                     data-test="DesignSystem-Badge"
@@ -414,12 +414,12 @@ exports[`Navigation component
                   class="PageHeader-titleWrapper"
                   data-test="DesignSystem-PageHeader--Title"
                 >
-                  <h4
+                  <h1
                     class="Heading Heading--m Heading--default PageHeader-title"
                     data-test="DesignSystem-Heading"
                   >
                     PageHeader title
-                  </h4>
+                  </h1>
                   <span
                     class="Badge Badge--secondary"
                     data-test="DesignSystem-Badge"
@@ -748,12 +748,12 @@ exports[`Navigation component
                   class="PageHeader-titleWrapper"
                   data-test="DesignSystem-PageHeader--Title"
                 >
-                  <h4
+                  <h1
                     class="Heading Heading--m Heading--default PageHeader-title"
                     data-test="DesignSystem-Heading"
                   >
                     PageHeader title
-                  </h4>
+                  </h1>
                   <span
                     class="Badge Badge--secondary"
                     data-test="DesignSystem-Badge"
@@ -1024,12 +1024,12 @@ exports[`Navigation component
                   class="PageHeader-titleWrapper"
                   data-test="DesignSystem-PageHeader--Title"
                 >
-                  <h4
+                  <h1
                     class="Heading Heading--m Heading--default PageHeader-title"
                     data-test="DesignSystem-Heading"
                   >
                     PageHeader title
-                  </h4>
+                  </h1>
                 </div>
               </div>
             </div>
@@ -1171,12 +1171,12 @@ exports[`Navigation component
                   class="PageHeader-titleWrapper"
                   data-test="DesignSystem-PageHeader--Title"
                 >
-                  <h4
+                  <h1
                     class="Heading Heading--m Heading--default PageHeader-title"
                     data-test="DesignSystem-Heading"
                   >
                     PageHeader title
-                  </h4>
+                  </h1>
                 </div>
               </div>
               <div
@@ -1298,12 +1298,12 @@ exports[`Navigation component
                   class="PageHeader-titleWrapper"
                   data-test="DesignSystem-PageHeader--Title"
                 >
-                  <h4
+                  <h1
                     class="Heading Heading--m Heading--default PageHeader-title"
                     data-test="DesignSystem-Heading"
                   >
                     PageHeader title
-                  </h4>
+                  </h1>
                 </div>
               </div>
               <div
@@ -1393,12 +1393,12 @@ exports[`Navigation component
                   class="PageHeader-titleWrapper"
                   data-test="DesignSystem-PageHeader--Title"
                 >
-                  <h4
+                  <h1
                     class="Heading Heading--m Heading--default PageHeader-title"
                     data-test="DesignSystem-Heading"
                   >
                     PageHeader title
-                  </h4>
+                  </h1>
                 </div>
               </div>
             </div>
@@ -1437,12 +1437,12 @@ exports[`Navigation component
                   class="PageHeader-titleWrapper"
                   data-test="DesignSystem-PageHeader--Title"
                 >
-                  <h4
+                  <h1
                     class="Heading Heading--m Heading--default PageHeader-title"
                     data-test="DesignSystem-Heading"
                   >
                     PageHeader title
-                  </h4>
+                  </h1>
                   <span
                     class="Badge Badge--secondary"
                     data-test="DesignSystem-Badge"
@@ -1487,12 +1487,12 @@ exports[`Navigation component
                   class="PageHeader-titleWrapper"
                   data-test="DesignSystem-PageHeader--Title"
                 >
-                  <h4
+                  <h1
                     class="Heading Heading--m Heading--default PageHeader-title"
                     data-test="DesignSystem-Heading"
                   >
                     PageHeader title
-                  </h4>
+                  </h1>
                 </div>
               </div>
             </div>
@@ -1554,12 +1554,12 @@ exports[`Navigation component
                   class="PageHeader-titleWrapper"
                   data-test="DesignSystem-PageHeader--Title"
                 >
-                  <h4
+                  <h1
                     class="Heading Heading--m Heading--default PageHeader-title"
                     data-test="DesignSystem-Heading"
                   >
                     PageHeader title
-                  </h4>
+                  </h1>
                 </div>
               </div>
             </div>
@@ -1655,12 +1655,12 @@ exports[`Navigation component
                   class="PageHeader-titleWrapper"
                   data-test="DesignSystem-PageHeader--Title"
                 >
-                  <h4
+                  <h1
                     class="Heading Heading--m Heading--default PageHeader-title"
                     data-test="DesignSystem-Heading"
                   >
                     PageHeader title
-                  </h4>
+                  </h1>
                   <span
                     class="Badge Badge--secondary"
                     data-test="DesignSystem-Badge"

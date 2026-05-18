@@ -24,6 +24,10 @@ export interface HeadingProps extends BaseProps, BaseHtmlProps<HTMLHeadingElemen
    * Color of `Text`
    */
   color?: TextColor;
+  /**
+   * HTML tag to render the heading as. Overrides the default tag associated with the size.
+   */
+  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'div' | 'span';
 }
 
 const sizeMap = {
@@ -35,7 +39,7 @@ const sizeMap = {
 };
 
 export const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>((props, ref) => {
-  const { appearance = 'default', size = 'm', children, className, color, ...rest } = props;
+  const { appearance = 'default', size = 'm', as, children, className, color, ...rest } = props;
 
   const classes = classNames(
     {
@@ -48,7 +52,13 @@ export const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>((props
   );
 
   return (
-    <GenericText ref={ref} data-test="DesignSystem-Heading" {...rest} className={classes} componentType={sizeMap[size]}>
+    <GenericText
+      ref={ref}
+      data-test="DesignSystem-Heading"
+      {...rest}
+      className={classes}
+      componentType={as || sizeMap[size]}
+    >
       {children}
     </GenericText>
   );

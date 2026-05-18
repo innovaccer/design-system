@@ -37,7 +37,7 @@ const SaraIconDefault = (props: SaraIconType) => {
         clipRule="evenodd"
         d="M6 0.75C6 3.6495 8.3505 6 11.25 6C8.3505 6 6 8.35051 6 11.25C6 8.35051 3.64949 6 0.75 6C3.64949 6 6 3.6495 6 0.75Z"
         fill="none"
-        stroke="#DD2D38"
+        stroke="#CA1822"
         strokeWidth="1"
         vectorEffect="non-scaling-stroke"
         clipPath="url(#clip0_54537_3573)"
