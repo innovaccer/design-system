@@ -199,4 +199,13 @@ describe('GenericChip component a11y', () => {
     );
     expect(await axe(container)).toHaveNoViolations();
   });
+
+  it('removable chip without onClick: chip content drops role/aria-label so the generic div is unnamed', () => {
+    const { getByTestId } = render(<GenericChip label="ChipLabel" name="Chip" clearButton onClose={jest.fn()} />);
+    const chipContentDiv = getByTestId('DesignSystem-GenericChip--Content');
+    expect(chipContentDiv).not.toHaveAttribute('role');
+    expect(chipContentDiv).not.toHaveAttribute('aria-label');
+    expect(chipContentDiv).not.toHaveAttribute('aria-labelledby');
+    expect(chipContentDiv).toHaveAttribute('tabindex', '-1');
+  });
 });

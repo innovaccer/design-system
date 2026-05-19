@@ -223,8 +223,8 @@ export const GenericChip = (props: GenericChipProps) => {
           data-test="DesignSystem-GenericChip--Content"
           role={computedRole}
           tabIndex={computedTabIndex}
-          aria-label={computedAriaLabel}
-          aria-labelledby={props['aria-labelledby']}
+          aria-label={computedRole ? computedAriaLabel : undefined}
+          aria-labelledby={computedRole ? props['aria-labelledby'] : undefined}
           className={classNames(styles['Chip-content'], styles[`Chip-content--${size}`])}
           onClick={onClickHandler}
           onKeyDown={onChipKeyDownHandler}
