@@ -202,6 +202,7 @@ const HeaderCell = (props: HeaderCellProps) => {
       const schemaMin = typeof schema.minWidth === 'number' ? schema.minWidth : undefined;
       const effectiveMinWidth = schemaMin || getCellSize(schema.cellType || 'DEFAULT').minWidth || 96;
       updateColumnSchema(name, { width: Math.max(maxWidth, effectiveMinWidth) });
+      onResizeEnd?.();
     }
   };
 
@@ -323,6 +324,7 @@ const HeaderCell = (props: HeaderCellProps) => {
               const schemaMin = typeof schema.minWidth === 'number' ? schema.minWidth : undefined;
               const effectiveMinWidth = schemaMin || getCellSize(schema.cellType || 'DEFAULT').minWidth || 96;
               updateColumnSchema(name, { width: Math.max(currentWidth + delta, effectiveMinWidth) });
+              onResizeEnd?.();
             } else if (event.key === 'Enter') {
               event.preventDefault();
               autoFitColumn();
