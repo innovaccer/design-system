@@ -159,7 +159,7 @@ export const GenericChip = (props: GenericChipProps) => {
     return labelText;
   };
 
-  const isWrapperInteractive = Boolean(onClick) || !clearButton;
+  const isWrapperInteractive = Boolean(onClick) || Boolean(props.role) || !clearButton;
   const computedTabIndex =
     props.tabIndex !== undefined ? (disabled ? -1 : props.tabIndex) : disabled || !isWrapperInteractive ? -1 : 0;
   const computedRole = props.role ?? (isWrapperInteractive ? 'button' : undefined);
