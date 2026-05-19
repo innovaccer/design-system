@@ -12,10 +12,14 @@ export interface EmptyDescriptionProps extends BaseProps {
    * Can be any renderable React Text.
    */
   children: React.ReactText;
+  /**
+   * HTML tag to render the heading as.
+   */
+  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 }
 
 const EmptyStateTitle = (props: EmptyDescriptionProps) => {
-  const { children, className, ...rest } = props;
+  const { children, className, as, ...rest } = props;
   const contextProp = React.useContext(EmptyStateContext);
 
   const { size = 'standard' } = contextProp;
@@ -30,7 +34,7 @@ const EmptyStateTitle = (props: EmptyDescriptionProps) => {
 
   if (size === 'standard') {
     return (
-      <Heading data-test="DesignSystem-EmptyState--Heading" className={headingClass} {...rest}>
+      <Heading data-test="DesignSystem-EmptyState--Heading" className={headingClass} as={as} {...rest}>
         {children}
       </Heading>
     );
@@ -42,6 +46,7 @@ const EmptyStateTitle = (props: EmptyDescriptionProps) => {
       className={headingClass}
       weight="medium"
       size={textSize[size]}
+      as={as}
       {...rest}
     >
       {children}

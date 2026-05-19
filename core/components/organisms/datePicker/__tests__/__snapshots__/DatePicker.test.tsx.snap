@@ -7,7 +7,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
   <div>
     <div>
       <div
-        class="d-flex"
+        class="DatePicker-content"
       >
         <div
           aria-label="Calendar"
@@ -59,12 +59,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
                   class="Calendar-headerButton"
                   type="button"
                 >
-                  <h5
+                  <span
                     class="Heading Heading--s Heading--default"
                     data-test="DesignSystem-Heading"
                   >
                     Mar
-                  </h5>
+                  </span>
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
@@ -78,12 +78,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
                   class="Calendar-headerButton ml-4"
                   type="button"
                 >
-                  <h5
+                  <span
                     class="Heading Heading--s Heading--default"
                     data-test="DesignSystem-Heading"
                   >
                     2020
-                  </h5>
+                  </span>
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
@@ -1305,19 +1305,24 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
         <div
           class="Chip-wrapper Chip Chip--action Chip-size--regular"
           data-test="DesignSystem-Chip--GenericChip"
-          role="button"
           style="max-width: var(--spacing-640);"
-          tabindex="0"
         >
           <div
-            class="Chip-text--truncate"
+            class="Chip-content Chip-content--regular"
+            data-test="DesignSystem-GenericChip--Content"
+            role="button"
+            tabindex="0"
           >
-            <span
-              class="Text Text--regular color-inverse Chip-text"
-              data-test="DesignSystem-GenericChip--Text"
+            <div
+              class="Chip-text--truncate"
             >
-              Today, Sep 22
-            </span>
+              <span
+                class="Text Text--regular color-inverse Chip-text"
+                data-test="DesignSystem-GenericChip--Text"
+              >
+                Today, Sep 22
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -1333,7 +1338,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
   <div>
     <div>
       <div
-        class="d-flex"
+        class="DatePicker-content"
       >
         <div
           aria-label="Calendar"
@@ -1386,12 +1391,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                   class="Calendar-headerButton"
                   type="button"
                 >
-                  <h5
+                  <span
                     class="Heading Heading--s Heading--default"
                     data-test="DesignSystem-Heading"
                   >
                     Mar
-                  </h5>
+                  </span>
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
@@ -1405,12 +1410,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                   class="Calendar-headerButton ml-4"
                   type="button"
                 >
-                  <h5
+                  <span
                     class="Heading Heading--s Heading--default"
                     data-test="DesignSystem-Heading"
                   >
                     2020
-                  </h5>
+                  </span>
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
@@ -2632,19 +2637,24 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
         <div
           class="Chip-wrapper Chip Chip--action Chip-size--regular"
           data-test="DesignSystem-Chip--GenericChip"
-          role="button"
           style="max-width: var(--spacing-640);"
-          tabindex="0"
         >
           <div
-            class="Chip-text--truncate"
+            class="Chip-content Chip-content--regular"
+            data-test="DesignSystem-GenericChip--Content"
+            role="button"
+            tabindex="0"
           >
-            <span
-              class="Text Text--regular color-inverse Chip-text"
-              data-test="DesignSystem-GenericChip--Text"
+            <div
+              class="Chip-text--truncate"
             >
-              Today, Sep 22
-            </span>
+              <span
+                class="Text Text--regular color-inverse Chip-text"
+                data-test="DesignSystem-GenericChip--Text"
+              >
+                Today, Sep 22
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -2660,7 +2670,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
   <div>
     <div>
       <div
-        class="d-flex"
+        class="DatePicker-content"
       >
         <div
           aria-label="Calendar"
@@ -2713,12 +2723,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                   class="Calendar-headerButton"
                   type="button"
                 >
-                  <h5
+                  <span
                     class="Heading Heading--s Heading--default"
                     data-test="DesignSystem-Heading"
                   >
                     Mar
-                  </h5>
+                  </span>
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
@@ -2732,12 +2742,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                   class="Calendar-headerButton ml-4"
                   type="button"
                 >
-                  <h5
+                  <span
                     class="Heading Heading--s Heading--default"
                     data-test="DesignSystem-Heading"
                   >
                     2020
-                  </h5>
+                  </span>
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
@@ -3959,19 +3969,24 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
         <div
           class="Chip-wrapper Chip Chip--action Chip-size--regular"
           data-test="DesignSystem-Chip--GenericChip"
-          role="button"
           style="max-width: var(--spacing-640);"
-          tabindex="0"
         >
           <div
-            class="Chip-text--truncate"
+            class="Chip-content Chip-content--regular"
+            data-test="DesignSystem-GenericChip--Content"
+            role="button"
+            tabindex="0"
           >
-            <span
-              class="Text Text--regular color-inverse Chip-text"
-              data-test="DesignSystem-GenericChip--Text"
+            <div
+              class="Chip-text--truncate"
             >
-              Today, Sep 22
-            </span>
+              <span
+                class="Text Text--regular color-inverse Chip-text"
+                data-test="DesignSystem-GenericChip--Text"
+              >
+                Today, Sep 22
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -3987,7 +4002,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
   <div>
     <div>
       <div
-        class="d-flex"
+        class="DatePicker-content"
       >
         <div
           aria-label="Calendar"
@@ -4039,12 +4054,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                   class="Calendar-headerButton"
                   type="button"
                 >
-                  <h5
+                  <span
                     class="Heading Heading--s Heading--default"
                     data-test="DesignSystem-Heading"
                   >
                     Mar
-                  </h5>
+                  </span>
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
@@ -4058,12 +4073,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                   class="Calendar-headerButton ml-4"
                   type="button"
                 >
-                  <h5
+                  <span
                     class="Heading Heading--s Heading--default"
                     data-test="DesignSystem-Heading"
                   >
                     2020
-                  </h5>
+                  </span>
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
@@ -5285,19 +5300,24 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
         <div
           class="Chip-wrapper Chip Chip--action Chip-size--regular"
           data-test="DesignSystem-Chip--GenericChip"
-          role="button"
           style="max-width: var(--spacing-640);"
-          tabindex="0"
         >
           <div
-            class="Chip-text--truncate"
+            class="Chip-content Chip-content--regular"
+            data-test="DesignSystem-GenericChip--Content"
+            role="button"
+            tabindex="0"
           >
-            <span
-              class="Text Text--regular color-inverse Chip-text"
-              data-test="DesignSystem-GenericChip--Text"
+            <div
+              class="Chip-text--truncate"
             >
-              Today, Sep 22
-            </span>
+              <span
+                class="Text Text--regular color-inverse Chip-text"
+                data-test="DesignSystem-GenericChip--Text"
+              >
+                Today, Sep 22
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -5313,7 +5333,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
   <div>
     <div>
       <div
-        class="d-flex"
+        class="DatePicker-content"
       >
         <div
           aria-label="Calendar"
@@ -5365,12 +5385,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                   class="Calendar-headerButton"
                   type="button"
                 >
-                  <h5
+                  <span
                     class="Heading Heading--s Heading--default"
                     data-test="DesignSystem-Heading"
                   >
                     Mar
-                  </h5>
+                  </span>
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
@@ -5384,12 +5404,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                   class="Calendar-headerButton ml-4"
                   type="button"
                 >
-                  <h5
+                  <span
                     class="Heading Heading--s Heading--default"
                     data-test="DesignSystem-Heading"
                   >
                     2020
-                  </h5>
+                  </span>
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
@@ -6611,19 +6631,24 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
         <div
           class="Chip-wrapper Chip Chip--action Chip-size--regular"
           data-test="DesignSystem-Chip--GenericChip"
-          role="button"
           style="max-width: var(--spacing-640);"
-          tabindex="0"
         >
           <div
-            class="Chip-text--truncate"
+            class="Chip-content Chip-content--regular"
+            data-test="DesignSystem-GenericChip--Content"
+            role="button"
+            tabindex="0"
           >
-            <span
-              class="Text Text--regular color-inverse Chip-text"
-              data-test="DesignSystem-GenericChip--Text"
+            <div
+              class="Chip-text--truncate"
             >
-              Today, Sep 22
-            </span>
+              <span
+                class="Text Text--regular color-inverse Chip-text"
+                data-test="DesignSystem-GenericChip--Text"
+              >
+                Today, Sep 22
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -6639,7 +6664,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
   <div>
     <div>
       <div
-        class="d-flex"
+        class="DatePicker-content"
       >
         <div
           aria-label="Calendar"
@@ -6691,12 +6716,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                   class="Calendar-headerButton"
                   type="button"
                 >
-                  <h5
+                  <span
                     class="Heading Heading--s Heading--default"
                     data-test="DesignSystem-Heading"
                   >
                     Mar
-                  </h5>
+                  </span>
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
@@ -6710,12 +6735,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                   class="Calendar-headerButton ml-4"
                   type="button"
                 >
-                  <h5
+                  <span
                     class="Heading Heading--s Heading--default"
                     data-test="DesignSystem-Heading"
                   >
                     2020
-                  </h5>
+                  </span>
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
@@ -7937,19 +7962,24 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
         <div
           class="Chip-wrapper Chip Chip--action Chip-size--regular"
           data-test="DesignSystem-Chip--GenericChip"
-          role="button"
           style="max-width: var(--spacing-640);"
-          tabindex="0"
         >
           <div
-            class="Chip-text--truncate"
+            class="Chip-content Chip-content--regular"
+            data-test="DesignSystem-GenericChip--Content"
+            role="button"
+            tabindex="0"
           >
-            <span
-              class="Text Text--regular color-inverse Chip-text"
-              data-test="DesignSystem-GenericChip--Text"
+            <div
+              class="Chip-text--truncate"
             >
-              Today, Sep 22
-            </span>
+              <span
+                class="Text Text--regular color-inverse Chip-text"
+                data-test="DesignSystem-GenericChip--Text"
+              >
+                Today, Sep 22
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -7965,7 +7995,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
   <div>
     <div>
       <div
-        class="d-flex"
+        class="DatePicker-content"
       >
         <div
           aria-label="Calendar"
@@ -8017,12 +8047,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                   class="Calendar-headerButton"
                   type="button"
                 >
-                  <h5
+                  <span
                     class="Heading Heading--s Heading--default"
                     data-test="DesignSystem-Heading"
                   >
                     2020
-                  </h5>
+                  </span>
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
@@ -8373,19 +8403,24 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
         <div
           class="Chip-wrapper Chip Chip--action Chip-size--regular"
           data-test="DesignSystem-Chip--GenericChip"
-          role="button"
           style="max-width: var(--spacing-640);"
-          tabindex="0"
         >
           <div
-            class="Chip-text--truncate"
+            class="Chip-content Chip-content--regular"
+            data-test="DesignSystem-GenericChip--Content"
+            role="button"
+            tabindex="0"
           >
-            <span
-              class="Text Text--regular color-inverse Chip-text"
-              data-test="DesignSystem-GenericChip--Text"
+            <div
+              class="Chip-text--truncate"
             >
-              Today, Sep 22
-            </span>
+              <span
+                class="Text Text--regular color-inverse Chip-text"
+                data-test="DesignSystem-GenericChip--Text"
+              >
+                Today, Sep 22
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -8401,7 +8436,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
   <div>
     <div>
       <div
-        class="d-flex"
+        class="DatePicker-content"
       >
         <div
           aria-label="Calendar"
@@ -8453,12 +8488,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                   class="Calendar-headerButton"
                   type="button"
                 >
-                  <h5
+                  <span
                     class="Heading Heading--s Heading--default"
                     data-test="DesignSystem-Heading"
                   >
                     2016 - 2027
-                  </h5>
+                  </span>
                 </button>
               </div>
               <div
@@ -8802,19 +8837,24 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
         <div
           class="Chip-wrapper Chip Chip--action Chip-size--regular"
           data-test="DesignSystem-Chip--GenericChip"
-          role="button"
           style="max-width: var(--spacing-640);"
-          tabindex="0"
         >
           <div
-            class="Chip-text--truncate"
+            class="Chip-content Chip-content--regular"
+            data-test="DesignSystem-GenericChip--Content"
+            role="button"
+            tabindex="0"
           >
-            <span
-              class="Text Text--regular color-inverse Chip-text"
-              data-test="DesignSystem-GenericChip--Text"
+            <div
+              class="Chip-text--truncate"
             >
-              Today, Sep 22
-            </span>
+              <span
+                class="Text Text--regular color-inverse Chip-text"
+                data-test="DesignSystem-GenericChip--Text"
+              >
+                Today, Sep 22
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -8830,7 +8870,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
   <div>
     <div>
       <div
-        class="d-flex"
+        class="DatePicker-content"
       >
         <div
           aria-label="Calendar"
@@ -8882,12 +8922,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
                   class="Calendar-headerButton"
                   type="button"
                 >
-                  <h5
+                  <span
                     class="Heading Heading--s Heading--default"
                     data-test="DesignSystem-Heading"
                   >
                     Mar
-                  </h5>
+                  </span>
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
@@ -8901,12 +8941,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
                   class="Calendar-headerButton ml-4"
                   type="button"
                 >
-                  <h5
+                  <span
                     class="Heading Heading--s Heading--default"
                     data-test="DesignSystem-Heading"
                   >
                     2020
-                  </h5>
+                  </span>
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
@@ -10128,19 +10168,24 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
         <div
           class="Chip-wrapper Chip Chip--action Chip-size--regular"
           data-test="DesignSystem-Chip--GenericChip"
-          role="button"
           style="max-width: var(--spacing-640);"
-          tabindex="0"
         >
           <div
-            class="Chip-text--truncate"
+            class="Chip-content Chip-content--regular"
+            data-test="DesignSystem-GenericChip--Content"
+            role="button"
+            tabindex="0"
           >
-            <span
-              class="Text Text--regular color-inverse Chip-text"
-              data-test="DesignSystem-GenericChip--Text"
+            <div
+              class="Chip-text--truncate"
             >
-              Today, Sep 22
-            </span>
+              <span
+                class="Text Text--regular color-inverse Chip-text"
+                data-test="DesignSystem-GenericChip--Text"
+              >
+                Today, Sep 22
+              </span>
+            </div>
           </div>
         </div>
       </div>

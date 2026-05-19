@@ -61,19 +61,24 @@ exports[`TS renders children 1`] = `
   <div
     class="Chip-wrapper Chip Chip--input Chip-size--regular"
     data-test="DesignSystem-Chip--GenericChip"
-    role="button"
     style="max-width: var(--spacing-640);"
-    tabindex="0"
   >
     <div
-      class="Chip-text--truncate"
+      class="Chip-content Chip-content--regular"
+      data-test="DesignSystem-GenericChip--Content"
+      role="button"
+      tabindex="0"
     >
-      <span
-        class="Text Text--regular color-inverse Chip-text"
-        data-test="DesignSystem-GenericChip--Text"
+      <div
+        class="Chip-text--truncate"
       >
-        Hello World!
-      </span>
+        <span
+          class="Text Text--regular color-inverse Chip-text"
+          data-test="DesignSystem-GenericChip--Text"
+        >
+          Hello World!
+        </span>
+      </div>
     </div>
   </div>
   <div
@@ -108,7 +113,7 @@ exports[`TS renders children 1`] = `
   />
   <div>
     <div
-      class="d-flex"
+      class="DatePicker-content"
     >
       <div
         aria-label="Calendar"
@@ -159,12 +164,12 @@ exports[`TS renders children 1`] = `
                 class="Calendar-headerButton"
                 type="button"
               >
-                <h5
+                <span
                   class="Heading Heading--s Heading--default"
                   data-test="DesignSystem-Heading"
                 >
                   Jun
-                </h5>
+                </span>
                 <i
                   class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                   data-test="DesignSystem-Icon"
@@ -178,12 +183,12 @@ exports[`TS renders children 1`] = `
                 class="Calendar-headerButton ml-4"
                 type="button"
               >
-                <h5
+                <span
                   class="Heading Heading--s Heading--default"
                   data-test="DesignSystem-Heading"
                 >
                   2021
-                </h5>
+                </span>
                 <i
                   class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                   data-test="DesignSystem-Icon"
@@ -1404,19 +1409,24 @@ exports[`TS renders children 1`] = `
       <div
         class="Chip-wrapper Chip Chip--action Chip-size--regular"
         data-test="DesignSystem-Chip--GenericChip"
-        role="button"
         style="max-width: var(--spacing-640);"
-        tabindex="0"
       >
         <div
-          class="Chip-text--truncate"
+          class="Chip-content Chip-content--regular"
+          data-test="DesignSystem-GenericChip--Content"
+          role="button"
+          tabindex="0"
         >
-          <span
-            class="Text Text--regular color-inverse Chip-text"
-            data-test="DesignSystem-GenericChip--Text"
+          <div
+            class="Chip-text--truncate"
           >
-            Today, Jun 14
-          </span>
+            <span
+              class="Text Text--regular color-inverse Chip-text"
+              data-test="DesignSystem-GenericChip--Text"
+            >
+              Today, Jun 14
+            </span>
+          </div>
         </div>
       </div>
     </div>
@@ -2227,7 +2237,6 @@ exports[`TS renders children 1`] = `
     </div>
   </div>
   <h4
-    aria-level="4"
     class="Subheading Subheading--default"
     data-test="DesignSystem-Subheading"
   >
@@ -2276,12 +2285,12 @@ exports[`TS renders children 1`] = `
       <div
         class="Toast-title"
       >
-        <h5
+        <span
           class="Heading Heading--s Heading--white Toast-heading Toast-heading--info"
           data-test="DesignSystem-Heading"
         >
           Hello World!
-        </h5>
+        </span>
       </div>
     </div>
   </div>
@@ -2309,12 +2318,12 @@ exports[`TS renders children 1`] = `
         <div
           class="OverlayHeader-headerWrapper"
         >
-          <h4
+          <h2
             class="Heading Heading--m Heading--default"
             data-test="DesignSystem-OverlayHeader--heading"
           >
             Hello World!
-          </h4>
+          </h2>
         </div>
       </div>
     </div>
@@ -2576,24 +2585,24 @@ exports[`TS renders children 1`] = `
             class="Calendar-headerButton"
             type="button"
           >
-            <h5
+            <span
               class="Heading Heading--s Heading--default"
               data-test="DesignSystem-Heading"
             >
               Jun
-            </h5>
+            </span>
           </button>
           <button
             aria-label="Select year"
             class="Calendar-headerButton ml-4"
             type="button"
           >
-            <h5
+            <span
               class="Heading Heading--s Heading--default"
               data-test="DesignSystem-Heading"
             >
               2021
-            </h5>
+            </span>
           </button>
         </div>
         <div
@@ -3955,31 +3964,27 @@ exports[`TS renders children 1`] = `
           class="PageHeader"
         >
           <div
-            class="Row w-100"
-            data-test="DesignSystem-Row"
+            class="PageHeader-row"
           >
             <div
-              class="Col Col--12 Col--m-12 Col--xl-12"
-              data-test="DesignSystem-Column"
+              class="PageHeader-group--title"
+              data-group="title"
             >
               <div
                 class="PageHeader-titleWrapper"
                 data-test="DesignSystem-PageHeader--Title"
               >
-                <h4
+                <h1
                   class="Heading Heading--m Heading--default PageHeader-title"
                   data-test="DesignSystem-Heading"
                 >
                   Hello World!
-                </h4>
+                </h1>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div
-        class="pl-3"
-      />
     </div>
     <hr
       aria-orientation="horizontal"

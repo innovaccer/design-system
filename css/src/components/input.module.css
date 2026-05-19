@@ -149,6 +149,7 @@
   cursor: pointer;
   color: var(--inverse-lighter);
   border-radius: var(--border-radius-full);
+  box-sizing: content-box;
 }
 
 .Input-iconWrapper--right:focus-visible .Input-icon--right {

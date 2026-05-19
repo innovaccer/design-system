@@ -16,10 +16,24 @@ export interface ModalHeaderProps extends BaseProps {
    * Optional id to attach to heading for aria-labelledby.
    */
   headingId?: string;
+  /**
+   * HTML tag to render the heading as.
+   */
+  headingAs?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 }
 
 export const ModalHeader = (props: ModalHeaderProps) => {
-  const { className, heading, subHeading, onClose, seperator, backIcon, backIconCallback, headingId } = props;
+  const {
+    className,
+    heading,
+    subHeading,
+    onClose,
+    seperator,
+    backIcon,
+    backIconCallback,
+    headingId,
+    headingAs = 'h2',
+  } = props;
   const baseProps = extractBaseProps(props);
 
   const classes = classNames(
@@ -39,6 +53,7 @@ export const ModalHeader = (props: ModalHeaderProps) => {
           backButton={backIcon}
           backButtonCallback={backIconCallback}
           headingId={headingId}
+          headingAs={headingAs}
         />
       </Column>
       <Column className="flex-grow-0">

@@ -145,7 +145,7 @@ export const Chip = (props: ChipProps) => {
       disabled={disabled}
       className={chipClass}
       onClose={onCloseHandler}
-      onClick={onClickHandler}
+      onClick={onClick ? onClickHandler : undefined}
       name={name}
       labelPrefix={labelPrefix}
       maxWidth={maxWidth}
