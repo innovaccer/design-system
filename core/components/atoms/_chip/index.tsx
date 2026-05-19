@@ -122,13 +122,6 @@ export const GenericChip = (props: GenericChipProps) => {
     ['inverse']: !disabled && !selected,
   }) as TextProps['color'];
 
-  const chipWrapperClass = classNames(
-    {
-      [styles['Chip-wrapper']]: true,
-    },
-    className
-  );
-
   const renderLabel = () => {
     if (typeof label === 'string') {
       return (
@@ -166,7 +159,10 @@ export const GenericChip = (props: GenericChipProps) => {
     return labelText;
   };
 
-  const computedTabIndex = props.tabIndex !== undefined ? (disabled ? -1 : props.tabIndex) : disabled ? -1 : 0;
+  const isWrapperInteractive = Boolean(onClick) || Boolean(props.role) || !clearButton;
+  const computedTabIndex =
+    props.tabIndex !== undefined ? (disabled ? -1 : props.tabIndex) : disabled || !isWrapperInteractive ? -1 : 0;
+  const computedRole = props.role ?? (isWrapperInteractive ? 'button' : undefined);
 
   const clearButtonAriaAttr = props.clearButtonAriaLabel ?? (typeof label === 'string' ? `Remove ${label}` : 'Remove');
 
@@ -179,21 +175,36 @@ export const GenericChip = (props: GenericChipProps) => {
   })();
 
   const getAriaProps = () => {
-    const effectiveRole = props.role || 'button';
     const ariaProps: React.HTMLAttributes<HTMLDivElement> = {};
 
     if (type === 'selection') {
-      if (effectiveRole === 'button') {
+      if (computedRole === 'button') {
         ariaProps['aria-pressed'] = selected;
-      } else if (effectiveRole === 'checkbox' || effectiveRole === 'menuitemcheckbox') {
+      } else if (computedRole === 'checkbox' || computedRole === 'menuitemcheckbox') {
         ariaProps['aria-checked'] = selected;
-      } else if (effectiveRole === 'option' || effectiveRole === 'tab' || effectiveRole === 'treeitem') {
+      } else if (computedRole === 'option' || computedRole === 'tab' || computedRole === 'treeitem') {
         ariaProps['aria-selected'] = selected;
       }
     }
 
     return ariaProps;
   };
+
+  const chipContent = (
+    <>
+      {icon && (
+        <Icon
+          data-test="DesignSystem-GenericChip--Icon"
+          name={icon}
+          type={iconType}
+          size={IconSize}
+          appearance={iconAppearance('left')}
+          className={iconClass('left')}
+        />
+      )}
+      {renderLabel()}
+    </>
+  );
 
   return (
     <Tooltip
@@ -203,29 +214,24 @@ export const GenericChip = (props: GenericChipProps) => {
       triggerClass="flex-grow-0"
     >
       <div
-        tabIndex={computedTabIndex}
         style={wrapperStyle}
         data-test="DesignSystem-GenericChip--Wrapper"
-        role={props.role || 'button'}
-        aria-label={computedAriaLabel}
-        aria-labelledby={props['aria-labelledby']}
-        {...getAriaProps()}
-        onKeyDown={onChipKeyDownHandler}
         {...baseProps}
-        className={chipWrapperClass}
-        onClick={onClickHandler}
+        className={classNames(styles['Chip-wrapper'], className)}
       >
-        {icon && (
-          <Icon
-            data-test="DesignSystem-GenericChip--Icon"
-            name={icon}
-            type={iconType}
-            size={IconSize}
-            appearance={iconAppearance('left')}
-            className={iconClass('left')}
-          />
-        )}
-        {renderLabel()}
+        <div
+          data-test="DesignSystem-GenericChip--Content"
+          role={computedRole}
+          tabIndex={computedTabIndex}
+          aria-label={computedRole ? computedAriaLabel : undefined}
+          aria-labelledby={computedRole ? props['aria-labelledby'] : undefined}
+          className={classNames(styles['Chip-content'], styles[`Chip-content--${size}`])}
+          onClick={onClickHandler}
+          onKeyDown={onChipKeyDownHandler}
+          {...getAriaProps()}
+        >
+          {chipContent}
+        </div>
         {clearButton && (
           <div
             role="button"

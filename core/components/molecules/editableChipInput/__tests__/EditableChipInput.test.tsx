@@ -150,7 +150,7 @@ describe('Chip component', () => {
       <EditableChipInput value={value} onChange={onChange} chipInputOptions={chipInputOptions} size="regular" />
     );
 
-    const editableChipInputChip = getAllByTestId('DesignSystem-EditableChipInput--Chip');
+    const editableChipInputChip = getAllByTestId('DesignSystem-GenericChip--Content');
     fireEvent.click(editableChipInputChip[0]);
     expect(onClick).toHaveBeenCalled();
     fireEvent.click(editableChipInputChip[1]);

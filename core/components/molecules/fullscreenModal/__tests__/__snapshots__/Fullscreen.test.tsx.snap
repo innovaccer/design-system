@@ -243,13 +243,13 @@ exports[`FullscreenModal component
                   <div
                     class="OverlayHeader-headerWrapper"
                   >
-                    <h4
+                    <h2
                       class="Heading Heading--m Heading--default"
                       data-test="DesignSystem-OverlayHeader--heading"
                       id="fullscreen-modal-title-6"
                     >
                       this is heading
-                    </h4>
+                    </h2>
                   </div>
                   <span
                     class="Text Text--subtle Text--regular OverlayHeader-subheading"
@@ -551,13 +551,13 @@ exports[`FullscreenModal component
                   <div
                     class="OverlayHeader-headerWrapper"
                   >
-                    <h4
+                    <h2
                       class="Heading Heading--m Heading--default"
                       data-test="DesignSystem-OverlayHeader--heading"
                       id="fullscreen-modal-title-5"
                     >
                       this is heading
-                    </h4>
+                    </h2>
                   </div>
                   <span
                     class="Text Text--subtle Text--regular OverlayHeader-subheading"
