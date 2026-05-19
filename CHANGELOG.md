@@ -1,3 +1,42 @@
+## 4.25.0 (2026-05-19)
+
+### Highlights
+
+- Added responsive behavior to PageHeader and DatePicker patterns; improved Table interactions and refined a11y across Chip, Input, and Header components.
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(table): update dropdown single click dragging movement in table component (da364d866)
+- feat(pageheader): add responsive behavior for pageheader component (3a95c6c3e)
+
+### Fixes
+
+- fix(input): update alignment of input clear icon (7f85ab1e3)
+- fix(chip): update a11y role for chip component (3f943673f)
+- fix(table): update table resizable behaviour (4cbe3b253)
+- fix(pattern): add responsive behavior in datepicker story pattern (4add940d5)
+- fix(header): update heading hierarchy (eb7cbc1e0)
+- fix(chip): update a11y attributes for nested interactive elements (6768fcc40)
+- fix(chip): update a11y attributes for nested interactive elements (eb172bd7d)
+
+### Improvements
+
+- style(icons): change stroke color from #DD2D38 to #CA1822 in AISparkle (4bebed62e)
+
+---
+
 ## 4.24.0 (2026-04-24)
 
 ### Highlights
