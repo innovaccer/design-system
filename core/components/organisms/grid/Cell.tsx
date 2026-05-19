@@ -112,6 +112,9 @@ const HeaderCell = (props: HeaderCellProps) => {
 
   let options: DropdownProps['options'] = [...pinOptions, ...hideOptions];
   if (sorting) options = [...sortOptions, ...options];
+  if (schema.resizable) {
+    options = [...options, { label: 'Fit to content', value: 'fitToContent', icon: 'aspect_ratio' }];
+  }
 
   const classes = classNames({
     [styles['Grid-headCell']]: true,
@@ -265,7 +268,13 @@ const HeaderCell = (props: HeaderCellProps) => {
                 }}
                 options={options}
                 align={'left'}
-                onChange={(selected: any) => onMenuChange(name, selected)}
+                onChange={(selected: any) => {
+                  if (selected === 'fitToContent') {
+                    autoFitColumn();
+                    return;
+                  }
+                  onMenuChange(name, selected);
+                }}
                 minWidth={176}
               />
             </div>
