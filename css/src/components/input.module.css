@@ -130,6 +130,7 @@
   display: flex;
   align-content: center;
   font-size: var(--font-size-m);
+  box-sizing: content-box;
 }
 
 .Input-icon--left {
