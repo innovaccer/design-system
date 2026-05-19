@@ -159,7 +159,10 @@ export const GenericChip = (props: GenericChipProps) => {
     return labelText;
   };
 
-  const computedTabIndex = props.tabIndex !== undefined ? (disabled ? -1 : props.tabIndex) : disabled ? -1 : 0;
+  const isWrapperInteractive = Boolean(onClick) || Boolean(props.role) || !clearButton;
+  const computedTabIndex =
+    props.tabIndex !== undefined ? (disabled ? -1 : props.tabIndex) : disabled || !isWrapperInteractive ? -1 : 0;
+  const computedRole = props.role ?? (isWrapperInteractive ? 'button' : undefined);
 
   const clearButtonAriaAttr = props.clearButtonAriaLabel ?? (typeof label === 'string' ? `Remove ${label}` : 'Remove');
 
@@ -172,15 +175,14 @@ export const GenericChip = (props: GenericChipProps) => {
   })();
 
   const getAriaProps = () => {
-    const effectiveRole = props.role || 'button';
     const ariaProps: React.HTMLAttributes<HTMLDivElement> = {};
 
     if (type === 'selection') {
-      if (effectiveRole === 'button') {
+      if (computedRole === 'button') {
         ariaProps['aria-pressed'] = selected;
-      } else if (effectiveRole === 'checkbox' || effectiveRole === 'menuitemcheckbox') {
+      } else if (computedRole === 'checkbox' || computedRole === 'menuitemcheckbox') {
         ariaProps['aria-checked'] = selected;
-      } else if (effectiveRole === 'option' || effectiveRole === 'tab' || effectiveRole === 'treeitem') {
+      } else if (computedRole === 'option' || computedRole === 'tab' || computedRole === 'treeitem') {
         ariaProps['aria-selected'] = selected;
       }
     }
@@ -219,10 +221,10 @@ export const GenericChip = (props: GenericChipProps) => {
       >
         <div
           data-test="DesignSystem-GenericChip--Content"
-          role={props.role || 'button'}
+          role={computedRole}
           tabIndex={computedTabIndex}
-          aria-label={computedAriaLabel}
-          aria-labelledby={props['aria-labelledby']}
+          aria-label={computedRole ? computedAriaLabel : undefined}
+          aria-labelledby={computedRole ? props['aria-labelledby'] : undefined}
           className={classNames(styles['Chip-content'], styles[`Chip-content--${size}`])}
           onClick={onClickHandler}
           onKeyDown={onChipKeyDownHandler}
