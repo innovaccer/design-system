@@ -130,7 +130,6 @@
   display: flex;
   align-content: center;
   font-size: var(--font-size-m);
-  box-sizing: content-box;
 }
 
 .Input-icon--left {
@@ -150,6 +149,7 @@
   cursor: pointer;
   color: var(--inverse-lighter);
   border-radius: var(--border-radius-full);
+  box-sizing: content-box;
 }
 
 .Input-iconWrapper--right:focus-visible .Input-icon--right {
