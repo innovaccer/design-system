@@ -296,6 +296,12 @@ The cursor changes to Pointing Hand when hovering on a header cell indicating th
 **Pinned column divider** is used to pin columns to the left so that they get fixed and do not scroll along with the rest of the columns. It is quite handy when the no. of columns is too many and all of them are not visible without scrolling. In that case, the pinning can help freeze the crucial columns in order to maintain the context.
 <Preview name='components-table-pinned-columns--pinned-columns' />
 
+**Narrow Containers**
+
+When the container is narrow, pinned columns can take so much width that other columns get completely hidden. To ensure the table stays accessible at small widths, columns are unpinned one at a time until the scrolling region is at least 320px.
+
+<br/>
+
 #### Selection
 
 ##### Default Selection
@@ -339,8 +345,13 @@ Use pagination over infinite scroll so that the user can navigate to an item’s
 
 #### Filtering
 
-To read all about table filters visit [Table Filters](https://design.innovaccer.com/patterns/tableFilters/usage/)
+To read about filters patterns visit [Table Filters](https://design.innovaccer.com/patterns/tableFilters/usage/)
 
+**Narrow containers**
+
+When a table is narrow, a long list of filters can overflow and cause horizontal scrolling. To prevent accessibility issues from having both horizontal and vertical scrollbars, filters automatically wrap to the next line to fit the available space.
+
+If a filter has a custom width, ensure this width is removed when the table shrinks towards 320px so the filter fits within the container and is not clipped.
 <br />
 
 #### Data Alignment
