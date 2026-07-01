@@ -335,12 +335,12 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
               setState={this.setState.bind(this)}
             />
           }
-          {...popoverOptions}
           triggerClass="w-100"
           position={position}
           appendToBody={true}
           open={open}
           onToggle={this.onToggleHandler}
+          {...popoverOptions}
         >
           {this.renderCalendar()}
         </Popover>
