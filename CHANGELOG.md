@@ -1,3 +1,27 @@
+## 4.25.1 (2026-07-01)
+
+### Highlights
+
+- Fixed the ordering of PopoverOption props in DatePicker for correct behavior. (079368248)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Fixes
+
+- fix(datepicker): update the order of popoveroption props (079368248)
+
+---
+
 ## 4.25.0 (2026-05-19)
 
 ### Highlights
