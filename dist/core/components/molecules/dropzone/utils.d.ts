@@ -1,0 +1,10 @@
+export declare const accepts: (file: File, acceptedFiles?: string | string[] | undefined) => boolean;
+export declare const isPropagationStopped: (event: any) => any;
+export declare const isEvtWithFiles: (event: any) => boolean;
+export declare const isKindFile: (item: null | Record<string, unknown>) => boolean;
+export declare const onDocumentDragOver: (event: DragEvent) => void;
+export declare const isIeOrEdge: (userAgent?: string) => boolean;
+declare type functype = (event: Event, ...args: unknown[]) => void;
+export declare const composeEventHandlers: (...fns: functype[]) => (event: Event, ...args: unknown[]) => boolean;
+export declare const reducer: (state: any, action: any) => any;
+export {};
