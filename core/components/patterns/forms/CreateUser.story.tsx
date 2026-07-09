@@ -125,7 +125,6 @@ const customCode = `
                     id: 'createUser-dob',
                     placeholder: 'MM/DD/YYYY',
                     icon: 'cake',
-                    autocomplete: 'bday',
                     mask: [/\\d/, /\\d/, '/', /\\d/, /\\d/, '/', /\\d/, /\\d/, /\\d/, /\\d/]
                   }}
                 />
