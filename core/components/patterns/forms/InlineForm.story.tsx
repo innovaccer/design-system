@@ -73,10 +73,10 @@ const customCode = `
                 <div className="mr-6 mb-6">
                   <Label withInput={true}>Gender</Label>
                   <div className="d-flex" role="group" aria-label="Gender">
-                    <Button className="mr-3" onClick={() => this.onChange('Male', 'gender')}>Male</Button>
-                    <Button className="mr-3" onClick={() => this.onChange('Female', 'gender')}>Female</Button>
-                    <Button className="mr-3" onClick={() => this.onChange('Other', 'gender')}>Other</Button>
-                    <Button onClick={() => this.onChange('Unknown', 'gender')}>Unknown</Button>
+                    <Button className="mr-3" selected={this.state.data.gender === 'Male'} onClick={() => this.onChange('Male', 'gender')}>Male</Button>
+                    <Button className="mr-3" selected={this.state.data.gender === 'Female'} onClick={() => this.onChange('Female', 'gender')}>Female</Button>
+                    <Button className="mr-3" selected={this.state.data.gender === 'Other'} onClick={() => this.onChange('Other', 'gender')}>Other</Button>
+                    <Button selected={this.state.data.gender === 'Unknown'} onClick={() => this.onChange('Unknown', 'gender')}>Unknown</Button>
                   </div>
                 </div>
                 <div className="mr-6 mb-6" style={{ width: 'var(--spacing-640)' }}>
