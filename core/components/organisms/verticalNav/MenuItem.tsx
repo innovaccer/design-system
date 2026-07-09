@@ -127,6 +127,7 @@ export const MenuItem = (props: MenuItemProps) => {
     href: menu.link,
     tabIndex: tabIndex !== undefined ? tabIndex : 0,
     role: 'treeitem',
+    'aria-selected': isActive,
     'aria-level': isChildren ? 2 : 1,
     'aria-expanded': hasSubmenu ? (isChildrenVisible ? 'true' : 'false') : undefined,
     'aria-label': !expanded && menu.icon ? menu.label : undefined,
