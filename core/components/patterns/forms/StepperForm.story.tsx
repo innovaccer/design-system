@@ -249,6 +249,7 @@ const customCode = `
                   <Label withInput={true} required htmlFor="regex-input">Regex</Label>
                   <Textarea
                     id="regex-input"
+                    placeholder="Enter regex pattern"
                     rows={3}
                     onChange={(e, value) => {
                       this.setState({
