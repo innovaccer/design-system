@@ -164,7 +164,9 @@
 }
 
 .Grid-cell--head {
-  overflow: hidden;
+  /* Text truncation is handled by `.Grid-cell--head .Grid-cellContent` (which has its own
+     overflow: hidden). We intentionally do NOT clip the head cell itself, so the resize
+     handle's 24px touch target (padding hit-slop below) is not clipped — WCAG 2.5.8. */
   padding-right: var(--spacing-10);
 }
 
@@ -258,6 +260,9 @@
   padding-right: var(--spacing-60);
   margin-right: calc(-1 * var(--spacing-60));
   box-sizing: content-box;
+  /* Keep the visible hover/focus bar at the 4px content width; the 24px padding is an
+     invisible touch-target extension only (so appearance is unchanged). */
+  background-clip: content-box;
 }
 
 .Grid-cellSortIcon {
