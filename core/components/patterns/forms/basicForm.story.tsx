@@ -84,8 +84,10 @@ const customCode = `
                 value={password}
                 onChange={this.onPasswordChange}
                 actionIcon={(
-                  <Icon
+                  <Input.ActionButton
+                    className="p-3"
                     name={this.state.passwordVisible ? 'visibility' : 'visibility_off'}
+                    aria-label={this.state.passwordVisible ? 'Hide password' : 'Show password'}
                     onClick={this.onActionClick}
                   />
                 )}
