@@ -63,35 +63,38 @@ const customCode = `
           <form onSubmit={this.onSubmit}>
             <Row className="mt-6">
               <Column sizeXL={4} sizeL={4} sizeM={6} className="mr-6 mb-6">
-                <Label withInput={true} required={true}>Last Name</Label>
+                <Label withInput={true} required={true} htmlFor="createUser-lastName">Last Name</Label>
                 <Input
+                  id="createUser-lastName"
                   name="lastName"
                   type="text"
                   placeholder="E.g. Doe, Smith, etc."
                   icon="person"
-                  autocomplete={'off'}
+                  autocomplete={'family-name'}
                   onChange={(event) => this.onChange(event.target.value, event.target.name)}
                 />
               </Column>
               <Column sizeXL={4} sizeL={4} sizeM={5} className="mr-6 mb-6">
-                <Label withInput={true}>Middle Name</Label>
+                <Label withInput={true} htmlFor="createUser-middleName">Middle Name</Label>
                 <Input
+                  id="createUser-middleName"
                   name="middleName"
                   type="text"
                   placeholder="E.g. Doe, Smith, etc."
                   icon="person"
-                  autocomplete={'off'}
+                  autocomplete={'additional-name'}
                   onChange={(event) => this.onChange(event.target.value, event.target.name)}
                 />
               </Column>
               <Column sizeXL={3} sizeL={3} sizeM={6} className="mr-6 mb-6">
-                <Label withInput={true} required={true}>First Name</Label>
+                <Label withInput={true} required={true} htmlFor="createUser-firstName">First Name</Label>
                 <Input
+                  id="createUser-firstName"
                   name="firstName"
                   type="text"
                   placeholder="E.g. John, Will, etc."
                   icon="person"
-                  autocomplete={'off'}
+                  autocomplete={'given-name'}
                   onChange={(event) => this.onChange(event.target.value, event.target.name)}
                 />
               </Column>
@@ -114,35 +117,39 @@ const customCode = `
                 </Select>
               </Column>
               <Column sizeXL={4} sizeL={4} sizeM={6} className="mr-6 mb-6">
-                <Label withInput={true}>Date of Birth</Label>
+                <Label withInput={true} htmlFor="createUser-dob">Date of Birth</Label>
                 <DatePicker
                   withInput={true}
                   onDateChange={(currentDate) => this.onChange(currentDate, 'dob')}
                   inputOptions={{
+                    id: 'createUser-dob',
                     placeholder: 'MM/DD/YYYY',
                     icon: 'cake',
+                    autocomplete: 'bday',
                     mask: [/\\d/, /\\d/, '/', /\\d/, /\\d/, '/', /\\d/, /\\d/, /\\d/, /\\d/]
                   }}
                 />
               </Column>
               <Column sizeXL={3} sizeL={3} sizeM={5} className="mr-6 mb-6">
-                <Label withInput={true} >Maiden Name</Label>
+                <Label withInput={true} htmlFor="createUser-maidenName">Maiden Name</Label>
                 <Input
+                  id="createUser-maidenName"
                   name="MaidenName"
                   type="text"
                   placeholder="E.g. Roe, Will, etc."
                   icon="person"
-                  autocomplete={'off'}
+                  autocomplete={'family-name'}
                   onChange={(event) => this.onChange(event.target.value, event.target.name)}
                 />
               </Column>
               <Column sizeXL={4} sizeL={4} sizeM={6} className="mr-6 mb-6">
-                <Label withInput={true} required={true}>Email Address</Label>
+                <Label withInput={true} required={true} htmlFor="createUser-email">Email Address</Label>
                 <Input
+                  id="createUser-email"
                   name="email"
                   type="email"
                   placeholder="E.g. abc@gmail.com"
-                  autocomplete={'off'}
+                  autocomplete={'email'}
                   onChange={(event) => this.onChange(event.target.value, event.target.name)}
                 />
               </Column>
@@ -165,8 +172,9 @@ const customCode = `
                 </Select>
               </Column>
               <Column sizeXL={3} sizeL={3} sizeM={5} className="mr-6 mb-6">
-                <Label withInput={true} >NPI</Label>
+                <Label withInput={true} htmlFor="createUser-npi">NPI</Label>
                 <Input
+                  id="createUser-npi"
                   name="npi"
                   type="text"
                   placeholder="E.g. 000000"

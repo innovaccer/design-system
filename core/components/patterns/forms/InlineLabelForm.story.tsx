@@ -96,6 +96,7 @@ const customCode = `
                 <Checkbox
                   name="defaultLanguage"
                   label="Set as Default"
+                  aria-describedby="known-languages-label"
                   defaultChecked={!!defaultLanguage}
                   onChange={(e) => {
                     const updatedData = {
