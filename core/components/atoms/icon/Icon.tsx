@@ -133,6 +133,16 @@ export const Icon = (props: IconProps) => {
 
   const baseProps = extractBaseProps(props);
 
+  const { onClick } = rest;
+  const ariaLabel = rest['aria-label'];
+  const ariaLabelledby = rest['aria-labelledby'];
+  // Non-interactive icons render the material-symbols ligature (e.g. `fiber_manual_record`) as their
+  // text content. Without a role, assistive tech treats the `<i>` as generic and ignores aria-label,
+  // announcing the ligature text instead. `role="img"` makes the aria-label/aria-labelledby the
+  // accessible name and suppresses the ligature text. Interactive icons already get `role="button"`
+  // from `useAccessibilityProps` and must stay unchanged.
+  const labelledNonInteractive = !onClick && (ariaLabel || ariaLabelledby);
+
   const mapper: Record<string, string> = {
     outline: 'outlined',
     sharp: 'outlined',
@@ -173,7 +183,14 @@ export const Icon = (props: IconProps) => {
     );
   }
   return (
-    <i data-test="DesignSystem-Icon" {...baseProps} className={iconClass} style={styles} {...accessibilityProps}>
+    <i
+      data-test="DesignSystem-Icon"
+      {...baseProps}
+      className={iconClass}
+      style={styles}
+      role={labelledNonInteractive ? 'img' : undefined}
+      {...accessibilityProps}
+    >
       {name}
     </i>
   );
