@@ -123,9 +123,11 @@ const customCode = `
                 onChange={this.onPasswordChange}
                 autocomplete="off"
                 actionIcon={(
-                  <Icon
+                  <Input.ActionButton
+                    className="p-3"
                     name={this.state.passwordVisible ? 'visibility' : 'visibility_off'}
-                    aria-label={this.state.passwordVisible ? 'Hide password' : 'Show password'}
+                    aria-label="Show password"
+                    aria-pressed={this.state.passwordVisible}
                     onClick={() => this.setState({ passwordVisible: !passwordVisible })}
                   />
                 )}
@@ -141,9 +143,11 @@ const customCode = `
                 onChange={this.onConfirmPasswordChange}
                 autocomplete="off"
                 actionIcon={(
-                  <Icon
+                  <Input.ActionButton
+                    className="p-3"
                     name={this.state.confirmPasswordVisible ? 'visibility' : 'visibility_off'}
-                    aria-label={this.state.confirmPasswordVisible ? 'Hide confirm password' : 'Show confirm password'}
+                    aria-label="Show confirm password"
+                    aria-pressed={this.state.confirmPasswordVisible}
                     onClick={() => this.setState({ confirmPasswordVisible: !confirmPasswordVisible })}
                   />
                 )}
