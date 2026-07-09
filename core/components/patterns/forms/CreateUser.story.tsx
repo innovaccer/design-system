@@ -103,7 +103,7 @@ const customCode = `
                 <Select 
                   width="100%"
                   onSelect={(option) => this.onChange(option.value, 'gender')}
-                  triggerOptions={{ placeholder: "Select Gender", }}
+                  triggerOptions={{ placeholder: "Select Gender", 'aria-label': "Gender", }}
                 >
                   <Select.List>
                     {genderOptions.map((item, key) => {
@@ -157,7 +157,7 @@ const customCode = `
                 <Select 
                   width="100%"
                   onSelect={(option) => this.onChange(option.value, 'userType')}
-                  triggerOptions={{ placeholder: "Select User Type", }}
+                  triggerOptions={{ placeholder: "Select User Type", 'aria-label': "User Type", }}
                 >
                   <Select.List>
                     {userOptions.map((item, key) => {
