@@ -153,6 +153,30 @@ export const getAllFocusableElements = (container: HTMLElement, roleHint?: strin
 };
 
 /**
+ * Expands external trigger refs into all focusable controls in each input
+ * wrapper (text field + clear button), keeping DOM order across triggers.
+ */
+export const getExternalFocusTrapElements = (
+  externalRoots: (HTMLElement | null | undefined)[],
+  container: HTMLElement
+): HTMLElement[] => {
+  const seen = new Set<HTMLElement>();
+  const out: HTMLElement[] = [];
+  for (const root of externalRoots) {
+    if (!root?.isConnected || container.contains(root)) continue;
+    const wrapper = root.closest('[data-test="DesignSystem-InputWrapper"]') as HTMLElement | null;
+    const scope = wrapper ?? root;
+    for (const el of getFocusableElements(scope)) {
+      if (!seen.has(el)) {
+        seen.add(el);
+        out.push(el);
+      }
+    }
+  }
+  return out;
+};
+
+/**
  * Handles Tab/Shift+Tab to trap focus within the container.
  *
  * @param staticFocusTarget - Optional non-tabbable element (tabindex="-1") that received
@@ -173,9 +197,7 @@ export const handleFocusTrapKeyDown = (
   if (event.key !== 'Tab') return false;
 
   const dialogFocusable = getFocusableElements(container);
-  const externalFocusable = (externalFocusTargets ?? []).filter(
-    (el): el is HTMLElement => !!el?.isConnected && !container.contains(el)
-  );
+  const externalFocusable = getExternalFocusTrapElements(externalFocusTargets ?? [], container);
   const focusable = [...externalFocusable, ...dialogFocusable.filter((el) => !externalFocusable.includes(el))];
   const activeElement = document.activeElement as HTMLElement | null;
 
