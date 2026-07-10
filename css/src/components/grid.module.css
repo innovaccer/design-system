@@ -267,7 +267,6 @@
   z-index: 5;
   box-sizing: border-box;
   cursor: ew-resize;
-  touch-action: none;
   background: transparent;
 }
 
@@ -286,6 +285,10 @@
 }
 
 @media (hover: hover) {
+  .Grid-cellResize {
+    touch-action: none;
+  }
+
   .Grid-cellResize:hover::after {
     opacity: 1;
     transition-delay: var(--duration--moderate-02);
