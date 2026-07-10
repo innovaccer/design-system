@@ -173,6 +173,11 @@ const SelectTrigger = (props: SelectTriggerProps) => {
   const iconClass = classNames('align-items-center', 'mr-2', 'ml-3', 'p-3-5', selectStyles['Select-crossButton']);
   const iconSize = triggerSize === 'small' ? 14 : 16;
   const triggerTextSize = triggerSize === 'small' ? 'small' : 'regular';
+  const inlineLabelText = inlineLabel
+    ? `${inlineLabel.trim().charAt(0).toUpperCase()}${inlineLabel.trim().slice(1)}`
+    : undefined;
+  const defaultTriggerAriaLabel = [inlineLabelText, value].filter(Boolean).join(' ') || 'Select trigger';
+  const triggerAriaLabel = 'aria-label' in props ? ariaLabel : defaultTriggerAriaLabel;
   return (
     <Tooltip
       showOnTruncation={true}
@@ -194,7 +199,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
         aria-controls={ariaControls}
         aria-expanded={openPopover}
         aria-haspopup="listbox"
-        aria-label={ariaLabel}
+        aria-label={triggerAriaLabel}
         data-test="DesignSystem-Select-trigger"
         {...rest}
       >
