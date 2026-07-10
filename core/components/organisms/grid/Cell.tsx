@@ -236,8 +236,7 @@ const HeaderCell = (props: HeaderCellProps) => {
           ) : (
             <div
               className={classNames({
-                [styles['Grid-headCellAction--reserveResizeLane']]:
-                  reserveResizeLaneForActions && !showMenu,
+                [styles['Grid-headCellAction--reserveResizeLane']]: reserveResizeLaneForActions && !showMenu,
               })}
             >
               <FilterSelect
@@ -279,6 +278,8 @@ const HeaderCell = (props: HeaderCellProps) => {
                 [styles['Grid-headCellAction--reserveResizeLane']]: reserveResizeLaneForActions && showMenu,
               })}
             >
+              <Dropdown
+                key={`${name}-${sorted}-${pinned}`}
                 menu={true}
                 optionType="WITH_ICON"
                 triggerOptions={{
