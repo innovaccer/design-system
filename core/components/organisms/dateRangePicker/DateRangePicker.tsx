@@ -183,6 +183,8 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
   closedViaOutsideClick = false;
   /** When true, the active trigger input is included in Tab trapping (input-originated open). */
   focusTrapIncludesTrigger = false;
+  /** Pointer on trigger chrome (icon/wrapper) — not a keyboard focus-origin open. */
+  triggerHadPointerDown = false;
 
   isFocusOnTrigger = () => {
     const active = document.activeElement;
@@ -191,12 +193,16 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
     return triggers.some((el) => el && (el === active || el.contains(active)));
   };
 
-  /** Controlled opens that happen while a trigger input already has focus. */
+  /** Controlled opens that happen while a trigger input already has focus (Tab/onFocus). */
   flagOpenFromFocusedTrigger = () => {
-    if (this.isFocusOnTrigger()) {
+    if (this.isFocusOnTrigger() && !this.triggerHadPointerDown) {
       this.openedViaInput = true;
       this.focusTrapIncludesTrigger = true;
     }
+  };
+
+  flagTriggerPointerDown = () => {
+    this.triggerHadPointerDown = true;
   };
 
   constructor(props: DateRangePickerProps) {
@@ -324,6 +330,7 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
    * input element, so this does not fire and the calendar still receives focus.
    */
   flagOpenFromInput = () => {
+    this.triggerHadPointerDown = true;
     this.openedViaInput = true;
     this.includeTriggerInFocusTrapWhenOpen();
   };
@@ -447,12 +454,16 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
 
     if (prevState.open !== this.state.open) {
       if (this.state.open) {
-        this.flagOpenFromFocusedTrigger();
+        const openedFromControlledProp = prevProps.open !== this.props.open && this.props.open === true;
+        if (openedFromControlledProp) {
+          this.flagOpenFromFocusedTrigger();
+        }
         this.activateFocusTrap(!this.openedViaInput);
       } else {
         this.deactivateFocusTrap();
       }
       this.openedViaInput = false;
+      this.triggerHadPointerDown = false;
     }
   }
 
@@ -646,6 +657,7 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
           triggerRef={this.singleTriggerRef}
           onTriggerFocus={() => this.setActiveField('single')}
           onInputMouseDown={this.flagOpenFromInput}
+          onTriggerPointerDown={this.flagTriggerPointerDown}
           onKeyboardOpen={this.openViaKeyboard}
         />
       ) : (
@@ -663,6 +675,7 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
           onTriggerFocus={this.setActiveField}
           openViaInput={this.openViaInput}
           onInputMouseDown={this.flagOpenFromInput}
+          onTriggerPointerDown={this.flagTriggerPointerDown}
           onKeyboardOpen={this.openViaKeyboard}
         />
       );

@@ -46,6 +46,8 @@ type TriggerProps = {
    * that input instead of moving focus into the calendar.
    */
   onInputMouseDown?: () => void;
+  /** Pointer on trigger chrome — distinguishes icon clicks from keyboard focus opens. */
+  onTriggerPointerDown?: () => void;
   /**
    * Called on an explicit keyboard open gesture (ArrowDown / Alt+ArrowDown) to
    * open the calendar AND move focus into the grid.
@@ -68,6 +70,7 @@ export const Trigger = (props: TriggerProps) => {
     onTriggerFocus,
     openViaInput,
     onInputMouseDown,
+    onTriggerPointerDown,
     onKeyboardOpen,
   } = props;
 
@@ -266,107 +269,112 @@ export const Trigger = (props: TriggerProps) => {
   });
 
   return (
-    <Row data-test="DesignSystem-DateRangePicker-InputTrigger">
-      <Column size={'6'} sizeXS={'12'} className={StartInputClassName}>
-        {startLabel && (
-          <Label
-            required={startInputOptions.required}
-            withInput={true}
-            htmlFor={startFieldId}
-            onMouseDown={() => onInputMouseDown?.()}
-          >
-            {startLabel}
-          </Label>
-        )}
-        <InputMask
-          icon="events"
-          placeholder={inputFormat}
-          {...startInputOptions}
-          id={startFieldId}
-          mask={mask}
-          value={
-            startDate
-              ? translateToString(inputFormat, startDate)
-              : init
-              ? InputMask.utils.getDefaultValue(mask, startPlaceholderChar)
-              : ''
-          }
-          onChange={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
-            onChangeHandler(e, val || '', 'start');
-          }}
-          onPaste={(e: React.ClipboardEvent<HTMLInputElement>, val?: string) => {
-            onPasteHandler(e, val || '', 'start');
-          }}
-          onBlur={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
-            onBlurHandler(e, val || '', 'start');
-          }}
-          onClear={(e: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>) => onClearHandler('start', e)}
-          onClick={() => onClickHandler('start')}
-          onMouseDown={onStartMouseDown}
-          onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => onKeyDownHandler(e, 'start')}
-          onFocus={(e: React.FocusEvent<HTMLInputElement>) => {
-            startInputOptions.onFocus?.(e);
-            onTriggerFocus?.('start');
-          }}
-          error={showStartError}
-          caption={showStartError ? startErrorMessage : ''}
-          validators={[inputValidator]}
-          clearOnEmptyBlur={true}
-          ref={startTriggerRef}
-          aria-expanded={open}
-          aria-controls={panelId}
-        />
-      </Column>
-      <Column size={'6'} sizeXS={'12'} className={EndInputClassName}>
-        {endLabel && (
-          <Label
-            required={endInputOptions.required}
-            withInput={true}
-            htmlFor={endFieldId}
-            onMouseDown={() => onInputMouseDown?.()}
-          >
-            {endLabel}
-          </Label>
-        )}
-        <InputMask
-          icon="events"
-          placeholder={inputFormat}
-          {...endInputOptions}
-          id={endFieldId}
-          mask={mask}
-          value={
-            endDate
-              ? translateToString(inputFormat, endDate)
-              : init
-              ? InputMask.utils.getDefaultValue(mask, endPlaceholderChar)
-              : ''
-          }
-          onChange={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
-            onChangeHandler(e, val || '', 'end');
-          }}
-          onPaste={(e: React.ClipboardEvent<HTMLInputElement>, val?: string) => {
-            onPasteHandler(e, val || '', 'end');
-          }}
-          onBlur={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
-            onBlurHandler(e, val || '', 'end');
-          }}
-          onClear={(e: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>) => onClearHandler('end', e)}
-          onClick={() => onClickHandler('end')}
-          onMouseDown={onEndMouseDown}
-          onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => onKeyDownHandler(e, 'end')}
-          onFocus={(e: React.FocusEvent<HTMLInputElement>) => {
-            endInputOptions.onFocus?.(e);
-            onTriggerFocus?.('end');
-          }}
-          error={showEndError}
-          caption={showEndError ? endErrorMessage : ''}
-          validators={[inputValidator]}
-          clearOnEmptyBlur={true}
-          ref={endTriggerRef}
-          aria-expanded={open}
-          aria-controls={panelId}
-        />
-      </Column>
-    </Row>
+    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
+    <div className="w-100" onMouseDown={() => onTriggerPointerDown?.()}>
+      <Row data-test="DesignSystem-DateRangePicker-InputTrigger">
+        <Column size={'6'} sizeXS={'12'} className={StartInputClassName}>
+          {startLabel && (
+            <Label
+              required={startInputOptions.required}
+              withInput={true}
+              htmlFor={startFieldId}
+              onMouseDown={() => onInputMouseDown?.()}
+            >
+              {startLabel}
+            </Label>
+          )}
+          <InputMask
+            icon="events"
+            placeholder={inputFormat}
+            {...startInputOptions}
+            id={startFieldId}
+            mask={mask}
+            value={
+              startDate
+                ? translateToString(inputFormat, startDate)
+                : init
+                ? InputMask.utils.getDefaultValue(mask, startPlaceholderChar)
+                : ''
+            }
+            onChange={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
+              onChangeHandler(e, val || '', 'start');
+            }}
+            onPaste={(e: React.ClipboardEvent<HTMLInputElement>, val?: string) => {
+              onPasteHandler(e, val || '', 'start');
+            }}
+            onBlur={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
+              onBlurHandler(e, val || '', 'start');
+            }}
+            onClear={(e: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>) =>
+              onClearHandler('start', e)
+            }
+            onClick={() => onClickHandler('start')}
+            onMouseDown={onStartMouseDown}
+            onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => onKeyDownHandler(e, 'start')}
+            onFocus={(e: React.FocusEvent<HTMLInputElement>) => {
+              startInputOptions.onFocus?.(e);
+              onTriggerFocus?.('start');
+            }}
+            error={showStartError}
+            caption={showStartError ? startErrorMessage : ''}
+            validators={[inputValidator]}
+            clearOnEmptyBlur={true}
+            ref={startTriggerRef}
+            aria-expanded={open}
+            aria-controls={panelId}
+          />
+        </Column>
+        <Column size={'6'} sizeXS={'12'} className={EndInputClassName}>
+          {endLabel && (
+            <Label
+              required={endInputOptions.required}
+              withInput={true}
+              htmlFor={endFieldId}
+              onMouseDown={() => onInputMouseDown?.()}
+            >
+              {endLabel}
+            </Label>
+          )}
+          <InputMask
+            icon="events"
+            placeholder={inputFormat}
+            {...endInputOptions}
+            id={endFieldId}
+            mask={mask}
+            value={
+              endDate
+                ? translateToString(inputFormat, endDate)
+                : init
+                ? InputMask.utils.getDefaultValue(mask, endPlaceholderChar)
+                : ''
+            }
+            onChange={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
+              onChangeHandler(e, val || '', 'end');
+            }}
+            onPaste={(e: React.ClipboardEvent<HTMLInputElement>, val?: string) => {
+              onPasteHandler(e, val || '', 'end');
+            }}
+            onBlur={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
+              onBlurHandler(e, val || '', 'end');
+            }}
+            onClear={(e: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>) => onClearHandler('end', e)}
+            onClick={() => onClickHandler('end')}
+            onMouseDown={onEndMouseDown}
+            onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => onKeyDownHandler(e, 'end')}
+            onFocus={(e: React.FocusEvent<HTMLInputElement>) => {
+              endInputOptions.onFocus?.(e);
+              onTriggerFocus?.('end');
+            }}
+            error={showEndError}
+            caption={showEndError ? endErrorMessage : ''}
+            validators={[inputValidator]}
+            clearOnEmptyBlur={true}
+            ref={endTriggerRef}
+            aria-expanded={open}
+            aria-controls={panelId}
+          />
+        </Column>
+      </Row>
+    </div>
   );
 };

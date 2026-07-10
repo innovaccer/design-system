@@ -32,6 +32,7 @@ type TriggerProps = {
    * the input instead of moving focus into the calendar.
    */
   onInputMouseDown?: () => void;
+  onTriggerPointerDown?: () => void;
   /**
    * Called on an explicit keyboard open gesture (ArrowDown / Alt+ArrowDown) to
    * open the calendar AND move focus into the grid.
@@ -51,6 +52,7 @@ export const SingleInputTrigger = (props: TriggerProps) => {
     triggerRef,
     onTriggerFocus,
     onInputMouseDown,
+    onTriggerPointerDown,
     onKeyboardOpen,
   } = props;
 
@@ -200,50 +202,53 @@ export const SingleInputTrigger = (props: TriggerProps) => {
   };
 
   return (
-    <Row data-test="DesignSystem-DateRangePicker-SingleInputTrigger">
-      <Column>
-        {label && (
-          <Label
-            required={inputOptions.required}
-            withInput={true}
-            htmlFor={fieldId}
-            onMouseDown={() => onInputMouseDown?.()}
-          >
-            {label}
-          </Label>
-        )}
-        <InputMask
-          icon="events"
-          placeholder={`${inputFormat} - ${inputFormat}`}
-          {...inputOptions}
-          id={fieldId}
-          mask={mask}
-          value={!startDate && !endDate && !init ? undefined : `${sValue} - ${eValue}`}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
-            onChangeHandler(e, val || '');
-          }}
-          onBlur={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
-            onBlurHandler(e, val || '');
-          }}
-          onPaste={(e: React.ClipboardEvent<HTMLInputElement>, val?: string) => {
-            onPasteHandler(e, val || '');
-          }}
-          onClear={onClearHandler}
-          onMouseDown={onMouseDownHandler}
-          onKeyDown={onKeyDownHandler}
-          onFocus={(e: React.FocusEvent<HTMLInputElement>) => {
-            inputOptions.onFocus?.(e);
-            onTriggerFocus?.();
-          }}
-          error={showError}
-          caption={showError ? errorMessage : ''}
-          validators={[inputValidator]}
-          clearOnEmptyBlur={true}
-          ref={triggerRef}
-          aria-expanded={open}
-          aria-controls={panelId}
-        />
-      </Column>
-    </Row>
+    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
+    <div className="w-100" onMouseDown={() => onTriggerPointerDown?.()}>
+      <Row data-test="DesignSystem-DateRangePicker-SingleInputTrigger">
+        <Column>
+          {label && (
+            <Label
+              required={inputOptions.required}
+              withInput={true}
+              htmlFor={fieldId}
+              onMouseDown={() => onInputMouseDown?.()}
+            >
+              {label}
+            </Label>
+          )}
+          <InputMask
+            icon="events"
+            placeholder={`${inputFormat} - ${inputFormat}`}
+            {...inputOptions}
+            id={fieldId}
+            mask={mask}
+            value={!startDate && !endDate && !init ? undefined : `${sValue} - ${eValue}`}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
+              onChangeHandler(e, val || '');
+            }}
+            onBlur={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
+              onBlurHandler(e, val || '');
+            }}
+            onPaste={(e: React.ClipboardEvent<HTMLInputElement>, val?: string) => {
+              onPasteHandler(e, val || '');
+            }}
+            onClear={onClearHandler}
+            onMouseDown={onMouseDownHandler}
+            onKeyDown={onKeyDownHandler}
+            onFocus={(e: React.FocusEvent<HTMLInputElement>) => {
+              inputOptions.onFocus?.(e);
+              onTriggerFocus?.();
+            }}
+            error={showError}
+            caption={showError ? errorMessage : ''}
+            validators={[inputValidator]}
+            clearOnEmptyBlur={true}
+            ref={triggerRef}
+            aria-expanded={open}
+            aria-controls={panelId}
+          />
+        </Column>
+      </Row>
+    </div>
   );
 };

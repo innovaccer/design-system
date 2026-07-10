@@ -147,6 +147,8 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
   closedViaOutsideClick = false;
   /** When true, the active trigger input is included in Tab trapping (input-originated open). */
   focusTrapIncludesTrigger = false;
+  /** Pointer on trigger chrome (icon/wrapper) — not a keyboard focus-origin open. */
+  triggerHadPointerDown = false;
 
   isFocusOnTrigger = () => {
     const trigger = this.triggerRef.current;
@@ -154,12 +156,16 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
     return !!(trigger && active && (trigger === active || trigger.contains(active)));
   };
 
-  /** Controlled opens that happen while a trigger input already has focus. */
+  /** Controlled opens that happen while a trigger input already has focus (Tab/onFocus). */
   flagOpenFromFocusedTrigger = () => {
-    if (this.isFocusOnTrigger()) {
+    if (this.isFocusOnTrigger() && !this.triggerHadPointerDown) {
       this.openedViaInput = true;
       this.focusTrapIncludesTrigger = true;
     }
+  };
+
+  flagTriggerPointerDown = () => {
+    this.triggerHadPointerDown = true;
   };
 
   constructor(props: DatePickerProps) {
@@ -267,6 +273,7 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
    * input element, so this does not fire and the calendar still receives focus.
    */
   flagOpenFromInput = () => {
+    this.triggerHadPointerDown = true;
     this.openedViaInput = true;
     this.includeTriggerInFocusTrapWhenOpen();
   };
@@ -335,12 +342,16 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
 
     if (prevState.open !== this.state.open) {
       if (this.state.open) {
-        this.flagOpenFromFocusedTrigger();
+        const openedFromControlledProp = prevProps.open !== this.props.open && this.props.open === true;
+        if (openedFromControlledProp) {
+          this.flagOpenFromFocusedTrigger();
+        }
         this.activateFocusTrap(!this.openedViaInput);
       } else {
         this.deactivateFocusTrap();
       }
       this.openedViaInput = false;
+      this.triggerHadPointerDown = false;
     }
   }
 
@@ -509,6 +520,7 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
               triggerRef={this.triggerRef}
               openViaInput={this.openViaInput}
               onInputMouseDown={this.flagOpenFromInput}
+              onTriggerPointerDown={this.flagTriggerPointerDown}
               onKeyboardOpen={this.openViaKeyboard}
             />
           }

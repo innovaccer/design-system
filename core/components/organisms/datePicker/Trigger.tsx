@@ -34,6 +34,11 @@ type TriggerProps = {
    */
   onInputMouseDown?: () => void;
   /**
+   * Called on `mousedown` anywhere on the trigger chrome (icon, wrapper, input)
+   * so pointer-origin opens are not treated as keyboard focus-origin opens.
+   */
+  onTriggerPointerDown?: () => void;
+  /**
    * Called on an explicit keyboard open gesture (ArrowDown / Alt+ArrowDown) to
    * open the calendar AND move focus into the grid.
    */
@@ -52,6 +57,7 @@ export const Trigger = (props: TriggerProps) => {
     triggerRef,
     openViaInput,
     onInputMouseDown,
+    onTriggerPointerDown,
     onKeyboardOpen,
   } = props;
 
@@ -144,28 +150,36 @@ export const Trigger = (props: TriggerProps) => {
 
   const mask = Utils.masks.date[inputFormat];
   return (
-    <InputMask
-      icon="events"
-      placeholder={inputFormat}
-      {...inputOptions}
-      error={showError}
-      mask={mask}
-      value={
-        date ? translateToString(inputFormat, date) : init ? InputMask.utils.getDefaultValue(mask, placeholderChar) : ''
-      }
-      onChange={onChangeHandler}
-      onPaste={onPasteHandler}
-      onBlur={onBlurHandler}
-      onClear={onClearHandler}
-      onMouseDown={onMouseDownHandler}
-      onKeyDown={onKeyDownHandler}
-      caption={showError ? errorMessage : ''}
-      validators={[inputValidator]}
-      clearOnEmptyBlur={true}
-      useDefaultValueOnEmpty={true}
-      ref={triggerRef}
-      aria-expanded={open}
-      aria-controls={panelId}
-    />
+    // Capture pointer on trigger chrome (icon/wrapper) for focus-trap routing.
+    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
+    <div className="w-100" onMouseDown={() => onTriggerPointerDown?.()}>
+      <InputMask
+        icon="events"
+        placeholder={inputFormat}
+        {...inputOptions}
+        error={showError}
+        mask={mask}
+        value={
+          date
+            ? translateToString(inputFormat, date)
+            : init
+            ? InputMask.utils.getDefaultValue(mask, placeholderChar)
+            : ''
+        }
+        onChange={onChangeHandler}
+        onPaste={onPasteHandler}
+        onBlur={onBlurHandler}
+        onClear={onClearHandler}
+        onMouseDown={onMouseDownHandler}
+        onKeyDown={onKeyDownHandler}
+        caption={showError ? errorMessage : ''}
+        validators={[inputValidator]}
+        clearOnEmptyBlur={true}
+        useDefaultValueOnEmpty={true}
+        ref={triggerRef}
+        aria-expanded={open}
+        aria-controls={panelId}
+      />
+    </div>
   );
 };
