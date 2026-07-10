@@ -242,14 +242,18 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
 
   componentWillUnmount() {
     if (this.state.open) {
-      document.removeEventListener('keydown', this.onFocusTrapKeyDown, true);
+      window.removeEventListener('keydown', this.onFocusTrapKeyDown, true);
     }
   }
 
   onFocusTrapKeyDown = (event: KeyboardEvent) => {
     const container = this.dialogRef.current;
     if (!container) return;
-    handleFocusTrapKeyDown(event, container, undefined, this.getFocusTrapExternalTargets());
+    if (handleFocusTrapKeyDown(event, container, undefined, this.getFocusTrapExternalTargets())) {
+      // Window capture runs before parent Modal/Sidesheet document traps so Tab
+      // from an external trigger is handled before an outer dialog can steal it.
+      event.stopImmediatePropagation();
+    }
   };
 
   getFocusTrapExternalTargets = (): (HTMLElement | null)[] | undefined => {
@@ -296,7 +300,7 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
     if (moveFocus) {
       this.waitForDialogAndFocus();
     }
-    document.addEventListener('keydown', this.onFocusTrapKeyDown, true);
+    window.addEventListener('keydown', this.onFocusTrapKeyDown, true);
   };
 
   /**
@@ -352,7 +356,7 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
   };
 
   deactivateFocusTrap = () => {
-    document.removeEventListener('keydown', this.onFocusTrapKeyDown, true);
+    window.removeEventListener('keydown', this.onFocusTrapKeyDown, true);
     this.focusTrapIncludesTrigger = false;
     if (this.closedViaOutsideClick) {
       // The user's click already moved focus/interaction elsewhere; don't pull
