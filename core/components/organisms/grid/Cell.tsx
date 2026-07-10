@@ -26,6 +26,8 @@ type HeaderCellProps = SharedCellProps & {
   setIsDragged: React.Dispatch<React.SetStateAction<boolean>>;
   /** When true, keep the full 24px lane inside the cell (no bleed past the grid edge). */
   flushResizeLane?: boolean;
+  /** When true, stack the resize lane above pinned header groups (right-pin boundary only). */
+  elevateResizeLaneOverPin?: boolean;
 };
 
 type BodyCellProps = SharedCellProps & {
@@ -48,6 +50,7 @@ export type CellProps = Partial<HeaderCellProps> &
     isHead?: boolean;
     firstCell: boolean;
     flushResizeLane?: boolean;
+    elevateResizeLaneOverPin?: boolean;
   };
 
 const HeaderCell = (props: HeaderCellProps) => {
@@ -74,6 +77,7 @@ const HeaderCell = (props: HeaderCellProps) => {
     updateColumnSchema,
     reorderColumn,
     flushResizeLane,
+    elevateResizeLaneOverPin,
   } = props;
 
   const headProps: HeaderCellRendererProps = {
@@ -136,6 +140,10 @@ const HeaderCell = (props: HeaderCellProps) => {
 
   const hasHeadActions = Boolean((showFilters && filters) || showMenu);
   const reserveResizeLaneForActions = flushResizeLane && hasHeadActions;
+  const filterActionReserveClass =
+    reserveResizeLaneForActions && !showMenu ? styles['Grid-headCellAction--reserveResizeLane'] : undefined;
+  const menuActionReserveClass =
+    reserveResizeLaneForActions && showMenu ? styles['Grid-headCellAction--reserveResizeLane'] : undefined;
 
   const selectFilterOptions = filters
     ? filters.map((f) => ({
@@ -234,11 +242,7 @@ const HeaderCell = (props: HeaderCellProps) => {
               <Placeholder />
             </span>
           ) : (
-            <div
-              className={classNames({
-                [styles['Grid-headCellAction--reserveResizeLane']]: reserveResizeLaneForActions && !showMenu,
-              })}
-            >
+            <div className={filterActionReserveClass}>
               <FilterSelect
                 name={name}
                 displayName=""
@@ -273,11 +277,7 @@ const HeaderCell = (props: HeaderCellProps) => {
               <Placeholder />
             </span>
           ) : (
-            <div
-              className={classNames({
-                [styles['Grid-headCellAction--reserveResizeLane']]: reserveResizeLaneForActions && showMenu,
-              })}
-            >
+            <div className={menuActionReserveClass}>
               <Dropdown
                 key={`${name}-${sorted}-${pinned}`}
                 menu={true}
@@ -312,6 +312,7 @@ const HeaderCell = (props: HeaderCellProps) => {
           className={classNames(styles['Grid-cellResize'], {
             [styles['Grid-cellResize--active']]: isResizing,
             [styles['Grid-cellResize--flushEnd']]: flushResizeLane,
+            [styles['Grid-cellResize--overPin']]: elevateResizeLaneOverPin,
           })}
           onMouseDown={handleResizeMouseDown}
           onDoubleClick={autoFitColumn}
@@ -426,6 +427,7 @@ export const Cell = (props: CellProps) => {
     reorderColumn,
     nestedRowData,
     flushResizeLane,
+    elevateResizeLaneOverPin,
   } = props as CellProps;
 
   const {
@@ -544,6 +546,7 @@ export const Cell = (props: CellProps) => {
           reorderColumn={reorderColumn!}
           setIsDragged={setIsDragged}
           flushResizeLane={flushResizeLane}
+          elevateResizeLaneOverPin={elevateResizeLaneOverPin}
         />
       ) : (
         <BodyCell

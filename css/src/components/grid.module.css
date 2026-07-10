@@ -312,6 +312,11 @@
   right: 0;
 }
 
+/* Right-pin boundary: bleed must stay above pinned group (z-index 6) without elevating all handles. */
+.Grid-cellResize--overPin {
+  z-index: 7;
+}
+
 .Grid-cellSortIcon {
   display: flex;
   align-items: center;
@@ -609,6 +614,7 @@
 /* Grid header */
 .Grid-row--head .Grid-cellGroup--pinned {
   background: var(--white);
+  z-index: 6;
 }
 
 .Grid-row--head .Grid-cellGroup--pinned-left {
