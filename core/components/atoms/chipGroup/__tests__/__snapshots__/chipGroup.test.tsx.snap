@@ -18,6 +18,7 @@ exports[`ChipGroup component
           style="max-width: var(--spacing-640);"
         >
           <div
+            aria-label="Action"
             class="Chip-content Chip-content--regular"
             data-test="DesignSystem-GenericChip--Content"
             role="button"

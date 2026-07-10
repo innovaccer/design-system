@@ -1308,6 +1308,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
           style="max-width: var(--spacing-640);"
         >
           <div
+            aria-label="Today, Sep 22"
             class="Chip-content Chip-content--regular"
             data-test="DesignSystem-GenericChip--Content"
             role="button"
@@ -2640,6 +2641,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
           style="max-width: var(--spacing-640);"
         >
           <div
+            aria-label="Today, Sep 22"
             class="Chip-content Chip-content--regular"
             data-test="DesignSystem-GenericChip--Content"
             role="button"
@@ -3972,6 +3974,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
           style="max-width: var(--spacing-640);"
         >
           <div
+            aria-label="Today, Sep 22"
             class="Chip-content Chip-content--regular"
             data-test="DesignSystem-GenericChip--Content"
             role="button"
@@ -5303,6 +5306,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
           style="max-width: var(--spacing-640);"
         >
           <div
+            aria-label="Today, Sep 22"
             class="Chip-content Chip-content--regular"
             data-test="DesignSystem-GenericChip--Content"
             role="button"
@@ -6634,6 +6638,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
           style="max-width: var(--spacing-640);"
         >
           <div
+            aria-label="Today, Sep 22"
             class="Chip-content Chip-content--regular"
             data-test="DesignSystem-GenericChip--Content"
             role="button"
@@ -7965,6 +7970,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
           style="max-width: var(--spacing-640);"
         >
           <div
+            aria-label="Today, Sep 22"
             class="Chip-content Chip-content--regular"
             data-test="DesignSystem-GenericChip--Content"
             role="button"
@@ -8406,6 +8412,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
           style="max-width: var(--spacing-640);"
         >
           <div
+            aria-label="Today, Sep 22"
             class="Chip-content Chip-content--regular"
             data-test="DesignSystem-GenericChip--Content"
             role="button"
@@ -8840,6 +8847,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
           style="max-width: var(--spacing-640);"
         >
           <div
+            aria-label="Today, Sep 22"
             class="Chip-content Chip-content--regular"
             data-test="DesignSystem-GenericChip--Content"
             role="button"
@@ -10171,6 +10179,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
           style="max-width: var(--spacing-640);"
         >
           <div
+            aria-label="Today, Sep 22"
             class="Chip-content Chip-content--regular"
             data-test="DesignSystem-GenericChip--Content"
             role="button"

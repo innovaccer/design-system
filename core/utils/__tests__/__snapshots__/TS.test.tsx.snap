@@ -64,6 +64,7 @@ exports[`TS renders children 1`] = `
     style="max-width: var(--spacing-640);"
   >
     <div
+      aria-label="Hello World!"
       class="Chip-content Chip-content--regular"
       data-test="DesignSystem-GenericChip--Content"
       role="button"
@@ -1412,6 +1413,7 @@ exports[`TS renders children 1`] = `
         style="max-width: var(--spacing-640);"
       >
         <div
+          aria-label="Today, Jun 14"
           class="Chip-content Chip-content--regular"
           data-test="DesignSystem-GenericChip--Content"
           role="button"
@@ -2294,10 +2296,17 @@ exports[`TS renders children 1`] = `
       </div>
     </div>
   </div>
+  <span
+    class="Tooltip-srOnly"
+    id="Tooltip-Test-uid"
+  >
+    Hello World!
+  </span>
   <div
     class="PopperWrapper-trigger"
   >
     <span
+      aria-describedby="Tooltip-Test-uid"
       class="Text Text--default Text--regular"
       data-test="DesignSystem-Text"
     >
