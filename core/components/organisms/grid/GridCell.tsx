@@ -166,7 +166,7 @@ const renderTitle = (props: CellProps) => {
   if (children !== undefined && children !== null) {
     if (tooltip) {
       return (
-        <Tooltip tooltip={children} position={'top-start'} triggerClass="w-100 overflow-hidden">
+        <Tooltip tooltip={children} position={'top-start'} triggerClass="w-100 overflow-hidden" aria-hidden="true">
           <HighlightedText
             text={children}
             searchTerm={searchTerm}
@@ -310,7 +310,7 @@ const renderStatusHint = (props: CellProps) => {
 
     if (tooltip) {
       return (
-        <Tooltip tooltip={children} position={'top-start'} triggerClass="w-100 overflow-hidden">
+        <Tooltip tooltip={children} position={'top-start'} triggerClass="w-100 overflow-hidden" aria-hidden="true">
           {content}
         </Tooltip>
       );

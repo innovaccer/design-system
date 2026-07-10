@@ -68,6 +68,7 @@ const AvatarSelectionItem = (props: AvatarSelectionItemProps) => {
         open={showTooltip}
         triggerClass={triggerClassName}
         position="right"
+        aria-hidden="true"
       >
         <Text className="ellipsis--noWrap ml-4" ref={elementRef}>
           {name}

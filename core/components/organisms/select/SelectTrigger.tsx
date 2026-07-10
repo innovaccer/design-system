@@ -180,6 +180,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
       tooltip={value}
       elementRef={elementRef}
       triggerClass="w-100"
+      aria-hidden="true"
     >
       <button
         ref={triggerRef as React.RefObject<HTMLButtonElement>}

@@ -152,6 +152,7 @@ const HeaderCell = (props: HeaderCellProps) => {
 
   const isSortable = !loading && sorting;
   const sortButtonAriaLabel = isSortable ? getSortButtonAriaLabel(schema.displayName, sorted) : undefined;
+  const headerAriaLabel = sortButtonAriaLabel ?? (headCellTooltip ? schema.displayName : undefined);
   const handleSortToggle = () => {
     if (!isSortable) return;
     if (sorted === 'asc') onMenuChange(name, 'sortDesc');
@@ -196,7 +197,7 @@ const HeaderCell = (props: HeaderCellProps) => {
         }}
         role={isSortable ? 'button' : undefined}
         tabIndex={isSortable ? 0 : -1}
-        aria-label={sortButtonAriaLabel}
+        aria-label={headerAriaLabel}
         aria-disabled={!isSortable || undefined}
       >
         {loading && !isValidSchema ? (
@@ -204,7 +205,12 @@ const HeaderCell = (props: HeaderCellProps) => {
             <PlaceholderParagraph length="medium" />
           </Placeholder>
         ) : !schema.headerCellRenderer && headCellTooltip ? (
-          <Tooltip position="top-start" triggerClass="w-100 overflow-hidden" tooltip={schema.displayName}>
+          <Tooltip
+            position="top-start"
+            triggerClass="w-100 overflow-hidden"
+            tooltip={schema.displayName}
+            aria-hidden="true"
+          >
             {renderLabel()}
           </Tooltip>
         ) : schema.headerCellRenderer && !headCellTooltip ? (

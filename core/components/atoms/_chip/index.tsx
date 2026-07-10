@@ -168,6 +168,9 @@ export const GenericChip = (props: GenericChipProps) => {
 
   const computedAriaLabel = (() => {
     if (props['aria-label']) return props['aria-label'];
+    if (typeof label === 'string' && computedRole) {
+      return getTooltipText() || label;
+    }
     if (clearButton && typeof label === 'string') {
       return labelPrefix ? `${labelPrefix} ${label}` : label;
     }
@@ -211,6 +214,7 @@ export const GenericChip = (props: GenericChipProps) => {
       showTooltip={isTextTruncated}
       data-test="DesignSystem-GenericChip--Tooltip"
       tooltip={getTooltipText()}
+      aria-hidden="true"
       triggerClass="flex-grow-0"
     >
       <div

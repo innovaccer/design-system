@@ -152,7 +152,10 @@ export const SegmentedControlItem = (props: SegmentedControlItemProps) => {
       disabled={isDisabled}
       tabIndex={isDisabled ? -1 : isSelected ? 0 : -1}
       data-test="DesignSystem-SegmentedControl-Item"
-      aria-label={ariaLabel || (isIconOnly && tooltip ? tooltip : undefined)}
+      aria-label={
+        ariaLabel ||
+        (isIconOnly && tooltip ? tooltip : !hasChildren && typeof label === 'string' ? String(label) : undefined)
+      }
       aria-labelledby={ariaLabelledBy}
       aria-checked={isTwoSegments ? undefined : isSelected}
       aria-pressed={isTwoSegments ? isSelected : undefined}
@@ -176,12 +179,17 @@ export const SegmentedControlItem = (props: SegmentedControlItemProps) => {
   );
 
   if (tooltip) {
-    return <Tooltip tooltip={tooltip}>{button}</Tooltip>;
+    const tooltipDuplicatesLabel = !hasChildren && typeof label === 'string' && tooltip === String(label);
+    return (
+      <Tooltip tooltip={tooltip} {...(tooltipDuplicatesLabel ? { 'aria-hidden': true as const } : {})}>
+        {button}
+      </Tooltip>
+    );
   }
 
   if (!hasChildren && label && typeof label === 'string') {
     return (
-      <Tooltip tooltip={label} showOnTruncation={true} elementRef={labelRef} position="bottom">
+      <Tooltip tooltip={label} showOnTruncation={true} elementRef={labelRef} position="bottom" aria-hidden="true">
         {button}
       </Tooltip>
     );

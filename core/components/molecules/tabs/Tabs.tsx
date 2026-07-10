@@ -298,6 +298,7 @@ export const Tabs = (props: TabsProps) => {
         tooltip={label}
         elementRef={elementRef}
         triggerClass="ellipsis--noWrap flex-grow-0"
+        aria-hidden="true"
       >
         <span className={tabClass} data-test="DesignSystem-Tabs--TextWrapper" style={{ maxWidth }}>
           {renderInfo(tab, index)}

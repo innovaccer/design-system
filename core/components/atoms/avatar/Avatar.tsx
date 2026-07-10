@@ -241,7 +241,7 @@ export const Avatar = (props: AvatarProps) => {
   const renderTooltip = () => (
     <span className="position-relative d-inline-flex">
       {withTooltip && initials ? (
-        <Tooltip tooltip={getTooltipName()} position={tooltipPosition} triggerClass="flex-grow-0">
+        <Tooltip tooltip={getTooltipName()} aria-hidden="true" position={tooltipPosition} triggerClass="flex-grow-0">
           {renderAvatar()}
         </Tooltip>
       ) : (

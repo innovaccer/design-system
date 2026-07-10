@@ -34,6 +34,7 @@ const AvatarOptionItem = (props: AvatarOptionItemProps) => {
         elementRef={elementRef}
         triggerClass={triggerClassName}
         position="right"
+        aria-hidden="true"
       >
         <Text ref={elementRef} data-test="DesignSystem-AvatarGroup--Text" className="ellipsis--noWrap ml-4">
           {name}
