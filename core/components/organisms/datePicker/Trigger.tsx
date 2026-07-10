@@ -177,6 +177,8 @@ export const Trigger = (props: TriggerProps) => {
         clearOnEmptyBlur={true}
         useDefaultValueOnEmpty={true}
         ref={triggerRef}
+        role="combobox"
+        aria-haspopup="dialog"
         aria-expanded={open}
         aria-controls={panelId}
       />

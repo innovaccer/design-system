@@ -320,6 +320,8 @@ export const Trigger = (props: TriggerProps) => {
             validators={[inputValidator]}
             clearOnEmptyBlur={true}
             ref={startTriggerRef}
+            role="combobox"
+            aria-haspopup="dialog"
             aria-expanded={open}
             aria-controls={panelId}
           />
@@ -370,6 +372,8 @@ export const Trigger = (props: TriggerProps) => {
             validators={[inputValidator]}
             clearOnEmptyBlur={true}
             ref={endTriggerRef}
+            role="combobox"
+            aria-haspopup="dialog"
             aria-expanded={open}
             aria-controls={panelId}
           />

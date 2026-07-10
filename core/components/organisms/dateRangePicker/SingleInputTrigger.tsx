@@ -244,6 +244,8 @@ export const SingleInputTrigger = (props: TriggerProps) => {
             validators={[inputValidator]}
             clearOnEmptyBlur={true}
             ref={triggerRef}
+            role="combobox"
+            aria-haspopup="dialog"
             aria-expanded={open}
             aria-controls={panelId}
           />
