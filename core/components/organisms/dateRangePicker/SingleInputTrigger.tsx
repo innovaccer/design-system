@@ -186,7 +186,10 @@ export const SingleInputTrigger = (props: TriggerProps) => {
     if (!endVal || endVal.includes(placeholderChar)) setState({ endDate: undefined });
   };
 
-  const onClearHandler = () => {
+  const onClearHandler = (e?: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>) => {
+    if (e?.type === 'click') {
+      onInputMouseDown?.();
+    }
     setState({
       init: true,
       startDate: undefined,

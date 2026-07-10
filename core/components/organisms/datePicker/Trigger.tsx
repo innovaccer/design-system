@@ -124,9 +124,10 @@ export const Trigger = (props: TriggerProps) => {
 
   const onClearHandler = (e: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>) => {
     const { onClear } = inputOptions;
-    // Clear focuses the input and the click can bubble to the popover trigger;
-    // treat this like an input-originated open so focus stays in the field.
-    onInputMouseDown?.();
+    // Pointer clears bubble to the popover trigger; keyboard clears do not open it.
+    if (e.type === 'click') {
+      onInputMouseDown?.();
+    }
     setState({
       init: true,
       date: undefined,

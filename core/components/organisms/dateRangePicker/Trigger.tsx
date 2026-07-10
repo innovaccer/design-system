@@ -210,7 +210,10 @@ export const Trigger = (props: TriggerProps) => {
     }
   };
 
-  const onClearHandler = (type: string) => {
+  const onClearHandler = (type: string, e?: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>) => {
+    if (e?.type === 'click') {
+      onInputMouseDown?.();
+    }
     setState({
       init: true,
     });
@@ -297,7 +300,7 @@ export const Trigger = (props: TriggerProps) => {
           onBlur={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
             onBlurHandler(e, val || '', 'start');
           }}
-          onClear={() => onClearHandler('start')}
+          onClear={(e: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>) => onClearHandler('start', e)}
           onClick={() => onClickHandler('start')}
           onMouseDown={onStartMouseDown}
           onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => onKeyDownHandler(e, 'start')}
@@ -347,7 +350,7 @@ export const Trigger = (props: TriggerProps) => {
           onBlur={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
             onBlurHandler(e, val || '', 'end');
           }}
-          onClear={() => onClearHandler('end')}
+          onClear={(e: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>) => onClearHandler('end', e)}
           onClick={() => onClickHandler('end')}
           onMouseDown={onEndMouseDown}
           onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => onKeyDownHandler(e, 'end')}
