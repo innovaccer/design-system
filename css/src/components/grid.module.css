@@ -165,9 +165,9 @@
 
 .Grid-cell--head {
   /* Text truncation is handled by `.Grid-cell--head .Grid-cellContent` (which has its own
-     overflow: hidden). We intentionally do NOT clip the head cell itself, so the resize
-     handle's 24px touch target (padding hit-slop below) is not clipped — WCAG 2.5.8. */
-  padding-right: var(--spacing-10);
+     overflow: hidden). We intentionally do NOT clip the head cell itself, so the stable
+     resize lane (absolute, out of flow) can extend into the next column — WCAG 2.5.8. */
+  padding-right: var(--spacing-20);
 }
 
 .Grid-cell--dragged {
@@ -251,18 +251,50 @@
   border-radius: var(--border-radius-10);
 }
 
+/* Stable 24px resize lane: 8px inside this column, 16px bleed into the next. Out of flow,
+   z-index above the adjacent header so resize wins over column reorder in the overlap. */
 .Grid-cellResize {
   position: absolute;
-  right: 0;
-  width: var(--spacing-10);
-  cursor: ew-resize;
+  top: 0;
+  right: calc(-1 * var(--spacing-40));
+  width: var(--spacing-60);
   height: 100%;
-  padding-right: var(--spacing-60);
-  margin-right: calc(-1 * var(--spacing-60));
-  box-sizing: content-box;
-  /* Keep the visible hover/focus bar at the 4px content width; the 24px padding is an
-     invisible touch-target extension only (so appearance is unchanged). */
-  background-clip: content-box;
+  z-index: 2;
+  box-sizing: border-box;
+  cursor: ew-resize;
+  touch-action: none;
+  background: transparent;
+}
+
+.Grid-cellResize::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  /* Align with the column boundary (8px from this cell's right edge). */
+  right: var(--spacing-40);
+  width: 1px;
+  background-color: var(--primary);
+  opacity: 0;
+  transition: opacity 120ms ease;
+  pointer-events: none;
+}
+
+@media (hover: hover) {
+  .Grid-cellResize:hover::after {
+    opacity: 1;
+    transition-delay: 200ms;
+  }
+}
+
+.Grid-cellResize:focus-visible {
+  outline: none;
+}
+
+.Grid-cellResize:focus-visible::after,
+.Grid-cellResize--active::after {
+  opacity: 1;
+  transition-delay: 0s;
 }
 
 .Grid-cellSortIcon {
@@ -273,15 +305,6 @@
 
 .Grid-cellSortIcon:hover {
   background: var(--secondary);
-}
-
-.Grid-cellResize:hover {
-  background: var(--primary);
-}
-
-.Grid-cellResize:focus-visible {
-  background: var(--primary);
-  outline: none;
 }
 
 .Grid-reorderHighlighter {

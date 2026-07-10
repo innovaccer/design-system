@@ -13,7 +13,8 @@ import styles from '@css/components/grid.module.css';
 type resizeColFn = (
   gridInfo: { updateColumnSchema: updateColumnSchemaFunction },
   name: ColumnSchema['name'],
-  el: GridRef
+  el: GridRef,
+  onEnd?: () => void
 ) => void;
 type sortColumnFn = (
   gridInfo: {
@@ -34,7 +35,7 @@ type hideColumnFn = (
   value: boolean
 ) => void;
 
-export const resizeCol: resizeColFn = ({ updateColumnSchema }, name, el) => {
+export const resizeCol: resizeColFn = ({ updateColumnSchema }, name, el, onEnd) => {
   const elX = el?.getBoundingClientRect().x;
   function resizable(ev: MouseEvent) {
     ev.preventDefault();
@@ -45,10 +46,17 @@ export const resizeCol: resizeColFn = ({ updateColumnSchema }, name, el) => {
     }
   }
 
-  window.addEventListener('mousemove', resizable);
-  window.addEventListener('mouseup', () => {
+  const onMouseUp = () => {
     window.removeEventListener('mousemove', resizable);
-  });
+    document.body.style.removeProperty('cursor');
+    document.body.style.removeProperty('user-select');
+    onEnd?.();
+  };
+
+  document.body.style.cursor = 'ew-resize';
+  document.body.style.userSelect = 'none';
+  window.addEventListener('mousemove', resizable);
+  window.addEventListener('mouseup', onMouseUp, { once: true });
 };
 
 export const sortColumn: sortColumnFn = ({ sortingList, updateSortingList }, name, type) => {

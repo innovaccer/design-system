@@ -92,6 +92,15 @@ const HeaderCell = (props: HeaderCellProps) => {
   const sorted = listIndex !== -1 ? sortingList[listIndex].type : null;
 
   const el = React.createRef<HTMLDivElement>();
+  const [isResizing, setIsResizing] = React.useState(false);
+
+  const handleResizeMouseDown = (e: React.MouseEvent<HTMLSpanElement>) => {
+    e.stopPropagation();
+    e.preventDefault();
+    setIsResizing(true);
+    setIsDragged(false);
+    resizeCol({ updateColumnSchema }, name, el.current, () => setIsResizing(false));
+  };
 
   const sortOptions: DropdownProps['options'] = [
     { label: 'Sort Ascending', value: 'sortAsc', icon: 'arrow_upward' },
@@ -235,6 +244,7 @@ const HeaderCell = (props: HeaderCellProps) => {
                 className="m-0"
                 customTrigger={
                   <Button
+                    size="tiny"
                     icon="filter_list"
                     appearance="transparent"
                     aria-label={`Filter ${schema.displayName} column`}
@@ -260,6 +270,7 @@ const HeaderCell = (props: HeaderCellProps) => {
                 triggerOptions={{
                   customTrigger: () => (
                     <Button
+                      size="tiny"
                       icon="more_vert_filled"
                       appearance="transparent"
                       aria-label={`More options for ${schema.displayName} column`}
@@ -283,11 +294,10 @@ const HeaderCell = (props: HeaderCellProps) => {
       )}
       {schema.resizable && (
         <span
-          className={styles['Grid-cellResize']}
-          onMouseDown={() => {
-            resizeCol({ updateColumnSchema }, name, el.current);
-            setIsDragged(false);
-          }}
+          className={classNames(styles['Grid-cellResize'], {
+            [styles['Grid-cellResize--active']]: isResizing,
+          })}
+          onMouseDown={handleResizeMouseDown}
           onDoubleClick={autoFitColumn}
           onKeyDown={(event: React.KeyboardEvent<HTMLSpanElement>) => {
             const RESIZE_STEP = 10;
@@ -447,6 +457,10 @@ export const Cell = (props: CellProps) => {
       draggable={isHead && draggable}
       onDragStart={(e) => {
         if (draggable) {
+          if ((e.target as HTMLElement).closest(`.${styles['Grid-cellResize']}`)) {
+            e.preventDefault();
+            return;
+          }
           setIsDragged(true);
           e.dataTransfer.setData('name', name);
           if (pinned) e.dataTransfer.setData('type', pinned);
