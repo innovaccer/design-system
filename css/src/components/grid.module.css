@@ -102,7 +102,7 @@
 
 /* Last resizable column: nudge header actions left so flush resize lane does not cover them. */
 .Grid-headCellAction--reserveResizeLane {
-  margin-right: var(--spacing-40);
+  margin-right: var(--spacing-60);
 }
 
 .Grid-body {

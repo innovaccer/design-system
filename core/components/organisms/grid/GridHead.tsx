@@ -36,7 +36,7 @@ export const GridHead = (props: GridHeadProps) => {
 
   const visibleSchema = [...leftPinnedSchema, ...unpinnedSchema, ...rightPinnedSchema];
   const rightmostResizableName = [...visibleSchema].reverse().find((s) => s.resizable)?.name;
-  const lastUnpinnedResizableName = [...unpinnedSchema].reverse().find((s) => s.resizable)?.name;
+  const lastUnpinnedColumn = unpinnedSchema[unpinnedSchema.length - 1];
 
   const CheckboxClass = classNames({
     [styles['Grid-cell']]: true,
@@ -98,8 +98,8 @@ export const GridHead = (props: GridHeadProps) => {
                 elevateResizeLaneOverPin={
                   !pinned &&
                   !!rightPinnedSchema.length &&
-                  s.resizable &&
-                  s.name === lastUnpinnedResizableName
+                  !!lastUnpinnedColumn?.resizable &&
+                  s.name === lastUnpinnedColumn.name
                 }
               />
             );
