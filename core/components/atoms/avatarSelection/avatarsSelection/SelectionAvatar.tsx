@@ -16,6 +16,11 @@ interface SelectionAvatarProps {
   tooltipPosition?: TooltipProps['position'];
   disabled?: boolean;
   tooltipSuffix?: string;
+  'aria-label'?: string;
+  'aria-checked'?: boolean;
+  'aria-disabled'?: boolean;
+  onClick?: (event: React.MouseEvent<HTMLSpanElement>) => void;
+  onKeyDown?: (event: React.KeyboardEvent<HTMLSpanElement>) => void;
 }
 
 export const SelectionAvatar = (props: SelectionAvatarProps) => {
