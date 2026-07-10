@@ -86,6 +86,7 @@ export const Trigger = (props: TriggerProps) => {
 
   const onStartMouseDown = (e: React.MouseEvent<HTMLInputElement>) => {
     startInputOptions.onMouseDown?.(e);
+    onTriggerFocus?.('start');
     if (!startInputOptions.readOnly) {
       onInputMouseDown?.();
     }
@@ -93,6 +94,7 @@ export const Trigger = (props: TriggerProps) => {
 
   const onEndMouseDown = (e: React.MouseEvent<HTMLInputElement>) => {
     endInputOptions.onMouseDown?.(e);
+    onTriggerFocus?.('end');
     if (!endInputOptions.readOnly) {
       onInputMouseDown?.();
     }
@@ -129,6 +131,7 @@ export const Trigger = (props: TriggerProps) => {
   };
 
   const onPasteHandler = (_e: React.ClipboardEvent<HTMLInputElement>, val: string, type: string) => {
+    onTriggerFocus?.(type === 'start' ? 'start' : 'end');
     openPopoverFromInput();
 
     if (type === 'start') {
@@ -160,6 +163,7 @@ export const Trigger = (props: TriggerProps) => {
   };
 
   const onChangeHandler = (_e: React.ChangeEvent<HTMLInputElement>, val: string, type: string) => {
+    onTriggerFocus?.(type === 'start' ? 'start' : 'end');
     openPopoverFromInput();
 
     if (type === 'start') {
@@ -284,6 +288,7 @@ export const Trigger = (props: TriggerProps) => {
               withInput={true}
               htmlFor={startFieldId}
               onMouseDown={() => {
+                onTriggerFocus?.('start');
                 if (!startInputOptions.readOnly) onInputMouseDown?.();
               }}
             >
@@ -340,6 +345,7 @@ export const Trigger = (props: TriggerProps) => {
               withInput={true}
               htmlFor={endFieldId}
               onMouseDown={() => {
+                onTriggerFocus?.('end');
                 if (!endInputOptions.readOnly) onInputMouseDown?.();
               }}
             >
