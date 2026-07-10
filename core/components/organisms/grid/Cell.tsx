@@ -144,6 +144,7 @@ const HeaderCell = (props: HeaderCellProps) => {
     reserveResizeLaneForActions && !showMenu ? styles['Grid-headCellAction--reserveResizeLane'] : undefined;
   const menuActionReserveClass =
     reserveResizeLaneForActions && showMenu ? styles['Grid-headCellAction--reserveResizeLane'] : undefined;
+  const compactHeadActionSize = reserveResizeLaneForActions ? ('tiny' as const) : undefined;
 
   const selectFilterOptions = filters
     ? filters.map((f) => ({
@@ -259,7 +260,7 @@ const HeaderCell = (props: HeaderCellProps) => {
                 className="m-0"
                 customTrigger={
                   <Button
-                    size="tiny"
+                    size={compactHeadActionSize}
                     icon="filter_list"
                     appearance="transparent"
                     aria-label={`Filter ${schema.displayName} column`}
@@ -285,7 +286,7 @@ const HeaderCell = (props: HeaderCellProps) => {
                 triggerOptions={{
                   customTrigger: () => (
                     <Button
-                      size="tiny"
+                      size={compactHeadActionSize}
                       icon="more_vert_filled"
                       appearance="transparent"
                       aria-label={`More options for ${schema.displayName} column`}
