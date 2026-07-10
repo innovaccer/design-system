@@ -148,6 +148,20 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
   /** When true, the active trigger input is included in Tab trapping (input-originated open). */
   focusTrapIncludesTrigger = false;
 
+  isFocusOnTrigger = () => {
+    const trigger = this.triggerRef.current;
+    const active = document.activeElement;
+    return !!(trigger && active && (trigger === active || trigger.contains(active)));
+  };
+
+  /** Controlled opens that happen while a trigger input already has focus. */
+  flagOpenFromFocusedTrigger = () => {
+    if (this.isFocusOnTrigger()) {
+      this.openedViaInput = true;
+      this.focusTrapIncludesTrigger = true;
+    }
+  };
+
   constructor(props: DatePickerProps) {
     super(props);
 
@@ -321,6 +335,7 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
 
     if (prevState.open !== this.state.open) {
       if (this.state.open) {
+        this.flagOpenFromFocusedTrigger();
         this.activateFocusTrap(!this.openedViaInput);
       } else {
         this.deactivateFocusTrap();
