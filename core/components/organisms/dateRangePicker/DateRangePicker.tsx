@@ -315,11 +315,24 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
     }
   };
 
+  isActiveTriggerReadOnly = () => {
+    const { singleInput, inputOptions, startInputOptions, endInputOptions } = this.props;
+    if (singleInput) return !!inputOptions?.readOnly;
+    if (this.activeField === 'end') return !!endInputOptions?.readOnly;
+    return !!startInputOptions?.readOnly;
+  };
+
   /**
    * Opens the popover as a result of typing/pasting in an editable input.
    * Flags the open so focus is not pulled into the calendar dialog.
    */
   openViaInput = () => {
+    if (this.isActiveTriggerReadOnly()) {
+      if (!this.state.open) {
+        this.setState({ open: true });
+      }
+      return;
+    }
     this.openedViaInput = true;
     if (this.state.open) {
       this.focusTrapIncludesTrigger = true;
@@ -336,6 +349,7 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
    * input element, so this does not fire and the calendar still receives focus.
    */
   flagOpenFromInput = () => {
+    if (this.isActiveTriggerReadOnly()) return;
     this.triggerHadPointerDown = true;
     this.openedViaInput = true;
     this.includeTriggerInFocusTrapWhenOpen();

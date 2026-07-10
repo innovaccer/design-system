@@ -86,12 +86,16 @@ export const Trigger = (props: TriggerProps) => {
 
   const onStartMouseDown = (e: React.MouseEvent<HTMLInputElement>) => {
     startInputOptions.onMouseDown?.(e);
-    onInputMouseDown?.();
+    if (!startInputOptions.readOnly) {
+      onInputMouseDown?.();
+    }
   };
 
   const onEndMouseDown = (e: React.MouseEvent<HTMLInputElement>) => {
     endInputOptions.onMouseDown?.(e);
-    onInputMouseDown?.();
+    if (!endInputOptions.readOnly) {
+      onInputMouseDown?.();
+    }
   };
 
   const onKeyDownHandler = (e: React.KeyboardEvent<HTMLInputElement>, type: 'start' | 'end') => {
@@ -214,7 +218,8 @@ export const Trigger = (props: TriggerProps) => {
   };
 
   const onClearHandler = (type: string, e?: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>) => {
-    if (e?.type === 'click') {
+    const readOnly = type === 'start' ? startInputOptions.readOnly : endInputOptions.readOnly;
+    if (e?.type === 'click' && !readOnly) {
       onInputMouseDown?.();
     }
     setState({
@@ -278,7 +283,9 @@ export const Trigger = (props: TriggerProps) => {
               required={startInputOptions.required}
               withInput={true}
               htmlFor={startFieldId}
-              onMouseDown={() => onInputMouseDown?.()}
+              onMouseDown={() => {
+                if (!startInputOptions.readOnly) onInputMouseDown?.();
+              }}
             >
               {startLabel}
             </Label>
@@ -332,7 +339,9 @@ export const Trigger = (props: TriggerProps) => {
               required={endInputOptions.required}
               withInput={true}
               htmlFor={endFieldId}
-              onMouseDown={() => onInputMouseDown?.()}
+              onMouseDown={() => {
+                if (!endInputOptions.readOnly) onInputMouseDown?.();
+              }}
             >
               {endLabel}
             </Label>

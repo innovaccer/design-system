@@ -263,6 +263,12 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
    * Flags the open so focus is not pulled into the calendar dialog.
    */
   openViaInput = () => {
+    if (this.props.inputOptions?.readOnly) {
+      if (!this.state.open) {
+        this.setState({ open: true });
+      }
+      return;
+    }
     this.openedViaInput = true;
     if (this.state.open) {
       this.focusTrapIncludesTrigger = true;
@@ -279,6 +285,7 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
    * input element, so this does not fire and the calendar still receives focus.
    */
   flagOpenFromInput = () => {
+    if (this.props.inputOptions?.readOnly) return;
     this.triggerHadPointerDown = true;
     this.openedViaInput = true;
     this.includeTriggerInFocusTrapWhenOpen();

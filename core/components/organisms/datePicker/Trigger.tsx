@@ -63,7 +63,9 @@ export const Trigger = (props: TriggerProps) => {
 
   const onMouseDownHandler = (e: React.MouseEvent<HTMLInputElement>) => {
     inputOptions.onMouseDown?.(e);
-    onInputMouseDown?.();
+    if (!inputOptions.readOnly) {
+      onInputMouseDown?.();
+    }
   };
 
   const onKeyDownHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -131,7 +133,7 @@ export const Trigger = (props: TriggerProps) => {
   const onClearHandler = (e: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>) => {
     const { onClear } = inputOptions;
     // Pointer clears bubble to the popover trigger; keyboard clears do not open it.
-    if (e.type === 'click') {
+    if (e.type === 'click' && !inputOptions.readOnly) {
       onInputMouseDown?.();
     }
     setState({

@@ -58,7 +58,9 @@ export const SingleInputTrigger = (props: TriggerProps) => {
 
   const onMouseDownHandler = (e: React.MouseEvent<HTMLInputElement>) => {
     inputOptions.onMouseDown?.(e);
-    onInputMouseDown?.();
+    if (!inputOptions.readOnly) {
+      onInputMouseDown?.();
+    }
   };
 
   const onKeyDownHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -189,7 +191,7 @@ export const SingleInputTrigger = (props: TriggerProps) => {
   };
 
   const onClearHandler = (e?: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>) => {
-    if (e?.type === 'click') {
+    if (e?.type === 'click' && !inputOptions.readOnly) {
       onInputMouseDown?.();
     }
     setState({
@@ -211,7 +213,9 @@ export const SingleInputTrigger = (props: TriggerProps) => {
               required={inputOptions.required}
               withInput={true}
               htmlFor={fieldId}
-              onMouseDown={() => onInputMouseDown?.()}
+              onMouseDown={() => {
+                if (!inputOptions.readOnly) onInputMouseDown?.();
+              }}
             >
               {label}
             </Label>
