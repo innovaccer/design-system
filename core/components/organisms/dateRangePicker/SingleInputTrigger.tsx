@@ -2,6 +2,7 @@ import * as React from 'react';
 import { InputMask, Row, Column, Label, Utils } from '@/index';
 import { compareDate, getDateInfo, translateToDate } from '../calendar/utility';
 import { DateRangePickerProps, DateRangePickerState } from './DateRangePicker';
+import uidGenerator from '@/utils/uidGenerator';
 
 type TriggerProps = {
   inputFormat: DateRangePickerProps['inputFormat'];
@@ -9,10 +10,63 @@ type TriggerProps = {
   validators: DateRangePickerProps['validators'];
   state: DateRangePickerState;
   setState: any;
+  /**
+   * Whether the calendar popover is currently open (drives `aria-expanded`)
+   */
+  open?: boolean;
+  /**
+   * `id` of the calendar dialog panel this trigger controls (drives `aria-controls`)
+   */
+  panelId?: string;
+  /**
+   * Ref to the underlying `input` element, used to return focus on popover close
+   */
+  triggerRef?: React.Ref<HTMLInputElement>;
+  /**
+   * Called when the input receives focus
+   */
+  onTriggerFocus?: () => void;
+  /**
+   * Called on `mousedown` on the input element (before the wrapper click that
+   * opens the popover) so a click INTO the editable field keeps the caret in
+   * the input instead of moving focus into the calendar.
+   */
+  onInputMouseDown?: () => void;
+  /**
+   * Called on an explicit keyboard open gesture (ArrowDown / Alt+ArrowDown) to
+   * open the calendar AND move focus into the grid.
+   */
+  onKeyboardOpen?: () => void;
 };
 
 export const SingleInputTrigger = (props: TriggerProps) => {
-  const { inputFormat, inputOptions, validators, state, setState } = props;
+  const {
+    inputFormat,
+    inputOptions,
+    validators,
+    state,
+    setState,
+    open,
+    panelId,
+    triggerRef,
+    onTriggerFocus,
+    onInputMouseDown,
+    onKeyboardOpen,
+  } = props;
+
+  const onMouseDownHandler = (e: React.MouseEvent<HTMLInputElement>) => {
+    inputOptions.onMouseDown?.(e);
+    onInputMouseDown?.();
+  };
+
+  const onKeyDownHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    inputOptions.onKeyDown?.(e);
+    if (e.key === 'ArrowDown') {
+      // Explicit keyboard open: enter the calendar grid (prevent caret jump).
+      e.preventDefault();
+      onKeyboardOpen?.();
+    }
+  };
 
   const { init, startDate, endDate, startValue, endValue, startError, endError } = state;
 
@@ -21,6 +75,8 @@ export const SingleInputTrigger = (props: TriggerProps) => {
   const errorMessage = inputOptions.caption === undefined ? 'Invalid value' : inputOptions.caption;
   const { label } = inputOptions;
   const { placeholderChar = '_' } = inputOptions;
+  const fieldIdRef = React.useRef<string>(`DateRangePicker-singleInput-${uidGenerator()}`);
+  const fieldId = inputOptions.id || fieldIdRef.current;
   const defaultValue = InputMask.utils.getDefaultValue(mask, placeholderChar).split(' - ');
   const sValue = startValue || defaultValue[0];
   const eValue = endValue || defaultValue[1];
@@ -144,7 +200,12 @@ export const SingleInputTrigger = (props: TriggerProps) => {
     <Row data-test="DesignSystem-DateRangePicker-SingleInputTrigger">
       <Column>
         {label && (
-          <Label required={inputOptions.required} withInput={true}>
+          <Label
+            required={inputOptions.required}
+            withInput={true}
+            htmlFor={fieldId}
+            onMouseDown={() => onInputMouseDown?.()}
+          >
             {label}
           </Label>
         )}
@@ -152,6 +213,7 @@ export const SingleInputTrigger = (props: TriggerProps) => {
           icon="events"
           placeholder={`${inputFormat} - ${inputFormat}`}
           {...inputOptions}
+          id={fieldId}
           mask={mask}
           value={!startDate && !endDate && !init ? undefined : `${sValue} - ${eValue}`}
           onChange={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
@@ -164,10 +226,19 @@ export const SingleInputTrigger = (props: TriggerProps) => {
             onPasteHandler(e, val || '');
           }}
           onClear={onClearHandler}
+          onMouseDown={onMouseDownHandler}
+          onKeyDown={onKeyDownHandler}
+          onFocus={(e: React.FocusEvent<HTMLInputElement>) => {
+            inputOptions.onFocus?.(e);
+            onTriggerFocus?.();
+          }}
           error={showError}
           caption={showError ? errorMessage : ''}
           validators={[inputValidator]}
           clearOnEmptyBlur={true}
+          ref={triggerRef}
+          aria-expanded={open}
+          aria-controls={panelId}
         />
       </Column>
     </Row>

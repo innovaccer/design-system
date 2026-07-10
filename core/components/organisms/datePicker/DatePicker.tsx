@@ -5,10 +5,13 @@ import { Popover, Utils, Chip } from '@/index';
 import { PopoverProps, InputMaskProps } from '@/index.type';
 import { Validators } from '@/utils/types';
 import { convertToDate, translateToString, compareDate, getDateInfo } from '../calendar/utility';
+import { getInitialFocusCell } from '../calendar/utils';
 import { Trigger } from './Trigger';
 import config from '../calendar/config';
 import classNames from 'classnames';
 import styles from '@css/components/datePicker.module.css';
+import uidGenerator from '@/utils/uidGenerator';
+import { getFocusableElements, handleFocusTrapKeyDown, restoreFocusToElementIfConnected } from '@/utils/overlayHelper';
 
 export type DatePickerProps = SharedProps & {
   /**
@@ -126,6 +129,25 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
     closeOnSelect: true,
   };
 
+  dialogRef = React.createRef<HTMLDivElement>();
+  triggerRef = React.createRef<HTMLInputElement>();
+  panelId: string;
+  /**
+   * `true` when the popover opened as a side effect of typing/pasting into the
+   * editable input. In that case focus must stay in the input (caret preserved)
+   * and must NOT be moved into the calendar dialog.
+   */
+  openedViaInput = false;
+  /**
+   * `true` when the popover is closing as a result of a click outside the
+   * dialog. In that case the user has already moved focus/interaction
+   * elsewhere, so `deactivateFocusTrap` must NOT steal focus back to the
+   * trigger. Reset immediately after being consumed.
+   */
+  closedViaOutsideClick = false;
+  /** When true, the active trigger input is included in Tab trapping (input-originated open). */
+  focusTrapIncludesTrigger = false;
+
   constructor(props: DatePickerProps) {
     super(props);
 
@@ -134,6 +156,8 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
     const date = convertToDate(props.date, inputFormat, validators);
     const error = this.getError(date);
 
+    this.panelId = `DatePicker-dialog-${uidGenerator()}`;
+
     this.state = {
       date,
       error,
@@ -141,6 +165,124 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
       open: props.open || false,
     };
   }
+
+  componentDidMount() {
+    if (this.state.open) {
+      this.activateFocusTrap();
+    }
+  }
+
+  componentWillUnmount() {
+    if (this.state.open) {
+      document.removeEventListener('keydown', this.onFocusTrapKeyDown, true);
+    }
+  }
+
+  onFocusTrapKeyDown = (event: KeyboardEvent) => {
+    const container = this.dialogRef.current;
+    if (!container) return;
+    const externalTargets = this.focusTrapIncludesTrigger ? [this.triggerRef.current] : undefined;
+    handleFocusTrapKeyDown(event, container, undefined, externalTargets);
+  };
+
+  focusInitialElement = () => {
+    const container = this.dialogRef.current;
+    if (!container) return;
+    const target = getInitialFocusCell(container) || getFocusableElements(container)[0];
+    target?.focus({ preventScroll: true });
+  };
+
+  /**
+   * `Popover` mounts its portal (and therefore `dialogRef`) in a passive
+   * `useEffect`, which can run after the `requestAnimationFrame` scheduled
+   * below. Poll across a bounded number of animation frames until the dialog
+   * node exists before moving focus into it, so focus isn't silently dropped
+   * back on the input (leaving Tab free to escape the `aria-modal` dialog).
+   */
+  waitForDialogAndFocus = (retriesLeft = 10) => {
+    window.requestAnimationFrame(() => {
+      if (!this.state.open) return;
+      if (this.dialogRef.current) {
+        this.focusInitialElement();
+      } else if (retriesLeft > 0) {
+        this.waitForDialogAndFocus(retriesLeft - 1);
+      }
+    });
+  };
+
+  activateFocusTrap = (moveFocus = true) => {
+    // Always arm the focus trap (Tab handling) while the dialog is open.
+    // Only move focus into the calendar for explicit opens; when the popover
+    // opened because the user is typing/pasting, leave the caret in the input
+    // and include that trigger in the trap cycle.
+    this.focusTrapIncludesTrigger = !moveFocus;
+    if (moveFocus) {
+      this.waitForDialogAndFocus();
+    }
+    document.addEventListener('keydown', this.onFocusTrapKeyDown, true);
+  };
+
+  /**
+   * When the popover is already open, re-include the trigger in Tab trapping
+   * after the user refocuses the editable input (click/label/type path).
+   */
+  includeTriggerInFocusTrapWhenOpen = () => {
+    if (this.state.open) {
+      this.focusTrapIncludesTrigger = true;
+    }
+  };
+
+  /**
+   * Opens the popover as a result of typing/pasting in the editable input.
+   * Flags the open so focus is not pulled into the calendar dialog.
+   */
+  openViaInput = () => {
+    this.openedViaInput = true;
+    if (this.state.open) {
+      this.focusTrapIncludesTrigger = true;
+    } else {
+      this.setState({ open: true });
+    }
+  };
+
+  /**
+   * Flags that the popover open about to be triggered originates from a pointer
+   * press on the input itself (mouse click into the editable field). Fires on
+   * `mousedown`, before the wrapper click that opens the popover, so focus stays
+   * in the input (caret preserved). Pressing the calendar icon does NOT hit the
+   * input element, so this does not fire and the calendar still receives focus.
+   */
+  flagOpenFromInput = () => {
+    this.openedViaInput = true;
+    this.includeTriggerInFocusTrapWhenOpen();
+  };
+
+  /**
+   * Explicit keyboard open (ArrowDown / Alt+ArrowDown on the input). Unlike
+   * typing, this is an intentional request to enter the calendar, so focus IS
+   * moved into the grid: opening goes through the explicit path
+   * (`openedViaInput` stays false → `activateFocusTrap(true)`), and when the
+   * popover is already open focus is moved into the grid directly.
+   */
+  openViaKeyboard = () => {
+    if (this.state.open) {
+      this.waitForDialogAndFocus();
+    } else {
+      this.setState({ open: true });
+    }
+  };
+
+  deactivateFocusTrap = () => {
+    document.removeEventListener('keydown', this.onFocusTrapKeyDown, true);
+    this.focusTrapIncludesTrigger = false;
+    if (this.closedViaOutsideClick) {
+      // The user's click already moved focus/interaction elsewhere; don't pull
+      // it back to the trigger.
+      this.closedViaOutsideClick = false;
+      return;
+    }
+    restoreFocusToElementIfConnected(this.triggerRef.current, this.dialogRef.current);
+  };
 
   componentDidUpdate(prevProps: DatePickerProps, prevState: DatePickerState) {
     if (prevProps.date !== this.props.date) {
@@ -175,6 +317,15 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
           onDateChange(undefined, '');
         }
       }
+    }
+
+    if (prevState.open !== this.state.open) {
+      if (this.state.open) {
+        this.activateFocusTrap(!this.openedViaInput);
+      } else {
+        this.deactivateFocusTrap();
+      }
+      this.openedViaInput = false;
     }
   }
 
@@ -213,6 +364,9 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
 
     switch (type) {
       case 'outsideClick':
+        if (!o) this.closedViaOutsideClick = true;
+        this.setState({ open: o });
+        break;
       case 'escapeKeypress':
         this.setState({ open: o });
         break;
@@ -319,10 +473,12 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
     const { open } = this.state;
 
     if (withInput) {
+      const resolvedAriaLabel = inputOptions['aria-label'] || this.props['aria-label'];
+      const resolvedAriaLabelledby = inputOptions['aria-labelledby'] || this.props['aria-labelledby'];
       const triggerInputOptions = {
         ...inputOptions,
-        'aria-label': inputOptions['aria-label'] || this.props['aria-label'],
-        'aria-labelledby': inputOptions['aria-labelledby'] || this.props['aria-labelledby'],
+        ...(resolvedAriaLabel ? { 'aria-label': resolvedAriaLabel } : {}),
+        ...(resolvedAriaLabelledby ? { 'aria-labelledby': resolvedAriaLabelledby } : {}),
       };
       return (
         <Popover
@@ -333,6 +489,12 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
               validators={validators}
               state={this.state}
               setState={this.setState.bind(this)}
+              open={open}
+              panelId={this.panelId}
+              triggerRef={this.triggerRef}
+              openViaInput={this.openViaInput}
+              onInputMouseDown={this.flagOpenFromInput}
+              onKeyboardOpen={this.openViaKeyboard}
             />
           }
           triggerClass="w-100"
@@ -342,7 +504,9 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
           onToggle={this.onToggleHandler}
           {...popoverOptions}
         >
-          {this.renderCalendar()}
+          <div role="dialog" aria-modal="true" aria-label="Choose date" id={this.panelId} ref={this.dialogRef}>
+            {this.renderCalendar()}
+          </div>
         </Popover>
       );
     }

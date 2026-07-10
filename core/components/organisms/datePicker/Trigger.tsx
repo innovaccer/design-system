@@ -9,10 +9,73 @@ type TriggerProps = {
   validators: DatePickerProps['validators'];
   state: DatePickerState;
   setState: any;
+  /**
+   * Whether the calendar popover is currently open (drives `aria-expanded`)
+   */
+  open?: boolean;
+  /**
+   * `id` of the calendar dialog panel this trigger controls (drives `aria-controls`)
+   */
+  panelId?: string;
+  /**
+   * Ref to the underlying `input` element, used to return focus on popover close
+   */
+  triggerRef?: React.Ref<HTMLInputElement>;
+  /**
+   * Opens the popover as a side effect of typing/pasting, WITHOUT moving focus
+   * into the calendar dialog (keeps the caret in the input). Falls back to a
+   * plain `open` state update when not provided.
+   */
+  openViaInput?: () => void;
+  /**
+   * Called on `mousedown` on the input element (before the wrapper click that
+   * opens the popover) so a click INTO the editable field keeps the caret in
+   * the input instead of moving focus into the calendar.
+   */
+  onInputMouseDown?: () => void;
+  /**
+   * Called on an explicit keyboard open gesture (ArrowDown / Alt+ArrowDown) to
+   * open the calendar AND move focus into the grid.
+   */
+  onKeyboardOpen?: () => void;
 };
 
 export const Trigger = (props: TriggerProps) => {
-  const { inputFormat, inputOptions, validators, state, setState } = props;
+  const {
+    inputFormat,
+    inputOptions,
+    validators,
+    state,
+    setState,
+    open,
+    panelId,
+    triggerRef,
+    openViaInput,
+    onInputMouseDown,
+    onKeyboardOpen,
+  } = props;
+
+  const onMouseDownHandler = (e: React.MouseEvent<HTMLInputElement>) => {
+    inputOptions.onMouseDown?.(e);
+    onInputMouseDown?.();
+  };
+
+  const onKeyDownHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    inputOptions.onKeyDown?.(e);
+    if (e.key === 'ArrowDown') {
+      // Explicit keyboard open: enter the calendar grid (prevent caret jump).
+      e.preventDefault();
+      onKeyboardOpen?.();
+    }
+  };
+
+  const openPopoverFromInput = () => {
+    if (openViaInput) {
+      openViaInput();
+    } else {
+      setState({ open: true });
+    }
+  };
 
   const { init, date, error } = state;
 
@@ -20,9 +83,7 @@ export const Trigger = (props: TriggerProps) => {
 
   const onPasteHandler = (_e: React.ClipboardEvent<HTMLInputElement>, val?: string) => {
     const { onPaste } = inputOptions;
-    setState({
-      open: true,
-    });
+    openPopoverFromInput();
 
     if (val && !val.includes(placeholderChar)) {
       const d = translateToDate(inputFormat, val, validators);
@@ -34,9 +95,7 @@ export const Trigger = (props: TriggerProps) => {
 
   const onChangeHandler = (_e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
     const { onChange } = inputOptions;
-    setState({
-      open: true,
-    });
+    openPopoverFromInput();
 
     if (val && !val.includes(placeholderChar)) {
       const d = translateToDate(inputFormat, val, validators);
@@ -65,6 +124,9 @@ export const Trigger = (props: TriggerProps) => {
 
   const onClearHandler = (e: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>) => {
     const { onClear } = inputOptions;
+    // Clear focuses the input and the click can bubble to the popover trigger;
+    // treat this like an input-originated open so focus stays in the field.
+    onInputMouseDown?.();
     setState({
       init: true,
       date: undefined,
@@ -94,10 +156,15 @@ export const Trigger = (props: TriggerProps) => {
       onPaste={onPasteHandler}
       onBlur={onBlurHandler}
       onClear={onClearHandler}
+      onMouseDown={onMouseDownHandler}
+      onKeyDown={onKeyDownHandler}
       caption={showError ? errorMessage : ''}
       validators={[inputValidator]}
       clearOnEmptyBlur={true}
       useDefaultValueOnEmpty={true}
+      ref={triggerRef}
+      aria-expanded={open}
+      aria-controls={panelId}
     />
   );
 };

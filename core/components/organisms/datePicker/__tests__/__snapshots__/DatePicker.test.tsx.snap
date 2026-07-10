@@ -10225,6 +10225,8 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
             </i>
           </div>
           <input
+            aria-controls="DatePicker-dialog-Test-uid"
+            aria-expanded="false"
             autocomplete="off"
             class="Input-input Input-input--regular mr-4"
             data-test="DesignSystem-Input"

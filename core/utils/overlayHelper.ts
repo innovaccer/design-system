@@ -158,22 +158,33 @@ export const getAllFocusableElements = (container: HTMLElement, roleHint?: strin
  * @param staticFocusTarget - Optional non-tabbable element (tabindex="-1") that received
  *   focus on overlay open (e.g. the dialog heading). It is not in the tabbable focusable
  *   list, so without this parameter Shift+Tab from it would escape the trap.
+ * @param externalFocusTargets - Optional tabbable elements outside `container` that should
+ *   participate in the trap cycle (e.g. a DatePicker trigger input while the calendar is
+ *   open and focus remains in the field).
  *
  * Returns true if the event was handled (focus was redirected or prevented).
  */
 export const handleFocusTrapKeyDown = (
   event: KeyboardEvent,
   container: HTMLElement,
-  staticFocusTarget?: HTMLElement | null
+  staticFocusTarget?: HTMLElement | null,
+  externalFocusTargets?: (HTMLElement | null | undefined)[]
 ): boolean => {
   if (event.key !== 'Tab') return false;
 
-  const focusable = getFocusableElements(container);
+  const dialogFocusable = getFocusableElements(container);
+  const externalFocusable = (externalFocusTargets ?? []).filter(
+    (el): el is HTMLElement => !!el?.isConnected && !container.contains(el)
+  );
+  const focusable = [...externalFocusable, ...dialogFocusable.filter((el) => !externalFocusable.includes(el))];
   const activeElement = document.activeElement as HTMLElement | null;
 
-  if (!activeElement || !container.contains(activeElement)) {
-    return false;
-  }
+  const isInScope =
+    !!activeElement &&
+    (container.contains(activeElement) ||
+      externalFocusable.some((el) => el === activeElement || el.contains(activeElement)));
+
+  if (!isInScope) return false;
 
   if (focusable.length === 0) {
     event.preventDefault();
@@ -194,10 +205,21 @@ export const handleFocusTrapKeyDown = (
       last.focus({ preventScroll: true });
       return true;
     }
+    if (externalFocusable.length > 0 && dialogFocusable.length > 0 && activeElement === dialogFocusable[0]) {
+      event.preventDefault();
+      externalFocusable[externalFocusable.length - 1].focus({ preventScroll: true });
+      return true;
+    }
   } else {
     if (activeElement === last) {
       event.preventDefault();
       first.focus({ preventScroll: true });
+      return true;
+    }
+    if (externalFocusable.length > 0 && externalFocusable.some((el) => el === activeElement)) {
+      event.preventDefault();
+      const dialogFirst = dialogFocusable[0] ?? last;
+      dialogFirst.focus({ preventScroll: true });
       return true;
     }
   }
