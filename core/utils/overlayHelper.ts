@@ -216,7 +216,10 @@ export const handleFocusTrapKeyDown = (
       first.focus({ preventScroll: true });
       return true;
     }
-    if (externalFocusable.length > 0 && externalFocusable.some((el) => el === activeElement)) {
+    const activeExternalIndex = externalFocusable.findIndex(
+      (el) => el === activeElement || (!!activeElement && el.contains(activeElement))
+    );
+    if (activeExternalIndex >= 0 && activeExternalIndex === externalFocusable.length - 1) {
       event.preventDefault();
       const dialogFirst = dialogFocusable[0] ?? last;
       dialogFirst.focus({ preventScroll: true });
