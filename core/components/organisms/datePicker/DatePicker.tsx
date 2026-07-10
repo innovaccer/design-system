@@ -149,6 +149,8 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
   focusTrapIncludesTrigger = false;
   /** Pointer on trigger chrome (icon/wrapper) — not a keyboard focus-origin open. */
   triggerHadPointerDown = false;
+  /** Props.open flipped true before deferred state.open sync (controlled onFocus opens). */
+  pendingControlledOpen = false;
 
   isFocusOnTrigger = () => {
     const trigger = this.triggerRef.current;
@@ -320,6 +322,9 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
     }
 
     if (prevProps.open !== this.props.open) {
+      if (this.props.open && !prevProps.open) {
+        this.pendingControlledOpen = true;
+      }
       this.setState({
         open: this.props.open || false,
       });
@@ -346,10 +351,10 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
 
     if (prevState.open !== this.state.open) {
       if (this.state.open) {
-        const openedFromControlledProp = prevProps.open !== this.props.open && this.props.open === true;
-        if (openedFromControlledProp) {
+        if (this.pendingControlledOpen && !this.openedViaInput) {
           this.flagOpenFromFocusedTrigger();
         }
+        this.pendingControlledOpen = false;
         this.activateFocusTrap(!this.openedViaInput);
       } else {
         this.deactivateFocusTrap();
