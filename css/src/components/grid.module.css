@@ -297,6 +297,16 @@
   transition-delay: 0s;
 }
 
+/* Rightmost resizable column: keep the full 24px lane inside the cell so the header
+   scroll width matches the body (no bleed past `.Grid-head` overflow-x). */
+.Grid-cellResize--flushEnd {
+  right: 0;
+}
+
+.Grid-cellResize--flushEnd::after {
+  right: 0;
+}
+
 .Grid-cellSortIcon {
   display: flex;
   align-items: center;

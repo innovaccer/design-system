@@ -24,6 +24,8 @@ type HeaderCellProps = SharedCellProps & {
   updateColumnSchema: GridHeadProps['updateColumnSchema'];
   reorderColumn: GridHeadProps['reorderColumn'];
   setIsDragged: React.Dispatch<React.SetStateAction<boolean>>;
+  /** When true, keep the full 24px lane inside the cell (no bleed past the grid edge). */
+  flushResizeLane?: boolean;
 };
 
 type BodyCellProps = SharedCellProps & {
@@ -45,6 +47,7 @@ export type CellProps = Partial<HeaderCellProps> &
   SharedCellProps & {
     isHead?: boolean;
     firstCell: boolean;
+    flushResizeLane?: boolean;
   };
 
 const HeaderCell = (props: HeaderCellProps) => {
@@ -70,6 +73,7 @@ const HeaderCell = (props: HeaderCellProps) => {
     onFilterChange,
     updateColumnSchema,
     reorderColumn,
+    flushResizeLane,
   } = props;
 
   const headProps: HeaderCellRendererProps = {
@@ -296,6 +300,7 @@ const HeaderCell = (props: HeaderCellProps) => {
         <span
           className={classNames(styles['Grid-cellResize'], {
             [styles['Grid-cellResize--active']]: isResizing,
+            [styles['Grid-cellResize--flushEnd']]: flushResizeLane,
           })}
           onMouseDown={handleResizeMouseDown}
           onDoubleClick={autoFitColumn}
@@ -409,6 +414,7 @@ export const Cell = (props: CellProps) => {
     updateColumnSchema,
     reorderColumn,
     nestedRowData,
+    flushResizeLane,
   } = props as CellProps;
 
   const {
@@ -526,6 +532,7 @@ export const Cell = (props: CellProps) => {
           updateColumnSchema={updateColumnSchema!}
           reorderColumn={reorderColumn!}
           setIsDragged={setIsDragged}
+          flushResizeLane={flushResizeLane}
         />
       ) : (
         <BodyCell
