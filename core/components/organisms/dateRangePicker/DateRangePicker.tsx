@@ -686,13 +686,19 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
         <Popover
           trigger={trigger}
           triggerClass="w-100"
-          className={RangePickerClass}
           position={position}
           appendToBody={true}
           open={open}
           onToggle={this.onToggleHandler}
         >
-          <div role="dialog" aria-modal="true" aria-label={dialogLabel} id={this.panelId} ref={this.dialogRef}>
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-label={dialogLabel}
+            id={this.panelId}
+            ref={this.dialogRef}
+            className={RangePickerClass}
+          >
             {children}
             {this.renderCalendar()}
           </div>
