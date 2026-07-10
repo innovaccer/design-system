@@ -134,6 +134,9 @@ const HeaderCell = (props: HeaderCellProps) => {
     [styles['Grid-headCell--draggable']]: draggable,
   });
 
+  const hasHeadActions = Boolean((showFilters && filters) || showMenu);
+  const reserveResizeLaneForActions = flushResizeLane && hasHeadActions;
+
   const selectFilterOptions = filters
     ? filters.map((f) => ({
         label: f.label,
@@ -231,7 +234,12 @@ const HeaderCell = (props: HeaderCellProps) => {
               <Placeholder />
             </span>
           ) : (
-            <div>
+            <div
+              className={classNames({
+                [styles['Grid-headCellAction--reserveResizeLane']]:
+                  reserveResizeLaneForActions && !showMenu,
+              })}
+            >
               <FilterSelect
                 name={name}
                 displayName=""
@@ -266,9 +274,11 @@ const HeaderCell = (props: HeaderCellProps) => {
               <Placeholder />
             </span>
           ) : (
-            <div>
-              <Dropdown
-                key={`${name}-${sorted}-${pinned}`}
+            <div
+              className={classNames({
+                [styles['Grid-headCellAction--reserveResizeLane']]: reserveResizeLaneForActions && showMenu,
+              })}
+            >
                 menu={true}
                 optionType="WITH_ICON"
                 triggerOptions={{
