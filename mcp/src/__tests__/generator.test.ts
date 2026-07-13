@@ -131,7 +131,7 @@ describe('Pattern Extractor', () => {
 describe('Version Extractor', () => {
   it('extracts version from root package.json', () => {
     const version = extractVersion();
-    assert.equal(version.version, '4.20.0');
+    assert.match(version.version, /^\d+\.\d+\.\d+/, 'Expected a semver-like version string');
     assert.ok(version.generatedAt, 'Missing generatedAt');
   });
 });

@@ -2,7 +2,7 @@
   "manifest_version": "0.3",
   "name": "masala-design-system",
   "display_name": "Masala Design System (MDS)",
-  "version": "4.20.0",
+  "version": "5.0.0-26",
   "description": "MCP server for the Innovaccer Masala Design System. Provides tools for tokens, components, examples, patterns, helpers, and code validation.",
   "long_description": "The Masala Design System (MDS) MCP server enables AI coding tools to correctly use Innovaccer's design system.\n\n**This server is read-only and makes no network requests.** It only reads static JSON files bundled inside the extension itself — it does not access your files, environment variables, or the internet.\n\nIt provides 14 deterministic tools backed by static manifests — no AI inside. Tools cover design tokens, component props/variants/a11y, usage examples, UI patterns, CSS helper classes, and a code validator that checks for raw HTML controls, hardcoded colors, non-approved imports, and inline styles.",
   "author": {

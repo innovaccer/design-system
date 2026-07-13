@@ -1,6 +1,6 @@
 {
   "name": "@innovaccer/mds-mcp",
-  "version": "4.20.0",
+  "version": "5.0.0-26",
   "description": "MCP server for the Masala Design System",
   "type": "module",
   "main": "dist/index.js",
