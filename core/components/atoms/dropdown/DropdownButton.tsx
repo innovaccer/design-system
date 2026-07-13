@@ -109,6 +109,7 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
   return (
     <button
       ref={ref}
+      id={id}
       type="button"
       value={children}
       className={buttonClass}
