@@ -37,7 +37,8 @@ type hideColumnFn = (
 ) => void;
 
 export const resizeCol: resizeColFn = ({ updateColumnSchema }, name, el, startPageX, onEnd) => {
-  const startWidth = el?.getBoundingClientRect().width ?? 0;
+  const outerCell = el?.parentElement;
+  const startWidth = outerCell?.getBoundingClientRect().width ?? el?.getBoundingClientRect().width ?? 0;
 
   function resizable(ev: MouseEvent) {
     ev.preventDefault();
