@@ -519,7 +519,7 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
       const resolvedAriaLabelledby = inputOptions['aria-labelledby'] || this.props['aria-labelledby'];
       const triggerInputOptions = {
         ...inputOptions,
-        ...(resolvedAriaLabel ? { 'aria-label': resolvedAriaLabel } : {}),
+        ...(resolvedAriaLabel && !resolvedAriaLabelledby ? { 'aria-label': resolvedAriaLabel } : {}),
         ...(resolvedAriaLabelledby ? { 'aria-labelledby': resolvedAriaLabelledby } : {}),
       };
       return (

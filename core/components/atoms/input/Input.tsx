@@ -221,17 +221,11 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
   }, [type]);
 
   const [resolvedClearButtonAriaLabel, setResolvedClearButtonAriaLabel] = React.useState(() => {
-    if (ariaLabel) return `Clear ${ariaLabel}`;
     if (placeholder) return `Clear ${placeholder}`;
     return 'Clear input';
   });
 
   React.useLayoutEffect(() => {
-    if (ariaLabel) {
-      setResolvedClearButtonAriaLabel(`Clear ${ariaLabel}`);
-      return;
-    }
-
     if (ariaLabelledBy && typeof document !== 'undefined') {
       const labelledByText = ariaLabelledBy
         .split(/\s+/)
@@ -242,6 +236,11 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
         setResolvedClearButtonAriaLabel(`Clear ${labelledByText}`);
         return;
       }
+    }
+
+    if (ariaLabel) {
+      setResolvedClearButtonAriaLabel(`Clear ${ariaLabel}`);
+      return;
     }
 
     const inputId = rest.id as string | undefined;

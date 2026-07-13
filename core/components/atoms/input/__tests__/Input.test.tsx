@@ -495,6 +495,29 @@ describe('Input Component - Comprehensive Behavior Tests', () => {
       expect(clearButton).toBeInTheDocument();
     });
 
+    it('prefers aria-labelledby over aria-label in clear button aria-label', () => {
+      const onClearMock = jest.fn();
+      const { getByRole } = render(
+        <>
+          <Label id="dob-label" htmlFor="dob-input">
+            Date of Birth
+          </Label>
+          <Input
+            id="dob-input"
+            name="dob"
+            placeholder="MM/DD/YYYY"
+            value="01/01/2024"
+            onClear={onClearMock}
+            aria-label="Legacy label"
+            aria-labelledby="dob-label"
+          />
+        </>
+      );
+
+      const clearButton = getByRole('button', { name: 'Clear Date of Birth' });
+      expect(clearButton).toBeInTheDocument();
+    });
+
     it('uses associated label text in clear button aria-label when wired with htmlFor', () => {
       const onClearMock = jest.fn();
       const { getByRole } = render(

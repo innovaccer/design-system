@@ -663,19 +663,23 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
       const resolvedSingleAriaLabelledby = inputOptions['aria-labelledby'] || ariaLabelledBy;
       const mergedSingleInputOptions = {
         ...inputOptions,
-        ...(resolvedSingleAriaLabel ? { 'aria-label': resolvedSingleAriaLabel } : {}),
+        ...(resolvedSingleAriaLabel && !resolvedSingleAriaLabelledby ? { 'aria-label': resolvedSingleAriaLabel } : {}),
         ...(resolvedSingleAriaLabelledby ? { 'aria-labelledby': resolvedSingleAriaLabelledby } : {}),
       };
       const resolvedStartAriaLabelledby = startInputOptions['aria-labelledby'] || ariaLabelledBy;
       const mergedStartInputOptions = {
         ...startInputOptions,
-        ...(startInputOptions['aria-label'] ? { 'aria-label': startInputOptions['aria-label'] } : {}),
+        ...(startInputOptions['aria-label'] && !resolvedStartAriaLabelledby
+          ? { 'aria-label': startInputOptions['aria-label'] }
+          : {}),
         ...(resolvedStartAriaLabelledby ? { 'aria-labelledby': resolvedStartAriaLabelledby } : {}),
       };
       const resolvedEndAriaLabelledby = endInputOptions['aria-labelledby'] || ariaLabelledBy;
       const mergedEndInputOptions = {
         ...endInputOptions,
-        ...(endInputOptions['aria-label'] ? { 'aria-label': endInputOptions['aria-label'] } : {}),
+        ...(endInputOptions['aria-label'] && !resolvedEndAriaLabelledby
+          ? { 'aria-label': endInputOptions['aria-label'] }
+          : {}),
         ...(resolvedEndAriaLabelledby ? { 'aria-labelledby': resolvedEndAriaLabelledby } : {}),
       };
       const trigger = singleInput ? (
