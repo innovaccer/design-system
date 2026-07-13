@@ -14,6 +14,7 @@ type resizeColFn = (
   gridInfo: { updateColumnSchema: updateColumnSchemaFunction },
   name: ColumnSchema['name'],
   el: GridRef,
+  startPageX: number,
   onEnd?: () => void
 ) => void;
 type sortColumnFn = (
@@ -35,15 +36,14 @@ type hideColumnFn = (
   value: boolean
 ) => void;
 
-export const resizeCol: resizeColFn = ({ updateColumnSchema }, name, el, onEnd) => {
-  const elX = el?.getBoundingClientRect().x;
+export const resizeCol: resizeColFn = ({ updateColumnSchema }, name, el, startPageX, onEnd) => {
+  const startWidth = el?.getBoundingClientRect().width ?? 0;
+
   function resizable(ev: MouseEvent) {
     ev.preventDefault();
-    if (elX) {
-      updateColumnSchema(name, {
-        width: ev.pageX - elX,
-      });
-    }
+    updateColumnSchema(name, {
+      width: startWidth + (ev.pageX - startPageX),
+    });
   }
 
   const onMouseUp = () => {

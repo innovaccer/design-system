@@ -107,7 +107,7 @@ const HeaderCell = (props: HeaderCellProps) => {
     e.preventDefault();
     setIsResizing(true);
     setIsDragged(false);
-    resizeCol({ updateColumnSchema }, name, el.current, () => setIsResizing(false));
+    resizeCol({ updateColumnSchema }, name, el.current, e.pageX, () => setIsResizing(false));
   };
 
   const sortOptions: DropdownProps['options'] = [
