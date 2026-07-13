@@ -13,6 +13,10 @@ export type SelectTriggerSize = 'small' | 'regular';
 
 export interface SelectTriggerProps extends BaseProps {
   /**
+   * `id` for the trigger button; pair with a visible `<Label htmlFor={id}>`.
+   */
+  id?: string;
+  /**
    * Accessible label for the Select trigger button.
    * @default "Select trigger"
    */
