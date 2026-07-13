@@ -25,14 +25,14 @@ const customCode = `
       }
 
       return (
-        <div className="w-75">
+        <div className="w-100">
           <Card className="px-7 py-6">
             <Heading className="mb-6" size="s">Configure Initiative</Heading>
             <Heading size="s" className="mb-2">Population Filter</Heading>
-            <div className="d-flex mt-5 mb-4">
-              <div className="mr-6" style={{ width: 'var(--spacing-440)' }}>
+            <div className="d-flex flex-column mt-5 mb-4">
+              <div className="w-100 mb-4">
                 <Label withInput={true} id="time-period-region-label" htmlFor="time-period-region-select">Region</Label>
-                <Select width="100%" triggerOptions={{ id: "time-period-region-select", 'aria-labelledby': "time-period-region-label" }}>
+                <Select appendToBody width="100%" triggerOptions={{ id: "time-period-region-select", 'aria-labelledby': "time-period-region-label" }}>
                   <Select.List>
                     {options.map((item, key) => {
                       return (
@@ -44,9 +44,9 @@ const customCode = `
                   </Select.List>
                 </Select>
               </div>
-              <div style={{ width: 'var(--spacing-640)' }}>
+              <div className="w-100">
                 <Label withInput={true} id="time-period-organization-label" htmlFor="time-period-organization-select">Organization</Label>
-                <Select width="100%" triggerOptions={{ id: "time-period-organization-select", 'aria-labelledby': "time-period-organization-label" }}>
+                <Select appendToBody width="100%" triggerOptions={{ id: "time-period-organization-select", 'aria-labelledby': "time-period-organization-label" }}>
                   <Select.List>
                     {options.map((item, key) => {
                       return (
