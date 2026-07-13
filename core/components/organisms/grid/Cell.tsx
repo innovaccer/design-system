@@ -139,11 +139,18 @@ const HeaderCell = (props: HeaderCellProps) => {
   });
 
   const hasHeadActions = Boolean((showFilters && filters) || showMenu);
-  const reserveResizeLaneForActions = flushResizeLane && hasHeadActions;
+  const hasCustomHeader = Boolean(schema.headerCellRenderer);
+  const reserveResizeLaneForActions = flushResizeLane && (hasHeadActions || hasCustomHeader);
   const filterActionReserveClass =
-    reserveResizeLaneForActions && !showMenu ? styles['Grid-headCellAction--reserveResizeLane'] : undefined;
+    reserveResizeLaneForActions && showFilters && filters && !showMenu
+      ? styles['Grid-headCellAction--reserveResizeLane']
+      : undefined;
   const menuActionReserveClass =
     reserveResizeLaneForActions && showMenu ? styles['Grid-headCellAction--reserveResizeLane'] : undefined;
+  const contentFlushReserveClass =
+    reserveResizeLaneForActions && hasCustomHeader && !hasHeadActions
+      ? styles['Grid-headCellAction--reserveResizeLane']
+      : undefined;
 
   const selectFilterOptions = filters
     ? filters.map((f) => ({
@@ -207,7 +214,7 @@ const HeaderCell = (props: HeaderCellProps) => {
   return (
     <div key={name} className={classes} ref={el}>
       <div
-        className={styles['Grid-cellContent']}
+        className={classNames(styles['Grid-cellContent'], contentFlushReserveClass)}
         data-test="DesignSystem-Grid-cellContent"
         onClick={handleSortToggle}
         onKeyDown={(event: React.KeyboardEvent<HTMLDivElement>) => {
