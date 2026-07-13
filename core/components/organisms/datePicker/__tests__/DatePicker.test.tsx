@@ -173,7 +173,7 @@ describe('renders DatePicker component Event Handlers ', () => {
     );
     const closeIcon = getByTestId('DesignSystem-Input--closeIcon');
     fireEvent.click(closeIcon);
-    expect(getByTestId('DesignSystem-Input')).toHaveValue('**/**/****');
+    expect(getByTestId('DesignSystem-Input')).toHaveValue('');
   });
 
   it('checks for input field onChange event with empty date', async () => {
@@ -181,20 +181,20 @@ describe('renders DatePicker component Event Handlers ', () => {
     const input = getByTestId('DesignSystem-Input');
     fireEvent.change(input, { currentTarget: { value: '' } });
     fireEvent.blur(input);
-    expect(input).toHaveValue('__/__/____');
+    expect(input).toHaveValue('');
   });
 
   it('checks onBlur Event', () => {
     const { getByTestId } = render(<DatePicker onDateChange={FunctionValue} withInput={true} />);
     const input = getByTestId('DesignSystem-Input');
     fireEvent.blur(input);
-    expect(input).toHaveValue('__/__/____');
+    expect(input).toHaveValue('');
   });
   it('checks onFocus Event', () => {
     const { getByTestId } = render(<DatePicker onDateChange={FunctionValue} withInput={true} />);
     const input = getByTestId('DesignSystem-Input');
     fireEvent.focus(input);
-    expect(input).toHaveValue('__/__/____');
+    expect(input).toHaveValue('');
   });
   it('checks for input field onError event', () => {
     const { getByTestId } = render(

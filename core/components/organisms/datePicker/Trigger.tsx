@@ -91,6 +91,7 @@ export const Trigger = (props: TriggerProps) => {
   const { placeholderChar = '_', label, ...inputMaskOptions } = inputOptions;
   const fieldIdRef = React.useRef<string>(`DatePicker-input-${uidGenerator()}`);
   const fieldId = inputOptions.id || fieldIdRef.current;
+  const labelId = `${fieldId}-label`;
 
   const onPasteHandler = (_e: React.ClipboardEvent<HTMLInputElement>, val?: string) => {
     const { onPaste } = inputOptions;
@@ -160,6 +161,7 @@ export const Trigger = (props: TriggerProps) => {
     <div className="w-100" onMouseDown={() => onTriggerPointerDown?.()}>
       {label && (
         <Label
+          id={labelId}
           required={inputOptions.required}
           withInput={true}
           htmlFor={fieldId}
@@ -177,13 +179,7 @@ export const Trigger = (props: TriggerProps) => {
         id={fieldId}
         error={showError}
         mask={mask}
-        value={
-          date
-            ? translateToString(inputFormat, date)
-            : init
-            ? InputMask.utils.getDefaultValue(mask, placeholderChar)
-            : ''
-        }
+        value={date ? translateToString(inputFormat, date) : ''}
         onChange={onChangeHandler}
         onPaste={onPasteHandler}
         onBlur={onBlurHandler}
@@ -194,11 +190,13 @@ export const Trigger = (props: TriggerProps) => {
         validators={[inputValidator]}
         clearOnEmptyBlur={true}
         useDefaultValueOnEmpty={true}
+        fillTemplateOnFocus={false}
         ref={triggerRef}
         role="combobox"
         aria-haspopup="dialog"
         aria-expanded={open}
         aria-controls={panelId}
+        aria-labelledby={label ? labelId : inputMaskOptions['aria-labelledby']}
       />
     </div>
   );
