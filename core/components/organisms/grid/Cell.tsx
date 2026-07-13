@@ -260,7 +260,6 @@ const HeaderCell = (props: HeaderCellProps) => {
                 customTrigger={
                   <Button
                     size="tiny"
-                    largeIcon
                     icon="filter_list"
                     appearance="transparent"
                     aria-label={`Filter ${schema.displayName} column`}
@@ -287,7 +286,6 @@ const HeaderCell = (props: HeaderCellProps) => {
                   customTrigger: () => (
                     <Button
                       size="tiny"
-                      largeIcon
                       icon="more_vert_filled"
                       appearance="transparent"
                       aria-label={`More options for ${schema.displayName} column`}
