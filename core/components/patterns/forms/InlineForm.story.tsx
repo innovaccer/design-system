@@ -49,8 +49,9 @@ const customCode = `
             <form onSubmit={this.onSubmit}>
               <div className="d-flex flex-wrap">
                 <div className="mr-6 mb-6">
-                  <Label withInput={true}>Last Name</Label>
+                  <Label withInput={true} htmlFor="inline-lastName">Last Name</Label>
                   <Input
+                    id="inline-lastName"
                     name="lastName"
                     type="text"
                     placeholder="E.g. Doe, Smith, etc."
@@ -60,8 +61,9 @@ const customCode = `
                   />
                 </div>
                 <div className="mr-6 mb-6">
-                  <Label withInput={true}>First Name</Label>
+                  <Label withInput={true} htmlFor="inline-firstName">First Name</Label>
                   <Input
+                    id="inline-firstName"
                     name="firstName"
                     type="text"
                     placeholder="E.g. John, Will, etc."
@@ -71,8 +73,8 @@ const customCode = `
                   />
                 </div>
                 <div className="mr-6 mb-6">
-                  <Label withInput={true}>Gender</Label>
-                  <div className="d-flex" role="group" aria-label="Gender">
+                  <Label withInput={true} id="inline-gender-label">Gender</Label>
+                  <div className="d-flex" role="group" aria-labelledby="inline-gender-label">
                     <Button className="mr-3" selected={this.state.data.gender === 'Male'} onClick={() => this.onChange('Male', 'gender')}>Male</Button>
                     <Button className="mr-3" selected={this.state.data.gender === 'Female'} onClick={() => this.onChange('Female', 'gender')}>Female</Button>
                     <Button className="mr-3" selected={this.state.data.gender === 'Other'} onClick={() => this.onChange('Other', 'gender')}>Other</Button>
@@ -80,9 +82,10 @@ const customCode = `
                   </div>
                 </div>
                 <div className="mr-6 mb-6" style={{ width: 'var(--spacing-640)' }}>
-                  <Label withInput={true}>Date of Birth</Label>
+                  <Label withInput={true} id="inline-dob-label">Date of Birth</Label>
                   <DatePicker
                     withInput={true}
+                    aria-labelledby="inline-dob-label"
                     onDateChange={(currentDate) => this.onChange(currentDate, 'date')}
                     inputOptions={{
                       placeholder: 'MM/DD/YYYY',
@@ -93,8 +96,9 @@ const customCode = `
                   />
                 </div>
                 <div className="mr-6 mb-6">
-                  <Label withInput={true}>EMPI</Label>
+                  <Label withInput={true} htmlFor="inline-empi">EMPI</Label>
                   <Input
+                    id="inline-empi"
                     name="empi"
                     type="text"
                     placeholder="P000000"
@@ -104,8 +108,9 @@ const customCode = `
                   />
                 </div>
                 <div className="mr-6 mb-6">
-                  <Label withInput={true}>MRN</Label>
+                  <Label withInput={true} htmlFor="inline-mrn">MRN</Label>
                   <Input
+                    id="inline-mrn"
                     name="mrn"
                     type="text"
                     placeholder="Medical Record Number"
@@ -115,8 +120,9 @@ const customCode = `
                   />
                 </div>
                 <div className="mr-6 mb-6">
-                  <Label withInput={true}>ZIP</Label>
+                  <Label withInput={true} htmlFor="inline-zip">ZIP</Label>
                   <Input
+                    id="inline-zip"
                     name="zip"
                     type="text"
                     placeholder="00000"
@@ -126,11 +132,11 @@ const customCode = `
                   />
                 </div>
                 <div className="mr-6 mb-6" style={{ width: 'var(--spacing-640)' }}>
-                  <Label withInput={true}>Primary Care Physician</Label>
+                  <Label withInput={true} id="inline-pcp-label" htmlFor="inline-pcp-select">Primary Care Physician</Label>
                   <Select
                     width="100%"
                     onSelect={(option) => this.onChange(option.value, 'pcp')}
-                    triggerOptions={{ placeholder: "Select physician…", icon: "add_box", 'aria-label': "Primary Care Physician" }}
+                    triggerOptions={{ id: "inline-pcp-select", placeholder: "Select physician…", icon: "add_box", 'aria-labelledby': "inline-pcp-label" }}
                   >
                     <Select.List>
                       {options.map((item, key) => {
@@ -144,11 +150,11 @@ const customCode = `
                   </Select>
                 </div>
                 <div className="mr-6 mb-6" style={{ width: 'var(--spacing-640)' }}>
-                  <Label withInput={true}>Region</Label>
+                  <Label withInput={true} id="inline-region-label" htmlFor="inline-region-select">Region</Label>
                   <Select
                     width="100%"
                     onSelect={(option) => this.onChange(option.value, 'region')}
-                    triggerOptions={{ placeholder: "Select region…", icon: "flag", 'aria-label': "Region" }}
+                    triggerOptions={{ id: "inline-region-select", placeholder: "Select region…", icon: "flag", 'aria-labelledby': "inline-region-label" }}
                   >
                     <Select.List>
                       {options.map((item, key) => {
