@@ -379,11 +379,11 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
   const onClearHandler = React.useCallback(
     (e: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>) => {
       newSelectionPos.current = defaultSelection.start;
-      setValue(defaultPlaceholderValue);
+      setValue(fillTemplateOnFocus ? defaultPlaceholderValue : '');
 
       onClear?.(e);
     },
-    [setValue, getPlaceholderValue, setCursorPosition, getDefaultSelection, onClear]
+    [setValue, defaultPlaceholderValue, defaultSelection, fillTemplateOnFocus, onClear]
   );
 
   const onFocusHandler = React.useCallback(
