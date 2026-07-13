@@ -174,6 +174,25 @@ describe('Select trigger accessibility for error and descriptions', () => {
     );
     expect(getByTestId('DesignSystem-Select-trigger')).toHaveAttribute('aria-describedby', 'opt-hint');
   });
+
+  it('uses aria-labelledby instead of aria-label and hides placeholder text from assistive tech', () => {
+    const { getByTestId } = render(
+      <Select
+        onSelect={FunctionValue}
+        triggerOptions={{
+          id: 'region-select',
+          placeholder: 'Select region…',
+          'aria-labelledby': 'region-label',
+        }}
+      >
+        {children}
+      </Select>
+    );
+    const trigger = getByTestId('DesignSystem-Select-trigger');
+    expect(trigger).toHaveAttribute('aria-labelledby', 'region-label');
+    expect(trigger).not.toHaveAttribute('aria-label');
+    expect(trigger.querySelector('span[aria-hidden="true"]')).toHaveTextContent('Select region…');
+  });
 });
 
 describe('Select component single input trigger tests', () => {

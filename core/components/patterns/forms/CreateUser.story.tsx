@@ -99,11 +99,11 @@ const customCode = `
                 />
               </Column>
               <Column sizeXL={4} sizeL={4} sizeM={5} className="mr-6 mb-6">
-                <Label withInput={true}>Gender</Label>
+                <Label withInput={true} id="createUser-gender-label" htmlFor="createUser-gender-select">Gender</Label>
                 <Select 
                   width="100%"
                   onSelect={(option) => this.onChange(option.value, 'gender')}
-                  triggerOptions={{ placeholder: "Select Gender", 'aria-label': "Gender", }}
+                  triggerOptions={{ id: "createUser-gender-select", placeholder: "Select Gender", 'aria-labelledby': "createUser-gender-label", }}
                 >
                   <Select.List>
                     {genderOptions.map((item, key) => {
@@ -153,11 +153,11 @@ const customCode = `
                 />
               </Column>
               <Column sizeXL={4} sizeL={4} sizeM={5} className="mr-6 mb-6">
-                <Label withInput={true}>User Type</Label>
+                <Label withInput={true} id="createUser-userType-label" htmlFor="createUser-userType-select">User Type</Label>
                 <Select 
                   width="100%"
                   onSelect={(option) => this.onChange(option.value, 'userType')}
-                  triggerOptions={{ placeholder: "Select User Type", 'aria-label': "User Type", }}
+                  triggerOptions={{ id: "createUser-userType-select", placeholder: "Select User Type", 'aria-labelledby': "createUser-userType-label", }}
                 >
                   <Select.List>
                     {userOptions.map((item, key) => {

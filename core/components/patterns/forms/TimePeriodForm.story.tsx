@@ -31,8 +31,8 @@ const customCode = `
             <Heading size="s" className="mb-2">Population Filter</Heading>
             <div className="d-flex mt-5 mb-4">
               <div className="mr-6" style={{ width: 'var(--spacing-440)' }}>
-                <Label withInput={true}>Region</Label>
-                <Select width="100%" triggerOptions={{ 'aria-label': "Region" }}>
+                <Label withInput={true} id="time-period-region-label" htmlFor="time-period-region-select">Region</Label>
+                <Select width="100%" triggerOptions={{ id: "time-period-region-select", 'aria-labelledby': "time-period-region-label" }}>
                   <Select.List>
                     {options.map((item, key) => {
                       return (
@@ -45,8 +45,8 @@ const customCode = `
                 </Select>
               </div>
               <div style={{ width: 'var(--spacing-640)' }}>
-                <Label withInput={true}>Organization</Label>
-                <Select width="100%" triggerOptions={{ 'aria-label': "Organization" }}>
+                <Label withInput={true} id="time-period-organization-label" htmlFor="time-period-organization-select">Organization</Label>
+                <Select width="100%" triggerOptions={{ id: "time-period-organization-select", 'aria-labelledby': "time-period-organization-label" }}>
                   <Select.List>
                     {options.map((item, key) => {
                       return (

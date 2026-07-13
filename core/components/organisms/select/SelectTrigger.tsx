@@ -18,6 +18,10 @@ export interface SelectTriggerProps extends BaseProps {
    */
   'aria-label'?: string;
   /**
+   * Associates the trigger with a visible label element (preferred over `aria-label`).
+   */
+  'aria-labelledby'?: string;
+  /**
    * Ids of supplementary description or help text (space-separated).
    */
   'aria-describedby'?: string;
@@ -88,7 +92,8 @@ export interface SelectTriggerProps extends BaseProps {
 const SelectTrigger = (props: SelectTriggerProps) => {
   const {
     triggerSize = 'regular',
-    'aria-label': ariaLabel = 'Select trigger',
+    'aria-label': ariaLabelProp,
+    'aria-labelledby': ariaLabelledBy,
     placeholder,
     withClearButton,
     icon,
@@ -103,6 +108,8 @@ const SelectTrigger = (props: SelectTriggerProps) => {
     'aria-controls': ariaControls,
     ...rest
   } = props;
+
+  const ariaLabel = ariaLabelledBy ? undefined : ariaLabelProp ?? 'Select trigger';
 
   const contextProp = React.useContext(SelectContext);
   const elementRef = React.useRef(null);
@@ -122,6 +129,8 @@ const SelectTrigger = (props: SelectTriggerProps) => {
     styleType,
     error,
   } = contextProp;
+
+  const hidePlaceholderFromA11y = !isOptionSelected && !!(ariaLabelledBy || ariaLabelProp);
 
   const buttonDisabled = disabled ? 'disabled' : 'default';
   const trimmedPlaceholder = placeholder?.trim();
@@ -194,6 +203,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
         aria-expanded={openPopover}
         aria-haspopup="listbox"
         aria-label={ariaLabel}
+        aria-labelledby={ariaLabelledBy}
         data-test="DesignSystem-Select-trigger"
         {...rest}
       >
@@ -215,7 +225,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
               />
             )}
             {value && (
-              <span ref={elementRef} className={textClass}>
+              <span ref={elementRef} className={textClass} aria-hidden={hidePlaceholderFromA11y || undefined}>
                 {value}
               </span>
             )}
