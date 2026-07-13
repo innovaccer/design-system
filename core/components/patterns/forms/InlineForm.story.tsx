@@ -82,12 +82,13 @@ const customCode = `
                   </div>
                 </div>
                 <div className="mr-6 mb-6" style={{ width: 'var(--spacing-640)' }}>
-                  <Label withInput={true} id="inline-dob-label">Date of Birth</Label>
+                  <Label withInput={true} id="inline-dob-label" htmlFor="inline-dob">Date of Birth</Label>
                   <DatePicker
                     withInput={true}
                     aria-labelledby="inline-dob-label"
                     onDateChange={(currentDate) => this.onChange(currentDate, 'date')}
                     inputOptions={{
+                      id: 'inline-dob',
                       placeholder: 'MM/DD/YYYY',
                       icon: 'cake',
                       autoComplete: 'bday',
