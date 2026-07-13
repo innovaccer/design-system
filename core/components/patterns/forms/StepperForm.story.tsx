@@ -174,6 +174,8 @@ const customCode = `
                     id="prefix-input"
                     mask={[/\\d/, '_', /\\d/, '_', /\\d/]}
                     name="prefix"
+                    required
+                    aria-label="Prefix (required) ID_ID_ID"
                     placeholder="ID_ID_ID"
                     placeholderChar="-"
                     onChange={(e) => this.onChangeOutput(e.target.value, e.target.name)}
