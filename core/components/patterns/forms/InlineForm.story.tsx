@@ -80,11 +80,11 @@ const customCode = `
                   </div>
                 </div>
                 <div className="mr-6 mb-6" style={{ width: 'var(--spacing-640)' }}>
-                  <Label withInput={true}>Date of Birth</Label>
                   <DatePicker
                     withInput={true}
                     onDateChange={(currentDate) => this.onChange(currentDate, 'date')}
                     inputOptions={{
+                      label: 'Date of Birth',
                       placeholder: 'MM/DD/YYYY',
                       icon: 'cake',
                       mask: [/\\d/, /\\d/, '/', /\\d/, /\\d/, '/', /\\d/, /\\d/, /\\d/, /\\d/]

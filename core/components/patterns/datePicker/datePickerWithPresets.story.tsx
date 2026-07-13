@@ -53,7 +53,7 @@ const customCode = `() => {
     const selectedPreset = presets.find((p) => p.value === selectedChip);
 
     return (
-      <DatePicker date={date} showTodayDate={false} size={size} withInput={withInput}>
+      <DatePicker date={date} showTodayDate={false} size={size} withInput={withInput} inputOptions={withInput ? { label: 'Set an appointment date' } : undefined}>
         <div className="pt-6 px-5">
           <div className="d-flex align-items-center justify-content-between">
             <Subheading size="s" appearance="subtle">
@@ -112,7 +112,6 @@ const customCode = `() => {
         <DatePickerPreset size="small" />
       </Card>
       <Card className="w-50 my-5 p-5">
-        <Label>Set an appointment date:</Label>
         <DatePickerPreset withInput={true} />
       </Card>
     </>

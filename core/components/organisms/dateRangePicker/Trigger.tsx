@@ -263,6 +263,8 @@ export const Trigger = (props: TriggerProps) => {
   const endFieldIdRef = React.useRef<string>(`DateRangePicker-endInput-${uidGenerator()}`);
   const startFieldId = startInputOptions.id || startFieldIdRef.current;
   const endFieldId = endInputOptions.id || endFieldIdRef.current;
+  const startLabelId = `${startFieldId}-label`;
+  const endLabelId = `${endFieldId}-label`;
   const inputValidator = (val: string): boolean => {
     return Utils.validators.isValid(validators, val, inputFormat);
   };
@@ -284,6 +286,7 @@ export const Trigger = (props: TriggerProps) => {
         <Column size={'6'} sizeXS={'12'} className={StartInputClassName}>
           {startLabel && (
             <Label
+              id={startLabelId}
               required={startInputOptions.required}
               withInput={true}
               htmlFor={startFieldId}
@@ -331,16 +334,19 @@ export const Trigger = (props: TriggerProps) => {
             caption={showStartError ? startErrorMessage : ''}
             validators={[inputValidator]}
             clearOnEmptyBlur={true}
+            fillTemplateOnFocus={false}
             ref={startTriggerRef}
             role="combobox"
             aria-haspopup="dialog"
             aria-expanded={open}
             aria-controls={panelId}
+            aria-labelledby={startLabel ? startLabelId : startInputOptions['aria-labelledby']}
           />
         </Column>
         <Column size={'6'} sizeXS={'12'} className={EndInputClassName}>
           {endLabel && (
             <Label
+              id={endLabelId}
               required={endInputOptions.required}
               withInput={true}
               htmlFor={endFieldId}
@@ -386,11 +392,13 @@ export const Trigger = (props: TriggerProps) => {
             caption={showEndError ? endErrorMessage : ''}
             validators={[inputValidator]}
             clearOnEmptyBlur={true}
+            fillTemplateOnFocus={false}
             ref={endTriggerRef}
             role="combobox"
             aria-haspopup="dialog"
             aria-expanded={open}
             aria-controls={panelId}
+            aria-labelledby={endLabel ? endLabelId : endInputOptions['aria-labelledby']}
           />
         </Column>
       </Row>

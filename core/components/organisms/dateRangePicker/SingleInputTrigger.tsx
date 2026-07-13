@@ -81,6 +81,7 @@ export const SingleInputTrigger = (props: TriggerProps) => {
   const { placeholderChar = '_' } = inputOptions;
   const fieldIdRef = React.useRef<string>(`DateRangePicker-singleInput-${uidGenerator()}`);
   const fieldId = inputOptions.id || fieldIdRef.current;
+  const labelId = `${fieldId}-label`;
   const defaultValue = InputMask.utils.getDefaultValue(mask, placeholderChar).split(' - ');
   const sValue = startValue || defaultValue[0];
   const eValue = endValue || defaultValue[1];
@@ -210,6 +211,7 @@ export const SingleInputTrigger = (props: TriggerProps) => {
         <Column>
           {label && (
             <Label
+              id={labelId}
               required={inputOptions.required}
               withInput={true}
               htmlFor={fieldId}
@@ -247,11 +249,13 @@ export const SingleInputTrigger = (props: TriggerProps) => {
             caption={showError ? errorMessage : ''}
             validators={[inputValidator]}
             clearOnEmptyBlur={true}
+            fillTemplateOnFocus={false}
             ref={triggerRef}
             role="combobox"
             aria-haspopup="dialog"
             aria-expanded={open}
             aria-controls={panelId}
+            aria-labelledby={label ? labelId : inputOptions['aria-labelledby']}
           />
         </Column>
       </Row>
