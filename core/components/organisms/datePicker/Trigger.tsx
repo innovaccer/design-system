@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { InputMask, Utils } from '@/index';
+import { InputMask, Label, Utils } from '@/index';
 import { translateToDate, translateToString } from '../calendar/utility';
 import { DatePickerProps, DatePickerState } from './DatePicker';
+import uidGenerator from '@/utils/uidGenerator';
 
 type TriggerProps = {
   inputFormat: DatePickerProps['inputFormat'];
@@ -87,7 +88,9 @@ export const Trigger = (props: TriggerProps) => {
 
   const { init, date, error } = state;
 
-  const { placeholderChar = '_' } = inputOptions;
+  const { placeholderChar = '_', label, ...inputMaskOptions } = inputOptions;
+  const fieldIdRef = React.useRef<string>(`DatePicker-input-${uidGenerator()}`);
+  const fieldId = inputOptions.id || fieldIdRef.current;
 
   const onPasteHandler = (_e: React.ClipboardEvent<HTMLInputElement>, val?: string) => {
     const { onPaste } = inputOptions;
@@ -155,10 +158,23 @@ export const Trigger = (props: TriggerProps) => {
     // Capture pointer on trigger chrome (icon/wrapper) for focus-trap routing.
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div className="w-100" onMouseDown={() => onTriggerPointerDown?.()}>
+      {label && (
+        <Label
+          required={inputOptions.required}
+          withInput={true}
+          htmlFor={fieldId}
+          onMouseDown={() => {
+            if (!inputOptions.readOnly) onInputMouseDown?.();
+          }}
+        >
+          {label}
+        </Label>
+      )}
       <InputMask
         icon="events"
         placeholder={inputFormat}
-        {...inputOptions}
+        {...inputMaskOptions}
+        id={fieldId}
         error={showError}
         mask={mask}
         value={

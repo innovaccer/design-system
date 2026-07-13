@@ -45,10 +45,10 @@ const customCode = `
       return (
         <div className="d-flex">
           <div className="d-flex flex-column">
-            <Label withInput>Date</Label>
             <DatePicker
               withInput={true}
               onDateChange={this.onDateChange.bind(this)}
+              inputOptions={{ label: 'Date' }}
             />
           </div>
           <div className="d-flex flex-column ml-5" style={{width: 'var(--spacing-440)'}}>

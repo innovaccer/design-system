@@ -31,13 +31,13 @@ const customCode = `
             <Heading size="s" className="mb-2">Population Filter</Heading>
             <div className="d-flex mt-5 mb-4">
               <div className="mr-6" style={{ width: 'var(--spacing-440)' }}>
-                <Label withInput={true}>Region</Label>
-                <Select width="100%" triggerOptions={{ 'aria-label': "Region" }}>
+                <Label withInput={true} htmlFor="time-period-region-select">Region</Label>
+                <Select width="100%" triggerOptions={{ id: "time-period-region-select", 'aria-label': "Region" }}>
                   <Select.List>
                     {options.map((item, key) => {
                       return (
-                        <Select.Option key={key} option={{ label: item.label, value: item.value }}> 
-                          {item.label} 
+                        <Select.Option key={key} option={{ label: item.label, value: item.value }} aria-label={\`Region option \${item.label}\`}>
+                          {item.label}
                         </Select.Option>
                       )
                     })}
@@ -45,13 +45,13 @@ const customCode = `
                 </Select>
               </div>
               <div style={{ width: 'var(--spacing-640)' }}>
-                <Label withInput={true}>Organization</Label>
-                <Select width="100%" triggerOptions={{ 'aria-label': "Organization" }}>
+                <Label withInput={true} htmlFor="time-period-organization-select">Organization</Label>
+                <Select width="100%" triggerOptions={{ id: "time-period-organization-select", 'aria-label': "Organization" }}>
                   <Select.List>
                     {options.map((item, key) => {
                       return (
-                        <Select.Option key={key} option={{ label: item.label, value: item.value }}> 
-                          {item.label} 
+                        <Select.Option key={key} option={{ label: item.label, value: item.value }} aria-label={\`Organization option \${item.label}\`}>
+                          {item.label}
                         </Select.Option>
                       )
                     })}
