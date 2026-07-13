@@ -100,9 +100,10 @@
   color: inherit;
 }
 
-/* Last resizable column: nudge header actions left so flush resize lane does not cover them. */
+/* Last resizable column: nudge header actions left so flush resize lane does not cover them.
+   Head cells already have 8px padding-right; reserve 16px more to clear the in-cell 16px of the 24px lane. */
 .Grid-headCellAction--reserveResizeLane {
-  margin-right: var(--spacing-60);
+  margin-right: var(--spacing-40);
 }
 
 .Grid-body {
