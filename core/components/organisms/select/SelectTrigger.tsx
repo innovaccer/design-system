@@ -158,8 +158,9 @@ const SelectTrigger = (props: SelectTriggerProps) => {
 
   const clearButtonAriaLabel =
     clearButtonAriaLabelProp ??
+    (ariaLabelledBy && labelledByText ? `Clear ${labelledByText}` : undefined) ??
     (ariaLabelProp && ariaLabelProp !== 'Select trigger' ? `Clear ${ariaLabelProp}` : undefined) ??
-    (labelledByText ? `Clear ${labelledByText}` : 'Clear selection');
+    'Clear selection';
 
   const buttonDisabled = disabled ? 'disabled' : 'default';
   const trimmedPlaceholder = placeholder?.trim();

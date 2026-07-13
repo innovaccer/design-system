@@ -215,6 +215,29 @@ describe('Select trigger accessibility for error and descriptions', () => {
 
     expect(getByTestId('DesignSystem-Select--closeIcon')).toHaveAttribute('aria-label', 'Clear Region');
   });
+
+  it('prefers visible label over aria-label for clear button when both are set', () => {
+    const { getByTestId } = render(
+      <>
+        <label id="region-label" htmlFor="region-select">
+          Region
+        </label>
+        <Select
+          onSelect={FunctionValue}
+          value={{ label: 'Option 1', value: 'Option 1' }}
+          triggerOptions={{
+            id: 'region-select',
+            'aria-label': 'Stale fallback label',
+            'aria-labelledby': 'region-label',
+          }}
+        >
+          {children}
+        </Select>
+      </>
+    );
+
+    expect(getByTestId('DesignSystem-Select--closeIcon')).toHaveAttribute('aria-label', 'Clear Region');
+  });
 });
 
 describe('Select component single input trigger tests', () => {
