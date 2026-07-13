@@ -1,0 +1,22 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "typeRoots": ["./typestubs", "./node_modules/@types"]
+  },
+  "include": ["core/**/*.ts", "core/**/*.tsx"],
+  "exclude": [
+    "node_modules",
+    "**/__stories__/**",
+    "**/__tests__/**",
+    "**/__test__/**",
+    "**/_tests_/**",
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "**/*.spec.ts",
+    "**/*.spec.tsx",
+    "core/utils/docPage/**",
+    "core/utils/storybookEventEmitter.ts",
+    "core/utils/testAxe.ts",
+    "core/utils/testHelper.ts"
+  ]
+}

@@ -97,7 +97,7 @@ export const Trigger = (props: TriggerProps) => {
       caption={showError ? errorMessage : ''}
       validators={[inputValidator]}
       clearOnEmptyBlur={true}
-      id="parent-DatePicker"
+      useDefaultValueOnEmpty={true}
     />
   );
 };

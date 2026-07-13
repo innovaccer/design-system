@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import MdsGrid from '../MdsGrid';
 import { GridColumnSpan, GridRowSpan, GridJustifySelf, GridAlignSelf } from '../GridItem';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -154,5 +155,17 @@ describe('GridItem component specifics', () => {
         expect(getByTestId('DesignSystem-MdsGridItem')).toHaveClass(`MdsGridItem-alignSelf--${align}`);
       });
     });
+  });
+});
+
+describe('GridItem component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(
+      <MdsGrid>
+        <MdsGrid.GridItem>Grid Item Content</MdsGrid.GridItem>
+      </MdsGrid>
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

@@ -11,9 +11,8 @@ exports[`ChatBubble component snapshot
         data-test="DesignSystem-Chat"
       >
         <div
-          aria-labelledby="chat-bubble-header"
           data-test="DesignSystem-ChatBubble-IncomingWrapper"
-          role="group"
+          role="article"
         >
           <div
             class="Row d-flex align-items-center mb-3 ChatBubble-metaData--incoming"
@@ -26,6 +25,7 @@ exports[`ChatBubble component snapshot
               John Doe
             </span>
             <span
+              aria-hidden="true"
               class="ChatBubble-separator"
               data-test="DesignSystem-IncomingChatBubble-Separator"
             />
@@ -37,6 +37,7 @@ exports[`ChatBubble component snapshot
               1:00 AM
             </span>
             <span
+              aria-hidden="true"
               class="ChatBubble-separator"
               data-test="DesignSystem-IncomingChatBubble-Separator"
             />
@@ -48,6 +49,7 @@ exports[`ChatBubble component snapshot
               Meta Data
             </span>
             <span
+              aria-hidden="true"
               class="ChatBubble-separator"
               data-test="DesignSystem-IncomingChatBubble-Separator"
             />
@@ -100,7 +102,7 @@ exports[`ChatBubble component snapshot
               </div>
             </div>
             <div
-              class="Col ChatBubble-actionBarWrapper"
+              class="Col ChatBubble-actionBarWrapper ChatBubble-actionBarWrapper--hidden"
               data-test="DesignSystem-Column"
             />
           </div>
@@ -113,9 +115,8 @@ exports[`ChatBubble component snapshot
       data-test="DesignSystem-Chat"
     >
       <div
-        aria-labelledby="chat-bubble-header"
         data-test="DesignSystem-ChatBubble-IncomingWrapper"
-        role="group"
+        role="article"
       >
         <div
           class="Row d-flex align-items-center mb-3 ChatBubble-metaData--incoming"
@@ -128,6 +129,7 @@ exports[`ChatBubble component snapshot
             John Doe
           </span>
           <span
+            aria-hidden="true"
             class="ChatBubble-separator"
             data-test="DesignSystem-IncomingChatBubble-Separator"
           />
@@ -139,6 +141,7 @@ exports[`ChatBubble component snapshot
             1:00 AM
           </span>
           <span
+            aria-hidden="true"
             class="ChatBubble-separator"
             data-test="DesignSystem-IncomingChatBubble-Separator"
           />
@@ -150,6 +153,7 @@ exports[`ChatBubble component snapshot
             Meta Data
           </span>
           <span
+            aria-hidden="true"
             class="ChatBubble-separator"
             data-test="DesignSystem-IncomingChatBubble-Separator"
           />
@@ -202,7 +206,7 @@ exports[`ChatBubble component snapshot
             </div>
           </div>
           <div
-            class="Col ChatBubble-actionBarWrapper"
+            class="Col ChatBubble-actionBarWrapper ChatBubble-actionBarWrapper--hidden"
             data-test="DesignSystem-Column"
           />
         </div>
@@ -274,10 +278,9 @@ exports[`ChatBubble component snapshot
         data-test="DesignSystem-Chat"
       >
         <div
-          aria-labelledby="chat-bubble-header"
           class="d-flex align-items-end w-100"
           data-test="DesignSystem-ChatBubble-OutgoingWrapper"
-          role="group"
+          role="article"
         >
           <div
             class="ChatBubble-box"
@@ -294,6 +297,7 @@ exports[`ChatBubble component snapshot
                 1:00 AM
               </span>
               <span
+                aria-hidden="true"
                 class="ChatBubble-separator"
                 data-test="DesignSystem-OutgoingChatBubble-Separator"
               />
@@ -305,6 +309,7 @@ exports[`ChatBubble component snapshot
                 Meta Data
               </span>
               <span
+                aria-hidden="true"
                 class="ChatBubble-separator"
                 data-test="DesignSystem-OutgoingChatBubble-Separator"
               />
@@ -323,7 +328,7 @@ exports[`ChatBubble component snapshot
               data-test="DesignSystem-OutgoingChatBubble-Wrapper"
             >
               <div
-                class="Col ChatBubble-actionBarWrapper"
+                class="Col ChatBubble-actionBarWrapper ChatBubble-actionBarWrapper--hidden"
                 data-test="DesignSystem-Column"
               />
               <div
@@ -343,6 +348,7 @@ exports[`ChatBubble component snapshot
             aria-label="Message sent successfully"
             class="material-symbols material-symbols-rounded Icon Icon--success ml-3"
             data-test="DesignSystem-OutgoingChatBubble-Status"
+            role="img"
             style="font-size: 16px; width: 16px;"
           >
             check_circle
@@ -356,10 +362,9 @@ exports[`ChatBubble component snapshot
       data-test="DesignSystem-Chat"
     >
       <div
-        aria-labelledby="chat-bubble-header"
         class="d-flex align-items-end w-100"
         data-test="DesignSystem-ChatBubble-OutgoingWrapper"
-        role="group"
+        role="article"
       >
         <div
           class="ChatBubble-box"
@@ -376,6 +381,7 @@ exports[`ChatBubble component snapshot
               1:00 AM
             </span>
             <span
+              aria-hidden="true"
               class="ChatBubble-separator"
               data-test="DesignSystem-OutgoingChatBubble-Separator"
             />
@@ -387,6 +393,7 @@ exports[`ChatBubble component snapshot
               Meta Data
             </span>
             <span
+              aria-hidden="true"
               class="ChatBubble-separator"
               data-test="DesignSystem-OutgoingChatBubble-Separator"
             />
@@ -405,7 +412,7 @@ exports[`ChatBubble component snapshot
             data-test="DesignSystem-OutgoingChatBubble-Wrapper"
           >
             <div
-              class="Col ChatBubble-actionBarWrapper"
+              class="Col ChatBubble-actionBarWrapper ChatBubble-actionBarWrapper--hidden"
               data-test="DesignSystem-Column"
             />
             <div
@@ -425,6 +432,7 @@ exports[`ChatBubble component snapshot
           aria-label="Message sent successfully"
           class="material-symbols material-symbols-rounded Icon Icon--success ml-3"
           data-test="DesignSystem-OutgoingChatBubble-Status"
+          role="img"
           style="font-size: 16px; width: 16px;"
         >
           check_circle

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import Checkbox, { CheckboxProps as Props } from '../Checkbox';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
@@ -163,5 +164,23 @@ describe('Checkbox component accessibility', () => {
   it('sets aria-checked to mixed when indeterminate', () => {
     const { getByTestId } = render(<Checkbox label={StringValue} indeterminate={true} />);
     expect(getByTestId('DesignSystem-Checkbox-InputBox')).toHaveAttribute('aria-checked', 'mixed');
+  });
+
+  it('forwards aria-label to the input element', () => {
+    const { getByTestId } = render(<Checkbox aria-label="Accept terms" />);
+    expect(getByTestId('DesignSystem-Checkbox-InputBox')).toHaveAttribute('aria-label', 'Accept terms');
+  });
+
+  it('forwards aria-labelledby to the input element', () => {
+    const { getByTestId } = render(<Checkbox aria-labelledby="external-label" />);
+    expect(getByTestId('DesignSystem-Checkbox-InputBox')).toHaveAttribute('aria-labelledby', 'external-label');
+  });
+});
+
+describe('Checkbox component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<Checkbox label={StringValue} />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

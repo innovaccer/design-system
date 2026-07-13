@@ -22,6 +22,8 @@ interface ComboboxTriggerProps {
   clearButton?: boolean;
   'aria-label'?: string;
   'aria-labelledby'?: string;
+  'aria-describedby'?: string;
+  'aria-errormessage'?: string;
 }
 
 export const ComboboxTrigger = (props: ComboboxTriggerProps) => {

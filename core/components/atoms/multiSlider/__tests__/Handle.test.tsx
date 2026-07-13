@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from 'jest-axe';
 import Handle from '../Handle';
 
 const min = 0;
@@ -497,5 +498,15 @@ describe('Handle off-grid navigation (keyboard from non-step-aligned values)', (
         />
       );
     });
+  });
+});
+
+describe('Handle component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(
+      <Handle value={50} label="Slider handle" min={0} max={100} stepSize={5} tickSize={5} tickSizeRatio={0.05} />
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

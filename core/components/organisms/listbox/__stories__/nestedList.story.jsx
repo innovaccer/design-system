@@ -15,7 +15,12 @@ const SubList = () => {
   */
 
   return (
-    <Listbox type="description" aria-label="Note types" className="SubList-wrapper mr-6 mb-5 mt-3">
+    <Listbox
+      type="description"
+      aria-label="Note types"
+      className="SubList-wrapper mr-6 mb-5 mt-3"
+      customFocusManagement={true}
+    >
       {noteList.map((note, key) => {
         return (
           <Listbox.Item key={key} className="justify-content-between">
@@ -135,7 +140,7 @@ const customCode = `
     */
 
     return (
-      <Listbox type="description" aria-label="Note types" className="SubList-wrapper mr-6 mb-5 mt-3">
+      <Listbox type="description" aria-label="Note types" className="SubList-wrapper mr-6 mb-5 mt-3" customFocusManagement={true}>
         {noteList.map((note, key) => {
           return (
             <Listbox.Item key={key} className="justify-content-between">

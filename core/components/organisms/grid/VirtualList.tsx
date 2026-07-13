@@ -19,6 +19,7 @@ interface VirtualScrollProps extends BaseProps {
   totalLength: number;
   renderItem: (index: number, item?: object) => React.ReactElement;
   onScroll?: (event: Event, element: HTMLElement) => void;
+  role?: React.AriaRole;
 }
 
 const VirtualList = (props: VirtualScrollProps) => {
@@ -197,6 +198,7 @@ const VirtualList = (props: VirtualScrollProps) => {
       {init && (
         <>
           <div
+            aria-hidden="true"
             style={{
               flexShrink: 0,
               height: topPadding,
@@ -204,6 +206,7 @@ const VirtualList = (props: VirtualScrollProps) => {
           />
           {renderItems(start, end)}
           <div
+            aria-hidden="true"
             style={{
               flexShrink: 0,
               height: bottomPadding,

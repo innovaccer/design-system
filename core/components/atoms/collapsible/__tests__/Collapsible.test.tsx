@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { Collapsible, CollapsibleProps as Props } from '@/components/atoms/collapsible';
 import { Icon, Text } from '@/index';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -196,5 +197,17 @@ describe('Collapsible component with prop: onToggle', () => {
     fireEvent.keyDown(footer, { key: 'Enter' });
     expect(onToggleMock).toHaveBeenCalledTimes(2);
     expect(onToggleMock).toHaveBeenLastCalledWith(true);
+  });
+});
+
+describe('Collapsible component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(
+      <Collapsible expanded={false}>
+        <div>Panel</div>
+      </Collapsible>
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

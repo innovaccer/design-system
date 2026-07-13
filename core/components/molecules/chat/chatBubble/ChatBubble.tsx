@@ -24,6 +24,7 @@ export type ChatBubbleProps = {
    *   urgentMessage?: () => JSX.Element;
    *   avatarData?: ChatAvatarProps;
    *   showAvatar?: boolean;
+   *   'aria-label'?: string;
    * }
    *
    * ChatAvatarProps: {
@@ -51,6 +52,7 @@ export type ChatBubbleProps = {
    *  actionBar?: () => JSX.Element;
    *  urgentMessage?: () => JSX.Element;
    *  failedMessage?: () => JSX.Element;
+   *  'aria-label'?: string;
    * }
    * </pre>
    */

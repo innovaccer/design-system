@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { fireEvent, render } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { SelectionCard } from '@/index';
 import { SelectionCardProps as Props } from '@/index.type';
@@ -318,5 +319,17 @@ describe('SelectionCard keyboard interactions', () => {
     fireEvent.keyDown(card, { key: ' ' });
 
     expect(onClick).toHaveBeenCalledWith(expect.any(Object), 'card-1', cardValue);
+  });
+});
+
+describe('SelectionCard component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(
+      <SelectionCard id="item1" selected={false}>
+        Selection Card
+      </SelectionCard>
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

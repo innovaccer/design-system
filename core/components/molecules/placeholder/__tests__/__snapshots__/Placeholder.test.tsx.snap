@@ -5,10 +5,12 @@ exports[`Placeholder component
  1`] = `
 <DocumentFragment>
   <div
+    aria-hidden="true"
     class="Placeholder"
     data-test="DesignSystem-Placeholder"
   >
     <span
+      aria-hidden="true"
       class="PlaceholderImage Placeholder--animation PlaceholderImage--large"
       data-test="DesignSystem-Placeholder--Image"
     />
@@ -17,6 +19,7 @@ exports[`Placeholder component
       data-test="DesignSystem-Placeholder--Paragraph"
     >
       <div
+        aria-hidden="true"
         class="PlaceholderParagraph-wrapper PlaceholderParagraph-wrapper--length-small"
       >
         <span
@@ -33,10 +36,12 @@ exports[`Placeholder component
  1`] = `
 <DocumentFragment>
   <div
+    aria-hidden="true"
     class="Placeholder"
     data-test="DesignSystem-Placeholder"
   >
     <span
+      aria-hidden="true"
       class="PlaceholderImage Placeholder--animation PlaceholderImage--medium"
       data-test="DesignSystem-Placeholder--Image"
     />
@@ -45,6 +50,7 @@ exports[`Placeholder component
       data-test="DesignSystem-Placeholder--Paragraph"
     >
       <div
+        aria-hidden="true"
         class="PlaceholderParagraph-wrapper PlaceholderParagraph-wrapper--length-small"
       >
         <span
@@ -61,10 +67,12 @@ exports[`Placeholder component
  1`] = `
 <DocumentFragment>
   <div
+    aria-hidden="true"
     class="Placeholder"
     data-test="DesignSystem-Placeholder"
   >
     <span
+      aria-hidden="true"
       class="PlaceholderImage Placeholder--animation PlaceholderImage--small"
       data-test="DesignSystem-Placeholder--Image"
     />
@@ -73,6 +81,7 @@ exports[`Placeholder component
       data-test="DesignSystem-Placeholder--Paragraph"
     >
       <div
+        aria-hidden="true"
         class="PlaceholderParagraph-wrapper PlaceholderParagraph-wrapper--length-small"
       >
         <span
@@ -89,6 +98,7 @@ exports[`Placeholder component
  1`] = `
 <DocumentFragment>
   <div
+    aria-hidden="true"
     class="Placeholder"
     data-test="DesignSystem-Placeholder"
   >
@@ -97,6 +107,7 @@ exports[`Placeholder component
       data-test="DesignSystem-Placeholder--Paragraph"
     >
       <div
+        aria-hidden="true"
         class="PlaceholderParagraph-wrapper PlaceholderParagraph-wrapper--length-small"
       >
         <span
@@ -113,10 +124,12 @@ exports[`Placeholder component
  1`] = `
 <DocumentFragment>
   <div
+    aria-hidden="true"
     class="Placeholder"
     data-test="DesignSystem-Placeholder"
   >
     <span
+      aria-hidden="true"
       class="PlaceholderImage Placeholder--animation PlaceholderImage--small"
       data-test="DesignSystem-Placeholder--Image"
     />
@@ -125,6 +138,7 @@ exports[`Placeholder component
       data-test="DesignSystem-Placeholder--Paragraph"
     >
       <div
+        aria-hidden="true"
         class="PlaceholderParagraph-wrapper PlaceholderParagraph-wrapper--length-small"
       >
         <span
@@ -141,6 +155,7 @@ exports[`Placeholder component
  1`] = `
 <DocumentFragment>
   <div
+    aria-hidden="true"
     class="Placeholder"
     data-test="DesignSystem-Placeholder"
   >
@@ -149,6 +164,7 @@ exports[`Placeholder component
       data-test="DesignSystem-Placeholder--Paragraph"
     >
       <div
+        aria-hidden="true"
         class="PlaceholderParagraph-wrapper PlaceholderParagraph-wrapper--length-small"
       >
         <span
@@ -165,10 +181,12 @@ exports[`Placeholder component
  1`] = `
 <DocumentFragment>
   <div
+    aria-hidden="true"
     class="Placeholder"
     data-test="DesignSystem-Placeholder"
   >
     <span
+      aria-hidden="true"
       class="PlaceholderImage Placeholder--animation PlaceholderImage--round PlaceholderImage--small"
       data-test="DesignSystem-Placeholder--Image"
     />
@@ -177,6 +195,7 @@ exports[`Placeholder component
       data-test="DesignSystem-Placeholder--Paragraph"
     >
       <div
+        aria-hidden="true"
         class="PlaceholderParagraph-wrapper PlaceholderParagraph-wrapper--length-small"
       >
         <span

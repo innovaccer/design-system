@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { KeyValuePair, Text } from '@/index';
 import { KeyValuePairProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, testMessageHelper } from '@/utils/testHelper';
@@ -122,5 +123,18 @@ describe('KeyValue component with Value sub component', () => {
     );
 
     expect(getByTestId('DesignSystem-KeyValuePair-ValueElement')).toHaveClass('custom-class');
+  });
+});
+
+describe('KeyValuePair component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(
+      <KeyValuePair>
+        <KeyValuePair.Key label="Label" />
+        <KeyValuePair.Value value="Value" />
+      </KeyValuePair>
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

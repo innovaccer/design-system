@@ -6,31 +6,13 @@ import MetaOption from './MetaOption';
 import IconOption from './IconOption';
 import IconWithMetaOption from './IconWithMetaOption';
 import { MetaList, Text } from '@/index';
+import isSpaceKey from '@/accessibility/utils/isSpaceKey';
 import { MetaListProps, IconProps, TextProps } from '@/index.type';
 import { OptionType } from '../DropdownList';
 import { ChangeEvent, IconType } from '@/common.type';
 import styles from '@css/components/dropdown.module.css';
 
 export type ClickEvent = React.MouseEvent<HTMLDivElement>;
-
-export interface OptionRendererProps {
-  /**
-   * Adds custom option
-   *
-   * OptionProps: {
-   *   optionData: Option;
-   *   selected: boolean;
-   *   active?: boolean;
-   *   index: number;
-   *   onChange?: (checked: boolean) => void;
-   * }
-   */
-  optionRenderer?: (props: OptionProps) => React.JSX.Element;
-  /**
-   * Type of option
-   */
-  optionType?: OptionType;
-}
 
 export interface OptionSchema extends Record<string, any> {
   label: string;
@@ -42,6 +24,40 @@ export interface OptionSchema extends Record<string, any> {
   disabled?: boolean;
   group?: string;
   iconType?: IconType;
+}
+
+/** Props passed to `optionRenderer` for custom dropdown rows */
+export interface CustomOptionRendererParams {
+  optionData: OptionSchema;
+  selected: boolean;
+  active?: boolean;
+  index: number;
+  onClick?: () => void;
+  onChange?: (event: ChangeEvent) => void;
+  id?: string;
+}
+
+export interface OptionRendererProps {
+  /**
+   * Adds custom option
+   *
+   * <pre className="DocPage-codeBlock">
+   * CustomOptionRendererParams: {
+   *   optionData: OptionSchema;
+   *   selected: boolean;
+   *   active?: boolean;
+   *   index: number;
+   *   onClick?: () => void;
+   *   onChange?: (event: ChangeEvent) => void;
+   *   id?: string;
+   * }
+   * </pre>
+   */
+  optionRenderer?: (props: CustomOptionRendererParams) => React.JSX.Element;
+  /**
+   * Type of option
+   */
+  optionType?: OptionType;
 }
 
 export interface OptionTypeProps {
@@ -99,8 +115,8 @@ const Option = (props: OptionProps) => {
 
   const { optionType = 'DEFAULT' } = optionData.optionType ? optionData : props;
   const { disabled } = optionData;
-  const color = disabled ? 'inverse-lightest' : selected && !menu ? 'primary-dark' : 'inverse';
-  const appearance = disabled ? 'disabled' : selected && !menu ? 'primary_dark' : 'default';
+  const color = disabled ? 'inverse-lightest' : undefined;
+  const appearance = disabled ? 'disabled' : 'default';
   const type = checkboxes ? 'WITH_CHECKBOX' : optionType;
   const component = OptionTypeMapping[type];
 
@@ -109,13 +125,16 @@ const Option = (props: OptionProps) => {
     [styles['Option--active']]: active,
     [styles['Option--selected']]: selected && !menu,
     [styles['Option--disabled']]: disabled,
+    [styles['Option--interactive']]: !disabled,
     ['OptionWrapper']: true,
-    [`color-${color}`]: true,
+    [`color-${color}`]: !!color,
   });
 
   const CheckboxClassName = classNames({
     [styles['Option-checkbox']]: true,
     [styles['Option-checkbox--active']]: active,
+    [styles['Option-checkbox--interactive']]: !disabled,
+    [styles['OptionWrapper--disabled']]: disabled,
     ['OptionWrapper']: true,
   });
 
@@ -149,6 +168,20 @@ const Option = (props: OptionProps) => {
     if (onChange) onChange(e);
   };
 
+  const handleCustomOptionKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (disabled) return;
+
+    if (event.key === 'Enter' || isSpaceKey(event)) {
+      event.preventDefault();
+      if (checkboxes) {
+        const checkboxInput = event.currentTarget.querySelector('input[type="checkbox"]') as HTMLInputElement | null;
+        checkboxInput?.click();
+      } else if (onClick) {
+        onClick();
+      }
+    }
+  };
+
   if (props.optionRenderer) {
     return (
       <div
@@ -156,9 +189,11 @@ const Option = (props: OptionProps) => {
         className={customOptionClass}
         data-disabled={disabled}
         onMouseEnter={onUpdateActiveOption}
+        onKeyDown={handleCustomOptionKeyDown}
         role={menu ? 'menuitem' : 'option'}
         aria-selected={!menu ? selected : undefined}
         aria-disabled={disabled || undefined}
+        tabIndex={disabled ? -1 : 0}
         {...(!checkboxes && { onClick })}
       >
         {props.optionRenderer({
@@ -167,6 +202,8 @@ const Option = (props: OptionProps) => {
           onChange,
           active,
           index,
+          onClick,
+          id,
         })}
       </div>
     );

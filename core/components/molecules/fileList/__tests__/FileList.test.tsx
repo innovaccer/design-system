@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { fileList } from '../__stories__/__common__/fileListExample';
 import { FileList, Button } from '@/index';
@@ -114,5 +115,13 @@ describe('FileList component with prop: actionRenderer', () => {
     );
 
     expect(getAllByTestId('DesignSystem-FileList--Button')).toHaveLength(fileList.length);
+  });
+});
+
+describe('FileList component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<FileList fileList={fileList as any} />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

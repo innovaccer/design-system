@@ -113,3 +113,10 @@ docs/cypress/screenshots
 tsconfig.type.tsbuildinfo
 dist/**/*.tsbuildinfo
 .vscode
+.vscode
+
+# --------------------
+# Claude Code
+# --------------------
+.claude/settings.json
+.claude/settings.local.json

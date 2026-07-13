@@ -67,6 +67,29 @@ describe('useAccessibilityProps', () => {
     expect(element).toHaveAttribute('aria-hidden', 'true');
   });
 
+  test('forwards all aria attributes in the clickable case', () => {
+    const onClick = jest.fn();
+    const { container } = render(
+      <TestComponent
+        onClick={onClick}
+        role="button"
+        aria-label="Open menu"
+        aria-labelledby="label-id"
+        aria-describedby="desc-id"
+        aria-controls="panel-id"
+        aria-expanded={false}
+        aria-haspopup="listbox"
+      />
+    );
+    const element = container.firstChild as HTMLElement;
+    expect(element).toHaveAttribute('aria-label', 'Open menu');
+    expect(element).toHaveAttribute('aria-labelledby', 'label-id');
+    expect(element).toHaveAttribute('aria-describedby', 'desc-id');
+    expect(element).toHaveAttribute('aria-controls', 'panel-id');
+    expect(element).toHaveAttribute('aria-expanded', 'false');
+    expect(element).toHaveAttribute('aria-haspopup', 'listbox');
+  });
+
   test('No trigger for callback on event of not allowed aria roles', () => {
     const onClick = jest.fn();
     const { getByRole } = render(<TestComponent onClick={onClick} role="tooltip" aria-label="test label" />);

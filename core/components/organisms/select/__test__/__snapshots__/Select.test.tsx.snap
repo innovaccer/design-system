@@ -6,8 +6,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -27,6 +25,7 @@ exports[`Select List component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -41,6 +40,7 @@ exports[`Select List component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -65,8 +65,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -86,6 +84,7 @@ exports[`Select List component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -100,6 +99,7 @@ exports[`Select List component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -124,8 +124,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -145,6 +143,7 @@ exports[`Select List component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -159,6 +158,7 @@ exports[`Select List component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -183,8 +183,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -204,6 +202,7 @@ exports[`Select List component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -218,6 +217,7 @@ exports[`Select List component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -242,8 +242,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -263,6 +261,7 @@ exports[`Select List component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -277,6 +276,7 @@ exports[`Select List component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -301,8 +301,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -322,6 +320,7 @@ exports[`Select List component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -336,6 +335,7 @@ exports[`Select List component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -360,8 +360,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -381,6 +379,7 @@ exports[`Select List component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -395,6 +394,7 @@ exports[`Select List component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -419,8 +419,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -440,6 +438,7 @@ exports[`Select List component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -454,6 +453,7 @@ exports[`Select List component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -478,8 +478,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -499,6 +497,7 @@ exports[`Select List component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -513,6 +512,7 @@ exports[`Select List component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -537,8 +537,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -558,6 +556,7 @@ exports[`Select List component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -572,6 +571,7 @@ exports[`Select List component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -596,8 +596,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -617,6 +615,7 @@ exports[`Select List component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -631,6 +630,7 @@ exports[`Select List component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -655,8 +655,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -676,6 +674,7 @@ exports[`Select List component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -690,6 +689,7 @@ exports[`Select List component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -714,8 +714,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -735,6 +733,7 @@ exports[`Select List component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -749,6 +748,7 @@ exports[`Select List component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -773,8 +773,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -794,6 +792,7 @@ exports[`Select List component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -808,6 +807,7 @@ exports[`Select List component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -832,8 +832,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -853,6 +851,7 @@ exports[`Select List component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -867,6 +866,7 @@ exports[`Select List component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -891,8 +891,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -912,6 +910,7 @@ exports[`Select List component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -926,6 +925,7 @@ exports[`Select List component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -950,8 +950,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -971,6 +969,7 @@ exports[`Select List component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -985,6 +984,7 @@ exports[`Select List component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -1009,8 +1009,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1030,6 +1028,7 @@ exports[`Select List component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -1044,6 +1043,7 @@ exports[`Select List component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -1068,8 +1068,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1089,6 +1087,7 @@ exports[`Select List component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -1103,6 +1102,7 @@ exports[`Select List component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -1127,8 +1127,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1148,6 +1146,7 @@ exports[`Select List component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -1162,6 +1161,7 @@ exports[`Select List component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -1186,8 +1186,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1207,6 +1205,7 @@ exports[`Select List component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -1221,6 +1220,7 @@ exports[`Select List component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -1245,8 +1245,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1266,6 +1264,7 @@ exports[`Select List component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -1280,6 +1279,7 @@ exports[`Select List component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -1304,8 +1304,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1325,6 +1323,7 @@ exports[`Select List component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -1339,6 +1338,7 @@ exports[`Select List component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -1363,8 +1363,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1384,6 +1382,7 @@ exports[`Select List component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -1398,6 +1397,7 @@ exports[`Select List component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -1422,8 +1422,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1443,6 +1441,7 @@ exports[`Select List component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -1457,6 +1456,7 @@ exports[`Select List component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -1481,8 +1481,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1502,6 +1500,7 @@ exports[`Select List component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -1516,6 +1515,7 @@ exports[`Select List component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -1540,8 +1540,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1561,6 +1559,7 @@ exports[`Select List component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -1575,6 +1574,7 @@ exports[`Select List component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -1599,8 +1599,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1620,6 +1618,7 @@ exports[`Select List component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -1634,6 +1633,7 @@ exports[`Select List component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -1658,8 +1658,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1679,6 +1677,7 @@ exports[`Select List component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -1693,6 +1692,7 @@ exports[`Select List component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -1717,8 +1717,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1738,6 +1736,7 @@ exports[`Select List component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -1752,6 +1751,7 @@ exports[`Select List component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -1776,8 +1776,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1797,6 +1795,7 @@ exports[`Select List component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -1811,6 +1810,7 @@ exports[`Select List component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -1835,8 +1835,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1856,6 +1854,7 @@ exports[`Select List component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -1870,6 +1869,7 @@ exports[`Select List component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -1894,8 +1894,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1915,6 +1913,7 @@ exports[`Select List component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -1929,6 +1928,7 @@ exports[`Select List component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -1953,8 +1953,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1974,6 +1972,7 @@ exports[`Select List component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -1988,6 +1987,7 @@ exports[`Select List component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -2012,8 +2012,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2033,6 +2031,7 @@ exports[`Select List component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -2047,6 +2046,7 @@ exports[`Select List component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -2071,8 +2071,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2092,6 +2090,7 @@ exports[`Select List component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -2106,6 +2105,7 @@ exports[`Select List component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -2130,8 +2130,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2151,6 +2149,7 @@ exports[`Select Option component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -2165,6 +2164,7 @@ exports[`Select Option component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -2189,8 +2189,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2210,6 +2208,7 @@ exports[`Select Option component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -2224,6 +2223,7 @@ exports[`Select Option component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -2248,8 +2248,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2269,6 +2267,7 @@ exports[`Select Option component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -2283,6 +2282,7 @@ exports[`Select Option component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -2307,8 +2307,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2328,6 +2326,7 @@ exports[`Select Option component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -2342,6 +2341,7 @@ exports[`Select Option component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -2366,8 +2366,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2387,6 +2385,7 @@ exports[`Select Option component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -2401,6 +2400,7 @@ exports[`Select Option component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -2425,8 +2425,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2446,6 +2444,7 @@ exports[`Select Option component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -2460,6 +2459,7 @@ exports[`Select Option component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -2484,8 +2484,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2505,6 +2503,7 @@ exports[`Select Option component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -2519,6 +2518,7 @@ exports[`Select Option component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -2543,8 +2543,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2564,6 +2562,7 @@ exports[`Select Option component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -2578,6 +2577,7 @@ exports[`Select Option component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -2602,8 +2602,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2623,6 +2621,7 @@ exports[`Select Option component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -2637,6 +2636,7 @@ exports[`Select Option component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -2661,8 +2661,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2682,6 +2680,7 @@ exports[`Select Option component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -2696,6 +2695,7 @@ exports[`Select Option component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -2720,8 +2720,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2741,6 +2739,7 @@ exports[`Select Option component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -2755,6 +2754,7 @@ exports[`Select Option component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -2779,8 +2779,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2800,6 +2798,7 @@ exports[`Select Option component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -2814,6 +2813,7 @@ exports[`Select Option component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -2838,8 +2838,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2859,6 +2857,7 @@ exports[`Select Option component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -2873,6 +2872,7 @@ exports[`Select Option component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -2897,8 +2897,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2918,6 +2916,7 @@ exports[`Select Option component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -2932,6 +2931,7 @@ exports[`Select Option component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -2956,8 +2956,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2977,6 +2975,7 @@ exports[`Select Option component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -2991,6 +2990,7 @@ exports[`Select Option component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -3015,8 +3015,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -3036,6 +3034,7 @@ exports[`Select Option component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -3050,6 +3049,7 @@ exports[`Select Option component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -3074,8 +3074,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -3095,6 +3093,7 @@ exports[`Select Option component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -3109,6 +3108,7 @@ exports[`Select Option component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -3133,8 +3133,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -3154,6 +3152,7 @@ exports[`Select Option component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -3168,6 +3167,7 @@ exports[`Select Option component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -3192,8 +3192,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -3213,6 +3211,7 @@ exports[`Select Option component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -3227,6 +3226,7 @@ exports[`Select Option component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -3251,8 +3251,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -3272,6 +3270,7 @@ exports[`Select Option component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -3286,6 +3285,7 @@ exports[`Select Option component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -3310,8 +3310,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -3331,6 +3329,7 @@ exports[`Select Option component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -3345,6 +3344,7 @@ exports[`Select Option component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -3369,8 +3369,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -3390,6 +3388,7 @@ exports[`Select Option component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -3404,6 +3403,7 @@ exports[`Select Option component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -3428,8 +3428,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -3449,6 +3447,7 @@ exports[`Select Option component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -3463,6 +3462,7 @@ exports[`Select Option component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -3487,8 +3487,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -3508,6 +3506,7 @@ exports[`Select Option component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -3522,6 +3521,7 @@ exports[`Select Option component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -3546,8 +3546,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -3567,6 +3565,7 @@ exports[`Select Option component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -3581,6 +3580,7 @@ exports[`Select Option component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -3605,8 +3605,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -3626,6 +3624,7 @@ exports[`Select Option component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -3640,6 +3639,7 @@ exports[`Select Option component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -3664,8 +3664,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -3685,6 +3683,7 @@ exports[`Select Option component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -3699,6 +3698,7 @@ exports[`Select Option component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -3723,8 +3723,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -3744,6 +3742,7 @@ exports[`Select Option component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -3758,6 +3757,7 @@ exports[`Select Option component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -3782,8 +3782,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -3803,6 +3801,7 @@ exports[`Select Option component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -3817,6 +3816,7 @@ exports[`Select Option component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -3841,8 +3841,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -3862,6 +3860,7 @@ exports[`Select Option component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -3876,6 +3875,7 @@ exports[`Select Option component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -3900,8 +3900,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -3921,6 +3919,7 @@ exports[`Select Option component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -3935,6 +3934,7 @@ exports[`Select Option component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -3959,8 +3959,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -3980,6 +3978,7 @@ exports[`Select Option component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -3994,6 +3993,7 @@ exports[`Select Option component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -4018,8 +4018,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -4039,6 +4037,7 @@ exports[`Select Option component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -4053,6 +4052,7 @@ exports[`Select Option component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -4077,8 +4077,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -4098,6 +4096,7 @@ exports[`Select Option component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -4112,6 +4111,7 @@ exports[`Select Option component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -4136,8 +4136,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -4157,6 +4155,7 @@ exports[`Select Option component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -4171,6 +4170,7 @@ exports[`Select Option component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -4195,8 +4195,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -4216,6 +4214,7 @@ exports[`Select Option component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -4230,6 +4229,7 @@ exports[`Select Option component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -4254,8 +4254,6 @@ exports[`Select component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -4275,6 +4273,7 @@ exports[`Select component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -4289,6 +4288,7 @@ exports[`Select component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -4313,8 +4313,6 @@ exports[`Select component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -4334,6 +4332,7 @@ exports[`Select component snapshots
             aria-label="Select trigger"
             class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
             data-test="DesignSystem-Select-trigger"
+            role="combobox"
             style="width: 176px;"
             tabindex="0"
             type="button"
@@ -4348,6 +4347,7 @@ exports[`Select component snapshots
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"

@@ -66,6 +66,22 @@ export type AvatarProps = {
    */
   'aria-label'?: string;
   /**
+   * Checked state for an interactive `Avatar` (used with a checkable `role`, e.g. `checkbox`/`radio`).
+   */
+  'aria-checked'?: boolean | 'true' | 'false' | 'mixed';
+  /**
+   * Disabled state for an interactive `Avatar` (used with a `role`).
+   */
+  'aria-disabled'?: boolean;
+  /**
+   * Click handler for an interactive `Avatar`.
+   */
+  onClick?: (event: React.MouseEvent<HTMLSpanElement>) => void;
+  /**
+   * Keydown handler for an interactive `Avatar`.
+   */
+  onKeyDown?: (event: React.KeyboardEvent<HTMLSpanElement>) => void;
+  /**
    * Show presence indicator for the `Avatar`
    */
   presence?: TPresence;
@@ -108,6 +124,10 @@ export const Avatar = (props: AvatarProps) => {
     role = 'presentation',
     'aria-hidden': ariaHidden,
     'aria-label': ariaLabelProp,
+    'aria-checked': ariaChecked,
+    'aria-disabled': ariaDisabled,
+    onClick,
+    onKeyDown,
   } = props;
 
   const baseProps = extractBaseProps(props);
@@ -128,9 +148,18 @@ export const Avatar = (props: AvatarProps) => {
   const AvatarAppearance =
     appearance || colors[(initials.charCodeAt(0) + (initials.charCodeAt(1) || 0)) % 8] || DefaultAppearance;
   const isDecorative = ariaHidden === true;
-  const resolvedRole = isDecorative ? 'presentation' : (role ?? (tabIndex !== undefined ? 'button' : 'img'));
+  const resolvedRole = isDecorative ? 'presentation' : (role ?? 'img');
   const ariaLabel = isDecorative ? undefined : ariaLabelProp || getTooltipName().trim() || initials || 'Avatar';
   const resolvedTabIndex = isDecorative ? -1 : disabled ? -1 : tabIndex !== undefined ? tabIndex : 0;
+  // A decorative avatar must stay inert; interactive state/handlers only apply when a role is exposed.
+  const interactiveProps = isDecorative
+    ? {}
+    : {
+        'aria-checked': ariaChecked,
+        'aria-disabled': ariaDisabled,
+        onClick,
+        onKeyDown,
+      };
 
   const darkAppearance = ['secondary', 'success', 'warning', 'accent1', 'accent4'];
   const showPresence =
@@ -205,6 +234,7 @@ export const Avatar = (props: AvatarProps) => {
               aria-label={ariaLabel}
               aria-hidden={ariaHidden}
               tabIndex={resolvedTabIndex}
+              {...interactiveProps}
             >
               {children}
             </span>
@@ -223,6 +253,7 @@ export const Avatar = (props: AvatarProps) => {
           aria-label={ariaLabel}
           aria-hidden={ariaHidden}
           tabIndex={resolvedTabIndex}
+          {...interactiveProps}
         >
           <>
             {initials && (

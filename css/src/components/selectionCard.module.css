@@ -97,3 +97,41 @@
   background-color: var(--primary-lightest);
   opacity: var(--opacity-10);
 }
+
+@media (forced-colors: active) {
+  /* All states use inset box-shadow as the sole border — replace with real borders */
+  .Selection-card--default,
+  .Selection-card--default:hover,
+  .Selection-card--default:active,
+  .Selection-card--default-disabled {
+    border: var(--border-width-2-5) solid ButtonText;
+    box-shadow: none;
+  }
+
+  /* Interactive selected states — use Highlight to signal selection */
+  .Selection-card--selected,
+  .Selection-card--selected:hover,
+  .Selection-card--selected:active {
+    border: var(--border-width-2-5) solid Highlight;
+    box-shadow: none;
+  }
+
+  .Selection-card--selected-disabled {
+    border: var(--border-width-2-5) solid GrayText;
+    box-shadow: none;
+  }
+
+  .Selection-card--default:focus,
+  .Selection-card--default:focus-visible,
+  .Selection-card--selected:focus,
+  .Selection-card--selected:focus-visible {
+    outline: var(--border-width-05) solid Highlight;
+    outline-offset: var(--spacing-05);
+    box-shadow: none;
+  }
+
+  /* Disabled: suppress the focus indicator */
+  .Selection-card--disabled {
+    outline: none;
+  }
+}

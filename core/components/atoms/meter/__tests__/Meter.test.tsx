@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Meter } from '@/index';
 import { render } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { MeterProps as Props } from '@/index.type';
 
@@ -169,5 +170,13 @@ describe('Meter Component', () => {
     const { getByTestId } = render(<Meter value={50} stepCount={5} data-test="DesignSystem-Meter-Test" />);
     const meter = getByTestId('DesignSystem-Meter-Test');
     expect(meter).toBeInTheDocument();
+  });
+});
+
+describe('Meter component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<Meter value={50} min={0} max={100} stepCount={5} ariaLabel="Completion meter" />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

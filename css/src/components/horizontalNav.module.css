@@ -27,8 +27,7 @@
   outline: none;
 }
 
-.HorizontalNav-menu--default:focus-visible,
-.HorizontalNav-menu--default:focus {
+.HorizontalNav-menu--default:focus-visible {
   outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: var(--spacing-05);
 }
@@ -46,11 +45,10 @@
   box-shadow: 0 0 0 var(--border-width-05) var(--primary);
 }
 
-.HorizontalNav-menu--active:focus-visible,
-.HorizontalNav-menu--active:focus {
+.HorizontalNav-menu--active:focus-visible {
   background-color: var(--primary-ultra-light);
   outline: var(--border-width-05) solid var(--primary-focus);
-  outline-offset: var(--spacing-05);
+  outline-offset: var(--spacing-10);
 }
 
 .HorizontalNav-menu--active:hover {
@@ -67,8 +65,7 @@
   color: var(--primary-darker);
 }
 
-.HorizontalNav-menu--active:focus-visible:active,
-.HorizontalNav-menu--active:focus:active {
+.HorizontalNav-menu--active:focus-visible:active {
   background-color: var(--primary-lighter);
   box-shadow: 0 0 0 var(--border-width-05) var(--primary-dark);
 }
@@ -94,4 +91,18 @@
 
 .HorizontalNav-pills--disabled {
   opacity: var(--opacity-10);
+}
+
+@media (forced-colors: active) {
+  /* Active nav item uses box-shadow as its visible ring — replace with a real border */
+  .HorizontalNav-menu--active {
+    border: var(--border-width-2-5) solid Highlight;
+    box-shadow: none;
+  }
+
+  .HorizontalNav-menu--active:active,
+  .HorizontalNav-menu--active:focus-visible:active {
+    border-color: Highlight;
+    box-shadow: none;
+  }
 }

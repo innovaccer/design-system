@@ -33,4 +33,13 @@ export const all = () => {
 export default {
   title: 'Components/Slider/Slider/All',
   component: Slider,
+  parameters: {
+    docs: {
+      docPage: {
+        a11yProps: `
+**label:** Use the \`label\` prop to provide a visible label for the slider. An \`id\` is automatically generated and linked to each slider handle via \`aria-labelledby\`, so screen readers announce the label alongside the current value.
+        `,
+      },
+    },
+  },
 };

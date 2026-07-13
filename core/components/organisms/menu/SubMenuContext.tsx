@@ -6,6 +6,7 @@ export type ContextProps = {
   parentListRef?: React.RefObject<HTMLDivElement | null>;
   menuID?: string;
   triggerID?: string;
+  parentMenuTriggerRef?: React.RefObject<HTMLButtonElement | null>;
 };
 
 export const SubMenuContext = React.createContext<ContextProps>({});

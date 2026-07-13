@@ -14,9 +14,11 @@ export const DropzoneError = (props: DropzoneErrorProps) => {
   return (
     <React.Fragment>
       {type !== 'tight' && <DropzoneIcon type={type} name="error" />}
-      <Text appearance="destructive" size="large" weight="strong">
-        {error}
-      </Text>
+      <div role="alert">
+        <Text appearance="destructive" size="large" weight="strong">
+          {error}
+        </Text>
+      </div>
     </React.Fragment>
   );
 };

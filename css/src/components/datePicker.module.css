@@ -1,0 +1,9 @@
+.DatePicker-content {
+  display: flex;
+}
+
+@media (max-width: 576px) {
+  .DatePicker-content {
+    flex-direction: column;
+  }
+}

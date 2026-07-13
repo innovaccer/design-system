@@ -43,7 +43,7 @@ export const failedResponse = () => {
   return (
     <div>
       <Button onClick={handleReset}>Reset</Button>
-      <Chat>
+      <Chat role="log" aria-live="polite" aria-label="Chat messages">
         <Chat.ChatBubble type="outgoing" outgoingOptions={outgoingOptions} className={classes}>
           <Text>Hello, I'd like to schedule an appointment with my cardiologist. Can you help me with that ?</Text>
         </Chat.ChatBubble>
@@ -100,7 +100,7 @@ const customCode = `() => {
   return (
     <div>
       <Button onClick={handleReset}>Reset</Button>
-      <Chat>
+      <Chat role="log" aria-live="polite" aria-label="Chat messages">
         <Chat.ChatBubble type="outgoing" outgoingOptions={outgoingOptions} className={classes}>
           <Text>Hello, I'd like to schedule an appointment with my cardiologist. Can you help me with that ?</Text>
         </Chat.ChatBubble>

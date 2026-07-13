@@ -37,13 +37,13 @@ exports[`Dialog component
               <div
                 class="OverlayHeader-headerWrapper"
               >
-                <h4
+                <h2
                   class="Heading Heading--m Heading--default"
                   data-test="DesignSystem-OverlayHeader--heading"
                   id="modal-title-4"
                 >
                   Sample String
-                </h4>
+                </h2>
               </div>
             </div>
           </div>
@@ -191,13 +191,13 @@ exports[`Dialog component
               <div
                 class="OverlayHeader-headerWrapper"
               >
-                <h4
+                <h2
                   class="Heading Heading--m Heading--default"
                   data-test="DesignSystem-OverlayHeader--heading"
                   id="modal-title-1"
                 >
                   Sample String
-                </h4>
+                </h2>
               </div>
             </div>
           </div>
@@ -343,13 +343,13 @@ exports[`Dialog component
               <div
                 class="OverlayHeader-headerWrapper"
               >
-                <h4
+                <h2
                   class="Heading Heading--m Heading--default"
                   data-test="DesignSystem-OverlayHeader--heading"
                   id="modal-title-2"
                 >
                   Sample String
-                </h4>
+                </h2>
               </div>
             </div>
           </div>
@@ -496,13 +496,13 @@ exports[`Dialog component
               <div
                 class="OverlayHeader-headerWrapper"
               >
-                <h4
+                <h2
                   class="Heading Heading--m Heading--default"
                   data-test="DesignSystem-OverlayHeader--heading"
                   id="modal-title-3"
                 >
                   Sample String
-                </h4>
+                </h2>
               </div>
             </div>
           </div>
@@ -649,13 +649,13 @@ exports[`Dialog component
               <div
                 class="OverlayHeader-headerWrapper"
               >
-                <h4
+                <h2
                   class="Heading Heading--m Heading--default"
                   data-test="DesignSystem-OverlayHeader--heading"
                   id="modal-title-5"
                 >
                   Sample String
-                </h4>
+                </h2>
               </div>
             </div>
           </div>
@@ -802,13 +802,13 @@ exports[`Dialog component
               <div
                 class="OverlayHeader-headerWrapper"
               >
-                <h4
+                <h2
                   class="Heading Heading--m Heading--default"
                   data-test="DesignSystem-OverlayHeader--heading"
                   id="modal-title-13"
                 >
                   Sample String
-                </h4>
+                </h2>
               </div>
             </div>
           </div>
@@ -955,13 +955,13 @@ exports[`Dialog component
               <div
                 class="OverlayHeader-headerWrapper"
               >
-                <h4
+                <h2
                   class="Heading Heading--m Heading--default"
                   data-test="DesignSystem-OverlayHeader--heading"
                   id="modal-title-12"
                 >
                   Sample String
-                </h4>
+                </h2>
               </div>
             </div>
           </div>
@@ -1108,13 +1108,13 @@ exports[`Dialog component
               <div
                 class="OverlayHeader-headerWrapper"
               >
-                <h4
+                <h2
                   class="Heading Heading--m Heading--default"
                   data-test="DesignSystem-OverlayHeader--heading"
                   id="modal-title-11"
                 >
                   Sample String
-                </h4>
+                </h2>
               </div>
             </div>
           </div>
@@ -1261,13 +1261,13 @@ exports[`Dialog component
               <div
                 class="OverlayHeader-headerWrapper"
               >
-                <h4
+                <h2
                   class="Heading Heading--m Heading--default"
                   data-test="DesignSystem-OverlayHeader--heading"
                   id="modal-title-9"
                 >
                   Sample String
-                </h4>
+                </h2>
               </div>
             </div>
           </div>
@@ -1414,13 +1414,13 @@ exports[`Dialog component
               <div
                 class="OverlayHeader-headerWrapper"
               >
-                <h4
+                <h2
                   class="Heading Heading--m Heading--default"
                   data-test="DesignSystem-OverlayHeader--heading"
                   id="modal-title-6"
                 >
                   Sample String
-                </h4>
+                </h2>
               </div>
             </div>
           </div>
@@ -1567,13 +1567,13 @@ exports[`Dialog component
               <div
                 class="OverlayHeader-headerWrapper"
               >
-                <h4
+                <h2
                   class="Heading Heading--m Heading--default"
                   data-test="DesignSystem-OverlayHeader--heading"
                   id="modal-title-7"
                 >
                   Sample String
-                </h4>
+                </h2>
               </div>
             </div>
           </div>
@@ -1720,13 +1720,13 @@ exports[`Dialog component
               <div
                 class="OverlayHeader-headerWrapper"
               >
-                <h4
+                <h2
                   class="Heading Heading--m Heading--default"
                   data-test="DesignSystem-OverlayHeader--heading"
                   id="modal-title-8"
                 >
                   Sample String
-                </h4>
+                </h2>
               </div>
             </div>
           </div>
@@ -1873,13 +1873,13 @@ exports[`Dialog component
               <div
                 class="OverlayHeader-headerWrapper"
               >
-                <h4
+                <h2
                   class="Heading Heading--m Heading--default"
                   data-test="DesignSystem-OverlayHeader--heading"
                   id="modal-title-10"
                 >
                   Sample String
-                </h4>
+                </h2>
               </div>
             </div>
           </div>

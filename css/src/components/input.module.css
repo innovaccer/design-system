@@ -58,7 +58,6 @@
 
 .Input--error:focus-within {
   border-color: var(--alert);
-  box-shadow: var(--shadow-spread) var(--alert-shadow);
 }
 
 .Input--error:focus-within .Input-icon--left {
@@ -150,6 +149,7 @@
   cursor: pointer;
   color: var(--inverse-lighter);
   border-radius: var(--border-radius-full);
+  box-sizing: content-box;
 }
 
 .Input-iconWrapper--right:focus-visible .Input-icon--right {

@@ -10,7 +10,7 @@ describe('handleKeyDown function', () => {
   let listRef: any;
 
   const mockListItems = [document.createElement('div'), document.createElement('div')];
-  mockListItems.forEach((item) => item.setAttribute('data-test', 'DesignSystem-Listbox-ItemWrapper'));
+  mockListItems.forEach((item) => item.setAttribute('data-test', 'DesignSystem-AvatarSelection--Option'));
 
   beforeEach(() => {
     // Setup mock functions to track calls

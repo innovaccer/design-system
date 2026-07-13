@@ -7,30 +7,16 @@
   cursor: pointer;
   width: fit-content;
   border: 0;
-  background: linear-gradient(
-    274deg,
-    rgba(231, 56, 79, 0.24) 0%,
-    rgba(231, 56, 79, 0.24) 19.79%,
-    rgba(240, 125, 0, 0.24) 100%
-  );
+  position: relative;
+  background: linear-gradient(109deg, #fdead8 10.28%, #fbdfd5 32.82%, #f9d1d5 63.38%, #fad9e7 96.05%);
 }
 
 .AIChip:hover {
-  background: linear-gradient(
-    274deg,
-    rgba(231, 56, 79, 0.32) 0%,
-    rgba(231, 56, 79, 0.32) 19.79%,
-    rgba(240, 125, 0, 0.32) 100%
-  );
+  background: linear-gradient(108deg, #fad3b0 15.89%, #f9cdb7 33.52%, #f8c6bf 54.17%, #f7bfc7 70.92%);
 }
 
 .AIChip:active {
-  background: linear-gradient(
-    274deg,
-    rgba(231, 56, 79, 0.48) 0%,
-    rgba(231, 56, 79, 0.48) 19.79%,
-    rgba(240, 125, 0, 0.48) 100%
-  );
+  background: linear-gradient(106deg, #f7bd89 20.06%, #f6b196 44.48%, #f4a4a5 67.83%, #f39faa 86.55%);
 }
 
 .AIChip:focus,
@@ -59,12 +45,7 @@
 /* Disabled Chip */
 
 .AIChip--disabled {
-  background: linear-gradient(
-    274deg,
-    rgba(231, 56, 79, 0.24) 0%,
-    rgba(231, 56, 79, 0.24) 19.79%,
-    rgba(240, 125, 0, 0.24) 100%
-  );
+  background: linear-gradient(109deg, #fdead8 10.28%, #fbdfd5 32.82%, #f9d1d5 63.38%, #fad9e7 96.05%);
 }
 
 .AIChip-icon--disabled {
@@ -78,10 +59,11 @@
 
 .AIChip:disabled {
   cursor: not-allowed;
-  background: linear-gradient(
-    274deg,
-    rgba(231, 56, 79, 0.24) 0%,
-    rgba(231, 56, 79, 0.24) 19.79%,
-    rgba(240, 125, 0, 0.24) 100%
-  );
+  background: linear-gradient(109deg, #fdead8 10.28%, #fbdfd5 32.82%, #f9d1d5 63.38%, #fad9e7 96.05%);
+}
+
+.AIChip-AIIcon {
+  position: absolute;
+  top: calc(-1 * var(--spacing-05));
+  right: calc(-1 * var(--spacing-05));
 }

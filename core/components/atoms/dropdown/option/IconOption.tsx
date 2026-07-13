@@ -3,6 +3,7 @@ import { OptionTypeProps } from './index';
 import { Text, Icon } from '@/index';
 import classNames from 'classnames';
 import styles from '@css/components/dropdown.module.css';
+import isSpaceKey from '@/accessibility/utils/isSpaceKey';
 
 const IconOption = (props: OptionTypeProps) => {
   const {
@@ -31,7 +32,7 @@ const IconOption = (props: OptionTypeProps) => {
   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
     if (disabled) return;
 
-    if (event.key === 'Enter' || event.key === ' ') {
+    if (event.key === 'Enter' || isSpaceKey(event)) {
       event.preventDefault();
       onClickHandler?.(event as unknown as React.MouseEvent<HTMLDivElement>);
     }
@@ -57,6 +58,15 @@ const IconOption = (props: OptionTypeProps) => {
           {label}
         </Text>
       </div>
+      {selected && !menu && (
+        <Icon
+          name="check"
+          appearance={props.appearance}
+          className={styles['Option-checkIcon']}
+          size={16}
+          data-test="DesignSystem-DropdownOption--checkIcon"
+        />
+      )}
     </div>
   );
 };

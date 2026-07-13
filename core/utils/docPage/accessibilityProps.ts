@@ -154,6 +154,11 @@ const curatedElementProps: Record<HtmlElementType, AccessibilityPropDef[]> = {
     { name: 'aria-multiline', type: 'boolean', description: 'Indicates the text input accepts multiple lines.' },
     { name: 'aria-hidden', type: 'boolean', description: 'Hides the element from assistive technologies.' },
     { name: 'role', type: 'string', description: 'Overrides the implicit textbox role.' },
+    {
+      name: 'tabIndex',
+      type: 'number',
+      description: 'Controls focus order. Use -1 to remove from tab sequence, 0 for natural order.',
+    },
   ],
 
   /**
@@ -297,17 +302,10 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
   Radio: { htmlElement: 'radio' },
 
   // Textbox-like (BaseHtmlProps<HTMLInputElement/HTMLTextAreaElement>)
-  // Note: Input overrides tabIndex internally (readOnly ? -1 : undefined), so consumers cannot customise it.
   Input: { htmlElement: 'textbox' },
   TextField: { htmlElement: 'textbox' },
-  Textarea: {
-    htmlElement: 'textbox',
-    customProps: [{ name: 'tabIndex', type: 'number', description: 'Controls focus order.' }],
-  },
-  MetricInput: {
-    htmlElement: 'textbox',
-    customProps: [{ name: 'tabIndex', type: 'number', description: 'Controls focus order.' }],
-  },
+  Textarea: { htmlElement: 'textbox' },
+  MetricInput: { htmlElement: 'textbox' },
 
   // Link-like (OmitNativeProps<HTMLLinkElement> / BaseHtmlProps<HTMLDivElement>)
   Link: { htmlElement: 'link' },
@@ -330,6 +328,8 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
   Text: { htmlElement: 'generic' },
   AIResponse: { htmlElement: 'generic' },
   Badge: { htmlElement: 'generic' },
+  Caption: { htmlElement: 'generic' },
+  StatusHint: { htmlElement: 'generic' },
 
   // Meter (BaseProps + React.HTMLAttributes<HTMLDivElement>)
   Meter: { htmlElement: 'range' },
@@ -371,15 +371,58 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
     ],
   },
 
-  // Spinner: only accepts aria-label (role="status" and aria-live="polite" are hardcoded internally)
+  // Spinner: accepts aria-label and aria-labelledby (role="status" and aria-live="polite" are hardcoded internally)
   Spinner: {
     htmlElement: 'custom',
     customProps: [
       {
         name: 'aria-label',
         type: 'string',
-        description: 'Describes the loading action for screen readers.',
+        description: 'Describes the loading action for screen readers. Ignored when aria-labelledby is provided.',
         defaultValue: '"Loading"',
+      },
+      {
+        name: 'aria-labelledby',
+        type: 'string',
+        description: 'ID of an external element that labels the spinner. When set, aria-label is suppressed.',
+      },
+    ],
+  },
+
+  // Slider / RangeSlider / MultiSlider: extend BaseProps only (extractBaseProps).
+  // aria-* are not forwarded to handles from the consumer — ARIA is wired internally
+  // from the `label` prop onto each role="slider" handle (aria-valuemin/max/now/text
+  // are computed from min/max/step/value). The only consumer-facing a11y control is `label`.
+  Slider: {
+    htmlElement: 'custom',
+    customProps: [
+      {
+        name: 'label',
+        type: 'string',
+        description:
+          'Visible label for the slider. Also forwarded as aria-label on the role="slider" handle so screen readers announce it with the current value.',
+      },
+    ],
+  },
+  RangeSlider: {
+    htmlElement: 'custom',
+    customProps: [
+      {
+        name: 'label',
+        type: 'string',
+        description:
+          'Visible label for the slider. Also forwarded as aria-label on each role="slider" handle so screen readers announce it with the current value.',
+      },
+    ],
+  },
+  MultiSlider: {
+    htmlElement: 'custom',
+    customProps: [
+      {
+        name: 'label',
+        type: 'string',
+        description:
+          'Visible label for the slider group. Applied as aria-label on every role="slider" handle that does not define its own label.',
       },
     ],
   },
@@ -483,12 +526,17 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
     ],
   },
 
-  // List: accepts aria-label, aria-labelledby
+  // List: accepts aria-label, aria-labelledby (mapped to Listbox component in codebase)
   List: {
     htmlElement: 'custom',
     customProps: [
       { name: 'aria-label', type: 'string', description: 'Accessible label for list container.' },
       { name: 'aria-labelledby', type: 'string', description: 'Associates list with an external label element.' },
+      {
+        name: 'aria-multiselectable',
+        type: 'boolean',
+        description: 'Indicates whether multiple items can be selected.',
+      },
     ],
   },
 
@@ -623,7 +671,7 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
     ],
   },
 
-  // ChoiceList: accepts aria-label and aria-labelledby on the component
+  // ChoiceList: accepts aria-label and aria-labelledby on the component; choices items accept a11y props
   ChoiceList: {
     htmlElement: 'custom',
     customProps: [
@@ -635,14 +683,51 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
           'References the ID of element(s) that label the choice list group. Use when the group is labelled by another element on the page.',
       },
     ],
+    nestedComponents: [
+      {
+        name: 'choices',
+        config: {
+          htmlElement: 'custom',
+          customProps: [
+            {
+              name: 'aria-label',
+              type: 'string',
+              description: 'Accessible label for the underlying input when no visible label is present.',
+            },
+            {
+              name: 'aria-labelledby',
+              type: 'string',
+              description: 'ID of the element that labels the underlying input.',
+            },
+            {
+              name: 'aria-describedby',
+              type: 'string',
+              description: 'ID of the element(s) that describe the underlying input.',
+            },
+          ],
+        },
+      },
+    ],
   },
 
-  // Combobox: accepts aria-label, aria-labelledby
+  // Combobox: accepts aria-label, aria-labelledby, aria-describedby, aria-errormessage
   Combobox: {
     htmlElement: 'custom',
     customProps: [
       { name: 'aria-label', type: 'string', description: 'Accessible label for the combobox input.' },
       { name: 'aria-labelledby', type: 'string', description: 'Points to element(s) that label the combobox input.' },
+      {
+        name: 'aria-describedby',
+        type: 'string',
+        description:
+          'Element ids (space-separated) for supplementary help or description regions (e.g. sibling HelpText).',
+      },
+      {
+        name: 'aria-errormessage',
+        type: 'string',
+        description:
+          'Id of the live error message element (e.g. HelpText with error); pair with aria-invalid when in error.',
+      },
     ],
   },
 
@@ -690,7 +775,7 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
     ],
   },
 
-  // Dropdown: accepts aria-label, aria-labelledby (forwarded to built-in trigger only), optionsAriaLabel, tabIndex
+  // Dropdown: accepts aria-label, aria-labelledby (forwarded to built-in trigger only), optionsAriaLabel, inert
   Dropdown: {
     htmlElement: 'custom',
     customProps: [
@@ -710,6 +795,12 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
         name: 'optionsAriaLabel',
         type: 'string',
         description: 'Accessible name for the options list container. Defaults to "{aria-label} options" or "Options".',
+      },
+      {
+        name: 'inert',
+        type: 'string',
+        description:
+          'Makes the dropdown and all its descendants non-interactive and non-focusable. Pass an empty string ("") to activate.',
       },
     ],
   },
@@ -783,9 +874,28 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
     ],
   },
 
-  // Select: nested triggerOptions
+  // Select: accepts aria-labelledby, aria-describedby, aria-errormessage, nested triggerOptions, Select.List, Select.Option
   Select: {
     htmlElement: 'custom',
+    customProps: [
+      {
+        name: 'aria-labelledby',
+        type: 'string',
+        description: 'Associates select trigger with an external label.',
+      },
+      {
+        name: 'aria-describedby',
+        type: 'string',
+        description:
+          'Element ids (space-separated) for supplementary help or description regions (e.g. sibling HelpText).',
+      },
+      {
+        name: 'aria-errormessage',
+        type: 'string',
+        description:
+          'Id of the live error message element (e.g. HelpText with error); pair with aria-invalid when in error.',
+      },
+    ],
     nestedComponents: [
       {
         name: 'triggerOptions',
@@ -798,6 +908,38 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
               description:
                 'Accessible label for the Select trigger button. Applied to the built-in trigger only; not forwarded when using customTrigger.',
               defaultValue: '"Select trigger"',
+            },
+            {
+              name: 'aria-labelledby',
+              type: 'string',
+              description:
+                'References the ID of element(s) that label the Select trigger button. Applied to the built-in trigger only.',
+            },
+          ],
+        },
+      },
+      {
+        name: 'Select.List',
+        config: {
+          htmlElement: 'custom',
+          customProps: [
+            {
+              name: 'aria-label',
+              type: 'string',
+              description: 'Accessible label for the options list container.',
+            },
+          ],
+        },
+      },
+      {
+        name: 'Select.Option',
+        config: {
+          htmlElement: 'custom',
+          customProps: [
+            {
+              name: 'aria-label',
+              type: 'string',
+              description: 'Accessible label for the select option.',
             },
           ],
         },
@@ -842,15 +984,220 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
     ],
   },
 
+  // SegmentedControl: accepts aria-label, aria-labelledby; Item accepts aria-label, aria-labelledby
+  SegmentedControl: {
+    htmlElement: 'custom',
+    customProps: [
+      {
+        name: 'aria-label',
+        type: 'string',
+        description: 'Accessible name for the segment group. Required if not labelled by an external element.',
+      },
+      {
+        name: 'aria-labelledby',
+        type: 'string',
+        description: 'ID of an element whose text labels the control group (e.g. an external heading).',
+      },
+    ],
+    nestedComponents: [
+      {
+        name: 'SegmentedControl.Item',
+        config: {
+          htmlElement: 'custom',
+          customProps: [
+            {
+              name: 'aria-label',
+              type: 'string',
+              description: 'Accessible name for icon-only or custom content segments.',
+            },
+            {
+              name: 'aria-labelledby',
+              type: 'string',
+              description: 'Associates segment with an external label element.',
+            },
+          ],
+        },
+      },
+    ],
+  },
+
   // ========================================================================
-  // NOT INCLUDED (BaseProps only, NO passable a11y props):
-  // SegmentedControl, ProgressBar, ProgressRing, Toast,
-  // Message, Collapsible, HelpText, Dialog, Tooltip, Popover,
-  // Dropzone, Stepper,
-  // VerticalNav,
-  // InlineMessage
-  // These components manage a11y internally and do not expose configurable
-  // aria-* props to consumers.
+  // Chat components
+  // ========================================================================
+
+  // Chat: root wrapper — accepts role, aria-live, aria-label as opt-in props.
+  // Nested options accept aria-label for individual bubble identification.
+  Chat: {
+    htmlElement: 'custom',
+    customProps: [
+      {
+        name: 'role',
+        type: 'string',
+        description:
+          'ARIA landmark role for the chat container. Use "log" on the message list to signal a live chat feed to screen readers.',
+      },
+      {
+        name: 'aria-live',
+        type: '"polite" | "assertive" | "off"',
+        description:
+          'Live-region politeness for new message announcements. Use "polite" on the message log; omit on wrappers that include input controls.',
+      },
+      {
+        name: 'aria-label',
+        type: 'string',
+        description: 'Accessible name for the chat container (e.g., "Chat messages").',
+      },
+    ],
+    nestedComponents: [
+      {
+        name: 'incomingOptions',
+        config: {
+          htmlElement: 'custom',
+          customProps: [
+            {
+              name: 'aria-label',
+              type: 'string',
+              description:
+                'Accessible label for an incoming chat bubble. Identifies the sender to screen readers (e.g., "Message from Jane Doe").',
+            },
+          ],
+        },
+      },
+      {
+        name: 'outgoingOptions',
+        config: {
+          htmlElement: 'custom',
+          customProps: [
+            {
+              name: 'aria-label',
+              type: 'string',
+              description:
+                'Accessible label for an outgoing chat bubble. Identifies the sender to screen readers (e.g., "Message from You").',
+            },
+          ],
+        },
+      },
+    ],
+  },
+
+  // ChatBubble: individual message unit (role="article").
+  // Passes through incomingOptions / outgoingOptions aria-label to the article element.
+  ChatBubble: {
+    htmlElement: 'custom',
+    customProps: [],
+    nestedComponents: [
+      {
+        name: 'incomingOptions',
+        config: {
+          htmlElement: 'custom',
+          customProps: [
+            {
+              name: 'aria-label',
+              type: 'string',
+              description:
+                'Accessible label applied to the article element for incoming bubbles (e.g., "Message from Jane Doe").',
+            },
+          ],
+        },
+      },
+      {
+        name: 'outgoingOptions',
+        config: {
+          htmlElement: 'custom',
+          customProps: [
+            {
+              name: 'aria-label',
+              type: 'string',
+              description:
+                'Accessible label applied to the article element for outgoing bubbles (e.g., "Message from You").',
+            },
+          ],
+        },
+      },
+    ],
+  },
+
+  // ChatInput: text composition area — exposes aria-label for the textarea.
+  ChatInput: {
+    htmlElement: 'custom',
+    customProps: [
+      {
+        name: 'aria-label',
+        type: 'string',
+        description:
+          'Accessible label for the chat textarea. Required when no visible label is present (e.g., "Type a message").',
+      },
+    ],
+  },
+
+  // UnreadMessage: button-like notification banner.
+  // Activated by click, Enter (keydown), or Space (keyup) following WAI-ARIA button pattern.
+  UnreadMessage: {
+    htmlElement: 'custom',
+    customProps: [
+      {
+        name: 'onClick',
+        type: 'React.MouseEventHandler<HTMLDivElement>',
+        description: 'Handler invoked when the unread-message banner is clicked.',
+      },
+      {
+        name: 'onKeyDown',
+        type: 'React.KeyboardEventHandler<HTMLDivElement>',
+        description:
+          'Additional keydown handler composed with the built-in Enter activation. The built-in handler always fires first.',
+      },
+      {
+        name: 'onKeyUp',
+        type: 'React.KeyboardEventHandler<HTMLDivElement>',
+        description:
+          'Additional keyup handler composed with the built-in Space activation. The built-in handler always fires first.',
+      },
+    ],
+  },
+
+  // ========================================================================
+  // NOT INCLUDED — no a11y prop table rendered for these components.
+  // All entries below extend BaseProps only and use extractBaseProps(),
+  // which does NOT forward aria-*. Any accessibility semantics are either
+  // hardcoded internally or inherited through composed children.
+  // ========================================================================
+  //
+  // Feedback & status (internal ARIA only):
+  //   ProgressBar, ProgressRing      — aria-value* computed from value/max
+  //   Toast, Message, InlineMessage  — role/aria-live managed internally
+  //   HelpText                       — presentational; consumers reference it via aria-describedby
+  //   Collapsible                    — aria-expanded managed internally via the trigger
+  //   StatusHint (moved to `generic` — extends BaseHtmlProps)
+  //
+  // Overlays (role/aria-modal hardcoded, consumer has no a11y knobs beyond
+  // what's exposed in the component-specific entries above):
+  //   Dialog, Tooltip, Popover, Dropzone, Stepper
+  //
+  // Chat internals:
+  //   Chat.DateSeparator             — decorative separator (aria-hidden)
+  //   Chat.NewMessage                — role="status" + aria-live="polite" hardcoded
+  //   Chat.TypingIndicator           — manages a11y internally
+  //
+  // Navigation:
+  //   VerticalNav                    — aria handled by composed Navigation items
+  //   Breadcrumbs                    — renders <nav aria-label="Breadcrumb"> internally; no passable a11y props
+  //   Pagination                     — internal aria on page buttons; consumers pass labels via structured props
+  //
+  // Static / layout primitives (no aria-* forwarded):
+  //   Divider, Backdrop,
+  //   PlaceholderImage, PlaceholderParagraph, Placeholder  — aria-hidden hardcoded
+  //   Legend, MetaList, Editable, ChipGroup,
+  //   CardHeader, CardBody, CardFooter,
+  //   ModalDescription,
+  //   OverlayHeader, OverlayBody, OverlayFooter,
+  //   KeyValuePair,
+  //   FileList, FileListItem,
+  //   FileUploader, FileUploaderButton, FileUploaderItem, FileUploaderFormat, FileUploaderStatus, FileUploaderList,
+  //   EmptyState, EmptyStateTitle, EmptyStateDescription, EmptyStateImage, EmptyStateActions,
+  //   ChatMessage, ChatMessage.Box, ChatMessage.Status, ChatMessage.MessageText
+  //
+  // Internal primitives (never rendered standalone in Storybook):
+  //   _chip, _text, popperWrapper
   // ========================================================================
 };
 

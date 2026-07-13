@@ -135,3 +135,42 @@
 .Switch-wrapper--checkedDisabled:before {
   border-color: transparent;
 }
+
+@media (forced-colors: active) {
+  .Switch-wrapper {
+    outline: var(--border-width-2-5) solid ButtonText;
+    outline-offset: calc(-1 * var(--border-width-2-5));
+    box-shadow: none;
+  }
+
+  /* Checked (enabled) track: use Highlight to distinguish on-state */
+  .Switch-wrapper--checked:not(.Switch-wrapper--checkedDisabled) {
+    background-color: Highlight;
+  }
+
+  .Switch-wrapper--checkedDisabled {
+    background-color: ButtonFace;
+    outline-color: GrayText;
+  }
+
+  /* Thumb: box-shadow is removed in forced-colors mode — ensure the existing border is visible */
+  .Switch-wrapper:before {
+    box-shadow: none;
+    border-color: ButtonText;
+  }
+
+  /* In the checked (enabled) state the thumb border is transparent — make it contrast against the track */
+  .Switch-wrapper--checked:not(.Switch-wrapper--checkedDisabled):before {
+    border-color: HighlightText;
+  }
+
+  /* Checked-disabled thumb: use GrayText so it reads as disabled */
+  .Switch-wrapper--checkedDisabled:before {
+    border-color: GrayText;
+  }
+
+  /* Unchecked-disabled thumb */
+  .Switch-wrapper--disabled:before {
+    border-color: GrayText;
+  }
+}

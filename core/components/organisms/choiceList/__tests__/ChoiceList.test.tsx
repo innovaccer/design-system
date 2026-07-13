@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import ChoiceList, { ChoiceListProps as Props } from '../ChoiceList';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
@@ -166,5 +167,20 @@ describe('ChoiceList component', () => {
       />
     );
     expect(getByTestId('DesignSystem-ChoiceList-Wrapper')).toHaveClass('customClass');
+  });
+});
+
+describe('ChoiceList component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(
+      <ChoiceList
+        choices={[
+          { label: 'Option 1', name: 'choiceList', value: 'option1' },
+          { label: 'Option 2', name: 'choiceList', value: 'option2' },
+        ]}
+      />
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

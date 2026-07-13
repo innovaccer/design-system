@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { GenericChip, GenericChipProps as Props } from '@/components/atoms/_chip';
 
@@ -58,7 +59,7 @@ describe('Chip component', () => {
 
   it('renders chip component with prop onClick', () => {
     const { getByTestId } = render(<GenericChip label="ChipLabel" name="Chip" onClick={FunctionValue} />);
-    const onClick = getByTestId('DesignSystem-GenericChip--Wrapper');
+    const onClick = getByTestId('DesignSystem-GenericChip--Content');
     fireEvent.click(onClick);
     expect(FunctionValue).toHaveBeenCalled();
   });
@@ -103,8 +104,8 @@ describe('Chip component with keyboard interaction', () => {
     const onClick = jest.fn();
     const { getByTestId } = render(<GenericChip name="Chip" label="Test Chip" onClick={onClick} />);
 
-    const chipWrapper = getByTestId('DesignSystem-GenericChip--Wrapper');
-    fireEvent.keyDown(chipWrapper, { key: 'Enter', code: 'Enter' });
+    const chipContent = getByTestId('DesignSystem-GenericChip--Content');
+    fireEvent.keyDown(chipContent, { key: 'Enter', code: 'Enter' });
 
     expect(onClick).toHaveBeenCalledTimes(1);
   });
@@ -178,5 +179,51 @@ describe('GenericChip component icon size functionality based on chip size', () 
     expect(leftIcon).toHaveStyle('width: 16px');
     expect(clearIcon).toHaveStyle('font-size: 16px');
     expect(clearIcon).toHaveStyle('width: 16px');
+  });
+});
+
+describe('GenericChip component a11y', () => {
+  it('has no violations: chip without clearButton', async () => {
+    const { container } = render(<GenericChip label="ChipLabel" name="Chip" onClick={jest.fn()} />);
+    expect(await axe(container)).toHaveNoViolations();
+  });
+
+  it('has no violations: removable chip without onClick (only clear button is interactive)', async () => {
+    const { container } = render(<GenericChip label="ChipLabel" name="Chip" clearButton onClose={jest.fn()} />);
+    expect(await axe(container)).toHaveNoViolations();
+  });
+
+  it('has no violations: removable chip with onClick (chip content and clear button are siblings)', async () => {
+    const { container } = render(
+      <GenericChip label="ChipLabel" name="Chip" clearButton onClick={jest.fn()} onClose={jest.fn()} />
+    );
+    expect(await axe(container)).toHaveNoViolations();
+  });
+
+  it('removable chip without onClick: chip content drops role/aria-label so the generic div is unnamed', () => {
+    const { getByTestId } = render(<GenericChip label="ChipLabel" name="Chip" clearButton onClose={jest.fn()} />);
+    const chipContentDiv = getByTestId('DesignSystem-GenericChip--Content');
+    expect(chipContentDiv).not.toHaveAttribute('role');
+    expect(chipContentDiv).not.toHaveAttribute('aria-label');
+    expect(chipContentDiv).not.toHaveAttribute('aria-labelledby');
+    expect(chipContentDiv).toHaveAttribute('tabindex', '-1');
+  });
+
+  it('removable chip with explicit role but no onClick stays keyboard focusable', () => {
+    const { getByTestId } = render(
+      <GenericChip
+        label="ChipLabel"
+        name="Chip"
+        type="selection"
+        role="checkbox"
+        selected
+        clearButton
+        onClose={jest.fn()}
+      />
+    );
+    const chipContentDiv = getByTestId('DesignSystem-GenericChip--Content');
+    expect(chipContentDiv).toHaveAttribute('role', 'checkbox');
+    expect(chipContentDiv).toHaveAttribute('aria-checked', 'true');
+    expect(chipContentDiv).toHaveAttribute('tabindex', '0');
   });
 });

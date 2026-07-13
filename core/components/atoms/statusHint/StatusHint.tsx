@@ -1,7 +1,8 @@
 import * as React from 'react';
 import Text from '@/components/atoms/text';
 import classNames from 'classnames';
-import { BaseProps, extractBaseProps } from '@/utils/types';
+import { BaseProps, BaseHtmlProps, extractBaseProps } from '@/utils/types';
+import isSpaceKey from '@/accessibility/utils/isSpaceKey';
 import { MessageAppearance } from '@/common.type';
 import styles from '@css/components/statusHint.module.css';
 import pageHeaderStyles from '@css/components/pageHeader.module.css';
@@ -37,7 +38,8 @@ export type StatusHintProps = {
    * Handler to be called when mouse pointer leaves `Status Hint`.
    */
   onMouseLeave?: (e: React.MouseEvent<HTMLDivElement>) => void;
-} & BaseProps;
+} & BaseProps &
+  BaseHtmlProps<HTMLDivElement>;
 
 export const StatusHint = (props: StatusHintProps) => {
   const {
@@ -49,6 +51,7 @@ export const StatusHint = (props: StatusHintProps) => {
     truncateLabel,
     className,
     size = 'regular',
+    ...rest
   } = props;
 
   const baseProps = extractBaseProps(props);
@@ -56,7 +59,7 @@ export const StatusHint = (props: StatusHintProps) => {
   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
     if (!isClickable) return;
 
-    if (event.key === 'Enter' || event.key === ' ') {
+    if (event.key === 'Enter' || isSpaceKey(event)) {
       event.preventDefault();
       onClick?.(event as unknown as React.MouseEvent<HTMLDivElement>);
     }
@@ -103,9 +106,14 @@ export const StatusHint = (props: StatusHintProps) => {
       onMouseLeave={(e) => onMouseLeave && onMouseLeave(e)}
       role={isClickable ? 'button' : undefined}
       tabIndex={isClickable ? 0 : undefined}
+      {...rest}
     >
-      {/* eslint-enable */}
-      <span data-test="DesignSystem-StatusHint--Icon" aria-hidden="true" className={StatusHintIconClass} />
+      <span
+        data-test="DesignSystem-StatusHint--Icon"
+        role="img"
+        aria-label={`${appearance} status`}
+        className={StatusHintIconClass}
+      />
       {renderChildren()}
     </div>
   );

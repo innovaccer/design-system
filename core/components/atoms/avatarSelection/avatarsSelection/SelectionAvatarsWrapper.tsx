@@ -45,6 +45,8 @@ export const SelectionAvatarsWrapper = (props: SelectionAvatarsWrapperProps) => 
 
     switch (event.key) {
       case 'Enter':
+      case ' ':
+        event.preventDefault();
         onClickHandler(item);
         break;
       default:
@@ -71,6 +73,7 @@ export const SelectionAvatarsWrapper = (props: SelectionAvatarsWrapperProps) => 
         });
 
         const newAvatarStyle = { ...avatarStyle, zIndex: avatarList.length - index };
+        const checkboxLabel = [firstName, lastName].filter(Boolean).join(' ').trim() || tooltipSuffix || 'Avatar';
 
         if (avatarRenderer) {
           return avatarRenderer(avatarItem);
@@ -78,16 +81,7 @@ export const SelectionAvatarsWrapper = (props: SelectionAvatarsWrapperProps) => 
 
         return (
           <span key={index} className={styles['SelectionAvatarGroup-wrapper']}>
-            <div
-              tabIndex={-1}
-              role="checkbox"
-              style={newAvatarStyle}
-              className={GroupClass}
-              data-test="DesignSystem-AvatarSelection--Avatar"
-              aria-checked={selectedItems && selectedItems.includes(avatarItem)}
-              onClick={() => onClickHandler(avatarItem)}
-              onKeyDown={(event: React.KeyboardEvent) => handleKeyDown(event, avatarItem)}
-            >
+            <div style={newAvatarStyle} className={GroupClass} data-test="DesignSystem-AvatarSelection--Avatar">
               <SelectionAvatar
                 size={size}
                 shape={avatarShape}
@@ -101,6 +95,11 @@ export const SelectionAvatarsWrapper = (props: SelectionAvatarsWrapperProps) => 
                 disabled={disabled}
                 tooltipSuffix={tooltipSuffix}
                 {...avatarItem}
+                aria-label={checkboxLabel}
+                aria-checked={Boolean(isSelected)}
+                aria-disabled={disabled}
+                onClick={() => onClickHandler(avatarItem)}
+                onKeyDown={(event: React.KeyboardEvent<HTMLSpanElement>) => handleKeyDown(event, avatarItem)}
               />
             </div>
           </span>

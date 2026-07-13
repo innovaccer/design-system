@@ -8,6 +8,7 @@ import { convertToDate, translateToString, compareDate, getDateInfo } from '../c
 import { Trigger } from './Trigger';
 import config from '../calendar/config';
 import classNames from 'classnames';
+import styles from '@css/components/datePicker.module.css';
 
 export type DatePickerProps = SharedProps & {
   /**
@@ -285,7 +286,7 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
 
     return (
       <div>
-        <div className="d-flex">
+        <div className={styles['DatePicker-content']}>
           {children}
           <Calendar
             {...rest}
@@ -334,12 +335,12 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
               setState={this.setState.bind(this)}
             />
           }
-          {...popoverOptions}
           triggerClass="w-100"
           position={position}
           appendToBody={true}
           open={open}
           onToggle={this.onToggleHandler}
+          {...popoverOptions}
         >
           {this.renderCalendar()}
         </Popover>

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import OverlayHeader, { OverlayHeaderProps as Props } from '../OverlayHeader';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
@@ -77,5 +78,13 @@ describe('OverlayHeader with overwrite class', () => {
   it('overwrite OverlayHeader class', () => {
     const { getByTestId } = render(<OverlayHeader heading={Heading} onClose={onClose} className={className} />);
     expect(getByTestId('DesignSystem-OverlayHeader')).toHaveClass(`OverlayHeader ${className}`);
+  });
+});
+
+describe('OverlayHeader component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<OverlayHeader heading="Modal header" />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

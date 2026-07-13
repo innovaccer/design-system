@@ -31,7 +31,11 @@ exports[`Breadcrumbs component renders four links 1`] = `
           href="/level0"
           tabindex="0"
         >
-          Level 0 check for truncate after 160px
+          <span
+            class="Link-text Link-text--subtle"
+          >
+            Level 0 check for truncate after 160px
+          </span>
         </a>
         <span
           class="Breadcrumbs-itemSeparator"
@@ -50,7 +54,11 @@ exports[`Breadcrumbs component renders four links 1`] = `
           href="/level1"
           tabindex="0"
         >
-          Level 1
+          <span
+            class="Link-text Link-text--subtle"
+          >
+            Level 1
+          </span>
         </a>
         <span
           class="Breadcrumbs-itemSeparator"
@@ -69,7 +77,11 @@ exports[`Breadcrumbs component renders four links 1`] = `
           href="/level2"
           tabindex="0"
         >
-          Level 2
+          <span
+            class="Link-text Link-text--subtle"
+          >
+            Level 2
+          </span>
         </a>
         <span
           class="Breadcrumbs-itemSeparator"
@@ -88,7 +100,11 @@ exports[`Breadcrumbs component renders four links 1`] = `
           href="/level3"
           tabindex="0"
         >
-          Level 3
+          <span
+            class="Link-text Link-text--subtle"
+          >
+            Level 3
+          </span>
         </a>
         <span
           class="Breadcrumbs-itemSeparator"

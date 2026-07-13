@@ -6,6 +6,7 @@ exports[`Image placeholder component
 <body>
   <div>
     <div
+      aria-hidden="true"
       class="PlaceholderParagraph-wrapper PlaceholderParagraph-wrapper--length-large"
     >
       <span
@@ -22,6 +23,7 @@ exports[`Image placeholder component
 <body>
   <div>
     <div
+      aria-hidden="true"
       class="PlaceholderParagraph-wrapper PlaceholderParagraph-wrapper--length-medium"
     >
       <span
@@ -38,6 +40,7 @@ exports[`Image placeholder component
 <body>
   <div>
     <div
+      aria-hidden="true"
       class="PlaceholderParagraph-wrapper PlaceholderParagraph-wrapper--length-small"
     >
       <span

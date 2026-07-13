@@ -10,11 +10,16 @@ export type OutsideClickProps = {
    * Element to be rendered
    */
   children: React.ReactElement<any>;
+  /**
+   * HTML element to use as the wrapper
+   * @default 'div'
+   */
+  wrapperElement?: 'div' | 'span';
 } & BaseHtmlProps<HTMLDivElement> &
   BaseProps;
 
 export const OutsideClick = React.forwardRef<HTMLDivElement, OutsideClickProps>((props, ref) => {
-  const { children, className, onOutsideClick, ...rest } = props;
+  const { children, className, onOutsideClick, wrapperElement = 'div', ...rest } = props;
 
   const innerRef = React.useRef<HTMLDivElement>(null);
 
@@ -39,10 +44,12 @@ export const OutsideClick = React.forwardRef<HTMLDivElement, OutsideClickProps>(
     }
   }, []);
 
+  const WrapperTag = wrapperElement as React.ElementType;
+
   return (
-    <div ref={innerRef} {...rest} className={className}>
+    <WrapperTag ref={innerRef} {...rest} className={className}>
       {children}
-    </div>
+    </WrapperTag>
   );
 });
 

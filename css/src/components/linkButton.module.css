@@ -46,7 +46,8 @@
   font-size: var(--font-size-s);
 }
 
-.LinkButton--default {
+.LinkButton--default,
+.LinkButton--default-disabled {
   color: var(--primary);
 }
 
@@ -58,21 +59,25 @@
   color: var(--primary-darker);
 }
 
-.LinkButton--default:focus,
-.LinkButton--default:focus-visible {
+.LinkButton--default:focus-visible,
+.LinkButton--default-disabled:focus-visible {
   outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: var(--spacing-05);
 }
 
-.LinkButton--default:disabled {
+.LinkButton--default-disabled {
   cursor: not-allowed;
-  pointer-events: none;
   color: var(--primary-lighter);
+}
+
+.LinkButton-infoIcon--default {
+  color: var(--text-link);
 }
 
 /* Subtle Appearance */
 
-.LinkButton--subtle {
+.LinkButton--subtle,
+.LinkButton--subtle-disabled {
   color: var(--inverse-lighter);
 }
 
@@ -84,14 +89,81 @@
   color: var(--inverse);
 }
 
-.LinkButton--subtle:focus,
-.LinkButton--subtle:focus-visible {
+.LinkButton--subtle:focus-visible,
+.LinkButton--subtle-disabled:focus-visible {
   outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: var(--spacing-05);
 }
 
-.LinkButton--subtle:disabled {
+.LinkButton--subtle-disabled {
   cursor: not-allowed;
-  pointer-events: none;
   color: var(--inverse-lightest);
+}
+
+.LinkButton-infoIcon--subtle {
+  color: var(--inverse-light);
+}
+
+.LinkButton-infoIconWrapper {
+  position: absolute;
+  top: calc(-1 * var(--spacing-05));
+  right: calc(-1 * var(--spacing-30));
+  width: var(--spacing-30);
+  height: var(--spacing-30);
+  box-sizing: border-box;
+  border-radius: var(--border-radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  pointer-events: none;
+}
+
+.LinkButton-infoIconWrapper--tiny {
+  top: calc(-1 * var(--spacing-05));
+  right: calc(-1 * var(--spacing-30));
+}
+
+.LinkButton-infoIconWrapper--regularIcon {
+  top: 0px;
+  right: calc(-1 * var(--spacing-05));
+}
+
+.LinkButton-infoIconWrapper--tinyIcon {
+  top: calc(-1 * var(--spacing-05));
+  right: calc(-1 * var(--spacing-05));
+}
+
+.LinkButton-withInfo {
+  padding-right: var(--spacing-20);
+}
+
+.LinkButton-infoIconWrapper--withChildren {
+  right: calc(-1 * var(--spacing-30) + var(--spacing-20));
+}
+
+.LinkButton-infoIconWrapper--iconOnly {
+  right: calc(-1 * var(--spacing-10) + var(--spacing-20));
+}
+
+.LinkButton-infoIconWrapper--tinyIcon {
+  right: calc(-1 * var(--spacing-05) + var(--spacing-20));
+}
+
+.LinkButton-infoIcon {
+  color: inherit;
+}
+
+.LinkButton-srOnly {
+  position: absolute;
+  width: var(--spacing-2-5);
+  height: var(--spacing-2-5);
+  padding: 0;
+  margin: calc(-1 * var(--spacing-2-5));
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }

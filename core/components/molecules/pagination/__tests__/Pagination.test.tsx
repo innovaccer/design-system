@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import Pagination, { PaginationProps as Props } from '../Pagination';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
@@ -198,5 +199,13 @@ describe('Pagination Component with overwrite class', () => {
       <Pagination className={className} totalPages={totalPages} onPageChange={FunctionValue} />
     );
     expect(getByTestId('DesignSystem-Pagination')).toHaveClass(className);
+  });
+});
+
+describe('Pagination component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<Pagination totalPages={50} onPageChange={jest.fn()} />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

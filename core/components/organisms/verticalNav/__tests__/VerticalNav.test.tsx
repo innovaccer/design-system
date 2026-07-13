@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { VerticalNavProps as Props } from '@/index.type';
 import { VerticalNav } from '@/index';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -513,5 +514,13 @@ describe('Vertical Navigation component WAI-ARIA tree semantics', () => {
     const { container } = render(<VerticalNav menus={menus} active={{ name: 'patient_360' }} expanded={true} />);
     const careManagement = container.querySelector('[data-menu-name="care_management"]');
     expect(careManagement?.getAttribute('aria-expanded')).toBe('false');
+  });
+});
+
+describe('VerticalNav component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<VerticalNav menus={menus} expanded={true} />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

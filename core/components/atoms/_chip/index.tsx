@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import Icon from '@/components/atoms/icon';
 import Text from '@/components/atoms/text';
 import { Name, ChipType } from '../chip/Chip';
+import isSpaceKey from '@/accessibility/utils/isSpaceKey';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { IconProps, TextProps } from '@/index.type';
 import { Tooltip } from '@/index';
@@ -26,6 +27,15 @@ export type GenericChipProps = {
   role?: string;
   'aria-label'?: string;
   'aria-labelledby'?: string;
+  /**
+   * Accessible name for the per-chip remove control (icon-only).
+   * @default 'Remove'
+   */
+  clearButtonAriaLabel?: string;
+  /**
+   * Overrides the chip wrapper `tabIndex` (e.g. `-1` when the remove control is the only keyboard target).
+   */
+  tabIndex?: number;
 } & BaseProps;
 
 export const GenericChip = (props: GenericChipProps) => {
@@ -80,14 +90,14 @@ export const GenericChip = (props: GenericChipProps) => {
   };
 
   const onKeyDownHandler = (event: React.KeyboardEvent) => {
-    if (event.key === 'Enter' || event.key === ' ' || event.key === 'Spacebar') {
+    if (event.key === 'Enter' || isSpaceKey(event)) {
       event.preventDefault();
       onCloseHandler(event);
     }
   };
 
   const onChipKeyDownHandler = (event: React.KeyboardEvent) => {
-    if (event.key === 'Enter' || event.key === ' ' || event.key === 'Spacebar') {
+    if (event.key === 'Enter' || isSpaceKey(event)) {
       event.preventDefault();
       onClickHandler();
     }
@@ -111,13 +121,6 @@ export const GenericChip = (props: GenericChipProps) => {
     ['primary-lighter']: selected && disabled,
     ['inverse']: !disabled && !selected,
   }) as TextProps['color'];
-
-  const chipWrapperClass = classNames(
-    {
-      [styles['Chip-wrapper']]: true,
-    },
-    className
-  );
 
   const renderLabel = () => {
     if (typeof label === 'string') {
@@ -156,22 +159,52 @@ export const GenericChip = (props: GenericChipProps) => {
     return labelText;
   };
 
+  const isWrapperInteractive = Boolean(onClick) || Boolean(props.role) || !clearButton;
+  const computedTabIndex =
+    props.tabIndex !== undefined ? (disabled ? -1 : props.tabIndex) : disabled || !isWrapperInteractive ? -1 : 0;
+  const computedRole = props.role ?? (isWrapperInteractive ? 'button' : undefined);
+
+  const clearButtonAriaAttr = props.clearButtonAriaLabel ?? (typeof label === 'string' ? `Remove ${label}` : 'Remove');
+
+  const computedAriaLabel = (() => {
+    if (props['aria-label']) return props['aria-label'];
+    if (clearButton && typeof label === 'string') {
+      return labelPrefix ? `${labelPrefix} ${label}` : label;
+    }
+    return undefined;
+  })();
+
   const getAriaProps = () => {
-    const effectiveRole = props.role || 'button';
     const ariaProps: React.HTMLAttributes<HTMLDivElement> = {};
 
     if (type === 'selection') {
-      if (effectiveRole === 'button') {
+      if (computedRole === 'button') {
         ariaProps['aria-pressed'] = selected;
-      } else if (effectiveRole === 'checkbox' || effectiveRole === 'menuitemcheckbox') {
+      } else if (computedRole === 'checkbox' || computedRole === 'menuitemcheckbox') {
         ariaProps['aria-checked'] = selected;
-      } else if (effectiveRole === 'option' || effectiveRole === 'tab' || effectiveRole === 'treeitem') {
+      } else if (computedRole === 'option' || computedRole === 'tab' || computedRole === 'treeitem') {
         ariaProps['aria-selected'] = selected;
       }
     }
 
     return ariaProps;
   };
+
+  const chipContent = (
+    <>
+      {icon && (
+        <Icon
+          data-test="DesignSystem-GenericChip--Icon"
+          name={icon}
+          type={iconType}
+          size={IconSize}
+          appearance={iconAppearance('left')}
+          className={iconClass('left')}
+        />
+      )}
+      {renderLabel()}
+    </>
+  );
 
   return (
     <Tooltip
@@ -181,33 +214,28 @@ export const GenericChip = (props: GenericChipProps) => {
       triggerClass="flex-grow-0"
     >
       <div
-        tabIndex={disabled ? -1 : 0}
         style={wrapperStyle}
         data-test="DesignSystem-GenericChip--Wrapper"
-        role={props.role || 'button'}
-        aria-label={props['aria-label']}
-        aria-labelledby={props['aria-labelledby']}
-        {...getAriaProps()}
-        onKeyDown={onChipKeyDownHandler}
         {...baseProps}
-        className={chipWrapperClass}
-        onClick={onClickHandler}
+        className={classNames(styles['Chip-wrapper'], className)}
       >
-        {icon && (
-          <Icon
-            data-test="DesignSystem-GenericChip--Icon"
-            name={icon}
-            type={iconType}
-            size={IconSize}
-            appearance={iconAppearance('left')}
-            className={iconClass('left')}
-          />
-        )}
-        {renderLabel()}
+        <div
+          data-test="DesignSystem-GenericChip--Content"
+          role={computedRole}
+          tabIndex={computedTabIndex}
+          aria-label={computedRole ? computedAriaLabel : undefined}
+          aria-labelledby={computedRole ? props['aria-labelledby'] : undefined}
+          className={classNames(styles['Chip-content'], styles[`Chip-content--${size}`])}
+          onClick={onClickHandler}
+          onKeyDown={onChipKeyDownHandler}
+          {...getAriaProps()}
+        >
+          {chipContent}
+        </div>
         {clearButton && (
           <div
             role="button"
-            aria-label="Remove"
+            aria-label={clearButtonAriaAttr}
             onClick={onCloseHandler}
             tabIndex={disabled ? -1 : 0}
             onKeyDown={onKeyDownHandler}

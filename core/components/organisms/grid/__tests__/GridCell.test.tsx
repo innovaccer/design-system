@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { GridCell } from '@/index';
 
 describe('renders GridCell with no cellType ', () => {
@@ -214,5 +215,13 @@ describe('renders GridCell with cellType STATUS_HINT', () => {
       />
     );
     expect(queryByTestId('DesignSystem-StatusHint')).toBeInTheDocument();
+  });
+});
+
+describe('GridCell component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<GridCell schema={{ displayName: 'Name', name: 'name' }} data={{ name: 'Zara' }} />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

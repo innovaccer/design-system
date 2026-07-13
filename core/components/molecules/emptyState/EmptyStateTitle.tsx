@@ -6,16 +6,20 @@ import EmptyStateContext from './EmptyStateContext';
 import { textSize } from './EmptyState';
 import styles from '@css/components/emptyState.module.css';
 
-export type EmptyTitleProps = {
+export type EmptyDescriptionProps = {
   /**
    * The content to be displayed within the component
    * Can be any renderable React Text.
    */
   children: string | number;
+  /**
+   * HTML tag to render the heading as.
+   */
+  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 } & BaseProps;
 
-const EmptyStateTitle = (props: EmptyTitleProps) => {
-  const { children, className, ...rest } = props;
+const EmptyStateTitle = (props: EmptyDescriptionProps) => {
+  const { children, className, as, ...rest } = props;
   const contextProp = React.useContext(EmptyStateContext);
 
   const { size = 'standard' } = contextProp;
@@ -30,7 +34,7 @@ const EmptyStateTitle = (props: EmptyTitleProps) => {
 
   if (size === 'standard') {
     return (
-      <Heading data-test="DesignSystem-EmptyState--Heading" className={headingClass} {...rest}>
+      <Heading data-test="DesignSystem-EmptyState--Heading" className={headingClass} as={as} {...rest}>
         {children}
       </Heading>
     );
@@ -42,6 +46,7 @@ const EmptyStateTitle = (props: EmptyTitleProps) => {
       className={headingClass}
       weight="medium"
       size={textSize[size]}
+      as={as}
       {...rest}
     >
       {children}

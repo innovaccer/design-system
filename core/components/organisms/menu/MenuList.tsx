@@ -33,6 +33,7 @@ export const MenuList = (props: MenuListProps) => {
       showDivider={false}
       data-test="DesignSystem-Menu-List"
       {...rest}
+      customFocusManagement
     >
       <MenuListContext.Provider value={{ size: props.size }}>{children}</MenuListContext.Provider>
     </Listbox>

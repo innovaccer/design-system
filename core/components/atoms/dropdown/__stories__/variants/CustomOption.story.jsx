@@ -23,7 +23,7 @@ export const customOption = () => {
 
     return (
       <div className="px-5 py-4 d-flex cursor-pointer justify-content-between">
-        <Checkbox checked={props.selected} onChange={props.onChange} label={label} />
+        <Checkbox checked={props.selected} onChange={props.onChange} label={label} id={props.id} tabIndex={-1} />
         {props.selected && <Icon name="done" />}
       </div>
     );
@@ -70,7 +70,7 @@ const customCode = `() => {
   const customOptionRenderer = (props) => {
     const { label, icon } = props.optionData;
     return (
-      <div className="px-5 py-4 d-flex cursor-pointer justify-content-between" onClick={props.onClick}>
+      <div className="px-5 py-4 d-flex cursor-pointer justify-content-between">
         <Text>{label}</Text>
         <Icon name={props.selected ? 'done' : icon} />
       </div>
@@ -80,8 +80,14 @@ const customCode = `() => {
   const customCheckboxRenderer = (props) => {
     const { label } = props.optionData;
     return (
-      <div className="px-5 py-4 d-flex cursor-pointer justify-content-between" onClick={props.onClick}>
-        <Checkbox checked={props.selected} onChange={props.onChange} label={label} />
+      <div className="px-5 py-4 d-flex cursor-pointer justify-content-between">
+        <Checkbox
+          checked={props.selected}
+          onChange={props.onChange}
+          label={label}
+          id={props.id}
+          tabIndex={-1}
+        />
         {props.selected && <Icon name="done" />}
       </div>
     );
@@ -120,7 +126,7 @@ export default {
           exclude: ['showHead'],
         },
         description:
-          'In case of custom option with checkbox, developer needs to pass checked and onChange props to checkbox component like in the example below for the indeterminate state and other functionalities to work. ',
+          'Pass `checked`, `onChange`, and `id` (from renderer props) to `Checkbox` so selection and the wrapping label work. For single-select custom rows, clicks bubble to the option wrapper; arrow keys and Enter or Space are handled on the wrapper. Do not put `onClick` on the whole row when `withCheckbox` is true (it would call the wrong handler for multi-select).',
       },
     },
   },

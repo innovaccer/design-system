@@ -5,10 +5,17 @@ exports[`Dropzone component snapshot
  1`] = `
 <DocumentFragment>
   <div
+    aria-label="File upload"
     class="Dropzone Dropzone--compressed Dropzone-animation Dropzone-animation--default"
     data-test="DesignSystem-Dropzone"
+    role="group"
   >
+    <span
+      class="Dropzone-srOnly"
+      role="status"
+    />
     <svg
+      aria-hidden="true"
       class="Dropzone-icon--compressed"
       fill="none"
       viewBox="0 0 64 64"
@@ -31,7 +38,6 @@ exports[`Dropzone component snapshot
           Drag your files here or
         </span>
         <span
-          aria-label="Drag your files here or click to select files"
           class="Text Text--link Text--strong Text--large ml-2 cursor-pointer"
           data-test="DesignSystem-Text"
           role="button"
@@ -69,10 +75,17 @@ exports[`Dropzone component snapshot
  1`] = `
 <DocumentFragment>
   <div
+    aria-label="File upload"
     class="Dropzone Dropzone--standard Dropzone-animation Dropzone-standard--default"
     data-test="DesignSystem-Dropzone"
+    role="group"
   >
+    <span
+      class="Dropzone-srOnly"
+      role="status"
+    />
     <svg
+      aria-hidden="true"
       class="Dropzone-icon--standard"
       fill="none"
       viewBox="0 0 64 64"
@@ -95,7 +108,6 @@ exports[`Dropzone component snapshot
           Drag your files here or
         </span>
         <span
-          aria-label="Drag your files here or click to select files"
           class="Text Text--link Text--strong Text--large ml-2 cursor-pointer"
           data-test="DesignSystem-Text"
           role="button"
@@ -133,9 +145,15 @@ exports[`Dropzone component snapshot
  1`] = `
 <DocumentFragment>
   <div
+    aria-label="File upload"
     class="Dropzone Dropzone--tight Dropzone-animation Dropzone-animation--default"
     data-test="DesignSystem-Dropzone"
+    role="group"
   >
+    <span
+      class="Dropzone-srOnly"
+      role="status"
+    />
     <div
       class="DropzoneWrapper DropzoneWrapper--tight"
       data-test="DesignSystem-Dropzone-Wrapper"
@@ -148,7 +166,6 @@ exports[`Dropzone component snapshot
           Drag your files here or
         </span>
         <span
-          aria-label="Drag your files here or click to select files"
           class="Text Text--link Text--strong Text--large ml-2 cursor-pointer"
           data-test="DesignSystem-Text"
           role="button"
@@ -186,10 +203,18 @@ exports[`Dropzone component snapshot
  1`] = `
 <DocumentFragment>
   <div
+    aria-disabled="true"
+    aria-label="File upload"
     class="Dropzone Dropzone--compressed Dropzone--disabled Dropzone-animation Dropzone-animation--default"
     data-test="DesignSystem-Dropzone"
+    role="group"
   >
+    <span
+      class="Dropzone-srOnly"
+      role="status"
+    />
     <svg
+      aria-hidden="true"
       class="Dropzone-icon--compressed"
       fill="none"
       viewBox="0 0 64 64"
@@ -212,7 +237,6 @@ exports[`Dropzone component snapshot
           Drag your files here or
         </span>
         <span
-          aria-label="Drag your files here or click to select files"
           class="Text Text--disabled Text--strong Text--large ml-2 cursor-pointer"
           data-test="DesignSystem-Text"
           tabindex="-1"
@@ -249,10 +273,18 @@ exports[`Dropzone component snapshot
  1`] = `
 <DocumentFragment>
   <div
+    aria-disabled="true"
+    aria-label="File upload"
     class="Dropzone Dropzone--standard Dropzone--disabled Dropzone-animation Dropzone-standard--default"
     data-test="DesignSystem-Dropzone"
+    role="group"
   >
+    <span
+      class="Dropzone-srOnly"
+      role="status"
+    />
     <svg
+      aria-hidden="true"
       class="Dropzone-icon--standard"
       fill="none"
       viewBox="0 0 64 64"
@@ -275,7 +307,6 @@ exports[`Dropzone component snapshot
           Drag your files here or
         </span>
         <span
-          aria-label="Drag your files here or click to select files"
           class="Text Text--disabled Text--strong Text--large ml-2 cursor-pointer"
           data-test="DesignSystem-Text"
           tabindex="-1"
@@ -312,9 +343,16 @@ exports[`Dropzone component snapshot
  1`] = `
 <DocumentFragment>
   <div
+    aria-disabled="true"
+    aria-label="File upload"
     class="Dropzone Dropzone--tight Dropzone--disabled Dropzone-animation Dropzone-animation--default"
     data-test="DesignSystem-Dropzone"
+    role="group"
   >
+    <span
+      class="Dropzone-srOnly"
+      role="status"
+    />
     <div
       class="DropzoneWrapper DropzoneWrapper--tight"
       data-test="DesignSystem-Dropzone-Wrapper"
@@ -327,7 +365,6 @@ exports[`Dropzone component snapshot
           Drag your files here or
         </span>
         <span
-          aria-label="Drag your files here or click to select files"
           class="Text Text--disabled Text--strong Text--large ml-2 cursor-pointer"
           data-test="DesignSystem-Text"
           tabindex="-1"
@@ -364,10 +401,17 @@ exports[`Dropzone component snapshot
  1`] = `
 <DocumentFragment>
   <div
+    aria-label="File upload"
     class="Dropzone Dropzone--standard Dropzone-animation Dropzone-standard--default"
     data-test="DesignSystem-Dropzone"
+    role="group"
   >
+    <span
+      class="Dropzone-srOnly"
+      role="status"
+    />
     <svg
+      aria-hidden="true"
       class="Dropzone-icon--standard"
       fill="none"
       viewBox="0 0 64 64"
@@ -390,7 +434,6 @@ exports[`Dropzone component snapshot
           Drag your files here or
         </span>
         <span
-          aria-label="Drag your files here or click to select files"
           class="Text Text--link Text--strong Text--large ml-2 cursor-pointer"
           data-test="DesignSystem-Text"
           role="button"
@@ -415,10 +458,17 @@ exports[`Dropzone component snapshot
  1`] = `
 <DocumentFragment>
   <div
+    aria-label="File upload"
     class="Dropzone Dropzone--standard Dropzone-animation Dropzone-standard--default"
     data-test="DesignSystem-Dropzone"
+    role="group"
   >
+    <span
+      class="Dropzone-srOnly"
+      role="status"
+    />
     <svg
+      aria-hidden="true"
       class="Dropzone-icon--standard"
       fill="none"
       viewBox="0 0 64 64"
@@ -441,7 +491,6 @@ exports[`Dropzone component snapshot
           Drag your files here or
         </span>
         <span
-          aria-label="Drag your files here or click to select files"
           class="Text Text--link Text--strong Text--large ml-2 cursor-pointer"
           data-test="DesignSystem-Text"
           role="button"
@@ -467,10 +516,17 @@ exports[`Dropzone component snapshot
  1`] = `
 <DocumentFragment>
   <div
+    aria-label="File upload"
     class="Dropzone Dropzone--standard Dropzone-animation Dropzone-standard--default"
     data-test="DesignSystem-Dropzone"
+    role="group"
   >
+    <span
+      class="Dropzone-srOnly"
+      role="status"
+    />
     <svg
+      aria-hidden="true"
       class="Dropzone-icon--standard"
       fill="none"
       viewBox="0 0 64 64"
@@ -493,7 +549,6 @@ exports[`Dropzone component snapshot
           Drag your files here or
         </span>
         <span
-          aria-label="Drag your files here or click to select files"
           class="Text Text--link Text--strong Text--large ml-2 cursor-pointer"
           data-test="DesignSystem-Text"
           role="button"
@@ -518,10 +573,17 @@ exports[`Dropzone component snapshot
  1`] = `
 <DocumentFragment>
   <div
+    aria-label="File upload"
     class="Dropzone Dropzone--standard Dropzone-animation Dropzone-standard--default"
     data-test="DesignSystem-Dropzone"
+    role="group"
   >
+    <span
+      class="Dropzone-srOnly"
+      role="status"
+    />
     <svg
+      aria-hidden="true"
       class="Dropzone-icon--standard"
       fill="none"
       viewBox="0 0 64 64"
@@ -544,7 +606,6 @@ exports[`Dropzone component snapshot
           Drag your files here or
         </span>
         <span
-          aria-label="Drag your files here or click to select files"
           class="Text Text--link Text--strong Text--large ml-2 cursor-pointer"
           data-test="DesignSystem-Text"
           role="button"

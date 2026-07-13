@@ -5,6 +5,10 @@
   width: 100%;
 }
 
+.EditableInput:focus-visible {
+  outline: none;
+}
+
 .EditableInput-actions {
   position: absolute;
   display: flex;
@@ -27,6 +31,21 @@
   white-space: nowrap;
   display: flex;
   align-items: center;
+  border-radius: var(--border-radius-10);
+  transition: var(--duration--fast-01) var(--standard-productive-curve);
+  cursor: pointer;
+}
+
+.EditableInput-default:hover {
+  background: var(--secondary-lighter);
+  border-color: var(--secondary-dark);
+}
+
+.EditableInput:focus-visible .EditableInput-default {
+  background: var(--white);
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-05);
+  border-color: transparent;
 }
 
 .EditableInput-default--regular {
@@ -49,4 +68,16 @@
 .EditableInput-Input--tiny {
   min-width: var(--spacing-240) !important;
   width: 100%;
+}
+
+.EditableInput-errorIcon--regular {
+  margin-right: var(--spacing-20);
+  margin-top: var(--spacing-10);
+  margin-bottom: var(--spacing-10);
+}
+
+.EditableInput-errorIcon--tiny {
+  margin-right: var(--spacing-10);
+  margin-top: var(--spacing-05);
+  margin-bottom: var(--spacing-05);
 }

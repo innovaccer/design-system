@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { Tabs, Tab } from '@/index';
 import { TabsProps as Props, TabConfig } from '@/index.type';
@@ -328,5 +329,15 @@ describe('Tabs Wrapper component custom max-width', () => {
       </Tabs>
     );
     expect(getByTestId('DesignSystem-Tabs--TextWrapper')).toHaveStyle('max-width: 100px;');
+  });
+});
+
+describe('Tabs component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(
+      <Tabs activeIndex={0} tabs={[{ label: 'Tab 1' }, { label: 'Tab 2' }]} onTabChange={jest.fn()} />
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

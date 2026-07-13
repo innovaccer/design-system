@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { fireEvent, render } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { Slider } from '@/index';
 import { SliderProps as Props } from '../Slider';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -95,5 +96,13 @@ describe('slider component', () => {
     handle.focus();
     fireEvent.keyDown(handle, { keyCode: 34 });
     expect(onChange).toHaveBeenCalledWith(25);
+  });
+});
+
+describe('Slider component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<Slider label="Volume" />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

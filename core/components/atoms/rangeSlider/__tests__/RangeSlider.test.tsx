@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { fireEvent, render } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { RangeSlider } from '@/index';
 
 describe('RangeSlider keyboard smoke tests', () => {
@@ -46,5 +47,13 @@ describe('RangeSlider keyboard smoke tests', () => {
     firstHandle.focus();
     fireEvent.keyDown(firstHandle, { keyCode: 35 }); // End - would move first handle to 10, but snaps to second at 4
     expect(onChange).toHaveBeenCalledWith([4, 4]);
+  });
+});
+
+describe('RangeSlider component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<RangeSlider defaultValue={[25, 75]} label="Range" min={0} max={100} stepSize={5} />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

@@ -85,7 +85,7 @@ export const groupListOptions = (listOptions: OptionSchema[]): OptionSchema[] =>
     {} as { [key: string]: OptionSchema[] }
   );
 
-  const flattenedGroupList = Object.values(groupList).flatMap((item) => [...item]);
+  const flattenedGroupList = ([] as any[]).concat(...Object.values(groupList));
 
   return flattenedGroupList;
 };

@@ -17,7 +17,7 @@ export type FileStatus = 'uploading' | 'completed' | 'error';
 export type FooterOptions = {
   actions: OverlayFooterProps['actions'];
 };
-export type AutoComplete = 'on' | 'off';
+export type AutoComplete = NonNullable<React.InputHTMLAttributes<HTMLInputElement>['autoComplete']>;
 export type NumberRange = [number, number];
 export type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
 

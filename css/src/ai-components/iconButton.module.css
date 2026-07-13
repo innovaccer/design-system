@@ -20,22 +20,12 @@
 }
 
 .AIIconButton:hover {
-  background: linear-gradient(
-    315deg,
-    rgba(227, 28, 121, 0.2) 0%,
-    rgba(231, 56, 79, 0.32) 19.79%,
-    rgba(240, 125, 0, 0.32) 100%
-  );
+  background: linear-gradient(143deg, #fad1b2 10.84%, #f8c4c1 51.71%, #f8c8d7 91.5%);
   color: var(--secondary) !important;
 }
 
 .AIIconButton:active {
-  background: linear-gradient(
-    315deg,
-    rgba(227, 28, 121, 0.31) 0%,
-    rgba(231, 56, 79, 0.48) 19.79%,
-    rgba(240, 125, 0, 0.48) 100%
-  );
+  background: linear-gradient(144deg, #f7ba8c 14.82%, #f6af98 40.53%, #f5a8a0 55.69%, #f5adc5 79.29%);
   color: var(--secondary-dark) !important;
 }
 

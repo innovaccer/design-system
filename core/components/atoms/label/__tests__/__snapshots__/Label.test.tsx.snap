@@ -107,6 +107,7 @@ exports[`Label component - info prop tests
               aria-label="long information text"
               class="material-symbols material-symbols-rounded Icon Icon--subtle ml-3 cursor-pointer d-flex align-items-center"
               data-test="DesignSystem-Label--Info"
+              role="img"
               style="font-size: 12px; width: 12px;"
             >
               info
@@ -150,6 +151,7 @@ exports[`Label component - info prop tests
               aria-label="sample info"
               class="material-symbols material-symbols-rounded Icon Icon--subtle ml-3 cursor-pointer d-flex align-items-center"
               data-test="DesignSystem-Label--Info"
+              role="img"
               style="font-size: 12px; width: 12px;"
             >
               info
@@ -193,6 +195,7 @@ exports[`Label component - info prop tests
               aria-label="tooltip text"
               class="material-symbols material-symbols-rounded Icon Icon--subtle ml-3 cursor-pointer d-flex align-items-center"
               data-test="DesignSystem-Label--Info"
+              role="img"
               style="font-size: 12px; width: 12px;"
             >
               info
@@ -330,10 +333,15 @@ exports[`Label component - size prop snapshot tests renders correctly with size=
       >
         Complex Small Label
         <span
-          aria-label="required"
-          class="Label-requiredIndicator"
+          aria-hidden="true"
+          class="Label-requiredIndicator mb-3-5 mt-2"
           data-test="DesignSystem-Label--RequiredIndicator"
         />
+        <span
+          class="Label-srOnly"
+        >
+          (required)
+        </span>
         <div
           class="w-fit-content"
         >
@@ -345,8 +353,9 @@ exports[`Label component - size prop snapshot tests renders correctly with size=
           >
             <i
               aria-label="Small label info"
-              class="material-symbols material-symbols-rounded Icon Icon--subtle ml-3 cursor-pointer d-flex align-items-center"
+              class="material-symbols material-symbols-rounded Icon Icon--subtle ml-3 cursor-pointer d-flex align-items-center mb-3-5"
               data-test="DesignSystem-Label--Info"
+              role="img"
               style="font-size: 12px; width: 12px;"
             >
               info
@@ -376,10 +385,15 @@ exports[`Label component - size prop snapshot tests renders correctly with size=
       >
         Complex Small Label
         <span
-          aria-label="required"
-          class="Label-requiredIndicator"
+          aria-hidden="true"
+          class="Label-requiredIndicator mb-3-5 mt-2"
           data-test="DesignSystem-Label--RequiredIndicator"
         />
+        <span
+          class="Label-srOnly"
+        >
+          (required)
+        </span>
         <div
           class="w-fit-content"
         >
@@ -391,8 +405,9 @@ exports[`Label component - size prop snapshot tests renders correctly with size=
           >
             <i
               aria-label="Small label info"
-              class="material-symbols material-symbols-rounded Icon Icon--subtle ml-3 cursor-pointer d-flex align-items-center"
+              class="material-symbols material-symbols-rounded Icon Icon--subtle ml-3 cursor-pointer d-flex align-items-center mb-3-5"
               data-test="DesignSystem-Label--Info"
+              role="img"
               style="font-size: 12px; width: 12px;"
             >
               info
@@ -470,10 +485,15 @@ exports[`Label component - size prop snapshot tests renders correctly with size=
       >
         Small Required Label
         <span
-          aria-label="required"
-          class="Label-requiredIndicator"
+          aria-hidden="true"
+          class="Label-requiredIndicator mb-3-5 mt-2"
           data-test="DesignSystem-Label--RequiredIndicator"
         />
+        <span
+          class="Label-srOnly"
+        >
+          (required)
+        </span>
       </label>
     </div>
   </div>
@@ -493,10 +513,15 @@ exports[`Label component - size prop snapshot tests renders correctly with size=
       >
         Small Required Label
         <span
-          aria-label="required"
-          class="Label-requiredIndicator"
+          aria-hidden="true"
+          class="Label-requiredIndicator mb-3-5 mt-2"
           data-test="DesignSystem-Label--RequiredIndicator"
         />
+        <span
+          class="Label-srOnly"
+        >
+          (required)
+        </span>
       </label>
     </div>
   </div>

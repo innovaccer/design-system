@@ -2,11 +2,11 @@ import React from 'react';
 import { extractBaseProps } from '@/utils/types';
 import Draggable from './Draggable';
 import { arrayMove } from './utils';
-import { ListboxProps } from '@/index.type';
+import { ListboxInternalProps } from '../Listbox';
 import classNames from 'classnames';
 import styles from '@css/components/listbox.module.css';
 
-export const DraggableList = (props: ListboxProps) => {
+export const DraggableList = (props: ListboxInternalProps) => {
   const { children, className, tagName: Tag = 'ul', size, type, draggable, showDivider, ...rest } = props;
   const baseProps = extractBaseProps(props);
 
@@ -19,6 +19,28 @@ export const DraggableList = (props: ListboxProps) => {
 
   const [childList, setChildList] = React.useState(renderChildren);
 
+  React.useEffect(() => {
+    setChildList((prevList) => {
+      const newChildrenMap = new Map();
+      renderChildren.forEach((child: any) => {
+        if (child.key) newChildrenMap.set(child.key, child);
+      });
+
+      const updatedList = prevList
+        .map((child: any) => newChildrenMap.get(child.key) || child)
+        .filter((child: any) => newChildrenMap.has(child.key));
+
+      const prevKeys = new Set(prevList.map((c: any) => c.key));
+      renderChildren.forEach((child: any) => {
+        if (child.key && !prevKeys.has(child.key)) {
+          updatedList.push(child);
+        }
+      });
+
+      return updatedList.length > 0 ? updatedList : renderChildren;
+    });
+  }, [children]);
+
   const onChangeHandler = (props: any) => {
     const { oldIndex, newIndex } = props;
     const updatedList = arrayMove(childList, oldIndex, newIndex);
@@ -30,15 +52,19 @@ export const DraggableList = (props: ListboxProps) => {
     <Draggable
       values={childList}
       onChange={onChangeHandler}
-      renderItem={({ value, props }) => {
+      renderItem={({ value, props, isDragged, isSelected }) => {
+        const itemClasses = classNames(styles['Listbox-item--draggable'], {
+          [styles['Listbox-item--drag-picked']]: isDragged,
+          [styles['Listbox-item--sticky-picked']]: isSelected,
+        });
         return (
-          <div {...props} className={styles['Listbox-item--draggable']}>
+          <div {...props} className={itemClasses}>
             {value}
           </div>
         );
       }}
       renderList={({ children, props: dragProps }) => (
-        <Tag data-test="DesignSystem-Listbox" {...baseProps} className={classes} {...rest} {...dragProps}>
+        <Tag data-test="DesignSystem-Listbox" {...baseProps} className={classes} tabIndex={-1} {...rest} {...dragProps}>
           {children}
         </Tag>
       )}

@@ -5,8 +5,11 @@ exports[`EditableChipInput component
  1`] = `
 <DocumentFragment>
   <div
+    aria-label="Click to edit. Current chips: Chip1, Chip2"
     class="EditableChipInput"
     data-test="DesignSystem-EditableChipInput"
+    role="button"
+    tabindex="0"
   >
     <div
       class="Editable"
@@ -14,32 +17,36 @@ exports[`EditableChipInput component
     >
       <div
         data-test="DesignSystem-EditableWrapper"
-        role="button"
-        tabindex="0"
       >
         <div
           class="EditableChipInput-defaultWithChips"
           data-test="DesignSystem-EditableChipInput--Default"
         >
           <div
-            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular my-2 mx-2"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular EditableChipInput-chip--regular"
             data-test="DesignSystem-EditableChipInput--Chip"
-            role="button"
             style="max-width: 256px;"
-            tabindex="0"
           >
             <div
-              class="Chip-text--truncate"
+              aria-label="Chip1"
+              class="Chip-content Chip-content--regular"
+              data-test="DesignSystem-GenericChip--Content"
+              role="button"
+              tabindex="0"
             >
-              <span
-                class="Text Text--regular color-inverse Chip-text"
-                data-test="DesignSystem-GenericChip--Text"
+              <div
+                class="Chip-text--truncate"
               >
-                Chip1
-              </span>
+                <span
+                  class="Text Text--regular color-inverse Chip-text"
+                  data-test="DesignSystem-GenericChip--Text"
+                >
+                  Chip1
+                </span>
+              </div>
             </div>
             <div
-              aria-label="Remove"
+              aria-label="Remove Chip1"
               class="Chip-icon Chip-icon--right cursor-pointer p-3"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
@@ -55,24 +62,30 @@ exports[`EditableChipInput component
             </div>
           </div>
           <div
-            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular my-2 mx-2"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular EditableChipInput-chip--regular"
             data-test="DesignSystem-EditableChipInput--Chip"
-            role="button"
             style="max-width: 256px;"
-            tabindex="0"
           >
             <div
-              class="Chip-text--truncate"
+              aria-label="Chip2"
+              class="Chip-content Chip-content--regular"
+              data-test="DesignSystem-GenericChip--Content"
+              role="button"
+              tabindex="0"
             >
-              <span
-                class="Text Text--regular color-inverse Chip-text"
-                data-test="DesignSystem-GenericChip--Text"
+              <div
+                class="Chip-text--truncate"
               >
-                Chip2
-              </span>
+                <span
+                  class="Text Text--regular color-inverse Chip-text"
+                  data-test="DesignSystem-GenericChip--Text"
+                >
+                  Chip2
+                </span>
+              </div>
             </div>
             <div
-              aria-label="Remove"
+              aria-label="Remove Chip2"
               class="Chip-icon Chip-icon--right cursor-pointer p-3"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
@@ -99,8 +112,11 @@ exports[`EditableChipInput component
  1`] = `
 <DocumentFragment>
   <div
+    aria-label="Click to edit. Current chips: Chip1, Chip2"
     class="EditableChipInput"
     data-test="DesignSystem-EditableChipInput"
+    role="button"
+    tabindex="0"
   >
     <div
       class="Editable"
@@ -108,32 +124,36 @@ exports[`EditableChipInput component
     >
       <div
         data-test="DesignSystem-EditableWrapper"
-        role="button"
-        tabindex="0"
       >
         <div
           class="EditableChipInput-defaultWithChips"
           data-test="DesignSystem-EditableChipInput--Default"
         >
           <div
-            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular my-2 mx-2"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular EditableChipInput-chip--regular"
             data-test="DesignSystem-EditableChipInput--Chip"
-            role="button"
             style="max-width: 256px;"
-            tabindex="0"
           >
             <div
-              class="Chip-text--truncate"
+              aria-label="Chip1"
+              class="Chip-content Chip-content--regular"
+              data-test="DesignSystem-GenericChip--Content"
+              role="button"
+              tabindex="0"
             >
-              <span
-                class="Text Text--regular color-inverse Chip-text"
-                data-test="DesignSystem-GenericChip--Text"
+              <div
+                class="Chip-text--truncate"
               >
-                Chip1
-              </span>
+                <span
+                  class="Text Text--regular color-inverse Chip-text"
+                  data-test="DesignSystem-GenericChip--Text"
+                >
+                  Chip1
+                </span>
+              </div>
             </div>
             <div
-              aria-label="Remove"
+              aria-label="Remove Chip1"
               class="Chip-icon Chip-icon--right cursor-pointer p-3"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
@@ -149,24 +169,30 @@ exports[`EditableChipInput component
             </div>
           </div>
           <div
-            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular my-2 mx-2"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular EditableChipInput-chip--regular"
             data-test="DesignSystem-EditableChipInput--Chip"
-            role="button"
             style="max-width: 256px;"
-            tabindex="0"
           >
             <div
-              class="Chip-text--truncate"
+              aria-label="Chip2"
+              class="Chip-content Chip-content--regular"
+              data-test="DesignSystem-GenericChip--Content"
+              role="button"
+              tabindex="0"
             >
-              <span
-                class="Text Text--regular color-inverse Chip-text"
-                data-test="DesignSystem-GenericChip--Text"
+              <div
+                class="Chip-text--truncate"
               >
-                Chip2
-              </span>
+                <span
+                  class="Text Text--regular color-inverse Chip-text"
+                  data-test="DesignSystem-GenericChip--Text"
+                >
+                  Chip2
+                </span>
+              </div>
             </div>
             <div
-              aria-label="Remove"
+              aria-label="Remove Chip2"
               class="Chip-icon Chip-icon--right cursor-pointer p-3"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
@@ -193,8 +219,11 @@ exports[`EditableChipInput component
  1`] = `
 <DocumentFragment>
   <div
+    aria-label="Click to edit. Current chips: Chip1, Chip2"
     class="EditableChipInput"
     data-test="DesignSystem-EditableChipInput"
+    role="button"
+    tabindex="0"
   >
     <div
       class="Editable"
@@ -202,32 +231,36 @@ exports[`EditableChipInput component
     >
       <div
         data-test="DesignSystem-EditableWrapper"
-        role="button"
-        tabindex="0"
       >
         <div
           class="EditableChipInput-defaultWithChips"
           data-test="DesignSystem-EditableChipInput--Default"
         >
           <div
-            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular my-2 mx-2"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular EditableChipInput-chip--regular"
             data-test="DesignSystem-EditableChipInput--Chip"
-            role="button"
             style="max-width: 256px;"
-            tabindex="0"
           >
             <div
-              class="Chip-text--truncate"
+              aria-label="Chip1"
+              class="Chip-content Chip-content--regular"
+              data-test="DesignSystem-GenericChip--Content"
+              role="button"
+              tabindex="0"
             >
-              <span
-                class="Text Text--regular color-inverse Chip-text"
-                data-test="DesignSystem-GenericChip--Text"
+              <div
+                class="Chip-text--truncate"
               >
-                Chip1
-              </span>
+                <span
+                  class="Text Text--regular color-inverse Chip-text"
+                  data-test="DesignSystem-GenericChip--Text"
+                >
+                  Chip1
+                </span>
+              </div>
             </div>
             <div
-              aria-label="Remove"
+              aria-label="Remove Chip1"
               class="Chip-icon Chip-icon--right cursor-pointer p-3"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
@@ -243,24 +276,30 @@ exports[`EditableChipInput component
             </div>
           </div>
           <div
-            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular my-2 mx-2"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular EditableChipInput-chip--regular"
             data-test="DesignSystem-EditableChipInput--Chip"
-            role="button"
             style="max-width: 256px;"
-            tabindex="0"
           >
             <div
-              class="Chip-text--truncate"
+              aria-label="Chip2"
+              class="Chip-content Chip-content--regular"
+              data-test="DesignSystem-GenericChip--Content"
+              role="button"
+              tabindex="0"
             >
-              <span
-                class="Text Text--regular color-inverse Chip-text"
-                data-test="DesignSystem-GenericChip--Text"
+              <div
+                class="Chip-text--truncate"
               >
-                Chip2
-              </span>
+                <span
+                  class="Text Text--regular color-inverse Chip-text"
+                  data-test="DesignSystem-GenericChip--Text"
+                >
+                  Chip2
+                </span>
+              </div>
             </div>
             <div
-              aria-label="Remove"
+              aria-label="Remove Chip2"
               class="Chip-icon Chip-icon--right cursor-pointer p-3"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
@@ -287,8 +326,11 @@ exports[`EditableChipInput component
  1`] = `
 <DocumentFragment>
   <div
+    aria-label="Click to edit. Current chips: Chip1, Chip2"
     class="EditableChipInput"
     data-test="DesignSystem-EditableChipInput"
+    role="button"
+    tabindex="0"
   >
     <div
       class="Editable"
@@ -296,32 +338,36 @@ exports[`EditableChipInput component
     >
       <div
         data-test="DesignSystem-EditableWrapper"
-        role="button"
-        tabindex="0"
       >
         <div
-          class="EditableChipInput-defaultWithChips"
+          class="EditableChipInput-defaultWithChips EditableChipInput-defaultWithChips--small"
           data-test="DesignSystem-EditableChipInput--Default"
         >
           <div
-            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--small my-2 mx-2"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--small EditableChipInput-chip--small"
             data-test="DesignSystem-EditableChipInput--Chip"
-            role="button"
             style="max-width: 256px;"
-            tabindex="0"
           >
             <div
-              class="Chip-text--truncate"
+              aria-label="Chip1"
+              class="Chip-content Chip-content--small"
+              data-test="DesignSystem-GenericChip--Content"
+              role="button"
+              tabindex="0"
             >
-              <span
-                class="Text Text--small color-inverse Chip-text"
-                data-test="DesignSystem-GenericChip--Text"
+              <div
+                class="Chip-text--truncate"
               >
-                Chip1
-              </span>
+                <span
+                  class="Text Text--small color-inverse Chip-text"
+                  data-test="DesignSystem-GenericChip--Text"
+                >
+                  Chip1
+                </span>
+              </div>
             </div>
             <div
-              aria-label="Remove"
+              aria-label="Remove Chip1"
               class="Chip-icon Chip-icon--right Chip-icon--rightSmall cursor-pointer"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
@@ -337,24 +383,30 @@ exports[`EditableChipInput component
             </div>
           </div>
           <div
-            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--small my-2 mx-2"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--small EditableChipInput-chip--small"
             data-test="DesignSystem-EditableChipInput--Chip"
-            role="button"
             style="max-width: 256px;"
-            tabindex="0"
           >
             <div
-              class="Chip-text--truncate"
+              aria-label="Chip2"
+              class="Chip-content Chip-content--small"
+              data-test="DesignSystem-GenericChip--Content"
+              role="button"
+              tabindex="0"
             >
-              <span
-                class="Text Text--small color-inverse Chip-text"
-                data-test="DesignSystem-GenericChip--Text"
+              <div
+                class="Chip-text--truncate"
               >
-                Chip2
-              </span>
+                <span
+                  class="Text Text--small color-inverse Chip-text"
+                  data-test="DesignSystem-GenericChip--Text"
+                >
+                  Chip2
+                </span>
+              </div>
             </div>
             <div
-              aria-label="Remove"
+              aria-label="Remove Chip2"
               class="Chip-icon Chip-icon--right Chip-icon--rightSmall cursor-pointer"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
@@ -381,8 +433,11 @@ exports[`EditableChipInput component
  1`] = `
 <DocumentFragment>
   <div
+    aria-label="Click to edit. Current chips: Chip1, Chip2"
     class="EditableChipInput"
     data-test="DesignSystem-EditableChipInput"
+    role="button"
+    tabindex="0"
   >
     <div
       class="Editable"
@@ -390,32 +445,36 @@ exports[`EditableChipInput component
     >
       <div
         data-test="DesignSystem-EditableWrapper"
-        role="button"
-        tabindex="0"
       >
         <div
           class="EditableChipInput-defaultWithChips"
           data-test="DesignSystem-EditableChipInput--Default"
         >
           <div
-            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular my-2 mx-2"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular EditableChipInput-chip--regular"
             data-test="DesignSystem-EditableChipInput--Chip"
-            role="button"
             style="max-width: 256px;"
-            tabindex="0"
           >
             <div
-              class="Chip-text--truncate"
+              aria-label="Chip1"
+              class="Chip-content Chip-content--regular"
+              data-test="DesignSystem-GenericChip--Content"
+              role="button"
+              tabindex="0"
             >
-              <span
-                class="Text Text--regular color-inverse Chip-text"
-                data-test="DesignSystem-GenericChip--Text"
+              <div
+                class="Chip-text--truncate"
               >
-                Chip1
-              </span>
+                <span
+                  class="Text Text--regular color-inverse Chip-text"
+                  data-test="DesignSystem-GenericChip--Text"
+                >
+                  Chip1
+                </span>
+              </div>
             </div>
             <div
-              aria-label="Remove"
+              aria-label="Remove Chip1"
               class="Chip-icon Chip-icon--right cursor-pointer p-3"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
@@ -431,24 +490,30 @@ exports[`EditableChipInput component
             </div>
           </div>
           <div
-            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular my-2 mx-2"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular EditableChipInput-chip--regular"
             data-test="DesignSystem-EditableChipInput--Chip"
-            role="button"
             style="max-width: 256px;"
-            tabindex="0"
           >
             <div
-              class="Chip-text--truncate"
+              aria-label="Chip2"
+              class="Chip-content Chip-content--regular"
+              data-test="DesignSystem-GenericChip--Content"
+              role="button"
+              tabindex="0"
             >
-              <span
-                class="Text Text--regular color-inverse Chip-text"
-                data-test="DesignSystem-GenericChip--Text"
+              <div
+                class="Chip-text--truncate"
               >
-                Chip2
-              </span>
+                <span
+                  class="Text Text--regular color-inverse Chip-text"
+                  data-test="DesignSystem-GenericChip--Text"
+                >
+                  Chip2
+                </span>
+              </div>
             </div>
             <div
-              aria-label="Remove"
+              aria-label="Remove Chip2"
               class="Chip-icon Chip-icon--right cursor-pointer p-3"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
@@ -475,8 +540,11 @@ exports[`EditableChipInput component
  1`] = `
 <DocumentFragment>
   <div
+    aria-label="Click to edit. Current chips: Chip1, Chip2"
     class="EditableChipInput"
     data-test="DesignSystem-EditableChipInput"
+    role="button"
+    tabindex="0"
   >
     <div
       class="Editable"
@@ -484,32 +552,36 @@ exports[`EditableChipInput component
     >
       <div
         data-test="DesignSystem-EditableWrapper"
-        role="button"
-        tabindex="0"
       >
         <div
-          class="EditableChipInput-defaultWithChips"
+          class="EditableChipInput-defaultWithChips EditableChipInput-defaultWithChips--small"
           data-test="DesignSystem-EditableChipInput--Default"
         >
           <div
-            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--small my-2 mx-2"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--small EditableChipInput-chip--small"
             data-test="DesignSystem-EditableChipInput--Chip"
-            role="button"
             style="max-width: 256px;"
-            tabindex="0"
           >
             <div
-              class="Chip-text--truncate"
+              aria-label="Chip1"
+              class="Chip-content Chip-content--small"
+              data-test="DesignSystem-GenericChip--Content"
+              role="button"
+              tabindex="0"
             >
-              <span
-                class="Text Text--small color-inverse Chip-text"
-                data-test="DesignSystem-GenericChip--Text"
+              <div
+                class="Chip-text--truncate"
               >
-                Chip1
-              </span>
+                <span
+                  class="Text Text--small color-inverse Chip-text"
+                  data-test="DesignSystem-GenericChip--Text"
+                >
+                  Chip1
+                </span>
+              </div>
             </div>
             <div
-              aria-label="Remove"
+              aria-label="Remove Chip1"
               class="Chip-icon Chip-icon--right Chip-icon--rightSmall cursor-pointer"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
@@ -525,24 +597,30 @@ exports[`EditableChipInput component
             </div>
           </div>
           <div
-            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--small my-2 mx-2"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--small EditableChipInput-chip--small"
             data-test="DesignSystem-EditableChipInput--Chip"
-            role="button"
             style="max-width: 256px;"
-            tabindex="0"
           >
             <div
-              class="Chip-text--truncate"
+              aria-label="Chip2"
+              class="Chip-content Chip-content--small"
+              data-test="DesignSystem-GenericChip--Content"
+              role="button"
+              tabindex="0"
             >
-              <span
-                class="Text Text--small color-inverse Chip-text"
-                data-test="DesignSystem-GenericChip--Text"
+              <div
+                class="Chip-text--truncate"
               >
-                Chip2
-              </span>
+                <span
+                  class="Text Text--small color-inverse Chip-text"
+                  data-test="DesignSystem-GenericChip--Text"
+                >
+                  Chip2
+                </span>
+              </div>
             </div>
             <div
-              aria-label="Remove"
+              aria-label="Remove Chip2"
               class="Chip-icon Chip-icon--right Chip-icon--rightSmall cursor-pointer"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
@@ -569,8 +647,11 @@ exports[`EditableChipInput component
  1`] = `
 <DocumentFragment>
   <div
+    aria-label="Click to edit. Current chips: Chip1, Chip2"
     class="EditableChipInput"
     data-test="DesignSystem-EditableChipInput"
+    role="button"
+    tabindex="0"
   >
     <div
       class="Editable"
@@ -578,32 +659,36 @@ exports[`EditableChipInput component
     >
       <div
         data-test="DesignSystem-EditableWrapper"
-        role="button"
-        tabindex="0"
       >
         <div
           class="EditableChipInput-defaultWithChips"
           data-test="DesignSystem-EditableChipInput--Default"
         >
           <div
-            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular my-2 mx-2"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular EditableChipInput-chip--regular"
             data-test="DesignSystem-EditableChipInput--Chip"
-            role="button"
             style="max-width: 256px;"
-            tabindex="0"
           >
             <div
-              class="Chip-text--truncate"
+              aria-label="Chip1"
+              class="Chip-content Chip-content--regular"
+              data-test="DesignSystem-GenericChip--Content"
+              role="button"
+              tabindex="0"
             >
-              <span
-                class="Text Text--regular color-inverse Chip-text"
-                data-test="DesignSystem-GenericChip--Text"
+              <div
+                class="Chip-text--truncate"
               >
-                Chip1
-              </span>
+                <span
+                  class="Text Text--regular color-inverse Chip-text"
+                  data-test="DesignSystem-GenericChip--Text"
+                >
+                  Chip1
+                </span>
+              </div>
             </div>
             <div
-              aria-label="Remove"
+              aria-label="Remove Chip1"
               class="Chip-icon Chip-icon--right cursor-pointer p-3"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
@@ -619,24 +704,30 @@ exports[`EditableChipInput component
             </div>
           </div>
           <div
-            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular my-2 mx-2"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular EditableChipInput-chip--regular"
             data-test="DesignSystem-EditableChipInput--Chip"
-            role="button"
             style="max-width: 256px;"
-            tabindex="0"
           >
             <div
-              class="Chip-text--truncate"
+              aria-label="Chip2"
+              class="Chip-content Chip-content--regular"
+              data-test="DesignSystem-GenericChip--Content"
+              role="button"
+              tabindex="0"
             >
-              <span
-                class="Text Text--regular color-inverse Chip-text"
-                data-test="DesignSystem-GenericChip--Text"
+              <div
+                class="Chip-text--truncate"
               >
-                Chip2
-              </span>
+                <span
+                  class="Text Text--regular color-inverse Chip-text"
+                  data-test="DesignSystem-GenericChip--Text"
+                >
+                  Chip2
+                </span>
+              </div>
             </div>
             <div
-              aria-label="Remove"
+              aria-label="Remove Chip2"
               class="Chip-icon Chip-icon--right cursor-pointer p-3"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
@@ -663,8 +754,11 @@ exports[`EditableChipInput component
  1`] = `
 <DocumentFragment>
   <div
+    aria-label="Click to edit. Current chips: Chip1, Chip2"
     class="EditableChipInput"
     data-test="DesignSystem-EditableChipInput"
+    role="button"
+    tabindex="0"
   >
     <div
       class="Editable"
@@ -672,32 +766,36 @@ exports[`EditableChipInput component
     >
       <div
         data-test="DesignSystem-EditableWrapper"
-        role="button"
-        tabindex="0"
       >
         <div
           class="EditableChipInput-defaultWithChips"
           data-test="DesignSystem-EditableChipInput--Default"
         >
           <div
-            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular my-2 mx-2"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular EditableChipInput-chip--regular"
             data-test="DesignSystem-EditableChipInput--Chip"
-            role="button"
             style="max-width: 256px;"
-            tabindex="0"
           >
             <div
-              class="Chip-text--truncate"
+              aria-label="Chip1"
+              class="Chip-content Chip-content--regular"
+              data-test="DesignSystem-GenericChip--Content"
+              role="button"
+              tabindex="0"
             >
-              <span
-                class="Text Text--regular color-inverse Chip-text"
-                data-test="DesignSystem-GenericChip--Text"
+              <div
+                class="Chip-text--truncate"
               >
-                Chip1
-              </span>
+                <span
+                  class="Text Text--regular color-inverse Chip-text"
+                  data-test="DesignSystem-GenericChip--Text"
+                >
+                  Chip1
+                </span>
+              </div>
             </div>
             <div
-              aria-label="Remove"
+              aria-label="Remove Chip1"
               class="Chip-icon Chip-icon--right cursor-pointer p-3"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
@@ -713,24 +811,30 @@ exports[`EditableChipInput component
             </div>
           </div>
           <div
-            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular my-2 mx-2"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular EditableChipInput-chip--regular"
             data-test="DesignSystem-EditableChipInput--Chip"
-            role="button"
             style="max-width: 256px;"
-            tabindex="0"
           >
             <div
-              class="Chip-text--truncate"
+              aria-label="Chip2"
+              class="Chip-content Chip-content--regular"
+              data-test="DesignSystem-GenericChip--Content"
+              role="button"
+              tabindex="0"
             >
-              <span
-                class="Text Text--regular color-inverse Chip-text"
-                data-test="DesignSystem-GenericChip--Text"
+              <div
+                class="Chip-text--truncate"
               >
-                Chip2
-              </span>
+                <span
+                  class="Text Text--regular color-inverse Chip-text"
+                  data-test="DesignSystem-GenericChip--Text"
+                >
+                  Chip2
+                </span>
+              </div>
             </div>
             <div
-              aria-label="Remove"
+              aria-label="Remove Chip2"
               class="Chip-icon Chip-icon--right cursor-pointer p-3"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
@@ -757,8 +861,11 @@ exports[`EditableChipInput component
  1`] = `
 <DocumentFragment>
   <div
+    aria-label="Click to edit. Current chips: Chip1, Chip2"
     class="EditableChipInput"
     data-test="DesignSystem-EditableChipInput"
+    role="button"
+    tabindex="0"
   >
     <div
       class="Editable"
@@ -766,32 +873,36 @@ exports[`EditableChipInput component
     >
       <div
         data-test="DesignSystem-EditableWrapper"
-        role="button"
-        tabindex="0"
       >
         <div
           class="EditableChipInput-defaultWithChips"
           data-test="DesignSystem-EditableChipInput--Default"
         >
           <div
-            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular my-2 mx-2"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular EditableChipInput-chip--regular"
             data-test="DesignSystem-EditableChipInput--Chip"
-            role="button"
             style="max-width: 256px;"
-            tabindex="0"
           >
             <div
-              class="Chip-text--truncate"
+              aria-label="Chip1"
+              class="Chip-content Chip-content--regular"
+              data-test="DesignSystem-GenericChip--Content"
+              role="button"
+              tabindex="0"
             >
-              <span
-                class="Text Text--regular color-inverse Chip-text"
-                data-test="DesignSystem-GenericChip--Text"
+              <div
+                class="Chip-text--truncate"
               >
-                Chip1
-              </span>
+                <span
+                  class="Text Text--regular color-inverse Chip-text"
+                  data-test="DesignSystem-GenericChip--Text"
+                >
+                  Chip1
+                </span>
+              </div>
             </div>
             <div
-              aria-label="Remove"
+              aria-label="Remove Chip1"
               class="Chip-icon Chip-icon--right cursor-pointer p-3"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
@@ -807,24 +918,30 @@ exports[`EditableChipInput component
             </div>
           </div>
           <div
-            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular my-2 mx-2"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular EditableChipInput-chip--regular"
             data-test="DesignSystem-EditableChipInput--Chip"
-            role="button"
             style="max-width: 256px;"
-            tabindex="0"
           >
             <div
-              class="Chip-text--truncate"
+              aria-label="Chip2"
+              class="Chip-content Chip-content--regular"
+              data-test="DesignSystem-GenericChip--Content"
+              role="button"
+              tabindex="0"
             >
-              <span
-                class="Text Text--regular color-inverse Chip-text"
-                data-test="DesignSystem-GenericChip--Text"
+              <div
+                class="Chip-text--truncate"
               >
-                Chip2
-              </span>
+                <span
+                  class="Text Text--regular color-inverse Chip-text"
+                  data-test="DesignSystem-GenericChip--Text"
+                >
+                  Chip2
+                </span>
+              </div>
             </div>
             <div
-              aria-label="Remove"
+              aria-label="Remove Chip2"
               class="Chip-icon Chip-icon--right cursor-pointer p-3"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
@@ -851,8 +968,11 @@ exports[`EditableChipInput component
  1`] = `
 <DocumentFragment>
   <div
+    aria-label="Click to edit. Current chips: Chip1, Chip2"
     class="EditableChipInput"
     data-test="DesignSystem-EditableChipInput"
+    role="button"
+    tabindex="0"
   >
     <div
       class="Editable"
@@ -860,32 +980,36 @@ exports[`EditableChipInput component
     >
       <div
         data-test="DesignSystem-EditableWrapper"
-        role="button"
-        tabindex="0"
       >
         <div
-          class="EditableChipInput-defaultWithChips"
+          class="EditableChipInput-defaultWithChips EditableChipInput-defaultWithChips--small"
           data-test="DesignSystem-EditableChipInput--Default"
         >
           <div
-            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--small my-2 mx-2"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--small EditableChipInput-chip--small"
             data-test="DesignSystem-EditableChipInput--Chip"
-            role="button"
             style="max-width: 256px;"
-            tabindex="0"
           >
             <div
-              class="Chip-text--truncate"
+              aria-label="Chip1"
+              class="Chip-content Chip-content--small"
+              data-test="DesignSystem-GenericChip--Content"
+              role="button"
+              tabindex="0"
             >
-              <span
-                class="Text Text--small color-inverse Chip-text"
-                data-test="DesignSystem-GenericChip--Text"
+              <div
+                class="Chip-text--truncate"
               >
-                Chip1
-              </span>
+                <span
+                  class="Text Text--small color-inverse Chip-text"
+                  data-test="DesignSystem-GenericChip--Text"
+                >
+                  Chip1
+                </span>
+              </div>
             </div>
             <div
-              aria-label="Remove"
+              aria-label="Remove Chip1"
               class="Chip-icon Chip-icon--right Chip-icon--rightSmall cursor-pointer"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
@@ -901,24 +1025,30 @@ exports[`EditableChipInput component
             </div>
           </div>
           <div
-            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--small my-2 mx-2"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--small EditableChipInput-chip--small"
             data-test="DesignSystem-EditableChipInput--Chip"
-            role="button"
             style="max-width: 256px;"
-            tabindex="0"
           >
             <div
-              class="Chip-text--truncate"
+              aria-label="Chip2"
+              class="Chip-content Chip-content--small"
+              data-test="DesignSystem-GenericChip--Content"
+              role="button"
+              tabindex="0"
             >
-              <span
-                class="Text Text--small color-inverse Chip-text"
-                data-test="DesignSystem-GenericChip--Text"
+              <div
+                class="Chip-text--truncate"
               >
-                Chip2
-              </span>
+                <span
+                  class="Text Text--small color-inverse Chip-text"
+                  data-test="DesignSystem-GenericChip--Text"
+                >
+                  Chip2
+                </span>
+              </div>
             </div>
             <div
-              aria-label="Remove"
+              aria-label="Remove Chip2"
               class="Chip-icon Chip-icon--right Chip-icon--rightSmall cursor-pointer"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
@@ -945,8 +1075,11 @@ exports[`EditableChipInput component
  1`] = `
 <DocumentFragment>
   <div
+    aria-label="Click to edit. Current chips: Chip1, Chip2"
     class="EditableChipInput"
     data-test="DesignSystem-EditableChipInput"
+    role="button"
+    tabindex="0"
   >
     <div
       class="Editable"
@@ -954,32 +1087,36 @@ exports[`EditableChipInput component
     >
       <div
         data-test="DesignSystem-EditableWrapper"
-        role="button"
-        tabindex="0"
       >
         <div
           class="EditableChipInput-defaultWithChips"
           data-test="DesignSystem-EditableChipInput--Default"
         >
           <div
-            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular my-2 mx-2"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular EditableChipInput-chip--regular"
             data-test="DesignSystem-EditableChipInput--Chip"
-            role="button"
             style="max-width: 256px;"
-            tabindex="0"
           >
             <div
-              class="Chip-text--truncate"
+              aria-label="Chip1"
+              class="Chip-content Chip-content--regular"
+              data-test="DesignSystem-GenericChip--Content"
+              role="button"
+              tabindex="0"
             >
-              <span
-                class="Text Text--regular color-inverse Chip-text"
-                data-test="DesignSystem-GenericChip--Text"
+              <div
+                class="Chip-text--truncate"
               >
-                Chip1
-              </span>
+                <span
+                  class="Text Text--regular color-inverse Chip-text"
+                  data-test="DesignSystem-GenericChip--Text"
+                >
+                  Chip1
+                </span>
+              </div>
             </div>
             <div
-              aria-label="Remove"
+              aria-label="Remove Chip1"
               class="Chip-icon Chip-icon--right cursor-pointer p-3"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
@@ -995,24 +1132,30 @@ exports[`EditableChipInput component
             </div>
           </div>
           <div
-            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular my-2 mx-2"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular EditableChipInput-chip--regular"
             data-test="DesignSystem-EditableChipInput--Chip"
-            role="button"
             style="max-width: 256px;"
-            tabindex="0"
           >
             <div
-              class="Chip-text--truncate"
+              aria-label="Chip2"
+              class="Chip-content Chip-content--regular"
+              data-test="DesignSystem-GenericChip--Content"
+              role="button"
+              tabindex="0"
             >
-              <span
-                class="Text Text--regular color-inverse Chip-text"
-                data-test="DesignSystem-GenericChip--Text"
+              <div
+                class="Chip-text--truncate"
               >
-                Chip2
-              </span>
+                <span
+                  class="Text Text--regular color-inverse Chip-text"
+                  data-test="DesignSystem-GenericChip--Text"
+                >
+                  Chip2
+                </span>
+              </div>
             </div>
             <div
-              aria-label="Remove"
+              aria-label="Remove Chip2"
               class="Chip-icon Chip-icon--right cursor-pointer p-3"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
@@ -1039,8 +1182,11 @@ exports[`EditableChipInput component
  1`] = `
 <DocumentFragment>
   <div
+    aria-label="Click to edit. Current chips: Chip1, Chip2"
     class="EditableChipInput"
     data-test="DesignSystem-EditableChipInput"
+    role="button"
+    tabindex="0"
   >
     <div
       class="Editable"
@@ -1048,32 +1194,36 @@ exports[`EditableChipInput component
     >
       <div
         data-test="DesignSystem-EditableWrapper"
-        role="button"
-        tabindex="0"
       >
         <div
-          class="EditableChipInput-defaultWithChips"
+          class="EditableChipInput-defaultWithChips EditableChipInput-defaultWithChips--small"
           data-test="DesignSystem-EditableChipInput--Default"
         >
           <div
-            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--small my-2 mx-2"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--small EditableChipInput-chip--small"
             data-test="DesignSystem-EditableChipInput--Chip"
-            role="button"
             style="max-width: 256px;"
-            tabindex="0"
           >
             <div
-              class="Chip-text--truncate"
+              aria-label="Chip1"
+              class="Chip-content Chip-content--small"
+              data-test="DesignSystem-GenericChip--Content"
+              role="button"
+              tabindex="0"
             >
-              <span
-                class="Text Text--small color-inverse Chip-text"
-                data-test="DesignSystem-GenericChip--Text"
+              <div
+                class="Chip-text--truncate"
               >
-                Chip1
-              </span>
+                <span
+                  class="Text Text--small color-inverse Chip-text"
+                  data-test="DesignSystem-GenericChip--Text"
+                >
+                  Chip1
+                </span>
+              </div>
             </div>
             <div
-              aria-label="Remove"
+              aria-label="Remove Chip1"
               class="Chip-icon Chip-icon--right Chip-icon--rightSmall cursor-pointer"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
@@ -1089,24 +1239,30 @@ exports[`EditableChipInput component
             </div>
           </div>
           <div
-            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--small my-2 mx-2"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--small EditableChipInput-chip--small"
             data-test="DesignSystem-EditableChipInput--Chip"
-            role="button"
             style="max-width: 256px;"
-            tabindex="0"
           >
             <div
-              class="Chip-text--truncate"
+              aria-label="Chip2"
+              class="Chip-content Chip-content--small"
+              data-test="DesignSystem-GenericChip--Content"
+              role="button"
+              tabindex="0"
             >
-              <span
-                class="Text Text--small color-inverse Chip-text"
-                data-test="DesignSystem-GenericChip--Text"
+              <div
+                class="Chip-text--truncate"
               >
-                Chip2
-              </span>
+                <span
+                  class="Text Text--small color-inverse Chip-text"
+                  data-test="DesignSystem-GenericChip--Text"
+                >
+                  Chip2
+                </span>
+              </div>
             </div>
             <div
-              aria-label="Remove"
+              aria-label="Remove Chip2"
               class="Chip-icon Chip-icon--right Chip-icon--rightSmall cursor-pointer"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"

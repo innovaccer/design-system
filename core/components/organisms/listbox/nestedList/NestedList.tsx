@@ -4,6 +4,8 @@ import { menuItemAnimation, getAnimationClass } from './Animation';
 export interface NestedListProp {
   expanded?: boolean;
   nestedBody?: React.ReactNode;
+  id?: string;
+  'aria-label'?: string;
 }
 
 function usePrevious(value?: boolean) {
@@ -17,7 +19,7 @@ function usePrevious(value?: boolean) {
 }
 
 export const NestedList = (props: NestedListProp) => {
-  const { nestedBody, expanded } = props;
+  const { nestedBody, expanded, id, 'aria-label': ariaLabel } = props;
   const prevState = usePrevious(expanded);
   const [open, setOpen] = React.useState(expanded);
   const [keyframe, setKeyframe] = React.useState('');
@@ -58,6 +60,9 @@ export const NestedList = (props: NestedListProp) => {
           onAnimationEnd={handleAnimationEnd}
           data-test="DesignSystem-Listbox--Nested-Item"
           ref={listItemRef}
+          id={id}
+          aria-label={ariaLabel}
+          role={ariaLabel ? 'region' : undefined}
         >
           {nestedBody}
         </div>

@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import Heading from '@/components/atoms/heading';
 import Text from '@/components/atoms/text';
 import Icon from '@/components/atoms/icon';
+import Button from '@/components/atoms/button';
 import ActionButton from './ActionButton';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { MessageAppearance } from '@/common.type';
@@ -51,10 +52,23 @@ export type ToastProps = {
    * Callback for `Toast` close event
    */
   onClose?: () => void;
+  /**
+   * Accessible label for the toast live region announced by screen readers
+   */
+  'aria-label'?: string;
+  /**
+   * Controls whether the entire live region is read as a whole when its content changes
+   * @default "true"
+   */
+  'aria-atomic'?: 'true' | 'false' | boolean;
+  /**
+   * HTML id for the toast element — use to create stable references from other elements
+   */
+  id?: string;
 } & BaseProps;
 
 export const Toast = (props: ToastProps) => {
-  const { title, message, actions, onClose, className } = props;
+  const { title, message, actions, onClose, className, 'aria-label': ariaLabel, 'aria-atomic': ariaAtomic, id } = props;
   let { appearance = 'info' } = props;
   appearance = appearance === 'default' ? 'info' : appearance;
 
@@ -88,9 +102,14 @@ export const Toast = (props: ToastProps) => {
       [styles['Toast-icon']]: true,
       [styles[`Toast-icon--${align}`]]: align,
       [styles[`Toast-icon--${appearance}`]]: appearance,
-      [styles['Toast-close-icon']]: align === 'right',
-      [styles[`Toast-close-icon--${appearance}`]]: appearance && align === 'right',
     });
+
+  const closeButtonClass = classNames({
+    [styles['Toast-icon--right']]: true,
+    [styles['Toast-close-icon']]: true,
+    [styles[`Toast-close-icon--${appearance}`]]: appearance,
+    [styles[`Toast-icon--${appearance}`]]: appearance,
+  });
 
   const textClass = classNames({
     [styles['Toast-text']]: true,
@@ -102,30 +121,37 @@ export const Toast = (props: ToastProps) => {
     [styles[`Toast-heading--${appearance}`]]: appearance,
   });
 
-  const onCloseHandler = () => {
-    if (onClose) onClose();
-  };
-
   return (
     <div
       {...baseProps}
+      id={id}
       className={wrapperClass}
       role={appearance === 'alert' || appearance === 'warning' ? 'alert' : 'status'}
       aria-live={appearance === 'alert' || appearance === 'warning' ? 'assertive' : 'polite'}
+      aria-label={ariaLabel}
+      aria-atomic={ariaAtomic}
     >
       {icon && <Icon name={icon} className={iconClass('left')} aria-hidden="true" />}
       <div className={styles['Toast-body']}>
         <div className={titleClass}>
-          <Heading size="s" className={headingClass} appearance={appearance !== 'warning' ? 'white' : 'default'}>
+          <Heading
+            size="s"
+            className={headingClass}
+            appearance={appearance !== 'warning' ? 'white' : 'default'}
+            as="span"
+          >
             {title}
           </Heading>
-          <Icon
-            name={'close'}
-            className={iconClass('right')}
-            onClick={onCloseHandler}
-            appearance={appearance !== 'warning' ? 'white' : 'default'}
-            aria-label="Close"
-          />
+          {onClose && (
+            <Button
+              appearance="transparent"
+              icon="close"
+              aria-label="Close"
+              onClick={onClose}
+              data-test="DesignSystem-Toast--CloseButton"
+              className={closeButtonClass}
+            />
+          )}
         </div>
         {message && (
           <Text appearance={appearance !== 'warning' ? 'white' : 'default'} className={textClass}>

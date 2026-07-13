@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Text, { TextProps as Props, TextAppearance, TextSize } from '../Text';
 import { render } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
 const sizes: TextSize[] = ['small', 'regular', 'large'];
@@ -146,5 +147,13 @@ describe('Text Component with Prop:color', () => {
       </Text>
     );
     expect(getByTestId('DesignSystem-Text')).toHaveClass('color-accent1-lightest');
+  });
+});
+
+describe('Text component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<Text>{StringValue}</Text>);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

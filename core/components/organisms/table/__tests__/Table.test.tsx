@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent, waitFor, screen, cleanup } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { Table, Button } from '@/index';
 import { TableProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -131,8 +132,8 @@ describe('render Table component with header', () => {
     fireEvent.click(applyButton);
     // Verify filter was applied - popover should close after Apply
     // The button might still exist in DOM but popover should be closed
-    const selectComponent = getByTestId('DesignSystem-Select');
-    expect(selectComponent).toHaveAttribute('aria-expanded', 'false');
+    const selectTrigger = getByTestId('DesignSystem-Select-trigger');
+    expect(selectTrigger).toHaveAttribute('aria-expanded', 'false');
   });
 
   it('render table with globalActionRenderer', () => {
@@ -234,14 +235,14 @@ describe('render Table component with header', () => {
 describe('render Table component with DraggableDropdown', () => {
   it('render table : draggableDropDown Apply button is triggered', () => {
     const schema = [{ name: 'name', displayName: 'Name', width: '50%' }];
-    const { getAllByTestId } = render(<Table withHeader={true} data={tableData} schema={schema} />);
+    const { getAllByTestId, getByTestId } = render(<Table withHeader={true} data={tableData} schema={schema} />);
     const tableColumnData = getAllByTestId('DesignSystem-Text')[0];
     expect(tableColumnData).toHaveTextContent('Name');
     const draggableDropdown = getAllByTestId('DesignSystem-Button')[0];
     fireEvent.click(draggableDropdown);
     const draggableDropdownCheckbox = getAllByTestId('DesignSystem-Checkbox-InputBox')[0];
     fireEvent.click(draggableDropdownCheckbox);
-    const draggableApplyButton = getAllByTestId('DesignSystem-Button')[3];
+    const draggableApplyButton = getByTestId('DesignSystem-DraggableDropdown-applyButton');
     fireEvent.click(draggableApplyButton);
     expect(tableColumnData).not.toBeInTheDocument();
   });
@@ -1471,8 +1472,8 @@ describe('render Table with filterType feature', () => {
         // After Apply, the popover closes
         // Wait for the popover to close
         await waitFor(() => {
-          const selectComponent = getByTestId('DesignSystem-Select');
-          expect(selectComponent).toHaveAttribute('aria-expanded', 'false');
+          const selectTrigger = getByTestId('DesignSystem-Select-trigger');
+          expect(selectTrigger).toHaveAttribute('aria-expanded', 'false');
         });
 
         // Verify that the trigger label reflects the selections
@@ -1542,7 +1543,7 @@ describe('render Table with filterType feature', () => {
         // Find the div with style inside the Select listbox
         const listbox = document.querySelector('[role="listbox"]');
         expect(listbox).toBeInTheDocument();
-        const selectListDiv = listbox?.querySelector('div[style]');
+        const selectListDiv = listbox?.parentElement;
         expect(selectListDiv).toBeInTheDocument();
         const style = (selectListDiv as HTMLElement).style;
         expect(parseFloat(style.minWidth || '0')).toBeGreaterThanOrEqual(176);
@@ -1585,7 +1586,7 @@ describe('render Table with filterType feature', () => {
         // Find the div with style inside the Select listbox
         const listbox = document.querySelector('[role="listbox"]');
         expect(listbox).toBeInTheDocument();
-        const selectListDiv = listbox?.querySelector('div[style]');
+        const selectListDiv = listbox?.parentElement;
         expect(selectListDiv).toBeInTheDocument();
         const style = (selectListDiv as HTMLElement).style;
         expect(parseFloat(style.minWidth || '0')).toBeGreaterThanOrEqual(200);
@@ -1628,7 +1629,7 @@ describe('render Table with filterType feature', () => {
         // Find the div with style inside the Select listbox
         const listbox = document.querySelector('[role="listbox"]');
         expect(listbox).toBeInTheDocument();
-        const selectListDiv = listbox?.querySelector('div[style]');
+        const selectListDiv = listbox?.parentElement;
         expect(selectListDiv).toBeInTheDocument();
         const style = (selectListDiv as HTMLElement).style;
         expect(style.maxWidth).toBe('500px');
@@ -1668,7 +1669,7 @@ describe('render Table with filterType feature', () => {
         // Find the div with style inside the Select listbox
         const listbox = document.querySelector('[role="listbox"]');
         expect(listbox).toBeInTheDocument();
-        const selectListDiv = listbox?.querySelector('div[style]');
+        const selectListDiv = listbox?.parentElement;
         expect(selectListDiv).toBeInTheDocument();
         const style = (selectListDiv as HTMLElement).style;
         // Should be clamped to 176 since 150 < 176
@@ -1708,7 +1709,7 @@ describe('render Table with filterType feature', () => {
         // Find the div with style inside the Select listbox
         const listbox = document.querySelector('[role="listbox"]');
         expect(listbox).toBeInTheDocument();
-        const selectListDiv = listbox?.querySelector('div[style]');
+        const selectListDiv = listbox?.parentElement;
         expect(selectListDiv).toBeInTheDocument();
         const style = (selectListDiv as HTMLElement).style;
         expect(parseFloat(style.minWidth || '0')).toBeGreaterThanOrEqual(176);
@@ -2305,5 +2306,13 @@ describe('render table with pagination during loading', () => {
       const paginationDuringSearch = queryByTestId('DesignSystem-Pagination');
       expect(paginationDuringSearch).not.toBeInTheDocument();
     });
+  });
+});
+
+describe('Table component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<Table data={tableData} schema={tableSchema} />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

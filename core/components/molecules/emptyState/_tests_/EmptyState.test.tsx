@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { EmptyState, Button, Icon } from '@/index';
 import { EmptyStateProps as Props, HeadingProps } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -200,5 +201,17 @@ describe('renders with different sizes', () => {
     expect(getByTestId('EmptyState--Text')).toHaveClass(`EmptyState-text`);
     expect(getByTestId('EmptyState--Actions')).toHaveClass(`EmptyState-actions--${size}`);
     expect(window.getComputedStyle(getByTestId('EmptyState--Img')).maxHeight).toBe(imageHeight[size]);
+  });
+});
+
+describe('EmptyState component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(
+      <EmptyState title={title} imageSrc={imageSrc} description={description} size="large">
+        {button}
+      </EmptyState>
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

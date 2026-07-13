@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import StatusHint, { StatusHintProps as IProps } from '../StatusHint';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { MessageAppearance } from '@/common.type';
@@ -107,5 +108,13 @@ describe('StatusHint component with prop:truncateLabel', () => {
     const statusHint = getByTestId('DesignSystem-StatusHint--Text');
     expect(statusHint).not.toHaveClass('Text--small');
     expect(statusHint).toHaveClass('Text--regular');
+  });
+});
+
+describe('StatusHint component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<StatusHint appearance="info">{label}</StatusHint>);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

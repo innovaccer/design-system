@@ -29,11 +29,24 @@ export type DropzoneProps = {
    * Link component to download sample file
    */
   sampleFileLink?: React.ReactNode;
+  /**
+   * Accessible label for the file upload zone announced by screen readers
+   * @default "File upload"
+   */
+  'aria-label'?: string;
 } & BaseProps &
   DropzoneBaseProps;
 
 export const Dropzone = (props: DropzoneProps) => {
-  const { type = 'standard', sizeLabel, className, formatLabel, sampleFileLink, disabled } = props;
+  const {
+    type = 'standard',
+    sizeLabel,
+    className,
+    formatLabel,
+    sampleFileLink,
+    disabled,
+    'aria-label': ariaLabel,
+  } = props;
 
   const { open, getRootProps, getInputProps, isDragActive, isDragReject, fileError } = DropzoneBase(props);
 
@@ -67,7 +80,6 @@ export const Dropzone = (props: DropzoneProps) => {
 
     const buttonAccessibilityProps = useAccessibilityProps({
       onClick: open,
-      'aria-label': 'Drag your files here or click to select files',
     });
 
     return (
@@ -99,7 +111,18 @@ export const Dropzone = (props: DropzoneProps) => {
   };
 
   return (
-    <div {...getRootProps()} {...baseProps} className={DropzoneClass} data-test="DesignSystem-Dropzone">
+    <div
+      {...getRootProps()}
+      {...baseProps}
+      className={DropzoneClass}
+      data-test="DesignSystem-Dropzone"
+      role="group"
+      aria-label={ariaLabel || 'File upload'}
+      aria-disabled={disabled || undefined}
+    >
+      <span role="status" className={styles['Dropzone-srOnly']}>
+        {isDragActive && !isDragReject ? 'Ready to drop files' : ''}
+      </span>
       {renderDropzone()}
     </div>
   );

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { Icon, Text } from '@/index';
-import { BaseProps, extractBaseProps } from '@/utils/types';
+import { BaseProps, BaseHtmlProps, extractBaseProps } from '@/utils/types';
 import { MessageAppearance } from '@/common.type';
 import styles from '@css/components/inlineMessage.module.css';
 
@@ -16,6 +16,10 @@ export type MessageSize = 'regular' | 'small';
 
 export type InlineMessageProps = {
   /**
+   * Optional DOM id (e.g. for `aria-describedby` / `aria-errormessage` on a related control).
+   */
+  id?: string;
+  /**
    * Color of `Inline Message`
    *
    * `default` appearance is soon to be deprecated
@@ -29,10 +33,11 @@ export type InlineMessageProps = {
    * Size of `Inline Message`
    */
   size?: MessageSize;
-} & BaseProps;
+} & BaseProps &
+  BaseHtmlProps<HTMLDivElement>;
 
 export const InlineMessage = (props: InlineMessageProps) => {
-  const { appearance = 'default', description = '', size = 'regular', className } = props;
+  const { appearance = 'default', description = '', size = 'regular', className, ...rest } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -57,7 +62,7 @@ export const InlineMessage = (props: InlineMessageProps) => {
   const TextWeight = size === 'small' ? 'medium' : undefined;
 
   return (
-    <div data-test="DesignSystem-InlineMessage" {...baseProps} className={InlineMessageClass}>
+    <div data-test="DesignSystem-InlineMessage" {...baseProps} {...rest} className={InlineMessageClass}>
       {appearance !== 'default' && (
         <Icon
           data-test="DesignSystem-InlineMessage--Icon"
@@ -65,6 +70,7 @@ export const InlineMessage = (props: InlineMessageProps) => {
           appearance={appearance}
           className={IconClass}
           size={IconSize}
+          aria-hidden="true"
         />
       )}
       <Text

@@ -268,7 +268,7 @@ export const FilterSelect: React.FC<FilterSelectProps> = (props) => {
         maxHeight={256}
         popoverWidth={'auto'}
       >
-        <div style={{ minWidth, maxWidth: filterOptions?.maxWidth }}>
+        <div data-test="DesignSystem-FilterSelect--ListWrapper" style={{ minWidth, maxWidth: filterOptions?.maxWidth }}>
           <Select.List>
             {isMultiSelect && filters.length > 0 && (
               <Select.Option

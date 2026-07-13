@@ -12,7 +12,7 @@ export const FromTo = () => {
 
   return (
     <div className="d-flex">
-      <div className="w-25 mr-5">
+      <div className="mr-5">
         <Label withInput={true}>From</Label>
         <TimePicker
           withSearch={true}
@@ -25,7 +25,7 @@ export const FromTo = () => {
         />
       </div>
 
-      <div className="w-25">
+      <div>
         <Label withInput={true}>To</Label>
         <TimePicker
           withSearch={true}
@@ -51,7 +51,7 @@ const customCode = `() => {
 
   return (
     <div className="d-flex">
-      <div className="w-25 mr-5">
+      <div className="mr-5">
         <Label withInput={true}>From</Label>
         <TimePicker
           withSearch={true}
@@ -64,7 +64,7 @@ const customCode = `() => {
         />
       </div>
 
-      <div className="w-25">
+      <div>
         <Label withInput={true}>To</Label>
         <TimePicker
           withSearch={true}

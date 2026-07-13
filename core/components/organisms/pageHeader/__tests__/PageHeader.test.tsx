@@ -1,8 +1,29 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import PageHeader, { PageHeaderProps as Props } from '../PageHeader';
 import { Stepper, Button, Tabs, Breadcrumbs, Badge, MetaList, StatusHint, HorizontalNav } from '@/index';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
+
+declare global {
+  interface Window {
+    ResizeObserver?:
+      | (new (callback: (entries: ResizeObserverEntry[]) => void) => {
+          observe(target: Element): void;
+          disconnect(): void;
+          unobserve(target: Element): void;
+        })
+      | undefined;
+  }
+}
+
+const ResizeObserverMock = jest.fn().mockImplementation(() => ({
+  observe: jest.fn(),
+  unobserve: jest.fn(),
+  disconnect: jest.fn(),
+}));
+
+window.ResizeObserver = ResizeObserverMock;
 
 const BooleanValues = [true, false];
 const title = 'PageHeader title';
@@ -119,6 +140,13 @@ describe('PageHeader Component with stepper', () => {
   expect(getByTestId('DesignSystem-PageHeader--Nav')).toBeInTheDocument();
 });
 
+describe('PageHeader Component with navigationPosition bottom and no nav/stepper', () => {
+  it('does not render bottom wrapper when no navigation or stepper is provided', () => {
+    const { queryByTestId } = render(<PageHeader title={title} navigationPosition="bottom" />);
+    expect(queryByTestId('DesignSystem-PageHeader--Nav')).not.toBeInTheDocument();
+  });
+});
+
 describe('PageHeader Component with actions', () => {
   const { getAllByTestId } = render(<PageHeader title={title} actions={actions} />);
   expect(getAllByTestId('DesignSystem-PageHeader--Actions')[0]).toBeInTheDocument();
@@ -142,4 +170,12 @@ describe('PageHeader Component with separator', () => {
 describe('PageHeader Component with button', () => {
   const { getByTestId } = render(<PageHeader title={title} button={button} />);
   expect(getByTestId('DesignSystem-PageHeader--Button')).toBeInTheDocument();
+});
+
+describe('PageHeader component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<PageHeader title={title} />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
 });

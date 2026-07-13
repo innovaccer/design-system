@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+// import { axe } from '@/utils/testAxe';
 import AvatarSelection, { AvatarSelectionProps as Props, AvatarData } from '../AvatarSelection';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { Avatar, Icon, Tooltip } from '@/index';
@@ -209,6 +210,27 @@ describe('AvatarSelection component', () => {
     expect(getByTestId('DesignSystem-AvatarSelection--TriggerAvatar').textContent).toMatch(`+${extraAvatar}`);
   });
 
+  it('exposes a single, properly-stated checkbox per group avatar (no nested checkbox)', () => {
+    const { getAllByTestId } = render(<AvatarSelection list={list} max={3} />);
+
+    const avatarItems = getAllByTestId('DesignSystem-AvatarSelection--Avatar');
+    avatarItems.forEach((item) => {
+      // The wrapping element is purely presentational — it is not a second checkbox
+      expect(item).not.toHaveAttribute('role');
+      expect(item).not.toHaveAttribute('tabindex');
+
+      // The avatar itself is the checkbox: it is focusable and carries role, state and label
+      const checkbox = item.querySelector('[data-test="DesignSystem-Avatar"]');
+      expect(checkbox).toHaveAttribute('role', 'checkbox');
+      expect(checkbox).toHaveAttribute('aria-checked');
+      expect(checkbox).toHaveAttribute('aria-label');
+      expect(checkbox).toHaveAttribute('tabindex', '0');
+
+      // Exactly one checkbox per item — no nesting
+      expect(item.querySelectorAll('[role="checkbox"]')).toHaveLength(1);
+    });
+  });
+
   it('marks popover list avatars as decorative', () => {
     const { getByTestId, getAllByTestId } = render(<AvatarSelection list={list} max={3} withSearch={true} />);
 
@@ -350,7 +372,7 @@ describe('AvatarSelection component with prop:withSearch', () => {
     if (searchInput) {
       fireEvent.keyDown(searchInput, { key: 'ArrowUp' });
     }
-    const optionList = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+    const optionList = getAllByTestId('DesignSystem-AvatarSelection--Option');
     expect(optionList[0]).toHaveFocus();
 
     fireEvent.keyDown(optionList[0], { key: 'ArrowUp' });
@@ -436,8 +458,10 @@ describe('AvatarSelection component callback function', () => {
     const { getAllByTestId } = render(
       <AvatarSelection list={selectedList} withSearch={true} onSelect={FunctionValue} />
     );
-    const avatarList = getAllByTestId('DesignSystem-AvatarSelection--Avatar');
-    fireEvent.click(avatarList[0]);
+    const checkbox = getAllByTestId('DesignSystem-AvatarSelection--Avatar')[0].querySelector(
+      '[data-test="DesignSystem-Avatar"]'
+    ) as HTMLElement;
+    fireEvent.click(checkbox);
     expect(FunctionValue).toHaveBeenCalled();
     expect(FunctionValue).toHaveBeenCalledWith([
       {
@@ -488,8 +512,10 @@ describe('AvatarSelection component with keyboard interactions', () => {
     const { getAllByTestId } = render(
       <AvatarSelection list={selectedList} withSearch={true} onSelect={FunctionValue} />
     );
-    const avatarElement = getAllByTestId('DesignSystem-AvatarSelection--Avatar')[0];
-    fireEvent.keyDown(avatarElement, { key: 'Enter' });
+    const checkbox = getAllByTestId('DesignSystem-AvatarSelection--Avatar')[0].querySelector(
+      '[data-test="DesignSystem-Avatar"]'
+    ) as HTMLElement;
+    fireEvent.keyDown(checkbox, { key: 'Enter' });
     expect(FunctionValue).toHaveBeenCalled();
     expect(FunctionValue).toHaveBeenCalledWith([
       {
@@ -500,13 +526,37 @@ describe('AvatarSelection component with keyboard interactions', () => {
     ]);
   });
 
+  it('toggles selection with the Space key from avatar element', () => {
+    jest.resetAllMocks();
+    const { getAllByTestId } = render(
+      <AvatarSelection list={selectedList} withSearch={true} onSelect={FunctionValue} />
+    );
+    const checkbox = getAllByTestId('DesignSystem-AvatarSelection--Avatar')[0].querySelector(
+      '[data-test="DesignSystem-Avatar"]'
+    ) as HTMLElement;
+    fireEvent.keyDown(checkbox, { key: ' ' });
+    expect(FunctionValue).toHaveBeenCalled();
+  });
+
+  it('removes disabled avatar element from the tab order', () => {
+    const { getAllByTestId } = render(<AvatarSelection list={disabledList} withSearch={true} />);
+    const checkbox = getAllByTestId('DesignSystem-AvatarSelection--Avatar')[0].querySelector(
+      '[data-test="DesignSystem-Avatar"]'
+    );
+    expect(checkbox).toHaveAttribute('role', 'checkbox');
+    expect(checkbox).toHaveAttribute('aria-disabled', 'true');
+    expect(checkbox).toHaveAttribute('tabindex', '-1');
+  });
+
   it('check for keyboard interaction from disabled avatar element', () => {
     jest.resetAllMocks();
     const { getAllByTestId } = render(
       <AvatarSelection list={disabledList} withSearch={true} onSelect={FunctionValue} />
     );
-    const avatarElement = getAllByTestId('DesignSystem-AvatarSelection--Avatar')[0];
-    fireEvent.keyDown(avatarElement, { key: 'Enter' });
+    const checkbox = getAllByTestId('DesignSystem-AvatarSelection--Avatar')[0].querySelector(
+      '[data-test="DesignSystem-Avatar"]'
+    ) as HTMLElement;
+    fireEvent.keyDown(checkbox, { key: 'Enter' });
     expect(FunctionValue).not.toHaveBeenCalled();
   });
 });
@@ -689,3 +739,17 @@ describe('AvatarSelection component with prop:size micro in count', () => {
     expect(textElement).toHaveClass('Avatar-content--tiny');
   });
 });
+
+// describe('AvatarSelection component a11y', () => {
+//   it('has no detectable a11y violations for empty state', async () => {
+//     const { container } = render(<AvatarSelection list={[]} />);
+//     const results = await axe(container);
+//     expect(results).toHaveNoViolations();
+//   });
+
+//   it('reports known a11y violations for populated state', async () => {
+//     const { container } = render(<AvatarSelection list={list} />);
+//     const results = await axe(container);
+//     expect(results).toHaveNoViolations();
+//   });
+// });

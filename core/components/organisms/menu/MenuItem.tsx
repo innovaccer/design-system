@@ -45,7 +45,7 @@ export const MenuItem = (props: MenuItemProps) => {
   const isSubMenuTrigger = false;
   const subListRef = null;
 
-  const { triggerRef, menuID, setParentOpen, triggerID, parentListRef } = subMenuContextProp;
+  const { triggerRef, menuID, setParentOpen, triggerID, parentListRef, parentMenuTriggerRef } = subMenuContextProp;
 
   const { setOpenPopover, focusedOption, setFocusedOption, menuTriggerRef, listRef } = contextProp;
 
@@ -106,7 +106,12 @@ export const MenuItem = (props: MenuItemProps) => {
     }
     setOpenPopover?.(false);
     onClick?.(event);
-    setParentOpen?.(false);
+    if (setParentOpen) {
+      setParentOpen(false);
+      parentMenuTriggerRef?.current?.focus();
+    } else {
+      menuTriggerRef?.current?.focus();
+    }
   };
 
   return (

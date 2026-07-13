@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
 import Label, { LabelProps as Props } from '../Label';
+import { axe } from '@/utils/testAxe';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
 const BooleanValue = [true, false];
@@ -901,3 +902,11 @@ describe('Label component with prop: size', () => {
 //     expect(baseElement).toMatchSnapshot();
 //   });
 // });
+
+describe('Label component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<Label>Label</Label>);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});

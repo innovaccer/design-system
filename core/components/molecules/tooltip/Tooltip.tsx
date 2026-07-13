@@ -127,7 +127,7 @@ export const Tooltip = (props: TooltipProps): React.ReactElement => {
   });
 
   const tooltipWrapper = (
-    <div className={tooltipClass} data-test="DesignSystem-Tooltip-Wrapper">
+    <div role="tooltip" className={tooltipClass} data-test="DesignSystem-Tooltip-Wrapper">
       {tooltip && (
         <Text className={styles['Tooltip-text']} appearance="white" size={size}>
           {tooltip}

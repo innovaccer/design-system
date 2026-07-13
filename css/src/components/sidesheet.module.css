@@ -108,3 +108,19 @@
 .Sidesheet-body--firstPage {
   animation: fadeIn var(--duration--fast-02) var(--standard-expressive-curve);
 }
+
+.Sidesheet:focus {
+  outline: none;
+}
+
+.Sidesheet-header [tabindex='-1']:focus {
+  outline: none;
+}
+
+@media (forced-colors: active) {
+  /* box-shadow is the only visual boundary; add a real left border so the panel edge is visible */
+  .Sidesheet {
+    border-left: var(--border-width-2-5) solid ButtonText;
+    box-shadow: none;
+  }
+}

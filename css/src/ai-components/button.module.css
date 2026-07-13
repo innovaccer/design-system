@@ -10,41 +10,21 @@
   display: flex;
   align-items: center;
   color: var(--inverse);
-  background: linear-gradient(
-    277deg,
-    rgba(227, 28, 121, 0.15) 0%,
-    rgba(231, 56, 79, 0.24) 28%,
-    rgba(240, 125, 0, 0.15) 100%
-  );
+  background: linear-gradient(109deg, #fdead8 10.28%, #fbdfd5 32.82%, #f9d1d5 63.38%, #fad9e7 96.05%);
 }
 
 .AIButton:hover {
-  background: linear-gradient(
-    277deg,
-    rgba(227, 28, 121, 0.2) 0%,
-    rgba(231, 56, 79, 0.32) 28%,
-    rgba(240, 125, 0, 0.2) 100%
-  );
+  background: linear-gradient(116deg, #fbe1c9 14.17%, #f8c5c6 50.06%, #f9cbdc 85.01%);
 }
 
 .AIButton:active {
-  background: linear-gradient(
-    277deg,
-    rgba(227, 28, 121, 0.31) 0%,
-    rgba(231, 56, 79, 0.48) 28%,
-    rgba(240, 125, 0, 0.31) 100%
-  );
+  background: linear-gradient(106deg, #fad1ae 20.06%, #f5aea9 44.48%, #f4a0ad 67.83%, #f6b3ce 86.55%);
 }
 
 .AIButton:disabled {
   cursor: not-allowed;
   opacity: var(--opacity-10);
-  background: linear-gradient(
-    277deg,
-    rgba(227, 28, 121, 0.15) 0%,
-    rgba(231, 56, 79, 0.24) 28%,
-    rgba(240, 125, 0, 0.15) 100%
-  );
+  background: linear-gradient(109deg, #fdead8 10.28%, #fbdfd5 32.82%, #f9d1d5 63.38%, #fad9e7 96.05%);
 }
 
 .AIButton:focus {

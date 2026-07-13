@@ -10,8 +10,6 @@ exports[`Editable component
   >
     <div
       data-test="DesignSystem-EditableWrapper"
-      role="button"
-      tabindex="0"
     >
       <div>
         First Name

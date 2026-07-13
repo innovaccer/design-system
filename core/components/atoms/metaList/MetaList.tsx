@@ -81,6 +81,7 @@ export const MetaList = (props: MetaListProps) => {
           size={8}
           className={LeftSeperatorClass}
           appearance="disabled"
+          aria-hidden="true"
         />
       )}
 
@@ -98,6 +99,7 @@ export const MetaList = (props: MetaListProps) => {
                 size={8}
                 className={SeperatorClass}
                 appearance="disabled"
+                aria-hidden="true"
               />
             )}
           </span>

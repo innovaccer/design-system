@@ -13,7 +13,7 @@ exports[`Chat New Message component snapshot
         aria-live="polite"
         class="py-6 d-flex justify-content-center align-items-center"
         data-test="DesignSystem-Chat-NewMessage"
-        role="button"
+        role="status"
       >
         <span
           class="NewMessage-Divider--left"

@@ -3,7 +3,7 @@ import { Text, Chat } from '@/index';
 
 export const defaultMessage = () => {
   return (
-    <Chat>
+    <Chat role="log" aria-live="polite" aria-label="Chat messages">
       <Chat.ChatBubble type="incoming">
         <Text>Hello, I'd like to schedule an appointment with my cardiologist. Can you help me with that ?</Text>
       </Chat.ChatBubble>

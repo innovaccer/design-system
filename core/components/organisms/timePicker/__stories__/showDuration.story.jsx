@@ -6,7 +6,7 @@ import { TimePickerWithSearch } from '../TimePickerWithSearch';
 export const timeDuration = () => {
   return (
     <Row>
-      <div className="w-25">
+      <div>
         <Label>12 Hour Format</Label>
         <TimePicker
           startTime="05:00"
@@ -18,7 +18,7 @@ export const timeDuration = () => {
         />
       </div>
 
-      <div className="w-25 ml-7">
+      <div className="ml-7">
         <Label>24 Hour Format</Label>
         <TimePicker
           startTime="05:00"
@@ -38,7 +38,7 @@ const customCode = `() => {
 
   return (
     <Row>
-      <div className="w-25">
+      <div>
         <Label>12 Hour Format</Label>
         <TimePicker
           startTime="05:00"
@@ -50,7 +50,7 @@ const customCode = `() => {
         />
       </div>
 
-      <div className="w-25 ml-7">
+      <div className="ml-7">
         <Label>24 Hour Format</Label>
         <TimePicker
           startTime="05:00"

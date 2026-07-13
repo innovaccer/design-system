@@ -18,10 +18,31 @@ export type ProgressRingProps = {
    * Describes how much work the task indicated by the `Progress Ring` requires.
    */
   max?: number;
+  /**
+   * Accessible name for the progress ring announced by screen readers.
+   * @default "Progress Ring"
+   */
+  'aria-label'?: string;
+  /**
+   * ID of an element whose text labels the progress ring (e.g. an external heading or label)
+   */
+  'aria-labelledby'?: string;
+  /**
+   * HTML id for the progress ring — use to reference it from other elements
+   */
+  id?: string;
 } & BaseProps;
 
 export const ProgressRing = (props: ProgressRingProps) => {
-  const { size = 'regular', value, max = 100, className } = props;
+  const {
+    size = 'regular',
+    max = 100,
+    value,
+    className,
+    'aria-label': ariaLabel,
+    'aria-labelledby': ariaLabelledby,
+    id,
+  } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -57,11 +78,13 @@ export const ProgressRing = (props: ProgressRingProps) => {
       {...baseProps}
       className={ProgressRingClass}
       {...svgProps}
+      id={id}
       role="progressbar"
       aria-valuemin={0}
       aria-valuemax={max}
       aria-valuenow={Math.max(0, Math.min(value, max))}
-      aria-label="Progress Ring"
+      aria-label={ariaLabel || 'Progress Ring'}
+      aria-labelledby={ariaLabelledby}
     >
       <circle className={styles['Ring-background']} {...circleProps} />
       <circle

@@ -20,10 +20,20 @@ export type SpinnerProps = {
    * @default "Loading"
    */
   'aria-label'?: string;
+  /**
+   * ID of the element that labels the spinner
+   */
+  'aria-labelledby'?: string;
 } & BaseProps;
 
 export const Spinner = (props: SpinnerProps) => {
-  const { appearance = 'primary', size = 'medium', className, 'aria-label': ariaLabel = 'Loading' } = props;
+  const {
+    appearance = 'primary',
+    size = 'medium',
+    className,
+    'aria-label': ariaLabel = 'Loading',
+    'aria-labelledby': ariaLabelledBy,
+  } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -65,7 +75,8 @@ export const Spinner = (props: SpinnerProps) => {
       {...baseProps}
       role="status"
       aria-live="polite"
-      aria-label={ariaLabel}
+      aria-label={ariaLabelledBy ? undefined : ariaLabel}
+      aria-labelledby={ariaLabelledBy}
       className={wrapperClasses}
       {...svgProps}
     >

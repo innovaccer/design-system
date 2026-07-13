@@ -1,3 +1,223 @@
+## 4.25.1 (2026-07-01)
+
+### Highlights
+
+- Fixed the ordering of PopoverOption props in DatePicker for correct behavior. (079368248)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Fixes
+
+- fix(datepicker): update the order of popoveroption props (079368248)
+
+---
+
+## 4.25.0 (2026-05-19)
+
+### Highlights
+
+- Added responsive behavior to PageHeader and DatePicker patterns; improved Table interactions and refined a11y across Chip, Input, and Header components.
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(table): update dropdown single click dragging movement in table component (da364d866)
+- feat(pageheader): add responsive behavior for pageheader component (3a95c6c3e)
+
+### Fixes
+
+- fix(input): update alignment of input clear icon (7f85ab1e3)
+- fix(chip): update a11y role for chip component (3f943673f)
+- fix(table): update table resizable behaviour (4cbe3b253)
+- fix(pattern): add responsive behavior in datepicker story pattern (4add940d5)
+- fix(header): update heading hierarchy (eb7cbc1e0)
+- fix(chip): update a11y attributes for nested interactive elements (6768fcc40)
+- fix(chip): update a11y attributes for nested interactive elements (eb172bd7d)
+
+### Improvements
+
+- style(icons): change stroke color from #DD2D38 to #CA1822 in AISparkle (4bebed62e)
+
+---
+
+## 4.24.0 (2026-04-24)
+
+### Highlights
+
+- Extended WCAG 2.2 AA accessibility coverage to Table, Grid, Menu, SegmentedControl, Calendar, Toast, ProgressBar, ProgressRing, Message, Dropzone, ChatInput, VerticalNav, EditableInput, and more;
+- Added disabled-state info affordance to Button, Avatar, Link, and LinkButton; 
+- Introduced Windows high contrast mode support.
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(a11y): add A11y Component Tracker and enhance accessibilityProp with tabIndex and aria (f88393781)
+- feat(metricInput): update arrow buttons touchpoint for a11y (e19affaef)
+- feat(button): add info icon for disabled state interaction (af245f892)
+- feat(avatar): update info icon for disabled state interaction (39ccf820b)
+- feat(linkbutton): add info icon on disabled interactions (494af8b52)
+- feat(Listbox): implement sticky-drag visual states and zero-drift UI (a7ca338cd)
+- feat(link): add disabled state info affordance (e8c4c897f)
+- feat(menu): add keyboard navigation for sub-menu trigger (1a1ffa0af)
+- feat(menu): add keyboard navigation for menu trigger (b09955c71)
+- feat(menu): add aria attributes for accessibility (dbe5fb67d)
+- feat(SegmentedControl): enhance accessibility with ARIA roles and roving tabindex (76caf0de6)
+- feat(dropzone): add accessibility attributes (feb6e0250)
+- feat(calendar): add tooltip and aria-label for prev/next navigation button (fbc21902c)
+- feat(segmentedControl): add aria attributes for accessibility (a3897b589)
+- feat(chipGroup): add a11y sttribute to chip component (e0631a7c4)
+- feat(toast): add aria attributes for accessibility (2732dd33a)
+- feat(progressRing): add aria attributes for accessibility (e3df442ff)
+- feat(progressBar): add aria attributes for accessibility (e2fe2ca21)
+- feat(message): add aria attributes for accessibility (bd78b15d0)
+- feat(editableInput): add aria attribute in editable input component (f407ff3d7)
+- feat(grid): add keyboard navigation support for accessibility (10ccb6af6)
+- feat(verticalNav): add aria attributes for accessibility (0e4d33d91)
+- feat(table): add aria attributes and keyboard a11y support in grid and table (5b073d599)
+- feat(grid): add aria attributes in grid component (d7db67be2)
+- feat: add windows high contrast mode support in component (ecf0cff4d)
+- feat(chatInput): add wcag a11y support in chatInput component (d2f63c7e1)
+
+### Fixes
+
+- fix(table): update id for checkboxes (f41eba735)
+- fix(spacekey): update keyboard events with space key utility (c718e9ea5)
+- fix(link): update disabled state (3b273ba1b)
+- fix(inputMask): update id attribute conflict in inputmask component (204d332e4)
+- fix(avatar): update role attribute for correct accessibility (3a06fe0ec)
+- fix(grid): fix whitespace issue is grid cell (f3499e85d)
+- fix(TimePicker): set 320px default width, 256px min-width, and wrap options text (104f60e32)
+- fix(Listbox): adjust position of selected and activated items in tight layout (04fec3ddd)
+- fix(MultiSlider): remove misleading role="button" from track and tick labels (6c2bf7185)
+- fix(MetricInput): resolve WCAG 2.2 AA a11y issues (ad75c0f57)
+- fix(VerificationCodeInput): prevent shared aria-label from overwriting per-digit labels (ae425fc5a)
+- fix(Input): forward aria-labelledby and honour consumer tabIndex (a7478ed1e)
+- fix(TextField): associate label with control and link helpText via aria-describedby (00b2444f7)
+- fix(InputMask): associate helpText/caption with input via aria-describedby (dc75c3dde)
+- fix(Radio): stable id, aria-label/labelledby/describedby, helpText association (5257f7665)
+- fix(Textarea): correct htmlFor/id pairing and aria-labelledby tokens in Size story (075b2303a)
+
+### Improvements
+
+- style(tokens): update semantic colors and ramps (d615dde03)
+- style(aicolor): update gradients and sara sparkle stroke (517554db8)
+- fix(contributors): update profile information (44bed37ec)
+
+---
+
+## 4.23.0 (2026-04-10)
+
+### Highlights
+
+- Extended WCAG 2.2 AA accessibility coverage across Dropdown, ChipInput, Input, Navigation, Editable, Listbox, Radio, Calendar, Select, Combobox, and Menu with comprehensive keyboard accessibility and ARIA attributes; 
+- introduced jest-axe testing tool for automated accessibility validation.
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat: add jest-axe testing tool for wcag accessibility (cf86684b8)
+- feat(Sidesheet, Modal): add aria-label to close button for accessibility (8566c13be)
+- feat(Dropdown): enhance Dropdown Accessibility and Visual Feedback (cc553f989)
+- feat(input): add clearButtonAriaLabel prop and related tests (0a457efa5)
+- feat(navigation): enhance accessibility with aria attributes and improve footer button accessibility (50bea9370)
+- feat(editable): keyboard axe for Editable family (a935362e5)
+- feat(listbox): add visual indicator for selected items (92c7e6662)
+- feat(radio): add accessibility warnings and aria attributes for Radio component (47c9f5862)
+- feat(a11y): add a11y prop table for ChoiceList, Select, and Segmented Control components (82b08dc62)
+- feat(Calendar): add a11y support in Calendar component (b2ec1a0d4)
+- feat(select, listbox, combobox, menu): add comprehensive keyboard accessibility (320ff2563)
+- feat(label): small size padding update (cde54effe)
+
+### Fixes
+
+- fix(chip-input): align clear action button (4730bedd8)
+- fix(AIChip): add sara sparkle for a11y (bae7fbc1e)
+- fix(chip): add aria attributes for close icon in chip (47ff27f2d)
+- fix(modal): update keyboard navigation (d3c43feef)
+- fix(Label): add aria-hidden to required dot and sr-only text for screen (3fd16946c)
+- fix(Textarea): forward readOnly prop to native textarea DOM element (d277e9c8c)
+- fix(StatusHint): add aria-label to status icon, hide skeletons from AT (0c2bd0d03)
+- fix(Link): render as button when href is not provided (f0d7e6a26)
+- fix(dropdown): update prop table for dropdown (e94a7f728)
+- fix(horizontalNav): adjust outline offset for active navigational item focus state (02db6a2a2)
+- fix(input): add aria attributes for error handling and inline label association (ecf9f09fe)
+- fix(Slider): add aria-labelledby to associate label with slider controls (b5c88df37)
+- fix(Checkbox): add accessible name requirement with aria-label & aria-labelledby support (181b4e865)
+- fix(Toast): use semantic button for close & fix keyboard accessibility (7a1f29dc4)
+- fix(Spinner): add aria-labelledby prop for accessible naming (acc7ef20f)
+- fix(Avatar): remove duplicate image semantics (78eabaf23)
+- fix(caption): add aria props support (374b18695)
+- fix(Pagination): accessible name and description for jump input (0f9f082ff)
+- fix(FileUploader): associate file input with descriptive text and announce dynamic updates (350ea2414)
+- fix(Toast): replace raw button with Button component for close icon (0a2f6ff49)
+- fix(metalist): add aria-hidden is true (0f728ae28)
+- fix(dropzone): add arial label for file input (ca94a69c1)
+- fix(Stepper): add aria-labels to step buttons for accessibility (852017173)
+- fix(linkbutton): add aria label to icon (8b34bd2f8)
+- fix(VerificationCodeInput): generate unique IDs per input field (8fa826c0c)
+- fix(Calendar): prevent selection of disabled values and fix keyboard boundaries (b3573369e)
+- fix(VerticalNav): resolve click regression and focus visibility (d7032a2c6)
+- fix(scrollbar): use native browser scrollbar (4a14c1cfd)
+- fix(chipInput): update clear icon to match Input component pattern (d2e2411a3)
+
+### Improvements
+
+- chore: update security vulnerabilities (8e5bd3998)
+- chore: update contributor list (8de7b068f)
+- chore: update lint rules & types checking (356707105)
+- chore: update test cases (80f814599)
+- chore: remove eslint warnings (a921e3ab9)
+- style(editableChipInput): update clear icon and remove error focus halo (897e264dd)
+
+### Documentation
+
+- docs(contributors): add contributor entries (2ae760dbb)
+
+---
+
 ## 4.22.0 (2026-03-30)
 
 ### Highlights

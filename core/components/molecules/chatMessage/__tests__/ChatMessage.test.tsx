@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import ChatMessage, { ChatMessageProps as Props, MessageType } from '../ChatMessage';
 
@@ -287,5 +288,13 @@ describe('ChatMessage component prop:statusOptions with type:urgent', () => {
     );
     expect(getAllByTestId('DesignSystem-Text')[1].textContent).toMatch('Urgent');
     expect(getByTestId('DesignSystem-MetaList--MetaLabel').textContent).toMatch(timeStr);
+  });
+});
+
+describe('ChatMessage component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<ChatMessage text="Message Text" type="incoming" />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

@@ -23,10 +23,31 @@ export type ProgressBarProps = {
    * State of `Progress Bar`
    */
   state?: ProgressBarState;
+  /**
+   * Accessible name for screen readers.
+   */
+  'aria-label'?: string;
+  /**
+   * ID of an element whose text labels the progress bar
+   */
+  'aria-labelledby'?: string;
+  /**
+   * HTML id for the progress bar
+   */
+  id?: string;
 } & BaseProps;
 
 export const ProgressBar = (props: ProgressBarProps) => {
-  const { value, max = 100, size = 'regular', state = 'default', className } = props;
+  const {
+    max = 100,
+    value,
+    className,
+    size = 'regular',
+    state = 'default',
+    ['aria-label']: ariaLabel,
+    ['aria-labelledby']: ariaLabelledby,
+    id,
+  } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -59,6 +80,9 @@ export const ProgressBar = (props: ProgressBarProps) => {
     <div
       data-test="DesignSystem-ProgressBar"
       role="progressbar"
+      id={id}
+      aria-label={ariaLabel}
+      aria-labelledby={ariaLabelledby}
       aria-valuemin={0}
       aria-valuemax={max}
       aria-valuenow={clampedValue}

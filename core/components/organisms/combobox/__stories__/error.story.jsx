@@ -24,10 +24,19 @@ export const withError = () => {
     setFilterList(updatedList);
   };
 
+  const barriersFieldMessageId = 'barriers-combobox-message';
+
   return (
     <div>
       <Label withInput={true}>Barriers</Label>
-      <Combobox onChange={onChangeHandler} className="w-50" error={true} aria-label="Barriers selector with error">
+      <Combobox
+        onChange={onChangeHandler}
+        className="w-50"
+        error={true}
+        aria-label="Barriers selector with error"
+        aria-describedby={barriersFieldMessageId}
+        aria-errormessage={barriersFieldMessageId}
+      >
         {filterList.length > 0 && (
           <Combobox.List>
             {filterList.map((item, key) => {
@@ -40,7 +49,7 @@ export const withError = () => {
           </Combobox.List>
         )}
       </Combobox>
-      <HelpText error={true} message="Please choose a valid option" />
+      <HelpText id={barriersFieldMessageId} error={true} message="Please choose a valid option" />
     </div>
   );
 };
@@ -66,10 +75,19 @@ const customCode = `() => {
     setFilterList(updatedList);
   };
 
+  const barriersFieldMessageId = 'barriers-combobox-message';
+
   return (
     <div>
       <Label withInput={true}>Barriers</Label>
-      <Combobox onChange={onChangeHandler} className="w-50" error={true} aria-label="Barriers selector with error">
+      <Combobox
+        onChange={onChangeHandler}
+        className="w-50"
+        error={true}
+        aria-label="Barriers selector with error"
+        aria-describedby={barriersFieldMessageId}
+        aria-errormessage={barriersFieldMessageId}
+      >
         {filterList.length > 0 && (
           <Combobox.List>
             {filterList.map((item, key) => {
@@ -82,7 +100,7 @@ const customCode = `() => {
           </Combobox.List>
         )}
       </Combobox>
-      <HelpText error={true} message="Please choose a valid option" />
+      <HelpText id={barriersFieldMessageId} error={true} message="Please choose a valid option" />
     </div>
   );
 }`;

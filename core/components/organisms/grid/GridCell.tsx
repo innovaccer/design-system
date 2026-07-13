@@ -170,7 +170,7 @@ const renderTitle = (props: CellProps) => {
           <HighlightedText
             text={children}
             searchTerm={searchTerm}
-            className="w-100 ellipsis"
+            className="w-100 ellipsis white-space-pre"
             highlightRegex={highlightRegex}
             highlightCell={highlightCell}
           />
@@ -181,7 +181,7 @@ const renderTitle = (props: CellProps) => {
       <HighlightedText
         text={children}
         searchTerm={searchTerm}
-        className="w-100 ellipsis"
+        className="w-100 ellipsis white-space-pre"
         highlightRegex={highlightRegex}
         highlightCell={highlightCell}
       />
@@ -289,25 +289,34 @@ const renderIcon = (props: CellProps) => {
 };
 
 const renderStatusHint = (props: CellProps) => {
-  const { cellData, searchTerm, highlightRegex, highlightCell } = props;
+  const { tooltip, cellData, searchTerm, highlightRegex, highlightCell } = props;
 
   const { statusAppearance } = cellData;
 
   const children = cellData.title;
 
   if (children) {
-    return (
+    const content = (
       <StatusHint appearance={statusAppearance} className="overflow-hidden">
         <HighlightedText
           text={children}
           searchTerm={searchTerm}
-          className="w-100 ellipsis"
+          className="w-100 ellipsis white-space-pre"
           highlightRegex={highlightRegex}
           highlightCell={highlightCell}
         />
-        {/* {children} */}
       </StatusHint>
     );
+
+    if (tooltip) {
+      return (
+        <Tooltip tooltip={children} position={'top-start'} triggerClass="w-100 overflow-hidden">
+          {content}
+        </Tooltip>
+      );
+    }
+
+    return content;
   }
 
   return null;
@@ -465,13 +474,13 @@ export const GridCell = (props: GridCellProps) => {
 
     case 'STATUS_HINT':
       return (
-        <div className={statusHintCellClass}>
+        <div className={statusHintCellClass} aria-busy={loading || undefined}>
           {loading ? (
             <Placeholder className="w-75 flex-grow-0" imageSize={'small'} round={true}>
               <PlaceholderParagraph length="large" />
             </Placeholder>
           ) : (
-            renderStatusHint({ cellData, searchTerm, highlightRegex, highlightCell })
+            renderStatusHint({ tooltip, cellData, searchTerm, highlightRegex, highlightCell })
           )}
         </div>
       );

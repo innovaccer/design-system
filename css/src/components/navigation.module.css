@@ -115,6 +115,22 @@
   border-top: var(--border);
 }
 
+.Navigation-footerButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.Navigation-footerButton:focus-visible {
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-05);
+}
+
 .Navigation--collapsed .Navigation-menuIcon--footer {
   transform: rotate(180deg);
 }

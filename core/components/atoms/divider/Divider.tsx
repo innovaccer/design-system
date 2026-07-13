@@ -15,10 +15,14 @@ export type DividerProps = {
    * @default "basic"
    */
   appearance?: DividerType;
+  /**
+   * Hides the divider from the accessibility tree when set to `true`
+   */
+  'aria-hidden'?: boolean | 'true' | 'false';
 } & BaseProps;
 
 export const Divider = (props: DividerProps) => {
-  const { appearance = 'basic', vertical = false, className } = props;
+  const { vertical = false, appearance = 'basic', className, 'aria-hidden': ariaHidden } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -39,6 +43,7 @@ export const Divider = (props: DividerProps) => {
       {...baseProps}
       className={DividerClass}
       aria-orientation={vertical ? 'vertical' : 'horizontal'}
+      aria-hidden={ariaHidden}
     />
   );
 };

@@ -3,10 +3,12 @@ import classNames from 'classnames';
 import { Tooltip, Icon, Text } from '@/index';
 import { IconProps } from '@/index.type';
 import { BaseHtmlProps, BaseProps, extractBaseProps } from '@/utils/types';
+import isSpaceKey from '@/accessibility/utils/isSpaceKey';
 import { AutoComplete, IconType } from '@/common.type';
 import ActionButton from './actionButton';
 import styles from '@css/components/input.module.css';
 import verificationCodeStyles from '@css/components/verificationCodeInput.module.css';
+import uidGenerator from '@/utils/uidGenerator';
 
 export type InputType = 'text' | 'password' | 'number' | 'email' | 'tel' | 'url';
 export type InputSize = 'tiny' | 'regular' | 'large';
@@ -184,11 +186,19 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
     disabled,
     readOnly,
     iconType,
+    'aria-invalid': ariaInvalid,
+    'aria-labelledby': ariaLabelledBy,
+    tabIndex: tabIndexProp,
     ...rest
   } = props;
 
   const ref = React.useRef<HTMLInputElement>(null);
   const [isInputBlank, setIsInputBlank] = React.useState<boolean>(!value);
+  const inlineLabelIdRef = React.useRef<string | null>(null);
+  if (inlineLabelIdRef.current === null) {
+    inlineLabelIdRef.current = `Input-inlineLabel-${uidGenerator()}`;
+  }
+  const inlineLabelId = inlineLabelIdRef.current;
 
   React.useImperativeHandle(forwardedRef, (): HTMLInputElement => {
     return ref.current as HTMLInputElement;
@@ -209,6 +219,12 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
       }
     }
   }, [type]);
+
+  const resolvedClearButtonAriaLabel = props['aria-label']
+    ? `Clear ${props['aria-label']}`
+    : placeholder
+      ? `Clear ${placeholder}`
+      : 'Clear input';
 
   const baseProps = extractBaseProps(props);
 
@@ -270,7 +286,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
       onBlur={() => setIsInputBlank(!ref.current?.value)}
     >
       {inlineLabel && (
-        <div className={styles['Input-inlineLabel']}>
+        <div className={styles['Input-inlineLabel']} id={inlineLabelId}>
           <Text appearance="subtle">{inlineLabel}</Text>
         </div>
       )}
@@ -298,11 +314,22 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
         onClick={onClick}
         onFocus={onFocus}
         onPaste={onPaste}
+        aria-labelledby={
+          inlineLabel && ariaLabelledBy
+            ? [inlineLabelId, ariaLabelledBy].filter(Boolean).join(' ')
+            : ariaLabelledBy || undefined
+        }
+        aria-describedby={
+          [rest['aria-describedby'], inlineLabel && !ariaLabelledBy ? inlineLabelId : undefined]
+            .filter(Boolean)
+            .join(' ') || undefined
+        }
         /**
          *for readOnly: true, tab focus from input element is removed. Hence, its tabIndex is set to -1.
          *For rest, "undefined" lets user agent(browser) use the default tabIndex.
          */
-        tabIndex={readOnly ? -1 : undefined}
+        tabIndex={tabIndexProp !== undefined ? tabIndexProp : readOnly ? -1 : undefined}
+        aria-invalid={error === true ? true : ariaInvalid}
       />
       {disabled ? (
         ''
@@ -315,13 +342,26 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
       ) : (
         onClear &&
         (value || defaultValue) && (
-          <div className={rightIconClass}>
-            <Icon
-              data-test="DesignSystem-Input--closeIcon"
-              onClick={(e) => {
+          <div
+            className={rightIconClass}
+            role="button"
+            tabIndex={0}
+            aria-label={resolvedClearButtonAriaLabel}
+            onClick={(e) => {
+              ref.current?.focus({ preventScroll: true });
+              onClear(e);
+            }}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || isSpaceKey(e)) {
+                e.preventDefault();
                 ref.current?.focus({ preventScroll: true });
                 onClear(e);
-              }}
+              }
+            }}
+          >
+            <Icon
+              data-test="DesignSystem-Input--closeIcon"
+              aria-hidden="true"
               name={'close'}
               size={sizeMapping[size]}
               className={inputRightIconClass}

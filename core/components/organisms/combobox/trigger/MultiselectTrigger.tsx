@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { Chip, Icon } from '@/index';
 import { ChipProps } from '@/index.type';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import isSpaceKey from '@/accessibility/utils/isSpaceKey';
 import { OptionType } from '@/common.type';
 import styles from '@css/components/chipInput.module.css';
 import inputStyles from '@css/components/input.module.css';
@@ -113,6 +114,10 @@ export interface MultiSelectTriggerProps extends BaseProps {
    * Associates trigger with external label
    */
   'aria-labelledby'?: string;
+  /**
+   * Exposes invalid state to assistive tech; when `error` is true this is set to `true` automatically.
+   */
+  'aria-invalid'?: boolean | 'true' | 'false' | 'grammar' | 'spelling';
 }
 
 export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTriggerProps>((props, forwardedInputRef) => {
@@ -135,6 +140,7 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
     role,
     'aria-label': ariaLabel,
     'aria-labelledby': ariaLabelledBy,
+    'aria-invalid': ariaInvalid,
     ...rest
   } = props;
 
@@ -273,16 +279,18 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
   const handleTriggerKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
     if (disabled || event.currentTarget !== event.target) return;
 
-    if (event.key === 'Enter' || event.key === ' ') {
+    if (event.key === 'Enter' || isSpaceKey(event)) {
       event.preventDefault();
       onClickHandler();
     }
   };
 
   const chipComponents = chips.map((chip, index) => {
-    const { type = 'input', onClick, ...rest } = chipOptions;
+    const { type = 'input', onClick, clearButton, ...rest } = chipOptions;
 
     const chipLabel = typeof chip === 'string' ? chip : chip?.label;
+    const clearButtonAriaLabel =
+      typeof chipLabel === 'string' && chipLabel.trim() !== '' ? `Remove ${chipLabel.trim()}` : 'Remove';
 
     return (
       <Chip
@@ -296,6 +304,9 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
         onClick={() => onClick && onClick(chip, index)}
         onClose={() => onChipDeleteHandler(index)}
         {...rest}
+        clearButton={clearButton}
+        clearButtonAriaLabel={clearButtonAriaLabel}
+        tabIndex={clearButton ? -1 : undefined}
       />
     );
   });
@@ -308,7 +319,7 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
         className={ChipInputClass}
         onClick={onClickHandler}
         onKeyDown={handleTriggerKeyDown}
-        tabIndex={disabled ? -1 : tabIndex || 0}
+        tabIndex={disabled ? -1 : tabIndex !== undefined ? tabIndex : 0}
         role="button"
         aria-disabled={disabled || undefined}
       >
@@ -330,8 +341,8 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
             role={role}
             aria-label={ariaLabel}
             aria-labelledby={ariaLabelledBy}
+            aria-invalid={error === true ? true : ariaInvalid}
           />
-          {/* eslint-enable */}
         </div>
         {!disabled && (chips.length > 0 || inputValue.length > 0) && (
           <div
@@ -342,12 +353,12 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
               'align-items-center',
               'flex-shrink-0'
             )}
-            tabIndex={0}
             role="button"
-            aria-label="Clear all"
             onClick={onDeleteAllHandler}
+            tabIndex={disabled ? -1 : 0}
+            aria-label="Clear all options"
             onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
+              if (e.key === 'Enter' || isSpaceKey(e)) {
                 e.preventDefault();
                 onDeleteAllHandler(e as any);
               }

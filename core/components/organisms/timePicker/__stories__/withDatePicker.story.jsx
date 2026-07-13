@@ -17,7 +17,7 @@ export const withDatePicker = () => {
 
   return (
     <Row>
-      <div className="w-25">
+      <div>
         <Label>Date</Label>
         <DatePicker
           aria-label="Visit date"
@@ -30,7 +30,7 @@ export const withDatePicker = () => {
           }}
         />
       </div>
-      <div className="w-25 ml-7">
+      <div className="ml-7">
         <Label>Time</Label>
         <TimePicker withSearch={true} open={open} aria-label="Appointment time" optionsAriaLabel="Time options" />
       </div>
@@ -53,7 +53,7 @@ const customCode = `() => {
 
   return (
     <Row>
-      <div className="w-25">
+      <div>
         <Label>Date</Label>
         <DatePicker
           aria-label="Visit date"
@@ -66,7 +66,7 @@ const customCode = `() => {
           }}
         />
       </div>
-      <div className="w-25 ml-7">
+      <div className="ml-7">
         <Label>Time</Label>
         <TimePicker withSearch={true} open={open} aria-label="Appointment time" optionsAriaLabel="Time options" />
       </div>

@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Listbox } from '@/index';
 import { BaseProps } from '@/utils/types';
 import { TListboxSize } from '@/common.type';
+import { ComboboxContext } from './ComboboxContext';
 
 type TagType = 'ul' | 'ol' | 'div' | 'nav';
 
@@ -22,19 +23,36 @@ export interface ComboboxListProps extends BaseProps {
    * Add divider below all list item
    */
   showDivider?: boolean;
+  /**
+   * When set, overrides Combobox `multiSelect` for `aria-multiselectable` on the listbox.
+   */
+  'aria-multiselectable'?: boolean;
 }
 
 export const ComboboxList = (props: ComboboxListProps) => {
-  const { children, size = 'compressed', tagName = 'ul', showDivider = false, ...rest } = props;
+  const { multiSelect, popoverId } = React.useContext(ComboboxContext);
+  const {
+    'aria-multiselectable': ariaMultiselectableProp,
+    size = 'compressed',
+    tagName = 'ul',
+    showDivider = false,
+    children,
+    ...restProps
+  } = props;
+  const ariaMultiselectable = ariaMultiselectableProp !== undefined ? ariaMultiselectableProp : Boolean(multiSelect);
+
   return (
     <Listbox
+      id={popoverId}
       type="option"
       showDivider={showDivider}
       tagName={tagName}
       size={size}
       className="py-3"
-      {...rest}
+      {...restProps}
       role="listbox"
+      customFocusManagement
+      aria-multiselectable={ariaMultiselectable}
     >
       {children}
     </Listbox>

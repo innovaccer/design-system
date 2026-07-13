@@ -1,5 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
+import isSpaceKey from '@/accessibility/utils/isSpaceKey';
 import { BaseProps, extractBaseProps, SingleOrArray } from '@/utils/types';
 import { TTabSize } from '@/common.type';
 import styles from '@css/components/tabs.module.css';
@@ -74,7 +75,7 @@ export const TabsWrapper = (props: TabsWrapperProps) => {
         onKeyDown={(event: React.KeyboardEvent<HTMLDivElement>) => {
           if (disabled) return;
 
-          if (event.key === 'Enter' || event.key === ' ') {
+          if (event.key === 'Enter' || isSpaceKey(event)) {
             event.preventDefault();
             tabClickHandler(index);
           }

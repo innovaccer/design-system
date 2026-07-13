@@ -42,13 +42,20 @@ export type MessageProps = {
    * Action links to be added inside `Message`
    */
   actions?: React.ReactNode;
+  /**
+   * HTML id for the `Message` element
+   */
+  id?: string;
+  /**
+   * HTML tag to render the heading as.
+   */
+  headingAs?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span' | 'div';
 } & BaseProps;
 
 export const Message = (props: MessageProps) => {
+  const { actions, title, className, size = 'regular', id, headingAs = 'h5' } = props;
   let { appearance = 'info' } = props;
   const { description = '' } = props;
-  const { actions, title, className, size = 'regular' } = props;
-
   appearance = appearance === 'default' ? 'info' : appearance;
 
   const baseProps = extractBaseProps(props);
@@ -108,6 +115,7 @@ export const Message = (props: MessageProps) => {
       data-test="DesignSystem-Message"
       role={appearance === 'alert' || appearance === 'warning' ? 'alert' : 'status'}
       {...baseProps}
+      id={id}
       className={MessageClass}
     >
       <Icon
@@ -120,7 +128,7 @@ export const Message = (props: MessageProps) => {
       />
       <div>
         {title && (
-          <Heading data-test="DesignSystem-Message--Title" size="s" className={TitleClass}>
+          <Heading data-test="DesignSystem-Message--Title" size="s" className={TitleClass} as={headingAs}>
             {title}
           </Heading>
         )}

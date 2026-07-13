@@ -18,7 +18,7 @@ export const withMetadata = () => {
   };
 
   return (
-    <Chat>
+    <Chat role="log" aria-live="polite" aria-label="Chat messages">
       <Chat.ChatBubble type="incoming" incomingOptions={incomingOptions}>
         <Text>Hello, I'd like to schedule an appointment with my cardiologist. Can you help me with that ? </Text>
       </Chat.ChatBubble>
@@ -44,7 +44,7 @@ const customCode = `() => {
   };
 
   return (
-    <Chat>
+    <Chat role="log" aria-live="polite" aria-label="Chat messages">
       <Chat.ChatBubble type="incoming" incomingOptions={incomingOptions}>
         <Text>Hello, I'd like to schedule an appointment with my cardiologist. Can you help me with that ? </Text>
       </Chat.ChatBubble>

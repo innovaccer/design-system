@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { fireEvent, render } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import ActionButton, { ActionButtonProps as Props, ActionButtonType } from '../ActionButton';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
@@ -80,5 +81,13 @@ describe('ActionButton component', () => {
     expect(getByTestId('DesignSystem-Image')).toBeInTheDocument();
     expect(getByTestId('DesignSystem-Input-ActionButton')).toBeInTheDocument();
     expect(getByTestId('DesignSystem-Input-ActionButton')).toHaveClass('ActionButton');
+  });
+});
+
+describe('ActionButton component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<ActionButton name={StringValue} />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

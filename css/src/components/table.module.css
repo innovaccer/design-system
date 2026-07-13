@@ -28,11 +28,42 @@
 }
 
 .Table-Header-Label--hide {
-  animation: fadeOut var(--duration--fast-02) var(--exit-productive-curve);
+  animation: tableHeaderFadeOut var(--duration--fast-02) var(--exit-productive-curve);
   animation-fill-mode: forwards;
+  pointer-events: none;
 }
 
 .Table-Header-Label--show {
   animation: fadeIn var(--duration--moderate-01) var(--entrance-productive-curve);
   animation-fill-mode: forwards;
+}
+
+@keyframes tableHeaderFadeOut {
+  from {
+    opacity: 1;
+    visibility: visible;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .Table-Header-Label--hide,
+  .Table-Header-Label--show {
+    animation-duration: 0.001ms;
+  }
+}
+
+.Table-srOnly {
+  position: absolute;
+  width: var(--spacing-2-5);
+  height: var(--spacing-2-5);
+  padding: 0;
+  margin: calc(-1 * var(--spacing-2-5));
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }

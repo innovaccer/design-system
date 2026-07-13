@@ -18,26 +18,3 @@
 .Overlay-container--close {
   animation-timing-function: cubic-bezier(0.4, 0.14, 1, 1);
 }
-
-::-webkit-scrollbar {
-  width: 16px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--secondary-dark);
-  border-radius: 8px;
-  border: 2px solid transparent;
-  background-clip: content-box;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--inverse-lightest);
-  border: 2px solid transparent;
-  background-clip: content-box;
-}
-
-::-webkit-scrollbar-thumb:active {
-  background: var(--inverse-lighter);
-  border: 2px solid transparent;
-  background-clip: content-box;
-}

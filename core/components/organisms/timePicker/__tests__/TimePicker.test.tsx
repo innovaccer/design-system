@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { TimePicker } from '@/index';
 import { TimePickerProps as Props } from '@/index.type';
@@ -209,5 +210,13 @@ describe('TimePicker component with error state true', () => {
   it('renders with input--error class', () => {
     const { getByTestId } = render(<TimePicker time={timeValues[1]} onTimeChange={FunctionValue} error={true} />);
     expect(getByTestId('DesignSystem-InputWrapper')).toHaveClass('Input--error');
+  });
+});
+
+describe('TimePicker component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<TimePicker />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

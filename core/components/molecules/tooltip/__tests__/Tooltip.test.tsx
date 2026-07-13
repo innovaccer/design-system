@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent, act } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { Tooltip, Button } from '@/index';
 import { TooltipProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -127,11 +128,20 @@ describe('Tooltip component with text overflow', () => {
 //   });
 // });
 
+describe('Tooltip component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    render(
+      <Tooltip tooltip="Sample string">
+        <Button>Button</Button>
+      </Tooltip>
+    );
+    const results = await axe(document.body);
+    expect(results).toHaveNoViolations();
+  });
+});
+
 describe('Tooltip component keyboard accessibility', () => {
-  // `fireEvent.focus` dispatches a synthetic FocusEvent but does not actually focus the
-  // element, so `:focus-visible` stays false and useFocus doesn't trigger.
-  // `act(() => button.focus())` genuinely focuses the element in jsdom.
-  it('should show tooltip when trigger receives keyboard focus', () => {
+  it('should close tooltip when Escape key is pressed', () => {
     const { getByRole, queryByText } = render(
       <Tooltip tooltip="A tooltip">
         <Button>Hover over me</Button>
@@ -152,6 +162,9 @@ describe('Tooltip component keyboard accessibility', () => {
     act(() => button.focus());
     expect(getByTestId('DesignSystem-Tooltip-Wrapper')).toBeInTheDocument();
 
+    act(() => {
+      jest.runAllTimers();
+    });
     fireEvent.keyDown(document, { key: 'Escape' });
     // After Escape, the popover closes: data-opened flips to false
     const popover = getByTestId('DesignSystem-Popover');

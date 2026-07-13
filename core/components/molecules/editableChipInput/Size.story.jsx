@@ -21,7 +21,6 @@ export const Size = () => {
       clearButton: true,
     },
     allowDuplicates: false,
-    autoFocus: false,
   };
 
   const sizes = ['regular', 'small'];
@@ -66,7 +65,6 @@ const customCode = `() => {
       clearButton: true,
     },
     allowDuplicates: false,
-    autoFocus: false,
   };
 
   const sizes = ['regular', 'small'];

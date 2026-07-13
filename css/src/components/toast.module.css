@@ -55,6 +55,8 @@
   padding-left: var(--spacing-10);
   height: var(--spacing-60);
   box-sizing: initial;
+  background: transparent;
+  border: none;
 }
 
 .Toast-icon--info,
@@ -66,6 +68,13 @@
 
 .Toast-icon--warning {
   color: var(--warning-darker);
+}
+
+.Toast-closeButton {
+  background: transparent;
+  border: none;
+  color: inherit;
+  padding: 0;
 }
 
 .Toast-close-icon:focus,
@@ -186,4 +195,14 @@
 .Toast-actionButton--warning:active {
   background: var(--warning-darker);
   color: var(--text-white);
+}
+
+@media (forced-colors: active) {
+  /* Close icon focus ring is conveyed via box-shadow only — replace with outline */
+  .Toast-close-icon:focus,
+  .Toast-close-icon:focus-visible {
+    outline: var(--border-width-05) solid Highlight;
+    outline-offset: var(--spacing-05);
+    box-shadow: none;
+  }
 }

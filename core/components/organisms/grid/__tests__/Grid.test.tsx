@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent, cleanup } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { Grid } from '@/index';
 import { GridProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -150,6 +151,33 @@ describe('render Grid component prop: updateSortingList with sortTypes', () => {
     fireEvent.click(input);
     expect(updateSortingList).toHaveBeenCalled();
     expect(updateSortingList.mock.calls[2]).toEqual([[{ name: 'name', type: 'desc' }]]);
+  });
+
+  it('sort button exposes unsorted state via aria-label', () => {
+    const { getByTestId } = render(
+      <Grid schema={schema} data={data} withCheckbox={true} updateSortingList={updateSortingList} />
+    );
+    expect(getByTestId('DesignSystem-Grid-cellContent')).toHaveAttribute(
+      'aria-label',
+      'Name, not sorted. Activate to sort ascending.'
+    );
+  });
+
+  it('sort button exposes ascending state via aria-label and aria-sort on columnheader', () => {
+    const { getByTestId, container } = render(
+      <Grid
+        schema={schema}
+        data={data}
+        withCheckbox={true}
+        updateSortingList={updateSortingList}
+        sortingList={[{ name: 'name', type: 'asc' }]}
+      />
+    );
+    expect(getByTestId('DesignSystem-Grid-cellContent')).toHaveAttribute(
+      'aria-label',
+      'Name, sorted ascending. Activate to sort descending.'
+    );
+    expect(container.querySelector('[data-col-id="name"]')).toHaveAttribute('aria-sort', 'ascending');
   });
 });
 
@@ -1388,5 +1416,13 @@ describe('render Grid with filterType feature', () => {
       const applyButton2 = getAllByTestId('DesignSystem-FilterSelect--ApplyButton');
       expect(applyButton2.length).toBeGreaterThan(0);
     });
+  });
+});
+
+describe('Grid component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<Grid />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

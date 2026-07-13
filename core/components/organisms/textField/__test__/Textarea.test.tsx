@@ -1,12 +1,19 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import { axe } from '@/utils/testAxe';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import TextField, { TextFieldProps as Props } from '../TextField';
 
 declare global {
   interface Window {
-    ResizeObserver: unknown;
+    ResizeObserver?:
+      | (new (callback: (entries: ResizeObserverEntry[]) => void) => {
+          observe(target: Element): void;
+          disconnect(): void;
+          unobserve(target: Element): void;
+        })
+      | undefined;
   }
 }
 
@@ -458,5 +465,13 @@ describe('TextField Components - Size Functionality Tests', () => {
       expect(input).toBeInTheDocument();
       expect(input.tagName.toLowerCase()).toBe('input');
     });
+  });
+});
+
+describe('TextField component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<TextField label="Name" name="name" placeholder="Enter name" onChange={jest.fn()} />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

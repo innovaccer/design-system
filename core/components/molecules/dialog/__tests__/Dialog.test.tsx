@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import Dialog, { DialogProps as Props } from '../Dialog';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
@@ -170,5 +171,23 @@ describe('Dialog Component with overwrite class', () => {
     );
 
     expect(getByTestId('DesignSystem-Dialog')).toHaveClass(className);
+  });
+});
+
+describe('Dialog component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    render(
+      <Dialog
+        open={true}
+        heading="Sample String"
+        primaryButtonLabel="Sample String"
+        secondaryButtonLabel="Sample String"
+        primaryButtonCallback={jest.fn()}
+        secondaryButtonCallback={jest.fn()}
+        onClose={jest.fn()}
+      />
+    );
+    const results = await axe(document.body);
+    expect(results).toHaveNoViolations();
   });
 });

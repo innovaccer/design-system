@@ -6,7 +6,7 @@ import { IconType, TTabSize } from '@/common.type';
 import styles from '@css/components/tabs.module.css';
 import pageHeaderStyles from '@css/components/pageHeader.module.css';
 
-type Tab = React.ReactElement | TabConfig;
+type TabItem = React.ReactElement | TabConfig;
 type noop = (tabInfo: TabInfo) => void;
 
 interface TabInfo {
@@ -121,14 +121,13 @@ export const Tabs = (props: TabsProps) => {
     headerClassName,
     size = 'regular',
     maxWidth = 'var(--spacing-640)',
-    tabs: tabsProp = [],
   } = props;
 
   const baseProps = extractBaseProps(props);
   const tabRefs: HTMLDivElement[] = [];
   const tabsInstanceIdRef = React.useRef<string>('');
 
-  const tabs: Tab[] = children ? filterTabs(children) : tabsProp;
+  const tabs: TabItem[] = children ? filterTabs(children) : props.tabs || [];
   const inlineComponent = children ? filterInlineComponent(children) : <></>;
   const totalTabs = tabs.length;
   if (!tabsInstanceIdRef.current) {
@@ -213,7 +212,7 @@ export const Tabs = (props: TabsProps) => {
     }
   };
 
-  const renderInfo = (tab: Tab, index: number) => {
+  const renderInfo = (tab: TabItem, index: number) => {
     const { count, icon, disabled, iconType } = tab as TabConfig;
 
     if (count !== undefined) {
@@ -247,7 +246,7 @@ export const Tabs = (props: TabsProps) => {
     return null;
   };
 
-  const renderDismissIcon = (tab: Tab, index: number, onDismiss: noop) => {
+  const renderDismissIcon = (tab: TabItem, index: number, onDismiss: noop) => {
     const { disabled, label } = tab as TabConfig;
     const iconAppearance = activeIndex === index ? 'info' : disabled ? 'disabled' : 'subtle';
 
@@ -279,7 +278,7 @@ export const Tabs = (props: TabsProps) => {
     );
   };
 
-  const renderTab = (tab: Tab, index: number) => {
+  const renderTab = (tab: TabItem, index: number) => {
     const elementRef = React.createRef<HTMLElement>();
 
     const { label = '', disabled, isDismissible, onDismiss = () => {} } = tab as TabConfig;
@@ -324,7 +323,7 @@ export const Tabs = (props: TabsProps) => {
     );
   };
 
-  const renderTabs = tabs.map((tab: Tab, index) => {
+  const renderTabs = tabs.map((tab: TabItem, index) => {
     const currentTabProp = children && 'props' in tab ? tab.props : tab;
     const { disabled, label, isDismissible } = currentTabProp as TabConfig;
 
@@ -359,7 +358,7 @@ export const Tabs = (props: TabsProps) => {
         aria-disabled={disabled || undefined}
         aria-label={typeof label === 'string' ? label : undefined}
       >
-        {renderTab(currentTabProp as Tab, index)}
+        {renderTab(currentTabProp as TabItem, index)}
       </div>
     );
   });

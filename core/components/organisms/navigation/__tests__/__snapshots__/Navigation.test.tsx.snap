@@ -399,6 +399,7 @@ exports[`Navigation component
             data-test="DesignSystem-Navigation-VerticalNavigation--menuWrapper"
           >
             <div
+              aria-label="Tab #1"
               class="Navigation-menu Navigation-menu--vertical"
               data-test="DesignSystem-Navigation-VerticalNavigation--menuItem"
               role="button"
@@ -457,6 +458,7 @@ exports[`Navigation component
           data-test="DesignSystem-Navigation-VerticalNavigation--menuWrapper"
         >
           <div
+            aria-label="Tab #1"
             class="Navigation-menu Navigation-menu--vertical"
             data-test="DesignSystem-Navigation-VerticalNavigation--menuItem"
             role="button"

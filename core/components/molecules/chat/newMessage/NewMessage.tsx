@@ -19,9 +19,9 @@ const NewMessage: React.FC<NewMessageProps> = (props) => {
     <div
       data-test="DesignSystem-Chat-NewMessage"
       className={classes}
-      role="button"
-      aria-label={text}
+      role="status"
       aria-live="polite"
+      aria-label={text}
       {...rest}
     >
       <span className={styles['NewMessage-Divider--left']} />

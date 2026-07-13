@@ -80,7 +80,7 @@ export const AvatarImage = (props: AvatarImageProps) => {
     <img
       data-test="DesignSystem-Image"
       src={src}
-      alt={firstName}
+      alt=""
       {...baseProps}
       height={imgSize}
       width={imgSize}

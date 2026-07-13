@@ -192,7 +192,7 @@ export const DropzoneBase = (props: DropzoneBaseProps) => {
 
   // Cb to open the file dialog when SPACE/ENTER occurs on the dropzone root
   const onKeyDownCb = useCallback(
-    (event: React.KeyboardEvent<HTMLDivElement>) => {
+    (event: React.KeyboardEvent) => {
       if (!rootRef.current || !rootRef.current.isEqualNode(event.target as Node)) {
         return;
       }

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { fireEvent, render } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import FileUploaderList, { FileUploaderListProps as Props } from '../FileUploaderList';
 
@@ -95,5 +96,13 @@ describe('FileUploaderList component Event Handler', () => {
     const { getByTestId } = render(<FileUploaderList fileList={[fileList[2]]} onRetry={FunctionValue} />);
     expect(getByTestId('DesignSystem-InlineMessage--Description')).toBeInTheDocument();
     expect(getByTestId('DesignSystem-InlineMessage--Description').textContent).toMatch('Network failure');
+  });
+});
+
+describe('FileUploaderList component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<FileUploaderList fileList={fileList} />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

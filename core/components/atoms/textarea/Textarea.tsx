@@ -118,6 +118,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>((pr
       defaultValue={defaultValue}
       required={required}
       disabled={disabled}
+      readOnly={readOnly}
       onChange={onChange}
       onBlur={onBlur}
       onClick={onClick}

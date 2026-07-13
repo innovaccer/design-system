@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent, cleanup } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { Button, Popover } from '@/index';
 import { PopoverProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -342,6 +343,22 @@ describe('renders Popover component with prop: open and onToggle', () => {
 //       </Popover>
 //     );
 
-//     expect(queryByTestId('DesignSystem-Popover')).not.toBeInTheDocument();
-//   });
+// expect(queryByTestId('DesignSystem-Popover')).not.toBeInTheDocument();
 // });
+
+describe('Popover component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const trigger = (
+      <Button appearance="basic" data-test="DesignSystem-PopoverTrigger">
+        Open Popup
+      </Button>
+    );
+    render(
+      <Popover trigger={trigger} open={true}>
+        Popover content
+      </Popover>
+    );
+    const results = await axe(document.body);
+    expect(results).toHaveNoViolations();
+  });
+});

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import Subheading, { SubheadingProps as Props } from '../Subheading';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { HeadingAppearance } from '@/common.type';
@@ -66,5 +67,13 @@ describe('Subheading Component with Prop:color', () => {
       </Subheading>
     );
     expect(getByTestId('DesignSystem-Subheading')).toHaveClass('color-accent1-lightest');
+  });
+});
+
+describe('Subheading component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<Subheading>{'Subheading'}</Subheading>);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

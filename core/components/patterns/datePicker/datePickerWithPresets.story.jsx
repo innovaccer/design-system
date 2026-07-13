@@ -13,13 +13,45 @@ const customCode = `() => {
   const getOneWeekLaterDate = setDate.bind(null, 7);
   const getThirtyDaysLaterDate = setDate.bind(null, 30);
 
-  
+  const useIsMobile = (breakpoint = 576) => {
+    const getMatch = () =>
+      typeof window !== 'undefined' && window.matchMedia(\`(max-width: \${breakpoint}px)\`).matches;
+    const [isMobile, setIsMobile] = React.useState(getMatch);
+
+    React.useEffect(() => {
+      const mql = window.matchMedia(\`(max-width: \${breakpoint}px)\`);
+      const onChange = (e) => setIsMobile(e.matches);
+      mql.addEventListener('change', onChange);
+      return () => mql.removeEventListener('change', onChange);
+    }, [breakpoint]);
+
+    return isMobile;
+  };
+
+  const presets = [
+    { value: 'today', label: 'Today', getDate: () => new Date() },
+    { value: 'tomorrow', label: 'Tomorrow', getDate: getTomorrowDate },
+    { value: 'threeDaysLater', label: '3 days later', getDate: getThreeDaysLaterDate },
+    { value: 'oneWeekLater', label: '1 week later', getDate: getOneWeekLaterDate },
+    { value: 'thirtyDaysLater', label: '30 days later', getDate: getThirtyDaysLaterDate },
+  ];
+
   const DatePickerPreset = ({ size, withInput=false }) => {
-    
+
     const [date, setDate] = React.useState(new Date());
     const [selectedChip, setSelectedChip] = React.useState('today');
-    
-    const classNames = size === 'small' ? 'd-flex mb-4' : 'd-flex mb-5';
+    const isMobile = useIsMobile();
+
+    const onPresetChange = (value) => {
+      const preset = presets.find((p) => p.value === value);
+      if (!preset) return;
+      setDate(preset.getDate());
+      setSelectedChip(preset.value);
+    };
+
+    const chipClassNames = size === 'small' ? 'd-flex mb-4' : 'd-flex mb-5';
+    const selectedPreset = presets.find((p) => p.value === selectedChip);
+
     return (
       <DatePicker date={date} showTodayDate={false} size={size} withInput={withInput}>
         <div className="pt-6 px-5">
@@ -28,64 +60,44 @@ const customCode = `() => {
               Date
             </Subheading>
           </div>
-          <div className="pt-4">
-            <Chip
-              label="Today"
-              clearButton={false}
-              type="action"
-              className={classNames}
-              selected={selectedChip === 'today'}
-              name="rangePicker"
-              onClick={() => {
-                setDate(new Date)
-                setSelectedChip('today')
-              }}
-            />
-            <Chip
-              label="Tomorrow"
-              clearButton={false}
-              type="action"
-              className={classNames}
-              name={'chip'}
-              onClick={() => {
-                setDate(getTomorrowDate())
-                setSelectedChip('tomorrow')
-              }}
-            />
-            <Chip
-              label="3 days later"
-              clearButton={false}
-              type="action"
-              className={classNames}
-              name="rangePicker"
-              onClick={() => {
-                setDate(getThreeDaysLaterDate())
-                setSelectedChip('threeDaysLater')
-              }}
-            />
-            <Chip
-              label="1 week later"
-              clearButton={false}
-              type="action"
-              className={classNames}
-              name="rangePicker"
-              onClick={() => {
-                setDate(getOneWeekLaterDate())
-                setSelectedChip('oneWeekLater')
-              }}
-            />
-            <Chip
-              label="30 days later"
-              clearButton={false}
-              type="action"
-              className={classNames}
-              name="rangePicker"
-              onClick={() => {
-                setDate(getThirtyDaysLaterDate())
-                setSelectedChip('thirtyDaysLater')
-              }}
-            />
-          </div>
+          {isMobile ? (
+            <div className="pt-4">
+              <Select
+                width="100%"
+                onSelect={(option) => option && !Array.isArray(option) && onPresetChange(option.value)}
+                value={selectedPreset ? { label: selectedPreset.label, value: selectedPreset.value } : undefined}
+                triggerOptions={{
+                  icon: 'calendar_today',
+                  placeholder: 'Presets',
+                  withClearButton: false,
+                  'aria-label': 'Date presets',
+                }}
+              >
+                <Select.List aria-label="Date presets" size="compressed">
+                  {presets.map((p) => (
+                    <Select.Option key={p.value} option={{ label: p.label, value: p.value }}>
+                      {p.label}
+                    </Select.Option>
+                  ))}
+                </Select.List>
+              </Select>
+            </div>
+          ) : (
+            <div className="pt-4">
+              {presets.map((p) => (
+                <Chip
+                  key={p.value}
+                  label={p.label}
+                  clearButton={false}
+                  type="action"
+                  className={chipClassNames}
+                  name={p.value}
+                  selected={selectedChip === p.value}
+                  onClick={() => onPresetChange(p.value)}
+                />
+              ))}
+            </div>
+          )}
         </div>
         <Divider vertical={true} />
       </DatePicker>

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import PlaceholderImage, { PlaceholderImageProps as Props } from '../PlaceholderImage';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
@@ -38,4 +39,12 @@ describe('Image placeholder component', () => {
   };
 
   testHelper(mapper, testFunc);
+});
+
+describe('PlaceholderImage component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<PlaceholderImage />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
 });
