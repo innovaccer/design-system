@@ -327,6 +327,11 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
    * Flags the open so focus is not pulled into the calendar dialog.
    */
   openViaInput = () => {
+    const { singleInput, inputOptions, startInputOptions, endInputOptions } = this.props;
+    const disabled = singleInput ? inputOptions.disabled : startInputOptions.disabled || endInputOptions.disabled;
+
+    if (disabled) return;
+
     if (this.isActiveTriggerReadOnly()) {
       if (!this.state.open) {
         this.setState({ open: true });
