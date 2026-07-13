@@ -193,6 +193,28 @@ describe('Select trigger accessibility for error and descriptions', () => {
     expect(trigger).not.toHaveAttribute('aria-label');
     expect(trigger.querySelector('span[aria-hidden="true"]')).toHaveTextContent('Select region…');
   });
+
+  it('names the clear button after the labelled field', () => {
+    const { getByTestId } = render(
+      <>
+        <label id="region-label" htmlFor="region-select">
+          Region
+        </label>
+        <Select
+          onSelect={FunctionValue}
+          value={{ label: 'Option 1', value: 'Option 1' }}
+          triggerOptions={{
+            id: 'region-select',
+            'aria-labelledby': 'region-label',
+          }}
+        >
+          {children}
+        </Select>
+      </>
+    );
+
+    expect(getByTestId('DesignSystem-Select--closeIcon')).toHaveAttribute('aria-label', 'Clear Region');
+  });
 });
 
 describe('Select component single input trigger tests', () => {

@@ -73,6 +73,11 @@ export interface SelectTriggerProps extends BaseProps {
    */
   onClear?: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
   /**
+   * Accessible name for the clear button. Defaults to `Clear {field label}` when the
+   * trigger has `aria-label` or `aria-labelledby`.
+   */
+  clearButtonAriaLabel?: string;
+  /**
    * A function used to customize the label displayed when multiple options are selected.
    *
    * The function receives the count of selected options as its argument and should return a string
@@ -101,6 +106,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
     inlineLabel,
     iconType,
     onClear,
+    clearButtonAriaLabel: clearButtonAriaLabelProp,
     setLabel,
     minWidth,
     maxWidth,
@@ -131,6 +137,25 @@ const SelectTrigger = (props: SelectTriggerProps) => {
   } = contextProp;
 
   const hidePlaceholderFromA11y = !isOptionSelected && !!(ariaLabelledBy || ariaLabelProp);
+
+  const [labelledByText, setLabelledByText] = React.useState<string>();
+
+  React.useLayoutEffect(() => {
+    if (!ariaLabelledBy) {
+      setLabelledByText(undefined);
+      return;
+    }
+
+    const labelId = ariaLabelledBy.split(/\s+/)[0];
+    const labelEl = document.getElementById(labelId);
+    const labelText = labelEl?.textContent?.replace(/\s*\(required\)\s*/gi, '').trim();
+    setLabelledByText(labelText || undefined);
+  }, [ariaLabelledBy]);
+
+  const clearButtonAriaLabel =
+    clearButtonAriaLabelProp ??
+    (ariaLabelProp && ariaLabelProp !== 'Select trigger' ? `Clear ${ariaLabelProp}` : undefined) ??
+    (labelledByText ? `Clear ${labelledByText}` : 'Clear selection');
 
   const buttonDisabled = disabled ? 'disabled' : 'default';
   const trimmedPlaceholder = placeholder?.trim();
@@ -237,7 +262,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
             className={iconClass}
             onClick={onClearHandler}
             onKeyDown={(e) => e.stopPropagation()}
-            aria-label="clear selected"
+            aria-label={clearButtonAriaLabel}
             data-test="DesignSystem-Select--closeIcon"
           >
             <Icon appearance={buttonDisabled} size={12} name="close" type={iconType} aria-hidden={true} />
