@@ -55,7 +55,7 @@ const customCode = `
                     type="text"
                     placeholder="E.g. Doe, Smith, etc."
                     icon="person"
-                    autocomplete={'off'}
+                    autoComplete="family-name"
                     onChange={(event) => this.onChange(event.target.value, event.target.name)}
                   />
                 </div>
@@ -66,7 +66,7 @@ const customCode = `
                     type="text"
                     placeholder="E.g. John, Will, etc."
                     icon="person"
-                    autocomplete={'off'}
+                    autoComplete="given-name"
                     onChange={(event) => this.onChange(event.target.value, event.target.name)}
                   />
                 </div>
@@ -87,6 +87,7 @@ const customCode = `
                     inputOptions={{
                       placeholder: 'MM/DD/YYYY',
                       icon: 'cake',
+                      autoComplete: 'bday',
                       mask: [/\\d/, /\\d/, '/', /\\d/, /\\d/, '/', /\\d/, /\\d/, /\\d/, /\\d/]
                     }}
                   />
@@ -120,7 +121,7 @@ const customCode = `
                     type="text"
                     placeholder="00000"
                     icon="location_on"
-                    autocomplete={'off'}
+                    autoComplete="postal-code"
                     onChange={(event) => this.onChange(event.target.value, event.target.name)}
                   />
                 </div>
