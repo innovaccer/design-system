@@ -334,6 +334,7 @@ export const Trigger = (props: TriggerProps) => {
             caption={showStartError ? startErrorMessage : ''}
             validators={[inputValidator]}
             clearOnEmptyBlur={true}
+            useDefaultValueOnEmpty={true}
             fillTemplateOnFocus={false}
             ref={startTriggerRef}
             role="combobox"
@@ -392,6 +393,7 @@ export const Trigger = (props: TriggerProps) => {
             caption={showEndError ? endErrorMessage : ''}
             validators={[inputValidator]}
             clearOnEmptyBlur={true}
+            useDefaultValueOnEmpty={true}
             fillTemplateOnFocus={false}
             ref={endTriggerRef}
             role="combobox"

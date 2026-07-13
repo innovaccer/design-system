@@ -186,6 +186,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
     readOnly,
     iconType,
     'aria-invalid': ariaInvalid,
+    'aria-label': ariaLabel,
     'aria-labelledby': ariaLabelledBy,
     tabIndex: tabIndexProp,
     ...rest
@@ -219,11 +220,43 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
     }
   }, [type]);
 
-  const resolvedClearButtonAriaLabel = props['aria-label']
-    ? `Clear ${props['aria-label']}`
-    : placeholder
-    ? `Clear ${placeholder}`
-    : 'Clear input';
+  const [resolvedClearButtonAriaLabel, setResolvedClearButtonAriaLabel] = React.useState(() => {
+    if (ariaLabel) return `Clear ${ariaLabel}`;
+    if (placeholder) return `Clear ${placeholder}`;
+    return 'Clear input';
+  });
+
+  React.useLayoutEffect(() => {
+    if (ariaLabel) {
+      setResolvedClearButtonAriaLabel(`Clear ${ariaLabel}`);
+      return;
+    }
+
+    if (ariaLabelledBy && typeof document !== 'undefined') {
+      const labelledByText = ariaLabelledBy
+        .split(/\s+/)
+        .map((id) => document.getElementById(id)?.textContent?.trim())
+        .filter(Boolean)
+        .join(' ');
+      if (labelledByText) {
+        setResolvedClearButtonAriaLabel(`Clear ${labelledByText}`);
+        return;
+      }
+    }
+
+    const inputId = rest.id as string | undefined;
+    if (inputId && typeof document !== 'undefined') {
+      const escapedId = typeof CSS !== 'undefined' && typeof CSS.escape === 'function' ? CSS.escape(inputId) : inputId;
+      const associatedLabel = document.querySelector(`label[for="${escapedId}"]`);
+      const associatedLabelText = associatedLabel?.textContent?.trim();
+      if (associatedLabelText) {
+        setResolvedClearButtonAriaLabel(`Clear ${associatedLabelText}`);
+        return;
+      }
+    }
+
+    setResolvedClearButtonAriaLabel(placeholder ? `Clear ${placeholder}` : 'Clear input');
+  }, [ariaLabel, ariaLabelledBy, rest.id, placeholder]);
 
   const baseProps = extractBaseProps(props);
 
@@ -318,6 +351,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
             ? [inlineLabelId, ariaLabelledBy].filter(Boolean).join(' ')
             : ariaLabelledBy || undefined
         }
+        aria-label={ariaLabel}
         aria-describedby={
           [rest['aria-describedby'], inlineLabel && !ariaLabelledBy ? inlineLabelId : undefined]
             .filter(Boolean)

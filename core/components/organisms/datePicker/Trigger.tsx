@@ -173,8 +173,10 @@ export const Trigger = (props: TriggerProps) => {
         </Label>
       )}
       <InputMask
+        label={label}
         icon="events"
         placeholder={inputFormat}
+        placeholderChar={placeholderChar}
         {...inputMaskOptions}
         id={fieldId}
         error={showError}

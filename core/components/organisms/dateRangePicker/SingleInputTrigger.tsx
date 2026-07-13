@@ -249,6 +249,7 @@ export const SingleInputTrigger = (props: TriggerProps) => {
             caption={showError ? errorMessage : ''}
             validators={[inputValidator]}
             clearOnEmptyBlur={true}
+            useDefaultValueOnEmpty={true}
             fillTemplateOnFocus={false}
             ref={triggerRef}
             role="combobox"

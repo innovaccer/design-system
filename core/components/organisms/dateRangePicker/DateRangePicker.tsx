@@ -364,6 +364,11 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
    * side (start/end) is tracked via `activeField` for focus return on close.
    */
   openViaKeyboard = () => {
+    const { singleInput, inputOptions, startInputOptions, endInputOptions } = this.props;
+    const disabled = singleInput ? inputOptions.disabled : startInputOptions.disabled || endInputOptions.disabled;
+
+    if (disabled) return;
+
     if (this.state.open) {
       this.waitForDialogAndFocus();
     } else {

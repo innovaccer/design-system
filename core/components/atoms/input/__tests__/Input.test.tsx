@@ -3,6 +3,7 @@ import { render, fireEvent } from '@testing-library/react';
 import { axe } from '@/utils/testAxe';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import Input, { InputProps as Props } from '../Input';
+import { Label } from '@/index';
 
 const iconValue = ['events'];
 const inputValue = ['value'];
@@ -469,6 +470,41 @@ describe('Input Component - Comprehensive Behavior Tests', () => {
       );
 
       const clearButton = getByRole('button', { name: 'Clear Email address' });
+      expect(clearButton).toBeInTheDocument();
+    });
+
+    it('uses aria-labelledby text in clear button aria-label when aria-label is absent', () => {
+      const onClearMock = jest.fn();
+      const { getByRole } = render(
+        <>
+          <Label id="dob-label" htmlFor="dob-input">
+            Date of Birth
+          </Label>
+          <Input
+            id="dob-input"
+            name="dob"
+            placeholder="MM/DD/YYYY"
+            value="01/01/2024"
+            onClear={onClearMock}
+            aria-labelledby="dob-label"
+          />
+        </>
+      );
+
+      const clearButton = getByRole('button', { name: 'Clear Date of Birth' });
+      expect(clearButton).toBeInTheDocument();
+    });
+
+    it('uses associated label text in clear button aria-label when wired with htmlFor', () => {
+      const onClearMock = jest.fn();
+      const { getByRole } = render(
+        <>
+          <Label htmlFor="dob-input">Date of Birth</Label>
+          <Input id="dob-input" name="dob" placeholder="MM/DD/YYYY" value="01/01/2024" onClear={onClearMock} />
+        </>
+      );
+
+      const clearButton = getByRole('button', { name: 'Clear Date of Birth' });
       expect(clearButton).toBeInTheDocument();
     });
   });
