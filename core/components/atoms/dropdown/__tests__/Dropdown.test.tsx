@@ -987,4 +987,9 @@ describe('Dropdown trigger accessibility and visual parity with Select', () => {
     const placeholder = within(dropdownTrigger).getByText('Select');
     expect(placeholder).toHaveAttribute('aria-hidden', 'true');
   });
+
+  it('forwards id to the trigger button for Label htmlFor pairing', () => {
+    const { getByTestId } = render(<Dropdown id="time-dropdown" options={storyOptions} aria-labelledby="time-label" />);
+    expect(getByTestId(trigger)).toHaveAttribute('id', 'time-dropdown');
+  });
 });

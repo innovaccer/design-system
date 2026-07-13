@@ -53,7 +53,7 @@ const customCode = `
             />
           </div>
           <div className="d-flex flex-column ml-5" style={{width: 'var(--spacing-440)'}}>
-            <Label withInput id="datetime-time-label">Time</Label>
+            <Label withInput id="datetime-time-label" htmlFor="datetime-time-dropdown">Time</Label>
             <Dropdown
               id="datetime-time-dropdown"
               aria-labelledby="datetime-time-label"

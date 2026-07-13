@@ -10,6 +10,10 @@ export type DropDownButtonSize = 'tiny' | 'regular';
 
 export interface TriggerProps {
   /**
+   * `id` for the dropdown trigger button; pair with a visible `<Label htmlFor={id}>`.
+   */
+  id?: string;
+  /**
    * Size of `Dropdown` trigger button
    * @default "regular"
    */
