@@ -38,8 +38,8 @@ const customCode = `() => {
 
   const DatePickerPreset = ({ size, withInput=false }) => {
 
-    const [date, setDate] = React.useState(new Date());
-    const [selectedChip, setSelectedChip] = React.useState('today');
+    const [date, setDate] = React.useState(withInput ? undefined : new Date());
+    const [selectedChip, setSelectedChip] = React.useState(withInput ? undefined : 'today');
     const isMobile = useIsMobile();
 
     const onPresetChange = (value) => {

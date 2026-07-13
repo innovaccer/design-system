@@ -414,12 +414,13 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
   const helpMessage = error ? caption : helpText;
   const resolvedDescribedBy =
     [ariaDescribedBy, helpMessage ? helpTextId : undefined].filter(Boolean).join(' ') || undefined;
+  const hasAriaLabelledBy = Boolean(rest['aria-labelledby']);
 
   return (
     <div className={classes} data-test="DesignSystem-InputMask--Wrapper">
       <Input
         label={label}
-        aria-label={label}
+        aria-label={hasAriaLabelledBy ? undefined : label}
         {...rest}
         value={value}
         error={error}
