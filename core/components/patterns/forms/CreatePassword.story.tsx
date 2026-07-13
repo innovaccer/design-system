@@ -121,7 +121,7 @@ const customCode = `
                 type={this.state.passwordVisible ? 'text' : 'password'}
                 value={this.state.password}
                 onChange={this.onPasswordChange}
-                autocomplete="off"
+                autoComplete="new-password"
                 actionIcon={(
                   <Input.ActionButton
                     className="p-3"
@@ -141,7 +141,7 @@ const customCode = `
                 type={this.state.confirmPasswordVisible ? 'text' : 'password'}
                 value={this.state.confirmPassword}
                 onChange={this.onConfirmPasswordChange}
-                autocomplete="off"
+                autoComplete="new-password"
                 actionIcon={(
                   <Input.ActionButton
                     className="p-3"
