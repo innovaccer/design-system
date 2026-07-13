@@ -137,6 +137,16 @@ describe('Input Mask component prop: onClearHandler', () => {
     fireEvent.click(closeIcon);
     expect(closeIcon).not.toBeInTheDocument();
   });
+
+  it('clears to empty value when fillTemplateOnFocus is false', () => {
+    const dateMask = [/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/];
+    const { getByTestId } = render(
+      <InputMask mask={dateMask} value="01/15/2024" fillTemplateOnFocus={false} onClear={onClearHandler} />
+    );
+    const input = getByTestId('DesignSystem-Input');
+    fireEvent.click(getByTestId('DesignSystem-Input--closeIcon'));
+    expect(input).toHaveValue('');
+  });
 });
 
 describe('InputMask component a11y', () => {

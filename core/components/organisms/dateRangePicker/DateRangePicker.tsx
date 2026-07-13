@@ -7,8 +7,11 @@ import { Validators } from '@/utils/types';
 import { Trigger } from './Trigger';
 import { SingleInputTrigger } from './SingleInputTrigger';
 import { getDateInfo, convertToDate, compareDate, translateToString } from '../calendar/utility';
+import { getInitialFocusCell } from '../calendar/utils';
 import { Popover, Utils } from '@/index';
 import styles from '@css/components/dateRangePicker.module.css';
+import uidGenerator from '@/utils/uidGenerator';
+import { getFocusableElements, handleFocusTrapKeyDown, restoreFocusToElementIfConnected } from '@/utils/overlayHelper';
 import {
   getCurrentWeek,
   getPreviousWeek,
@@ -158,6 +161,52 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
   };
   monthsInView: number;
 
+  dialogRef = React.createRef<HTMLDivElement>();
+  startTriggerRef = React.createRef<HTMLInputElement>();
+  endTriggerRef = React.createRef<HTMLInputElement>();
+  singleTriggerRef = React.createRef<HTMLInputElement>();
+  panelId: string;
+  /** Tracks which trigger input (start/end/single) most recently had focus, so focus can be returned to it on close */
+  activeField: 'start' | 'end' | 'single' = 'start';
+  /**
+   * `true` when the popover opened as a side effect of typing/pasting into an
+   * editable input. In that case focus must stay in the input (caret preserved)
+   * and must NOT be moved into the calendar dialog.
+   */
+  openedViaInput = false;
+  /**
+   * `true` when the popover is closing as a result of a click outside the
+   * dialog. In that case the user has already moved focus/interaction
+   * elsewhere, so `deactivateFocusTrap` must NOT steal focus back to the
+   * trigger. Reset immediately after being consumed.
+   */
+  closedViaOutsideClick = false;
+  /** When true, the active trigger input is included in Tab trapping (input-originated open). */
+  focusTrapIncludesTrigger = false;
+  /** Pointer on trigger chrome (icon/wrapper) — not a keyboard focus-origin open. */
+  triggerHadPointerDown = false;
+  /** Props.open flipped true before deferred state.open sync (controlled onFocus opens). */
+  pendingControlledOpen = false;
+
+  isFocusOnTrigger = () => {
+    const active = document.activeElement;
+    if (!active) return false;
+    const triggers = [this.startTriggerRef.current, this.endTriggerRef.current, this.singleTriggerRef.current];
+    return triggers.some((el) => el && (el === active || el.contains(active)));
+  };
+
+  /** Controlled opens that happen while a trigger input already has focus (Tab/onFocus). */
+  flagOpenFromFocusedTrigger = () => {
+    if (this.isFocusOnTrigger() && !this.triggerHadPointerDown) {
+      this.openedViaInput = true;
+      this.focusTrapIncludesTrigger = true;
+    }
+  };
+
+  flagTriggerPointerDown = () => {
+    this.triggerHadPointerDown = true;
+  };
+
   constructor(props: DateRangePickerProps) {
     super(props);
 
@@ -168,6 +217,8 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
     const { startValue, endValue } = this.getDate(startDate, endDate);
 
     const { startError, endError } = this.getErrors(startDate, endDate);
+
+    this.panelId = `DateRangePicker-dialog-${uidGenerator()}`;
 
     this.state = {
       startDate,
@@ -184,6 +235,173 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
 
     this.monthsInView = props.monthsInView || (props.withInput ? 2 : 1);
   }
+
+  componentDidMount() {
+    if (this.state.open) {
+      this.activateFocusTrap();
+    }
+  }
+
+  componentWillUnmount() {
+    if (this.state.open) {
+      window.removeEventListener('keydown', this.onFocusTrapKeyDown, true);
+    }
+  }
+
+  onFocusTrapKeyDown = (event: KeyboardEvent) => {
+    const container = this.dialogRef.current;
+    if (!container) return;
+    if (handleFocusTrapKeyDown(event, container, undefined, this.getFocusTrapExternalTargets())) {
+      // Window capture runs before parent Modal/Sidesheet document traps so Tab
+      // from an external trigger is handled before an outer dialog can steal it.
+      event.stopImmediatePropagation();
+    }
+  };
+
+  getFocusTrapExternalTargets = (): (HTMLElement | null)[] | undefined => {
+    if (!this.focusTrapIncludesTrigger) return undefined;
+    const { singleInput } = this.props;
+    if (singleInput) {
+      return [this.singleTriggerRef.current];
+    }
+    // Dual-input manual entry: Tab must reach both start and end fields.
+    return [this.startTriggerRef.current, this.endTriggerRef.current];
+  };
+
+  focusInitialElement = () => {
+    const container = this.dialogRef.current;
+    if (!container) return;
+    const target = getInitialFocusCell(container) || getFocusableElements(container)[0];
+    target?.focus({ preventScroll: true });
+  };
+
+  /**
+   * `Popover` mounts its portal (and therefore `dialogRef`) in a passive
+   * `useEffect`, which can run after the `requestAnimationFrame` scheduled
+   * below. Poll across a bounded number of animation frames until the dialog
+   * node exists before moving focus into it, so focus isn't silently dropped
+   * back on the input (leaving Tab free to escape the `aria-modal` dialog).
+   */
+  waitForDialogAndFocus = (retriesLeft = 10) => {
+    window.requestAnimationFrame(() => {
+      if (!this.state.open) return;
+      if (this.dialogRef.current) {
+        this.focusInitialElement();
+      } else if (retriesLeft > 0) {
+        this.waitForDialogAndFocus(retriesLeft - 1);
+      }
+    });
+  };
+
+  activateFocusTrap = (moveFocus = true) => {
+    // Always arm the focus trap (Tab handling) while the dialog is open.
+    // Only move focus into the calendar for explicit opens; when the popover
+    // opened because the user is typing/pasting, leave the caret in the input
+    // and include that trigger in the trap cycle.
+    this.focusTrapIncludesTrigger = !moveFocus;
+    if (moveFocus) {
+      this.waitForDialogAndFocus();
+    }
+    window.addEventListener('keydown', this.onFocusTrapKeyDown, true);
+  };
+
+  /**
+   * When the popover is already open, re-include the active trigger in Tab
+   * trapping after the user refocuses an editable input (click/label/type path).
+   */
+  includeTriggerInFocusTrapWhenOpen = () => {
+    if (this.state.open) {
+      this.focusTrapIncludesTrigger = true;
+    }
+  };
+
+  isActiveTriggerReadOnly = () => {
+    const { singleInput, inputOptions, startInputOptions, endInputOptions } = this.props;
+    if (singleInput) return !!inputOptions?.readOnly;
+    if (this.activeField === 'end') return !!endInputOptions?.readOnly;
+    return !!startInputOptions?.readOnly;
+  };
+
+  /**
+   * Opens the popover as a result of typing/pasting in an editable input.
+   * Flags the open so focus is not pulled into the calendar dialog.
+   */
+  openViaInput = () => {
+    const { singleInput, inputOptions, startInputOptions, endInputOptions } = this.props;
+    const disabled = singleInput ? inputOptions.disabled : startInputOptions.disabled || endInputOptions.disabled;
+
+    if (disabled) return;
+
+    if (this.isActiveTriggerReadOnly()) {
+      if (!this.state.open) {
+        this.setState({ open: true });
+      }
+      return;
+    }
+    this.openedViaInput = true;
+    if (this.state.open) {
+      this.focusTrapIncludesTrigger = true;
+    } else {
+      this.setState({ open: true });
+    }
+  };
+
+  /**
+   * Flags that the popover open about to be triggered originates from a pointer
+   * press on an input itself (mouse click into an editable field). Fires on
+   * `mousedown`, before the wrapper click that opens the popover, so focus stays
+   * in the input (caret preserved). Pressing the calendar icon does NOT hit the
+   * input element, so this does not fire and the calendar still receives focus.
+   */
+  flagOpenFromInput = () => {
+    if (this.isActiveTriggerReadOnly()) return;
+    this.triggerHadPointerDown = true;
+    this.openedViaInput = true;
+    this.includeTriggerInFocusTrapWhenOpen();
+  };
+
+  /**
+   * Explicit keyboard open (ArrowDown / Alt+ArrowDown on an input). Unlike
+   * typing, this is an intentional request to enter the calendar, so focus IS
+   * moved into the grid: opening goes through the explicit path
+   * (`openedViaInput` stays false → `activateFocusTrap(true)`), and when the
+   * popover is already open focus is moved into the grid directly. The trigger
+   * side (start/end) is tracked via `activeField` for focus return on close.
+   */
+  openViaKeyboard = () => {
+    const { singleInput, inputOptions, startInputOptions, endInputOptions } = this.props;
+    const disabled = singleInput ? inputOptions.disabled : startInputOptions.disabled || endInputOptions.disabled;
+
+    if (disabled) return;
+
+    if (this.state.open) {
+      this.waitForDialogAndFocus();
+    } else {
+      this.setState({ open: true });
+    }
+  };
+
+  deactivateFocusTrap = () => {
+    window.removeEventListener('keydown', this.onFocusTrapKeyDown, true);
+    this.focusTrapIncludesTrigger = false;
+    if (this.closedViaOutsideClick) {
+      // The user's click already moved focus/interaction elsewhere; don't pull
+      // it back to the trigger.
+      this.closedViaOutsideClick = false;
+      return;
+    }
+    const { singleInput } = this.props;
+    const triggerRef = singleInput
+      ? this.singleTriggerRef
+      : this.activeField === 'end'
+      ? this.endTriggerRef
+      : this.startTriggerRef;
+    restoreFocusToElementIfConnected(triggerRef.current, this.dialogRef.current);
+  };
+
+  setActiveField = (field: 'start' | 'end' | 'single') => {
+    this.activeField = field;
+  };
 
   componentDidUpdate(prevProps: DateRangePickerProps, prevState: DateRangePickerState) {
     if (prevProps.startDate !== this.props.startDate) {
@@ -209,6 +427,9 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
     }
 
     if (prevProps.open !== this.props.open) {
+      if (this.props.open && !prevProps.open) {
+        this.pendingControlledOpen = true;
+      }
       this.setState({
         open: this.props.open || false,
       });
@@ -262,6 +483,20 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
           open: false,
         });
       }
+    }
+
+    if (prevState.open !== this.state.open) {
+      if (this.state.open) {
+        if (this.pendingControlledOpen && !this.openedViaInput) {
+          this.flagOpenFromFocusedTrigger();
+        }
+        this.pendingControlledOpen = false;
+        this.activateFocusTrap(!this.openedViaInput);
+      } else {
+        this.deactivateFocusTrap();
+      }
+      this.openedViaInput = false;
+      this.triggerHadPointerDown = false;
     }
   }
 
@@ -348,6 +583,9 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
 
     switch (type) {
       case 'outsideClick':
+        if (!o) this.closedViaOutsideClick = true;
+        this.setState({ open: o });
+        break;
       case 'escapeKeypress':
         this.setState({ open: o });
         break;
@@ -421,20 +659,28 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
     });
 
     if (withInput) {
+      const resolvedSingleAriaLabel = inputOptions['aria-label'] || ariaLabel;
+      const resolvedSingleAriaLabelledby = inputOptions['aria-labelledby'] || ariaLabelledBy;
       const mergedSingleInputOptions = {
         ...inputOptions,
-        'aria-label': inputOptions['aria-label'] || ariaLabel,
-        'aria-labelledby': inputOptions['aria-labelledby'] || ariaLabelledBy,
+        ...(resolvedSingleAriaLabel && !resolvedSingleAriaLabelledby ? { 'aria-label': resolvedSingleAriaLabel } : {}),
+        ...(resolvedSingleAriaLabelledby ? { 'aria-labelledby': resolvedSingleAriaLabelledby } : {}),
       };
+      const resolvedStartAriaLabelledby = startInputOptions['aria-labelledby'] || ariaLabelledBy;
       const mergedStartInputOptions = {
         ...startInputOptions,
-        'aria-label': startInputOptions['aria-label'],
-        'aria-labelledby': startInputOptions['aria-labelledby'] || ariaLabelledBy,
+        ...(startInputOptions['aria-label'] && !resolvedStartAriaLabelledby
+          ? { 'aria-label': startInputOptions['aria-label'] }
+          : {}),
+        ...(resolvedStartAriaLabelledby ? { 'aria-labelledby': resolvedStartAriaLabelledby } : {}),
       };
+      const resolvedEndAriaLabelledby = endInputOptions['aria-labelledby'] || ariaLabelledBy;
       const mergedEndInputOptions = {
         ...endInputOptions,
-        'aria-label': endInputOptions['aria-label'],
-        'aria-labelledby': endInputOptions['aria-labelledby'] || ariaLabelledBy,
+        ...(endInputOptions['aria-label'] && !resolvedEndAriaLabelledby
+          ? { 'aria-label': endInputOptions['aria-label'] }
+          : {}),
+        ...(resolvedEndAriaLabelledby ? { 'aria-labelledby': resolvedEndAriaLabelledby } : {}),
       };
       const trigger = singleInput ? (
         <SingleInputTrigger
@@ -443,6 +689,13 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
           validators={validators}
           state={this.state}
           setState={this.setState.bind(this)}
+          open={open}
+          panelId={this.panelId}
+          triggerRef={this.singleTriggerRef}
+          onTriggerFocus={() => this.setActiveField('single')}
+          onInputMouseDown={this.flagOpenFromInput}
+          onTriggerPointerDown={this.flagTriggerPointerDown}
+          onKeyboardOpen={this.openViaKeyboard}
         />
       ) : (
         <Trigger
@@ -452,21 +705,40 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
           validators={validators}
           state={this.state}
           setState={this.setState.bind(this)}
+          open={open}
+          panelId={this.panelId}
+          startTriggerRef={this.startTriggerRef}
+          endTriggerRef={this.endTriggerRef}
+          onTriggerFocus={this.setActiveField}
+          openViaInput={this.openViaInput}
+          onInputMouseDown={this.flagOpenFromInput}
+          onTriggerPointerDown={this.flagTriggerPointerDown}
+          onKeyboardOpen={this.openViaKeyboard}
         />
       );
+
+      const dialogLabel = 'Choose date range';
 
       return (
         <Popover
           trigger={trigger}
           triggerClass="w-100"
-          className={RangePickerClass}
           position={position}
           appendToBody={true}
           open={open}
           onToggle={this.onToggleHandler}
         >
-          {children}
-          {this.renderCalendar()}
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-label={dialogLabel}
+            id={this.panelId}
+            ref={this.dialogRef}
+            className={RangePickerClass}
+          >
+            {children}
+            {this.renderCalendar()}
+          </div>
         </Popover>
       );
     }

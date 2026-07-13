@@ -68,6 +68,18 @@ export const focusYearCell = (container: HTMLElement, yearIndex: number): boolea
 };
 
 /**
+ * Finds the calendar grid cell that should receive focus when a Calendar-based
+ * popover (`DatePicker`/`DateRangePicker`) opens. Calendar uses a roving `tabIndex`
+ * (one cell per grid has `tabIndex={0}`, matching the currently selected/focused
+ * date, month, or year); this returns that cell, whichever view is active.
+ */
+export const getInitialFocusCell = (container: HTMLElement): HTMLElement | null => {
+  return container.querySelector<HTMLElement>(
+    `${DATE_CELL_SELECTOR}[tabindex="0"], ${MONTH_CELL_SELECTOR}[tabindex="0"], ${YEAR_CELL_SELECTOR}[tabindex="0"]`
+  );
+};
+
+/**
  * Get the row and column of the currently focused date cell.
  */
 export const getFocusedDateCell = (container: HTMLElement): FocusedCell | null => {

@@ -10204,48 +10204,57 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
       class="PopperWrapper-trigger w-100"
     >
       <div
-        class="d-flex flex-column flex-grow-1"
-        data-test="DesignSystem-InputMask--Wrapper"
+        class="w-100"
       >
         <div
-          class="Input Input--regular"
-          data-test="DesignSystem-InputWrapper"
-          role="presentation"
-          style="min-width: 256px;"
+          class="d-flex flex-column flex-grow-1"
+          data-test="DesignSystem-InputMask--Wrapper"
         >
           <div
-            class="Input-icon Input-icon--left"
+            class="Input Input--regular"
+            data-test="DesignSystem-InputWrapper"
+            role="presentation"
+            style="min-width: 256px;"
           >
-            <i
-              class="material-symbols material-symbols-rounded Icon"
-              data-test="DesignSystem-Icon"
-              style="font-size: 16px; width: 16px;"
+            <div
+              class="Input-icon Input-icon--left"
             >
-              events
-            </i>
-          </div>
-          <input
-            autocomplete="off"
-            class="Input-input Input-input--regular mr-4"
-            data-test="DesignSystem-Input"
-            placeholder="mm/dd/yyyy"
-            type="text"
-            value="03/01/2020"
-          />
-          <div
-            aria-label="Clear mm/dd/yyyy"
-            class="Input-icon Input-iconWrapper--right"
-            role="button"
-            tabindex="0"
-          >
-            <i
-              aria-hidden="true"
-              class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
-              data-test="DesignSystem-Input--closeIcon"
-              style="font-size: 16px; width: 16px;"
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Icon"
+                style="font-size: 16px; width: 16px;"
+              >
+                events
+              </i>
+            </div>
+            <input
+              aria-controls="DatePicker-dialog-Test-uid"
+              aria-expanded="false"
+              aria-haspopup="dialog"
+              autocomplete="off"
+              class="Input-input Input-input--regular mr-4"
+              data-test="DesignSystem-Input"
+              id="DatePicker-input-Test-uid"
+              placeholder="mm/dd/yyyy"
+              role="combobox"
+              type="text"
+              value="03/01/2020"
+            />
+            <div
+              aria-label="Clear mm/dd/yyyy"
+              class="Input-icon Input-iconWrapper--right"
+              role="button"
+              tabindex="0"
             >
-              close
-            </i>
+              <i
+                aria-hidden="true"
+                class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
+                data-test="DesignSystem-Input--closeIcon"
+                style="font-size: 16px; width: 16px;"
+              >
+                close
+              </i>
+            </div>
           </div>
         </div>
       </div>

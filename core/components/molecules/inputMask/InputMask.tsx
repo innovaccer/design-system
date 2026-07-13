@@ -57,6 +57,12 @@ export interface MaskProps extends BaseProps {
    * @ignore
    */
   useDefaultValueOnEmpty?: boolean;
+  /**
+   * When false, focus keeps the input empty so screen readers announce the visible label and
+   * `placeholder` (e.g. mm/dd/yyyy) instead of the mask template (e.g. __/__/____).
+   * @default true
+   */
+  fillTemplateOnFocus?: boolean;
 }
 export type InputMaskProps = InputProps & MaskProps;
 type SelectionPos = {
@@ -83,6 +89,7 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
     validators = [],
     clearOnEmptyBlur = true,
     useDefaultValueOnEmpty = false,
+    fillTemplateOnFocus = true,
     defaultValue,
     mask,
     error,
@@ -372,24 +379,24 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
   const onClearHandler = React.useCallback(
     (e: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>) => {
       newSelectionPos.current = defaultSelection.start;
-      setValue(defaultPlaceholderValue);
+      setValue(fillTemplateOnFocus ? defaultPlaceholderValue : '');
 
       onClear?.(e);
     },
-    [setValue, getPlaceholderValue, setCursorPosition, getDefaultSelection, onClear]
+    [setValue, defaultPlaceholderValue, defaultSelection, fillTemplateOnFocus, onClear]
   );
 
   const onFocusHandler = React.useCallback(
     (e: React.FocusEvent<HTMLInputElement>) => {
       deferId.current = window.requestAnimationFrame(updateSelection);
-      if (!value) {
+      if (!value && fillTemplateOnFocus) {
         newSelectionPos.current = defaultSelection.start;
         setValue(getPlaceholderValue());
       }
 
       onFocus?.(e);
     },
-    [deferId.current, value, updateSelection, setValue, setSelectionPos, onFocus]
+    [deferId.current, value, fillTemplateOnFocus, updateSelection, setValue, setSelectionPos, onFocus]
   );
 
   const classes = React.useMemo(
@@ -407,12 +414,13 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
   const helpMessage = error ? caption : helpText;
   const resolvedDescribedBy =
     [ariaDescribedBy, helpMessage ? helpTextId : undefined].filter(Boolean).join(' ') || undefined;
+  const hasAriaLabelledBy = Boolean(rest['aria-labelledby']);
 
   return (
     <div className={classes} data-test="DesignSystem-InputMask--Wrapper">
       <Input
         label={label}
-        aria-label={label}
+        aria-label={hasAriaLabelledBy ? undefined : label}
         {...rest}
         value={value}
         error={error}
