@@ -279,6 +279,11 @@ export const Trigger = (props: TriggerProps) => {
     [styles['DateRangePicker-input--endDate']]: true,
   });
 
+  const resolvedStartAriaLabelledby =
+    [startLabel && startLabelId, startInputOptions['aria-labelledby']].filter(Boolean).join(' ') || undefined;
+  const resolvedEndAriaLabelledby =
+    [endLabel && endLabelId, endInputOptions['aria-labelledby']].filter(Boolean).join(' ') || undefined;
+
   return (
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div className="w-100" onMouseDown={() => onTriggerPointerDown?.()}>
@@ -341,7 +346,7 @@ export const Trigger = (props: TriggerProps) => {
             aria-haspopup="dialog"
             aria-expanded={open}
             aria-controls={panelId}
-            aria-labelledby={startLabel ? startLabelId : startInputOptions['aria-labelledby']}
+            aria-labelledby={resolvedStartAriaLabelledby}
           />
         </Column>
         <Column size={'6'} sizeXS={'12'} className={EndInputClassName}>
@@ -400,7 +405,7 @@ export const Trigger = (props: TriggerProps) => {
             aria-haspopup="dialog"
             aria-expanded={open}
             aria-controls={panelId}
-            aria-labelledby={endLabel ? endLabelId : endInputOptions['aria-labelledby']}
+            aria-labelledby={resolvedEndAriaLabelledby}
           />
         </Column>
       </Row>

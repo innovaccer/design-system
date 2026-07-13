@@ -155,6 +155,8 @@ export const Trigger = (props: TriggerProps) => {
   };
 
   const mask = Utils.masks.date[inputFormat];
+  const resolvedAriaLabelledby =
+    [label && labelId, inputMaskOptions['aria-labelledby']].filter(Boolean).join(' ') || undefined;
   return (
     // Capture pointer on trigger chrome (icon/wrapper) for focus-trap routing.
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
@@ -198,7 +200,7 @@ export const Trigger = (props: TriggerProps) => {
         aria-haspopup="dialog"
         aria-expanded={open}
         aria-controls={panelId}
-        aria-labelledby={label ? labelId : inputMaskOptions['aria-labelledby']}
+        aria-labelledby={resolvedAriaLabelledby}
       />
     </div>
   );

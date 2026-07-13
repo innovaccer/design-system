@@ -204,6 +204,9 @@ export const SingleInputTrigger = (props: TriggerProps) => {
     });
   };
 
+  const resolvedAriaLabelledby =
+    [label && labelId, inputOptions['aria-labelledby']].filter(Boolean).join(' ') || undefined;
+
   return (
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div className="w-100" onMouseDown={() => onTriggerPointerDown?.()}>
@@ -256,7 +259,7 @@ export const SingleInputTrigger = (props: TriggerProps) => {
             aria-haspopup="dialog"
             aria-expanded={open}
             aria-controls={panelId}
-            aria-labelledby={label ? labelId : inputOptions['aria-labelledby']}
+            aria-labelledby={resolvedAriaLabelledby}
           />
         </Column>
       </Row>
