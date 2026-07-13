@@ -992,4 +992,14 @@ describe('Dropdown trigger accessibility and visual parity with Select', () => {
     const { getByTestId } = render(<Dropdown id="time-dropdown" options={storyOptions} aria-labelledby="time-label" />);
     expect(getByTestId(trigger)).toHaveAttribute('id', 'time-dropdown');
   });
+
+  it('includes selected value in aria-labelledby when externally labelled', () => {
+    const selectedOptions = [{ label: '10:00 AM', value: '10:00 AM', selected: true }];
+    const { getByTestId } = render(
+      <Dropdown id="time-dropdown" options={selectedOptions} aria-labelledby="time-label" />
+    );
+    const dropdownTrigger = getByTestId(trigger);
+    expect(dropdownTrigger).toHaveAttribute('aria-labelledby', 'time-label time-dropdown-value');
+    expect(within(dropdownTrigger).getByText('10:00 AM')).toHaveAttribute('id', 'time-dropdown-value');
+  });
 });

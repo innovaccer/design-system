@@ -75,6 +75,7 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
     inlineLabel,
     error,
     iconType,
+    id,
     'aria-label': ariaLabel,
     'aria-labelledby': ariaLabelledBy,
     ...rest
@@ -84,6 +85,8 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
   const trimmedPlaceholder = placeholder.trim();
   const value = children ? children : trimmedPlaceholder;
   const isPlaceholder = !children && !menu;
+  const valueElementId = id && children ? `${id}-value` : undefined;
+  const triggerLabelledBy = ariaLabelledBy && valueElementId ? `${ariaLabelledBy} ${valueElementId}` : ariaLabelledBy;
   const iconName = !menu ? (open ? 'keyboard_arrow_up' : 'keyboard_arrow_down') : icon ? icon : 'more_horiz';
 
   const buttonClass = classNames({
@@ -114,7 +117,7 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
       aria-haspopup={menu ? 'menu' : 'listbox'}
       aria-expanded={open}
       aria-label={ariaLabelledBy ? undefined : ariaLabel}
-      aria-labelledby={ariaLabelledBy}
+      aria-labelledby={triggerLabelledBy}
       data-test="DesignSystem-DropdownTrigger"
       {...rest}
     >
@@ -129,7 +132,11 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
             <Icon appearance={buttonDisabled} className="d-flex align-items-center mr-4" name={icon} type={iconType} />
           )}
           {value && (
-            <span className={textClass} aria-hidden={isPlaceholder && ariaLabelledBy ? true : undefined}>
+            <span
+              id={valueElementId}
+              className={textClass}
+              aria-hidden={isPlaceholder && ariaLabelledBy ? true : undefined}
+            >
               {value}
             </span>
           )}
