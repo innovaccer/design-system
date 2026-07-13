@@ -974,4 +974,17 @@ describe('Dropdown trigger accessibility and visual parity with Select', () => {
     const options = getAllByTestId('DesignSystem-DropdownOption--DEFAULT');
     expect(options[0]).toHaveAttribute('tabindex', '0');
   });
+
+  it('uses aria-labelledby instead of aria-label and hides placeholder from assistive tech', () => {
+    const { getByTestId } = render(
+      <Dropdown options={storyOptions} aria-labelledby="time-label" aria-label="Stale label" />
+    );
+    const dropdownTrigger = getByTestId(trigger);
+
+    expect(dropdownTrigger).toHaveAttribute('aria-labelledby', 'time-label');
+    expect(dropdownTrigger).not.toHaveAttribute('aria-label');
+
+    const placeholder = within(dropdownTrigger).getByText('Select');
+    expect(placeholder).toHaveAttribute('aria-hidden', 'true');
+  });
 });

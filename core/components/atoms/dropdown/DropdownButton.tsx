@@ -71,12 +71,15 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
     inlineLabel,
     error,
     iconType,
+    'aria-label': ariaLabel,
+    'aria-labelledby': ariaLabelledBy,
     ...rest
   } = props;
 
   const buttonDisabled = disabled ? 'disabled' : 'default';
   const trimmedPlaceholder = placeholder.trim();
   const value = children ? children : trimmedPlaceholder;
+  const isPlaceholder = !children && !menu;
   const iconName = !menu ? (open ? 'keyboard_arrow_up' : 'keyboard_arrow_down') : icon ? icon : 'more_horiz';
 
   const buttonClass = classNames({
@@ -106,6 +109,8 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
       tabIndex={0}
       aria-haspopup={menu ? 'menu' : 'listbox'}
       aria-expanded={open}
+      aria-label={ariaLabelledBy ? undefined : ariaLabel}
+      aria-labelledby={ariaLabelledBy}
       data-test="DesignSystem-DropdownTrigger"
       {...rest}
     >
@@ -119,7 +124,11 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
           {icon && !inlineLabel && (
             <Icon appearance={buttonDisabled} className="d-flex align-items-center mr-4" name={icon} type={iconType} />
           )}
-          {value && <span className={textClass}>{value}</span>}
+          {value && (
+            <span className={textClass} aria-hidden={isPlaceholder && ariaLabelledBy ? true : undefined}>
+              {value}
+            </span>
+          )}
         </div>
       )}
       <Icon appearance={buttonDisabled} name={iconName} type={iconType} />

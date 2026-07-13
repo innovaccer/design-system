@@ -45,15 +45,19 @@ const customCode = `
       return (
         <div className="d-flex">
           <div className="d-flex flex-column">
-            <Label withInput>Date</Label>
+            <Label withInput id="datetime-date-label">Date</Label>
             <DatePicker
               withInput={true}
               onDateChange={this.onDateChange.bind(this)}
+              aria-labelledby="datetime-date-label"
             />
           </div>
           <div className="d-flex flex-column ml-5" style={{width: 'var(--spacing-440)'}}>
-            <Label withInput>Time</Label>
+            <Label withInput id="datetime-time-label">Time</Label>
             <Dropdown
+              id="datetime-time-dropdown"
+              aria-labelledby="datetime-time-label"
+              optionsAriaLabel="Time options"
               open={open}
               onPopperToggle={this.onPopperToggle.bind(this)}
               options={timeValues.map(value => ({label: value, value}))}
