@@ -41,6 +41,20 @@ function parseCustomProperties(css: string): Map<string, string> {
   return props;
 }
 
+function resolveVarChain(value: string, source: Map<string, string>, seen: Set<string> = new Set()): string {
+  const varRef = value.match(/^var\((--[\w-]+)\)$/);
+  if (!varRef) return value;
+
+  const refName = varRef[1];
+  if (seen.has(refName)) return value;
+
+  const refValue = source.get(refName);
+  if (refValue === undefined) return value;
+
+  seen.add(refName);
+  return resolveVarChain(refValue, source, seen);
+}
+
 function classifyNamespace(name: string): string {
   for (const [ns, pattern] of Object.entries(NAMESPACE_PATTERNS)) {
     if (pattern.test(name)) return ns;
@@ -67,7 +81,7 @@ export function extractTokens(version: string): TokensManifest {
   for (const [name, value] of rawTokens) {
     const ns = 'rawColors';
     namespaces[ns] ??= {};
-    namespaces[ns][name] = { value, category: 'raw' };
+    namespaces[ns][name] = { value: resolveVarChain(value, rawTokens), category: 'raw' };
   }
 
   for (const [name, value] of semanticVars) {
@@ -82,8 +96,8 @@ export function extractTokens(version: string): TokensManifest {
 
     const varRef = value.match(/^var\((--[\w-]+)\)$/);
     if (varRef) {
-      const resolved = rawTokens.get(varRef[1]);
-      if (resolved) entry.resolved = resolved;
+      const resolved = resolveVarChain(value, rawTokens);
+      if (resolved !== value) entry.resolved = resolved;
     }
 
     namespaces[ns][name] = entry;

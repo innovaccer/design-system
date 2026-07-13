@@ -80,7 +80,9 @@ function parsePropsFromSource(source: string, componentName: string): {
 
   const interfacePatterns = [
     new RegExp(`interface\\s+${capName}Props[^{]*\\{`, 'g'),
+    new RegExp(`type\\s+${capName}Props\\s*=[^{;]*\\{`, 'g'),
     new RegExp(`interface\\s+\\w*Props[^{]*\\{`, 'g'),
+    new RegExp(`type\\s+\\w*Props\\s*=[^{;]*\\{`, 'g'),
   ];
 
   let interfaceBody: string | null = null;

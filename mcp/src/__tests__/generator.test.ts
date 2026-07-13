@@ -24,7 +24,7 @@ describe('Token Extractor', () => {
   it('extracts raw color tokens', () => {
     const rawColors = tokens.namespaces['rawColors'];
     assert.ok(rawColors['--jal'], 'Missing --jal token');
-    assert.equal(rawColors['--jal'].value, '#0070dd');
+    assert.equal(rawColors['--jal'].value, '#0060d6');
     assert.equal(rawColors['--jal'].category, 'raw');
   });
 
@@ -32,7 +32,7 @@ describe('Token Extractor', () => {
     const colors = tokens.namespaces['colors'];
     assert.ok(colors['--primary'], 'Missing --primary token');
     assert.equal(colors['--primary'].value, 'var(--jal)');
-    assert.equal(colors['--primary'].resolved, '#0070dd');
+    assert.equal(colors['--primary'].resolved, '#0060d6');
     assert.equal(colors['--primary'].category, 'semantic');
   });
 
