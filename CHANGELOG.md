@@ -1,3 +1,45 @@
+## 4.26.0 (2026-07-14)
+
+### Highlights
+
+- Broad accessibility improvements across form patterns, Dropdown, Grid, Icon, Select, and VerticalNav — screen-reader announcements, associated labels, and consistent autocomplete handling.
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Fixes
+
+- fix(a11y): form pattern stories — headings, labels & autocomplete (0828d520c)
+- fix(Dropdown): hide decorative option icons from screen readers (2a86cabe7)
+- fix(StepperForm): add persistent format hint for Prefix input (52f992a52)
+- fix(Forms): add placeholder to Stepper regex textarea (90d697b3b)
+- fix(Dropdown): wire Time label in Date And Time Picker story (90d270792)
+- fix(TimePeriodForm): reflow Region and Organization selects at 320px (9e8845c3f)
+- fix(avatar): udpate accessibility props in avatar selection component (86c9f88ae)
+- fix(Icon): announce aria-label instead of icon name (role=img) (77d3829d9)
+- fix(InputMask): honor consumer autoComplete (c91ddf556)
+- fix(Grid): accessible table cell/row structure (3a1a9b826)
+- fix(Grid): announce loading state to screen readers (60176b291)
+- fix(Forms): label Create User gender/user-type selects for screen readers (dbad104b6)
+- fix(Forms): use direct aria-label for Set as Default checkbox (0244aab4c)
+- fix(Forms): remove no-op DOB autocomplete on Create User (217b7252c)
+- fix(Forms): wire field labels and autocomplete on Create User & Inline Label forms (db5f4dcfd)
+- fix(VerticalNav): announce selected item via aria-selected (c5f1c4d61)
+- fix(Forms): convey Inline Form gender selection via aria-pressed (a4b0b946d)
+- fix(Select): announce option text and hide decorative trigger icons (6e762c62d)
+- fix(Forms): accessible password show/hide toggle (4a9ce22dd)
+
+---
+
 ## 4.25.1 (2026-07-01)
 
 ### Highlights
