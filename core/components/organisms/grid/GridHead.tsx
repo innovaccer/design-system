@@ -72,7 +72,7 @@ export const GridHead = (props: GridHeadProps) => {
       });
 
       return (
-        <div className={classes}>
+        <div className={classes} role="presentation">
           {renderCheckbox(shouldRenderCheckbox)}
           {currSchema.map((s, index) => {
             let cI = pinned === 'left' ? index : leftPinnedSchema.length + index;
