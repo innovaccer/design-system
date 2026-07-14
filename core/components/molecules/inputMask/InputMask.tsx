@@ -96,7 +96,6 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
     className,
     helpText,
     label,
-    autoComplete = 'off',
     'aria-describedby': ariaDescribedBy,
     ...rest
   } = props;
@@ -422,7 +421,7 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
         onClear={!isValueEqualPlaceholder ? onClearHandler : undefined}
         onBlur={onBlurHandler}
         onPaste={onPasteHandler}
-        autoComplete={autoComplete}
+        autoComplete={'off'}
         ref={ref}
         aria-describedby={resolvedDescribedBy}
       />

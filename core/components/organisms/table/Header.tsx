@@ -328,9 +328,7 @@ export const Header = (props: HeaderProps) => {
             <>
               {/* Persistent live region: always in DOM so screen readers announce text changes */}
               <span aria-live="polite" aria-atomic="true" className={tableStyles['Table-srOnly']}>
-                {loading
-                  ? 'Loading records'
-                  : showSelectedLabel
+                {showSelectedLabel
                   ? customSelectedRowLabel ?? getSelectedRowLabel()
                   : customUnSelectedRowLabel ?? getUnSelectedRowLabel()}
               </span>

@@ -4,7 +4,7 @@ import { RowData, ColumnSchema, SortType } from './Grid';
 import { Dropdown, Placeholder, PlaceholderParagraph, Text, Icon, Button, Tooltip, GridCell } from '@/index';
 import { DropdownProps, GridCellProps } from '@/index.type';
 import { isSpaceKey } from '@/accessibility/utils';
-import { resizeCol, hasSchema, getSortButtonAriaLabel } from './utility';
+import { resizeCol, hasSchema } from './utility';
 import { getCellSize, getWidth } from './columnUtility';
 import { GridHeadProps } from './GridHead';
 import GridContext from './GridContext';
@@ -151,7 +151,6 @@ const HeaderCell = (props: HeaderCellProps) => {
   );
 
   const isSortable = !loading && sorting;
-  const sortButtonAriaLabel = isSortable ? getSortButtonAriaLabel(schema.displayName, sorted) : undefined;
   const handleSortToggle = () => {
     if (!isSortable) return;
     if (sorted === 'asc') onMenuChange(name, 'sortDesc');
@@ -196,7 +195,6 @@ const HeaderCell = (props: HeaderCellProps) => {
         }}
         role={isSortable ? 'button' : undefined}
         tabIndex={isSortable ? 0 : -1}
-        aria-label={sortButtonAriaLabel}
         aria-disabled={!isSortable || undefined}
       >
         {loading && !isValidSchema ? (
@@ -421,7 +419,7 @@ export const Cell = (props: CellProps) => {
     const entry = sortingList.find((l) => l.name === name);
     if (entry?.type === 'asc') return 'ascending';
     if (entry?.type === 'desc') return 'descending';
-    return undefined;
+    return 'none';
   }, [isHead, sorting, sortingList, name]);
 
   const { width, minWidth = 96, maxWidth = 800 } = getCellSize(cellType);

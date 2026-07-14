@@ -174,10 +174,8 @@ const customCode = `
                     id="prefix-input"
                     mask={[/\\d/, '_', /\\d/, '_', /\\d/]}
                     name="prefix"
-                    required
                     placeholder="ID_ID_ID"
                     placeholderChar="-"
-                    helpText="Use format ID_ID_ID"
                     onChange={(e) => this.onChangeOutput(e.target.value, e.target.name)}
                   />
                 </div>
@@ -251,7 +249,6 @@ const customCode = `
                   <Label withInput={true} required htmlFor="regex-input">Regex</Label>
                   <Textarea
                     id="regex-input"
-                    placeholder="Enter regex pattern"
                     rows={3}
                     onChange={(e, value) => {
                       this.setState({

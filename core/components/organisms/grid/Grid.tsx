@@ -707,7 +707,6 @@ export class Grid extends React.Component<GridProps, GridState> {
         role="grid"
         aria-label={ariaLabel}
         aria-labelledby={ariaLabelledBy}
-        aria-busy={loading}
         ref={(el) => {
           this.gridRef = el;
         }}

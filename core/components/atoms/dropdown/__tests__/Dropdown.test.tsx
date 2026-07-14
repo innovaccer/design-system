@@ -974,32 +974,4 @@ describe('Dropdown trigger accessibility and visual parity with Select', () => {
     const options = getAllByTestId('DesignSystem-DropdownOption--DEFAULT');
     expect(options[0]).toHaveAttribute('tabindex', '0');
   });
-
-  it('uses aria-labelledby instead of aria-label and hides placeholder from assistive tech', () => {
-    const { getByTestId } = render(
-      <Dropdown options={storyOptions} aria-labelledby="time-label" aria-label="Stale label" />
-    );
-    const dropdownTrigger = getByTestId(trigger);
-
-    expect(dropdownTrigger).toHaveAttribute('aria-labelledby', 'time-label');
-    expect(dropdownTrigger).not.toHaveAttribute('aria-label');
-
-    const placeholder = within(dropdownTrigger).getByText('Select');
-    expect(placeholder).toHaveAttribute('aria-hidden', 'true');
-  });
-
-  it('forwards id to the trigger button for Label htmlFor pairing', () => {
-    const { getByTestId } = render(<Dropdown id="time-dropdown" options={storyOptions} aria-labelledby="time-label" />);
-    expect(getByTestId(trigger)).toHaveAttribute('id', 'time-dropdown');
-  });
-
-  it('includes selected value in aria-labelledby when externally labelled', () => {
-    const selectedOptions = [{ label: '10:00 AM', value: '10:00 AM', selected: true }];
-    const { getByTestId } = render(
-      <Dropdown id="time-dropdown" options={selectedOptions} aria-labelledby="time-label" />
-    );
-    const dropdownTrigger = getByTestId(trigger);
-    expect(dropdownTrigger).toHaveAttribute('aria-labelledby', 'time-label time-dropdown-value');
-    expect(within(dropdownTrigger).getByText('10:00 AM')).toHaveAttribute('id', 'time-dropdown-value');
-  });
 });

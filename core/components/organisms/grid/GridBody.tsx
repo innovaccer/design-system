@@ -269,12 +269,7 @@ export const GridBody = (props: GridBodyProps) => {
   };
 
   return (
-    <div
-      className={styles['Grid-body']}
-      onScroll={(event) => handleOnScroll(event)}
-      ref={listRef}
-      aria-busy={isLoadingMore || undefined}
-    >
+    <div className={styles['Grid-body']} onScroll={(event) => handleOnScroll(event)} ref={listRef}>
       {enableRowVirtualization ? (
         memoizedVirtualScroll
       ) : (

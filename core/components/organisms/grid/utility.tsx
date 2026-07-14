@@ -1,4 +1,4 @@
-import { Data, Schema, SortType } from './Grid';
+import { Data, Schema } from './Grid';
 import { GridProps } from '@/index.type';
 export * from './columnUtility';
 export * from './rowUtility';
@@ -54,20 +54,6 @@ export const getSchema = (
 };
 
 export const getPluralSuffix = (count: number) => (count > 1 ? 's' : '');
-
-/**
- * Accessible name for a sortable column-header button. `aria-sort` stays on the
- * parent `columnheader`; this label is what screen readers announce on focus.
- */
-export const getSortButtonAriaLabel = (displayName: string, sorted: SortType | null): string => {
-  if (sorted === 'asc') {
-    return `${displayName}, sorted ascending. Activate to sort descending.`;
-  }
-  if (sorted === 'desc') {
-    return `${displayName}, sorted descending. Activate to remove sort.`;
-  }
-  return `${displayName}, not sorted. Activate to sort ascending.`;
-};
 
 export const isScrollAtTop = (enableRowVirtualization?: boolean, ref?: HTMLDivElement): boolean => {
   // Find the correct scrollable element
