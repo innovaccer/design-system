@@ -5,11 +5,18 @@ exports[`Tooltip component
  1`] = `
 <body>
   <div>
+    <span
+      class="Tooltip-srOnly"
+      id="Tooltip-Test-uid"
+    >
+      Sample string
+    </span>
     
     <div
       class="PopperWrapper-trigger"
     >
       <button
+        aria-describedby="Tooltip-Test-uid"
         class="Button Button--regular Button--basic Button--iconAlign-left"
         data-test="DesignSystem-Button"
         tabindex="0"
@@ -30,11 +37,18 @@ exports[`Tooltip component
  1`] = `
 <body>
   <div>
+    <span
+      class="Tooltip-srOnly"
+      id="Tooltip-Test-uid"
+    >
+      Sample string
+    </span>
     
     <div
       class="PopperWrapper-trigger"
     >
       <button
+        aria-describedby="Tooltip-Test-uid"
         class="Button Button--regular Button--basic Button--iconAlign-left"
         data-test="DesignSystem-Button"
         tabindex="0"
@@ -55,11 +69,18 @@ exports[`Tooltip component
  1`] = `
 <body>
   <div>
+    <span
+      class="Tooltip-srOnly"
+      id="Tooltip-Test-uid"
+    >
+      Sample string
+    </span>
     
     <div
       class="PopperWrapper-trigger"
     >
       <button
+        aria-describedby="Tooltip-Test-uid"
         class="Button Button--regular Button--basic Button--iconAlign-left"
         data-test="DesignSystem-Button"
         tabindex="0"
@@ -80,11 +101,18 @@ exports[`Tooltip component
  1`] = `
 <body>
   <div>
+    <span
+      class="Tooltip-srOnly"
+      id="Tooltip-Test-uid"
+    >
+      Sample string
+    </span>
     
     <div
       class="PopperWrapper-trigger"
     >
       <button
+        aria-describedby="Tooltip-Test-uid"
         class="Button Button--regular Button--basic Button--iconAlign-left"
         data-test="DesignSystem-Button"
         tabindex="0"
@@ -105,11 +133,18 @@ exports[`Tooltip component
  1`] = `
 <body>
   <div>
+    <span
+      class="Tooltip-srOnly"
+      id="Tooltip-Test-uid"
+    >
+      Sample string
+    </span>
     
     <div
       class="PopperWrapper-trigger"
     >
       <button
+        aria-describedby="Tooltip-Test-uid"
         class="Button Button--regular Button--basic Button--iconAlign-left"
         data-test="DesignSystem-Button"
         tabindex="0"
@@ -130,11 +165,18 @@ exports[`Tooltip component
  1`] = `
 <body>
   <div>
+    <span
+      class="Tooltip-srOnly"
+      id="Tooltip-Test-uid"
+    >
+      Sample string
+    </span>
     
     <div
       class="PopperWrapper-trigger"
     >
       <button
+        aria-describedby="Tooltip-Test-uid"
         class="Button Button--regular Button--basic Button--iconAlign-left"
         data-test="DesignSystem-Button"
         tabindex="0"
@@ -155,11 +197,18 @@ exports[`Tooltip component
  1`] = `
 <body>
   <div>
+    <span
+      class="Tooltip-srOnly"
+      id="Tooltip-Test-uid"
+    >
+      Sample string
+    </span>
     
     <div
       class="PopperWrapper-trigger"
     >
       <button
+        aria-describedby="Tooltip-Test-uid"
         class="Button Button--regular Button--basic Button--iconAlign-left"
         data-test="DesignSystem-Button"
         tabindex="0"
@@ -180,11 +229,18 @@ exports[`Tooltip component
  1`] = `
 <body>
   <div>
+    <span
+      class="Tooltip-srOnly"
+      id="Tooltip-Test-uid"
+    >
+      Sample string
+    </span>
     
     <div
       class="PopperWrapper-trigger"
     >
       <button
+        aria-describedby="Tooltip-Test-uid"
         class="Button Button--regular Button--basic Button--iconAlign-left"
         data-test="DesignSystem-Button"
         tabindex="0"
@@ -205,11 +261,18 @@ exports[`Tooltip component
  1`] = `
 <body>
   <div>
+    <span
+      class="Tooltip-srOnly"
+      id="Tooltip-Test-uid"
+    >
+      Sample string
+    </span>
     
     <div
       class="PopperWrapper-trigger"
     >
       <button
+        aria-describedby="Tooltip-Test-uid"
         class="Button Button--regular Button--basic Button--iconAlign-left"
         data-test="DesignSystem-Button"
         tabindex="0"
@@ -230,11 +293,18 @@ exports[`Tooltip component
  1`] = `
 <body>
   <div>
+    <span
+      class="Tooltip-srOnly"
+      id="Tooltip-Test-uid"
+    >
+      Sample string
+    </span>
     
     <div
       class="PopperWrapper-trigger"
     >
       <button
+        aria-describedby="Tooltip-Test-uid"
         class="Button Button--regular Button--basic Button--iconAlign-left"
         data-test="DesignSystem-Button"
         tabindex="0"
@@ -255,11 +325,18 @@ exports[`Tooltip component
  1`] = `
 <body>
   <div>
+    <span
+      class="Tooltip-srOnly"
+      id="Tooltip-Test-uid"
+    >
+      Sample string
+    </span>
     
     <div
       class="PopperWrapper-trigger"
     >
       <button
+        aria-describedby="Tooltip-Test-uid"
         class="Button Button--regular Button--basic Button--iconAlign-left"
         data-test="DesignSystem-Button"
         tabindex="0"
@@ -280,11 +357,18 @@ exports[`Tooltip component
  1`] = `
 <body>
   <div>
+    <span
+      class="Tooltip-srOnly"
+      id="Tooltip-Test-uid"
+    >
+      Sample string
+    </span>
     
     <div
       class="PopperWrapper-trigger"
     >
       <button
+        aria-describedby="Tooltip-Test-uid"
         class="Button Button--regular Button--basic Button--iconAlign-left"
         data-test="DesignSystem-Button"
         tabindex="0"
@@ -305,11 +389,18 @@ exports[`Tooltip component
  1`] = `
 <body>
   <div>
+    <span
+      class="Tooltip-srOnly"
+      id="Tooltip-Test-uid"
+    >
+      Sample string
+    </span>
     
     <div
       class="PopperWrapper-trigger"
     >
       <button
+        aria-describedby="Tooltip-Test-uid"
         class="Button Button--regular Button--basic Button--iconAlign-left"
         data-test="DesignSystem-Button"
         tabindex="0"
@@ -330,11 +421,18 @@ exports[`Tooltip component
  1`] = `
 <body>
   <div>
+    <span
+      class="Tooltip-srOnly"
+      id="Tooltip-Test-uid"
+    >
+      Sample string
+    </span>
     
     <div
       class="PopperWrapper-trigger"
     >
       <button
+        aria-describedby="Tooltip-Test-uid"
         class="Button Button--regular Button--basic Button--iconAlign-left"
         data-test="DesignSystem-Button"
         tabindex="0"
@@ -355,11 +453,18 @@ exports[`Tooltip component
  1`] = `
 <body>
   <div>
+    <span
+      class="Tooltip-srOnly"
+      id="Tooltip-Test-uid"
+    >
+      Sample string
+    </span>
     
     <div
       class="PopperWrapper-trigger"
     >
       <button
+        aria-describedby="Tooltip-Test-uid"
         class="Button Button--regular Button--basic Button--iconAlign-left"
         data-test="DesignSystem-Button"
         tabindex="0"
@@ -380,11 +485,18 @@ exports[`Tooltip component
  1`] = `
 <body>
   <div>
+    <span
+      class="Tooltip-srOnly"
+      id="Tooltip-Test-uid"
+    >
+      Sample string
+    </span>
     
     <div
       class="PopperWrapper-trigger"
     >
       <button
+        aria-describedby="Tooltip-Test-uid"
         class="Button Button--regular Button--basic Button--iconAlign-left"
         data-test="DesignSystem-Button"
         tabindex="0"

@@ -26,6 +26,7 @@ exports[`Navigation component
             >
               <a
                 aria-disabled="false"
+                aria-label="Senders"
                 class="Link Link--tiny Link--subtle Breadcrumbs-link ellipsis--noWrap"
                 data-test="DesignSystem-Breadcrumbs-link"
                 href="/Senders"
@@ -354,6 +355,7 @@ exports[`Navigation component
             >
               <a
                 aria-disabled="false"
+                aria-label="Senders"
                 class="Link Link--tiny Link--subtle Breadcrumbs-link ellipsis--noWrap"
                 data-test="DesignSystem-Breadcrumbs-link"
                 href="/Senders"
@@ -688,6 +690,7 @@ exports[`Navigation component
             >
               <a
                 aria-disabled="false"
+                aria-label="Senders"
                 class="Link Link--tiny Link--subtle Breadcrumbs-link ellipsis--noWrap"
                 data-test="DesignSystem-Breadcrumbs-link"
                 href="/Senders"
@@ -1356,6 +1359,7 @@ exports[`Navigation component
             >
               <a
                 aria-disabled="false"
+                aria-label="Senders"
                 class="Link Link--tiny Link--subtle Breadcrumbs-link ellipsis--noWrap"
                 data-test="DesignSystem-Breadcrumbs-link"
                 href="/Senders"
@@ -1595,6 +1599,7 @@ exports[`Navigation component
             >
               <a
                 aria-disabled="false"
+                aria-label="Senders"
                 class="Link Link--tiny Link--subtle Breadcrumbs-link ellipsis--noWrap"
                 data-test="DesignSystem-Breadcrumbs-link"
                 href="/Senders"

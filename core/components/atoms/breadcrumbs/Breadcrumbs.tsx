@@ -64,6 +64,7 @@ const RenderLink = ({ item, onClick }: renderLinkProps) => {
       onClick={onClickHandler}
       appearance="subtle"
       size="tiny"
+      aria-label={item.label}
     >
       {item.label}
     </Link>
@@ -74,7 +75,7 @@ const RenderItem = ({ item, onClick, index, showTooltip }: renderItemProps) => {
   return (
     <div key={index} className={styles['Breadcrumbs-item']} data-test="DesignSystem-Breadcrumbs-item">
       {showTooltip ? (
-        <Tooltip tooltip={item.label} position="bottom">
+        <Tooltip tooltip={item.label} aria-hidden="true" position="bottom">
           <RenderLink item={item} onClick={onClick} />
         </Tooltip>
       ) : (

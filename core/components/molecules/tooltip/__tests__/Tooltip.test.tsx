@@ -48,7 +48,7 @@ describe('Tooltip component', () => {
 
 describe('Tooltip component with text overflow', () => {
   it('should render tooltip when showOnTruncation is false', () => {
-    const { getByRole, queryByText } = render(
+    const { getByRole, queryByRole } = render(
       <Tooltip showOnTruncation={false} tooltip="A tooltip">
         <Button style={{ maxWidth: 150 }} className="ellipsis--noWrap d-inline-block w-100">
           show me the tooltip on hover
@@ -57,7 +57,7 @@ describe('Tooltip component with text overflow', () => {
     );
     const button = getByRole('button');
     fireEvent.mouseOver(button);
-    const tooltipText = queryByText('A tooltip');
+    const tooltipText = queryByRole('tooltip');
     expect(tooltipText).toBeInTheDocument();
   });
 
@@ -142,36 +142,36 @@ describe('Tooltip component a11y', () => {
 
 describe('Tooltip component keyboard accessibility', () => {
   it('should close tooltip when Escape key is pressed', () => {
-    const { getByRole, queryByText } = render(
+    const { getByRole, queryByRole } = render(
       <Tooltip tooltip="A tooltip">
         <Button>Hover over me</Button>
       </Tooltip>
     );
     const button = getByRole('button');
     fireEvent.mouseOver(button);
-    expect(queryByText('A tooltip')).toBeInTheDocument();
+    expect(queryByRole('tooltip')).toBeInTheDocument();
 
     act(() => {
       jest.runAllTimers();
     });
     fireEvent.keyDown(document, { key: 'Escape' });
-    expect(queryByText('A tooltip')).not.toBeInTheDocument();
+    expect(queryByRole('tooltip')).not.toBeInTheDocument();
   });
 
   it('should not close tooltip when other keys are pressed', () => {
-    const { getByRole, queryByText } = render(
+    const { getByRole, queryByRole } = render(
       <Tooltip tooltip="A tooltip">
         <Button>Hover over me</Button>
       </Tooltip>
     );
     const button = getByRole('button');
     fireEvent.mouseOver(button);
-    expect(queryByText('A tooltip')).toBeInTheDocument();
+    expect(queryByRole('tooltip')).toBeInTheDocument();
 
     fireEvent.keyDown(document, { key: 'Enter' });
-    expect(queryByText('A tooltip')).toBeInTheDocument();
+    expect(queryByRole('tooltip')).toBeInTheDocument();
 
     fireEvent.keyDown(document, { key: 'a' });
-    expect(queryByText('A tooltip')).toBeInTheDocument();
+    expect(queryByRole('tooltip')).toBeInTheDocument();
   });
 });

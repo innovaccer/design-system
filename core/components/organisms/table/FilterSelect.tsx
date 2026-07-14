@@ -232,7 +232,13 @@ export const FilterSelect: React.FC<FilterSelectProps> = (props) => {
     const [showTooltip, setShowTooltip] = React.useState(false);
 
     return (
-      <Tooltip showOnTruncation={true} tooltip={option.label} elementRef={elementRef} open={showTooltip}>
+      <Tooltip
+        showOnTruncation={true}
+        tooltip={option.label}
+        elementRef={elementRef}
+        open={showTooltip}
+        aria-hidden="true"
+      >
         <Select.Option key={`${option.value}-${index}`} option={option}>
           <Text
             ref={elementRef}

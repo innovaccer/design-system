@@ -135,6 +135,15 @@ describe('SelectOption multiselect checkbox accessibility', () => {
 });
 
 describe('Select trigger accessibility for error and descriptions', () => {
+  it('uses displayed value as default aria-label when aria-label is omitted', () => {
+    const { getByTestId } = render(
+      <Select onSelect={FunctionValue} triggerOptions={{ placeholder: 'Choose item' }}>
+        {children}
+      </Select>
+    );
+    expect(getByTestId('DesignSystem-Select-trigger')).toHaveAttribute('aria-label', 'Choose item');
+  });
+
   it('forwards aria-describedby and aria-errormessage from triggerOptions', () => {
     const { getByTestId } = render(
       <Select

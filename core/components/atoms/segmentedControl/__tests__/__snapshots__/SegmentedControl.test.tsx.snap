@@ -29,6 +29,7 @@ exports[`SegmentedControl Component - Custom Content Snapshot Tests matches snap
         class="SegmentedControl-divider SegmentedControl-divider--regular SegmentedControl-divider--hidden"
       />
       <button
+        aria-label="Option 2"
         aria-pressed="false"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
@@ -62,6 +63,7 @@ exports[`SegmentedControl Component - Disabled States Snapshot Tests matches sna
       />
       <button
         aria-checked="true"
+        aria-label="Day"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--disabled SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         disabled=""
@@ -80,6 +82,7 @@ exports[`SegmentedControl Component - Disabled States Snapshot Tests matches sna
       />
       <button
         aria-checked="false"
+        aria-label="Week"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--disabled SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         disabled=""
@@ -98,6 +101,7 @@ exports[`SegmentedControl Component - Disabled States Snapshot Tests matches sna
       />
       <button
         aria-checked="false"
+        aria-label="Month"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--disabled SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         disabled=""
@@ -132,6 +136,7 @@ exports[`SegmentedControl Component - Disabled States Snapshot Tests matches sna
       />
       <button
         aria-checked="true"
+        aria-label="Day"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         role="radio"
@@ -149,6 +154,7 @@ exports[`SegmentedControl Component - Disabled States Snapshot Tests matches sna
       />
       <button
         aria-checked="false"
+        aria-label="Week"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--disabled SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         disabled=""
@@ -167,6 +173,7 @@ exports[`SegmentedControl Component - Disabled States Snapshot Tests matches sna
       />
       <button
         aria-checked="false"
+        aria-label="Month"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         role="radio"
@@ -200,6 +207,7 @@ exports[`SegmentedControl Component - Disabled States Snapshot Tests matches sna
       />
       <button
         aria-checked="false"
+        aria-label="Day"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         role="radio"
@@ -217,6 +225,7 @@ exports[`SegmentedControl Component - Disabled States Snapshot Tests matches sna
       />
       <button
         aria-checked="true"
+        aria-label="Week"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--disabled SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         disabled=""
@@ -235,6 +244,7 @@ exports[`SegmentedControl Component - Disabled States Snapshot Tests matches sna
       />
       <button
         aria-checked="false"
+        aria-label="Month"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         role="radio"
@@ -270,6 +280,7 @@ exports[`SegmentedControl Component - Expanded Prop Snapshot Tests
       />
       <button
         aria-checked="true"
+        aria-label="Day"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         role="radio"
@@ -287,6 +298,7 @@ exports[`SegmentedControl Component - Expanded Prop Snapshot Tests
       />
       <button
         aria-checked="false"
+        aria-label="Week"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         role="radio"
@@ -304,6 +316,7 @@ exports[`SegmentedControl Component - Expanded Prop Snapshot Tests
       />
       <button
         aria-checked="false"
+        aria-label="Month"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         role="radio"
@@ -339,6 +352,7 @@ exports[`SegmentedControl Component - Expanded Prop Snapshot Tests
       />
       <button
         aria-checked="true"
+        aria-label="Day"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--expanded"
         data-test="DesignSystem-SegmentedControl-Item"
         role="radio"
@@ -356,6 +370,7 @@ exports[`SegmentedControl Component - Expanded Prop Snapshot Tests
       />
       <button
         aria-checked="false"
+        aria-label="Week"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--expanded"
         data-test="DesignSystem-SegmentedControl-Item"
         role="radio"
@@ -373,6 +388,7 @@ exports[`SegmentedControl Component - Expanded Prop Snapshot Tests
       />
       <button
         aria-checked="false"
+        aria-label="Month"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--expanded"
         data-test="DesignSystem-SegmentedControl-Item"
         role="radio"
@@ -406,6 +422,7 @@ exports[`SegmentedControl Component - Icon + Label Snapshot Tests matches snapsh
       />
       <button
         aria-checked="true"
+        aria-label="Day"
         class="SegmentedControl-segment SegmentedControl-segment--large SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         role="radio"
@@ -434,6 +451,7 @@ exports[`SegmentedControl Component - Icon + Label Snapshot Tests matches snapsh
       />
       <button
         aria-checked="false"
+        aria-label="Week"
         class="SegmentedControl-segment SegmentedControl-segment--large SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         role="radio"
@@ -462,6 +480,7 @@ exports[`SegmentedControl Component - Icon + Label Snapshot Tests matches snapsh
       />
       <button
         aria-checked="false"
+        aria-label="Month"
         class="SegmentedControl-segment SegmentedControl-segment--large SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         role="radio"
@@ -506,6 +525,7 @@ exports[`SegmentedControl Component - Icon + Label Snapshot Tests matches snapsh
       />
       <button
         aria-checked="true"
+        aria-label="Day"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         role="radio"
@@ -534,6 +554,7 @@ exports[`SegmentedControl Component - Icon + Label Snapshot Tests matches snapsh
       />
       <button
         aria-checked="false"
+        aria-label="Week"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         role="radio"
@@ -562,6 +583,7 @@ exports[`SegmentedControl Component - Icon + Label Snapshot Tests matches snapsh
       />
       <button
         aria-checked="false"
+        aria-label="Month"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         role="radio"
@@ -606,6 +628,7 @@ exports[`SegmentedControl Component - Icon + Label Snapshot Tests matches snapsh
       />
       <button
         aria-checked="true"
+        aria-label="Day"
         class="SegmentedControl-segment SegmentedControl-segment--small SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         role="radio"
@@ -634,6 +657,7 @@ exports[`SegmentedControl Component - Icon + Label Snapshot Tests matches snapsh
       />
       <button
         aria-checked="false"
+        aria-label="Week"
         class="SegmentedControl-segment SegmentedControl-segment--small SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         role="radio"
@@ -662,6 +686,7 @@ exports[`SegmentedControl Component - Icon + Label Snapshot Tests matches snapsh
       />
       <button
         aria-checked="false"
+        aria-label="Month"
         class="SegmentedControl-segment SegmentedControl-segment--small SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         role="radio"
@@ -961,6 +986,7 @@ exports[`SegmentedControl Component - Label Only Snapshot Tests matches snapshot
       />
       <button
         aria-checked="true"
+        aria-label="Day"
         class="SegmentedControl-segment SegmentedControl-segment--large SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         role="radio"
@@ -978,6 +1004,7 @@ exports[`SegmentedControl Component - Label Only Snapshot Tests matches snapshot
       />
       <button
         aria-checked="false"
+        aria-label="Week"
         class="SegmentedControl-segment SegmentedControl-segment--large SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         role="radio"
@@ -995,6 +1022,7 @@ exports[`SegmentedControl Component - Label Only Snapshot Tests matches snapshot
       />
       <button
         aria-checked="false"
+        aria-label="Month"
         class="SegmentedControl-segment SegmentedControl-segment--large SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         role="radio"
@@ -1028,6 +1056,7 @@ exports[`SegmentedControl Component - Label Only Snapshot Tests matches snapshot
       />
       <button
         aria-checked="true"
+        aria-label="Day"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         role="radio"
@@ -1045,6 +1074,7 @@ exports[`SegmentedControl Component - Label Only Snapshot Tests matches snapshot
       />
       <button
         aria-checked="false"
+        aria-label="Week"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         role="radio"
@@ -1062,6 +1092,7 @@ exports[`SegmentedControl Component - Label Only Snapshot Tests matches snapshot
       />
       <button
         aria-checked="false"
+        aria-label="Month"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         role="radio"
@@ -1095,6 +1126,7 @@ exports[`SegmentedControl Component - Label Only Snapshot Tests matches snapshot
       />
       <button
         aria-checked="true"
+        aria-label="Day"
         class="SegmentedControl-segment SegmentedControl-segment--small SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         role="radio"
@@ -1112,6 +1144,7 @@ exports[`SegmentedControl Component - Label Only Snapshot Tests matches snapshot
       />
       <button
         aria-checked="false"
+        aria-label="Week"
         class="SegmentedControl-segment SegmentedControl-segment--small SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         role="radio"
@@ -1129,6 +1162,7 @@ exports[`SegmentedControl Component - Label Only Snapshot Tests matches snapshot
       />
       <button
         aria-checked="false"
+        aria-label="Month"
         class="SegmentedControl-segment SegmentedControl-segment--small SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         role="radio"
@@ -1164,6 +1198,7 @@ exports[`SegmentedControl Component - Size Variants Snapshot Tests
       />
       <button
         aria-checked="true"
+        aria-label="Day"
         class="SegmentedControl-segment SegmentedControl-segment--large SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         role="radio"
@@ -1181,6 +1216,7 @@ exports[`SegmentedControl Component - Size Variants Snapshot Tests
       />
       <button
         aria-checked="false"
+        aria-label="Week"
         class="SegmentedControl-segment SegmentedControl-segment--large SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         role="radio"
@@ -1198,6 +1234,7 @@ exports[`SegmentedControl Component - Size Variants Snapshot Tests
       />
       <button
         aria-checked="false"
+        aria-label="Month"
         class="SegmentedControl-segment SegmentedControl-segment--large SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         role="radio"
@@ -1233,6 +1270,7 @@ exports[`SegmentedControl Component - Size Variants Snapshot Tests
       />
       <button
         aria-checked="true"
+        aria-label="Day"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         role="radio"
@@ -1250,6 +1288,7 @@ exports[`SegmentedControl Component - Size Variants Snapshot Tests
       />
       <button
         aria-checked="false"
+        aria-label="Week"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         role="radio"
@@ -1267,6 +1306,7 @@ exports[`SegmentedControl Component - Size Variants Snapshot Tests
       />
       <button
         aria-checked="false"
+        aria-label="Month"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         role="radio"
@@ -1302,6 +1342,7 @@ exports[`SegmentedControl Component - Size Variants Snapshot Tests
       />
       <button
         aria-checked="true"
+        aria-label="Day"
         class="SegmentedControl-segment SegmentedControl-segment--small SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         role="radio"
@@ -1319,6 +1360,7 @@ exports[`SegmentedControl Component - Size Variants Snapshot Tests
       />
       <button
         aria-checked="false"
+        aria-label="Week"
         class="SegmentedControl-segment SegmentedControl-segment--small SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         role="radio"
@@ -1336,6 +1378,7 @@ exports[`SegmentedControl Component - Size Variants Snapshot Tests
       />
       <button
         aria-checked="false"
+        aria-label="Month"
         class="SegmentedControl-segment SegmentedControl-segment--small SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         role="radio"
@@ -1368,6 +1411,7 @@ exports[`SegmentedControl Component - Two Segments Snapshot Tests matches snapsh
         style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
       />
       <button
+        aria-label="Option 1"
         aria-pressed="true"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--equalWidth SegmentedControl-segment--twoSegmentsSelected"
         data-test="DesignSystem-SegmentedControl-Item"
@@ -1384,6 +1428,7 @@ exports[`SegmentedControl Component - Two Segments Snapshot Tests matches snapsh
         class="SegmentedControl-divider SegmentedControl-divider--regular SegmentedControl-divider--hidden"
       />
       <button
+        aria-label="Option 2"
         aria-pressed="false"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
@@ -1417,6 +1462,7 @@ exports[`SegmentedControl Component - isEqualWidth Snapshot Tests matches snapsh
       />
       <button
         aria-checked="true"
+        aria-label="Very Long Option Label"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected"
         data-test="DesignSystem-SegmentedControl-Item"
         role="radio"
@@ -1434,6 +1480,7 @@ exports[`SegmentedControl Component - isEqualWidth Snapshot Tests matches snapsh
       />
       <button
         aria-checked="false"
+        aria-label="Short"
         class="SegmentedControl-segment SegmentedControl-segment--regular"
         data-test="DesignSystem-SegmentedControl-Item"
         role="radio"
@@ -1451,6 +1498,7 @@ exports[`SegmentedControl Component - isEqualWidth Snapshot Tests matches snapsh
       />
       <button
         aria-checked="false"
+        aria-label="Medium Label"
         class="SegmentedControl-segment SegmentedControl-segment--regular"
         data-test="DesignSystem-SegmentedControl-Item"
         role="radio"
@@ -1484,6 +1532,7 @@ exports[`SegmentedControl Component - isEqualWidth Snapshot Tests matches snapsh
       />
       <button
         aria-checked="true"
+        aria-label="Very Long Option Label"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         role="radio"
@@ -1501,6 +1550,7 @@ exports[`SegmentedControl Component - isEqualWidth Snapshot Tests matches snapsh
       />
       <button
         aria-checked="false"
+        aria-label="Short"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         role="radio"
@@ -1518,6 +1568,7 @@ exports[`SegmentedControl Component - isEqualWidth Snapshot Tests matches snapsh
       />
       <button
         aria-checked="false"
+        aria-label="Medium Label"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         role="radio"
@@ -1551,6 +1602,7 @@ exports[`SegmentedControl Component - maxWidth Snapshot Tests matches snapshot w
       />
       <button
         aria-checked="true"
+        aria-label="Very Long Option Label That Should Truncate"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         role="radio"
@@ -1568,6 +1620,7 @@ exports[`SegmentedControl Component - maxWidth Snapshot Tests matches snapshot w
       />
       <button
         aria-checked="false"
+        aria-label="Short"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         role="radio"
@@ -1585,6 +1638,7 @@ exports[`SegmentedControl Component - maxWidth Snapshot Tests matches snapshot w
       />
       <button
         aria-checked="false"
+        aria-label="Medium Label"
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
         data-test="DesignSystem-SegmentedControl-Item"
         role="radio"
