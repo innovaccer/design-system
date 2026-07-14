@@ -33,7 +33,8 @@
     "build": "npm run build-css && npm run build-js",
     "version": "./scripts/version.sh",
     "prepare": "husky install",
-    "generate-types": "node node_modules/.bin/dts-bundle-generator --config dts.config.js"
+    "generate-types": "node node_modules/.bin/dts-bundle-generator --config dts.config.js",
+    "mcp:server": "node tools/mcp/design-system-mcp-server.js"
   },
   "author": "Innovaccer",
   "license": "MIT",
