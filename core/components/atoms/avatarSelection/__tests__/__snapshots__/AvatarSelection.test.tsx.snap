@@ -16,9 +16,13 @@ Object {
           class="SelectionAvatarGroup-wrapper"
         >
           <div
+            aria-checked="false"
+            aria-label="John Doe"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
             data-test="DesignSystem-AvatarSelection--Avatar"
+            role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 5;"
+            tabindex="-1"
           >
             <span
               class="position-relative d-inline-flex"
@@ -32,7 +36,6 @@ Object {
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
-                    aria-checked="false"
                     aria-label="John Doe"
                     class="Avatar Avatar--regular Avatar--accent1 Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
@@ -55,9 +58,13 @@ Object {
           class="SelectionAvatarGroup-wrapper"
         >
           <div
+            aria-checked="false"
+            aria-label="Steven Packton"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
             data-test="DesignSystem-AvatarSelection--Avatar"
+            role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 4;"
+            tabindex="-1"
           >
             <span
               class="position-relative d-inline-flex"
@@ -71,7 +78,6 @@ Object {
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
-                    aria-checked="false"
                     aria-label="Steven Packton"
                     class="Avatar Avatar--regular Avatar--alert Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
@@ -94,9 +100,13 @@ Object {
           class="SelectionAvatarGroup-wrapper"
         >
           <div
+            aria-checked="false"
+            aria-label="Nancy Wheeler"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
             data-test="DesignSystem-AvatarSelection--Avatar"
+            role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 3;"
+            tabindex="-1"
           >
             <span
               class="position-relative d-inline-flex"
@@ -110,7 +120,6 @@ Object {
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
-                    aria-checked="false"
                     aria-label="Nancy Wheeler"
                     class="Avatar Avatar--regular Avatar--warning Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
@@ -133,9 +142,13 @@ Object {
           class="SelectionAvatarGroup-wrapper"
         >
           <div
+            aria-checked="false"
+            aria-label="Monica Geller"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
             data-test="DesignSystem-AvatarSelection--Avatar"
+            role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 2;"
+            tabindex="-1"
           >
             <span
               class="position-relative d-inline-flex"
@@ -149,7 +162,6 @@ Object {
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
-                    aria-checked="false"
                     aria-label="Monica Geller"
                     class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
@@ -172,9 +184,13 @@ Object {
           class="SelectionAvatarGroup-wrapper"
         >
           <div
+            aria-checked="false"
+            aria-label="Arya Stark"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
             data-test="DesignSystem-AvatarSelection--Avatar"
+            role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
+            tabindex="-1"
           >
             <span
               class="position-relative d-inline-flex"
@@ -188,7 +204,6 @@ Object {
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
-                    aria-checked="false"
                     aria-label="Arya Stark"
                     class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
@@ -259,9 +274,13 @@ Object {
         class="SelectionAvatarGroup-wrapper"
       >
         <div
+          aria-checked="false"
+          aria-label="John Doe"
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
           data-test="DesignSystem-AvatarSelection--Avatar"
+          role="checkbox"
           style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 5;"
+          tabindex="-1"
         >
           <span
             class="position-relative d-inline-flex"
@@ -275,7 +294,6 @@ Object {
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
-                  aria-checked="false"
                   aria-label="John Doe"
                   class="Avatar Avatar--regular Avatar--accent1 Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
@@ -298,9 +316,13 @@ Object {
         class="SelectionAvatarGroup-wrapper"
       >
         <div
+          aria-checked="false"
+          aria-label="Steven Packton"
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
           data-test="DesignSystem-AvatarSelection--Avatar"
+          role="checkbox"
           style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 4;"
+          tabindex="-1"
         >
           <span
             class="position-relative d-inline-flex"
@@ -314,7 +336,6 @@ Object {
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
-                  aria-checked="false"
                   aria-label="Steven Packton"
                   class="Avatar Avatar--regular Avatar--alert Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
@@ -337,9 +358,13 @@ Object {
         class="SelectionAvatarGroup-wrapper"
       >
         <div
+          aria-checked="false"
+          aria-label="Nancy Wheeler"
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
           data-test="DesignSystem-AvatarSelection--Avatar"
+          role="checkbox"
           style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 3;"
+          tabindex="-1"
         >
           <span
             class="position-relative d-inline-flex"
@@ -353,7 +378,6 @@ Object {
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
-                  aria-checked="false"
                   aria-label="Nancy Wheeler"
                   class="Avatar Avatar--regular Avatar--warning Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
@@ -376,9 +400,13 @@ Object {
         class="SelectionAvatarGroup-wrapper"
       >
         <div
+          aria-checked="false"
+          aria-label="Monica Geller"
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
           data-test="DesignSystem-AvatarSelection--Avatar"
+          role="checkbox"
           style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 2;"
+          tabindex="-1"
         >
           <span
             class="position-relative d-inline-flex"
@@ -392,7 +420,6 @@ Object {
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
-                  aria-checked="false"
                   aria-label="Monica Geller"
                   class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
@@ -415,9 +442,13 @@ Object {
         class="SelectionAvatarGroup-wrapper"
       >
         <div
+          aria-checked="false"
+          aria-label="Arya Stark"
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
           data-test="DesignSystem-AvatarSelection--Avatar"
+          role="checkbox"
           style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
+          tabindex="-1"
         >
           <span
             class="position-relative d-inline-flex"
@@ -431,7 +462,6 @@ Object {
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
-                  aria-checked="false"
                   aria-label="Arya Stark"
                   class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
@@ -561,9 +591,13 @@ Object {
           class="SelectionAvatarGroup-wrapper"
         >
           <div
+            aria-checked="false"
+            aria-label="John Doe"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
             data-test="DesignSystem-AvatarSelection--Avatar"
+            role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 5;"
+            tabindex="-1"
           >
             <span
               class="position-relative d-inline-flex"
@@ -577,7 +611,6 @@ Object {
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
-                    aria-checked="false"
                     aria-label="John Doe"
                     class="Avatar Avatar--regular Avatar--accent1 Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
@@ -600,9 +633,13 @@ Object {
           class="SelectionAvatarGroup-wrapper"
         >
           <div
+            aria-checked="false"
+            aria-label="Steven Packton"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
             data-test="DesignSystem-AvatarSelection--Avatar"
+            role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 4;"
+            tabindex="-1"
           >
             <span
               class="position-relative d-inline-flex"
@@ -616,7 +653,6 @@ Object {
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
-                    aria-checked="false"
                     aria-label="Steven Packton"
                     class="Avatar Avatar--regular Avatar--alert Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
@@ -639,9 +675,13 @@ Object {
           class="SelectionAvatarGroup-wrapper"
         >
           <div
+            aria-checked="false"
+            aria-label="Nancy Wheeler"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
             data-test="DesignSystem-AvatarSelection--Avatar"
+            role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 3;"
+            tabindex="-1"
           >
             <span
               class="position-relative d-inline-flex"
@@ -655,7 +695,6 @@ Object {
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
-                    aria-checked="false"
                     aria-label="Nancy Wheeler"
                     class="Avatar Avatar--regular Avatar--warning Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
@@ -678,9 +717,13 @@ Object {
           class="SelectionAvatarGroup-wrapper"
         >
           <div
+            aria-checked="false"
+            aria-label="Monica Geller"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
             data-test="DesignSystem-AvatarSelection--Avatar"
+            role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 2;"
+            tabindex="-1"
           >
             <span
               class="position-relative d-inline-flex"
@@ -694,7 +737,6 @@ Object {
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
-                    aria-checked="false"
                     aria-label="Monica Geller"
                     class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
@@ -717,9 +759,13 @@ Object {
           class="SelectionAvatarGroup-wrapper"
         >
           <div
+            aria-checked="false"
+            aria-label="Arya Stark"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
             data-test="DesignSystem-AvatarSelection--Avatar"
+            role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
+            tabindex="-1"
           >
             <span
               class="position-relative d-inline-flex"
@@ -733,7 +779,6 @@ Object {
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
-                    aria-checked="false"
                     aria-label="Arya Stark"
                     class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
@@ -804,9 +849,13 @@ Object {
         class="SelectionAvatarGroup-wrapper"
       >
         <div
+          aria-checked="false"
+          aria-label="John Doe"
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
           data-test="DesignSystem-AvatarSelection--Avatar"
+          role="checkbox"
           style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 5;"
+          tabindex="-1"
         >
           <span
             class="position-relative d-inline-flex"
@@ -820,7 +869,6 @@ Object {
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
-                  aria-checked="false"
                   aria-label="John Doe"
                   class="Avatar Avatar--regular Avatar--accent1 Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
@@ -843,9 +891,13 @@ Object {
         class="SelectionAvatarGroup-wrapper"
       >
         <div
+          aria-checked="false"
+          aria-label="Steven Packton"
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
           data-test="DesignSystem-AvatarSelection--Avatar"
+          role="checkbox"
           style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 4;"
+          tabindex="-1"
         >
           <span
             class="position-relative d-inline-flex"
@@ -859,7 +911,6 @@ Object {
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
-                  aria-checked="false"
                   aria-label="Steven Packton"
                   class="Avatar Avatar--regular Avatar--alert Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
@@ -882,9 +933,13 @@ Object {
         class="SelectionAvatarGroup-wrapper"
       >
         <div
+          aria-checked="false"
+          aria-label="Nancy Wheeler"
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
           data-test="DesignSystem-AvatarSelection--Avatar"
+          role="checkbox"
           style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 3;"
+          tabindex="-1"
         >
           <span
             class="position-relative d-inline-flex"
@@ -898,7 +953,6 @@ Object {
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
-                  aria-checked="false"
                   aria-label="Nancy Wheeler"
                   class="Avatar Avatar--regular Avatar--warning Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
@@ -921,9 +975,13 @@ Object {
         class="SelectionAvatarGroup-wrapper"
       >
         <div
+          aria-checked="false"
+          aria-label="Monica Geller"
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
           data-test="DesignSystem-AvatarSelection--Avatar"
+          role="checkbox"
           style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 2;"
+          tabindex="-1"
         >
           <span
             class="position-relative d-inline-flex"
@@ -937,7 +995,6 @@ Object {
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
-                  aria-checked="false"
                   aria-label="Monica Geller"
                   class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
@@ -960,9 +1017,13 @@ Object {
         class="SelectionAvatarGroup-wrapper"
       >
         <div
+          aria-checked="false"
+          aria-label="Arya Stark"
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
           data-test="DesignSystem-AvatarSelection--Avatar"
+          role="checkbox"
           style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
+          tabindex="-1"
         >
           <span
             class="position-relative d-inline-flex"
@@ -976,7 +1037,6 @@ Object {
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
-                  aria-checked="false"
                   aria-label="Arya Stark"
                   class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
@@ -1106,9 +1166,13 @@ Object {
           class="SelectionAvatarGroup-wrapper"
         >
           <div
+            aria-checked="false"
+            aria-label="John Doe"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
             data-test="DesignSystem-AvatarSelection--Avatar"
+            role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 5;"
+            tabindex="-1"
           >
             <span
               class="position-relative d-inline-flex"
@@ -1122,7 +1186,6 @@ Object {
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
-                    aria-checked="false"
                     aria-label="John Doe"
                     class="Avatar Avatar--tiny Avatar--accent1 Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
@@ -1145,9 +1208,13 @@ Object {
           class="SelectionAvatarGroup-wrapper"
         >
           <div
+            aria-checked="false"
+            aria-label="Steven Packton"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
             data-test="DesignSystem-AvatarSelection--Avatar"
+            role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 4;"
+            tabindex="-1"
           >
             <span
               class="position-relative d-inline-flex"
@@ -1161,7 +1228,6 @@ Object {
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
-                    aria-checked="false"
                     aria-label="Steven Packton"
                     class="Avatar Avatar--tiny Avatar--alert Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
@@ -1184,9 +1250,13 @@ Object {
           class="SelectionAvatarGroup-wrapper"
         >
           <div
+            aria-checked="false"
+            aria-label="Nancy Wheeler"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
             data-test="DesignSystem-AvatarSelection--Avatar"
+            role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 3;"
+            tabindex="-1"
           >
             <span
               class="position-relative d-inline-flex"
@@ -1200,7 +1270,6 @@ Object {
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
-                    aria-checked="false"
                     aria-label="Nancy Wheeler"
                     class="Avatar Avatar--tiny Avatar--warning Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
@@ -1223,9 +1292,13 @@ Object {
           class="SelectionAvatarGroup-wrapper"
         >
           <div
+            aria-checked="false"
+            aria-label="Monica Geller"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
             data-test="DesignSystem-AvatarSelection--Avatar"
+            role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 2;"
+            tabindex="-1"
           >
             <span
               class="position-relative d-inline-flex"
@@ -1239,7 +1312,6 @@ Object {
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
-                    aria-checked="false"
                     aria-label="Monica Geller"
                     class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
@@ -1262,9 +1334,13 @@ Object {
           class="SelectionAvatarGroup-wrapper"
         >
           <div
+            aria-checked="false"
+            aria-label="Arya Stark"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
             data-test="DesignSystem-AvatarSelection--Avatar"
+            role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 1;"
+            tabindex="-1"
           >
             <span
               class="position-relative d-inline-flex"
@@ -1278,7 +1354,6 @@ Object {
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
-                    aria-checked="false"
                     aria-label="Arya Stark"
                     class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
@@ -1349,9 +1424,13 @@ Object {
         class="SelectionAvatarGroup-wrapper"
       >
         <div
+          aria-checked="false"
+          aria-label="John Doe"
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
           data-test="DesignSystem-AvatarSelection--Avatar"
+          role="checkbox"
           style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 5;"
+          tabindex="-1"
         >
           <span
             class="position-relative d-inline-flex"
@@ -1365,7 +1444,6 @@ Object {
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
-                  aria-checked="false"
                   aria-label="John Doe"
                   class="Avatar Avatar--tiny Avatar--accent1 Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
@@ -1388,9 +1466,13 @@ Object {
         class="SelectionAvatarGroup-wrapper"
       >
         <div
+          aria-checked="false"
+          aria-label="Steven Packton"
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
           data-test="DesignSystem-AvatarSelection--Avatar"
+          role="checkbox"
           style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 4;"
+          tabindex="-1"
         >
           <span
             class="position-relative d-inline-flex"
@@ -1404,7 +1486,6 @@ Object {
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
-                  aria-checked="false"
                   aria-label="Steven Packton"
                   class="Avatar Avatar--tiny Avatar--alert Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
@@ -1427,9 +1508,13 @@ Object {
         class="SelectionAvatarGroup-wrapper"
       >
         <div
+          aria-checked="false"
+          aria-label="Nancy Wheeler"
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
           data-test="DesignSystem-AvatarSelection--Avatar"
+          role="checkbox"
           style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 3;"
+          tabindex="-1"
         >
           <span
             class="position-relative d-inline-flex"
@@ -1443,7 +1528,6 @@ Object {
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
-                  aria-checked="false"
                   aria-label="Nancy Wheeler"
                   class="Avatar Avatar--tiny Avatar--warning Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
@@ -1466,9 +1550,13 @@ Object {
         class="SelectionAvatarGroup-wrapper"
       >
         <div
+          aria-checked="false"
+          aria-label="Monica Geller"
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
           data-test="DesignSystem-AvatarSelection--Avatar"
+          role="checkbox"
           style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 2;"
+          tabindex="-1"
         >
           <span
             class="position-relative d-inline-flex"
@@ -1482,7 +1570,6 @@ Object {
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
-                  aria-checked="false"
                   aria-label="Monica Geller"
                   class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
@@ -1505,9 +1592,13 @@ Object {
         class="SelectionAvatarGroup-wrapper"
       >
         <div
+          aria-checked="false"
+          aria-label="Arya Stark"
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
           data-test="DesignSystem-AvatarSelection--Avatar"
+          role="checkbox"
           style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 1;"
+          tabindex="-1"
         >
           <span
             class="position-relative d-inline-flex"
@@ -1521,7 +1612,6 @@ Object {
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
-                  aria-checked="false"
                   aria-label="Arya Stark"
                   class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
@@ -1651,9 +1741,13 @@ Object {
           class="SelectionAvatarGroup-wrapper"
         >
           <div
+            aria-checked="false"
+            aria-label="John Doe"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
             data-test="DesignSystem-AvatarSelection--Avatar"
+            role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 5;"
+            tabindex="-1"
           >
             <span
               class="position-relative d-inline-flex"
@@ -1667,7 +1761,6 @@ Object {
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
-                    aria-checked="false"
                     aria-label="John Doe"
                     class="Avatar Avatar--regular Avatar--accent1 Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
@@ -1690,9 +1783,13 @@ Object {
           class="SelectionAvatarGroup-wrapper"
         >
           <div
+            aria-checked="false"
+            aria-label="Steven Packton"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
             data-test="DesignSystem-AvatarSelection--Avatar"
+            role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 4;"
+            tabindex="-1"
           >
             <span
               class="position-relative d-inline-flex"
@@ -1706,7 +1803,6 @@ Object {
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
-                    aria-checked="false"
                     aria-label="Steven Packton"
                     class="Avatar Avatar--regular Avatar--alert Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
@@ -1729,9 +1825,13 @@ Object {
           class="SelectionAvatarGroup-wrapper"
         >
           <div
+            aria-checked="false"
+            aria-label="Nancy Wheeler"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
             data-test="DesignSystem-AvatarSelection--Avatar"
+            role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 3;"
+            tabindex="-1"
           >
             <span
               class="position-relative d-inline-flex"
@@ -1745,7 +1845,6 @@ Object {
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
-                    aria-checked="false"
                     aria-label="Nancy Wheeler"
                     class="Avatar Avatar--regular Avatar--warning Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
@@ -1768,9 +1867,13 @@ Object {
           class="SelectionAvatarGroup-wrapper"
         >
           <div
+            aria-checked="false"
+            aria-label="Monica Geller"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
             data-test="DesignSystem-AvatarSelection--Avatar"
+            role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 2;"
+            tabindex="-1"
           >
             <span
               class="position-relative d-inline-flex"
@@ -1784,7 +1887,6 @@ Object {
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
-                    aria-checked="false"
                     aria-label="Monica Geller"
                     class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
@@ -1807,9 +1909,13 @@ Object {
           class="SelectionAvatarGroup-wrapper"
         >
           <div
+            aria-checked="false"
+            aria-label="Arya Stark"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
             data-test="DesignSystem-AvatarSelection--Avatar"
+            role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
+            tabindex="-1"
           >
             <span
               class="position-relative d-inline-flex"
@@ -1823,7 +1929,6 @@ Object {
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
-                    aria-checked="false"
                     aria-label="Arya Stark"
                     class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
@@ -1980,9 +2085,13 @@ Object {
           class="SelectionAvatarGroup-wrapper"
         >
           <div
+            aria-checked="false"
+            aria-label="John Doe"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
             data-test="DesignSystem-AvatarSelection--Avatar"
+            role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 5;"
+            tabindex="-1"
           >
             <span
               class="position-relative d-inline-flex"
@@ -1996,7 +2105,6 @@ Object {
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
-                    aria-checked="false"
                     aria-label="John Doe"
                     class="Avatar Avatar--tiny Avatar--accent1 Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
@@ -2019,9 +2127,13 @@ Object {
           class="SelectionAvatarGroup-wrapper"
         >
           <div
+            aria-checked="false"
+            aria-label="Steven Packton"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
             data-test="DesignSystem-AvatarSelection--Avatar"
+            role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 4;"
+            tabindex="-1"
           >
             <span
               class="position-relative d-inline-flex"
@@ -2035,7 +2147,6 @@ Object {
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
-                    aria-checked="false"
                     aria-label="Steven Packton"
                     class="Avatar Avatar--tiny Avatar--alert Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
@@ -2058,9 +2169,13 @@ Object {
           class="SelectionAvatarGroup-wrapper"
         >
           <div
+            aria-checked="false"
+            aria-label="Nancy Wheeler"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
             data-test="DesignSystem-AvatarSelection--Avatar"
+            role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 3;"
+            tabindex="-1"
           >
             <span
               class="position-relative d-inline-flex"
@@ -2074,7 +2189,6 @@ Object {
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
-                    aria-checked="false"
                     aria-label="Nancy Wheeler"
                     class="Avatar Avatar--tiny Avatar--warning Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
@@ -2097,9 +2211,13 @@ Object {
           class="SelectionAvatarGroup-wrapper"
         >
           <div
+            aria-checked="false"
+            aria-label="Monica Geller"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
             data-test="DesignSystem-AvatarSelection--Avatar"
+            role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 2;"
+            tabindex="-1"
           >
             <span
               class="position-relative d-inline-flex"
@@ -2113,7 +2231,6 @@ Object {
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
-                    aria-checked="false"
                     aria-label="Monica Geller"
                     class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
@@ -2136,9 +2253,13 @@ Object {
           class="SelectionAvatarGroup-wrapper"
         >
           <div
+            aria-checked="false"
+            aria-label="Arya Stark"
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
             data-test="DesignSystem-AvatarSelection--Avatar"
+            role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 1;"
+            tabindex="-1"
           >
             <span
               class="position-relative d-inline-flex"
@@ -2152,7 +2273,6 @@ Object {
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
-                    aria-checked="false"
                     aria-label="Arya Stark"
                     class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
                     data-test="DesignSystem-Avatar"
@@ -2223,9 +2343,13 @@ Object {
         class="SelectionAvatarGroup-wrapper"
       >
         <div
+          aria-checked="false"
+          aria-label="John Doe"
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
           data-test="DesignSystem-AvatarSelection--Avatar"
+          role="checkbox"
           style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 5;"
+          tabindex="-1"
         >
           <span
             class="position-relative d-inline-flex"
@@ -2239,7 +2363,6 @@ Object {
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
-                  aria-checked="false"
                   aria-label="John Doe"
                   class="Avatar Avatar--tiny Avatar--accent1 Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
@@ -2262,9 +2385,13 @@ Object {
         class="SelectionAvatarGroup-wrapper"
       >
         <div
+          aria-checked="false"
+          aria-label="Steven Packton"
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
           data-test="DesignSystem-AvatarSelection--Avatar"
+          role="checkbox"
           style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 4;"
+          tabindex="-1"
         >
           <span
             class="position-relative d-inline-flex"
@@ -2278,7 +2405,6 @@ Object {
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
-                  aria-checked="false"
                   aria-label="Steven Packton"
                   class="Avatar Avatar--tiny Avatar--alert Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
@@ -2301,9 +2427,13 @@ Object {
         class="SelectionAvatarGroup-wrapper"
       >
         <div
+          aria-checked="false"
+          aria-label="Nancy Wheeler"
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
           data-test="DesignSystem-AvatarSelection--Avatar"
+          role="checkbox"
           style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 3;"
+          tabindex="-1"
         >
           <span
             class="position-relative d-inline-flex"
@@ -2317,7 +2447,6 @@ Object {
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
-                  aria-checked="false"
                   aria-label="Nancy Wheeler"
                   class="Avatar Avatar--tiny Avatar--warning Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
@@ -2340,9 +2469,13 @@ Object {
         class="SelectionAvatarGroup-wrapper"
       >
         <div
+          aria-checked="false"
+          aria-label="Monica Geller"
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
           data-test="DesignSystem-AvatarSelection--Avatar"
+          role="checkbox"
           style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 2;"
+          tabindex="-1"
         >
           <span
             class="position-relative d-inline-flex"
@@ -2356,7 +2489,6 @@ Object {
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
-                  aria-checked="false"
                   aria-label="Monica Geller"
                   class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
@@ -2379,9 +2511,13 @@ Object {
         class="SelectionAvatarGroup-wrapper"
       >
         <div
+          aria-checked="false"
+          aria-label="Arya Stark"
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--tiny SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
           data-test="DesignSystem-AvatarSelection--Avatar"
+          role="checkbox"
           style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 1;"
+          tabindex="-1"
         >
           <span
             class="position-relative d-inline-flex"
@@ -2395,7 +2531,6 @@ Object {
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
-                  aria-checked="false"
                   aria-label="Arya Stark"
                   class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"

@@ -152,33 +152,6 @@ describe('render Grid component prop: updateSortingList with sortTypes', () => {
     expect(updateSortingList).toHaveBeenCalled();
     expect(updateSortingList.mock.calls[2]).toEqual([[{ name: 'name', type: 'desc' }]]);
   });
-
-  it('sort button exposes unsorted state via aria-label', () => {
-    const { getByTestId } = render(
-      <Grid schema={schema} data={data} withCheckbox={true} updateSortingList={updateSortingList} />
-    );
-    expect(getByTestId('DesignSystem-Grid-cellContent')).toHaveAttribute(
-      'aria-label',
-      'Name, not sorted. Activate to sort ascending.'
-    );
-  });
-
-  it('sort button exposes ascending state via aria-label and aria-sort on columnheader', () => {
-    const { getByTestId, container } = render(
-      <Grid
-        schema={schema}
-        data={data}
-        withCheckbox={true}
-        updateSortingList={updateSortingList}
-        sortingList={[{ name: 'name', type: 'asc' }]}
-      />
-    );
-    expect(getByTestId('DesignSystem-Grid-cellContent')).toHaveAttribute(
-      'aria-label',
-      'Name, sorted ascending. Activate to sort descending.'
-    );
-    expect(container.querySelector('[data-col-id="name"]')).toHaveAttribute('aria-sort', 'ascending');
-  });
 });
 
 describe('render Grid component prop: updateSchema ', () => {

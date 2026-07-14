@@ -211,7 +211,6 @@ const SelectTrigger = (props: SelectTriggerProps) => {
                 name={icon}
                 type={iconType}
                 size={iconSize}
-                aria-hidden={true}
               />
             )}
             {value && (
@@ -234,7 +233,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
           </button>
         )}
 
-        <Icon appearance={buttonDisabled} name={iconName} type={iconType} aria-hidden={true} />
+        <Icon appearance={buttonDisabled} name={iconName} type={iconType} />
       </button>
     </Tooltip>
   );

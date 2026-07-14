@@ -54,15 +54,7 @@ const IconWithMetaOption = (props: OptionTypeProps) => {
       aria-selected={!menu ? selected : undefined}
     >
       {/* eslint-enable  */}
-      {icon && (
-        <Icon
-          data-test={`${dataTest}--Icon`}
-          className={IconClass}
-          name={icon}
-          appearance={appearance}
-          aria-hidden={true}
-        />
-      )}
+      {icon && <Icon data-test={`${dataTest}--Icon`} className={IconClass} name={icon} appearance={appearance} />}
       <div className={styles['Option-label']}>
         <Text className={textClassName} color={color}>
           {label}

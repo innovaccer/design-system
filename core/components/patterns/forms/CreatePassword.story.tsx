@@ -121,13 +121,11 @@ const customCode = `
                 type={this.state.passwordVisible ? 'text' : 'password'}
                 value={this.state.password}
                 onChange={this.onPasswordChange}
-                autoComplete="new-password"
+                autocomplete="off"
                 actionIcon={(
-                  <Input.ActionButton
-                    className="p-3"
+                  <Icon
                     name={this.state.passwordVisible ? 'visibility' : 'visibility_off'}
-                    aria-label="Show password"
-                    aria-pressed={this.state.passwordVisible}
+                    aria-label={this.state.passwordVisible ? 'Hide password' : 'Show password'}
                     onClick={() => this.setState({ passwordVisible: !passwordVisible })}
                   />
                 )}
@@ -141,13 +139,11 @@ const customCode = `
                 type={this.state.confirmPasswordVisible ? 'text' : 'password'}
                 value={this.state.confirmPassword}
                 onChange={this.onConfirmPasswordChange}
-                autoComplete="new-password"
+                autocomplete="off"
                 actionIcon={(
-                  <Input.ActionButton
-                    className="p-3"
+                  <Icon
                     name={this.state.confirmPasswordVisible ? 'visibility' : 'visibility_off'}
-                    aria-label="Show confirm password"
-                    aria-pressed={this.state.confirmPasswordVisible}
+                    aria-label={this.state.confirmPasswordVisible ? 'Hide confirm password' : 'Show confirm password'}
                     onClick={() => this.setState({ confirmPasswordVisible: !confirmPasswordVisible })}
                   />
                 )}

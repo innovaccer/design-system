@@ -10,10 +10,6 @@ export type DropDownButtonSize = 'tiny' | 'regular';
 
 export interface TriggerProps {
   /**
-   * `id` for the dropdown trigger button; pair with a visible `<Label htmlFor={id}>`.
-   */
-  id?: string;
-  /**
    * Size of `Dropdown` trigger button
    * @default "regular"
    */
@@ -75,18 +71,12 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
     inlineLabel,
     error,
     iconType,
-    id,
-    'aria-label': ariaLabel,
-    'aria-labelledby': ariaLabelledBy,
     ...rest
   } = props;
 
   const buttonDisabled = disabled ? 'disabled' : 'default';
   const trimmedPlaceholder = placeholder.trim();
   const value = children ? children : trimmedPlaceholder;
-  const isPlaceholder = !children && !menu;
-  const valueElementId = id && children ? `${id}-value` : undefined;
-  const triggerLabelledBy = ariaLabelledBy && valueElementId ? `${ariaLabelledBy} ${valueElementId}` : ariaLabelledBy;
   const iconName = !menu ? (open ? 'keyboard_arrow_up' : 'keyboard_arrow_down') : icon ? icon : 'more_horiz';
 
   const buttonClass = classNames({
@@ -109,7 +99,6 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
   return (
     <button
       ref={ref}
-      id={id}
       type="button"
       value={children}
       className={buttonClass}
@@ -117,8 +106,6 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
       tabIndex={0}
       aria-haspopup={menu ? 'menu' : 'listbox'}
       aria-expanded={open}
-      aria-label={ariaLabelledBy ? undefined : ariaLabel}
-      aria-labelledby={triggerLabelledBy}
       data-test="DesignSystem-DropdownTrigger"
       {...rest}
     >
@@ -132,15 +119,7 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
           {icon && !inlineLabel && (
             <Icon appearance={buttonDisabled} className="d-flex align-items-center mr-4" name={icon} type={iconType} />
           )}
-          {value && (
-            <span
-              id={valueElementId}
-              className={textClass}
-              aria-hidden={isPlaceholder && ariaLabelledBy ? true : undefined}
-            >
-              {value}
-            </span>
-          )}
+          {value && <span className={textClass}>{value}</span>}
         </div>
       )}
       <Icon appearance={buttonDisabled} name={iconName} type={iconType} />

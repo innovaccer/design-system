@@ -347,7 +347,6 @@ const DropdownList = (props: OptionsProps) => {
     NewCustomTrigger
   ) : (
     <DropdownButton
-      id={props.id}
       placeholder={placeholder}
       triggerSize={triggerSize}
       open={dropdownOpen}
@@ -358,8 +357,8 @@ const DropdownList = (props: OptionsProps) => {
       error={error}
       ref={dropdownTriggerRef}
       iconType={iconType}
-      aria-label={triggerAriaLabelledBy ? undefined : triggerAriaLabel}
-      aria-labelledby={triggerAriaLabelledBy}
+      aria-label={props['aria-label']}
+      aria-labelledby={props['aria-labelledby']}
     >
       {triggerLabel}
     </DropdownButton>
