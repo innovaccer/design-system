@@ -71,7 +71,7 @@ const customCode = `
                 type="text"
                 placeholder="Enter email"
                 className="mb-6"
-                autocomplete={'off'}
+                autoComplete="email"
                 onChange={this.onEmailChange}
               />
               <Label withInput={true}>Password</Label>
@@ -79,13 +79,16 @@ const customCode = `
                 name="input"
                 className="mb-4"
                 placeholder="Enter password"
-                autocomplete={'off'}
+                autoComplete="current-password"
                 type={this.state.passwordVisible ? 'text' : 'password'}
                 value={password}
                 onChange={this.onPasswordChange}
                 actionIcon={(
-                  <Icon
+                  <Input.ActionButton
+                    className="p-3"
                     name={this.state.passwordVisible ? 'visibility' : 'visibility_off'}
+                    aria-label="Show password"
+                    aria-pressed={this.state.passwordVisible}
                     onClick={this.onActionClick}
                   />
                 )}
