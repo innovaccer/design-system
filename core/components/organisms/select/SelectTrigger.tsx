@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { Icon, Text, Tooltip } from '@/index';
 import { IconType } from '@/common.type';
 import { SelectContext } from './SelectContext';
-import { handleKeyDownTrigger, computeValue } from './utils';
+import { handleKeyDownTrigger, computeValue, getLabelTextFromElement } from './utils';
 import { BaseProps } from '@/utils/types';
 import selectStyles from '@css/components/select.module.css';
 import buttonStyles from '@css/components/button.module.css';
@@ -152,8 +152,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
 
     const labelId = ariaLabelledBy.split(/\s+/)[0];
     const labelEl = document.getElementById(labelId);
-    const labelText = labelEl?.textContent?.replace(/\s*\(required\)\s*/gi, '').trim();
-    setLabelledByText(labelText || undefined);
+    setLabelledByText(labelEl ? getLabelTextFromElement(labelEl) : undefined);
   }, [ariaLabelledBy]);
 
   const clearButtonAriaLabel =

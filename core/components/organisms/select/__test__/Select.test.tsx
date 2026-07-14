@@ -2,7 +2,7 @@ import * as React from 'react';
 import { axe } from '@/utils/testAxe';
 import { render, fireEvent, waitFor, act } from '@testing-library/react';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
-import { Select, AIIconButton } from '@/index';
+import { Select, AIIconButton, Label } from '@/index';
 import { SelectProps as Props } from '@/index.type';
 
 window.HTMLElement.prototype.scrollIntoView = jest.fn();
@@ -237,6 +237,28 @@ describe('Select trigger accessibility for error and descriptions', () => {
     );
 
     expect(getByTestId('DesignSystem-Select--closeIcon')).toHaveAttribute('aria-label', 'Clear Region');
+  });
+
+  it('strips label adornments from clear button name when label has info icon', () => {
+    const { getByTestId } = render(
+      <>
+        <Label withInput={true} id="status-label" htmlFor="status-select" info="Additional status context">
+          Status
+        </Label>
+        <Select
+          onSelect={FunctionValue}
+          value={{ label: 'Option 1', value: 'Option 1' }}
+          triggerOptions={{
+            id: 'status-select',
+            'aria-labelledby': 'status-label',
+          }}
+        >
+          {children}
+        </Select>
+      </>
+    );
+
+    expect(getByTestId('DesignSystem-Select--closeIcon')).toHaveAttribute('aria-label', 'Clear Status');
   });
 });
 
