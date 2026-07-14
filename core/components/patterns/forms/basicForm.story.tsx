@@ -71,7 +71,7 @@ const customCode = `
                 type="text"
                 placeholder="Enter email"
                 className="mb-6"
-                autocomplete={'off'}
+                autoComplete="email"
                 onChange={this.onEmailChange}
               />
               <Label withInput={true}>Password</Label>
@@ -79,7 +79,7 @@ const customCode = `
                 name="input"
                 className="mb-4"
                 placeholder="Enter password"
-                autocomplete={'off'}
+                autoComplete="current-password"
                 type={this.state.passwordVisible ? 'text' : 'password'}
                 value={password}
                 onChange={this.onPasswordChange}
