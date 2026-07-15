@@ -25,14 +25,14 @@ const customCode = `
       }
 
       return (
-        <div className="w-75">
+        <div className="w-100">
           <Card className="px-7 py-6">
             <Heading className="mb-6" size="s">Configure Initiative</Heading>
-            <Heading size="s" className="mb-2">Population Filter</Heading>
-            <div className="d-flex mt-5 mb-4">
-              <div className="mr-6" style={{ width: 'var(--spacing-440)' }}>
+            <Heading size="s" as="h6" className="mb-2">Population Filter</Heading>
+            <div className="d-flex flex-column mt-5 mb-4">
+              <div className="w-100 mb-4">
                 <Label withInput={true}>Region</Label>
-                <Select width="100%" triggerOptions={{ 'aria-label': "Region" }}>
+                <Select appendToBody width="100%" triggerOptions={{ 'aria-label': "Region" }}>
                   <Select.List>
                     {options.map((item, key) => {
                       return (
@@ -44,9 +44,9 @@ const customCode = `
                   </Select.List>
                 </Select>
               </div>
-              <div style={{ width: 'var(--spacing-640)' }}>
+              <div className="w-100">
                 <Label withInput={true}>Organization</Label>
-                <Select width="100%" triggerOptions={{ 'aria-label': "Organization" }}>
+                <Select appendToBody width="100%" triggerOptions={{ 'aria-label': "Organization" }}>
                   <Select.List>
                     {options.map((item, key) => {
                       return (
@@ -61,7 +61,7 @@ const customCode = `
             </div>
             <Link target="_blank" href="#">Add organizations</Link>
             <div className="my-6 pt-6" style={{ borderTop: 'var(--border-width-2-5) solid var(--secondary-light)' }}>
-              <Heading size="s">Time Period</Heading>
+              <Heading size="s" as="h6">Time Period</Heading>
               <div className="mt-5">
                 <DateRangePicker withInput />
               </div>
