@@ -82,8 +82,16 @@ export const stepperWithAnimation = () => {
           <Row className="mt-5 mb-4">
             <Column size={6} className="d-flex">
               <div className="mr-6 w-100">
-                <Label withInput={true}>Region</Label>
-                <Select triggerOptions={{ withClearButton: false }}>
+                <Label withInput={true} id="stepper-animation-region-label" htmlFor="stepper-animation-region-select">
+                  Region
+                </Label>
+                <Select
+                  triggerOptions={{
+                    id: 'stepper-animation-region-select',
+                    withClearButton: false,
+                    'aria-labelledby': 'stepper-animation-region-label',
+                  }}
+                >
                   <Select.List>
                     {options.map((item, key) => {
                       return (
@@ -96,8 +104,20 @@ export const stepperWithAnimation = () => {
                 </Select>
               </div>
               <div className="w-100">
-                <Label withInput={true}>Organization</Label>
-                <Select triggerOptions={{ withClearButton: false }}>
+                <Label
+                  withInput={true}
+                  id="stepper-animation-organization-label"
+                  htmlFor="stepper-animation-organization-select"
+                >
+                  Organization
+                </Label>
+                <Select
+                  triggerOptions={{
+                    id: 'stepper-animation-organization-select',
+                    withClearButton: false,
+                    'aria-labelledby': 'stepper-animation-organization-label',
+                  }}
+                >
                   <Select.List>
                     {options.map((item, key) => {
                       return (
@@ -518,8 +538,8 @@ const customCode = `() => {
           <Row className="mt-5 mb-4">
             <Column size={6} className="d-flex">
               <div className="mr-6 w-100">
-                <Label withInput={true}>Region</Label>
-                <Select triggerOptions={{ withClearButton: false }}>
+                <Label withInput={true} id="stepper-animation-region-label" htmlFor="stepper-animation-region-select">Region</Label>
+                <Select triggerOptions={{ id: "stepper-animation-region-select", withClearButton: false, 'aria-labelledby': "stepper-animation-region-label" }}>
                   <Select.List>
                     {options.map((item, key) => {
                       return (
@@ -532,8 +552,8 @@ const customCode = `() => {
                 </Select>
               </div>
               <div className="w-100">
-                <Label withInput={true}>Organization</Label>
-                <Select triggerOptions={{ withClearButton: false }}>
+                <Label withInput={true} id="stepper-animation-organization-label" htmlFor="stepper-animation-organization-select">Organization</Label>
+                <Select triggerOptions={{ id: "stepper-animation-organization-select", withClearButton: false, 'aria-labelledby': "stepper-animation-organization-label" }}>
                   <Select.List>
                     {options.map((item, key) => {
                       return (

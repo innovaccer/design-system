@@ -2,7 +2,7 @@ import * as React from 'react';
 import { axe } from '@/utils/testAxe';
 import { render, fireEvent, waitFor, act } from '@testing-library/react';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
-import { Select, AIIconButton } from '@/index';
+import { Select, AIIconButton, Label } from '@/index';
 import { SelectProps as Props } from '@/index.type';
 
 window.HTMLElement.prototype.scrollIntoView = jest.fn();
@@ -173,6 +173,92 @@ describe('Select trigger accessibility for error and descriptions', () => {
       </Select>
     );
     expect(getByTestId('DesignSystem-Select-trigger')).toHaveAttribute('aria-describedby', 'opt-hint');
+  });
+
+  it('uses aria-labelledby instead of aria-label and hides placeholder text from assistive tech', () => {
+    const { getByTestId } = render(
+      <Select
+        onSelect={FunctionValue}
+        triggerOptions={{
+          id: 'region-select',
+          placeholder: 'Select region…',
+          'aria-labelledby': 'region-label',
+        }}
+      >
+        {children}
+      </Select>
+    );
+    const trigger = getByTestId('DesignSystem-Select-trigger');
+    expect(trigger).toHaveAttribute('aria-labelledby', 'region-label');
+    expect(trigger).not.toHaveAttribute('aria-label');
+    expect(trigger.querySelector('span[aria-hidden="true"]')).toHaveTextContent('Select region…');
+  });
+
+  it('names the clear button after the labelled field', () => {
+    const { getByTestId } = render(
+      <>
+        <label id="region-label" htmlFor="region-select">
+          Region
+        </label>
+        <Select
+          onSelect={FunctionValue}
+          value={{ label: 'Option 1', value: 'Option 1' }}
+          triggerOptions={{
+            id: 'region-select',
+            'aria-labelledby': 'region-label',
+          }}
+        >
+          {children}
+        </Select>
+      </>
+    );
+
+    expect(getByTestId('DesignSystem-Select--closeIcon')).toHaveAttribute('aria-label', 'Clear Region');
+  });
+
+  it('prefers visible label over aria-label for clear button when both are set', () => {
+    const { getByTestId } = render(
+      <>
+        <label id="region-label" htmlFor="region-select">
+          Region
+        </label>
+        <Select
+          onSelect={FunctionValue}
+          value={{ label: 'Option 1', value: 'Option 1' }}
+          triggerOptions={{
+            id: 'region-select',
+            'aria-label': 'Stale fallback label',
+            'aria-labelledby': 'region-label',
+          }}
+        >
+          {children}
+        </Select>
+      </>
+    );
+
+    expect(getByTestId('DesignSystem-Select--closeIcon')).toHaveAttribute('aria-label', 'Clear Region');
+  });
+
+  it('strips label adornments from clear button name when label has info icon', () => {
+    const { getByTestId } = render(
+      <>
+        <Label withInput={true} id="status-label" htmlFor="status-select" info="Additional status context">
+          Status
+        </Label>
+        <Select
+          onSelect={FunctionValue}
+          value={{ label: 'Option 1', value: 'Option 1' }}
+          triggerOptions={{
+            id: 'status-select',
+            'aria-labelledby': 'status-label',
+          }}
+        >
+          {children}
+        </Select>
+      </>
+    );
+
+    expect(getByTestId('DesignSystem-Select--closeIcon')).toHaveAttribute('aria-label', 'Clear Status');
   });
 });
 

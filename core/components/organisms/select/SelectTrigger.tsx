@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { Icon, Text, Tooltip } from '@/index';
 import { IconType } from '@/common.type';
 import { SelectContext } from './SelectContext';
-import { handleKeyDownTrigger, computeValue } from './utils';
+import { handleKeyDownTrigger, computeValue, getLabelTextFromElement } from './utils';
 import { BaseProps } from '@/utils/types';
 import selectStyles from '@css/components/select.module.css';
 import buttonStyles from '@css/components/button.module.css';
@@ -13,10 +13,18 @@ export type SelectTriggerSize = 'small' | 'regular';
 
 export interface SelectTriggerProps extends BaseProps {
   /**
+   * `id` for the trigger button; pair with a visible `<Label htmlFor={id}>`.
+   */
+  id?: string;
+  /**
    * Accessible label for the Select trigger button.
    * @default "Select trigger"
    */
   'aria-label'?: string;
+  /**
+   * Associates the trigger with a visible label element (preferred over `aria-label`).
+   */
+  'aria-labelledby'?: string;
   /**
    * Ids of supplementary description or help text (space-separated).
    */
@@ -69,6 +77,11 @@ export interface SelectTriggerProps extends BaseProps {
    */
   onClear?: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
   /**
+   * Accessible name for the clear button. Defaults to `Clear {field label}` when the
+   * trigger has `aria-label` or `aria-labelledby`.
+   */
+  clearButtonAriaLabel?: string;
+  /**
    * A function used to customize the label displayed when multiple options are selected.
    *
    * The function receives the count of selected options as its argument and should return a string
@@ -88,7 +101,8 @@ export interface SelectTriggerProps extends BaseProps {
 const SelectTrigger = (props: SelectTriggerProps) => {
   const {
     triggerSize = 'regular',
-    'aria-label': ariaLabel = 'Select trigger',
+    'aria-label': ariaLabelProp,
+    'aria-labelledby': ariaLabelledBy,
     placeholder,
     withClearButton,
     icon,
@@ -96,6 +110,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
     inlineLabel,
     iconType,
     onClear,
+    clearButtonAriaLabel: clearButtonAriaLabelProp,
     setLabel,
     minWidth,
     maxWidth,
@@ -103,6 +118,8 @@ const SelectTrigger = (props: SelectTriggerProps) => {
     'aria-controls': ariaControls,
     ...rest
   } = props;
+
+  const ariaLabel = ariaLabelledBy ? undefined : ariaLabelProp ?? 'Select trigger';
 
   const contextProp = React.useContext(SelectContext);
   const elementRef = React.useRef(null);
@@ -122,6 +139,27 @@ const SelectTrigger = (props: SelectTriggerProps) => {
     styleType,
     error,
   } = contextProp;
+
+  const hidePlaceholderFromA11y = !isOptionSelected && !!(ariaLabelledBy || ariaLabelProp);
+
+  const [labelledByText, setLabelledByText] = React.useState<string>();
+
+  React.useLayoutEffect(() => {
+    if (!ariaLabelledBy) {
+      setLabelledByText(undefined);
+      return;
+    }
+
+    const labelId = ariaLabelledBy.split(/\s+/)[0];
+    const labelEl = document.getElementById(labelId);
+    setLabelledByText(labelEl ? getLabelTextFromElement(labelEl) : undefined);
+  }, [ariaLabelledBy]);
+
+  const clearButtonAriaLabel =
+    clearButtonAriaLabelProp ??
+    (ariaLabelledBy && labelledByText ? `Clear ${labelledByText}` : undefined) ??
+    (ariaLabelProp && ariaLabelProp !== 'Select trigger' ? `Clear ${ariaLabelProp}` : undefined) ??
+    'Clear selection';
 
   const buttonDisabled = disabled ? 'disabled' : 'default';
   const trimmedPlaceholder = placeholder?.trim();
@@ -194,6 +232,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
         aria-expanded={openPopover}
         aria-haspopup="listbox"
         aria-label={ariaLabel}
+        aria-labelledby={ariaLabelledBy}
         data-test="DesignSystem-Select-trigger"
         {...rest}
       >
@@ -215,7 +254,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
               />
             )}
             {value && (
-              <span ref={elementRef} className={textClass}>
+              <span ref={elementRef} className={textClass} aria-hidden={hidePlaceholderFromA11y || undefined}>
                 {value}
               </span>
             )}
@@ -227,7 +266,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
             className={iconClass}
             onClick={onClearHandler}
             onKeyDown={(e) => e.stopPropagation()}
-            aria-label="clear selected"
+            aria-label={clearButtonAriaLabel}
             data-test="DesignSystem-Select--closeIcon"
           >
             <Icon appearance={buttonDisabled} size={12} name="close" type={iconType} aria-hidden={true} />

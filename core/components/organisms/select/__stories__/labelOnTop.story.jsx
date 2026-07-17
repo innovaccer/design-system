@@ -23,8 +23,13 @@ export const labelOnTop = () => {
 
   return (
     <div className="w-25">
-      <Label withInput={true}>Area code</Label>
-      <Select onSelect={onSelectHandler} triggerOptions={{ 'aria-label': 'Area code selector' }}>
+      <Label withInput={true} id="area-code-label" htmlFor="area-code-select">
+        Area code
+      </Label>
+      <Select
+        onSelect={onSelectHandler}
+        triggerOptions={{ id: 'area-code-select', 'aria-labelledby': 'area-code-label' }}
+      >
         <Select.List aria-label="Area code options">
           {areaCode.map((item, key) => {
             return (
@@ -63,8 +68,8 @@ const customCode = `() => {
 
   return (
     <div className="w-25">
-      <Label withInput={true}>Area code</Label>
-      <Select onSelect={onSelectHandler} triggerOptions={{ 'aria-label': 'Area code selector' }}>
+      <Label withInput={true} id="area-code-label" htmlFor="area-code-select">Area code</Label>
+      <Select onSelect={onSelectHandler} triggerOptions={{ id: 'area-code-select', 'aria-labelledby': 'area-code-label' }}>
         <Select.List aria-label="Area code options">
           {areaCode.map((item, key) => {
             return (

@@ -109,11 +109,11 @@ const customCode = `
                   The system automatically creates collection for multiple support.
                 </Text>
                 <div className="mt-4">
-                  <Label withInput={true}>Input Collection 1</Label>
+                  <Label withInput={true} id="stepper-input-collection-1-label" htmlFor="stepper-input-collection-1">Input Collection 1</Label>
                   <Select
                     width="100%"
                     className="mb-4"
-                    triggerOptions={{ placeholder: "Input Collection 1", 'aria-label': "Input Collection 1" }}
+                    triggerOptions={{ id: "stepper-input-collection-1", placeholder: "Input Collection 1", 'aria-labelledby': "stepper-input-collection-1-label" }}
                     onSelect={(option) => this.onChangeOutput(option.value, 'collection1')}
                   >
                     <Select.List>
@@ -126,10 +126,10 @@ const customCode = `
                       })}
                     </Select.List>
                   </Select>
-                  <Label withInput={true}>Input Collection 2</Label>
+                  <Label withInput={true} id="stepper-input-collection-2-label" htmlFor="stepper-input-collection-2">Input Collection 2</Label>
                   <Select
                     width="100%"
-                    triggerOptions={{ placeholder: "Input Collection 2", 'aria-label': "Input Collection 2" }}
+                    triggerOptions={{ id: "stepper-input-collection-2", placeholder: "Input Collection 2", 'aria-labelledby': "stepper-input-collection-2-label" }}
                     onSelect={(option) => this.onChangeOutput(option.value, 'collection2')}
                   >
                     <Select.List>
@@ -151,10 +151,10 @@ const customCode = `
                   The system automatically creates collection for multiple support.
                 </Text>
                 <div className="mt-6">
-                  <Label withInput={true}>Destination Collection</Label>
+                  <Label withInput={true} id="stepper-destination-collection-label" htmlFor="stepper-destination-collection">Destination Collection</Label>
                   <Select
                     width="100%"
-                    triggerOptions={{ placeholder: "Select Destination", 'aria-label': "Destination Collection" }}
+                    triggerOptions={{ id: "stepper-destination-collection", placeholder: "Select Destination", 'aria-labelledby': "stepper-destination-collection-label" }}
                     onSelect={(option) => this.onChangeOutput(option.value, 'collection')}
                   >
                     <Select.List>
@@ -182,10 +182,10 @@ const customCode = `
                   />
                 </div>
                 <div className="mt-6">
-                  <Label withInput={true} required>Retention Period</Label>
+                  <Label withInput={true} required id="stepper-retention-period-label" htmlFor="stepper-retention-period">Retention Period</Label>
                   <Select
                     width="100%"
-                    triggerOptions={{ 'aria-label': "Retention Period" }}
+                    triggerOptions={{ id: "stepper-retention-period", 'aria-labelledby': "stepper-retention-period-label" }}
                     onSelect={(option) => this.onChangeOutput(option.value, 'retention')}
                   >
                     <Select.List>
@@ -198,10 +198,10 @@ const customCode = `
                       })}
                     </Select.List>
                   </Select>
-                  <Label className="mt-6" withInput={true}>Visibility Clarification</Label>
+                  <Label className="mt-6" withInput={true} id="stepper-visibility-clarification-label" htmlFor="stepper-visibility-clarification">Visibility Clarification</Label>
                   <Select
                     width="100%"
-                    triggerOptions={{ 'aria-label': "Visibility Clarification" }}
+                    triggerOptions={{ id: "stepper-visibility-clarification", 'aria-labelledby': "stepper-visibility-clarification-label" }}
                     onSelect={(option) => this.onChangeOutput(option.value, 'clarification')}
                   >
                     <Select.List>
@@ -227,9 +227,9 @@ const customCode = `
                   </div>
                 </div>
                 <div className="mt-6">
-                  <Label withInput={true} required>Mode</Label>
+                  <Label withInput={true} required id="stepper-mode-label" htmlFor="stepper-mode">Mode</Label>
                   <Select
-                    triggerOptions={{ 'aria-label': "Mode" }}
+                    triggerOptions={{ id: "stepper-mode", 'aria-labelledby': "stepper-mode-label" }}
                     onSelect={(option) => {
                       this.setState({
                         configuration: { ...this.state.configuration, mode: option.value }

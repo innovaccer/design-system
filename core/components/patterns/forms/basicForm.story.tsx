@@ -65,8 +65,9 @@ const customCode = `
           <Card className="px-6 py-6">
             <form onSubmit={this.onSubmit}>
               <Heading className="mb-7" size="m">Login</Heading>
-              <Label withInput={true}>Email</Label>
+              <Label withInput={true} htmlFor="basic-email-input">Email</Label>
               <Input
+                id="basic-email-input"
                 name="input"
                 type="text"
                 placeholder="Enter email"
@@ -74,8 +75,9 @@ const customCode = `
                 autoComplete="email"
                 onChange={this.onEmailChange}
               />
-              <Label withInput={true}>Password</Label>
+              <Label withInput={true} htmlFor="basic-password-input">Password</Label>
               <Input
+                id="basic-password-input"
                 name="input"
                 className="mb-4"
                 placeholder="Enter password"

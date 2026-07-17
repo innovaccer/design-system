@@ -23,11 +23,13 @@ export const selectWithHelptext = () => {
 
   return (
     <div className="w-25">
-      <Label withInput={true}>Area code</Label>
+      <Label withInput={true} id="area-code-label" htmlFor="area-code-select">
+        Area code
+      </Label>
       <Select
         width="var(--spacing-640)"
         onSelect={onSelectHandler}
-        triggerOptions={{ 'aria-label': 'Area code selector' }}
+        triggerOptions={{ id: 'area-code-select', 'aria-labelledby': 'area-code-label' }}
       >
         <Select.List aria-label="Area code options">
           {areaCode.map((item, key) => {
@@ -68,8 +70,8 @@ const customCode = `() => {
 
   return (
     <div className="w-25">
-      <Label withInput={true}>Area code</Label>
-      <Select width="var(--spacing-640)" onSelect={onSelectHandler} triggerOptions={{ 'aria-label': 'Area code selector' }}>
+      <Label withInput={true} id="area-code-label" htmlFor="area-code-select">Area code</Label>
+      <Select width="var(--spacing-640)" onSelect={onSelectHandler} triggerOptions={{ id: 'area-code-select', 'aria-labelledby': 'area-code-label' }}>
         <Select.List aria-label="Area code options">
           {areaCode.map((item, key) => {
             return (

@@ -417,3 +417,17 @@ export const focusPopoverInitial = (
   }
   return idx;
 };
+
+const LABEL_ADORNMENT_SELECTOR =
+  '[aria-hidden="true"], [data-test="DesignSystem-Label--Info"], [data-test="DesignSystem-Label--OptionalText"]';
+
+/**
+ * Reads visible label text for clear-button naming, ignoring decorative adornments
+ * such as info icons, optional markers, and aria-hidden indicators.
+ */
+export const getLabelTextFromElement = (labelEl: HTMLElement): string | undefined => {
+  const clone = labelEl.cloneNode(true) as HTMLElement;
+  clone.querySelectorAll(LABEL_ADORNMENT_SELECTOR).forEach((el) => el.remove());
+  const text = clone.textContent?.replace(/\s*\(required\)\s*/gi, '').trim();
+  return text || undefined;
+};
