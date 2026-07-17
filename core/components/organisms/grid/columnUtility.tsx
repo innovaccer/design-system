@@ -13,7 +13,9 @@ import styles from '@css/components/grid.module.css';
 type resizeColFn = (
   gridInfo: { updateColumnSchema: updateColumnSchemaFunction },
   name: ColumnSchema['name'],
-  el: GridRef
+  el: GridRef,
+  startPageX: number,
+  onEnd?: () => void
 ) => void;
 type sortColumnFn = (
   gridInfo: {
@@ -34,21 +36,28 @@ type hideColumnFn = (
   value: boolean
 ) => void;
 
-export const resizeCol: resizeColFn = ({ updateColumnSchema }, name, el) => {
-  const elX = el?.getBoundingClientRect().x;
+export const resizeCol: resizeColFn = ({ updateColumnSchema }, name, el, startPageX, onEnd) => {
+  const outerCell = el?.parentElement;
+  const startWidth = outerCell?.getBoundingClientRect().width ?? el?.getBoundingClientRect().width ?? 0;
+
   function resizable(ev: MouseEvent) {
     ev.preventDefault();
-    if (elX) {
-      updateColumnSchema(name, {
-        width: ev.pageX - elX,
-      });
-    }
+    updateColumnSchema(name, {
+      width: startWidth + (ev.pageX - startPageX),
+    });
   }
 
-  window.addEventListener('mousemove', resizable);
-  window.addEventListener('mouseup', () => {
+  const onMouseUp = () => {
     window.removeEventListener('mousemove', resizable);
-  });
+    document.body.style.removeProperty('cursor');
+    document.body.style.removeProperty('user-select');
+    onEnd?.();
+  };
+
+  document.body.style.cursor = 'ew-resize';
+  document.body.style.userSelect = 'none';
+  window.addEventListener('mousemove', resizable);
+  window.addEventListener('mouseup', onMouseUp, { once: true });
 };
 
 export const sortColumn: sortColumnFn = ({ sortingList, updateSortingList }, name, type) => {

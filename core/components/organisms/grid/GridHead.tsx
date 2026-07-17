@@ -34,6 +34,10 @@ export const GridHead = (props: GridHeadProps) => {
   const rightPinnedSchema = pinnedSchema.filter((s) => !s.hidden && s.pinned === 'right');
   const unpinnedSchema = schema.filter((s) => !s.hidden && !s.pinned);
 
+  const visibleSchema = [...leftPinnedSchema, ...unpinnedSchema, ...rightPinnedSchema];
+  const lastVisibleColumn = visibleSchema[visibleSchema.length - 1];
+  const lastUnpinnedColumn = unpinnedSchema[unpinnedSchema.length - 1];
+
   const CheckboxClass = classNames({
     [styles['Grid-cell']]: true,
     [styles['Grid-cell--head']]: true,
@@ -90,6 +94,13 @@ export const GridHead = (props: GridHeadProps) => {
                 onFilterChange={onFilterChange}
                 updateColumnSchema={updateColumnSchema}
                 reorderColumn={reorderColumn}
+                flushResizeLane={s.resizable && s.name === lastVisibleColumn?.name}
+                elevateResizeLaneOverPin={
+                  !pinned &&
+                  !!rightPinnedSchema.length &&
+                  !!lastUnpinnedColumn?.resizable &&
+                  s.name === lastUnpinnedColumn.name
+                }
               />
             );
           })}

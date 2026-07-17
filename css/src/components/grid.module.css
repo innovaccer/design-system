@@ -100,6 +100,12 @@
   color: inherit;
 }
 
+/* Last resizable column: nudge header actions left so flush resize lane does not cover them.
+   Head cells already have 8px padding-right; reserve 16px more to clear the in-cell 16px of the 24px lane. */
+.Grid-headCellAction--reserveResizeLane {
+  margin-right: var(--spacing-40);
+}
+
 .Grid-body {
   display: flex;
   flex-direction: column;
@@ -164,8 +170,10 @@
 }
 
 .Grid-cell--head {
-  overflow: hidden;
-  padding-right: var(--spacing-10);
+  /* Text truncation is handled by `.Grid-cell--head .Grid-cellContent` (which has its own
+     overflow: hidden). We intentionally do NOT clip the head cell itself, so the stable
+     resize lane (absolute, out of flow) can extend into the next column — WCAG 2.5.8. */
+  padding-right: var(--spacing-20);
 }
 
 .Grid-cell--dragged {
@@ -249,15 +257,68 @@
   border-radius: var(--border-radius-10);
 }
 
+/* Stable 24px resize lane: 8px inside this column, 16px bleed into the next. Out of flow,
+   z-index above adjacent headers and right-pinned groups so resize wins in overlap zones. */
 .Grid-cellResize {
   position: absolute;
-  right: 0;
-  width: var(--spacing-10);
-  cursor: ew-resize;
+  top: 0;
+  right: calc(-1 * var(--spacing-40));
+  width: var(--spacing-60);
   height: 100%;
-  padding-right: var(--spacing-60);
-  margin-right: calc(-1 * var(--spacing-60));
-  box-sizing: content-box;
+  z-index: 5;
+  box-sizing: border-box;
+  cursor: ew-resize;
+  background: transparent;
+}
+
+.Grid-cellResize::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  /* Align with the column boundary (8px from this cell's right edge). */
+  right: var(--spacing-40);
+  width: var(--border-width-2-5);
+  background-color: var(--primary);
+  opacity: 0;
+  transition: opacity var(--duration--fast-02) ease;
+  pointer-events: none;
+}
+
+@media (hover: hover) {
+  .Grid-cellResize {
+    touch-action: none;
+  }
+
+  .Grid-cellResize:hover::after {
+    opacity: 1;
+    transition-delay: var(--duration--moderate-02);
+  }
+}
+
+.Grid-cellResize:focus-visible {
+  outline: none;
+}
+
+.Grid-cellResize:focus-visible::after,
+.Grid-cellResize--active::after {
+  opacity: 1;
+  transition-delay: 0s;
+}
+
+/* Rightmost resizable column: keep the full 24px lane inside the cell so the header
+   scroll width matches the body (no bleed past `.Grid-head` overflow-x). */
+.Grid-cellResize--flushEnd {
+  right: 0;
+}
+
+.Grid-cellResize--flushEnd::after {
+  right: 0;
+}
+
+/* Right-pin boundary: bleed must stay above pinned group (z-index 6) without elevating all handles. */
+.Grid-cellResize--overPin {
+  z-index: 7;
 }
 
 .Grid-cellSortIcon {
@@ -268,15 +329,6 @@
 
 .Grid-cellSortIcon:hover {
   background: var(--secondary);
-}
-
-.Grid-cellResize:hover {
-  background: var(--primary);
-}
-
-.Grid-cellResize:focus-visible {
-  background: var(--primary);
-  outline: none;
 }
 
 .Grid-reorderHighlighter {
@@ -566,6 +618,7 @@
 /* Grid header */
 .Grid-row--head .Grid-cellGroup--pinned {
   background: var(--white);
+  z-index: 6;
 }
 
 .Grid-row--head .Grid-cellGroup--pinned-left {
