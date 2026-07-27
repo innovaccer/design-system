@@ -69,6 +69,7 @@ const customCode = `
                   name="lastName"
                   type="text"
                   placeholder="E.g. Doe, Smith, etc."
+                  aria-label="Last Name"
                   icon="person"
                   autocomplete={'family-name'}
                   onChange={(event) => this.onChange(event.target.value, event.target.name)}
@@ -81,6 +82,7 @@ const customCode = `
                   name="middleName"
                   type="text"
                   placeholder="E.g. Doe, Smith, etc."
+                  aria-label="Middle Name"
                   icon="person"
                   autocomplete={'additional-name'}
                   onChange={(event) => this.onChange(event.target.value, event.target.name)}
@@ -93,17 +95,22 @@ const customCode = `
                   name="firstName"
                   type="text"
                   placeholder="E.g. John, Will, etc."
+                  aria-label="First Name"
                   icon="person"
                   autocomplete={'given-name'}
                   onChange={(event) => this.onChange(event.target.value, event.target.name)}
                 />
               </Column>
               <Column sizeXL={4} sizeL={4} sizeM={5} className="mr-6 mb-6">
-                <Label withInput={true}>Gender</Label>
+                <Label withInput={true} htmlFor="createUser-gender">Gender</Label>
                 <Select 
                   width="100%"
                   onSelect={(option) => this.onChange(option.value, 'gender')}
-                  triggerOptions={{ placeholder: "Select Gender", 'aria-label': "Gender", }}
+                  triggerOptions={{
+                    id: "createUser-gender",
+                    placeholder: "Select Gender",
+                    'aria-label': "Select Gender",
+                  }}
                 >
                   <Select.List>
                     {genderOptions.map((item, key) => {
@@ -117,14 +124,16 @@ const customCode = `
                 </Select>
               </Column>
               <Column sizeXL={4} sizeL={4} sizeM={6} className="mr-6 mb-6">
-                <Label withInput={true} htmlFor="createUser-dob">Date of Birth</Label>
+                <Label withInput={true} id="createUser-dob-label" htmlFor="createUser-dob">Date of Birth</Label>
                 <DatePicker
                   withInput={true}
+                  aria-labelledby="createUser-dob-label"
                   onDateChange={(currentDate) => this.onChange(currentDate, 'dob')}
                   inputOptions={{
                     id: 'createUser-dob',
                     placeholder: 'MM/DD/YYYY',
                     icon: 'cake',
+                    'aria-label': 'Date of Birth',
                     mask: [/\\d/, /\\d/, '/', /\\d/, /\\d/, '/', /\\d/, /\\d/, /\\d/, /\\d/]
                   }}
                 />
@@ -136,6 +145,7 @@ const customCode = `
                   name="MaidenName"
                   type="text"
                   placeholder="E.g. Roe, Will, etc."
+                  aria-label="Maiden Name"
                   icon="person"
                   autocomplete={'family-name'}
                   onChange={(event) => this.onChange(event.target.value, event.target.name)}
@@ -148,16 +158,21 @@ const customCode = `
                   name="email"
                   type="email"
                   placeholder="E.g. abc@gmail.com"
+                  aria-label="Email Address"
                   autocomplete={'email'}
                   onChange={(event) => this.onChange(event.target.value, event.target.name)}
                 />
               </Column>
               <Column sizeXL={4} sizeL={4} sizeM={5} className="mr-6 mb-6">
-                <Label withInput={true}>User Type</Label>
+                <Label withInput={true} htmlFor="createUser-userType">User Type</Label>
                 <Select 
                   width="100%"
                   onSelect={(option) => this.onChange(option.value, 'userType')}
-                  triggerOptions={{ placeholder: "Select User Type", 'aria-label': "User Type", }}
+                  triggerOptions={{
+                    id: "createUser-userType",
+                    placeholder: "Select User Type",
+                    'aria-label': "Select User Type",
+                  }}
                 >
                   <Select.List>
                     {userOptions.map((item, key) => {
@@ -177,6 +192,7 @@ const customCode = `
                   name="npi"
                   type="text"
                   placeholder="E.g. 000000"
+                  aria-label="NPI"
                   autocomplete={'off'}
                   onChange={(event) => this.onChange(event.target.value, event.target.name)}
                 />
