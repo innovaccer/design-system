@@ -39,6 +39,7 @@ const customCode = `
                     id: "time-period-region",
                     placeholder: "Select",
                     'aria-label': "Region",
+                    clearButtonAriaLabel: "Clear Region selection",
                   }}
                 >
                   <Select.List>
@@ -61,6 +62,7 @@ const customCode = `
                     id: "time-period-org",
                     placeholder: "Select",
                     'aria-label': "Organization",
+                    clearButtonAriaLabel: "Clear Organization selection",
                   }}
                 >
                   <Select.List>

@@ -906,14 +906,19 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
               name: 'aria-label',
               type: 'string',
               description:
-                'Accessible label for the Select trigger button. Applied to the built-in trigger only; not forwarded when using customTrigger.',
-              defaultValue: '"Select trigger"',
+                'Accessible label for the Select trigger button. Omitted when aria-labelledby is set; when both are omitted, falls back to placeholder. Applied to the built-in trigger only; not forwarded when using customTrigger.',
             },
             {
               name: 'aria-labelledby',
               type: 'string',
               description:
                 'References the ID of element(s) that label the Select trigger button. Applied to the built-in trigger only.',
+            },
+            {
+              name: 'clearButtonAriaLabel',
+              type: 'string',
+              description:
+                'Accessible name for the clear button. Defaults to Clear ${aria-label}, then Clear ${placeholder}, then "Clear selection".',
             },
           ],
         },

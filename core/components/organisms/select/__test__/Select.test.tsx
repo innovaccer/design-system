@@ -176,6 +176,99 @@ describe('Select trigger accessibility for error and descriptions', () => {
   });
 });
 
+describe('Select trigger and option accessible names', () => {
+  it('uses placeholder as the trigger accessible name instead of "Select trigger"', () => {
+    const { getByTestId } = render(
+      <Select onSelect={FunctionValue} triggerOptions={{ placeholder: 'Select Gender' }}>
+        {children}
+      </Select>
+    );
+    const trigger = getByTestId('DesignSystem-Select-trigger');
+    expect(trigger).toHaveAttribute('aria-label', 'Select Gender');
+    expect(trigger).not.toHaveAttribute('aria-label', 'Select trigger');
+    expect(trigger).toHaveTextContent('Select Gender');
+  });
+
+  it('applies aria-label when provided and omits it when aria-labelledby is set', () => {
+    const { getByTestId, rerender } = render(
+      <Select onSelect={FunctionValue} triggerOptions={{ 'aria-label': 'Select Gender' }}>
+        {children}
+      </Select>
+    );
+    expect(getByTestId('DesignSystem-Select-trigger')).toHaveAttribute('aria-label', 'Select Gender');
+
+    rerender(
+      <Select
+        onSelect={FunctionValue}
+        triggerOptions={{ 'aria-label': 'Select Gender', 'aria-labelledby': 'gender-label' }}
+      >
+        {children}
+      </Select>
+    );
+    const trigger = getByTestId('DesignSystem-Select-trigger');
+    expect(trigger).toHaveAttribute('aria-labelledby', 'gender-label');
+    expect(trigger).not.toHaveAttribute('aria-label');
+  });
+
+  it('merges top-level aria-label and aria-labelledby into the trigger', () => {
+    const { getByTestId } = render(
+      <Select onSelect={FunctionValue} aria-labelledby="external-label">
+        {children}
+      </Select>
+    );
+    expect(getByTestId('DesignSystem-Select-trigger')).toHaveAttribute('aria-labelledby', 'external-label');
+  });
+
+  it('uses contextual clear button accessible names', () => {
+    const { getByTestId, rerender } = render(
+      <Select onSelect={FunctionValue} triggerOptions={{ placeholder: 'Select Gender', 'aria-label': 'Select Gender' }}>
+        {children}
+      </Select>
+    );
+    fireEvent.click(getByTestId('DesignSystem-Select-trigger'));
+    fireEvent.click(getByTestId('DesignSystem-Select-Option'));
+    expect(getByTestId('DesignSystem-Select--closeIcon')).toHaveAttribute('aria-label', 'Clear Select Gender');
+
+    rerender(
+      <Select
+        onSelect={FunctionValue}
+        value={{ label: 'Option 1', value: 'Option 1' }}
+        triggerOptions={{ clearButtonAriaLabel: 'Clear Region selection' }}
+      >
+        {children}
+      </Select>
+    );
+    expect(getByTestId('DesignSystem-Select--closeIcon')).toHaveAttribute('aria-label', 'Clear Region selection');
+  });
+
+  it('exposes listbox options with role="option" and names from visible text', () => {
+    const { getByTestId, getAllByTestId } = render(
+      <Select onSelect={FunctionValue}>
+        <Select.List>
+          <Select.Option option={{ label: 'User A', value: 'UserA' }}>User A</Select.Option>
+          <Select.Option option={{ label: 'User B', value: 'UserB' }}>User B</Select.Option>
+        </Select.List>
+      </Select>
+    );
+
+    fireEvent.click(getByTestId('DesignSystem-Select-trigger'));
+
+    const listbox = document.querySelector('[role="listbox"]');
+    expect(listbox).toBeInTheDocument();
+
+    const options = getAllByTestId('DesignSystem-Select-Option');
+    expect(options).toHaveLength(2);
+    expect(options[0]).toHaveAttribute('role', 'option');
+    expect(options[1]).toHaveAttribute('role', 'option');
+    expect(options[0]).toHaveAttribute(
+      'aria-labelledby',
+      `${listbox?.getAttribute('id')}-DesignSystem-SelectOption-label-0`
+    );
+    expect(options[0]).not.toHaveAttribute('aria-label');
+    expect(document.getElementById(options[0].getAttribute('aria-labelledby') || '')).toHaveTextContent('User A');
+  });
+});
+
 describe('Select component single input trigger tests', () => {
   it('check for placeholder in single input trigger', () => {
     const { getByTestId } = render(
@@ -1814,7 +1907,11 @@ describe('Select component size functionality tests', () => {
 
   describe('Select component a11y', () => {
     it('has no detectable a11y violations', async () => {
-      const { container } = render(<Select onSelect={FunctionValue}>{children}</Select>);
+      const { container } = render(
+        <Select onSelect={FunctionValue} triggerOptions={{ 'aria-label': 'Choose an option' }}>
+          {children}
+        </Select>
+      );
       const results = await axe(container);
       expect(results).toHaveNoViolations();
     });
@@ -1824,14 +1921,14 @@ describe('Select component size functionality tests', () => {
 describe('Select subcomponents a11y', () => {
   it('Select.SearchInput, Select.List, Select.Option and Select.Footer have no detectable a11y violations when open', async () => {
     const { getByTestId } = render(
-      <Select onSelect={FunctionValue}>
+      <Select onSelect={FunctionValue} triggerOptions={{ 'aria-label': 'Choose an option' }}>
         <Select.SearchInput placeholder="Search options" />
         <Select.List>
           <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
           <Select.Option option={{ label: 'Option 2', value: 'Option 2' }}>Option 2</Select.Option>
         </Select.List>
         <Select.Footer>
-          <button>Apply</button>
+          <button type="button">Apply</button>
         </Select.Footer>
       </Select>
     );
@@ -1844,7 +1941,7 @@ describe('Select subcomponents a11y', () => {
 describe('Select.EmptyTemplate a11y', () => {
   it('has no detectable a11y violations when open', async () => {
     const { getByTestId } = render(
-      <Select onSelect={FunctionValue}>
+      <Select onSelect={FunctionValue} triggerOptions={{ 'aria-label': 'Choose an option' }}>
         <Select.EmptyTemplate title="No results found" description="No options available." />
       </Select>
     );
