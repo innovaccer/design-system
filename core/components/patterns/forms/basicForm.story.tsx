@@ -90,7 +90,6 @@ const customCode = `
                     className="p-3"
                     name={this.state.passwordVisible ? 'visibility' : 'visibility_off'}
                     aria-label={this.state.passwordVisible ? 'Hide password' : 'Show password'}
-                    aria-pressed={this.state.passwordVisible}
                     onClick={this.onActionClick}
                   />
                 )}
