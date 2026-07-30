@@ -14,9 +14,15 @@ export type SelectTriggerSize = 'small' | 'regular';
 export interface SelectTriggerProps extends BaseProps {
   /**
    * Accessible label for the Select trigger button.
-   * @default "Select trigger"
+   * Prefer pairing a visible `<Label htmlFor>` with `id` / `aria-labelledby` when possible.
+   * When omitted (and `aria-labelledby` is also omitted), falls back to `placeholder`.
    */
   'aria-label'?: string;
+  /**
+   * Associates the Select trigger with an external label element.
+   * When set, `aria-label` is not applied so the referenced label provides the accessible name.
+   */
+  'aria-labelledby'?: string;
   /**
    * Ids of supplementary description or help text (space-separated).
    */
@@ -33,6 +39,11 @@ export interface SelectTriggerProps extends BaseProps {
    * Id of the listbox element controlled by this combobox trigger.
    */
   'aria-controls'?: string;
+  /**
+   * Accessible name for the clear button shown when a value is selected.
+   * Defaults to `Clear ${aria-label}`, then `Clear ${placeholder}`, then `"Clear selection"`.
+   */
+  clearButtonAriaLabel?: string;
   /**
    * Specifies the size of the Select trigger button.
    * @default "regular"
@@ -88,9 +99,11 @@ export interface SelectTriggerProps extends BaseProps {
 const SelectTrigger = (props: SelectTriggerProps) => {
   const {
     triggerSize = 'regular',
-    'aria-label': ariaLabel = 'Select trigger',
+    'aria-label': ariaLabel,
+    'aria-labelledby': ariaLabelledBy,
     placeholder,
     withClearButton,
+    clearButtonAriaLabel,
     icon,
     disabled,
     inlineLabel,
@@ -173,6 +186,14 @@ const SelectTrigger = (props: SelectTriggerProps) => {
   const iconClass = classNames('align-items-center', 'mr-2', 'ml-3', 'p-3-5', selectStyles['Select-crossButton']);
   const iconSize = triggerSize === 'small' ? 14 : 16;
   const triggerTextSize = triggerSize === 'small' ? 'small' : 'regular';
+  // Prefer explicit naming; otherwise mirror the visible placeholder so AccName matches trigger text (2.5.3).
+  const resolvedAriaLabel = ariaLabelledBy ? undefined : ariaLabel ?? trimmedPlaceholder;
+  const resolvedClearButtonAriaLabel =
+    clearButtonAriaLabel ||
+    (ariaLabel ? `Clear ${ariaLabel}` : undefined) ||
+    (trimmedPlaceholder ? `Clear ${trimmedPlaceholder}` : undefined) ||
+    'Clear selection';
+
   return (
     <Tooltip
       showOnTruncation={true}
@@ -193,7 +214,8 @@ const SelectTrigger = (props: SelectTriggerProps) => {
         aria-controls={ariaControls}
         aria-expanded={openPopover}
         aria-haspopup="listbox"
-        aria-label={ariaLabel}
+        aria-label={resolvedAriaLabel}
+        aria-labelledby={ariaLabelledBy}
         data-test="DesignSystem-Select-trigger"
         {...rest}
       >
@@ -227,7 +249,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
             className={iconClass}
             onClick={onClearHandler}
             onKeyDown={(e) => e.stopPropagation()}
-            aria-label="clear selected"
+            aria-label={resolvedClearButtonAriaLabel}
             data-test="DesignSystem-Select--closeIcon"
           >
             <Icon appearance={buttonDisabled} size={12} name="close" type={iconType} aria-hidden={true} />
