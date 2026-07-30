@@ -148,8 +148,9 @@ export const SelectOption = (props: SelectOptionProps) => {
   const optionLabelString = typeof option.label === 'string' ? option.label.trim() : '';
   const checkboxFallbackAriaLabel = ariaLabel ?? (optionLabelString || undefined);
   const associateCheckboxWithOptionLabel = childCount > 0;
-  // Prefer visible option text via aria-labelledby so option names are conveyed to AT (4.1.2).
-  const resolvedOptionLabelledBy = ariaLabelledBy || (childCount > 0 ? optionLabelId : undefined);
+  // Naming precedence: explicit aria-labelledby > explicit aria-label > generated labelledby from children > option.label
+  const resolvedOptionLabelledBy = ariaLabelledBy || (!ariaLabel && childCount > 0 ? optionLabelId : undefined);
+  const resolvedOptionAriaLabel = resolvedOptionLabelledBy ? undefined : ariaLabel || optionLabelString || undefined;
 
   return (
     <Listbox.Item
@@ -157,7 +158,7 @@ export const SelectOption = (props: SelectOptionProps) => {
       onClick={onClickHandler}
       aria-selected={checked}
       aria-labelledby={resolvedOptionLabelledBy}
-      aria-label={resolvedOptionLabelledBy ? undefined : ariaLabel || optionLabelString || undefined}
+      aria-label={resolvedOptionAriaLabel}
       onKeyDown={(event) => onKeyDownHandler(event)}
       onFocus={(e) => setFocusedOption?.(e.currentTarget)}
       selected={checked}

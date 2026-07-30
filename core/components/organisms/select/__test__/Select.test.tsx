@@ -267,6 +267,49 @@ describe('Select trigger and option accessible names', () => {
     expect(options[0]).not.toHaveAttribute('aria-label');
     expect(document.getElementById(options[0].getAttribute('aria-labelledby') || '')).toHaveTextContent('User A');
   });
+
+  it('respects an explicit Select.Option aria-label even when children are present', () => {
+    const { getByTestId, getAllByTestId } = render(
+      <Select onSelect={FunctionValue}>
+        <Select.List>
+          <Select.Option option={{ label: 'User A', value: 'UserA' }} aria-label="User A option">
+            User A
+          </Select.Option>
+        </Select.List>
+      </Select>
+    );
+
+    fireEvent.click(getByTestId('DesignSystem-Select-trigger'));
+
+    const option = getAllByTestId('DesignSystem-Select-Option')[0];
+    expect(option).toHaveAttribute('aria-label', 'User A option');
+    expect(option).not.toHaveAttribute('aria-labelledby');
+  });
+
+  it('prefers an explicit Select.Option aria-labelledby over aria-label and generated ids', () => {
+    const { getByTestId, getAllByTestId } = render(
+      <>
+        <span id="custom-option-label">Custom option name</span>
+        <Select onSelect={FunctionValue}>
+          <Select.List>
+            <Select.Option
+              option={{ label: 'User A', value: 'UserA' }}
+              aria-label="ignored when labelledby is set"
+              aria-labelledby="custom-option-label"
+            >
+              User A
+            </Select.Option>
+          </Select.List>
+        </Select>
+      </>
+    );
+
+    fireEvent.click(getByTestId('DesignSystem-Select-trigger'));
+
+    const option = getAllByTestId('DesignSystem-Select-Option')[0];
+    expect(option).toHaveAttribute('aria-labelledby', 'custom-option-label');
+    expect(option).not.toHaveAttribute('aria-label');
+  });
 });
 
 describe('Select component single input trigger tests', () => {
