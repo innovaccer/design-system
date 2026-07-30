@@ -1,0 +1,977 @@
+Issue ID,Summary,Description,Impact,Checkpoint Group,Issue Type,Test Unit,Recommended to fix,User,Group Name,Group Description,Group Status,Assign To,Date Created,Digital asset type,Release,Environment,Platform,Assistive technology,Source Code,Selector,Checkpoint,Method,Issue Status,Issue Source,Test Case Name,Standards,Product,URL,Attachments,Flagged,Flagged for Reason,Flagged By,Unit Type,More Info,Issue Comments,Group Notes,Test Unit Attachment,Test Run Name,Success Criteria,Issue URL,Rule Id
+2354461,Programmatic label does not convey purpose of control,"The programmatic label does not convey the purpose of the control. The programmatic label and visual label do not convey consistent information.
+
+Element Description: The following elements
+- Select User Type
+- Select Gender
+
+Description of the issue:  The above element's programmatic label does not convey the purpose of the element.
+
+Current programmatic label: Trigger
+
+Expected programmatic label:
+- Select User Type
+- Select Gender",Serious,2.4 Navigable,Accessibility,Create User Form,"Rule : 
+Labels MUST be meaningful.
+
+How To Fix: 
+Fix this issue by ensuring that the programmatic label for the control correctly conveys the purpose of the control. Generally, the programmatic label and the visual label(s) should match. 
+
+1. If a control gets its accessible name from an ARIA attribute such as aria-label, ensure that the aria-label value does not conflict with the visible label.
+
+2. If a control has more than one piece of information on the screen that work together as the field's label (for example: a text label and an input format), ensure all applicable information is included in the accessible name.
+
+Reference: 
+Deque University: https://dequeuniversity.com/class/forms/labels/meaningful
+
+Background: 
+When form fields or interactive controls have vague or misleading labels, people may not understand the type of data expected or what a control will do if activated. This is especially true for people with cognitive disabilities and people who are blind and use a screen reader. Both the visible and the programmatic label must sufficiently describe the purpose of the form field or control. Descriptive labels give people confidence when filling out a form or using interactive content and help prevent mistakes.",rachna.siddhanti@deque.com,"Deque Not Fixed, 25 June 2026",,,,10/30/25 at 5:05 pm,Desktop Web,Initial assessment,Staging,Windows/Chrome,NVDA,"element 1 : <!--****************** ELEMENT 1 ******************-->
+
+<span class=""Text Text--regular Select-trigger--text"">  Select Gender</span>
+
+<!--****************** ELEMENT 2 ******************-->
+
+<button type=""button"" class=""Button Select-trigger Select-trigger--regular..."" aria-haspopup=""listbox"" aria-expanded=""false"" aria-label=""trigger"" data-test=""DesignSystem-Select-trigger"" aria-controls=""select-listbox"">  <div class=""Select-trigger-wrapper ellipsis--noWrap"">    <span class=""Text Text--regular Select-trigger--text"">      Select User Type    </span>  </div>  <i data-test=""DesignSystem-Icon"" class=""material-symbols material-symbols-rounded Icon..."" role=""button"">    keyboard_arrow_down  </i></button>",element 1 : div#docs-root > div > div > div > div:nth-of-type(2) > div > div > div:nth-of-type(2) > div > div > div > form > div > div:nth-of-type(8) > div:nth-of-type(2) > div > button,Descriptive Labels (2.4.6.b),Manual,Open,axe Auditor,Innovaccer - Design System Audit,"508-2017-wcag21, 508-2017-wcag2, wcag2a, wcag2aa, wcag21a, wcag21aa",Desktop Web,https://mds.innovaccer.com/?path=/docs/patterns-forms-create-user--create-user,"element 1 - Validated_on_06-24-2026_Not_Fixed: https://axeauditor.dequecloud.com/api/v2/file/0ad4f5fa-6faa-11f1-abac-47bf3985c992
+ element 1 - Programmatic label does not convey purpose of control: https://axeauditor.dequecloud.com/api/v2/file/c47b9e68-27b6-4ff5-a85f-df617bfede82",,,,Page,,"harsha.kuruva@deque.com: Validation round: 1
+
+Status: Not Fixed
+
+Comments: Verified, and the issue is not fixed. Still, the issue remains the same
+The mentioned combo boxes in the issue details programmatic label don't convey the purpose of the controls
+
+To resolve this issue, ensure that to associate the visible label with the combo boxes
+
+Screenshot: Validated on 06-24-2026_Not Fixed",,Create User Form: https://axeauditor.dequecloud.com/api/v2/file/34d1f136-edd8-11f0-a7a2-0b5db5cb1b54,Innovaccer - Design System Audit_10-29-25-12:53,2.4.6,https://axeauditor.dequecloud.com/test-run/45b36198-b498-11f0-a843-6f41ab87c814/issue/2b3d9abe-b591-11f0-8276-f32d3064b70f,label-programmatic-not-descriptive
+2353861,Text alternative does not present same info as image,"The text alternative does not present the same information as the image.
+
+Element Description: The following elements
+-check_circle
+
+Element location: Appears on satisfying all the password requirements
+
+Description of the issue: The above image does not convey the same information as the image 
+
+
+Current text alternative of the image: 
+check_circle
+
+Expected text alternative of the image:
+Criteria met ",Serious,1.1 Text Alternatives,Accessibility,Create password,"Rule : 
+The alternative text for informative images MUST be accurately conveying the purpose of the image, and the author's intent in a way that is useful to those who cannot see the image.
+
+How To Fix: 
+Fix this issue by ensuring that the alternative text for the informative image describes its intent, purpose, or meaning.
+
+<img src=""sunset.jpg"" alt=""The sun setting over the Pacific Ocean, with a silhouette of a flying seagull in the foreground"">
+
+Reference: 
+Deque University: https://dequeuniversity.com/class/images/alt-text/informative
+W3C-WAI tutorial: https://www.w3.org/WAI/tutorials/images/
+
+Background: 
+People who are blind cannot see images on a page. In order to give people who cannot see an image access to the information conveyed by the image, it must have a text alternative. The text alternative must describe the information or function represented by the image. Screen readers can then use the alternative text to convey that information to the screen reader user.
+
+For informative images - images that convey information - the alternative text must communicate the intent, purpose, or meaning of the image in a way that serves as a true alternative for the image.",rachna.siddhanti@deque.com,"Deque Not Fixed, 25 June 2026",,,,10/30/25 at 1:59 pm,Desktop Web,Initial assessment,Staging,Windows/Chrome,NVDA,"element 1 : <!--****************** ELEMENT 1 ******************-->
+
+<i data-test=""DesignSystem-Icon"" class=""material-symbols material-symbols-rounded Icon..."" role=""button"">  check_circle</i>
+
+<!--****************** ELEMENT 2 ******************-->
+
+<i data-test=""DesignSystem-Icon"" class=""material-symbols material-symbols-rounded Icon..."" role=""button"">  check_circle</i>
+
+<!--****************** ELEMENT 3 ******************-->
+
+<i data-test=""DesignSystem-Icon"" class=""material-symbols material-symbols-rounded Icon..."" role=""button"">  check_circle</i>
+
+<!--****************** ELEMENT 4 ******************-->
+
+<i data-test=""DesignSystem-Icon"" class=""material-symbols material-symbols-rounded Icon..."" role=""button"">  check_circle</i>
+
+<!--****************** ELEMENT 5 ******************-->
+
+<i data-test=""DesignSystem-Icon"" class=""material-symbols material-symbols-rounded Icon..."" role=""button"">  check_circle</i>",element 1 : div#docs-root > div > div > div > div:nth-of-type(2) > div > div > div:nth-of-type(2) > div > div > div > form > div:nth-of-type(3) > div:nth-of-type(5) > i,Alternative Text (Informative Images) (1.1.1.b),Manual,Open,axe Auditor,Innovaccer - Design System Audit,"508-2017-wcag21, 508-2017-wcag2, wcag2a, wcag2aa, wcag21a, wcag21aa",Desktop Web,https://mds.innovaccer.com/?path=/docs/patterns-forms-create-password--create-password,"element 1 - Validated_on_06-24-2026_Not_Fixed: https://axeauditor.dequecloud.com/api/v2/file/946e40c4-6fa4-11f1-b878-b78ee45b83fa
+ element 1 - Text alternative does not present same info as image - 1: https://axeauditor.dequecloud.com/api/v2/file/e39be994-a0cc-4491-9af5-44ac29d8025b",,,,Page,,"harsha.kuruva@deque.com: Validation round: 1
+
+Status: Not Fixed
+
+Comments: Verified, and the issue is not fixed. Currently, for the tick mark icons, the 'Check circle' is being conveyed to the screen reader users
+
+To resolve this issue, while navigating to the tick mark icons, the screen reader should announce 'Requirement met', and also provide role=""img"" 
+
+Source code: <i data-test=""DesignSystem-Icon"" class=""material-symbols material-symbols-rounded Icon Icon--success mr-4"" aria-label=""Requirement met"" style=""font-size: 16px; width: 16px;"">check_circle</i>
+
+Screenshot: Validated on 06-24-2026_Not Fixed",,Create password: https://axeauditor.dequecloud.com/api/v2/file/34742baa-edd8-11f0-9b58-5b7f4f67fbd2,Innovaccer - Design System Audit_10-29-25-12:53,1.1.1,https://axeauditor.dequecloud.com/test-run/45b36198-b498-11f0-a843-6f41ab87c814/issue/2bf4eb16-b577-11f0-8d84-6f8e2e5d3a42,alt-text-different
+2354462,Accessible name does not contain visible label,"Accessible name does not contain the visible label text.
+
+Element Description: The following elements
+- Select User Type
+- Select Gender
+
+Description of the issue: The element's accessible name does not contain the visible label.
+
+Current accessible label: Trigger
+
+Expected accessible label:
+- Select User Type
+- Select Gender",Serious,2.5 Pointer Accessible,Accessibility,Create User Form,"Rule : 
+For each user interface component that includes a visible text label, the accessible name MUST match (or include) the visible text in the label.
+
+How To Fix: 
+Fix this issue by ensuring that the accessible name - such as the aria-label - contains the text of the visible label in the same order in which it appears. While it is not necessary that the visible label and accessible name match exactly, it is a best practice to have the accessible name begin with the visible text.
+
+Reference: 
+Deque University: https://dequeuniversity.com/class/forms/labels/visibility
+WCAG Understanding document: https://www.w3.org/WAI/WCAG22/Understanding/label-in-name
+
+Background: 
+Speech input users can interact with a webpage by speaking the visible text labels of menus, links, and buttons that appear on the screen. It is confusing to speech input users when they say a visible text label they see, but the speech command does not work because the component's accessible (programmatic) name does not match the visible label. When a user interface component has a visible text label - whether it be real text or an image of text - that text must also be found in the component's accessible (programmatic) name. When the visible label and accessible (programmatic) name for interactive components are in sync, speech input users can effectively interact with those components.",rachna.siddhanti@deque.com,"Deque Not Fixed, 25 June 2026",,,,10/30/25 at 5:06 pm,Desktop Web,Initial assessment,Staging,Windows/Chrome,NVDA,"element 1 : <!--****************** ELEMENT 1 ******************-->
+
+<span class=""Text Text--regular Select-trigger--text"">  Select Gender</span>
+
+<!--****************** ELEMENT 2 ******************-->
+
+<button type=""button"" class=""Button Select-trigger Select-trigger--regular..."" aria-haspopup=""listbox"" aria-expanded=""false"" aria-label=""trigger"" data-test=""DesignSystem-Select-trigger"" aria-controls=""select-listbox"">  <div class=""Select-trigger-wrapper ellipsis--noWrap"">    <span class=""Text Text--regular Select-trigger--text"">      Select User Type    </span>  </div>  <i data-test=""DesignSystem-Icon"" class=""material-symbols material-symbols-rounded Icon..."" role=""button"">    keyboard_arrow_down  </i></button>",element 1 : div#docs-root > div > div > div > div:nth-of-type(2) > div > div > div:nth-of-type(2) > div > div > div > form > div > div:nth-of-type(8) > div:nth-of-type(2) > div > button,Label in Name (2.5.3.a),Manual,Open,axe Auditor,Innovaccer - Design System Audit,"508-2017-wcag21, 508-2017-wcag2, wcag2a, wcag2aa, wcag21a, wcag21aa",Desktop Web,https://mds.innovaccer.com/?path=/docs/patterns-forms-create-user--create-user,"element 1 - Validated_on_06-24-2026_Not_Fixed: https://axeauditor.dequecloud.com/api/v2/file/5c3b4e4e-6faa-11f1-a805-af2351302948
+ element 1 - Accessible name missing - 1: https://axeauditor.dequecloud.com/api/v2/file/f12f56a5-9a2f-4a56-9385-f361fabc1950",,,,Page,,"harsha.kuruva@deque.com: Validation round: 1
+
+Status: Not Fixed
+
+Comments: Verified, and the issue is not fixed. Still, the issue remains the same
+The mentioned combo boxes in the issue details, accessible name, and visible labels do not match
+
+To resolve this issue, ensure that to associate the visible label with the combo boxes
+
+Screenshot: Validated on 06-24-2026_Not Fixed",,Create User Form: https://axeauditor.dequecloud.com/api/v2/file/34d1f136-edd8-11f0-a7a2-0b5db5cb1b54,Innovaccer - Design System Audit_10-29-25-12:53,2.5.3,https://axeauditor.dequecloud.com/test-run/45b36198-b498-11f0-a843-6f41ab87c814/issue/32415418-b591-11f0-9f7a-1f4ec4dfb2b5,speech-accessible-name-mismatch
+2356880,Active user interface component lacks 3 to 1 contrast ratio,"The visual boundary of an active user interface component lacks 3 to 1 contrast ratio.
+
+Element Description: The visual boundary of the following element
+- Regex
+
+Element location: In 'Add Configuration' section
+
+Description of the issue: The visual boundary of the above-mentioned elements lacks the required color contrast ratio of 3:1 with the background color.
+
+Contrast Details
+Visual boundary color: #D5D5D5
+Outer adjacent color: #FFFFFF
+Contrast Ratio: 1.46 : 1",Serious,1.4 Distinguishable,Accessibility,Stepper Form,"Rule : 
+The visual characteristics that indicate the component's purpose or type (e.g. is it a checkbox, text field, slider, switch, etc.) must have sufficient contrast of 3 to 1 with the adjacent background. Exceptions exist.
+
+How To Fix: 
+Fix this issue by adjusting the user interface component boundary and/or background to increase the contrast with either the inner or outer adjacent background to at least 3 to 1.
+
+Reference: 
+WCAG Understanding document: https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast
+
+Background: 
+People who have low vision or are colorblind may have difficulty perceiving that an element is interactive or what its state is - e.g. whether it has keyboard focus, is selected/checked/pressed, etc. - if the contrast between the element boundaries and/or state indicators and its background or adjacent colors is insufficient. When an interactive element's visual boundaries and state indicators have adequate contrast, people who have low vision or are colorblind are more likely to be able to perceive which elements on the screen are interactive and what their current state is.",keerthana.kurapati@deque.com,"Deque Not Fixed, 25 June 2026",,,,10/31/25 at 8:46 pm,Desktop Web,Initial assessment,Staging,Windows/Chrome,NVDA,"element 1 : <!--****************** ELEMENT 1 ******************-->
+
+<textarea data-test=""DesignSystem-Textarea"" class=""Textarea Textarea--resize""></textarea>",element 1 : div#docs-root > div > div > div > div:nth-of-type(2) > div > div > div:nth-of-type(2) > div > div > div > form > div:nth-of-type(3) > div:nth-of-type(3) > textarea,Non-Text Contrast - Active User Interface Components (1.4.11.a),Manual,Open,axe Auditor,Innovaccer - Design System Audit,"508-2017-wcag21, 508-2017-wcag2, wcag2a, wcag2aa, wcag21a, wcag21aa",Desktop Web,https://mds.innovaccer.com/?path=/docs/patterns-forms-stepper-form--stepper-form,"element 1 - Not_Fixed_06-25-2026: https://axeauditor.dequecloud.com/api/v2/file/da5b043e-703d-11f1-b850-b3787479b86f
+ element 1 - Active user interface component lacks 3 to 1 contrast ratio - 1: https://axeauditor.dequecloud.com/api/v2/file/c9bf0764-6fd2-41c7-a0d5-0ff6ff04aa6b",,,,Page,,"shraddha.chouksey@deque.com: Validation Date - 06-25-2026
+
+Status - Not Fixed
+
+Comment - Verified, and the issue is not fixed, the visual boundary of the above-mentioned elements still lacks the required color contrast ratio of 3:1 with the background color.
+
+Contrast Details
+Visual boundary color: #D4D4D4
+Adjacent color: #FFFFFF
+Contrast Ratio: 1.48:1
+
+Source Code - <textarea data-test=""DesignSystem-Textarea"" id=""regex-input"" rows=""3"" class=""Textarea Textarea--resize""></textarea>
+
+Screenshot- Not Fixed 06-25-2026",,"Stepper Form: https://axeauditor.dequecloud.com/api/v2/file/3500ba20-edd8-11f0-bef7-ebe57a90afd7
+Stepper Form: https://axeauditor.dequecloud.com/api/v2/file/3500b930-edd8-11f0-bef5-7b56352821c7",Innovaccer - Design System Audit_10-29-25-12:53,1.4.11,https://axeauditor.dequecloud.com/test-run/45b36198-b498-11f0-a843-6f41ab87c814/issue/340d01aa-b679-11f0-b486-cb9a10eeac70,contrast-uic-active-3-1
+2354809,Select: Custom select does not have a role and/or state,"The custom select element is missing required roles and/or states or properties.
+
+Element Description: The following elements
+User type dropdown options
+- User B
+- User A
+
+Gender dropdown options
+- Male
+- Female
+
+Description of the issue: The above elements appear to be options in the dropdown, but are provided with a tab role, and the option names are not conveyed.
+
+Ensure to provide appropriate roles and attributes for a single select dropdown ",Critical,4.1 Compatible,Accessibility,Create User Form,"Rule : 
+The name, role, value, states, and properties of user interface components MUST be programmatically determinable by assistive technologies.
+
+How To Fix: 
+Fix this issue by using ONE of the following techniques:
+1. Use an HTML <select> element with <option> elements to create the drop-down menu.
+2. Use the ARIA combobox design pattern. View the full ARIA design pattern for a combobox including expected keyboard interactions and examples: https://www.w3.org/WAI/ARIA/apg/patterns/combobox/
+
+Reference: 
+W3C HTML5 Recommendation: https://www.w3.org/TR/html5/sec-forms.html#the-select-element
+WAI-ARIA Authoring Practices: https://www.w3.org/WAI/ARIA/apg/patterns/combobox/
+
+Background: 
+Every user interface control must have a role to convey what type of control it is for screen reader and other assistive technology users. Native HTML elements - such as <button>, <a>, <input>, <select> - already have a role, so nothing more needs to be done. If you create a custom version of a native HTML element or a custom control or widget that does not have a native HTML equivalent, you must add the relevant role(s) using ARIA as well as expected keyboard interactions.",rachna.siddhanti@deque.com,"Deque Not Fixed, 25 June 2026",,,,10/30/25 at 9:31 pm,Desktop Web,Initial assessment,Staging,Windows/Chrome,NVDA,"element 1 : <!--****************** ELEMENT 1 ******************-->
+
+<div data-test=""DesignSystem-Popover"" class=""Popover"" data-layer=""true"" data-opened=""true"" data-placement=""bottom-start"" data-hide=""false"">  <div>    <div role=""listbox"" id=""select-listbox"">      <ul data-test=""DesignSystem-Listbox"" class=""Listbox my-3"" aria-label=""Options item list"" aria-multiselectable=""false"">        <!-- ... 2 children ... -->      </ul>    </div>  </div></div>
+
+<!--****************** ELEMENT 2 ******************-->
+
+<div data-test=""DesignSystem-Listbox-ItemWr..."" class=""Listbox-item Listbox-item--compressed..."" role=""tablist"">  <div class=""Select-option"">    <div class=""Select-option--text"">      User A    </div>  </div></div>
+
+<!--****************** ELEMENT 3 ******************-->
+
+<div data-test=""DesignSystem-Listbox-ItemWr..."" class=""Listbox-item Listbox-item--compressed..."" role=""tablist"">  <div class=""Select-option"">    <div class=""Select-option--text"">      User B    </div>  </div></div>",element 1 : div#select-listbox > ul > li:nth-of-type(2) > div,"Name, Role, Value (4.1.2.a)",Manual,Open,axe Auditor,Innovaccer - Design System Audit,"508-2017-wcag21, 508-2017-wcag2, wcag2a, wcag2aa, wcag21a, wcag21aa",Desktop Web,https://mds.innovaccer.com/?path=/docs/patterns-forms-create-user--create-user,"element 1 - Validated_on_06-24-2026_Not_Fixed: https://axeauditor.dequecloud.com/api/v2/file/47bd6042-6faf-11f1-b8ba-531ca1c794c4
+ element 1 - Validated_on_06-24-2026_Not_Fixed: https://axeauditor.dequecloud.com/api/v2/file/47be722a-6faf-11f1-8a9b-7f016c927815
+ element 1 - Select: Custom select does not have a role and state: https://axeauditor.dequecloud.com/api/v2/file/0c678323-2d24-425d-ba41-1683ceacc837
+ element 1 - Select: Custom select does not have a role and state: https://axeauditor.dequecloud.com/api/v2/file/23798dd6-b633-4c36-a3ba-ddcc16921c25",,,,Page,,"harsha.kuruva@deque.com: Validation round: 1
+
+Status: Not Fixed
+
+Comments: Verified, and the issue is not fixed. Currently, the mentioned options in the combo boxes at the issue details are not being conveyed to the screen reader users
+
+To resolve this issue, ensure that provide appropriate roles and attributes for a single select dropdown 
+
+Screenshot: Validated on 06-24-2026_Not Fixed",,Create User Form: https://axeauditor.dequecloud.com/api/v2/file/34d1f136-edd8-11f0-a7a2-0b5db5cb1b54,Innovaccer - Design System Audit_10-29-25-12:53,4.1.2,https://axeauditor.dequecloud.com/test-run/45b36198-b498-11f0-a843-6f41ab87c814/issue/382a9f0e-b5b6-11f0-ab4d-a772ced5f2b5,select-missing-role-state
+2352169,Programmatic label does not convey purpose of control,"The programmatic label does not convey the purpose of the control. The programmatic label and visual label do not convey consistent information.
+
+Element Description: The following elements
+- Visibility button
+- Visibility off button
+
+Description of the issue: The above mentioned element's programmatic label is not descriptive of the function that the element is intended for. Screen reader users would have difficulty in understanding the element's purpose.
+
+Expected programmatic label: 
+Show password
+hide password",Serious,2.4 Navigable,Accessibility,Basic Form,"Rule : 
+Labels MUST be meaningful.
+
+How To Fix: 
+Fix this issue by ensuring that the programmatic label for the control correctly conveys the purpose of the control. Generally, the programmatic label and the visual label(s) should match. 
+
+1. If a control gets its accessible name from an ARIA attribute such as aria-label, ensure that the aria-label value does not conflict with the visible label.
+
+2. If a control has more than one piece of information on the screen that work together as the field's label (for example: a text label and an input format), ensure all applicable information is included in the accessible name.
+
+Reference: 
+Deque University: https://dequeuniversity.com/class/forms/labels/meaningful
+
+Background: 
+When form fields or interactive controls have vague or misleading labels, people may not understand the type of data expected or what a control will do if activated. This is especially true for people with cognitive disabilities and people who are blind and use a screen reader. Both the visible and the programmatic label must sufficiently describe the purpose of the form field or control. Descriptive labels give people confidence when filling out a form or using interactive content and help prevent mistakes.",rachna.siddhanti@deque.com,"Deque Not Fixed, 25 June 2026",,,,10/29/25 at 7:09 pm,Desktop Web,Initial assessment,Staging,Windows/Chrome,NVDA,"element 1 : <!--****************** ELEMENT 1 ******************-->
+
+<i data-test=""DesignSystem-Icon"" class=""material-symbols material-symbols-rounded Icon"" role=""button"">  visibility_off</i>",element 1 : div#docs-root > div > div > div > div:nth-of-type(2) > div > div > div:nth-of-type(2) > div > div > div > form > div:nth-of-type(4) > i,Descriptive Labels (2.4.6.b),Manual,Open,axe Auditor,Innovaccer - Design System Audit,"508-2017-wcag21, 508-2017-wcag2, wcag2a, wcag2aa, wcag21a, wcag21aa",Desktop Web,https://mds.innovaccer.com/?path=/docs/patterns-forms-basic-form--basic-form,"element 1 - 06-24-2026_NotFixed: https://axeauditor.dequecloud.com/api/v2/file/160f0c52-6fa6-11f1-9f5d-97df9681e64b
+ element 1 - Programmatic label does not convey purpose of control - 2: https://axeauditor.dequecloud.com/api/v2/file/4b51f75f-8a15-465b-a5d8-1c4a3c443110",,,,Page,,"lakshmi.katikala@deque.com: Validation round:1
+Status: Not Fixed
+Comments: Verified and the issue is not fixed. 
+Ensure that all interactive controls have a clear and descriptive programmatic label that accurately conveys their purpose 
+Note: When focus moves to the password visibility toggle control, screen reader users should be informed of the current action through an appropriate accessible name. For example, it should announce “Show password” when the password is hidden and “Hide password” when the password is visible.
+
+Screenshot: 06-24-2026_NotFixed
+Source code: 
+<i data-test=""DesignSystem-Icon"" class=""material-symbols material-symbols-rounded Icon"" role=""button"" tabindex=""0"" style=""font-size: 16px; width: 16px;"">visibility</i>",,Basic Form: https://axeauditor.dequecloud.com/api/v2/file/34f8ca22-edd8-11f0-bc30-83a6951eb9cb,Innovaccer - Design System Audit_10-29-25-12:53,2.4.6,https://axeauditor.dequecloud.com/test-run/45b36198-b498-11f0-a843-6f41ab87c814/issue/4168cca4-b4d9-11f0-b779-af87fbe40b3b,label-programmatic-not-descriptive
+2356809,Controls have same name but different actions,"Multiple controls have the same labels/names but perform different actions. This is not conveyed via text associated with individual controls.
+
+1) Element Description: The following elements
+- clear selected
+- clear selected
+
+Element location : On selecting any option from the ""Region"" and ""Organization"" dropdowns
+
+Description of the issue: When multiple buttons with same name are present but their functionality is different then screen reader users would not know the purpose of such buttons.
+- Current names: 
+ - clear selected
+ - clear selected
+- Suggested name: 
+  - Clear Region selection
+  - Clear Organization selection
+
+2) Element Description: The following elements
+- close
+- close
+
+Element location : On selecting start date and end date
+
+Description of the issue: When multiple buttons with same name are present but their functionality is different then screen reader users would not know the purpose of such buttons.
+- Current name:
+   - close
+   - close
+- Suggested name:
+  - Clear start date
+  - Clear end date",Serious,2.4 Navigable,Accessibility,Time Period Form,"Rule : 
+Labels MUST be meaningful.
+
+How To Fix: 
+Fix this issue by using ONE of the following techniques:
+1. Use an aria-label attribute to provide a complete programmatic label for the control.
+
+<button aria-label=""Register for Class A: House training your puppy"">Register</button>
+
+2. Use an aria-describedby attribute to associate visible text with the control to provide a complete description of its purpose.
+
+<h3 id=""class-a"">Class A: House training your puppy</h3>
+.....
+
+<button aria-describedby=""class-a"">Register</button>
+
+3. Change the control label (both visible and programmatic) to provide a complete description of its purpose.
+
+Reference: 
+Deque University: https://dequeuniversity.com/class/forms/labels/meaningful
+
+Background: 
+When multiple controls on a page have the same name but a different action, visual users may be able to tell the purpose of each control by its location on the screen or the content near it, but screen reader users may not be able to figure that out so easily. (For example, when there are multiple ""Buy Me"" buttons on the screen, which product will a particular button buy?) Controls with the same name but different action can be differentiated programmatically without changing the visual appearance of the content. This will allow a screen reader user to understand what each control will do and avoid making mistakes.",kiranmai.ireddy@deque.com,"Deque Not Fixed, 25 June 2026",,,,10/31/25 at 6:39 pm,Desktop Web,Initial assessment,Staging,Windows/Chrome,NVDA,"element 1 : <!--****************** ELEMENT 1 ******************-->
+
+<i data-test=""DesignSystem-Select--closeIcon"" class=""material-symbols material-symbols-rounded Icon..."" role=""button"" aria-label=""clear selected"">  close</i>
+
+<!--****************** ELEMENT 2 ******************-->
+
+<i data-test=""DesignSystem-Select--closeIcon"" class=""material-symbols material-symbols-rounded Icon..."" role=""button"" aria-label=""clear selected"">  close</i>
+ element 2 : <!--****************** ELEMENT 1 ******************-->
+
+<div class=""Input-icon Input-iconWrapper--right"">  <i data-test=""DesignSystem-Input--closeIcon"" class=""material-symbols material-symbols-rounded Icon..."" role=""button"">    close  </i></div>
+
+<!--****************** ELEMENT 2 ******************-->
+
+<div class=""Input-icon Input-iconWrapper--right"">  <i data-test=""DesignSystem-Input--closeIcon"" class=""material-symbols material-symbols-rounded Icon..."" role=""button"">    close  </i></div>","element 1 : div#docs-root > div > div > div > div:nth-of-type(2) > div > div > div:nth-of-type(2) > div > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > div > button > i
+ element 2 : div#docs-root > div > div > div > div:nth-of-type(2) > div > div > div:nth-of-type(2) > div > div > div > div:nth-of-type(2) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > div > div:nth-of-type(2)",Descriptive Labels (2.4.6.b),Manual,Open,axe Auditor,Innovaccer - Design System Audit,"508-2017-wcag21, 508-2017-wcag2, wcag2a, wcag2aa, wcag21a, wcag21aa",Desktop Web,https://mds.innovaccer.com/?path=/docs/patterns-forms-time-period-form--time-period-form,"element 2 -  06-25-2026_NotFixed: https://axeauditor.dequecloud.com/api/v2/file/ccc4c950-705a-11f1-805e-674b2dc3fca6
+ element 2 - Controls have same name but different actions - 1: https://axeauditor.dequecloud.com/api/v2/file/29e6f82f-4043-4e25-b560-5a23a6f51bfa
+ element 1 - Controls have same name but different actions - 1: https://axeauditor.dequecloud.com/api/v2/file/4df0ad96-37f1-4b23-afdb-e27b27e3991e",,,,Page,,"lakshmi.katikala@deque.com:  Validation round:1
+Status: Not Fixed
+Comments: Verified and the issue is not fixed.
+Suggested accessible names: 
+  - Clear Region
+  - Clear Organization
+  - Clear start date
+  - Clear end date 
+Note: Ensure controls that perform different actions have unique and descriptive accessible names that clearly distinguish their purpose 
+Screenshot: 06-25-2026_NotFixed
+Source code: 
+<i data-test=""DesignSystem-Input--closeIcon"" class=""material-symbols material-symbols-rounded Icon Input-icon--right p-3"" aria-hidden=""true"" style=""font-size: 16px; width: 16px;"">close</i>",,Time period form: https://axeauditor.dequecloud.com/api/v2/file/3564b8b8-edd8-11f0-b9ab-8bc667a3a532,Innovaccer - Design System Audit_10-29-25-12:53,2.4.6,https://axeauditor.dequecloud.com/test-run/45b36198-b498-11f0-a843-6f41ab87c814/issue/5a878d94-b667-11f0-abf2-c3fc1a4fa914,buttons-confusing
+2356802,Accessible name does not contain visible label,"Accessible name does not contain the visible label text.
+
+Element Description: The following elements
+- Region single select
+- Organization single select
+- Start date 
+- End date
+
+Description of the issue: Visible label and accessible name are different and do not match.
+- Visible label: 
+  - Region Select
+  - Organization select
+  - Start date mm/dd/yyyy
+  - End date mm/dd/yyyy
+- Current name: 
+  - trigger
+  - trigger
+  - dd/mm/yyyy
+  - dd/mm/yyyy
+- Suggested name:
+  - Region Select
+  - Organization select
+  - Start date mm/dd/yyyy
+  - End date mm/dd/yyyy",Serious,2.5 Pointer Accessible,Accessibility,Time Period Form,"Rule : 
+For each user interface component that includes a visible text label, the accessible name MUST match (or include) the visible text in the label.
+
+How To Fix: 
+Fix this issue by ensuring that the accessible name - such as the aria-label - contains the text of the visible label in the same order in which it appears. While it is not necessary that the visible label and accessible name match exactly, it is a best practice to have the accessible name begin with the visible text.
+
+Reference: 
+Deque University: https://dequeuniversity.com/class/forms/labels/visibility
+WCAG Understanding document: https://www.w3.org/WAI/WCAG22/Understanding/label-in-name
+
+Background: 
+Speech input users can interact with a webpage by speaking the visible text labels of menus, links, and buttons that appear on the screen. It is confusing to speech input users when they say a visible text label they see, but the speech command does not work because the component's accessible (programmatic) name does not match the visible label. When a user interface component has a visible text label - whether it be real text or an image of text - that text must also be found in the component's accessible (programmatic) name. When the visible label and accessible (programmatic) name for interactive components are in sync, speech input users can effectively interact with those components.",kiranmai.ireddy@deque.com,"Deque Not Fixed, 25 June 2026",,,,10/31/25 at 6:33 pm,Desktop Web,Initial assessment,Staging,Windows/Chrome,NVDA,"element 1 : <!--****************** ELEMENT 1 ******************-->
+
+<button type=""button"" class=""Button Select-trigger Select-trigger--regular..."" aria-haspopup=""listbox"" aria-expanded=""false"" aria-label=""trigger"" data-test=""DesignSystem-Select-trigger"" aria-controls=""select-listbox"">  <div class=""Select-trigger-wrapper ellipsis--noWrap"">    <span class=""Text Text--regular Select-trigger--text"">      Select    </span>  </div>  <i data-test=""DesignSystem-Icon"" class=""material-symbols material-symbols-rounded Icon..."" role=""button"">    keyboard_arrow_down  </i></button>
+
+<!--****************** ELEMENT 2 ******************-->
+
+<button type=""button"" class=""Button Select-trigger Select-trigger--regular..."" aria-haspopup=""listbox"" aria-expanded=""false"" aria-label=""trigger"" data-test=""DesignSystem-Select-trigger"" aria-controls=""select-listbox"">  <div class=""Select-trigger-wrapper ellipsis--noWrap"">    <span class=""Text Text--regular Select-trigger--text"">      Select    </span>  </div>  <i data-test=""DesignSystem-Icon"" class=""material-symbols material-symbols-rounded Icon..."" role=""button"">    keyboard_arrow_down  </i></button>
+
+<!--****************** ELEMENT 3 ******************-->
+
+<div data-test=""DesignSystem-InputWrapper"" class=""Input Input--regular"" role=""presentation"">  <div class=""Input-icon Input-icon--left"">    <i data-test=""DesignSystem-Icon"" class=""material-symbols material-symbols-rounded Icon"" role=""button"">      events    </i>  </div>  <input data-test=""DesignSystem-Input"" type=""text"" placeholder=""mm/dd/yyyy"" class=""Input-input Input-input--regular mr-4"" value="""" /></div>
+
+<!--****************** ELEMENT 4 ******************-->
+
+<div data-test=""DesignSystem-InputWrapper"" class=""Input Input--regular"" role=""presentation"">  <div class=""Input-icon Input-icon--left Input-icon--inputBlank"">    <i data-test=""DesignSystem-Icon"" class=""material-symbols material-symbols-rounded Icon"" role=""button"">      events    </i>  </div>  <input data-test=""DesignSystem-Input"" type=""text"" placeholder=""mm/dd/yyyy"" class=""Input-input Input-input--regular"" value=""__/__/____"" /></div>",element 1 : div#docs-root > div > div > div > div:nth-of-type(2) > div > div > div:nth-of-type(2) > div > div > div > div:nth-of-type(2) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > div,Label in Name (2.5.3.a),Manual,Open,axe Auditor,Innovaccer - Design System Audit,"508-2017-wcag21, 508-2017-wcag2, wcag2a, wcag2aa, wcag21a, wcag21aa",Desktop Web,https://mds.innovaccer.com/?path=/docs/patterns-forms-time-period-form--time-period-form,"element 1 -  06-25-2026_NotFixed: https://axeauditor.dequecloud.com/api/v2/file/c7c09318-7059-11f1-b4b4-4f42270b543e
+ element 1 - Accessible name does not contain visible label - 1: https://axeauditor.dequecloud.com/api/v2/file/ae454c9a-b6be-4f2e-bf4d-b247a7c9399f
+ element 1 - Accessible name does not contain visible label - 2: https://axeauditor.dequecloud.com/api/v2/file/3c2ec3e1-14f6-47f9-81b5-3ebf3ab672d4",,,,Page,,"lakshmi.katikala@deque.com: 
+ Validation round:1
+Status: Not Fixed
+Comments: Verified and the issue is not fixed. 
+Note: Ensure the accessible name includes the visible label text to maintain consistency for all users.
+Screenshot: 06-25-2026_NotFixed
+Source code: 
+<input data-test=""DesignSystem-Input"" label=""Start Date"" autocomplete=""off"" type=""text"" placeholder=""mm/dd/yyyy"" class=""Input-input Input-input--regular mr-4"" value="""" fdprocessedid=""buyuzq"">",,Time period form: https://axeauditor.dequecloud.com/api/v2/file/3564b8b8-edd8-11f0-b9ab-8bc667a3a532,Innovaccer - Design System Audit_10-29-25-12:53,2.5.3,https://axeauditor.dequecloud.com/test-run/45b36198-b498-11f0-a843-6f41ab87c814/issue/9d14035a-b666-11f0-b4d4-8b70bfcdccb7,speech-accessible-name-mismatch
+2356803,Programmatic label does not convey purpose of control,"The programmatic label does not convey the purpose of the control. The programmatic label and visual label do not convey consistent information.
+
+Element Description: The following elements
+- Region single select
+- Organization single select
+- Start date 
+- End date
+
+Description of the issue: The above mentioned element's programmatic label is not descriptive of the function that the element is intended for. Screen reader users would have difficulty in understanding the element's purpose
+- Current name: 
+  - trigger
+  - trigger
+  - dd/mm/yyyy
+  - dd/mm/yyyy
+- Suggested name:
+  - Region Select
+  - Organization select
+  - Start date mm/dd/yyyy
+  - End date mm/dd/yyyy",Serious,2.4 Navigable,Accessibility,Time Period Form,"Rule : 
+Labels MUST be meaningful.
+
+How To Fix: 
+Fix this issue by ensuring that the programmatic label for the control correctly conveys the purpose of the control. Generally, the programmatic label and the visual label(s) should match. 
+
+1. If a control gets its accessible name from an ARIA attribute such as aria-label, ensure that the aria-label value does not conflict with the visible label.
+
+2. If a control has more than one piece of information on the screen that work together as the field's label (for example: a text label and an input format), ensure all applicable information is included in the accessible name.
+
+Reference: 
+Deque University: https://dequeuniversity.com/class/forms/labels/meaningful
+
+Background: 
+When form fields or interactive controls have vague or misleading labels, people may not understand the type of data expected or what a control will do if activated. This is especially true for people with cognitive disabilities and people who are blind and use a screen reader. Both the visible and the programmatic label must sufficiently describe the purpose of the form field or control. Descriptive labels give people confidence when filling out a form or using interactive content and help prevent mistakes.",kiranmai.ireddy@deque.com,"Deque Not Fixed, 25 June 2026",,,,10/31/25 at 6:33 pm,Desktop Web,Initial assessment,Staging,Windows/Chrome,NVDA,"element 1 : <!--****************** ELEMENT 1 ******************-->
+
+<button type=""button"" class=""Button Select-trigger Select-trigger--regular..."" aria-haspopup=""listbox"" aria-expanded=""false"" aria-label=""trigger"" data-test=""DesignSystem-Select-trigger"" aria-controls=""select-listbox"">  <div class=""Select-trigger-wrapper ellipsis--noWrap"">    <span class=""Text Text--regular Select-trigger--text"">      Select    </span>  </div>  <i data-test=""DesignSystem-Icon"" class=""material-symbols material-symbols-rounded Icon..."" role=""button"">    keyboard_arrow_down  </i></button>
+
+<!--****************** ELEMENT 2 ******************-->
+
+<button type=""button"" class=""Button Select-trigger Select-trigger--regular..."" aria-haspopup=""listbox"" aria-expanded=""false"" aria-label=""trigger"" data-test=""DesignSystem-Select-trigger"" aria-controls=""select-listbox"">  <div class=""Select-trigger-wrapper ellipsis--noWrap"">    <span class=""Text Text--regular Select-trigger--text"">      Select    </span>  </div>  <i data-test=""DesignSystem-Icon"" class=""material-symbols material-symbols-rounded Icon..."" role=""button"">    keyboard_arrow_down  </i></button>
+
+<!--****************** ELEMENT 3 ******************-->
+
+<div data-test=""DesignSystem-InputWrapper"" class=""Input Input--regular"" role=""presentation"">  <div class=""Input-icon Input-icon--left"">    <i data-test=""DesignSystem-Icon"" class=""material-symbols material-symbols-rounded Icon"" role=""button"">      events    </i>  </div>  <input data-test=""DesignSystem-Input"" type=""text"" placeholder=""mm/dd/yyyy"" class=""Input-input Input-input--regular mr-4"" value="""" /></div>
+
+<!--****************** ELEMENT 4 ******************-->
+
+<div data-test=""DesignSystem-InputWrapper"" class=""Input Input--regular"" role=""presentation"">  <div class=""Input-icon Input-icon--left Input-icon--inputBlank"">    <i data-test=""DesignSystem-Icon"" class=""material-symbols material-symbols-rounded Icon"" role=""button"">      events    </i>  </div>  <input data-test=""DesignSystem-Input"" type=""text"" placeholder=""mm/dd/yyyy"" class=""Input-input Input-input--regular"" value=""__/__/____"" /></div>",element 1 : div#docs-root > div > div > div > div:nth-of-type(2) > div > div > div:nth-of-type(2) > div > div > div > div:nth-of-type(2) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > div,Descriptive Labels (2.4.6.b),Manual,Open,axe Auditor,Innovaccer - Design System Audit,"508-2017-wcag21, 508-2017-wcag2, wcag2a, wcag2aa, wcag21a, wcag21aa",Desktop Web,https://mds.innovaccer.com/?path=/docs/patterns-forms-time-period-form--time-period-form,"element 1 -  06-25-2026_NotFixed: https://axeauditor.dequecloud.com/api/v2/file/d16a785c-7059-11f1-bc07-93fb98f47820
+ element 1 - Programmatic label does not convey purpose of control - 1: https://axeauditor.dequecloud.com/api/v2/file/b8954ba9-92dc-4d6d-8eb9-b00b77700876
+ element 1 - Programmatic label does not convey purpose of control - 2: https://axeauditor.dequecloud.com/api/v2/file/3ec9ca94-78da-4dcb-a4cd-6f36ba6a09e5",,,,Page,,"lakshmi.katikala@deque.com:  Validation round:1
+Status: Not Fixed
+Comments: Verified and the issue is not fixed. 
+Note: Ensure the programmatic label clearly describes the purpose and functionality of the control.
+Suggested accessible names:
+  - Region
+  - Organization
+  - Start date mm/dd/yyyy
+  - End date mm/dd/yyyy
+Note: Ensure to hide 'keyboard arrow down' text from the screen reader users.
+
+Screenshot: 06-25-2026_NotFixed
+Source code: 
+<input data-test=""DesignSystem-Input"" label=""Start Date"" autocomplete=""off"" type=""text"" placeholder=""mm/dd/yyyy"" class=""Input-input Input-input--regular mr-4"" value="""" fdprocessedid=""buyuzq"">",,Time period form: https://axeauditor.dequecloud.com/api/v2/file/3564b8b8-edd8-11f0-b9ab-8bc667a3a532,Innovaccer - Design System Audit_10-29-25-12:53,2.4.6,https://axeauditor.dequecloud.com/test-run/45b36198-b498-11f0-a843-6f41ab87c814/issue/a2112acc-b666-11f0-992e-07b5028d022e,label-programmatic-not-descriptive
+2351366,Programmatic label does not convey purpose of control,"The programmatic label does not convey the purpose of the control. The programmatic label and visual label do not convey consistent information.
+
+Element Description: The following elements
+- Set an appointment date:
+
+Element location: Date picker with Presets
+
+Description of the issue: The above mentioned element's programmatic label is not descriptive of the function that the element is intended for. Screen reader users would have difficulty in understanding the element's purpose",Serious,2.4 Navigable,Accessibility,Date Picker,"Rule : 
+Labels MUST be meaningful.
+
+How To Fix: 
+Fix this issue by ensuring that the programmatic label for the control correctly conveys the purpose of the control. Generally, the programmatic label and the visual label(s) should match. 
+
+1. If a control gets its accessible name from an ARIA attribute such as aria-label, ensure that the aria-label value does not conflict with the visible label.
+
+2. If a control has more than one piece of information on the screen that work together as the field's label (for example: a text label and an input format), ensure all applicable information is included in the accessible name.
+
+Reference: 
+Deque University: https://dequeuniversity.com/class/forms/labels/meaningful
+
+Background: 
+When form fields or interactive controls have vague or misleading labels, people may not understand the type of data expected or what a control will do if activated. This is especially true for people with cognitive disabilities and people who are blind and use a screen reader. Both the visible and the programmatic label must sufficiently describe the purpose of the form field or control. Descriptive labels give people confidence when filling out a form or using interactive content and help prevent mistakes.",rachna.siddhanti@deque.com,"Deque Not Fixed, 25 June 2026",,,,10/29/25 at 4:20 pm,Desktop Web,Initial assessment,Staging,Windows/Chrome,NVDA,"element 1 : <!--****************** ELEMENT 1 ******************-->
+
+<div data-test=""DesignSystem-Card"" class=""Card Card--shadow10 w-50 my-5 p-5"">  <div data-test=""DesignSystem-Label"" class=""Label"">    <label data-test=""DesignSystem-Label--Text"" class=""Label-text"">      Set an appointment date:    </label>  </div>  <style>    @keyframes popper-open-cdgz {
+          from { ...  </style>  <div class=""PopperWrapper-trigger w-100"">    <div class=""d-flex flex-column flex-grow-1"" data-test=""DesignSystem-InputMask--Wra..."">      <div data-test=""DesignSystem-InputWrapper"" class=""Input Input--regular"" role=""presentation"">        <!-- ... 2 children ... -->      </div>    </div>  </div></div>",element 1 : div#docs-root > div > div > div > div:nth-of-type(2) > div > div > div:nth-of-type(2) > div > div:nth-of-type(3),Descriptive Labels (2.4.6.b),Manual,Open,axe Auditor,Innovaccer - Design System Audit,"508-2017-wcag21, 508-2017-wcag2, wcag2a, wcag2aa, wcag21a, wcag21aa",Desktop Web,https://mds.innovaccer.com/?path=/docs/patterns-datepicker-date-and-time-picker--date-and-time-picker,"element 1 - 06-25-2026_NotFixed: https://axeauditor.dequecloud.com/api/v2/file/013e722a-7052-11f1-b9f8-13c66f9d046f
+ element 1 - Programmatic label does not convey purpose of control - 1: https://axeauditor.dequecloud.com/api/v2/file/897f40db-065b-4cd1-a84e-de6fd6b34206",,,,Page,,"lakshmi.katikala@deque.com: Validation round:1
+Status: Not Fixed
+Comments: Verified and the issue is not fixed. 
+Note: Ensure the programmatic label clearly describes the purpose and functionality of the control.
+Suggested accessible name: Set an appointment date:
+Screenshot: 06-25-2026_NotFixed
+Source code: 
+<input data-test=""DesignSystem-Input"" autocomplete=""off"" type=""text"" placeholder=""mm/dd/yyyy"" class=""Input-input Input-input--regular mr-4"" value=""06/25/2026"">",,"Date Picker: https://axeauditor.dequecloud.com/api/v2/file/34d6c4f4-edd8-11f0-b04c-c75c125d4e2a
+Date Picker: https://axeauditor.dequecloud.com/api/v2/file/34cf30c2-edd8-11f0-a2ad-6378a3e1fe69",Innovaccer - Design System Audit_10-29-25-12:53,2.4.6,https://axeauditor.dequecloud.com/test-run/45b36198-b498-11f0-a843-6f41ab87c814/issue/a6239db2-b4c1-11f0-b1b2-2fdf28617c6c,label-programmatic-not-descriptive
+2351367,Accessible name does not contain visible label,"Accessible name does not contain the visible label text.
+
+Element Description: The following elements
+- Set an appointment date:
+
+Element location: Date picker with Presets
+
+Description of the issue: Visible label and accessible name are different and do not match.
+
+Current accessible name: mm/dd/yyyy
+
+Expected accessible name: Set an appointment date:",Serious,2.5 Pointer Accessible,Accessibility,Date Picker,"Rule : 
+For each user interface component that includes a visible text label, the accessible name MUST match (or include) the visible text in the label.
+
+How To Fix: 
+Fix this issue by ensuring that the accessible name - such as the aria-label - contains the text of the visible label in the same order in which it appears. While it is not necessary that the visible label and accessible name match exactly, it is a best practice to have the accessible name begin with the visible text.
+
+Reference: 
+Deque University: https://dequeuniversity.com/class/forms/labels/visibility
+WCAG Understanding document: https://www.w3.org/WAI/WCAG22/Understanding/label-in-name
+
+Background: 
+Speech input users can interact with a webpage by speaking the visible text labels of menus, links, and buttons that appear on the screen. It is confusing to speech input users when they say a visible text label they see, but the speech command does not work because the component's accessible (programmatic) name does not match the visible label. When a user interface component has a visible text label - whether it be real text or an image of text - that text must also be found in the component's accessible (programmatic) name. When the visible label and accessible (programmatic) name for interactive components are in sync, speech input users can effectively interact with those components.",rachna.siddhanti@deque.com,"Deque Not Fixed, 25 June 2026",,,,10/29/25 at 4:20 pm,Desktop Web,Initial assessment,Staging,Windows/Chrome,NVDA,"element 1 : <!--****************** ELEMENT 1 ******************-->
+
+<div data-test=""DesignSystem-Card"" class=""Card Card--shadow10 w-50 my-5 p-5"">  <div data-test=""DesignSystem-Label"" class=""Label"">    <label data-test=""DesignSystem-Label--Text"" class=""Label-text"">      Set an appointment date:    </label>  </div>  <style>    @keyframes popper-open-cdgz {
+          from { ...  </style>  <div class=""PopperWrapper-trigger w-100"">    <div class=""d-flex flex-column flex-grow-1"" data-test=""DesignSystem-InputMask--Wra..."">      <div data-test=""DesignSystem-InputWrapper"" class=""Input Input--regular"" role=""presentation"">        <!-- ... 2 children ... -->      </div>    </div>  </div></div>",element 1 : div#docs-root > div > div > div > div:nth-of-type(2) > div > div > div:nth-of-type(2) > div > div:nth-of-type(3),Label in Name (2.5.3.a),Manual,Open,axe Auditor,Innovaccer - Design System Audit,"508-2017-wcag21, 508-2017-wcag2, wcag2a, wcag2aa, wcag21a, wcag21aa",Desktop Web,https://mds.innovaccer.com/?path=/docs/patterns-datepicker-date-and-time-picker--date-and-time-picker,"element 1 - 06-25-2026_NotFixed: https://axeauditor.dequecloud.com/api/v2/file/f8c6219c-7051-11f1-8301-13f22827230c
+ element 1 - Accessible name does not contain visible label - 1: https://axeauditor.dequecloud.com/api/v2/file/ee29a7da-192f-41a6-a398-d14289f1f7a1",,,,Page,,"lakshmi.katikala@deque.com: Validation round:1
+Status: Not Fixed
+Comments: Verified and the issue is not fixed. 
+Note: Ensure the accessible name includes the visible label text to maintain consistency for all users.
+Suggested accessible name: Set an appointment date:
+Screenshot: 06-25-2026_NotFixed
+Source code: 
+<input data-test=""DesignSystem-Input"" autocomplete=""off"" type=""text"" placeholder=""mm/dd/yyyy"" class=""Input-input Input-input--regular mr-4"" value=""06/25/2026"">",,"Date Picker: https://axeauditor.dequecloud.com/api/v2/file/34d6c4f4-edd8-11f0-b04c-c75c125d4e2a
+Date Picker: https://axeauditor.dequecloud.com/api/v2/file/34cf30c2-edd8-11f0-a2ad-6378a3e1fe69",Innovaccer - Design System Audit_10-29-25-12:53,2.5.3,https://axeauditor.dequecloud.com/test-run/45b36198-b498-11f0-a843-6f41ab87c814/issue/acd43acc-b4c1-11f0-9750-87c95ffa0d7f,speech-accessible-name-mismatch
+2354325,Programmatic label does not convey purpose of control,"The programmatic label does not convey the purpose of the control. The programmatic label and visual label do not convey consistent information.
+
+Element Description: The following elements
+- Last Name
+- Middle Name
+- First Name
+- Date of Birth
+- Maiden Name
+- Email Address
+- NPI
+
+Description of the issue: The above mentioned element's programmatic label is not descriptive of the function that the element is intended for. Screen reader users would have difficulty in understanding the element's purpose
+
+Ensure to associate the visible label with the form field",Serious,2.4 Navigable,Accessibility,Create User Form,"Rule : 
+Labels MUST be meaningful.
+
+How To Fix: 
+Fix this issue by ensuring that the programmatic label for the control correctly conveys the purpose of the control. Generally, the programmatic label and the visual label(s) should match. 
+
+1. If a control gets its accessible name from an ARIA attribute such as aria-label, ensure that the aria-label value does not conflict with the visible label.
+
+2. If a control has more than one piece of information on the screen that work together as the field's label (for example: a text label and an input format), ensure all applicable information is included in the accessible name.
+
+Reference: 
+Deque University: https://dequeuniversity.com/class/forms/labels/meaningful
+
+Background: 
+When form fields or interactive controls have vague or misleading labels, people may not understand the type of data expected or what a control will do if activated. This is especially true for people with cognitive disabilities and people who are blind and use a screen reader. Both the visible and the programmatic label must sufficiently describe the purpose of the form field or control. Descriptive labels give people confidence when filling out a form or using interactive content and help prevent mistakes.",rachna.siddhanti@deque.com,"Deque Not Fixed, 25 June 2026",,,,10/30/25 at 3:57 pm,Desktop Web,Initial assessment,Staging,Windows/Chrome,NVDA,"element 1 : <!--****************** ELEMENT 1 ******************-->
+
+<div data-test=""DesignSystem-InputWrapper"" class=""Input Input--regular"" role=""presentation"">  <div class=""Input-icon Input-icon--left Input-icon--inputBlank"">    <i data-test=""DesignSystem-Icon"" class=""material-symbols material-symbols-rounded Icon"" role=""button"">      person    </i>  </div>  <input data-test=""DesignSystem-Input"" type=""text"" placeholder=""E.g. Doe, Smith, etc."" class=""Input-input Input-input--regular"" value="""" /></div>
+
+<!--****************** ELEMENT 2 ******************-->
+
+<div data-test=""DesignSystem-InputWrapper"" class=""Input Input--regular"" role=""presentation"">  <div class=""Input-icon Input-icon--left Input-icon--inputBlank"">    <i data-test=""DesignSystem-Icon"" class=""material-symbols material-symbols-rounded Icon"" role=""button"">      person    </i>  </div>  <input data-test=""DesignSystem-Input"" type=""text"" placeholder=""E.g. Doe, Smith, etc."" class=""Input-input Input-input--regular"" value="""" /></div>
+
+<!--****************** ELEMENT 3 ******************-->
+
+<div data-test=""DesignSystem-InputWrapper"" class=""Input Input--regular"" role=""presentation"">  <div class=""Input-icon Input-icon--left Input-icon--inputBlank"">    <i data-test=""DesignSystem-Icon"" class=""material-symbols material-symbols-rounded Icon"" role=""button"">      person    </i>  </div>  <input data-test=""DesignSystem-Input"" type=""text"" placeholder=""E.g. John, Will, etc."" class=""Input-input Input-input--regular"" value="""" /></div>
+
+<!--****************** ELEMENT 4 ******************-->
+
+<div data-test=""DesignSystem-InputWrapper"" class=""Input Input--regular"" role=""presentation"">  <div class=""Input-icon Input-icon--left"">    <i data-test=""DesignSystem-Icon"" class=""material-symbols material-symbols-rounded Icon"" role=""button"">      cake    </i>  </div>  <input data-test=""DesignSystem-Input"" type=""text"" placeholder=""MM/DD/YYYY"" class=""Input-input Input-input--regular"" value=""__/__/____"" /></div>
+
+<!--****************** ELEMENT 5 ******************-->
+
+<div data-test=""DesignSystem-InputWrapper"" class=""Input Input--regular"" role=""presentation"">  <div class=""Input-icon Input-icon--left Input-icon--inputBlank"">    <i data-test=""DesignSystem-Icon"" class=""material-symbols material-symbols-rounded Icon"" role=""button"">      person    </i>  </div>  <input data-test=""DesignSystem-Input"" type=""text"" placeholder=""E.g. Roe, Will, etc."" class=""Input-input Input-input--regular"" value="""" /></div>
+
+<!--****************** ELEMENT 6 ******************-->
+
+<div data-test=""DesignSystem-InputWrapper"" class=""Input Input--regular"" role=""presentation"">  <input data-test=""DesignSystem-Input"" type=""email"" placeholder=""E.g. abc@gmail.com"" class=""Input-input Input-input--regular"" value="""" /></div>
+
+<!--****************** ELEMENT 7 ******************-->
+
+<div data-test=""DesignSystem-InputWrapper"" class=""Input Input--regular"" role=""presentation"">  <input data-test=""DesignSystem-Input"" type=""text"" placeholder=""E.g. 000000"" class=""Input-input Input-input--regular"" value="""" /></div>",element 1 : div#docs-root > div > div > div > div:nth-of-type(2) > div > div > div:nth-of-type(2) > div > div > div > form > div > div:nth-of-type(9) > div:nth-of-type(2),Descriptive Labels (2.4.6.b),Manual,Open,axe Auditor,Innovaccer - Design System Audit,"508-2017-wcag21, 508-2017-wcag2, wcag2a, wcag2aa, wcag21a, wcag21aa",Desktop Web,https://mds.innovaccer.com/?path=/docs/patterns-forms-create-user--create-user,"element 1 - Validated_on_06-24-2026_Not_Fixed: https://axeauditor.dequecloud.com/api/v2/file/611e3bbe-6fa6-11f1-a6f6-bbd2a1064530
+ element 1 - Programmatic label does not convey purpose of control - 1: https://axeauditor.dequecloud.com/api/v2/file/b9afbcca-0783-466e-b799-340d0568e2b3",,,,Page,,"harsha.kuruva@deque.com: Validation round: 1
+
+Status: Not Fixed
+
+Comments: Verified, and the issue is not fixed. Still, the issue remains the same
+The mentioned edit fields in the issue details programmatic label don't convey the purpose of the controls
+
+To resolve this issue, ensure that to associate the visible label with the form fields
+
+Screenshot: Validated on 06-24-2026_Not Fixed",,Create User Form: https://axeauditor.dequecloud.com/api/v2/file/34d1f136-edd8-11f0-a7a2-0b5db5cb1b54,Innovaccer - Design System Audit_10-29-25-12:53,2.4.6,https://axeauditor.dequecloud.com/test-run/45b36198-b498-11f0-a843-6f41ab87c814/issue/adfeca22-b587-11f0-8c33-af1a2315589e,label-programmatic-not-descriptive
+2355000,Programmatic label does not convey purpose of control,"The programmatic label does not convey the purpose of the control. The programmatic label and visual label do not convey consistent information.
+
+Element Description: The following elements
+- date:
+
+Description of the issue: The above mentioned element's programmatic label is not descriptive of the function that the element is intended for. Screen reader users would have difficulty in understanding the element's purpose",Serious,2.4 Navigable,Accessibility,Date Range Picker,"Rule : 
+Labels MUST be meaningful.
+
+How To Fix: 
+Fix this issue by ensuring that the programmatic label for the control correctly conveys the purpose of the control. Generally, the programmatic label and the visual label(s) should match. 
+
+1. If a control gets its accessible name from an ARIA attribute such as aria-label, ensure that the aria-label value does not conflict with the visible label.
+
+2. If a control has more than one piece of information on the screen that work together as the field's label (for example: a text label and an input format), ensure all applicable information is included in the accessible name.
+
+Reference: 
+Deque University: https://dequeuniversity.com/class/forms/labels/meaningful
+
+Background: 
+When form fields or interactive controls have vague or misleading labels, people may not understand the type of data expected or what a control will do if activated. This is especially true for people with cognitive disabilities and people who are blind and use a screen reader. Both the visible and the programmatic label must sufficiently describe the purpose of the form field or control. Descriptive labels give people confidence when filling out a form or using interactive content and help prevent mistakes.",rachna.siddhanti@deque.com,"Deque Not Fixed, 25 June 2026",,,,10/31/25 at 5:27 am,Desktop Web,Initial assessment,Staging,Windows/Chrome,NVDA,"element 1 : <!--****************** ELEMENT 1 ******************-->
+
+<div data-test=""DesignSystem-InputWrapper"" class=""Input Input--regular"" role=""presentation"">  <div class=""Input-icon Input-icon--left"">    <i data-test=""DesignSystem-Icon"" class=""material-symbols material-symbols-rounded Icon"" role=""button"">      events    </i>  </div>  <input data-test=""DesignSystem-Input"" type=""text"" placeholder=""mm/dd/yyyy - mm/dd/yyyy"" class=""Input-input Input-input--regular mr-4"" value="""" /></div>",element 1 : div#docs-root > div > div > div > div:nth-of-type(2) > div > div > div:nth-of-type(2) > div > div > div > div > div > div:nth-of-type(2) > div,Descriptive Labels (2.4.6.b),Manual,Open,axe Auditor,Innovaccer - Design System Audit,"508-2017-wcag21, 508-2017-wcag2, wcag2a, wcag2aa, wcag21a, wcag21aa",Desktop Web,https://mds.innovaccer.com/?path=/docs/patterns-daterangepicker-with-custom-popover--with-custom-popover,"element 1 - 06-24-2026_NotFixed: https://axeauditor.dequecloud.com/api/v2/file/86aa2912-6fc7-11f1-8e8d-efcda5858f22
+ element 1 - Programmatic label does not convey purpose of control: https://axeauditor.dequecloud.com/api/v2/file/840b87f3-c9b3-4e60-9c0d-fd0b023aee87",,,,Page,,"lakshmi.katikala@deque.com: Validation round:1
+Status: Not Fixed
+Comments: Verified and the issue is not fixed. 
+Ensure that the programmatic label of each control clearly and accurately describes its purpose or action so that assistive technology users can understand its function.
+Suggested label: 'Date mm/dd/yyyy - mm/dd/yyyy'
+Screenshot: 06-24-2026_NotFixed
+Source code: 
+<input data-test=""DesignSystem-Input"" label=""Date"" autocomplete=""off"" type=""text"" placeholder=""mm/dd/yyyy - mm/dd/yyyy"" class=""Input-input Input-input--regular mr-4"" value="""" fdprocessedid=""4bydnd"">",,Date Range Picker: https://axeauditor.dequecloud.com/api/v2/file/351d1b48-edd8-11f0-ae1c-1be8f4cf9f95,Innovaccer - Design System Audit_10-29-25-12:53,2.4.6,https://axeauditor.dequecloud.com/test-run/45b36198-b498-11f0-a843-6f41ab87c814/issue/b42da1b8-b5f8-11f0-82a4-47a77570ef89,label-programmatic-not-descriptive
+2355001,Accessible name does not contain visible label,"Accessible name does not contain the visible label text.
+
+Element Description: The following elements
+- Date
+
+Description of the issue: Visible label and accessible name are different and do not match.
+
+Current accessible name: mm/dd/yyyy- mm/dd/yyyy
+
+Expected accessible name: Date",Serious,2.5 Pointer Accessible,Accessibility,Date Range Picker,"Rule : 
+For each user interface component that includes a visible text label, the accessible name MUST match (or include) the visible text in the label.
+
+How To Fix: 
+Fix this issue by ensuring that the accessible name - such as the aria-label - contains the text of the visible label in the same order in which it appears. While it is not necessary that the visible label and accessible name match exactly, it is a best practice to have the accessible name begin with the visible text.
+
+Reference: 
+Deque University: https://dequeuniversity.com/class/forms/labels/visibility
+WCAG Understanding document: https://www.w3.org/WAI/WCAG22/Understanding/label-in-name
+
+Background: 
+Speech input users can interact with a webpage by speaking the visible text labels of menus, links, and buttons that appear on the screen. It is confusing to speech input users when they say a visible text label they see, but the speech command does not work because the component's accessible (programmatic) name does not match the visible label. When a user interface component has a visible text label - whether it be real text or an image of text - that text must also be found in the component's accessible (programmatic) name. When the visible label and accessible (programmatic) name for interactive components are in sync, speech input users can effectively interact with those components.",rachna.siddhanti@deque.com,"Deque Not Fixed, 25 June 2026",,,,10/31/25 at 5:27 am,Desktop Web,Initial assessment,Staging,Windows/Chrome,NVDA,"element 1 : <div data-test=""DesignSystem-InputWrapper"" class=""Input Input--regular"" role=""presentation"">  <div class=""Input-icon Input-icon--left"">    <i data-test=""DesignSystem-Icon"" class=""material-symbols material-symbols-rounded Icon"" role=""button"">      events    </i>  </div>  <input data-test=""DesignSystem-Input"" type=""text"" placeholder=""mm/dd/yyyy - mm/dd/yyyy"" class=""Input-input Input-input--regular mr-4"" value="""" /></div>
+",element 1 : div#docs-root > div > div > div > div:nth-of-type(2) > div > div > div:nth-of-type(2) > div > div > div > div > div > div:nth-of-type(2) > div,Label in Name (2.5.3.a),Manual,Open,axe Auditor,Innovaccer - Design System Audit,"508-2017-wcag21, 508-2017-wcag2, wcag2a, wcag2aa, wcag21a, wcag21aa",Desktop Web,https://mds.innovaccer.com/?path=/docs/patterns-daterangepicker-with-custom-popover--with-custom-popover,"element 1 - 06-24-2026_NotFixed: https://axeauditor.dequecloud.com/api/v2/file/8bd2f446-6fc7-11f1-a33d-a3d6ff552c66
+ element 1 - Accessible name does not contain visible label: https://axeauditor.dequecloud.com/api/v2/file/d9459091-8310-4986-8610-6dcc8606fc83",,,,Page,,"lakshmi.katikala@deque.com: Validation round:1
+Status: Not Fixed
+Comments: Verified and the issue is not fixed. 
+Ensure that the accessible name includes the visible label text and matches the label presented visually to users.
+Suggested label: 'Date mm/dd/yyyy - mm/dd/yyyy'
+
+Screenshot: 06-24-2026_NotFixed
+Source code: 
+<input data-test=""DesignSystem-Input"" label=""Date"" autocomplete=""off"" type=""text"" placeholder=""mm/dd/yyyy - mm/dd/yyyy"" class=""Input-input Input-input--regular mr-4"" value="""" fdprocessedid=""4bydnd"">",,Date Range Picker: https://axeauditor.dequecloud.com/api/v2/file/351d1b48-edd8-11f0-ae1c-1be8f4cf9f95,Innovaccer - Design System Audit_10-29-25-12:53,2.5.3,https://axeauditor.dequecloud.com/test-run/45b36198-b498-11f0-a843-6f41ab87c814/issue/b42f3262-b5f8-11f0-879e-ab6f4625768e,speech-accessible-name-mismatch
+2355007,Function cannot be performed by keyboard alone,"There is no way to perform the function using only the keyboard on the same screen or on a qualifying conforming alternate version.
+
+Element Description: Calendar widget dates
+
+Description of the issue: Above mentioned elements are not keyboard operable and do not have an alternative element that performs the same function.
+",Critical,2.1 Keyboard Accessible,Accessibility,Date Range Picker,"Rule : 
+Functionality MUST be available using the keyboard, unless the functionality cannot be accomplished in any known way using a keyboard.
+
+How To Fix: 
+Fix this issue by ensuring the component can be used by the keyboard. This includes ensuring controls are:
+1. Focusable with a keyboard (i.e. can be reached using the Tab key or Arrow keys on a keyboard), and
+2. Operable with a keyboard (e.g. links are activated with the Enter key, buttons are activated with Enter and Spacebar, checkboxes are activated with Spacebar, dragging and swiping actions have a keyboard alternative, etc.)
+
+The best way to do this is to use native HTML elements when HTML equivalents exist (e.g. anchor, button, select, text area, and input elements). When custom (non native HTML) controls have to be used, you must ensure they can be focused with a keyboard (often using tabindex=""0"") and operated with a keyboard (using JavaScript event handlers). The ARIA Authoring Practices Guide provides information on expected keyboard interaction patterns for custom controls and widgets and working examples (see References below).
+
+Reference: 
+Deque University: https://dequeuniversity.com/class/input-methods/keyboard-input/functionality
+ARIA Authoring Practices Guide Patterns: https://www.w3.org/WAI/ARIA/apg/patterns/
+
+Background: 
+Some people cannot use a mouse due to vision or motor disabilities. Content that can be operated with a mouse must also be made operable with a keyboard. When content is operable through a keyboard, it becomes operable by a variety of assistive technologies such as speech input software, sip-and-puff software, on-screen keyboards, scanning software, and alternate keyboards.",rachna.siddhanti@deque.com,"Deque Not Fixed, 25 June 2026",,,,10/31/25 at 5:27 am,Desktop Web,Initial assessment,Staging,Windows/Chrome,NVDA,"element 1 : <!--****************** ELEMENT 1 ******************-->
+
+<button data-test=""DesignSystem-Button"" type=""button"" class=""Button Button--regular Button--regularSquare..."">  <div class=""Button-icon"" data-test=""DesignSystem-Button--Icon-W..."">    <i data-test=""DesignSystem-Button--Icon"" class=""material-symbols material-symbols-rounded Icon"" role=""button"">      arrow_forward    </i>  </div></button>
+
+<!--****************** ELEMENT 2 ******************-->
+
+<button data-test=""DesignSystem-Button"" type=""button"" class=""Button Button--regular Button--regularSquare..."">  <div class=""Button-icon"" data-test=""DesignSystem-Button--Icon-W..."">    <i data-test=""DesignSystem-Button--Icon"" class=""material-symbols material-symbols-rounded Icon"" role=""button"">      arrow_back    </i>  </div></button>
+
+<!--****************** ELEMENT 3 ******************-->
+
+<div class=""Calendar-valueWrapper"" data-test=""designSystem-Calendar-Wrapp..."">  <span data-test=""DesignSystem-Calendar--date..."" class=""Text Text--regular color-inverse Calendar-value..."">    4  </span></div>",element 1 : html > body > div:nth-of-type(8) > div:nth-of-type(2) > div > div:nth-of-type(2) > div:nth-of-type(2) > div > div:nth-of-type(7),Keyboard Navigation (2.1.1.a),Manual,Open,axe Auditor,Innovaccer - Design System Audit,"508-2017-wcag21, 508-2017-wcag2, wcag2a, wcag2aa, wcag21a, wcag21aa",Desktop Web,https://mds.innovaccer.com/?path=/docs/patterns-daterangepicker-with-custom-popover--with-custom-popover,"element 1 - 06-25-2026_NotFixed: https://axeauditor.dequecloud.com/api/v2/file/0a8cc0ce-7076-11f1-a18f-fbfa48d69e99
+ element 1 - 06-24-2026_Fixed: https://axeauditor.dequecloud.com/api/v2/file/8d88648c-6fb9-11f1-97d3-1fffa880cccf
+ element 1 - Function cannot be performed by keyboard alone: https://axeauditor.dequecloud.com/api/v2/file/9eaf812a-2689-4770-8fb9-6666b7e89731",,,,Page,,"lakshmi.katikala@deque.com: 
+Validation round:1
+Status: Not Fixed
+Comments: Verified and the issue is not fixed. 
+User is unable to navigate to the calendar widget elements or select date options using only the keyboard. Once the calendar widget is made keyboard accessible, ensure that the keyboard focus order and screen reader reading order are logical. Currently, the calendar widget is placed at the end of the page in the DOM, which may result in an illogical focus and reading sequence.
+Screenshot: 06-25-2026_NotFixed
+Source code: 
+<button type=""button"" role=""gridcell"" data-calendar-date-cell=""true"" data-row=""0"" data-col=""1"" data-test=""DesignSystem-Calendar--dateValue"" class=""Calendar-value Calendar-inRangeValue Calendar-dateValue--large"" tabindex=""0"" aria-label=""June 1, 2026"" aria-disabled=""false"" aria-selected=""false"" fdprocessedid=""jr9al9""><span data-test=""DesignSystem-Text"" class=""Text Text--regular color-inverse"">1</span></button>",,Date Range Picker: https://axeauditor.dequecloud.com/api/v2/file/351d1b48-edd8-11f0-ae1c-1be8f4cf9f95,Innovaccer - Design System Audit_10-29-25-12:53,2.1.1,https://axeauditor.dequecloud.com/test-run/45b36198-b498-11f0-a843-6f41ab87c814/issue/b438917c-b5f8-11f0-87a4-8fe2a1fb1b29,keyboard-inaccessible
+2355862,Keyboard focus is lost or misplaced due to user interaction or content update,"Keyboard focus is lost or placed on the wrong element during user interaction, content refresh or update, or other reason.
+
+Element Description: The following elements
+- User Type
+- Date of Birth
+- Gender
+
+
+Description of the issue: When the above mentioned element is activated and an option is selected, screen reader focus is moved to top of the page which is not logical.",Serious,2.4 Navigable,Accessibility,Create User Form,"Rule : 
+The focus MUST be purposely moved or set (via JavaScript) onto the appropriate element when the user's action requires a change of context or location for effective keyboard or touch interaction.
+
+How To Fix: 
+Fix this issue by explicitly placing focus on a logical element when content is removed, refreshed, or added, for example:
+1. For content added to the screen in reaction to a user-fired event, focus should be shifted to the new content - such as in single page applications.
+2. For content removed from the screen in reaction to a user-fired event, focus should be shifted to the next logical place in the interaction.
+
+Reference: 
+Deque University: https://dequeuniversity.com/class/input-methods/keyboard-input/focus-management
+Deque University:https://dequeuniversity.com/class/dynamic-updates/notify-users/move-focus
+Deque University: https://dequeuniversity.com/class/dynamic-updates/ajax/single-page-applications
+
+Background: 
+One of the biggest challenges when creating rich web interfaces using JavaScript is the management of focus when new content or controls are added or removed from the page. The presentation or modification of content on the screen may require that the user interact with -or at the very least, take notice of - the new or changed content. It is important to have a clear indication of page content that has been updated. This allows the user to understand the change and also allows a keyboard user to interact with any new content.",rachna.siddhanti@deque.com,"Deque Partially Fixed, 25 June 2026",,,,10/31/25 at 3:35 pm,Desktop Web,Initial assessment,Staging,Windows/Chrome,NVDA,"element 1 : <!--****************** ELEMENT 1 ******************-->
+
+<div data-test=""DesignSystem-Column"" class=""Col Col--m-5 Col--l-4 Col--xl-4 mr-6 mb-6"">  <div data-test=""DesignSystem-Label"" class=""Label Label--withInput"">    <label data-test=""DesignSystem-Label--Text"" class=""Label-text"">      Gender    </label>  </div>  <div data-test=""DesignSystem-Select"" aria-haspopup=""listbox"" aria-expanded=""false"">    <style>      @keyframes popper-open-l0rd {
+          from { ...    </style>    <div class=""PopperWrapper-trigger d-block"">      <button type=""button"" class=""Button Select-trigger Select-trigger--regular"" aria-haspopup=""listbox"" aria-expanded=""false"" aria-label=""trigger"" data-test=""DesignSystem-Select-trigger"" aria-controls=""select-listbox"">        <!-- ... 3 children ... -->      </button>    </div>  </div></div>
+
+<!--****************** ELEMENT 2 ******************-->
+
+<div data-test=""DesignSystem-Column"" class=""Col Col--m-6 Col--l-4 Col--xl-4 mr-6 mb-6"">  <div data-test=""DesignSystem-Label"" class=""Label Label--withInput"">    <label data-test=""DesignSystem-Label--Text"" class=""Label-text"">      Date of Birth    </label>  </div>  <style>    @keyframes popper-open-ga0r {
+          from { ...  </style>  <div class=""PopperWrapper-trigger w-100"">    <div class=""d-flex flex-column flex-grow-1"" data-test=""DesignSystem-InputMask--Wra..."">      <div data-test=""DesignSystem-InputWrapper"" class=""Input Input--regular"" role=""presentation"">        <!-- ... 3 children ... -->      </div>    </div>  </div></div>
+
+<!--****************** ELEMENT 3 ******************-->
+
+<div data-test=""DesignSystem-Column"" class=""Col Col--m-5 Col--l-4 Col--xl-4 mr-6 mb-6"">  <div data-test=""DesignSystem-Label"" class=""Label Label--withInput"">    <label data-test=""DesignSystem-Label--Text"" class=""Label-text"">      User Type    </label>  </div>  <div data-test=""DesignSystem-Select"" aria-haspopup=""listbox"" aria-expanded=""false"">    <div class=""PopperWrapper-trigger d-block"">      <button type=""button"" class=""Button Select-trigger Select-trigger--regular..."" aria-haspopup=""listbox"" aria-expanded=""false"" aria-label=""trigger"" data-test=""DesignSystem-Select-trigger"" aria-controls=""select-listbox"">        <!-- ... 2 children ... -->      </button>    </div>  </div></div>",element 1 : div#docs-root > div > div > div > div:nth-of-type(2) > div > div > div:nth-of-type(2) > div > div > div > form > div > div:nth-of-type(8),Focus Order (2.4.3.a),Manual,Open,axe Auditor,Innovaccer - Design System Audit,"508-2017-wcag21, 508-2017-wcag2, wcag2a, wcag2aa, wcag21a, wcag21aa",Desktop Web,https://mds.innovaccer.com/?path=/docs/patterns-forms-create-user--create-user,"element 1 - Validated_on_06-24-2026_Partially_Fixed: https://axeauditor.dequecloud.com/api/v2/file/14b9320e-6fb2-11f1-90dd-dbdea454c2b0
+ element 1 - Keyboard focus is lost or misplaced due to user interaction or content update - 1: https://axeauditor.dequecloud.com/api/v2/file/0337aa93-55ea-4447-8588-8768fe72f812",,,,Page,,"harsha.kuruva@deque.com: Validation round: 1
+
+Status: Partially Fixed
+
+Comments: Verified, and the issue is partially fixed. Currently, when the calendar widget opens, focus does not automatically move into the widget. Instead, it remains at the end of the DOM. Furthermore, after a date is selected, the focus is incorrectly reset to the top of the page.
+
+To resolve this, implement the following focus behavior:
+1.  When the calendar widget is expanded, focus should move immediately into the widget.
+2.  Once a date is selected, focus should be returned to the ""Date of Birth"" edit field.
+
+Screenshot: Validated on 06-24-2026_Partially Fixed",,Create User Form: https://axeauditor.dequecloud.com/api/v2/file/34d1f136-edd8-11f0-a7a2-0b5db5cb1b54,Innovaccer - Design System Audit_10-29-25-12:53,2.4.3,https://axeauditor.dequecloud.com/test-run/45b36198-b498-11f0-a843-6f41ab87c814/issue/b618a748-b64d-11f0-bc5a-5b46cc33d962,focus-lost
+2354327,Accessible name does not contain visible label,"Accessible name does not contain the visible label text.
+
+Element Description: The following elements
+- Last Name
+- Middle Name
+- First Name
+- Date of Birth
+- Maiden Name
+- Email Address
+- NPI
+
+Description of the issue: Visible label and accessible name are different and do not match.",Serious,2.5 Pointer Accessible,Accessibility,Create User Form,"Rule : 
+For each user interface component that includes a visible text label, the accessible name MUST match (or include) the visible text in the label.
+
+How To Fix: 
+Fix this issue by ensuring that the accessible name - such as the aria-label - contains the text of the visible label in the same order in which it appears. While it is not necessary that the visible label and accessible name match exactly, it is a best practice to have the accessible name begin with the visible text.
+
+Reference: 
+Deque University: https://dequeuniversity.com/class/forms/labels/visibility
+WCAG Understanding document: https://www.w3.org/WAI/WCAG22/Understanding/label-in-name
+
+Background: 
+Speech input users can interact with a webpage by speaking the visible text labels of menus, links, and buttons that appear on the screen. It is confusing to speech input users when they say a visible text label they see, but the speech command does not work because the component's accessible (programmatic) name does not match the visible label. When a user interface component has a visible text label - whether it be real text or an image of text - that text must also be found in the component's accessible (programmatic) name. When the visible label and accessible (programmatic) name for interactive components are in sync, speech input users can effectively interact with those components.",rachna.siddhanti@deque.com,"Deque Not Fixed, 25 June 2026",,,,10/30/25 at 3:58 pm,Desktop Web,Initial assessment,Staging,Windows/Chrome,NVDA,"element 1 : <!--****************** ELEMENT 1 ******************-->
+
+<div data-test=""DesignSystem-InputWrapper"" class=""Input Input--regular"" role=""presentation"">  <div class=""Input-icon Input-icon--left Input-icon--inputBlank"">    <i data-test=""DesignSystem-Icon"" class=""material-symbols material-symbols-rounded Icon"" role=""button"">      person    </i>  </div>  <input data-test=""DesignSystem-Input"" type=""text"" placeholder=""E.g. Doe, Smith, etc."" class=""Input-input Input-input--regular"" value="""" /></div>
+
+<!--****************** ELEMENT 2 ******************-->
+
+<div data-test=""DesignSystem-InputWrapper"" class=""Input Input--regular"" role=""presentation"">  <div class=""Input-icon Input-icon--left Input-icon--inputBlank"">    <i data-test=""DesignSystem-Icon"" class=""material-symbols material-symbols-rounded Icon"" role=""button"">      person    </i>  </div>  <input data-test=""DesignSystem-Input"" type=""text"" placeholder=""E.g. Doe, Smith, etc."" class=""Input-input Input-input--regular"" value="""" /></div>
+
+<!--****************** ELEMENT 3 ******************-->
+
+<div data-test=""DesignSystem-InputWrapper"" class=""Input Input--regular"" role=""presentation"">  <div class=""Input-icon Input-icon--left Input-icon--inputBlank"">    <i data-test=""DesignSystem-Icon"" class=""material-symbols material-symbols-rounded Icon"" role=""button"">      person    </i>  </div>  <input data-test=""DesignSystem-Input"" type=""text"" placeholder=""E.g. John, Will, etc."" class=""Input-input Input-input--regular"" value="""" /></div>
+
+<!--****************** ELEMENT 4 ******************-->
+
+<div data-test=""DesignSystem-InputWrapper"" class=""Input Input--regular"" role=""presentation"">  <div class=""Input-icon Input-icon--left"">    <i data-test=""DesignSystem-Icon"" class=""material-symbols material-symbols-rounded Icon"" role=""button"">      cake    </i>  </div>  <input data-test=""DesignSystem-Input"" type=""text"" placeholder=""MM/DD/YYYY"" class=""Input-input Input-input--regular"" value=""__/__/____"" /></div>
+
+<!--****************** ELEMENT 5 ******************-->
+
+<div data-test=""DesignSystem-InputWrapper"" class=""Input Input--regular"" role=""presentation"">  <div class=""Input-icon Input-icon--left Input-icon--inputBlank"">    <i data-test=""DesignSystem-Icon"" class=""material-symbols material-symbols-rounded Icon"" role=""button"">      person    </i>  </div>  <input data-test=""DesignSystem-Input"" type=""text"" placeholder=""E.g. Roe, Will, etc."" class=""Input-input Input-input--regular"" value="""" /></div>
+
+<!--****************** ELEMENT 6 ******************-->
+
+<div data-test=""DesignSystem-InputWrapper"" class=""Input Input--regular"" role=""presentation"">  <input data-test=""DesignSystem-Input"" type=""email"" placeholder=""E.g. abc@gmail.com"" class=""Input-input Input-input--regular"" value="""" /></div>
+
+<!--****************** ELEMENT 7 ******************-->
+
+<div data-test=""DesignSystem-InputWrapper"" class=""Input Input--regular"" role=""presentation"">  <input data-test=""DesignSystem-Input"" type=""text"" placeholder=""E.g. 000000"" class=""Input-input Input-input--regular"" value="""" /></div>",element 1 : div#docs-root > div > div > div > div:nth-of-type(2) > div > div > div:nth-of-type(2) > div > div > div > form > div > div:nth-of-type(9) > div:nth-of-type(2),Label in Name (2.5.3.a),Manual,Open,axe Auditor,Innovaccer - Design System Audit,"508-2017-wcag21, 508-2017-wcag2, wcag2a, wcag2aa, wcag21a, wcag21aa",Desktop Web,https://mds.innovaccer.com/?path=/docs/patterns-forms-create-user--create-user,"element 1 - Validated_on_06-24-2026_Not_Fixed: https://axeauditor.dequecloud.com/api/v2/file/b45c9d84-6fa6-11f1-bef8-6bbb607a3986
+ element 1 - Accessible name does not contain visible label - 1: https://axeauditor.dequecloud.com/api/v2/file/8caa7db9-3e0f-4d64-8091-9a71c0c8aa73",,,,Page,,"harsha.kuruva@deque.com: Validation round: 1
+
+Status: Not Fixed
+
+Comments: Verified, and the issue is not fixed. Still, the issue remains the same
+The mentioned edit fields in the issue details accessible names and visible labels don't match
+
+To resolve this issue, ensure that to associate the visible label with the form fields
+
+Screenshot: Validated on 06-24-2026_Not Fixed",,Create User Form: https://axeauditor.dequecloud.com/api/v2/file/34d1f136-edd8-11f0-a7a2-0b5db5cb1b54,Innovaccer - Design System Audit_10-29-25-12:53,2.5.3,https://axeauditor.dequecloud.com/test-run/45b36198-b498-11f0-a843-6f41ab87c814/issue/b62f4262-b587-11f0-9a17-d37ea9ed81db,speech-accessible-name-mismatch
+2350975,Function cannot be performed by keyboard alone,"There is no way to perform the function using only the keyboard on the same screen or on a qualifying conforming alternate version.
+
+Element Description: The following elements
+- 2025
+- Oct
+
+Element location: Located on the calendar widget
+
+Description of the issue: Above mentioned elements are not keyboard operable and do not have an alternative element that performs the same function.
+
+Note: Applicable to the month and year view buttons 
+",Critical,2.1 Keyboard Accessible,Accessibility,Date Picker,"Rule : 
+Links, buttons, and interactive controls MUST be keyboard-focusable and operable.
+
+How To Fix: 
+If the control is doing a ""button action"" as opposed to navigating to another location, fix this issue by using ONE of the following techniques:
+
+1. Use a native HTML <button> element. A <button> element comes with keyboard accessibility baked in.
+
+<button>Quick view</button>
+
+2. Ensure the control is:
+a. Keyboard focusable (this may involve adding tabindex=""0"" to make it focusable) AND
+b. Keyboard operable using the Enter and Spacebar keys in addition to mouse click (this may involve adding JavaScript event handlers for those keys).
+
+NOTE: If you do not use a <button>, you will also need to add role=""button"" to ensure the button has a role to satisfy 4.1.2 Name, Role, Value, and a focus indicator will be needed to satisfy 2.4.7 Focus Visible.
+
+<div tabindex=""0"" role=""button"">Quick view</div>
+
+Reference: 
+Deque University: https://dequeuniversity.com/class/input-methods/keyboard-input/functionality
+Deque University: https://dequeuniversity.com/class/input-methods/keyboard-input/tab-focusability
+
+Background: 
+Some people cannot use a mouse due to vision or motor disabilities. Content that can be operated with a mouse must also be made operable with a keyboard. When content is operable through a keyboard, it becomes operable by a variety of assistive technologies such as speech input software, sip-and-puff software, on-screen keyboards, scanning software, and alternate keyboards.",rachna.siddhanti@deque.com,"Deque Not Fixed, 25 June 2026",,,,10/29/25 at 1:58 pm,Desktop Web,Initial assessment,Staging,Windows/Chrome,NVDA,"element 1 : <!--****************** ELEMENT 1 ******************-->
+
+<div class=""d-flex justify-content-center align-items-center"">  <h5 data-test=""DesignSystem-Heading"" class=""Heading Heading--s Heading--default"">    Oct  </h5>  <i data-test=""DesignSystem-Icon"" class=""material-symbols material-symbols-rounded Icon..."" role=""button"">    keyboard_arrow_down  </i></div>
+
+<!--****************** ELEMENT 2 ******************-->
+
+<div class=""ml-4 d-flex justify-content-center..."">  <h5 data-test=""DesignSystem-Heading"" class=""Heading Heading--s Heading--default"">    2025  </h5>  <i data-test=""DesignSystem-Icon"" class=""material-symbols material-symbols-rounded Icon..."" role=""button"">    keyboard_arrow_down  </i></div>",element 1 : html > body > div:nth-of-type(8) > div > div > div > div > div > div > div:nth-of-type(2),Keyboard Navigation (2.1.1.a),Manual,Open,axe Auditor,Innovaccer - Design System Audit,"508-2017-wcag21, 508-2017-wcag2, wcag2a, wcag2aa, wcag21a, wcag21aa",Desktop Web,https://mds.innovaccer.com/?path=/docs/patterns-datepicker-date-and-time-picker--date-and-time-picker,"element 1 - 06-25-2026_NotFixed: https://axeauditor.dequecloud.com/api/v2/file/0fef4bcc-7076-11f1-aa3a-8f5180920692
+ element 1 - Function cannot be performed by keyboard alone - 1: https://axeauditor.dequecloud.com/api/v2/file/97e85b9d-4479-4751-91b8-319cab3efe85",,,,Page,,"lakshmi.katikala@deque.com: 
+Validation round:1
+Status: Not Fixed
+Comments: Verified and the issue is not fixed. 
+User is unable to navigate to the calendar widget elements using only the keyboard. Once the calendar widget is made keyboard accessible, ensure that the keyboard focus order and screen reader reading order are logical. Currently, the calendar widget is placed at the end of the page in the DOM, which may result in an illogical focus and reading sequence.
+Screenshot: 06-25-2026_NotFixed
+Source code: 
+<span data-test=""DesignSystem-Heading"" class=""Heading Heading--s Heading--default"">Jun</span>",,"Date Picker: https://axeauditor.dequecloud.com/api/v2/file/34d6c4f4-edd8-11f0-b04c-c75c125d4e2a
+Date Picker: https://axeauditor.dequecloud.com/api/v2/file/34cf30c2-edd8-11f0-a2ad-6378a3e1fe69",Innovaccer - Design System Audit_10-29-25-12:53,2.1.1,https://axeauditor.dequecloud.com/test-run/45b36198-b498-11f0-a843-6f41ab87c814/issue/c5b9ce80-b4ad-11f0-91c8-f3e2bd3141f9,keyboard-inaccessible
+2350978,Function cannot be performed by keyboard alone,"There is no way to perform the function using only the keyboard on the same screen or on a qualifying conforming alternate version.
+
+Element Description: Calendar widget dates
+
+Description of the issue: Above mentioned elements are not keyboard operable and do not have an alternative element that performs the same function.
+
+Note: Applicable to the month and year view
+",Critical,2.1 Keyboard Accessible,Accessibility,Date Picker,"Rule : 
+Functionality MUST be available using the keyboard, unless the functionality cannot be accomplished in any known way using a keyboard.
+
+How To Fix: 
+Fix this issue by ensuring the component can be used by the keyboard. This includes ensuring controls are:
+1. Focusable with a keyboard (i.e. can be reached using the Tab key or Arrow keys on a keyboard), and
+2. Operable with a keyboard (e.g. links are activated with the Enter key, buttons are activated with Enter and Spacebar, checkboxes are activated with Spacebar, dragging and swiping actions have a keyboard alternative, etc.)
+
+The best way to do this is to use native HTML elements when HTML equivalents exist (e.g. anchor, button, select, text area, and input elements). When custom (non native HTML) controls have to be used, you must ensure they can be focused with a keyboard (often using tabindex=""0"") and operated with a keyboard (using JavaScript event handlers). The ARIA Authoring Practices Guide provides information on expected keyboard interaction patterns for custom controls and widgets and working examples (see References below).
+
+Reference: 
+Deque University: https://dequeuniversity.com/class/input-methods/keyboard-input/functionality
+ARIA Authoring Practices Guide Patterns: https://www.w3.org/WAI/ARIA/apg/patterns/
+
+Background: 
+Some people cannot use a mouse due to vision or motor disabilities. Content that can be operated with a mouse must also be made operable with a keyboard. When content is operable through a keyboard, it becomes operable by a variety of assistive technologies such as speech input software, sip-and-puff software, on-screen keyboards, scanning software, and alternate keyboards.",rachna.siddhanti@deque.com,"Deque Not Fixed, 25 June 2026",,,,10/29/25 at 1:58 pm,Desktop Web,Initial assessment,Staging,Windows/Chrome,NVDA,"element 1 : <!--****************** ELEMENT 1 ******************-->
+
+<div class=""Calendar-valueWrapper"" data-test=""designSystem-Calendar-Wrapp..."">  <span data-test=""DesignSystem-Calendar--date..."" class=""Text Text--regular color-inverse Calendar-value..."">    2  </span></div>
+
+<!--****************** ELEMENT 2 ******************-->
+
+<div class=""Calendar-valueWrapper"" data-test=""designSystem-Calendar-Wrapp..."">  <span data-test=""DesignSystem-Calendar--date..."" class=""Text Text--regular color-inverse Calendar-value..."">    1  </span></div>",element 1 : html > body > div:nth-of-type(8) > div > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > div > div:nth-of-type(4),Keyboard Navigation (2.1.1.a),Manual,Open,axe Auditor,Innovaccer - Design System Audit,"508-2017-wcag21, 508-2017-wcag2, wcag2a, wcag2aa, wcag21a, wcag21aa",Desktop Web,https://mds.innovaccer.com/?path=/docs/patterns-datepicker-date-and-time-picker--date-and-time-picker,"element 1 - 06-25-2026_NotFixed: https://axeauditor.dequecloud.com/api/v2/file/0d0f44e8-7076-11f1-b5c3-4be2819354a3
+ element 1 - Function cannot be performed by keyboard alone - 1: https://axeauditor.dequecloud.com/api/v2/file/42dfcae6-c52e-4bb0-a8eb-d47da30c140f",,,,Page,,"lakshmi.katikala@deque.com: 
+Validation round:1
+Status: Not Fixed
+Comments: Verified and the issue is not fixed. 
+User is unable to navigate to the calendar widget elements or select date options using only the keyboard. Once the calendar widget is made keyboard accessible, ensure that the keyboard focus order and screen reader reading order are logical. Currently, the calendar widget is placed at the end of the page in the DOM, which may result in an illogical focus and reading sequence.
+Screenshot: 06-25-2026_NotFixed
+Source code: 
+<button type=""button"" role=""gridcell"" data-calendar-date-cell=""true"" data-row=""0"" data-col=""1"" data-test=""DesignSystem-Calendar--dateValue"" class=""Calendar-value Calendar-inRangeValue Calendar-dateValue--large"" tabindex=""0"" aria-label=""June 1, 2026"" aria-disabled=""false"" aria-selected=""false""><span data-test=""DesignSystem-Text"" class=""Text Text--regular color-inverse"">1</span></button>",,"Date Picker: https://axeauditor.dequecloud.com/api/v2/file/34d6c4f4-edd8-11f0-b04c-c75c125d4e2a
+Date Picker: https://axeauditor.dequecloud.com/api/v2/file/34cf30c2-edd8-11f0-a2ad-6378a3e1fe69",Innovaccer - Design System Audit_10-29-25-12:53,2.1.1,https://axeauditor.dequecloud.com/test-run/45b36198-b498-11f0-a843-6f41ab87c814/issue/ddada976-b4ad-11f0-91d4-d78827825c18,keyboard-inaccessible
+2350899,Programmatic label does not convey purpose of control,"The programmatic label does not convey the purpose of the control. The programmatic label and visual label do not convey consistent information.
+
+Element Description: The following elements
+- Time
+- Date
+
+Description of the issue: The above mentioned element's programmatic label is not descriptive of the function that the element is intended for. Screen reader users would have difficulty in understanding the element's purpose
+
+Ensure to associate the visible label with form field ",Serious,2.4 Navigable,Accessibility,Date Picker,"Rule : 
+Labels MUST be meaningful.
+
+How To Fix: 
+Fix this issue by ensuring that the programmatic label for the control correctly conveys the purpose of the control. Generally, the programmatic label and the visual label(s) should match. 
+
+1. If a control gets its accessible name from an ARIA attribute such as aria-label, ensure that the aria-label value does not conflict with the visible label.
+
+2. If a control has more than one piece of information on the screen that work together as the field's label (for example: a text label and an input format), ensure all applicable information is included in the accessible name.
+
+Reference: 
+Deque University: https://dequeuniversity.com/class/forms/labels/meaningful
+
+Background: 
+When form fields or interactive controls have vague or misleading labels, people may not understand the type of data expected or what a control will do if activated. This is especially true for people with cognitive disabilities and people who are blind and use a screen reader. Both the visible and the programmatic label must sufficiently describe the purpose of the form field or control. Descriptive labels give people confidence when filling out a form or using interactive content and help prevent mistakes.",rachna.siddhanti@deque.com,"Deque Not Fixed, 25 June 2026",,,,10/29/25 at 1:16 pm,Desktop Web,Initial assessment,Staging,Windows/Chrome,NVDA,"element 1 : <!--****************** ELEMENT 1 ******************-->
+
+<div data-test=""DesignSystem-InputWrapper"" class=""Input Input--regular"" role=""presentation"">  <div class=""Input-icon Input-icon--left Input-icon--inputBlank"">    <i data-test=""DesignSystem-Icon"" class=""material-symbols material-symbols-rounded Icon"" role=""button"">      events    </i>  </div>  <input data-test=""DesignSystem-Input"" type=""text"" placeholder=""mm/dd/yyyy"" class=""Input-input Input-input--regular mr-4"" value="""" /></div>
+
+<!--****************** ELEMENT 2 ******************-->
+
+<button type=""button"" value="""" class=""Button DropdownButton DropdownButton--regular..."" data-test=""DesignSystem-DropdownTrigger"">  <div class=""DropdownButton-wrapper"">    <span class=""Text Text--regular DropdownButton-text"">      Select    </span>  </div>  <i data-test=""DesignSystem-Icon"" class=""material-symbols material-symbols-rounded Icon..."" role=""button"">    keyboard_arrow_down  </i></button>",element 1 : div#docs-root > div > div > div > div:nth-of-type(2) > div > div > div:nth-of-type(2) > div > div > div:nth-of-type(2) > div:nth-of-type(2) > div > button,Descriptive Labels (2.4.6.b),Manual,Open,axe Auditor,Innovaccer - Design System Audit,"508-2017-wcag21, 508-2017-wcag2, wcag2a, wcag2aa, wcag21a, wcag21aa",Desktop Web,https://mds.innovaccer.com/?path=/docs/patterns-datepicker-date-and-time-picker--date-and-time-picker,"element 1 -  06-25-2026_NotFixed: https://axeauditor.dequecloud.com/api/v2/file/1fe8a2e0-6f9e-11f1-8de8-3fca558e738c
+ element 1 - Programmatic label does not convey purpose of control - 1: https://axeauditor.dequecloud.com/api/v2/file/75d44b19-0a5c-4b25-b7af-b979c9f99f46",,,,Page,,"lakshmi.katikala@deque.com:  Validation round:1
+Status: Not Fixed
+Comments: Verified and the issue is not fixed. 
+Note: Ensure the programmatic label clearly describes the purpose and functionality of the control.
+Suggested accessible labels: 
+- Date
+- Time
+
+Screenshot: 06-25-2026_NotFixed
+Source code: 
+<input data-test=""DesignSystem-Input"" autocomplete=""off"" type=""text"" placeholder=""mm/dd/yyyy"" class=""Input-input Input-input--regular mr-4"" value="""">",,"Date Picker: https://axeauditor.dequecloud.com/api/v2/file/34d6c4f4-edd8-11f0-b04c-c75c125d4e2a
+Date Picker: https://axeauditor.dequecloud.com/api/v2/file/34cf30c2-edd8-11f0-a2ad-6378a3e1fe69",Innovaccer - Design System Audit_10-29-25-12:53,2.4.6,https://axeauditor.dequecloud.com/test-run/45b36198-b498-11f0-a843-6f41ab87c814/issue/f9027608-b4a7-11f0-bb7a-8b06d72282b2,label-programmatic-not-descriptive
+2350901,Accessible name does not contain visible label,"Accessible name does not contain the visible label text.
+
+Element Description: The following elements
+- Time
+- Date
+
+Description of the issue: Visible label and accessible name are different and do not match.
+
+Current accessible name: 
+mm/ff/yyyy
+select
+
+Expected accessible name: 
+- Time
+- Date
+",Serious,2.5 Pointer Accessible,Accessibility,Date Picker,"Rule : 
+For each user interface component that includes a visible text label, the accessible name MUST match (or include) the visible text in the label.
+
+How To Fix: 
+Fix this issue by ensuring that the accessible name - such as the aria-label - contains the text of the visible label in the same order in which it appears. While it is not necessary that the visible label and accessible name match exactly, it is a best practice to have the accessible name begin with the visible text.
+
+Reference: 
+Deque University: https://dequeuniversity.com/class/forms/labels/visibility
+WCAG Understanding document: https://www.w3.org/WAI/WCAG22/Understanding/label-in-name
+
+Background: 
+Speech input users can interact with a webpage by speaking the visible text labels of menus, links, and buttons that appear on the screen. It is confusing to speech input users when they say a visible text label they see, but the speech command does not work because the component's accessible (programmatic) name does not match the visible label. When a user interface component has a visible text label - whether it be real text or an image of text - that text must also be found in the component's accessible (programmatic) name. When the visible label and accessible (programmatic) name for interactive components are in sync, speech input users can effectively interact with those components.",rachna.siddhanti@deque.com,"Deque Not Fixed, 25 June 2026",,,,10/29/25 at 1:16 pm,Desktop Web,Initial assessment,Staging,Windows/Chrome,NVDA,"element 1 : <!--****************** ELEMENT 1 ******************-->
+
+<div data-test=""DesignSystem-InputWrapper"" class=""Input Input--regular"" role=""presentation"">  <div class=""Input-icon Input-icon--left Input-icon--inputBlank"">    <i data-test=""DesignSystem-Icon"" class=""material-symbols material-symbols-rounded Icon"" role=""button"">      events    </i>  </div>  <input data-test=""DesignSystem-Input"" type=""text"" placeholder=""mm/dd/yyyy"" class=""Input-input Input-input--regular mr-4"" value="""" /></div>
+
+<!--****************** ELEMENT 2 ******************-->
+
+<button type=""button"" value="""" class=""Button DropdownButton DropdownButton--regular..."" data-test=""DesignSystem-DropdownTrigger"">  <div class=""DropdownButton-wrapper"">    <span class=""Text Text--regular DropdownButton-text"">      Select    </span>  </div>  <i data-test=""DesignSystem-Icon"" class=""material-symbols material-symbols-rounded Icon..."" role=""button"">    keyboard_arrow_down  </i></button>",element 1 : div#docs-root > div > div > div > div:nth-of-type(2) > div > div > div:nth-of-type(2) > div > div > div:nth-of-type(2) > div:nth-of-type(2) > div > button,Label in Name (2.5.3.a),Manual,Open,axe Auditor,Innovaccer - Design System Audit,"508-2017-wcag21, 508-2017-wcag2, wcag2a, wcag2aa, wcag21a, wcag21aa",Desktop Web,https://mds.innovaccer.com/?path=/docs/patterns-datepicker-date-and-time-picker--date-and-time-picker,"element 1 -  06-25-2026_NotFixed: https://axeauditor.dequecloud.com/api/v2/file/2e0e8a10-6f9e-11f1-8e52-cb7180468b0b
+ element 1 - Accessible name does not contain visible label - 1: https://axeauditor.dequecloud.com/api/v2/file/84137e31-e301-4837-8b88-be93e6d5aa73",,,,Page,,"lakshmi.katikala@deque.com:  Validation round:1
+Status: Not Fixed
+Comments: Verified and the issue is not fixed. 
+Suggested accessible labels: 
+- Date
+- Time
+Note: Ensure the accessible name includes the visible label text to maintain consistency for all users.
+Screenshot: 06-25-2026_NotFixed
+Source code: 
+<input data-test=""DesignSystem-Input"" autocomplete=""off"" type=""text"" placeholder=""mm/dd/yyyy"" class=""Input-input Input-input--regular mr-4"" value="""">",,"Date Picker: https://axeauditor.dequecloud.com/api/v2/file/34d6c4f4-edd8-11f0-b04c-c75c125d4e2a
+Date Picker: https://axeauditor.dequecloud.com/api/v2/file/34cf30c2-edd8-11f0-a2ad-6378a3e1fe69",Innovaccer - Design System Audit_10-29-25-12:53,2.5.3,https://axeauditor.dequecloud.com/test-run/45b36198-b498-11f0-a843-6f41ab87c814/issue/ffcc8ea6-b4a7-11f0-b4bd-dbb28b24a010,speech-accessible-name-mismatch
