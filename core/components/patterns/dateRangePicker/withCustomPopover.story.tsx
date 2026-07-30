@@ -149,6 +149,10 @@ const customCode = `
           }}
           monthsInView={1}
           monthNav={monthNav}
+          inputOptions={{
+            label: 'Date',
+            'aria-label': 'Date mm/dd/yyyy - mm/dd/yyyy',
+          }}
         >
           {renderChildren()}
           <Divider vertical={true} />
