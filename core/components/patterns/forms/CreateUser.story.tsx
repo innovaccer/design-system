@@ -82,7 +82,6 @@ const customCode = `
                   name="middleName"
                   type="text"
                   placeholder="E.g. Doe, Smith, etc."
-                  aria-label="Middle Name"
                   icon="person"
                   autocomplete={'additional-name'}
                   onChange={(event) => this.onChange(event.target.value, event.target.name)}
@@ -133,7 +132,6 @@ const customCode = `
                     id: 'createUser-dob',
                     placeholder: 'MM/DD/YYYY',
                     icon: 'cake',
-                    'aria-label': 'Date of Birth',
                     mask: [/\\d/, /\\d/, '/', /\\d/, /\\d/, '/', /\\d/, /\\d/, /\\d/, /\\d/]
                   }}
                 />
@@ -145,7 +143,6 @@ const customCode = `
                   name="MaidenName"
                   type="text"
                   placeholder="E.g. Roe, Will, etc."
-                  aria-label="Maiden Name"
                   icon="person"
                   autocomplete={'family-name'}
                   onChange={(event) => this.onChange(event.target.value, event.target.name)}
@@ -192,7 +189,6 @@ const customCode = `
                   name="npi"
                   type="text"
                   placeholder="E.g. 000000"
-                  aria-label="NPI"
                   autocomplete={'off'}
                   onChange={(event) => this.onChange(event.target.value, event.target.name)}
                 />
