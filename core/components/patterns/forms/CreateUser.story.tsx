@@ -130,6 +130,7 @@ const customCode = `
                   onDateChange={(currentDate) => this.onChange(currentDate, 'dob')}
                   inputOptions={{
                     id: 'createUser-dob',
+                    label: 'Date of Birth',
                     placeholder: 'MM/DD/YYYY',
                     icon: 'cake',
                     mask: [/\\d/, /\\d/, '/', /\\d/, /\\d/, '/', /\\d/, /\\d/, /\\d/, /\\d/]

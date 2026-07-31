@@ -1079,4 +1079,17 @@ describe('DateRangePicker component a11y', () => {
     const endDateCells = getAllByLabelText('June 8, 2021');
     expect(endDateCells.some((cell) => cell === document.activeElement)).toBe(true);
   });
+
+  it('moves focus into the calendar when opened via click', async () => {
+    const { getByLabelText, getAllByLabelText } = render(
+      <DateRangePicker startDate={startDate} endDate={endDate} withInput={true} view="date" />
+    );
+
+    fireEvent.click(getByLabelText('Start Date'));
+
+    await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(() => resolve(undefined))));
+
+    const startDateCells = getAllByLabelText('March 3, 2020');
+    expect(startDateCells.some((cell) => cell === document.activeElement)).toBe(true);
+  });
 });

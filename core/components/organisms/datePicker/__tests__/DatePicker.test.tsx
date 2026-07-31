@@ -236,6 +236,19 @@ describe('DatePicker component a11y', () => {
     expect(input).toHaveFocus();
   });
 
+  it('moves focus into the calendar when opened via click', async () => {
+    const { getByTestId, getAllByLabelText } = render(
+      <DatePicker date={newDate} withInput={true} closeOnSelect={true} />
+    );
+    const input = getByTestId('DesignSystem-Input') as HTMLInputElement;
+    fireEvent.click(input);
+
+    await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(() => resolve(undefined))));
+
+    const selectedDate = getAllByLabelText('March 1, 2020')[0];
+    expect(selectedDate).toHaveFocus();
+  });
+
   it('moves focus into a month cell when opened in month view', async () => {
     const { getByTestId, getByLabelText } = render(
       <DatePicker date={newDate} withInput={true} open={true} view="month" />

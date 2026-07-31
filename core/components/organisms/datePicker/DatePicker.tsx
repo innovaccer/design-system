@@ -198,7 +198,9 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
     const target = findFocusableCalendarCell(root);
     if (!target) return false;
 
-    target.focus({ preventScroll: true });
+    // focusVisible keeps a ring after mouse-open in browsers that support it;
+    // calendar CSS also paints :focus so the indicator is never silent.
+    target.focus({ preventScroll: true, focusVisible: true } as FocusOptions);
     return true;
   };
 
@@ -214,7 +216,7 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
 
       e.preventDefault();
       requestAnimationFrame(() => {
-        target.focus({ preventScroll: true });
+        target.focus({ preventScroll: true, focusVisible: true } as FocusOptions);
       });
     }
   };
@@ -258,7 +260,15 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
         this.setState({ open: o });
         break;
       case 'onClick':
-        this.setState({ open: true });
+        // Move focus into the calendar when the popover opens via click (Deque / APG).
+        // Typing opens via onChange and keeps focus in the input for uninterrupted entry.
+        this.setState({ open: true }, () => {
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              this.focusCalendar();
+            });
+          });
+        });
         break;
     }
   };
