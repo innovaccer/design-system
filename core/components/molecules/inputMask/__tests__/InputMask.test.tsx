@@ -171,4 +171,24 @@ describe('InputMask component a11y', () => {
     expect(input).toHaveAttribute('aria-labelledby', 'external-date-label');
     expect(input).not.toHaveAttribute('aria-label');
   });
+
+  it('keeps a distinct clear-button name from label when aria-labelledby is set', () => {
+    const { getByTestId } = render(
+      <InputMask
+        mask={mask}
+        label="Start Date"
+        aria-labelledby="external-start-label"
+        value="1111 2222 3333 4444"
+        onClear={onClearHandler}
+      />
+    );
+
+    const input = getByTestId('DesignSystem-Input');
+    expect(input).toHaveAttribute('aria-labelledby', 'external-start-label');
+    expect(input).not.toHaveAttribute('aria-label');
+    expect(getByTestId('DesignSystem-Input--closeIcon').parentElement).toHaveAttribute(
+      'aria-label',
+      'Clear Start Date'
+    );
+  });
 });
