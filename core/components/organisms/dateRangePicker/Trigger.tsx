@@ -4,6 +4,7 @@ import { compareDate, getDateInfo, translateToDate, translateToString } from '..
 import { DateRangePickerProps, DateRangePickerState } from './DateRangePicker';
 import styles from '@css/components/dateRangePicker.module.css';
 import classNames from 'classnames';
+import uidGenerator from '@/utils/uidGenerator';
 
 type TriggerProps = {
   inputFormat: DateRangePickerProps['inputFormat'];
@@ -12,10 +13,32 @@ type TriggerProps = {
   validators: DateRangePickerProps['validators'];
   state: DateRangePickerState;
   setState: any;
+  startInputRef?: React.Ref<HTMLInputElement>;
+  endInputRef?: React.Ref<HTMLInputElement>;
+  onStartInputKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+  onEndInputKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+  onStartInputActivate?: () => void;
+  onEndInputActivate?: () => void;
 };
 
 export const Trigger = (props: TriggerProps) => {
-  const { inputFormat, startInputOptions, endInputOptions, validators, state, setState } = props;
+  const {
+    inputFormat,
+    startInputOptions,
+    endInputOptions,
+    validators,
+    state,
+    setState,
+    startInputRef,
+    endInputRef,
+    onStartInputKeyDown,
+    onEndInputKeyDown,
+    onStartInputActivate,
+    onEndInputActivate,
+  } = props;
+
+  const startInputIdRef = React.useRef(`DesignSystem-DateRangePicker-startInput-${uidGenerator()}`);
+  const endInputIdRef = React.useRef(`DesignSystem-DateRangePicker-endInput-${uidGenerator()}`);
 
   const { init, startDate, endDate, startError, endError } = state;
 
@@ -145,6 +168,9 @@ export const Trigger = (props: TriggerProps) => {
   };
 
   const onClickHandler = (type: string) => {
+    if (type === 'start') onStartInputActivate?.();
+    if (type === 'end') onEndInputActivate?.();
+
     const { open } = state;
     if (!open) {
       updateNav(type);
@@ -158,8 +184,10 @@ export const Trigger = (props: TriggerProps) => {
   const showEndError = endInputOptions.error || (endInputOptions.required && endError && init);
   const startErrorMessage = startInputOptions.caption === undefined ? 'Invalid value' : startInputOptions.caption;
   const endErrorMessage = endInputOptions.caption === undefined ? 'Invalid value' : endInputOptions.caption;
-  const { label: startLabel } = startInputOptions;
-  const { label: endLabel } = endInputOptions;
+  const { label: startLabel, id: startIdOption, onKeyDown: startOptionsKeyDown, ...startInputRest } = startInputOptions;
+  const { label: endLabel, id: endIdOption, onKeyDown: endOptionsKeyDown, ...endInputRest } = endInputOptions;
+  const startInputId = startIdOption || startInputIdRef.current;
+  const endInputId = endIdOption || endInputIdRef.current;
   const inputValidator = (val: string): boolean => {
     return Utils.validators.isValid(validators, val, inputFormat);
   };
@@ -178,14 +206,17 @@ export const Trigger = (props: TriggerProps) => {
     <Row data-test="DesignSystem-DateRangePicker-InputTrigger">
       <Column size={'6'} sizeXS={'12'} className={StartInputClassName}>
         {startLabel && (
-          <Label required={startInputOptions.required} withInput={true}>
+          <Label required={startInputOptions.required} withInput={true} htmlFor={startInputId}>
             {startLabel}
           </Label>
         )}
         <InputMask
           icon="events"
           placeholder={inputFormat}
-          {...startInputOptions}
+          {...startInputRest}
+          id={startInputId}
+          label={startLabel}
+          ref={startInputRef}
           mask={mask}
           value={
             startDate
@@ -203,6 +234,10 @@ export const Trigger = (props: TriggerProps) => {
           onBlur={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
             onBlurHandler(e, val || '', 'start');
           }}
+          onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
+            onStartInputKeyDown?.(e);
+            startOptionsKeyDown?.(e);
+          }}
           onClear={() => onClearHandler('start')}
           onClick={() => onClickHandler('start')}
           error={showStartError}
@@ -213,14 +248,17 @@ export const Trigger = (props: TriggerProps) => {
       </Column>
       <Column size={'6'} sizeXS={'12'} className={EndInputClassName}>
         {endLabel && (
-          <Label required={endInputOptions.required} withInput={true}>
+          <Label required={endInputOptions.required} withInput={true} htmlFor={endInputId}>
             {endLabel}
           </Label>
         )}
         <InputMask
           icon="events"
           placeholder={inputFormat}
-          {...endInputOptions}
+          {...endInputRest}
+          id={endInputId}
+          label={endLabel}
+          ref={endInputRef}
           mask={mask}
           value={
             endDate
@@ -237,6 +275,10 @@ export const Trigger = (props: TriggerProps) => {
           }}
           onBlur={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
             onBlurHandler(e, val || '', 'end');
+          }}
+          onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
+            onEndInputKeyDown?.(e);
+            endOptionsKeyDown?.(e);
           }}
           onClear={() => onClearHandler('end')}
           onClick={() => onClickHandler('end')}

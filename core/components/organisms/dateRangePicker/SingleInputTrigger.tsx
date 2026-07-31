@@ -2,6 +2,7 @@ import * as React from 'react';
 import { InputMask, Row, Column, Label, Utils } from '@/index';
 import { compareDate, getDateInfo, translateToDate } from '../calendar/utility';
 import { DateRangePickerProps, DateRangePickerState } from './DateRangePicker';
+import uidGenerator from '@/utils/uidGenerator';
 
 type TriggerProps = {
   inputFormat: DateRangePickerProps['inputFormat'];
@@ -9,10 +10,13 @@ type TriggerProps = {
   validators: DateRangePickerProps['validators'];
   state: DateRangePickerState;
   setState: any;
+  inputRef?: React.Ref<HTMLInputElement>;
+  onInputKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
 };
 
 export const SingleInputTrigger = (props: TriggerProps) => {
-  const { inputFormat, inputOptions, validators, state, setState } = props;
+  const { inputFormat, inputOptions, validators, state, setState, inputRef, onInputKeyDown } = props;
+  const inputIdRef = React.useRef(`DesignSystem-DateRangePicker-singleInput-${uidGenerator()}`);
 
   const { init, startDate, endDate, startValue, endValue, startError, endError } = state;
 
@@ -140,18 +144,24 @@ export const SingleInputTrigger = (props: TriggerProps) => {
     });
   };
 
+  const { id: idOption, onKeyDown: optionsKeyDown, ...inputRest } = inputOptions;
+  const inputId = idOption || inputIdRef.current;
+
   return (
     <Row data-test="DesignSystem-DateRangePicker-SingleInputTrigger">
       <Column>
         {label && (
-          <Label required={inputOptions.required} withInput={true}>
+          <Label required={inputOptions.required} withInput={true} htmlFor={inputId}>
             {label}
           </Label>
         )}
         <InputMask
           icon="events"
           placeholder={`${inputFormat} - ${inputFormat}`}
-          {...inputOptions}
+          {...inputRest}
+          id={inputId}
+          label={label}
+          ref={inputRef}
           mask={mask}
           value={!startDate && !endDate && !init ? undefined : `${sValue} - ${eValue}`}
           onChange={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
@@ -162,6 +172,10 @@ export const SingleInputTrigger = (props: TriggerProps) => {
           }}
           onPaste={(e: React.ClipboardEvent<HTMLInputElement>, val?: string) => {
             onPasteHandler(e, val || '');
+          }}
+          onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
+            onInputKeyDown?.(e);
+            optionsKeyDown?.(e);
           }}
           onClear={onClearHandler}
           error={showError}

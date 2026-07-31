@@ -7,6 +7,7 @@ import { Validators } from '@/utils/types';
 import { Trigger } from './Trigger';
 import { SingleInputTrigger } from './SingleInputTrigger';
 import { getDateInfo, convertToDate, compareDate, translateToString } from '../calendar/utility';
+import { DATE_CELL_SELECTOR } from '../calendar/utils';
 import { Popover, Utils } from '@/index';
 import styles from '@css/components/dateRangePicker.module.css';
 import {
@@ -157,6 +158,11 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
     },
   };
   monthsInView: number;
+  private startInputRef = React.createRef<HTMLInputElement>();
+  private endInputRef = React.createRef<HTMLInputElement>();
+  private singleInputRef = React.createRef<HTMLInputElement>();
+  private calendarContainerRef = React.createRef<HTMLDivElement>();
+  private lastFocusedInput: 'start' | 'end' | 'single' = 'start';
 
   constructor(props: DateRangePickerProps) {
     super(props);
@@ -183,6 +189,7 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
     };
 
     this.monthsInView = props.monthsInView || (props.withInput ? 2 : 1);
+    this.lastFocusedInput = props.singleInput ? 'single' : 'start';
   }
 
   componentDidUpdate(prevProps: DateRangePickerProps, prevState: DateRangePickerState) {
@@ -263,7 +270,50 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
         });
       }
     }
+
+    // Return focus to the last-used date input when the popover closes.
+    if (prevState.open && !this.state.open) {
+      const active = document.activeElement as HTMLElement | null;
+      const calendarRoot = this.calendarContainerRef.current;
+      if (!active || active === document.body || (calendarRoot && calendarRoot.contains(active))) {
+        this.focusLastInput();
+      }
+    }
   }
+
+  focusLastInput = () => {
+    const ref =
+      this.lastFocusedInput === 'end'
+        ? this.endInputRef
+        : this.lastFocusedInput === 'single'
+        ? this.singleInputRef
+        : this.startInputRef;
+    ref.current?.focus({ preventScroll: true });
+  };
+
+  focusCalendar = () => {
+    const root = this.calendarContainerRef.current;
+    if (!root) return;
+
+    const selected = root.querySelector(
+      `${DATE_CELL_SELECTOR}[aria-selected="true"]:not([aria-disabled="true"])`
+    ) as HTMLElement | null;
+    const first = root.querySelector(
+      `${DATE_CELL_SELECTOR}:not([aria-disabled="true"]):not([disabled])`
+    ) as HTMLElement | null;
+
+    (selected || first)?.focus({ preventScroll: true });
+  };
+
+  onInputKeyDown = (input: 'start' | 'end' | 'single') => (e: React.KeyboardEvent<HTMLInputElement>) => {
+    this.lastFocusedInput = input;
+    if (!this.state.open || e.defaultPrevented) return;
+
+    if (e.key === 'ArrowDown' || (e.key === 'Tab' && !e.shiftKey)) {
+      e.preventDefault();
+      requestAnimationFrame(() => this.focusCalendar());
+    }
+  };
 
   getDate = (startDate?: Date, endDate?: Date) => {
     const { inputFormat } = this.props;
@@ -393,6 +443,7 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
         yearNav={yearNav}
         monthNav={monthNav}
         rangeLimit={rangeLimit}
+        wrapperRef={this.calendarContainerRef}
       />
     );
   }
@@ -423,18 +474,24 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
     if (withInput) {
       const mergedSingleInputOptions = {
         ...inputOptions,
-        'aria-label': inputOptions['aria-label'] || ariaLabel,
-        'aria-labelledby': inputOptions['aria-labelledby'] || ariaLabelledBy,
+        ...(inputOptions['aria-label'] || ariaLabel ? { 'aria-label': inputOptions['aria-label'] || ariaLabel } : {}),
+        ...(inputOptions['aria-labelledby'] || ariaLabelledBy
+          ? { 'aria-labelledby': inputOptions['aria-labelledby'] || ariaLabelledBy }
+          : {}),
       };
       const mergedStartInputOptions = {
         ...startInputOptions,
-        'aria-label': startInputOptions['aria-label'],
-        'aria-labelledby': startInputOptions['aria-labelledby'] || ariaLabelledBy,
+        ...(startInputOptions['aria-label'] ? { 'aria-label': startInputOptions['aria-label'] } : {}),
+        ...(startInputOptions['aria-labelledby'] || ariaLabelledBy
+          ? { 'aria-labelledby': startInputOptions['aria-labelledby'] || ariaLabelledBy }
+          : {}),
       };
       const mergedEndInputOptions = {
         ...endInputOptions,
-        'aria-label': endInputOptions['aria-label'],
-        'aria-labelledby': endInputOptions['aria-labelledby'] || ariaLabelledBy,
+        ...(endInputOptions['aria-label'] ? { 'aria-label': endInputOptions['aria-label'] } : {}),
+        ...(endInputOptions['aria-labelledby'] || ariaLabelledBy
+          ? { 'aria-labelledby': endInputOptions['aria-labelledby'] || ariaLabelledBy }
+          : {}),
       };
       const trigger = singleInput ? (
         <SingleInputTrigger
@@ -443,6 +500,8 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
           validators={validators}
           state={this.state}
           setState={this.setState.bind(this)}
+          inputRef={this.singleInputRef}
+          onInputKeyDown={this.onInputKeyDown('single')}
         />
       ) : (
         <Trigger
@@ -452,6 +511,16 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
           validators={validators}
           state={this.state}
           setState={this.setState.bind(this)}
+          startInputRef={this.startInputRef}
+          endInputRef={this.endInputRef}
+          onStartInputKeyDown={this.onInputKeyDown('start')}
+          onEndInputKeyDown={this.onInputKeyDown('end')}
+          onStartInputActivate={() => {
+            this.lastFocusedInput = 'start';
+          }}
+          onEndInputActivate={() => {
+            this.lastFocusedInput = 'end';
+          }}
         />
       );
 

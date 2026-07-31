@@ -145,4 +145,30 @@ describe('InputMask component a11y', () => {
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
+
+  it('uses label as aria-label fallback when aria-label is omitted', () => {
+    const { getByTestId } = render(<InputMask mask={mask} label="Start Date" />);
+    expect(getByTestId('DesignSystem-Input')).toHaveAttribute('aria-label', 'Start Date');
+  });
+
+  it('keeps an explicit aria-label when label is also provided', () => {
+    const { getByTestId } = render(<InputMask mask={mask} label="Start Date" aria-label="Start date mm/dd/yyyy" />);
+    expect(getByTestId('DesignSystem-Input')).toHaveAttribute('aria-label', 'Start date mm/dd/yyyy');
+  });
+
+  it('does not let an undefined aria-label wipe the label fallback', () => {
+    const { getByTestId } = render(
+      <InputMask mask={mask} label="End Date" aria-label={undefined as unknown as string} />
+    );
+    expect(getByTestId('DesignSystem-Input')).toHaveAttribute('aria-label', 'End Date');
+  });
+
+  it('prefers aria-labelledby over aria-label and label', () => {
+    const { getByTestId } = render(
+      <InputMask mask={mask} label="Date" aria-label="ignored" aria-labelledby="external-date-label" />
+    );
+    const input = getByTestId('DesignSystem-Input');
+    expect(input).toHaveAttribute('aria-labelledby', 'external-date-label');
+    expect(input).not.toHaveAttribute('aria-label');
+  });
 });

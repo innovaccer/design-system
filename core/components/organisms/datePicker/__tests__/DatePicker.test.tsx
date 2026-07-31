@@ -217,4 +217,22 @@ describe('DatePicker component a11y', () => {
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
+
+  it('moves focus into the calendar on ArrowDown and returns focus to input after select', async () => {
+    const { getByTestId, getAllByLabelText } = render(
+      <DatePicker date={newDate} withInput={true} open={true} closeOnSelect={true} />
+    );
+    const input = getByTestId('DesignSystem-Input') as HTMLInputElement;
+    input.focus();
+    expect(input).toHaveFocus();
+
+    fireEvent.keyDown(input, { key: 'ArrowDown' });
+    await new Promise((resolve) => requestAnimationFrame(() => resolve(undefined)));
+
+    const selectedDate = getAllByLabelText('March 1, 2020')[0];
+    expect(selectedDate).toHaveFocus();
+
+    fireEvent.click(selectedDate);
+    expect(input).toHaveFocus();
+  });
 });

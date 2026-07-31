@@ -1031,4 +1031,31 @@ describe('DateRangePicker component a11y', () => {
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
+
+  it('associates start/end labels with inputs and names clear actions from those labels', () => {
+    const { getByLabelText, getAllByTestId } = render(
+      <DateRangePicker startDate={startDate} endDate={endDate} withInput={true} />
+    );
+
+    const startInput = getByLabelText('Start Date') as HTMLInputElement;
+    const endInput = getByLabelText('End Date') as HTMLInputElement;
+    expect(startInput).toBeInTheDocument();
+    expect(endInput).toBeInTheDocument();
+    expect(startInput).toHaveAttribute('aria-label', 'Start Date');
+    expect(endInput).toHaveAttribute('aria-label', 'End Date');
+
+    const clearButtons = getAllByTestId('DesignSystem-Input--closeIcon').map((icon) => icon.parentElement);
+    expect(clearButtons[0]).toHaveAttribute('aria-label', 'Clear Start Date');
+    expect(clearButtons[1]).toHaveAttribute('aria-label', 'Clear End Date');
+  });
+
+  it('associates the single-input Date label and clear action', () => {
+    const { getByLabelText, getByTestId } = render(
+      <DateRangePicker startDate={startDate} endDate={endDate} withInput={true} singleInput={true} />
+    );
+
+    const input = getByLabelText('Date');
+    expect(input).toHaveAttribute('aria-label', 'Date');
+    expect(getByTestId('DesignSystem-Input--closeIcon').parentElement).toHaveAttribute('aria-label', 'Clear Date');
+  });
 });

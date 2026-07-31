@@ -9,10 +9,12 @@ type TriggerProps = {
   validators: DatePickerProps['validators'];
   state: DatePickerState;
   setState: any;
+  inputRef?: React.Ref<HTMLInputElement>;
+  onInputKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
 };
 
 export const Trigger = (props: TriggerProps) => {
-  const { inputFormat, inputOptions, validators, state, setState } = props;
+  const { inputFormat, inputOptions, validators, state, setState, inputRef, onInputKeyDown } = props;
 
   const { init, date, error } = state;
 
@@ -80,11 +82,14 @@ export const Trigger = (props: TriggerProps) => {
   };
 
   const mask = Utils.masks.date[inputFormat];
+  const { onKeyDown: optionsKeyDown, ...inputRest } = inputOptions;
+
   return (
     <InputMask
       icon="events"
       placeholder={inputFormat}
-      {...inputOptions}
+      {...inputRest}
+      ref={inputRef}
       error={showError}
       mask={mask}
       value={
@@ -93,6 +98,10 @@ export const Trigger = (props: TriggerProps) => {
       onChange={onChangeHandler}
       onPaste={onPasteHandler}
       onBlur={onBlurHandler}
+      onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
+        onInputKeyDown?.(e);
+        optionsKeyDown?.(e);
+      }}
       onClear={onClearHandler}
       caption={showError ? errorMessage : ''}
       validators={[inputValidator]}
