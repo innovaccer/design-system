@@ -16,6 +16,7 @@ exports[`Horizontal Navigation component
         href="/patient360"
       >
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon mr-3 HorizontalNav-animate"
           data-test="DesignSystem-HorizontalNav--Icon"
           style="font-size: 16px; width: 16px;"

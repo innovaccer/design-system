@@ -262,6 +262,7 @@ export const Tabs = (props: TabsProps) => {
         data-test="DesignSystem-DismissibleTabs--Icon"
         name="clear"
         appearance={iconAppearance}
+        aria-label={label ? `Close ${label} tab` : 'Close tab'}
         className={dismissIconClass(disabled)}
         onClick={!disabled ? onCloseHandler : undefined}
         tabIndex={disabled ? -1 : 0}

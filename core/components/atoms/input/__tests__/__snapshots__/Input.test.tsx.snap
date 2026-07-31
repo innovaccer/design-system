@@ -40,6 +40,7 @@ exports[`Input Component - Disabled State with Icon Snapshot Tests
         class="Input-icon Input-icon--left"
       >
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-Icon"
           style="font-size: 16px; width: 16px;"
@@ -101,6 +102,7 @@ exports[`Input Component - Disabled State without Change Handler Snapshot Tests
         class="Input-icon Input-icon--left"
       >
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-Icon"
           style="font-size: 16px; width: 16px;"
@@ -161,6 +163,7 @@ exports[`Input Component - Error State with Icon Snapshot Tests
         class="Input-icon Input-icon--left Input-icon--error"
       >
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-Icon"
           style="font-size: 16px; width: 16px;"
@@ -220,6 +223,7 @@ exports[`Input Component - Icon and Placeholder Variants Snapshot Tests
         class="Input-icon Input-icon--left Input-icon--inputBlank"
       >
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-Icon"
           style="font-size: 16px; width: 16px;"
@@ -279,6 +283,7 @@ exports[`Input Component - Icon and Placeholder Variants Snapshot Tests
         class="Input-icon Input-icon--left"
       >
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-Icon"
           style="font-size: 16px; width: 16px;"
@@ -509,6 +514,7 @@ exports[`Input Component - ReadOnly State with Icon Snapshot Tests
         class="Input-icon Input-icon--left"
       >
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-Icon"
           style="font-size: 16px; width: 16px;"
