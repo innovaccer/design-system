@@ -97,6 +97,7 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
     helpText,
     label,
     autoComplete = 'off',
+    clearButtonAriaLabel: clearButtonAriaLabelProp,
     'aria-describedby': ariaDescribedBy,
     'aria-label': ariaLabel,
     'aria-labelledby': ariaLabelledBy,
@@ -105,11 +106,11 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
 
   // Prefer explicit aria-labelledby, then explicit aria-label, then visual `label`.
   // Pull aria-* out of `rest` so an explicit `undefined` from callers cannot wipe the fallback.
-  // Keep a separate clear-button name from `label`/`aria-label` even when labelledby owns AccName.
+  // Prefer an explicit clearButtonAriaLabel (localized/product-specific) before generating one.
   const resolvedAriaLabelledBy = ariaLabelledBy;
   const resolvedAriaLabel = resolvedAriaLabelledBy ? undefined : ariaLabel || label || undefined;
   const clearNameSource = label || ariaLabel;
-  const clearButtonAriaLabel = clearNameSource ? `Clear ${clearNameSource}` : undefined;
+  const clearButtonAriaLabel = clearButtonAriaLabelProp || (clearNameSource ? `Clear ${clearNameSource}` : undefined);
 
   const helpTextIdRef = React.useRef<string | null>(null);
   if (helpTextIdRef.current === null) {

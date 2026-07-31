@@ -191,4 +191,19 @@ describe('InputMask component a11y', () => {
       'Clear Start Date'
     );
   });
+
+  it('preserves an explicit clearButtonAriaLabel over generated fallbacks', () => {
+    const { getByTestId } = render(
+      <InputMask
+        mask={mask}
+        label="Start Date"
+        placeholder="mm/dd/yyyy"
+        clearButtonAriaLabel="Effacer la date"
+        value="1111 2222 3333 4444"
+        onClear={onClearHandler}
+      />
+    );
+
+    expect(getByTestId('DesignSystem-Input--closeIcon').parentElement).toHaveAttribute('aria-label', 'Effacer la date');
+  });
 });

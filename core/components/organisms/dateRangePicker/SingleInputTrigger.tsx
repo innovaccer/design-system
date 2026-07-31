@@ -174,8 +174,11 @@ export const SingleInputTrigger = (props: TriggerProps) => {
             onPasteHandler(e, val || '');
           }}
           onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
-            onInputKeyDown?.(e);
+            // Consumer first so preventDefault can cancel picker Tab/ArrowDown focus moves.
             optionsKeyDown?.(e);
+            if (!e.defaultPrevented) {
+              onInputKeyDown?.(e);
+            }
           }}
           onClear={onClearHandler}
           error={showError}

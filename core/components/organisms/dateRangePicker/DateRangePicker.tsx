@@ -427,10 +427,12 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
       case 'escapeKeypress':
         this.setState({ open: o });
         break;
-      case 'onClick':
-        // Move focus into the calendar when the popover opens via click (Deque / APG).
-        // Typing opens via onChange and keeps focus in the input for uninterrupted entry.
+      case 'onClick': {
+        // Only move focus when opening (closed → open). If already open (e.g. opened by typing),
+        // keep focus in the input so the user can reposition the caret / select text.
+        const shouldFocusCalendar = !this.state.open;
         this.setState({ open: true }, () => {
+          if (!shouldFocusCalendar) return;
           requestAnimationFrame(() => {
             requestAnimationFrame(() => {
               this.focusCalendar();
@@ -438,6 +440,7 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
           });
         });
         break;
+      }
     }
   };
 

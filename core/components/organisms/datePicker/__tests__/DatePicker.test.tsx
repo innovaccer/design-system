@@ -249,6 +249,41 @@ describe('DatePicker component a11y', () => {
     expect(selectedDate).toHaveFocus();
   });
 
+  it('does not steal focus when clicking an already-open input', async () => {
+    const { getByTestId } = render(<DatePicker date={newDate} withInput={true} open={true} />);
+    const input = getByTestId('DesignSystem-Input') as HTMLInputElement;
+    input.focus();
+    expect(input).toHaveFocus();
+
+    fireEvent.click(input);
+    await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(() => resolve(undefined))));
+
+    expect(input).toHaveFocus();
+  });
+
+  it('lets inputOptions.onKeyDown preventDefault cancel calendar focus shortcuts', async () => {
+    const { getByTestId, getAllByLabelText } = render(
+      <DatePicker
+        date={newDate}
+        withInput={true}
+        open={true}
+        inputOptions={{
+          onKeyDown: (e: React.KeyboardEvent<HTMLInputElement>) => {
+            if (e.key === 'ArrowDown') e.preventDefault();
+          },
+        }}
+      />
+    );
+    const input = getByTestId('DesignSystem-Input') as HTMLInputElement;
+    input.focus();
+
+    fireEvent.keyDown(input, { key: 'ArrowDown' });
+    await new Promise((resolve) => requestAnimationFrame(() => resolve(undefined)));
+
+    expect(input).toHaveFocus();
+    expect(getAllByLabelText('March 1, 2020')[0]).not.toHaveFocus();
+  });
+
   it('moves focus into a month cell when opened in month view', async () => {
     const { getByTestId, getByLabelText } = render(
       <DatePicker date={newDate} withInput={true} open={true} view="month" />

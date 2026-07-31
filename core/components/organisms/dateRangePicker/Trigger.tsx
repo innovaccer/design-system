@@ -235,8 +235,11 @@ export const Trigger = (props: TriggerProps) => {
             onBlurHandler(e, val || '', 'start');
           }}
           onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
-            onStartInputKeyDown?.(e);
+            // Consumer first so preventDefault can cancel picker Tab/ArrowDown focus moves.
             startOptionsKeyDown?.(e);
+            if (!e.defaultPrevented) {
+              onStartInputKeyDown?.(e);
+            }
           }}
           onClear={() => onClearHandler('start')}
           onClick={() => onClickHandler('start')}
@@ -277,8 +280,11 @@ export const Trigger = (props: TriggerProps) => {
             onBlurHandler(e, val || '', 'end');
           }}
           onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
-            onEndInputKeyDown?.(e);
+            // Consumer first so preventDefault can cancel picker Tab/ArrowDown focus moves.
             endOptionsKeyDown?.(e);
+            if (!e.defaultPrevented) {
+              onEndInputKeyDown?.(e);
+            }
           }}
           onClear={() => onClearHandler('end')}
           onClick={() => onClickHandler('end')}
