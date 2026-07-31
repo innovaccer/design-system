@@ -235,4 +235,17 @@ describe('DatePicker component a11y', () => {
     fireEvent.click(selectedDate);
     expect(input).toHaveFocus();
   });
+
+  it('moves focus into a month cell when opened in month view', async () => {
+    const { getByTestId, getByLabelText } = render(
+      <DatePicker date={newDate} withInput={true} open={true} view="month" />
+    );
+    const input = getByTestId('DesignSystem-Input') as HTMLInputElement;
+    input.focus();
+
+    fireEvent.keyDown(input, { key: 'ArrowDown' });
+    await new Promise((resolve) => requestAnimationFrame(() => resolve(undefined)));
+
+    expect(getByLabelText('Mar')).toHaveFocus();
+  });
 });

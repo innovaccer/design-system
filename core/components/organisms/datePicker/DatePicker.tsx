@@ -5,7 +5,7 @@ import { Popover, Utils, Chip } from '@/index';
 import { PopoverProps, InputMaskProps } from '@/index.type';
 import { Validators } from '@/utils/types';
 import { convertToDate, translateToString, compareDate, getDateInfo } from '../calendar/utility';
-import { DATE_CELL_SELECTOR } from '../calendar/utils';
+import { findFocusableCalendarCell } from '../calendar/utils';
 import { Trigger } from './Trigger';
 import config from '../calendar/config';
 import classNames from 'classnames';
@@ -191,27 +191,31 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
     }
   }
 
-  focusCalendar = () => {
+  focusCalendar = (): boolean => {
     const root = this.calendarContainerRef.current;
-    if (!root) return;
+    if (!root) return false;
 
-    const selected = root.querySelector(
-      `${DATE_CELL_SELECTOR}[aria-selected="true"]:not([aria-disabled="true"])`
-    ) as HTMLElement | null;
-    const first = root.querySelector(
-      `${DATE_CELL_SELECTOR}:not([aria-disabled="true"]):not([disabled])`
-    ) as HTMLElement | null;
+    const target = findFocusableCalendarCell(root);
+    if (!target) return false;
 
-    (selected || first)?.focus({ preventScroll: true });
+    target.focus({ preventScroll: true });
+    return true;
   };
 
   onInputKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (!this.state.open || e.defaultPrevented) return;
 
     // Keep typing uninterrupted; move focus into the portaled calendar on Tab / ArrowDown.
+    // Only prevent default when a focusable calendar cell exists (date/month/year views).
     if (e.key === 'ArrowDown' || (e.key === 'Tab' && !e.shiftKey)) {
+      const root = this.calendarContainerRef.current;
+      const target = root ? findFocusableCalendarCell(root) : null;
+      if (!target) return;
+
       e.preventDefault();
-      requestAnimationFrame(() => this.focusCalendar());
+      requestAnimationFrame(() => {
+        target.focus({ preventScroll: true });
+      });
     }
   };
 

@@ -18,10 +18,61 @@ export const MONTH_CELL_SELECTOR = '[data-calendar-month-cell]';
  */
 export const YEAR_CELL_SELECTOR = '[data-calendar-year-cell]';
 
+const ENABLED_CELL_SELECTOR = ':not([aria-disabled="true"]):not([disabled])';
+
 export interface FocusedCell {
   row: number;
   col: number;
 }
+
+export type FindFocusableCalendarCellOptions = {
+  /** Prefer a selected date cell whose accessible name matches this label */
+  preferredAriaLabel?: string;
+  /** When multiple date cells are selected, which one to prefer */
+  preferredSelectedIndex?: 'first' | 'last';
+};
+
+/**
+ * Finds the best focus target in the currently rendered calendar view
+ * (date, month, or year). Returns null when no enabled cell exists.
+ */
+export const findFocusableCalendarCell = (
+  root: HTMLElement,
+  options: FindFocusableCalendarCellOptions = {}
+): HTMLElement | null => {
+  const { preferredAriaLabel, preferredSelectedIndex = 'first' } = options;
+
+  const selectedDates = Array.from(
+    root.querySelectorAll(`${DATE_CELL_SELECTOR}[aria-selected="true"]${ENABLED_CELL_SELECTOR}`)
+  ) as HTMLElement[];
+
+  if (preferredAriaLabel) {
+    const preferred = selectedDates.find((cell) => cell.getAttribute('aria-label') === preferredAriaLabel);
+    if (preferred) return preferred;
+  }
+
+  if (selectedDates.length > 0) {
+    return preferredSelectedIndex === 'last' ? selectedDates[selectedDates.length - 1] : selectedDates[0];
+  }
+
+  const firstDate = root.querySelector(`${DATE_CELL_SELECTOR}${ENABLED_CELL_SELECTOR}`) as HTMLElement | null;
+  if (firstDate) return firstDate;
+
+  const selectedMonth = root.querySelector(
+    `${MONTH_CELL_SELECTOR}[aria-selected="true"]${ENABLED_CELL_SELECTOR}`
+  ) as HTMLElement | null;
+  if (selectedMonth) return selectedMonth;
+
+  const firstMonth = root.querySelector(`${MONTH_CELL_SELECTOR}${ENABLED_CELL_SELECTOR}`) as HTMLElement | null;
+  if (firstMonth) return firstMonth;
+
+  const selectedYear = root.querySelector(
+    `${YEAR_CELL_SELECTOR}[aria-selected="true"]${ENABLED_CELL_SELECTOR}`
+  ) as HTMLElement | null;
+  if (selectedYear) return selectedYear;
+
+  return root.querySelector(`${YEAR_CELL_SELECTOR}${ENABLED_CELL_SELECTOR}`) as HTMLElement | null;
+};
 
 /**
  * Focus a date cell at the given row and column within the calendar container.

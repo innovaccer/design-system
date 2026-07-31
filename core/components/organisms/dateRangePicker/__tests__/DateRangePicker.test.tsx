@@ -1058,4 +1058,25 @@ describe('DateRangePicker component a11y', () => {
     expect(input).toHaveAttribute('aria-label', 'Date');
     expect(getByTestId('DesignSystem-Input--closeIcon').parentElement).toHaveAttribute('aria-label', 'Clear Date');
   });
+
+  it('focuses the end date cell when ArrowDown is pressed from the End Date input', async () => {
+    const { getByLabelText, getAllByLabelText } = render(
+      <DateRangePicker
+        startDate={startDate}
+        endDate={endDate}
+        withInput={true}
+        open={true}
+        monthsInView={2}
+        view="date"
+      />
+    );
+
+    const endInput = getByLabelText('End Date') as HTMLInputElement;
+    endInput.focus();
+    fireEvent.keyDown(endInput, { key: 'ArrowDown' });
+    await new Promise((resolve) => requestAnimationFrame(() => resolve(undefined)));
+
+    const endDateCells = getAllByLabelText('June 8, 2021');
+    expect(endDateCells.some((cell) => cell === document.activeElement)).toBe(true);
+  });
 });
