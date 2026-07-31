@@ -1031,4 +1031,65 @@ describe('DateRangePicker component a11y', () => {
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
+
+  it('associates start/end labels with inputs and names clear actions from those labels', () => {
+    const { getByLabelText, getAllByTestId } = render(
+      <DateRangePicker startDate={startDate} endDate={endDate} withInput={true} />
+    );
+
+    const startInput = getByLabelText('Start Date') as HTMLInputElement;
+    const endInput = getByLabelText('End Date') as HTMLInputElement;
+    expect(startInput).toBeInTheDocument();
+    expect(endInput).toBeInTheDocument();
+    expect(startInput).toHaveAttribute('aria-label', 'Start Date');
+    expect(endInput).toHaveAttribute('aria-label', 'End Date');
+
+    const clearButtons = getAllByTestId('DesignSystem-Input--closeIcon').map((icon) => icon.parentElement);
+    expect(clearButtons[0]).toHaveAttribute('aria-label', 'Clear Start Date');
+    expect(clearButtons[1]).toHaveAttribute('aria-label', 'Clear End Date');
+  });
+
+  it('associates the single-input Date label and clear action', () => {
+    const { getByLabelText, getByTestId } = render(
+      <DateRangePicker startDate={startDate} endDate={endDate} withInput={true} singleInput={true} />
+    );
+
+    const input = getByLabelText('Date');
+    expect(input).toHaveAttribute('aria-label', 'Date');
+    expect(getByTestId('DesignSystem-Input--closeIcon').parentElement).toHaveAttribute('aria-label', 'Clear Date');
+  });
+
+  it('focuses the end date cell when ArrowDown is pressed from the End Date input', async () => {
+    const { getByLabelText, getAllByLabelText } = render(
+      <DateRangePicker
+        startDate={startDate}
+        endDate={endDate}
+        withInput={true}
+        open={true}
+        monthsInView={2}
+        view="date"
+      />
+    );
+
+    const endInput = getByLabelText('End Date') as HTMLInputElement;
+    endInput.focus();
+    fireEvent.keyDown(endInput, { key: 'ArrowDown' });
+    await new Promise((resolve) => requestAnimationFrame(() => resolve(undefined)));
+
+    const endDateCells = getAllByLabelText('June 8, 2021');
+    expect(endDateCells.some((cell) => cell === document.activeElement)).toBe(true);
+  });
+
+  it('moves focus into the calendar when opened via click', async () => {
+    const { getByLabelText, getAllByLabelText } = render(
+      <DateRangePicker startDate={startDate} endDate={endDate} withInput={true} view="date" />
+    );
+
+    fireEvent.click(getByLabelText('Start Date'));
+
+    await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(() => resolve(undefined))));
+
+    const startDateCells = getAllByLabelText('March 3, 2020');
+    expect(startDateCells.some((cell) => cell === document.activeElement)).toBe(true);
+  });
 });

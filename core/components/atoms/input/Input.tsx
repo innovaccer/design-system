@@ -117,6 +117,11 @@ export interface InputProps extends BaseProps, BaseHtmlProps<HTMLInputElement> {
    */
   onClear?: (e: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>) => void;
   /**
+   * Accessible name for the clear button.
+   * Defaults to `Clear ${aria-label}` or `Clear ${placeholder}`.
+   */
+  clearButtonAriaLabel?: string;
+  /**
    * Callback function when `Input` text changes
    */
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -185,6 +190,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
     disabled,
     readOnly,
     iconType,
+    clearButtonAriaLabel,
     'aria-invalid': ariaInvalid,
     'aria-labelledby': ariaLabelledBy,
     tabIndex: tabIndexProp,
@@ -219,11 +225,10 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
     }
   }, [type]);
 
-  const resolvedClearButtonAriaLabel = props['aria-label']
-    ? `Clear ${props['aria-label']}`
-    : placeholder
-    ? `Clear ${placeholder}`
-    : 'Clear input';
+  const resolvedClearButtonAriaLabel =
+    clearButtonAriaLabel ||
+    (props['aria-label'] ? `Clear ${props['aria-label']}` : undefined) ||
+    (placeholder ? `Clear ${placeholder}` : 'Clear input');
 
   const baseProps = extractBaseProps(props);
 
