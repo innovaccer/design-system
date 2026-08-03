@@ -104,44 +104,55 @@ export const HorizontalNav = (props: HorizontalNavProps) => {
       </>
     );
 
-    if (menu.disabled) {
-      return (
-        <span key={index} {...commonProps} aria-disabled="true">
-          {content}
-        </span>
-      );
-    }
+    const renderMenu = () => {
+      if (menu.disabled) {
+        return (
+          <span {...commonProps} aria-disabled="true">
+            {content}
+          </span>
+        );
+      }
 
-    if (menu.link) {
+      if (menu.link) {
+        return (
+          <a
+            {...commonProps}
+            href={menu.link}
+            aria-current={isActive ? 'page' : undefined}
+            onClick={(event) => onClickHandler(event, menu)}
+          >
+            {content}
+          </a>
+        );
+      }
+
       return (
-        <a
-          key={index}
+        <button
+          type="button"
           {...commonProps}
-          href={menu.link}
           aria-current={isActive ? 'page' : undefined}
           onClick={(event) => onClickHandler(event, menu)}
         >
           {content}
-        </a>
+        </button>
       );
-    }
+    };
 
     return (
-      <button
-        type="button"
-        key={index}
-        {...commonProps}
-        aria-current={isActive ? 'page' : undefined}
-        onClick={(event) => onClickHandler(event, menu)}
-      >
-        {content}
-      </button>
+      <li key={index} className={styles['HorizontalNav-listItem']}>
+        {renderMenu()}
+      </li>
     );
   });
 
   return (
     <nav {...baseProps} className={classes} aria-label={ariaLabel}>
-      {list}
+      {/* `role="list"` is redundant per spec but required here: Safari/VoiceOver drops list
+          semantics from a `list-style: none` list, which is exactly how this nav is styled. */}
+      {/* eslint-disable-next-line jsx-a11y/no-redundant-roles */}
+      <ul role="list" className={styles['HorizontalNav-list']} data-test="DesignSystem-HorizontalNav--List">
+        {list}
+      </ul>
     </nav>
   );
 };

@@ -14,60 +14,78 @@ Object {
           aria-label="Horizontal Navigation"
           class="HorizontalNav"
         >
-          <button
-            class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
-            data-test="DesignSystem-HorizontalNav"
-            type="button"
+          <ul
+            class="HorizontalNav-list"
+            data-test="DesignSystem-HorizontalNav--List"
+            role="list"
           >
-            <span
-              class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
-              data-test="DesignSystem-HorizontalNav--Pills"
+            <li
+              class="HorizontalNav-listItem"
             >
-              1
-            </span>
-            <span
-              class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
-              data-test="DesignSystem-HorizontalNav--Text"
+              <button
+                class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
+                data-test="DesignSystem-HorizontalNav"
+                type="button"
+              >
+                <span
+                  class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
+                  data-test="DesignSystem-HorizontalNav--Pills"
+                >
+                  1
+                </span>
+                <span
+                  class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
+                  data-test="DesignSystem-HorizontalNav--Text"
+                >
+                  Tab #1
+                </span>
+              </button>
+            </li>
+            <li
+              class="HorizontalNav-listItem"
             >
-              Tab #1
-            </span>
-          </button>
-          <button
-            class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
-            data-test="DesignSystem-HorizontalNav"
-            type="button"
-          >
-            <span
-              class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
-              data-test="DesignSystem-HorizontalNav--Pills"
+              <button
+                class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
+                data-test="DesignSystem-HorizontalNav"
+                type="button"
+              >
+                <span
+                  class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
+                  data-test="DesignSystem-HorizontalNav--Pills"
+                >
+                  2
+                </span>
+                <span
+                  class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
+                  data-test="DesignSystem-HorizontalNav--Text"
+                >
+                  Tab #2
+                </span>
+              </button>
+            </li>
+            <li
+              class="HorizontalNav-listItem"
             >
-              2
-            </span>
-            <span
-              class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
-              data-test="DesignSystem-HorizontalNav--Text"
-            >
-              Tab #2
-            </span>
-          </button>
-          <button
-            class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
-            data-test="DesignSystem-HorizontalNav"
-            type="button"
-          >
-            <span
-              class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
-              data-test="DesignSystem-HorizontalNav--Pills"
-            >
-              3
-            </span>
-            <span
-              class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
-              data-test="DesignSystem-HorizontalNav--Text"
-            >
-              Tab #3
-            </span>
-          </button>
+              <button
+                class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
+                data-test="DesignSystem-HorizontalNav"
+                type="button"
+              >
+                <span
+                  class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
+                  data-test="DesignSystem-HorizontalNav--Pills"
+                >
+                  3
+                </span>
+                <span
+                  class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
+                  data-test="DesignSystem-HorizontalNav--Text"
+                >
+                  Tab #3
+                </span>
+              </button>
+            </li>
+          </ul>
         </nav>
       </div>
     </div>
@@ -80,60 +98,78 @@ Object {
         aria-label="Horizontal Navigation"
         class="HorizontalNav"
       >
-        <button
-          class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
-          data-test="DesignSystem-HorizontalNav"
-          type="button"
+        <ul
+          class="HorizontalNav-list"
+          data-test="DesignSystem-HorizontalNav--List"
+          role="list"
         >
-          <span
-            class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
-            data-test="DesignSystem-HorizontalNav--Pills"
+          <li
+            class="HorizontalNav-listItem"
           >
-            1
-          </span>
-          <span
-            class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
-            data-test="DesignSystem-HorizontalNav--Text"
+            <button
+              class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
+              data-test="DesignSystem-HorizontalNav"
+              type="button"
+            >
+              <span
+                class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
+                data-test="DesignSystem-HorizontalNav--Pills"
+              >
+                1
+              </span>
+              <span
+                class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
+                data-test="DesignSystem-HorizontalNav--Text"
+              >
+                Tab #1
+              </span>
+            </button>
+          </li>
+          <li
+            class="HorizontalNav-listItem"
           >
-            Tab #1
-          </span>
-        </button>
-        <button
-          class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
-          data-test="DesignSystem-HorizontalNav"
-          type="button"
-        >
-          <span
-            class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
-            data-test="DesignSystem-HorizontalNav--Pills"
+            <button
+              class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
+              data-test="DesignSystem-HorizontalNav"
+              type="button"
+            >
+              <span
+                class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
+                data-test="DesignSystem-HorizontalNav--Pills"
+              >
+                2
+              </span>
+              <span
+                class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
+                data-test="DesignSystem-HorizontalNav--Text"
+              >
+                Tab #2
+              </span>
+            </button>
+          </li>
+          <li
+            class="HorizontalNav-listItem"
           >
-            2
-          </span>
-          <span
-            class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
-            data-test="DesignSystem-HorizontalNav--Text"
-          >
-            Tab #2
-          </span>
-        </button>
-        <button
-          class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
-          data-test="DesignSystem-HorizontalNav"
-          type="button"
-        >
-          <span
-            class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
-            data-test="DesignSystem-HorizontalNav--Pills"
-          >
-            3
-          </span>
-          <span
-            class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
-            data-test="DesignSystem-HorizontalNav--Text"
-          >
-            Tab #3
-          </span>
-        </button>
+            <button
+              class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
+              data-test="DesignSystem-HorizontalNav"
+              type="button"
+            >
+              <span
+                class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
+                data-test="DesignSystem-HorizontalNav--Pills"
+              >
+                3
+              </span>
+              <span
+                class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
+                data-test="DesignSystem-HorizontalNav--Text"
+              >
+                Tab #3
+              </span>
+            </button>
+          </li>
+        </ul>
       </nav>
     </div>
   </div>,
@@ -205,60 +241,78 @@ Object {
           aria-label="Horizontal Navigation"
           class="HorizontalNav"
         >
-          <button
-            class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
-            data-test="DesignSystem-HorizontalNav"
-            type="button"
+          <ul
+            class="HorizontalNav-list"
+            data-test="DesignSystem-HorizontalNav--List"
+            role="list"
           >
-            <span
-              class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
-              data-test="DesignSystem-HorizontalNav--Pills"
+            <li
+              class="HorizontalNav-listItem"
             >
-              1
-            </span>
-            <span
-              class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
-              data-test="DesignSystem-HorizontalNav--Text"
+              <button
+                class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
+                data-test="DesignSystem-HorizontalNav"
+                type="button"
+              >
+                <span
+                  class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
+                  data-test="DesignSystem-HorizontalNav--Pills"
+                >
+                  1
+                </span>
+                <span
+                  class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
+                  data-test="DesignSystem-HorizontalNav--Text"
+                >
+                  Tab #1
+                </span>
+              </button>
+            </li>
+            <li
+              class="HorizontalNav-listItem"
             >
-              Tab #1
-            </span>
-          </button>
-          <button
-            class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
-            data-test="DesignSystem-HorizontalNav"
-            type="button"
-          >
-            <span
-              class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
-              data-test="DesignSystem-HorizontalNav--Pills"
+              <button
+                class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
+                data-test="DesignSystem-HorizontalNav"
+                type="button"
+              >
+                <span
+                  class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
+                  data-test="DesignSystem-HorizontalNav--Pills"
+                >
+                  2
+                </span>
+                <span
+                  class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
+                  data-test="DesignSystem-HorizontalNav--Text"
+                >
+                  Tab #2
+                </span>
+              </button>
+            </li>
+            <li
+              class="HorizontalNav-listItem"
             >
-              2
-            </span>
-            <span
-              class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
-              data-test="DesignSystem-HorizontalNav--Text"
-            >
-              Tab #2
-            </span>
-          </button>
-          <button
-            class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
-            data-test="DesignSystem-HorizontalNav"
-            type="button"
-          >
-            <span
-              class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
-              data-test="DesignSystem-HorizontalNav--Pills"
-            >
-              3
-            </span>
-            <span
-              class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
-              data-test="DesignSystem-HorizontalNav--Text"
-            >
-              Tab #3
-            </span>
-          </button>
+              <button
+                class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
+                data-test="DesignSystem-HorizontalNav"
+                type="button"
+              >
+                <span
+                  class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
+                  data-test="DesignSystem-HorizontalNav--Pills"
+                >
+                  3
+                </span>
+                <span
+                  class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
+                  data-test="DesignSystem-HorizontalNav--Text"
+                >
+                  Tab #3
+                </span>
+              </button>
+            </li>
+          </ul>
         </nav>
       </div>
     </div>
@@ -271,60 +325,78 @@ Object {
         aria-label="Horizontal Navigation"
         class="HorizontalNav"
       >
-        <button
-          class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
-          data-test="DesignSystem-HorizontalNav"
-          type="button"
+        <ul
+          class="HorizontalNav-list"
+          data-test="DesignSystem-HorizontalNav--List"
+          role="list"
         >
-          <span
-            class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
-            data-test="DesignSystem-HorizontalNav--Pills"
+          <li
+            class="HorizontalNav-listItem"
           >
-            1
-          </span>
-          <span
-            class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
-            data-test="DesignSystem-HorizontalNav--Text"
+            <button
+              class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
+              data-test="DesignSystem-HorizontalNav"
+              type="button"
+            >
+              <span
+                class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
+                data-test="DesignSystem-HorizontalNav--Pills"
+              >
+                1
+              </span>
+              <span
+                class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
+                data-test="DesignSystem-HorizontalNav--Text"
+              >
+                Tab #1
+              </span>
+            </button>
+          </li>
+          <li
+            class="HorizontalNav-listItem"
           >
-            Tab #1
-          </span>
-        </button>
-        <button
-          class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
-          data-test="DesignSystem-HorizontalNav"
-          type="button"
-        >
-          <span
-            class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
-            data-test="DesignSystem-HorizontalNav--Pills"
+            <button
+              class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
+              data-test="DesignSystem-HorizontalNav"
+              type="button"
+            >
+              <span
+                class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
+                data-test="DesignSystem-HorizontalNav--Pills"
+              >
+                2
+              </span>
+              <span
+                class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
+                data-test="DesignSystem-HorizontalNav--Text"
+              >
+                Tab #2
+              </span>
+            </button>
+          </li>
+          <li
+            class="HorizontalNav-listItem"
           >
-            2
-          </span>
-          <span
-            class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
-            data-test="DesignSystem-HorizontalNav--Text"
-          >
-            Tab #2
-          </span>
-        </button>
-        <button
-          class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
-          data-test="DesignSystem-HorizontalNav"
-          type="button"
-        >
-          <span
-            class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
-            data-test="DesignSystem-HorizontalNav--Pills"
-          >
-            3
-          </span>
-          <span
-            class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
-            data-test="DesignSystem-HorizontalNav--Text"
-          >
-            Tab #3
-          </span>
-        </button>
+            <button
+              class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
+              data-test="DesignSystem-HorizontalNav"
+              type="button"
+            >
+              <span
+                class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
+                data-test="DesignSystem-HorizontalNav--Pills"
+              >
+                3
+              </span>
+              <span
+                class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
+                data-test="DesignSystem-HorizontalNav--Text"
+              >
+                Tab #3
+              </span>
+            </button>
+          </li>
+        </ul>
       </nav>
     </div>
   </div>,
