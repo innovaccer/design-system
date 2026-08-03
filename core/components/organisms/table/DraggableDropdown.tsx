@@ -93,21 +93,6 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
   const getFocusableElements = () =>
     Array.from(dropdownRef.current?.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR) ?? []);
 
-  // The popover content is portaled to `document.body`, so it is neither the next DOM node nor the
-  // next tab stop after the trigger. Without moving focus in on open, a screen reader user reaches
-  // the expanded content only at the very end of the page.
-  //
-  // There are two possible orderings between `open` flipping and the dialog node existing, and each
-  // needs its own hook — neither alone is sufficient:
-  //
-  //  1. Node mounts *after* `open` flips. The usual path: `PopperWrapper` mirrors `open` into its
-  //     own state in `componentDidUpdate`, so the portal is created a commit later. Handled by the
-  //     callback ref, which fires when the node attaches (children first).
-  //  2. Node is *already* mounted when `open` flips. `PopperWrapper` defers unmounting until its
-  //     close animation ends, so reopening before that lands reuses the existing node and never
-  //     remounts — the callback ref would not fire at all. Handled by the layout effect.
-  //
-  // Both are synchronous React lifecycle hooks, so this needs no frame timing or retry loop.
   const focusFirstControl = React.useCallback(() => {
     dropdownRef.current?.querySelector<HTMLElement>(FOCUSABLE_SELECTOR)?.focus();
   }, []);
@@ -185,12 +170,6 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
         }}
         className={gridStyles['Header-draggableDropdown']}
       >
-        {/*
-          The handler below does not make this container a control; it only redirects Tab between
-          the real focusable descendants so focus cannot escape into the page behind the popover.
-          `jsx-a11y/no-noninteractive-element-interactions` cannot distinguish a focus trap from an
-          interactive element, so it is a false positive here.
-        */}
         {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */}
         <div ref={setDialogRef} role="dialog" aria-label="Choose columns" onKeyDown={onDialogKeyDown}>
           <div className={gridStyles['Dropdown-wrapper']}>
