@@ -31,6 +31,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -75,6 +76,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -119,6 +121,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -163,6 +166,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -201,6 +205,7 @@ exports[`Dropdown component
             class="DropdownButton-wrapper"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default d-flex align-items-center mr-4"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -214,6 +219,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -264,6 +270,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -308,6 +315,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -347,6 +355,7 @@ exports[`Dropdown component
             class="DropdownButton-wrapper"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--disabled d-flex align-items-center mr-4"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -360,6 +369,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--disabled"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -411,6 +421,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--disabled"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -456,6 +467,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--disabled"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -500,6 +512,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -544,6 +557,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -588,6 +602,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -632,6 +647,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -676,6 +692,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -711,6 +728,7 @@ exports[`Dropdown component
           value=""
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -755,6 +773,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -799,6 +818,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -843,6 +863,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -887,6 +908,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -931,6 +953,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -975,6 +998,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -1019,6 +1043,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -1063,6 +1088,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -1107,6 +1133,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -1151,6 +1178,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -1195,6 +1223,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"

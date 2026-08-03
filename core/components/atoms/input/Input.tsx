@@ -273,6 +273,8 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
     <div
       className={rightIconClass} // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
       tabIndex={0}
+      role="img"
+      aria-label={info}
     >
       <Icon name={'info'} size={sizeMapping[size]} className={inputRightIconClass} />
     </div>

@@ -22,6 +22,7 @@ Object {
             tabindex="0"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
               data-test="DesignSystem-Icon"
               style="font-size: 20px; width: 20px;"
@@ -49,6 +50,7 @@ Object {
           tabindex="0"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
             data-test="DesignSystem-Icon"
             style="font-size: 20px; width: 20px;"
@@ -135,6 +137,7 @@ Object {
             tabindex="0"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--accent2Darker"
               data-test="DesignSystem-Icon"
               style="font-size: 20px; width: 20px;"
@@ -162,6 +165,7 @@ Object {
           tabindex="0"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--accent2Darker"
             data-test="DesignSystem-Icon"
             style="font-size: 20px; width: 20px;"
@@ -248,6 +252,7 @@ Object {
             tabindex="0"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--accent3Darker"
               data-test="DesignSystem-Icon"
               style="font-size: 20px; width: 20px;"
@@ -275,6 +280,7 @@ Object {
           tabindex="0"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--accent3Darker"
             data-test="DesignSystem-Icon"
             style="font-size: 20px; width: 20px;"
@@ -361,6 +367,7 @@ Object {
             tabindex="0"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--accent4Darker Avatar-content"
               data-test="DesignSystem-Icon"
               style="font-size: 20px; width: 20px;"
@@ -388,6 +395,7 @@ Object {
           tabindex="0"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--accent4Darker Avatar-content"
             data-test="DesignSystem-Icon"
             style="font-size: 20px; width: 20px;"
@@ -474,6 +482,7 @@ Object {
             tabindex="0"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
               data-test="DesignSystem-Icon"
               style="font-size: 20px; width: 20px;"
@@ -501,6 +510,7 @@ Object {
           tabindex="0"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
             data-test="DesignSystem-Icon"
             style="font-size: 20px; width: 20px;"
@@ -587,6 +597,7 @@ Object {
             tabindex="0"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--primaryDarker"
               data-test="DesignSystem-Icon"
               style="font-size: 20px; width: 20px;"
@@ -614,6 +625,7 @@ Object {
           tabindex="0"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--primaryDarker"
             data-test="DesignSystem-Icon"
             style="font-size: 20px; width: 20px;"
@@ -700,6 +712,7 @@ Object {
             tabindex="0"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--inverse Avatar-content"
               data-test="DesignSystem-Icon"
               style="font-size: 20px; width: 20px;"
@@ -727,6 +740,7 @@ Object {
           tabindex="0"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--inverse Avatar-content"
             data-test="DesignSystem-Icon"
             style="font-size: 20px; width: 20px;"
@@ -813,6 +827,7 @@ Object {
             tabindex="0"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--successDarker Avatar-content"
               data-test="DesignSystem-Icon"
               style="font-size: 20px; width: 20px;"
@@ -840,6 +855,7 @@ Object {
           tabindex="0"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--successDarker Avatar-content"
             data-test="DesignSystem-Icon"
             style="font-size: 20px; width: 20px;"
@@ -926,6 +942,7 @@ Object {
             tabindex="0"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--warningDarker Avatar-content"
               data-test="DesignSystem-Icon"
               style="font-size: 20px; width: 20px;"
@@ -953,6 +970,7 @@ Object {
           tabindex="0"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--warningDarker Avatar-content"
             data-test="DesignSystem-Icon"
             style="font-size: 20px; width: 20px;"
@@ -1039,6 +1057,7 @@ Object {
             tabindex="0"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -1066,6 +1085,7 @@ Object {
           tabindex="0"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -1152,6 +1172,7 @@ Object {
             tabindex="0"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--accent2Darker"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -1179,6 +1200,7 @@ Object {
           tabindex="0"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--accent2Darker"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -1265,6 +1287,7 @@ Object {
             tabindex="0"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--accent3Darker"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -1292,6 +1315,7 @@ Object {
           tabindex="0"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--accent3Darker"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -1378,6 +1402,7 @@ Object {
             tabindex="0"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--accent4Darker Avatar-content"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -1405,6 +1430,7 @@ Object {
           tabindex="0"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--accent4Darker Avatar-content"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -1491,6 +1517,7 @@ Object {
             tabindex="0"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -1518,6 +1545,7 @@ Object {
           tabindex="0"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -1604,6 +1632,7 @@ Object {
             tabindex="0"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--primaryDarker"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -1631,6 +1660,7 @@ Object {
           tabindex="0"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--primaryDarker"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -1717,6 +1747,7 @@ Object {
             tabindex="0"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--inverse Avatar-content"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -1744,6 +1775,7 @@ Object {
           tabindex="0"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--inverse Avatar-content"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -1830,6 +1862,7 @@ Object {
             tabindex="0"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--successDarker Avatar-content"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -1857,6 +1890,7 @@ Object {
           tabindex="0"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--successDarker Avatar-content"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -1943,6 +1977,7 @@ Object {
             tabindex="0"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--warningDarker Avatar-content"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -1970,6 +2005,7 @@ Object {
           tabindex="0"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--warningDarker Avatar-content"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"

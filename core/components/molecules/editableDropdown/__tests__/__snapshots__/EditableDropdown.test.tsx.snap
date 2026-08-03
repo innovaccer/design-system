@@ -41,6 +41,7 @@ exports[`EditableDropdown component
                 class="DropdownButton-wrapper"
               />
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--default"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -62,6 +63,7 @@ exports[`EditableDropdown component
             />
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default EditableDropdown-icon"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"

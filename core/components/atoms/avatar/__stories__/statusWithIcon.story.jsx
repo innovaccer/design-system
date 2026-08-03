@@ -10,7 +10,7 @@ export const statusWithIcon = () => {
       appearance="primary"
       status={
         <Tooltip tooltip="Verified" position="top">
-          <Icon name="done" size={10} appearance="white" className="p-1 bg-success" />
+          <Icon aria-label="Verified" name="done" size={10} appearance="white" className="p-1 bg-success" />
         </Tooltip>
       }
     />

@@ -94,7 +94,7 @@ const customCode = `
       <div className="pt-6 px-5">
         <div className="d-flex align-items-center justify-content-between">
           <Subheading size="s" className="py-3" appearance="subtle">Range</Subheading>
-          <Icon name="refresh" onClick={onReset} />
+          <Icon name="refresh" onClick={onReset} aria-label="Reset range" />
         </div>
         {isMobile ? (
           <div className="pt-5">

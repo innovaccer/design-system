@@ -416,6 +416,7 @@ exports[`SegmentedControl Component - Icon + Label Snapshot Tests matches snapsh
           class="SegmentedControl-segmentIcon SegmentedControl-segmentIcon--large"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
             style="font-size: 20px; width: 20px;"
@@ -444,6 +445,7 @@ exports[`SegmentedControl Component - Icon + Label Snapshot Tests matches snapsh
           class="SegmentedControl-segmentIcon SegmentedControl-segmentIcon--large"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
             style="font-size: 20px; width: 20px;"
@@ -472,6 +474,7 @@ exports[`SegmentedControl Component - Icon + Label Snapshot Tests matches snapsh
           class="SegmentedControl-segmentIcon SegmentedControl-segmentIcon--large"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
             style="font-size: 20px; width: 20px;"
@@ -516,6 +519,7 @@ exports[`SegmentedControl Component - Icon + Label Snapshot Tests matches snapsh
           class="SegmentedControl-segmentIcon SegmentedControl-segmentIcon--regular"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -544,6 +548,7 @@ exports[`SegmentedControl Component - Icon + Label Snapshot Tests matches snapsh
           class="SegmentedControl-segmentIcon SegmentedControl-segmentIcon--regular"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -572,6 +577,7 @@ exports[`SegmentedControl Component - Icon + Label Snapshot Tests matches snapsh
           class="SegmentedControl-segmentIcon SegmentedControl-segmentIcon--regular"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -616,6 +622,7 @@ exports[`SegmentedControl Component - Icon + Label Snapshot Tests matches snapsh
           class="SegmentedControl-segmentIcon SegmentedControl-segmentIcon--small"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
             style="font-size: 14px; width: 14px;"
@@ -644,6 +651,7 @@ exports[`SegmentedControl Component - Icon + Label Snapshot Tests matches snapsh
           class="SegmentedControl-segmentIcon SegmentedControl-segmentIcon--small"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
             style="font-size: 14px; width: 14px;"
@@ -672,6 +680,7 @@ exports[`SegmentedControl Component - Icon + Label Snapshot Tests matches snapsh
           class="SegmentedControl-segmentIcon SegmentedControl-segmentIcon--small"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
             style="font-size: 14px; width: 14px;"
@@ -716,6 +725,7 @@ exports[`SegmentedControl Component - Icon Only Snapshot Tests matches snapshot 
           class="SegmentedControl-segmentIcon SegmentedControl-segmentIcon--only"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
             style="font-size: 20px; width: 20px;"
@@ -739,6 +749,7 @@ exports[`SegmentedControl Component - Icon Only Snapshot Tests matches snapshot 
           class="SegmentedControl-segmentIcon SegmentedControl-segmentIcon--only"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
             style="font-size: 20px; width: 20px;"
@@ -762,6 +773,7 @@ exports[`SegmentedControl Component - Icon Only Snapshot Tests matches snapshot 
           class="SegmentedControl-segmentIcon SegmentedControl-segmentIcon--only"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
             style="font-size: 20px; width: 20px;"
@@ -801,6 +813,7 @@ exports[`SegmentedControl Component - Icon Only Snapshot Tests matches snapshot 
           class="SegmentedControl-segmentIcon SegmentedControl-segmentIcon--only"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -824,6 +837,7 @@ exports[`SegmentedControl Component - Icon Only Snapshot Tests matches snapshot 
           class="SegmentedControl-segmentIcon SegmentedControl-segmentIcon--only"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -847,6 +861,7 @@ exports[`SegmentedControl Component - Icon Only Snapshot Tests matches snapshot 
           class="SegmentedControl-segmentIcon SegmentedControl-segmentIcon--only"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -886,6 +901,7 @@ exports[`SegmentedControl Component - Icon Only Snapshot Tests matches snapshot 
           class="SegmentedControl-segmentIcon SegmentedControl-segmentIcon--only"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
             style="font-size: 14px; width: 14px;"
@@ -909,6 +925,7 @@ exports[`SegmentedControl Component - Icon Only Snapshot Tests matches snapshot 
           class="SegmentedControl-segmentIcon SegmentedControl-segmentIcon--only"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
             style="font-size: 14px; width: 14px;"
@@ -932,6 +949,7 @@ exports[`SegmentedControl Component - Icon Only Snapshot Tests matches snapshot 
           class="SegmentedControl-segmentIcon SegmentedControl-segmentIcon--only"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
             style="font-size: 14px; width: 14px;"

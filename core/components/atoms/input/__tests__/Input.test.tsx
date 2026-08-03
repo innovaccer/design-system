@@ -513,6 +513,15 @@ describe('Input Component - Comprehensive Behavior Tests', () => {
       expect(infoWrapper).toBeInTheDocument();
     });
 
+    it('names the focusable info trigger with the info text', () => {
+      const { getByRole } = render(<Input name="test" info="This is helpful information" />);
+
+      // The tooltip opens on hover only, so the trigger must carry the text itself
+      const infoTrigger = getByRole('img', { name: 'This is helpful information' });
+      expect(infoTrigger).toHaveAttribute('tabIndex', '0');
+      expect(infoTrigger.querySelector('[data-test="DesignSystem-Icon"]')).toHaveAttribute('aria-hidden', 'true');
+    });
+
     it('does not render info tooltip when disabled', () => {
       const { container } = render(<Input name="test" info="This is helpful information" disabled={true} />);
 

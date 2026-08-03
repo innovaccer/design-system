@@ -17,6 +17,7 @@ exports[`Chip component
         tabindex="0"
       >
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon Icon--inverse Chip-icon Chip-icon--left"
           data-test="DesignSystem-GenericChip--Icon"
           style="font-size: 16px; width: 16px;"
@@ -56,6 +57,7 @@ exports[`Chip component
         tabindex="0"
       >
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon Icon--primaryDark Chip-icon Chip-icon--left"
           data-test="DesignSystem-GenericChip--Icon"
           style="font-size: 16px; width: 16px;"
@@ -95,6 +97,7 @@ exports[`Chip component
         tabindex="-1"
       >
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon Icon--inverse Chip-icon Chip-icon--left"
           data-test="DesignSystem-GenericChip--Icon"
           style="font-size: 16px; width: 16px;"
@@ -134,6 +137,7 @@ exports[`Chip component
         tabindex="-1"
       >
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon Icon--primaryLighter Chip-icon Chip-icon--left"
           data-test="DesignSystem-GenericChip--Icon"
           style="font-size: 16px; width: 16px;"
@@ -174,6 +178,7 @@ exports[`Chip component
         tabindex="0"
       >
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon Icon--inverse Chip-icon Chip-icon--left"
           data-test="DesignSystem-GenericChip--Icon"
           style="font-size: 16px; width: 16px;"
@@ -199,6 +204,7 @@ exports[`Chip component
         tabindex="0"
       >
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon Icon--subtle"
           data-test="DesignSystem-Icon"
           style="font-size: 16px; width: 16px;"
@@ -229,6 +235,7 @@ exports[`Chip component
         tabindex="0"
       >
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon Icon--primaryDark Chip-icon Chip-icon--left"
           data-test="DesignSystem-GenericChip--Icon"
           style="font-size: 16px; width: 16px;"
@@ -254,6 +261,7 @@ exports[`Chip component
         tabindex="0"
       >
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon Icon--primaryDark"
           data-test="DesignSystem-Icon"
           style="font-size: 16px; width: 16px;"
@@ -284,6 +292,7 @@ exports[`Chip component
         tabindex="-1"
       >
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon Icon--inverse Chip-icon Chip-icon--left"
           data-test="DesignSystem-GenericChip--Icon"
           style="font-size: 16px; width: 16px;"
@@ -309,6 +318,7 @@ exports[`Chip component
         tabindex="-1"
       >
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon Icon--subtle"
           data-test="DesignSystem-Icon"
           style="font-size: 16px; width: 16px;"
@@ -339,6 +349,7 @@ exports[`Chip component
         tabindex="-1"
       >
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon Icon--primaryLighter Chip-icon Chip-icon--left"
           data-test="DesignSystem-GenericChip--Icon"
           style="font-size: 16px; width: 16px;"
@@ -364,6 +375,7 @@ exports[`Chip component
         tabindex="-1"
       >
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon Icon--primaryLighter"
           data-test="DesignSystem-Icon"
           style="font-size: 16px; width: 16px;"
