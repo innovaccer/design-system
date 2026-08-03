@@ -13,7 +13,8 @@ import styles from '@css/components/grid.module.css';
 type resizeColFn = (
   gridInfo: { updateColumnSchema: updateColumnSchemaFunction },
   name: ColumnSchema['name'],
-  el: GridRef
+  el: GridRef,
+  pointerX?: number
 ) => void;
 type sortColumnFn = (
   gridInfo: {
@@ -34,13 +35,18 @@ type hideColumnFn = (
   value: boolean
 ) => void;
 
-export const resizeCol: resizeColFn = ({ updateColumnSchema }, name, el) => {
-  const elX = el?.getBoundingClientRect().x;
+export const resizeCol: resizeColFn = ({ updateColumnSchema }, name, el, pointerX) => {
+  const rect = el?.getBoundingClientRect();
+  const elX = rect?.x;
+  // Distance between the pointer and the column edge when the drag started, so a
+  // grab anywhere inside the resize hit area keeps the edge under the cursor.
+  const grabOffset = rect && pointerX !== undefined ? rect.right - pointerX : 0;
+
   function resizable(ev: MouseEvent) {
     ev.preventDefault();
     if (elX) {
       updateColumnSchema(name, {
-        width: ev.pageX - elX,
+        width: ev.pageX - elX + grabOffset,
       });
     }
   }
