@@ -286,6 +286,12 @@ describe('Horizontal Navigation component list semantics', () => {
     expect(getByRole('navigation')).toContainElement(getByRole('list'));
   });
 
+  it('does not render an empty list when there are no menus', () => {
+    const { queryByRole, getByRole } = render(<HorizontalNav menus={[]} />);
+    expect(getByRole('navigation')).toBeInTheDocument();
+    expect(queryByRole('list')).not.toBeInTheDocument();
+  });
+
   it('renders each menu item inside its own list item', () => {
     const { getAllByRole, getAllByTestId } = render(<HorizontalNav menus={menus} />);
     const listItems = getAllByRole('listitem');

@@ -147,12 +147,12 @@ export const HorizontalNav = (props: HorizontalNavProps) => {
 
   return (
     <nav {...baseProps} className={classes} aria-label={ariaLabel}>
-      {/* `role="list"` is redundant per spec but required here: Safari/VoiceOver drops list
-          semantics from a `list-style: none` list, which is exactly how this nav is styled. */}
-      {/* eslint-disable-next-line jsx-a11y/no-redundant-roles */}
-      <ul role="list" className={styles['HorizontalNav-list']} data-test="DesignSystem-HorizontalNav--List">
-        {list}
-      </ul>
+      {list.length > 0 && (
+        // eslint-disable-next-line jsx-a11y/no-redundant-roles
+        <ul role="list" className={styles['HorizontalNav-list']} data-test="DesignSystem-HorizontalNav--List">
+          {list}
+        </ul>
+      )}
     </nav>
   );
 };

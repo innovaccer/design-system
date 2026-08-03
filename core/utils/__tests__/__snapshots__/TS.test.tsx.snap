@@ -3969,13 +3969,7 @@ exports[`TS renders children 1`] = `
     <nav
       aria-label="Horizontal Navigation"
       class="HorizontalNav"
-    >
-      <ul
-        class="HorizontalNav-list"
-        data-test="DesignSystem-HorizontalNav--List"
-        role="list"
-      />
-    </nav>
+    />
   </div>
   <div
     data-test="DesignSystem-PageHeader"
