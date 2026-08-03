@@ -171,7 +171,7 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
         className={gridStyles['Header-draggableDropdown']}
       >
         {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */}
-        <div ref={setDialogRef} role="dialog" aria-label="Choose columns" onKeyDown={onDialogKeyDown}>
+        <div ref={setDialogRef} role="dialog" aria-modal="true" aria-label="Choose columns" onKeyDown={onDialogKeyDown}>
           <div className={gridStyles['Dropdown-wrapper']}>
             <div className="OptionWrapper">
               <Checkbox

@@ -25,6 +25,14 @@ it('dialog has role and accessible name; haspopup matches', async () => {
   expect(dialog).toBeInTheDocument();
 });
 
+// The dialog confines Tab to its own controls, so it must also declare modality — otherwise a
+// screen reader's virtual cursor can roam the table behind a popup the keyboard cannot leave.
+it('declares aria-modal to match the focus trap', () => {
+  const { trigger, getByRole } = setup();
+  fireEvent.click(trigger);
+  expect(getByRole('dialog')).toHaveAttribute('aria-modal', 'true');
+});
+
 it('moves focus into the dialog when opened by click', async () => {
   const { trigger } = setup();
   fireEvent.click(trigger);
