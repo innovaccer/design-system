@@ -947,6 +947,32 @@ describe('Dropdown trigger accessibility and visual parity with Select', () => {
     expect(dropdownTrigger).not.toHaveAttribute('aria-expanded', 'true');
   });
 
+  it('does not set aria-controls while the dropdown is closed', () => {
+    const { getByTestId } = render(<Dropdown options={storyOptions} />);
+    expect(getByTestId(trigger)).not.toHaveAttribute('aria-controls');
+  });
+
+  it('points aria-controls at the listbox when the dropdown is open', () => {
+    const { getByTestId, getByRole } = render(<Dropdown options={storyOptions} />);
+    const dropdownTrigger = getByTestId(trigger);
+
+    fireEvent.click(dropdownTrigger);
+
+    const listbox = getByRole('listbox');
+    expect(listbox).toHaveAttribute('id');
+    expect(dropdownTrigger).toHaveAttribute('aria-controls', listbox.getAttribute('id'));
+  });
+
+  it('points aria-controls at the menu when a menu dropdown is open', () => {
+    const { getByTestId, getByRole } = render(<Dropdown options={storyOptions} menu={true} />);
+    const dropdownTrigger = getByTestId(trigger);
+
+    fireEvent.click(dropdownTrigger);
+
+    const menu = getByRole('menu');
+    expect(dropdownTrigger).toHaveAttribute('aria-controls', menu.getAttribute('id'));
+  });
+
   it('shows keyboard_arrow_up icon when dropdown is open', () => {
     const { getByTestId } = render(<Dropdown options={storyOptions} />);
     const dropdownTrigger = getByTestId(trigger);

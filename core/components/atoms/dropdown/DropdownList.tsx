@@ -274,6 +274,8 @@ const DropdownList = (props: OptionsProps) => {
   const dropdownCancelButtonRef = React.createRef<HTMLButtonElement>();
   const dropdownApplyButtonRef = React.createRef<HTMLButtonElement>();
   const dropdownFieldIdsPrefixRef = React.useRef(`ds-dropdown-${uidGenerator()}`);
+  // Links the trigger to its popup via `aria-controls`.
+  const optionsContainerId = `${dropdownFieldIdsPrefixRef.current}-options`;
 
   const enableSearch = withSearch || props.async;
 
@@ -360,6 +362,7 @@ const DropdownList = (props: OptionsProps) => {
       iconType={iconType}
       aria-label={triggerAriaLabelledBy ? undefined : triggerAriaLabel}
       aria-labelledby={triggerAriaLabelledBy}
+      aria-controls={dropdownOpen ? optionsContainerId : undefined}
     >
       {triggerLabel}
     </DropdownButton>
@@ -662,6 +665,7 @@ const DropdownList = (props: OptionsProps) => {
     return (
       <div className={dropdownWrapperClass} style={dropdownStyle} ref={dropdownRef}>
         <div
+          id={optionsContainerId}
           role={menu ? 'menu' : 'listbox'}
           aria-label={resolvedOptionsAriaLabel}
           aria-labelledby={triggerAriaLabelledBy}
