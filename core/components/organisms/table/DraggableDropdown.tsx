@@ -5,6 +5,8 @@ import { moveToIndex, getPluralSuffix } from '../grid/utility';
 import dropdownStyles from '@css/components/dropdown.module.css';
 import gridStyles from '@css/components/grid.module.css';
 
+const FOCUSABLE_SELECTOR = 'input[type="checkbox"]:not([disabled]), button:not([disabled])';
+
 interface DraggableDropdownProps {
   options: DropdownProps['options'];
   onChange: (options: DropdownProps['options']) => void;
@@ -45,10 +47,12 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
 
   const onCancelHandler = () => {
     setOpen(false);
+    triggerRef.current?.focus();
   };
 
   const onApplyHandler = () => {
     setOpen(false);
+    triggerRef.current?.focus();
 
     if (onChange) onChange(tempOptions);
   };
@@ -83,10 +87,58 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
     if (e.key === 'ArrowDown') {
       e.preventDefault();
       setOpen(true);
-      requestAnimationFrame(() => {
-        const firstFocusable = dropdownRef.current?.querySelector<HTMLElement>('input[type="checkbox"], button');
-        firstFocusable?.focus();
-      });
+    }
+  };
+
+  const getFocusableElements = () =>
+    Array.from(dropdownRef.current?.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR) ?? []);
+
+  // The popover content is portaled to `document.body`, so it is neither the next DOM node nor the
+  // next tab stop after the trigger. Without moving focus in on open, a screen reader user reaches
+  // the expanded content only at the very end of the page.
+  //
+  // There are two possible orderings between `open` flipping and the dialog node existing, and each
+  // needs its own hook — neither alone is sufficient:
+  //
+  //  1. Node mounts *after* `open` flips. The usual path: `PopperWrapper` mirrors `open` into its
+  //     own state in `componentDidUpdate`, so the portal is created a commit later. Handled by the
+  //     callback ref, which fires when the node attaches (children first).
+  //  2. Node is *already* mounted when `open` flips. `PopperWrapper` defers unmounting until its
+  //     close animation ends, so reopening before that lands reuses the existing node and never
+  //     remounts — the callback ref would not fire at all. Handled by the layout effect.
+  //
+  // Both are synchronous React lifecycle hooks, so this needs no frame timing or retry loop.
+  const focusFirstControl = React.useCallback(() => {
+    dropdownRef.current?.querySelector<HTMLElement>(FOCUSABLE_SELECTOR)?.focus();
+  }, []);
+
+  const setDialogRef = React.useCallback(
+    (node: HTMLDivElement | null) => {
+      dropdownRef.current = node;
+      if (node) focusFirstControl();
+    },
+    [focusFirstControl]
+  );
+
+  React.useLayoutEffect(() => {
+    if (open) focusFirstControl();
+  }, [open, focusFirstControl]);
+
+  const onDialogKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key !== 'Tab') return;
+
+    const focusable = getFocusableElements();
+    if (!focusable.length) return;
+
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
     }
   };
 
@@ -133,7 +185,14 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
         }}
         className={gridStyles['Header-draggableDropdown']}
       >
-        <div ref={dropdownRef}>
+        {/*
+          The handler below does not make this container a control; it only redirects Tab between
+          the real focusable descendants so focus cannot escape into the page behind the popover.
+          `jsx-a11y/no-noninteractive-element-interactions` cannot distinguish a focus trap from an
+          interactive element, so it is a false positive here.
+        */}
+        {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */}
+        <div ref={setDialogRef} role="dialog" aria-label="Choose columns" onKeyDown={onDialogKeyDown}>
           <div className={gridStyles['Dropdown-wrapper']}>
             <div className="OptionWrapper">
               <Checkbox
