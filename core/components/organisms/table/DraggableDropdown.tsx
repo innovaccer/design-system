@@ -5,6 +5,8 @@ import { moveToIndex, getPluralSuffix } from '../grid/utility';
 import dropdownStyles from '@css/components/dropdown.module.css';
 import gridStyles from '@css/components/grid.module.css';
 
+const FOCUSABLE_SELECTOR = 'input[type="checkbox"]:not([disabled]), button:not([disabled])';
+
 interface DraggableDropdownProps {
   options: DropdownProps['options'];
   onChange: (options: DropdownProps['options']) => void;
@@ -45,10 +47,12 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
 
   const onCancelHandler = () => {
     setOpen(false);
+    triggerRef.current?.focus();
   };
 
   const onApplyHandler = () => {
     setOpen(false);
+    triggerRef.current?.focus();
 
     if (onChange) onChange(tempOptions);
   };
@@ -83,10 +87,43 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
     if (e.key === 'ArrowDown') {
       e.preventDefault();
       setOpen(true);
-      requestAnimationFrame(() => {
-        const firstFocusable = dropdownRef.current?.querySelector<HTMLElement>('input[type="checkbox"], button');
-        firstFocusable?.focus();
-      });
+    }
+  };
+
+  const getFocusableElements = () =>
+    Array.from(dropdownRef.current?.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR) ?? []);
+
+  const focusFirstControl = React.useCallback(() => {
+    dropdownRef.current?.querySelector<HTMLElement>(FOCUSABLE_SELECTOR)?.focus();
+  }, []);
+
+  const setDialogRef = React.useCallback(
+    (node: HTMLDivElement | null) => {
+      dropdownRef.current = node;
+      if (node) focusFirstControl();
+    },
+    [focusFirstControl]
+  );
+
+  React.useLayoutEffect(() => {
+    if (open) focusFirstControl();
+  }, [open, focusFirstControl]);
+
+  const onDialogKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key !== 'Tab') return;
+
+    const focusable = getFocusableElements();
+    if (!focusable.length) return;
+
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
     }
   };
 
@@ -133,7 +170,8 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
         }}
         className={gridStyles['Header-draggableDropdown']}
       >
-        <div ref={dropdownRef}>
+        {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */}
+        <div ref={setDialogRef} role="dialog" aria-modal="true" aria-label="Choose columns" onKeyDown={onDialogKeyDown}>
           <div className={gridStyles['Dropdown-wrapper']}>
             <div className="OptionWrapper">
               <Checkbox
