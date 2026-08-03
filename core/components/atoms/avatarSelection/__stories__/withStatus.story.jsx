@@ -10,7 +10,7 @@ export const withStatus = () => {
       selected: true,
       status: (
         <Tooltip position="top" tooltip="Verified">
-          <Icon appearance="white" className="p-1 bg-success" name="done" size={10} />
+          <Icon aria-label="Verified" appearance="white" className="p-1 bg-success" name="done" size={10} />
         </Tooltip>
       ),
     },
@@ -24,7 +24,7 @@ export const withStatus = () => {
       lastName: 'Wheeler',
       status: (
         <Tooltip position="top" tooltip="Verified">
-          <Icon appearance="white" className="p-1 bg-success" name="done" size={10} />
+          <Icon aria-label="Verified" appearance="white" className="p-1 bg-success" name="done" size={10} />
         </Tooltip>
       ),
     },
@@ -48,7 +48,7 @@ export const withStatus = () => {
       image: <Avatar.Image src="https://design.innovaccer.com/images/avatar1.png" />,
       status: (
         <Tooltip position="top" tooltip="Deactivated">
-          <Icon appearance="white" className="p-1 bg-danger" name="remove" size={10} />
+          <Icon aria-label="Deactivated" appearance="white" className="p-1 bg-danger" name="remove" size={10} />
         </Tooltip>
       ),
     },
@@ -58,7 +58,7 @@ export const withStatus = () => {
       selected: true,
       status: (
         <Tooltip position="top" tooltip="Traveling">
-          <Icon appearance="white" className="p-1 bg-secondary" name="water" size={10} />
+          <Icon aria-label="Traveling" appearance="white" className="p-1 bg-secondary" name="water" size={10} />
         </Tooltip>
       ),
     },
@@ -67,7 +67,7 @@ export const withStatus = () => {
       lastName: 'Geller',
       status: (
         <Tooltip position="top" tooltip="Verified">
-          <Icon appearance="white" className="p-1 bg-success" name="done" size={10} />
+          <Icon aria-label="Verified" appearance="white" className="p-1 bg-success" name="done" size={10} />
         </Tooltip>
       ),
     },
@@ -107,7 +107,7 @@ const customCode = `() => {
       selected: true,
       status: (
         <Tooltip position="top" tooltip="Verified">
-          <Icon appearance="white" className="p-1 bg-success" name="done" size={10} />
+          <Icon aria-label="Verified" appearance="white" className="p-1 bg-success" name="done" size={10} />
         </Tooltip>
       ),
     },
@@ -121,7 +121,7 @@ const customCode = `() => {
       lastName: 'Wheeler',
       status: (
         <Tooltip position="top" tooltip="Verified">
-          <Icon appearance="white" className="p-1 bg-success" name="done" size={10} />
+          <Icon aria-label="Verified" appearance="white" className="p-1 bg-success" name="done" size={10} />
         </Tooltip>
       ),
     },
@@ -145,7 +145,7 @@ const customCode = `() => {
       image: <Avatar.Image src="https://design.innovaccer.com/images/avatar1.png" />,
       status: (
         <Tooltip position="top" tooltip="Deactivated">
-          <Icon appearance="white" className="p-1 bg-danger" name="remove" size={10} />
+          <Icon aria-label="Deactivated" appearance="white" className="p-1 bg-danger" name="remove" size={10} />
         </Tooltip>
       ),
     },
@@ -155,7 +155,7 @@ const customCode = `() => {
       selected: true,
       status: (
         <Tooltip position="top" tooltip="Traveling">
-          <Icon appearance="white" className="p-1 bg-secondary" name="water" size={10} />
+          <Icon aria-label="Traveling" appearance="white" className="p-1 bg-secondary" name="water" size={10} />
         </Tooltip>
       ),
     },
@@ -164,7 +164,7 @@ const customCode = `() => {
       lastName: 'Geller',
       status: (
         <Tooltip position="top" tooltip="Verified">
-          <Icon appearance="white" className="p-1 bg-success" name="done" size={10} />
+          <Icon aria-label="Verified" appearance="white" className="p-1 bg-success" name="done" size={10} />
         </Tooltip>
       ),
     },

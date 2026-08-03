@@ -12,7 +12,7 @@ export const withStatus = () => {
       lastName: 'Packton',
       status: (
         <Tooltip position="top" tooltip="Verified">
-          <Icon appearance="white" className="p-1 bg-success" name="done" size={10} />
+          <Icon aria-label="Verified" appearance="white" className="p-1 bg-success" name="done" size={10} />
         </Tooltip>
       ),
     },
@@ -21,7 +21,7 @@ export const withStatus = () => {
       lastName: 'Wheeler',
       status: (
         <Tooltip position="top" tooltip="On Call">
-          <Icon appearance="white" className="p-1 bg-primary" name="phone" size={10} />
+          <Icon aria-label="On Call" appearance="white" className="p-1 bg-primary" name="phone" size={10} />
         </Tooltip>
       ),
     },
@@ -35,7 +35,7 @@ export const withStatus = () => {
       image: <Avatar.Image src="https://design.innovaccer.com/images/avatar2.jpeg" />,
       status: (
         <Tooltip position="top" tooltip="Verified">
-          <Icon appearance="white" className="p-1 bg-success" name="done" size={10} />
+          <Icon aria-label="Verified" appearance="white" className="p-1 bg-success" name="done" size={10} />
         </Tooltip>
       ),
     },
@@ -67,7 +67,7 @@ const customCode = `() => {
       lastName: 'Packton',
       status: (
         <Tooltip position="top" tooltip="Verified">
-          <Icon appearance="white" className="p-1 bg-success" name="done" size={10} />
+          <Icon aria-label="Verified" appearance="white" className="p-1 bg-success" name="done" size={10} />
         </Tooltip>
       ),
     },
@@ -76,7 +76,7 @@ const customCode = `() => {
       lastName: 'Wheeler',
       status: (
         <Tooltip position="top" tooltip="On Call">
-          <Icon appearance="white" className="p-1 bg-primary" name="phone" size={10} />
+          <Icon aria-label="On Call" appearance="white" className="p-1 bg-primary" name="phone" size={10} />
         </Tooltip>
       ),
     },
@@ -90,7 +90,7 @@ const customCode = `() => {
       image: <Avatar.Image src="https://design.innovaccer.com/images/avatar2.jpeg" />,
       status: (
         <Tooltip position="top" tooltip="Verified">
-          <Icon appearance="white" className="p-1 bg-success" name="done" size={10} />
+          <Icon aria-label="Verified" appearance="white" className="p-1 bg-success" name="done" size={10} />
         </Tooltip>
       ),
     },
