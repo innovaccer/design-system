@@ -9,57 +9,75 @@ exports[`Horizontal Navigation component
       aria-label="Horizontal Navigation"
       class="HorizontalNav"
     >
-      <a
-        aria-current="page"
-        class="HorizontalNav-menu HorizontalNav-menu--active HorizontalNav-animate color-primary-dark"
-        data-test="DesignSystem-HorizontalNav"
-        href="/patient360"
+      <ul
+        class="HorizontalNav-list"
+        data-test="DesignSystem-HorizontalNav--List"
+        role="list"
       >
-        <i
-          aria-hidden="true"
-          class="material-symbols material-symbols-rounded Icon mr-3 HorizontalNav-animate"
-          data-test="DesignSystem-HorizontalNav--Icon"
-          style="font-size: 16px; width: 16px;"
+        <li
+          class="HorizontalNav-listItem"
         >
-          events
-        </i>
-        <span
-          class="Text Text--medium Text--regular color-primary-dark HorizontalNav-menuText HorizontalNav-animate"
-          data-test="DesignSystem-HorizontalNav--Text"
+          <a
+            aria-current="page"
+            class="HorizontalNav-menu HorizontalNav-menu--active HorizontalNav-animate color-primary-dark"
+            data-test="DesignSystem-HorizontalNav"
+            href="/patient360"
+          >
+            <i
+              aria-hidden="true"
+              class="material-symbols material-symbols-rounded Icon mr-3 HorizontalNav-animate"
+              data-test="DesignSystem-HorizontalNav--Icon"
+              style="font-size: 16px; width: 16px;"
+            >
+              events
+            </i>
+            <span
+              class="Text Text--medium Text--regular color-primary-dark HorizontalNav-menuText HorizontalNav-animate"
+              data-test="DesignSystem-HorizontalNav--Text"
+            >
+              Tab #1
+            </span>
+          </a>
+        </li>
+        <li
+          class="HorizontalNav-listItem"
         >
-          Tab #1
-        </span>
-      </a>
-      <a
-        class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
-        data-test="DesignSystem-HorizontalNav"
-        href="/outreach"
-      >
-        <span
-          class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
-          data-test="DesignSystem-HorizontalNav--Pills"
+          <a
+            class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
+            data-test="DesignSystem-HorizontalNav"
+            href="/outreach"
+          >
+            <span
+              class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
+              data-test="DesignSystem-HorizontalNav--Pills"
+            >
+              10
+            </span>
+            <span
+              class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
+              data-test="DesignSystem-HorizontalNav--Text"
+            >
+              Tab #2
+            </span>
+          </a>
+        </li>
+        <li
+          class="HorizontalNav-listItem"
         >
-          10
-        </span>
-        <span
-          class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
-          data-test="DesignSystem-HorizontalNav--Text"
-        >
-          Tab #2
-        </span>
-      </a>
-      <span
-        aria-disabled="true"
-        class="HorizontalNav-menu HorizontalNav-menu--disabled HorizontalNav-animate color-inverse-lightest"
-        data-test="DesignSystem-HorizontalNav"
-      >
-        <span
-          class="Text Text--medium Text--regular color-inverse-lightest HorizontalNav-menuText HorizontalNav-animate"
-          data-test="DesignSystem-HorizontalNav--Text"
-        >
-          Tab #3
-        </span>
-      </span>
+          <span
+            aria-disabled="true"
+            class="HorizontalNav-menu HorizontalNav-menu--disabled HorizontalNav-animate color-inverse-lightest"
+            data-test="DesignSystem-HorizontalNav"
+          >
+            <span
+              class="Text Text--medium Text--regular color-inverse-lightest HorizontalNav-menuText HorizontalNav-animate"
+              data-test="DesignSystem-HorizontalNav--Text"
+            >
+              Tab #3
+            </span>
+          </span>
+        </li>
+      </ul>
     </nav>
   </div>
 </body>
