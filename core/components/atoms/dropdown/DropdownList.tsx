@@ -274,8 +274,10 @@ const DropdownList = (props: OptionsProps) => {
   const dropdownCancelButtonRef = React.createRef<HTMLButtonElement>();
   const dropdownApplyButtonRef = React.createRef<HTMLButtonElement>();
   const dropdownFieldIdsPrefixRef = React.useRef(`ds-dropdown-${uidGenerator()}`);
-  // Links the trigger to its popup via `aria-controls`.
-  const optionsContainerId = `${dropdownFieldIdsPrefixRef.current}-options`;
+  // Target of the trigger's `aria-controls`. This sits on the popup wrapper rather than the
+  // listbox, because the listbox is not rendered in the loading, empty and error states while
+  // the trigger still reports itself as expanded.
+  const popupId = `${dropdownFieldIdsPrefixRef.current}-popup`;
 
   const enableSearch = withSearch || props.async;
 
@@ -362,7 +364,7 @@ const DropdownList = (props: OptionsProps) => {
       iconType={iconType}
       aria-label={triggerAriaLabelledBy ? undefined : triggerAriaLabel}
       aria-labelledby={triggerAriaLabelledBy}
-      aria-controls={dropdownOpen ? optionsContainerId : undefined}
+      aria-controls={dropdownOpen ? popupId : undefined}
     >
       {triggerLabel}
     </DropdownButton>
@@ -665,7 +667,6 @@ const DropdownList = (props: OptionsProps) => {
     return (
       <div className={dropdownWrapperClass} style={dropdownStyle} ref={dropdownRef}>
         <div
-          id={optionsContainerId}
           role={menu ? 'menu' : 'listbox'}
           aria-label={resolvedOptionsAriaLabel}
           aria-labelledby={triggerAriaLabelledBy}
@@ -1037,7 +1038,7 @@ const DropdownList = (props: OptionsProps) => {
         {...popoverOptions}
         data-test="DesignSystem-Dropdown--Popover"
       >
-        <div onKeyDown={onPopoverKeyDown} ref={popoverContentRef} role="presentation">
+        <div id={popupId} onKeyDown={onPopoverKeyDown} ref={popoverContentRef} role="presentation">
           {enableSearch && renderSearch()}
           {renderDropdownSection()}
           {showApplyButton && withCheckbox && renderApplyButton()}

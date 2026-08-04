@@ -952,25 +952,65 @@ describe('Dropdown trigger accessibility and visual parity with Select', () => {
     expect(getByTestId(trigger)).not.toHaveAttribute('aria-controls');
   });
 
-  it('points aria-controls at the listbox when the dropdown is open', () => {
-    const { getByTestId, getByRole } = render(<Dropdown options={storyOptions} />);
+  const expectAriaControlsResolves = (dropdownTrigger: HTMLElement, baseElement: HTMLElement) => {
+    const controls = dropdownTrigger.getAttribute('aria-controls');
+    expect(controls).toBeTruthy();
+    // The referenced id must exist in the DOM, or the relationship is broken for assistive tech.
+    expect(baseElement.querySelector(`#${controls}`)).toBeInTheDocument();
+  };
+
+  it('points aria-controls at a rendered popup when the dropdown is open', () => {
+    const { getByTestId, getByRole, baseElement } = render(<Dropdown options={storyOptions} />);
     const dropdownTrigger = getByTestId(trigger);
 
     fireEvent.click(dropdownTrigger);
 
-    const listbox = getByRole('listbox');
-    expect(listbox).toHaveAttribute('id');
-    expect(dropdownTrigger).toHaveAttribute('aria-controls', listbox.getAttribute('id'));
+    expectAriaControlsResolves(dropdownTrigger, baseElement as HTMLElement);
+    expect(baseElement.querySelector(`#${dropdownTrigger.getAttribute('aria-controls')}`)).toContainElement(
+      getByRole('listbox')
+    );
   });
 
-  it('points aria-controls at the menu when a menu dropdown is open', () => {
-    const { getByTestId, getByRole } = render(<Dropdown options={storyOptions} menu={true} />);
+  it('points aria-controls at a rendered popup when a menu dropdown is open', () => {
+    const { getByTestId, baseElement } = render(<Dropdown options={storyOptions} menu={true} />);
     const dropdownTrigger = getByTestId(trigger);
 
     fireEvent.click(dropdownTrigger);
 
-    const menu = getByRole('menu');
-    expect(dropdownTrigger).toHaveAttribute('aria-controls', menu.getAttribute('id'));
+    expectAriaControlsResolves(dropdownTrigger, baseElement as HTMLElement);
+  });
+
+  it('points aria-controls at a rendered popup while options are loading', () => {
+    const { getByTestId, queryByRole, baseElement } = render(<Dropdown options={[]} loading={true} />);
+    const dropdownTrigger = getByTestId(trigger);
+
+    fireEvent.click(dropdownTrigger);
+
+    // Guards against a vacuous pass: the loading branch renders no listbox at all.
+    expect(queryByRole('listbox')).not.toBeInTheDocument();
+    expectAriaControlsResolves(dropdownTrigger, baseElement as HTMLElement);
+  });
+
+  it('points aria-controls at a rendered popup when there are no results', () => {
+    const { getByTestId, queryByRole, baseElement } = render(
+      <Dropdown options={[]} noResultMessage="No results found" />
+    );
+    const dropdownTrigger = getByTestId(trigger);
+
+    fireEvent.click(dropdownTrigger);
+
+    expect(queryByRole('listbox')).not.toBeInTheDocument();
+    expectAriaControlsResolves(dropdownTrigger, baseElement as HTMLElement);
+  });
+
+  it('points aria-controls at a rendered popup when the error template is shown', () => {
+    const { getByTestId, queryByRole, baseElement } = render(<Dropdown options={[]} />);
+    const dropdownTrigger = getByTestId(trigger);
+
+    fireEvent.click(dropdownTrigger);
+
+    expect(queryByRole('listbox')).not.toBeInTheDocument();
+    expectAriaControlsResolves(dropdownTrigger, baseElement as HTMLElement);
   });
 
   it('shows keyboard_arrow_up icon when dropdown is open', () => {
