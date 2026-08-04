@@ -1,3 +1,37 @@
+## 4.27.0 (2026-08-04)
+
+### Highlights
+
+- Full keyboard navigation in the Calendar component, plus a broad sweep of ARIA and semantic-structure fixes across Dropdown, Select, Table, HorizontalNav, and Icon.
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(calendar): add keyboard navigation in calendar component (d548c7824)
+
+### Fixes
+
+- fix(dropdown): add a11y attribute in dropdown component (36213a930)
+- fix(horizontalNav): fix a11y list structure of nav items (5f0a26b6e)
+- fix(table): update a11y attributes in draggable dropdown (2d782a127)
+- fix(icon): add aria attributes for decorative icon (6984f1d93)
+- fix(table): update target size of resize drag element (5b7ba50e5)
+- fix(select): add aria attributes in select component (4a61bbe25)
+- fix(stories): update accessibility relates issues (5284d8aff)
+
+---
+
 ## 4.26.0 (2026-07-14)
 
 ### Highlights
