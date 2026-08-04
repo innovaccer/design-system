@@ -2599,6 +2599,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -2652,6 +2653,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -2711,6 +2713,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -2764,6 +2767,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -2823,6 +2827,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -2876,6 +2881,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -2935,6 +2941,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -2988,6 +2995,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -3047,6 +3055,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -3100,6 +3109,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -3159,6 +3169,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -3212,6 +3223,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -3271,6 +3283,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -3324,6 +3337,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -3383,6 +3397,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -3436,6 +3451,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -3495,6 +3511,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -3548,6 +3565,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -3607,6 +3625,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -3660,6 +3679,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -3719,6 +3739,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -3772,6 +3793,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -3831,6 +3853,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -3884,6 +3907,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -3943,6 +3967,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -3996,6 +4021,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -4055,6 +4081,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -4108,6 +4135,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -4167,6 +4195,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -4220,6 +4249,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -4279,6 +4309,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -4332,6 +4363,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -4391,6 +4423,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -4444,6 +4477,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -4503,6 +4537,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -4556,6 +4591,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -4615,6 +4651,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -4696,6 +4733,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -4748,6 +4786,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -4807,6 +4846,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -4860,6 +4900,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -4919,6 +4960,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -4972,6 +5014,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -5031,6 +5074,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -5084,6 +5128,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -5143,6 +5188,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -5196,6 +5242,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -5255,6 +5302,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -5308,6 +5356,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -5367,6 +5416,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -5420,6 +5470,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -5479,6 +5530,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -5532,6 +5584,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -5591,6 +5644,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -5644,6 +5698,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -5703,6 +5758,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -5756,6 +5812,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -5815,6 +5872,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -5868,6 +5926,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -5927,6 +5986,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -5980,6 +6040,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -6039,6 +6100,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -6092,6 +6154,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -6151,6 +6214,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -6204,6 +6268,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -6263,6 +6328,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -6316,6 +6382,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -6375,6 +6442,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -6428,6 +6496,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -6487,6 +6556,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -6540,6 +6610,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -6599,6 +6670,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"
@@ -6652,6 +6724,7 @@ exports[`Listbox component snapshot
             tabindex="-1"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               style="font-size: 16px; width: 16px;"

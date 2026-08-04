@@ -60,6 +60,7 @@ exports[`FileUploaderList component
             />
           </svg>
           <button
+            aria-label="Remove Audio File.mp3"
             class="Button Button--regular Button--regularSquare Button--transparent"
             data-test="DesignSystem-FileUploader--CancelButton"
             tabindex="0"
@@ -69,6 +70,7 @@ exports[`FileUploaderList component
               data-test="DesignSystem-Button--Icon-Wrapper"
             >
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
@@ -99,6 +101,7 @@ exports[`FileUploaderList component
           class="d-flex align-items-center"
         >
           <button
+            aria-label="Remove Video File.mp4"
             class="Button Button--regular Button--regularSquare Button--transparent"
             data-test="DesignSystem-FileUploader--CancelButton"
             tabindex="0"
@@ -108,6 +111,7 @@ exports[`FileUploaderList component
               data-test="DesignSystem-Button--Icon-Wrapper"
             >
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
@@ -138,6 +142,7 @@ exports[`FileUploaderList component
           class="d-flex align-items-center"
         >
           <button
+            aria-label="Retry uploading Image File.jpeg"
             class="Button Button--regular Button--regularSquare Button--transparent mr-2"
             data-test="DesignSystem-Button"
             tabindex="0"
@@ -147,6 +152,7 @@ exports[`FileUploaderList component
               data-test="DesignSystem-Button--Icon-Wrapper"
             >
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
@@ -156,6 +162,7 @@ exports[`FileUploaderList component
             </div>
           </button>
           <button
+            aria-label="Remove Image File.jpeg"
             class="Button Button--regular Button--regularSquare Button--transparent"
             data-test="DesignSystem-FileUploader--CancelButton"
             tabindex="0"
@@ -165,6 +172,7 @@ exports[`FileUploaderList component
               data-test="DesignSystem-Button--Icon-Wrapper"
             >
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"

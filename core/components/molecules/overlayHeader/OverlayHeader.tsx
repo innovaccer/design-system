@@ -88,6 +88,7 @@ export const OverlayHeader = (props: OverlayHeaderProps) => {
             className="mr-4"
             icon="arrow_back"
             largeIcon={true}
+            aria-label="Go back"
             onClick={backButtonCallback || backIconCallback}
           />
         )}

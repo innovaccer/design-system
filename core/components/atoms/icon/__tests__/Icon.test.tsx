@@ -93,4 +93,49 @@ describe('Icon component a11y', () => {
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
+
+  it('hides a decorative icon so its ligature does not leak into an ancestor name', () => {
+    const { getByTestId } = render(<Icon name="keyboard_arrow_down" />);
+
+    expect(getByTestId('DesignSystem-Icon')).toHaveAttribute('aria-hidden', 'true');
+  });
+
+  it('keeps the ligature out of the accessible name of a wrapping control', () => {
+    const { getByRole } = render(
+      <button>
+        <Icon name="keyboard_arrow_down" />
+        AUTH POLICY
+      </button>
+    );
+
+    expect(getByRole('button')).toHaveAccessibleName('AUTH POLICY');
+  });
+
+  it('exposes a labelled icon as an image instead of hiding it', () => {
+    const { getByTestId } = render(<Icon name={StringValue} aria-label="Upcoming events" />);
+    const icon = getByTestId('DesignSystem-Icon');
+
+    expect(icon).toHaveAttribute('role', 'img');
+    expect(icon).not.toHaveAttribute('aria-hidden');
+  });
+
+  it('does not hide an interactive icon', () => {
+    const { getByTestId } = render(<Icon name={StringValue} onClick={FunctionValue} />);
+    const icon = getByTestId('DesignSystem-Icon');
+
+    expect(icon).toHaveAttribute('role', 'button');
+    expect(icon).not.toHaveAttribute('aria-hidden');
+  });
+
+  it('does not hide a focusable icon, since aria-hidden on a focusable element is invalid', () => {
+    const { getByTestId } = render(<Icon name={StringValue} tabIndex={0} />);
+
+    expect(getByTestId('DesignSystem-Icon')).not.toHaveAttribute('aria-hidden');
+  });
+
+  it('lets a consumer opt out with an explicit aria-hidden={false}', () => {
+    const { getByTestId } = render(<Icon name={StringValue} aria-hidden={false} />);
+
+    expect(getByTestId('DesignSystem-Icon')).toHaveAttribute('aria-hidden', 'false');
+  });
 });

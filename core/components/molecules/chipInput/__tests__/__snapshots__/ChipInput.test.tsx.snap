@@ -48,6 +48,7 @@ exports[`ChipInput component
               tabindex="0"
             >
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--subtle"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -87,6 +88,7 @@ exports[`ChipInput component
               tabindex="0"
             >
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--subtle"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -111,6 +113,7 @@ exports[`ChipInput component
           tabindex="0"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -172,6 +175,7 @@ exports[`ChipInput component
               tabindex="-1"
             >
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--subtle"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -211,6 +215,7 @@ exports[`ChipInput component
               tabindex="-1"
             >
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--subtle"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -237,6 +242,7 @@ exports[`ChipInput component
           tabindex="-1"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--disabled p-3"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -298,6 +304,7 @@ exports[`ChipInput component
               tabindex="0"
             >
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--subtle"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -337,6 +344,7 @@ exports[`ChipInput component
               tabindex="0"
             >
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--subtle"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -361,6 +369,7 @@ exports[`ChipInput component
           tabindex="0"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"

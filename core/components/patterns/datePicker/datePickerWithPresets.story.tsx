@@ -36,7 +36,7 @@ const customCode = `() => {
     { value: 'thirtyDaysLater', label: '30 days later', getDate: getThirtyDaysLaterDate },
   ];
 
-  const DatePickerPreset = ({ size, withInput=false }) => {
+  const DatePickerPreset = ({ size, withInput=false, 'aria-labelledby': ariaLabelledBy, inputAriaLabel, inputId }) => {
 
     const [date, setDate] = React.useState(new Date());
     const [selectedChip, setSelectedChip] = React.useState('today');
@@ -53,7 +53,17 @@ const customCode = `() => {
     const selectedPreset = presets.find((p) => p.value === selectedChip);
 
     return (
-      <DatePicker date={date} showTodayDate={false} size={size} withInput={withInput}>
+      <DatePicker
+        date={date}
+        showTodayDate={false}
+        size={size}
+        withInput={withInput}
+        aria-labelledby={ariaLabelledBy}
+        inputOptions={{
+          ...(inputId ? { id: inputId } : {}),
+          ...(inputAriaLabel ? { 'aria-label': inputAriaLabel } : {}),
+        }}
+      >
         <div className="pt-6 px-5">
           <div className="d-flex align-items-center justify-content-between">
             <Subheading size="s" appearance="subtle">
@@ -112,8 +122,15 @@ const customCode = `() => {
         <DatePickerPreset size="small" />
       </Card>
       <Card className="w-50 my-5 p-5">
-        <Label>Set an appointment date:</Label>
-        <DatePickerPreset withInput={true} />
+        <Label id="appointment-date-label" withInput={true} htmlFor="appointment-date-input">
+          Set an appointment date:
+        </Label>
+        <DatePickerPreset
+          withInput={true}
+          aria-labelledby="appointment-date-label"
+          inputAriaLabel="Set an appointment date:"
+          inputId="appointment-date-input"
+        />
       </Card>
     </>
   );

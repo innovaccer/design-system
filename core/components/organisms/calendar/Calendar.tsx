@@ -112,6 +112,10 @@ export interface SharedProps extends BaseProps {
    * Associates calendar wrapper with an external label
    */
   'aria-labelledby'?: string;
+  /**
+   * Optional ref to the calendar root wrapper element
+   */
+  wrapperRef?: React.Ref<HTMLDivElement>;
 }
 
 export type CalendarProps = {
@@ -1717,6 +1721,18 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     );
   };
 
+  setCalendarWrapperRef = (node: HTMLDivElement | null) => {
+    (this.calendarWrapperRef as React.MutableRefObject<HTMLDivElement | null>).current = node;
+
+    const { wrapperRef } = this.props;
+    if (!wrapperRef) return;
+    if (typeof wrapperRef === 'function') {
+      wrapperRef(node);
+    } else {
+      (wrapperRef as React.MutableRefObject<HTMLDivElement | null>).current = node;
+    }
+  };
+
   render() {
     const { monthsInView, className, 'aria-label': ariaLabel, 'aria-labelledby': ariaLabelledBy } = this.props;
 
@@ -1733,7 +1749,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     return (
       <div
         {...baseProps}
-        ref={this.calendarWrapperRef}
+        ref={this.setCalendarWrapperRef}
         className={classes}
         data-test="DesignSystem-Calendar-Wrapper"
         aria-label={ariaLabel || defaultAriaLabel}

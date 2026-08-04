@@ -286,8 +286,8 @@ const HeaderCell = (props: HeaderCellProps) => {
       {schema.resizable && (
         <span
           className={styles['Grid-cellResize']}
-          onMouseDown={() => {
-            resizeCol({ updateColumnSchema }, name, el.current);
+          onMouseDown={(event: React.MouseEvent<HTMLSpanElement>) => {
+            resizeCol({ updateColumnSchema }, name, el.current, event.clientX);
             setIsDragged(false);
           }}
           onDoubleClick={autoFitColumn}

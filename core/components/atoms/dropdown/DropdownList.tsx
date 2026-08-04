@@ -274,6 +274,10 @@ const DropdownList = (props: OptionsProps) => {
   const dropdownCancelButtonRef = React.createRef<HTMLButtonElement>();
   const dropdownApplyButtonRef = React.createRef<HTMLButtonElement>();
   const dropdownFieldIdsPrefixRef = React.useRef(`ds-dropdown-${uidGenerator()}`);
+  // Target of the trigger's `aria-controls`. This sits on the popup wrapper rather than the
+  // listbox, because the listbox is not rendered in the loading, empty and error states while
+  // the trigger still reports itself as expanded.
+  const popupId = `${dropdownFieldIdsPrefixRef.current}-popup`;
 
   const enableSearch = withSearch || props.async;
 
@@ -360,6 +364,7 @@ const DropdownList = (props: OptionsProps) => {
       iconType={iconType}
       aria-label={triggerAriaLabelledBy ? undefined : triggerAriaLabel}
       aria-labelledby={triggerAriaLabelledBy}
+      aria-controls={dropdownOpen ? popupId : undefined}
     >
       {triggerLabel}
     </DropdownButton>
@@ -1033,7 +1038,7 @@ const DropdownList = (props: OptionsProps) => {
         {...popoverOptions}
         data-test="DesignSystem-Dropdown--Popover"
       >
-        <div onKeyDown={onPopoverKeyDown} ref={popoverContentRef} role="presentation">
+        <div id={popupId} onKeyDown={onPopoverKeyDown} ref={popoverContentRef} role="presentation">
           {enableSearch && renderSearch()}
           {renderDropdownSection()}
           {showApplyButton && withCheckbox && renderApplyButton()}

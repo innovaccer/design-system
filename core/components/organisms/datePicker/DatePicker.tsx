@@ -5,6 +5,7 @@ import { Popover, Utils, Chip } from '@/index';
 import { PopoverProps, InputMaskProps } from '@/index.type';
 import { Validators } from '@/utils/types';
 import { convertToDate, translateToString, compareDate, getDateInfo } from '../calendar/utility';
+import { findFocusableCalendarCell } from '../calendar/utils';
 import { Trigger } from './Trigger';
 import config from '../calendar/config';
 import classNames from 'classnames';
@@ -126,6 +127,9 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
     closeOnSelect: true,
   };
 
+  private inputRef = React.createRef<HTMLInputElement>();
+  private calendarContainerRef = React.createRef<HTMLDivElement>();
+
   constructor(props: DatePickerProps) {
     super(props);
 
@@ -176,7 +180,46 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
         }
       }
     }
+
+    // Return focus to the date input when the popover closes (select / Escape / outside click).
+    if (prevState.open && !this.state.open) {
+      const active = document.activeElement as HTMLElement | null;
+      const calendarRoot = this.calendarContainerRef.current;
+      if (!active || active === document.body || (calendarRoot && calendarRoot.contains(active))) {
+        this.inputRef.current?.focus({ preventScroll: true });
+      }
+    }
   }
+
+  focusCalendar = (): boolean => {
+    const root = this.calendarContainerRef.current;
+    if (!root) return false;
+
+    const target = findFocusableCalendarCell(root);
+    if (!target) return false;
+
+    // focusVisible keeps a ring after mouse-open in browsers that support it;
+    // calendar CSS also paints :focus so the indicator is never silent.
+    target.focus({ preventScroll: true, focusVisible: true } as FocusOptions);
+    return true;
+  };
+
+  onInputKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (!this.state.open || e.defaultPrevented) return;
+
+    // Keep typing uninterrupted; move focus into the portaled calendar on Tab / ArrowDown.
+    // Only prevent default when a focusable calendar cell exists (date/month/year views).
+    if (e.key === 'ArrowDown' || (e.key === 'Tab' && !e.shiftKey)) {
+      const root = this.calendarContainerRef.current;
+      const target = root ? findFocusableCalendarCell(root) : null;
+      if (!target) return;
+
+      e.preventDefault();
+      requestAnimationFrame(() => {
+        target.focus({ preventScroll: true, focusVisible: true } as FocusOptions);
+      });
+    }
+  };
 
   getError = (date?: Date) => {
     const { disabledBefore, disabledAfter, outputFormat, onError } = this.props;
@@ -216,9 +259,20 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
       case 'escapeKeypress':
         this.setState({ open: o });
         break;
-      case 'onClick':
-        this.setState({ open: true });
+      case 'onClick': {
+        // Only move focus when opening (closed → open). If already open (e.g. opened by typing),
+        // keep focus in the input so the user can reposition the caret / select text.
+        const shouldFocusCalendar = !this.state.open;
+        this.setState({ open: true }, () => {
+          if (!shouldFocusCalendar) return;
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              this.focusCalendar();
+            });
+          });
+        });
         break;
+      }
     }
   };
 
@@ -296,6 +350,7 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
             disabledBefore={dateDisabledBefore}
             disabledAfter={dateDisabledAfter}
             onDateChange={this.onDateChangeHandler}
+            wrapperRef={this.calendarContainerRef}
           />
         </div>
         {showTodayDate && (
@@ -321,8 +376,12 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
     if (withInput) {
       const triggerInputOptions = {
         ...inputOptions,
-        'aria-label': inputOptions['aria-label'] || this.props['aria-label'],
-        'aria-labelledby': inputOptions['aria-labelledby'] || this.props['aria-labelledby'],
+        ...(inputOptions['aria-label'] || this.props['aria-label']
+          ? { 'aria-label': inputOptions['aria-label'] || this.props['aria-label'] }
+          : {}),
+        ...(inputOptions['aria-labelledby'] || this.props['aria-labelledby']
+          ? { 'aria-labelledby': inputOptions['aria-labelledby'] || this.props['aria-labelledby'] }
+          : {}),
       };
       return (
         <Popover
@@ -333,6 +392,8 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
               validators={validators}
               state={this.state}
               setState={this.setState.bind(this)}
+              inputRef={this.inputRef}
+              onInputKeyDown={this.onInputKeyDown}
             />
           }
           triggerClass="w-100"

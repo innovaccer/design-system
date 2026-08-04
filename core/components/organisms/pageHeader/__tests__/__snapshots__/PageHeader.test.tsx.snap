@@ -62,6 +62,7 @@ exports[`Navigation component
                 data-test="DesignSystem-Button--Icon-Wrapper"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon"
                   data-test="DesignSystem-Button--Icon"
                   style="font-size: 14px; width: 14px;"
@@ -196,30 +197,44 @@ exports[`Navigation component
               aria-label="Horizontal Navigation"
               class="HorizontalNav"
             >
-              <button
-                class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
-                data-test="DesignSystem-HorizontalNav"
-                type="button"
+              <ul
+                class="HorizontalNav-list"
+                data-test="DesignSystem-HorizontalNav--List"
+                role="list"
               >
-                <span
-                  class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
-                  data-test="DesignSystem-HorizontalNav--Text"
+                <li
+                  class="HorizontalNav-listItem"
                 >
-                  Virtual Visits
-                </span>
-              </button>
-              <button
-                class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
-                data-test="DesignSystem-HorizontalNav"
-                type="button"
-              >
-                <span
-                  class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
-                  data-test="DesignSystem-HorizontalNav--Text"
+                  <button
+                    class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
+                    data-test="DesignSystem-HorizontalNav"
+                    type="button"
+                  >
+                    <span
+                      class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
+                      data-test="DesignSystem-HorizontalNav--Text"
+                    >
+                      Virtual Visits
+                    </span>
+                  </button>
+                </li>
+                <li
+                  class="HorizontalNav-listItem"
                 >
-                  Assesments
-                </span>
-              </button>
+                  <button
+                    class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
+                    data-test="DesignSystem-HorizontalNav"
+                    type="button"
+                  >
+                    <span
+                      class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
+                      data-test="DesignSystem-HorizontalNav--Text"
+                    >
+                      Assesments
+                    </span>
+                  </button>
+                </li>
+              </ul>
             </nav>
           </div>
           <div
@@ -390,6 +405,7 @@ exports[`Navigation component
                 data-test="DesignSystem-Button--Icon-Wrapper"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon"
                   data-test="DesignSystem-Button--Icon"
                   style="font-size: 14px; width: 14px;"
@@ -506,30 +522,44 @@ exports[`Navigation component
                     aria-label="Horizontal Navigation"
                     class="HorizontalNav"
                   >
-                    <button
-                      class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
-                      data-test="DesignSystem-HorizontalNav"
-                      type="button"
+                    <ul
+                      class="HorizontalNav-list"
+                      data-test="DesignSystem-HorizontalNav--List"
+                      role="list"
                     >
-                      <span
-                        class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
-                        data-test="DesignSystem-HorizontalNav--Text"
+                      <li
+                        class="HorizontalNav-listItem"
                       >
-                        Virtual Visits
-                      </span>
-                    </button>
-                    <button
-                      class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
-                      data-test="DesignSystem-HorizontalNav"
-                      type="button"
-                    >
-                      <span
-                        class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
-                        data-test="DesignSystem-HorizontalNav--Text"
+                        <button
+                          class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
+                          data-test="DesignSystem-HorizontalNav"
+                          type="button"
+                        >
+                          <span
+                            class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
+                            data-test="DesignSystem-HorizontalNav--Text"
+                          >
+                            Virtual Visits
+                          </span>
+                        </button>
+                      </li>
+                      <li
+                        class="HorizontalNav-listItem"
                       >
-                        Assesments
-                      </span>
-                    </button>
+                        <button
+                          class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
+                          data-test="DesignSystem-HorizontalNav"
+                          type="button"
+                        >
+                          <span
+                            class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
+                            data-test="DesignSystem-HorizontalNav--Text"
+                          >
+                            Assesments
+                          </span>
+                        </button>
+                      </li>
+                    </ul>
                   </nav>
                 </div>
               </div>
@@ -724,6 +754,7 @@ exports[`Navigation component
                 data-test="DesignSystem-Button--Icon-Wrapper"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon"
                   data-test="DesignSystem-Button--Icon"
                   style="font-size: 14px; width: 14px;"
@@ -858,30 +889,44 @@ exports[`Navigation component
               aria-label="Horizontal Navigation"
               class="HorizontalNav"
             >
-              <button
-                class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
-                data-test="DesignSystem-HorizontalNav"
-                type="button"
+              <ul
+                class="HorizontalNav-list"
+                data-test="DesignSystem-HorizontalNav--List"
+                role="list"
               >
-                <span
-                  class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
-                  data-test="DesignSystem-HorizontalNav--Text"
+                <li
+                  class="HorizontalNav-listItem"
                 >
-                  Virtual Visits
-                </span>
-              </button>
-              <button
-                class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
-                data-test="DesignSystem-HorizontalNav"
-                type="button"
-              >
-                <span
-                  class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
-                  data-test="DesignSystem-HorizontalNav--Text"
+                  <button
+                    class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
+                    data-test="DesignSystem-HorizontalNav"
+                    type="button"
+                  >
+                    <span
+                      class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
+                      data-test="DesignSystem-HorizontalNav--Text"
+                    >
+                      Virtual Visits
+                    </span>
+                  </button>
+                </li>
+                <li
+                  class="HorizontalNav-listItem"
                 >
-                  Assesments
-                </span>
-              </button>
+                  <button
+                    class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
+                    data-test="DesignSystem-HorizontalNav"
+                    type="button"
+                  >
+                    <span
+                      class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
+                      data-test="DesignSystem-HorizontalNav--Text"
+                    >
+                      Assesments
+                    </span>
+                  </button>
+                </li>
+              </ul>
             </nav>
           </div>
           <div
@@ -1202,6 +1247,7 @@ exports[`Navigation component
                       tabindex="0"
                     >
                       <i
+                        aria-hidden="true"
                         class="material-symbols material-symbols-outlined Icon mr-3 my-4 Stepper-animate"
                         data-test="DesignSystem-Step--Icon"
                         style="font-size: 16px; width: 16px;"
@@ -1224,6 +1270,7 @@ exports[`Navigation component
                       tabindex="-1"
                     >
                       <i
+                        aria-hidden="true"
                         class="material-symbols material-symbols-outlined Icon mr-3 my-4 Stepper-animate"
                         data-test="DesignSystem-Step--Icon"
                         style="font-size: 16px; width: 16px;"
@@ -1246,6 +1293,7 @@ exports[`Navigation component
                       tabindex="-1"
                     >
                       <i
+                        aria-hidden="true"
                         class="material-symbols material-symbols-outlined Icon mr-3 my-4 Stepper-animate"
                         data-test="DesignSystem-Step--Icon"
                         style="font-size: 16px; width: 16px;"
@@ -1530,6 +1578,7 @@ exports[`Navigation component
                 data-test="DesignSystem-Button--Icon-Wrapper"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon"
                   data-test="DesignSystem-Button--Icon"
                   style="font-size: 14px; width: 14px;"
@@ -1631,6 +1680,7 @@ exports[`Navigation component
                 data-test="DesignSystem-Button--Icon-Wrapper"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon"
                   data-test="DesignSystem-Button--Icon"
                   style="font-size: 14px; width: 14px;"
@@ -1747,30 +1797,44 @@ exports[`Navigation component
                     aria-label="Horizontal Navigation"
                     class="HorizontalNav"
                   >
-                    <button
-                      class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
-                      data-test="DesignSystem-HorizontalNav"
-                      type="button"
+                    <ul
+                      class="HorizontalNav-list"
+                      data-test="DesignSystem-HorizontalNav--List"
+                      role="list"
                     >
-                      <span
-                        class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
-                        data-test="DesignSystem-HorizontalNav--Text"
+                      <li
+                        class="HorizontalNav-listItem"
                       >
-                        Virtual Visits
-                      </span>
-                    </button>
-                    <button
-                      class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
-                      data-test="DesignSystem-HorizontalNav"
-                      type="button"
-                    >
-                      <span
-                        class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
-                        data-test="DesignSystem-HorizontalNav--Text"
+                        <button
+                          class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
+                          data-test="DesignSystem-HorizontalNav"
+                          type="button"
+                        >
+                          <span
+                            class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
+                            data-test="DesignSystem-HorizontalNav--Text"
+                          >
+                            Virtual Visits
+                          </span>
+                        </button>
+                      </li>
+                      <li
+                        class="HorizontalNav-listItem"
                       >
-                        Assesments
-                      </span>
-                    </button>
+                        <button
+                          class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
+                          data-test="DesignSystem-HorizontalNav"
+                          type="button"
+                        >
+                          <span
+                            class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
+                            data-test="DesignSystem-HorizontalNav--Text"
+                          >
+                            Assesments
+                          </span>
+                        </button>
+                      </li>
+                    </ul>
                   </nav>
                 </div>
               </div>
