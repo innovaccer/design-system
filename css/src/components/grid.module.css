@@ -251,13 +251,25 @@
 
 .Grid-cellResize {
   position: absolute;
+  top: 0;
+  right: 0;
+  width: var(--spacing-60);
+  height: 100%;
+  cursor: ew-resize;
+  box-sizing: border-box;
+}
+
+.Grid-cellResize::after {
+  content: '';
+  position: absolute;
+  top: 0;
   right: 0;
   width: var(--spacing-10);
-  cursor: ew-resize;
   height: 100%;
-  padding-right: var(--spacing-60);
-  margin-right: calc(-1 * var(--spacing-60));
-  box-sizing: content-box;
+}
+
+.Grid-headCell:has(> .Grid-cellResize) {
+  padding-right: calc(var(--spacing-60) - var(--spacing-10));
 }
 
 .Grid-cellSortIcon {
@@ -270,12 +282,12 @@
   background: var(--secondary);
 }
 
-.Grid-cellResize:hover {
+.Grid-cellResize:hover::after,
+.Grid-cellResize:focus-visible::after {
   background: var(--primary);
 }
 
 .Grid-cellResize:focus-visible {
-  background: var(--primary);
   outline: none;
 }
 

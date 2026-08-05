@@ -66,9 +66,17 @@ exports[`Dialog component
                   data-test="DesignSystem-Modal--CloseButton"
                   tabindex="0"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -220,9 +228,17 @@ exports[`Dialog component
                   data-test="DesignSystem-Modal--CloseButton"
                   tabindex="0"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -372,9 +388,17 @@ exports[`Dialog component
                   data-test="DesignSystem-Modal--CloseButton"
                   tabindex="0"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -525,9 +549,17 @@ exports[`Dialog component
                   data-test="DesignSystem-Modal--CloseButton"
                   tabindex="0"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -678,9 +710,17 @@ exports[`Dialog component
                   data-test="DesignSystem-Modal--CloseButton"
                   tabindex="0"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -831,9 +871,17 @@ exports[`Dialog component
                   data-test="DesignSystem-Modal--CloseButton"
                   tabindex="0"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -984,9 +1032,17 @@ exports[`Dialog component
                   data-test="DesignSystem-Modal--CloseButton"
                   tabindex="0"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -1137,9 +1193,17 @@ exports[`Dialog component
                   data-test="DesignSystem-Modal--CloseButton"
                   tabindex="0"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -1290,9 +1354,17 @@ exports[`Dialog component
                   data-test="DesignSystem-Modal--CloseButton"
                   tabindex="0"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -1443,9 +1515,17 @@ exports[`Dialog component
                   data-test="DesignSystem-Modal--CloseButton"
                   tabindex="0"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -1596,9 +1676,17 @@ exports[`Dialog component
                   data-test="DesignSystem-Modal--CloseButton"
                   tabindex="0"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -1749,9 +1837,17 @@ exports[`Dialog component
                   data-test="DesignSystem-Modal--CloseButton"
                   tabindex="0"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -1902,9 +1998,17 @@ exports[`Dialog component
                   data-test="DesignSystem-Modal--CloseButton"
                   tabindex="0"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"

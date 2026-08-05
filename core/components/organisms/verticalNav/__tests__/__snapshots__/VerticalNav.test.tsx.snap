@@ -14,7 +14,152 @@ exports[`Vertical Navigation component
       <div
         class="w-fit-content"
       >
+<<<<<<< HEAD
         <div
+=======
+        <a
+          aria-label="Patient 360"
+          aria-level="1"
+          aria-selected="false"
+          class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
+          data-menu-name="patient_360"
+          data-test="DesignSystem-VerticalNav--Item"
+          href="/patient360"
+          role="treeitem"
+          tabindex="-1"
+        >
+          <div
+            class="d-flex align-items-center overflow-hidden"
+          >
+            <i
+              aria-hidden="true"
+              class="material-symbols material-symbols-rounded Icon"
+              data-test="DesignSystem-VerticalNav--Icon"
+              style="font-size: 16px; width: 16px;"
+            >
+              assignment_ind
+            </i>
+          </div>
+        </a>
+      </div>
+      
+      <div
+        class="PopperWrapper-trigger"
+      >
+        <a
+          aria-expanded="true"
+          aria-label="Care Management and Resources"
+          aria-level="1"
+          aria-selected="false"
+          class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
+          data-menu-name="care_management"
+          data-test="DesignSystem-VerticalNav--Item"
+          role="treeitem"
+          tabindex="-1"
+        >
+          <div
+            class="d-flex align-items-center overflow-hidden"
+          >
+            <i
+              aria-hidden="true"
+              class="material-symbols material-symbols-rounded Icon"
+              data-test="DesignSystem-VerticalNav--Icon"
+              style="font-size: 16px; width: 16px;"
+            >
+              forum
+            </i>
+          </div>
+        </a>
+      </div>
+      
+      <div
+        class="PopperWrapper-trigger"
+      >
+        <a
+          aria-label="Timeline"
+          aria-level="2"
+          aria-selected="true"
+          class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem--active color-primary-dark"
+          data-menu-name="care_management.timeline"
+          role="treeitem"
+          tabindex="0"
+        >
+          <div
+            class="d-flex align-items-center overflow-hidden"
+          >
+            <i
+              aria-hidden="true"
+              class="material-symbols material-symbols-rounded Icon"
+              data-test="DesignSystem-VerticalNav--Icon"
+              style="font-size: 16px; width: 16px;"
+            >
+              assignment_ind
+            </i>
+          </div>
+        </a>
+      </div>
+      
+      <div
+        class="PopperWrapper-trigger"
+      >
+        <a
+          aria-label="Care Plans"
+          aria-level="2"
+          aria-selected="false"
+          class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
+          data-menu-name="care_management.care_plans"
+          role="treeitem"
+          tabindex="-1"
+        >
+          <div
+            class="d-flex align-items-center overflow-hidden"
+          >
+            <i
+              aria-hidden="true"
+              class="material-symbols material-symbols-rounded Icon"
+              data-test="DesignSystem-VerticalNav--Icon"
+              style="font-size: 16px; width: 16px;"
+            >
+              events
+            </i>
+          </div>
+        </a>
+      </div>
+      
+      <div
+        class="PopperWrapper-trigger"
+      >
+        <a
+          aria-label="Episodes"
+          aria-level="1"
+          aria-selected="false"
+          class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem--disabled color-inverse-lightest"
+          data-disabled="true"
+          data-menu-name="episodes"
+          data-test="DesignSystem-VerticalNav--Item"
+          role="treeitem"
+          tabindex="-1"
+        >
+          <div
+            class="d-flex align-items-center overflow-hidden"
+          >
+            <i
+              aria-hidden="true"
+              class="material-symbols material-symbols-rounded Icon"
+              data-test="DesignSystem-VerticalNav--Icon"
+              style="font-size: 16px; width: 16px;"
+            >
+              airline_seat_flat_angled
+            </i>
+          </div>
+        </a>
+      </div>
+      
+      <div
+        class="PopperWrapper-trigger"
+      >
+        <a
+>>>>>>> upstream
           aria-expanded="false"
           aria-haspopup="dialog"
           class="w-fit-content"
@@ -31,8 +176,16 @@ exports[`Vertical Navigation component
             role="treeitem"
             tabindex="-1"
           >
+<<<<<<< HEAD
             <div
               class="d-flex align-items-center overflow-hidden"
+=======
+            <i
+              aria-hidden="true"
+              class="material-symbols material-symbols-rounded Icon"
+              data-test="DesignSystem-VerticalNav--Icon"
+              style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
             >
               <i
                 class="material-symbols material-symbols-rounded Icon"
@@ -275,6 +428,7 @@ exports[`Vertical Navigation component
           class="d-flex align-items-center overflow-hidden"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
             style="font-size: 16px; width: 16px;"
@@ -319,6 +473,7 @@ exports[`Vertical Navigation component
           class="d-flex align-items-center overflow-hidden"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
             style="font-size: 16px; width: 16px;"
@@ -333,6 +488,7 @@ exports[`Vertical Navigation component
           </span>
         </div>
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon mx-4"
           data-test="DesignSystem-Icon"
           style="font-size: 16px; width: 16px;"
@@ -352,6 +508,7 @@ exports[`Vertical Navigation component
           class="d-flex align-items-center overflow-hidden"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
             style="font-size: 16px; width: 16px;"
@@ -378,6 +535,7 @@ exports[`Vertical Navigation component
           class="d-flex align-items-center overflow-hidden"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
             style="font-size: 16px; width: 16px;"
@@ -406,6 +564,7 @@ exports[`Vertical Navigation component
           class="d-flex align-items-center overflow-hidden"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
             style="font-size: 16px; width: 16px;"
@@ -440,6 +599,7 @@ exports[`Vertical Navigation component
           class="d-flex align-items-center overflow-hidden"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
             style="font-size: 16px; width: 16px;"
@@ -454,6 +614,7 @@ exports[`Vertical Navigation component
           </span>
         </div>
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon mx-4"
           data-test="DesignSystem-Icon"
           style="font-size: 16px; width: 16px;"

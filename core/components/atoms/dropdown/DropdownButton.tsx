@@ -56,6 +56,10 @@ export interface TriggerProps {
    * Associates dropdown trigger with an external label.
    */
   'aria-labelledby'?: string;
+  /**
+   * `id` of the popup the trigger controls. Set only while the popup is open.
+   */
+  'aria-controls'?: string;
 }
 
 export interface DropdownButtonProps extends TriggerProps {

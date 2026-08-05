@@ -119,6 +119,8 @@ export type SelectProps = {
    * {
    *  triggerSize?: 'small' | 'regular';
    *  'aria-label'?: string;
+   *  'aria-labelledby'?: string;
+   *  clearButtonAriaLabel?: string;
    *  icon?: string;
    *  placeholder?: string;
    *  inlineLabel?: string;
@@ -135,7 +137,9 @@ export type SelectProps = {
    * | Name | Description | Default |
    * | --- | --- | --- |
    * | triggerSize | Specifies the size of the Select trigger button. | regular |
-   * | aria-label | Accessible label for the Select trigger button | Select trigger |
+   * | aria-label | Accessible label for the Select trigger button. Omitted when `aria-labelledby` is set; when both are omitted, falls back to `placeholder`. | placeholder |
+   * | aria-labelledby | Associates the Select trigger with an external label | - |
+   * | clearButtonAriaLabel | Accessible name for the clear button | Clear ${aria-label \| placeholder} or "Clear selection" |
    * | icon | Specifies the name of the icon to be displayed in the trigger button | - |
    * | iconType | Specifies the type of icon to be displayed in the trigger button | - |
    * | inlineLabel | Optional label displayed inline inside the Select trigger button | - |
@@ -150,6 +154,14 @@ export type SelectProps = {
    */
 
   triggerOptions?: SelectTriggerProps;
+  /**
+   * Accessible label for the Select trigger. Applied when `triggerOptions['aria-label']` is not set.
+   */
+  'aria-label'?: string;
+  /**
+   * Associates the Select trigger with an external label. Applied when `triggerOptions['aria-labelledby']` is not set.
+   */
+  'aria-labelledby'?: string;
   /**
    * Default aria-describedby for the Select trigger.
    */
@@ -198,6 +210,8 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
     onToggle,
     styleType = 'filled',
     error = false,
+    'aria-label': ariaLabelProp,
+    'aria-labelledby': ariaLabelledByProp,
     'aria-describedby': ariaDescribedByProp,
     'aria-errormessage': ariaErrormessageProp,
     trapFocus,
@@ -230,6 +244,12 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
 
   const mergedTriggerOptions = {
     ...triggerOptions,
+    ...((triggerOptions == null || triggerOptions['aria-label'] == null) && ariaLabelProp
+      ? { 'aria-label': ariaLabelProp }
+      : {}),
+    ...((triggerOptions == null || triggerOptions['aria-labelledby'] == null) && ariaLabelledByProp
+      ? { 'aria-labelledby': ariaLabelledByProp }
+      : {}),
     ...((triggerOptions == null || triggerOptions['aria-describedby'] == null) && ariaDescribedByProp
       ? { 'aria-describedby': ariaDescribedByProp }
       : {}),

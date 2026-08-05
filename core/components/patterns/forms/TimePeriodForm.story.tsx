@@ -31,8 +31,17 @@ const customCode = `
             <Heading size="s" as="h6" className="mb-2">Population Filter</Heading>
             <div className="d-flex flex-column mt-5 mb-4">
               <div className="w-100 mb-4">
-                <Label withInput={true}>Region</Label>
-                <Select appendToBody width="100%" triggerOptions={{ 'aria-label': "Region" }}>
+                <Label withInput={true} htmlFor="time-period-region">Region</Label>
+                <Select
+                  appendToBody
+                  width="100%"
+                  triggerOptions={{
+                    id: "time-period-region",
+                    placeholder: "Select",
+                    'aria-label': "Region",
+                    clearButtonAriaLabel: "Clear Region selection",
+                  }}
+                >
                   <Select.List>
                     {options.map((item, key) => {
                       return (
@@ -45,8 +54,17 @@ const customCode = `
                 </Select>
               </div>
               <div className="w-100">
-                <Label withInput={true}>Organization</Label>
-                <Select appendToBody width="100%" triggerOptions={{ 'aria-label': "Organization" }}>
+                <Label withInput={true} htmlFor="time-period-org">Organization</Label>
+                <Select
+                  appendToBody
+                  width="100%"
+                  triggerOptions={{
+                    id: "time-period-org",
+                    placeholder: "Select",
+                    'aria-label': "Organization",
+                    clearButtonAriaLabel: "Clear Organization selection",
+                  }}
+                >
                   <Select.List>
                     {options.map((item, key) => {
                       return (
@@ -63,7 +81,17 @@ const customCode = `
             <div className="my-6 pt-6" style={{ borderTop: 'var(--border-width-2-5) solid var(--secondary-light)' }}>
               <Heading size="s" as="h6">Time Period</Heading>
               <div className="mt-5">
-                <DateRangePicker withInput />
+                <DateRangePicker
+                  withInput
+                  startInputOptions={{
+                    label: 'Start Date',
+                    'aria-label': 'Start date mm/dd/yyyy',
+                  }}
+                  endInputOptions={{
+                    label: 'End Date',
+                    'aria-label': 'End date mm/dd/yyyy',
+                  }}
+                />
               </div>
               <Slider
                 className="mt-6 mb-7"

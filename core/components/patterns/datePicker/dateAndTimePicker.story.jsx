@@ -113,11 +113,15 @@ const customCode = `
       return (
         <div className="d-flex">
           <div className="d-flex flex-column">
-            <Label withInput id="datetime-date-label">Date</Label>
+            <Label withInput id="datetime-date-label" htmlFor="datetime-date-input">Date</Label>
             <DatePicker
               withInput={true}
               onDateChange={this.onDateChange.bind(this)}
               aria-labelledby="datetime-date-label"
+              inputOptions={{
+                id: 'datetime-date-input',
+                'aria-label': 'Date',
+              }}
             />
           </div>
           <div className="d-flex flex-column ml-5" style={{width: 'var(--spacing-440)'}}>
@@ -125,6 +129,7 @@ const customCode = `
             <Dropdown
               id="datetime-time-dropdown"
               aria-labelledby="datetime-time-label"
+              aria-label="Time"
               optionsAriaLabel="Time options"
               open={open}
               onPopperToggle={this.onPopperToggle.bind(this)}

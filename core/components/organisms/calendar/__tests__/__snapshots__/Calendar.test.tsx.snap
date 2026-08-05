@@ -37,9 +37,17 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -68,6 +76,7 @@ exports[`Calendar component
                 Mar
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -87,6 +96,7 @@ exports[`Calendar component
                 2020
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -114,9 +124,17 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -1354,9 +1372,17 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -1385,6 +1411,7 @@ exports[`Calendar component
                 Mar
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -1404,6 +1431,7 @@ exports[`Calendar component
                 2020
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -1432,9 +1460,17 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -2673,9 +2709,17 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -2704,6 +2748,7 @@ exports[`Calendar component
                 Mar
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -2723,6 +2768,7 @@ exports[`Calendar component
                 2020
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -2750,9 +2796,17 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -3991,9 +4045,17 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -4022,6 +4084,7 @@ exports[`Calendar component
                 Mar
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -4041,6 +4104,7 @@ exports[`Calendar component
                 2020
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -4069,9 +4133,17 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -5309,9 +5381,17 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -5340,6 +5420,7 @@ exports[`Calendar component
                 Mar
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -5359,6 +5440,7 @@ exports[`Calendar component
                 2020
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -5386,9 +5468,17 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -6626,9 +6716,17 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -6657,6 +6755,7 @@ exports[`Calendar component
                 Mar
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -6676,6 +6775,7 @@ exports[`Calendar component
                 2020
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -6703,9 +6803,17 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -7943,9 +8051,17 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -7974,6 +8090,7 @@ exports[`Calendar component
                 Mar
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -7993,6 +8110,7 @@ exports[`Calendar component
                 2020
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -8020,9 +8138,17 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -9260,9 +9386,17 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -9291,6 +9425,7 @@ exports[`Calendar component
                 Mar
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -9310,6 +9445,7 @@ exports[`Calendar component
                 2020
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -9337,9 +9473,17 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -10577,9 +10721,17 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -10608,6 +10760,7 @@ exports[`Calendar component
                 Mar
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -10627,6 +10780,7 @@ exports[`Calendar component
                 2020
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -10654,9 +10808,17 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -11894,9 +12056,17 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -11925,6 +12095,7 @@ exports[`Calendar component
                 Mar
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -11944,6 +12115,7 @@ exports[`Calendar component
                 2020
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -11971,9 +12143,17 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -13211,9 +13391,17 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -13242,6 +13430,7 @@ exports[`Calendar component
                 Mar
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -13261,6 +13450,7 @@ exports[`Calendar component
                 2020
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -13288,9 +13478,17 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -14528,9 +14726,17 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -14559,6 +14765,7 @@ exports[`Calendar component
                 Mar
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -14578,6 +14785,7 @@ exports[`Calendar component
                 2020
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -14605,9 +14813,17 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -15845,9 +16061,17 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -15876,6 +16100,7 @@ exports[`Calendar component
                 Mar
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -15895,6 +16120,7 @@ exports[`Calendar component
                 2020
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -16836,6 +17062,7 @@ exports[`Calendar component
                 Apr
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -16855,6 +17082,7 @@ exports[`Calendar component
                 2020
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -16882,9 +17110,17 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -17879,9 +18115,17 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -17910,6 +18154,7 @@ exports[`Calendar component
                 Mar
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -17929,6 +18174,7 @@ exports[`Calendar component
                 2020
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -18870,6 +19116,7 @@ exports[`Calendar component
                 Apr
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -18889,6 +19136,7 @@ exports[`Calendar component
                 2020
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -19809,6 +20057,7 @@ exports[`Calendar component
                 May
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -19828,6 +20077,7 @@ exports[`Calendar component
                 2020
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -19855,9 +20105,17 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -20990,9 +21248,17 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -21021,6 +21287,7 @@ exports[`Calendar component
                 Mar
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -21040,6 +21307,7 @@ exports[`Calendar component
                 2020
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -21067,9 +21335,17 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -22307,9 +22583,17 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -22338,6 +22622,7 @@ exports[`Calendar component
                 2020
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -22365,9 +22650,17 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -22734,9 +23027,17 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -22785,9 +23086,17 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -23154,9 +23463,17 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 14px; width: 14px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -23185,6 +23502,7 @@ exports[`Calendar component
                 Mar
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -23204,6 +23522,7 @@ exports[`Calendar component
                 2020
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -23231,9 +23550,17 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 14px; width: 14px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -24471,9 +24798,17 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 14px; width: 14px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -24502,6 +24837,7 @@ exports[`Calendar component
                 Mar
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -24521,6 +24857,7 @@ exports[`Calendar component
                 2020
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -25462,6 +25799,7 @@ exports[`Calendar component
                 Apr
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -25481,6 +25819,7 @@ exports[`Calendar component
                 2020
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -25508,9 +25847,17 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 14px; width: 14px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -26505,9 +26852,17 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 14px; width: 14px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -26536,6 +26891,7 @@ exports[`Calendar component
                 Mar
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -26555,6 +26911,7 @@ exports[`Calendar component
                 2020
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -27496,6 +27853,7 @@ exports[`Calendar component
                 Apr
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -27515,6 +27873,7 @@ exports[`Calendar component
                 2020
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -28435,6 +28794,7 @@ exports[`Calendar component
                 May
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -28454,6 +28814,7 @@ exports[`Calendar component
                 2020
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -28481,9 +28842,17 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 14px; width: 14px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -29616,9 +29985,17 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 14px; width: 14px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -29647,6 +30024,7 @@ exports[`Calendar component
                 Mar
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -29666,6 +30044,7 @@ exports[`Calendar component
                 2020
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -29693,9 +30072,17 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 14px; width: 14px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -30933,9 +31320,17 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 14px; width: 14px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -30964,6 +31359,7 @@ exports[`Calendar component
                 2020
               </span>
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -30991,9 +31387,17 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 14px; width: 14px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -31360,9 +31764,17 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 14px; width: 14px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -31411,9 +31823,17 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 14px; width: 14px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"

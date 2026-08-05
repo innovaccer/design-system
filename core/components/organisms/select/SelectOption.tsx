@@ -47,13 +47,29 @@ export interface SelectOptionProps extends BaseProps {
    */
   'aria-label'?: string;
   /**
+   * Associates the option with labelling element(s). When omitted and the option has children,
+   * the visible option label is used via an internal id.
+   */
+  'aria-labelledby'?: string;
+  /**
    * Index in the list (injected by Select.List for roving tabindex).
    */
   index?: number;
 }
 
 export const SelectOption = (props: SelectOptionProps) => {
-  const { children, option, checkedState, onClick, withCheckbox = true, disabled, index, ...rest } = props;
+  const {
+    children,
+    option,
+    checkedState,
+    onClick,
+    withCheckbox = true,
+    disabled,
+    index,
+    'aria-label': ariaLabel,
+    'aria-labelledby': ariaLabelledBy,
+    ...rest
+  } = props;
   const contextProp = React.useContext(SelectContext);
   const {
     onOptionClick,
@@ -130,15 +146,19 @@ export const SelectOption = (props: SelectOptionProps) => {
 
   const childCount = React.Children.count(children);
   const optionLabelString = typeof option.label === 'string' ? option.label.trim() : '';
-  const checkboxFallbackAriaLabel = props['aria-label'] ?? (optionLabelString || undefined);
+  const checkboxFallbackAriaLabel = ariaLabel ?? (optionLabelString || undefined);
   const associateCheckboxWithOptionLabel = childCount > 0;
+  // Naming precedence: explicit aria-labelledby > explicit aria-label > generated labelledby from children > option.label
+  const resolvedOptionLabelledBy = ariaLabelledBy || (!ariaLabel && childCount > 0 ? optionLabelId : undefined);
+  const resolvedOptionAriaLabel = resolvedOptionLabelledBy ? undefined : ariaLabel || optionLabelString || undefined;
 
   return (
     <Listbox.Item
       role="option"
       onClick={onClickHandler}
       aria-selected={checked}
-      aria-label={props['aria-label'] || optionLabelString || undefined}
+      aria-labelledby={resolvedOptionLabelledBy}
+      aria-label={resolvedOptionAriaLabel}
       onKeyDown={(event) => onKeyDownHandler(event)}
       onFocus={(e) => setFocusedOption?.(e.currentTarget)}
       selected={checked}

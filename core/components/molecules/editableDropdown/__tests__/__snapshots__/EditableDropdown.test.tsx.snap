@@ -33,6 +33,7 @@ exports[`EditableDropdown component
               class="w-100"
               data-state="closed"
             >
+<<<<<<< HEAD
               <button
                 aria-expanded="false"
                 aria-haspopup="listbox"
@@ -41,6 +42,16 @@ exports[`EditableDropdown component
                 tabindex="0"
                 type="button"
                 value=""
+=======
+              <div
+                class="DropdownButton-wrapper"
+              />
+              <i
+                aria-hidden="true"
+                class="material-symbols material-symbols-rounded Icon Icon--default"
+                data-test="DesignSystem-Icon"
+                style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
               >
                 <div
                   class="DropdownButton-wrapper"
@@ -68,6 +79,7 @@ exports[`EditableDropdown component
             />
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default EditableDropdown-icon"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"

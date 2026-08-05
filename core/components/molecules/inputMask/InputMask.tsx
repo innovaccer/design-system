@@ -98,9 +98,20 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
     helpText,
     label,
     autoComplete = 'off',
+    clearButtonAriaLabel: clearButtonAriaLabelProp,
     'aria-describedby': ariaDescribedBy,
+    'aria-label': ariaLabel,
+    'aria-labelledby': ariaLabelledBy,
     ...rest
   } = props;
+
+  // Prefer explicit aria-labelledby, then explicit aria-label, then visual `label`.
+  // Pull aria-* out of `rest` so an explicit `undefined` from callers cannot wipe the fallback.
+  // Prefer an explicit clearButtonAriaLabel (localized/product-specific) before generating one.
+  const resolvedAriaLabelledBy = ariaLabelledBy;
+  const resolvedAriaLabel = resolvedAriaLabelledBy ? undefined : ariaLabel || label || undefined;
+  const clearNameSource = label || ariaLabel;
+  const clearButtonAriaLabel = clearButtonAriaLabelProp || (clearNameSource ? `Clear ${clearNameSource}` : undefined);
 
   const helpTextIdRef = React.useRef<string | null>(null);
   if (helpTextIdRef.current === null) {
@@ -412,8 +423,6 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
   return (
     <div className={classes} data-test="DesignSystem-InputMask--Wrapper">
       <Input
-        label={label}
-        aria-label={label}
         {...rest}
         value={value}
         error={error}
@@ -425,7 +434,10 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
         onPaste={onPasteHandler}
         autoComplete={autoComplete}
         ref={ref}
+        aria-label={resolvedAriaLabel}
+        aria-labelledby={resolvedAriaLabelledBy}
         aria-describedby={resolvedDescribedBy}
+        clearButtonAriaLabel={clearButtonAriaLabel}
       />
       <HelpText id={helpTextId} message={helpMessage} error={error} />
     </div>

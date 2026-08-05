@@ -29,6 +29,7 @@ exports[`Dropdown component
             <div
               class="DropdownButton-wrapper"
             >
+<<<<<<< HEAD
               <span
                 class="Text Text--regular DropdownButton-text"
               >
@@ -44,6 +45,20 @@ exports[`Dropdown component
             </i>
           </button>
         </div>
+=======
+              Select
+            </span>
+          </div>
+          <i
+            aria-hidden="true"
+            class="material-symbols material-symbols-rounded Icon Icon--default"
+            data-test="DesignSystem-Icon"
+            style="font-size: 16px; width: 16px;"
+          >
+            keyboard_arrow_down
+          </i>
+        </button>
+>>>>>>> upstream
       </div>
     </div>
   </div>
@@ -83,6 +98,7 @@ exports[`Dropdown component
             <div
               class="DropdownButton-wrapper"
             >
+<<<<<<< HEAD
               <span
                 class="Text Text--regular DropdownButton-text"
               >
@@ -98,6 +114,20 @@ exports[`Dropdown component
             </i>
           </button>
         </div>
+=======
+              Select
+            </span>
+          </div>
+          <i
+            aria-hidden="true"
+            class="material-symbols material-symbols-rounded Icon Icon--default"
+            data-test="DesignSystem-Icon"
+            style="font-size: 16px; width: 16px;"
+          >
+            keyboard_arrow_down
+          </i>
+        </button>
+>>>>>>> upstream
       </div>
     </div>
   </div>
@@ -137,6 +167,7 @@ exports[`Dropdown component
             <div
               class="DropdownButton-wrapper"
             >
+<<<<<<< HEAD
               <span
                 class="Text Text--regular DropdownButton-text"
               >
@@ -152,6 +183,20 @@ exports[`Dropdown component
             </i>
           </button>
         </div>
+=======
+              Select
+            </span>
+          </div>
+          <i
+            aria-hidden="true"
+            class="material-symbols material-symbols-rounded Icon Icon--default"
+            data-test="DesignSystem-Icon"
+            style="font-size: 16px; width: 16px;"
+          >
+            keyboard_arrow_down
+          </i>
+        </button>
+>>>>>>> upstream
       </div>
     </div>
   </div>
@@ -191,6 +236,7 @@ exports[`Dropdown component
             <div
               class="DropdownButton-wrapper"
             >
+<<<<<<< HEAD
               <span
                 class="Text Text--regular DropdownButton-text"
               >
@@ -206,6 +252,20 @@ exports[`Dropdown component
             </i>
           </button>
         </div>
+=======
+              Select
+            </span>
+          </div>
+          <i
+            aria-hidden="true"
+            class="material-symbols material-symbols-rounded Icon Icon--default"
+            data-test="DesignSystem-Icon"
+            style="font-size: 16px; width: 16px;"
+          >
+            keyboard_arrow_down
+          </i>
+        </button>
+>>>>>>> upstream
       </div>
     </div>
   </div>
@@ -259,14 +319,37 @@ exports[`Dropdown component
               </span>
             </div>
             <i
+<<<<<<< HEAD
               class="material-symbols material-symbols-rounded Icon Icon--default"
+=======
+              aria-hidden="true"
+              class="material-symbols material-symbols-rounded Icon Icon--default d-flex align-items-center mr-4"
+>>>>>>> upstream
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
             >
               keyboard_arrow_down
             </i>
+<<<<<<< HEAD
           </button>
         </div>
+=======
+            <span
+              class="Text Text--regular DropdownButton-text"
+            >
+              Select
+            </span>
+          </div>
+          <i
+            aria-hidden="true"
+            class="material-symbols material-symbols-rounded Icon Icon--default"
+            data-test="DesignSystem-Icon"
+            style="font-size: 16px; width: 16px;"
+          >
+            keyboard_arrow_down
+          </i>
+        </button>
+>>>>>>> upstream
       </div>
     </div>
   </div>
@@ -323,10 +406,25 @@ exports[`Dropdown component
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
             >
+<<<<<<< HEAD
               keyboard_arrow_down
             </i>
           </button>
         </div>
+=======
+              Select
+            </span>
+          </div>
+          <i
+            aria-hidden="true"
+            class="material-symbols material-symbols-rounded Icon Icon--default"
+            data-test="DesignSystem-Icon"
+            style="font-size: 16px; width: 16px;"
+          >
+            keyboard_arrow_down
+          </i>
+        </button>
+>>>>>>> upstream
       </div>
     </div>
   </div>
@@ -366,6 +464,7 @@ exports[`Dropdown component
             <div
               class="DropdownButton-wrapper"
             >
+<<<<<<< HEAD
               <span
                 class="Text Text--regular DropdownButton-text"
               >
@@ -381,6 +480,20 @@ exports[`Dropdown component
             </i>
           </button>
         </div>
+=======
+              Select
+            </span>
+          </div>
+          <i
+            aria-hidden="true"
+            class="material-symbols material-symbols-rounded Icon Icon--default"
+            data-test="DesignSystem-Icon"
+            style="font-size: 16px; width: 16px;"
+          >
+            keyboard_arrow_down
+          </i>
+        </button>
+>>>>>>> upstream
       </div>
     </div>
   </div>
@@ -435,14 +548,37 @@ exports[`Dropdown component
               </span>
             </div>
             <i
+<<<<<<< HEAD
               class="material-symbols material-symbols-rounded Icon Icon--disabled"
+=======
+              aria-hidden="true"
+              class="material-symbols material-symbols-rounded Icon Icon--disabled d-flex align-items-center mr-4"
+>>>>>>> upstream
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
             >
               keyboard_arrow_down
             </i>
+<<<<<<< HEAD
           </button>
         </div>
+=======
+            <span
+              class="Text Text--regular DropdownButton-text"
+            >
+              Select
+            </span>
+          </div>
+          <i
+            aria-hidden="true"
+            class="material-symbols material-symbols-rounded Icon Icon--disabled"
+            data-test="DesignSystem-Icon"
+            style="font-size: 16px; width: 16px;"
+          >
+            keyboard_arrow_down
+          </i>
+        </button>
+>>>>>>> upstream
       </div>
     </div>
   </div>
@@ -500,10 +636,25 @@ exports[`Dropdown component
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
             >
+<<<<<<< HEAD
               keyboard_arrow_down
             </i>
           </button>
         </div>
+=======
+              Select
+            </span>
+          </div>
+          <i
+            aria-hidden="true"
+            class="material-symbols material-symbols-rounded Icon Icon--disabled"
+            data-test="DesignSystem-Icon"
+            style="font-size: 16px; width: 16px;"
+          >
+            keyboard_arrow_down
+          </i>
+        </button>
+>>>>>>> upstream
       </div>
     </div>
   </div>
@@ -544,6 +695,7 @@ exports[`Dropdown component
             <div
               class="DropdownButton-wrapper"
             >
+<<<<<<< HEAD
               <span
                 class="Text Text--regular DropdownButton-text"
               >
@@ -559,6 +711,20 @@ exports[`Dropdown component
             </i>
           </button>
         </div>
+=======
+              Select
+            </span>
+          </div>
+          <i
+            aria-hidden="true"
+            class="material-symbols material-symbols-rounded Icon Icon--disabled"
+            data-test="DesignSystem-Icon"
+            style="font-size: 16px; width: 16px;"
+          >
+            keyboard_arrow_down
+          </i>
+        </button>
+>>>>>>> upstream
       </div>
     </div>
   </div>
@@ -598,6 +764,7 @@ exports[`Dropdown component
             <div
               class="DropdownButton-wrapper"
             >
+<<<<<<< HEAD
               <span
                 class="Text Text--regular DropdownButton-text"
               >
@@ -613,6 +780,20 @@ exports[`Dropdown component
             </i>
           </button>
         </div>
+=======
+              Select
+            </span>
+          </div>
+          <i
+            aria-hidden="true"
+            class="material-symbols material-symbols-rounded Icon Icon--default"
+            data-test="DesignSystem-Icon"
+            style="font-size: 16px; width: 16px;"
+          >
+            keyboard_arrow_down
+          </i>
+        </button>
+>>>>>>> upstream
       </div>
     </div>
   </div>
@@ -652,6 +833,7 @@ exports[`Dropdown component
             <div
               class="DropdownButton-wrapper"
             >
+<<<<<<< HEAD
               <span
                 class="Text Text--regular DropdownButton-text"
               >
@@ -667,6 +849,20 @@ exports[`Dropdown component
             </i>
           </button>
         </div>
+=======
+              Select
+            </span>
+          </div>
+          <i
+            aria-hidden="true"
+            class="material-symbols material-symbols-rounded Icon Icon--default"
+            data-test="DesignSystem-Icon"
+            style="font-size: 16px; width: 16px;"
+          >
+            keyboard_arrow_down
+          </i>
+        </button>
+>>>>>>> upstream
       </div>
     </div>
   </div>
@@ -706,6 +902,7 @@ exports[`Dropdown component
             <div
               class="DropdownButton-wrapper"
             >
+<<<<<<< HEAD
               <span
                 class="Text Text--regular DropdownButton-text"
               >
@@ -721,6 +918,20 @@ exports[`Dropdown component
             </i>
           </button>
         </div>
+=======
+              Select
+            </span>
+          </div>
+          <i
+            aria-hidden="true"
+            class="material-symbols material-symbols-rounded Icon Icon--default"
+            data-test="DesignSystem-Icon"
+            style="font-size: 16px; width: 16px;"
+          >
+            keyboard_arrow_down
+          </i>
+        </button>
+>>>>>>> upstream
       </div>
     </div>
   </div>
@@ -760,6 +971,7 @@ exports[`Dropdown component
             <div
               class="DropdownButton-wrapper"
             >
+<<<<<<< HEAD
               <span
                 class="Text Text--regular DropdownButton-text"
               >
@@ -775,6 +987,20 @@ exports[`Dropdown component
             </i>
           </button>
         </div>
+=======
+              Select
+            </span>
+          </div>
+          <i
+            aria-hidden="true"
+            class="material-symbols material-symbols-rounded Icon Icon--default"
+            data-test="DesignSystem-Icon"
+            style="font-size: 16px; width: 16px;"
+          >
+            keyboard_arrow_down
+          </i>
+        </button>
+>>>>>>> upstream
       </div>
     </div>
   </div>
@@ -814,6 +1040,7 @@ exports[`Dropdown component
             <div
               class="DropdownButton-wrapper"
             >
+<<<<<<< HEAD
               <span
                 class="Text Text--regular DropdownButton-text"
               >
@@ -829,6 +1056,20 @@ exports[`Dropdown component
             </i>
           </button>
         </div>
+=======
+              Select
+            </span>
+          </div>
+          <i
+            aria-hidden="true"
+            class="material-symbols material-symbols-rounded Icon Icon--default"
+            data-test="DesignSystem-Icon"
+            style="font-size: 16px; width: 16px;"
+          >
+            keyboard_arrow_down
+          </i>
+        </button>
+>>>>>>> upstream
       </div>
     </div>
   </div>
@@ -857,6 +1098,7 @@ exports[`Dropdown component
           class="w-fit-content"
           data-state="closed"
         >
+<<<<<<< HEAD
           <button
             aria-haspopup="menu"
             class="Button DropdownButton DropdownButton--regular DropdownButton--regularSquare"
@@ -864,6 +1106,13 @@ exports[`Dropdown component
             tabindex="0"
             type="button"
             value=""
+=======
+          <i
+            aria-hidden="true"
+            class="material-symbols material-symbols-rounded Icon Icon--default"
+            data-test="DesignSystem-Icon"
+            style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
           >
             <i
               class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -913,6 +1162,7 @@ exports[`Dropdown component
             <div
               class="DropdownButton-wrapper"
             >
+<<<<<<< HEAD
               <span
                 class="Text Text--regular DropdownButton-text"
               >
@@ -928,6 +1178,20 @@ exports[`Dropdown component
             </i>
           </button>
         </div>
+=======
+              Select
+            </span>
+          </div>
+          <i
+            aria-hidden="true"
+            class="material-symbols material-symbols-rounded Icon Icon--default"
+            data-test="DesignSystem-Icon"
+            style="font-size: 16px; width: 16px;"
+          >
+            keyboard_arrow_down
+          </i>
+        </button>
+>>>>>>> upstream
       </div>
     </div>
   </div>
@@ -967,6 +1231,7 @@ exports[`Dropdown component
             <div
               class="DropdownButton-wrapper"
             >
+<<<<<<< HEAD
               <span
                 class="Text Text--regular DropdownButton-text"
               >
@@ -982,6 +1247,20 @@ exports[`Dropdown component
             </i>
           </button>
         </div>
+=======
+              Select
+            </span>
+          </div>
+          <i
+            aria-hidden="true"
+            class="material-symbols material-symbols-rounded Icon Icon--default"
+            data-test="DesignSystem-Icon"
+            style="font-size: 16px; width: 16px;"
+          >
+            keyboard_arrow_down
+          </i>
+        </button>
+>>>>>>> upstream
       </div>
     </div>
   </div>
@@ -1021,6 +1300,7 @@ exports[`Dropdown component
             <div
               class="DropdownButton-wrapper"
             >
+<<<<<<< HEAD
               <span
                 class="Text Text--regular DropdownButton-text"
               >
@@ -1036,6 +1316,20 @@ exports[`Dropdown component
             </i>
           </button>
         </div>
+=======
+              Select
+            </span>
+          </div>
+          <i
+            aria-hidden="true"
+            class="material-symbols material-symbols-rounded Icon Icon--default"
+            data-test="DesignSystem-Icon"
+            style="font-size: 16px; width: 16px;"
+          >
+            keyboard_arrow_down
+          </i>
+        </button>
+>>>>>>> upstream
       </div>
     </div>
   </div>
@@ -1075,6 +1369,7 @@ exports[`Dropdown component
             <div
               class="DropdownButton-wrapper"
             >
+<<<<<<< HEAD
               <span
                 class="Text Text--regular DropdownButton-text"
               >
@@ -1090,6 +1385,20 @@ exports[`Dropdown component
             </i>
           </button>
         </div>
+=======
+              Select
+            </span>
+          </div>
+          <i
+            aria-hidden="true"
+            class="material-symbols material-symbols-rounded Icon Icon--default"
+            data-test="DesignSystem-Icon"
+            style="font-size: 16px; width: 16px;"
+          >
+            keyboard_arrow_down
+          </i>
+        </button>
+>>>>>>> upstream
       </div>
     </div>
   </div>
@@ -1129,6 +1438,7 @@ exports[`Dropdown component
             <div
               class="DropdownButton-wrapper"
             >
+<<<<<<< HEAD
               <span
                 class="Text Text--regular DropdownButton-text"
               >
@@ -1144,6 +1454,20 @@ exports[`Dropdown component
             </i>
           </button>
         </div>
+=======
+              Select
+            </span>
+          </div>
+          <i
+            aria-hidden="true"
+            class="material-symbols material-symbols-rounded Icon Icon--default"
+            data-test="DesignSystem-Icon"
+            style="font-size: 16px; width: 16px;"
+          >
+            keyboard_arrow_down
+          </i>
+        </button>
+>>>>>>> upstream
       </div>
     </div>
   </div>
@@ -1183,6 +1507,7 @@ exports[`Dropdown component
             <div
               class="DropdownButton-wrapper"
             >
+<<<<<<< HEAD
               <span
                 class="Text Text--regular DropdownButton-text"
               >
@@ -1198,6 +1523,20 @@ exports[`Dropdown component
             </i>
           </button>
         </div>
+=======
+              Select
+            </span>
+          </div>
+          <i
+            aria-hidden="true"
+            class="material-symbols material-symbols-rounded Icon Icon--default"
+            data-test="DesignSystem-Icon"
+            style="font-size: 16px; width: 16px;"
+          >
+            keyboard_arrow_down
+          </i>
+        </button>
+>>>>>>> upstream
       </div>
     </div>
   </div>
@@ -1237,6 +1576,7 @@ exports[`Dropdown component
             <div
               class="DropdownButton-wrapper"
             >
+<<<<<<< HEAD
               <span
                 class="Text Text--regular DropdownButton-text"
               >
@@ -1252,6 +1592,20 @@ exports[`Dropdown component
             </i>
           </button>
         </div>
+=======
+              Select
+            </span>
+          </div>
+          <i
+            aria-hidden="true"
+            class="material-symbols material-symbols-rounded Icon Icon--default"
+            data-test="DesignSystem-Icon"
+            style="font-size: 16px; width: 16px;"
+          >
+            keyboard_arrow_down
+          </i>
+        </button>
+>>>>>>> upstream
       </div>
     </div>
   </div>
@@ -1291,6 +1645,7 @@ exports[`Dropdown component
             <div
               class="DropdownButton-wrapper"
             >
+<<<<<<< HEAD
               <span
                 class="Text Text--regular DropdownButton-text"
               >
@@ -1306,6 +1661,20 @@ exports[`Dropdown component
             </i>
           </button>
         </div>
+=======
+              Select
+            </span>
+          </div>
+          <i
+            aria-hidden="true"
+            class="material-symbols material-symbols-rounded Icon Icon--default"
+            data-test="DesignSystem-Icon"
+            style="font-size: 16px; width: 16px;"
+          >
+            keyboard_arrow_down
+          </i>
+        </button>
+>>>>>>> upstream
       </div>
     </div>
   </div>
@@ -1345,6 +1714,7 @@ exports[`Dropdown component
             <div
               class="DropdownButton-wrapper"
             >
+<<<<<<< HEAD
               <span
                 class="Text Text--regular DropdownButton-text"
               >
@@ -1360,6 +1730,20 @@ exports[`Dropdown component
             </i>
           </button>
         </div>
+=======
+              Select
+            </span>
+          </div>
+          <i
+            aria-hidden="true"
+            class="material-symbols material-symbols-rounded Icon Icon--default"
+            data-test="DesignSystem-Icon"
+            style="font-size: 16px; width: 16px;"
+          >
+            keyboard_arrow_down
+          </i>
+        </button>
+>>>>>>> upstream
       </div>
     </div>
   </div>
@@ -1399,6 +1783,7 @@ exports[`Dropdown component
             <div
               class="DropdownButton-wrapper"
             >
+<<<<<<< HEAD
               <span
                 class="Text Text--regular DropdownButton-text"
               >
@@ -1414,6 +1799,20 @@ exports[`Dropdown component
             </i>
           </button>
         </div>
+=======
+              Select
+            </span>
+          </div>
+          <i
+            aria-hidden="true"
+            class="material-symbols material-symbols-rounded Icon Icon--default"
+            data-test="DesignSystem-Icon"
+            style="font-size: 16px; width: 16px;"
+          >
+            keyboard_arrow_down
+          </i>
+        </button>
+>>>>>>> upstream
       </div>
     </div>
   </div>
@@ -1453,6 +1852,7 @@ exports[`Dropdown component
             <div
               class="DropdownButton-wrapper"
             >
+<<<<<<< HEAD
               <span
                 class="Text Text--regular DropdownButton-text"
               >
@@ -1468,6 +1868,20 @@ exports[`Dropdown component
             </i>
           </button>
         </div>
+=======
+              Select
+            </span>
+          </div>
+          <i
+            aria-hidden="true"
+            class="material-symbols material-symbols-rounded Icon Icon--default"
+            data-test="DesignSystem-Icon"
+            style="font-size: 16px; width: 16px;"
+          >
+            keyboard_arrow_down
+          </i>
+        </button>
+>>>>>>> upstream
       </div>
     </div>
   </div>

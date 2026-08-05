@@ -7,6 +7,7 @@ import { Validators } from '@/utils/types';
 import { Trigger } from './Trigger';
 import { SingleInputTrigger } from './SingleInputTrigger';
 import { getDateInfo, convertToDate, compareDate, translateToString } from '../calendar/utility';
+import { findFocusableCalendarCell, formatDateAriaLabel } from '../calendar/utils';
 import { Popover, Utils } from '@/index';
 import styles from '@css/components/dateRangePicker.module.css';
 import {
@@ -157,6 +158,11 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
     },
   };
   monthsInView: number;
+  private startInputRef = React.createRef<HTMLInputElement>();
+  private endInputRef = React.createRef<HTMLInputElement>();
+  private singleInputRef = React.createRef<HTMLInputElement>();
+  private calendarContainerRef = React.createRef<HTMLDivElement>();
+  private lastFocusedInput: 'start' | 'end' | 'single' = 'start';
 
   constructor(props: DateRangePickerProps) {
     super(props);
@@ -183,6 +189,7 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
     };
 
     this.monthsInView = props.monthsInView || (props.withInput ? 2 : 1);
+    this.lastFocusedInput = props.singleInput ? 'single' : 'start';
   }
 
   componentDidUpdate(prevProps: DateRangePickerProps, prevState: DateRangePickerState) {
@@ -263,7 +270,76 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
         });
       }
     }
+
+    // Return focus to the last-used date input when the popover closes.
+    if (prevState.open && !this.state.open) {
+      const active = document.activeElement as HTMLElement | null;
+      const calendarRoot = this.calendarContainerRef.current;
+      if (!active || active === document.body || (calendarRoot && calendarRoot.contains(active))) {
+        this.focusLastInput();
+      }
+    }
   }
+
+  focusLastInput = () => {
+    const ref =
+      this.lastFocusedInput === 'end'
+        ? this.endInputRef
+        : this.lastFocusedInput === 'single'
+          ? this.singleInputRef
+          : this.startInputRef;
+    ref.current?.focus({ preventScroll: true });
+  };
+
+  focusCalendar = (): boolean => {
+    const root = this.calendarContainerRef.current;
+    if (!root) return false;
+
+    const preferredDate =
+      this.lastFocusedInput === 'end'
+        ? this.state.endDate
+        : this.lastFocusedInput === 'start'
+          ? this.state.startDate
+          : this.state.startDate || this.state.endDate;
+
+    const target = findFocusableCalendarCell(root, {
+      preferredAriaLabel: preferredDate ? formatDateAriaLabel(preferredDate) : undefined,
+      preferredSelectedIndex: this.lastFocusedInput === 'end' ? 'last' : 'first',
+    });
+    if (!target) return false;
+
+    target.focus({ preventScroll: true, focusVisible: true } as FocusOptions);
+    return true;
+  };
+
+  onInputKeyDown = (input: 'start' | 'end' | 'single') => (e: React.KeyboardEvent<HTMLInputElement>) => {
+    this.lastFocusedInput = input;
+    if (!this.state.open || e.defaultPrevented) return;
+
+    // Only prevent default when a focusable calendar cell exists (date/month/year views).
+    if (e.key === 'ArrowDown' || (e.key === 'Tab' && !e.shiftKey)) {
+      const root = this.calendarContainerRef.current;
+      if (!root) return;
+
+      const preferredDate =
+        input === 'end'
+          ? this.state.endDate
+          : input === 'start'
+            ? this.state.startDate
+            : this.state.startDate || this.state.endDate;
+
+      const target = findFocusableCalendarCell(root, {
+        preferredAriaLabel: preferredDate ? formatDateAriaLabel(preferredDate) : undefined,
+        preferredSelectedIndex: input === 'end' ? 'last' : 'first',
+      });
+      if (!target) return;
+
+      e.preventDefault();
+      requestAnimationFrame(() => {
+        target.focus({ preventScroll: true, focusVisible: true } as FocusOptions);
+      });
+    }
+  };
 
   getDate = (startDate?: Date, endDate?: Date) => {
     const { inputFormat } = this.props;
@@ -351,9 +427,20 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
       case 'escapeKeypress':
         this.setState({ open: o });
         break;
-      case 'onClick':
-        this.setState({ open: true });
+      case 'onClick': {
+        // Only move focus when opening (closed → open). If already open (e.g. opened by typing),
+        // keep focus in the input so the user can reposition the caret / select text.
+        const shouldFocusCalendar = !this.state.open;
+        this.setState({ open: true }, () => {
+          if (!shouldFocusCalendar) return;
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              this.focusCalendar();
+            });
+          });
+        });
         break;
+      }
     }
   };
 
@@ -393,6 +480,7 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
         yearNav={yearNav}
         monthNav={monthNav}
         rangeLimit={rangeLimit}
+        wrapperRef={this.calendarContainerRef}
       />
     );
   }
@@ -421,20 +509,35 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
     });
 
     if (withInput) {
+      // React defaultProps do not deep-merge objects; restore default labels when callers
+      // pass a partial inputOptions/startInputOptions/endInputOptions object.
+      const defaults = DateRangePicker.defaultProps;
+      const resolvedSingleInputOptions = { ...defaults.inputOptions, ...inputOptions };
+      const resolvedStartInputOptions = { ...defaults.startInputOptions, ...startInputOptions };
+      const resolvedEndInputOptions = { ...defaults.endInputOptions, ...endInputOptions };
+
       const mergedSingleInputOptions = {
-        ...inputOptions,
-        'aria-label': inputOptions['aria-label'] || ariaLabel,
-        'aria-labelledby': inputOptions['aria-labelledby'] || ariaLabelledBy,
+        ...resolvedSingleInputOptions,
+        ...(resolvedSingleInputOptions['aria-label'] || ariaLabel
+          ? { 'aria-label': resolvedSingleInputOptions['aria-label'] || ariaLabel }
+          : {}),
+        ...(resolvedSingleInputOptions['aria-labelledby'] || ariaLabelledBy
+          ? { 'aria-labelledby': resolvedSingleInputOptions['aria-labelledby'] || ariaLabelledBy }
+          : {}),
       };
       const mergedStartInputOptions = {
-        ...startInputOptions,
-        'aria-label': startInputOptions['aria-label'],
-        'aria-labelledby': startInputOptions['aria-labelledby'] || ariaLabelledBy,
+        ...resolvedStartInputOptions,
+        ...(resolvedStartInputOptions['aria-label'] ? { 'aria-label': resolvedStartInputOptions['aria-label'] } : {}),
+        ...(resolvedStartInputOptions['aria-labelledby'] || ariaLabelledBy
+          ? { 'aria-labelledby': resolvedStartInputOptions['aria-labelledby'] || ariaLabelledBy }
+          : {}),
       };
       const mergedEndInputOptions = {
-        ...endInputOptions,
-        'aria-label': endInputOptions['aria-label'],
-        'aria-labelledby': endInputOptions['aria-labelledby'] || ariaLabelledBy,
+        ...resolvedEndInputOptions,
+        ...(resolvedEndInputOptions['aria-label'] ? { 'aria-label': resolvedEndInputOptions['aria-label'] } : {}),
+        ...(resolvedEndInputOptions['aria-labelledby'] || ariaLabelledBy
+          ? { 'aria-labelledby': resolvedEndInputOptions['aria-labelledby'] || ariaLabelledBy }
+          : {}),
       };
       const trigger = singleInput ? (
         <SingleInputTrigger
@@ -443,6 +546,8 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
           validators={validators}
           state={this.state}
           setState={this.setState.bind(this)}
+          inputRef={this.singleInputRef}
+          onInputKeyDown={this.onInputKeyDown('single')}
         />
       ) : (
         <Trigger
@@ -452,6 +557,16 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
           validators={validators}
           state={this.state}
           setState={this.setState.bind(this)}
+          startInputRef={this.startInputRef}
+          endInputRef={this.endInputRef}
+          onStartInputKeyDown={this.onInputKeyDown('start')}
+          onEndInputKeyDown={this.onInputKeyDown('end')}
+          onStartInputActivate={() => {
+            this.lastFocusedInput = 'start';
+          }}
+          onEndInputActivate={() => {
+            this.lastFocusedInput = 'end';
+          }}
         />
       );
 

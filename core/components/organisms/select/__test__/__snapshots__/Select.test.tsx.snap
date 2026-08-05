@@ -14,9 +14,20 @@ exports[`Select List component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -73,9 +84,20 @@ exports[`Select List component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -132,9 +154,20 @@ exports[`Select List component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -191,9 +224,20 @@ exports[`Select List component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -250,9 +294,20 @@ exports[`Select List component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -309,9 +364,20 @@ exports[`Select List component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -368,9 +434,20 @@ exports[`Select List component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -427,9 +504,20 @@ exports[`Select List component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -486,9 +574,20 @@ exports[`Select List component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -545,9 +644,20 @@ exports[`Select List component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -604,9 +714,20 @@ exports[`Select List component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -663,9 +784,20 @@ exports[`Select List component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -722,9 +854,20 @@ exports[`Select List component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -781,9 +924,20 @@ exports[`Select List component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -840,9 +994,20 @@ exports[`Select List component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -899,9 +1064,20 @@ exports[`Select List component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -958,9 +1134,20 @@ exports[`Select List component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -1017,9 +1204,20 @@ exports[`Select List component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -1076,9 +1274,20 @@ exports[`Select List component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -1135,9 +1344,20 @@ exports[`Select List component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -1194,9 +1414,20 @@ exports[`Select List component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -1253,9 +1484,20 @@ exports[`Select List component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -1312,9 +1554,20 @@ exports[`Select List component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -1371,9 +1624,20 @@ exports[`Select List component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -1430,9 +1694,20 @@ exports[`Select List component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -1489,9 +1764,20 @@ exports[`Select List component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -1548,9 +1834,20 @@ exports[`Select List component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -1607,9 +1904,20 @@ exports[`Select List component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -1666,9 +1974,20 @@ exports[`Select List component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -1725,9 +2044,20 @@ exports[`Select List component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -1784,9 +2114,20 @@ exports[`Select List component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -1843,9 +2184,20 @@ exports[`Select List component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -1902,9 +2254,20 @@ exports[`Select List component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -1961,9 +2324,20 @@ exports[`Select List component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -2020,9 +2394,20 @@ exports[`Select List component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -2079,9 +2464,20 @@ exports[`Select List component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -2138,9 +2534,20 @@ exports[`Select Option component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -2197,9 +2604,20 @@ exports[`Select Option component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -2256,9 +2674,20 @@ exports[`Select Option component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -2315,9 +2744,20 @@ exports[`Select Option component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -2374,9 +2814,20 @@ exports[`Select Option component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -2433,9 +2884,20 @@ exports[`Select Option component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -2492,9 +2954,20 @@ exports[`Select Option component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -2551,9 +3024,20 @@ exports[`Select Option component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -2610,9 +3094,20 @@ exports[`Select Option component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -2669,9 +3164,20 @@ exports[`Select Option component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -2728,9 +3234,20 @@ exports[`Select Option component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -2787,9 +3304,20 @@ exports[`Select Option component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -2846,9 +3374,20 @@ exports[`Select Option component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -2905,9 +3444,20 @@ exports[`Select Option component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -2964,9 +3514,20 @@ exports[`Select Option component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -3023,9 +3584,20 @@ exports[`Select Option component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -3082,9 +3654,20 @@ exports[`Select Option component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -3141,9 +3724,20 @@ exports[`Select Option component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -3200,9 +3794,20 @@ exports[`Select Option component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -3259,9 +3864,20 @@ exports[`Select Option component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -3318,9 +3934,20 @@ exports[`Select Option component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -3377,9 +4004,20 @@ exports[`Select Option component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -3436,9 +4074,20 @@ exports[`Select Option component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -3495,9 +4144,20 @@ exports[`Select Option component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -3554,9 +4214,20 @@ exports[`Select Option component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -3613,9 +4284,20 @@ exports[`Select Option component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -3672,9 +4354,20 @@ exports[`Select Option component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -3731,9 +4424,20 @@ exports[`Select Option component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -3790,9 +4494,20 @@ exports[`Select Option component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -3849,9 +4564,20 @@ exports[`Select Option component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -3908,9 +4634,20 @@ exports[`Select Option component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -3967,9 +4704,20 @@ exports[`Select Option component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -4026,9 +4774,20 @@ exports[`Select Option component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -4085,9 +4844,20 @@ exports[`Select Option component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -4144,9 +4914,20 @@ exports[`Select Option component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -4203,9 +4984,20 @@ exports[`Select Option component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -4262,9 +5054,20 @@ exports[`Select component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"
@@ -4321,9 +5124,20 @@ exports[`Select component snapshots
       >
         <div
           aria-expanded="false"
+<<<<<<< HEAD
           aria-haspopup="dialog"
           class="d-block"
           data-state="closed"
+=======
+          aria-haspopup="listbox"
+          aria-label="Select"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          role="combobox"
+          style="width: 176px;"
+          tabindex="0"
+          type="button"
+>>>>>>> upstream
         >
           <button
             aria-controls="select-listbox-Test-uid"

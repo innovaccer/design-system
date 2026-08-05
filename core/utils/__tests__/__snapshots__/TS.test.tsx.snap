@@ -17,6 +17,7 @@ exports[`TS renders children 1`] = `
         tabindex="0"
       >
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon Icon--inverse"
           data-test="DesignSystem-Avatar--Icon"
           style="font-size: 20px; width: 20px;"
@@ -146,9 +147,17 @@ exports[`TS renders children 1`] = `
                     tabindex="0"
                     type="button"
                   >
+<<<<<<< HEAD
                     <div
                       class="Button-icon"
                       data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                    <i
+                      aria-hidden="true"
+                      class="material-symbols material-symbols-rounded Icon"
+                      data-test="DesignSystem-Button--Icon"
+                      style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                     >
                       <i
                         class="material-symbols material-symbols-rounded Icon"
@@ -177,6 +186,7 @@ exports[`TS renders children 1`] = `
                   Jun
                 </span>
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                   data-test="DesignSystem-Icon"
                   style="font-size: 16px; width: 16px;"
@@ -196,6 +206,7 @@ exports[`TS renders children 1`] = `
                   2021
                 </span>
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                   data-test="DesignSystem-Icon"
                   style="font-size: 16px; width: 16px;"
@@ -223,9 +234,17 @@ exports[`TS renders children 1`] = `
                     tabindex="0"
                     type="button"
                   >
+<<<<<<< HEAD
                     <div
                       class="Button-icon"
                       data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                    <i
+                      aria-hidden="true"
+                      class="material-symbols material-symbols-rounded Icon"
+                      data-test="DesignSystem-Button--Icon"
+                      style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                     >
                       <i
                         class="material-symbols material-symbols-rounded Icon"
@@ -1468,6 +1487,7 @@ exports[`TS renders children 1`] = `
           <div
             class="DropdownButton-wrapper"
           >
+<<<<<<< HEAD
             <span
               class="Text Text--regular DropdownButton-text"
             >
@@ -1483,6 +1503,20 @@ exports[`TS renders children 1`] = `
           </i>
         </button>
       </div>
+=======
+            Select
+          </span>
+        </div>
+        <i
+          aria-hidden="true"
+          class="material-symbols material-symbols-rounded Icon Icon--default"
+          data-test="DesignSystem-Icon"
+          style="font-size: 16px; width: 16px;"
+        >
+          keyboard_arrow_down
+        </i>
+      </button>
+>>>>>>> upstream
     </div>
   </div>
   <div
@@ -1514,6 +1548,7 @@ exports[`TS renders children 1`] = `
               class="w-100"
               data-state="closed"
             >
+<<<<<<< HEAD
               <button
                 aria-expanded="false"
                 aria-haspopup="listbox"
@@ -1522,6 +1557,16 @@ exports[`TS renders children 1`] = `
                 tabindex="0"
                 type="button"
                 value=""
+=======
+              <div
+                class="DropdownButton-wrapper"
+              />
+              <i
+                aria-hidden="true"
+                class="material-symbols material-symbols-rounded Icon Icon--default"
+                data-test="DesignSystem-Icon"
+                style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
               >
                 <div
                   class="DropdownButton-wrapper"
@@ -1549,6 +1594,7 @@ exports[`TS renders children 1`] = `
             />
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default EditableDropdown-icon"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -1586,6 +1632,7 @@ exports[`TS renders children 1`] = `
     Hello World!
   </h4>
   <i
+    aria-hidden="true"
     class="material-symbols material-symbols-rounded Icon"
     data-test="DesignSystem-Icon"
     style="font-size: 16px; width: 16px;"
@@ -2363,6 +2410,7 @@ exports[`TS renders children 1`] = `
       data-test="DesignSystem-Column"
     >
       <button
+        aria-label="Close"
         class="Button Button--regular Button--regularSquare Button--transparent"
         data-test="DesignSystem-Modal--CloseButton"
         tabindex="0"
@@ -2372,6 +2420,7 @@ exports[`TS renders children 1`] = `
           data-test="DesignSystem-Button--Icon-Wrapper"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             style="font-size: 16px; width: 16px;"
@@ -2427,6 +2476,7 @@ exports[`TS renders children 1`] = `
           data-test="DesignSystem-Button--Icon-Wrapper"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             style="font-size: 16px; width: 16px;"
@@ -2447,6 +2497,7 @@ exports[`TS renders children 1`] = `
           data-test="DesignSystem-Button--Icon-Wrapper"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             style="font-size: 16px; width: 16px;"
@@ -2471,6 +2522,7 @@ exports[`TS renders children 1`] = `
           data-test="DesignSystem-Button--Icon-Wrapper"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             style="font-size: 16px; width: 16px;"
@@ -2491,6 +2543,7 @@ exports[`TS renders children 1`] = `
           data-test="DesignSystem-Button--Icon-Wrapper"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             style="font-size: 16px; width: 16px;"
@@ -2603,9 +2656,17 @@ exports[`TS renders children 1`] = `
                 tabindex="0"
                 type="button"
               >
+<<<<<<< HEAD
                 <div
                   class="Button-icon"
                   data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                <i
+                  aria-hidden="true"
+                  class="material-symbols material-symbols-rounded Icon"
+                  data-test="DesignSystem-Button--Icon"
+                  style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                 >
                   <i
                     class="material-symbols material-symbols-rounded Icon"
@@ -2666,9 +2727,17 @@ exports[`TS renders children 1`] = `
                 tabindex="0"
                 type="button"
               >
+<<<<<<< HEAD
                 <div
                   class="Button-icon"
                   data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                <i
+                  aria-hidden="true"
+                  class="material-symbols material-symbols-rounded Icon"
+                  data-test="DesignSystem-Button--Icon"
+                  style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                 >
                   <i
                     class="material-symbols material-symbols-rounded Icon"

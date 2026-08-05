@@ -102,6 +102,7 @@ export const FileUploaderItem = (props: FileUploaderItemProps) => {
             size="regular"
             onClick={() => onDelete && onDelete(file, id)}
             icon="close"
+            aria-label={`Remove ${name}`}
           />
         </div>
       </div>

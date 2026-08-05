@@ -143,6 +143,13 @@ export const Icon = (props: IconProps) => {
   // accessible name and suppresses the ligature text. Interactive icons already get `role="button"`
   // from `useAccessibilityProps` and must stay unchanged.
   const labelledNonInteractive = !onClick && (ariaLabel || ariaLabelledby);
+  // A decorative icon carries no name of its own and cannot be focused, so its material-symbols
+  // ligature (e.g. `keyboard_arrow_down`) is a font implementation detail rather than content. Left
+  // exposed, it is concatenated into the accessible name of any ancestor control, e.g. a disclosure
+  // button announcing "keyboard_arrow_down AUTH POLICY". Hide it by default; consumers opt out by
+  // passing `aria-label`/`aria-labelledby` (which switch on `role="img"` above), by making the icon
+  // interactive with `onClick`, or with an explicit `aria-hidden={false}`.
+  const isDecorative = !onClick && !ariaLabel && !ariaLabelledby && rest.tabIndex === undefined;
 
   const mapper: Record<string, string> = {
     outline: 'outlined',
@@ -190,6 +197,7 @@ export const Icon = (props: IconProps) => {
       className={iconClass}
       style={styles}
       role={labelledNonInteractive ? 'img' : undefined}
+      aria-hidden={isDecorative || undefined}
       {...accessibilityProps}
     >
       {name}

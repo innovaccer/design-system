@@ -174,18 +174,20 @@ const customCode = `
           <Card className="px-6 py-6">
             <form onSubmit={this.onSubmit}>
               <Heading className="mb-7" size="m">Login</Heading>
-              <Label withInput={true}>Email</Label>
+              <Label withInput={true} htmlFor="basic-form-email">Email</Label>
               <Input
-                name="input"
-                type="text"
+                id="basic-form-email"
+                name="email"
+                type="email"
                 placeholder="Enter email"
                 className="mb-6"
                 autoComplete="email"
                 onChange={this.onEmailChange}
               />
-              <Label withInput={true}>Password</Label>
+              <Label withInput={true} htmlFor="basic-form-password">Password</Label>
               <Input
-                name="input"
+                id="basic-form-password"
+                name="password"
                 className="mb-4"
                 placeholder="Enter password"
                 autoComplete="current-password"
@@ -196,8 +198,7 @@ const customCode = `
                   <Input.ActionButton
                     className="p-3"
                     name={this.state.passwordVisible ? 'visibility' : 'visibility_off'}
-                    aria-label="Show password"
-                    aria-pressed={this.state.passwordVisible}
+                    aria-label={this.state.passwordVisible ? 'Hide password' : 'Show password'}
                     onClick={this.onActionClick}
                   />
                 )}

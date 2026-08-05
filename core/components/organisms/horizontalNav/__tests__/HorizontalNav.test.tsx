@@ -270,6 +270,37 @@ describe('Horizontal Navigation component prop: aria-label', () => {
   });
 });
 
+describe('Horizontal Navigation component list semantics', () => {
+  it('renders menus inside a list', () => {
+    const { getByRole } = render(<HorizontalNav menus={menus} />);
+    expect(getByRole('list')).toBeInTheDocument();
+  });
+
+  it('renders one list item per menu', () => {
+    const { getAllByRole } = render(<HorizontalNav menus={menus} />);
+    expect(getAllByRole('listitem')).toHaveLength(menus.length);
+  });
+
+  it('renders the list inside the nav landmark', () => {
+    const { getByRole } = render(<HorizontalNav menus={menus} />);
+    expect(getByRole('navigation')).toContainElement(getByRole('list'));
+  });
+
+  it('does not render an empty list when there are no menus', () => {
+    const { queryByRole, getByRole } = render(<HorizontalNav menus={[]} />);
+    expect(getByRole('navigation')).toBeInTheDocument();
+    expect(queryByRole('list')).not.toBeInTheDocument();
+  });
+
+  it('renders each menu item inside its own list item', () => {
+    const { getAllByRole, getAllByTestId } = render(<HorizontalNav menus={menus} />);
+    const listItems = getAllByRole('listitem');
+    getAllByTestId(HorizontalNavDataKey).forEach((menuItem, index) => {
+      expect(listItems[index]).toContainElement(menuItem);
+    });
+  });
+});
+
 describe('HorizontalNav component a11y', () => {
   it('has no detectable a11y violations', async () => {
     const { container } = render(<HorizontalNav menus={menus} />);

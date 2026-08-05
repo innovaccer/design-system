@@ -41,9 +41,17 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
                       tabindex="0"
                       type="button"
                     >
+<<<<<<< HEAD
                       <div
                         class="Button-icon"
                         data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                      <i
+                        aria-hidden="true"
+                        class="material-symbols material-symbols-rounded Icon"
+                        data-test="DesignSystem-Button--Icon"
+                        style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                       >
                         <i
                           class="material-symbols material-symbols-rounded Icon"
@@ -72,6 +80,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
                     Mar
                   </span>
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
                     style="font-size: 16px; width: 16px;"
@@ -91,6 +100,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
                     2020
                   </span>
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
                     style="font-size: 16px; width: 16px;"
@@ -118,9 +128,17 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
                       tabindex="0"
                       type="button"
                     >
+<<<<<<< HEAD
                       <div
                         class="Button-icon"
                         data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                      <i
+                        aria-hidden="true"
+                        class="material-symbols material-symbols-rounded Icon"
+                        data-test="DesignSystem-Button--Icon"
+                        style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                       >
                         <i
                           class="material-symbols material-symbols-rounded Icon"
@@ -1393,9 +1411,17 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       tabindex="0"
                       type="button"
                     >
+<<<<<<< HEAD
                       <div
                         class="Button-icon"
                         data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                      <i
+                        aria-hidden="true"
+                        class="material-symbols material-symbols-rounded Icon"
+                        data-test="DesignSystem-Button--Icon"
+                        style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                       >
                         <i
                           class="material-symbols material-symbols-rounded Icon"
@@ -1424,6 +1450,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                     Mar
                   </span>
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
                     style="font-size: 16px; width: 16px;"
@@ -1443,6 +1470,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                     2020
                   </span>
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
                     style="font-size: 16px; width: 16px;"
@@ -1470,9 +1498,17 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       tabindex="0"
                       type="button"
                     >
+<<<<<<< HEAD
                       <div
                         class="Button-icon"
                         data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                      <i
+                        aria-hidden="true"
+                        class="material-symbols material-symbols-rounded Icon"
+                        data-test="DesignSystem-Button--Icon"
+                        style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                       >
                         <i
                           class="material-symbols material-symbols-rounded Icon"
@@ -2745,9 +2781,17 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       tabindex="0"
                       type="button"
                     >
+<<<<<<< HEAD
                       <div
                         class="Button-icon"
                         data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                      <i
+                        aria-hidden="true"
+                        class="material-symbols material-symbols-rounded Icon"
+                        data-test="DesignSystem-Button--Icon"
+                        style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                       >
                         <i
                           class="material-symbols material-symbols-rounded Icon"
@@ -2776,6 +2820,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                     Mar
                   </span>
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
                     style="font-size: 16px; width: 16px;"
@@ -2795,6 +2840,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                     2020
                   </span>
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
                     style="font-size: 16px; width: 16px;"
@@ -2822,9 +2868,17 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       tabindex="0"
                       type="button"
                     >
+<<<<<<< HEAD
                       <div
                         class="Button-icon"
                         data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                      <i
+                        aria-hidden="true"
+                        class="material-symbols material-symbols-rounded Icon"
+                        data-test="DesignSystem-Button--Icon"
+                        style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                       >
                         <i
                           class="material-symbols material-symbols-rounded Icon"
@@ -4096,9 +4150,17 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                       tabindex="0"
                       type="button"
                     >
+<<<<<<< HEAD
                       <div
                         class="Button-icon"
                         data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                      <i
+                        aria-hidden="true"
+                        class="material-symbols material-symbols-rounded Icon"
+                        data-test="DesignSystem-Button--Icon"
+                        style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                       >
                         <i
                           class="material-symbols material-symbols-rounded Icon"
@@ -4127,6 +4189,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                     Mar
                   </span>
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
                     style="font-size: 16px; width: 16px;"
@@ -4146,6 +4209,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                     2020
                   </span>
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
                     style="font-size: 16px; width: 16px;"
@@ -4173,9 +4237,17 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                       tabindex="0"
                       type="button"
                     >
+<<<<<<< HEAD
                       <div
                         class="Button-icon"
                         data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                      <i
+                        aria-hidden="true"
+                        class="material-symbols material-symbols-rounded Icon"
+                        data-test="DesignSystem-Button--Icon"
+                        style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                       >
                         <i
                           class="material-symbols material-symbols-rounded Icon"
@@ -5447,9 +5519,17 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                       tabindex="0"
                       type="button"
                     >
+<<<<<<< HEAD
                       <div
                         class="Button-icon"
                         data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                      <i
+                        aria-hidden="true"
+                        class="material-symbols material-symbols-rounded Icon"
+                        data-test="DesignSystem-Button--Icon"
+                        style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                       >
                         <i
                           class="material-symbols material-symbols-rounded Icon"
@@ -5478,6 +5558,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                     Mar
                   </span>
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
                     style="font-size: 16px; width: 16px;"
@@ -5497,6 +5578,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                     2020
                   </span>
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
                     style="font-size: 16px; width: 16px;"
@@ -5524,9 +5606,17 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                       tabindex="0"
                       type="button"
                     >
+<<<<<<< HEAD
                       <div
                         class="Button-icon"
                         data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                      <i
+                        aria-hidden="true"
+                        class="material-symbols material-symbols-rounded Icon"
+                        data-test="DesignSystem-Button--Icon"
+                        style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                       >
                         <i
                           class="material-symbols material-symbols-rounded Icon"
@@ -6798,9 +6888,17 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                       tabindex="0"
                       type="button"
                     >
+<<<<<<< HEAD
                       <div
                         class="Button-icon"
                         data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                      <i
+                        aria-hidden="true"
+                        class="material-symbols material-symbols-rounded Icon"
+                        data-test="DesignSystem-Button--Icon"
+                        style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                       >
                         <i
                           class="material-symbols material-symbols-rounded Icon"
@@ -6829,6 +6927,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                     Mar
                   </span>
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
                     style="font-size: 16px; width: 16px;"
@@ -6848,6 +6947,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                     2020
                   </span>
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
                     style="font-size: 16px; width: 16px;"
@@ -6875,9 +6975,17 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                       tabindex="0"
                       type="button"
                     >
+<<<<<<< HEAD
                       <div
                         class="Button-icon"
                         data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                      <i
+                        aria-hidden="true"
+                        class="material-symbols material-symbols-rounded Icon"
+                        data-test="DesignSystem-Button--Icon"
+                        style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                       >
                         <i
                           class="material-symbols material-symbols-rounded Icon"
@@ -8149,9 +8257,17 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                       tabindex="0"
                       type="button"
                     >
+<<<<<<< HEAD
                       <div
                         class="Button-icon"
                         data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                      <i
+                        aria-hidden="true"
+                        class="material-symbols material-symbols-rounded Icon"
+                        data-test="DesignSystem-Button--Icon"
+                        style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                       >
                         <i
                           class="material-symbols material-symbols-rounded Icon"
@@ -8180,6 +8296,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                     2020
                   </span>
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
                     style="font-size: 16px; width: 16px;"
@@ -8207,9 +8324,17 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                       tabindex="0"
                       type="button"
                     >
+<<<<<<< HEAD
                       <div
                         class="Button-icon"
                         data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                      <i
+                        aria-hidden="true"
+                        class="material-symbols material-symbols-rounded Icon"
+                        data-test="DesignSystem-Button--Icon"
+                        style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                       >
                         <i
                           class="material-symbols material-symbols-rounded Icon"
@@ -8610,9 +8735,17 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                       tabindex="0"
                       type="button"
                     >
+<<<<<<< HEAD
                       <div
                         class="Button-icon"
                         data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                      <i
+                        aria-hidden="true"
+                        class="material-symbols material-symbols-rounded Icon"
+                        data-test="DesignSystem-Button--Icon"
+                        style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                       >
                         <i
                           class="material-symbols material-symbols-rounded Icon"
@@ -8661,9 +8794,17 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                       tabindex="0"
                       type="button"
                     >
+<<<<<<< HEAD
                       <div
                         class="Button-icon"
                         data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                      <i
+                        aria-hidden="true"
+                        class="material-symbols material-symbols-rounded Icon"
+                        data-test="DesignSystem-Button--Icon"
+                        style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                       >
                         <i
                           class="material-symbols material-symbols-rounded Icon"
@@ -9064,9 +9205,17 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
                       tabindex="0"
                       type="button"
                     >
+<<<<<<< HEAD
                       <div
                         class="Button-icon"
                         data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                      <i
+                        aria-hidden="true"
+                        class="material-symbols material-symbols-rounded Icon"
+                        data-test="DesignSystem-Button--Icon"
+                        style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                       >
                         <i
                           class="material-symbols material-symbols-rounded Icon"
@@ -9095,6 +9244,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
                     Mar
                   </span>
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
                     style="font-size: 16px; width: 16px;"
@@ -9114,6 +9264,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
                     2020
                   </span>
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
                     style="font-size: 16px; width: 16px;"
@@ -9141,9 +9292,17 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
                       tabindex="0"
                       type="button"
                     >
+<<<<<<< HEAD
                       <div
                         class="Button-icon"
                         data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                      <i
+                        aria-hidden="true"
+                        class="material-symbols material-symbols-rounded Icon"
+                        data-test="DesignSystem-Button--Icon"
+                        style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                       >
                         <i
                           class="material-symbols material-symbols-rounded Icon"
@@ -10398,8 +10557,16 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
             role="presentation"
             style="min-width: 256px;"
           >
+<<<<<<< HEAD
             <div
               class="Input-icon Input-icon--left"
+=======
+            <i
+              aria-hidden="true"
+              class="material-symbols material-symbols-rounded Icon"
+              data-test="DesignSystem-Icon"
+              style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
             >
               <i
                 class="material-symbols material-symbols-rounded Icon"

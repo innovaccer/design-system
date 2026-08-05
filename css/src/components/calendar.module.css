@@ -216,13 +216,12 @@
   color: inherit;
 }
 
+/* Always show focus on calendar cells: open-via-click moves focus programmatically
+   (mouse modality → :focus-visible is false), and roving tabindex needs a visible target. */
+.Calendar-value:focus,
 .Calendar-value:focus-visible {
   outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: 1px;
-}
-
-.Calendar-value:focus:not(:focus-visible) {
-  outline: none;
 }
 
 .Calendar-value:hover {

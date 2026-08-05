@@ -56,6 +56,7 @@ exports[`Modal component
             data-test="DesignSystem-Column"
           >
             <button
+              aria-label="Close"
               class="Button Button--regular Button--regularSquare Button--transparent"
               data-test="DesignSystem-Modal--CloseButton"
               tabindex="0"
@@ -65,6 +66,7 @@ exports[`Modal component
                 data-test="DesignSystem-Button--Icon-Wrapper"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon"
                   data-test="DesignSystem-Button--Icon"
                   style="font-size: 16px; width: 16px;"
@@ -148,6 +150,7 @@ exports[`Modal component
               data-test="DesignSystem-Column"
             >
               <button
+                aria-label="Close"
                 class="Button Button--regular Button--regularSquare Button--transparent"
                 data-test="DesignSystem-Modal--CloseButton"
                 tabindex="0"
@@ -157,6 +160,7 @@ exports[`Modal component
                   data-test="DesignSystem-Button--Icon-Wrapper"
                 >
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
                     style="font-size: 16px; width: 16px;"
@@ -237,9 +241,17 @@ exports[`Modal component
                   data-test="DesignSystem-Modal--CloseButton"
                   tabindex="0"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -292,6 +304,7 @@ exports[`Modal component
               data-test="DesignSystem-Column"
             >
               <button
+                aria-label="Close"
                 class="Button Button--regular Button--regularSquare Button--transparent"
                 data-test="DesignSystem-Modal--CloseButton"
                 tabindex="0"
@@ -301,6 +314,7 @@ exports[`Modal component
                   data-test="DesignSystem-Button--Icon-Wrapper"
                 >
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
                     style="font-size: 16px; width: 16px;"
@@ -415,9 +429,17 @@ exports[`Modal component
                     data-test="DesignSystem-Modal--CloseButton"
                     tabindex="0"
                   >
+<<<<<<< HEAD
                     <div
                       class="Button-icon"
                       data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                    <i
+                      aria-hidden="true"
+                      class="material-symbols material-symbols-rounded Icon"
+                      data-test="DesignSystem-Button--Icon"
+                      style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                     >
                       <i
                         class="material-symbols material-symbols-rounded Icon"
@@ -470,6 +492,7 @@ exports[`Modal component
                 data-test="DesignSystem-Column"
               >
                 <button
+                  aria-label="Close"
                   class="Button Button--regular Button--regularSquare Button--transparent"
                   data-test="DesignSystem-Modal--CloseButton"
                   tabindex="0"
@@ -479,6 +502,7 @@ exports[`Modal component
                     data-test="DesignSystem-Button--Icon-Wrapper"
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 16px; width: 16px;"
@@ -608,9 +632,17 @@ exports[`Modal component
                   data-test="DesignSystem-Modal--CloseButton"
                   tabindex="0"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -663,6 +695,7 @@ exports[`Modal component
               data-test="DesignSystem-Column"
             >
               <button
+                aria-label="Close"
                 class="Button Button--regular Button--regularSquare Button--transparent"
                 data-test="DesignSystem-Modal--CloseButton"
                 tabindex="0"
@@ -672,6 +705,7 @@ exports[`Modal component
                   data-test="DesignSystem-Button--Icon-Wrapper"
                 >
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
                     style="font-size: 16px; width: 16px;"
@@ -780,9 +814,17 @@ exports[`Modal component
                     data-test="DesignSystem-Modal--CloseButton"
                     tabindex="0"
                   >
+<<<<<<< HEAD
                     <div
                       class="Button-icon"
                       data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                    <i
+                      aria-hidden="true"
+                      class="material-symbols material-symbols-rounded Icon"
+                      data-test="DesignSystem-Button--Icon"
+                      style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                     >
                       <i
                         class="material-symbols material-symbols-rounded Icon"
@@ -835,6 +877,7 @@ exports[`Modal component
                 data-test="DesignSystem-Column"
               >
                 <button
+                  aria-label="Close"
                   class="Button Button--regular Button--regularSquare Button--transparent"
                   data-test="DesignSystem-Modal--CloseButton"
                   tabindex="0"
@@ -844,6 +887,7 @@ exports[`Modal component
                     data-test="DesignSystem-Button--Icon-Wrapper"
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 16px; width: 16px;"
@@ -934,6 +978,7 @@ exports[`Modal component
             data-test="DesignSystem-Column"
           >
             <button
+              aria-label="Close"
               class="Button Button--regular Button--regularSquare Button--transparent"
               data-test="DesignSystem-Modal--CloseButton"
               tabindex="0"
@@ -943,6 +988,7 @@ exports[`Modal component
                 data-test="DesignSystem-Button--Icon-Wrapper"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon"
                   data-test="DesignSystem-Button--Icon"
                   style="font-size: 16px; width: 16px;"
@@ -1026,6 +1072,7 @@ exports[`Modal component
               data-test="DesignSystem-Column"
             >
               <button
+                aria-label="Close"
                 class="Button Button--regular Button--regularSquare Button--transparent"
                 data-test="DesignSystem-Modal--CloseButton"
                 tabindex="0"
@@ -1035,6 +1082,7 @@ exports[`Modal component
                   data-test="DesignSystem-Button--Icon-Wrapper"
                 >
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
                     style="font-size: 16px; width: 16px;"
@@ -1115,9 +1163,17 @@ exports[`Modal component
                   data-test="DesignSystem-Modal--CloseButton"
                   tabindex="0"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -1170,6 +1226,7 @@ exports[`Modal component
               data-test="DesignSystem-Column"
             >
               <button
+                aria-label="Close"
                 class="Button Button--regular Button--regularSquare Button--transparent"
                 data-test="DesignSystem-Modal--CloseButton"
                 tabindex="0"
@@ -1179,6 +1236,7 @@ exports[`Modal component
                   data-test="DesignSystem-Button--Icon-Wrapper"
                 >
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
                     style="font-size: 16px; width: 16px;"
@@ -1293,9 +1351,17 @@ exports[`Modal component
                     data-test="DesignSystem-Modal--CloseButton"
                     tabindex="0"
                   >
+<<<<<<< HEAD
                     <div
                       class="Button-icon"
                       data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                    <i
+                      aria-hidden="true"
+                      class="material-symbols material-symbols-rounded Icon"
+                      data-test="DesignSystem-Button--Icon"
+                      style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                     >
                       <i
                         class="material-symbols material-symbols-rounded Icon"
@@ -1348,6 +1414,7 @@ exports[`Modal component
                 data-test="DesignSystem-Column"
               >
                 <button
+                  aria-label="Close"
                   class="Button Button--regular Button--regularSquare Button--transparent"
                   data-test="DesignSystem-Modal--CloseButton"
                   tabindex="0"
@@ -1357,6 +1424,7 @@ exports[`Modal component
                     data-test="DesignSystem-Button--Icon-Wrapper"
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 16px; width: 16px;"
@@ -1486,9 +1554,17 @@ exports[`Modal component
                   data-test="DesignSystem-Modal--CloseButton"
                   tabindex="0"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -1541,6 +1617,7 @@ exports[`Modal component
               data-test="DesignSystem-Column"
             >
               <button
+                aria-label="Close"
                 class="Button Button--regular Button--regularSquare Button--transparent"
                 data-test="DesignSystem-Modal--CloseButton"
                 tabindex="0"
@@ -1550,6 +1627,7 @@ exports[`Modal component
                   data-test="DesignSystem-Button--Icon-Wrapper"
                 >
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
                     style="font-size: 16px; width: 16px;"
@@ -1658,9 +1736,17 @@ exports[`Modal component
                     data-test="DesignSystem-Modal--CloseButton"
                     tabindex="0"
                   >
+<<<<<<< HEAD
                     <div
                       class="Button-icon"
                       data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                    <i
+                      aria-hidden="true"
+                      class="material-symbols material-symbols-rounded Icon"
+                      data-test="DesignSystem-Button--Icon"
+                      style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                     >
                       <i
                         class="material-symbols material-symbols-rounded Icon"
@@ -1713,6 +1799,7 @@ exports[`Modal component
                 data-test="DesignSystem-Column"
               >
                 <button
+                  aria-label="Close"
                   class="Button Button--regular Button--regularSquare Button--transparent"
                   data-test="DesignSystem-Modal--CloseButton"
                   tabindex="0"
@@ -1722,6 +1809,7 @@ exports[`Modal component
                     data-test="DesignSystem-Button--Icon-Wrapper"
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 16px; width: 16px;"
@@ -1813,6 +1901,7 @@ exports[`Modal component
             data-test="DesignSystem-Column"
           >
             <button
+              aria-label="Close"
               class="Button Button--regular Button--regularSquare Button--transparent"
               data-test="DesignSystem-Modal--CloseButton"
               tabindex="0"
@@ -1822,6 +1911,7 @@ exports[`Modal component
                 data-test="DesignSystem-Button--Icon-Wrapper"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon"
                   data-test="DesignSystem-Button--Icon"
                   style="font-size: 16px; width: 16px;"
@@ -1904,6 +1994,7 @@ exports[`Modal component
               data-test="DesignSystem-Column"
             >
               <button
+                aria-label="Close"
                 class="Button Button--regular Button--regularSquare Button--transparent"
                 data-test="DesignSystem-Modal--CloseButton"
                 tabindex="0"
@@ -1913,6 +2004,7 @@ exports[`Modal component
                   data-test="DesignSystem-Button--Icon-Wrapper"
                 >
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
                     style="font-size: 16px; width: 16px;"
@@ -1993,9 +2085,17 @@ exports[`Modal component
                   data-test="DesignSystem-Modal--CloseButton"
                   tabindex="0"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -2048,6 +2148,7 @@ exports[`Modal component
               data-test="DesignSystem-Column"
             >
               <button
+                aria-label="Close"
                 class="Button Button--regular Button--regularSquare Button--transparent"
                 data-test="DesignSystem-Modal--CloseButton"
                 tabindex="0"
@@ -2057,6 +2158,7 @@ exports[`Modal component
                   data-test="DesignSystem-Button--Icon-Wrapper"
                 >
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
                     style="font-size: 16px; width: 16px;"
@@ -2171,9 +2273,17 @@ exports[`Modal component
                     data-test="DesignSystem-Modal--CloseButton"
                     tabindex="0"
                   >
+<<<<<<< HEAD
                     <div
                       class="Button-icon"
                       data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                    <i
+                      aria-hidden="true"
+                      class="material-symbols material-symbols-rounded Icon"
+                      data-test="DesignSystem-Button--Icon"
+                      style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                     >
                       <i
                         class="material-symbols material-symbols-rounded Icon"
@@ -2226,6 +2336,7 @@ exports[`Modal component
                 data-test="DesignSystem-Column"
               >
                 <button
+                  aria-label="Close"
                   class="Button Button--regular Button--regularSquare Button--transparent"
                   data-test="DesignSystem-Modal--CloseButton"
                   tabindex="0"
@@ -2235,6 +2346,7 @@ exports[`Modal component
                     data-test="DesignSystem-Button--Icon-Wrapper"
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 16px; width: 16px;"
@@ -2364,9 +2476,17 @@ exports[`Modal component
                   data-test="DesignSystem-Modal--CloseButton"
                   tabindex="0"
                 >
+<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                   >
                     <i
                       class="material-symbols material-symbols-rounded Icon"
@@ -2419,6 +2539,7 @@ exports[`Modal component
               data-test="DesignSystem-Column"
             >
               <button
+                aria-label="Close"
                 class="Button Button--regular Button--regularSquare Button--transparent"
                 data-test="DesignSystem-Modal--CloseButton"
                 tabindex="0"
@@ -2428,6 +2549,7 @@ exports[`Modal component
                   data-test="DesignSystem-Button--Icon-Wrapper"
                 >
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
                     style="font-size: 16px; width: 16px;"
@@ -2536,9 +2658,17 @@ exports[`Modal component
                     data-test="DesignSystem-Modal--CloseButton"
                     tabindex="0"
                   >
+<<<<<<< HEAD
                     <div
                       class="Button-icon"
                       data-test="DesignSystem-Button--Icon-Wrapper"
+=======
+                    <i
+                      aria-hidden="true"
+                      class="material-symbols material-symbols-rounded Icon"
+                      data-test="DesignSystem-Button--Icon"
+                      style="font-size: 16px; width: 16px;"
+>>>>>>> upstream
                     >
                       <i
                         class="material-symbols material-symbols-rounded Icon"
@@ -2591,6 +2721,7 @@ exports[`Modal component
                 data-test="DesignSystem-Column"
               >
                 <button
+                  aria-label="Close"
                   class="Button Button--regular Button--regularSquare Button--transparent"
                   data-test="DesignSystem-Modal--CloseButton"
                   tabindex="0"
@@ -2600,6 +2731,7 @@ exports[`Modal component
                     data-test="DesignSystem-Button--Icon-Wrapper"
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 16px; width: 16px;"
