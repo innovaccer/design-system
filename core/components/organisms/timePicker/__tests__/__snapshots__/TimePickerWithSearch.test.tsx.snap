@@ -50,7 +50,6 @@ exports[`TimePicker component snapshots renders snapshot for all props
             <div
               class="DropdownButton-wrapper"
             >
-<<<<<<< HEAD
               <span
                 class="Text Text--regular DropdownButton-text"
               >
@@ -58,6 +57,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -66,20 +66,6 @@ exports[`TimePicker component snapshots renders snapshot for all props
             </i>
           </button>
         </div>
-=======
-              Select
-            </span>
-          </div>
-          <i
-            aria-hidden="true"
-            class="material-symbols material-symbols-rounded Icon Icon--default"
-            data-test="DesignSystem-Icon"
-            style="font-size: 16px; width: 16px;"
-          >
-            keyboard_arrow_down
-          </i>
-        </button>
->>>>>>> upstream
       </div>
     </div>
   </div>
@@ -140,7 +126,6 @@ exports[`TimePicker component snapshots renders snapshot for all props
             <div
               class="DropdownButton-wrapper"
             >
-<<<<<<< HEAD
               <span
                 class="Text Text--regular DropdownButton-text"
               >
@@ -148,6 +133,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -156,20 +142,6 @@ exports[`TimePicker component snapshots renders snapshot for all props
             </i>
           </button>
         </div>
-=======
-              Select
-            </span>
-          </div>
-          <i
-            aria-hidden="true"
-            class="material-symbols material-symbols-rounded Icon Icon--default"
-            data-test="DesignSystem-Icon"
-            style="font-size: 16px; width: 16px;"
-          >
-            keyboard_arrow_down
-          </i>
-        </button>
->>>>>>> upstream
       </div>
     </div>
   </div>
@@ -242,7 +214,6 @@ exports[`TimePicker component snapshots renders snapshot for all props
             <div
               class="DropdownButton-wrapper"
             >
-<<<<<<< HEAD
               <span
                 class="Text Text--regular DropdownButton-text"
               >
@@ -250,6 +221,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -258,20 +230,6 @@ exports[`TimePicker component snapshots renders snapshot for all props
             </i>
           </button>
         </div>
-=======
-              Select
-            </span>
-          </div>
-          <i
-            aria-hidden="true"
-            class="material-symbols material-symbols-rounded Icon Icon--default"
-            data-test="DesignSystem-Icon"
-            style="font-size: 16px; width: 16px;"
-          >
-            keyboard_arrow_down
-          </i>
-        </button>
->>>>>>> upstream
       </div>
     </div>
   </div>
@@ -340,7 +298,6 @@ exports[`TimePicker component snapshots renders snapshot for all props
             <div
               class="DropdownButton-wrapper"
             >
-<<<<<<< HEAD
               <span
                 class="Text Text--regular DropdownButton-text"
               >
@@ -348,6 +305,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -356,20 +314,6 @@ exports[`TimePicker component snapshots renders snapshot for all props
             </i>
           </button>
         </div>
-=======
-              Select
-            </span>
-          </div>
-          <i
-            aria-hidden="true"
-            class="material-symbols material-symbols-rounded Icon Icon--default"
-            data-test="DesignSystem-Icon"
-            style="font-size: 16px; width: 16px;"
-          >
-            keyboard_arrow_down
-          </i>
-        </button>
->>>>>>> upstream
       </div>
     </div>
   </div>
@@ -418,7 +362,6 @@ exports[`TimePicker component snapshots renders snapshot for all props
             <div
               class="DropdownButton-wrapper"
             >
-<<<<<<< HEAD
               <span
                 class="Text Text--regular DropdownButton-text"
               >
@@ -426,6 +369,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -434,20 +378,6 @@ exports[`TimePicker component snapshots renders snapshot for all props
             </i>
           </button>
         </div>
-=======
-              Select
-            </span>
-          </div>
-          <i
-            aria-hidden="true"
-            class="material-symbols material-symbols-rounded Icon Icon--default"
-            data-test="DesignSystem-Icon"
-            style="font-size: 16px; width: 16px;"
-          >
-            keyboard_arrow_down
-          </i>
-        </button>
->>>>>>> upstream
       </div>
     </div>
   </div>
@@ -492,7 +422,6 @@ exports[`TimePicker component snapshots renders snapshot for all props
             <div
               class="DropdownButton-wrapper"
             >
-<<<<<<< HEAD
               <span
                 class="Text Text--regular DropdownButton-text"
               >
@@ -500,6 +429,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -508,20 +438,6 @@ exports[`TimePicker component snapshots renders snapshot for all props
             </i>
           </button>
         </div>
-=======
-              Select
-            </span>
-          </div>
-          <i
-            aria-hidden="true"
-            class="material-symbols material-symbols-rounded Icon Icon--default"
-            data-test="DesignSystem-Icon"
-            style="font-size: 16px; width: 16px;"
-          >
-            keyboard_arrow_down
-          </i>
-        </button>
->>>>>>> upstream
       </div>
     </div>
   </div>
@@ -578,7 +494,6 @@ exports[`TimePicker component snapshots renders snapshot for all props
             <div
               class="DropdownButton-wrapper"
             >
-<<<<<<< HEAD
               <span
                 class="Text Text--regular DropdownButton-text"
               >
@@ -586,6 +501,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -594,20 +510,6 @@ exports[`TimePicker component snapshots renders snapshot for all props
             </i>
           </button>
         </div>
-=======
-              Select
-            </span>
-          </div>
-          <i
-            aria-hidden="true"
-            class="material-symbols material-symbols-rounded Icon Icon--default"
-            data-test="DesignSystem-Icon"
-            style="font-size: 16px; width: 16px;"
-          >
-            keyboard_arrow_down
-          </i>
-        </button>
->>>>>>> upstream
       </div>
     </div>
   </div>
@@ -660,7 +562,6 @@ exports[`TimePicker component snapshots renders snapshot for all props
             <div
               class="DropdownButton-wrapper"
             >
-<<<<<<< HEAD
               <span
                 class="Text Text--regular DropdownButton-text"
               >
@@ -668,6 +569,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
               </span>
             </div>
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -676,20 +578,6 @@ exports[`TimePicker component snapshots renders snapshot for all props
             </i>
           </button>
         </div>
-=======
-              Select
-            </span>
-          </div>
-          <i
-            aria-hidden="true"
-            class="material-symbols material-symbols-rounded Icon Icon--default"
-            data-test="DesignSystem-Icon"
-            style="font-size: 16px; width: 16px;"
-          >
-            keyboard_arrow_down
-          </i>
-        </button>
->>>>>>> upstream
       </div>
     </div>
   </div>

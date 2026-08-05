@@ -72,19 +72,12 @@ exports[`Sidesheet component
                   data-test="DesignSystem-Sidesheet--CloseButton"
                   tabindex="0"
                 >
-<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 20px; width: 20px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 20px; width: 20px;"
@@ -192,19 +185,12 @@ exports[`Sidesheet component
                   data-test="DesignSystem-Sidesheet--CloseButton"
                   tabindex="0"
                 >
-<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 20px; width: 20px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 20px; width: 20px;"

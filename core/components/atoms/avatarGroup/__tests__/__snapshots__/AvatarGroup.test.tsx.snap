@@ -33,22 +33,15 @@ exports[`AvatarGroup component snapshot
                   class="Avatar-wrapper"
                   data-test="DesignSystem-AvatarWrapper"
                 >
-<<<<<<< HEAD
                   <span
                     aria-label="John Doe"
                     class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
                     data-test="DesignSystem-Avatar"
                     role="presentation"
                     tabindex="0"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
-                    data-test="DesignSystem-Icon"
-                    style="font-size: 20px; width: 20px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
                       data-test="DesignSystem-Icon"
                       style="font-size: 20px; width: 20px;"
@@ -82,22 +75,15 @@ exports[`AvatarGroup component snapshot
                   class="Avatar-wrapper"
                   data-test="DesignSystem-AvatarWrapper"
                 >
-<<<<<<< HEAD
                   <span
                     aria-label="Steven Packton"
                     class="Avatar Avatar--regular Avatar--alert Avatar--default"
                     data-test="DesignSystem-Avatar"
                     role="presentation"
                     tabindex="0"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
-                    data-test="DesignSystem-Icon"
-                    style="font-size: 20px; width: 20px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
                       data-test="DesignSystem-Icon"
                       style="font-size: 20px; width: 20px;"
@@ -148,22 +134,15 @@ exports[`AvatarGroup component snapshot
                 class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
-<<<<<<< HEAD
                 <span
                   aria-label="John Doe"
                   class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
                   data-test="DesignSystem-Avatar"
                   role="presentation"
                   tabindex="0"
-=======
-                <i
-                  aria-hidden="true"
-                  class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
-                  data-test="DesignSystem-Icon"
-                  style="font-size: 20px; width: 20px;"
->>>>>>> upstream
                 >
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
                     data-test="DesignSystem-Icon"
                     style="font-size: 20px; width: 20px;"
@@ -197,22 +176,15 @@ exports[`AvatarGroup component snapshot
                 class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
-<<<<<<< HEAD
                 <span
                   aria-label="Steven Packton"
                   class="Avatar Avatar--regular Avatar--alert Avatar--default"
                   data-test="DesignSystem-Avatar"
                   role="presentation"
                   tabindex="0"
-=======
-                <i
-                  aria-hidden="true"
-                  class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
-                  data-test="DesignSystem-Icon"
-                  style="font-size: 20px; width: 20px;"
->>>>>>> upstream
                 >
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
                     data-test="DesignSystem-Icon"
                     style="font-size: 20px; width: 20px;"
@@ -314,22 +286,15 @@ exports[`AvatarGroup component snapshot
                   class="Avatar-wrapper"
                   data-test="DesignSystem-AvatarWrapper"
                 >
-<<<<<<< HEAD
                   <span
                     aria-label="John Doe"
                     class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
                     data-test="DesignSystem-Avatar"
                     role="presentation"
                     tabindex="0"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
-                    data-test="DesignSystem-Icon"
-                    style="font-size: 20px; width: 20px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
                       data-test="DesignSystem-Icon"
                       style="font-size: 20px; width: 20px;"
@@ -363,22 +328,15 @@ exports[`AvatarGroup component snapshot
                   class="Avatar-wrapper"
                   data-test="DesignSystem-AvatarWrapper"
                 >
-<<<<<<< HEAD
                   <span
                     aria-label="Steven Packton"
                     class="Avatar Avatar--regular Avatar--alert Avatar--default"
                     data-test="DesignSystem-Avatar"
                     role="presentation"
                     tabindex="0"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
-                    data-test="DesignSystem-Icon"
-                    style="font-size: 20px; width: 20px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
                       data-test="DesignSystem-Icon"
                       style="font-size: 20px; width: 20px;"
@@ -429,22 +387,15 @@ exports[`AvatarGroup component snapshot
                 class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
-<<<<<<< HEAD
                 <span
                   aria-label="John Doe"
                   class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
                   data-test="DesignSystem-Avatar"
                   role="presentation"
                   tabindex="0"
-=======
-                <i
-                  aria-hidden="true"
-                  class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
-                  data-test="DesignSystem-Icon"
-                  style="font-size: 20px; width: 20px;"
->>>>>>> upstream
                 >
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
                     data-test="DesignSystem-Icon"
                     style="font-size: 20px; width: 20px;"
@@ -478,22 +429,15 @@ exports[`AvatarGroup component snapshot
                 class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
-<<<<<<< HEAD
                 <span
                   aria-label="Steven Packton"
                   class="Avatar Avatar--regular Avatar--alert Avatar--default"
                   data-test="DesignSystem-Avatar"
                   role="presentation"
                   tabindex="0"
-=======
-                <i
-                  aria-hidden="true"
-                  class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
-                  data-test="DesignSystem-Icon"
-                  style="font-size: 20px; width: 20px;"
->>>>>>> upstream
                 >
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
                     data-test="DesignSystem-Icon"
                     style="font-size: 20px; width: 20px;"
@@ -595,22 +539,15 @@ exports[`AvatarGroup component snapshot
                   class="Avatar-wrapper"
                   data-test="DesignSystem-AvatarWrapper"
                 >
-<<<<<<< HEAD
                   <span
                     aria-label="John Doe"
                     class="Avatar Avatar--tiny Avatar--accent1 Avatar--default"
                     data-test="DesignSystem-Avatar"
                     role="presentation"
                     tabindex="0"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
-                    data-test="DesignSystem-Icon"
-                    style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
                       data-test="DesignSystem-Icon"
                       style="font-size: 16px; width: 16px;"
@@ -644,22 +581,15 @@ exports[`AvatarGroup component snapshot
                   class="Avatar-wrapper"
                   data-test="DesignSystem-AvatarWrapper"
                 >
-<<<<<<< HEAD
                   <span
                     aria-label="Steven Packton"
                     class="Avatar Avatar--tiny Avatar--alert Avatar--default"
                     data-test="DesignSystem-Avatar"
                     role="presentation"
                     tabindex="0"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
-                    data-test="DesignSystem-Icon"
-                    style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
                       data-test="DesignSystem-Icon"
                       style="font-size: 16px; width: 16px;"
@@ -710,22 +640,15 @@ exports[`AvatarGroup component snapshot
                 class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
-<<<<<<< HEAD
                 <span
                   aria-label="John Doe"
                   class="Avatar Avatar--tiny Avatar--accent1 Avatar--default"
                   data-test="DesignSystem-Avatar"
                   role="presentation"
                   tabindex="0"
-=======
-                <i
-                  aria-hidden="true"
-                  class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
-                  data-test="DesignSystem-Icon"
-                  style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                 >
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
                     data-test="DesignSystem-Icon"
                     style="font-size: 16px; width: 16px;"
@@ -759,22 +682,15 @@ exports[`AvatarGroup component snapshot
                 class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
-<<<<<<< HEAD
                 <span
                   aria-label="Steven Packton"
                   class="Avatar Avatar--tiny Avatar--alert Avatar--default"
                   data-test="DesignSystem-Avatar"
                   role="presentation"
                   tabindex="0"
-=======
-                <i
-                  aria-hidden="true"
-                  class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
-                  data-test="DesignSystem-Icon"
-                  style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                 >
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
                     data-test="DesignSystem-Icon"
                     style="font-size: 16px; width: 16px;"
@@ -876,22 +792,15 @@ exports[`AvatarGroup component snapshot
                   class="Avatar-wrapper"
                   data-test="DesignSystem-AvatarWrapper"
                 >
-<<<<<<< HEAD
                   <span
                     aria-label="John Doe"
                     class="Avatar Avatar--tiny Avatar--accent1 Avatar--default"
                     data-test="DesignSystem-Avatar"
                     role="presentation"
                     tabindex="0"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
-                    data-test="DesignSystem-Icon"
-                    style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
                       data-test="DesignSystem-Icon"
                       style="font-size: 16px; width: 16px;"
@@ -925,22 +834,15 @@ exports[`AvatarGroup component snapshot
                   class="Avatar-wrapper"
                   data-test="DesignSystem-AvatarWrapper"
                 >
-<<<<<<< HEAD
                   <span
                     aria-label="Steven Packton"
                     class="Avatar Avatar--tiny Avatar--alert Avatar--default"
                     data-test="DesignSystem-Avatar"
                     role="presentation"
                     tabindex="0"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
-                    data-test="DesignSystem-Icon"
-                    style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
                       data-test="DesignSystem-Icon"
                       style="font-size: 16px; width: 16px;"
@@ -991,22 +893,15 @@ exports[`AvatarGroup component snapshot
                 class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
-<<<<<<< HEAD
                 <span
                   aria-label="John Doe"
                   class="Avatar Avatar--tiny Avatar--accent1 Avatar--default"
                   data-test="DesignSystem-Avatar"
                   role="presentation"
                   tabindex="0"
-=======
-                <i
-                  aria-hidden="true"
-                  class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
-                  data-test="DesignSystem-Icon"
-                  style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                 >
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
                     data-test="DesignSystem-Icon"
                     style="font-size: 16px; width: 16px;"
@@ -1040,22 +935,15 @@ exports[`AvatarGroup component snapshot
                 class="Avatar-wrapper"
                 data-test="DesignSystem-AvatarWrapper"
               >
-<<<<<<< HEAD
                 <span
                   aria-label="Steven Packton"
                   class="Avatar Avatar--tiny Avatar--alert Avatar--default"
                   data-test="DesignSystem-Avatar"
                   role="presentation"
                   tabindex="0"
-=======
-                <i
-                  aria-hidden="true"
-                  class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
-                  data-test="DesignSystem-Icon"
-                  style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                 >
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
                     data-test="DesignSystem-Icon"
                     style="font-size: 16px; width: 16px;"

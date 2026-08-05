@@ -162,6 +162,7 @@ exports[`EditableChipInput component
               tabindex="0"
             >
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--subtle"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -201,6 +202,7 @@ exports[`EditableChipInput component
               tabindex="0"
             >
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--subtle"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -269,6 +271,7 @@ exports[`EditableChipInput component
               tabindex="0"
             >
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--subtle"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -308,6 +311,7 @@ exports[`EditableChipInput component
               tabindex="0"
             >
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--subtle"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -376,6 +380,7 @@ exports[`EditableChipInput component
               tabindex="0"
             >
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--subtle"
                 data-test="DesignSystem-Icon"
                 style="font-size: 12px; width: 12px;"
@@ -415,6 +420,7 @@ exports[`EditableChipInput component
               tabindex="0"
             >
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--subtle"
                 data-test="DesignSystem-Icon"
                 style="font-size: 12px; width: 12px;"
@@ -810,6 +816,7 @@ exports[`EditableChipInput component
               tabindex="0"
             >
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--subtle"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -849,6 +856,7 @@ exports[`EditableChipInput component
               tabindex="0"
             >
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--subtle"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -917,6 +925,7 @@ exports[`EditableChipInput component
               tabindex="0"
             >
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--subtle"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -956,6 +965,7 @@ exports[`EditableChipInput component
               tabindex="0"
             >
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--subtle"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -1024,6 +1034,7 @@ exports[`EditableChipInput component
               tabindex="0"
             >
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--subtle"
                 data-test="DesignSystem-Icon"
                 style="font-size: 12px; width: 12px;"
@@ -1063,6 +1074,7 @@ exports[`EditableChipInput component
               tabindex="0"
             >
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--subtle"
                 data-test="DesignSystem-Icon"
                 style="font-size: 12px; width: 12px;"

@@ -41,19 +41,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
                       tabindex="0"
                       type="button"
                     >
-<<<<<<< HEAD
                       <div
                         class="Button-icon"
                         data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                      <i
-                        aria-hidden="true"
-                        class="material-symbols material-symbols-rounded Icon"
-                        data-test="DesignSystem-Button--Icon"
-                        style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                       >
                         <i
+                          aria-hidden="true"
                           class="material-symbols material-symbols-rounded Icon"
                           data-test="DesignSystem-Button--Icon"
                           style="font-size: 16px; width: 16px;"
@@ -128,19 +121,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
                       tabindex="0"
                       type="button"
                     >
-<<<<<<< HEAD
                       <div
                         class="Button-icon"
                         data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                      <i
-                        aria-hidden="true"
-                        class="material-symbols material-symbols-rounded Icon"
-                        data-test="DesignSystem-Button--Icon"
-                        style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                       >
                         <i
+                          aria-hidden="true"
                           class="material-symbols material-symbols-rounded Icon"
                           data-test="DesignSystem-Button--Icon"
                           style="font-size: 16px; width: 16px;"
@@ -1411,19 +1397,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       tabindex="0"
                       type="button"
                     >
-<<<<<<< HEAD
                       <div
                         class="Button-icon"
                         data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                      <i
-                        aria-hidden="true"
-                        class="material-symbols material-symbols-rounded Icon"
-                        data-test="DesignSystem-Button--Icon"
-                        style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                       >
                         <i
+                          aria-hidden="true"
                           class="material-symbols material-symbols-rounded Icon"
                           data-test="DesignSystem-Button--Icon"
                           style="font-size: 16px; width: 16px;"
@@ -1498,19 +1477,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       tabindex="0"
                       type="button"
                     >
-<<<<<<< HEAD
                       <div
                         class="Button-icon"
                         data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                      <i
-                        aria-hidden="true"
-                        class="material-symbols material-symbols-rounded Icon"
-                        data-test="DesignSystem-Button--Icon"
-                        style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                       >
                         <i
+                          aria-hidden="true"
                           class="material-symbols material-symbols-rounded Icon"
                           data-test="DesignSystem-Button--Icon"
                           style="font-size: 16px; width: 16px;"
@@ -2781,19 +2753,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       tabindex="0"
                       type="button"
                     >
-<<<<<<< HEAD
                       <div
                         class="Button-icon"
                         data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                      <i
-                        aria-hidden="true"
-                        class="material-symbols material-symbols-rounded Icon"
-                        data-test="DesignSystem-Button--Icon"
-                        style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                       >
                         <i
+                          aria-hidden="true"
                           class="material-symbols material-symbols-rounded Icon"
                           data-test="DesignSystem-Button--Icon"
                           style="font-size: 16px; width: 16px;"
@@ -2868,19 +2833,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                       tabindex="0"
                       type="button"
                     >
-<<<<<<< HEAD
                       <div
                         class="Button-icon"
                         data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                      <i
-                        aria-hidden="true"
-                        class="material-symbols material-symbols-rounded Icon"
-                        data-test="DesignSystem-Button--Icon"
-                        style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                       >
                         <i
+                          aria-hidden="true"
                           class="material-symbols material-symbols-rounded Icon"
                           data-test="DesignSystem-Button--Icon"
                           style="font-size: 16px; width: 16px;"
@@ -4150,19 +4108,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                       tabindex="0"
                       type="button"
                     >
-<<<<<<< HEAD
                       <div
                         class="Button-icon"
                         data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                      <i
-                        aria-hidden="true"
-                        class="material-symbols material-symbols-rounded Icon"
-                        data-test="DesignSystem-Button--Icon"
-                        style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                       >
                         <i
+                          aria-hidden="true"
                           class="material-symbols material-symbols-rounded Icon"
                           data-test="DesignSystem-Button--Icon"
                           style="font-size: 16px; width: 16px;"
@@ -4237,19 +4188,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                       tabindex="0"
                       type="button"
                     >
-<<<<<<< HEAD
                       <div
                         class="Button-icon"
                         data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                      <i
-                        aria-hidden="true"
-                        class="material-symbols material-symbols-rounded Icon"
-                        data-test="DesignSystem-Button--Icon"
-                        style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                       >
                         <i
+                          aria-hidden="true"
                           class="material-symbols material-symbols-rounded Icon"
                           data-test="DesignSystem-Button--Icon"
                           style="font-size: 16px; width: 16px;"
@@ -5519,19 +5463,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                       tabindex="0"
                       type="button"
                     >
-<<<<<<< HEAD
                       <div
                         class="Button-icon"
                         data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                      <i
-                        aria-hidden="true"
-                        class="material-symbols material-symbols-rounded Icon"
-                        data-test="DesignSystem-Button--Icon"
-                        style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                       >
                         <i
+                          aria-hidden="true"
                           class="material-symbols material-symbols-rounded Icon"
                           data-test="DesignSystem-Button--Icon"
                           style="font-size: 16px; width: 16px;"
@@ -5606,19 +5543,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                       tabindex="0"
                       type="button"
                     >
-<<<<<<< HEAD
                       <div
                         class="Button-icon"
                         data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                      <i
-                        aria-hidden="true"
-                        class="material-symbols material-symbols-rounded Icon"
-                        data-test="DesignSystem-Button--Icon"
-                        style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                       >
                         <i
+                          aria-hidden="true"
                           class="material-symbols material-symbols-rounded Icon"
                           data-test="DesignSystem-Button--Icon"
                           style="font-size: 16px; width: 16px;"
@@ -6888,19 +6818,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                       tabindex="0"
                       type="button"
                     >
-<<<<<<< HEAD
                       <div
                         class="Button-icon"
                         data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                      <i
-                        aria-hidden="true"
-                        class="material-symbols material-symbols-rounded Icon"
-                        data-test="DesignSystem-Button--Icon"
-                        style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                       >
                         <i
+                          aria-hidden="true"
                           class="material-symbols material-symbols-rounded Icon"
                           data-test="DesignSystem-Button--Icon"
                           style="font-size: 16px; width: 16px;"
@@ -6975,19 +6898,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                       tabindex="0"
                       type="button"
                     >
-<<<<<<< HEAD
                       <div
                         class="Button-icon"
                         data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                      <i
-                        aria-hidden="true"
-                        class="material-symbols material-symbols-rounded Icon"
-                        data-test="DesignSystem-Button--Icon"
-                        style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                       >
                         <i
+                          aria-hidden="true"
                           class="material-symbols material-symbols-rounded Icon"
                           data-test="DesignSystem-Button--Icon"
                           style="font-size: 16px; width: 16px;"
@@ -8257,19 +8173,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                       tabindex="0"
                       type="button"
                     >
-<<<<<<< HEAD
                       <div
                         class="Button-icon"
                         data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                      <i
-                        aria-hidden="true"
-                        class="material-symbols material-symbols-rounded Icon"
-                        data-test="DesignSystem-Button--Icon"
-                        style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                       >
                         <i
+                          aria-hidden="true"
                           class="material-symbols material-symbols-rounded Icon"
                           data-test="DesignSystem-Button--Icon"
                           style="font-size: 16px; width: 16px;"
@@ -8324,19 +8233,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                       tabindex="0"
                       type="button"
                     >
-<<<<<<< HEAD
                       <div
                         class="Button-icon"
                         data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                      <i
-                        aria-hidden="true"
-                        class="material-symbols material-symbols-rounded Icon"
-                        data-test="DesignSystem-Button--Icon"
-                        style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                       >
                         <i
+                          aria-hidden="true"
                           class="material-symbols material-symbols-rounded Icon"
                           data-test="DesignSystem-Button--Icon"
                           style="font-size: 16px; width: 16px;"
@@ -8735,19 +8637,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                       tabindex="0"
                       type="button"
                     >
-<<<<<<< HEAD
                       <div
                         class="Button-icon"
                         data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                      <i
-                        aria-hidden="true"
-                        class="material-symbols material-symbols-rounded Icon"
-                        data-test="DesignSystem-Button--Icon"
-                        style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                       >
                         <i
+                          aria-hidden="true"
                           class="material-symbols material-symbols-rounded Icon"
                           data-test="DesignSystem-Button--Icon"
                           style="font-size: 16px; width: 16px;"
@@ -8794,19 +8689,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                       tabindex="0"
                       type="button"
                     >
-<<<<<<< HEAD
                       <div
                         class="Button-icon"
                         data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                      <i
-                        aria-hidden="true"
-                        class="material-symbols material-symbols-rounded Icon"
-                        data-test="DesignSystem-Button--Icon"
-                        style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                       >
                         <i
+                          aria-hidden="true"
                           class="material-symbols material-symbols-rounded Icon"
                           data-test="DesignSystem-Button--Icon"
                           style="font-size: 16px; width: 16px;"
@@ -9205,19 +9093,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
                       tabindex="0"
                       type="button"
                     >
-<<<<<<< HEAD
                       <div
                         class="Button-icon"
                         data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                      <i
-                        aria-hidden="true"
-                        class="material-symbols material-symbols-rounded Icon"
-                        data-test="DesignSystem-Button--Icon"
-                        style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                       >
                         <i
+                          aria-hidden="true"
                           class="material-symbols material-symbols-rounded Icon"
                           data-test="DesignSystem-Button--Icon"
                           style="font-size: 16px; width: 16px;"
@@ -9292,19 +9173,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
                       tabindex="0"
                       type="button"
                     >
-<<<<<<< HEAD
                       <div
                         class="Button-icon"
                         data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                      <i
-                        aria-hidden="true"
-                        class="material-symbols material-symbols-rounded Icon"
-                        data-test="DesignSystem-Button--Icon"
-                        style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                       >
                         <i
+                          aria-hidden="true"
                           class="material-symbols material-symbols-rounded Icon"
                           data-test="DesignSystem-Button--Icon"
                           style="font-size: 16px; width: 16px;"
@@ -10557,18 +10431,11 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
             role="presentation"
             style="min-width: 256px;"
           >
-<<<<<<< HEAD
             <div
               class="Input-icon Input-icon--left"
-=======
-            <i
-              aria-hidden="true"
-              class="material-symbols material-symbols-rounded Icon"
-              data-test="DesignSystem-Icon"
-              style="font-size: 16px; width: 16px;"
->>>>>>> upstream
             >
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"

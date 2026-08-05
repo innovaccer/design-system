@@ -37,19 +37,12 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
-<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 16px; width: 16px;"
@@ -124,19 +117,12 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
-<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 16px; width: 16px;"
@@ -1372,19 +1358,12 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
-<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 16px; width: 16px;"
@@ -1460,19 +1439,12 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
-<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 16px; width: 16px;"
@@ -2709,19 +2681,12 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
-<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 16px; width: 16px;"
@@ -2796,19 +2761,12 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
-<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 16px; width: 16px;"
@@ -4045,19 +4003,12 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
-<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 16px; width: 16px;"
@@ -4133,19 +4084,12 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
-<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 16px; width: 16px;"
@@ -5381,19 +5325,12 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
-<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 16px; width: 16px;"
@@ -5468,19 +5405,12 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
-<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 16px; width: 16px;"
@@ -6716,19 +6646,12 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
-<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 16px; width: 16px;"
@@ -6803,19 +6726,12 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
-<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 16px; width: 16px;"
@@ -8051,19 +7967,12 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
-<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 16px; width: 16px;"
@@ -8138,19 +8047,12 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
-<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 16px; width: 16px;"
@@ -9386,19 +9288,12 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
-<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 16px; width: 16px;"
@@ -9473,19 +9368,12 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
-<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 16px; width: 16px;"
@@ -10721,19 +10609,12 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
-<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 16px; width: 16px;"
@@ -10808,19 +10689,12 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
-<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 16px; width: 16px;"
@@ -12056,19 +11930,12 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
-<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 16px; width: 16px;"
@@ -12143,19 +12010,12 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
-<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 16px; width: 16px;"
@@ -13391,19 +13251,12 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
-<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 16px; width: 16px;"
@@ -13478,19 +13331,12 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
-<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 16px; width: 16px;"
@@ -14726,19 +14572,12 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
-<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 16px; width: 16px;"
@@ -14813,19 +14652,12 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
-<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 16px; width: 16px;"
@@ -16061,19 +15893,12 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
-<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 16px; width: 16px;"
@@ -17110,19 +16935,12 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
-<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 16px; width: 16px;"
@@ -18115,19 +17933,12 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
-<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 16px; width: 16px;"
@@ -20105,19 +19916,12 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
-<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 16px; width: 16px;"
@@ -21248,19 +21052,12 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
-<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 16px; width: 16px;"
@@ -21335,19 +21132,12 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
-<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 16px; width: 16px;"
@@ -22583,19 +22373,12 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
-<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 16px; width: 16px;"
@@ -22650,19 +22433,12 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
-<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 16px; width: 16px;"
@@ -23027,19 +22803,12 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
-<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 16px; width: 16px;"
@@ -23086,19 +22855,12 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
-<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 16px; width: 16px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 16px; width: 16px;"
@@ -23463,19 +23225,12 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
-<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 14px; width: 14px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 14px; width: 14px;"
@@ -23550,19 +23305,12 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
-<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 14px; width: 14px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 14px; width: 14px;"
@@ -24798,19 +24546,12 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
-<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 14px; width: 14px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 14px; width: 14px;"
@@ -25847,19 +25588,12 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
-<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 14px; width: 14px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 14px; width: 14px;"
@@ -26852,19 +26586,12 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
-<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 14px; width: 14px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 14px; width: 14px;"
@@ -28842,19 +28569,12 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
-<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 14px; width: 14px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 14px; width: 14px;"
@@ -29985,19 +29705,12 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
-<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 14px; width: 14px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 14px; width: 14px;"
@@ -30072,19 +29785,12 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
-<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 14px; width: 14px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 14px; width: 14px;"
@@ -31320,19 +31026,12 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
-<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 14px; width: 14px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 14px; width: 14px;"
@@ -31387,19 +31086,12 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
-<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 14px; width: 14px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 14px; width: 14px;"
@@ -31764,19 +31456,12 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
-<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 14px; width: 14px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 14px; width: 14px;"
@@ -31823,19 +31508,12 @@ exports[`Calendar component
                   tabindex="0"
                   type="button"
                 >
-<<<<<<< HEAD
                   <div
                     class="Button-icon"
                     data-test="DesignSystem-Button--Icon-Wrapper"
-=======
-                  <i
-                    aria-hidden="true"
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    style="font-size: 14px; width: 14px;"
->>>>>>> upstream
                   >
                     <i
+                      aria-hidden="true"
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
                       style="font-size: 14px; width: 14px;"
