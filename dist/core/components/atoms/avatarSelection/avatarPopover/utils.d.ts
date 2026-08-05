@@ -1,0 +1,3 @@
+import React from 'react';
+export declare const handleKeyDown: (event: React.KeyboardEvent, focusedOption: Element | undefined, setFocusedOption?: React.Dispatch<React.SetStateAction<HTMLElement | undefined>>, setHighlightFirstItem?: React.Dispatch<React.SetStateAction<boolean>>, setHighlightLastItem?: React.Dispatch<React.SetStateAction<boolean>>, listRef?: any, withSearch?: boolean, setOpenPopover?: React.Dispatch<React.SetStateAction<boolean>>, triggerRef?: any) => void;
+export declare const handleInputKeyDown: (event: React.KeyboardEvent, listRef: any, setFocusedOption?: React.Dispatch<React.SetStateAction<HTMLElement | undefined>>, setOpenPopover?: React.Dispatch<React.SetStateAction<boolean>>, triggerRef?: any) => void;
