@@ -210,7 +210,8 @@ export const VerticalNav = (props: VerticalNavProps) => {
         setSubMenuExpandedState({ ...subMenuExpandedState, [menu.name]: !subMenuExpandedState[menu.name] });
       }
     } else {
-      if (onClick) onClick(menu);
+      const isAlreadyActive = isMenuActive(menus, menu, active);
+      if (!isAlreadyActive && onClick) onClick(menu);
     }
   };
 
