@@ -47,7 +47,23 @@ function font() {
   return gulp.src([materialFont]).pipe(gulp.dest('./dist'));
 }
 
-exports.build = gulp.series(clean, gulp.parallel(css, font));
+function buildWbA(cb) {
+  const { execFile } = require('child_process');
+  const path = require('path');
+  execFile(
+    process.execPath,
+    [path.join(__dirname, 'scripts/build-wb-a.mjs')],
+    { cwd: __dirname },
+    (err, stdout, stderr) => {
+      if (stdout) process.stdout.write(stdout);
+      if (stderr) process.stderr.write(stderr);
+      cb(err);
+    }
+  );
+}
+
+exports.build = gulp.series(clean, gulp.parallel(css, font, buildWbA));
+exports.buildWbA = buildWbA;
 
 exports.clean = clean;
 

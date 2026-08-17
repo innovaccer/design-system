@@ -1,0 +1,8 @@
+/* Host defaults for the wb-a scoped stylesheet (not collision demo rules). */
+:scope {
+  --color-primary: rgb(190 35 55);
+  display: block;
+  font-family: var(--font-family, 'Nunito Sans', sans-serif);
+  color: var(--text, #000);
+  box-sizing: border-box;
+}
