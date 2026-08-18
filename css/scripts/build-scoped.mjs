@@ -45,6 +45,12 @@ const OUTPUT_FILE = process.env.MDS_SCOPE_OUTPUT || 'mds-scoped.css';
 /** At-rules whose names live in a global namespace and therefore cannot be scoped. */
 const GLOBAL_AT_RULES = ['keyframes', 'font-face', 'property', 'counter-style'];
 
+/**
+ * Overlays that React portals to `document.body` mark themselves with this selector —
+ * `MDS_PORTAL_ROOT_PROPS` in `core/utils/overlayHelper.ts`. Keep the two in sync.
+ */
+const PORTAL_ROOT_SELECTOR = "[data-mds-root='portal']";
+
 function expandGlobs(patterns) {
   const results = [];
   for (const pattern of patterns) {
@@ -251,6 +257,25 @@ function assertNoGlobalAtRulesRemain(root) {
   }
 }
 
+/**
+ * Returns the `@scope` prelude, guaranteeing that MDS's own portal roots are scoped.
+ *
+ * Portaled overlays (modals, poppers, backdrops, drag ghosts) escape the consumer's
+ * container and mark *themselves* as scope roots, so the prelude has to match them
+ * whatever the consumer scopes on. Without this, a custom `MDS_SCOPE_SELECTOR` such as
+ * `ui-shell-app` would leave every overlay outside all scopes and therefore unstyled.
+ *
+ * The portal selector is omitted only when the list already contains a bare
+ * `[data-mds-root]`, which matches any value — `portal` included.
+ */
+function buildScopePrelude(selector) {
+  const parts = splitSelectorList(selector);
+  const alreadyCovered = parts.some(
+    (part) => part === '[data-mds-root]' || part.replace(/["']/g, '') === PORTAL_ROOT_SELECTOR.replace(/["']/g, '')
+  );
+  return alreadyCovered ? parts.join(', ') : [...parts, PORTAL_ROOT_SELECTOR].join(', ');
+}
+
 async function build() {
   const files = expandGlobs(sources).filter((f) => fs.existsSync(f));
   const seen = new Set();
@@ -269,9 +294,10 @@ async function build() {
   remapRootSelectors(remaining);
   addRootAnchoredVariants(remaining);
 
+  const prelude = buildScopePrelude(SCOPE_SELECTOR);
   const outRoot = postcss.root();
   for (const node of hoisted) outRoot.append(node.clone());
-  outRoot.append(postcss.parse(`@scope (${SCOPE_SELECTOR}) {\n${remaining.toString()}\n}`));
+  outRoot.append(postcss.parse(`@scope (${prelude}) {\n${remaining.toString()}\n}`));
 
   const outDir = path.join(cssRoot, 'dist');
   fs.mkdirSync(outDir, { recursive: true });
@@ -279,7 +305,7 @@ async function build() {
   fs.writeFileSync(outPath, outRoot.toString());
   console.log(
     `Wrote ${path.relative(cssRoot, outPath)} (${fs.statSync(outPath).size} bytes) ` +
-      `from ${unique.length} sources, scoped to \`${SCOPE_SELECTOR}\``
+      `from ${unique.length} sources, scoped to \`${prelude}\``
   );
 }
 

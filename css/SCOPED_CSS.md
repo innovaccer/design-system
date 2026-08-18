@@ -75,8 +75,12 @@ Because *every* rule gets a variant, all rules matching a given scope root are b
 same `:scope` (0,1,0). Relative specificity — and therefore the cascade between MDS rules —
 is preserved.
 
-The `"portal"` value carries no behaviour — the prelude matches any `[data-mds-root]`. It is
-there so it's obvious in DevTools which scope roots MDS created and which you did.
+The `"portal"` value is what lets the build guarantee overlays are always scoped: because
+these roots are created by MDS rather than by you, `[data-mds-root='portal']` is appended to
+the `@scope` prelude automatically whenever your own selector would not already match it. A
+custom `MDS_SCOPE_SELECTOR` such as `ui-shell-app` would otherwise leave every modal, popper
+and backdrop outside all scopes, and therefore unstyled. It also makes it obvious in DevTools
+which scope roots MDS created and which you did.
 
 All of this is inert in the default unscoped bundle: the attribute matches nothing.
 
@@ -91,6 +95,10 @@ MDS_SCOPE_OUTPUT='ui-apps.css' MDS_SCOPE_SELECTOR='ui-shell-app, ui-admin-app' n
 
 One selector list in a single `@scope` block covers many hosts — you do not need a stylesheet
 per app.
+
+`[data-mds-root='portal']` is appended to the prelude automatically unless your selector list
+already contains a bare `[data-mds-root]`, so MDS's portaled overlays stay scoped whatever you
+scope on. The build logs the final prelude it used.
 
 CSS has **no tag-name wildcard**, so a pattern like `ui-*-app` cannot be expressed as a
 selector: `^=` / `$=` / `*=` match attribute *values*, and a tag name is not an attribute.
