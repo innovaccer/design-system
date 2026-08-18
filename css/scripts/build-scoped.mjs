@@ -13,6 +13,11 @@
  *    scope root itself and not just its descendants (see below)
  * 5. Wrap the remaining rules in @scope (<selector>)
  *
+ * This is a CSS-only feature: it requires no changes in `core/`, so the stylesheet can
+ * be updated independently of the library version and works with releases already in
+ * the wild. Everything it needs to hook onto is markup the components already render
+ * (see PORTAL_ROOT_SELECTORS).
+ *
  * Nothing is added to the scope root itself. A `[data-mds-root]` element is consumer
  * markup, so anything declared on it would compete with the consumer's own layout —
  * notably, a custom-element scope root (`<ui-shell-app data-mds-root>`) needs its own
@@ -46,10 +51,10 @@ const OUTPUT_FILE = process.env.MDS_SCOPE_OUTPUT || 'mds-scoped.css';
 const GLOBAL_AT_RULES = ['keyframes', 'font-face', 'property', 'counter-style'];
 
 /**
- * Overlays that React portals to `document.body` mark themselves with this selector —
- * `MDS_PORTAL_ROOT_PROPS` in `core/utils/overlayHelper.ts`. Keep the two in sync.
+ * Scope roots for MDS's own portaled overlays — see `portal-roots.cjs` for why each
+ * selector looks the way it does. Shared with the test that guards them.
  */
-const PORTAL_ROOT_SELECTOR = "[data-mds-root='portal']";
+const { PORTAL_ROOT_SELECTORS } = require('./portal-roots.cjs');
 
 function expandGlobs(patterns) {
   const results = [];
@@ -258,22 +263,15 @@ function assertNoGlobalAtRulesRemain(root) {
 }
 
 /**
- * Returns the `@scope` prelude, guaranteeing that MDS's own portal roots are scoped.
+ * Returns the `@scope` prelude: the consumer's opt-in selector plus MDS's own portal
+ * roots.
  *
- * Portaled overlays (modals, poppers, backdrops, drag ghosts) escape the consumer's
- * container and mark *themselves* as scope roots, so the prelude has to match them
- * whatever the consumer scopes on. Without this, a custom `MDS_SCOPE_SELECTOR` such as
- * `ui-shell-app` would leave every overlay outside all scopes and therefore unstyled.
- *
- * The portal selector is omitted only when the list already contains a bare
- * `[data-mds-root]`, which matches any value — `portal` included.
+ * The portal roots are unconditional. They target MDS-owned markup rather than anything
+ * the consumer controls, so no consumer selector can subsume them — and omitting them
+ * would leave every modal, popper and backdrop outside all scopes, rendering unstyled.
  */
-function buildScopePrelude(selector) {
-  const parts = splitSelectorList(selector);
-  const alreadyCovered = parts.some(
-    (part) => part === '[data-mds-root]' || part.replace(/["']/g, '') === PORTAL_ROOT_SELECTOR.replace(/["']/g, '')
-  );
-  return alreadyCovered ? parts.join(', ') : [...parts, PORTAL_ROOT_SELECTOR].join(', ');
+function buildScopePrelude(consumerSelector) {
+  return [...splitSelectorList(consumerSelector), ...PORTAL_ROOT_SELECTORS].join(', ');
 }
 
 async function build() {

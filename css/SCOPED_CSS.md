@@ -60,29 +60,49 @@ the consumer's `[data-mds-root]`. Without special handling they would receive ne
 component rules nor tokens, and render completely unstyled.
 
 Inside `@scope`, a rule like `.Backdrop` is implicitly `:scope .Backdrop`, so it matches
-**descendants of a scope root only** — marking the portaled element itself is not enough on
-its own. Two things make it work, with no extra wrapper elements and no DOM changes:
+**descendants of a scope root only**. Those portaled elements therefore have to be scope
+roots in their own right, and there is no MDS-owned ancestor to hang that on. So the build
+adds them to the prelude directly, targeting markup the components *already* render:
 
-- **Modal / Sidesheet / FullscreenModal** already portal into the shared `.Overlay-wrapper`
-  container. `getWrapperElement()` marks that existing element, and their roots are
-  descendants of it.
-- **Backdrop / poppers / drag ghost** portal straight to `document.body` with no MDS ancestor.
-  They spread `MDS_PORTAL_ROOT_PROPS` (`data-mds-root="portal"`) onto their own root element,
-  and the build's root-anchored selector variants (`:scope.Backdrop`) let those rules match
-  the scope root itself.
+```css
+@scope (
+  [data-mds-root],                              /* your opt-in container */
+  body > .Overlay-wrapper:has([data-layer]),    /* Modal, Sidesheet, FullscreenModal */
+  body > [data-test='DesignSystem-Popover'],    /* Popover, Tooltip, Dropdown, Menu, … */
+  body > [data-test='DesignSystem-Backdrop'],   /* Backdrop */
+  body > .Listbox-item--draggable               /* Listbox drag ghost */
+)
+```
 
-Because *every* rule gets a variant, all rules matching a given scope root are bumped by the
-same `:scope` (0,1,0). Relative specificity — and therefore the cascade between MDS rules —
-is preserved.
+Every popper-based component shares one root — `Popover` renders the popup element itself and
+Tooltip/Dropdown/Menu all go through it — so a single selector covers them all.
 
-The `"portal"` value is what lets the build guarantee overlays are always scoped: because
-these roots are created by MDS rather than by you, `[data-mds-root='portal']` is appended to
-the `@scope` prelude automatically whenever your own selector would not already match it. A
-custom `MDS_SCOPE_SELECTOR` such as `ui-shell-app` would otherwise leave every modal, popper
-and backdrop outside all scopes, and therefore unstyled. It also makes it obvious in DevTools
-which scope roots MDS created and which you did.
+Each selector is qualified so it cannot collide with a host app's own class names:
 
-All of this is inert in the default unscoped bundle: the attribute matches nothing.
+- **`body >`** — all of these land as direct children of `<body>`, so a colliding host class
+  would have to be at body level too.
+- **`:has([data-layer])`** — `data-layer` is an MDS-only attribute present on all five portal
+  roots. `.Overlay-wrapper` is a generic enough name that a host app could plausibly reuse it,
+  so the class alone is not enough. It matches a *descendant* rather than a child because Modal
+  wraps its container in `OutsideClick` when `backdropClose` is set.
+- **`data-test='DesignSystem-*'`** — already namespaced.
+
+The root-anchored selector variants from step 3 are what let those roots style *themselves*:
+`.Backdrop` alone would only match descendants. Because *every* rule gets a variant, all rules
+matching a given scope root are bumped by the same `:scope` (0,1,0), so relative specificity —
+and therefore the cascade between MDS rules — is preserved.
+
+`css/scripts/portal-roots.cjs` is the single source of truth for this list, shared with
+`core/utils/__tests__/scopedPortalRoots.test.tsx`. That test renders each overlay and asserts
+the selectors still match, so if a component ever stops rendering one of these hooks the build
+fails loudly instead of silently shipping unstyled overlays.
+
+### No component changes required
+
+This is the reason the prelude keys off existing markup rather than a dedicated attribute:
+nothing in `core/` changes, so **the scoped stylesheet can be updated independently of the
+library version**. Consumers swap the CSS file without rebuilding or upgrading, and it works
+against releases already in the wild.
 
 ## Custom scope selectors
 
@@ -96,9 +116,9 @@ MDS_SCOPE_OUTPUT='ui-apps.css' MDS_SCOPE_SELECTOR='ui-shell-app, ui-admin-app' n
 One selector list in a single `@scope` block covers many hosts — you do not need a stylesheet
 per app.
 
-`[data-mds-root='portal']` is appended to the prelude automatically unless your selector list
-already contains a bare `[data-mds-root]`, so MDS's portaled overlays stay scoped whatever you
-scope on. The build logs the final prelude it used.
+`MDS_SCOPE_SELECTOR` replaces only the *consumer* part of the prelude. The portal-root
+selectors are always appended, so MDS's overlays stay scoped whatever you scope on. The build
+logs the final prelude it used.
 
 CSS has **no tag-name wildcard**, so a pattern like `ui-*-app` cannot be expressed as a
 selector: `^=` / `$=` / `*=` match attribute *values*, and a tag name is not an attribute.
@@ -118,4 +138,8 @@ runtime (a `MutationObserver` plus `/^ui-.*-app$/.test(el.tagName.toLowerCase())
   `[data-mds-root]` does not affect overlays, which are scope roots of their own under
   `<body>`. They are deliberately not re-parented into the app's scope root, because a
   `transform` / `filter` / `contain` on an ancestor there would become the containing block
-  and break `position: fixed` overlays.
+  and break `position: fixed` overlays. Declare token overrides on `:root` so both the
+  in-tree components and the body-level overlays pick them up.
+- **The drag ghost has the weakest qualifier.** No `data-test` exists on it, so
+  `body > .Listbox-item--draggable` is all that is available. Worth tightening with a
+  `data-test` next time component changes ship.

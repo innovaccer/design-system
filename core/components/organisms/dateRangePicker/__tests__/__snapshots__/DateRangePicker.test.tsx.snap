@@ -86693,7 +86693,6 @@ exports[`DateRangePicker component
   <div
     class="Popover DateRangePicker DateRangePicker--left"
     data-layer="true"
-    data-mds-root="portal"
     data-opened="true"
     data-test="DesignSystem-Popover"
     style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; z-index: 501;"
@@ -88832,7 +88831,6 @@ exports[`DateRangePicker component
   <div
     class="Popover DateRangePicker DateRangePicker--left"
     data-layer="true"
-    data-mds-root="portal"
     data-opened="true"
     data-test="DesignSystem-Popover"
     style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; z-index: 501;"
@@ -90971,7 +90969,6 @@ exports[`DateRangePicker component
   <div
     class="Popover DateRangePicker DateRangePicker--left"
     data-layer="true"
-    data-mds-root="portal"
     data-opened="true"
     data-test="DesignSystem-Popover"
     style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; z-index: 501;"
@@ -95199,7 +95196,6 @@ exports[`DateRangePicker component
   <div
     class="Popover DateRangePicker DateRangePicker--left"
     data-layer="true"
-    data-mds-root="portal"
     data-opened="true"
     data-test="DesignSystem-Popover"
     style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; z-index: 501;"
@@ -97338,7 +97334,6 @@ exports[`DateRangePicker component
   <div
     class="Popover DateRangePicker DateRangePicker--left"
     data-layer="true"
-    data-mds-root="portal"
     data-opened="true"
     data-test="DesignSystem-Popover"
     style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; z-index: 501;"
@@ -99477,7 +99472,6 @@ exports[`DateRangePicker component
   <div
     class="Popover DateRangePicker DateRangePicker--left"
     data-layer="true"
-    data-mds-root="portal"
     data-opened="true"
     data-test="DesignSystem-Popover"
     style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; z-index: 501;"

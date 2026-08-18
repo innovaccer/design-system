@@ -8,12 +8,6 @@ export interface IItemProps {
   onFocus?: () => void;
   style?: React.CSSProperties;
   ref?: React.RefObject<any>;
-  /**
-   * Marks the drag ghost as a root for the scoped stylesheet — it is portaled to
-   * `document.body`, outside the consumer's `[data-mds-root]`. See
-   * `MDS_PORTAL_ROOT_PROPS` in `@/utils/overlayHelper`.
-   */
-  'data-mds-root'?: string;
 }
 
 export interface RenderItemParams<Value> {

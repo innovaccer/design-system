@@ -1,42 +1,9 @@
-/**
- * Attribute that marks an element as a root for the scoped stylesheet
- * (`@scope ([data-mds-root])` in `@innovaccer/design-system/css/scoped`).
- *
- * Inside `@scope`, a rule such as `.Backdrop` is implicitly `:scope .Backdrop` —
- * it matches *descendants* of a scope root only. Overlays are portaled to
- * `document.body`, outside the consumer's scope root, so they would otherwise
- * receive neither component rules nor design tokens.
- *
- * What makes marking the portaled element enough is that the scoped build pairs every
- * selector with a root-anchored variant (`.Backdrop, :scope.Backdrop`), so a rule can
- * match the scope root itself. No wrapper element is involved.
- *
- * Consumers mark their app container with a bare `data-mds-root`; MDS marks its own
- * portaled roots with the `"portal"` value ({@link MDS_PORTAL_ROOT_PROPS}). The scope
- * prelude matches either, so the value carries no behaviour — it is there to make it
- * obvious in DevTools which roots MDS created and which the consumer did.
- *
- * Inert for the default (unscoped) `css/dist/index.css` bundle.
- */
-export const MDS_ROOT_ATTRIBUTE = 'data-mds-root';
-
-/**
- * Spread onto an element that React portals outside the consumer's scope root, to
- * make it a scope root in its own right. Adds no wrapper element and no styles.
- */
-export const MDS_PORTAL_ROOT_PROPS = { [MDS_ROOT_ATTRIBUTE]: 'portal' } as const;
-
 export const getWrapperElement = (): Element => {
   let element = document.querySelector('.Overlay-wrapper');
   if (element === null) {
     element = document.createElement('div');
     element.classList.add('Overlay-wrapper');
     document.body.appendChild(element);
-  }
-  // Modal/Sidesheet/FullscreenModal portal *into* this existing container, so marking
-  // it is enough for them — their own roots are descendants of a scope root.
-  if (!element.hasAttribute(MDS_ROOT_ATTRIBUTE)) {
-    element.setAttribute(MDS_ROOT_ATTRIBUTE, 'portal');
   }
   return element;
 };

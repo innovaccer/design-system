@@ -6,7 +6,6 @@ import classNames from 'classnames';
 import { PositionType } from '@/common.type';
 import { flushSync } from 'react-dom';
 import OverlayManager from '@/utils/OverlayManager';
-import { MDS_PORTAL_ROOT_PROPS } from '@/utils/overlayHelper';
 
 type ActionType = 'click' | 'hover';
 type Offset = 'small' | 'medium' | 'large';
@@ -529,9 +528,6 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
     const childProps = {
       ref,
       style: childrenStyles,
-      // Only the `appendToBody` branches portal to `document.body`, escaping the
-      // consumer's scope root; the inline branch is already in scope.
-      ...(this.props.appendToBody ? MDS_PORTAL_ROOT_PROPS : {}),
       'data-placement': placement,
       'data-hide': outOfBoundaries,
       onMouseEnter: this.handleMouseEnter,

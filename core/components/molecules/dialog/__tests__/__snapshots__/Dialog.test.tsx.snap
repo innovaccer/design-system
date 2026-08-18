@@ -8,7 +8,6 @@ exports[`Dialog component
 >
   <div
     class="Overlay-wrapper"
-    data-mds-root="portal"
   >
     <div
       class="Row Row Overlay-container Overlay-container--open"
@@ -138,7 +137,6 @@ exports[`Dialog component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
-    data-mds-root="portal"
     data-opened="true"
     data-test="DesignSystem-Backdrop"
     style="z-index: 1010;"
@@ -155,7 +153,6 @@ exports[`Dialog component
   <div />
   <div
     class="Overlay-wrapper"
-    data-mds-root="portal"
   >
     <div
       class="Row Row Overlay-container Overlay-container--open"
@@ -284,7 +281,6 @@ exports[`Dialog component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
-    data-mds-root="portal"
     data-opened="true"
     data-test="DesignSystem-Backdrop"
     style="z-index: 1010;"
@@ -300,7 +296,6 @@ exports[`Dialog component
 >
   <div
     class="Overlay-wrapper"
-    data-mds-root="portal"
   >
     <div
       class="Row Row Overlay-container Overlay-container--open"
@@ -430,7 +425,6 @@ exports[`Dialog component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
-    data-mds-root="portal"
     data-opened="true"
     data-test="DesignSystem-Backdrop"
     style="z-index: 1010;"
@@ -446,7 +440,6 @@ exports[`Dialog component
 >
   <div
     class="Overlay-wrapper"
-    data-mds-root="portal"
   >
     <div
       class="Row Row Overlay-container Overlay-container--open"
@@ -576,7 +569,6 @@ exports[`Dialog component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
-    data-mds-root="portal"
     data-opened="true"
     data-test="DesignSystem-Backdrop"
     style="z-index: 1010;"
@@ -592,7 +584,6 @@ exports[`Dialog component
 >
   <div
     class="Overlay-wrapper"
-    data-mds-root="portal"
   >
     <div
       class="Row Row Overlay-container Overlay-container--open"
@@ -722,7 +713,6 @@ exports[`Dialog component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
-    data-mds-root="portal"
     data-opened="true"
     data-test="DesignSystem-Backdrop"
     style="z-index: 1010;"
@@ -738,7 +728,6 @@ exports[`Dialog component
 >
   <div
     class="Overlay-wrapper"
-    data-mds-root="portal"
   >
     <div
       class="Row Row Overlay-container Overlay-container--open"
@@ -868,7 +857,6 @@ exports[`Dialog component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
-    data-mds-root="portal"
     data-opened="true"
     data-test="DesignSystem-Backdrop"
     style="z-index: 1010;"
@@ -884,7 +872,6 @@ exports[`Dialog component
 >
   <div
     class="Overlay-wrapper"
-    data-mds-root="portal"
   >
     <div
       class="Row Row Overlay-container Overlay-container--open"
@@ -1014,7 +1001,6 @@ exports[`Dialog component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
-    data-mds-root="portal"
     data-opened="true"
     data-test="DesignSystem-Backdrop"
     style="z-index: 1010;"
@@ -1030,7 +1016,6 @@ exports[`Dialog component
 >
   <div
     class="Overlay-wrapper"
-    data-mds-root="portal"
   >
     <div
       class="Row Row Overlay-container Overlay-container--open"
@@ -1160,7 +1145,6 @@ exports[`Dialog component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
-    data-mds-root="portal"
     data-opened="true"
     data-test="DesignSystem-Backdrop"
     style="z-index: 1010;"
@@ -1176,7 +1160,6 @@ exports[`Dialog component
 >
   <div
     class="Overlay-wrapper"
-    data-mds-root="portal"
   >
     <div
       class="Row Row Overlay-container Overlay-container--open"
@@ -1306,7 +1289,6 @@ exports[`Dialog component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
-    data-mds-root="portal"
     data-opened="true"
     data-test="DesignSystem-Backdrop"
     style="z-index: 1010;"
@@ -1322,7 +1304,6 @@ exports[`Dialog component
 >
   <div
     class="Overlay-wrapper"
-    data-mds-root="portal"
   >
     <div
       class="Row Row Overlay-container Overlay-container--open"
@@ -1452,7 +1433,6 @@ exports[`Dialog component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
-    data-mds-root="portal"
     data-opened="true"
     data-test="DesignSystem-Backdrop"
     style="z-index: 1010;"
@@ -1468,7 +1448,6 @@ exports[`Dialog component
 >
   <div
     class="Overlay-wrapper"
-    data-mds-root="portal"
   >
     <div
       class="Row Row Overlay-container Overlay-container--open"
@@ -1598,7 +1577,6 @@ exports[`Dialog component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
-    data-mds-root="portal"
     data-opened="true"
     data-test="DesignSystem-Backdrop"
     style="z-index: 1010;"
@@ -1614,7 +1592,6 @@ exports[`Dialog component
 >
   <div
     class="Overlay-wrapper"
-    data-mds-root="portal"
   >
     <div
       class="Row Row Overlay-container Overlay-container--open"
@@ -1744,7 +1721,6 @@ exports[`Dialog component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
-    data-mds-root="portal"
     data-opened="true"
     data-test="DesignSystem-Backdrop"
     style="z-index: 1010;"
@@ -1760,7 +1736,6 @@ exports[`Dialog component
 >
   <div
     class="Overlay-wrapper"
-    data-mds-root="portal"
   >
     <div
       class="Row Row Overlay-container Overlay-container--open"
@@ -1890,7 +1865,6 @@ exports[`Dialog component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
-    data-mds-root="portal"
     data-opened="true"
     data-test="DesignSystem-Backdrop"
     style="z-index: 1010;"

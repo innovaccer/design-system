@@ -8,7 +8,6 @@ exports[`Sidesheet component
 >
   <div
     class="Overlay-wrapper"
-    data-mds-root="portal"
   >
     <div
       class="Row Overlay-container fade-in Overlay-container--open"
@@ -96,7 +95,6 @@ exports[`Sidesheet component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
-    data-mds-root="portal"
     data-opened="true"
     data-test="DesignSystem-Backdrop"
     style="z-index: 1000;"
@@ -113,7 +111,6 @@ exports[`Sidesheet component
   <div />
   <div
     class="Overlay-wrapper"
-    data-mds-root="portal"
   >
     <div
       class="Row Overlay-container fade-in Overlay-container--open"
@@ -200,7 +197,6 @@ exports[`Sidesheet component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
-    data-mds-root="portal"
     data-opened="true"
     data-test="DesignSystem-Backdrop"
     style="z-index: 1000;"

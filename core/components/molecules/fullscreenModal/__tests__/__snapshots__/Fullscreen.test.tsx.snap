@@ -6,7 +6,6 @@ exports[`FullscreenModal component
 <body>
   <div
     class="Overlay-wrapper"
-    data-mds-root="portal"
   >
     <div
       class="Overlay-container Overlay-container--open"
@@ -96,7 +95,6 @@ exports[`FullscreenModal component
 <body>
   <div
     class="Overlay-wrapper"
-    data-mds-root="portal"
   >
     <div
       class="Overlay-container Overlay-container--open"
@@ -211,7 +209,6 @@ exports[`FullscreenModal component
 <body>
   <div
     class="Overlay-wrapper"
-    data-mds-root="portal"
   >
     <div
       class="Overlay-container Overlay-container--open"
@@ -321,7 +318,6 @@ exports[`FullscreenModal component
   <div />
   <div
     class="Overlay-wrapper"
-    data-mds-root="portal"
   >
     <div
       class="Overlay-container Overlay-container--open"
@@ -410,7 +406,6 @@ exports[`FullscreenModal component
 <body>
   <div
     class="Overlay-wrapper"
-    data-mds-root="portal"
   >
     <div
       class="Overlay-container Overlay-container--open"
@@ -525,7 +520,6 @@ exports[`FullscreenModal component
 <body>
   <div
     class="Overlay-wrapper"
-    data-mds-root="portal"
   >
     <div
       class="Overlay-container Overlay-container--open"

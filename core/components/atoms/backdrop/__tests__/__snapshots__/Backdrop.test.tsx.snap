@@ -10,7 +10,6 @@ exports[`Backdrop component
   <div
     class="Backdrop Backdrop-animation--close"
     data-layer="true"
-    data-mds-root="portal"
     data-opened="false"
     data-test="DesignSystem-Backdrop"
   />
@@ -27,7 +26,6 @@ exports[`Backdrop component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
-    data-mds-root="portal"
     data-opened="true"
     data-test="DesignSystem-Backdrop"
   />
