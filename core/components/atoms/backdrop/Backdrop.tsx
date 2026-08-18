@@ -2,6 +2,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import { MDS_PORTAL_ROOT_PROPS } from '@/utils/overlayHelper';
 import styles from '@css/components/backdrop.module.css';
 
 const { useEffect, useState } = React;
@@ -77,6 +78,7 @@ export const Backdrop: React.FC<BackdropProps> = (props) => {
       data-test="DesignSystem-Backdrop"
       data-layer={true}
       data-opened={open}
+      {...MDS_PORTAL_ROOT_PROPS}
       {...baseProps}
       className={classes}
       style={{ zIndex: props.zIndex }}

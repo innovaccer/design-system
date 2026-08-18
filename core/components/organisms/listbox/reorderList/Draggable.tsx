@@ -3,6 +3,7 @@ import * as ReactDOM from 'react-dom';
 import { getTranslateOffset, transformItem, setItemTransition, binarySearch, schd, isTouchEvent } from './utils';
 import type { IItemProps, IProps, TEvent } from './types';
 import isSpaceKey from '@/accessibility/utils/isSpaceKey';
+import { MDS_PORTAL_ROOT_PROPS } from '@/utils/overlayHelper';
 import styles from '@css/components/listbox.module.css';
 
 const AUTOSCROLL_ACTIVE_OFFSET = 200;
@@ -754,6 +755,8 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
                 ref: this.ghostRef,
                 style: ghostStyle,
                 onWheel: this.onWheel,
+                // Portaled to `document.body`, so it escapes the consumer's scope root.
+                ...MDS_PORTAL_ROOT_PROPS,
               },
               index: this.state.itemDragged,
               isDragged: !this.state.isClickAndFollow,

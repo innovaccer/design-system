@@ -8,6 +8,7 @@ exports[`Modal component
 >
   <div
     class="Overlay-wrapper"
+    data-mds-root="portal"
   >
     <div
       class="Row Row Overlay-container Overlay-container--open"
@@ -84,6 +85,7 @@ exports[`Modal component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
+    data-mds-root="portal"
     data-opened="true"
     data-test="DesignSystem-Backdrop"
     style="z-index: 1010;"
@@ -99,6 +101,7 @@ exports[`Modal component
 >
   <div
     class="Overlay-wrapper"
+    data-mds-root="portal"
   >
     <div
       data-test="DesignSystem-Modal--OutsideClick"
@@ -179,6 +182,7 @@ exports[`Modal component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
+    data-mds-root="portal"
     data-opened="true"
     data-test="DesignSystem-Backdrop"
     style="z-index: 1010;"
@@ -194,6 +198,7 @@ exports[`Modal component
 >
   <div
     class="Overlay-wrapper"
+    data-mds-root="portal"
   >
     <div
       class="Row Row Overlay-container Overlay-container--open"
@@ -347,6 +352,7 @@ exports[`Modal component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
+    data-mds-root="portal"
     data-opened="true"
     data-test="DesignSystem-Backdrop"
     style="z-index: 1010;"
@@ -362,6 +368,7 @@ exports[`Modal component
 >
   <div
     class="Overlay-wrapper"
+    data-mds-root="portal"
   >
     <div
       data-test="DesignSystem-Modal--OutsideClick"
@@ -519,6 +526,7 @@ exports[`Modal component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
+    data-mds-root="portal"
     data-opened="true"
     data-test="DesignSystem-Backdrop"
     style="z-index: 1010;"
@@ -534,6 +542,7 @@ exports[`Modal component
 >
   <div
     class="Overlay-wrapper"
+    data-mds-root="portal"
   >
     <div
       class="Row Row Overlay-container Overlay-container--open"
@@ -681,6 +690,7 @@ exports[`Modal component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
+    data-mds-root="portal"
     data-opened="true"
     data-test="DesignSystem-Backdrop"
     style="z-index: 1010;"
@@ -696,6 +706,7 @@ exports[`Modal component
 >
   <div
     class="Overlay-wrapper"
+    data-mds-root="portal"
   >
     <div
       data-test="DesignSystem-Modal--OutsideClick"
@@ -847,6 +858,7 @@ exports[`Modal component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
+    data-mds-root="portal"
     data-opened="true"
     data-test="DesignSystem-Backdrop"
     style="z-index: 1010;"
@@ -862,6 +874,7 @@ exports[`Modal component
 >
   <div
     class="Overlay-wrapper"
+    data-mds-root="portal"
   >
     <div
       class="Row Row Overlay-container Overlay-container--open"
@@ -938,6 +951,7 @@ exports[`Modal component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
+    data-mds-root="portal"
     data-opened="true"
     data-test="DesignSystem-Backdrop"
     style="z-index: 1010;"
@@ -953,6 +967,7 @@ exports[`Modal component
 >
   <div
     class="Overlay-wrapper"
+    data-mds-root="portal"
   >
     <div
       data-test="DesignSystem-Modal--OutsideClick"
@@ -1033,6 +1048,7 @@ exports[`Modal component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
+    data-mds-root="portal"
     data-opened="true"
     data-test="DesignSystem-Backdrop"
     style="z-index: 1010;"
@@ -1048,6 +1064,7 @@ exports[`Modal component
 >
   <div
     class="Overlay-wrapper"
+    data-mds-root="portal"
   >
     <div
       class="Row Row Overlay-container Overlay-container--open"
@@ -1201,6 +1218,7 @@ exports[`Modal component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
+    data-mds-root="portal"
     data-opened="true"
     data-test="DesignSystem-Backdrop"
     style="z-index: 1010;"
@@ -1216,6 +1234,7 @@ exports[`Modal component
 >
   <div
     class="Overlay-wrapper"
+    data-mds-root="portal"
   >
     <div
       data-test="DesignSystem-Modal--OutsideClick"
@@ -1373,6 +1392,7 @@ exports[`Modal component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
+    data-mds-root="portal"
     data-opened="true"
     data-test="DesignSystem-Backdrop"
     style="z-index: 1010;"
@@ -1388,6 +1408,7 @@ exports[`Modal component
 >
   <div
     class="Overlay-wrapper"
+    data-mds-root="portal"
   >
     <div
       class="Row Row Overlay-container Overlay-container--open"
@@ -1535,6 +1556,7 @@ exports[`Modal component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
+    data-mds-root="portal"
     data-opened="true"
     data-test="DesignSystem-Backdrop"
     style="z-index: 1010;"
@@ -1550,6 +1572,7 @@ exports[`Modal component
 >
   <div
     class="Overlay-wrapper"
+    data-mds-root="portal"
   >
     <div
       data-test="DesignSystem-Modal--OutsideClick"
@@ -1701,6 +1724,7 @@ exports[`Modal component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
+    data-mds-root="portal"
     data-opened="true"
     data-test="DesignSystem-Backdrop"
     style="z-index: 1010;"
@@ -1717,6 +1741,7 @@ exports[`Modal component
   <div />
   <div
     class="Overlay-wrapper"
+    data-mds-root="portal"
   >
     <div
       class="Row Row Overlay-container Overlay-container--open"
@@ -1792,6 +1817,7 @@ exports[`Modal component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
+    data-mds-root="portal"
     data-opened="true"
     data-test="DesignSystem-Backdrop"
     style="z-index: 1010;"
@@ -1807,6 +1833,7 @@ exports[`Modal component
 >
   <div
     class="Overlay-wrapper"
+    data-mds-root="portal"
   >
     <div
       data-test="DesignSystem-Modal--OutsideClick"
@@ -1887,6 +1914,7 @@ exports[`Modal component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
+    data-mds-root="portal"
     data-opened="true"
     data-test="DesignSystem-Backdrop"
     style="z-index: 1010;"
@@ -1902,6 +1930,7 @@ exports[`Modal component
 >
   <div
     class="Overlay-wrapper"
+    data-mds-root="portal"
   >
     <div
       class="Row Row Overlay-container Overlay-container--open"
@@ -2055,6 +2084,7 @@ exports[`Modal component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
+    data-mds-root="portal"
     data-opened="true"
     data-test="DesignSystem-Backdrop"
     style="z-index: 1010;"
@@ -2070,6 +2100,7 @@ exports[`Modal component
 >
   <div
     class="Overlay-wrapper"
+    data-mds-root="portal"
   >
     <div
       data-test="DesignSystem-Modal--OutsideClick"
@@ -2227,6 +2258,7 @@ exports[`Modal component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
+    data-mds-root="portal"
     data-opened="true"
     data-test="DesignSystem-Backdrop"
     style="z-index: 1010;"
@@ -2242,6 +2274,7 @@ exports[`Modal component
 >
   <div
     class="Overlay-wrapper"
+    data-mds-root="portal"
   >
     <div
       class="Row Row Overlay-container Overlay-container--open"
@@ -2389,6 +2422,7 @@ exports[`Modal component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
+    data-mds-root="portal"
     data-opened="true"
     data-test="DesignSystem-Backdrop"
     style="z-index: 1010;"
@@ -2404,6 +2438,7 @@ exports[`Modal component
 >
   <div
     class="Overlay-wrapper"
+    data-mds-root="portal"
   >
     <div
       data-test="DesignSystem-Modal--OutsideClick"
@@ -2555,6 +2590,7 @@ exports[`Modal component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
+    data-mds-root="portal"
     data-opened="true"
     data-test="DesignSystem-Backdrop"
     style="z-index: 1010;"

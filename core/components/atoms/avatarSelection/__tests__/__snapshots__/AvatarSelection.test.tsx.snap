@@ -1887,6 +1887,7 @@ Object {
       class="Popover"
       data-hide="false"
       data-layer="true"
+      data-mds-root="portal"
       data-opened="true"
       data-placement="bottom-end"
       data-test="DesignSystem-Popover"
