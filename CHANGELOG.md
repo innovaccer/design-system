@@ -1,3 +1,27 @@
+## 4.28.0-1 (2026-08-18)
+
+### Highlights
+
+- Support for scoped CSS, letting consumers isolate design-system styles from the host application's global stylesheet.
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Improvements
+
+- style(css): add support for scoped css (fcedea2d5)
+
+---
+
 ## 4.27.0 (2026-08-04)
 
 ### Highlights
