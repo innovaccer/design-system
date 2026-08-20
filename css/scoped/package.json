@@ -1,0 +1,5 @@
+{
+  "name": "scoped-css",
+  "main": "../dist/mds-scoped.css",
+  "style": "../dist/mds-scoped.css"
+}

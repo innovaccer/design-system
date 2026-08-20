@@ -5,28 +5,10 @@ const sourcemaps = require('gulp-sourcemaps');
 const concat = require('gulp-concat');
 const postcssColorMod = require('postcss-color-mod-function');
 const cleaner = require('gulp-clean');
+const path = require('path');
+const { execFile } = require('child_process');
 
-const materialIcons = './material-design-icons/iconfont/material-icons.css';
-const materialFont = './material-design-icons/iconfont/*.{ttf,otf,woff2}';
-
-const typographyCssPath = [
-  './src/components/text.module.css',
-  './src/components/heading.module.css',
-  './src/components/label.module.css',
-  './src/components/caption.module.css',
-  './src/components/subheading.module.css',
-];
-
-const sources = [
-  './src/tokens/*.css',
-  './src/variables/*.css',
-  materialIcons,
-  './src/core/*.css',
-  ...typographyCssPath,
-  './src/components/*.css',
-  './src/ai-components/*.css',
-  './src/utils/*.css',
-];
+const { materialFont, sources } = require('./scripts/css-sources.cjs');
 
 function clean() {
   return gulp.src('./dist/*', { allowEmpty: true }).pipe(cleaner());
@@ -47,10 +29,37 @@ function font() {
   return gulp.src([materialFont]).pipe(gulp.dest('./dist'));
 }
 
-exports.build = gulp.series(clean, gulp.parallel(css, font));
+/**
+ * Builds `dist/mds-scoped.css` — the same CSS wrapped in `@scope ([data-mds-root])`.
+ *
+ * Runs out of process because the scoped build is authored as an ES module (it needs
+ * postcss' AST directly to hoist `@keyframes` above the `@scope` block, which a
+ * streaming gulp pipeline cannot express). Errors propagate through `cb` so a broken
+ * scoped build fails `gulp build` rather than passing silently.
+ */
+function cssScoped(cb) {
+  execFile(
+    process.execPath,
+    [path.join(__dirname, 'scripts/build-scoped.mjs')],
+    { cwd: __dirname },
+    (err, stdout, stderr) => {
+      if (stdout) process.stdout.write(stdout);
+      if (stderr) process.stderr.write(stderr);
+      cb(err);
+    }
+  );
+}
+cssScoped.displayName = 'css:scoped';
 
+/** Both bundles read the same sources, so one watch rebuilds both. */
+function watch() {
+  return gulp.watch(sources, gulp.parallel(css, cssScoped));
+}
+watch.displayName = 'watch';
+
+exports.build = gulp.series(clean, gulp.parallel(css, font, cssScoped));
+exports.cssScoped = cssScoped;
 exports.clean = clean;
+exports.watch = watch;
 
-gulp.task('watch', () => {
-  gulp.watch(sources, gulp.series(css));
-});
+gulp.task('watch', watch);

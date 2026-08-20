@@ -1,4 +1,4 @@
-@keyframes rotate {
+@keyframes mds-rotate {
   0% {
     transform: rotate(0deg);
   }
@@ -7,7 +7,7 @@
   }
 }
 
-@keyframes spin {
+@keyframes mds-spin {
   0% {
     stroke-dasharray: 1, 200;
     stroke-dashoffset: 0;
@@ -23,7 +23,7 @@
 }
 
 .Spinner {
-  animation: rotate 2s linear infinite;
+  animation: mds-rotate 2s linear infinite;
 }
 
 .Spinner--xsmall {
@@ -50,7 +50,7 @@
   stroke-linecap: round;
   stroke-dasharray: 1 200;
   stroke-dashoffset: 0;
-  animation: spin 1.5s ease-in-out infinite;
+  animation: mds-spin 1.5s ease-in-out infinite;
 }
 
 .Circle--primary {
