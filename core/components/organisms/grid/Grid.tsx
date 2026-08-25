@@ -712,6 +712,10 @@ export class Grid extends React.Component<GridProps, GridState> {
           this.gridRef = el;
         }}
       >
+        {/* Persistent live region: always in DOM so screen readers announce the loading state change */}
+        <span aria-live="polite" aria-atomic="true" className={styles['Grid-srOnly']}>
+          {loading ? 'Loading records' : ''}
+        </span>
         {init && (
           <GridProvider
             value={{
