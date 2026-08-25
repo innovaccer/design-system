@@ -701,10 +701,9 @@ export class Grid extends React.Component<GridProps, GridState> {
 
     return (
       <>
-        {/* Persistent live region: always in DOM so screen readers announce the loading state change.
-            Kept outside the role="grid" element below — that role only permits row/rowgroup children. */}
+        {/* Persistent live region: always in DOM so screen readers announce the loading state change. */}
         <span aria-live="polite" aria-atomic="true" className={styles['Grid-srOnly']}>
-          {loading ? 'Loading records' : ''}
+          {init && loading ? 'Loading records' : ''}
         </span>
         <div
           data-test="DesignSystem-Grid"
