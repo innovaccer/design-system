@@ -3851,6 +3851,11 @@ exports[`TS renders children 1`] = `
       </span>
     </div>
   </div>
+  <span
+    aria-atomic="true"
+    aria-live="polite"
+    class="Grid-srOnly"
+  />
   <div
     aria-busy="false"
     aria-label="Data grid"
@@ -3883,6 +3888,11 @@ exports[`TS renders children 1`] = `
     <div
       class="Table-grid"
     >
+      <span
+        aria-atomic="true"
+        aria-live="polite"
+        class="Grid-srOnly"
+      />
       <div
         aria-busy="false"
         aria-label="Data grid"
@@ -3922,6 +3932,11 @@ exports[`TS renders children 1`] = `
     <div
       class="Table-grid"
     >
+      <span
+        aria-atomic="true"
+        aria-live="polite"
+        class="Grid-srOnly"
+      />
       <div
         aria-busy="false"
         aria-label="Data grid"
