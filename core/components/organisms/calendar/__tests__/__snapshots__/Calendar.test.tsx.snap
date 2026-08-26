@@ -22673,6 +22673,7 @@ exports[`Calendar component
               class="Calendar-yearValueWrapper"
             >
               <button
+                aria-current="date"
                 aria-disabled="false"
                 aria-label="2021"
                 aria-selected="false"
@@ -31206,6 +31207,7 @@ exports[`Calendar component
               class="Calendar-yearValueWrapper"
             >
               <button
+                aria-current="date"
                 aria-disabled="false"
                 aria-label="2021"
                 aria-selected="false"
