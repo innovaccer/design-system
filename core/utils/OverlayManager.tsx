@@ -37,6 +37,10 @@ class OverlayManager {
 
     return !!this.overlays.length && this.overlays[this.overlays.length - 1] === overlay;
   }
+
+  getTopOverlay(): HTMLDivElement | null {
+    return this.overlays.length ? this.overlays[this.overlays.length - 1] : null;
+  }
 }
 
 const instance = new OverlayManager();
