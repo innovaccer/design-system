@@ -1460,18 +1460,10 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                 actualDateObj.getDate()
               );
             let active = !disabled && yearState === yearNavVal && monthState === monthNavVal && dateState === date;
-            const today = () => {
-              let boolVal;
-              if (date <= 0) {
-                boolVal =
-                  currYear === yearNavVal && currMonth === monthNavVal - 1 && todayDate === prevMonthDayRange + date;
-              } else if (date > dayRange) {
-                boolVal = currYear === yearNavVal && currMonth === monthNavVal + 1 && todayDate === date - dayRange;
-              } else {
-                boolVal = currYear === yearNavVal && currMonth === monthNavVal && todayDate === date;
-              }
-              return boolVal;
-            };
+            const today = () =>
+              actualDateObj.getFullYear() === currYear &&
+              actualDateObj.getMonth() === currMonth &&
+              actualDateObj.getDate() === todayDate;
             let startActive = false;
             let endActive = false;
             let inRange = false;
