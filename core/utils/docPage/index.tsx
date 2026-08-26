@@ -416,11 +416,14 @@ export const docPage = () => {
       )}
 
       {!!sandboxTitle && (
-        <div className="border-right" style={{ borderRadius: '4px' }}>
+        // The CodeSandbox editor embed (file tree + code + console + preview) doesn't reflow below
+        // ~960px — it overlaps its own controls instead. Rather than let it squash into that broken
+        // state, keep it at a usable width and let this section scroll horizontally on narrow viewports.
+        <div className="border-right" style={{ borderRadius: '4px', overflowX: 'auto' }}>
           <iframe
             src={`https://codesandbox.io/embed/${sandboxTitle}?autoresize=1&fontsize=14&hidenavigation=1&theme=dark&view=preview`}
-            className="w-100 vh-100 overflow-hidden"
-            style={{ border: '4px', borderRadius: '4px' }}
+            className="vh-100 overflow-hidden"
+            style={{ border: '4px', borderRadius: '4px', minWidth: 960, width: '100%' }}
             title={sandboxTitle}
             allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
             sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
