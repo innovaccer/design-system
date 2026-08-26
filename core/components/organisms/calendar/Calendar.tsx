@@ -882,6 +882,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                 aria-label={year.toString()}
                 aria-disabled={disabled}
                 aria-selected={active}
+                aria-current={isCurrentYear() ? 'date' : undefined}
                 onClick={this.selectYear(year, disabled)}
                 onKeyDown={(ev) => this.handleYearCellKeyDown(ev, year, offset, disabled)}
                 onFocus={() => this.setState({ focusedYearIndex: offset })}
@@ -987,6 +988,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                 aria-label={months[month]}
                 aria-disabled={disabled}
                 aria-selected={active}
+                aria-current={isCurrentMonth() ? 'date' : undefined}
                 onClick={this.selectMonth(month, disabled)}
                 onKeyDown={(ev) => this.handleMonthCellKeyDown(ev, month, disabled)}
                 onFocus={() => this.setState({ focusedMonth: month })}
@@ -1621,6 +1623,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                   aria-label={formatDateAriaLabel(fullDate)}
                   aria-disabled={disabled}
                   aria-selected={Boolean(active || activeDate)}
+                  aria-current={today() ? 'date' : undefined}
                   onClick={onClickHandler(date, disabled)}
                   onKeyDown={(ev) =>
                     this.handleDateCellKeyDown(
