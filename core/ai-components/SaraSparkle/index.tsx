@@ -68,6 +68,7 @@ export const SaraSparkle = (props: SaraSparkleProps) => {
 SaraSparkle.defaultProps = {
   size: 24,
   state: 'default',
+  alt: '',
 };
 
 export default SaraSparkle;
