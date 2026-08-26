@@ -716,6 +716,7 @@ exports[`TS renders children 1`] = `
                   data-test="designSystem-Calendar-WrapperClass"
                 >
                   <button
+                    aria-current="date"
                     aria-disabled="false"
                     aria-label="June 14, 2021"
                     aria-selected="false"
@@ -3135,6 +3136,7 @@ exports[`TS renders children 1`] = `
               data-test="designSystem-Calendar-WrapperClass"
             >
               <button
+                aria-current="date"
                 aria-disabled="false"
                 aria-label="June 14, 2021"
                 aria-selected="false"
