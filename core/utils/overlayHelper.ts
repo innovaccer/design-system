@@ -1,3 +1,5 @@
+import OverlayManager from './OverlayManager';
+
 export const getWrapperElement = (): Element => {
   let element = document.querySelector('.Overlay-wrapper');
   if (element === null) {
@@ -168,12 +170,27 @@ export const handleFocusTrapKeyDown = (
 ): boolean => {
   if (event.key !== 'Tab') return false;
 
-  const focusable = getFocusableElements(container);
   const activeElement = document.activeElement as HTMLElement | null;
 
-  if (!activeElement || !container.contains(activeElement)) {
+  if (!activeElement) {
     return false;
   }
+
+  // A nested overlay (Select/Dropdown/DatePicker popup) portals its content to document.body,
+  // so it's never a DOM descendant of `container` even though it was opened from within it.
+  // Without this, focus moving into that portal makes `container.contains(activeElement)` false,
+  // and the trap bails out entirely — letting Tab escape past the modal into the page behind it.
+  const topOverlay = OverlayManager.getTopOverlay();
+  const isInsideNestedOverlay = !!topOverlay && topOverlay !== container && topOverlay.contains(activeElement);
+
+  if (!container.contains(activeElement) && !isInsideNestedOverlay) {
+    return false;
+  }
+
+  const focusable =
+    isInsideNestedOverlay && topOverlay
+      ? [...getFocusableElements(container), ...getFocusableElements(topOverlay)]
+      : getFocusableElements(container);
 
   if (focusable.length === 0) {
     event.preventDefault();
