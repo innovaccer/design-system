@@ -3833,17 +3833,24 @@ exports[`TS renders children 1`] = `
   >
     <div
       class="TabsWrapper-header"
+      role="tablist"
     >
       <div
+        aria-controls="tabs-wrapper-1-panel"
+        aria-selected="true"
         class="Tab Tab--active Tab--regular"
         data-test="DesignSystem-Tabs--Header"
-        role="button"
+        id="tabs-wrapper-1-tab-0"
+        role="tab"
         tabindex="0"
       />
     </div>
     <div
+      aria-labelledby="tabs-wrapper-1-tab-0"
       class="TabsWrapper-content"
       data-test="DesignSystem-Tabs--Content"
+      id="tabs-wrapper-1-panel"
+      role="tabpanel"
     >
       <span
         class="Text Text--default Text--regular"

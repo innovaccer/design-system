@@ -25,12 +25,21 @@ export interface TabsWrapperProps extends BaseProps {
   size?: TTabSize;
 }
 
+let tabsWrapperInstanceCounter = 0;
+
 export const TabsWrapper = (props: TabsWrapperProps) => {
   const { children, onTabChange, className, size } = props;
 
   const baseProps = extractBaseProps(props);
   const tabs = Array.isArray(children) ? children : [children];
   const totalTabs = tabs.length;
+
+  const tabsInstanceIdRef = React.useRef<string>('');
+  if (!tabsInstanceIdRef.current) {
+    tabsWrapperInstanceCounter += 1;
+    tabsInstanceIdRef.current = `tabs-wrapper-${tabsWrapperInstanceCounter}`;
+  }
+  const panelId = `${tabsInstanceIdRef.current}-panel`;
 
   const [active, setActiveTab] = React.useState(props.active && props.active < totalTabs ? props.active : 0);
 
@@ -70,6 +79,7 @@ export const TabsWrapper = (props: TabsWrapperProps) => {
       <div
         data-test="DesignSystem-Tabs--Header"
         key={index}
+        id={`${tabsInstanceIdRef.current}-tab-${index}`}
         className={tabHeaderClass}
         onClick={() => !disabled && tabClickHandler(index)}
         onKeyDown={(event: React.KeyboardEvent<HTMLDivElement>) => {
@@ -80,8 +90,10 @@ export const TabsWrapper = (props: TabsWrapperProps) => {
             tabClickHandler(index);
           }
         }}
-        role="button"
+        role="tab"
         tabIndex={disabled ? -1 : 0}
+        aria-selected={!disabled && active === index}
+        aria-controls={panelId}
         aria-disabled={disabled || undefined}
       >
         {label}
@@ -91,8 +103,16 @@ export const TabsWrapper = (props: TabsWrapperProps) => {
 
   return (
     <div data-test="DesignSystem-TabsWrapper" {...baseProps} className={wrapperClass}>
-      <div className={headerClass}>{TabsHeader}</div>
-      <div className={styles['TabsWrapper-content']} data-test="DesignSystem-Tabs--Content">
+      <div className={headerClass} role="tablist">
+        {TabsHeader}
+      </div>
+      <div
+        className={styles['TabsWrapper-content']}
+        data-test="DesignSystem-Tabs--Content"
+        role="tabpanel"
+        id={panelId}
+        aria-labelledby={`${tabsInstanceIdRef.current}-tab-${active}`}
+      >
         {tabs[active]}
       </div>
     </div>
