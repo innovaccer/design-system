@@ -168,14 +168,23 @@ export const Tooltip = (props: TooltipProps) => {
       return React.cloneElement<any>(element, { ref: mergedRef });
     }
 
-    // If the trigger's own accessible name (aria-label) already says the same thing as the
-    // tooltip (e.g. a "Close" icon button with tooltip="Close"), describing it again would
-    // make screen readers announce the same word twice — once as the name, once as the description.
-    const triggerAriaLabel = (element.props as { 'aria-label'?: string })['aria-label'];
+    // If the trigger's own accessible name already says the same thing as the tooltip
+    // (e.g. a "Close" icon button with tooltip="Close", or <button>Save</button> with
+    // tooltip="Save"), describing it again would make screen readers announce the same
+    // word twice — once as the name, once as the description. `aria-label` and plain-text
+    // `children` are the two name sources we can read directly off the trigger element;
+    // `aria-labelledby` points elsewhere in the DOM, so it can't be resolved here.
+    const triggerProps = element.props as { 'aria-label'?: string; children?: React.ReactNode };
+    const triggerAccessibleName =
+      typeof triggerProps['aria-label'] === 'string'
+        ? triggerProps['aria-label']
+        : typeof triggerProps.children === 'string' || typeof triggerProps.children === 'number'
+        ? String(triggerProps.children)
+        : undefined;
     const repeatsAccessibleName =
-      typeof triggerAriaLabel === 'string' &&
       typeof tooltip === 'string' &&
-      triggerAriaLabel.trim().toLowerCase() === tooltip.trim().toLowerCase();
+      triggerAccessibleName !== undefined &&
+      triggerAccessibleName.trim().toLowerCase() === tooltip.trim().toLowerCase();
 
     if (repeatsAccessibleName) {
       return React.cloneElement<any>(element, { ref: mergedRef });

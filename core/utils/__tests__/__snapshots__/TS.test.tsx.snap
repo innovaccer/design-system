@@ -2308,7 +2308,6 @@ exports[`TS renders children 1`] = `
     class="PopperWrapper-trigger"
   >
     <span
-      aria-describedby="Tooltip-Test-uid"
       class="Text Text--default Text--regular"
       data-test="DesignSystem-Text"
     >
