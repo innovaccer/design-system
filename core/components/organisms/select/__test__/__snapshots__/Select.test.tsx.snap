@@ -13,27 +13,32 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -42,7 +47,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -62,27 +67,32 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -91,7 +101,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -111,27 +121,32 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -140,7 +155,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -160,27 +175,32 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -189,7 +209,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -209,27 +229,32 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -238,7 +263,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -258,27 +283,32 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -287,7 +317,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -307,27 +337,32 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -336,7 +371,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -356,27 +391,32 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -385,7 +425,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -405,27 +445,32 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -434,7 +479,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -454,27 +499,32 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -483,7 +533,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -503,27 +553,32 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -532,7 +587,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -552,27 +607,32 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -581,7 +641,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -601,27 +661,32 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -630,7 +695,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -650,27 +715,32 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -679,7 +749,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -699,27 +769,32 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -728,7 +803,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -748,27 +823,32 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -777,7 +857,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -797,27 +877,32 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -826,7 +911,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -846,27 +931,32 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -875,7 +965,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -895,27 +985,32 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -924,7 +1019,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -944,27 +1039,32 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -973,7 +1073,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -993,27 +1093,32 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -1022,7 +1127,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1042,27 +1147,32 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -1071,7 +1181,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1091,27 +1201,32 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -1120,7 +1235,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1140,27 +1255,32 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -1169,7 +1289,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1189,27 +1309,32 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -1218,7 +1343,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1238,27 +1363,32 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -1267,7 +1397,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1287,27 +1417,32 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -1316,7 +1451,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1336,27 +1471,32 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -1365,7 +1505,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1385,27 +1525,32 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -1414,7 +1559,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1434,27 +1579,32 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -1463,7 +1613,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1483,27 +1633,32 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -1512,7 +1667,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1532,27 +1687,32 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -1561,7 +1721,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1581,27 +1741,32 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -1610,7 +1775,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1630,27 +1795,32 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -1659,7 +1829,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1679,27 +1849,32 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -1708,7 +1883,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1728,27 +1903,32 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -1757,7 +1937,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1777,27 +1957,32 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -1806,7 +1991,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1826,27 +2011,32 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -1855,7 +2045,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1875,27 +2065,32 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -1904,7 +2099,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1924,27 +2119,32 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -1953,7 +2153,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1973,27 +2173,32 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -2002,7 +2207,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2022,27 +2227,32 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -2051,7 +2261,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2071,27 +2281,32 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -2100,7 +2315,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2120,27 +2335,32 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -2149,7 +2369,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2169,27 +2389,32 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -2198,7 +2423,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2218,27 +2443,32 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -2247,7 +2477,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2267,27 +2497,32 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -2296,7 +2531,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2316,27 +2551,32 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -2345,7 +2585,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2365,27 +2605,32 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -2394,7 +2639,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2414,27 +2659,32 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -2443,7 +2693,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2463,27 +2713,32 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -2492,7 +2747,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2512,27 +2767,32 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -2541,7 +2801,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2561,27 +2821,32 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -2590,7 +2855,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2610,27 +2875,32 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -2639,7 +2909,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2659,27 +2929,32 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -2688,7 +2963,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2708,27 +2983,32 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -2737,7 +3017,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2757,27 +3037,32 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -2786,7 +3071,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2806,27 +3091,32 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -2835,7 +3125,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2855,27 +3145,32 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -2884,7 +3179,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2904,27 +3199,32 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -2933,7 +3233,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2953,27 +3253,32 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -2982,7 +3287,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -3002,27 +3307,32 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -3031,7 +3341,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -3051,27 +3361,32 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -3080,7 +3395,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -3100,27 +3415,32 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -3129,7 +3449,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -3149,27 +3469,32 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -3178,7 +3503,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -3198,27 +3523,32 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -3227,7 +3557,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -3247,27 +3577,32 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -3276,7 +3611,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -3296,27 +3631,32 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -3325,7 +3665,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -3345,27 +3685,32 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -3374,7 +3719,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -3394,27 +3739,32 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -3423,7 +3773,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -3443,27 +3793,32 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -3472,7 +3827,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -3492,27 +3847,32 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -3521,7 +3881,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -3541,27 +3901,32 @@ exports[`Select component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -3570,7 +3935,7 @@ exports[`Select component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -3590,27 +3955,32 @@ exports[`Select component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
-          aria-controls="select-listbox-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select"
+        <div
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
-          data-test="DesignSystem-Select-trigger"
-          role="combobox"
+          data-test="DesignSystem-Select-triggerBox"
           style="width: 176px;"
-          tabindex="0"
-          type="button"
         >
-          <div
-            class="Select-trigger-wrapper ellipsis--noWrap"
+          <button
+            aria-controls="select-listbox-Test-uid"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select"
+            class="Select-trigger-control"
+            data-test="DesignSystem-Select-trigger"
+            role="combobox"
+            tabindex="0"
+            type="button"
           >
-            <span
-              class="Text Text--regular Select-trigger--text"
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
             >
-              Select
-            </span>
-          </div>
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+          </button>
           <i
             aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
@@ -3619,7 +3989,7 @@ exports[`Select component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
