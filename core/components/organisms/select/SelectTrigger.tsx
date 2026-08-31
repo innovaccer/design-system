@@ -112,6 +112,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
     setLabel,
     minWidth,
     maxWidth,
+    className,
     'aria-invalid': ariaInvalid,
     'aria-controls': ariaControls,
     ...rest
@@ -159,18 +160,21 @@ const SelectTrigger = (props: SelectTriggerProps) => {
     triggerRef?.current?.focus({ preventScroll: true });
   };
 
-  const buttonClass = classNames({
-    [buttonStyles['Button']]: true,
-    [selectStyles['Select-trigger']]: true,
-    [selectStyles[`Select-trigger--${triggerSize}`]]: triggerSize,
-    [selectStyles['Select-trigger--placeholder']]: !isOptionSelected,
-    [selectStyles[`Select-trigger--${styleType}Placeholder`]]: !isOptionSelected && !!styleType,
-    [selectStyles['Select-trigger--icon']]: icon,
-    [selectStyles[`Select-trigger--${styleType}Open`]]: openPopover && !!styleType,
-    [selectStyles[`Select-trigger--${styleType}`]]: !!styleType,
-    [selectStyles['Select-trigger--error']]: !!error,
-    [selectStyles['Select-trigger--disabled']]: !!disabled,
-  });
+  const buttonClass = classNames(
+    {
+      [buttonStyles['Button']]: true,
+      [selectStyles['Select-trigger']]: true,
+      [selectStyles[`Select-trigger--${triggerSize}`]]: triggerSize,
+      [selectStyles['Select-trigger--placeholder']]: !isOptionSelected,
+      [selectStyles[`Select-trigger--${styleType}Placeholder`]]: !isOptionSelected && !!styleType,
+      [selectStyles['Select-trigger--icon']]: icon,
+      [selectStyles[`Select-trigger--${styleType}Open`]]: openPopover && !!styleType,
+      [selectStyles[`Select-trigger--${styleType}`]]: !!styleType,
+      [selectStyles['Select-trigger--error']]: !!error,
+      [selectStyles['Select-trigger--disabled']]: !!disabled,
+    },
+    className
+  );
 
   const textClass = classNames({
     [textStyles['Text']]: true,

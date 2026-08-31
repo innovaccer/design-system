@@ -1755,6 +1755,22 @@ describe('Select component size functionality tests', () => {
     });
   });
 
+  describe('Select component trigger custom className', () => {
+    it('merges triggerOptions.className into the trigger box instead of replacing its classes', () => {
+      const { getByTestId } = render(
+        <Select onSelect={FunctionValue} styleType="filled" triggerOptions={{ className: 'custom-trigger-class' }}>
+          <Select.List>
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      const triggerBox = getByTestId('DesignSystem-Select-triggerBox');
+      expect(triggerBox).toHaveClass('custom-trigger-class');
+      expect(triggerBox).toHaveClass('Select-trigger--filled');
+    });
+  });
+
   describe('Select component with error prop - Tests for error state styling', () => {
     it('should not apply error class by default when error prop is not provided', () => {
       const { getByTestId } = render(
