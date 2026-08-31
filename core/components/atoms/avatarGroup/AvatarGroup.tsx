@@ -183,6 +183,8 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
     className
   );
 
+  const [open, setOpen] = React.useState(false);
+
   const avatarPopperBodyProps = {
     hiddenAvatarList: [...list].slice(max, list.length),
     popperRenderer,
@@ -209,7 +211,17 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
       {list.length - max > 0 && list.length !== 3 && (
         <Popover
           on={on}
-          trigger={<AvatarCount on={on} size={size} hiddenAvatarCount={hiddenAvatarCount} avatarStyle={avatarStyle} />}
+          open={open}
+          onToggle={setOpen}
+          trigger={
+            <AvatarCount
+              on={on}
+              size={size}
+              hiddenAvatarCount={hiddenAvatarCount}
+              avatarStyle={avatarStyle}
+              open={open}
+            />
+          }
           position={position}
           appendToBody={appendToBody}
           offset="medium"
