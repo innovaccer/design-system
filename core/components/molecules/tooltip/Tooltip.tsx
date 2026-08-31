@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Popover, Text } from '@/index';
 import { PopoverProps } from '@/index.type';
 import { BaseProps, filterProps } from '@/utils/types';
+import uidGenerator from '@/utils/uidGenerator';
 import styles from '@css/components/tooltip.module.css';
 import classNames from 'classnames';
 
@@ -50,7 +51,10 @@ export interface TooltipProps extends Omit<PopoverProps, TooltipPopperProps>, Ba
    */
   showTooltip?: boolean;
   /**
-   * Trigger for `Tooltip`
+   * Trigger for `Tooltip`.
+   *
+   * Must be a focusable element (e.g. `button`, `a`, or an element with a `tabIndex`)
+   * so keyboard users can reveal the tooltip on focus, consistent with mouse hover.
    */
   children: PopoverProps['trigger'];
   /**
@@ -80,6 +84,24 @@ export interface TooltipProps extends Omit<PopoverProps, TooltipPopperProps>, Ba
    * Add delay to the tooltip opening event
    */
   openDelay?: number;
+  /**
+   * Hides the visual tooltip bubble from assistive technology and skips linking it to the
+   * trigger via `aria-describedby`.
+   *
+   * Use this when the trigger already exposes an equivalent accessible description itself
+   * (e.g. `Button`/`LinkButton`'s own `tooltip` prop, which renders a dedicated sr-only
+   * description) so screen readers don't announce the same text twice.
+   */
+  'aria-hidden'?: React.AriaAttributes['aria-hidden'];
+}
+
+function assignRef<T>(ref: React.Ref<T> | undefined, value: T | null) {
+  if (ref == null) return;
+  if (typeof ref === 'function') {
+    ref(value);
+  } else {
+    (ref as React.MutableRefObject<T | null>).current = value;
+  }
 }
 
 export const detectTruncation = (boundaryRef: React.RefObject<HTMLElement>) => {
@@ -90,21 +112,96 @@ export const detectTruncation = (boundaryRef: React.RefObject<HTMLElement>) => {
 };
 
 export const Tooltip = (props: TooltipProps) => {
-  const { children, tooltip, showTooltip, showOnTruncation, elementRef, className, size = 'regular', ...rest } = props;
+  const {
+    children,
+    tooltip,
+    showTooltip,
+    showOnTruncation,
+    elementRef,
+    className,
+    size = 'regular',
+    'aria-hidden': ariaHidden,
+    ...rest
+  } = props;
   const childrenRef = React.useRef(null);
   const [isTruncated, setIsTruncated] = React.useState(false);
+
+  const tooltipIdRef = React.useRef<string | null>(null);
+  if (tooltipIdRef.current === null) {
+    tooltipIdRef.current = `Tooltip-${uidGenerator()}`;
+  }
+  const tooltipId = tooltipIdRef.current;
+
+  // When true, the trigger already exposes an equivalent accessible description of its own
+  // (e.g. Button/LinkButton's sr-only tooltip text), so this Tooltip must not add a second one.
+  const hideFromAT = ariaHidden === true || ariaHidden === 'true';
+
+  // Truncation tooltips repeat text that's already present (just visually clipped) in the
+  // trigger/elementRef DOM node, so screen readers already have it — linking the tooltip
+  // bubble via aria-describedby would announce the same text a second time.
+  const skipDescription = hideFromAT || showOnTruncation;
 
   React.useEffect(() => {
     const element = elementRef ? elementRef : childrenRef;
     setIsTruncated(detectTruncation(element));
   }, [childrenRef, elementRef, children]);
 
+  // Associates the trigger with the tooltip content so screen readers announce it,
+  // regardless of whether the trigger also needs the ref used for truncation detection.
+  // The ref passed via `extraProps` is merged with (not swapped for) any ref the caller
+  // already attached to the trigger, so imperative access (e.g. `<Button ref={...}>`) keeps working.
+  const withTooltipAria = (
+    element: React.ReactElement<any>,
+    extraProps: { ref?: React.Ref<any> } = {}
+  ): React.ReactElement<any> => {
+    if (!React.isValidElement(element)) return element;
+
+    const existingRef = (element as React.ReactElement<any> & { ref?: React.Ref<any> }).ref;
+    const mergedRef = extraProps.ref
+      ? (node: unknown) => {
+          assignRef(extraProps.ref, node);
+          assignRef(existingRef, node);
+        }
+      : existingRef;
+
+    if (skipDescription) {
+      return React.cloneElement<any>(element, { ref: mergedRef });
+    }
+
+    // If the trigger's own accessible name already says the same thing as the tooltip
+    // (e.g. a "Close" icon button with tooltip="Close", or <button>Save</button> with
+    // tooltip="Save"), describing it again would make screen readers announce the same
+    // word twice — once as the name, once as the description. `aria-label` and plain-text
+    // `children` are the two name sources we can read directly off the trigger element;
+    // `aria-labelledby` points elsewhere in the DOM, so it can't be resolved here.
+    const triggerProps = element.props as { 'aria-label'?: string; children?: React.ReactNode };
+    const triggerAccessibleName =
+      typeof triggerProps['aria-label'] === 'string'
+        ? triggerProps['aria-label']
+        : typeof triggerProps.children === 'string' || typeof triggerProps.children === 'number'
+        ? String(triggerProps.children)
+        : undefined;
+    const repeatsAccessibleName =
+      typeof tooltip === 'string' &&
+      triggerAccessibleName !== undefined &&
+      triggerAccessibleName.trim().toLowerCase() === tooltip.trim().toLowerCase();
+
+    if (repeatsAccessibleName) {
+      return React.cloneElement<any>(element, { ref: mergedRef });
+    }
+
+    const existingDescribedBy = (element.props as { 'aria-describedby'?: string })['aria-describedby'];
+    return React.cloneElement<any>(element, {
+      ref: mergedRef,
+      'aria-describedby': existingDescribedBy ? `${existingDescribedBy} ${tooltipId}` : tooltipId,
+    });
+  };
+
+  // Only attach the measurement ref when truncation detection actually needs it — plain
+  // function-component triggers (e.g. Link, Icon) can't take a ref without forwardRef,
+  // so forcing one on unconditionally would warn ("Function components cannot be given refs").
   const renderChildren =
-    elementRef || !React.isValidElement(children)
-      ? children
-      : React.cloneElement(children as React.ReactElement<any>, {
-          ref: childrenRef,
-        });
+    showOnTruncation && !elementRef ? withTooltipAria(children, { ref: childrenRef }) : withTooltipAria(children);
 
   if (!showTooltip) {
     // If showTooltip is false skip the Popover and return the children directly
@@ -117,7 +214,13 @@ export const Tooltip = (props: TooltipProps) => {
   });
 
   const tooltipWrapper = (
-    <div role="tooltip" className={tooltipClass} data-test="DesignSystem-Tooltip-Wrapper">
+    <div
+      id={skipDescription ? undefined : tooltipId}
+      aria-hidden={hideFromAT || undefined}
+      role="tooltip"
+      className={tooltipClass}
+      data-test="DesignSystem-Tooltip-Wrapper"
+    >
       <Text className={styles['Tooltip-text']} appearance="white" size={size}>
         {tooltip}
       </Text>
@@ -148,7 +251,7 @@ export const Tooltip = (props: TooltipProps) => {
 
   return (
     <Popover
-      trigger={children}
+      trigger={renderChildren}
       on={'hover'}
       offset={'medium'}
       animationClass={{
