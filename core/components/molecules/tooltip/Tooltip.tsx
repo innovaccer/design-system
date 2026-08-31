@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Popover, Text } from '@/index';
 import { PopoverProps } from '@/index.type';
 import { BaseProps, filterProps } from '@/utils/types';
+import uidGenerator from '@/utils/uidGenerator';
 import styles from '@css/components/tooltip.module.css';
 import classNames from 'classnames';
 
@@ -50,7 +51,10 @@ export interface TooltipProps extends Omit<PopoverProps, TooltipPopperProps>, Ba
    */
   showTooltip?: boolean;
   /**
-   * Trigger for `Tooltip`
+   * Trigger for `Tooltip`.
+   *
+   * Must be a focusable element (e.g. `button`, `a`, or an element with a `tabIndex`)
+   * so keyboard users can reveal the tooltip on focus, consistent with mouse hover.
    */
   children: PopoverProps['trigger'];
   /**
@@ -94,17 +98,35 @@ export const Tooltip = (props: TooltipProps) => {
   const childrenRef = React.useRef(null);
   const [isTruncated, setIsTruncated] = React.useState(false);
 
+  const tooltipIdRef = React.useRef<string | null>(null);
+  if (tooltipIdRef.current === null) {
+    tooltipIdRef.current = `Tooltip-${uidGenerator()}`;
+  }
+  const tooltipId = tooltipIdRef.current;
+
   React.useEffect(() => {
     const element = elementRef ? elementRef : childrenRef;
     setIsTruncated(detectTruncation(element));
   }, [childrenRef, elementRef, children]);
 
+  // Associates the trigger with the tooltip content so screen readers announce it,
+  // regardless of whether the trigger also needs the ref used for truncation detection.
+  const withTooltipAria = (
+    element: React.ReactElement<any>,
+    extraProps: Record<string, unknown> = {}
+  ): React.ReactElement<any> => {
+    if (!React.isValidElement(element)) return element;
+    const existingDescribedBy = (element.props as { 'aria-describedby'?: string })['aria-describedby'];
+    return React.cloneElement<any>(element, {
+      'aria-describedby': existingDescribedBy ? `${existingDescribedBy} ${tooltipId}` : tooltipId,
+      ...extraProps,
+    });
+  };
+
   const renderChildren =
     elementRef || !React.isValidElement(children)
-      ? children
-      : React.cloneElement(children as React.ReactElement<any>, {
-          ref: childrenRef,
-        });
+      ? withTooltipAria(children)
+      : withTooltipAria(children, { ref: childrenRef });
 
   if (!showTooltip) {
     // If showTooltip is false skip the Popover and return the children directly
@@ -117,7 +139,7 @@ export const Tooltip = (props: TooltipProps) => {
   });
 
   const tooltipWrapper = (
-    <div role="tooltip" className={tooltipClass} data-test="DesignSystem-Tooltip-Wrapper">
+    <div id={tooltipId} role="tooltip" className={tooltipClass} data-test="DesignSystem-Tooltip-Wrapper">
       <Text className={styles['Tooltip-text']} appearance="white" size={size}>
         {tooltip}
       </Text>
@@ -148,7 +170,7 @@ export const Tooltip = (props: TooltipProps) => {
 
   return (
     <Popover
-      trigger={children}
+      trigger={renderChildren}
       on={'hover'}
       offset={'medium'}
       animationClass={{
