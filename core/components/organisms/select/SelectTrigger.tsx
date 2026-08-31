@@ -168,6 +168,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
     [selectStyles[`Select-trigger--${styleType}Open`]]: openPopover && !!styleType,
     [selectStyles[`Select-trigger--${styleType}`]]: !!styleType,
     [selectStyles['Select-trigger--error']]: !!error,
+    [selectStyles['Select-trigger--disabled']]: !!disabled,
   });
 
   const textClass = classNames({
@@ -202,24 +203,25 @@ const SelectTrigger = (props: SelectTriggerProps) => {
       elementRef={elementRef}
       triggerClass="w-100"
     >
-      <button
-        ref={triggerRef as React.RefObject<HTMLButtonElement>}
-        onKeyDown={(event) => handleKeyDownTrigger(event, setOpenPopover, setHighlightFirstItem, setHighlightLastItem)}
-        type="button"
-        className={buttonClass}
-        disabled={disabled}
-        tabIndex={0}
-        style={triggerStyle}
-        role="combobox"
-        aria-controls={ariaControls}
-        aria-expanded={openPopover}
-        aria-haspopup="listbox"
-        aria-label={resolvedAriaLabel}
-        aria-labelledby={ariaLabelledBy}
-        data-test="DesignSystem-Select-trigger"
-        {...rest}
-      >
-        {
+      <div className={buttonClass} style={triggerStyle} data-test="DesignSystem-Select-triggerBox">
+        <button
+          ref={triggerRef as React.RefObject<HTMLButtonElement>}
+          onKeyDown={(event) =>
+            handleKeyDownTrigger(event, setOpenPopover, setHighlightFirstItem, setHighlightLastItem)
+          }
+          type="button"
+          className={selectStyles['Select-trigger-control']}
+          disabled={disabled}
+          tabIndex={0}
+          role="combobox"
+          aria-controls={ariaControls}
+          aria-expanded={openPopover}
+          aria-haspopup="listbox"
+          aria-label={resolvedAriaLabel}
+          aria-labelledby={ariaLabelledBy}
+          data-test="DesignSystem-Select-trigger"
+          {...rest}
+        >
           <div className={triggerClass}>
             {inlineLabel && (
               <Text appearance="subtle" className={`${inlineLabelClass} mr-4`} size={triggerTextSize}>
@@ -242,7 +244,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
               </span>
             )}
           </div>
-        }
+        </button>
         {isOptionSelected && withClearButton && (
           <button
             type="button"
@@ -255,9 +257,8 @@ const SelectTrigger = (props: SelectTriggerProps) => {
             <Icon appearance={buttonDisabled} size={12} name="close" type={iconType} aria-hidden={true} />
           </button>
         )}
-
         <Icon appearance={buttonDisabled} name={iconName} type={iconType} aria-hidden={true} />
-      </button>
+      </div>
     </Tooltip>
   );
 };

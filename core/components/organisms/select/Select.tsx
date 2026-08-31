@@ -221,6 +221,7 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
   const [isOptionSelected, setIsOptionSelected] = React.useState(false);
 
   const triggerRef = React.useRef<HTMLElement | null>(null);
+  const containerRef = React.useRef<HTMLDivElement | null>(null);
   const listRef = React.useRef<HTMLDivElement | null>(null);
   const wasOpenRef = React.useRef(false);
 
@@ -286,8 +287,10 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
 
   React.useEffect(() => {
     // if popover width is not provided explicitly, apply the trigger width to popover width
+    // the default SelectTrigger wraps its focusable control, so its own box (not the narrower
+    // inner control) reflects the full trigger width; a custom `trigger` has no such wrapper.
     const MIN_WIDTH = 176;
-    const triggerWidth = triggerRef.current?.clientWidth;
+    const triggerWidth = trigger ? triggerRef.current?.clientWidth : containerRef.current?.clientWidth;
 
     if (!popoverWidth && triggerWidth) {
       setPopoverStyle({
@@ -510,7 +513,7 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
 
   return (
     <SelectContext.Provider value={contextProp}>
-      <div data-test="DesignSystem-Select" style={WrapperStyle} {...baseProps}>
+      <div data-test="DesignSystem-Select" ref={containerRef} style={WrapperStyle} {...baseProps}>
         <Popover
           open={openPopover}
           onToggle={onToggleHandler}
