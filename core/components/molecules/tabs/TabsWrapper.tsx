@@ -23,6 +23,10 @@ export interface TabsWrapperProps extends BaseProps {
    * Defines size of `Tab` component
    */
   size?: TTabSize;
+  /**
+   * Associates the tablist with a visible label element.
+   */
+  'aria-labelledby'?: string;
 }
 
 let tabsWrapperInstanceCounter = 0;
@@ -64,6 +68,19 @@ export const TabsWrapper = (props: TabsWrapperProps) => {
     if (onTabChange) onTabChange(tabIndex);
   };
 
+  const tabRefs: (HTMLDivElement | null)[] = [];
+
+  const focusAdjacentTab = (fromIndex: number, direction: 1 | -1) => {
+    let nextIndex = fromIndex + direction;
+    while (nextIndex >= 0 && nextIndex < totalTabs) {
+      if (!tabs[nextIndex].props.disabled) {
+        tabRefs[nextIndex]?.focus();
+        return;
+      }
+      nextIndex += direction;
+    }
+  };
+
   const TabsHeader = tabs.map((child, index) => {
     const { label, disabled } = child.props;
 
@@ -77,6 +94,9 @@ export const TabsWrapper = (props: TabsWrapperProps) => {
 
     return (
       <div
+        ref={(element) => {
+          tabRefs[index] = element;
+        }}
         data-test="DesignSystem-Tabs--Header"
         key={index}
         id={`${tabsInstanceIdRef.current}-tab-${index}`}
@@ -89,10 +109,18 @@ export const TabsWrapper = (props: TabsWrapperProps) => {
             event.preventDefault();
             tabClickHandler(index);
           }
+          if (event.key === 'ArrowLeft') {
+            event.preventDefault();
+            focusAdjacentTab(index, -1);
+          }
+          if (event.key === 'ArrowRight') {
+            event.preventDefault();
+            focusAdjacentTab(index, 1);
+          }
         }}
         role="tab"
         tabIndex={disabled ? -1 : 0}
-        aria-selected={!disabled && active === index}
+        aria-selected={active === index}
         aria-controls={panelId}
         aria-disabled={disabled || undefined}
       >
@@ -103,7 +131,7 @@ export const TabsWrapper = (props: TabsWrapperProps) => {
 
   return (
     <div data-test="DesignSystem-TabsWrapper" {...baseProps} className={wrapperClass}>
-      <div className={headerClass} role="tablist">
+      <div className={headerClass} role="tablist" aria-labelledby={props['aria-labelledby']}>
         {TabsHeader}
       </div>
       <div
