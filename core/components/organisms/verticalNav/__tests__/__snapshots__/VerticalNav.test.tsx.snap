@@ -16,6 +16,7 @@ exports[`Vertical Navigation component
         class="PopperWrapper-trigger"
       >
         <a
+          aria-describedby="Tooltip-Test-uid"
           aria-label="Patient 360"
           aria-level="1"
           aria-selected="false"
@@ -45,6 +46,7 @@ exports[`Vertical Navigation component
         class="PopperWrapper-trigger"
       >
         <a
+          aria-describedby="Tooltip-Test-uid"
           aria-expanded="true"
           aria-label="Care Management and Resources"
           aria-level="1"
@@ -74,6 +76,7 @@ exports[`Vertical Navigation component
         class="PopperWrapper-trigger"
       >
         <a
+          aria-describedby="Tooltip-Test-uid"
           aria-label="Timeline"
           aria-level="2"
           aria-selected="true"
@@ -101,6 +104,7 @@ exports[`Vertical Navigation component
         class="PopperWrapper-trigger"
       >
         <a
+          aria-describedby="Tooltip-Test-uid"
           aria-label="Care Plans"
           aria-level="2"
           aria-selected="false"
@@ -128,6 +132,7 @@ exports[`Vertical Navigation component
         class="PopperWrapper-trigger"
       >
         <a
+          aria-describedby="Tooltip-Test-uid"
           aria-label="Episodes"
           aria-level="1"
           aria-selected="false"
@@ -157,6 +162,7 @@ exports[`Vertical Navigation component
         class="PopperWrapper-trigger"
       >
         <a
+          aria-describedby="Tooltip-Test-uid"
           aria-expanded="false"
           aria-label="Risk"
           aria-level="1"

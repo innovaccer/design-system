@@ -84,6 +84,24 @@ export interface TooltipProps extends Omit<PopoverProps, TooltipPopperProps>, Ba
    * Add delay to the tooltip opening event
    */
   openDelay?: number;
+  /**
+   * Hides the visual tooltip bubble from assistive technology and skips linking it to the
+   * trigger via `aria-describedby`.
+   *
+   * Use this when the trigger already exposes an equivalent accessible description itself
+   * (e.g. `Button`/`LinkButton`'s own `tooltip` prop, which renders a dedicated sr-only
+   * description) so screen readers don't announce the same text twice.
+   */
+  'aria-hidden'?: React.AriaAttributes['aria-hidden'];
+}
+
+function assignRef<T>(ref: React.Ref<T> | undefined, value: T | null) {
+  if (ref == null) return;
+  if (typeof ref === 'function') {
+    ref(value);
+  } else {
+    (ref as React.MutableRefObject<T | null>).current = value;
+  }
 }
 
 export const detectTruncation = (boundaryRef: React.RefObject<HTMLElement>) => {
@@ -94,7 +112,17 @@ export const detectTruncation = (boundaryRef: React.RefObject<HTMLElement>) => {
 };
 
 export const Tooltip = (props: TooltipProps) => {
-  const { children, tooltip, showTooltip, showOnTruncation, elementRef, className, size = 'regular', ...rest } = props;
+  const {
+    children,
+    tooltip,
+    showTooltip,
+    showOnTruncation,
+    elementRef,
+    className,
+    size = 'regular',
+    'aria-hidden': ariaHidden,
+    ...rest
+  } = props;
   const childrenRef = React.useRef(null);
   const [isTruncated, setIsTruncated] = React.useState(false);
 
@@ -104,6 +132,15 @@ export const Tooltip = (props: TooltipProps) => {
   }
   const tooltipId = tooltipIdRef.current;
 
+  // When true, the trigger already exposes an equivalent accessible description of its own
+  // (e.g. Button/LinkButton's sr-only tooltip text), so this Tooltip must not add a second one.
+  const hideFromAT = ariaHidden === true || ariaHidden === 'true';
+
+  // Truncation tooltips repeat text that's already present (just visually clipped) in the
+  // trigger/elementRef DOM node, so screen readers already have it — linking the tooltip
+  // bubble via aria-describedby would announce the same text a second time.
+  const skipDescription = hideFromAT || showOnTruncation;
+
   React.useEffect(() => {
     const element = elementRef ? elementRef : childrenRef;
     setIsTruncated(detectTruncation(element));
@@ -111,15 +148,30 @@ export const Tooltip = (props: TooltipProps) => {
 
   // Associates the trigger with the tooltip content so screen readers announce it,
   // regardless of whether the trigger also needs the ref used for truncation detection.
+  // The ref passed via `extraProps` is merged with (not swapped for) any ref the caller
+  // already attached to the trigger, so imperative access (e.g. `<Button ref={...}>`) keeps working.
   const withTooltipAria = (
     element: React.ReactElement<any>,
-    extraProps: Record<string, unknown> = {}
+    extraProps: { ref?: React.Ref<any> } = {}
   ): React.ReactElement<any> => {
     if (!React.isValidElement(element)) return element;
+
+    const existingRef = (element as React.ReactElement<any> & { ref?: React.Ref<any> }).ref;
+    const mergedRef = extraProps.ref
+      ? (node: unknown) => {
+          assignRef(extraProps.ref, node);
+          assignRef(existingRef, node);
+        }
+      : existingRef;
+
+    if (skipDescription) {
+      return React.cloneElement<any>(element, { ref: mergedRef });
+    }
+
     const existingDescribedBy = (element.props as { 'aria-describedby'?: string })['aria-describedby'];
     return React.cloneElement<any>(element, {
+      ref: mergedRef,
       'aria-describedby': existingDescribedBy ? `${existingDescribedBy} ${tooltipId}` : tooltipId,
-      ...extraProps,
     });
   };
 
@@ -139,7 +191,13 @@ export const Tooltip = (props: TooltipProps) => {
   });
 
   const tooltipWrapper = (
-    <div id={tooltipId} role="tooltip" className={tooltipClass} data-test="DesignSystem-Tooltip-Wrapper">
+    <div
+      id={skipDescription ? undefined : tooltipId}
+      aria-hidden={hideFromAT || undefined}
+      role="tooltip"
+      className={tooltipClass}
+      data-test="DesignSystem-Tooltip-Wrapper"
+    >
       <Text className={styles['Tooltip-text']} appearance="white" size={size}>
         {tooltip}
       </Text>

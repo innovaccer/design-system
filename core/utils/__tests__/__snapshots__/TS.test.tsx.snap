@@ -136,6 +136,7 @@ exports[`TS renders children 1`] = `
                 class="PopperWrapper-trigger"
               >
                 <button
+                  aria-describedby="Tooltip-Test-uid"
                   aria-label="Previous month"
                   class="Button Button--regular Button--regularSquare Button--basic"
                   data-test="DesignSystem-Button"
@@ -209,6 +210,7 @@ exports[`TS renders children 1`] = `
                 class="PopperWrapper-trigger"
               >
                 <button
+                  aria-describedby="Tooltip-Test-uid"
                   aria-label="Next month"
                   class="Button Button--regular Button--regularSquare Button--basic"
                   data-test="DesignSystem-Button"
@@ -2308,6 +2310,7 @@ exports[`TS renders children 1`] = `
     class="PopperWrapper-trigger"
   >
     <span
+      aria-describedby="Tooltip-Test-uid"
       class="Text Text--default Text--regular"
       data-test="DesignSystem-Text"
     >
@@ -2572,6 +2575,7 @@ exports[`TS renders children 1`] = `
             class="PopperWrapper-trigger"
           >
             <button
+              aria-describedby="Tooltip-Test-uid"
               aria-label="Previous month"
               class="Button Button--regular Button--regularSquare Button--basic"
               data-test="DesignSystem-Button"
@@ -2629,6 +2633,7 @@ exports[`TS renders children 1`] = `
             class="PopperWrapper-trigger"
           >
             <button
+              aria-describedby="Tooltip-Test-uid"
               aria-label="Next month"
               class="Button Button--regular Button--regularSquare Button--basic"
               data-test="DesignSystem-Button"
