@@ -25,6 +25,11 @@
   transition: var(--duration--fast-01) var(--standard-productive-curve);
 }
 
+.Select-trigger:has(.Select-trigger-control:focus-visible) {
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-05);
+}
+
 .Select-trigger--disabled {
   pointer-events: none;
 }
@@ -44,8 +49,7 @@
 }
 
 .Select-trigger-control:focus-visible {
-  outline: var(--border-width-05) solid var(--primary-focus);
-  outline-offset: var(--spacing-05);
+  outline: none;
 }
 
 .Select-trigger--filled {
@@ -71,7 +75,7 @@
   color: var(--text);
 }
 
-.Select-trigger--filled:focus-within {
+.Select-trigger--filled:has(.Select-trigger-control:focus-visible) {
   background-color: var(--secondary-light);
 }
 
