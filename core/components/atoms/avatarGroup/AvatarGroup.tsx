@@ -175,6 +175,8 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
 
   const avatarList = list.length === 3 ? list : list.slice(0, max);
 
+  const showOverflowTrigger = list.length - max > 0 && list.length !== 3;
+
   const AvatarGroupClass = classNames(
     {
       [styles['AvatarGroup']]: true,
@@ -182,6 +184,12 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
     },
     className
   );
+
+  const [open, setOpen] = React.useState(false);
+
+  React.useEffect(() => {
+    if (!showOverflowTrigger) setOpen(false);
+  }, [showOverflowTrigger]);
 
   const avatarPopperBodyProps = {
     hiddenAvatarList: [...list].slice(max, list.length),
@@ -206,10 +214,20 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
       aria-labelledby={ariaLabelledBy}
     >
       <Avatars size={size} avatarList={avatarList} avatarStyle={avatarStyle} tooltipPosition={tooltipPosition} />
-      {list.length - max > 0 && list.length !== 3 && (
+      {showOverflowTrigger && (
         <Popover
           on={on}
-          trigger={<AvatarCount on={on} size={size} hiddenAvatarCount={hiddenAvatarCount} avatarStyle={avatarStyle} />}
+          open={open}
+          onToggle={setOpen}
+          trigger={
+            <AvatarCount
+              on={on}
+              size={size}
+              hiddenAvatarCount={hiddenAvatarCount}
+              avatarStyle={avatarStyle}
+              open={open}
+            />
+          }
           position={position}
           appendToBody={appendToBody}
           offset="medium"

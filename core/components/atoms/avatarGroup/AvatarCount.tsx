@@ -6,7 +6,7 @@ import styles from '@css/components/avatar.module.css';
 import avatarGroupStyles from '@css/components/avatarGroup.module.css';
 
 const AvatarCount = (props: any) => {
-  const { hiddenAvatarCount, avatarStyle, size = 'regular', on } = props;
+  const { hiddenAvatarCount, avatarStyle, size = 'regular', on, open } = props;
 
   const ContentClass = classNames({
     [styles['Avatar-content']]: true,
@@ -30,6 +30,7 @@ const AvatarCount = (props: any) => {
       tabIndex={0}
       role="button"
       aria-haspopup="listbox"
+      aria-expanded={open}
       onKeyDown={(event: React.KeyboardEvent<HTMLDivElement>) => {
         if (event.key === 'Enter' || isSpaceKey(event)) {
           event.preventDefault();
