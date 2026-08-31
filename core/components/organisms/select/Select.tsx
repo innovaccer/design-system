@@ -385,16 +385,17 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
   }, [openPopover]);
 
   const onToggleHandler = (open: boolean) => {
+    if (triggerOptions && triggerOptions.disabled) {
+      setOpenPopover(false);
+      return;
+    }
+
     if (onToggle) {
       onToggle(open);
     }
 
-    if (triggerOptions && triggerOptions.disabled) {
-      setOpenPopover(false);
-    } else {
-      setOpenPopover(open);
-      setHighlightFirstItem(open);
-    }
+    setOpenPopover(open);
+    setHighlightFirstItem(open);
   };
 
   const onOptionClick = (option: OptionType | OptionType[]) => {

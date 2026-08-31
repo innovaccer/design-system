@@ -1733,6 +1733,21 @@ describe('Select component size functionality tests', () => {
       expect(queryByTestId('DesignSystem-Popover')).not.toBeInTheDocument();
     });
 
+    it('does not call the public onToggle callback when clicking the outer trigger box of a disabled Select', () => {
+      const onToggleFunctionValue = jest.fn();
+      const { getByTestId } = render(
+        <Select onSelect={FunctionValue} onToggle={onToggleFunctionValue} triggerOptions={{ disabled: true }}>
+          <Select.List>
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      fireEvent.click(getByTestId('DesignSystem-Select-triggerBox'));
+
+      expect(onToggleFunctionValue).not.toHaveBeenCalled();
+    });
+
     it('disables the clear button so a disabled Select with a selected value cannot be cleared', () => {
       const { getByTestId } = render(
         <Select
