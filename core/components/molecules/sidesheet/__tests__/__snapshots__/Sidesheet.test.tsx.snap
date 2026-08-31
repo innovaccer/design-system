@@ -62,7 +62,6 @@ exports[`Sidesheet component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Close"
                 class="Button Button--regular Button--regularSquare Button--transparent"
                 data-test="DesignSystem-Sidesheet--CloseButton"
@@ -166,7 +165,6 @@ exports[`Sidesheet component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Close"
                 class="Button Button--regular Button--regularSquare Button--transparent"
                 data-test="DesignSystem-Sidesheet--CloseButton"

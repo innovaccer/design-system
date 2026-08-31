@@ -99,7 +99,6 @@ exports[`Label component - info prop tests
           class="PopperWrapper-trigger"
         >
           <i
-            aria-describedby="Tooltip-Test-uid"
             aria-label="long information text"
             class="material-symbols material-symbols-rounded Icon Icon--subtle ml-3 cursor-pointer d-flex align-items-center"
             data-test="DesignSystem-Label--Info"
@@ -134,7 +133,6 @@ exports[`Label component - info prop tests
           class="PopperWrapper-trigger"
         >
           <i
-            aria-describedby="Tooltip-Test-uid"
             aria-label="sample info"
             class="material-symbols material-symbols-rounded Icon Icon--subtle ml-3 cursor-pointer d-flex align-items-center"
             data-test="DesignSystem-Label--Info"
@@ -169,7 +167,6 @@ exports[`Label component - info prop tests
           class="PopperWrapper-trigger"
         >
           <i
-            aria-describedby="Tooltip-Test-uid"
             aria-label="tooltip text"
             class="material-symbols material-symbols-rounded Icon Icon--subtle ml-3 cursor-pointer d-flex align-items-center"
             data-test="DesignSystem-Label--Info"
@@ -266,7 +263,6 @@ exports[`Label component - size prop snapshot tests renders correctly with size=
           class="PopperWrapper-trigger"
         >
           <i
-            aria-describedby="Tooltip-Test-uid"
             aria-label="Small label info"
             class="material-symbols material-symbols-rounded Icon Icon--subtle ml-3 cursor-pointer d-flex align-items-center mb-3-5"
             data-test="DesignSystem-Label--Info"

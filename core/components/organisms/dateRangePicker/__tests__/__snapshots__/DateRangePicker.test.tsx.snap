@@ -26,7 +26,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -85,7 +84,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -1313,7 +1311,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -1372,7 +1369,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -2600,7 +2596,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic-disabled Button--disabled"
                 data-test="DesignSystem-Button"
@@ -2660,7 +2655,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -3888,7 +3882,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic-disabled Button--disabled"
                 data-test="DesignSystem-Button"
@@ -3948,7 +3941,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -5176,7 +5168,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -5235,7 +5226,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -6463,7 +6453,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -6522,7 +6511,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -7750,7 +7738,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -7809,7 +7796,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -9037,7 +9023,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -9096,7 +9081,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -10324,7 +10308,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -10383,7 +10366,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -11611,7 +11593,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -11670,7 +11651,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -12898,7 +12878,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -12957,7 +12936,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -14185,7 +14163,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -14244,7 +14221,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -15472,7 +15448,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -15531,7 +15506,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -16759,7 +16733,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -16818,7 +16791,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -18046,7 +18018,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -18105,7 +18076,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -19333,7 +19303,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -19392,7 +19361,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -20620,7 +20588,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -20679,7 +20646,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -21907,7 +21873,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -21966,7 +21931,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -23194,7 +23158,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -23253,7 +23216,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -24481,7 +24443,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -24540,7 +24501,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -25768,7 +25728,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -25827,7 +25786,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -27055,7 +27013,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -27114,7 +27071,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -28342,7 +28298,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -28401,7 +28356,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -29629,7 +29583,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -29688,7 +29641,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -30916,7 +30868,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -30975,7 +30926,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -32203,7 +32153,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -32262,7 +32211,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -33490,7 +33438,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -33549,7 +33496,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -34777,7 +34723,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -34836,7 +34781,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -36064,7 +36008,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -36123,7 +36066,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -37351,7 +37293,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -37410,7 +37351,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -38638,7 +38578,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -38697,7 +38636,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -39925,7 +39863,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -39984,7 +39921,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -41212,7 +41148,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -41271,7 +41206,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -42499,7 +42433,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -42558,7 +42491,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -43786,7 +43718,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -43845,7 +43776,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -45073,7 +45003,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -45132,7 +45061,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -46360,7 +46288,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -46419,7 +46346,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -47647,7 +47573,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -47706,7 +47631,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -48934,7 +48858,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -48993,7 +48916,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -50221,7 +50143,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -50280,7 +50201,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -51508,7 +51428,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -51567,7 +51486,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -52795,7 +52713,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -52854,7 +52771,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -54082,7 +53998,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -54141,7 +54056,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -55369,7 +55283,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -55428,7 +55341,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -56656,7 +56568,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -56715,7 +56626,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -57943,7 +57853,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -58002,7 +57911,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -59230,7 +59138,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -59289,7 +59196,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -60517,7 +60423,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -60576,7 +60481,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -61804,7 +61708,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -62767,7 +62670,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -63794,7 +63696,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -65703,7 +65604,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -66667,7 +66567,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -66726,7 +66625,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -67954,7 +67852,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -68980,7 +68877,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -69944,7 +69840,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -71895,7 +71790,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -72997,7 +72891,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -73056,7 +72949,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -74284,7 +74176,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -75352,7 +75243,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -76454,7 +76344,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -78501,7 +78390,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -79507,7 +79395,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -79566,7 +79453,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -80794,7 +80680,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous year"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -80841,7 +80726,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next year"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -81198,7 +81082,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous year block"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -81245,7 +81128,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next year block"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -82056,7 +81938,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--tiny Button--tinySquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -82115,7 +81996,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--tiny Button--tinySquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -83343,7 +83223,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous year"
                 class="Button Button--tiny Button--tinySquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -83390,7 +83269,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next year"
                 class="Button Button--tiny Button--tinySquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -83747,7 +83625,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous year block"
                 class="Button Button--tiny Button--tinySquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -83794,7 +83671,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next year block"
                 class="Button Button--tiny Button--tinySquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -84605,7 +84481,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -84664,7 +84539,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -85892,7 +85766,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous year"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -85939,7 +85812,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next year"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -86296,7 +86168,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous year block"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -86343,7 +86214,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next year block"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -86851,7 +86721,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -87877,7 +87746,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -88991,7 +88859,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -90017,7 +89884,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -91131,7 +90997,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -92157,7 +92022,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -93121,7 +92985,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--tiny Button--tinySquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -93180,7 +93043,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--tiny Button--tinySquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -94408,7 +94270,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous year"
                 class="Button Button--tiny Button--tinySquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -94455,7 +94316,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next year"
                 class="Button Button--tiny Button--tinySquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -94812,7 +94672,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous year block"
                 class="Button Button--tiny Button--tinySquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -94859,7 +94718,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next year block"
                 class="Button Button--tiny Button--tinySquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -95367,7 +95225,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--tiny Button--tinySquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -96393,7 +96250,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--tiny Button--tinySquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -97507,7 +97363,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--tiny Button--tinySquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -98533,7 +98388,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--tiny Button--tinySquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -99647,7 +99501,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--tiny Button--tinySquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -100673,7 +100526,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--tiny Button--tinySquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -101637,7 +101489,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -101696,7 +101547,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -102924,7 +102774,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -102983,7 +102832,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -104211,7 +104059,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -104268,7 +104115,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -104415,7 +104261,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -104472,7 +104317,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -104619,7 +104463,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -104676,7 +104519,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -104823,7 +104665,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -104880,7 +104721,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -105027,7 +104867,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -105084,7 +104923,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -105231,7 +105069,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -105288,7 +105125,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -105435,7 +105271,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -105492,7 +105327,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -105639,7 +105473,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -105696,7 +105529,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -105843,7 +105675,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -105900,7 +105731,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -106047,7 +105877,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -106104,7 +105933,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -106251,7 +106079,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -106308,7 +106135,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -106455,7 +106281,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -106512,7 +106337,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -106659,7 +106483,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -106716,7 +106539,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -106863,7 +106685,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -106920,7 +106741,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -107067,7 +106887,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -107124,7 +106943,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -107271,7 +107089,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -107328,7 +107145,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -107475,7 +107291,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -107534,7 +107349,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -108762,7 +108576,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -108821,7 +108634,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -110049,7 +109861,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -110108,7 +109919,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -111336,7 +111146,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -111395,7 +111204,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -112623,7 +112431,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -112682,7 +112489,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -113910,7 +113716,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -113969,7 +113774,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -115197,7 +115001,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -115256,7 +115059,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -116484,7 +116286,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -116543,7 +116344,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -117771,7 +117571,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -117830,7 +117629,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -119058,7 +118856,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -119117,7 +118914,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -120345,7 +120141,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -120404,7 +120199,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -121632,7 +121426,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -121691,7 +121484,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -122919,7 +122711,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -122978,7 +122769,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -124206,7 +123996,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -124265,7 +124054,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -125493,7 +125281,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -125552,7 +125339,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -126780,7 +126566,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -126839,7 +126624,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -128067,7 +127851,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -128124,7 +127907,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -128271,7 +128053,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -128328,7 +128109,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -128475,7 +128255,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -128532,7 +128311,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -128679,7 +128457,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -128736,7 +128513,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -128883,7 +128659,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -128940,7 +128715,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -129087,7 +128861,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -129144,7 +128917,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -129291,7 +129063,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -129348,7 +129119,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -129495,7 +129265,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -129552,7 +129321,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -129699,7 +129467,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -129756,7 +129523,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -129903,7 +129669,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -129960,7 +129725,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -130107,7 +129871,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -130164,7 +129927,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -130311,7 +130073,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -130368,7 +130129,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -130515,7 +130275,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -130572,7 +130331,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -130719,7 +130477,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -130776,7 +130533,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -130923,7 +130679,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -130980,7 +130735,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -131127,7 +130881,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -131184,7 +130937,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -131331,7 +131083,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -131390,7 +131141,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -132618,7 +132368,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -132677,7 +132426,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -133905,7 +133653,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -133964,7 +133711,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -135192,7 +134938,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -135251,7 +134996,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -136479,7 +136223,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -136538,7 +136281,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -137766,7 +137508,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -137825,7 +137566,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -139053,7 +138793,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -139112,7 +138851,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -140340,7 +140078,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -140399,7 +140136,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -141627,7 +141363,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -141686,7 +141421,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -142914,7 +142648,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -142973,7 +142706,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -144201,7 +143933,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -144260,7 +143991,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -145488,7 +145218,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -145547,7 +145276,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -146775,7 +146503,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -146834,7 +146561,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -148062,7 +147788,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -148121,7 +147846,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -149349,7 +149073,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -149408,7 +149131,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -150636,7 +150358,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -150695,7 +150416,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -151923,7 +151643,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -151982,7 +151701,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -153210,7 +152928,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -153269,7 +152986,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -154497,7 +154213,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"
@@ -154556,7 +154271,6 @@ exports[`DateRangePicker component
               class="PopperWrapper-trigger"
             >
               <button
-                aria-describedby="Tooltip-Test-uid"
                 aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic"
                 data-test="DesignSystem-Button"

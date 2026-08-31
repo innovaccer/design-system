@@ -30,7 +30,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
                   class="PopperWrapper-trigger"
                 >
                   <button
-                    aria-describedby="Tooltip-Test-uid"
                     aria-label="Previous month"
                     class="Button Button--regular Button--regularSquare Button--basic"
                     data-test="DesignSystem-Button"
@@ -105,7 +104,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
                   class="PopperWrapper-trigger"
                 >
                   <button
-                    aria-describedby="Tooltip-Test-uid"
                     aria-label="Next month"
                     class="Button Button--regular Button--regularSquare Button--basic"
                     data-test="DesignSystem-Button"
@@ -1367,7 +1365,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                   class="PopperWrapper-trigger"
                 >
                   <button
-                    aria-describedby="Tooltip-Test-uid"
                     aria-label="Previous month"
                     class="Button Button--regular Button--regularSquare Button--basic-disabled Button--disabled"
                     data-test="DesignSystem-Button"
@@ -1443,7 +1440,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                   class="PopperWrapper-trigger"
                 >
                   <button
-                    aria-describedby="Tooltip-Test-uid"
                     aria-label="Next month"
                     class="Button Button--regular Button--regularSquare Button--basic"
                     data-test="DesignSystem-Button"
@@ -2705,7 +2701,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                   class="PopperWrapper-trigger"
                 >
                   <button
-                    aria-describedby="Tooltip-Test-uid"
                     aria-label="Previous month"
                     class="Button Button--regular Button--regularSquare Button--basic-disabled Button--disabled"
                     data-test="DesignSystem-Button"
@@ -2781,7 +2776,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                   class="PopperWrapper-trigger"
                 >
                   <button
-                    aria-describedby="Tooltip-Test-uid"
                     aria-label="Next month"
                     class="Button Button--regular Button--regularSquare Button--basic"
                     data-test="DesignSystem-Button"
@@ -4043,7 +4037,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                   class="PopperWrapper-trigger"
                 >
                   <button
-                    aria-describedby="Tooltip-Test-uid"
                     aria-label="Previous month"
                     class="Button Button--regular Button--regularSquare Button--basic"
                     data-test="DesignSystem-Button"
@@ -4118,7 +4111,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                   class="PopperWrapper-trigger"
                 >
                   <button
-                    aria-describedby="Tooltip-Test-uid"
                     aria-label="Next month"
                     class="Button Button--regular Button--regularSquare Button--basic"
                     data-test="DesignSystem-Button"
@@ -5380,7 +5372,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                   class="PopperWrapper-trigger"
                 >
                   <button
-                    aria-describedby="Tooltip-Test-uid"
                     aria-label="Previous month"
                     class="Button Button--regular Button--regularSquare Button--basic"
                     data-test="DesignSystem-Button"
@@ -5455,7 +5446,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                   class="PopperWrapper-trigger"
                 >
                   <button
-                    aria-describedby="Tooltip-Test-uid"
                     aria-label="Next month"
                     class="Button Button--regular Button--regularSquare Button--basic"
                     data-test="DesignSystem-Button"
@@ -6717,7 +6707,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                   class="PopperWrapper-trigger"
                 >
                   <button
-                    aria-describedby="Tooltip-Test-uid"
                     aria-label="Previous month"
                     class="Button Button--regular Button--regularSquare Button--basic"
                     data-test="DesignSystem-Button"
@@ -6792,7 +6781,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                   class="PopperWrapper-trigger"
                 >
                   <button
-                    aria-describedby="Tooltip-Test-uid"
                     aria-label="Next month"
                     class="Button Button--regular Button--regularSquare Button--basic"
                     data-test="DesignSystem-Button"
@@ -8054,7 +8042,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                   class="PopperWrapper-trigger"
                 >
                   <button
-                    aria-describedby="Tooltip-Test-uid"
                     aria-label="Previous year"
                     class="Button Button--regular Button--regularSquare Button--basic"
                     data-test="DesignSystem-Button"
@@ -8109,7 +8096,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                   class="PopperWrapper-trigger"
                 >
                   <button
-                    aria-describedby="Tooltip-Test-uid"
                     aria-label="Next year"
                     class="Button Button--regular Button--regularSquare Button--basic"
                     data-test="DesignSystem-Button"
@@ -8500,7 +8486,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                   class="PopperWrapper-trigger"
                 >
                   <button
-                    aria-describedby="Tooltip-Test-uid"
                     aria-label="Previous year block"
                     class="Button Button--regular Button--regularSquare Button--basic"
                     data-test="DesignSystem-Button"
@@ -8547,7 +8532,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                   class="PopperWrapper-trigger"
                 >
                   <button
-                    aria-describedby="Tooltip-Test-uid"
                     aria-label="Next year block"
                     class="Button Button--regular Button--regularSquare Button--basic"
                     data-test="DesignSystem-Button"
@@ -8939,7 +8923,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
                   class="PopperWrapper-trigger"
                 >
                   <button
-                    aria-describedby="Tooltip-Test-uid"
                     aria-label="Previous month"
                     class="Button Button--regular Button--regularSquare Button--basic"
                     data-test="DesignSystem-Button"
@@ -9014,7 +8997,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
                   class="PopperWrapper-trigger"
                 >
                   <button
-                    aria-describedby="Tooltip-Test-uid"
                     aria-label="Next month"
                     class="Button Button--regular Button--regularSquare Button--basic"
                     data-test="DesignSystem-Button"
