@@ -25,6 +25,10 @@
   transition: var(--duration--fast-01) var(--standard-productive-curve);
 }
 
+.Select-trigger--disabled {
+  pointer-events: none;
+}
+
 .Select-trigger-control {
   display: flex;
   align-items: center;
@@ -50,7 +54,6 @@
 .Select-trigger--filled.Select-trigger--disabled {
   background: var(--secondary-lighter);
   color: var(--text-disabled);
-  pointer-events: none;
 }
 
 .Select-trigger--filled:active,

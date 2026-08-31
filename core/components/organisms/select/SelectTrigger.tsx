@@ -131,6 +131,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
     setHighlightFirstItem,
     setHighlightLastItem,
     triggerRef,
+    triggerBoxRef,
     width,
     styleType,
     error,
@@ -203,7 +204,12 @@ const SelectTrigger = (props: SelectTriggerProps) => {
       elementRef={elementRef}
       triggerClass="w-100"
     >
-      <div className={buttonClass} style={triggerStyle} data-test="DesignSystem-Select-triggerBox">
+      <div
+        ref={triggerBoxRef as React.RefObject<HTMLDivElement>}
+        className={buttonClass}
+        style={triggerStyle}
+        data-test="DesignSystem-Select-triggerBox"
+      >
         <button
           ref={triggerRef as React.RefObject<HTMLButtonElement>}
           onKeyDown={(event) =>
@@ -251,6 +257,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
             className={iconClass}
             onClick={onClearHandler}
             onKeyDown={(e) => e.stopPropagation()}
+            disabled={disabled}
             aria-label={resolvedClearButtonAriaLabel}
             data-test="DesignSystem-Select--closeIcon"
           >

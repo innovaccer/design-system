@@ -18,6 +18,7 @@ export type ContextProps = {
   multiSelect?: boolean;
   listRef?: React.RefObject<HTMLDivElement>;
   triggerRef?: React.RefObject<HTMLElement | null>;
+  triggerBoxRef?: React.RefObject<HTMLElement | null>;
   focusedOption?: HTMLElement;
   setFocusedOption?: React.Dispatch<React.SetStateAction<HTMLElement | undefined>>;
   setHighlightFirstItem?: React.Dispatch<React.SetStateAction<boolean>>;

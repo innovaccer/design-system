@@ -1704,6 +1704,57 @@ describe('Select component size functionality tests', () => {
     });
   });
 
+  describe('Select component disabled trigger behavior', () => {
+    it('does not open the popover when clicking the outer trigger box of a disabled filled Select', () => {
+      const { getByTestId, queryByTestId } = render(
+        <Select onSelect={FunctionValue} styleType="filled" triggerOptions={{ disabled: true }}>
+          <Select.List>
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      fireEvent.click(getByTestId('DesignSystem-Select-triggerBox'));
+
+      expect(queryByTestId('DesignSystem-Popover')).not.toBeInTheDocument();
+    });
+
+    it('does not open the popover when clicking the outer trigger box of a disabled outlined Select', () => {
+      const { getByTestId, queryByTestId } = render(
+        <Select onSelect={FunctionValue} styleType="outlined" triggerOptions={{ disabled: true }}>
+          <Select.List>
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      fireEvent.click(getByTestId('DesignSystem-Select-triggerBox'));
+
+      expect(queryByTestId('DesignSystem-Popover')).not.toBeInTheDocument();
+    });
+
+    it('disables the clear button so a disabled Select with a selected value cannot be cleared', () => {
+      const { getByTestId } = render(
+        <Select
+          onSelect={FunctionValue}
+          triggerOptions={{ disabled: true, onClear: FunctionValue }}
+          value={{ label: 'Option 1', value: 'Option 1' }}
+        >
+          <Select.List>
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      const closeIcon = getByTestId('DesignSystem-Select--closeIcon');
+      expect(closeIcon).toBeDisabled();
+
+      fireEvent.click(closeIcon);
+
+      expect(getByTestId('DesignSystem-Select-trigger')).toHaveTextContent('Option 1');
+    });
+  });
+
   describe('Select component with error prop - Tests for error state styling', () => {
     it('should not apply error class by default when error prop is not provided', () => {
       const { getByTestId } = render(
