@@ -5,7 +5,13 @@ import styles from '@css/components/avatar.module.css';
 import avatarGroupStyles from '@css/components/avatarGroup.module.css';
 
 const AvatarCount = (props: any) => {
-  const { hiddenAvatarCount, avatarStyle, size = 'regular', on } = props;
+  const { hiddenAvatarCount, avatarStyle, size = 'regular', on, expanded } = props;
+
+  const onKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (event.key !== 'Enter' && event.key !== ' ') return;
+    event.preventDefault();
+    event.currentTarget.click();
+  };
 
   const ContentClass = classNames({
     [styles['Avatar-content']]: true,
@@ -29,6 +35,9 @@ const AvatarCount = (props: any) => {
       tabIndex={0}
       role="button"
       aria-haspopup="listbox"
+      aria-expanded={expanded}
+      aria-label={`${hiddenAvatarCount} more avatars`}
+      onKeyDown={onKeyDown}
     >
       <span data-test="DesignSystem-AvatarGroup--TriggerAvatarVariants" className={AvatarVariantsClass}>
         <Text className={ContentClass}>{`+${hiddenAvatarCount}`}</Text>

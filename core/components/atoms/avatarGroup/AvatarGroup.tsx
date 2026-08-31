@@ -196,6 +196,8 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
     size,
   };
 
+  const [expanded, setExpanded] = React.useState(false);
+
   return (
     <div
       data-test="DesignSystem-AvatarGroup"
@@ -209,7 +211,17 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
       {list.length - max > 0 && list.length !== 3 && (
         <Popover
           on={on}
-          trigger={<AvatarCount on={on} size={size} hiddenAvatarCount={hiddenAvatarCount} avatarStyle={avatarStyle} />}
+          open={expanded}
+          onToggle={setExpanded}
+          trigger={
+            <AvatarCount
+              on={on}
+              size={size}
+              hiddenAvatarCount={hiddenAvatarCount}
+              avatarStyle={avatarStyle}
+              expanded={expanded}
+            />
+          }
           position={position}
           appendToBody={appendToBody}
           offset="medium"
