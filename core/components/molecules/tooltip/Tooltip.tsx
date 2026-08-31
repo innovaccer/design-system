@@ -197,10 +197,11 @@ export const Tooltip = (props: TooltipProps) => {
     });
   };
 
+  // Only attach the measurement ref when truncation detection actually needs it — plain
+  // function-component triggers (e.g. Link, Icon) can't take a ref without forwardRef,
+  // so forcing one on unconditionally would warn ("Function components cannot be given refs").
   const renderChildren =
-    elementRef || !React.isValidElement(children)
-      ? withTooltipAria(children)
-      : withTooltipAria(children, { ref: childrenRef });
+    showOnTruncation && !elementRef ? withTooltipAria(children, { ref: childrenRef }) : withTooltipAria(children);
 
   if (!showTooltip) {
     // If showTooltip is false skip the Popover and return the children directly
