@@ -197,6 +197,52 @@ describe('TabsWrapper component keyboard navigation', () => {
     expect(tab[0].tabIndex).toBe(-1);
     expect(tab[2].tabIndex).toBe(0);
   });
+
+  it('wraps focus from the last enabled tab to the first when ArrowRight is pressed at the boundary', () => {
+    const { getAllByTestId } = render(tabs(2));
+    const tab = getAllByTestId('DesignSystem-Tabs--Header');
+
+    fireEvent.focus(tab[2]);
+    fireEvent.keyDown(tab[2], { key: 'ArrowRight', keyCode: 39 });
+
+    expect(document.activeElement).toContainElement(tab[0]);
+  });
+
+  it('wraps focus from the first enabled tab to the last, skipping a disabled tab, when ArrowLeft is pressed at the boundary', () => {
+    const { getAllByTestId } = render(tabs(0));
+    const tab = getAllByTestId('DesignSystem-Tabs--Header');
+
+    fireEvent.focus(tab[0]);
+    fireEvent.keyDown(tab[0], { key: 'ArrowLeft', keyCode: 37 });
+
+    expect(document.activeElement).toContainElement(tab[2]);
+  });
+
+  it('falls back to the first enabled tab when the focused tab is removed on rerender', () => {
+    const ThreeTabs = (
+      <TabsWrapper active={0} onTabChange={FunctionValue}>
+        <Tab label={<div>Label 1</div>}>Tab 1</Tab>
+        <Tab label={<div>Label 2</div>}>Tab 2</Tab>
+        <Tab label={<div>Label 3</div>}>Tab 3</Tab>
+      </TabsWrapper>
+    );
+    const TwoTabs = (
+      <TabsWrapper active={0} onTabChange={FunctionValue}>
+        <Tab label={<div>Label 1</div>}>Tab 1</Tab>
+        <Tab label={<div>Label 2</div>}>Tab 2</Tab>
+      </TabsWrapper>
+    );
+
+    const { getAllByTestId, rerender } = render(ThreeTabs);
+    const initialTabs = getAllByTestId('DesignSystem-Tabs--Header');
+    fireEvent.focus(initialTabs[2]);
+
+    rerender(TwoTabs);
+    const remainingTabs = getAllByTestId('DesignSystem-Tabs--Header');
+
+    expect(remainingTabs[0].tabIndex).toBe(0);
+    expect(remainingTabs[1].tabIndex).toBe(-1);
+  });
 });
 
 describe('TabsWrapper component with prop: aria-labelledby', () => {

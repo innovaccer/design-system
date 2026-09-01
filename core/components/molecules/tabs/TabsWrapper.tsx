@@ -55,7 +55,8 @@ export const TabsWrapper = (props: TabsWrapperProps) => {
   }, [props.active]);
 
   const firstEnabledIndex = tabs.findIndex((tab) => !tab.props.disabled);
-  const rovingIndex = tabs[focusedIndex]?.props?.disabled ? firstEnabledIndex : focusedIndex;
+  const isFocusedIndexValid = focusedIndex >= 0 && focusedIndex < totalTabs && !tabs[focusedIndex]?.props?.disabled;
+  const rovingIndex = isFocusedIndexValid ? focusedIndex : firstEnabledIndex;
 
   const wrapperClass = classNames(
     {
@@ -77,13 +78,13 @@ export const TabsWrapper = (props: TabsWrapperProps) => {
   const tabRefs: (HTMLDivElement | null)[] = [];
 
   const focusAdjacentTab = (fromIndex: number, direction: 1 | -1) => {
-    let nextIndex = fromIndex + direction;
-    while (nextIndex >= 0 && nextIndex < totalTabs) {
+    let nextIndex = (fromIndex + direction + totalTabs) % totalTabs;
+    for (let steps = 0; steps < totalTabs; steps += 1) {
       if (!tabs[nextIndex].props.disabled) {
         tabRefs[nextIndex]?.focus();
         return;
       }
-      nextIndex += direction;
+      nextIndex = (nextIndex + direction + totalTabs) % totalTabs;
     }
   };
 
