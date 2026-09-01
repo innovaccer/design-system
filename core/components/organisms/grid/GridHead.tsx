@@ -7,7 +7,7 @@ import {
   updateColumnSchemaFunction,
   reorderColumnFunction,
 } from './Grid';
-import { Checkbox, Placeholder } from '@/index';
+import { Checkbox, Placeholder, Tooltip } from '@/index';
 import { Cell } from './Cell';
 import classNames from 'classnames';
 import GridContext from './GridContext';
@@ -55,7 +55,9 @@ export const GridHead = (props: GridHeadProps) => {
         {loading ? (
           <Placeholder className="mr-4" />
         ) : (
-          <Checkbox {...selectAll} id={`${gridId}-select-all`} onChange={onSelectAll} aria-label="Select all rows" />
+          <Tooltip tooltip="Select all rows" position="top-start">
+            <Checkbox {...selectAll} id={`${gridId}-select-all`} onChange={onSelectAll} aria-label="Select all rows" />
+          </Tooltip>
         )}
       </div>
     );
