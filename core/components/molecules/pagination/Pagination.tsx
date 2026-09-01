@@ -37,9 +37,11 @@ export const Pagination = (props: PaginationProps) => {
   const { type, totalPages, onPageChange, className, pageJumpDebounceDuration } = props;
 
   const baseProps = extractBaseProps(props);
+  const [labelId, setLabelId] = React.useState<string | undefined>();
   const [descriptionId, setDescriptionId] = React.useState<string | undefined>();
 
   React.useEffect(() => {
+    setLabelId(`DesignSystem-Pagination-page-${uidGenerator()}`);
     setDescriptionId(`DesignSystem-Pagination-totalPage-${uidGenerator()}`);
   }, []);
 
@@ -150,6 +152,8 @@ export const Pagination = (props: PaginationProps) => {
       </div>
       {type === 'jump' && (
         <div className={styles['Pagination-pageIndex']}>
+          <Text id={labelId} className="mr-4">{`Page`}</Text>
+
           <MetricInput
             name="page"
             className={styles['Pagination-MetricInput']}
@@ -157,10 +161,9 @@ export const Pagination = (props: PaginationProps) => {
             value={`${isNaturalNumber(page) ? page : ''}`}
             data-test="DesignSystem-Pagination--Input"
             onKeyPress={onKeyPressHandler}
-            aria-label="Current page"
-            aria-describedby={descriptionId}
+            aria-labelledby={labelId && descriptionId ? `${labelId} ${descriptionId}` : undefined}
           />
-          <Text id={descriptionId}>{` of ${totalPages} pages`}</Text>
+          <Text id={descriptionId}>{` of ${totalPages}`}</Text>
         </div>
       )}
       <div className={nextButtonWrapperClass}>
