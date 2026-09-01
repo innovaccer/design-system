@@ -222,8 +222,8 @@
   --inverse-shadow: color-mod(var(--inverse) a(var(--opacity-4)));
 
   /* Text colors */
-  --text: var(--color-neutral-1200);
-  --text-subtle: var(--color-neutral-800);
+  --text: var(--inverse);
+  --text-subtle: var(--inverse-lighter);
   --text-link: var(--primary);
   --text-disabled: var(--inverse-lightest);
   --text-destructive: var(--alert);
