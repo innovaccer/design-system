@@ -5,6 +5,7 @@ import { ModalProps as Props } from '@/index.type';
 import { ModalHeader, Modal, ModalBody, ModalFooter, Button, Text } from '@/index';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import OverlayManager from '@/utils/OverlayManager';
+import { syncBackgroundVisibility } from '@/utils/overlayHelper';
 
 const flushRAF = () => act(() => new Promise((resolve) => requestAnimationFrame(() => resolve())));
 
@@ -861,14 +862,18 @@ describe('Modal background hiding', () => {
     expect(sibling).toHaveAttribute('aria-hidden', 'false');
   });
 
-  it('never hides the Overlay-wrapper, an open Backdrop, or a registered OverlayManager overlay', async () => {
+  it('never hides the Overlay-wrapper, an open Backdrop, or an overlay nested inside the active dialog', async () => {
+    render(<Modal open={true} onClose={jest.fn()} headerOptions={{ heading: 'Heading' }} />);
+    await flushRAF();
+
+    // Registered *after* the modal — simulates a Calendar/Dropdown/Select opened from inside
+    // it, so it's one of the modal's own nested overlays (OverlayManager.getNestedOverlays),
+    // not an unrelated overlay that merely predates the modal.
     const registered = document.createElement('div');
     registered.setAttribute('data-test', 'registered-popover');
     document.body.appendChild(registered);
     OverlayManager.add(registered);
-
-    render(<Modal open={true} onClose={jest.fn()} headerOptions={{ heading: 'Heading' }} />);
-    await flushRAF();
+    syncBackgroundVisibility();
 
     expect(document.querySelector('.Overlay-wrapper')).not.toHaveAttribute('aria-hidden');
     expect(document.querySelector('.Backdrop')).not.toHaveAttribute('aria-hidden');

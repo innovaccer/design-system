@@ -35,6 +35,66 @@ describe('syncBackgroundVisibility', () => {
   });
 });
 
+describe('syncBackgroundVisibility — nested overlays of an inactive dialog', () => {
+  it('hides a Dropdown/Select left open inside a dialog that is no longer the active (topmost) one', () => {
+    const dialogA = document.createElement('div');
+    document.body.appendChild(dialogA);
+    OverlayManager.add(dialogA, { trapsFocus: true });
+    syncBackgroundVisibility();
+
+    // A body-portaled Dropdown/Select opened from inside dialog A while A was on top.
+    const dropdownOwnedByA = document.createElement('div');
+    document.body.appendChild(dropdownOwnedByA);
+    OverlayManager.add(dropdownOwnedByA);
+    syncBackgroundVisibility();
+    expect(dropdownOwnedByA).not.toHaveAttribute('aria-hidden');
+
+    // Dialog B opens on top of A — A (and everything it owns) becomes inactive.
+    const dialogB = document.createElement('div');
+    document.body.appendChild(dialogB);
+    OverlayManager.add(dialogB, { trapsFocus: true });
+    syncBackgroundVisibility();
+
+    expect(dialogA).toHaveAttribute('aria-hidden', 'true');
+    expect(dropdownOwnedByA).toHaveAttribute('aria-hidden', 'true');
+
+    // B closes — A (and its Dropdown) becomes active again.
+    OverlayManager.remove(dialogB);
+    syncBackgroundVisibility();
+
+    expect(dialogA).not.toHaveAttribute('aria-hidden');
+    expect(dropdownOwnedByA).not.toHaveAttribute('aria-hidden');
+
+    OverlayManager.remove(dropdownOwnedByA);
+    OverlayManager.remove(dialogA);
+    syncBackgroundVisibility();
+    dialogA.remove();
+    dialogB.remove();
+    dropdownOwnedByA.remove();
+  });
+});
+
+describe('OverlayManager.getNestedOverlays — FullscreenModal boundary', () => {
+  it("does not absorb a FullscreenModal opened on top of a lower dialog into that dialog's nested-overlay scope", () => {
+    const lowerDialog = document.createElement('div');
+    document.body.appendChild(lowerDialog);
+    OverlayManager.add(lowerDialog, { trapsFocus: true });
+
+    // FullscreenModal registers with trapsFocus: true too — it's a dialog boundary, even
+    // though it doesn't (yet) implement its own focus trap. See FullscreenModal.tsx.
+    const fullscreenModal = document.createElement('div');
+    document.body.appendChild(fullscreenModal);
+    OverlayManager.add(fullscreenModal, { trapsFocus: true });
+
+    expect(OverlayManager.getNestedOverlays(lowerDialog)).not.toContain(fullscreenModal);
+
+    OverlayManager.remove(fullscreenModal);
+    OverlayManager.remove(lowerDialog);
+    lowerDialog.remove();
+    fullscreenModal.remove();
+  });
+});
+
 describe('revealOverlayFromHiddenBackground', () => {
   it('does not reveal a large container that merely contains the overlay — only an exact body-child match', () => {
     const trappingOverlay = document.createElement('div');

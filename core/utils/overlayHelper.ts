@@ -260,19 +260,6 @@ export const restoreFocusToElementIfConnected = (
 // stacked trapping overlay that's currently inactive (see `syncBackgroundVisibility`).
 let hiddenBackground: Map<Element, string | null> | null = null;
 
-// Exact match only — NOT `el.contains(overlay)`. A body-level container (e.g. the app's own
-// root) can legitimately contain a registered overlay that renders inline via
-// `PopperWrapper`'s `appendToBody={false}` anywhere in the app, unrelated to the current
-// trapping overlay. `.contains()` would exempt that entire container — and everything else
-// inside it — from hiding. Only a registered overlay's own dedicated element (the one
-// `OverlayManager.add` was actually called with — always a genuine `document.body` child
-// when `appendToBody` is true, the only way such an overlay ends up outside a trap's own
-// DOM subtree in the first place) is kept.
-const isKeptFromBackgroundHiding = (el: Element) =>
-  el.classList.contains('Overlay-wrapper') ||
-  el.classList.contains('Backdrop') ||
-  OverlayManager.overlays.some((overlay) => overlay === el);
-
 const restoreAriaHidden = (el: Element, priorValue: string | null) => {
   if (priorValue === null) el.removeAttribute('aria-hidden');
   else el.setAttribute('aria-hidden', priorValue);
@@ -291,12 +278,14 @@ const revealElement = (el: Element) => {
 };
 
 /**
- * Keeps everything except the *active* trapping overlay hidden from screen readers.
- * `aria-modal` alone isn't honored consistently across AT/browser combinations, so this
- * marks `aria-hidden` on:
+ * Keeps everything except the *active* trapping overlay — and that overlay's own nested
+ * overlays — hidden from screen readers. `aria-modal` alone isn't honored consistently
+ * across AT/browser combinations, so this marks `aria-hidden` on:
  *  - every `document.body`-level sibling, except the shared portal root (`.Overlay-wrapper`),
- *    any open `Backdrop`, and any currently-open Popover-based widget (Dropdown, Select,
- *    Menu, Calendar/DatePicker, Tooltip — these all register via `OverlayManager.add`);
+ *    any open `Backdrop`, and any Popover-based widget (Dropdown, Select, Menu,
+ *    Calendar/DatePicker, Tooltip) *owned by the topmost trapping overlay* — i.e. one of
+ *    `OverlayManager.getNestedOverlays(topmost)`. A Dropdown left open inside an now-inactive
+ *    stacked Modal underneath is background too, not just the inactive Modal itself.
  *  - any *other* currently-registered trapping overlay (Modal, Sidesheet) that isn't the
  *    topmost one — e.g. a Modal opened on top of another Modal — since they share the same
  *    `.Overlay-wrapper` root and would otherwise both stay exposed to AT at once.
@@ -319,16 +308,28 @@ export const syncBackgroundVisibility = (): void => {
 
   if (!hiddenBackground) hiddenBackground = new Map();
 
+  const topmost = trapping[trapping.length - 1];
+  // Exact match only — NOT `el.contains(overlay)`. A body-level container (e.g. the app's
+  // own root) can legitimately contain a registered overlay that renders inline via
+  // `PopperWrapper`'s `appendToBody={false}` anywhere in the app, unrelated to the active
+  // trapping overlay. `.contains()` would exempt that entire container — and everything
+  // else inside it — from hiding.
+  const activeOverlays: HTMLDivElement[] = [topmost, ...OverlayManager.getNestedOverlays(topmost)];
+
   // Re-scan on every call, not just the first: a body-level node (e.g. a toast portal) can
   // mount after the first trapping overlay opened, and would otherwise stay exposed to AT
-  // until the last one closes. `hideElement` no-ops for anything already hidden, so
-  // repeating this is cheap and safe.
+  // until the last one closes. Also reveals anything hidden by an earlier call that's now
+  // owned by the (new) topmost overlay — e.g. a Dropdown inside a Modal that just became
+  // active again after an outer stacked Modal closed. Both directions are idempotent.
   Array.from(document.body.children).forEach((child) => {
-    if (isKeptFromBackgroundHiding(child)) return;
-    hideElement(child);
+    const isKept =
+      child.classList.contains('Overlay-wrapper') ||
+      child.classList.contains('Backdrop') ||
+      activeOverlays.some((overlay) => overlay === child);
+    if (isKept) revealElement(child);
+    else hideElement(child);
   });
 
-  const topmost = trapping[trapping.length - 1];
   trapping.forEach((overlay) => (overlay === topmost ? revealElement(overlay) : hideElement(overlay)));
 };
 

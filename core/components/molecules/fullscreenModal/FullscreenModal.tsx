@@ -166,7 +166,11 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
   componentDidMount() {
     if (this.props.closeOnEscape) {
       if (this.state.open) {
-        OverlayManager.add(this.modalRef.current);
+        // `trapsFocus: true` doesn't mean FullscreenModal has its own focus trap yet (it
+        // doesn't — see Modal/Sidesheet for that) — it marks this as a dialog *boundary* so
+        // OverlayManager.getNestedOverlays stops here instead of absorbing a FullscreenModal
+        // opened on top of a Modal/Sidesheet into that lower dialog's own trap/hide scope.
+        OverlayManager.add(this.modalRef.current, { trapsFocus: true });
       }
       document.addEventListener('keydown', this.onCloseHandler);
     }
@@ -191,7 +195,7 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
           animate: true,
         });
 
-        if (this.props.closeOnEscape) OverlayManager.add(this.modalRef.current);
+        if (this.props.closeOnEscape) OverlayManager.add(this.modalRef.current, { trapsFocus: true });
       } else {
         this.setState(
           {
