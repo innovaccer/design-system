@@ -74,8 +74,8 @@ describe('syncBackgroundVisibility — nested overlays of an inactive dialog', (
   });
 });
 
-describe('OverlayManager.getNestedOverlays — FullscreenModal boundary', () => {
-  it("does not absorb a FullscreenModal opened on top of a lower dialog into that dialog's nested-overlay scope", () => {
+describe('OverlayManager.getOwnedOverlays', () => {
+  it("does not absorb a FullscreenModal opened on top of a lower dialog into that dialog's owned-overlay scope", () => {
     const lowerDialog = document.createElement('div');
     document.body.appendChild(lowerDialog);
     OverlayManager.add(lowerDialog, { trapsFocus: true });
@@ -86,12 +86,46 @@ describe('OverlayManager.getNestedOverlays — FullscreenModal boundary', () => 
     document.body.appendChild(fullscreenModal);
     OverlayManager.add(fullscreenModal, { trapsFocus: true });
 
-    expect(OverlayManager.getNestedOverlays(lowerDialog)).not.toContain(fullscreenModal);
+    expect(OverlayManager.getOwnedOverlays(lowerDialog)).not.toContain(fullscreenModal);
 
     OverlayManager.remove(fullscreenModal);
     OverlayManager.remove(lowerDialog);
     lowerDialog.remove();
     fullscreenModal.remove();
+  });
+
+  it("keeps each of two independently-open trapping overlays' popovers correctly attributed, regardless of registration order", () => {
+    // Two unrelated trapping overlays (e.g. two independent Modals via different portals,
+    // or a Modal and a FullscreenModal) open at once, each with its own owned popover.
+    // Array-position inference (the old getNestedOverlays) could get this wrong depending
+    // on interleaving; direct ownership can't, since it's recorded once at registration.
+    const dialogA = document.createElement('div');
+    document.body.appendChild(dialogA);
+    OverlayManager.add(dialogA, { trapsFocus: true });
+
+    const popoverOwnedByA = document.createElement('div');
+    document.body.appendChild(popoverOwnedByA);
+    OverlayManager.add(popoverOwnedByA);
+
+    const dialogB = document.createElement('div');
+    document.body.appendChild(dialogB);
+    OverlayManager.add(dialogB, { trapsFocus: true });
+
+    const popoverOwnedByB = document.createElement('div');
+    document.body.appendChild(popoverOwnedByB);
+    OverlayManager.add(popoverOwnedByB);
+
+    expect(OverlayManager.getOwnedOverlays(dialogA)).toEqual([popoverOwnedByA]);
+    expect(OverlayManager.getOwnedOverlays(dialogB)).toEqual([popoverOwnedByB]);
+
+    OverlayManager.remove(popoverOwnedByA);
+    OverlayManager.remove(popoverOwnedByB);
+    OverlayManager.remove(dialogA);
+    OverlayManager.remove(dialogB);
+    dialogA.remove();
+    dialogB.remove();
+    popoverOwnedByA.remove();
+    popoverOwnedByB.remove();
   });
 });
 

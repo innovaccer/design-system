@@ -162,7 +162,7 @@ export const getAllFocusableElements = (container: HTMLElement, roleHint?: strin
  *   list, so without this parameter Shift+Tab from it would escape the trap.
  * @param registeredOverlay - The element this overlay passed to `OverlayManager.add`. When
  *   given, the trap's boundary widens to include any of its own nested overlays (see
- *   `OverlayManager.getNestedOverlays`) — a Popover/Calendar/Dropdown/Select opened from
+ *   `OverlayManager.getOwnedOverlays`) — a Popover/Calendar/Dropdown/Select opened from
  *   inside it. Those portal to `document.body` directly (via `PopperWrapper`), so they live
  *   outside `container`'s own DOM subtree and would otherwise let Tab escape the trap the
  *   moment focus moves into one.
@@ -187,7 +187,7 @@ export const handleFocusTrapKeyDown = (
   // actually come later in the DOM — which corrupts the computed "last" focusable and lets
   // Tab from the true last control escape uncaught.
   const nestedOverlays = registeredOverlay
-    ? OverlayManager.getNestedOverlays(registeredOverlay).filter((overlay) => !container.contains(overlay))
+    ? OverlayManager.getOwnedOverlays(registeredOverlay).filter((overlay) => !container.contains(overlay))
     : [];
   const isInsideTrap =
     container.contains(activeElement) || nestedOverlays.some((overlay) => overlay.contains(activeElement));
@@ -277,6 +277,22 @@ const revealElement = (el: Element) => {
   hiddenBackground!.delete(el);
 };
 
+// Watches for body-level nodes added/removed while a trapping overlay is open (e.g. a toast
+// portal mounting), so they're hidden immediately rather than only the next time some other
+// trapping overlay happens to open or close. Started/stopped alongside `hiddenBackground`.
+let bodyObserver: MutationObserver | null = null;
+
+const startObservingBody = (): void => {
+  if (bodyObserver) return;
+  bodyObserver = new MutationObserver(() => syncBackgroundVisibility());
+  bodyObserver.observe(document.body, { childList: true });
+};
+
+const stopObservingBody = (): void => {
+  bodyObserver?.disconnect();
+  bodyObserver = null;
+};
+
 /**
  * Keeps everything except the *active* trapping overlay — and that overlay's own nested
  * overlays — hidden from screen readers. `aria-modal` alone isn't honored consistently
@@ -284,7 +300,7 @@ const revealElement = (el: Element) => {
  *  - every `document.body`-level sibling, except the shared portal root (`.Overlay-wrapper`),
  *    any open `Backdrop`, and any Popover-based widget (Dropdown, Select, Menu,
  *    Calendar/DatePicker, Tooltip) *owned by the topmost trapping overlay* — i.e. one of
- *    `OverlayManager.getNestedOverlays(topmost)`. A Dropdown left open inside an now-inactive
+ *    `OverlayManager.getOwnedOverlays(topmost)`. A Dropdown left open inside an now-inactive
  *    stacked Modal underneath is background too, not just the inactive Modal itself.
  *  - any *other* currently-registered trapping overlay (Modal, Sidesheet) that isn't the
  *    topmost one — e.g. a Modal opened on top of another Modal — since they share the same
@@ -294,18 +310,23 @@ const revealElement = (el: Element) => {
  * affects screen reader browse-mode navigation, which isn't gated by DOM focus at all.
  *
  * Call this after registering or unregistering a trapping overlay with `OverlayManager`
- * (on open *and* close) — it's idempotent and re-syncs to whatever is currently open.
+ * (on open *and* close) — it's idempotent and re-syncs to whatever is currently open. A
+ * `MutationObserver` on `document.body` also calls this automatically in between, so a
+ * body-level node mounting mid-session (with no other trapping overlay opening or closing)
+ * still gets caught while the current one remains open.
  */
 export const syncBackgroundVisibility = (): void => {
   const trapping = OverlayManager.getTrappingOverlays();
 
   if (trapping.length === 0) {
+    stopObservingBody();
     if (!hiddenBackground) return;
     hiddenBackground.forEach((priorValue, el) => restoreAriaHidden(el, priorValue));
     hiddenBackground = null;
     return;
   }
 
+  startObservingBody();
   if (!hiddenBackground) hiddenBackground = new Map();
 
   const topmost = trapping[trapping.length - 1];
@@ -314,13 +335,11 @@ export const syncBackgroundVisibility = (): void => {
   // `PopperWrapper`'s `appendToBody={false}` anywhere in the app, unrelated to the active
   // trapping overlay. `.contains()` would exempt that entire container — and everything
   // else inside it — from hiding.
-  const activeOverlays: HTMLDivElement[] = [topmost, ...OverlayManager.getNestedOverlays(topmost)];
+  const activeOverlays: HTMLDivElement[] = [topmost, ...OverlayManager.getOwnedOverlays(topmost)];
 
-  // Re-scan on every call, not just the first: a body-level node (e.g. a toast portal) can
-  // mount after the first trapping overlay opened, and would otherwise stay exposed to AT
-  // until the last one closes. Also reveals anything hidden by an earlier call that's now
-  // owned by the (new) topmost overlay — e.g. a Dropdown inside a Modal that just became
-  // active again after an outer stacked Modal closed. Both directions are idempotent.
+  // Reveals anything hidden by an earlier call that's now owned by the (new) topmost
+  // overlay — e.g. a Dropdown inside a Modal that just became active again after an outer
+  // stacked Modal closed. Both directions are idempotent.
   Array.from(document.body.children).forEach((child) => {
     const isKept =
       child.classList.contains('Overlay-wrapper') ||
