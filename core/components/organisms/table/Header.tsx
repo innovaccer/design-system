@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Checkbox, Label, Input, Button, Divider } from '@/index';
+import { Checkbox, Label, Input, Button, Divider, Tooltip } from '@/index';
 import uidGenerator from '@/utils/uidGenerator';
 import {
   updateSchemaFunction,
@@ -314,15 +314,17 @@ export const Header = (props: HeaderProps) => {
       <div className={headerClasses}>
         <div className={gridStyles['Header-label']}>
           {!showHead && withCheckbox && !loading && (
-            <Checkbox
-              className="mr-4"
-              id={`${headerIdRef.current}-select-all`}
-              {...selectAll}
-              aria-label="Select all"
-              onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                if (onSelectAll) onSelectAll(event.target.checked);
-              }}
-            />
+            <Tooltip tooltip="Select all" position="top-start" triggerClass="flex-grow-0">
+              <Checkbox
+                className="mr-4"
+                id={`${headerIdRef.current}-select-all`}
+                {...selectAll}
+                aria-label="Select all"
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                  if (onSelectAll) onSelectAll(event.target.checked);
+                }}
+              />
+            </Tooltip>
           )}
           {
             <>
