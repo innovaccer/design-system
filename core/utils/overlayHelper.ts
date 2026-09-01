@@ -180,7 +180,15 @@ export const handleFocusTrapKeyDown = (
   const activeElement = document.activeElement as HTMLElement | null;
   if (!activeElement) return false;
 
-  const nestedOverlays = registeredOverlay ? OverlayManager.getNestedOverlays(registeredOverlay) : [];
+  // Exclude any nested overlay that's already inside `container` (e.g. a `PopperWrapper`
+  // with `appendToBody={false}`, rendered inline). Its focusables are already found via
+  // `container` itself, in correct DOM order; including it again would duplicate them and
+  // put the duplicate after every other control in `container` — including ones that
+  // actually come later in the DOM — which corrupts the computed "last" focusable and lets
+  // Tab from the true last control escape uncaught.
+  const nestedOverlays = registeredOverlay
+    ? OverlayManager.getNestedOverlays(registeredOverlay).filter((overlay) => !container.contains(overlay))
+    : [];
   const isInsideTrap =
     container.contains(activeElement) || nestedOverlays.some((overlay) => overlay.contains(activeElement));
   if (!isInsideTrap) return false;
@@ -309,13 +317,16 @@ export const syncBackgroundVisibility = (): void => {
     return;
   }
 
-  if (!hiddenBackground) {
-    hiddenBackground = new Map();
-    Array.from(document.body.children).forEach((child) => {
-      if (isKeptFromBackgroundHiding(child)) return;
-      hideElement(child);
-    });
-  }
+  if (!hiddenBackground) hiddenBackground = new Map();
+
+  // Re-scan on every call, not just the first: a body-level node (e.g. a toast portal) can
+  // mount after the first trapping overlay opened, and would otherwise stay exposed to AT
+  // until the last one closes. `hideElement` no-ops for anything already hidden, so
+  // repeating this is cheap and safe.
+  Array.from(document.body.children).forEach((child) => {
+    if (isKeptFromBackgroundHiding(child)) return;
+    hideElement(child);
+  });
 
   const topmost = trapping[trapping.length - 1];
   trapping.forEach((overlay) => (overlay === topmost ? revealElement(overlay) : hideElement(overlay)));
@@ -334,6 +345,11 @@ export const syncBackgroundVisibility = (): void => {
 export const revealOverlayFromHiddenBackground = (overlayEl: HTMLElement | null): void => {
   if (!overlayEl || !hiddenBackground) return;
 
-  const bodyChild = Array.from(document.body.children).find((child) => child.contains(overlayEl));
+  // Exact match only — same reasoning as `isKeptFromBackgroundHiding`. An inline
+  // (`appendToBody={false}`) overlay nested inside a large body-level container (e.g. the
+  // app's own root) isn't itself a `document.body` child, so there's nothing of its own to
+  // reveal here; un-hiding the container that merely contains it would re-expose everything
+  // else inside that container too.
+  const bodyChild = Array.from(document.body.children).find((child) => child === overlayEl);
   if (bodyChild) revealElement(bodyChild);
 };
