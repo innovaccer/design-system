@@ -101,7 +101,14 @@ export const GridHead = (props: GridHeadProps) => {
   };
 
   return (
-    <div className={styles['Grid-head']} role="rowgroup" data-test="DesignSystem-GridHead-wrapper">
+    <div
+      className={styles['Grid-head']}
+      role="rowgroup"
+      // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+      tabIndex={0}
+      aria-label="Scroll table header horizontally"
+      data-test="DesignSystem-GridHead-wrapper"
+    >
       <div className={RowClass} role={hasColumns ? 'row' : undefined}>
         {renderSchema(leftPinnedSchema, !!leftPinnedSchema.length, 'left')}
         {renderSchema(unpinnedSchema, !leftPinnedSchema.length && !!unpinnedSchema.length)}

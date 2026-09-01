@@ -3873,9 +3873,11 @@ exports[`TS renders children 1`] = `
     role="grid"
   >
     <div
+      aria-label="Scroll table header horizontally"
       class="Grid-head"
       data-test="DesignSystem-GridHead-wrapper"
       role="rowgroup"
+      tabindex="0"
     >
       <div
         class="Grid-row Grid-row--head"
@@ -3954,9 +3956,11 @@ exports[`TS renders children 1`] = `
         role="grid"
       >
         <div
+          aria-label="Scroll table header horizontally"
           class="Grid-head"
           data-test="DesignSystem-GridHead-wrapper"
           role="rowgroup"
+          tabindex="0"
         >
           <div
             class="Grid-row Grid-row--head"
