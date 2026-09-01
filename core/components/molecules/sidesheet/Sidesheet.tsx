@@ -13,8 +13,7 @@ import {
   closeOnEscapeKeypress,
   handleFocusTrapKeyDown,
   restoreFocusToElementIfConnected,
-  hideBackgroundForOverlay,
-  restoreBackgroundIfNoTrappingOverlay,
+  syncBackgroundVisibility,
 } from '@/utils/overlayHelper';
 import OverlayManager from '@/utils/OverlayManager';
 import { FooterOptions } from '@/common.type';
@@ -205,7 +204,7 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
     const container = this.sidesheetContentRef.current;
     if (!container) return;
 
-    hideBackgroundForOverlay();
+    syncBackgroundVisibility();
 
     this.autofocusRAF = window.requestAnimationFrame(() => {
       this.autofocusRAF = null;
@@ -225,7 +224,7 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
 
     document.removeEventListener('keydown', this.onCloseHandler);
 
-    restoreBackgroundIfNoTrappingOverlay();
+    syncBackgroundVisibility();
 
     const container = this.sidesheetContentRef.current;
     if (container) {

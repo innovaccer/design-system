@@ -13,8 +13,7 @@ import {
   closeOnEscapeKeypress,
   handleFocusTrapKeyDown,
   restoreFocusToElementIfConnected,
-  hideBackgroundForOverlay,
-  restoreBackgroundIfNoTrappingOverlay,
+  syncBackgroundVisibility,
 } from '@/utils/overlayHelper';
 import OverlayManager from '@/utils/OverlayManager';
 import { FooterOptions } from '@/common.type';
@@ -187,7 +186,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
     const container = this.modalContentRef.current;
     if (!container) return;
 
-    hideBackgroundForOverlay();
+    syncBackgroundVisibility();
 
     window.requestAnimationFrame(() => {
       // Per WAI-ARIA APG: for dialogs with semantic content (heading + body + footer),
@@ -213,7 +212,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
 
     document.removeEventListener('keydown', this.onCloseHandler);
 
-    restoreBackgroundIfNoTrappingOverlay();
+    syncBackgroundVisibility();
 
     const container = this.modalContentRef.current;
     if (container) {

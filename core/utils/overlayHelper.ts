@@ -248,46 +248,82 @@ export const restoreFocusToElementIfConnected = (
 
 // Module-level rather than a DOM marker: keeps our own bookkeeping out of the DOM/snapshots,
 // and lets us restore each element's exact prior `aria-hidden` value (including an explicit
-// `"false"`), not just "present or not".
+// `"false"`), not just "present or not". Holds both true background body-children AND any
+// stacked trapping overlay that's currently inactive (see `syncBackgroundVisibility`).
 let hiddenBackground: Map<Element, string | null> | null = null;
 
+// Exact match only — NOT `el.contains(overlay)`. A body-level container (e.g. the app's own
+// root) can legitimately contain a registered overlay that renders inline via
+// `PopperWrapper`'s `appendToBody={false}` anywhere in the app, unrelated to the current
+// trapping overlay. `.contains()` would exempt that entire container — and everything else
+// inside it — from hiding. Only a registered overlay's own dedicated element (the one
+// `OverlayManager.add` was actually called with — always a genuine `document.body` child
+// when `appendToBody` is true, the only way such an overlay ends up outside a trap's own
+// DOM subtree in the first place) is kept.
 const isKeptFromBackgroundHiding = (el: Element) =>
   el.classList.contains('Overlay-wrapper') ||
   el.classList.contains('Backdrop') ||
-  OverlayManager.overlays.some((overlay) => el === overlay || el.contains(overlay));
+  OverlayManager.overlays.some((overlay) => overlay === el);
 
 const restoreAriaHidden = (el: Element, priorValue: string | null) => {
   if (priorValue === null) el.removeAttribute('aria-hidden');
   else el.setAttribute('aria-hidden', priorValue);
 };
 
+const hideElement = (el: Element) => {
+  if (el.getAttribute('aria-hidden') === 'true') return; // already hidden (by us or otherwise)
+  hiddenBackground!.set(el, el.getAttribute('aria-hidden'));
+  el.setAttribute('aria-hidden', 'true');
+};
+
+const revealElement = (el: Element) => {
+  if (!hiddenBackground!.has(el)) return;
+  restoreAriaHidden(el, hiddenBackground!.get(el) ?? null);
+  hiddenBackground!.delete(el);
+};
+
 /**
- * Hides background siblings from screen readers while a focus-trapping overlay (Modal,
- * Sidesheet) is open. `aria-modal` alone isn't honored consistently across AT/browser
- * combinations, so this marks everything at the `document.body` level `aria-hidden`
- * except the overlay's own shared portal root (`.Overlay-wrapper`), any open `Backdrop`,
- * and any currently-open Popover-based widget (Dropdown, Select, Menu, Calendar/DatePicker,
- * Tooltip — these all register via `OverlayManager.add`).
+ * Keeps everything except the *active* trapping overlay hidden from screen readers.
+ * `aria-modal` alone isn't honored consistently across AT/browser combinations, so this
+ * marks `aria-hidden` on:
+ *  - every `document.body`-level sibling, except the shared portal root (`.Overlay-wrapper`),
+ *    any open `Backdrop`, and any currently-open Popover-based widget (Dropdown, Select,
+ *    Menu, Calendar/DatePicker, Tooltip — these all register via `OverlayManager.add`);
+ *  - any *other* currently-registered trapping overlay (Modal, Sidesheet) that isn't the
+ *    topmost one — e.g. a Modal opened on top of another Modal — since they share the same
+ *    `.Overlay-wrapper` root and would otherwise both stay exposed to AT at once.
  *
  * Keyboard focus is handled separately by {@link handleFocusTrapKeyDown} — this only
  * affects screen reader browse-mode navigation, which isn't gated by DOM focus at all.
  *
- * No-op if the background is already hidden by an outer (stacked) trapping overlay.
+ * Call this after registering or unregistering a trapping overlay with `OverlayManager`
+ * (on open *and* close) — it's idempotent and re-syncs to whatever is currently open.
  */
-export const hideBackgroundForOverlay = (): void => {
-  if (hiddenBackground) return;
-  hiddenBackground = new Map();
+export const syncBackgroundVisibility = (): void => {
+  const trapping = OverlayManager.getTrappingOverlays();
 
-  Array.from(document.body.children).forEach((child) => {
-    if (isKeptFromBackgroundHiding(child) || child.getAttribute('aria-hidden') === 'true') return;
-    hiddenBackground!.set(child, child.getAttribute('aria-hidden'));
-    child.setAttribute('aria-hidden', 'true');
-  });
+  if (trapping.length === 0) {
+    if (!hiddenBackground) return;
+    hiddenBackground.forEach((priorValue, el) => restoreAriaHidden(el, priorValue));
+    hiddenBackground = null;
+    return;
+  }
+
+  if (!hiddenBackground) {
+    hiddenBackground = new Map();
+    Array.from(document.body.children).forEach((child) => {
+      if (isKeptFromBackgroundHiding(child)) return;
+      hideElement(child);
+    });
+  }
+
+  const topmost = trapping[trapping.length - 1];
+  trapping.forEach((overlay) => (overlay === topmost ? revealElement(overlay) : hideElement(overlay)));
 };
 
 /**
  * Un-hides a single overlay root from the background-hidden state, if it got caught by
- * {@link hideBackgroundForOverlay} before it had a chance to register with `OverlayManager`.
+ * {@link syncBackgroundVisibility} before it had a chance to register with `OverlayManager`.
  *
  * `PopperWrapper` registers via a zero-delay timer (see `scheduleOverlayAdd`), so a
  * Popover/Select/Menu/DatePicker that's already open when a Modal/Sidesheet mounts can
@@ -299,20 +335,5 @@ export const revealOverlayFromHiddenBackground = (overlayEl: HTMLElement | null)
   if (!overlayEl || !hiddenBackground) return;
 
   const bodyChild = Array.from(document.body.children).find((child) => child.contains(overlayEl));
-  if (!bodyChild || !hiddenBackground.has(bodyChild)) return;
-
-  restoreAriaHidden(bodyChild, hiddenBackground.get(bodyChild) ?? null);
-  hiddenBackground.delete(bodyChild);
-};
-
-/**
- * Reverses {@link hideBackgroundForOverlay}, but only once no trapping overlay
- * remains open (so closing an inner stacked modal doesn't expose the background
- * while an outer modal is still open).
- */
-export const restoreBackgroundIfNoTrappingOverlay = (): void => {
-  if (OverlayManager.hasTrappingOverlay() || !hiddenBackground) return;
-
-  hiddenBackground.forEach((priorValue, el) => restoreAriaHidden(el, priorValue));
-  hiddenBackground = null;
+  if (bodyChild) revealElement(bodyChild);
 };

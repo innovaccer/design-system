@@ -1,10 +1,9 @@
 interface OverlayAddOptions {
   /**
    * Marks this overlay as one that traps keyboard focus within itself (Modal, Sidesheet).
-   * Used to decide when background siblings should be hidden from AT (see
-   * `hideBackgroundForOverlay`/`restoreBackgroundIfNoTrappingOverlay` in `overlayHelper.ts`),
-   * to detect stacked trapping overlays so the background isn't restored too early, and to
-   * widen a trap's own Tab boundary to its nested overlays (see `getNestedOverlays`).
+   * Used to decide when background siblings (and inactive stacked dialogs) should be
+   * hidden from AT (see `syncBackgroundVisibility` in `overlayHelper.ts`), and to widen a
+   * trap's own Tab boundary to its nested overlays (see `getNestedOverlays`).
    */
   trapsFocus?: boolean;
 }
@@ -55,8 +54,14 @@ class OverlayManager {
     return !!this.overlays.length && this.overlays[this.overlays.length - 1] === overlay;
   }
 
-  hasTrappingOverlay(): boolean {
-    return this.overlays.some((overlay) => this.trapping.has(overlay));
+  /**
+   * Currently-registered overlays that trap focus (Modal, Sidesheet), in open order — the
+   * last entry is the topmost/active one. Used to hide inactive stacked dialogs from AT
+   * (see `syncBackgroundVisibility` in `overlayHelper.ts`) and to know when the last one
+   * has closed.
+   */
+  getTrappingOverlays(): HTMLDivElement[] {
+    return this.overlays.filter((overlay) => this.trapping.has(overlay));
   }
 
   /**

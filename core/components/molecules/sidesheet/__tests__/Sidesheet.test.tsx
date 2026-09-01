@@ -450,11 +450,16 @@ describe('Sidesheet background hiding', () => {
     expect(document.querySelector('.Backdrop')).not.toHaveAttribute('aria-hidden');
   });
 
-  it('keeps the background hidden while a stacked sidesheet remains open, and restores it once the last one closes', async () => {
+  it('keeps the background — and an inactive stacked dialog — hidden, revealing each as it becomes active again', async () => {
     const { unmount: unmountA } = render(
       <Sidesheet open={true} onClose={jest.fn()} headerOptions={{ heading: 'Sheet A' }} />
     );
     await flushRAF();
+
+    // The element registered with OverlayManager (and thus the one that gets aria-hidden)
+    // is the outer Row Sidesheet renders, not the inner role="dialog" Column itself.
+    const dialogA = document.querySelector('[data-test="DesignSystem-SidesheetContainer"]') as HTMLElement;
+    expect(dialogA).not.toHaveAttribute('aria-hidden');
 
     const { unmount: unmountB } = render(
       <Sidesheet open={true} onClose={jest.fn()} headerOptions={{ heading: 'Sheet B' }} />
@@ -462,12 +467,37 @@ describe('Sidesheet background hiding', () => {
     await flushRAF();
 
     expect(sibling).toHaveAttribute('aria-hidden', 'true');
+    // A is now the inactive dialog stacked underneath B, sharing the same Overlay-wrapper —
+    // it must be hidden from AT too, not just true "background" body-level siblings.
+    expect(dialogA).toHaveAttribute('aria-hidden', 'true');
 
     unmountB();
     expect(sibling).toHaveAttribute('aria-hidden', 'true');
+    // A is active again now that B has closed.
+    expect(dialogA).not.toHaveAttribute('aria-hidden');
 
     unmountA();
     expect(sibling).not.toHaveAttribute('aria-hidden');
+  });
+
+  it('hides a body-level container even if it merely contains a registered overlay somewhere inside it', async () => {
+    // Simulates an inline (appendToBody={false}) Popover/Select open elsewhere in the app:
+    // the registered overlay element is nested *inside* a larger body-level container (e.g.
+    // the app's own root), not the container itself. Only the overlay's own dedicated
+    // element should be exempt from hiding — not the whole container around it.
+    const appRoot = document.createElement('div');
+    const inlineOverlay = document.createElement('div');
+    appRoot.appendChild(inlineOverlay);
+    document.body.appendChild(appRoot);
+    OverlayManager.add(inlineOverlay);
+
+    render(<Sidesheet open={true} onClose={jest.fn()} headerOptions={{ heading: 'Heading' }} />);
+    await flushRAF();
+
+    expect(appRoot).toHaveAttribute('aria-hidden', 'true');
+
+    OverlayManager.remove(inlineOverlay);
+    appRoot.remove();
   });
 });
 
