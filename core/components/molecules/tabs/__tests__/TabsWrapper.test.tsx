@@ -183,6 +183,20 @@ describe('TabsWrapper component keyboard navigation', () => {
 
     expect(document.activeElement).toContainElement(tab[0]);
   });
+
+  it('keeps exactly one enabled tab in the page tab order and moves it as focus moves', () => {
+    const { getAllByTestId } = render(tabs(0));
+    const tab = getAllByTestId('DesignSystem-Tabs--Header');
+
+    expect(tab[0].tabIndex).toBe(0);
+    expect(tab[2].tabIndex).toBe(-1);
+
+    fireEvent.focus(tab[0]);
+    fireEvent.keyDown(tab[0], { key: 'ArrowRight', keyCode: 39 });
+
+    expect(tab[0].tabIndex).toBe(-1);
+    expect(tab[2].tabIndex).toBe(0);
+  });
 });
 
 describe('TabsWrapper component with prop: aria-labelledby', () => {

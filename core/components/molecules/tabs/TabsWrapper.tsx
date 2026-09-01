@@ -46,10 +46,16 @@ export const TabsWrapper = (props: TabsWrapperProps) => {
   const panelId = `${tabsInstanceIdRef.current}-panel`;
 
   const [active, setActiveTab] = React.useState(props.active && props.active < totalTabs ? props.active : 0);
+  const [focusedIndex, setFocusedIndex] = React.useState(props.active && props.active < totalTabs ? props.active : 0);
 
   React.useEffect(() => {
-    setActiveTab(props.active && props.active < totalTabs ? props.active : 0);
+    const nextActive = props.active && props.active < totalTabs ? props.active : 0;
+    setActiveTab(nextActive);
+    setFocusedIndex(nextActive);
   }, [props.active]);
+
+  const firstEnabledIndex = tabs.findIndex((tab) => !tab.props.disabled);
+  const rovingIndex = tabs[focusedIndex]?.props?.disabled ? firstEnabledIndex : focusedIndex;
 
   const wrapperClass = classNames(
     {
@@ -118,8 +124,9 @@ export const TabsWrapper = (props: TabsWrapperProps) => {
             focusAdjacentTab(index, 1);
           }
         }}
+        onFocus={() => !disabled && setFocusedIndex(index)}
         role="tab"
-        tabIndex={disabled ? -1 : 0}
+        tabIndex={disabled ? -1 : rovingIndex === index ? 0 : -1}
         aria-selected={active === index}
         aria-controls={panelId}
         aria-disabled={disabled || undefined}
