@@ -45,8 +45,9 @@ export const TabsWrapper = (props: TabsWrapperProps) => {
   }
   const panelId = `${tabsInstanceIdRef.current}-panel`;
 
-  const [active, setActiveTab] = React.useState(props.active && props.active < totalTabs ? props.active : 0);
+  const [activeState, setActiveTab] = React.useState(props.active && props.active < totalTabs ? props.active : 0);
   const [focusedIndex, setFocusedIndex] = React.useState(props.active && props.active < totalTabs ? props.active : 0);
+  const active = activeState < totalTabs ? activeState : 0;
 
   React.useEffect(() => {
     const nextActive = props.active && props.active < totalTabs ? props.active : 0;

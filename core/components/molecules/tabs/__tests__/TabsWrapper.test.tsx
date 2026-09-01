@@ -245,6 +245,31 @@ describe('TabsWrapper component keyboard navigation', () => {
   });
 });
 
+describe('TabsWrapper component with shrinking tabs', () => {
+  it('normalizes the active tab back into range when the number of tabs shrinks past the active index', () => {
+    const ThreeTabs = (
+      <TabsWrapper active={2} onTabChange={FunctionValue}>
+        <Tab label={<div>Label 1</div>}>Tab 1</Tab>
+        <Tab label={<div>Label 2</div>}>Tab 2</Tab>
+        <Tab label={<div>Label 3</div>}>Tab 3</Tab>
+      </TabsWrapper>
+    );
+    const TwoTabs = (
+      <TabsWrapper active={2} onTabChange={FunctionValue}>
+        <Tab label={<div>Label 1</div>}>Tab 1</Tab>
+        <Tab label={<div>Label 2</div>}>Tab 2</Tab>
+      </TabsWrapper>
+    );
+
+    const { getByTestId, getAllByTestId, rerender } = render(ThreeTabs);
+    rerender(TwoTabs);
+
+    expect(getByTestId('DesignSystem-Tabs--Content').textContent).toMatch('Tab 1');
+    expect(getAllByTestId('DesignSystem-Tabs--Header')[0]).toHaveAttribute('aria-selected', 'true');
+    expect(getAllByTestId('DesignSystem-Tabs--Header')[1]).toHaveAttribute('aria-selected', 'false');
+  });
+});
+
 describe('TabsWrapper component with prop: aria-labelledby', () => {
   it('applies aria-labelledby on the tablist container', () => {
     const { getByTestId } = render(
