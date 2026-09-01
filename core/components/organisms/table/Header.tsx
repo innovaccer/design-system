@@ -314,7 +314,7 @@ export const Header = (props: HeaderProps) => {
       <div className={headerClasses}>
         <div className={gridStyles['Header-label']}>
           {!showHead && withCheckbox && !loading && (
-            <Tooltip tooltip="Select all" position="top-start">
+            <Tooltip tooltip="Select all" position="top-start" triggerClass="flex-grow-0">
               <Checkbox
                 className="mr-4"
                 id={`${headerIdRef.current}-select-all`}

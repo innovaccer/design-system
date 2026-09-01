@@ -55,7 +55,7 @@ export const GridHead = (props: GridHeadProps) => {
         {loading ? (
           <Placeholder className="mr-4" />
         ) : (
-          <Tooltip tooltip="Select all rows" position="top-start">
+          <Tooltip tooltip="Select all rows" position="top-start" triggerClass="flex-grow-0">
             <Checkbox {...selectAll} id={`${gridId}-select-all`} onChange={onSelectAll} aria-label="Select all rows" />
           </Tooltip>
         )}
