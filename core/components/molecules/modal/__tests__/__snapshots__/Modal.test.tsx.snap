@@ -4,6 +4,7 @@ exports[`Modal component
   dimension: "large", open: true
  1`] = `
 <body
+  data-overlay-background-hidden="true"
   style="overflow: hidden;"
 >
   <div
@@ -80,7 +81,11 @@ exports[`Modal component
       </div>
     </div>
   </div>
-  <div />
+  <div
+    aria-hidden="true"
+    data-overlay-hidden="true"
+    inert=""
+  />
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
@@ -95,6 +100,7 @@ exports[`Modal component
   dimension: "large", open: true, backdropClose: "[Function]"
  1`] = `
 <body
+  data-overlay-background-hidden="true"
   style="overflow: hidden;"
 >
   <div
@@ -175,7 +181,11 @@ exports[`Modal component
       </div>
     </div>
   </div>
-  <div />
+  <div
+    aria-hidden="true"
+    data-overlay-hidden="true"
+    inert=""
+  />
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
@@ -190,6 +200,7 @@ exports[`Modal component
   dimension: "large", open: true, header: "[ReactNode]", footer: "[ReactNode]"
  1`] = `
 <body
+  data-overlay-background-hidden="true"
   style="overflow: hidden;"
 >
   <div
@@ -343,7 +354,11 @@ exports[`Modal component
       </div>
     </div>
   </div>
-  <div />
+  <div
+    aria-hidden="true"
+    data-overlay-hidden="true"
+    inert=""
+  />
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
@@ -358,6 +373,7 @@ exports[`Modal component
   dimension: "large", open: true, header: "[ReactNode]", footer: "[ReactNode]", backdropClose: "[Function]"
  1`] = `
 <body
+  data-overlay-background-hidden="true"
   style="overflow: hidden;"
 >
   <div
@@ -515,7 +531,11 @@ exports[`Modal component
       </div>
     </div>
   </div>
-  <div />
+  <div
+    aria-hidden="true"
+    data-overlay-hidden="true"
+    inert=""
+  />
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
@@ -530,6 +550,7 @@ exports[`Modal component
   dimension: "large", open: true, headerOptions: {"heading":"this is heading","subHeading":"this is subheading"}, footerOptions: {"actions":[]}
  1`] = `
 <body
+  data-overlay-background-hidden="true"
   style="overflow: hidden;"
 >
   <div
@@ -677,7 +698,11 @@ exports[`Modal component
       </div>
     </div>
   </div>
-  <div />
+  <div
+    aria-hidden="true"
+    data-overlay-hidden="true"
+    inert=""
+  />
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
@@ -692,6 +717,7 @@ exports[`Modal component
   dimension: "large", open: true, headerOptions: {"heading":"this is heading","subHeading":"this is subheading"}, footerOptions: {"actions":[]}, backdropClose: "[Function]"
  1`] = `
 <body
+  data-overlay-background-hidden="true"
   style="overflow: hidden;"
 >
   <div
@@ -843,7 +869,11 @@ exports[`Modal component
       </div>
     </div>
   </div>
-  <div />
+  <div
+    aria-hidden="true"
+    data-overlay-hidden="true"
+    inert=""
+  />
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
@@ -858,6 +888,7 @@ exports[`Modal component
   dimension: "medium", open: true
  1`] = `
 <body
+  data-overlay-background-hidden="true"
   style="overflow: hidden;"
 >
   <div
@@ -934,7 +965,11 @@ exports[`Modal component
       </div>
     </div>
   </div>
-  <div />
+  <div
+    aria-hidden="true"
+    data-overlay-hidden="true"
+    inert=""
+  />
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
@@ -949,6 +984,7 @@ exports[`Modal component
   dimension: "medium", open: true, backdropClose: "[Function]"
  1`] = `
 <body
+  data-overlay-background-hidden="true"
   style="overflow: hidden;"
 >
   <div
@@ -1029,7 +1065,11 @@ exports[`Modal component
       </div>
     </div>
   </div>
-  <div />
+  <div
+    aria-hidden="true"
+    data-overlay-hidden="true"
+    inert=""
+  />
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
@@ -1044,6 +1084,7 @@ exports[`Modal component
   dimension: "medium", open: true, header: "[ReactNode]", footer: "[ReactNode]"
  1`] = `
 <body
+  data-overlay-background-hidden="true"
   style="overflow: hidden;"
 >
   <div
@@ -1197,7 +1238,11 @@ exports[`Modal component
       </div>
     </div>
   </div>
-  <div />
+  <div
+    aria-hidden="true"
+    data-overlay-hidden="true"
+    inert=""
+  />
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
@@ -1212,6 +1257,7 @@ exports[`Modal component
   dimension: "medium", open: true, header: "[ReactNode]", footer: "[ReactNode]", backdropClose: "[Function]"
  1`] = `
 <body
+  data-overlay-background-hidden="true"
   style="overflow: hidden;"
 >
   <div
@@ -1369,7 +1415,11 @@ exports[`Modal component
       </div>
     </div>
   </div>
-  <div />
+  <div
+    aria-hidden="true"
+    data-overlay-hidden="true"
+    inert=""
+  />
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
@@ -1384,6 +1434,7 @@ exports[`Modal component
   dimension: "medium", open: true, headerOptions: {"heading":"this is heading","subHeading":"this is subheading"}, footerOptions: {"actions":[]}
  1`] = `
 <body
+  data-overlay-background-hidden="true"
   style="overflow: hidden;"
 >
   <div
@@ -1531,7 +1582,11 @@ exports[`Modal component
       </div>
     </div>
   </div>
-  <div />
+  <div
+    aria-hidden="true"
+    data-overlay-hidden="true"
+    inert=""
+  />
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
@@ -1546,6 +1601,7 @@ exports[`Modal component
   dimension: "medium", open: true, headerOptions: {"heading":"this is heading","subHeading":"this is subheading"}, footerOptions: {"actions":[]}, backdropClose: "[Function]"
  1`] = `
 <body
+  data-overlay-background-hidden="true"
   style="overflow: hidden;"
 >
   <div
@@ -1697,7 +1753,11 @@ exports[`Modal component
       </div>
     </div>
   </div>
-  <div />
+  <div
+    aria-hidden="true"
+    data-overlay-hidden="true"
+    inert=""
+  />
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
@@ -1712,9 +1772,14 @@ exports[`Modal component
   dimension: "small", open: true
  1`] = `
 <body
+  data-overlay-background-hidden="true"
   style="overflow: hidden;"
 >
-  <div />
+  <div
+    aria-hidden="true"
+    data-overlay-hidden="true"
+    inert=""
+  />
   <div
     class="Overlay-wrapper"
   >
@@ -1803,6 +1868,7 @@ exports[`Modal component
   dimension: "small", open: true, backdropClose: "[Function]"
  1`] = `
 <body
+  data-overlay-background-hidden="true"
   style="overflow: hidden;"
 >
   <div
@@ -1883,7 +1949,11 @@ exports[`Modal component
       </div>
     </div>
   </div>
-  <div />
+  <div
+    aria-hidden="true"
+    data-overlay-hidden="true"
+    inert=""
+  />
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
@@ -1898,6 +1968,7 @@ exports[`Modal component
   dimension: "small", open: true, header: "[ReactNode]", footer: "[ReactNode]"
  1`] = `
 <body
+  data-overlay-background-hidden="true"
   style="overflow: hidden;"
 >
   <div
@@ -2051,7 +2122,11 @@ exports[`Modal component
       </div>
     </div>
   </div>
-  <div />
+  <div
+    aria-hidden="true"
+    data-overlay-hidden="true"
+    inert=""
+  />
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
@@ -2066,6 +2141,7 @@ exports[`Modal component
   dimension: "small", open: true, header: "[ReactNode]", footer: "[ReactNode]", backdropClose: "[Function]"
  1`] = `
 <body
+  data-overlay-background-hidden="true"
   style="overflow: hidden;"
 >
   <div
@@ -2223,7 +2299,11 @@ exports[`Modal component
       </div>
     </div>
   </div>
-  <div />
+  <div
+    aria-hidden="true"
+    data-overlay-hidden="true"
+    inert=""
+  />
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
@@ -2238,6 +2318,7 @@ exports[`Modal component
   dimension: "small", open: true, headerOptions: {"heading":"this is heading","subHeading":"this is subheading"}, footerOptions: {"actions":[]}
  1`] = `
 <body
+  data-overlay-background-hidden="true"
   style="overflow: hidden;"
 >
   <div
@@ -2385,7 +2466,11 @@ exports[`Modal component
       </div>
     </div>
   </div>
-  <div />
+  <div
+    aria-hidden="true"
+    data-overlay-hidden="true"
+    inert=""
+  />
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
@@ -2400,6 +2485,7 @@ exports[`Modal component
   dimension: "small", open: true, headerOptions: {"heading":"this is heading","subHeading":"this is subheading"}, footerOptions: {"actions":[]}, backdropClose: "[Function]"
  1`] = `
 <body
+  data-overlay-background-hidden="true"
   style="overflow: hidden;"
 >
   <div
@@ -2551,7 +2637,11 @@ exports[`Modal component
       </div>
     </div>
   </div>
-  <div />
+  <div
+    aria-hidden="true"
+    data-overlay-hidden="true"
+    inert=""
+  />
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"

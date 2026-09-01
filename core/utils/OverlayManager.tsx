@@ -1,12 +1,26 @@
+interface OverlayAddOptions {
+  /**
+   * Marks this overlay as one that traps keyboard focus within itself (Modal, Sidesheet).
+   * Used to decide when background siblings should be hidden from AT/keyboard (see
+   * `hideBackgroundForOverlay`/`restoreBackgroundIfNoTrappingOverlay` in `overlayHelper.ts`)
+   * and to detect stacked trapping overlays so the background isn't restored too early.
+   */
+  trapsFocus?: boolean;
+}
+
 class OverlayManager {
   overlays: HTMLDivElement[];
+  private trapping: WeakSet<HTMLDivElement>;
 
   constructor() {
     this.overlays = [];
+    this.trapping = new WeakSet();
   }
 
-  add(overlay: HTMLDivElement | null) {
+  add(overlay: HTMLDivElement | null, options?: OverlayAddOptions) {
     if (overlay === null) return;
+
+    if (options?.trapsFocus) this.trapping.add(overlay);
 
     let overlayIdx = this.overlays.indexOf(overlay);
 
@@ -23,6 +37,8 @@ class OverlayManager {
   remove(overlay: HTMLDivElement | null) {
     if (overlay === null) return;
 
+    this.trapping.delete(overlay);
+
     const overlayIdx = this.overlays.indexOf(overlay);
 
     if (overlayIdx === -1) {
@@ -36,6 +52,10 @@ class OverlayManager {
     if (overlay === null) return;
 
     return !!this.overlays.length && this.overlays[this.overlays.length - 1] === overlay;
+  }
+
+  hasTrappingOverlay(): boolean {
+    return this.overlays.some((overlay) => this.trapping.has(overlay));
   }
 }
 

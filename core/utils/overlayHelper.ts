@@ -1,3 +1,5 @@
+import OverlayManager from './OverlayManager';
+
 export const getWrapperElement = (): Element => {
   let element = document.querySelector('.Overlay-wrapper');
   if (element === null) {
@@ -228,5 +230,50 @@ export const restoreFocusToElementIfConnected = (
     }
 
     element.focus({ preventScroll: true });
+  });
+};
+
+const BACKGROUND_HIDDEN_MARKER = 'data-overlay-hidden';
+
+/**
+ * Hides background siblings from screen readers and keyboard navigation while a
+ * focus-trapping overlay (Modal, Sidesheet) is open. `aria-modal` alone isn't honored
+ * consistently across AT/browser combinations, so this hides everything at the
+ * `document.body` level except the overlay's own shared portal root (`.Overlay-wrapper`),
+ * any open `Backdrop`, and any currently-open Popover-based widget (Dropdown, Select,
+ * Menu, Calendar/DatePicker, Tooltip — these all register via `OverlayManager.add`).
+ *
+ * No-op if the background is already hidden by an outer (stacked) trapping overlay.
+ */
+export const hideBackgroundForOverlay = (): void => {
+  if (document.body.hasAttribute('data-overlay-background-hidden')) return;
+  document.body.setAttribute('data-overlay-background-hidden', 'true');
+
+  const keep = (el: Element) =>
+    el.classList.contains('Overlay-wrapper') ||
+    el.classList.contains('Backdrop') ||
+    OverlayManager.overlays.some((overlay) => el === overlay || el.contains(overlay));
+
+  Array.from(document.body.children).forEach((child) => {
+    if (keep(child) || child.getAttribute('aria-hidden') === 'true') return;
+    child.setAttribute(BACKGROUND_HIDDEN_MARKER, 'true');
+    child.setAttribute('aria-hidden', 'true');
+    child.setAttribute('inert', '');
+  });
+};
+
+/**
+ * Reverses {@link hideBackgroundForOverlay}, but only once no trapping overlay
+ * remains open (so closing an inner stacked modal doesn't expose the background
+ * while an outer modal is still open).
+ */
+export const restoreBackgroundIfNoTrappingOverlay = (): void => {
+  if (OverlayManager.hasTrappingOverlay()) return;
+
+  document.body.removeAttribute('data-overlay-background-hidden');
+  document.querySelectorAll(`[${BACKGROUND_HIDDEN_MARKER}]`).forEach((el) => {
+    el.removeAttribute(BACKGROUND_HIDDEN_MARKER);
+    el.removeAttribute('aria-hidden');
+    el.removeAttribute('inert');
   });
 };
