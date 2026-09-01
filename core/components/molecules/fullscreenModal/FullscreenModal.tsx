@@ -7,7 +7,12 @@ import { OverlayHeader, OverlayHeaderProps } from '@/components/molecules/overla
 import { OverlayBody } from '@/components/molecules/overlayBody';
 import { Row, Column, Button, Tooltip } from '@/index';
 import { ColumnProps } from '@/index.type';
-import { getWrapperElement, getUpdatedZIndex, closeOnEscapeKeypress } from '@/utils/overlayHelper';
+import {
+  getWrapperElement,
+  getUpdatedZIndex,
+  closeOnEscapeKeypress,
+  syncBackgroundVisibility,
+} from '@/utils/overlayHelper';
 import OverlayManager from '@/utils/OverlayManager';
 import { FooterOptions } from '@/common.type';
 import styles from '@css/components/fullscreenModal.module.css';
@@ -166,14 +171,25 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
   componentDidMount() {
     if (this.props.closeOnEscape) {
       if (this.state.open) {
-        OverlayManager.add(this.modalRef.current);
+        // `trapsFocus: true` doesn't mean FullscreenModal has its own focus trap yet (it
+        // doesn't — see Modal/Sidesheet for that) — it marks this as a dialog *boundary* so
+        // OverlayManager.getNestedOverlays stops here instead of absorbing a FullscreenModal
+        // opened on top of a Modal/Sidesheet into that lower dialog's own trap/hide scope.
+        OverlayManager.add(this.modalRef.current, { trapsFocus: true });
+        syncBackgroundVisibility();
       }
       document.addEventListener('keydown', this.onCloseHandler);
     }
   }
 
   componentWillUnmount() {
-    if (this.props.closeOnEscape) document.removeEventListener('keydown', this.onCloseHandler);
+    if (this.props.closeOnEscape) {
+      document.removeEventListener('keydown', this.onCloseHandler);
+      if (this.state.open) {
+        OverlayManager.remove(this.modalRef.current);
+        syncBackgroundVisibility();
+      }
+    }
   }
 
   componentDidUpdate(prevProps: FullscreenModalProps) {
@@ -191,7 +207,10 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
           animate: true,
         });
 
-        if (this.props.closeOnEscape) OverlayManager.add(this.modalRef.current);
+        if (this.props.closeOnEscape) {
+          OverlayManager.add(this.modalRef.current, { trapsFocus: true });
+          syncBackgroundVisibility();
+        }
       } else {
         this.setState(
           {
@@ -206,7 +225,10 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
           }
         );
 
-        if (this.props.closeOnEscape) OverlayManager.remove(this.modalRef.current);
+        if (this.props.closeOnEscape) {
+          OverlayManager.remove(this.modalRef.current);
+          syncBackgroundVisibility();
+        }
       }
     }
   }
