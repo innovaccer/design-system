@@ -99,7 +99,7 @@
 
 .Chip--selection {
   background: var(--shadow-0);
-  border-color: var(--stone);
+  border-color: var(--secondary);
   cursor: pointer;
 }
 
