@@ -13,6 +13,8 @@ import {
   closeOnEscapeKeypress,
   handleFocusTrapKeyDown,
   restoreFocusToElementIfConnected,
+  hideBackgroundForOverlay,
+  restoreBackgroundIfNoTrappingOverlay,
 } from '@/utils/overlayHelper';
 import OverlayManager from '@/utils/OverlayManager';
 import { FooterOptions } from '@/common.type';
@@ -175,7 +177,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
   onFocusTrapKeyDown = (event: KeyboardEvent) => {
     const container = this.modalContentRef.current;
     if (!container) return;
-    handleFocusTrapKeyDown(event, container, this.staticFocusTarget);
+    handleFocusTrapKeyDown(event, container, this.staticFocusTarget, this.modalRef.current);
   };
 
   activateFocusTrap = () => {
@@ -184,6 +186,8 @@ class Modal extends React.Component<ModalProps, ModalState> {
     }
     const container = this.modalContentRef.current;
     if (!container) return;
+
+    hideBackgroundForOverlay();
 
     window.requestAnimationFrame(() => {
       // Per WAI-ARIA APG: for dialogs with semantic content (heading + body + footer),
@@ -209,6 +213,8 @@ class Modal extends React.Component<ModalProps, ModalState> {
 
     document.removeEventListener('keydown', this.onCloseHandler);
 
+    restoreBackgroundIfNoTrappingOverlay();
+
     const container = this.modalContentRef.current;
     if (container) {
       container.removeAttribute('tabindex');
@@ -229,11 +235,11 @@ class Modal extends React.Component<ModalProps, ModalState> {
 
   componentDidMount() {
     if (this.state.open) {
-      OverlayManager.add(this.modalRef.current);
+      OverlayManager.add(this.modalRef.current, { trapsFocus: true });
     }
 
     if (this.props.backdropClose && this.state.open) {
-      OverlayManager.add(this.modalRef.current);
+      OverlayManager.add(this.modalRef.current, { trapsFocus: true });
     }
 
     const zIndex = getUpdatedZIndex({
@@ -252,8 +258,10 @@ class Modal extends React.Component<ModalProps, ModalState> {
 
   componentWillUnmount() {
     if (this.state.open) {
-      this.deactivateFocusTrap();
+      // Unregister before deactivating: deactivateFocusTrap's background-restore check
+      // needs this overlay already gone from OverlayManager to know it was the last one.
       OverlayManager.remove(this.modalRef.current);
+      this.deactivateFocusTrap();
     }
   }
 
@@ -272,12 +280,14 @@ class Modal extends React.Component<ModalProps, ModalState> {
           animate: true,
         });
 
-        OverlayManager.add(this.modalRef.current);
+        OverlayManager.add(this.modalRef.current, { trapsFocus: true });
 
         this.activateFocusTrap();
       } else {
-        this.deactivateFocusTrap();
+        // Unregister before deactivating: deactivateFocusTrap's background-restore check
+        // needs this overlay already gone from OverlayManager to know it was the last one.
         OverlayManager.remove(this.modalRef.current);
+        this.deactivateFocusTrap();
 
         this.setState(
           {

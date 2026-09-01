@@ -1,3 +1,5 @@
+import OverlayManager from './OverlayManager';
+
 export const getWrapperElement = (): Element => {
   let element = document.querySelector('.Overlay-wrapper');
   if (element === null) {
@@ -158,22 +160,35 @@ export const getAllFocusableElements = (container: HTMLElement, roleHint?: strin
  * @param staticFocusTarget - Optional non-tabbable element (tabindex="-1") that received
  *   focus on overlay open (e.g. the dialog heading). It is not in the tabbable focusable
  *   list, so without this parameter Shift+Tab from it would escape the trap.
+ * @param registeredOverlay - The element this overlay passed to `OverlayManager.add`. When
+ *   given, the trap's boundary widens to include any of its own nested overlays (see
+ *   `OverlayManager.getNestedOverlays`) — a Popover/Calendar/Dropdown/Select opened from
+ *   inside it. Those portal to `document.body` directly (via `PopperWrapper`), so they live
+ *   outside `container`'s own DOM subtree and would otherwise let Tab escape the trap the
+ *   moment focus moves into one.
  *
  * Returns true if the event was handled (focus was redirected or prevented).
  */
 export const handleFocusTrapKeyDown = (
   event: KeyboardEvent,
   container: HTMLElement,
-  staticFocusTarget?: HTMLElement | null
+  staticFocusTarget?: HTMLElement | null,
+  registeredOverlay?: HTMLDivElement | null
 ): boolean => {
   if (event.key !== 'Tab') return false;
 
-  const focusable = getFocusableElements(container);
   const activeElement = document.activeElement as HTMLElement | null;
+  if (!activeElement) return false;
 
-  if (!activeElement || !container.contains(activeElement)) {
-    return false;
-  }
+  const nestedOverlays = registeredOverlay ? OverlayManager.getNestedOverlays(registeredOverlay) : [];
+  const isInsideTrap =
+    container.contains(activeElement) || nestedOverlays.some((overlay) => overlay.contains(activeElement));
+  if (!isInsideTrap) return false;
+
+  const focusable = [container, ...nestedOverlays].reduce<HTMLElement[]>(
+    (acc, scope) => acc.concat(getFocusableElements(scope)),
+    []
+  );
 
   if (focusable.length === 0) {
     event.preventDefault();
@@ -229,4 +244,75 @@ export const restoreFocusToElementIfConnected = (
 
     element.focus({ preventScroll: true });
   });
+};
+
+// Module-level rather than a DOM marker: keeps our own bookkeeping out of the DOM/snapshots,
+// and lets us restore each element's exact prior `aria-hidden` value (including an explicit
+// `"false"`), not just "present or not".
+let hiddenBackground: Map<Element, string | null> | null = null;
+
+const isKeptFromBackgroundHiding = (el: Element) =>
+  el.classList.contains('Overlay-wrapper') ||
+  el.classList.contains('Backdrop') ||
+  OverlayManager.overlays.some((overlay) => el === overlay || el.contains(overlay));
+
+const restoreAriaHidden = (el: Element, priorValue: string | null) => {
+  if (priorValue === null) el.removeAttribute('aria-hidden');
+  else el.setAttribute('aria-hidden', priorValue);
+};
+
+/**
+ * Hides background siblings from screen readers while a focus-trapping overlay (Modal,
+ * Sidesheet) is open. `aria-modal` alone isn't honored consistently across AT/browser
+ * combinations, so this marks everything at the `document.body` level `aria-hidden`
+ * except the overlay's own shared portal root (`.Overlay-wrapper`), any open `Backdrop`,
+ * and any currently-open Popover-based widget (Dropdown, Select, Menu, Calendar/DatePicker,
+ * Tooltip — these all register via `OverlayManager.add`).
+ *
+ * Keyboard focus is handled separately by {@link handleFocusTrapKeyDown} — this only
+ * affects screen reader browse-mode navigation, which isn't gated by DOM focus at all.
+ *
+ * No-op if the background is already hidden by an outer (stacked) trapping overlay.
+ */
+export const hideBackgroundForOverlay = (): void => {
+  if (hiddenBackground) return;
+  hiddenBackground = new Map();
+
+  Array.from(document.body.children).forEach((child) => {
+    if (isKeptFromBackgroundHiding(child) || child.getAttribute('aria-hidden') === 'true') return;
+    hiddenBackground!.set(child, child.getAttribute('aria-hidden'));
+    child.setAttribute('aria-hidden', 'true');
+  });
+};
+
+/**
+ * Un-hides a single overlay root from the background-hidden state, if it got caught by
+ * {@link hideBackgroundForOverlay} before it had a chance to register with `OverlayManager`.
+ *
+ * `PopperWrapper` registers via a zero-delay timer (see `scheduleOverlayAdd`), so a
+ * Popover/Select/Menu/DatePicker that's already open when a Modal/Sidesheet mounts can
+ * exist in the DOM (and get swept up as "background") a tick before it's registered.
+ * Called right after registration to correct that retroactively — a no-op once the
+ * overlay was never hidden in the first place.
+ */
+export const revealOverlayFromHiddenBackground = (overlayEl: HTMLElement | null): void => {
+  if (!overlayEl || !hiddenBackground) return;
+
+  const bodyChild = Array.from(document.body.children).find((child) => child.contains(overlayEl));
+  if (!bodyChild || !hiddenBackground.has(bodyChild)) return;
+
+  restoreAriaHidden(bodyChild, hiddenBackground.get(bodyChild) ?? null);
+  hiddenBackground.delete(bodyChild);
+};
+
+/**
+ * Reverses {@link hideBackgroundForOverlay}, but only once no trapping overlay
+ * remains open (so closing an inner stacked modal doesn't expose the background
+ * while an outer modal is still open).
+ */
+export const restoreBackgroundIfNoTrappingOverlay = (): void => {
+  if (OverlayManager.hasTrappingOverlay() || !hiddenBackground) return;
+
+  hiddenBackground.forEach((priorValue, el) => restoreAriaHidden(el, priorValue));
+  hiddenBackground = null;
 };

@@ -4,6 +4,7 @@ import { axe } from '@/utils/testAxe';
 import { SidesheetProps as Props } from '@/index.type';
 import { Button, Sidesheet, Text } from '@/index';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
+import OverlayManager from '@/utils/OverlayManager';
 
 const dimension = ['regular', 'large'];
 const FunctionValue = jest.fn();
@@ -412,6 +413,92 @@ describe('Sidesheet component with prop: open', () => {
 
     expect(preventDefaultSpy).not.toHaveBeenCalled();
     jest.useFakeTimers();
+  });
+});
+
+describe('Sidesheet background hiding', () => {
+  const flushRAF = () => act(() => new Promise((resolve) => requestAnimationFrame(() => resolve())));
+  let sibling: HTMLDivElement;
+
+  beforeEach(() => {
+    sibling = document.createElement('div');
+    sibling.setAttribute('data-test', 'app-root-sibling');
+    document.body.appendChild(sibling);
+  });
+
+  afterEach(() => {
+    sibling.remove();
+  });
+
+  it('hides a background sibling from screen readers while open, and restores it on close', async () => {
+    const { rerender } = render(<Sidesheet open={true} onClose={jest.fn()} headerOptions={{ heading: 'Heading' }} />);
+    await flushRAF();
+
+    expect(sibling).toHaveAttribute('aria-hidden', 'true');
+
+    rerender(<Sidesheet open={false} onClose={jest.fn()} headerOptions={{ heading: 'Heading' }} />);
+    await flushRAF();
+
+    expect(sibling).not.toHaveAttribute('aria-hidden');
+  });
+
+  it('never hides the Overlay-wrapper or an open Backdrop', async () => {
+    render(<Sidesheet open={true} onClose={jest.fn()} headerOptions={{ heading: 'Heading' }} />);
+    await flushRAF();
+
+    expect(document.querySelector('.Overlay-wrapper')).not.toHaveAttribute('aria-hidden');
+    expect(document.querySelector('.Backdrop')).not.toHaveAttribute('aria-hidden');
+  });
+
+  it('keeps the background hidden while a stacked sidesheet remains open, and restores it once the last one closes', async () => {
+    const { unmount: unmountA } = render(
+      <Sidesheet open={true} onClose={jest.fn()} headerOptions={{ heading: 'Sheet A' }} />
+    );
+    await flushRAF();
+
+    const { unmount: unmountB } = render(
+      <Sidesheet open={true} onClose={jest.fn()} headerOptions={{ heading: 'Sheet B' }} />
+    );
+    await flushRAF();
+
+    expect(sibling).toHaveAttribute('aria-hidden', 'true');
+
+    unmountB();
+    expect(sibling).toHaveAttribute('aria-hidden', 'true');
+
+    unmountA();
+    expect(sibling).not.toHaveAttribute('aria-hidden');
+  });
+});
+
+describe('Sidesheet focus trap — nested overlays', () => {
+  const flushRAF = () => act(() => new Promise((resolve) => requestAnimationFrame(() => resolve())));
+
+  it('Tab from a nested (body-portaled) overlay wraps back into the sidesheet instead of escaping', async () => {
+    const { getByTestId } = render(
+      <Sidesheet open={true} onClose={jest.fn()} headerOptions={{ heading: 'Heading' }} />
+    );
+    await flushRAF();
+
+    const closeButton = getByTestId('DesignSystem-Sidesheet--CloseButton');
+
+    // Simulate a Calendar/Dropdown/Select popover opened from inside the sidesheet: it portals
+    // to document.body directly (outside the dialog's own DOM subtree) and registers with
+    // OverlayManager after the sidesheet itself, exactly like PopperWrapper does.
+    const nested = document.createElement('div');
+    const nestedButton = document.createElement('button');
+    nestedButton.textContent = 'Nested option';
+    nested.appendChild(nestedButton);
+    document.body.appendChild(nested);
+    OverlayManager.add(nested);
+
+    nestedButton.focus();
+    fireEvent.keyDown(document, { key: 'Tab' });
+
+    expect(document.activeElement).toBe(closeButton);
+
+    OverlayManager.remove(nested);
+    nested.remove();
   });
 });
 

@@ -6,6 +6,7 @@ import classNames from 'classnames';
 import { PositionType } from '@/common.type';
 import { flushSync } from 'react-dom';
 import OverlayManager from '@/utils/OverlayManager';
+import { revealOverlayFromHiddenBackground } from '@/utils/overlayHelper';
 
 type ActionType = 'click' | 'hover';
 type Offset = 'small' | 'medium' | 'large';
@@ -174,6 +175,10 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
       if (this.popupRef.current && this.props.open) {
         this._overlayElement = this.popupRef.current;
         OverlayManager.add(this._overlayElement);
+        // This registration is deferred a tick, so a Modal/Sidesheet that mounted (and
+        // hid the background) in the same tick may have already swept this popover up
+        // as "background" before it had a chance to register. Correct that now.
+        revealOverlayFromHiddenBackground(this._overlayElement);
         this.addEscapeKeyHandler();
       }
     }, 0);

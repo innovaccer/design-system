@@ -13,6 +13,8 @@ import {
   closeOnEscapeKeypress,
   handleFocusTrapKeyDown,
   restoreFocusToElementIfConnected,
+  hideBackgroundForOverlay,
+  restoreBackgroundIfNoTrappingOverlay,
 } from '@/utils/overlayHelper';
 import OverlayManager from '@/utils/OverlayManager';
 import { FooterOptions } from '@/common.type';
@@ -169,7 +171,7 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
   onFocusTrapKeyDown = (event: KeyboardEvent) => {
     const container = this.sidesheetContentRef.current;
     if (!container) return;
-    handleFocusTrapKeyDown(event, container, this.staticFocusTarget);
+    handleFocusTrapKeyDown(event, container, this.staticFocusTarget, this.sidesheetRef.current);
   };
 
   focusOnOpen = () => {
@@ -203,6 +205,8 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
     const container = this.sidesheetContentRef.current;
     if (!container) return;
 
+    hideBackgroundForOverlay();
+
     this.autofocusRAF = window.requestAnimationFrame(() => {
       this.autofocusRAF = null;
       this.focusOnOpen();
@@ -220,6 +224,8 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
     document.removeEventListener('keydown', this.onFocusTrapKeyDown, true);
 
     document.removeEventListener('keydown', this.onCloseHandler);
+
+    restoreBackgroundIfNoTrappingOverlay();
 
     const container = this.sidesheetContentRef.current;
     if (container) {
@@ -239,11 +245,11 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
 
   componentDidMount() {
     if (this.state.open) {
-      OverlayManager.add(this.sidesheetRef.current);
+      OverlayManager.add(this.sidesheetRef.current, { trapsFocus: true });
       this.activateFocusTrap();
     }
     if (this.props.backdropClose && this.state.open) {
-      OverlayManager.add(this.sidesheetRef.current);
+      OverlayManager.add(this.sidesheetRef.current, { trapsFocus: true });
     }
     const zIndex = getUpdatedZIndex({
       element: this.element,
@@ -257,8 +263,10 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
 
   componentWillUnmount() {
     if (this.state.open) {
-      this.deactivateFocusTrap();
+      // Unregister before deactivating: deactivateFocusTrap's background-restore check
+      // needs this overlay already gone from OverlayManager to know it was the last one.
       OverlayManager.remove(this.sidesheetRef.current);
+      this.deactivateFocusTrap();
     }
   }
 
@@ -277,11 +285,13 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
           animate: true,
         });
 
-        OverlayManager.add(this.sidesheetRef.current);
+        OverlayManager.add(this.sidesheetRef.current, { trapsFocus: true });
         this.activateFocusTrap();
       } else {
-        this.deactivateFocusTrap();
+        // Unregister before deactivating: deactivateFocusTrap's background-restore check
+        // needs this overlay already gone from OverlayManager to know it was the last one.
         OverlayManager.remove(this.sidesheetRef.current);
+        this.deactivateFocusTrap();
 
         this.setState({
           animate: false,
