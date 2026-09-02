@@ -318,8 +318,14 @@ const DropdownList = (props: OptionsProps) => {
       }
 
       if (!enableSearch) {
+        // Double rAF: gives the browser a full extra frame to commit the freshly-rendered
+        // role="menuitem"/"option" into the accessibility tree before focus lands on it —
+        // a single rAF can still race the AT and cause the first auto-focused option to be
+        // announced without its role (subsequent arrow-key focus changes are unaffected).
         requestAnimationFrame(() => {
-          focusFirstOption();
+          requestAnimationFrame(() => {
+            focusFirstOption();
+          });
         });
       }
     }
