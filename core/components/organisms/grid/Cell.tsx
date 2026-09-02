@@ -4,7 +4,7 @@ import { RowData, ColumnSchema, SortType } from './Grid';
 import { Dropdown, Placeholder, PlaceholderParagraph, Text, Icon, Button, Tooltip, GridCell } from '@/index';
 import { DropdownProps, GridCellProps } from '@/index.type';
 import { isSpaceKey } from '@/accessibility/utils';
-import { resizeCol, hasSchema, getSortButtonAriaLabel } from './utility';
+import { resizeCol, hasSchema, getSortButtonAriaLabel, REORDER_COLUMN_HINT } from './utility';
 import { getCellSize, getWidth } from './columnUtility';
 import { GridHeadProps } from './GridHead';
 import GridContext from './GridContext';
@@ -151,7 +151,12 @@ const HeaderCell = (props: HeaderCellProps) => {
   );
 
   const isSortable = !loading && sorting;
-  const sortButtonAriaLabel = isSortable ? getSortButtonAriaLabel(schema.displayName, sorted) : undefined;
+  const isReorderable = !!draggable && !!reorderColumn;
+  const sortButtonAriaLabel = isSortable
+    ? getSortButtonAriaLabel(schema.displayName, sorted, isReorderable)
+    : isReorderable
+    ? `${schema.displayName}. ${REORDER_COLUMN_HINT}`
+    : undefined;
   const handleSortToggle = () => {
     if (!isSortable) return;
     if (sorted === 'asc') onMenuChange(name, 'sortDesc');
@@ -195,7 +200,7 @@ const HeaderCell = (props: HeaderCellProps) => {
           }
         }}
         role={isSortable ? 'button' : undefined}
-        tabIndex={isSortable ? 0 : -1}
+        tabIndex={isSortable || isReorderable ? 0 : -1}
         aria-label={sortButtonAriaLabel}
         aria-disabled={!isSortable || undefined}
       >
