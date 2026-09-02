@@ -1,3 +1,46 @@
+## 4.28.0 (2026-09-02)
+
+### Highlights
+
+- Broad accessibility sweep adding ARIA, keyboard, and screen-reader support across Tooltip, Calendar, Avatar, AvatarGroup, TabsWrapper, Grid, Table, and Select, alongside an updated color design tokens mapping.
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(color): update color design tokens mapping (f3b2f370e)
+- feat(tabsWrapper): add a11y support in tabs wrapper component (332a43265)
+- feat(avatarGroup): add label for count avatar (e9f7613c0)
+- feat(avatarGroup): add expanded aria attr support (9c61a3e20)
+- feat(tooltip): add a11y in tooltip component (73a7f095b)
+- feat(saraSparkle): add a11y default alt attribute (aee983e14)
+- feat(calendar): add aria attributes for calendar component (5763950bf)
+- feat(avatar): add keyboard handler in avatar group (39c75471a)
+- feat(grid): add screen reader element in grid component (6718f6252)
+
+### Fixes
+
+- fix(table): add visible tooltip label to select-all checkbox (c0fcf53a1)
+- fix(table): update a11y for table pagination (7b50f1625)
+- fix(grid): add keyboard access to scrollable region (6db5196f7)
+- fix(select): avoid using interactive nested element in select trigger (50da2eb3b)
+
+### Improvements
+
+- chore: update storybook codesandbox responsive design (cdb7b48ca)
+
+---
+
 ## 4.28.0-1 (2026-08-18)
 
 ### Highlights
