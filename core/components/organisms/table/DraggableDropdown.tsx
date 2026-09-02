@@ -163,7 +163,7 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
             iconAlign="right"
             aria-expanded={open}
             aria-haspopup="dialog"
-            aria-owns={open ? dialogId : undefined}
+            aria-controls={open ? dialogId : undefined}
             onKeyDown={onTriggerKeyDown}
           >
             {`Showing ${options.filter((option) => option.selected).length} of ${
