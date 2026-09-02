@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Button, Checkbox, Popover } from '@/index';
 import { DropdownProps } from '@/index.type';
 import { moveToIndex, getPluralSuffix } from '../grid/utility';
+import uidGenerator from '@/utils/uidGenerator';
 import dropdownStyles from '@css/components/dropdown.module.css';
 import gridStyles from '@css/components/grid.module.css';
 
@@ -21,6 +22,11 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
   const [pickedUpValue, setPickedUpValue] = React.useState<React.ReactText | null>(null);
   const triggerRef = React.useRef<HTMLButtonElement | null>(null);
   const dropdownRef = React.useRef<HTMLDivElement | null>(null);
+  const [dialogId, setDialogId] = React.useState<string | undefined>();
+
+  React.useEffect(() => {
+    setDialogId(`DesignSystem-Table-Header--draggableDropdown-${uidGenerator()}`);
+  }, []);
 
   React.useEffect(() => {
     setTempOptions(options);
@@ -157,6 +163,7 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
             iconAlign="right"
             aria-expanded={open}
             aria-haspopup="dialog"
+            aria-owns={open ? dialogId : undefined}
             onKeyDown={onTriggerKeyDown}
           >
             {`Showing ${options.filter((option) => option.selected).length} of ${
@@ -171,7 +178,14 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
         className={gridStyles['Header-draggableDropdown']}
       >
         {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */}
-        <div ref={setDialogRef} role="dialog" aria-modal="true" aria-label="Choose columns" onKeyDown={onDialogKeyDown}>
+        <div
+          ref={setDialogRef}
+          id={dialogId}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Choose columns"
+          onKeyDown={onDialogKeyDown}
+        >
           <div className={gridStyles['Dropdown-wrapper']}>
             <div className="OptionWrapper">
               <Checkbox
