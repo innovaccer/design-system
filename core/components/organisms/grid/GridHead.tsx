@@ -82,7 +82,7 @@ export const GridHead = (props: GridHeadProps) => {
 
             return (
               <Cell
-                key={`${cI}`}
+                key={s.name}
                 firstCell={!index}
                 colIndex={cI}
                 isHead={true}

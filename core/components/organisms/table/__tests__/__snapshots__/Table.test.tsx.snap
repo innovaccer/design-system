@@ -59370,7 +59370,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -59596,7 +59596,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -59822,7 +59822,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -60053,7 +60053,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -60284,7 +60284,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -60542,7 +60542,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -60800,7 +60800,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -61063,7 +61063,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -61359,7 +61359,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -61678,7 +61678,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -61997,7 +61997,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -62321,7 +62321,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -62645,7 +62645,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -62996,7 +62996,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -63347,7 +63347,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -63703,7 +63703,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -64026,7 +64026,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -64258,7 +64258,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -64490,7 +64490,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -64727,7 +64727,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -64964,7 +64964,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -65228,7 +65228,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -65492,7 +65492,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -65761,7 +65761,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -66063,7 +66063,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -66388,7 +66388,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -66713,7 +66713,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -67043,7 +67043,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -67373,7 +67373,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -67730,7 +67730,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -68087,7 +68087,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -68449,7 +68449,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -68865,7 +68865,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -69178,7 +69178,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -69491,7 +69491,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -69809,7 +69809,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -70127,7 +70127,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -70472,7 +70472,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -70817,7 +70817,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -71167,7 +71167,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -71550,7 +71550,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -71956,7 +71956,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -72362,7 +72362,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -72773,7 +72773,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -73184,7 +73184,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -73622,7 +73622,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -74060,7 +74060,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -74503,7 +74503,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -74913,7 +74913,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -75232,7 +75232,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -75551,7 +75551,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -75875,7 +75875,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -76199,7 +76199,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -76550,7 +76550,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -76901,7 +76901,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -77257,7 +77257,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -77646,7 +77646,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -78058,7 +78058,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -78470,7 +78470,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -78887,7 +78887,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -79304,7 +79304,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -79748,7 +79748,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -80192,7 +80192,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -80641,7 +80641,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -129898,7 +129898,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -130124,7 +130124,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -130350,7 +130350,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -130581,7 +130581,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -130812,7 +130812,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -131070,7 +131070,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -131328,7 +131328,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -131591,7 +131591,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -131887,7 +131887,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -132206,7 +132206,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -132525,7 +132525,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -132849,7 +132849,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -133173,7 +133173,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -133524,7 +133524,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -133875,7 +133875,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -134231,7 +134231,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -134554,7 +134554,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -134786,7 +134786,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -135018,7 +135018,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -135255,7 +135255,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -135492,7 +135492,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -135756,7 +135756,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -136020,7 +136020,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -136289,7 +136289,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -136591,7 +136591,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -136916,7 +136916,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -137241,7 +137241,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -137571,7 +137571,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -137901,7 +137901,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -138258,7 +138258,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -138615,7 +138615,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -138977,7 +138977,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -139393,7 +139393,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -139706,7 +139706,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -140019,7 +140019,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -140337,7 +140337,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -140655,7 +140655,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -141000,7 +141000,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -141345,7 +141345,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -141695,7 +141695,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -142078,7 +142078,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -142484,7 +142484,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -142890,7 +142890,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -143301,7 +143301,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -143712,7 +143712,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -144150,7 +144150,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -144588,7 +144588,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -145031,7 +145031,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -145441,7 +145441,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -145760,7 +145760,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -146079,7 +146079,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -146403,7 +146403,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -146727,7 +146727,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -147078,7 +147078,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -147429,7 +147429,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -147785,7 +147785,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -148174,7 +148174,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -148586,7 +148586,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -148998,7 +148998,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -149415,7 +149415,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -149832,7 +149832,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -150276,7 +150276,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -150720,7 +150720,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -151169,7 +151169,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -285867,7 +285867,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name, not sorted. Activate to sort ascending."
+                      aria-label="Name, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
@@ -285938,7 +285938,7 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Gender, not sorted. Activate to sort ascending."
+                      aria-label="Gender, not sorted. Activate to sort ascending. Press Shift plus Left or Right arrow key to reorder column."
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
                       role="button"
