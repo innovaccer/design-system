@@ -202,7 +202,7 @@ const HeaderCell = (props: HeaderCellProps) => {
         role={isSortable ? 'button' : undefined}
         tabIndex={isSortable || isReorderable ? 0 : -1}
         aria-label={sortButtonAriaLabel}
-        aria-disabled={!isSortable || undefined}
+        aria-disabled={!isSortable && !isReorderable ? true : undefined}
       >
         {loading && !isValidSchema ? (
           <Placeholder withImage={false}>
