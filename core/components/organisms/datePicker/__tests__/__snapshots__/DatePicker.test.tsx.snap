@@ -8687,6 +8687,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                   class="Calendar-yearValueWrapper"
                 >
                   <button
+                    aria-current="date"
                     aria-disabled="false"
                     aria-label="2021"
                     aria-selected="false"

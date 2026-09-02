@@ -516,6 +516,39 @@ describe('AvatarGroup component with size based spacing', () => {
   });
 });
 
+describe('AvatarGroup Component with accessible overflow trigger', () => {
+  it('uses a default aria-label describing the overflow trigger', () => {
+    const max = 3;
+    const extraAvatarCount = list.length - max;
+
+    const { getByTestId } = render(<AvatarGroup list={list} max={max} />);
+    expect(getByTestId('DesignSystem-AvatarGroup--TriggerAvatar')).toHaveAttribute(
+      'aria-label',
+      `+${extraAvatarCount} more`
+    );
+  });
+
+  it('uses a custom moreAvatarsLabel for the overflow trigger', () => {
+    const max = 3;
+    const extraAvatarCount = list.length - max;
+
+    const { getByTestId } = render(<AvatarGroup list={list} max={max} moreAvatarsLabel="care team members" />);
+    expect(getByTestId('DesignSystem-AvatarGroup--TriggerAvatar')).toHaveAttribute(
+      'aria-label',
+      `+${extraAvatarCount} care team members`
+    );
+  });
+
+  it('reflects popover open state via aria-expanded', () => {
+    const { getByTestId } = render(<AvatarGroup list={list} max={3} popoverOptions={{ on: 'click' }} />);
+    const trigger = getByTestId('DesignSystem-AvatarGroup--TriggerAvatar');
+
+    expect(trigger).toHaveAttribute('aria-expanded', 'false');
+    fireEvent.click(trigger);
+    expect(trigger).toHaveAttribute('aria-expanded', 'true');
+  });
+});
+
 describe('AvatarGroup component a11y', () => {
   it('has no detectable a11y violations', async () => {
     const { container } = render(<AvatarGroup list={list} />);

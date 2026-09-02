@@ -151,6 +151,156 @@ describe('TabsWrapper component with prop:size', () => {
   });
 });
 
+describe('TabsWrapper component keyboard navigation', () => {
+  const tabs = (activeTab: number) => (
+    <TabsWrapper active={activeTab} onTabChange={FunctionValue}>
+      <Tab label={<div>Label 1</div>}>Tab 1</Tab>
+      <Tab label={<div>Label 2</div>} disabled={true}>
+        Tab 2
+      </Tab>
+      <Tab label={<div>Label 3</div>}>Tab 3</Tab>
+    </TabsWrapper>
+  );
+
+  afterEach(() => jest.clearAllMocks());
+
+  it('moves focus to the next enabled tab and skips a disabled tab when ArrowRight is pressed', () => {
+    const { getAllByTestId } = render(tabs(0));
+    const tab = getAllByTestId('DesignSystem-Tabs--Header');
+
+    fireEvent.focus(tab[0]);
+    fireEvent.keyDown(tab[0], { key: 'ArrowRight', keyCode: 39 });
+
+    expect(document.activeElement).toContainElement(tab[2]);
+  });
+
+  it('moves focus to the previous enabled tab and skips a disabled tab when ArrowLeft is pressed', () => {
+    const { getAllByTestId } = render(tabs(2));
+    const tab = getAllByTestId('DesignSystem-Tabs--Header');
+
+    fireEvent.focus(tab[2]);
+    fireEvent.keyDown(tab[2], { key: 'ArrowLeft', keyCode: 37 });
+
+    expect(document.activeElement).toContainElement(tab[0]);
+  });
+
+  it('keeps exactly one enabled tab in the page tab order and moves it as focus moves', () => {
+    const { getAllByTestId } = render(tabs(0));
+    const tab = getAllByTestId('DesignSystem-Tabs--Header');
+
+    expect(tab[0].tabIndex).toBe(0);
+    expect(tab[2].tabIndex).toBe(-1);
+
+    fireEvent.focus(tab[0]);
+    fireEvent.keyDown(tab[0], { key: 'ArrowRight', keyCode: 39 });
+
+    expect(tab[0].tabIndex).toBe(-1);
+    expect(tab[2].tabIndex).toBe(0);
+  });
+
+  it('wraps focus from the last enabled tab to the first when ArrowRight is pressed at the boundary', () => {
+    const { getAllByTestId } = render(tabs(2));
+    const tab = getAllByTestId('DesignSystem-Tabs--Header');
+
+    fireEvent.focus(tab[2]);
+    fireEvent.keyDown(tab[2], { key: 'ArrowRight', keyCode: 39 });
+
+    expect(document.activeElement).toContainElement(tab[0]);
+  });
+
+  it('wraps focus from the first enabled tab to the last, skipping a disabled tab, when ArrowLeft is pressed at the boundary', () => {
+    const { getAllByTestId } = render(tabs(0));
+    const tab = getAllByTestId('DesignSystem-Tabs--Header');
+
+    fireEvent.focus(tab[0]);
+    fireEvent.keyDown(tab[0], { key: 'ArrowLeft', keyCode: 37 });
+
+    expect(document.activeElement).toContainElement(tab[2]);
+  });
+
+  it('falls back to the first enabled tab when the focused tab is removed on rerender', () => {
+    const ThreeTabs = (
+      <TabsWrapper active={0} onTabChange={FunctionValue}>
+        <Tab label={<div>Label 1</div>}>Tab 1</Tab>
+        <Tab label={<div>Label 2</div>}>Tab 2</Tab>
+        <Tab label={<div>Label 3</div>}>Tab 3</Tab>
+      </TabsWrapper>
+    );
+    const TwoTabs = (
+      <TabsWrapper active={0} onTabChange={FunctionValue}>
+        <Tab label={<div>Label 1</div>}>Tab 1</Tab>
+        <Tab label={<div>Label 2</div>}>Tab 2</Tab>
+      </TabsWrapper>
+    );
+
+    const { getAllByTestId, rerender } = render(ThreeTabs);
+    const initialTabs = getAllByTestId('DesignSystem-Tabs--Header');
+    fireEvent.focus(initialTabs[2]);
+
+    rerender(TwoTabs);
+    const remainingTabs = getAllByTestId('DesignSystem-Tabs--Header');
+
+    expect(remainingTabs[0].tabIndex).toBe(0);
+    expect(remainingTabs[1].tabIndex).toBe(-1);
+  });
+});
+
+describe('TabsWrapper component with shrinking tabs', () => {
+  it('normalizes the active tab back into range when the number of tabs shrinks past the active index', () => {
+    const ThreeTabs = (
+      <TabsWrapper active={2} onTabChange={FunctionValue}>
+        <Tab label={<div>Label 1</div>}>Tab 1</Tab>
+        <Tab label={<div>Label 2</div>}>Tab 2</Tab>
+        <Tab label={<div>Label 3</div>}>Tab 3</Tab>
+      </TabsWrapper>
+    );
+    const TwoTabs = (
+      <TabsWrapper active={2} onTabChange={FunctionValue}>
+        <Tab label={<div>Label 1</div>}>Tab 1</Tab>
+        <Tab label={<div>Label 2</div>}>Tab 2</Tab>
+      </TabsWrapper>
+    );
+
+    const { getByTestId, getAllByTestId, rerender } = render(ThreeTabs);
+    rerender(TwoTabs);
+
+    expect(getByTestId('DesignSystem-Tabs--Content').textContent).toMatch('Tab 1');
+    expect(getAllByTestId('DesignSystem-Tabs--Header')[0]).toHaveAttribute('aria-selected', 'true');
+    expect(getAllByTestId('DesignSystem-Tabs--Header')[1]).toHaveAttribute('aria-selected', 'false');
+  });
+});
+
+describe('TabsWrapper component with prop: aria-labelledby', () => {
+  it('applies aria-labelledby on the tablist container', () => {
+    const { getByTestId } = render(
+      <TabsWrapper active={0} onTabChange={FunctionValue} aria-labelledby="tabs-heading">
+        <Tab label={<></>}>Tab 1</Tab>
+      </TabsWrapper>
+    );
+
+    expect(getByTestId('DesignSystem-Tabs--Header').parentElement).toHaveAttribute('aria-labelledby', 'tabs-heading');
+  });
+});
+
+describe('TabsWrapper component with active disabled tab', () => {
+  it('keeps aria-selected consistent with the rendered panel even if that tab is disabled', () => {
+    const activeTab = 1;
+
+    const { getAllByTestId, getByTestId } = render(
+      <TabsWrapper active={activeTab} onTabChange={FunctionValue}>
+        <Tab label={<></>}>Tab 1</Tab>
+        <Tab label={<></>} disabled={true}>
+          Tab 2
+        </Tab>
+      </TabsWrapper>
+    );
+
+    expect(getAllByTestId('DesignSystem-Tabs--Header')[activeTab]).toHaveAttribute('aria-selected', 'true');
+    expect(getAllByTestId('DesignSystem-Tabs--Header')[0]).toHaveAttribute('aria-selected', 'false');
+    expect(getByTestId('DesignSystem-Tabs--Content').textContent).toMatch('Tab 2');
+  });
+});
+
 describe('TabsWrapper component a11y', () => {
   it('has no detectable a11y violations', async () => {
     const { container } = render(

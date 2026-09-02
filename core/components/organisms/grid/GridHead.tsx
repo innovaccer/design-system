@@ -7,7 +7,7 @@ import {
   updateColumnSchemaFunction,
   reorderColumnFunction,
 } from './Grid';
-import { Checkbox, Placeholder } from '@/index';
+import { Checkbox, Placeholder, Tooltip } from '@/index';
 import { Cell } from './Cell';
 import classNames from 'classnames';
 import GridContext from './GridContext';
@@ -55,7 +55,9 @@ export const GridHead = (props: GridHeadProps) => {
         {loading ? (
           <Placeholder className="mr-4" />
         ) : (
-          <Checkbox {...selectAll} id={`${gridId}-select-all`} onChange={onSelectAll} aria-label="Select all rows" />
+          <Tooltip tooltip="Select all rows" position="top-start" triggerClass="flex-grow-0">
+            <Checkbox {...selectAll} id={`${gridId}-select-all`} onChange={onSelectAll} aria-label="Select all rows" />
+          </Tooltip>
         )}
       </div>
     );
@@ -101,7 +103,14 @@ export const GridHead = (props: GridHeadProps) => {
   };
 
   return (
-    <div className={styles['Grid-head']} role="rowgroup" data-test="DesignSystem-GridHead-wrapper">
+    <div
+      className={styles['Grid-head']}
+      role="rowgroup"
+      // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+      tabIndex={0}
+      aria-label="Scroll table header horizontally"
+      data-test="DesignSystem-GridHead-wrapper"
+    >
       <div className={RowClass} role={hasColumns ? 'row' : undefined}>
         {renderSchema(leftPinnedSchema, !!leftPinnedSchema.length, 'left')}
         {renderSchema(unpinnedSchema, !leftPinnedSchema.length && !!unpinnedSchema.length)}

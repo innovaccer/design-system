@@ -112,6 +112,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
     setLabel,
     minWidth,
     maxWidth,
+    className,
     'aria-invalid': ariaInvalid,
     'aria-controls': ariaControls,
     ...rest
@@ -131,6 +132,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
     setHighlightFirstItem,
     setHighlightLastItem,
     triggerRef,
+    triggerBoxRef,
     width,
     styleType,
     error,
@@ -158,17 +160,21 @@ const SelectTrigger = (props: SelectTriggerProps) => {
     triggerRef?.current?.focus({ preventScroll: true });
   };
 
-  const buttonClass = classNames({
-    [buttonStyles['Button']]: true,
-    [selectStyles['Select-trigger']]: true,
-    [selectStyles[`Select-trigger--${triggerSize}`]]: triggerSize,
-    [selectStyles['Select-trigger--placeholder']]: !isOptionSelected,
-    [selectStyles[`Select-trigger--${styleType}Placeholder`]]: !isOptionSelected && !!styleType,
-    [selectStyles['Select-trigger--icon']]: icon,
-    [selectStyles[`Select-trigger--${styleType}Open`]]: openPopover && !!styleType,
-    [selectStyles[`Select-trigger--${styleType}`]]: !!styleType,
-    [selectStyles['Select-trigger--error']]: !!error,
-  });
+  const buttonClass = classNames(
+    {
+      [buttonStyles['Button']]: true,
+      [selectStyles['Select-trigger']]: true,
+      [selectStyles[`Select-trigger--${triggerSize}`]]: triggerSize,
+      [selectStyles['Select-trigger--placeholder']]: !isOptionSelected,
+      [selectStyles[`Select-trigger--${styleType}Placeholder`]]: !isOptionSelected && !!styleType,
+      [selectStyles['Select-trigger--icon']]: icon,
+      [selectStyles[`Select-trigger--${styleType}Open`]]: openPopover && !!styleType,
+      [selectStyles[`Select-trigger--${styleType}`]]: !!styleType,
+      [selectStyles['Select-trigger--error']]: !!error,
+      [selectStyles['Select-trigger--disabled']]: !!disabled,
+    },
+    className
+  );
 
   const textClass = classNames({
     [textStyles['Text']]: true,
@@ -202,24 +208,30 @@ const SelectTrigger = (props: SelectTriggerProps) => {
       elementRef={elementRef}
       triggerClass="w-100"
     >
-      <button
-        ref={triggerRef as React.RefObject<HTMLButtonElement>}
-        onKeyDown={(event) => handleKeyDownTrigger(event, setOpenPopover, setHighlightFirstItem, setHighlightLastItem)}
-        type="button"
+      <div
+        ref={triggerBoxRef as React.RefObject<HTMLDivElement>}
         className={buttonClass}
-        disabled={disabled}
-        tabIndex={0}
         style={triggerStyle}
-        role="combobox"
-        aria-controls={ariaControls}
-        aria-expanded={openPopover}
-        aria-haspopup="listbox"
-        aria-label={resolvedAriaLabel}
-        aria-labelledby={ariaLabelledBy}
-        data-test="DesignSystem-Select-trigger"
-        {...rest}
+        data-test="DesignSystem-Select-triggerBox"
       >
-        {
+        <button
+          ref={triggerRef as React.RefObject<HTMLButtonElement>}
+          onKeyDown={(event) =>
+            handleKeyDownTrigger(event, setOpenPopover, setHighlightFirstItem, setHighlightLastItem)
+          }
+          type="button"
+          className={selectStyles['Select-trigger-control']}
+          disabled={disabled}
+          tabIndex={0}
+          role="combobox"
+          aria-controls={ariaControls}
+          aria-expanded={openPopover}
+          aria-haspopup="listbox"
+          aria-label={resolvedAriaLabel}
+          aria-labelledby={ariaLabelledBy}
+          data-test="DesignSystem-Select-trigger"
+          {...rest}
+        >
           <div className={triggerClass}>
             {inlineLabel && (
               <Text appearance="subtle" className={`${inlineLabelClass} mr-4`} size={triggerTextSize}>
@@ -242,22 +254,22 @@ const SelectTrigger = (props: SelectTriggerProps) => {
               </span>
             )}
           </div>
-        }
+        </button>
         {isOptionSelected && withClearButton && (
           <button
             type="button"
             className={iconClass}
             onClick={onClearHandler}
             onKeyDown={(e) => e.stopPropagation()}
+            disabled={disabled}
             aria-label={resolvedClearButtonAriaLabel}
             data-test="DesignSystem-Select--closeIcon"
           >
             <Icon appearance={buttonDisabled} size={12} name="close" type={iconType} aria-hidden={true} />
           </button>
         )}
-
         <Icon appearance={buttonDisabled} name={iconName} type={iconType} aria-hidden={true} />
-      </button>
+      </div>
     </Tooltip>
   );
 };

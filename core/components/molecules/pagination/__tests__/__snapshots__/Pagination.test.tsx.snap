@@ -155,6 +155,13 @@ exports[`Pagination component
     <div
       class="Pagination-pageIndex"
     >
+      <span
+        class="Text Text--default Text--regular mr-4"
+        data-test="DesignSystem-Text"
+        id="DesignSystem-Pagination-page-Test-uid"
+      >
+        Page
+      </span>
       <div
         class="MetricInput MetricInput--regular Pagination-MetricInput"
         data-test="DesignSystem-MetricInputWrapper"
@@ -180,8 +187,7 @@ exports[`Pagination component
           class="MetricInput-content MetricInput-content--regular"
         >
           <input
-            aria-describedby="DesignSystem-Pagination-totalPage-Test-uid"
-            aria-label="Current page"
+            aria-labelledby="DesignSystem-Pagination-page-Test-uid DesignSystem-Pagination-totalPage-Test-uid"
             class="MetricInput-input MetricInput-input--regular"
             data-test="DesignSystem-Pagination--Input"
             name="page"
@@ -211,7 +217,7 @@ exports[`Pagination component
         data-test="DesignSystem-Text"
         id="DesignSystem-Pagination-totalPage-Test-uid"
       >
-         of 50 pages
+         of 50
       </span>
     </div>
     <div

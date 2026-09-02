@@ -47,6 +47,10 @@ export interface AvatarGroupProps extends BaseProps {
    */
   'aria-labelledby'?: string;
   /**
+   * Descriptive suffix announced by screen readers for the `+x` trigger, e.g. `+6 ${moreAvatarsLabel}`.
+   */
+  moreAvatarsLabel?: string;
+  /**
    * List of `Avatars`
    *
    * <pre className="DocPage-codeBlock">
@@ -142,6 +146,7 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
     size,
     'aria-label': ariaLabel,
     'aria-labelledby': ariaLabelledBy,
+    moreAvatarsLabel = 'more',
   } = props;
 
   const {
@@ -175,6 +180,8 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
 
   const avatarList = list.length === 3 ? list : list.slice(0, max);
 
+  const showOverflowTrigger = list.length - max > 0 && list.length !== 3;
+
   const AvatarGroupClass = classNames(
     {
       [styles['AvatarGroup']]: true,
@@ -182,6 +189,12 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
     },
     className
   );
+
+  const [open, setOpen] = React.useState(false);
+
+  React.useEffect(() => {
+    if (!showOverflowTrigger) setOpen(false);
+  }, [showOverflowTrigger]);
 
   const avatarPopperBodyProps = {
     hiddenAvatarList: [...list].slice(max, list.length),
@@ -206,10 +219,21 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
       aria-labelledby={ariaLabelledBy}
     >
       <Avatars size={size} avatarList={avatarList} avatarStyle={avatarStyle} tooltipPosition={tooltipPosition} />
-      {list.length - max > 0 && list.length !== 3 && (
+      {showOverflowTrigger && (
         <Popover
           on={on}
-          trigger={<AvatarCount on={on} size={size} hiddenAvatarCount={hiddenAvatarCount} avatarStyle={avatarStyle} />}
+          open={open}
+          onToggle={setOpen}
+          trigger={
+            <AvatarCount
+              on={on}
+              size={size}
+              hiddenAvatarCount={hiddenAvatarCount}
+              avatarStyle={avatarStyle}
+              open={open}
+              moreAvatarsLabel={moreAvatarsLabel}
+            />
+          }
           position={position}
           appendToBody={appendToBody}
           offset="medium"
@@ -228,6 +252,7 @@ AvatarGroup.defaultProps = {
   borderColor: 'white',
   popoverOptions: {},
   size: 'regular',
+  moreAvatarsLabel: 'more',
 };
 
 export default AvatarGroup;

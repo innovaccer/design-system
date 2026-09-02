@@ -272,7 +272,9 @@ export const Avatar = (props: AvatarProps) => {
   const renderTooltip = () => (
     <span className="position-relative d-inline-flex">
       {withTooltip && initials ? (
-        <Tooltip tooltip={getTooltipName()} position={tooltipPosition} triggerClass="flex-grow-0">
+        // ariaLabel already falls back to this same tooltip text (getTooltipName()), so the
+        // trigger's accessible name already conveys it — aria-hidden avoids describing it twice.
+        <Tooltip tooltip={getTooltipName()} position={tooltipPosition} triggerClass="flex-grow-0" aria-hidden="true">
           {renderAvatar()}
         </Tooltip>
       ) : (

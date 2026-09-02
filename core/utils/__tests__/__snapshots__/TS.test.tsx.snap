@@ -716,6 +716,7 @@ exports[`TS renders children 1`] = `
                   data-test="designSystem-Calendar-WrapperClass"
                 >
                   <button
+                    aria-current="date"
                     aria-disabled="false"
                     aria-label="June 14, 2021"
                     aria-selected="false"
@@ -3135,6 +3136,7 @@ exports[`TS renders children 1`] = `
               data-test="designSystem-Calendar-WrapperClass"
             >
               <button
+                aria-current="date"
                 aria-disabled="false"
                 aria-label="June 14, 2021"
                 aria-selected="false"
@@ -3831,17 +3833,24 @@ exports[`TS renders children 1`] = `
   >
     <div
       class="TabsWrapper-header"
+      role="tablist"
     >
       <div
+        aria-controls="tabs-wrapper-1-panel"
+        aria-selected="true"
         class="Tab Tab--active Tab--regular"
         data-test="DesignSystem-Tabs--Header"
-        role="button"
+        id="tabs-wrapper-1-tab-0"
+        role="tab"
         tabindex="0"
       />
     </div>
     <div
+      aria-labelledby="tabs-wrapper-1-tab-0"
       class="TabsWrapper-content"
       data-test="DesignSystem-Tabs--Content"
+      id="tabs-wrapper-1-panel"
+      role="tabpanel"
     >
       <span
         class="Text Text--default Text--regular"
@@ -3851,6 +3860,11 @@ exports[`TS renders children 1`] = `
       </span>
     </div>
   </div>
+  <span
+    aria-atomic="true"
+    aria-live="polite"
+    class="Grid-srOnly"
+  />
   <div
     aria-busy="false"
     aria-label="Data grid"
@@ -3859,9 +3873,11 @@ exports[`TS renders children 1`] = `
     role="grid"
   >
     <div
+      aria-label="Scroll table header horizontally"
       class="Grid-head"
       data-test="DesignSystem-GridHead-wrapper"
       role="rowgroup"
+      tabindex="0"
     >
       <div
         class="Grid-row Grid-row--head"
@@ -3883,6 +3899,11 @@ exports[`TS renders children 1`] = `
     <div
       class="Table-grid"
     >
+      <span
+        aria-atomic="true"
+        aria-live="polite"
+        class="Grid-srOnly"
+      />
       <div
         aria-busy="false"
         aria-label="Data grid"
@@ -3922,6 +3943,11 @@ exports[`TS renders children 1`] = `
     <div
       class="Table-grid"
     >
+      <span
+        aria-atomic="true"
+        aria-live="polite"
+        class="Grid-srOnly"
+      />
       <div
         aria-busy="false"
         aria-label="Data grid"
@@ -3930,9 +3956,11 @@ exports[`TS renders children 1`] = `
         role="grid"
       >
         <div
+          aria-label="Scroll table header horizontally"
           class="Grid-head"
           data-test="DesignSystem-GridHead-wrapper"
           role="rowgroup"
+          tabindex="0"
         >
           <div
             class="Grid-row Grid-row--head"
