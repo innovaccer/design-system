@@ -226,4 +226,13 @@ describe('GenericChip component a11y', () => {
     expect(chipContentDiv).toHaveAttribute('aria-checked', 'true');
     expect(chipContentDiv).toHaveAttribute('tabindex', '0');
   });
+
+  it('chip with role radio conveys checked state to assistive technology', () => {
+    const { getByTestId } = render(
+      <GenericChip label="ChipLabel" name="Chip" type="selection" role="radio" selected onClick={jest.fn()} />
+    );
+    const chipContentDiv = getByTestId('DesignSystem-GenericChip--Content');
+    expect(chipContentDiv).toHaveAttribute('role', 'radio');
+    expect(chipContentDiv).toHaveAttribute('aria-checked', 'true');
+  });
 });
