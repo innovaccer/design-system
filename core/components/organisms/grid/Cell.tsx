@@ -416,6 +416,7 @@ export const Cell = (props: CellProps) => {
     sortingList,
     schema: contextSchema,
     loading,
+    updateSchema,
   } = context;
 
   const { name, hidden, pinned, cellType = 'DEFAULT', sorting = true } = schema;
@@ -432,7 +433,7 @@ export const Cell = (props: CellProps) => {
   // otherwise this columnheader itself becomes the focus target for drag-reorder,
   // so the two never compete for the same tab stop.
   const isHeadSortable = isHead && !loading && sorting;
-  const isReorderable = isHead && !loading && !!draggable && !!reorderColumn;
+  const isReorderable = isHead && !loading && !!draggable && !!reorderColumn && !!updateSchema;
 
   const { width, minWidth = 96, maxWidth = 800 } = getCellSize(cellType);
 
