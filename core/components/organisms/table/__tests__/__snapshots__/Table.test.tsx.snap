@@ -5248,10 +5248,10 @@ exports[`Table component async
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <div
                         aria-hidden="true"
@@ -5854,10 +5854,10 @@ exports[`Table component async
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <div
                         aria-hidden="true"
@@ -6460,10 +6460,10 @@ exports[`Table component async
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <div
                         aria-hidden="true"
@@ -7066,10 +7066,10 @@ exports[`Table component async
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <div
                         aria-hidden="true"
@@ -7759,10 +7759,10 @@ exports[`Table component async
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <div
                         aria-hidden="true"
@@ -8452,10 +8452,10 @@ exports[`Table component async
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <div
                         aria-hidden="true"
@@ -9145,10 +9145,10 @@ exports[`Table component async
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <div
                         aria-hidden="true"
@@ -9838,10 +9838,10 @@ exports[`Table component async
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <div
                         aria-hidden="true"
@@ -198156,10 +198156,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -198389,10 +198389,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -198622,10 +198622,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -198860,10 +198860,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -199098,10 +199098,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -199363,10 +199363,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -199628,10 +199628,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -199898,10 +199898,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -200184,10 +200184,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -200469,10 +200469,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -200754,10 +200754,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -201044,10 +201044,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -201334,10 +201334,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -201651,10 +201651,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -201968,10 +201968,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -202290,10 +202290,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -202596,10 +202596,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -202835,10 +202835,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -203074,10 +203074,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -203318,10 +203318,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -203562,10 +203562,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -203833,10 +203833,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -204104,10 +204104,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -204380,10 +204380,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -204672,10 +204672,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -204963,10 +204963,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -205254,10 +205254,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -205550,10 +205550,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -205846,10 +205846,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -206169,10 +206169,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -206492,10 +206492,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -206820,10 +206820,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -207219,10 +207219,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -207539,10 +207539,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -207859,10 +207859,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -208184,10 +208184,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -208509,10 +208509,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -208861,10 +208861,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -209213,10 +209213,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -209570,10 +209570,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -209943,10 +209943,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -210315,10 +210315,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -210687,10 +210687,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -211064,10 +211064,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -211441,10 +211441,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -211845,10 +211845,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -212249,10 +212249,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -212658,10 +212658,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -213051,10 +213051,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -213377,10 +213377,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -213703,10 +213703,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -214034,10 +214034,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -214365,10 +214365,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -214723,10 +214723,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -215081,10 +215081,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -215444,10 +215444,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -215823,10 +215823,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -216201,10 +216201,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -216579,10 +216579,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -216962,10 +216962,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -217345,10 +217345,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -217755,10 +217755,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -218165,10 +218165,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -218580,10 +218580,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -265548,10 +265548,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -265781,10 +265781,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -266014,10 +266014,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -266252,10 +266252,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -266490,10 +266490,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -266755,10 +266755,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -267020,10 +267020,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -267290,10 +267290,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -267576,10 +267576,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -267861,10 +267861,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -268146,10 +268146,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -268436,10 +268436,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -268726,10 +268726,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -269043,10 +269043,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -269360,10 +269360,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -269682,10 +269682,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -269988,10 +269988,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -270227,10 +270227,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -270466,10 +270466,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -270710,10 +270710,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -270954,10 +270954,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -271225,10 +271225,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -271496,10 +271496,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -271772,10 +271772,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -272064,10 +272064,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -272355,10 +272355,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -272646,10 +272646,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -272942,10 +272942,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -273238,10 +273238,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -273561,10 +273561,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -273884,10 +273884,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -274212,10 +274212,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -274611,10 +274611,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -274931,10 +274931,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -275251,10 +275251,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -275576,10 +275576,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -275901,10 +275901,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -276253,10 +276253,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -276605,10 +276605,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -276962,10 +276962,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -277335,10 +277335,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -277707,10 +277707,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -278079,10 +278079,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -278456,10 +278456,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -278833,10 +278833,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -279237,10 +279237,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -279641,10 +279641,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -280050,10 +280050,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -280443,10 +280443,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -280769,10 +280769,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -281095,10 +281095,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -281426,10 +281426,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -281757,10 +281757,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -282115,10 +282115,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -282473,10 +282473,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -282836,10 +282836,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -283215,10 +283215,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -283593,10 +283593,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -283971,10 +283971,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -284354,10 +284354,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -284737,10 +284737,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -285147,10 +285147,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       <span
                         class="Text Text--default Text--strong Text--regular ellipsis--noWrap"
@@ -285557,10 +285557,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div
@@ -286299,10 +286299,10 @@ exports[`Table component sync
                     class="Grid-headCell Grid-headCell--draggable"
                   >
                     <div
-                      aria-label="Name. Press Shift plus Left or Right arrow key to reorder column."
+                      aria-disabled="true"
                       class="Grid-cellContent"
                       data-test="DesignSystem-Grid-cellContent"
-                      tabindex="0"
+                      tabindex="-1"
                     >
                       
                       <div

@@ -151,7 +151,7 @@ const HeaderCell = (props: HeaderCellProps) => {
   );
 
   const isSortable = !loading && sorting;
-  const isReorderable = !!draggable && !!reorderColumn;
+  const isReorderable = !loading && !!draggable && !!reorderColumn;
   const sortButtonAriaLabel = isSortable
     ? getSortButtonAriaLabel(schema.displayName, sorted, isReorderable)
     : isReorderable
@@ -199,7 +199,7 @@ const HeaderCell = (props: HeaderCellProps) => {
             handleSortToggle();
           }
         }}
-        role={isSortable ? 'button' : undefined}
+        role={isSortable || isReorderable ? 'button' : undefined}
         tabIndex={isSortable || isReorderable ? 0 : -1}
         aria-label={sortButtonAriaLabel}
         aria-disabled={!isSortable && !isReorderable ? true : undefined}
@@ -417,6 +417,7 @@ export const Cell = (props: CellProps) => {
     showNestedRowTrigger,
     sortingList,
     schema: contextSchema,
+    loading,
   } = context;
 
   const { name, hidden, pinned, cellType = 'DEFAULT', sorting } = schema;
@@ -486,7 +487,7 @@ export const Cell = (props: CellProps) => {
         }
       }}
       onKeyDown={
-        isHead && draggable && reorderColumn
+        isHead && !loading && draggable && reorderColumn
           ? (e: React.KeyboardEvent<HTMLDivElement>) => {
               if (!e.shiftKey || (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight')) return;
               const target = e.target as HTMLElement;
