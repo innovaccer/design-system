@@ -4,7 +4,7 @@ import { RowData, ColumnSchema, SortType } from './Grid';
 import { Dropdown, Placeholder, PlaceholderParagraph, Text, Icon, Button, Tooltip, GridCell } from '@/index';
 import { DropdownProps, GridCellProps } from '@/index.type';
 import { isSpaceKey } from '@/accessibility/utils';
-import { resizeCol, hasSchema, getSortButtonAriaLabel } from './utility';
+import { resizeCol, hasSchema, getSortButtonAriaLabel, REORDER_COLUMN_HINT } from './utility';
 import { getCellSize, getWidth } from './columnUtility';
 import { GridHeadProps } from './GridHead';
 import GridContext from './GridContext';
@@ -151,7 +151,10 @@ const HeaderCell = (props: HeaderCellProps) => {
   );
 
   const isSortable = !loading && sorting;
-  const sortButtonAriaLabel = isSortable ? getSortButtonAriaLabel(schema.displayName, sorted) : undefined;
+  const isReorderable = !loading && !!draggable && !!reorderColumn;
+  const sortButtonAriaLabel = isSortable
+    ? getSortButtonAriaLabel(schema.displayName, sorted, isReorderable)
+    : undefined;
   const handleSortToggle = () => {
     if (!isSortable) return;
     if (sorted === 'asc') onMenuChange(name, 'sortDesc');
@@ -412,9 +415,11 @@ export const Cell = (props: CellProps) => {
     showNestedRowTrigger,
     sortingList,
     schema: contextSchema,
+    loading,
+    updateSchema,
   } = context;
 
-  const { name, hidden, pinned, cellType = 'DEFAULT', sorting } = schema;
+  const { name, hidden, pinned, cellType = 'DEFAULT', sorting = true } = schema;
 
   const ariaSortValue: React.AriaAttributes['aria-sort'] = React.useMemo(() => {
     if (!isHead || sorting === false) return undefined;
@@ -423,6 +428,12 @@ export const Cell = (props: CellProps) => {
     if (entry?.type === 'desc') return 'descending';
     return undefined;
   }, [isHead, sorting, sortingList, name]);
+
+  // The sortable inner button (HeaderCell) is the focus target when sorting is on;
+  // otherwise this columnheader itself becomes the focus target for drag-reorder,
+  // so the two never compete for the same tab stop.
+  const isHeadSortable = isHead && !loading && sorting;
+  const isReorderable = isHead && !loading && !!draggable && !!reorderColumn && !!updateSchema;
 
   const { width, minWidth = 96, maxWidth = 800 } = getCellSize(cellType);
 
@@ -481,7 +492,7 @@ export const Cell = (props: CellProps) => {
         }
       }}
       onKeyDown={
-        isHead && draggable && reorderColumn
+        isReorderable
           ? (e: React.KeyboardEvent<HTMLDivElement>) => {
               if (!e.shiftKey || (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight')) return;
               const target = e.target as HTMLElement;
@@ -491,13 +502,15 @@ export const Cell = (props: CellProps) => {
               if (currentIdx === -1) return;
               e.preventDefault();
               if (e.key === 'ArrowLeft' && currentIdx > 0) {
-                reorderColumn(name, visibleSchema[currentIdx - 1].name);
+                reorderColumn!(name, visibleSchema[currentIdx - 1].name);
               } else if (e.key === 'ArrowRight' && currentIdx < visibleSchema.length - 1) {
-                reorderColumn(name, visibleSchema[currentIdx + 1].name);
+                reorderColumn!(name, visibleSchema[currentIdx + 1].name);
               }
             }
           : undefined
       }
+      tabIndex={isReorderable && !isHeadSortable ? 0 : undefined}
+      aria-label={isReorderable && !isHeadSortable ? `${schema.displayName}. ${REORDER_COLUMN_HINT}` : undefined}
       style={{
         width: getWidth({ ref, withCheckbox }, schema.width || width),
         minWidth: getWidth({ ref, withCheckbox }, schema.minWidth || minWidth),

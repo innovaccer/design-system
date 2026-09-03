@@ -210,6 +210,23 @@ describe('AvatarSelection component', () => {
     expect(getByTestId('DesignSystem-AvatarSelection--TriggerAvatar').textContent).toMatch(`+${extraAvatar}`);
   });
 
+  it('gives the overflow trigger a meaningful accessible name', () => {
+    const max = 3;
+    const extraAvatar = list.length - max;
+
+    const { getByTestId, rerender } = render(<AvatarSelection list={list} max={max} />);
+    expect(getByTestId('DesignSystem-AvatarSelection--TriggerAvatar')).toHaveAttribute(
+      'aria-label',
+      `+${extraAvatar} more`
+    );
+
+    rerender(<AvatarSelection list={list} max={max} moreAvatarsLabel="more cohorts" />);
+    expect(getByTestId('DesignSystem-AvatarSelection--TriggerAvatar')).toHaveAttribute(
+      'aria-label',
+      `+${extraAvatar} more cohorts`
+    );
+  });
+
   it('exposes a single, properly-stated checkbox per group avatar (no nested checkbox)', () => {
     const { getAllByTestId } = render(<AvatarSelection list={list} max={3} />);
 
@@ -324,6 +341,9 @@ describe('AvatarSelection component with prop:withSearch', () => {
 
     const emptyState = getByTestId('DesignSystem-AvatarSelection--EmptyState');
     expect(emptyState).toBeInTheDocument();
+
+    const liveRegion = getByTestId('DesignSystem-AvatarSelection--Popover').querySelector('[aria-live="polite"]');
+    expect(liveRegion).toHaveTextContent('No users found. Try modifying your search to find what you are looking for.');
 
     const clearIcon = getByTestId('DesignSystem-Input--closeIcon');
     expect(clearIcon).toBeInTheDocument();

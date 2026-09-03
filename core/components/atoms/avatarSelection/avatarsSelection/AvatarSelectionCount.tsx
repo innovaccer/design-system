@@ -13,10 +13,15 @@ interface CountAvatarProp {
   hiddenAvatarCount?: number;
   hiddenAvatarList: AvatarData[];
   avatarStyle?: { backgroundColor?: string; boxShadow?: string };
+  /**
+   * Descriptive suffix announced by screen readers for the `+x` trigger, e.g. `+6 ${moreAvatarsLabel}`.
+   * Matches the same prop on `AvatarGroup`.
+   */
+  moreAvatarsLabel?: string;
 }
 
 export const AvatarSelectionCount = (props: CountAvatarProp) => {
-  const { hiddenAvatarCount, avatarStyle, size, hiddenAvatarList } = props;
+  const { hiddenAvatarCount, avatarStyle, size, hiddenAvatarList, moreAvatarsLabel = 'more' } = props;
 
   const contextProp = React.useContext(AvatarSelectionContext);
   const {
@@ -72,6 +77,7 @@ export const AvatarSelectionCount = (props: CountAvatarProp) => {
       aria-haspopup="listbox"
       aria-expanded={openPopover}
       aria-controls={popoverId}
+      aria-label={`+${hiddenAvatarCount} ${moreAvatarsLabel}`}
       ref={triggerRef}
     >
       <Avatar tabIndex={-1} role="presentation" size={size} appearance="secondary" className={avatarClassName}>

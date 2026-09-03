@@ -603,24 +603,39 @@ const DropdownList = (props: OptionsProps) => {
     const optionIsSelected = tempSelected.findIndex((option) => option.value === item.value) !== -1;
     const id = `${dropdownFieldIdsPrefixRef.current}-option-${index}`;
 
+    const option = (
+      <Option
+        optionData={item}
+        truncateOption={truncateOption}
+        selected={optionIsSelected}
+        index={index}
+        updateActiveOption={updateActiveOption}
+        optionRenderer={optionRenderer}
+        active={active}
+        checkboxes={withCheckbox}
+        menu={menu}
+        onClick={() => optionClickHandler(item)}
+        onChange={(e) => props.onSelect(item, e.target.checked)}
+        optionType={props.optionType}
+        id={id}
+      />
+    );
+
+    // `label htmlFor` is only meaningful when the option renders a checkbox with a matching id
+    // (CheckboxOption). Every other option type has no element with that id, so wrapping its
+    // role="menuitem"/"option" row in a dangling <label> breaks role announcement in screen readers.
+    if (withCheckbox) {
+      return (
+        <label htmlFor={id} key={index} role="presentation">
+          {option}
+        </label>
+      );
+    }
+
     return (
-      <label htmlFor={id} key={index} role="presentation">
-        <Option
-          optionData={item}
-          truncateOption={truncateOption}
-          selected={optionIsSelected}
-          index={index}
-          updateActiveOption={updateActiveOption}
-          optionRenderer={optionRenderer}
-          active={active}
-          checkboxes={withCheckbox}
-          menu={menu}
-          onClick={() => optionClickHandler(item)}
-          onChange={(e) => props.onSelect(item, e.target.checked)}
-          optionType={props.optionType}
-          id={id}
-        />
-      </label>
+      <div key={index} role="presentation">
+        {option}
+      </div>
     );
   };
 
