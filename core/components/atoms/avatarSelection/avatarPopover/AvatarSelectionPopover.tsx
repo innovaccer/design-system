@@ -137,6 +137,12 @@ export const AvatarSelectionPopover = (props: AvatarPopoverProps) => {
         />
       )}
 
+      {/* Persistent live region: always in DOM so screen readers announce the empty-state message.
+          while the user is actively typing in the focused search input. */}
+      <span aria-live="polite" aria-atomic="true" className={styles['AvatarSelection-srOnly']}>
+        {searchList.length === 0 ? 'No users found. Try modifying your search to find what you are looking for.' : ''}
+      </span>
+
       <div style={customStyle} className={popperClassName}>
         {searchList.length === 0 && (
           <AvatarSelectionEmptyState
