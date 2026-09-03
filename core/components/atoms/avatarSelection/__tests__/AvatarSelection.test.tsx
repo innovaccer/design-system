@@ -325,6 +325,9 @@ describe('AvatarSelection component with prop:withSearch', () => {
     const emptyState = getByTestId('DesignSystem-AvatarSelection--EmptyState');
     expect(emptyState).toBeInTheDocument();
 
+    const liveRegion = getByTestId('DesignSystem-AvatarSelection--Popover').querySelector('[aria-live="polite"]');
+    expect(liveRegion).toHaveTextContent('No users found. Try modifying your search to find what you are looking for.');
+
     const clearIcon = getByTestId('DesignSystem-Input--closeIcon');
     expect(clearIcon).toBeInTheDocument();
     fireEvent.click(clearIcon);
