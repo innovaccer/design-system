@@ -145,6 +145,10 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
     return () => document.removeEventListener('keydown', handleEscape);
   }, [open]);
 
+  const columnCountLabel = `Showing ${options.filter((option) => option.selected).length} of ${
+    options.length
+  } column${getPluralSuffix(options.length)}`;
+
   return (
     <div className={dropdownStyles['Dropdown']}>
       <Popover
@@ -164,11 +168,10 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
             aria-expanded={open}
             aria-haspopup="dialog"
             aria-controls={open ? dialogId : undefined}
+            aria-label={`Select columns, ${columnCountLabel}`}
             onKeyDown={onTriggerKeyDown}
           >
-            {`Showing ${options.filter((option) => option.selected).length} of ${
-              options.length
-            } column${getPluralSuffix(options.length)}`}
+            {columnCountLabel}
           </Button>
         }
         triggerClass="w-100"
