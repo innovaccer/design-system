@@ -131,6 +131,11 @@ export interface AvatarSelectionProps extends BaseProps {
    * Adds custom class to avatar wrapper
    */
   className?: string;
+  /**
+   * Descriptive suffix announced by screen readers for the `+x` trigger, e.g. `+6 ${moreAvatarsLabel}`.
+   * Matches the same prop on `AvatarGroup`.
+   */
+  moreAvatarsLabel?: string;
 }
 
 export const AvatarSelection = (props: AvatarSelectionProps) => {
@@ -150,6 +155,7 @@ export const AvatarSelection = (props: AvatarSelectionProps) => {
     withSearch,
     searchComparator,
     children,
+    moreAvatarsLabel,
     'aria-label': ariaLabel,
     'aria-labelledby': ariaLabelledBy,
   } = props;
@@ -242,6 +248,7 @@ export const AvatarSelection = (props: AvatarSelectionProps) => {
     avatarStyle,
     hiddenAvatarCount,
     hiddenAvatarList,
+    moreAvatarsLabel,
   };
 
   const onToggleHandler = (open: boolean) => {
@@ -305,6 +312,7 @@ AvatarSelection.defaultProps = {
   size: 'regular',
   width: 256,
   maxHeight: 256,
+  moreAvatarsLabel: 'more',
 };
 
 AvatarSelection.Input = AvatarSelectionInput;
