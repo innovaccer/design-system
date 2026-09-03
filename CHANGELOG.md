@@ -1,3 +1,37 @@
+## 4.29.0 (2026-09-03)
+
+### Highlights
+
+- Continued accessibility hardening across Grid, Dropdown, Chip, Table, and AvatarSelection components.
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(avatarSelection): add aria attribute for avatar count (84566d6c9)
+- feat(avatarSelection): add aria attribute for search empty state (e488d63a1)
+
+### Fixes
+
+- fix(story): remove redundant textarea from card (253ca9f7a)
+- fix(table): add aria attr in draggable dropdown (de2c74a7c)
+- fix(table): add aria attributes in draggable dropdown in table (5e4de718a)
+- fix(chip): update role for chip component (f46b0e12c)
+- fix(dropdown): update option wrapper from label in dropdwon option (780763526)
+- fix(grid): update keyboard interaction for reorder cell (f95b5c40c)
+
+---
+
 ## 4.28.0 (2026-09-02)
 
 ### Highlights
