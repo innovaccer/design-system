@@ -224,6 +224,51 @@ describe('render Grid component prop: updateSchema ', () => {
   });
 });
 
+describe('render Grid component prop: updateSchema for resize menu actions', () => {
+  const schema = [
+    {
+      name: 'name',
+      displayName: 'Name',
+      width: 100,
+      resizable: true,
+    },
+  ];
+  const data = [
+    {
+      name: 'Zara',
+      selected: true,
+    },
+  ];
+
+  it('calls updateSchema with width increased by the resize step', () => {
+    const updateSchemaResize = jest.fn();
+    const { getAllByTestId } = render(
+      <Grid schema={schema} showMenu={true} data={data} updateSchema={updateSchemaResize} />
+    );
+    const popoverButton = getAllByTestId('DesignSystem-Button')[0];
+    fireEvent.click(popoverButton);
+    const dropdownOption = getAllByTestId('DesignSystem-DropdownOption--WITH_ICON')[6];
+    fireEvent.click(dropdownOption);
+    expect(updateSchemaResize).toHaveBeenCalledTimes(1);
+    expect(updateSchemaResize).toHaveBeenCalledWith([{ ...schema[0], width: 110 }]);
+  });
+
+  it('calls updateSchema with width decreased by the resize step, clamped to the minimum width', () => {
+    const updateSchemaResize = jest.fn();
+    const clampingSchema = [{ ...schema[0], width: 98 }];
+    const { getAllByTestId } = render(
+      <Grid schema={clampingSchema} showMenu={true} data={data} updateSchema={updateSchemaResize} />
+    );
+    const popoverButton = getAllByTestId('DesignSystem-Button')[0];
+    fireEvent.click(popoverButton);
+    const dropdownOption = getAllByTestId('DesignSystem-DropdownOption--WITH_ICON')[7];
+    fireEvent.click(dropdownOption);
+    expect(updateSchemaResize).toHaveBeenCalledTimes(1);
+    // 98 - 10 = 88, clamped up to the DEFAULT cell type's minWidth of 96
+    expect(updateSchemaResize).toHaveBeenCalledWith([{ ...clampingSchema[0], width: 96 }]);
+  });
+});
+
 describe('renders children with pagination and page', () => {
   const schema = [
     {

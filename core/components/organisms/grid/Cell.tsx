@@ -191,10 +191,12 @@ const HeaderCell = (props: HeaderCellProps) => {
 
   const RESIZE_STEP = 10;
   const resizeByStep = (direction: 1 | -1) => {
-    const currentWidth = el.current?.parentElement?.getBoundingClientRect().width ?? 0;
+    // The columnheader's inline `width` is the configured/basis width; its bounding rect can be
+    // larger when `flex-grow` stretches the cell to fill unused grid space, so read the style directly.
+    const basisWidth = parseFloat(el.current?.parentElement?.style.width || '') || 0;
     const schemaMin = typeof schema.minWidth === 'number' ? schema.minWidth : undefined;
     const effectiveMinWidth = schemaMin || getCellSize(schema.cellType || 'DEFAULT').minWidth || 96;
-    updateColumnSchema(name, { width: Math.max(currentWidth + direction * RESIZE_STEP, effectiveMinWidth) });
+    updateColumnSchema(name, { width: Math.max(basisWidth + direction * RESIZE_STEP, effectiveMinWidth) });
   };
 
   return (

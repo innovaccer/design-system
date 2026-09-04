@@ -84,7 +84,10 @@ export type ColumnSchema = {
    */
   maxWidth?: React.ReactText;
   /**
-   * Denotes if column is resizable
+   * Denotes if column is resizable.
+   * Resizing can be done by dragging the column edge, via arrow keys on the resize
+   * handle, or via the "Increase width"/"Decrease width"/"Fit to content" actions in
+   * the column's more-options menu (single-pointer alternatives to dragging), subject to `minWidth`/`maxWidth`.
    */
   resizable?: boolean;
   /**
