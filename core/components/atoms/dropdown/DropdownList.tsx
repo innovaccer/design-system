@@ -345,7 +345,13 @@ const DropdownList = (props: OptionsProps) => {
   } = props;
 
   const CustomTrigger = customTrigger ? customTrigger(triggerLabel ? triggerLabel : placeholder) : <></>;
-  const NewCustomTrigger = React.cloneElement(CustomTrigger, { tabIndex: 0, ref: dropdownTriggerRef });
+  const NewCustomTrigger = React.cloneElement(CustomTrigger, {
+    tabIndex: 0,
+    ref: dropdownTriggerRef,
+    'aria-haspopup': menu ? 'menu' : 'listbox',
+    'aria-expanded': dropdownOpen,
+    'aria-controls': dropdownOpen ? popupId : undefined,
+  });
 
   const trigger = customTrigger ? (
     NewCustomTrigger
