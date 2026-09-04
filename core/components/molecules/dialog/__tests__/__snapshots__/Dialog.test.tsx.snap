@@ -133,11 +133,8 @@ exports[`Dialog component
       </div>
     </div>
   </div>
+  <div />
   <div
-    aria-hidden="true"
-  />
-  <div
-    aria-hidden="true"
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
     data-opened="true"
@@ -153,9 +150,7 @@ exports[`Dialog component
 <body
   style="overflow: hidden;"
 >
-  <div
-    aria-hidden="true"
-  />
+  <div />
   <div
     class="Overlay-wrapper"
   >
@@ -284,7 +279,6 @@ exports[`Dialog component
     </div>
   </div>
   <div
-    aria-hidden="true"
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
     data-opened="true"
@@ -427,11 +421,8 @@ exports[`Dialog component
       </div>
     </div>
   </div>
+  <div />
   <div
-    aria-hidden="true"
-  />
-  <div
-    aria-hidden="true"
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
     data-opened="true"
@@ -574,11 +565,8 @@ exports[`Dialog component
       </div>
     </div>
   </div>
+  <div />
   <div
-    aria-hidden="true"
-  />
-  <div
-    aria-hidden="true"
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
     data-opened="true"
@@ -721,11 +709,8 @@ exports[`Dialog component
       </div>
     </div>
   </div>
+  <div />
   <div
-    aria-hidden="true"
-  />
-  <div
-    aria-hidden="true"
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
     data-opened="true"
@@ -868,11 +853,8 @@ exports[`Dialog component
       </div>
     </div>
   </div>
+  <div />
   <div
-    aria-hidden="true"
-  />
-  <div
-    aria-hidden="true"
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
     data-opened="true"
@@ -1015,11 +997,8 @@ exports[`Dialog component
       </div>
     </div>
   </div>
+  <div />
   <div
-    aria-hidden="true"
-  />
-  <div
-    aria-hidden="true"
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
     data-opened="true"
@@ -1162,11 +1141,8 @@ exports[`Dialog component
       </div>
     </div>
   </div>
+  <div />
   <div
-    aria-hidden="true"
-  />
-  <div
-    aria-hidden="true"
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
     data-opened="true"
@@ -1309,11 +1285,8 @@ exports[`Dialog component
       </div>
     </div>
   </div>
+  <div />
   <div
-    aria-hidden="true"
-  />
-  <div
-    aria-hidden="true"
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
     data-opened="true"
@@ -1456,11 +1429,8 @@ exports[`Dialog component
       </div>
     </div>
   </div>
+  <div />
   <div
-    aria-hidden="true"
-  />
-  <div
-    aria-hidden="true"
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
     data-opened="true"
@@ -1603,11 +1573,8 @@ exports[`Dialog component
       </div>
     </div>
   </div>
+  <div />
   <div
-    aria-hidden="true"
-  />
-  <div
-    aria-hidden="true"
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
     data-opened="true"
@@ -1750,11 +1717,8 @@ exports[`Dialog component
       </div>
     </div>
   </div>
+  <div />
   <div
-    aria-hidden="true"
-  />
-  <div
-    aria-hidden="true"
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
     data-opened="true"
@@ -1897,11 +1861,8 @@ exports[`Dialog component
       </div>
     </div>
   </div>
+  <div />
   <div
-    aria-hidden="true"
-  />
-  <div
-    aria-hidden="true"
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
     data-opened="true"

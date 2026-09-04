@@ -7,9 +7,10 @@ import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/u
 import OverlayManager from '@/utils/OverlayManager';
 
 const flushRAF = () => act(() => new Promise((resolve) => requestAnimationFrame(() => resolve())));
-// activateBackgroundHiding defers its scan by a macrotask so an already-open nested Popper
-// has time to register with OverlayManager first — flush that tick before asserting on it.
-const flushTimers = () => act(() => new Promise((resolve) => setTimeout(resolve, 0)));
+// activateBackgroundHiding defers its scan by two macrotask ticks so an already-open nested
+// Popper — inside this dialog or a later-mounting nested one — has time to register with
+// OverlayManager first, regardless of which order those registrations queue in.
+const flushTimers = () => act(() => new Promise((resolve) => setTimeout(() => setTimeout(resolve, 0), 0)));
 
 const FunctionValue = jest.fn();
 const onClose = jest.fn();
@@ -991,6 +992,14 @@ describe('Modal hides background from screen readers', () => {
     return appRoot;
   };
 
+  // `render()`'s own queries resolve against the whole `document.body` (Modal portals
+  // outside each call's own container), and `data-test="DesignSystem-Modal"` isn't unique
+  // per instance — so with more than one modal mounted, disambiguate by heading text.
+  const findModalByHeading = (heading: string): HTMLElement =>
+    Array.from(document.querySelectorAll<HTMLElement>('[data-test="DesignSystem-Modal"]')).find((dialog) =>
+      dialog.textContent?.includes(heading)
+    )!;
+
   it('keeps an already-open nested Popper (e.g. a controlled DatePicker) visible instead of hiding it as background', async () => {
     const appRoot = appendAppRoot();
 
@@ -1058,7 +1067,7 @@ describe('Modal hides background from screen readers', () => {
     appRoot.remove();
   });
 
-  it('keeps the background hidden while a second modal is still open (reference counted)', async () => {
+  it('keeps the background hidden while a second modal is still open (reference counted), and hides the underlying dialog itself while it is covered', async () => {
     const appRoot = appendAppRoot();
 
     const { rerender: rerenderFirst } = render(
@@ -1068,6 +1077,8 @@ describe('Modal hides background from screen readers', () => {
     );
     await flushRAF();
 
+    const firstDialog = findModalByHeading('First');
+
     const { rerender: rerenderSecond } = render(
       <Modal open={true} onClose={jest.fn()} headerOptions={{ heading: 'Second' }}>
         <Text>Second body</Text>
@@ -1076,6 +1087,24 @@ describe('Modal hides background from screen readers', () => {
     await flushRAF();
     await flushTimers();
 
+    const secondDialog = findModalByHeading('Second');
+
+    expect(appRoot.getAttribute('aria-hidden')).toBe('true');
+    // The first (now underlying) dialog must itself be hidden from screen readers while the
+    // second dialog is on top of it — both render inside the same `.Overlay-wrapper`, so
+    // hiding page-level siblings alone can't tell them apart.
+    expect(firstDialog.getAttribute('aria-hidden')).toBe('true');
+    expect(secondDialog.getAttribute('aria-hidden')).not.toBe('true');
+
+    rerenderSecond(
+      <Modal open={false} onClose={jest.fn()} headerOptions={{ heading: 'Second' }}>
+        <Text>Second body</Text>
+      </Modal>
+    );
+
+    // Second modal closed — first is topmost again and must be exposed; background stays
+    // hidden because the first modal is still open.
+    expect(firstDialog.getAttribute('aria-hidden')).toBeNull();
     expect(appRoot.getAttribute('aria-hidden')).toBe('true');
 
     rerenderFirst(
@@ -1084,16 +1113,51 @@ describe('Modal hides background from screen readers', () => {
       </Modal>
     );
 
-    // Second modal is still open — background must stay hidden.
-    expect(appRoot.getAttribute('aria-hidden')).toBe('true');
+    expect(appRoot.getAttribute('aria-hidden')).toBeNull();
 
-    rerenderSecond(
-      <Modal open={false} onClose={jest.fn()} headerOptions={{ heading: 'Second' }}>
-        <Text>Second body</Text>
+    appRoot.remove();
+  });
+
+  it("keeps a stacked (later-opened) dialog's own already-open nested Popper visible, and does not let the outer dialog's trap absorb it", async () => {
+    const appRoot = appendAppRoot();
+
+    render(
+      <Modal open={true} onClose={jest.fn()} headerOptions={{ heading: 'Outer' }} backdropClose={jest.fn()}>
+        <Text>Outer body</Text>
       </Modal>
     );
+    await flushRAF();
 
-    expect(appRoot.getAttribute('aria-hidden')).toBeNull();
+    render(
+      <Modal open={true} onClose={jest.fn()} headerOptions={{ heading: 'Inner' }} backdropClose={jest.fn()}>
+        <FakeInitiallyOpenPopper />
+        <Text>Inner body</Text>
+      </Modal>
+    );
+    await flushRAF();
+    await flushTimers();
+
+    const fakePopper = document.querySelector('[data-testid="fake-popper"]') as HTMLElement;
+    expect(fakePopper).toBeTruthy();
+    // The inner dialog's own already-open popper must stay exposed even though it mounted
+    // after the outer (first) dialog already claimed the page-background scan.
+    expect(fakePopper.getAttribute('aria-hidden')).not.toBe('true');
+    expect(appRoot.getAttribute('aria-hidden')).toBe('true');
+
+    // Tab from the popper's last control must wrap into the *inner* dialog's own close
+    // button, not get hijacked by the outer dialog's earlier-registered capture listener.
+    // getFocusableElements() only looks at *descendants* of a nested-overlay scope, so (as
+    // with a real Popper) the focus target is a child inside the popper, not the popper
+    // container itself.
+    const innerCloseButton = findModalByHeading('Inner').querySelector(
+      '[data-test="DesignSystem-Modal--CloseButton"]'
+    ) as HTMLElement;
+    const popperButton = document.createElement('button');
+    popperButton.textContent = 'Next month';
+    fakePopper.appendChild(popperButton);
+    popperButton.focus();
+    fireEvent.keyDown(document, { key: 'Tab' });
+    expect(document.activeElement).toBe(innerCloseButton);
 
     appRoot.remove();
   });

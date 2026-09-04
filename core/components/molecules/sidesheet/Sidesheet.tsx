@@ -218,7 +218,7 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
     // Keyboard focus trapping doesn't stop a screen reader's virtual/browse cursor, which
     // ignores tabindex and DOM focus — hide the rest of the page from assistive tech too
     // (aria-modal alone isn't honored consistently across browser/screen reader pairs).
-    activateBackgroundHiding(() => [this.element, ...getNestedOverlayElements(this.sidesheetRef.current, container)]);
+    activateBackgroundHiding(container, this.element);
   };
 
   deactivateFocusTrap = () => {
@@ -230,10 +230,10 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
 
     document.removeEventListener('keydown', this.onCloseHandler);
 
-    deactivateBackgroundHiding();
-
     const container = this.sidesheetContentRef.current;
+
     if (container) {
+      deactivateBackgroundHiding(container);
       container.removeAttribute('tabindex');
     }
 

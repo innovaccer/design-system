@@ -210,7 +210,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
     // Keyboard focus trapping doesn't stop a screen reader's virtual/browse cursor, which
     // ignores tabindex and DOM focus — hide the rest of the page from assistive tech too
     // (aria-modal alone isn't honored consistently across browser/screen reader pairs).
-    activateBackgroundHiding(() => [this.element, ...getNestedOverlayElements(this.modalRef.current, container)]);
+    activateBackgroundHiding(container, this.element);
   };
 
   deactivateFocusTrap = () => {
@@ -218,10 +218,10 @@ class Modal extends React.Component<ModalProps, ModalState> {
 
     document.removeEventListener('keydown', this.onCloseHandler);
 
-    deactivateBackgroundHiding();
-
     const container = this.modalContentRef.current;
+
     if (container) {
+      deactivateBackgroundHiding(container);
       container.removeAttribute('tabindex');
     }
 

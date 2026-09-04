@@ -171,9 +171,12 @@ const isOrContainsDialog = (element: Element): boolean =>
  * records them in open order — so the dialog's focus trap can be extended to include
  * them instead of losing focus to the trap when it reaches one.
  *
- * Excludes independent nested dialogs (a Modal or Sidesheet opened on top of this one) —
- * see {@link isOrContainsDialog} — since those own their own focus trap and must not be
- * absorbed into this one's.
+ * Stops at the first nested dialog (a Modal or Sidesheet opened on top of this one — see
+ * {@link isOrContainsDialog}) and excludes everything from that point on, not just the
+ * dialog itself: a popper the nested dialog opens (e.g. its own DatePicker) is registered
+ * with `OverlayManager` *after* that dialog too, so without stopping there it would also
+ * be picked up here and wrongly absorbed into *this* (outer) trap — whose capture-phase
+ * listener runs first and would hijack Tab away from the inner dialog's own trap.
  *
  * @param ownOverlayEl - The dialog's own element as registered with `OverlayManager`
  *   (e.g. `this.modalRef.current`), used to find overlays opened after it.
@@ -181,13 +184,16 @@ const isOrContainsDialog = (element: Element): boolean =>
  *   (unexpectedly) DOM descendants/ancestors of it.
  */
 export const getNestedOverlayElements = (ownOverlayEl: HTMLElement | null, container: HTMLElement): HTMLElement[] => {
-  return OverlayManager.getOverlaysAfter(ownOverlayEl as HTMLDivElement | null).filter(
-    (overlay) =>
-      overlay.isConnected &&
-      !isOrContainsDialog(overlay) &&
-      !container.contains(overlay) &&
-      !overlay.contains(container)
-  );
+  const nested: HTMLElement[] = [];
+
+  for (const overlay of OverlayManager.getOverlaysAfter(ownOverlayEl as HTMLDivElement | null)) {
+    if (isOrContainsDialog(overlay)) break;
+    if (!overlay.isConnected) continue;
+    if (container.contains(overlay) || overlay.contains(container)) continue;
+    nested.push(overlay);
+  }
+
+  return nested;
 };
 
 /**
@@ -280,50 +286,102 @@ export const hideBackgroundFromScreenReaders = (keepVisible: Element[]): (() => 
   };
 };
 
-let backgroundHideDepth = 0;
-let restoreBackgroundFromScreenReaders: (() => void) | null = null;
-let pendingActivation: { cancelled: boolean } | null = null;
+/**
+ * Ordered stack of currently-open dialog *content* elements (the one carrying
+ * `role="dialog"` — e.g. `this.modalContentRef.current`) that share the singleton portal
+ * returned by {@link getWrapperElement} (Modal/Sidesheet both render into it). Because they
+ * share that one `document.body` child, hiding background siblings of the portal (see
+ * {@link hideBackgroundFromScreenReaders}) can't by itself tell one stacked dialog's content
+ * apart from another's — per the WAI-ARIA dialog pattern, only the *topmost* dialog should
+ * stay exposed to a screen reader's browse cursor; every dialog underneath it must also be
+ * `aria-hidden` until it's topmost again.
+ */
+const dialogRootStack: HTMLElement[] = [];
+let restorePageBackground: (() => void) | null = null;
 
 /**
- * Reference-counted wrapper around {@link hideBackgroundFromScreenReaders} for dialogs that
- * share the same portal root (Modal/Sidesheet both render into the singleton returned by
- * {@link getWrapperElement}). The first dialog to open hides the background; dialogs opened
- * while one is already active are no-ops (the background is already hidden); the background
- * is restored only once the last open dialog calls {@link deactivateBackgroundHiding}.
+ * All currently-open Popper-portaled overlays (Dropdown/DatePicker/Popover, ...) anywhere
+ * in the `OverlayManager` stack, regardless of which dialog opened them. Used to build the
+ * page-level "keep visible" set for {@link activateBackgroundHiding}: every one of them
+ * shares the same `document.body`-level portal as the dialogs' own wrapper and must stay
+ * exposed no matter how many dialogs are stacked or which one owns it.
  *
- * @param getVisibleElements - Lazily computes the elements to keep visible. A Popper
- *   (Dropdown/DatePicker/Popover) that's *already open* on the dialog's first render mounts
- *   its `document.body` portal, as a child, before the dialog's own `componentDidMount` runs
- *   — but registers with `OverlayManager` via a `setTimeout(0)` (see
- *   `PopperWrapper.scheduleOverlayAdd`), queued *before* the one below since children mount
- *   before parents. Deferring this scan the same way means that registration has landed by
- *   the time `getVisibleElements` (typically built with {@link getNestedOverlayElements})
- *   runs, so such a popper is correctly kept visible instead of being hidden as background
- *   for the dialog's entire lifetime.
+ * Unlike {@link getNestedOverlayElements} — which stops at the next dialog boundary to
+ * scope one *specific* dialog's own focus trap — this deliberately keeps scanning past
+ * dialog boundaries: dialog elements themselves are excluded, but a nested dialog's own
+ * poppers must still be included.
  */
-export const activateBackgroundHiding = (getVisibleElements: () => Element[]): void => {
-  backgroundHideDepth += 1;
-  if (backgroundHideDepth === 1) {
-    const activation = { cancelled: false };
-    pendingActivation = activation;
+const getAllOpenPopperOverlays = (): HTMLElement[] =>
+  OverlayManager.overlays.filter((overlay) => overlay.isConnected && !isOrContainsDialog(overlay));
+
+/**
+ * Marks `dialogRoot` as the new topmost dialog: `aria-hidden`s whichever dialog was
+ * previously on top (if any), and — the first time the stack goes from empty to
+ * non-empty — hides the rest of the page too.
+ *
+ * No-op if `dialogRoot` is already the topmost entry, so a duplicate activation call for
+ * the same dialog can't push it twice or double-hide the previous top.
+ *
+ * @param dialogRoot - This dialog's own `role="dialog"` element.
+ * @param portalRoot - The shared portal root to keep visible (e.g. `this.element`, from
+ *   {@link getWrapperElement}).
+ */
+export const activateBackgroundHiding = (dialogRoot: HTMLElement, portalRoot: Element): void => {
+  if (dialogRootStack[dialogRootStack.length - 1] === dialogRoot) return;
+
+  const previousTop = dialogRootStack[dialogRootStack.length - 1];
+  if (previousTop) previousTop.setAttribute('aria-hidden', 'true');
+
+  // Undo a stale `aria-hidden` from a past cycle where this same dialog element got
+  // covered and then closed without being reopened in between — the element persists
+  // across opens/closes (only its content unmounts), so nothing else would clear it.
+  dialogRoot.removeAttribute('aria-hidden');
+  dialogRootStack.push(dialogRoot);
+
+  if (dialogRootStack.length === 1) {
+    // A Popper (Dropdown/DatePicker/Popover) that's already open on first render mounts its
+    // `document.body` portal, as a child, before registering with `OverlayManager` via its
+    // own `setTimeout(0)` (see `PopperWrapper.scheduleOverlayAdd`). Whether that registration
+    // is queued *before* or *after* this one depends on whether the popper sits inside *this*
+    // dialog (mounts first, so its timer is queued first) or a later-mounting nested dialog
+    // (mounts after this dialog's own componentDidMount already queued this timer, so its
+    // registration timer is queued after). A second deferred tick guarantees every such
+    // registration made during the same synchronous commit has landed either way, so the
+    // scan below never misses one and hides it as background for the dialog's whole lifetime.
     window.setTimeout(() => {
-      if (activation.cancelled) return;
-      restoreBackgroundFromScreenReaders = hideBackgroundFromScreenReaders(getVisibleElements());
+      window.setTimeout(() => {
+        // This dialog closed (and possibly another opened) before the deferral elapsed;
+        // whichever dialog is now at the bottom of the stack owns the page-background scan.
+        if (dialogRootStack[0] !== dialogRoot) return;
+        restorePageBackground = hideBackgroundFromScreenReaders([portalRoot, ...getAllOpenPopperOverlays()]);
+      }, 0);
     }, 0);
   }
 };
 
-export const deactivateBackgroundHiding = (): void => {
-  backgroundHideDepth = Math.max(0, backgroundHideDepth - 1);
-  if (backgroundHideDepth === 0) {
-    if (pendingActivation) {
-      pendingActivation.cancelled = true;
-      pendingActivation = null;
-    }
-    if (restoreBackgroundFromScreenReaders) {
-      restoreBackgroundFromScreenReaders();
-      restoreBackgroundFromScreenReaders = null;
-    }
+/**
+ * Reverses {@link activateBackgroundHiding} for `dialogRoot`: removes it from the stack
+ * and exposes whichever dialog is now topmost, or the page background if none remain.
+ *
+ * Idempotent — a dialog whose `open` prop flips to `false` can call this once from
+ * `componentDidUpdate` and again from `componentWillUnmount` if it unmounts mid
+ * close-animation (`state.open` hasn't settled to `false` yet); the second call finds
+ * `dialogRoot` no longer in the stack and does nothing.
+ */
+export const deactivateBackgroundHiding = (dialogRoot: HTMLElement): void => {
+  const index = dialogRootStack.indexOf(dialogRoot);
+  if (index === -1) return;
+  dialogRootStack.splice(index, 1);
+
+  const newTop = dialogRootStack[dialogRootStack.length - 1];
+  if (newTop) {
+    newTop.removeAttribute('aria-hidden');
+    return;
+  }
+
+  if (restorePageBackground) {
+    restorePageBackground();
+    restorePageBackground = null;
   }
 };
 
