@@ -13,6 +13,9 @@ import {
   closeOnEscapeKeypress,
   handleFocusTrapKeyDown,
   restoreFocusToElementIfConnected,
+  getNestedOverlayElements,
+  activateBackgroundHiding,
+  deactivateBackgroundHiding,
 } from '@/utils/overlayHelper';
 import OverlayManager from '@/utils/OverlayManager';
 import { FooterOptions } from '@/common.type';
@@ -175,7 +178,8 @@ class Modal extends React.Component<ModalProps, ModalState> {
   onFocusTrapKeyDown = (event: KeyboardEvent) => {
     const container = this.modalContentRef.current;
     if (!container) return;
-    handleFocusTrapKeyDown(event, container, this.staticFocusTarget);
+    const nestedOverlays = getNestedOverlayElements(this.modalRef.current, container);
+    handleFocusTrapKeyDown(event, container, this.staticFocusTarget, nestedOverlays);
   };
 
   activateFocusTrap = () => {
@@ -202,6 +206,11 @@ class Modal extends React.Component<ModalProps, ModalState> {
 
     document.addEventListener('keydown', this.onFocusTrapKeyDown, true);
     document.addEventListener('keydown', this.onCloseHandler);
+
+    // Keyboard focus trapping doesn't stop a screen reader's virtual/browse cursor, which
+    // ignores tabindex and DOM focus — hide the rest of the page from assistive tech too
+    // (aria-modal alone isn't honored consistently across browser/screen reader pairs).
+    activateBackgroundHiding(container, this.element);
   };
 
   deactivateFocusTrap = () => {
@@ -210,7 +219,9 @@ class Modal extends React.Component<ModalProps, ModalState> {
     document.removeEventListener('keydown', this.onCloseHandler);
 
     const container = this.modalContentRef.current;
+
     if (container) {
+      deactivateBackgroundHiding(container);
       container.removeAttribute('tabindex');
     }
 
