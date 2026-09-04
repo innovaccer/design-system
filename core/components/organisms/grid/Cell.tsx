@@ -190,13 +190,22 @@ const HeaderCell = (props: HeaderCellProps) => {
   };
 
   const RESIZE_STEP = 10;
+  // schema.minWidth/maxWidth may be a number or a px/percent string (React.ReactText); pull out the numeric px value.
+  const parseBound = (value?: React.ReactText): number | undefined => {
+    if (typeof value === 'number') return value;
+    if (typeof value !== 'string') return undefined;
+    const parsed = parseFloat(value);
+    return Number.isNaN(parsed) ? undefined : parsed;
+  };
   const resizeByStep = (direction: 1 | -1) => {
     // The columnheader's inline `width` is the configured/basis width; its bounding rect can be
     // larger when `flex-grow` stretches the cell to fill unused grid space, so read the style directly.
     const basisWidth = parseFloat(el.current?.parentElement?.style.width || '') || 0;
-    const schemaMin = typeof schema.minWidth === 'number' ? schema.minWidth : undefined;
-    const effectiveMinWidth = schemaMin || getCellSize(schema.cellType || 'DEFAULT').minWidth || 96;
-    updateColumnSchema(name, { width: Math.max(basisWidth + direction * RESIZE_STEP, effectiveMinWidth) });
+    const cellSize = getCellSize(schema.cellType || 'DEFAULT');
+    const effectiveMinWidth = parseBound(schema.minWidth) || cellSize.minWidth || 96;
+    const effectiveMaxWidth = parseBound(schema.maxWidth) || cellSize.maxWidth || 800;
+    const nextWidth = Math.min(Math.max(basisWidth + direction * RESIZE_STEP, effectiveMinWidth), effectiveMaxWidth);
+    updateColumnSchema(name, { width: nextWidth });
   };
 
   return (
