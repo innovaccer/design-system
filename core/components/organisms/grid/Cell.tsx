@@ -113,7 +113,12 @@ const HeaderCell = (props: HeaderCellProps) => {
   let options: DropdownProps['options'] = [...pinOptions, ...hideOptions];
   if (sorting) options = [...sortOptions, ...options];
   if (schema.resizable) {
-    options = [...options, { label: 'Fit to content', value: 'fitToContent', icon: 'aspect_ratio' }];
+    options = [
+      ...options,
+      { label: 'Fit to content', value: 'fitToContent', icon: 'aspect_ratio' },
+      { label: 'Increase width', value: 'increaseWidth', icon: 'add' },
+      { label: 'Decrease width', value: 'decreaseWidth', icon: 'remove' },
+    ];
   }
 
   const classes = classNames({
@@ -182,6 +187,14 @@ const HeaderCell = (props: HeaderCellProps) => {
       const effectiveMinWidth = schemaMin || getCellSize(schema.cellType || 'DEFAULT').minWidth || 96;
       updateColumnSchema(name, { width: Math.max(maxWidth, effectiveMinWidth) });
     }
+  };
+
+  const RESIZE_STEP = 10;
+  const resizeByStep = (direction: 1 | -1) => {
+    const currentWidth = el.current?.parentElement?.getBoundingClientRect().width ?? 0;
+    const schemaMin = typeof schema.minWidth === 'number' ? schema.minWidth : undefined;
+    const effectiveMinWidth = schemaMin || getCellSize(schema.cellType || 'DEFAULT').minWidth || 96;
+    updateColumnSchema(name, { width: Math.max(currentWidth + direction * RESIZE_STEP, effectiveMinWidth) });
   };
 
   return (
@@ -278,6 +291,10 @@ const HeaderCell = (props: HeaderCellProps) => {
                     autoFitColumn();
                     return;
                   }
+                  if (selected === 'increaseWidth' || selected === 'decreaseWidth') {
+                    resizeByStep(selected === 'increaseWidth' ? 1 : -1);
+                    return;
+                  }
                   onMenuChange(name, selected);
                 }}
                 minWidth={176}
@@ -295,14 +312,9 @@ const HeaderCell = (props: HeaderCellProps) => {
           }}
           onDoubleClick={autoFitColumn}
           onKeyDown={(event: React.KeyboardEvent<HTMLSpanElement>) => {
-            const RESIZE_STEP = 10;
             if (!event.shiftKey && (event.key === 'ArrowRight' || event.key === 'ArrowLeft')) {
               event.preventDefault();
-              const currentWidth = el.current?.parentElement?.getBoundingClientRect().width ?? 0;
-              const delta = event.key === 'ArrowRight' ? RESIZE_STEP : -RESIZE_STEP;
-              const schemaMin = typeof schema.minWidth === 'number' ? schema.minWidth : undefined;
-              const effectiveMinWidth = schemaMin || getCellSize(schema.cellType || 'DEFAULT').minWidth || 96;
-              updateColumnSchema(name, { width: Math.max(currentWidth + delta, effectiveMinWidth) });
+              resizeByStep(event.key === 'ArrowRight' ? 1 : -1);
             } else if (event.key === 'Enter') {
               event.preventDefault();
               autoFitColumn();
