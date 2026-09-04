@@ -4,6 +4,7 @@ import { axe } from '@/utils/testAxe';
 import { ModalProps as Props } from '@/index.type';
 import { ModalHeader, Modal, ModalBody, ModalFooter, Button, Text } from '@/index';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
+import OverlayManager from '@/utils/OverlayManager';
 
 const flushRAF = () => act(() => new Promise((resolve) => requestAnimationFrame(() => resolve())));
 
@@ -818,6 +819,191 @@ describe('Modal focus trap', () => {
     document.dispatchEvent(shiftTabEvent);
 
     expect(preventDefaultSpy).not.toHaveBeenCalled();
+  });
+
+  // A Dropdown/DatePicker calendar opened from inside the Modal renders its content into
+  // `document.body` via a portal (see PopperWrapper), so it's never a DOM descendant of the
+  // dialog even though it's visually part of it. Simulate that by registering a plain overlay
+  // element with OverlayManager after the modal — the trap must widen to include it instead of
+  // losing focus to the browser's native tab order (the reported bug).
+  it('Tab from the last focusable in an open nested overlay (e.g. calendar) wraps back into the modal instead of escaping', async () => {
+    const { getByTestId } = render(
+      <Modal open={true} onClose={jest.fn()} headerOptions={{ heading: 'Heading' }}>
+        <Text>Body</Text>
+      </Modal>
+    );
+
+    await flushRAF();
+
+    const nestedOverlay = document.createElement('div');
+    const nestedButton = document.createElement('button');
+    nestedButton.textContent = 'Next month';
+    nestedOverlay.appendChild(nestedButton);
+    document.body.appendChild(nestedOverlay);
+    OverlayManager.add(nestedOverlay);
+
+    nestedButton.focus();
+    expect(document.activeElement).toBe(nestedButton);
+
+    fireEvent.keyDown(document, { key: 'Tab' });
+
+    const closeButton = getByTestId('DesignSystem-Modal--CloseButton');
+    expect(document.activeElement).toBe(closeButton);
+
+    OverlayManager.remove(nestedOverlay);
+    nestedOverlay.remove();
+  });
+
+  it("Shift+Tab from the modal's first focusable wraps into an open nested overlay (e.g. calendar) instead of escaping", async () => {
+    const { getByTestId } = render(
+      <Modal open={true} onClose={jest.fn()} headerOptions={{ heading: 'Heading' }}>
+        <Text>Body</Text>
+      </Modal>
+    );
+
+    await flushRAF();
+
+    const nestedOverlay = document.createElement('div');
+    const nestedButton = document.createElement('button');
+    nestedButton.textContent = 'Next month';
+    nestedOverlay.appendChild(nestedButton);
+    document.body.appendChild(nestedOverlay);
+    OverlayManager.add(nestedOverlay);
+
+    const closeButton = getByTestId('DesignSystem-Modal--CloseButton');
+    closeButton.focus();
+    expect(document.activeElement).toBe(closeButton);
+
+    fireEvent.keyDown(document, { key: 'Tab', shiftKey: true });
+
+    expect(document.activeElement).toBe(nestedButton);
+
+    OverlayManager.remove(nestedOverlay);
+    nestedOverlay.remove();
+  });
+
+  it('does not extend the trap to an unrelated overlay that was already open before the modal', async () => {
+    // An overlay registered *before* the modal (lower in the OverlayManager stack) was not
+    // opened from within it, so it must stay out of the modal's trap boundary.
+    const priorOverlay = document.createElement('div');
+    const priorButton = document.createElement('button');
+    priorOverlay.appendChild(priorButton);
+    document.body.appendChild(priorOverlay);
+    OverlayManager.add(priorOverlay);
+
+    const { getByTestId } = render(
+      <Modal open={true} onClose={jest.fn()} headerOptions={{ heading: 'Heading' }}>
+        <Text>Body</Text>
+      </Modal>
+    );
+
+    await flushRAF();
+
+    const closeButton = getByTestId('DesignSystem-Modal--CloseButton');
+    closeButton.focus();
+
+    fireEvent.keyDown(document, { key: 'Tab', shiftKey: true });
+
+    // Wraps to itself (the only focusable in the modal), not to the unrelated prior overlay.
+    expect(document.activeElement).toBe(closeButton);
+
+    OverlayManager.remove(priorOverlay);
+    priorOverlay.remove();
+  });
+});
+
+describe('Modal hides background from screen readers', () => {
+  // Simulates the app's root node: a `<body>` sibling that exists outside the Modal's own
+  // portal (`.Overlay-wrapper`). Screen reader browse-mode/virtual-cursor navigation ignores
+  // tabindex and DOM focus, so hiding it is a separate concern from the Tab-key focus trap.
+  const appendAppRoot = () => {
+    const appRoot = document.createElement('div');
+    appRoot.textContent = 'Rest of the app';
+    document.body.appendChild(appRoot);
+    return appRoot;
+  };
+
+  it('hides pre-existing body siblings from screen readers while open, and restores them on close', async () => {
+    const appRoot = appendAppRoot();
+
+    const { rerender } = render(
+      <Modal open={true} onClose={jest.fn()} headerOptions={{ heading: 'Heading' }}>
+        <Text>Body</Text>
+      </Modal>
+    );
+    await flushRAF();
+
+    expect(appRoot.getAttribute('aria-hidden')).toBe('true');
+
+    rerender(
+      <Modal open={false} onClose={jest.fn()} headerOptions={{ heading: 'Heading' }}>
+        <Text>Body</Text>
+      </Modal>
+    );
+
+    expect(appRoot.getAttribute('aria-hidden')).toBeNull();
+
+    appRoot.remove();
+  });
+
+  it('does not hide its own portaled content (the dialog stays exposed to screen readers)', async () => {
+    const appRoot = appendAppRoot();
+
+    const { getByTestId } = render(
+      <Modal open={true} onClose={jest.fn()} headerOptions={{ heading: 'Heading' }}>
+        <Text>Body</Text>
+      </Modal>
+    );
+    await flushRAF();
+
+    const modalContainer = getByTestId('DesignSystem-Modal');
+    // Walk up to the `.Overlay-wrapper` portal root and confirm nothing on that path was hidden.
+    let node: HTMLElement | null = modalContainer;
+    while (node && node !== document.body) {
+      expect(node.getAttribute('aria-hidden')).not.toBe('true');
+      node = node.parentElement;
+    }
+
+    appRoot.remove();
+  });
+
+  it('keeps the background hidden while a second modal is still open (reference counted)', async () => {
+    const appRoot = appendAppRoot();
+
+    const { rerender: rerenderFirst } = render(
+      <Modal open={true} onClose={jest.fn()} headerOptions={{ heading: 'First' }}>
+        <Text>First body</Text>
+      </Modal>
+    );
+    await flushRAF();
+
+    const { rerender: rerenderSecond } = render(
+      <Modal open={true} onClose={jest.fn()} headerOptions={{ heading: 'Second' }}>
+        <Text>Second body</Text>
+      </Modal>
+    );
+    await flushRAF();
+
+    expect(appRoot.getAttribute('aria-hidden')).toBe('true');
+
+    rerenderFirst(
+      <Modal open={false} onClose={jest.fn()} headerOptions={{ heading: 'First' }}>
+        <Text>First body</Text>
+      </Modal>
+    );
+
+    // Second modal is still open — background must stay hidden.
+    expect(appRoot.getAttribute('aria-hidden')).toBe('true');
+
+    rerenderSecond(
+      <Modal open={false} onClose={jest.fn()} headerOptions={{ heading: 'Second' }}>
+        <Text>Second body</Text>
+      </Modal>
+    );
+
+    expect(appRoot.getAttribute('aria-hidden')).toBeNull();
+
+    appRoot.remove();
   });
 });
 

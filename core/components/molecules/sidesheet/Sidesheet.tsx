@@ -13,6 +13,9 @@ import {
   closeOnEscapeKeypress,
   handleFocusTrapKeyDown,
   restoreFocusToElementIfConnected,
+  getNestedOverlayElements,
+  activateBackgroundHiding,
+  deactivateBackgroundHiding,
 } from '@/utils/overlayHelper';
 import OverlayManager from '@/utils/OverlayManager';
 import { FooterOptions } from '@/common.type';
@@ -169,7 +172,8 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
   onFocusTrapKeyDown = (event: KeyboardEvent) => {
     const container = this.sidesheetContentRef.current;
     if (!container) return;
-    handleFocusTrapKeyDown(event, container, this.staticFocusTarget);
+    const nestedOverlays = getNestedOverlayElements(this.sidesheetRef.current, container);
+    handleFocusTrapKeyDown(event, container, this.staticFocusTarget, nestedOverlays);
   };
 
   focusOnOpen = () => {
@@ -210,6 +214,11 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
 
     document.addEventListener('keydown', this.onFocusTrapKeyDown, true);
     document.addEventListener('keydown', this.onCloseHandler);
+
+    // Keyboard focus trapping doesn't stop a screen reader's virtual/browse cursor, which
+    // ignores tabindex and DOM focus — hide the rest of the page from assistive tech too
+    // (aria-modal alone isn't honored consistently across browser/screen reader pairs).
+    activateBackgroundHiding([this.element]);
   };
 
   deactivateFocusTrap = () => {
@@ -220,6 +229,8 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
     document.removeEventListener('keydown', this.onFocusTrapKeyDown, true);
 
     document.removeEventListener('keydown', this.onCloseHandler);
+
+    deactivateBackgroundHiding();
 
     const container = this.sidesheetContentRef.current;
     if (container) {

@@ -1,3 +1,5 @@
+import OverlayManager from './OverlayManager';
+
 export const getWrapperElement = (): Element => {
   let element = document.querySelector('.Overlay-wrapper');
   if (element === null) {
@@ -153,25 +155,52 @@ export const getAllFocusableElements = (container: HTMLElement, roleHint?: strin
 };
 
 /**
+ * Poppers (Dropdown menus, DatePicker calendars, ...) render their content into
+ * `document.body` via a portal, so it is never a DOM descendant of the dialog that
+ * spawned it even though it's visually layered on top of it. This returns such
+ * currently-open portaled overlays — found via {@link OverlayManager}'s stack, which
+ * records them in open order — so the dialog's focus trap can be extended to include
+ * them instead of losing focus to the trap when it reaches one.
+ *
+ * @param ownOverlayEl - The dialog's own element as registered with `OverlayManager`
+ *   (e.g. `this.modalRef.current`), used to find overlays opened after it.
+ * @param container - The dialog's content container; used to exclude overlays that are
+ *   (unexpectedly) DOM descendants/ancestors of it, and independent nested dialogs.
+ */
+export const getNestedOverlayElements = (ownOverlayEl: HTMLElement | null, container: HTMLElement): HTMLElement[] => {
+  return OverlayManager.getOverlaysAfter(ownOverlayEl as HTMLDivElement | null).filter(
+    (overlay) =>
+      overlay.isConnected &&
+      overlay.getAttribute('role') !== 'dialog' &&
+      !container.contains(overlay) &&
+      !overlay.contains(container)
+  );
+};
+
+/**
  * Handles Tab/Shift+Tab to trap focus within the container.
  *
  * @param staticFocusTarget - Optional non-tabbable element (tabindex="-1") that received
  *   focus on overlay open (e.g. the dialog heading). It is not in the tabbable focusable
  *   list, so without this parameter Shift+Tab from it would escape the trap.
+ * @param nestedOverlays - Currently-open portaled overlays (see {@link getNestedOverlayElements})
+ *   that should be treated as part of the trapped region, in the order they were opened.
  *
  * Returns true if the event was handled (focus was redirected or prevented).
  */
 export const handleFocusTrapKeyDown = (
   event: KeyboardEvent,
   container: HTMLElement,
-  staticFocusTarget?: HTMLElement | null
+  staticFocusTarget?: HTMLElement | null,
+  nestedOverlays: HTMLElement[] = []
 ): boolean => {
   if (event.key !== 'Tab') return false;
 
-  const focusable = getFocusableElements(container);
+  const scopes = [container, ...nestedOverlays];
+  const focusable = scopes.reduce<HTMLElement[]>((acc, scope) => acc.concat(getFocusableElements(scope)), []);
   const activeElement = document.activeElement as HTMLElement | null;
 
-  if (!activeElement || !container.contains(activeElement)) {
+  if (!activeElement || !scopes.some((scope) => scope.contains(activeElement))) {
     return false;
   }
 
@@ -203,6 +232,64 @@ export const handleFocusTrapKeyDown = (
   }
 
   return false;
+};
+
+const NON_CONTENT_TAGS = new Set(['SCRIPT', 'STYLE']);
+
+/**
+ * Sets `aria-hidden="true"` on every `<body>` child other than `keepVisible`, so a screen
+ * reader's virtual/browse cursor can't wander into the rest of the page while a dialog is
+ * open. This is a distinct problem from keyboard focus trapping (arrow-key browse-mode
+ * navigation ignores tabindex and DOM focus entirely) and is why `aria-modal` alone isn't
+ * sufficient in every screen reader/browser combination — see WAI-ARIA APG dialog pattern.
+ *
+ * Skips `<script>`/`<style>` tags (never exposed to assistive tech regardless of
+ * `aria-hidden`) and anything already `aria-hidden="true"`, so a dialog opened while
+ * another is already active doesn't clobber the outer one's state.
+ *
+ * Returns a restore function that removes `aria-hidden` from exactly the elements this call
+ * added it to.
+ */
+export const hideBackgroundFromScreenReaders = (keepVisible: Element[]): (() => void) => {
+  const hidden: Element[] = [];
+
+  Array.from(document.body.children).forEach((child) => {
+    if (NON_CONTENT_TAGS.has(child.tagName)) return;
+    if (keepVisible.includes(child)) return;
+    if (child.getAttribute('aria-hidden') === 'true') return;
+
+    child.setAttribute('aria-hidden', 'true');
+    hidden.push(child);
+  });
+
+  return () => {
+    hidden.forEach((child) => child.removeAttribute('aria-hidden'));
+  };
+};
+
+let backgroundHideDepth = 0;
+let restoreBackgroundFromScreenReaders: (() => void) | null = null;
+
+/**
+ * Reference-counted wrapper around {@link hideBackgroundFromScreenReaders} for dialogs that
+ * share the same portal root (Modal/Sidesheet both render into the singleton returned by
+ * {@link getWrapperElement}). The first dialog to open hides the background; dialogs opened
+ * while one is already active are no-ops (the background is already hidden); the background
+ * is restored only once the last open dialog calls {@link deactivateBackgroundHiding}.
+ */
+export const activateBackgroundHiding = (keepVisible: Element[]): void => {
+  backgroundHideDepth += 1;
+  if (backgroundHideDepth === 1) {
+    restoreBackgroundFromScreenReaders = hideBackgroundFromScreenReaders(keepVisible);
+  }
+};
+
+export const deactivateBackgroundHiding = (): void => {
+  backgroundHideDepth = Math.max(0, backgroundHideDepth - 1);
+  if (backgroundHideDepth === 0 && restoreBackgroundFromScreenReaders) {
+    restoreBackgroundFromScreenReaders();
+    restoreBackgroundFromScreenReaders = null;
+  }
 };
 
 /**

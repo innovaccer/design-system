@@ -415,6 +415,43 @@ describe('Sidesheet component with prop: open', () => {
   });
 });
 
+describe('Sidesheet hides background from screen readers', () => {
+  // Simulates the app's root node: a `<body>` sibling that exists outside the Sidesheet's own
+  // portal (`.Overlay-wrapper`). Screen reader browse-mode/virtual-cursor navigation ignores
+  // tabindex and DOM focus, so hiding it is a separate concern from the Tab-key focus trap.
+  const appendAppRoot = () => {
+    const appRoot = document.createElement('div');
+    appRoot.textContent = 'Rest of the app';
+    document.body.appendChild(appRoot);
+    return appRoot;
+  };
+
+  it('hides pre-existing body siblings from screen readers while open, and restores them on close', async () => {
+    jest.useRealTimers();
+    const flushRAF = () => act(() => new Promise((resolve) => requestAnimationFrame(() => resolve())));
+    const appRoot = appendAppRoot();
+
+    const { rerender } = render(
+      <Sidesheet dimension="large" headerOptions={headerOptions} open={true} footer={footer} onClose={jest.fn()}>
+        <Text>Body</Text>
+      </Sidesheet>
+    );
+    await flushRAF();
+
+    expect(appRoot.getAttribute('aria-hidden')).toBe('true');
+
+    rerender(
+      <Sidesheet dimension="large" headerOptions={headerOptions} open={false} footer={footer} onClose={jest.fn()}>
+        <Text>Body</Text>
+      </Sidesheet>
+    );
+
+    expect(appRoot.getAttribute('aria-hidden')).toBeNull();
+
+    appRoot.remove();
+  });
+});
+
 describe('Sidesheet component a11y', () => {
   it('has no detectable a11y violations', async () => {
     render(<Sidesheet dimension="regular" headerOptions={{ heading: 'Heading' }} open={true} />);
