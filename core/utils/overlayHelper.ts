@@ -155,6 +155,15 @@ export const getAllFocusableElements = (container: HTMLElement, roleHint?: strin
 };
 
 /**
+ * True if `element` is a dialog, or has one nested inside it. Modal/Sidesheet register
+ * their *outer* wrapper with `OverlayManager` (the element carrying `role="dialog"` is a
+ * descendant — always for Sidesheet, and for Modal whenever `backdropClose` is used), so
+ * checking `element`'s own `role` attribute alone misses those cases.
+ */
+const isOrContainsDialog = (element: Element): boolean =>
+  element.getAttribute('role') === 'dialog' || element.querySelector('[role="dialog"]') !== null;
+
+/**
  * Poppers (Dropdown menus, DatePicker calendars, ...) render their content into
  * `document.body` via a portal, so it is never a DOM descendant of the dialog that
  * spawned it even though it's visually layered on top of it. This returns such
@@ -162,16 +171,20 @@ export const getAllFocusableElements = (container: HTMLElement, roleHint?: strin
  * records them in open order — so the dialog's focus trap can be extended to include
  * them instead of losing focus to the trap when it reaches one.
  *
+ * Excludes independent nested dialogs (a Modal or Sidesheet opened on top of this one) —
+ * see {@link isOrContainsDialog} — since those own their own focus trap and must not be
+ * absorbed into this one's.
+ *
  * @param ownOverlayEl - The dialog's own element as registered with `OverlayManager`
  *   (e.g. `this.modalRef.current`), used to find overlays opened after it.
  * @param container - The dialog's content container; used to exclude overlays that are
- *   (unexpectedly) DOM descendants/ancestors of it, and independent nested dialogs.
+ *   (unexpectedly) DOM descendants/ancestors of it.
  */
 export const getNestedOverlayElements = (ownOverlayEl: HTMLElement | null, container: HTMLElement): HTMLElement[] => {
   return OverlayManager.getOverlaysAfter(ownOverlayEl as HTMLDivElement | null).filter(
     (overlay) =>
       overlay.isConnected &&
-      overlay.getAttribute('role') !== 'dialog' &&
+      !isOrContainsDialog(overlay) &&
       !container.contains(overlay) &&
       !overlay.contains(container)
   );
@@ -269,6 +282,7 @@ export const hideBackgroundFromScreenReaders = (keepVisible: Element[]): (() => 
 
 let backgroundHideDepth = 0;
 let restoreBackgroundFromScreenReaders: (() => void) | null = null;
+let pendingActivation: { cancelled: boolean } | null = null;
 
 /**
  * Reference-counted wrapper around {@link hideBackgroundFromScreenReaders} for dialogs that
@@ -276,19 +290,40 @@ let restoreBackgroundFromScreenReaders: (() => void) | null = null;
  * {@link getWrapperElement}). The first dialog to open hides the background; dialogs opened
  * while one is already active are no-ops (the background is already hidden); the background
  * is restored only once the last open dialog calls {@link deactivateBackgroundHiding}.
+ *
+ * @param getVisibleElements - Lazily computes the elements to keep visible. A Popper
+ *   (Dropdown/DatePicker/Popover) that's *already open* on the dialog's first render mounts
+ *   its `document.body` portal, as a child, before the dialog's own `componentDidMount` runs
+ *   — but registers with `OverlayManager` via a `setTimeout(0)` (see
+ *   `PopperWrapper.scheduleOverlayAdd`), queued *before* the one below since children mount
+ *   before parents. Deferring this scan the same way means that registration has landed by
+ *   the time `getVisibleElements` (typically built with {@link getNestedOverlayElements})
+ *   runs, so such a popper is correctly kept visible instead of being hidden as background
+ *   for the dialog's entire lifetime.
  */
-export const activateBackgroundHiding = (keepVisible: Element[]): void => {
+export const activateBackgroundHiding = (getVisibleElements: () => Element[]): void => {
   backgroundHideDepth += 1;
   if (backgroundHideDepth === 1) {
-    restoreBackgroundFromScreenReaders = hideBackgroundFromScreenReaders(keepVisible);
+    const activation = { cancelled: false };
+    pendingActivation = activation;
+    window.setTimeout(() => {
+      if (activation.cancelled) return;
+      restoreBackgroundFromScreenReaders = hideBackgroundFromScreenReaders(getVisibleElements());
+    }, 0);
   }
 };
 
 export const deactivateBackgroundHiding = (): void => {
   backgroundHideDepth = Math.max(0, backgroundHideDepth - 1);
-  if (backgroundHideDepth === 0 && restoreBackgroundFromScreenReaders) {
-    restoreBackgroundFromScreenReaders();
-    restoreBackgroundFromScreenReaders = null;
+  if (backgroundHideDepth === 0) {
+    if (pendingActivation) {
+      pendingActivation.cancelled = true;
+      pendingActivation = null;
+    }
+    if (restoreBackgroundFromScreenReaders) {
+      restoreBackgroundFromScreenReaders();
+      restoreBackgroundFromScreenReaders = null;
+    }
   }
 };
 

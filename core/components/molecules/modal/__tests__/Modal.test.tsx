@@ -7,6 +7,9 @@ import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/u
 import OverlayManager from '@/utils/OverlayManager';
 
 const flushRAF = () => act(() => new Promise((resolve) => requestAnimationFrame(() => resolve())));
+// activateBackgroundHiding defers its scan by a macrotask so an already-open nested Popper
+// has time to register with OverlayManager first — flush that tick before asserting on it.
+const flushTimers = () => act(() => new Promise((resolve) => setTimeout(resolve, 0)));
 
 const FunctionValue = jest.fn();
 const onClose = jest.fn();
@@ -882,6 +885,42 @@ describe('Modal focus trap', () => {
     nestedOverlay.remove();
   });
 
+  it('does not absorb a nested dialog into its trap even when the dialog registered its outer wrapper (Sidesheet/backdropClose-Modal pattern)', async () => {
+    // Sidesheet (always) and a backdropClose Modal register their *outer* wrapper with
+    // OverlayManager, not the descendant carrying role="dialog" — so detecting "is this a
+    // nested dialog to exclude" must look for a dialog *inside* the overlay, not just check
+    // the overlay element's own role attribute.
+    const { getByTestId } = render(
+      <Modal open={true} onClose={jest.fn()} headerOptions={{ heading: 'Heading' }}>
+        <Text>Body</Text>
+      </Modal>
+    );
+
+    await flushRAF();
+
+    const nestedDialogWrapper = document.createElement('div');
+    const nestedDialog = document.createElement('div');
+    nestedDialog.setAttribute('role', 'dialog');
+    const nestedDialogButton = document.createElement('button');
+    nestedDialogButton.textContent = 'Nested dialog button';
+    nestedDialog.appendChild(nestedDialogButton);
+    nestedDialogWrapper.appendChild(nestedDialog);
+    document.body.appendChild(nestedDialogWrapper);
+    OverlayManager.add(nestedDialogWrapper);
+
+    const closeButton = getByTestId('DesignSystem-Modal--CloseButton');
+    closeButton.focus();
+
+    fireEvent.keyDown(document, { key: 'Tab', shiftKey: true });
+
+    // Wraps to itself (the only focusable in this modal), not into the nested dialog —
+    // the nested dialog owns its own independent focus trap.
+    expect(document.activeElement).toBe(closeButton);
+
+    OverlayManager.remove(nestedDialogWrapper);
+    nestedDialogWrapper.remove();
+  });
+
   it('does not extend the trap to an unrelated overlay that was already open before the modal', async () => {
     // An overlay registered *before* the modal (lower in the OverlayManager stack) was not
     // opened from within it, so it must stay out of the modal's trap boundary.
@@ -912,6 +951,35 @@ describe('Modal focus trap', () => {
   });
 });
 
+// Mirrors PopperWrapper.scheduleOverlayAdd's exact timing: on mount, portals a node straight
+// into `document.body` (synchronous, like react-popper's appendToBody), then registers it with
+// OverlayManager one macrotask later. Standing in for a Dropdown/DatePicker/Popover that's
+// already open on the very first render.
+class FakeInitiallyOpenPopper extends React.Component {
+  el: HTMLDivElement | null = null;
+
+  componentDidMount() {
+    this.el = document.createElement('div');
+    this.el.setAttribute('data-testid', 'fake-popper');
+    document.body.appendChild(this.el);
+    window.setTimeout(() => {
+      if (this.el) OverlayManager.add(this.el);
+    }, 0);
+  }
+
+  componentWillUnmount() {
+    if (this.el) {
+      OverlayManager.remove(this.el);
+      this.el.remove();
+      this.el = null;
+    }
+  }
+
+  render() {
+    return null;
+  }
+}
+
 describe('Modal hides background from screen readers', () => {
   // Simulates the app's root node: a `<body>` sibling that exists outside the Modal's own
   // portal (`.Overlay-wrapper`). Screen reader browse-mode/virtual-cursor navigation ignores
@@ -923,6 +991,27 @@ describe('Modal hides background from screen readers', () => {
     return appRoot;
   };
 
+  it('keeps an already-open nested Popper (e.g. a controlled DatePicker) visible instead of hiding it as background', async () => {
+    const appRoot = appendAppRoot();
+
+    render(
+      <Modal open={true} onClose={jest.fn()} headerOptions={{ heading: 'Heading' }}>
+        <FakeInitiallyOpenPopper />
+        <Text>Body</Text>
+      </Modal>
+    );
+
+    await flushRAF();
+    await flushTimers();
+
+    const fakePopper = document.querySelector('[data-testid="fake-popper"]') as HTMLElement;
+    expect(fakePopper).toBeTruthy();
+    expect(fakePopper.getAttribute('aria-hidden')).not.toBe('true');
+    expect(appRoot.getAttribute('aria-hidden')).toBe('true');
+
+    appRoot.remove();
+  });
+
   it('hides pre-existing body siblings from screen readers while open, and restores them on close', async () => {
     const appRoot = appendAppRoot();
 
@@ -932,6 +1021,7 @@ describe('Modal hides background from screen readers', () => {
       </Modal>
     );
     await flushRAF();
+    await flushTimers();
 
     expect(appRoot.getAttribute('aria-hidden')).toBe('true');
 
@@ -955,6 +1045,7 @@ describe('Modal hides background from screen readers', () => {
       </Modal>
     );
     await flushRAF();
+    await flushTimers();
 
     const modalContainer = getByTestId('DesignSystem-Modal');
     // Walk up to the `.Overlay-wrapper` portal root and confirm nothing on that path was hidden.
@@ -983,6 +1074,7 @@ describe('Modal hides background from screen readers', () => {
       </Modal>
     );
     await flushRAF();
+    await flushTimers();
 
     expect(appRoot.getAttribute('aria-hidden')).toBe('true');
 

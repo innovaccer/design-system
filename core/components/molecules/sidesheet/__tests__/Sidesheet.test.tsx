@@ -429,6 +429,9 @@ describe('Sidesheet hides background from screen readers', () => {
   it('hides pre-existing body siblings from screen readers while open, and restores them on close', async () => {
     jest.useRealTimers();
     const flushRAF = () => act(() => new Promise((resolve) => requestAnimationFrame(() => resolve())));
+    // activateBackgroundHiding defers its scan by a macrotask so an already-open nested
+    // Popper has time to register with OverlayManager first — flush that tick too.
+    const flushTimers = () => act(() => new Promise((resolve) => setTimeout(resolve, 0)));
     const appRoot = appendAppRoot();
 
     const { rerender } = render(
@@ -437,6 +440,7 @@ describe('Sidesheet hides background from screen readers', () => {
       </Sidesheet>
     );
     await flushRAF();
+    await flushTimers();
 
     expect(appRoot.getAttribute('aria-hidden')).toBe('true');
 
