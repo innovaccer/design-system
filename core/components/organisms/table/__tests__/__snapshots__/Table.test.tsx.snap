@@ -38831,6 +38831,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -39089,6 +39091,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -39352,6 +39356,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -39615,6 +39621,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -41192,6 +41200,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -41543,6 +41553,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -41899,6 +41911,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -42255,6 +42269,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -43511,6 +43527,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -43775,6 +43793,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -44044,6 +44064,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -44313,6 +44335,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -45920,6 +45944,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -46277,6 +46303,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -46639,6 +46667,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -47001,6 +47031,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -48679,6 +48711,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -49025,6 +49059,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -49376,6 +49412,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -49727,6 +49765,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -51744,6 +51784,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -52183,6 +52225,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -52627,6 +52671,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -53071,6 +53117,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -54767,6 +54815,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -55119,6 +55169,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -55476,6 +55528,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -55833,6 +55887,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -57880,6 +57936,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -58325,6 +58383,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -58775,6 +58835,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -59225,6 +59287,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -60463,6 +60527,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -60721,6 +60787,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -60984,6 +61052,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -61247,6 +61317,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -62824,6 +62896,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -63175,6 +63249,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -63531,6 +63607,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -63887,6 +63965,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -65143,6 +65223,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -65407,6 +65489,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -65676,6 +65760,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -65945,6 +66031,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -67552,6 +67640,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -67909,6 +67999,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -68271,6 +68363,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -68633,6 +68727,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -70311,6 +70407,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -70657,6 +70755,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -71008,6 +71108,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -71359,6 +71461,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -73376,6 +73480,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -73815,6 +73921,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -74259,6 +74367,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -74703,6 +74813,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -76399,6 +76511,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -76751,6 +76865,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -77108,6 +77224,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -77465,6 +77583,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -79512,6 +79632,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -79957,6 +80079,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -80407,6 +80531,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -80857,6 +80983,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -109487,6 +109615,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -109745,6 +109875,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -110008,6 +110140,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -110271,6 +110405,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -111848,6 +111984,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -112199,6 +112337,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -112555,6 +112695,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -112911,6 +113053,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -114167,6 +114311,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -114431,6 +114577,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -114700,6 +114848,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -114969,6 +115119,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -116576,6 +116728,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -116933,6 +117087,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -117295,6 +117451,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -117657,6 +117815,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -119335,6 +119495,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -119681,6 +119843,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -120032,6 +120196,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -120383,6 +120549,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -122400,6 +122568,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -122839,6 +123009,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -123283,6 +123455,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -123727,6 +123901,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -125423,6 +125599,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -125775,6 +125953,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -126132,6 +126312,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -126489,6 +126671,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -128536,6 +128720,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -128981,6 +129167,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -129431,6 +129619,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -129881,6 +130071,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -131119,6 +131311,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -131377,6 +131571,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -131640,6 +131836,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -131903,6 +132101,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -133480,6 +133680,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -133831,6 +134033,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -134187,6 +134391,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -134543,6 +134749,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -135799,6 +136007,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -136063,6 +136273,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -136332,6 +136544,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -136601,6 +136815,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -138208,6 +138424,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -138565,6 +138783,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -138927,6 +139147,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -139289,6 +139511,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -140967,6 +141191,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -141313,6 +141539,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -141664,6 +141892,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -142015,6 +142245,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -144032,6 +144264,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -144471,6 +144705,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -144915,6 +145151,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -145359,6 +145597,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -147055,6 +147295,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -147407,6 +147649,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -147764,6 +148008,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -148121,6 +148367,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -150168,6 +150416,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -150613,6 +150863,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -151063,6 +151315,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -151513,6 +151767,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -178764,6 +179020,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -179029,6 +179287,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -179299,6 +179559,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -179569,6 +179831,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -181000,6 +181264,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -181317,6 +181583,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -181639,6 +181907,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -181961,6 +182231,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -183228,6 +183500,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -183499,6 +183773,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -183775,6 +184051,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -184051,6 +184329,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -185512,6 +185792,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -185835,6 +186117,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -186163,6 +186447,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -186491,6 +186777,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -188180,6 +188468,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -188533,6 +188823,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -188891,6 +189183,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -189249,6 +189543,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -191120,6 +191416,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -191525,6 +191823,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -191935,6 +192235,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -192345,6 +192647,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -194052,6 +194356,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -194411,6 +194717,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -194775,6 +195083,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -195139,6 +195449,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -197040,6 +197352,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -197451,6 +197765,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -197867,6 +198183,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -198283,6 +198601,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -199532,6 +199852,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -199797,6 +200119,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -200067,6 +200391,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -200337,6 +200663,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -201768,6 +202096,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -202085,6 +202415,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -202407,6 +202739,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -202729,6 +203063,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -203996,6 +204332,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -204267,6 +204605,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -204543,6 +204883,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -204819,6 +205161,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -206280,6 +206624,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -206603,6 +206949,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -206931,6 +207279,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -207259,6 +207609,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -208948,6 +209300,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -209301,6 +209655,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -209659,6 +210015,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -210017,6 +210375,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -211888,6 +212248,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -212293,6 +212655,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -212703,6 +213067,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -213113,6 +213479,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -214820,6 +215188,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -215179,6 +215549,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -215543,6 +215915,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -215907,6 +216281,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -217808,6 +218184,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -218219,6 +218597,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -218635,6 +219015,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -219051,6 +219433,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -246284,6 +246668,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -246549,6 +246935,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -246819,6 +247207,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -247089,6 +247479,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -248520,6 +248912,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -248837,6 +249231,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -249159,6 +249555,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -249481,6 +249879,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -250748,6 +251148,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -251019,6 +251421,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -251295,6 +251699,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -251571,6 +251977,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -253032,6 +253440,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -253355,6 +253765,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -253683,6 +254095,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -254011,6 +254425,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -255700,6 +256116,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -256053,6 +256471,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -256411,6 +256831,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -256769,6 +257191,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -258640,6 +259064,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -259045,6 +259471,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -259455,6 +259883,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -259865,6 +260295,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -261572,6 +262004,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -261931,6 +262365,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -262295,6 +262731,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -262659,6 +263097,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -264560,6 +265000,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -264971,6 +265413,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -265387,6 +265831,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -265803,6 +266249,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -267052,6 +267500,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -267317,6 +267767,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -267587,6 +268039,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -267857,6 +268311,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -269288,6 +269744,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -269605,6 +270063,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -269927,6 +270387,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -270249,6 +270711,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -271516,6 +271980,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -271787,6 +272253,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -272063,6 +272531,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -272339,6 +272809,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -273800,6 +274272,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -274123,6 +274597,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -274451,6 +274927,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -274779,6 +275257,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -276468,6 +276948,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -276821,6 +277303,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -277179,6 +277663,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -277537,6 +278023,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -279408,6 +279896,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -279813,6 +280303,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -280223,6 +280715,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -280633,6 +281127,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -282340,6 +282836,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -282699,6 +283197,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -283063,6 +283563,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -283427,6 +283929,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -285328,6 +285832,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -285739,6 +286245,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -286155,6 +286663,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -286422,6 +286932,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -286493,6 +287005,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Gender column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
@@ -286898,6 +287412,8 @@ exports[`Table component sync
                           class="PopperWrapper-trigger"
                         >
                           <button
+                            aria-expanded="false"
+                            aria-haspopup="menu"
                             aria-label="More options for Name column"
                             class="Button Button--regular Button--regularSquare Button--transparent"
                             data-test="DesignSystem-Button"
