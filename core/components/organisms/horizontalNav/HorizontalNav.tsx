@@ -7,7 +7,13 @@ import { getNavItemColor, getPillsAppearance, isMenuActive, Menu, formatCount } 
 import styles from '@css/components/horizontalNav.module.css';
 
 export type HorizontalNavProps = BaseProps &
-  Pick<VerticalNavProps, 'menus' | 'active' | 'onClick'> & {
+  Omit<Pick<VerticalNavProps, 'menus' | 'active' | 'onClick'>, 'onClick'> & {
+    /**
+     * Callback to be called on Menu click **(only if it's not disabled)**.
+     * Unlike `VerticalNav`, `HorizontalNav` calls this for every enabled item,
+     * including an already-active leaf item.
+     */
+    onClick?: VerticalNavProps['onClick'];
     'aria-label'?: string;
   };
 export type Align = 'left' | 'center';
