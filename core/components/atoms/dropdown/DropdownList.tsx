@@ -349,7 +349,7 @@ const DropdownList = (props: OptionsProps) => {
     tabIndex: 0,
     ref: dropdownTriggerRef,
     'aria-haspopup': menu ? 'menu' : 'listbox',
-    'aria-expanded': dropdownOpen,
+    'aria-expanded': !!dropdownOpen,
     'aria-controls': dropdownOpen ? popupId : undefined,
   });
 
