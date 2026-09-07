@@ -2,7 +2,7 @@ import * as React from 'react';
 import { render, fireEvent, act } from '@testing-library/react';
 import { axe } from '@/utils/testAxe';
 import { SidesheetProps as Props } from '@/index.type';
-import { Button, Sidesheet, Text } from '@/index';
+import { Button, Modal, Sidesheet, Text } from '@/index';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
 const dimension = ['regular', 'large'];
@@ -412,6 +412,93 @@ describe('Sidesheet component with prop: open', () => {
 
     expect(preventDefaultSpy).not.toHaveBeenCalled();
     jest.useFakeTimers();
+  });
+});
+
+describe('Sidesheet hides background from screen readers', () => {
+  // Simulates the app's root node: a `<body>` sibling that exists outside the Sidesheet's own
+  // portal (`.Overlay-wrapper`). Screen reader browse-mode/virtual-cursor navigation ignores
+  // tabindex and DOM focus, so hiding it is a separate concern from the Tab-key focus trap.
+  const appendAppRoot = () => {
+    const appRoot = document.createElement('div');
+    appRoot.textContent = 'Rest of the app';
+    document.body.appendChild(appRoot);
+    return appRoot;
+  };
+
+  it('hides pre-existing body siblings from screen readers while open, and restores them on close', async () => {
+    jest.useRealTimers();
+    const flushRAF = () => act(() => new Promise((resolve) => requestAnimationFrame(() => resolve())));
+    // activateBackgroundHiding defers its scan by two macrotask ticks so an already-open
+    // nested Popper has time to register with OverlayManager first, regardless of mount order.
+    const flushTimers = () => act(() => new Promise((resolve) => setTimeout(() => setTimeout(resolve, 0), 0)));
+    const appRoot = appendAppRoot();
+
+    const { rerender } = render(
+      <Sidesheet dimension="large" headerOptions={headerOptions} open={true} footer={footer} onClose={jest.fn()}>
+        <Text>Body</Text>
+      </Sidesheet>
+    );
+    await flushRAF();
+    await flushTimers();
+
+    expect(appRoot.getAttribute('aria-hidden')).toBe('true');
+
+    rerender(
+      <Sidesheet dimension="large" headerOptions={headerOptions} open={false} footer={footer} onClose={jest.fn()}>
+        <Text>Body</Text>
+      </Sidesheet>
+    );
+
+    expect(appRoot.getAttribute('aria-hidden')).toBeNull();
+
+    appRoot.remove();
+  });
+
+  it('is idempotent when unmounted mid close-animation, and does not corrupt shared background-hiding state for another still-open dialog', async () => {
+    jest.useRealTimers();
+    const flushRAF = () => act(() => new Promise((resolve) => requestAnimationFrame(() => resolve())));
+    const flushTimers = () => act(() => new Promise((resolve) => setTimeout(() => setTimeout(resolve, 0), 0)));
+    const appRoot = appendAppRoot();
+
+    const { rerender, unmount } = render(
+      <Sidesheet dimension="large" headerOptions={headerOptions} open={true} footer={footer} onClose={jest.fn()}>
+        <Text>Sidesheet body</Text>
+      </Sidesheet>
+    );
+    await flushRAF();
+
+    // A second dialog opens on top of the sidesheet.
+    const { unmount: unmountModal } = render(
+      <Modal open={true} onClose={jest.fn()} headerOptions={{ heading: 'On top' }}>
+        <Text>Modal body</Text>
+      </Modal>
+    );
+    await flushRAF();
+    await flushTimers();
+
+    expect(appRoot.getAttribute('aria-hidden')).toBe('true');
+
+    // Close the sidesheet, then unmount it immediately — before its 120ms close-animation
+    // timer flips `state.open` to `false` — so `componentWillUnmount`'s own deactivate call
+    // (guarded by `state.open`, which hasn't settled yet) fires as a second, redundant
+    // deactivation for this same instance, on top of the one `componentDidUpdate` already
+    // made when `open` flipped to `false`.
+    rerender(
+      <Sidesheet dimension="large" headerOptions={headerOptions} open={false} footer={footer} onClose={jest.fn()}>
+        <Text>Sidesheet body</Text>
+      </Sidesheet>
+    );
+    unmount();
+
+    // The Modal opened on top of the sidesheet is still open — the redundant deactivation
+    // must not have decremented the shared background-hiding state on its behalf.
+    expect(appRoot.getAttribute('aria-hidden')).toBe('true');
+
+    unmountModal();
+    expect(appRoot.getAttribute('aria-hidden')).toBeNull();
+
+    appRoot.remove();
   });
 });
 
