@@ -1,0 +1,17 @@
+export declare const getWrapperElement: () => Element;
+interface elementData {
+    element: Element;
+    containerClassName: string;
+    elementRef: React.RefObject<HTMLDivElement>;
+}
+export declare const getUpdatedZIndex: (ele: elementData) => number | undefined;
+export declare const closeOnEscapeKeypress: (event: KeyboardEvent, isTopOverlay: boolean | undefined, onClose: (event: Event) => void) => void;
+export declare const getFocusableElements: (container: HTMLElement) => HTMLElement[];
+export declare const getAllFocusableElements: (container: HTMLElement, roleHint?: string | undefined) => HTMLElement[];
+export declare const getNestedOverlayElements: (ownOverlayEl: HTMLElement | null, container: HTMLElement) => HTMLElement[];
+export declare const handleFocusTrapKeyDown: (event: KeyboardEvent, container: HTMLElement, staticFocusTarget?: HTMLElement | null | undefined, nestedOverlays?: HTMLElement[]) => boolean;
+export declare const hideBackgroundFromScreenReaders: (keepVisible: Element[]) => (() => void);
+export declare const activateBackgroundHiding: (dialogRoot: HTMLElement, portalRoot: Element) => void;
+export declare const deactivateBackgroundHiding: (dialogRoot: HTMLElement) => void;
+export declare const restoreFocusToElementIfConnected: (element: HTMLElement | null | undefined, closingOverlay?: HTMLElement | null | undefined) => void;
+export {};
