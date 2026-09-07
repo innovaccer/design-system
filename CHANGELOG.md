@@ -1,3 +1,29 @@
+## 4.30.0 (2026-09-07)
+
+### Highlights
+
+- Accessibility improvements to Table menu options and Modal overlay behaviour, alongside a new single-click dragging option for Table columns.
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(table): add a11y attributes in table menu options (654970e5f)
+- feat(modal): update overlay behaviour for a11y fix (04eac7e1c)
+- feat(table): add single click dragging movement option (d31e4b2de)
+
+---
+
 ## 4.29.0 (2026-09-03)
 
 ### Highlights
