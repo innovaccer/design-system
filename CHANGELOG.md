@@ -1,3 +1,27 @@
+## 4.30.1 (2026-09-09)
+
+### Highlights
+
+- Added a portal selector for scoped CSS support.
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Improvements
+
+- style(scoped-css): add portal selector for scoped css (e6966cbf8)
+
+---
+
 ## 4.30.0 (2026-09-07)
 
 ### Highlights
