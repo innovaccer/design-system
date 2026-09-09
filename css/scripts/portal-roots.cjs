@@ -34,6 +34,17 @@ const PORTAL_ROOT_SELECTORS = [
   'body > .Overlay-wrapper:has([data-layer])',
   /** Popover and everything built on it: Tooltip, Dropdown, Menu, DateRangePicker, … */
   "body > [data-test='DesignSystem-Popover']",
+  /**
+   * `PopperWrapper` now renders through `@floating-ui/react`'s `FloatingPortal`, which
+   * inserts its own `<div data-floating-ui-portal>` directly under `body` and nests the
+   * `data-test='DesignSystem-Popover'` element one level inside *that* — so the selector
+   * above no longer matches a direct child of `body` for any Popover-built component
+   * (Tooltip, Dropdown, Menu, Select, DateRangePicker, AvatarGroup, …). This selector
+   * targets the actual direct child instead. `data-floating-ui-portal` is set
+   * unconditionally by the library itself, so it doesn't depend on a component's
+   * (now overridable via a `dataTest` prop) `data-test` value.
+   */
+  'body > [data-floating-ui-portal]',
   /** Backdrop, including the one Modal/Sidesheet render. */
   "body > [data-test='DesignSystem-Backdrop']",
   /**
