@@ -330,6 +330,25 @@ describe('Vertical Navigation component prop: onClick', () => {
     expect(onClick).toHaveBeenCalled();
     expect(onClick).toHaveBeenCalledWith(menus[menuClicked].subMenu![0]);
   });
+
+  it('does not call onClick callback when an already active leaf item is clicked again', () => {
+    onClick.mockClear();
+    const menuClicked = 0;
+    const { getAllByTestId } = render(<VerticalNav menus={menus} active={{ name: 'patient_360' }} onClick={onClick} />);
+
+    const activeMenu = getAllByTestId('DesignSystem-VerticalNav--Item')[menuClicked];
+    fireEvent.click(activeMenu);
+    expect(onClick).not.toHaveBeenCalled();
+  });
+
+  it('does not call onClick callback when an already active child item is clicked again', () => {
+    onClick.mockClear();
+    const { container } = render(<VerticalNav expanded={true} menus={menus} active={active} onClick={onClick} />);
+
+    const activeChildMenu = container.querySelector('[data-menu-name="care_management.timeline"]') as HTMLElement;
+    fireEvent.click(activeChildMenu);
+    expect(onClick).not.toHaveBeenCalled();
+  });
 });
 
 describe('Vertical Navigation component prop: menus with expanded subMenu', () => {
