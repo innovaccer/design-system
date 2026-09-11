@@ -138,6 +138,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
     error,
   } = contextProp;
 
+  const isDisabled = Boolean(disabled);
   const buttonDisabled = disabled ? 'disabled' : 'default';
   const trimmedPlaceholder = placeholder?.trim();
   const displayValue = computeValue(multiSelect, selectValue, setLabel);
@@ -216,12 +217,14 @@ const SelectTrigger = (props: SelectTriggerProps) => {
       >
         <button
           ref={triggerRef as React.RefObject<HTMLButtonElement>}
-          onKeyDown={(event) =>
-            handleKeyDownTrigger(event, setOpenPopover, setHighlightFirstItem, setHighlightLastItem)
-          }
+          onKeyDown={(event) => {
+            if (isDisabled) return;
+            handleKeyDownTrigger(event, setOpenPopover, setHighlightFirstItem, setHighlightLastItem);
+          }}
           type="button"
           className={selectStyles['Select-trigger-control']}
-          disabled={disabled}
+          disabled={undefined}
+          aria-disabled={isDisabled || undefined}
           tabIndex={0}
           role="combobox"
           aria-controls={ariaControls}
