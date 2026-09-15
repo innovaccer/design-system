@@ -82529,6 +82529,7 @@ exports[`DateRangePicker component
               class="Calendar-yearValueWrapper"
             >
               <button
+                aria-current="date"
                 aria-disabled="false"
                 aria-label="2024"
                 aria-selected="false"
@@ -85161,6 +85162,7 @@ exports[`DateRangePicker component
               class="Calendar-yearValueWrapper"
             >
               <button
+                aria-current="date"
                 aria-disabled="false"
                 aria-label="2024"
                 aria-selected="false"
@@ -87793,6 +87795,7 @@ exports[`DateRangePicker component
               class="Calendar-yearValueWrapper"
             >
               <button
+                aria-current="date"
                 aria-disabled="false"
                 aria-label="2024"
                 aria-selected="false"
@@ -96488,6 +96491,7 @@ exports[`DateRangePicker component
               class="Calendar-yearValueWrapper"
             >
               <button
+                aria-current="date"
                 aria-disabled="false"
                 aria-label="2024"
                 aria-selected="false"

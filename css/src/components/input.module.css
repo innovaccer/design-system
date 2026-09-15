@@ -93,7 +93,7 @@
   font-weight: var(--font-weight-normal);
   font-size: var(--font-size);
   line-height: var(--font-height-s);
-  color: var(--night);
+  color: var(--inverse);
   padding: 0;
   border: none;
   background: transparent;

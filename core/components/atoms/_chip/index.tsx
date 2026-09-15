@@ -180,7 +180,7 @@ export const GenericChip = (props: GenericChipProps) => {
     if (type === 'selection') {
       if (computedRole === 'button') {
         ariaProps['aria-pressed'] = selected;
-      } else if (computedRole === 'checkbox' || computedRole === 'menuitemcheckbox') {
+      } else if (computedRole === 'checkbox' || computedRole === 'menuitemcheckbox' || computedRole === 'radio') {
         ariaProps['aria-checked'] = selected;
       } else if (computedRole === 'option' || computedRole === 'tab' || computedRole === 'treeitem') {
         ariaProps['aria-selected'] = selected;

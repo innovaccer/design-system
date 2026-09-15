@@ -69,10 +69,18 @@ adds them to the prelude directly, targeting markup the components *already* ren
   [data-mds-root],                              /* your opt-in container */
   body > .Overlay-wrapper:has([data-layer]),    /* Modal, Sidesheet, FullscreenModal */
   body > [data-test='DesignSystem-Popover'],    /* Popover, Tooltip, Dropdown, Menu, … */
+  body > [data-floating-ui-portal],             /* same components, via @floating-ui/react's FloatingPortal */
   body > [data-test='DesignSystem-Backdrop'],   /* Backdrop */
   body > .Listbox-item--draggable               /* Listbox drag ghost */
 )
 ```
+
+`body > [data-floating-ui-portal]` is a second, additive root for the same Popover-built
+components: `PopperWrapper` now renders through `@floating-ui/react`'s `FloatingPortal`, which
+inserts its own `<div data-floating-ui-portal>` directly under `body` and nests the
+`data-test='DesignSystem-Popover'` element one level inside *that* — no longer a direct child
+of `body`. `data-floating-ui-portal` is set unconditionally by the library itself, so it keeps
+matching regardless of a component's (now overridable via a `dataTest` prop) `data-test` value.
 
 Every popper-based component shares one root — `Popover` renders the popup element itself and
 Tooltip/Dropdown/Menu all go through it — so a single selector covers them all.

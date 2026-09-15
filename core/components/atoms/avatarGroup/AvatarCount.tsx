@@ -1,11 +1,12 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { Text } from '@/index';
+import isSpaceKey from '@/accessibility/utils/isSpaceKey';
 import styles from '@css/components/avatar.module.css';
 import avatarGroupStyles from '@css/components/avatarGroup.module.css';
 
 const AvatarCount = (props: any) => {
-  const { hiddenAvatarCount, avatarStyle, size = 'regular', on } = props;
+  const { hiddenAvatarCount, avatarStyle, size = 'regular', on, open, moreAvatarsLabel } = props;
 
   const ContentClass = classNames({
     [styles['Avatar-content']]: true,
@@ -29,6 +30,14 @@ const AvatarCount = (props: any) => {
       tabIndex={0}
       role="button"
       aria-haspopup="listbox"
+      aria-expanded={open}
+      aria-label={`+${hiddenAvatarCount} ${moreAvatarsLabel}`}
+      onKeyDown={(event: React.KeyboardEvent<HTMLDivElement>) => {
+        if (event.key === 'Enter' || isSpaceKey(event)) {
+          event.preventDefault();
+          event.currentTarget.click();
+        }
+      }}
     >
       <span data-test="DesignSystem-AvatarGroup--TriggerAvatarVariants" className={AvatarVariantsClass}>
         <Text className={ContentClass}>{`+${hiddenAvatarCount}`}</Text>

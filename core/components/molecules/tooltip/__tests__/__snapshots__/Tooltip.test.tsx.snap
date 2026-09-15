@@ -15,6 +15,7 @@ exports[`Tooltip component
         data-state="closed"
       >
         <button
+          aria-describedby="Tooltip-Test-uid"
           class="Button Button--regular Button--basic Button--iconAlign-left"
           data-test="DesignSystem-Button"
           tabindex="0"
@@ -50,6 +51,7 @@ exports[`Tooltip component
         data-state="closed"
       >
         <button
+          aria-describedby="Tooltip-Test-uid"
           class="Button Button--regular Button--basic Button--iconAlign-left"
           data-test="DesignSystem-Button"
           tabindex="0"
@@ -85,6 +87,7 @@ exports[`Tooltip component
         data-state="closed"
       >
         <button
+          aria-describedby="Tooltip-Test-uid"
           class="Button Button--regular Button--basic Button--iconAlign-left"
           data-test="DesignSystem-Button"
           tabindex="0"
@@ -120,6 +123,7 @@ exports[`Tooltip component
         data-state="closed"
       >
         <button
+          aria-describedby="Tooltip-Test-uid"
           class="Button Button--regular Button--basic Button--iconAlign-left"
           data-test="DesignSystem-Button"
           tabindex="0"
@@ -155,6 +159,7 @@ exports[`Tooltip component
         data-state="closed"
       >
         <button
+          aria-describedby="Tooltip-Test-uid"
           class="Button Button--regular Button--basic Button--iconAlign-left"
           data-test="DesignSystem-Button"
           tabindex="0"
@@ -190,6 +195,7 @@ exports[`Tooltip component
         data-state="closed"
       >
         <button
+          aria-describedby="Tooltip-Test-uid"
           class="Button Button--regular Button--basic Button--iconAlign-left"
           data-test="DesignSystem-Button"
           tabindex="0"
@@ -225,6 +231,7 @@ exports[`Tooltip component
         data-state="closed"
       >
         <button
+          aria-describedby="Tooltip-Test-uid"
           class="Button Button--regular Button--basic Button--iconAlign-left"
           data-test="DesignSystem-Button"
           tabindex="0"
@@ -260,6 +267,7 @@ exports[`Tooltip component
         data-state="closed"
       >
         <button
+          aria-describedby="Tooltip-Test-uid"
           class="Button Button--regular Button--basic Button--iconAlign-left"
           data-test="DesignSystem-Button"
           tabindex="0"
@@ -295,6 +303,7 @@ exports[`Tooltip component
         data-state="closed"
       >
         <button
+          aria-describedby="Tooltip-Test-uid"
           class="Button Button--regular Button--basic Button--iconAlign-left"
           data-test="DesignSystem-Button"
           tabindex="0"
@@ -330,6 +339,7 @@ exports[`Tooltip component
         data-state="closed"
       >
         <button
+          aria-describedby="Tooltip-Test-uid"
           class="Button Button--regular Button--basic Button--iconAlign-left"
           data-test="DesignSystem-Button"
           tabindex="0"
@@ -365,6 +375,7 @@ exports[`Tooltip component
         data-state="closed"
       >
         <button
+          aria-describedby="Tooltip-Test-uid"
           class="Button Button--regular Button--basic Button--iconAlign-left"
           data-test="DesignSystem-Button"
           tabindex="0"
@@ -400,6 +411,7 @@ exports[`Tooltip component
         data-state="closed"
       >
         <button
+          aria-describedby="Tooltip-Test-uid"
           class="Button Button--regular Button--basic Button--iconAlign-left"
           data-test="DesignSystem-Button"
           tabindex="0"
@@ -435,6 +447,7 @@ exports[`Tooltip component
         data-state="closed"
       >
         <button
+          aria-describedby="Tooltip-Test-uid"
           class="Button Button--regular Button--basic Button--iconAlign-left"
           data-test="DesignSystem-Button"
           tabindex="0"
@@ -470,6 +483,7 @@ exports[`Tooltip component
         data-state="closed"
       >
         <button
+          aria-describedby="Tooltip-Test-uid"
           class="Button Button--regular Button--basic Button--iconAlign-left"
           data-test="DesignSystem-Button"
           tabindex="0"
@@ -505,6 +519,7 @@ exports[`Tooltip component
         data-state="closed"
       >
         <button
+          aria-describedby="Tooltip-Test-uid"
           class="Button Button--regular Button--basic Button--iconAlign-left"
           data-test="DesignSystem-Button"
           tabindex="0"
@@ -540,6 +555,7 @@ exports[`Tooltip component
         data-state="closed"
       >
         <button
+          aria-describedby="Tooltip-Test-uid"
           class="Button Button--regular Button--basic Button--iconAlign-left"
           data-test="DesignSystem-Button"
           tabindex="0"

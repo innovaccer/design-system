@@ -247,19 +247,6 @@ const customCode = `
                     </Select.List>
                   </Select>
                 </div>
-                <div className="mt-6">
-                  <Label withInput={true} required htmlFor="regex-input">Regex</Label>
-                  <Textarea
-                    id="regex-input"
-                    placeholder="Enter regex pattern"
-                    rows={3}
-                    onChange={(e, value) => {
-                      this.setState({
-                        configuration: { ...this.state.configuration, regex: value }
-                      });
-                    }}
-                  />
-                </div>
                 <Label className="mt-6" withInput={true} htmlFor="enable-retention" required>Enable Retention</Label>
                 <Switch id="enable-retention" appearance="primary" defaultChecked={true} className="d-flex" />
               </div>

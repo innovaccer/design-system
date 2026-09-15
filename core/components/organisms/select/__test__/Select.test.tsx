@@ -329,7 +329,7 @@ describe('Select component single input trigger tests', () => {
     const { getByTestId } = render(<Select onSelect={FunctionValue}>{children}</Select>);
     const triggerButton = getByTestId('DesignSystem-Select-trigger');
     expect(triggerButton).toBeInTheDocument();
-    expect(triggerButton).toHaveStyle('width: 176px');
+    expect(getByTestId('DesignSystem-Select-triggerBox')).toHaveStyle('width: 176px');
   });
 
   it('check for the default width of popover', () => {
@@ -350,7 +350,7 @@ describe('Select component single input trigger tests', () => {
     );
     const triggerButton = getByTestId('DesignSystem-Select-trigger');
     expect(triggerButton).toBeInTheDocument();
-    expect(triggerButton).toHaveStyle('width: 200px');
+    expect(getByTestId('DesignSystem-Select-triggerBox')).toHaveStyle('width: 200px');
   });
 
   it('override the default width of popover', () => {
@@ -447,8 +447,9 @@ describe('Select component single input trigger tests', () => {
 
     const triggerButton = getByTestId('DesignSystem-Select-trigger');
     expect(triggerButton).toBeInTheDocument();
-    expect(triggerButton).toHaveStyle('min-width: 120px');
-    expect(triggerButton).toHaveStyle('max-width: 240px');
+    const triggerBox = getByTestId('DesignSystem-Select-triggerBox');
+    expect(triggerBox).toHaveStyle('min-width: 120px');
+    expect(triggerBox).toHaveStyle('max-width: 240px');
   });
 
   it('should apply minWidth and maxWidth styles on the trigger when provided via triggerOptions as strings', () => {
@@ -460,8 +461,9 @@ describe('Select component single input trigger tests', () => {
 
     const triggerButton = getByTestId('DesignSystem-Select-trigger');
     expect(triggerButton).toBeInTheDocument();
-    expect(triggerButton).toHaveStyle('min-width: 176px');
-    expect(triggerButton).toHaveStyle('max-width: 256px');
+    const triggerBox = getByTestId('DesignSystem-Select-triggerBox');
+    expect(triggerBox).toHaveStyle('min-width: 176px');
+    expect(triggerBox).toHaveStyle('max-width: 256px');
   });
 
   it('should work with width="auto" and triggerOptions minWidth/maxWidth together', () => {
@@ -473,8 +475,9 @@ describe('Select component single input trigger tests', () => {
 
     const triggerButton = getByTestId('DesignSystem-Select-trigger');
     expect(triggerButton).toBeInTheDocument();
-    expect(triggerButton).toHaveStyle('min-width: 176px');
-    expect(triggerButton).toHaveStyle('max-width: 256px');
+    const triggerBox = getByTestId('DesignSystem-Select-triggerBox');
+    expect(triggerBox).toHaveStyle('min-width: 176px');
+    expect(triggerBox).toHaveStyle('max-width: 256px');
   });
 });
 
@@ -1363,7 +1366,7 @@ describe('Select component size functionality tests', () => {
       );
 
       const triggerButton = getByTestId('DesignSystem-Select-trigger');
-      expect(triggerButton).toHaveClass('Select-trigger--small');
+      expect(getByTestId('DesignSystem-Select-triggerBox')).toHaveClass('Select-trigger--small');
 
       fireEvent.click(triggerButton);
 
@@ -1389,7 +1392,7 @@ describe('Select component size functionality tests', () => {
       );
 
       const triggerButton = getByTestId('DesignSystem-Select-trigger');
-      expect(triggerButton).toHaveClass('Select-trigger--regular');
+      expect(getByTestId('DesignSystem-Select-triggerBox')).toHaveClass('Select-trigger--regular');
 
       fireEvent.click(triggerButton);
 
@@ -1415,7 +1418,7 @@ describe('Select component size functionality tests', () => {
       );
 
       const triggerButton = getByTestId('DesignSystem-Select-trigger');
-      expect(triggerButton).toHaveClass('Select-trigger--small');
+      expect(getByTestId('DesignSystem-Select-triggerBox')).toHaveClass('Select-trigger--small');
 
       fireEvent.click(triggerButton);
 
@@ -1552,8 +1555,8 @@ describe('Select component size functionality tests', () => {
         </Select>
       );
 
-      const triggerButton = getByTestId('DesignSystem-Select-trigger');
-      expect(triggerButton).toHaveClass('Select-trigger--filled');
+      const triggerBox = getByTestId('DesignSystem-Select-triggerBox');
+      expect(triggerBox).toHaveClass('Select-trigger--filled');
     });
 
     it('should render Select with styleType="filled" and apply Select-trigger--filled class', () => {
@@ -1565,8 +1568,8 @@ describe('Select component size functionality tests', () => {
         </Select>
       );
 
-      const triggerButton = getByTestId('DesignSystem-Select-trigger');
-      expect(triggerButton).toHaveClass('Select-trigger--filled');
+      const triggerBox = getByTestId('DesignSystem-Select-triggerBox');
+      expect(triggerBox).toHaveClass('Select-trigger--filled');
     });
 
     it('should render Select with styleType="outlined" and apply Select-trigger--outlined class', () => {
@@ -1578,8 +1581,8 @@ describe('Select component size functionality tests', () => {
         </Select>
       );
 
-      const triggerButton = getByTestId('DesignSystem-Select-trigger');
-      expect(triggerButton).toHaveClass('Select-trigger--outlined');
+      const triggerBox = getByTestId('DesignSystem-Select-triggerBox');
+      expect(triggerBox).toHaveClass('Select-trigger--outlined');
     });
 
     it('should apply Select-trigger--filledPlaceholder class when no option is selected in filled variant', () => {
@@ -1591,8 +1594,8 @@ describe('Select component size functionality tests', () => {
         </Select>
       );
 
-      const triggerButton = getByTestId('DesignSystem-Select-trigger');
-      expect(triggerButton).toHaveClass('Select-trigger--filledPlaceholder');
+      const triggerBox = getByTestId('DesignSystem-Select-triggerBox');
+      expect(triggerBox).toHaveClass('Select-trigger--filledPlaceholder');
     });
 
     it('should apply Select-trigger--outlinedPlaceholder class when no option is selected in outlined variant', () => {
@@ -1604,8 +1607,8 @@ describe('Select component size functionality tests', () => {
         </Select>
       );
 
-      const triggerButton = getByTestId('DesignSystem-Select-trigger');
-      expect(triggerButton).toHaveClass('Select-trigger--outlinedPlaceholder');
+      const triggerBox = getByTestId('DesignSystem-Select-triggerBox');
+      expect(triggerBox).toHaveClass('Select-trigger--outlinedPlaceholder');
     });
 
     it('should apply Select-trigger--filledOpen class when filled Select is opened', () => {
@@ -1620,7 +1623,7 @@ describe('Select component size functionality tests', () => {
       const triggerButton = getByTestId('DesignSystem-Select-trigger');
       fireEvent.click(triggerButton);
 
-      expect(triggerButton).toHaveClass('Select-trigger--filledOpen');
+      expect(getByTestId('DesignSystem-Select-triggerBox')).toHaveClass('Select-trigger--filledOpen');
     });
 
     it('should apply Select-trigger--outlinedOpen class when outlined Select is opened', () => {
@@ -1635,7 +1638,7 @@ describe('Select component size functionality tests', () => {
       const triggerButton = getByTestId('DesignSystem-Select-trigger');
       fireEvent.click(triggerButton);
 
-      expect(triggerButton).toHaveClass('Select-trigger--outlinedOpen');
+      expect(getByTestId('DesignSystem-Select-triggerBox')).toHaveClass('Select-trigger--outlinedOpen');
     });
 
     it('should work correctly with styleType="outlined" and different trigger sizes', () => {
@@ -1647,9 +1650,9 @@ describe('Select component size functionality tests', () => {
         </Select>
       );
 
-      const triggerButton = getByTestId('DesignSystem-Select-trigger');
-      expect(triggerButton).toHaveClass('Select-trigger--outlined');
-      expect(triggerButton).toHaveClass('Select-trigger--small');
+      const triggerBox = getByTestId('DesignSystem-Select-triggerBox');
+      expect(triggerBox).toHaveClass('Select-trigger--outlined');
+      expect(triggerBox).toHaveClass('Select-trigger--small');
     });
 
     it('should work correctly with styleType="filled" and different trigger sizes', () => {
@@ -1661,9 +1664,9 @@ describe('Select component size functionality tests', () => {
         </Select>
       );
 
-      const triggerButton = getByTestId('DesignSystem-Select-trigger');
-      expect(triggerButton).toHaveClass('Select-trigger--filled');
-      expect(triggerButton).toHaveClass('Select-trigger--regular');
+      const triggerBox = getByTestId('DesignSystem-Select-triggerBox');
+      expect(triggerBox).toHaveClass('Select-trigger--filled');
+      expect(triggerBox).toHaveClass('Select-trigger--regular');
     });
 
     it('should maintain styleType classes after selecting an option', () => {
@@ -1682,8 +1685,9 @@ describe('Select component size functionality tests', () => {
       const options = getAllByTestId('DesignSystem-Select-Option');
       fireEvent.click(options[0]);
 
-      expect(triggerButton).toHaveClass('Select-trigger--outlined');
-      expect(triggerButton).not.toHaveClass('Select-trigger--outlinedPlaceholder');
+      const triggerBox = getByTestId('DesignSystem-Select-triggerBox');
+      expect(triggerBox).toHaveClass('Select-trigger--outlined');
+      expect(triggerBox).not.toHaveClass('Select-trigger--outlinedPlaceholder');
     });
 
     it('should work with multiSelect and styleType="outlined"', () => {
@@ -1696,8 +1700,90 @@ describe('Select component size functionality tests', () => {
         </Select>
       );
 
-      const triggerButton = getByTestId('DesignSystem-Select-trigger');
-      expect(triggerButton).toHaveClass('Select-trigger--outlined');
+      const triggerBox = getByTestId('DesignSystem-Select-triggerBox');
+      expect(triggerBox).toHaveClass('Select-trigger--outlined');
+    });
+  });
+
+  describe('Select component disabled trigger behavior', () => {
+    it('does not open the popover when clicking the outer trigger box of a disabled filled Select', () => {
+      const { getByTestId, queryByTestId } = render(
+        <Select onSelect={FunctionValue} styleType="filled" triggerOptions={{ disabled: true }}>
+          <Select.List>
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      fireEvent.click(getByTestId('DesignSystem-Select-triggerBox'));
+
+      expect(queryByTestId('DesignSystem-Popover')).not.toBeInTheDocument();
+    });
+
+    it('does not open the popover when clicking the outer trigger box of a disabled outlined Select', () => {
+      const { getByTestId, queryByTestId } = render(
+        <Select onSelect={FunctionValue} styleType="outlined" triggerOptions={{ disabled: true }}>
+          <Select.List>
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      fireEvent.click(getByTestId('DesignSystem-Select-triggerBox'));
+
+      expect(queryByTestId('DesignSystem-Popover')).not.toBeInTheDocument();
+    });
+
+    it('does not call the public onToggle callback when clicking the outer trigger box of a disabled Select', () => {
+      const onToggleFunctionValue = jest.fn();
+      const { getByTestId } = render(
+        <Select onSelect={FunctionValue} onToggle={onToggleFunctionValue} triggerOptions={{ disabled: true }}>
+          <Select.List>
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      fireEvent.click(getByTestId('DesignSystem-Select-triggerBox'));
+
+      expect(onToggleFunctionValue).not.toHaveBeenCalled();
+    });
+
+    it('disables the clear button so a disabled Select with a selected value cannot be cleared', () => {
+      const { getByTestId } = render(
+        <Select
+          onSelect={FunctionValue}
+          triggerOptions={{ disabled: true, onClear: FunctionValue }}
+          value={{ label: 'Option 1', value: 'Option 1' }}
+        >
+          <Select.List>
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      const closeIcon = getByTestId('DesignSystem-Select--closeIcon');
+      expect(closeIcon).toBeDisabled();
+
+      fireEvent.click(closeIcon);
+
+      expect(getByTestId('DesignSystem-Select-trigger')).toHaveTextContent('Option 1');
+    });
+  });
+
+  describe('Select component trigger custom className', () => {
+    it('merges triggerOptions.className into the trigger box instead of replacing its classes', () => {
+      const { getByTestId } = render(
+        <Select onSelect={FunctionValue} styleType="filled" triggerOptions={{ className: 'custom-trigger-class' }}>
+          <Select.List>
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      const triggerBox = getByTestId('DesignSystem-Select-triggerBox');
+      expect(triggerBox).toHaveClass('custom-trigger-class');
+      expect(triggerBox).toHaveClass('Select-trigger--filled');
     });
   });
 
@@ -1711,8 +1797,8 @@ describe('Select component size functionality tests', () => {
         </Select>
       );
 
-      const triggerButton = getByTestId('DesignSystem-Select-trigger');
-      expect(triggerButton).not.toHaveClass('Select-trigger--error');
+      const triggerBox = getByTestId('DesignSystem-Select-triggerBox');
+      expect(triggerBox).not.toHaveClass('Select-trigger--error');
     });
 
     it('should not apply error class when error={false}', () => {
@@ -1724,8 +1810,8 @@ describe('Select component size functionality tests', () => {
         </Select>
       );
 
-      const triggerButton = getByTestId('DesignSystem-Select-trigger');
-      expect(triggerButton).not.toHaveClass('Select-trigger--error');
+      const triggerBox = getByTestId('DesignSystem-Select-triggerBox');
+      expect(triggerBox).not.toHaveClass('Select-trigger--error');
     });
 
     it('should apply Select-trigger--error class when error={true}', () => {
@@ -1737,8 +1823,8 @@ describe('Select component size functionality tests', () => {
         </Select>
       );
 
-      const triggerButton = getByTestId('DesignSystem-Select-trigger');
-      expect(triggerButton).toHaveClass('Select-trigger--error');
+      const triggerBox = getByTestId('DesignSystem-Select-triggerBox');
+      expect(triggerBox).toHaveClass('Select-trigger--error');
     });
 
     it('should apply error class along with styleType="filled" class', () => {
@@ -1750,9 +1836,9 @@ describe('Select component size functionality tests', () => {
         </Select>
       );
 
-      const triggerButton = getByTestId('DesignSystem-Select-trigger');
-      expect(triggerButton).toHaveClass('Select-trigger--error');
-      expect(triggerButton).toHaveClass('Select-trigger--filled');
+      const triggerBox = getByTestId('DesignSystem-Select-triggerBox');
+      expect(triggerBox).toHaveClass('Select-trigger--error');
+      expect(triggerBox).toHaveClass('Select-trigger--filled');
     });
 
     it('should apply error class along with styleType="outlined" class', () => {
@@ -1764,9 +1850,9 @@ describe('Select component size functionality tests', () => {
         </Select>
       );
 
-      const triggerButton = getByTestId('DesignSystem-Select-trigger');
-      expect(triggerButton).toHaveClass('Select-trigger--error');
-      expect(triggerButton).toHaveClass('Select-trigger--outlined');
+      const triggerBox = getByTestId('DesignSystem-Select-triggerBox');
+      expect(triggerBox).toHaveClass('Select-trigger--error');
+      expect(triggerBox).toHaveClass('Select-trigger--outlined');
     });
 
     it('should maintain error class when Select is opened', () => {
@@ -1781,7 +1867,7 @@ describe('Select component size functionality tests', () => {
       const triggerButton = getByTestId('DesignSystem-Select-trigger');
       fireEvent.click(triggerButton);
 
-      expect(triggerButton).toHaveClass('Select-trigger--error');
+      expect(getByTestId('DesignSystem-Select-triggerBox')).toHaveClass('Select-trigger--error');
     });
 
     it('should maintain error class after selecting an option', () => {
@@ -1800,7 +1886,7 @@ describe('Select component size functionality tests', () => {
       const options = getAllByTestId('DesignSystem-Select-Option');
       fireEvent.click(options[0]);
 
-      expect(triggerButton).toHaveClass('Select-trigger--error');
+      expect(getByTestId('DesignSystem-Select-triggerBox')).toHaveClass('Select-trigger--error');
     });
 
     it('should work with error prop, multiSelect, and styleType together', () => {
@@ -1813,9 +1899,9 @@ describe('Select component size functionality tests', () => {
         </Select>
       );
 
-      const triggerButton = getByTestId('DesignSystem-Select-trigger');
-      expect(triggerButton).toHaveClass('Select-trigger--error');
-      expect(triggerButton).toHaveClass('Select-trigger--outlined');
+      const triggerBox = getByTestId('DesignSystem-Select-triggerBox');
+      expect(triggerBox).toHaveClass('Select-trigger--error');
+      expect(triggerBox).toHaveClass('Select-trigger--outlined');
     });
 
     it('should work with error prop and different trigger sizes', () => {
@@ -1827,9 +1913,9 @@ describe('Select component size functionality tests', () => {
         </Select>
       );
 
-      const triggerButton = getByTestId('DesignSystem-Select-trigger');
-      expect(triggerButton).toHaveClass('Select-trigger--error');
-      expect(triggerButton).toHaveClass('Select-trigger--small');
+      const triggerBox = getByTestId('DesignSystem-Select-triggerBox');
+      expect(triggerBox).toHaveClass('Select-trigger--error');
+      expect(triggerBox).toHaveClass('Select-trigger--small');
     });
 
     it('should apply error class along with placeholder class when no option is selected', () => {
@@ -1841,9 +1927,9 @@ describe('Select component size functionality tests', () => {
         </Select>
       );
 
-      const triggerButton = getByTestId('DesignSystem-Select-trigger');
-      expect(triggerButton).toHaveClass('Select-trigger--error');
-      expect(triggerButton).toHaveClass('Select-trigger--filledPlaceholder');
+      const triggerBox = getByTestId('DesignSystem-Select-triggerBox');
+      expect(triggerBox).toHaveClass('Select-trigger--error');
+      expect(triggerBox).toHaveClass('Select-trigger--filledPlaceholder');
     });
   });
 
@@ -1857,11 +1943,11 @@ describe('Select component size functionality tests', () => {
         </Select>
       );
 
-      const triggerButton = getByTestId('DesignSystem-Select-trigger');
-      expect(triggerButton).toHaveClass('Select-trigger--filled');
-      expect(triggerButton).toHaveClass('Select-trigger--error');
-      expect(triggerButton).toHaveClass('Select-trigger--small');
-      expect(triggerButton).toHaveClass('Select-trigger--filledPlaceholder');
+      const triggerBox = getByTestId('DesignSystem-Select-triggerBox');
+      expect(triggerBox).toHaveClass('Select-trigger--filled');
+      expect(triggerBox).toHaveClass('Select-trigger--error');
+      expect(triggerBox).toHaveClass('Select-trigger--small');
+      expect(triggerBox).toHaveClass('Select-trigger--filledPlaceholder');
     });
 
     it('should correctly apply all classes when using outlined styleType with error and regular size', () => {
@@ -1873,11 +1959,11 @@ describe('Select component size functionality tests', () => {
         </Select>
       );
 
-      const triggerButton = getByTestId('DesignSystem-Select-trigger');
-      expect(triggerButton).toHaveClass('Select-trigger--outlined');
-      expect(triggerButton).toHaveClass('Select-trigger--error');
-      expect(triggerButton).toHaveClass('Select-trigger--regular');
-      expect(triggerButton).toHaveClass('Select-trigger--outlinedPlaceholder');
+      const triggerBox = getByTestId('DesignSystem-Select-triggerBox');
+      expect(triggerBox).toHaveClass('Select-trigger--outlined');
+      expect(triggerBox).toHaveClass('Select-trigger--error');
+      expect(triggerBox).toHaveClass('Select-trigger--regular');
+      expect(triggerBox).toHaveClass('Select-trigger--outlinedPlaceholder');
     });
 
     it('should handle dynamic changes to error prop correctly', () => {
@@ -1889,8 +1975,8 @@ describe('Select component size functionality tests', () => {
         </Select>
       );
 
-      const triggerButton = getByTestId('DesignSystem-Select-trigger');
-      expect(triggerButton).not.toHaveClass('Select-trigger--error');
+      const triggerBox = getByTestId('DesignSystem-Select-triggerBox');
+      expect(triggerBox).not.toHaveClass('Select-trigger--error');
 
       rerender(
         <Select onSelect={FunctionValue} error={true}>
@@ -1900,7 +1986,7 @@ describe('Select component size functionality tests', () => {
         </Select>
       );
 
-      expect(triggerButton).toHaveClass('Select-trigger--error');
+      expect(triggerBox).toHaveClass('Select-trigger--error');
     });
 
     it('should handle styleType change from filled to outlined correctly', () => {
@@ -1912,8 +1998,8 @@ describe('Select component size functionality tests', () => {
         </Select>
       );
 
-      const triggerButton = getByTestId('DesignSystem-Select-trigger');
-      expect(triggerButton).toHaveClass('Select-trigger--filled');
+      const triggerBox = getByTestId('DesignSystem-Select-triggerBox');
+      expect(triggerBox).toHaveClass('Select-trigger--filled');
 
       rerender(
         <Select onSelect={FunctionValue} styleType="outlined">
@@ -1923,8 +2009,8 @@ describe('Select component size functionality tests', () => {
         </Select>
       );
 
-      expect(triggerButton).toHaveClass('Select-trigger--outlined');
-      expect(triggerButton).not.toHaveClass('Select-trigger--filled');
+      expect(triggerBox).toHaveClass('Select-trigger--outlined');
+      expect(triggerBox).not.toHaveClass('Select-trigger--filled');
     });
 
     it('should work correctly with pre-selected value, styleType, and error prop', () => {
@@ -1942,10 +2028,10 @@ describe('Select component size functionality tests', () => {
         </Select>
       );
 
-      const triggerButton = getByTestId('DesignSystem-Select-trigger');
-      expect(triggerButton).toHaveClass('Select-trigger--outlined');
-      expect(triggerButton).toHaveClass('Select-trigger--error');
-      expect(triggerButton).not.toHaveClass('Select-trigger--outlinedPlaceholder');
+      const triggerBox = getByTestId('DesignSystem-Select-triggerBox');
+      expect(triggerBox).toHaveClass('Select-trigger--outlined');
+      expect(triggerBox).toHaveClass('Select-trigger--error');
+      expect(triggerBox).not.toHaveClass('Select-trigger--outlinedPlaceholder');
     });
   });
 

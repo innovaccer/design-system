@@ -427,8 +427,8 @@ Note: For more details [color-mod](https://www.npmjs.com/package/postcss-color-m
 ## TEXT-COLORS
    | value | properties |
    | ----- | ---------- |
-   | --text | --night ; |
-   | --text-subtle | --night-lighter ; |
+   | --text | --inverse ; |
+   | --text-subtle | --inverse-lighter ; |
    | --text-link | --primary ; |
    | --text-disabled | --inverse-lightest ; |
    | --text-destructive | --alert ; |

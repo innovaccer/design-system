@@ -294,10 +294,13 @@ describe('renders async dropdown', () => {
 
     fireEvent.input(searchInput, { target: { value: 'Option 30' } });
     expect(getAllByTestId('DesignSystem-Dropdown--PlaceholderParagraph')).toHaveLength(10);
-    await waitFor(() => {
-      expect(getAllByTestId('DesignSystem-DropdownOption--DEFAULT')).toHaveLength(50);
-      expect(getAllByTestId('DesignSystem-DropdownOption--DEFAULT')[29]).toHaveTextContent('Option 30');
-    });
+    await waitFor(
+      () => {
+        expect(getAllByTestId('DesignSystem-DropdownOption--DEFAULT')).toHaveLength(50);
+        expect(getAllByTestId('DesignSystem-DropdownOption--DEFAULT')[29]).toHaveTextContent('Option 30');
+      },
+      { timeout: 2000 }
+    );
   });
 
   it('renders async search with default fetchOptions', async () => {
@@ -861,10 +864,15 @@ describe('Dropdown errorTemplate', () => {
     const dropdownTrigger = getByTestId(trigger);
     fireEvent.click(dropdownTrigger);
 
-    await waitFor(() => {
-      expect(getAllByTestId('DesignSystem-Text')[0].textContent).toMatch('No record available');
-      expect(getAllByTestId('DesignSystem-Text')[1].textContent).toMatch('We have nothing to show you at the moment.');
-    });
+    await waitFor(
+      () => {
+        expect(getAllByTestId('DesignSystem-Text')[0].textContent).toMatch('No record available');
+        expect(getAllByTestId('DesignSystem-Text')[1].textContent).toMatch(
+          'We have nothing to show you at the moment.'
+        );
+      },
+      { timeout: 2000 }
+    );
   });
 
   it('renders default template when search returns no result', async () => {

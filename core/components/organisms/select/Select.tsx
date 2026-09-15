@@ -226,6 +226,7 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
   );
 
   const triggerRef = React.useRef<HTMLElement | null>(null);
+  const triggerBoxRef = React.useRef<HTMLElement | null>(null);
   const listRef = React.useRef<HTMLDivElement | null>(null);
   const prevValueRef = React.useRef<OptionType | OptionType[] | undefined>(value);
   const wasOpenRef = React.useRef(false);
@@ -292,8 +293,10 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
 
   React.useEffect(() => {
     // if popover width is not provided explicitly, apply the trigger width to popover width
+    // the default SelectTrigger wraps its focusable control in its own box, so measure that box
+    // (not the narrower inner control) for the full trigger width; a custom `trigger` has no such wrapper.
     const MIN_WIDTH = 176;
-    const triggerWidth = triggerRef.current?.clientWidth;
+    const triggerWidth = trigger ? triggerRef.current?.clientWidth : triggerBoxRef.current?.clientWidth;
 
     if (!popoverWidth && triggerWidth) {
       setPopoverStyle({
@@ -392,16 +395,17 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
   }, [openPopover]);
 
   const onToggleHandler = (open: boolean) => {
+    if (triggerOptions && triggerOptions.disabled) {
+      setOpenPopover(false);
+      return;
+    }
+
     if (onToggle) {
       onToggle(open);
     }
 
-    if (triggerOptions && triggerOptions.disabled) {
-      setOpenPopover(false);
-    } else {
-      setOpenPopover(open);
-      setHighlightFirstItem(open);
-    }
+    setOpenPopover(open);
+    setHighlightFirstItem(open);
   };
 
   const onOptionClick = (option: OptionType | OptionType[]) => {
@@ -509,6 +513,7 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
     multiSelect,
     listRef,
     triggerRef,
+    triggerBoxRef,
     focusedOption,
     setFocusedOption,
     setHighlightFirstItem,

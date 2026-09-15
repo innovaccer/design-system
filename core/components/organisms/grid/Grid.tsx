@@ -85,7 +85,10 @@ export type ColumnSchema = {
    */
   maxWidth?: string | number;
   /**
-   * Denotes if column is resizable
+   * Denotes if column is resizable.
+   * Resizing can be done by dragging the column edge, via arrow keys on the resize
+   * handle, or via the "Increase width"/"Decrease width"/"Fit to content" actions in
+   * the column's more-options menu (single-pointer alternatives to dragging), subject to `minWidth`/`maxWidth`.
    */
   resizable?: boolean;
   /**
@@ -701,59 +704,65 @@ export class Grid extends React.Component<GridProps, GridState> {
     );
 
     return (
-      <div
-        data-test="DesignSystem-Grid"
-        {...baseProps}
-        className={classes}
-        role="grid"
-        aria-label={ariaLabel}
-        aria-labelledby={ariaLabelledBy}
-        aria-busy={loading}
-        ref={(el) => {
-          this.gridRef = el;
-        }}
-      >
-        {init && (
-          <GridProvider
-            value={{
-              ...this.props,
-              ref: this.gridRef,
-              gridId: this.gridId,
-              isSortingListUpdated: this.state.isSortingListUpdated,
-              updateIsSortingListUpdated: this.updateIsSortingListUpdated.bind(this),
-            }}
-          >
-            {showHead && (
-              <GridHead
-                schema={schema}
-                onSelectAll={this.onSelectAll?.bind(this)}
-                onMenuChange={this.onMenuChange.bind(this)}
-                onFilterChange={this.onFilterChange.bind(this)}
-                updateColumnSchema={this.updateColumnSchema.bind(this)}
-                reorderColumn={this.reorderColumn.bind(this)}
-              />
-            )}
-            {!loading && error ? (
-              errorTemplate &&
-              ((typeof errorTemplate === 'function' ? errorTemplate({}) : errorTemplate) as React.ReactNode)
-            ) : (
-              <GridBody
-                key={`${page}`}
-                schema={schema}
-                prevPageInfo={prevPageInfo}
-                updatePrevPageInfo={this.updatePrevPageInfo.bind(this)}
-                onSelect={this.onSelect.bind(this)}
-                enableRowVirtualization={enableRowVirtualization}
-                virtualRowOptions={virtualRowOptions}
-                infiniteScrollOptions={infiniteScrollOptions}
-                enableInfiniteScroll={enableInfiniteScroll}
-                onScroll={onScroll}
-                fetchDataOnScroll={fetchDataOnScroll}
-              />
-            )}
-          </GridProvider>
-        )}
-      </div>
+      <>
+        {/* Persistent live region: always in DOM so screen readers announce the loading state change. */}
+        <span aria-live="polite" aria-atomic="true" className={styles['Grid-srOnly']}>
+          {init && loading ? 'Loading records' : ''}
+        </span>
+        <div
+          data-test="DesignSystem-Grid"
+          {...baseProps}
+          className={classes}
+          role="grid"
+          aria-label={ariaLabel}
+          aria-labelledby={ariaLabelledBy}
+          aria-busy={loading}
+          ref={(el) => {
+            this.gridRef = el;
+          }}
+        >
+          {init && (
+            <GridProvider
+              value={{
+                ...this.props,
+                ref: this.gridRef,
+                gridId: this.gridId,
+                isSortingListUpdated: this.state.isSortingListUpdated,
+                updateIsSortingListUpdated: this.updateIsSortingListUpdated.bind(this),
+              }}
+            >
+              {showHead && (
+                <GridHead
+                  schema={schema}
+                  onSelectAll={this.onSelectAll?.bind(this)}
+                  onMenuChange={this.onMenuChange.bind(this)}
+                  onFilterChange={this.onFilterChange.bind(this)}
+                  updateColumnSchema={this.updateColumnSchema.bind(this)}
+                  reorderColumn={this.reorderColumn.bind(this)}
+                />
+              )}
+              {!loading && error ? (
+                errorTemplate &&
+                (typeof errorTemplate === 'function' ? React.createElement(errorTemplate, {}) : errorTemplate)
+              ) : (
+                <GridBody
+                  key={`${page}`}
+                  schema={schema}
+                  prevPageInfo={prevPageInfo}
+                  updatePrevPageInfo={this.updatePrevPageInfo.bind(this)}
+                  onSelect={this.onSelect.bind(this)}
+                  enableRowVirtualization={enableRowVirtualization}
+                  virtualRowOptions={virtualRowOptions}
+                  infiniteScrollOptions={infiniteScrollOptions}
+                  enableInfiniteScroll={enableInfiniteScroll}
+                  onScroll={onScroll}
+                  fetchDataOnScroll={fetchDataOnScroll}
+                />
+              )}
+            </GridProvider>
+          )}
+        </div>
+      </>
     );
   }
 }

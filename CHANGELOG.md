@@ -1,3 +1,130 @@
+## 4.30.1 (2026-09-09)
+
+### Highlights
+
+- Added a portal selector for scoped CSS support.
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Improvements
+
+- style(scoped-css): add portal selector for scoped css (e6966cbf8)
+
+---
+
+## 4.30.0 (2026-09-07)
+
+### Highlights
+
+- Accessibility improvements to Table menu options and Modal overlay behaviour, alongside a new single-click dragging option for Table columns.
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(table): add a11y attributes in table menu options (654970e5f)
+- feat(modal): update overlay behaviour for a11y fix (04eac7e1c)
+- feat(table): add single click dragging movement option (d31e4b2de)
+
+---
+
+## 4.29.0 (2026-09-03)
+
+### Highlights
+
+- Continued accessibility hardening across Grid, Dropdown, Chip, Table, and AvatarSelection components.
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(avatarSelection): add aria attribute for avatar count (84566d6c9)
+- feat(avatarSelection): add aria attribute for search empty state (e488d63a1)
+
+### Fixes
+
+- fix(story): remove redundant textarea from card (253ca9f7a)
+- fix(table): add aria attr in draggable dropdown (de2c74a7c)
+- fix(table): add aria attributes in draggable dropdown in table (5e4de718a)
+- fix(chip): update role for chip component (f46b0e12c)
+- fix(dropdown): update option wrapper from label in dropdwon option (780763526)
+- fix(grid): update keyboard interaction for reorder cell (f95b5c40c)
+
+---
+
+## 4.28.0 (2026-09-02)
+
+### Highlights
+
+- Broad accessibility sweep adding ARIA, keyboard, and screen-reader support across Tooltip, Calendar, Avatar, AvatarGroup, TabsWrapper, Grid, Table, and Select, alongside an updated color design tokens mapping.
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(color): update color design tokens mapping (f3b2f370e)
+- feat(tabsWrapper): add a11y support in tabs wrapper component (332a43265)
+- feat(avatarGroup): add label for count avatar (e9f7613c0)
+- feat(avatarGroup): add expanded aria attr support (9c61a3e20)
+- feat(tooltip): add a11y in tooltip component (73a7f095b)
+- feat(saraSparkle): add a11y default alt attribute (aee983e14)
+- feat(calendar): add aria attributes for calendar component (5763950bf)
+- feat(avatar): add keyboard handler in avatar group (39c75471a)
+- feat(grid): add screen reader element in grid component (6718f6252)
+
+### Fixes
+
+- fix(table): add visible tooltip label to select-all checkbox (c0fcf53a1)
+- fix(table): update a11y for table pagination (7b50f1625)
+- fix(grid): add keyboard access to scrollable region (6db5196f7)
+- fix(select): avoid using interactive nested element in select trigger (50da2eb3b)
+
+### Improvements
+
+- chore: update storybook codesandbox responsive design (cdb7b48ca)
+
+---
+
 ## 4.28.0-1 (2026-08-18)
 
 ### Highlights

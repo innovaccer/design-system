@@ -133,6 +133,7 @@ const customCode = `
                     label: 'Date of Birth',
                     placeholder: 'MM/DD/YYYY',
                     icon: 'cake',
+                    autoComplete: 'bday',
                     mask: [/\\d/, /\\d/, '/', /\\d/, /\\d/, '/', /\\d/, /\\d/, /\\d/, /\\d/]
                   }}
                 />

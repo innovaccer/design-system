@@ -74,7 +74,9 @@ const RenderItem = ({ item, onClick, index, showTooltip }: renderItemProps) => {
   return (
     <div key={index} className={styles['Breadcrumbs-item']} data-test="DesignSystem-Breadcrumbs-item">
       {showTooltip ? (
-        <Tooltip tooltip={item.label} position="bottom">
+        // The link's own text is item.label too (just CSS-truncated), so its accessible name
+        // already conveys this — aria-hidden avoids describing it a second time.
+        <Tooltip tooltip={item.label} position="bottom" aria-hidden="true">
           <RenderLink item={item} onClick={onClick} />
         </Tooltip>
       ) : (

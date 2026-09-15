@@ -11,10 +11,16 @@ export const Trigger = () => {
           <AvatarGroup size="regular" list={list.slice(0, 4)} popoverOptions={{ on: 'hover' }} />
         </div>
       </div>
-      <div className="flex-column">
+      <div className="flex-column mr-9">
         <Text weight="strong">Click</Text>
         <div className="mt-4">
           <AvatarGroup list={list.slice(0, 4)} popoverOptions={{ on: 'click' }} />
+        </div>
+      </div>
+      <div className="flex-column">
+        <Text weight="strong">Accessible label</Text>
+        <div className="mt-4">
+          <AvatarGroup list={list.slice(0, 4)} moreAvatarsLabel="care team members" />
         </div>
       </div>
     </div>
@@ -49,10 +55,16 @@ const customCode = `() => {
           <AvatarGroup list={list.slice(0, 4)} popoverOptions={{ on: 'hover' }} />
         </div>
       </div>
-      <div className="flex-column">
+      <div className="flex-column mr-9">
         <Text weight="strong">Click</Text>
         <div className="mt-4">
           <AvatarGroup list={list.slice(0, 4)} popoverOptions={{ on: 'click' }} />
+        </div>
+      </div>
+      <div className="flex-column">
+        <Text weight="strong">Accessible label</Text>
+        <div className="mt-4">
+          <AvatarGroup list={list.slice(0, 4)} moreAvatarsLabel="care team members" />
         </div>
       </div>
     </div>

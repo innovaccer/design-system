@@ -56,17 +56,26 @@ export const getSchema = (
 export const getPluralSuffix = (count: number) => (count > 1 ? 's' : '');
 
 /**
+ * Instructional hint announced on a draggable column header so keyboard/screen-reader
+ * users can discover the Shift+Arrow reorder shortcut.
+ */
+export const REORDER_COLUMN_HINT = 'Press Shift plus Left or Right arrow key to reorder column.';
+
+/**
  * Accessible name for a sortable column-header button. `aria-sort` stays on the
  * parent `columnheader`; this label is what screen readers announce on focus.
+ * When `reorderable` is true, the reorder hint is appended so the same focus
+ * target also announces the drag-reorder shortcut.
  */
-export const getSortButtonAriaLabel = (displayName: string, sorted: SortType | null): string => {
+export const getSortButtonAriaLabel = (displayName: string, sorted: SortType | null, reorderable?: boolean): string => {
+  const hint = reorderable ? ` ${REORDER_COLUMN_HINT}` : '';
   if (sorted === 'asc') {
-    return `${displayName}, sorted ascending. Activate to sort descending.`;
+    return `${displayName}, sorted ascending. Activate to sort descending.${hint}`;
   }
   if (sorted === 'desc') {
-    return `${displayName}, sorted descending. Activate to remove sort.`;
+    return `${displayName}, sorted descending. Activate to remove sort.${hint}`;
   }
-  return `${displayName}, not sorted. Activate to sort ascending.`;
+  return `${displayName}, not sorted. Activate to sort ascending.${hint}`;
 };
 
 export const isScrollAtTop = (enableRowVirtualization?: boolean, ref?: HTMLDivElement): boolean => {
