@@ -227,7 +227,7 @@ export const VerticalNav = (props: VerticalNavProps) => {
       const hasGroup = index === 0 || menus[index - 1].group !== menu.group;
 
       // Flush previous group if group changes
-      if (hasGroup && currentGroup !== undefined) {
+      if (hasGroup && groupItems.length > 0) {
         if (expanded && currentGroup) {
           list.push(
             <div
@@ -297,7 +297,7 @@ export const VerticalNav = (props: VerticalNavProps) => {
     });
 
     // Flush last group
-    if (currentGroup !== undefined) {
+    if (groupItems.length > 0) {
       if (expanded && currentGroup) {
         list.push(
           <div
