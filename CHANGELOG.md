@@ -1,3 +1,27 @@
+## 4.30.3 (2026-09-23)
+
+### Highlights
+
+- Fixed Modal not closing on Escape when nested overlays are present.
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Fixes
+
+- fix(modal): check nested overlays before closing on Escape (489071cf2)
+
+---
+
 ## 4.30.2 (2026-09-22)
 
 ### Highlights
