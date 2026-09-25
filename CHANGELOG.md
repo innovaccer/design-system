@@ -1,3 +1,28 @@
+## 4.30.2 (2026-09-22)
+
+### Highlights
+
+- Accessibility fixes for Select's disabled trigger focusability and Label's screen reader positioning.
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Fixes
+
+- fix(select): keep disabled trigger focusable via aria-disabled (59c383a92)
+- fix(label): update position for screen reader label (cf1087561)
+
+---
+
 ## 4.30.1 (2026-09-09)
 
 ### Highlights
