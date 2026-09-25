@@ -172,7 +172,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
   }
 
   onCloseHandler = (event: KeyboardEvent) => {
-    closeOnEscapeKeypress(event, true, this.onOutsideClickHandler);
+    closeOnEscapeKeypress(event, OverlayManager.isTopOverlay(this.modalRef.current), this.onOutsideClickHandler);
   };
 
   onFocusTrapKeyDown = (event: KeyboardEvent) => {
