@@ -70,6 +70,8 @@ export const getFocusableElements = (container: HTMLElement): HTMLElement[] => {
   });
 };
 
+const SELF_CONTAINED_OVERLAY_SELECTOR = '[data-focus-contained]';
+
 const LISTBOX_OPTION_SELECTOR = '[role="option"]';
 
 /**
@@ -215,9 +217,14 @@ export const handleFocusTrapKeyDown = (
 ): boolean => {
   if (event.key !== 'Tab') return false;
 
-  const scopes = [container, ...nestedOverlays];
-  const focusable = scopes.reduce<HTMLElement[]>((acc, scope) => acc.concat(getFocusableElements(scope)), []);
   const activeElement = document.activeElement as HTMLElement | null;
+  const selfContainedOverlay = activeElement
+    ? nestedOverlays.find(
+        (overlay) => overlay.contains(activeElement) && overlay.querySelector(SELF_CONTAINED_OVERLAY_SELECTOR)
+      )
+    : undefined;
+  const scopes = selfContainedOverlay ? [selfContainedOverlay] : [container, ...nestedOverlays];
+  const focusable = scopes.reduce<HTMLElement[]>((acc, scope) => acc.concat(getFocusableElements(scope)), []);
 
   if (!activeElement || !scopes.some((scope) => scope.contains(activeElement))) {
     return false;

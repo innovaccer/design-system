@@ -5,7 +5,9 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
  1`] = `
 <body>
   <div>
-    <div>
+    <div
+      data-focus-contained="true"
+    >
       <div
         class="DatePicker-content"
       >
@@ -1340,7 +1342,9 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
  1`] = `
 <body>
   <div>
-    <div>
+    <div
+      data-focus-contained="true"
+    >
       <div
         class="DatePicker-content"
       >
@@ -2676,7 +2680,9 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
  1`] = `
 <body>
   <div>
-    <div>
+    <div
+      data-focus-contained="true"
+    >
       <div
         class="DatePicker-content"
       >
@@ -4012,7 +4018,9 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
  1`] = `
 <body>
   <div>
-    <div>
+    <div
+      data-focus-contained="true"
+    >
       <div
         class="DatePicker-content"
       >
@@ -5347,7 +5355,9 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
  1`] = `
 <body>
   <div>
-    <div>
+    <div
+      data-focus-contained="true"
+    >
       <div
         class="DatePicker-content"
       >
@@ -6682,7 +6692,9 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
  1`] = `
 <body>
   <div>
-    <div>
+    <div
+      data-focus-contained="true"
+    >
       <div
         class="DatePicker-content"
       >
@@ -8017,7 +8029,9 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
  1`] = `
 <body>
   <div>
-    <div>
+    <div
+      data-focus-contained="true"
+    >
       <div
         class="DatePicker-content"
       >
@@ -8461,7 +8475,9 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
  1`] = `
 <body>
   <div>
-    <div>
+    <div
+      data-focus-contained="true"
+    >
       <div
         class="DatePicker-content"
       >
@@ -8898,7 +8914,9 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
  1`] = `
 <body>
   <div>
-    <div>
+    <div
+      data-focus-contained="true"
+    >
       <div
         class="DatePicker-content"
       >

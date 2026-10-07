@@ -184,8 +184,7 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
     // Return focus to the date input when the popover closes (select / Escape / outside click).
     if (prevState.open && !this.state.open) {
       const active = document.activeElement as HTMLElement | null;
-      const calendarRoot = this.calendarContainerRef.current;
-      if (!active || active === document.body || (calendarRoot && calendarRoot.contains(active))) {
+      if (!active || active === document.body || active.closest('[data-focus-contained]')) {
         this.inputRef.current?.focus({ preventScroll: true });
       }
     }
@@ -339,7 +338,7 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
     });
 
     return (
-      <div>
+      <div data-focus-contained>
         <div className={styles['DatePicker-content']}>
           {children}
           <Calendar
