@@ -49,6 +49,16 @@ export const closeOnEscapeKeypress = (
   }
 };
 
+const getZIndex = (element: Element) => Number(window.getComputedStyle(element).zIndex);
+
+export const hasOpenLayerAbove = (overlay: HTMLElement | null): boolean => {
+  const layer = overlay?.closest('[data-layer]');
+  if (!layer) return false;
+
+  const layerZIndex = getZIndex(layer);
+  return Array.from(document.querySelectorAll('[data-opened="true"]')).some((el) => getZIndex(el) > layerZIndex);
+};
+
 const FOCUSABLE_SELECTOR =
   'a[href], button:not([disabled]), input:not([disabled]):not([type="hidden"]), select:not([disabled]), textarea:not([disabled]), [contenteditable="true"], summary, area[href], [tabindex]:not([tabindex="-1"])';
 
