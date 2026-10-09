@@ -1,3 +1,29 @@
+## 4.30.4 (2026-10-09)
+
+### Highlights
+
+- Accessibility fixes across Modal, DatePicker, and Dropdown for Escape handling, focus management, and ARIA attributes.
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Fixes
+
+- fix(modal): don't close on Escape while an open popover, tooltip or layer is above it (d688faf59)
+- fix(datepicker): keep Tab inside open calendar and return focus to input after choosing Today (116902f4b)
+- fix(dropdown): expose combobox role and always set aria-expanded on trigger (6d4de208e)
+
+---
+
 ## 4.30.3 (2026-09-23)
 
 ### Highlights
