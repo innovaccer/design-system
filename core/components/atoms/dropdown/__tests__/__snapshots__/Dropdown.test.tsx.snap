@@ -14,9 +14,12 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-expanded="false"
           aria-haspopup="listbox"
+          aria-label="Select"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
+          role="combobox"
           tabindex="0"
           type="button"
           value=""
@@ -59,9 +62,12 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-expanded="false"
           aria-haspopup="listbox"
+          aria-label="Select"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
+          role="combobox"
           tabindex="0"
           type="button"
           value=""
@@ -104,9 +110,12 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-expanded="false"
           aria-haspopup="listbox"
+          aria-label="Select"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
+          role="combobox"
           tabindex="0"
           type="button"
           value=""
@@ -149,9 +158,12 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-expanded="false"
           aria-haspopup="listbox"
+          aria-label="Select"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
+          role="combobox"
           tabindex="0"
           type="button"
           value=""
@@ -194,9 +206,12 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-expanded="false"
           aria-haspopup="listbox"
+          aria-label="Select"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder DropdownButton--icon"
           data-test="DesignSystem-DropdownTrigger"
+          role="combobox"
           tabindex="0"
           type="button"
           value=""
@@ -247,9 +262,12 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-expanded="false"
           aria-haspopup="listbox"
+          aria-label="Select"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
+          role="combobox"
           tabindex="0"
           type="button"
           value=""
@@ -298,9 +316,12 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-expanded="false"
           aria-haspopup="listbox"
+          aria-label="Select"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
+          role="combobox"
           tabindex="0"
           type="button"
           value=""
@@ -343,10 +364,13 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-expanded="false"
           aria-haspopup="listbox"
+          aria-label="Select"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder DropdownButton--icon"
           data-test="DesignSystem-DropdownTrigger"
           disabled=""
+          role="combobox"
           tabindex="0"
           type="button"
           value=""
@@ -397,10 +421,13 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-expanded="false"
           aria-haspopup="listbox"
+          aria-label="Select"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           disabled=""
+          role="combobox"
           tabindex="0"
           type="button"
           value=""
@@ -449,10 +476,13 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-expanded="false"
           aria-haspopup="listbox"
+          aria-label="Select"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           disabled=""
+          role="combobox"
           tabindex="0"
           type="button"
           value=""
@@ -495,9 +525,12 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-expanded="false"
           aria-haspopup="listbox"
+          aria-label="Select"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
+          role="combobox"
           tabindex="0"
           type="button"
           value=""
@@ -540,9 +573,12 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-expanded="false"
           aria-haspopup="listbox"
+          aria-label="Select"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
+          role="combobox"
           tabindex="0"
           type="button"
           value=""
@@ -585,9 +621,12 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-expanded="false"
           aria-haspopup="listbox"
+          aria-label="Select"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
+          role="combobox"
           tabindex="0"
           type="button"
           value=""
@@ -630,9 +669,12 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-expanded="false"
           aria-haspopup="listbox"
+          aria-label="Select"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
+          role="combobox"
           tabindex="0"
           type="button"
           value=""
@@ -675,9 +717,12 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-expanded="false"
           aria-haspopup="listbox"
+          aria-label="Select"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
+          role="combobox"
           tabindex="0"
           type="button"
           value=""
@@ -720,6 +765,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger"
       >
         <button
+          aria-expanded="false"
           aria-haspopup="menu"
           class="Button DropdownButton DropdownButton--regular DropdownButton--regularSquare"
           data-test="DesignSystem-DropdownTrigger"
@@ -756,9 +802,12 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-expanded="false"
           aria-haspopup="listbox"
+          aria-label="Select"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
+          role="combobox"
           tabindex="0"
           type="button"
           value=""
@@ -801,9 +850,12 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-expanded="false"
           aria-haspopup="listbox"
+          aria-label="Select"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
+          role="combobox"
           tabindex="0"
           type="button"
           value=""
@@ -846,9 +898,12 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-expanded="false"
           aria-haspopup="listbox"
+          aria-label="Select"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
+          role="combobox"
           tabindex="0"
           type="button"
           value=""
@@ -891,9 +946,12 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-expanded="false"
           aria-haspopup="listbox"
+          aria-label="Select"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
+          role="combobox"
           tabindex="0"
           type="button"
           value=""
@@ -936,9 +994,12 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-expanded="false"
           aria-haspopup="listbox"
+          aria-label="Select"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
+          role="combobox"
           tabindex="0"
           type="button"
           value=""
@@ -981,9 +1042,12 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-expanded="false"
           aria-haspopup="listbox"
+          aria-label="Select"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
+          role="combobox"
           tabindex="0"
           type="button"
           value=""
@@ -1026,9 +1090,12 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-expanded="false"
           aria-haspopup="listbox"
+          aria-label="Select"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
+          role="combobox"
           tabindex="0"
           type="button"
           value=""
@@ -1071,9 +1138,12 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-expanded="false"
           aria-haspopup="listbox"
+          aria-label="Select"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
+          role="combobox"
           tabindex="0"
           type="button"
           value=""
@@ -1116,9 +1186,12 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-expanded="false"
           aria-haspopup="listbox"
+          aria-label="Select"
           class="Button DropdownButton DropdownButton--tiny DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
+          role="combobox"
           tabindex="0"
           type="button"
           value=""
@@ -1161,9 +1234,12 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-expanded="false"
           aria-haspopup="listbox"
+          aria-label="Select"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
+          role="combobox"
           tabindex="0"
           type="button"
           value=""
@@ -1206,9 +1282,12 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-expanded="false"
           aria-haspopup="listbox"
+          aria-label="Select"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
+          role="combobox"
           tabindex="0"
           type="button"
           value=""
