@@ -112,7 +112,9 @@ exports[`TS renders children 1`] = `
     class="Col"
     data-test="DesignSystem-Column"
   />
-  <div>
+  <div
+    data-focus-contained="true"
+  >
     <div
       class="DatePicker-content"
     >
