@@ -19,6 +19,23 @@
   border-top: var(--border-width-2-5) solid var(--secondary-light);
 }
 
+.VerticalNav-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.VerticalNav-group:not(:first-child) .VerticalNav-group-heading {
+  border-top: var(--border-width-2-5) solid var(--secondary-light);
+}
+
+.VerticalNav-group-heading {
+  text-transform: uppercase;
+  padding-left: var(--spacing-40);
+  padding-top: var(--spacing-30);
+  padding-bottom: var(--spacing-15);
+  margin-top: var(--spacing-20);
+}
+
 .MenuItem {
   text-decoration: none;
   box-sizing: border-box;
