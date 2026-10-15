@@ -10278,10 +10278,13 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
             </i>
           </div>
           <input
+            aria-expanded="false"
+            aria-haspopup="dialog"
             autocomplete="off"
             class="Input-input Input-input--regular mr-4"
             data-test="DesignSystem-Input"
             placeholder="mm/dd/yyyy"
+            role="combobox"
             type="text"
             value="03/01/2020"
           />
