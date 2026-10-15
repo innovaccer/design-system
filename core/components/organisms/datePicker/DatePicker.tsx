@@ -9,6 +9,7 @@ import { findFocusableCalendarCell } from '../calendar/utils';
 import { Trigger } from './Trigger';
 import config from '../calendar/config';
 import classNames from 'classnames';
+import uidGenerator from '@/utils/uidGenerator';
 import styles from '@css/components/datePicker.module.css';
 
 export type DatePickerProps = SharedProps & {
@@ -129,6 +130,7 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
 
   private inputRef = React.createRef<HTMLInputElement>();
   private calendarContainerRef = React.createRef<HTMLDivElement>();
+  private popupId = `DesignSystem-DatePicker-popup-${uidGenerator()}`;
 
   constructor(props: DatePickerProps) {
     super(props);
@@ -204,7 +206,15 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
   };
 
   onInputKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (!this.state.open || e.defaultPrevented) return;
+    if (e.defaultPrevented) return;
+
+    if (!this.state.open) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        this.onToggleHandler(true, 'onClick');
+      }
+      return;
+    }
 
     // Keep typing uninterrupted; move focus into the portaled calendar on Tab / ArrowDown.
     // Only prevent default when a focusable calendar cell exists (date/month/year views).
@@ -337,8 +347,10 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
       'pt-3': size === 'large' && view === 'year',
     });
 
+    const popupProps = withInput ? { id: this.popupId, role: 'dialog', 'aria-label': 'Calendar' } : {};
+
     return (
-      <div data-focus-contained>
+      <div data-focus-contained {...popupProps}>
         <div className={styles['DatePicker-content']}>
           {children}
           <Calendar
@@ -393,6 +405,7 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
               setState={this.setState.bind(this)}
               inputRef={this.inputRef}
               onInputKeyDown={this.onInputKeyDown}
+              popupId={this.popupId}
             />
           }
           triggerClass="w-100"
