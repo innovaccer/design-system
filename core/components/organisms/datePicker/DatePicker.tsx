@@ -209,7 +209,7 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
     if (e.defaultPrevented) return;
 
     if (!this.state.open) {
-      if (e.key === 'Enter') {
+      if (e.key === 'Enter' || e.key === 'ArrowDown') {
         e.preventDefault();
         this.onToggleHandler(true, 'onClick');
       }
