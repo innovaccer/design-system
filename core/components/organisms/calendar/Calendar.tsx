@@ -12,6 +12,7 @@ import {
   focusMonthCell,
   focusYearCell,
   formatDateAriaLabel,
+  selectedAriaLabel,
   handleDateViewKeyDown,
   handleMonthViewKeyDown,
   handleYearViewKeyDown,
@@ -898,7 +899,6 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                 data-year-index={offset}
                 className={valueClass}
                 tabIndex={isFocused ? 0 : -1}
-                aria-label={year.toString()}
                 aria-disabled={disabled}
                 aria-selected={active}
                 aria-current={isCurrentYear() ? 'date' : undefined}
@@ -916,6 +916,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                 >
                   {year}
                 </Text>
+                {active && <span className={styles['Calendar-srOnly']}>, selected</span>}
               </button>
             </div>
           );
@@ -1004,7 +1005,6 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                 data-month={month}
                 className={valueClass}
                 tabIndex={isFocused ? 0 : -1}
-                aria-label={months[month]}
                 aria-disabled={disabled}
                 aria-selected={active}
                 aria-current={isCurrentMonth() ? 'date' : undefined}
@@ -1022,6 +1022,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                 >
                   {months[month]}
                 </Text>
+                {active && <span className={styles['Calendar-srOnly']}>, selected</span>}
               </button>
             </div>
           );
@@ -1631,7 +1632,6 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                   data-test="DesignSystem-Calendar--dateValue"
                   className={valueClass}
                   tabIndex={isFocused ? 0 : -1}
-                  aria-label={formatDateAriaLabel(fullDate)}
                   aria-disabled={disabled}
                   aria-selected={Boolean(active || activeDate)}
                   aria-current={today() ? 'date' : undefined}
@@ -1662,7 +1662,11 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                   onMouseOver={onMouseOverHandler(date)}
                   onMouseEnter={onMouseEnterHandler.bind(this, date, today(), disabled)}
                 >
+                  <span className={styles['Calendar-srOnly']} data-calendar-cell-label>
+                    {selectedAriaLabel(formatDateAriaLabel(fullDate), Boolean(active || activeDate))}
+                  </span>
                   <Text
+                    aria-hidden="true"
                     color={getTextAppearance() === 'default' || today() ? getTextColor : undefined}
                     appearance={getTextAppearance()}
                     size={size === 'small' ? 'small' : 'regular'}

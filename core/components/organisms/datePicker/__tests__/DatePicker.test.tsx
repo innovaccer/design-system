@@ -219,7 +219,7 @@ describe('DatePicker component a11y', () => {
   });
 
   it('moves focus into the calendar on ArrowDown and returns focus to input after select', async () => {
-    const { getByTestId, getAllByLabelText } = render(
+    const { getByTestId, getAllByRole } = render(
       <DatePicker date={newDate} withInput={true} open={true} closeOnSelect={true} />
     );
     const input = getByTestId('DesignSystem-Input') as HTMLInputElement;
@@ -229,7 +229,7 @@ describe('DatePicker component a11y', () => {
     fireEvent.keyDown(input, { key: 'ArrowDown' });
     await new Promise((resolve) => requestAnimationFrame(() => resolve(undefined)));
 
-    const selectedDate = getAllByLabelText('March 1, 2020')[0];
+    const selectedDate = getAllByRole('gridcell', { name: 'March 1, 2020, selected' })[0];
     expect(selectedDate).toHaveFocus();
 
     fireEvent.click(selectedDate);
@@ -237,15 +237,13 @@ describe('DatePicker component a11y', () => {
   });
 
   it('moves focus into the calendar when opened via click', async () => {
-    const { getByTestId, getAllByLabelText } = render(
-      <DatePicker date={newDate} withInput={true} closeOnSelect={true} />
-    );
+    const { getByTestId, getAllByRole } = render(<DatePicker date={newDate} withInput={true} closeOnSelect={true} />);
     const input = getByTestId('DesignSystem-Input') as HTMLInputElement;
     fireEvent.click(input);
 
     await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(() => resolve(undefined))));
 
-    const selectedDate = getAllByLabelText('March 1, 2020')[0];
+    const selectedDate = getAllByRole('gridcell', { name: 'March 1, 2020, selected' })[0];
     expect(selectedDate).toHaveFocus();
   });
 
@@ -262,7 +260,7 @@ describe('DatePicker component a11y', () => {
   });
 
   it('lets inputOptions.onKeyDown preventDefault cancel calendar focus shortcuts', async () => {
-    const { getByTestId, getAllByLabelText } = render(
+    const { getByTestId, getAllByRole } = render(
       <DatePicker
         date={newDate}
         withInput={true}
@@ -281,19 +279,17 @@ describe('DatePicker component a11y', () => {
     await new Promise((resolve) => requestAnimationFrame(() => resolve(undefined)));
 
     expect(input).toHaveFocus();
-    expect(getAllByLabelText('March 1, 2020')[0]).not.toHaveFocus();
+    expect(getAllByRole('gridcell', { name: 'March 1, 2020, selected' })[0]).not.toHaveFocus();
   });
 
   it('moves focus into a month cell when opened in month view', async () => {
-    const { getByTestId, getByLabelText } = render(
-      <DatePicker date={newDate} withInput={true} open={true} view="month" />
-    );
+    const { getByTestId, getByRole } = render(<DatePicker date={newDate} withInput={true} open={true} view="month" />);
     const input = getByTestId('DesignSystem-Input') as HTMLInputElement;
     input.focus();
 
     fireEvent.keyDown(input, { key: 'ArrowDown' });
     await new Promise((resolve) => requestAnimationFrame(() => resolve(undefined)));
 
-    expect(getByLabelText('Mar')).toHaveFocus();
+    expect(getByRole('gridcell', { name: /^Mar\s*, selected$/ })).toHaveFocus();
   });
 });
