@@ -45,7 +45,8 @@ export interface VerticalNavProps extends BaseProps {
    */
   active?: ActiveMenu;
   /**
-   * Callback to be called on Menu click**(only if it's not disabled)**
+   * Callback to be called on Menu click**(only if it's not disabled)**.
+   * Not called when the clicked leaf item is already the active one.
    */
   onClick?: (menu: Menu) => void;
   /**
@@ -210,7 +211,8 @@ export const VerticalNav = (props: VerticalNavProps) => {
         setSubMenuExpandedState({ ...subMenuExpandedState, [menu.name]: !subMenuExpandedState[menu.name] });
       }
     } else {
-      if (onClick) onClick(menu);
+      const isAlreadyActive = isMenuActive(menus, menu, active);
+      if (!isAlreadyActive && onClick) onClick(menu);
     }
   };
 
