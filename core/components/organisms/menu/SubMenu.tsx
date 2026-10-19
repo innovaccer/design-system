@@ -1,6 +1,6 @@
 import React from 'react';
 import MenuContext from './MenuContext';
-import { handleKeyDown } from './utils';
+import { handleKeyDown, MENU_LIST_ITEM_SELECTOR } from './utils';
 import uidGenerator from '@/utils/uidGenerator';
 import SubMenuContext from './SubMenuContext';
 
@@ -36,7 +36,7 @@ export const SubMenu = (props: SubMenuProps) => {
   React.useEffect(() => {
     if (shouldFocusFirstItem && isSubmenuOpen) {
       requestAnimationFrame(() => {
-        const listItems = subListRef.current?.querySelectorAll('[data-test="DesignSystem-Menu-ListItem"]');
+        const listItems = subListRef.current?.querySelectorAll(MENU_LIST_ITEM_SELECTOR);
         (listItems?.[0] as HTMLElement)?.focus();
         setShouldFocusFirstItem(false);
       });

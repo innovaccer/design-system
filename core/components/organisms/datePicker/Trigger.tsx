@@ -11,12 +11,13 @@ type TriggerProps = {
   setState: any;
   inputRef?: React.Ref<HTMLInputElement>;
   onInputKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+  popupId?: string;
 };
 
 export const Trigger = (props: TriggerProps) => {
-  const { inputFormat, inputOptions, validators, state, setState, inputRef, onInputKeyDown } = props;
+  const { inputFormat, inputOptions, validators, state, setState, inputRef, onInputKeyDown, popupId } = props;
 
-  const { init, date, error } = state;
+  const { init, date, error, open } = state;
 
   const { placeholderChar = '_' } = inputOptions;
 
@@ -88,6 +89,10 @@ export const Trigger = (props: TriggerProps) => {
     <InputMask
       icon="events"
       placeholder={inputFormat}
+      role="combobox"
+      aria-haspopup="dialog"
+      aria-expanded={open}
+      aria-controls={open ? popupId : undefined}
       {...inputRest}
       ref={inputRef}
       error={showError}
