@@ -330,7 +330,9 @@ describe('Calendar component', () => {
         const weekRow = firstDayElement?.closest('.Calendar-valueRow');
         expect(weekRow).toBeInTheDocument();
 
-        const dateElements = Array.from(weekRow!.children).map((child) => child.textContent?.trim());
+        const dateElements = Array.from(weekRow!.children).map((child) =>
+          child.querySelector('[data-test="DesignSystem-Text"]')?.textContent?.trim()
+        );
         const firstDayIndex = dateElements.indexOf('1');
         expect(firstDayIndex).not.toBe(-1);
 
