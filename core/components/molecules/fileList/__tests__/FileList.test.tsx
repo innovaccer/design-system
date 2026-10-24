@@ -68,6 +68,19 @@ describe('FileList component', () => {
     expect(getByTestId('DesignSystem-FileListItem--Name')).toHaveClass('Text--subtle');
     expect(getByTestId('DesignSystem-FileListItem--Icon')).not.toHaveClass('FileIcon--animate');
   });
+
+  it('describes the error row by its error message', () => {
+    const { getByTestId } = render(<FileList fileList={[fileList[2]] as FileListType} />);
+    const row = getByTestId('DesignSystem-FileListItem');
+    const describedBy = row.getAttribute('aria-describedby');
+    expect(describedBy).toBeTruthy();
+    expect(document.getElementById(describedBy as string)).toHaveTextContent(`${fileList[2].errorMessage}`);
+  });
+
+  it('does not set aria-describedby on non-error rows', () => {
+    const { getByTestId } = render(<FileList fileList={[fileList[0]] as FileListType} />);
+    expect(getByTestId('DesignSystem-FileListItem')).not.toHaveAttribute('aria-describedby');
+  });
 });
 
 describe('FileList component with prop: onClick', () => {

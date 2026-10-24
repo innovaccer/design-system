@@ -60,10 +60,19 @@ export interface FileListItemProps extends BaseProps, Record<string, any> {
   onClick?: (file: FileListItemProps) => void;
 }
 
+let fileItemInstanceCounter = 0;
+
 export const FileListItem = (props: FileListItemProps) => {
   const { progress, errorMessage, onClick, className, actions, fileItem, file, status, fileSize } = props;
 
   const { name } = file;
+
+  const errorIdRef = React.useRef<string>('');
+  if (!errorIdRef.current) {
+    fileItemInstanceCounter += 1;
+    errorIdRef.current = `file-item-error-${fileItemInstanceCounter}`;
+  }
+  const errorId = status === 'error' ? errorIdRef.current : undefined;
 
   const baseProps = extractBaseProps(props);
 
@@ -98,6 +107,7 @@ export const FileListItem = (props: FileListItemProps) => {
       role="button"
       tabIndex={0}
       aria-label={`${name}${status === 'error' ? ', upload failed' : status === 'uploading' ? ', uploading' : ''}`}
+      aria-describedby={errorId}
     >
       <div className={styles['FileItem-file']}>
         <div className={styles['FileItem-fileContent']}>
@@ -128,6 +138,7 @@ export const FileListItem = (props: FileListItemProps) => {
           size="small"
           appearance="alert"
           description={errorMessage}
+          id={errorId}
           className={styles['FileItem-error']}
         />
       )}

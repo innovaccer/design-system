@@ -112,6 +112,7 @@ exports[`FileList component
       </div>
     </div>
     <div
+      aria-describedby="file-item-error-3"
       aria-label="Image File.jpeg, upload failed"
       class="FileItem"
       data-test="DesignSystem-FileListItem"
@@ -153,6 +154,7 @@ exports[`FileList component
       <div
         class="InlineMessage FileItem-error"
         data-test="DesignSystem-InlineMessage"
+        id="file-item-error-3"
       >
         <i
           aria-hidden="true"
