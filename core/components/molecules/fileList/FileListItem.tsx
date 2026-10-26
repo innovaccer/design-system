@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { Text, InlineMessage } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import uidGenerator from '@/utils/uidGenerator';
 import isSpaceKey from '@/accessibility/utils/isSpaceKey';
 import FileIcon from './FileIcon';
 import { FileStatus } from '@/common.type';
@@ -60,8 +61,6 @@ export interface FileListItemProps extends BaseProps, Record<string, any> {
   onClick?: (file: FileListItemProps) => void;
 }
 
-let fileItemInstanceCounter = 0;
-
 export const FileListItem = (props: FileListItemProps) => {
   const { progress, errorMessage, onClick, className, actions, fileItem, file, status, fileSize } = props;
 
@@ -69,8 +68,7 @@ export const FileListItem = (props: FileListItemProps) => {
 
   const errorIdRef = React.useRef<string>('');
   if (!errorIdRef.current) {
-    fileItemInstanceCounter += 1;
-    errorIdRef.current = `file-item-error-${fileItemInstanceCounter}`;
+    errorIdRef.current = `file-item-error-${uidGenerator()}`;
   }
   const errorId = status === 'error' ? errorIdRef.current : undefined;
 
