@@ -7,6 +7,12 @@ import { FileList, Button } from '@/index';
 import { FileListProps as Props } from '@/index.type';
 import { FileListItemProps } from '../FileListItem';
 
+let mockUid = 0;
+jest.mock('@/utils/uidGenerator', () => ({
+  __esModule: true,
+  default: () => `uid-${++mockUid}`,
+}));
+
 const FunctionValue = jest.fn();
 
 type FileListType = Omit<FileListItemProps[], 'onClick'>;
@@ -75,6 +81,13 @@ describe('FileList component', () => {
     const describedBy = row.getAttribute('aria-describedby');
     expect(describedBy).toBeTruthy();
     expect(document.getElementById(describedBy as string)).toHaveTextContent(`${fileList[2].errorMessage}`);
+  });
+
+  it('gives each error row its own error id', () => {
+    const { getAllByTestId } = render(<FileList fileList={[fileList[2], fileList[2]] as FileListType} />);
+    const [a, b] = getAllByTestId('DesignSystem-FileListItem').map((r) => r.getAttribute('aria-describedby'));
+    expect(a).toBeTruthy();
+    expect(a).not.toEqual(b);
   });
 
   it('does not set aria-describedby on non-error rows', () => {
