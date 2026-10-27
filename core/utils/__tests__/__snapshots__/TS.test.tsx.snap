@@ -112,7 +112,9 @@ exports[`TS renders children 1`] = `
     class="Col"
     data-test="DesignSystem-Column"
   />
-  <div>
+  <div
+    data-focus-contained="true"
+  >
     <div
       class="DatePicker-content"
     >
@@ -332,7 +334,6 @@ exports[`TS renders children 1`] = `
                 >
                   <button
                     aria-disabled="false"
-                    aria-label="May 30, 2021"
                     aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
@@ -344,6 +345,13 @@ exports[`TS renders children 1`] = `
                     type="button"
                   >
                     <span
+                      class="Calendar-srOnly"
+                      data-calendar-cell-label="true"
+                    >
+                      May 30, 2021
+                    </span>
+                    <span
+                      aria-hidden="true"
                       class="Text Text--subtle Text--regular"
                       data-test="DesignSystem-Text"
                     >
@@ -357,7 +365,6 @@ exports[`TS renders children 1`] = `
                 >
                   <button
                     aria-disabled="false"
-                    aria-label="May 31, 2021"
                     aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
@@ -369,6 +376,13 @@ exports[`TS renders children 1`] = `
                     type="button"
                   >
                     <span
+                      class="Calendar-srOnly"
+                      data-calendar-cell-label="true"
+                    >
+                      May 31, 2021
+                    </span>
+                    <span
+                      aria-hidden="true"
                       class="Text Text--subtle Text--regular"
                       data-test="DesignSystem-Text"
                     >
@@ -382,7 +396,6 @@ exports[`TS renders children 1`] = `
                 >
                   <button
                     aria-disabled="false"
-                    aria-label="June 1, 2021"
                     aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
@@ -394,6 +407,13 @@ exports[`TS renders children 1`] = `
                     type="button"
                   >
                     <span
+                      class="Calendar-srOnly"
+                      data-calendar-cell-label="true"
+                    >
+                      June 1, 2021
+                    </span>
+                    <span
+                      aria-hidden="true"
                       class="Text Text--regular color-inverse"
                       data-test="DesignSystem-Text"
                     >
@@ -407,7 +427,6 @@ exports[`TS renders children 1`] = `
                 >
                   <button
                     aria-disabled="false"
-                    aria-label="June 2, 2021"
                     aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
@@ -419,6 +438,13 @@ exports[`TS renders children 1`] = `
                     type="button"
                   >
                     <span
+                      class="Calendar-srOnly"
+                      data-calendar-cell-label="true"
+                    >
+                      June 2, 2021
+                    </span>
+                    <span
+                      aria-hidden="true"
                       class="Text Text--regular color-inverse"
                       data-test="DesignSystem-Text"
                     >
@@ -432,7 +458,6 @@ exports[`TS renders children 1`] = `
                 >
                   <button
                     aria-disabled="false"
-                    aria-label="June 3, 2021"
                     aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
@@ -444,6 +469,13 @@ exports[`TS renders children 1`] = `
                     type="button"
                   >
                     <span
+                      class="Calendar-srOnly"
+                      data-calendar-cell-label="true"
+                    >
+                      June 3, 2021
+                    </span>
+                    <span
+                      aria-hidden="true"
                       class="Text Text--regular color-inverse"
                       data-test="DesignSystem-Text"
                     >
@@ -457,7 +489,6 @@ exports[`TS renders children 1`] = `
                 >
                   <button
                     aria-disabled="false"
-                    aria-label="June 4, 2021"
                     aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
@@ -469,6 +500,13 @@ exports[`TS renders children 1`] = `
                     type="button"
                   >
                     <span
+                      class="Calendar-srOnly"
+                      data-calendar-cell-label="true"
+                    >
+                      June 4, 2021
+                    </span>
+                    <span
+                      aria-hidden="true"
                       class="Text Text--regular color-inverse"
                       data-test="DesignSystem-Text"
                     >
@@ -482,7 +520,6 @@ exports[`TS renders children 1`] = `
                 >
                   <button
                     aria-disabled="false"
-                    aria-label="June 5, 2021"
                     aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
@@ -494,6 +531,13 @@ exports[`TS renders children 1`] = `
                     type="button"
                   >
                     <span
+                      class="Calendar-srOnly"
+                      data-calendar-cell-label="true"
+                    >
+                      June 5, 2021
+                    </span>
+                    <span
+                      aria-hidden="true"
                       class="Text Text--regular color-inverse"
                       data-test="DesignSystem-Text"
                     >
@@ -512,7 +556,6 @@ exports[`TS renders children 1`] = `
                 >
                   <button
                     aria-disabled="false"
-                    aria-label="June 6, 2021"
                     aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
@@ -524,6 +567,13 @@ exports[`TS renders children 1`] = `
                     type="button"
                   >
                     <span
+                      class="Calendar-srOnly"
+                      data-calendar-cell-label="true"
+                    >
+                      June 6, 2021
+                    </span>
+                    <span
+                      aria-hidden="true"
                       class="Text Text--regular color-inverse"
                       data-test="DesignSystem-Text"
                     >
@@ -537,7 +587,6 @@ exports[`TS renders children 1`] = `
                 >
                   <button
                     aria-disabled="false"
-                    aria-label="June 7, 2021"
                     aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
@@ -549,6 +598,13 @@ exports[`TS renders children 1`] = `
                     type="button"
                   >
                     <span
+                      class="Calendar-srOnly"
+                      data-calendar-cell-label="true"
+                    >
+                      June 7, 2021
+                    </span>
+                    <span
+                      aria-hidden="true"
                       class="Text Text--regular color-inverse"
                       data-test="DesignSystem-Text"
                     >
@@ -562,7 +618,6 @@ exports[`TS renders children 1`] = `
                 >
                   <button
                     aria-disabled="false"
-                    aria-label="June 8, 2021"
                     aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
@@ -574,6 +629,13 @@ exports[`TS renders children 1`] = `
                     type="button"
                   >
                     <span
+                      class="Calendar-srOnly"
+                      data-calendar-cell-label="true"
+                    >
+                      June 8, 2021
+                    </span>
+                    <span
+                      aria-hidden="true"
                       class="Text Text--regular color-inverse"
                       data-test="DesignSystem-Text"
                     >
@@ -587,7 +649,6 @@ exports[`TS renders children 1`] = `
                 >
                   <button
                     aria-disabled="false"
-                    aria-label="June 9, 2021"
                     aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
@@ -599,6 +660,13 @@ exports[`TS renders children 1`] = `
                     type="button"
                   >
                     <span
+                      class="Calendar-srOnly"
+                      data-calendar-cell-label="true"
+                    >
+                      June 9, 2021
+                    </span>
+                    <span
+                      aria-hidden="true"
                       class="Text Text--regular color-inverse"
                       data-test="DesignSystem-Text"
                     >
@@ -612,7 +680,6 @@ exports[`TS renders children 1`] = `
                 >
                   <button
                     aria-disabled="false"
-                    aria-label="June 10, 2021"
                     aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
@@ -624,6 +691,13 @@ exports[`TS renders children 1`] = `
                     type="button"
                   >
                     <span
+                      class="Calendar-srOnly"
+                      data-calendar-cell-label="true"
+                    >
+                      June 10, 2021
+                    </span>
+                    <span
+                      aria-hidden="true"
                       class="Text Text--regular color-inverse"
                       data-test="DesignSystem-Text"
                     >
@@ -637,7 +711,6 @@ exports[`TS renders children 1`] = `
                 >
                   <button
                     aria-disabled="false"
-                    aria-label="June 11, 2021"
                     aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
@@ -649,6 +722,13 @@ exports[`TS renders children 1`] = `
                     type="button"
                   >
                     <span
+                      class="Calendar-srOnly"
+                      data-calendar-cell-label="true"
+                    >
+                      June 11, 2021
+                    </span>
+                    <span
+                      aria-hidden="true"
                       class="Text Text--regular color-inverse"
                       data-test="DesignSystem-Text"
                     >
@@ -662,7 +742,6 @@ exports[`TS renders children 1`] = `
                 >
                   <button
                     aria-disabled="false"
-                    aria-label="June 12, 2021"
                     aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
@@ -674,6 +753,13 @@ exports[`TS renders children 1`] = `
                     type="button"
                   >
                     <span
+                      class="Calendar-srOnly"
+                      data-calendar-cell-label="true"
+                    >
+                      June 12, 2021
+                    </span>
+                    <span
+                      aria-hidden="true"
                       class="Text Text--regular color-inverse"
                       data-test="DesignSystem-Text"
                     >
@@ -692,7 +778,6 @@ exports[`TS renders children 1`] = `
                 >
                   <button
                     aria-disabled="false"
-                    aria-label="June 13, 2021"
                     aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
@@ -704,6 +789,13 @@ exports[`TS renders children 1`] = `
                     type="button"
                   >
                     <span
+                      class="Calendar-srOnly"
+                      data-calendar-cell-label="true"
+                    >
+                      June 13, 2021
+                    </span>
+                    <span
+                      aria-hidden="true"
                       class="Text Text--regular color-inverse"
                       data-test="DesignSystem-Text"
                     >
@@ -718,7 +810,6 @@ exports[`TS renders children 1`] = `
                   <button
                     aria-current="date"
                     aria-disabled="false"
-                    aria-label="June 14, 2021"
                     aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large Calendar-value--currDateMonthYear Calendar-value--currDate"
                     data-calendar-date-cell="true"
@@ -730,6 +821,13 @@ exports[`TS renders children 1`] = `
                     type="button"
                   >
                     <span
+                      class="Calendar-srOnly"
+                      data-calendar-cell-label="true"
+                    >
+                      June 14, 2021
+                    </span>
+                    <span
+                      aria-hidden="true"
                       class="Text Text--regular color-primary-dark"
                       data-test="DesignSystem-Text"
                     >
@@ -743,7 +841,6 @@ exports[`TS renders children 1`] = `
                 >
                   <button
                     aria-disabled="false"
-                    aria-label="June 15, 2021"
                     aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
@@ -755,6 +852,13 @@ exports[`TS renders children 1`] = `
                     type="button"
                   >
                     <span
+                      class="Calendar-srOnly"
+                      data-calendar-cell-label="true"
+                    >
+                      June 15, 2021
+                    </span>
+                    <span
+                      aria-hidden="true"
                       class="Text Text--regular color-inverse"
                       data-test="DesignSystem-Text"
                     >
@@ -768,7 +872,6 @@ exports[`TS renders children 1`] = `
                 >
                   <button
                     aria-disabled="false"
-                    aria-label="June 16, 2021"
                     aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
@@ -780,6 +883,13 @@ exports[`TS renders children 1`] = `
                     type="button"
                   >
                     <span
+                      class="Calendar-srOnly"
+                      data-calendar-cell-label="true"
+                    >
+                      June 16, 2021
+                    </span>
+                    <span
+                      aria-hidden="true"
                       class="Text Text--regular color-inverse"
                       data-test="DesignSystem-Text"
                     >
@@ -793,7 +903,6 @@ exports[`TS renders children 1`] = `
                 >
                   <button
                     aria-disabled="false"
-                    aria-label="June 17, 2021"
                     aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
@@ -805,6 +914,13 @@ exports[`TS renders children 1`] = `
                     type="button"
                   >
                     <span
+                      class="Calendar-srOnly"
+                      data-calendar-cell-label="true"
+                    >
+                      June 17, 2021
+                    </span>
+                    <span
+                      aria-hidden="true"
                       class="Text Text--regular color-inverse"
                       data-test="DesignSystem-Text"
                     >
@@ -818,7 +934,6 @@ exports[`TS renders children 1`] = `
                 >
                   <button
                     aria-disabled="false"
-                    aria-label="June 18, 2021"
                     aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
@@ -830,6 +945,13 @@ exports[`TS renders children 1`] = `
                     type="button"
                   >
                     <span
+                      class="Calendar-srOnly"
+                      data-calendar-cell-label="true"
+                    >
+                      June 18, 2021
+                    </span>
+                    <span
+                      aria-hidden="true"
                       class="Text Text--regular color-inverse"
                       data-test="DesignSystem-Text"
                     >
@@ -843,7 +965,6 @@ exports[`TS renders children 1`] = `
                 >
                   <button
                     aria-disabled="false"
-                    aria-label="June 19, 2021"
                     aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
@@ -855,6 +976,13 @@ exports[`TS renders children 1`] = `
                     type="button"
                   >
                     <span
+                      class="Calendar-srOnly"
+                      data-calendar-cell-label="true"
+                    >
+                      June 19, 2021
+                    </span>
+                    <span
+                      aria-hidden="true"
                       class="Text Text--regular color-inverse"
                       data-test="DesignSystem-Text"
                     >
@@ -873,7 +1001,6 @@ exports[`TS renders children 1`] = `
                 >
                   <button
                     aria-disabled="false"
-                    aria-label="June 20, 2021"
                     aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
@@ -885,6 +1012,13 @@ exports[`TS renders children 1`] = `
                     type="button"
                   >
                     <span
+                      class="Calendar-srOnly"
+                      data-calendar-cell-label="true"
+                    >
+                      June 20, 2021
+                    </span>
+                    <span
+                      aria-hidden="true"
                       class="Text Text--regular color-inverse"
                       data-test="DesignSystem-Text"
                     >
@@ -898,7 +1032,6 @@ exports[`TS renders children 1`] = `
                 >
                   <button
                     aria-disabled="false"
-                    aria-label="June 21, 2021"
                     aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
@@ -910,6 +1043,13 @@ exports[`TS renders children 1`] = `
                     type="button"
                   >
                     <span
+                      class="Calendar-srOnly"
+                      data-calendar-cell-label="true"
+                    >
+                      June 21, 2021
+                    </span>
+                    <span
+                      aria-hidden="true"
                       class="Text Text--regular color-inverse"
                       data-test="DesignSystem-Text"
                     >
@@ -923,7 +1063,6 @@ exports[`TS renders children 1`] = `
                 >
                   <button
                     aria-disabled="false"
-                    aria-label="June 22, 2021"
                     aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
@@ -935,6 +1074,13 @@ exports[`TS renders children 1`] = `
                     type="button"
                   >
                     <span
+                      class="Calendar-srOnly"
+                      data-calendar-cell-label="true"
+                    >
+                      June 22, 2021
+                    </span>
+                    <span
+                      aria-hidden="true"
                       class="Text Text--regular color-inverse"
                       data-test="DesignSystem-Text"
                     >
@@ -948,7 +1094,6 @@ exports[`TS renders children 1`] = `
                 >
                   <button
                     aria-disabled="false"
-                    aria-label="June 23, 2021"
                     aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
@@ -960,6 +1105,13 @@ exports[`TS renders children 1`] = `
                     type="button"
                   >
                     <span
+                      class="Calendar-srOnly"
+                      data-calendar-cell-label="true"
+                    >
+                      June 23, 2021
+                    </span>
+                    <span
+                      aria-hidden="true"
                       class="Text Text--regular color-inverse"
                       data-test="DesignSystem-Text"
                     >
@@ -973,7 +1125,6 @@ exports[`TS renders children 1`] = `
                 >
                   <button
                     aria-disabled="false"
-                    aria-label="June 24, 2021"
                     aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
@@ -985,6 +1136,13 @@ exports[`TS renders children 1`] = `
                     type="button"
                   >
                     <span
+                      class="Calendar-srOnly"
+                      data-calendar-cell-label="true"
+                    >
+                      June 24, 2021
+                    </span>
+                    <span
+                      aria-hidden="true"
                       class="Text Text--regular color-inverse"
                       data-test="DesignSystem-Text"
                     >
@@ -998,7 +1156,6 @@ exports[`TS renders children 1`] = `
                 >
                   <button
                     aria-disabled="false"
-                    aria-label="June 25, 2021"
                     aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
@@ -1010,6 +1167,13 @@ exports[`TS renders children 1`] = `
                     type="button"
                   >
                     <span
+                      class="Calendar-srOnly"
+                      data-calendar-cell-label="true"
+                    >
+                      June 25, 2021
+                    </span>
+                    <span
+                      aria-hidden="true"
                       class="Text Text--regular color-inverse"
                       data-test="DesignSystem-Text"
                     >
@@ -1023,7 +1187,6 @@ exports[`TS renders children 1`] = `
                 >
                   <button
                     aria-disabled="false"
-                    aria-label="June 26, 2021"
                     aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
@@ -1035,6 +1198,13 @@ exports[`TS renders children 1`] = `
                     type="button"
                   >
                     <span
+                      class="Calendar-srOnly"
+                      data-calendar-cell-label="true"
+                    >
+                      June 26, 2021
+                    </span>
+                    <span
+                      aria-hidden="true"
                       class="Text Text--regular color-inverse"
                       data-test="DesignSystem-Text"
                     >
@@ -1053,7 +1223,6 @@ exports[`TS renders children 1`] = `
                 >
                   <button
                     aria-disabled="false"
-                    aria-label="June 27, 2021"
                     aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
@@ -1065,6 +1234,13 @@ exports[`TS renders children 1`] = `
                     type="button"
                   >
                     <span
+                      class="Calendar-srOnly"
+                      data-calendar-cell-label="true"
+                    >
+                      June 27, 2021
+                    </span>
+                    <span
+                      aria-hidden="true"
                       class="Text Text--regular color-inverse"
                       data-test="DesignSystem-Text"
                     >
@@ -1078,7 +1254,6 @@ exports[`TS renders children 1`] = `
                 >
                   <button
                     aria-disabled="false"
-                    aria-label="June 28, 2021"
                     aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
@@ -1090,6 +1265,13 @@ exports[`TS renders children 1`] = `
                     type="button"
                   >
                     <span
+                      class="Calendar-srOnly"
+                      data-calendar-cell-label="true"
+                    >
+                      June 28, 2021
+                    </span>
+                    <span
+                      aria-hidden="true"
                       class="Text Text--regular color-inverse"
                       data-test="DesignSystem-Text"
                     >
@@ -1103,7 +1285,6 @@ exports[`TS renders children 1`] = `
                 >
                   <button
                     aria-disabled="false"
-                    aria-label="June 29, 2021"
                     aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
@@ -1115,6 +1296,13 @@ exports[`TS renders children 1`] = `
                     type="button"
                   >
                     <span
+                      class="Calendar-srOnly"
+                      data-calendar-cell-label="true"
+                    >
+                      June 29, 2021
+                    </span>
+                    <span
+                      aria-hidden="true"
                       class="Text Text--regular color-inverse"
                       data-test="DesignSystem-Text"
                     >
@@ -1128,7 +1316,6 @@ exports[`TS renders children 1`] = `
                 >
                   <button
                     aria-disabled="false"
-                    aria-label="June 30, 2021"
                     aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
@@ -1140,6 +1327,13 @@ exports[`TS renders children 1`] = `
                     type="button"
                   >
                     <span
+                      class="Calendar-srOnly"
+                      data-calendar-cell-label="true"
+                    >
+                      June 30, 2021
+                    </span>
+                    <span
+                      aria-hidden="true"
                       class="Text Text--regular color-inverse"
                       data-test="DesignSystem-Text"
                     >
@@ -1153,7 +1347,6 @@ exports[`TS renders children 1`] = `
                 >
                   <button
                     aria-disabled="false"
-                    aria-label="July 1, 2021"
                     aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
@@ -1165,6 +1358,13 @@ exports[`TS renders children 1`] = `
                     type="button"
                   >
                     <span
+                      class="Calendar-srOnly"
+                      data-calendar-cell-label="true"
+                    >
+                      July 1, 2021
+                    </span>
+                    <span
+                      aria-hidden="true"
                       class="Text Text--subtle Text--regular"
                       data-test="DesignSystem-Text"
                     >
@@ -1178,7 +1378,6 @@ exports[`TS renders children 1`] = `
                 >
                   <button
                     aria-disabled="false"
-                    aria-label="July 2, 2021"
                     aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
@@ -1190,6 +1389,13 @@ exports[`TS renders children 1`] = `
                     type="button"
                   >
                     <span
+                      class="Calendar-srOnly"
+                      data-calendar-cell-label="true"
+                    >
+                      July 2, 2021
+                    </span>
+                    <span
+                      aria-hidden="true"
                       class="Text Text--subtle Text--regular"
                       data-test="DesignSystem-Text"
                     >
@@ -1203,7 +1409,6 @@ exports[`TS renders children 1`] = `
                 >
                   <button
                     aria-disabled="false"
-                    aria-label="July 3, 2021"
                     aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
@@ -1215,6 +1420,13 @@ exports[`TS renders children 1`] = `
                     type="button"
                   >
                     <span
+                      class="Calendar-srOnly"
+                      data-calendar-cell-label="true"
+                    >
+                      July 3, 2021
+                    </span>
+                    <span
+                      aria-hidden="true"
                       class="Text Text--subtle Text--regular"
                       data-test="DesignSystem-Text"
                     >
@@ -1233,7 +1445,6 @@ exports[`TS renders children 1`] = `
                 >
                   <button
                     aria-disabled="false"
-                    aria-label="July 4, 2021"
                     aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
@@ -1245,6 +1456,13 @@ exports[`TS renders children 1`] = `
                     type="button"
                   >
                     <span
+                      class="Calendar-srOnly"
+                      data-calendar-cell-label="true"
+                    >
+                      July 4, 2021
+                    </span>
+                    <span
+                      aria-hidden="true"
                       class="Text Text--subtle Text--regular"
                       data-test="DesignSystem-Text"
                     >
@@ -1258,7 +1476,6 @@ exports[`TS renders children 1`] = `
                 >
                   <button
                     aria-disabled="false"
-                    aria-label="July 5, 2021"
                     aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
@@ -1270,6 +1487,13 @@ exports[`TS renders children 1`] = `
                     type="button"
                   >
                     <span
+                      class="Calendar-srOnly"
+                      data-calendar-cell-label="true"
+                    >
+                      July 5, 2021
+                    </span>
+                    <span
+                      aria-hidden="true"
                       class="Text Text--subtle Text--regular"
                       data-test="DesignSystem-Text"
                     >
@@ -1283,7 +1507,6 @@ exports[`TS renders children 1`] = `
                 >
                   <button
                     aria-disabled="false"
-                    aria-label="July 6, 2021"
                     aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
@@ -1295,6 +1518,13 @@ exports[`TS renders children 1`] = `
                     type="button"
                   >
                     <span
+                      class="Calendar-srOnly"
+                      data-calendar-cell-label="true"
+                    >
+                      July 6, 2021
+                    </span>
+                    <span
+                      aria-hidden="true"
                       class="Text Text--subtle Text--regular"
                       data-test="DesignSystem-Text"
                     >
@@ -1308,7 +1538,6 @@ exports[`TS renders children 1`] = `
                 >
                   <button
                     aria-disabled="false"
-                    aria-label="July 7, 2021"
                     aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
@@ -1320,6 +1549,13 @@ exports[`TS renders children 1`] = `
                     type="button"
                   >
                     <span
+                      class="Calendar-srOnly"
+                      data-calendar-cell-label="true"
+                    >
+                      July 7, 2021
+                    </span>
+                    <span
+                      aria-hidden="true"
                       class="Text Text--subtle Text--regular"
                       data-test="DesignSystem-Text"
                     >
@@ -1333,7 +1569,6 @@ exports[`TS renders children 1`] = `
                 >
                   <button
                     aria-disabled="false"
-                    aria-label="July 8, 2021"
                     aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
@@ -1345,6 +1580,13 @@ exports[`TS renders children 1`] = `
                     type="button"
                   >
                     <span
+                      class="Calendar-srOnly"
+                      data-calendar-cell-label="true"
+                    >
+                      July 8, 2021
+                    </span>
+                    <span
+                      aria-hidden="true"
                       class="Text Text--subtle Text--regular"
                       data-test="DesignSystem-Text"
                     >
@@ -1358,7 +1600,6 @@ exports[`TS renders children 1`] = `
                 >
                   <button
                     aria-disabled="false"
-                    aria-label="July 9, 2021"
                     aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
@@ -1370,6 +1611,13 @@ exports[`TS renders children 1`] = `
                     type="button"
                   >
                     <span
+                      class="Calendar-srOnly"
+                      data-calendar-cell-label="true"
+                    >
+                      July 9, 2021
+                    </span>
+                    <span
+                      aria-hidden="true"
                       class="Text Text--subtle Text--regular"
                       data-test="DesignSystem-Text"
                     >
@@ -1383,7 +1631,6 @@ exports[`TS renders children 1`] = `
                 >
                   <button
                     aria-disabled="false"
-                    aria-label="July 10, 2021"
                     aria-selected="false"
                     class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-calendar-date-cell="true"
@@ -1395,6 +1642,13 @@ exports[`TS renders children 1`] = `
                     type="button"
                   >
                     <span
+                      class="Calendar-srOnly"
+                      data-calendar-cell-label="true"
+                    >
+                      July 10, 2021
+                    </span>
+                    <span
+                      aria-hidden="true"
                       class="Text Text--subtle Text--regular"
                       data-test="DesignSystem-Text"
                     >
@@ -2757,7 +3011,6 @@ exports[`TS renders children 1`] = `
             >
               <button
                 aria-disabled="false"
-                aria-label="May 30, 2021"
                 aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
@@ -2769,6 +3022,13 @@ exports[`TS renders children 1`] = `
                 type="button"
               >
                 <span
+                  class="Calendar-srOnly"
+                  data-calendar-cell-label="true"
+                >
+                  May 30, 2021
+                </span>
+                <span
+                  aria-hidden="true"
                   class="Text Text--subtle Text--regular"
                   data-test="DesignSystem-Text"
                 >
@@ -2782,7 +3042,6 @@ exports[`TS renders children 1`] = `
             >
               <button
                 aria-disabled="false"
-                aria-label="May 31, 2021"
                 aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
@@ -2794,6 +3053,13 @@ exports[`TS renders children 1`] = `
                 type="button"
               >
                 <span
+                  class="Calendar-srOnly"
+                  data-calendar-cell-label="true"
+                >
+                  May 31, 2021
+                </span>
+                <span
+                  aria-hidden="true"
                   class="Text Text--subtle Text--regular"
                   data-test="DesignSystem-Text"
                 >
@@ -2807,7 +3073,6 @@ exports[`TS renders children 1`] = `
             >
               <button
                 aria-disabled="false"
-                aria-label="June 1, 2021"
                 aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
@@ -2819,6 +3084,13 @@ exports[`TS renders children 1`] = `
                 type="button"
               >
                 <span
+                  class="Calendar-srOnly"
+                  data-calendar-cell-label="true"
+                >
+                  June 1, 2021
+                </span>
+                <span
+                  aria-hidden="true"
                   class="Text Text--regular color-inverse"
                   data-test="DesignSystem-Text"
                 >
@@ -2832,7 +3104,6 @@ exports[`TS renders children 1`] = `
             >
               <button
                 aria-disabled="false"
-                aria-label="June 2, 2021"
                 aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
@@ -2844,6 +3115,13 @@ exports[`TS renders children 1`] = `
                 type="button"
               >
                 <span
+                  class="Calendar-srOnly"
+                  data-calendar-cell-label="true"
+                >
+                  June 2, 2021
+                </span>
+                <span
+                  aria-hidden="true"
                   class="Text Text--regular color-inverse"
                   data-test="DesignSystem-Text"
                 >
@@ -2857,7 +3135,6 @@ exports[`TS renders children 1`] = `
             >
               <button
                 aria-disabled="false"
-                aria-label="June 3, 2021"
                 aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
@@ -2869,6 +3146,13 @@ exports[`TS renders children 1`] = `
                 type="button"
               >
                 <span
+                  class="Calendar-srOnly"
+                  data-calendar-cell-label="true"
+                >
+                  June 3, 2021
+                </span>
+                <span
+                  aria-hidden="true"
                   class="Text Text--regular color-inverse"
                   data-test="DesignSystem-Text"
                 >
@@ -2882,7 +3166,6 @@ exports[`TS renders children 1`] = `
             >
               <button
                 aria-disabled="false"
-                aria-label="June 4, 2021"
                 aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
@@ -2894,6 +3177,13 @@ exports[`TS renders children 1`] = `
                 type="button"
               >
                 <span
+                  class="Calendar-srOnly"
+                  data-calendar-cell-label="true"
+                >
+                  June 4, 2021
+                </span>
+                <span
+                  aria-hidden="true"
                   class="Text Text--regular color-inverse"
                   data-test="DesignSystem-Text"
                 >
@@ -2907,7 +3197,6 @@ exports[`TS renders children 1`] = `
             >
               <button
                 aria-disabled="false"
-                aria-label="June 5, 2021"
                 aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
@@ -2919,6 +3208,13 @@ exports[`TS renders children 1`] = `
                 type="button"
               >
                 <span
+                  class="Calendar-srOnly"
+                  data-calendar-cell-label="true"
+                >
+                  June 5, 2021
+                </span>
+                <span
+                  aria-hidden="true"
                   class="Text Text--regular color-inverse"
                   data-test="DesignSystem-Text"
                 >
@@ -2937,7 +3233,6 @@ exports[`TS renders children 1`] = `
             >
               <button
                 aria-disabled="false"
-                aria-label="June 6, 2021"
                 aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
@@ -2949,6 +3244,13 @@ exports[`TS renders children 1`] = `
                 type="button"
               >
                 <span
+                  class="Calendar-srOnly"
+                  data-calendar-cell-label="true"
+                >
+                  June 6, 2021
+                </span>
+                <span
+                  aria-hidden="true"
                   class="Text Text--regular color-inverse"
                   data-test="DesignSystem-Text"
                 >
@@ -2962,7 +3264,6 @@ exports[`TS renders children 1`] = `
             >
               <button
                 aria-disabled="false"
-                aria-label="June 7, 2021"
                 aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
@@ -2974,6 +3275,13 @@ exports[`TS renders children 1`] = `
                 type="button"
               >
                 <span
+                  class="Calendar-srOnly"
+                  data-calendar-cell-label="true"
+                >
+                  June 7, 2021
+                </span>
+                <span
+                  aria-hidden="true"
                   class="Text Text--regular color-inverse"
                   data-test="DesignSystem-Text"
                 >
@@ -2987,7 +3295,6 @@ exports[`TS renders children 1`] = `
             >
               <button
                 aria-disabled="false"
-                aria-label="June 8, 2021"
                 aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
@@ -2999,6 +3306,13 @@ exports[`TS renders children 1`] = `
                 type="button"
               >
                 <span
+                  class="Calendar-srOnly"
+                  data-calendar-cell-label="true"
+                >
+                  June 8, 2021
+                </span>
+                <span
+                  aria-hidden="true"
                   class="Text Text--regular color-inverse"
                   data-test="DesignSystem-Text"
                 >
@@ -3012,7 +3326,6 @@ exports[`TS renders children 1`] = `
             >
               <button
                 aria-disabled="false"
-                aria-label="June 9, 2021"
                 aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
@@ -3024,6 +3337,13 @@ exports[`TS renders children 1`] = `
                 type="button"
               >
                 <span
+                  class="Calendar-srOnly"
+                  data-calendar-cell-label="true"
+                >
+                  June 9, 2021
+                </span>
+                <span
+                  aria-hidden="true"
                   class="Text Text--regular color-inverse"
                   data-test="DesignSystem-Text"
                 >
@@ -3037,7 +3357,6 @@ exports[`TS renders children 1`] = `
             >
               <button
                 aria-disabled="false"
-                aria-label="June 10, 2021"
                 aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
@@ -3049,6 +3368,13 @@ exports[`TS renders children 1`] = `
                 type="button"
               >
                 <span
+                  class="Calendar-srOnly"
+                  data-calendar-cell-label="true"
+                >
+                  June 10, 2021
+                </span>
+                <span
+                  aria-hidden="true"
                   class="Text Text--regular color-inverse"
                   data-test="DesignSystem-Text"
                 >
@@ -3062,7 +3388,6 @@ exports[`TS renders children 1`] = `
             >
               <button
                 aria-disabled="false"
-                aria-label="June 11, 2021"
                 aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
@@ -3074,6 +3399,13 @@ exports[`TS renders children 1`] = `
                 type="button"
               >
                 <span
+                  class="Calendar-srOnly"
+                  data-calendar-cell-label="true"
+                >
+                  June 11, 2021
+                </span>
+                <span
+                  aria-hidden="true"
                   class="Text Text--regular color-inverse"
                   data-test="DesignSystem-Text"
                 >
@@ -3087,7 +3419,6 @@ exports[`TS renders children 1`] = `
             >
               <button
                 aria-disabled="false"
-                aria-label="June 12, 2021"
                 aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
@@ -3099,6 +3430,13 @@ exports[`TS renders children 1`] = `
                 type="button"
               >
                 <span
+                  class="Calendar-srOnly"
+                  data-calendar-cell-label="true"
+                >
+                  June 12, 2021
+                </span>
+                <span
+                  aria-hidden="true"
                   class="Text Text--regular color-inverse"
                   data-test="DesignSystem-Text"
                 >
@@ -3117,7 +3455,6 @@ exports[`TS renders children 1`] = `
             >
               <button
                 aria-disabled="false"
-                aria-label="June 13, 2021"
                 aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
@@ -3129,6 +3466,13 @@ exports[`TS renders children 1`] = `
                 type="button"
               >
                 <span
+                  class="Calendar-srOnly"
+                  data-calendar-cell-label="true"
+                >
+                  June 13, 2021
+                </span>
+                <span
+                  aria-hidden="true"
                   class="Text Text--regular color-inverse"
                   data-test="DesignSystem-Text"
                 >
@@ -3143,7 +3487,6 @@ exports[`TS renders children 1`] = `
               <button
                 aria-current="date"
                 aria-disabled="false"
-                aria-label="June 14, 2021"
                 aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large Calendar-value--currDateMonthYear Calendar-value--currDate"
                 data-calendar-date-cell="true"
@@ -3155,6 +3498,13 @@ exports[`TS renders children 1`] = `
                 type="button"
               >
                 <span
+                  class="Calendar-srOnly"
+                  data-calendar-cell-label="true"
+                >
+                  June 14, 2021
+                </span>
+                <span
+                  aria-hidden="true"
                   class="Text Text--regular color-primary-dark"
                   data-test="DesignSystem-Text"
                 >
@@ -3168,7 +3518,6 @@ exports[`TS renders children 1`] = `
             >
               <button
                 aria-disabled="false"
-                aria-label="June 15, 2021"
                 aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
@@ -3180,6 +3529,13 @@ exports[`TS renders children 1`] = `
                 type="button"
               >
                 <span
+                  class="Calendar-srOnly"
+                  data-calendar-cell-label="true"
+                >
+                  June 15, 2021
+                </span>
+                <span
+                  aria-hidden="true"
                   class="Text Text--regular color-inverse"
                   data-test="DesignSystem-Text"
                 >
@@ -3193,7 +3549,6 @@ exports[`TS renders children 1`] = `
             >
               <button
                 aria-disabled="false"
-                aria-label="June 16, 2021"
                 aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
@@ -3205,6 +3560,13 @@ exports[`TS renders children 1`] = `
                 type="button"
               >
                 <span
+                  class="Calendar-srOnly"
+                  data-calendar-cell-label="true"
+                >
+                  June 16, 2021
+                </span>
+                <span
+                  aria-hidden="true"
                   class="Text Text--regular color-inverse"
                   data-test="DesignSystem-Text"
                 >
@@ -3218,7 +3580,6 @@ exports[`TS renders children 1`] = `
             >
               <button
                 aria-disabled="false"
-                aria-label="June 17, 2021"
                 aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
@@ -3230,6 +3591,13 @@ exports[`TS renders children 1`] = `
                 type="button"
               >
                 <span
+                  class="Calendar-srOnly"
+                  data-calendar-cell-label="true"
+                >
+                  June 17, 2021
+                </span>
+                <span
+                  aria-hidden="true"
                   class="Text Text--regular color-inverse"
                   data-test="DesignSystem-Text"
                 >
@@ -3243,7 +3611,6 @@ exports[`TS renders children 1`] = `
             >
               <button
                 aria-disabled="false"
-                aria-label="June 18, 2021"
                 aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
@@ -3255,6 +3622,13 @@ exports[`TS renders children 1`] = `
                 type="button"
               >
                 <span
+                  class="Calendar-srOnly"
+                  data-calendar-cell-label="true"
+                >
+                  June 18, 2021
+                </span>
+                <span
+                  aria-hidden="true"
                   class="Text Text--regular color-inverse"
                   data-test="DesignSystem-Text"
                 >
@@ -3268,7 +3642,6 @@ exports[`TS renders children 1`] = `
             >
               <button
                 aria-disabled="false"
-                aria-label="June 19, 2021"
                 aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
@@ -3280,6 +3653,13 @@ exports[`TS renders children 1`] = `
                 type="button"
               >
                 <span
+                  class="Calendar-srOnly"
+                  data-calendar-cell-label="true"
+                >
+                  June 19, 2021
+                </span>
+                <span
+                  aria-hidden="true"
                   class="Text Text--regular color-inverse"
                   data-test="DesignSystem-Text"
                 >
@@ -3298,7 +3678,6 @@ exports[`TS renders children 1`] = `
             >
               <button
                 aria-disabled="false"
-                aria-label="June 20, 2021"
                 aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
@@ -3310,6 +3689,13 @@ exports[`TS renders children 1`] = `
                 type="button"
               >
                 <span
+                  class="Calendar-srOnly"
+                  data-calendar-cell-label="true"
+                >
+                  June 20, 2021
+                </span>
+                <span
+                  aria-hidden="true"
                   class="Text Text--regular color-inverse"
                   data-test="DesignSystem-Text"
                 >
@@ -3323,7 +3709,6 @@ exports[`TS renders children 1`] = `
             >
               <button
                 aria-disabled="false"
-                aria-label="June 21, 2021"
                 aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
@@ -3335,6 +3720,13 @@ exports[`TS renders children 1`] = `
                 type="button"
               >
                 <span
+                  class="Calendar-srOnly"
+                  data-calendar-cell-label="true"
+                >
+                  June 21, 2021
+                </span>
+                <span
+                  aria-hidden="true"
                   class="Text Text--regular color-inverse"
                   data-test="DesignSystem-Text"
                 >
@@ -3348,7 +3740,6 @@ exports[`TS renders children 1`] = `
             >
               <button
                 aria-disabled="false"
-                aria-label="June 22, 2021"
                 aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
@@ -3360,6 +3751,13 @@ exports[`TS renders children 1`] = `
                 type="button"
               >
                 <span
+                  class="Calendar-srOnly"
+                  data-calendar-cell-label="true"
+                >
+                  June 22, 2021
+                </span>
+                <span
+                  aria-hidden="true"
                   class="Text Text--regular color-inverse"
                   data-test="DesignSystem-Text"
                 >
@@ -3373,7 +3771,6 @@ exports[`TS renders children 1`] = `
             >
               <button
                 aria-disabled="false"
-                aria-label="June 23, 2021"
                 aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
@@ -3385,6 +3782,13 @@ exports[`TS renders children 1`] = `
                 type="button"
               >
                 <span
+                  class="Calendar-srOnly"
+                  data-calendar-cell-label="true"
+                >
+                  June 23, 2021
+                </span>
+                <span
+                  aria-hidden="true"
                   class="Text Text--regular color-inverse"
                   data-test="DesignSystem-Text"
                 >
@@ -3398,7 +3802,6 @@ exports[`TS renders children 1`] = `
             >
               <button
                 aria-disabled="false"
-                aria-label="June 24, 2021"
                 aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
@@ -3410,6 +3813,13 @@ exports[`TS renders children 1`] = `
                 type="button"
               >
                 <span
+                  class="Calendar-srOnly"
+                  data-calendar-cell-label="true"
+                >
+                  June 24, 2021
+                </span>
+                <span
+                  aria-hidden="true"
                   class="Text Text--regular color-inverse"
                   data-test="DesignSystem-Text"
                 >
@@ -3423,7 +3833,6 @@ exports[`TS renders children 1`] = `
             >
               <button
                 aria-disabled="false"
-                aria-label="June 25, 2021"
                 aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
@@ -3435,6 +3844,13 @@ exports[`TS renders children 1`] = `
                 type="button"
               >
                 <span
+                  class="Calendar-srOnly"
+                  data-calendar-cell-label="true"
+                >
+                  June 25, 2021
+                </span>
+                <span
+                  aria-hidden="true"
                   class="Text Text--regular color-inverse"
                   data-test="DesignSystem-Text"
                 >
@@ -3448,7 +3864,6 @@ exports[`TS renders children 1`] = `
             >
               <button
                 aria-disabled="false"
-                aria-label="June 26, 2021"
                 aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
@@ -3460,6 +3875,13 @@ exports[`TS renders children 1`] = `
                 type="button"
               >
                 <span
+                  class="Calendar-srOnly"
+                  data-calendar-cell-label="true"
+                >
+                  June 26, 2021
+                </span>
+                <span
+                  aria-hidden="true"
                   class="Text Text--regular color-inverse"
                   data-test="DesignSystem-Text"
                 >
@@ -3478,7 +3900,6 @@ exports[`TS renders children 1`] = `
             >
               <button
                 aria-disabled="false"
-                aria-label="June 27, 2021"
                 aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
@@ -3490,6 +3911,13 @@ exports[`TS renders children 1`] = `
                 type="button"
               >
                 <span
+                  class="Calendar-srOnly"
+                  data-calendar-cell-label="true"
+                >
+                  June 27, 2021
+                </span>
+                <span
+                  aria-hidden="true"
                   class="Text Text--regular color-inverse"
                   data-test="DesignSystem-Text"
                 >
@@ -3503,7 +3931,6 @@ exports[`TS renders children 1`] = `
             >
               <button
                 aria-disabled="false"
-                aria-label="June 28, 2021"
                 aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
@@ -3515,6 +3942,13 @@ exports[`TS renders children 1`] = `
                 type="button"
               >
                 <span
+                  class="Calendar-srOnly"
+                  data-calendar-cell-label="true"
+                >
+                  June 28, 2021
+                </span>
+                <span
+                  aria-hidden="true"
                   class="Text Text--regular color-inverse"
                   data-test="DesignSystem-Text"
                 >
@@ -3528,7 +3962,6 @@ exports[`TS renders children 1`] = `
             >
               <button
                 aria-disabled="false"
-                aria-label="June 29, 2021"
                 aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
@@ -3540,6 +3973,13 @@ exports[`TS renders children 1`] = `
                 type="button"
               >
                 <span
+                  class="Calendar-srOnly"
+                  data-calendar-cell-label="true"
+                >
+                  June 29, 2021
+                </span>
+                <span
+                  aria-hidden="true"
                   class="Text Text--regular color-inverse"
                   data-test="DesignSystem-Text"
                 >
@@ -3553,7 +3993,6 @@ exports[`TS renders children 1`] = `
             >
               <button
                 aria-disabled="false"
-                aria-label="June 30, 2021"
                 aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
@@ -3565,6 +4004,13 @@ exports[`TS renders children 1`] = `
                 type="button"
               >
                 <span
+                  class="Calendar-srOnly"
+                  data-calendar-cell-label="true"
+                >
+                  June 30, 2021
+                </span>
+                <span
+                  aria-hidden="true"
                   class="Text Text--regular color-inverse"
                   data-test="DesignSystem-Text"
                 >
@@ -3578,7 +4024,6 @@ exports[`TS renders children 1`] = `
             >
               <button
                 aria-disabled="false"
-                aria-label="July 1, 2021"
                 aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
@@ -3590,6 +4035,13 @@ exports[`TS renders children 1`] = `
                 type="button"
               >
                 <span
+                  class="Calendar-srOnly"
+                  data-calendar-cell-label="true"
+                >
+                  July 1, 2021
+                </span>
+                <span
+                  aria-hidden="true"
                   class="Text Text--subtle Text--regular"
                   data-test="DesignSystem-Text"
                 >
@@ -3603,7 +4055,6 @@ exports[`TS renders children 1`] = `
             >
               <button
                 aria-disabled="false"
-                aria-label="July 2, 2021"
                 aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
@@ -3615,6 +4066,13 @@ exports[`TS renders children 1`] = `
                 type="button"
               >
                 <span
+                  class="Calendar-srOnly"
+                  data-calendar-cell-label="true"
+                >
+                  July 2, 2021
+                </span>
+                <span
+                  aria-hidden="true"
                   class="Text Text--subtle Text--regular"
                   data-test="DesignSystem-Text"
                 >
@@ -3628,7 +4086,6 @@ exports[`TS renders children 1`] = `
             >
               <button
                 aria-disabled="false"
-                aria-label="July 3, 2021"
                 aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
@@ -3640,6 +4097,13 @@ exports[`TS renders children 1`] = `
                 type="button"
               >
                 <span
+                  class="Calendar-srOnly"
+                  data-calendar-cell-label="true"
+                >
+                  July 3, 2021
+                </span>
+                <span
+                  aria-hidden="true"
                   class="Text Text--subtle Text--regular"
                   data-test="DesignSystem-Text"
                 >
@@ -3658,7 +4122,6 @@ exports[`TS renders children 1`] = `
             >
               <button
                 aria-disabled="false"
-                aria-label="July 4, 2021"
                 aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
@@ -3670,6 +4133,13 @@ exports[`TS renders children 1`] = `
                 type="button"
               >
                 <span
+                  class="Calendar-srOnly"
+                  data-calendar-cell-label="true"
+                >
+                  July 4, 2021
+                </span>
+                <span
+                  aria-hidden="true"
                   class="Text Text--subtle Text--regular"
                   data-test="DesignSystem-Text"
                 >
@@ -3683,7 +4153,6 @@ exports[`TS renders children 1`] = `
             >
               <button
                 aria-disabled="false"
-                aria-label="July 5, 2021"
                 aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
@@ -3695,6 +4164,13 @@ exports[`TS renders children 1`] = `
                 type="button"
               >
                 <span
+                  class="Calendar-srOnly"
+                  data-calendar-cell-label="true"
+                >
+                  July 5, 2021
+                </span>
+                <span
+                  aria-hidden="true"
                   class="Text Text--subtle Text--regular"
                   data-test="DesignSystem-Text"
                 >
@@ -3708,7 +4184,6 @@ exports[`TS renders children 1`] = `
             >
               <button
                 aria-disabled="false"
-                aria-label="July 6, 2021"
                 aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
@@ -3720,6 +4195,13 @@ exports[`TS renders children 1`] = `
                 type="button"
               >
                 <span
+                  class="Calendar-srOnly"
+                  data-calendar-cell-label="true"
+                >
+                  July 6, 2021
+                </span>
+                <span
+                  aria-hidden="true"
                   class="Text Text--subtle Text--regular"
                   data-test="DesignSystem-Text"
                 >
@@ -3733,7 +4215,6 @@ exports[`TS renders children 1`] = `
             >
               <button
                 aria-disabled="false"
-                aria-label="July 7, 2021"
                 aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
@@ -3745,6 +4226,13 @@ exports[`TS renders children 1`] = `
                 type="button"
               >
                 <span
+                  class="Calendar-srOnly"
+                  data-calendar-cell-label="true"
+                >
+                  July 7, 2021
+                </span>
+                <span
+                  aria-hidden="true"
                   class="Text Text--subtle Text--regular"
                   data-test="DesignSystem-Text"
                 >
@@ -3758,7 +4246,6 @@ exports[`TS renders children 1`] = `
             >
               <button
                 aria-disabled="false"
-                aria-label="July 8, 2021"
                 aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
@@ -3770,6 +4257,13 @@ exports[`TS renders children 1`] = `
                 type="button"
               >
                 <span
+                  class="Calendar-srOnly"
+                  data-calendar-cell-label="true"
+                >
+                  July 8, 2021
+                </span>
+                <span
+                  aria-hidden="true"
                   class="Text Text--subtle Text--regular"
                   data-test="DesignSystem-Text"
                 >
@@ -3783,7 +4277,6 @@ exports[`TS renders children 1`] = `
             >
               <button
                 aria-disabled="false"
-                aria-label="July 9, 2021"
                 aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
@@ -3795,6 +4288,13 @@ exports[`TS renders children 1`] = `
                 type="button"
               >
                 <span
+                  class="Calendar-srOnly"
+                  data-calendar-cell-label="true"
+                >
+                  July 9, 2021
+                </span>
+                <span
+                  aria-hidden="true"
                   class="Text Text--subtle Text--regular"
                   data-test="DesignSystem-Text"
                 >
@@ -3808,7 +4308,6 @@ exports[`TS renders children 1`] = `
             >
               <button
                 aria-disabled="false"
-                aria-label="July 10, 2021"
                 aria-selected="false"
                 class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-calendar-date-cell="true"
@@ -3820,6 +4319,13 @@ exports[`TS renders children 1`] = `
                 type="button"
               >
                 <span
+                  class="Calendar-srOnly"
+                  data-calendar-cell-label="true"
+                >
+                  July 10, 2021
+                </span>
+                <span
+                  aria-hidden="true"
                   class="Text Text--subtle Text--regular"
                   data-test="DesignSystem-Text"
                 >

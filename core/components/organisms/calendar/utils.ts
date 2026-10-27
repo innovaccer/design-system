@@ -47,7 +47,10 @@ export const findFocusableCalendarCell = (
   ) as HTMLElement[];
 
   if (preferredAriaLabel) {
-    const preferred = selectedDates.find((cell) => cell.getAttribute('aria-label') === preferredAriaLabel);
+    const preferred = selectedDates.find((cell) => {
+      const label = cell.querySelector('[data-calendar-cell-label]')?.textContent;
+      return label === preferredAriaLabel || label === selectedAriaLabel(preferredAriaLabel, true);
+    });
     if (preferred) return preferred;
   }
 
@@ -159,6 +162,9 @@ export const navigateDateGrid = (
 /**
  * Format date for aria-label (e.g., "March 12, 2026")
  */
+export const selectedAriaLabel = (label: string, selected?: boolean): string =>
+  selected ? `${label}, selected` : label;
+
 export const formatDateAriaLabel = (d: Date): string => {
   const months = [
     'January',

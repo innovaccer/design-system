@@ -11,6 +11,7 @@ import {
   getWrapperElement,
   getUpdatedZIndex,
   closeOnEscapeKeypress,
+  hasOpenLayerAbove,
   handleFocusTrapKeyDown,
   restoreFocusToElementIfConnected,
   getNestedOverlayElements,
@@ -172,7 +173,12 @@ class Modal extends React.Component<ModalProps, ModalState> {
   }
 
   onCloseHandler = (event: KeyboardEvent) => {
-    closeOnEscapeKeypress(event, OverlayManager.isTopOverlay(this.modalRef.current), this.onOutsideClickHandler);
+    const modalElement = this.modalRef.current;
+    closeOnEscapeKeypress(
+      event,
+      OverlayManager.isTopOverlay(modalElement) && !hasOpenLayerAbove(modalElement),
+      this.onOutsideClickHandler
+    );
   };
 
   onFocusTrapKeyDown = (event: KeyboardEvent) => {

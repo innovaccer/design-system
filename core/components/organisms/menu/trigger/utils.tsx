@@ -1,4 +1,5 @@
 import React from 'react';
+import { MENU_LIST_ITEM_SELECTOR } from '../utils';
 
 export const handleKeyDown = (
   event: React.KeyboardEvent,
@@ -31,7 +32,7 @@ export const focusListItem = (
   setFocusedOption?: React.Dispatch<React.SetStateAction<HTMLElement | undefined>>,
   listRef?: any
 ) => {
-  const listItems = listRef.current?.querySelectorAll('[data-test="DesignSystem-Menu-ListItem"]');
+  const listItems = listRef.current?.querySelectorAll(MENU_LIST_ITEM_SELECTOR);
   if (!listItems?.length) {
     return;
   }
