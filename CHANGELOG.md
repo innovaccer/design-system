@@ -1,3 +1,29 @@
+## 4.30.6 (2026-10-28)
+
+### Highlights
+
+- Fixes to VerticalNav section semantics, Table grid cell text truncation, and FileList error row descriptions.
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Fixes
+
+- fix(VerticalNav): add semantic grouping for navigation sections (4c08dc3b1)
+- fix(table): update grid cell text truncate behavior (0bc316a46)
+- fix(fileList): describe error file rows by their error message (c0cb355ab)
+
+---
+
 ## 4.30.5 (2026-10-19)
 
 ### Highlights
