@@ -1,0 +1,25 @@
+import * as React from 'react';
+import { Menu, ActiveMenu } from "../../../utils/navigationHelper";
+export declare type LayoutType = 'vertical' | 'horizontal';
+export declare type Align = 'left' | 'center';
+export interface VerticalNavigationProps {
+    menus: Menu[];
+    active?: ActiveMenu;
+    onClick?: (menu: Menu) => void;
+    rounded: boolean;
+    expanded: boolean;
+    footer?: boolean;
+    onToggle?: (expanded: boolean) => void;
+    autoCollapse: boolean;
+    'aria-label'?: string;
+}
+export declare const VerticalNavigation: {
+    (props: VerticalNavigationProps): React.JSX.Element;
+    defaultProps: {
+        expanded: boolean;
+        autoCollapse: boolean;
+        rounded: boolean;
+        'aria-label': string;
+    };
+};
+export default VerticalNavigation;
