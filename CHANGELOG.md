@@ -1,3 +1,33 @@
+## 4.30.5 (2026-10-19)
+
+### Highlights
+
+- Broad accessibility fixes to DatePicker/Calendar combobox semantics and keyboard navigation, plus Menu and Dropdown improvements.
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Fixes
+
+- fix(menu): find menu items by role so a consumer data-test no longer breaks keyboard navigation (18101eab8)
+- fix(calendar): name selected dates, months and years, and stop reading them twice (048699c4a)
+- fix(calendar): move focus into the new view when the view changes from inside the calendar (ac0f8e061)
+- fix(datepicker): keep Tab focus inside the calendar dialog while it is open (8dd6e46da)
+- fix(datepicker): open the calendar on ArrowDown when the input is closed (ff00b41a4)
+- fix(datepicker): expose combobox semantics and open the calendar on Enter (faa783584)
+- fix(dropdown): associate group headers with their options via role=group (7ba2fdae5)
+
+---
+
 ## 4.30.4 (2026-10-09)
 
 ### Highlights
