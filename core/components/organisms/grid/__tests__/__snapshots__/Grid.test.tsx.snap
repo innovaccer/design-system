@@ -240799,7 +240799,7 @@ exports[`Grid component
                         class="GridCell--align-left GridCell--default GridCell"
                       >
                         <span
-                          class="Text Text--default Text--regular w-100 ellipsis white-space-pre"
+                          class="Text Text--default Text--regular w-100 ellipsis"
                           data-test="DesignSystem-Text"
                         >
                           Zara
