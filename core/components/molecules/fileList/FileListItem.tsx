@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { Text, InlineMessage } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import uidGenerator from '@/utils/uidGenerator';
 import isSpaceKey from '@/accessibility/utils/isSpaceKey';
 import FileIcon from './FileIcon';
 import { FileStatus } from '@/common.type';
@@ -65,6 +66,12 @@ export const FileListItem = (props: FileListItemProps) => {
 
   const { name } = file;
 
+  const errorIdRef = React.useRef<string>('');
+  if (!errorIdRef.current) {
+    errorIdRef.current = `file-item-error-${uidGenerator()}`;
+  }
+  const errorId = status === 'error' ? errorIdRef.current : undefined;
+
   const baseProps = extractBaseProps(props);
 
   const FileItemClass = classNames(
@@ -98,6 +105,7 @@ export const FileListItem = (props: FileListItemProps) => {
       role="button"
       tabIndex={0}
       aria-label={`${name}${status === 'error' ? ', upload failed' : status === 'uploading' ? ', uploading' : ''}`}
+      aria-describedby={errorId}
     >
       <div className={styles['FileItem-file']}>
         <div className={styles['FileItem-fileContent']}>
@@ -128,6 +136,7 @@ export const FileListItem = (props: FileListItemProps) => {
           size="small"
           appearance="alert"
           description={errorMessage}
+          id={errorId}
           className={styles['FileItem-error']}
         />
       )}
