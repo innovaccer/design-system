@@ -1101,27 +1101,25 @@ describe('Dropdown grouped options a11y (group label association)', () => {
 
   it('wraps each group in role="group" labelled by its visible header', () => {
     openDropdown();
-    const groups = screen.getAllByRole('group');
+    const groups = screen.getAllByRole('group', { hidden: true });
     expect(groups).toHaveLength(2);
-    expect(groups[0]).toHaveAccessibleName('Provider');
-    expect(groups[1]).toHaveAccessibleName('Speciality');
-    groups.forEach((group) => {
-      const labelId = group.getAttribute('aria-labelledby') as string;
-      expect(document.getElementById(labelId)).not.toBeNull();
-    });
+    // The popover is visibility:hidden in jsdom (no layout), so accessible names resolve to ''; check the label element directly.
+    const labelFor = (group: HTMLElement) => document.getElementById(group.getAttribute('aria-labelledby') as string);
+    expect(labelFor(groups[0])).toHaveTextContent('Provider');
+    expect(labelFor(groups[1])).toHaveTextContent('Speciality');
   });
 
   it("puts each group's options inside its own group", () => {
     openDropdown();
-    const [provider, speciality] = screen.getAllByRole('group');
+    const [provider, speciality] = screen.getAllByRole('group', { hidden: true });
     expect(
       within(provider)
-        .getAllByRole('option')
+        .getAllByRole('option', { hidden: true })
         .map((o) => o.textContent)
     ).toEqual(['All', 'PCP']);
     expect(
       within(speciality)
-        .getAllByRole('option')
+        .getAllByRole('option', { hidden: true })
         .map((o) => o.textContent)
     ).toEqual(['Cardiology', 'Neurology']);
   });
@@ -1133,7 +1131,7 @@ describe('Dropdown grouped options a11y (group label association)', () => {
 
   it('gives every group a distinct label id', () => {
     openDropdown();
-    const ids = screen.getAllByRole('group').map((g) => g.getAttribute('aria-labelledby'));
+    const ids = screen.getAllByRole('group', { hidden: true }).map((g) => g.getAttribute('aria-labelledby'));
     expect(new Set(ids).size).toBe(ids.length);
   });
 

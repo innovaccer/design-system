@@ -1025,6 +1025,10 @@ describe('DateRangePicker component prop:allowReverseSelection', () => {
   });
 });
 
+// The popover is visibility:hidden in jsdom (no layout), so role names resolve to ''; match cells by label text instead.
+const getGridCells = (label: RegExp) =>
+  screen.getAllByRole('gridcell', { hidden: true }).filter((cell) => label.test(cell.textContent || ''));
+
 describe('DateRangePicker component a11y', () => {
   // TODO: Popover trigger wrapper has aria-expanded/aria-haspopup with no role (axe aria-allowed-attr).
   it.skip('has no detectable a11y violations', async () => {
@@ -1061,7 +1065,7 @@ describe('DateRangePicker component a11y', () => {
   });
 
   it('focuses the end date cell when ArrowDown is pressed from the End Date input', async () => {
-    const { getByLabelText, getAllByRole } = render(
+    const { getByLabelText } = render(
       <DateRangePicker
         startDate={startDate}
         endDate={endDate}
@@ -1077,12 +1081,12 @@ describe('DateRangePicker component a11y', () => {
     fireEvent.keyDown(endInput, { key: 'ArrowDown' });
     await new Promise((resolve) => requestAnimationFrame(() => resolve(undefined)));
 
-    const endDateCells = getAllByRole('gridcell', { name: 'End range: June 8, 2021, selected' });
+    const endDateCells = getGridCells(/^End range: June 8, 2021, selected/);
     expect(endDateCells.some((cell) => cell === document.activeElement)).toBe(true);
   });
 
   it('moves focus into the calendar when opened via click', async () => {
-    const { getByLabelText, getAllByRole } = render(
+    const { getByLabelText } = render(
       <DateRangePicker startDate={startDate} endDate={endDate} withInput={true} view="date" />
     );
 
@@ -1090,7 +1094,7 @@ describe('DateRangePicker component a11y', () => {
 
     await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(() => resolve(undefined))));
 
-    const startDateCells = getAllByRole('gridcell', { name: 'Start range: March 3, 2020, selected' });
+    const startDateCells = getGridCells(/^Start range: March 3, 2020, selected/);
     expect(startDateCells.some((cell) => cell === document.activeElement)).toBe(true);
   });
 });
