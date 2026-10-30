@@ -1,0 +1,15 @@
+import { DateObject, DateType, Day } from './types';
+import { Validators } from '@/utils/types';
+type Operator = 'less' | 'more' | 'equal';
+export declare const getIndexOfDay: (day: Day) => number;
+export declare const getYearBlock: (year: number) => number;
+export declare const getDaysInMonth: (year: number, month: number) => number;
+export declare const getFirstDayOfMonth: (year: number, month: number) => number;
+export declare const getDateInfo: (d?: DateType) => Record<string, any>;
+export declare const convertToDate: (d?: DateType | DateObject, format?: string, validators?: Validators) => Date | undefined;
+export declare const compareYearBlock: (d: DateType | undefined, operator: Operator, currDecade: number) => boolean;
+export declare const compareDate: (d: DateType | undefined, operator: Operator, currYear: number, currMonth?: number, currDate?: number) => boolean;
+export declare const translateToString: (format: string, d?: Date) => string;
+export declare const translateToDate: (format: string, val: string, validators?: Validators) => Date | undefined;
+export declare const dateComparison: (date: Date | undefined, operator: Operator, currDate: string, currMonth: string, currYear: string) => boolean;
+export {};

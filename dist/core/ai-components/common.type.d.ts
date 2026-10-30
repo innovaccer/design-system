@@ -1,0 +1,11 @@
+export type TButtonAppearance = 'primary' | 'basic';
+export type TButtonType = 'button' | 'submit' | 'reset';
+export type TIconPosition = 'top' | 'bottom';
+export type TSize2Hierarchy = 'regular' | 'large';
+export type TSize3Hierarchy = 'regular' | 'medium' | 'large';
+export type TSize4Hierarchy = 'tiny' | 'regular' | 'medium' | 'large';
+export type TArrangement = 'horizontal' | 'vertical';
+export type TSaraStates = 'default' | 'resting';
+export type TSaraSparkleStates = 'default' | 'listening' | 'short-processing' | 'long-processing';
+export type TProgressIndicatorStates = 'listening' | 'short-processing' | 'long-processing';
+export type TBaseHtmlProps<T> = Omit<React.HTMLProps<T>, ''>;
