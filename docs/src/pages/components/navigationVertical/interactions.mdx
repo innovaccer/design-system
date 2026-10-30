@@ -9,7 +9,7 @@ import navigationvertical20 from "./images/navigationvertical-20.gif"
 
 Selecting a leaf item calls `onClick`. Selecting that same leaf again while it is active does not call `onClick` a second time.
 
-Parent items continue to expand or collapse their child items when selected.
+When the nav panel is expanded, parent items continue to expand or collapse their child items when selected. When the panel is collapsed, selecting a parent item calls `onClick` with its first child item instead.
 
 ### Collapsing the Nav Panel
 
