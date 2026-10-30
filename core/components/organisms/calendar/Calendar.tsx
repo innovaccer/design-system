@@ -1667,8 +1667,8 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                     {selectedAriaLabel(
                       rangeAriaLabel(
                         formatDateAriaLabel(fullDate),
-                        rangePicker && startActive && !disabled,
-                        rangePicker && endActive && !disabled
+                        Boolean(rangePicker && isStartActive && !disabled),
+                        Boolean(rangePicker && isEndActive && !disabled)
                       ),
                       Boolean(active || activeDate)
                     )}

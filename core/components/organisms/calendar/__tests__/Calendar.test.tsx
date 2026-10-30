@@ -209,6 +209,38 @@ describe('Calendar component', () => {
       expect(labels.some((l) => l && l.startsWith('End range'))).toBe(false);
     });
 
+    it('prefixes an end date shown as a next-month cell', () => {
+      const { container } = render(
+        <Calendar
+          yearNav={2023}
+          monthNav={0}
+          rangePicker={true}
+          startDate={new Date(2023, 0, 30)}
+          endDate={new Date(2023, 1, 8)}
+          view="date"
+        />
+      );
+      const labels = cellText(container);
+      expect(labels).toContain('Start range: January 30, 2023, selected');
+      expect(labels).toContain('End range: February 8, 2023, selected');
+    });
+
+    it('prefixes a start date shown as a previous-month cell', () => {
+      const { container } = render(
+        <Calendar
+          yearNav={2021}
+          monthNav={6}
+          rangePicker={true}
+          startDate={new Date(2021, 5, 30)}
+          endDate={new Date(2021, 6, 15)}
+          view="date"
+        />
+      );
+      const labels = cellText(container);
+      expect(labels).toContain('Start range: June 30, 2021, selected');
+      expect(labels).toContain('End range: July 15, 2021, selected');
+    });
+
     it('adds no range text without rangePicker', () => {
       const { container } = render(
         <Calendar
