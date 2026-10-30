@@ -49,6 +49,16 @@ export const closeOnEscapeKeypress = (
   }
 };
 
+const getZIndex = (element: Element) => Number(window.getComputedStyle(element).zIndex);
+
+export const hasOpenLayerAbove = (overlay: HTMLElement | null): boolean => {
+  const layer = overlay?.closest('[data-layer]');
+  if (!layer) return false;
+
+  const layerZIndex = getZIndex(layer);
+  return Array.from(document.querySelectorAll('[data-opened="true"]')).some((el) => getZIndex(el) > layerZIndex);
+};
+
 const FOCUSABLE_SELECTOR =
   'a[href], button:not([disabled]), input:not([disabled]):not([type="hidden"]), select:not([disabled]), textarea:not([disabled]), [contenteditable="true"], summary, area[href], [tabindex]:not([tabindex="-1"])';
 
@@ -69,6 +79,8 @@ export const getFocusableElements = (container: HTMLElement): HTMLElement[] => {
     return isVisible && !isAriaHidden && !isAriaDisabled && !isInert && !isExplicitlyNonFocusable;
   });
 };
+
+const SELF_CONTAINED_OVERLAY_SELECTOR = '[data-focus-contained]';
 
 const LISTBOX_OPTION_SELECTOR = '[role="option"]';
 
@@ -215,9 +227,14 @@ export const handleFocusTrapKeyDown = (
 ): boolean => {
   if (event.key !== 'Tab') return false;
 
-  const scopes = [container, ...nestedOverlays];
-  const focusable = scopes.reduce<HTMLElement[]>((acc, scope) => acc.concat(getFocusableElements(scope)), []);
   const activeElement = document.activeElement as HTMLElement | null;
+  const selfContainedOverlay = activeElement
+    ? nestedOverlays.find(
+        (overlay) => overlay.contains(activeElement) && overlay.querySelector(SELF_CONTAINED_OVERLAY_SELECTOR)
+      )
+    : undefined;
+  const scopes = selfContainedOverlay ? [selfContainedOverlay] : [container, ...nestedOverlays];
+  const focusable = scopes.reduce<HTMLElement[]>((acc, scope) => acc.concat(getFocusableElements(scope)), []);
 
   if (!activeElement || !scopes.some((scope) => scope.contains(activeElement))) {
     return false;

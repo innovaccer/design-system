@@ -32,6 +32,7 @@
 
 .Select-trigger--disabled {
   pointer-events: none;
+  color: var(--text-disabled);
 }
 
 .Select-trigger-control {

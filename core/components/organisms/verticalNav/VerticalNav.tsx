@@ -215,63 +215,109 @@ export const VerticalNav = (props: VerticalNavProps) => {
   };
 
   const renderList = () => {
-    const list = menus.map((menu, index) => {
+    const list: React.ReactNode[] = [];
+    let currentGroup: string | undefined;
+    let groupItems: React.ReactNode[] = [];
+    let groupIndex = 0;
+
+    menus.forEach((menu, index) => {
       const isActive = !menuState[menu.name] && isMenuActive(menus, menu, active);
       const hasSubmenu = menu.subMenu && menu.subMenu.length > 0;
       const isChildrenVisible = hasSubmenu && (menuState[menu.name] || subMenuExpandedState[menu.name]);
       const hasGroup = index === 0 || menus[index - 1].group !== menu.group;
 
-      const sectionClass = classNames({
-        [styles['VerticalNav-section']]: true,
-        [styles['VerticalNav-section--border']]: index !== 0,
-      });
+      // Flush previous group if group changes
+      if (hasGroup && groupItems.length > 0) {
+        if (expanded && currentGroup) {
+          list.push(
+            <div
+              key={`group-${groupIndex}`}
+              role="group"
+              aria-label={currentGroup}
+              className={styles['VerticalNav-group']}
+            >
+              <div className={styles['VerticalNav-group-heading']}>
+                <Text data-test="DesignSystem-VerticalNav--Section" size="small" weight="strong" appearance="subtle">
+                  {currentGroup}
+                </Text>
+              </div>
+              {groupItems}
+            </div>
+          );
+        } else {
+          list.push(...groupItems);
+        }
+        groupItems = [];
+        groupIndex++;
+      }
 
-      return (
-        <React.Fragment key={index}>
-          {hasGroup && menu.group && expanded && (
-            <div className={sectionClass}>
+      currentGroup = menu.group;
+
+      const menuItemElement = (
+        <MenuItem
+          key={`item-${index}`}
+          data-test="DesignSystem-VerticalNav--Item"
+          menu={menu}
+          expanded={expanded}
+          isActive={isActive}
+          hasSubmenu={hasSubmenu}
+          isChildren={false}
+          rounded={rounded}
+          isChildrenVisible={isChildrenVisible}
+          onClick={onClickHandler}
+          customItemRenderer={customItemRenderer}
+          customOptionRenderer={customOptionRenderer}
+          tabIndex={effectiveFocused === menu.name ? 0 : -1}
+        />
+      );
+
+      groupItems.push(menuItemElement);
+
+      if (isChildrenVisible) {
+        groupItems.push(
+          ...menu.subMenu!.map((subMenu, id) => {
+            return (
+              <MenuItem
+                key={`subitem-${index}-${id}`}
+                menu={subMenu}
+                expanded={expanded}
+                hasSubmenu={false}
+                isChildren={true}
+                rounded={rounded}
+                onClick={onClickHandler}
+                isActive={isMenuActive(menus, subMenu, active)}
+                customItemRenderer={customItemRenderer}
+                customOptionRenderer={customOptionRenderer}
+                tabIndex={effectiveFocused === subMenu.name ? 0 : -1}
+              />
+            );
+          })
+        );
+      }
+    });
+
+    // Flush last group
+    if (groupItems.length > 0) {
+      if (expanded && currentGroup) {
+        list.push(
+          <div
+            key={`group-${groupIndex}`}
+            role="group"
+            aria-label={currentGroup}
+            className={styles['VerticalNav-group']}
+          >
+            <div className={styles['VerticalNav-group-heading']}>
               <Text data-test="DesignSystem-VerticalNav--Section" size="small" weight="strong" appearance="subtle">
-                {menu.group}
+                {currentGroup}
               </Text>
             </div>
-          )}
-          {
-            <MenuItem
-              data-test="DesignSystem-VerticalNav--Item"
-              menu={menu}
-              expanded={expanded}
-              isActive={isActive}
-              hasSubmenu={hasSubmenu}
-              isChildren={false}
-              rounded={rounded}
-              isChildrenVisible={isChildrenVisible}
-              onClick={onClickHandler}
-              customItemRenderer={customItemRenderer}
-              customOptionRenderer={customOptionRenderer}
-              tabIndex={effectiveFocused === menu.name ? 0 : -1}
-            />
-          }
-          {isChildrenVisible &&
-            menu.subMenu!.map((subMenu, id) => {
-              return (
-                <MenuItem
-                  key={id}
-                  menu={subMenu}
-                  expanded={expanded}
-                  hasSubmenu={false}
-                  isChildren={true}
-                  rounded={rounded}
-                  onClick={onClickHandler}
-                  isActive={isMenuActive(menus, subMenu, active)}
-                  customItemRenderer={customItemRenderer}
-                  customOptionRenderer={customOptionRenderer}
-                  tabIndex={effectiveFocused === subMenu.name ? 0 : -1}
-                />
-              );
-            })}
-        </React.Fragment>
-      );
-    });
+            {groupItems}
+          </div>
+        );
+      } else {
+        list.push(...groupItems);
+      }
+    }
 
     return list;
   };

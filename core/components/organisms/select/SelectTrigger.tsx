@@ -5,6 +5,7 @@ import { IconType } from '@/common.type';
 import { SelectContext } from './SelectContext';
 import { handleKeyDownTrigger, computeValue } from './utils';
 import { BaseProps } from '@/utils/types';
+import isSpaceKey from '@/accessibility/utils/isSpaceKey';
 import selectStyles from '@css/components/select.module.css';
 import buttonStyles from '@css/components/button.module.css';
 import textStyles from '@css/components/text.module.css';
@@ -138,10 +139,20 @@ const SelectTrigger = (props: SelectTriggerProps) => {
     error,
   } = contextProp;
 
+  const { detectTruncation } = Tooltip.useAutoTooltip();
+  const [isValueTruncated, setIsValueTruncated] = React.useState(false);
+
+  const isDisabled = Boolean(disabled);
+  const useAriaDisabled = Boolean(isDisabled && isValueTruncated);
+  const nativeDisabled = useAriaDisabled ? undefined : disabled;
   const buttonDisabled = disabled ? 'disabled' : 'default';
   const trimmedPlaceholder = placeholder?.trim();
   const displayValue = computeValue(multiSelect, selectValue, setLabel);
   const value = isOptionSelected && displayValue.length > 0 ? displayValue : trimmedPlaceholder;
+
+  React.useEffect(() => {
+    setIsValueTruncated(detectTruncation(elementRef));
+  }, [detectTruncation, value]);
   const iconName = openPopover ? 'keyboard_arrow_up' : 'keyboard_arrow_down';
   const triggerStyle = {
     width: width,
@@ -216,12 +227,21 @@ const SelectTrigger = (props: SelectTriggerProps) => {
       >
         <button
           ref={triggerRef as React.RefObject<HTMLButtonElement>}
-          onKeyDown={(event) =>
-            handleKeyDownTrigger(event, setOpenPopover, setHighlightFirstItem, setHighlightLastItem)
-          }
+          onKeyDown={(event) => {
+            if (useAriaDisabled) {
+              if (event.key === 'Enter' || isSpaceKey(event)) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              return;
+            }
+            if (isDisabled) return;
+            handleKeyDownTrigger(event, setOpenPopover, setHighlightFirstItem, setHighlightLastItem);
+          }}
           type="button"
           className={selectStyles['Select-trigger-control']}
-          disabled={disabled}
+          disabled={nativeDisabled}
+          aria-disabled={useAriaDisabled ? true : undefined}
           tabIndex={0}
           role="combobox"
           aria-controls={ariaControls}

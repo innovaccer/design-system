@@ -1060,9 +1060,8 @@ describe('DateRangePicker component a11y', () => {
     expect(getByTestId('DesignSystem-Input--closeIcon').parentElement).toHaveAttribute('aria-label', 'Clear Date');
   });
 
-  // TODO: focus never moves into the calendar; assertion times out.
-  it.skip('focuses the end date cell when ArrowDown is pressed from the End Date input', async () => {
-    const { getByLabelText, getAllByLabelText } = render(
+  it('focuses the end date cell when ArrowDown is pressed from the End Date input', async () => {
+    const { getByLabelText, getAllByRole } = render(
       <DateRangePicker
         startDate={startDate}
         endDate={endDate}
@@ -1078,13 +1077,12 @@ describe('DateRangePicker component a11y', () => {
     fireEvent.keyDown(endInput, { key: 'ArrowDown' });
     await new Promise((resolve) => requestAnimationFrame(() => resolve(undefined)));
 
-    const endDateCells = getAllByLabelText('June 8, 2021');
+    const endDateCells = getAllByRole('gridcell', { name: 'End range: June 8, 2021, selected' });
     expect(endDateCells.some((cell) => cell === document.activeElement)).toBe(true);
   });
 
-  // TODO: focus never moves into the calendar; assertion times out.
-  it.skip('moves focus into the calendar when opened via click', async () => {
-    const { getByLabelText, getAllByLabelText } = render(
+  it('moves focus into the calendar when opened via click', async () => {
+    const { getByLabelText, getAllByRole } = render(
       <DateRangePicker startDate={startDate} endDate={endDate} withInput={true} view="date" />
     );
 
@@ -1092,7 +1090,7 @@ describe('DateRangePicker component a11y', () => {
 
     await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(() => resolve(undefined))));
 
-    const startDateCells = getAllByLabelText('March 3, 2020');
+    const startDateCells = getAllByRole('gridcell', { name: 'Start range: March 3, 2020, selected' });
     expect(startDateCells.some((cell) => cell === document.activeElement)).toBe(true);
   });
 });

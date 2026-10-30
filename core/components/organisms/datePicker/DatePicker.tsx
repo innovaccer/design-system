@@ -4,11 +4,13 @@ import { DateType, DateFormat } from '../calendar/types';
 import { Popover, Utils, Chip } from '@/index';
 import { PopoverProps, InputMaskProps } from '@/index.type';
 import { Validators } from '@/utils/types';
+import { handleFocusTrapKeyDown } from '@/utils/overlayHelper';
 import { convertToDate, translateToString, compareDate, getDateInfo } from '../calendar/utility';
 import { findFocusableCalendarCell } from '../calendar/utils';
 import { Trigger } from './Trigger';
 import config from '../calendar/config';
 import classNames from 'classnames';
+import uidGenerator from '@/utils/uidGenerator';
 import styles from '@css/components/datePicker.module.css';
 
 export type DatePickerProps = SharedProps & {
@@ -129,6 +131,9 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
 
   private inputRef = React.createRef<HTMLInputElement>();
   private calendarContainerRef = React.createRef<HTMLDivElement>();
+  private popupRef = React.createRef<HTMLDivElement>();
+  private focusTrapActive = false;
+  private popupId = `DesignSystem-DatePicker-popup-${uidGenerator()}`;
 
   constructor(props: DatePickerProps) {
     super(props);
@@ -145,6 +150,35 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
       open: props.open || false,
     };
   }
+
+  componentDidMount() {
+    this.syncFocusTrap();
+  }
+
+  componentWillUnmount() {
+    this.removeFocusTrap();
+  }
+
+  onFocusTrapKeyDown = (event: KeyboardEvent) => {
+    const container = this.popupRef.current;
+    if (container) handleFocusTrapKeyDown(event, container);
+  };
+
+  removeFocusTrap = () => {
+    if (!this.focusTrapActive) return;
+    document.removeEventListener('keydown', this.onFocusTrapKeyDown, true);
+    this.focusTrapActive = false;
+  };
+
+  syncFocusTrap = () => {
+    if (this.props.withInput && this.state.open) {
+      if (this.focusTrapActive) return;
+      document.addEventListener('keydown', this.onFocusTrapKeyDown, true);
+      this.focusTrapActive = true;
+      return;
+    }
+    this.removeFocusTrap();
+  };
 
   componentDidUpdate(prevProps: DatePickerProps, prevState: DatePickerState) {
     if (prevProps.date !== this.props.date) {
@@ -184,11 +218,12 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
     // Return focus to the date input when the popover closes (select / Escape / outside click).
     if (prevState.open && !this.state.open) {
       const active = document.activeElement as HTMLElement | null;
-      const calendarRoot = this.calendarContainerRef.current;
-      if (!active || active === document.body || (calendarRoot && calendarRoot.contains(active))) {
+      if (!active || active === document.body || active.closest('[data-focus-contained]')) {
         this.inputRef.current?.focus({ preventScroll: true });
       }
     }
+
+    this.syncFocusTrap();
   }
 
   focusCalendar = (): boolean => {
@@ -205,7 +240,15 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
   };
 
   onInputKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (!this.state.open || e.defaultPrevented) return;
+    if (e.defaultPrevented) return;
+
+    if (!this.state.open) {
+      if (e.key === 'Enter' || e.key === 'ArrowDown') {
+        e.preventDefault();
+        this.onToggleHandler(true, 'onClick');
+      }
+      return;
+    }
 
     // Keep typing uninterrupted; move focus into the portaled calendar on Tab / ArrowDown.
     // Only prevent default when a focusable calendar cell exists (date/month/year views).
@@ -338,8 +381,10 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
       'pt-3': size === 'large' && view === 'year',
     });
 
+    const popupProps = withInput ? { id: this.popupId, role: 'dialog', 'aria-label': 'Calendar' } : {};
+
     return (
-      <div>
+      <div data-focus-contained ref={this.popupRef} {...popupProps}>
         <div className={styles['DatePicker-content']}>
           {children}
           <Calendar
@@ -394,6 +439,7 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
               setState={this.setState.bind(this)}
               inputRef={this.inputRef}
               onInputKeyDown={this.onInputKeyDown}
+              popupId={this.popupId}
             />
           }
           triggerClass="w-100"

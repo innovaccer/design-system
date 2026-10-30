@@ -158,6 +158,11 @@ type CellProps = {
   highlightCell?: boolean;
 };
 
+// Truncate on a single line only when a tooltip can reveal the full text; otherwise let the text wrap.
+// Both preserve newlines and consecutive spaces so the displayed value is the same either way.
+const getTextClass = (tooltip?: boolean) =>
+  classNames('w-100 ellipsis', tooltip ? 'white-space-pre' : 'white-space-pre-wrap');
+
 const renderTitle = (props: CellProps) => {
   const { tooltip, cellData, searchTerm, highlightRegex, highlightCell } = props;
 
@@ -170,7 +175,7 @@ const renderTitle = (props: CellProps) => {
           <HighlightedText
             text={children}
             searchTerm={searchTerm}
-            className="w-100 ellipsis white-space-pre"
+            className={getTextClass(tooltip)}
             highlightRegex={highlightRegex}
             highlightCell={highlightCell}
           />
@@ -181,7 +186,7 @@ const renderTitle = (props: CellProps) => {
       <HighlightedText
         text={children}
         searchTerm={searchTerm}
-        className="w-100 ellipsis white-space-pre"
+        className={getTextClass(tooltip)}
         highlightRegex={highlightRegex}
         highlightCell={highlightCell}
       />
@@ -301,7 +306,7 @@ const renderStatusHint = (props: CellProps) => {
         <HighlightedText
           text={children}
           searchTerm={searchTerm}
-          className="w-100 ellipsis white-space-pre"
+          className={getTextClass(tooltip)}
           highlightRegex={highlightRegex}
           highlightCell={highlightCell}
         />

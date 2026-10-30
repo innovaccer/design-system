@@ -92,7 +92,7 @@ export const handleKeyDown = (
   }
 };
 
-const MENU_LIST_ITEM_SELECTOR = '[data-test="DesignSystem-Menu-ListItem"]';
+export const MENU_LIST_ITEM_SELECTOR = '[role="menuitem"], [data-test="DesignSystem-Menu-ListItem"]';
 
 const navigateOptions = (
   direction: string,

@@ -1,6 +1,7 @@
 /* Label */
 .Label {
   display: inline-flex;
+  position: relative;
 }
 .Label--small {
   font-size: var(--font-size-s);

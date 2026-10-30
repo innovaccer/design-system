@@ -92,6 +92,7 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
   const valueElementId = id && children ? `${id}-value` : undefined;
   const triggerLabelledBy = ariaLabelledBy && valueElementId ? `${ariaLabelledBy} ${valueElementId}` : ariaLabelledBy;
   const iconName = !menu ? (open ? 'keyboard_arrow_up' : 'keyboard_arrow_down') : icon ? icon : 'more_horiz';
+  const resolvedAriaLabel = ariaLabelledBy ? undefined : ariaLabel || (menu ? undefined : String(value));
 
   const buttonClass = classNames({
     [buttonStyles['Button']]: true,
@@ -119,9 +120,10 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
       className={buttonClass}
       disabled={disabled}
       tabIndex={0}
+      role={menu ? undefined : 'combobox'}
       aria-haspopup={menu ? 'menu' : 'listbox'}
-      aria-expanded={open}
-      aria-label={ariaLabelledBy ? undefined : ariaLabel}
+      aria-expanded={!!open}
+      aria-label={resolvedAriaLabel}
       aria-labelledby={triggerLabelledBy}
       data-test="DesignSystem-DropdownTrigger"
       {...rest}

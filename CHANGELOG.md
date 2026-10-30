@@ -1,3 +1,134 @@
+## 4.30.6 (2026-10-28)
+
+### Highlights
+
+- Fixes to VerticalNav section semantics, Table grid cell text truncation, and FileList error row descriptions.
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Fixes
+
+- fix(VerticalNav): add semantic grouping for navigation sections (4c08dc3b1)
+- fix(table): update grid cell text truncate behavior (0bc316a46)
+- fix(fileList): describe error file rows by their error message (c0cb355ab)
+
+---
+
+## 4.30.5 (2026-10-19)
+
+### Highlights
+
+- Broad accessibility fixes to DatePicker/Calendar combobox semantics and keyboard navigation, plus Menu and Dropdown improvements.
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Fixes
+
+- fix(menu): find menu items by role so a consumer data-test no longer breaks keyboard navigation (18101eab8)
+- fix(calendar): name selected dates, months and years, and stop reading them twice (048699c4a)
+- fix(calendar): move focus into the new view when the view changes from inside the calendar (ac0f8e061)
+- fix(datepicker): keep Tab focus inside the calendar dialog while it is open (8dd6e46da)
+- fix(datepicker): open the calendar on ArrowDown when the input is closed (ff00b41a4)
+- fix(datepicker): expose combobox semantics and open the calendar on Enter (faa783584)
+- fix(dropdown): associate group headers with their options via role=group (7ba2fdae5)
+
+---
+
+## 4.30.4 (2026-10-09)
+
+### Highlights
+
+- Accessibility fixes across Modal, DatePicker, and Dropdown for Escape handling, focus management, and ARIA attributes.
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Fixes
+
+- fix(modal): don't close on Escape while an open popover, tooltip or layer is above it (d688faf59)
+- fix(datepicker): keep Tab inside open calendar and return focus to input after choosing Today (116902f4b)
+- fix(dropdown): expose combobox role and always set aria-expanded on trigger (6d4de208e)
+
+---
+
+## 4.30.3 (2026-09-23)
+
+### Highlights
+
+- Fixed Modal not closing on Escape when nested overlays are present.
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Fixes
+
+- fix(modal): check nested overlays before closing on Escape (489071cf2)
+
+---
+
+## 4.30.2 (2026-09-22)
+
+### Highlights
+
+- Accessibility fixes for Select's disabled trigger focusability and Label's screen reader positioning.
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Fixes
+
+- fix(select): keep disabled trigger focusable via aria-disabled (59c383a92)
+- fix(label): update position for screen reader label (cf1087561)
+
+---
+
 ## 4.30.1 (2026-09-09)
 
 ### Highlights

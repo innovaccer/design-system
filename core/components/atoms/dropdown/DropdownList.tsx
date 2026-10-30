@@ -475,13 +475,13 @@ const DropdownList = (props: OptionsProps) => {
     );
   };
 
-  const renderGroups = (group: string, selectedGroup?: boolean, inOptionsComposite?: boolean) => {
+  const renderGroups = (group: string, selectedGroup?: boolean, inOptionsComposite?: boolean, labelId?: string) => {
     const { onClearOptions } = props;
     const isClearDisabled = selected.every((option) => option.disabled);
 
     return (
       <div className={getDropdownSectionClass(selectedGroup)} role={inOptionsComposite ? 'presentation' : undefined}>
-        <Text size="small" appearance={'subtle'}>
+        <Text id={labelId} size="small" appearance={'subtle'}>
           {group}
         </Text>
         {selectedGroup && (
@@ -656,6 +656,18 @@ const DropdownList = (props: OptionsProps) => {
 
     const groupedListOptions = groupListOptions(listOptions);
 
+    // Split the flat, group-ordered list into runs of the same group (header shown on a run's first row).
+    const groupChunks: { group?: string; showHeader: boolean; items: { option: OptionSchema; index: number }[] }[] = [];
+    groupedListOptions.forEach((option, index) => {
+      const prevGroup =
+        index > 0 ? groupedListOptions[index - 1].group : selected.length ? selectedSectionLabel : undefined;
+      const isGroupDifferent = prevGroup !== option.group;
+      if (isGroupDifferent || !groupChunks.length) {
+        groupChunks.push({ group: option.group, showHeader: isGroupDifferent && !!option.group, items: [] });
+      }
+      groupChunks[groupChunks.length - 1].items.push({ option, index });
+    });
+
     const emptyMessageClass = classNames({
       [dropdownStyles['Dropdown-wrapper']]: true,
       'w-100': true,
@@ -700,18 +712,25 @@ const DropdownList = (props: OptionsProps) => {
             listOptions.length - selected.length > 0 &&
             !listOptions[0].group?.trim() &&
             renderGroups(allItemsSectionLabel, false, true)}
-          {groupedListOptions.map((option, index) => {
-            const prevGroup =
-              index > 0 ? groupedListOptions[index - 1].group : selected.length ? selectedSectionLabel : undefined;
-            const currentGroup = option.group;
-            const isGroupDifferent = prevGroup !== currentGroup;
-            const updatedIndex = index + selected.length;
-
-            return (
+          {groupChunks.map((chunk, chunkIndex) => {
+            // a11y: tie the visible group header to the options under it (WCAG 1.3.1). Only chunks that
+            // render a header are wrapped in role="group"; ungrouped lists keep their existing DOM.
+            const labelId = chunk.showHeader
+              ? `${dropdownFieldIdsPrefixRef.current}-group-label-${chunkIndex}`
+              : undefined;
+            const rows = chunk.items.map(({ option, index }, itemIndex) => (
               <div className={dropdownStyles['Option-checkboxWrapper']} key={index} role="presentation">
-                {isGroupDifferent && currentGroup && renderGroups(currentGroup, false, true)}
-                {renderOptions(option, updatedIndex)}
+                {itemIndex === 0 && chunk.showHeader && renderGroups(chunk.group as string, false, true, labelId)}
+                {renderOptions(option, index + selected.length)}
               </div>
+            ));
+
+            return labelId ? (
+              <div role="group" aria-labelledby={labelId} key={`group-${chunkIndex}`}>
+                {rows}
+              </div>
+            ) : (
+              <React.Fragment key={`group-${chunkIndex}`}>{rows}</React.Fragment>
             );
           })}
         </div>

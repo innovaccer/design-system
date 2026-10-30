@@ -1084,3 +1084,65 @@ describe('Dropdown trigger accessibility and visual parity with Select', () => {
     expect(within(dropdownTrigger).getByText('10:00 AM')).toHaveAttribute('id', 'time-dropdown-value');
   });
 });
+
+describe('Dropdown grouped options a11y (group label association)', () => {
+  const groupedOptions = [
+    { label: 'All', value: 'all', group: 'Provider' },
+    { label: 'PCP', value: 'pcp', group: 'Provider' },
+    { label: 'Cardiology', value: 'cardiology', group: 'Speciality' },
+    { label: 'Neurology', value: 'neurology', group: 'Speciality' },
+  ];
+
+  const openDropdown = (props: Partial<Props> = {}) => {
+    const utils = render(<Dropdown options={groupedOptions} withCheckbox={true} {...props} />);
+    fireEvent.click(utils.getByTestId(trigger));
+    return utils;
+  };
+
+  it('wraps each group in role="group" labelled by its visible header', () => {
+    openDropdown();
+    const groups = screen.getAllByRole('group');
+    expect(groups).toHaveLength(2);
+    expect(groups[0]).toHaveAccessibleName('Provider');
+    expect(groups[1]).toHaveAccessibleName('Speciality');
+    groups.forEach((group) => {
+      const labelId = group.getAttribute('aria-labelledby') as string;
+      expect(document.getElementById(labelId)).not.toBeNull();
+    });
+  });
+
+  it("puts each group's options inside its own group", () => {
+    openDropdown();
+    const [provider, speciality] = screen.getAllByRole('group');
+    expect(
+      within(provider)
+        .getAllByRole('option')
+        .map((o) => o.textContent)
+    ).toEqual(['All', 'PCP']);
+    expect(
+      within(speciality)
+        .getAllByRole('option')
+        .map((o) => o.textContent)
+    ).toEqual(['Cardiology', 'Neurology']);
+  });
+
+  it('renders no group wrapper when options are not grouped', () => {
+    openDropdown({ options: storyOptions });
+    expect(screen.queryAllByRole('group')).toHaveLength(0);
+  });
+
+  it('gives every group a distinct label id', () => {
+    openDropdown();
+    const ids = screen.getAllByRole('group').map((g) => g.getAttribute('aria-labelledby'));
+    expect(new Set(ids).size).toBe(ids.length);
+  });
+
+  it('introduces no group-related axe violations when open', async () => {
+    openDropdown();
+    const results = await axe(document.body);
+    // The open checkbox list already reports nested-interactive / aria-allowed-role for the native checkbox
+    // inside each option; only the rules this change can affect are asserted here.
+    const groupRules = ['aria-required-children', 'aria-required-parent', 'aria-valid-attr-value'];
+    expect(results.violations.filter((v) => groupRules.includes(v.id))).toEqual([]);
+  });
+});

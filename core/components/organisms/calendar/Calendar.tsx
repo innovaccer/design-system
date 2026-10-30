@@ -12,6 +12,8 @@ import {
   focusMonthCell,
   focusYearCell,
   formatDateAriaLabel,
+  selectedAriaLabel,
+  rangeAriaLabel,
   handleDateViewKeyDown,
   handleMonthViewKeyDown,
   handleYearViewKeyDown,
@@ -233,7 +235,13 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     };
   }
 
-  componentDidUpdate(prevProps: CalendarProps, prevState: CalendarState) {
+  getSnapshotBeforeUpdate(_prevProps: CalendarProps, prevState: CalendarState) {
+    if (prevState.view === this.state.view) return null;
+    const container = this.calendarWrapperRef.current;
+    return !!container && container.contains(document.activeElement);
+  }
+
+  componentDidUpdate(prevProps: CalendarProps, prevState: CalendarState, focusWasInside?: boolean | null) {
     const { monthsInView } = this.props;
 
     if (prevProps.date !== this.props.date) {
@@ -423,6 +431,19 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
           }
           this.setState({ pendingFocusDate: undefined });
         }
+      }
+    }
+
+    if (focusWasInside && prevState.view !== this.state.view && this.calendarWrapperRef.current) {
+      const container = this.calendarWrapperRef.current;
+      const target =
+        container.querySelector<HTMLElement>('[role="gridcell"][tabindex="0"]') ||
+        container.querySelector<HTMLElement>('[role="gridcell"]:not([aria-disabled="true"])') ||
+        container.querySelector<HTMLElement>(
+          '[class*="Calendar-headerButton"]:not([disabled]), [class*="Calendar-headerIcon"] button:not([disabled])'
+        );
+      if (target) {
+        target.focus({ preventScroll: true });
       }
     }
 
@@ -879,7 +900,6 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                 data-year-index={offset}
                 className={valueClass}
                 tabIndex={isFocused ? 0 : -1}
-                aria-label={year.toString()}
                 aria-disabled={disabled}
                 aria-selected={active}
                 aria-current={isCurrentYear() ? 'date' : undefined}
@@ -897,6 +917,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                 >
                   {year}
                 </Text>
+                {active && <span className={styles['Calendar-srOnly']}>, selected</span>}
               </button>
             </div>
           );
@@ -985,7 +1006,6 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                 data-month={month}
                 className={valueClass}
                 tabIndex={isFocused ? 0 : -1}
-                aria-label={months[month]}
                 aria-disabled={disabled}
                 aria-selected={active}
                 aria-current={isCurrentMonth() ? 'date' : undefined}
@@ -1003,6 +1023,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                 >
                   {months[month]}
                 </Text>
+                {active && <span className={styles['Calendar-srOnly']}>, selected</span>}
               </button>
             </div>
           );
@@ -1612,7 +1633,6 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                   data-test="DesignSystem-Calendar--dateValue"
                   className={valueClass}
                   tabIndex={isFocused ? 0 : -1}
-                  aria-label={formatDateAriaLabel(fullDate)}
                   aria-disabled={disabled}
                   aria-selected={Boolean(active || activeDate)}
                   aria-current={today() ? 'date' : undefined}
@@ -1643,7 +1663,18 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                   onMouseOver={onMouseOverHandler(date)}
                   onMouseEnter={onMouseEnterHandler.bind(this, date, today(), disabled)}
                 >
+                  <span className={styles['Calendar-srOnly']} data-calendar-cell-label>
+                    {selectedAriaLabel(
+                      rangeAriaLabel(
+                        formatDateAriaLabel(fullDate),
+                        Boolean(rangePicker && isStartActive && !disabled),
+                        Boolean(rangePicker && isEndActive && !disabled)
+                      ),
+                      Boolean(active || activeDate)
+                    )}
+                  </span>
                   <Text
+                    aria-hidden="true"
                     color={getTextAppearance() === 'default' || today() ? getTextColor : undefined}
                     appearance={getTextAppearance()}
                     size={size === 'small' ? 'small' : 'regular'}
