@@ -1161,8 +1161,11 @@ describe('Modal hides background from screen readers', () => {
         <Text>Outer body</Text>
       </Modal>
     );
-    await flushRAF();
-
+    // Mount the inner dialog in the same tick as the outer one (no await in between). The outer
+    // dialog's background scan is two chained setTimeout(0)s; awaiting here lets its first tick
+    // fire at an arbitrary point relative to the popper's own registration timer, and under
+    // CPU load the scan's second tick can then run before the popper registers and hide it.
+    // Mounting synchronously fixes the order: scan tick 1, popper registers, scan tick 2.
     render(
       <Modal open={true} onClose={jest.fn()} headerOptions={{ heading: 'Inner' }} backdropClose={jest.fn()}>
         <FakeInitiallyOpenPopper />
