@@ -136,7 +136,7 @@
 }
 
 .Tooltip-container {
-  transition-property: opacity, visibility;
+  transition-property: opacity;
   transition-delay: 400ms;
   animation-delay: 400ms;
 }
