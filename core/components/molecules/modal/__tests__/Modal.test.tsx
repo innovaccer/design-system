@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render, fireEvent, act } from '@testing-library/react';
+import { render, fireEvent, act, waitFor } from '@testing-library/react';
 import { axe } from '@/utils/testAxe';
 import { ModalProps as Props } from '@/index.type';
 import { ModalHeader, Modal, ModalBody, ModalFooter, Button, Text } from '@/index';
@@ -1161,8 +1161,11 @@ describe('Modal hides background from screen readers', () => {
         <Text>Outer body</Text>
       </Modal>
     );
-    await flushRAF();
-
+    // Mount the inner dialog in the same tick as the outer one (no await in between). The outer
+    // dialog's background scan is two chained setTimeout(0)s; awaiting here lets its first tick
+    // fire at an arbitrary point relative to the popper's own registration timer, and under
+    // CPU load the scan's second tick can then run before the popper registers and hide it.
+    // Mounting synchronously fixes the order: scan tick 1, popper registers, scan tick 2.
     render(
       <Modal open={true} onClose={jest.fn()} headerOptions={{ heading: 'Inner' }} backdropClose={jest.fn()}>
         <FakeInitiallyOpenPopper />
@@ -1170,14 +1173,18 @@ describe('Modal hides background from screen readers', () => {
       </Modal>
     );
     await flushRAF();
-    await flushTimers();
 
     const fakePopper = document.querySelector('[data-testid="fake-popper"]') as HTMLElement;
     expect(fakePopper).toBeTruthy();
+    // Wait on observable state (popper registered, page background hidden) rather than a fixed
+    // number of timer ticks, which is sensitive to CPU load when suites run in parallel.
+    await waitFor(() => {
+      expect(OverlayManager.overlays).toContain(fakePopper);
+      expect(appRoot.getAttribute('aria-hidden')).toBe('true');
+    });
     // The inner dialog's own already-open popper must stay exposed even though it mounted
     // after the outer (first) dialog already claimed the page-background scan.
     expect(fakePopper.getAttribute('aria-hidden')).not.toBe('true');
-    expect(appRoot.getAttribute('aria-hidden')).toBe('true');
 
     // Tab from the popper's last control must wrap into the *inner* dialog's own close
     // button, not get hijacked by the outer dialog's earlier-registered capture listener.
