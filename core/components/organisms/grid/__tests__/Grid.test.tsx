@@ -1471,3 +1471,31 @@ describe('Grid component a11y', () => {
     expect(results).toHaveNoViolations();
   });
 });
+
+describe('nested rows on sorting', () => {
+  const schema = [{ name: 'name', displayName: 'Name' }];
+  const renderNestedRow = ({ data }: { data: { name: string } }) => <div>Details of {data.name}</div>;
+
+  it('collapses expanded nested rows when the sorting changes', () => {
+    const data = [{ name: 'Alice' }, { name: 'Bob' }];
+    const { getAllByTestId, queryByText, rerender } = render(
+      <Grid schema={schema} data={data} nestedRows={true} nestedRowRenderer={renderNestedRow} sortingList={[]} />
+    );
+
+    fireEvent.click(getAllByTestId('DesignSystem-Grid-nestedRowTrigger')[0]);
+    expect(queryByText('Details of Alice')).toBeInTheDocument();
+
+    rerender(
+      <Grid
+        schema={schema}
+        data={[...data].reverse()}
+        nestedRows={true}
+        nestedRowRenderer={renderNestedRow}
+        sortingList={[{ name: 'name', type: 'desc' }]}
+      />
+    );
+
+    expect(queryByText('Details of Alice')).not.toBeInTheDocument();
+    expect(queryByText('Details of Bob')).not.toBeInTheDocument();
+  });
+});

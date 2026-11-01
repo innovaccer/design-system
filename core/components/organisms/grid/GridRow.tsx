@@ -20,8 +20,17 @@ export interface GridRowProps {
 export const GridRow = (props: GridRowProps) => {
   const context = React.useContext(GridContext);
 
-  const { type, onRowClick, loading, withCheckbox, nestedRows, checkboxAlignment, showNestedRowTrigger, gridId } =
-    context;
+  const {
+    type,
+    onRowClick,
+    loading,
+    withCheckbox,
+    nestedRows,
+    checkboxAlignment,
+    showNestedRowTrigger,
+    gridId,
+    sortingList,
+  } = context;
 
   const { schema, data, rowIndex: rI, onSelect, className } = props;
 
@@ -37,13 +46,15 @@ export const GridRow = (props: GridRowProps) => {
   const rowRef = React.useRef<HTMLDivElement>(null);
   const [expanded, setExpanded] = React.useState<boolean>(() => getExpandedState());
 
+  // Rows are keyed by index, so after sorting a row shows another record:
+  // reset the nested row to its default state instead of keeping it expanded.
   React.useEffect(() => {
     if (!showNestedRowTrigger) {
       setExpanded(true);
     } else {
       setExpanded(_expandNestedRow || false);
     }
-  }, [_expandNestedRow]);
+  }, [_expandNestedRow, sortingList]);
 
   const rowClasses = classNames(styles['Grid-row'], styles['Grid-row--body'], {
     [styles['Grid-row--selected']]: data._selected,
