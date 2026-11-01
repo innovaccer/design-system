@@ -1558,6 +1558,43 @@ describe('nested rows on sorting', () => {
     expect(queryByText('Details of Bob')).not.toBeInTheDocument();
   });
 
+  it('marks the nested row trigger as disabled while the grid is loading', () => {
+    const data = [{ name: 'Alice' }];
+    const { getByTestId } = render(
+      <Grid schema={schema} data={data} nestedRows={true} nestedRowRenderer={renderNestedRow} loading={true} />
+    );
+
+    const trigger = getByTestId('DesignSystem-Grid-nestedRowTrigger');
+    expect(trigger).toHaveAttribute('aria-disabled', 'true');
+    expect(trigger).toHaveAttribute('tabindex', '-1');
+    // Space is handled, so it does not scroll the page
+    expect(fireEvent.keyDown(trigger, { key: ' ' })).toBe(false);
+  });
+
+  it('collapses the row when sorted data arrives after the sorting list', () => {
+    const shown: string[] = [];
+    const Details = ({ name }: { name: string }) => {
+      React.useEffect(() => {
+        shown.push(name);
+      }, [name]);
+      return <div>Details of {name}</div>;
+    };
+    const props = {
+      schema,
+      nestedRows: true,
+      nestedRowRenderer: ({ data: rowData }: { data: { name: string } }) => <Details name={rowData.name} />,
+    };
+    const data = [{ name: 'Alice', _expandNestedRow: true }, { name: 'Bob' }];
+    const { rerender } = render(<Grid {...props} data={data} sortingList={[]} />);
+    expect(shown).toEqual(['Alice']);
+
+    const sortingList = [{ name: 'name', type: 'desc' as const }];
+    rerender(<Grid {...props} data={data} sortingList={sortingList} />);
+    rerender(<Grid {...props} data={[...data].reverse()} sortingList={sortingList} />);
+
+    expect(shown).not.toContain('Bob');
+  });
+
   it('keeps nested rows expanded when an equal sorting list is passed again', () => {
     const data = [{ name: 'Alice' }, { name: 'Bob' }];
     const { getAllByTestId, queryByText, rerender } = render(
