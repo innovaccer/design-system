@@ -1498,4 +1498,32 @@ describe('nested rows on sorting', () => {
     expect(queryByText('Details of Alice')).not.toBeInTheDocument();
     expect(queryByText('Details of Bob')).not.toBeInTheDocument();
   });
+
+  it('keeps nested rows expanded when an equal sorting list is passed again', () => {
+    const data = [{ name: 'Alice' }, { name: 'Bob' }];
+    const { getAllByTestId, queryByText, rerender } = render(
+      <Grid
+        schema={schema}
+        data={data}
+        nestedRows={true}
+        nestedRowRenderer={renderNestedRow}
+        sortingList={[{ name: 'name', type: 'asc' }]}
+      />
+    );
+
+    fireEvent.click(getAllByTestId('DesignSystem-Grid-nestedRowTrigger')[0]);
+    expect(queryByText('Details of Alice')).toBeInTheDocument();
+
+    rerender(
+      <Grid
+        schema={schema}
+        data={data}
+        nestedRows={true}
+        nestedRowRenderer={renderNestedRow}
+        sortingList={[{ name: 'name', type: 'asc' }]}
+      />
+    );
+
+    expect(queryByText('Details of Alice')).toBeInTheDocument();
+  });
 });
