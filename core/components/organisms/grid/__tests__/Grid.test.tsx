@@ -1546,6 +1546,18 @@ describe('nested rows on sorting', () => {
     expect(shown).toEqual(['Alice']);
   });
 
+  it('does not expand a nested row while the grid is loading', () => {
+    const data = [{ name: 'Alice' }, { name: 'Bob' }];
+    const props = { schema, nestedRows: true, nestedRowRenderer: renderNestedRow, sortingList: [] };
+    const { getAllByTestId, queryByText, rerender } = render(<Grid {...props} data={data} loading={true} />);
+
+    fireEvent.click(getAllByTestId('DesignSystem-Grid-nestedRowTrigger')[0]);
+    rerender(<Grid {...props} data={[...data].reverse()} loading={false} />);
+
+    expect(queryByText('Details of Alice')).not.toBeInTheDocument();
+    expect(queryByText('Details of Bob')).not.toBeInTheDocument();
+  });
+
   it('keeps nested rows expanded when an equal sorting list is passed again', () => {
     const data = [{ name: 'Alice' }, { name: 'Bob' }];
     const { getAllByTestId, queryByText, rerender } = render(

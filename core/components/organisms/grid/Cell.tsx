@@ -366,6 +366,10 @@ const BodyCell = (props: BodyCellProps) => {
     ['align-items-end']: verticalAlign === 'bottom',
   });
 
+  // While loading, the rows can be replaced by new data at the same index,
+  // so do not let them expand, as sorting is disabled too.
+  const canToggle = !!nestedRowData && !loading;
+
   const NestedRowTrigger = () => {
     if (showNestedRowTrigger) {
       return (
@@ -378,13 +382,13 @@ const BodyCell = (props: BodyCellProps) => {
           aria-label={expanded ? 'Collapse row' : 'Expand row'}
           tabIndex={0}
           onClick={(e) => {
-            if (nestedRowData) {
+            if (canToggle) {
               e.stopPropagation();
               setExpanded(!expanded);
             }
           }}
           onKeyDown={(e: React.KeyboardEvent) => {
-            if (nestedRowData && (e.key === 'Enter' || isSpaceKey(e))) {
+            if (canToggle && (e.key === 'Enter' || isSpaceKey(e))) {
               e.preventDefault();
               e.stopPropagation();
               setExpanded(!expanded);
