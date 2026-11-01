@@ -1499,6 +1499,53 @@ describe('nested rows on sorting', () => {
     expect(queryByText('Details of Bob')).not.toBeInTheDocument();
   });
 
+  it('collapses nested rows when sorting changes to a list that joins to the same text', () => {
+    const data = [{ name: 'Alice' }, { name: 'Bob' }];
+    const props = { schema, nestedRows: true, nestedRowRenderer: renderNestedRow };
+    const { getAllByTestId, queryByText, rerender } = render(
+      <Grid
+        {...props}
+        data={data}
+        sortingList={[
+          { name: 'a', type: 'asc' },
+          { name: 'b', type: 'desc' },
+        ]}
+      />
+    );
+
+    fireEvent.click(getAllByTestId('DesignSystem-Grid-nestedRowTrigger')[0]);
+    expect(queryByText('Details of Alice')).toBeInTheDocument();
+
+    rerender(<Grid {...props} data={[...data].reverse()} sortingList={[{ name: 'a:asc,b', type: 'desc' }]} />);
+
+    expect(queryByText('Details of Alice')).not.toBeInTheDocument();
+    expect(queryByText('Details of Bob')).not.toBeInTheDocument();
+  });
+
+  it('does not show the nested row of the record that moves into an expanded row', () => {
+    const shown: string[] = [];
+    const Details = ({ name }: { name: string }) => {
+      React.useEffect(() => {
+        shown.push(name);
+      }, [name]);
+      return <div>Details of {name}</div>;
+    };
+    const data = [{ name: 'Alice' }, { name: 'Bob' }];
+    const props = {
+      schema,
+      nestedRows: true,
+      nestedRowRenderer: ({ data: rowData }: { data: { name: string } }) => <Details name={rowData.name} />,
+    };
+    const { getAllByTestId, rerender } = render(<Grid {...props} data={data} sortingList={[]} />);
+
+    fireEvent.click(getAllByTestId('DesignSystem-Grid-nestedRowTrigger')[0]);
+    expect(shown).toEqual(['Alice']);
+
+    rerender(<Grid {...props} data={[...data].reverse()} sortingList={[{ name: 'name', type: 'desc' }]} />);
+
+    expect(shown).toEqual(['Alice']);
+  });
+
   it('keeps nested rows expanded when an equal sorting list is passed again', () => {
     const data = [{ name: 'Alice' }, { name: 'Bob' }];
     const { getAllByTestId, queryByText, rerender } = render(

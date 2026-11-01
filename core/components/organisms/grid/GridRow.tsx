@@ -48,8 +48,14 @@ export const GridRow = (props: GridRowProps) => {
 
   // Rows are keyed by index, so after sorting a row shows another record:
   // reset the nested row to its default state instead of keeping it expanded.
-  // Compare the sort values, as a new but equal sortingList is not a new sort.
-  const sortingKey = sortingList?.map((sort) => `${sort.name}:${sort.type}`).join(',');
+  // Compare the sort values, as a new but equal sortingList is not a new sort,
+  // and reset while rendering so the new record never shows the old state.
+  const sortingKey = JSON.stringify(sortingList?.map((sort) => [sort.name, sort.type]));
+  const [prevSortingKey, setPrevSortingKey] = React.useState(sortingKey);
+  if (sortingKey !== prevSortingKey) {
+    setPrevSortingKey(sortingKey);
+    setExpanded(getExpandedState());
+  }
 
   React.useEffect(() => {
     if (!showNestedRowTrigger) {
@@ -57,7 +63,7 @@ export const GridRow = (props: GridRowProps) => {
     } else {
       setExpanded(_expandNestedRow || false);
     }
-  }, [_expandNestedRow, sortingKey]);
+  }, [_expandNestedRow]);
 
   const rowClasses = classNames(styles['Grid-row'], styles['Grid-row--body'], {
     [styles['Grid-row--selected']]: data._selected,
