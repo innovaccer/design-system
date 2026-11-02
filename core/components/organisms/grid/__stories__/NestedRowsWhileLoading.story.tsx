@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Grid, Text } from '@/index';
+import { NestedRowProps } from '../GridNestedRow';
 
 const schema = [
   { name: 'name', displayName: 'Name', width: '50%' },
@@ -11,12 +12,12 @@ const data = [
   { name: 'Louella Veneur', gender: 'Female' },
 ];
 
-const nestedRowRenderer = ({ data: rowData }) => <Text>Details of {rowData.name}</Text>;
+const nestedRowRenderer = ({ data: rowData }: NestedRowProps) => <Text>{rowData.name}</Text>;
 
 // CSF format story
 export const nestedRowsWhileLoading = () => {
   return (
-    <div style={{ height: '200px' }}>
+    <div className="vh-50">
       <Grid schema={schema} data={data} nestedRows={true} nestedRowRenderer={nestedRowRenderer} loading={true} />
     </div>
   );
@@ -33,10 +34,10 @@ const customCode = `() => {
     { name: 'Louella Veneur', gender: 'Female' },
   ];
 
-  const nestedRowRenderer = ({ data: rowData }) => <Text>Details of {rowData.name}</Text>;
+  const nestedRowRenderer = ({ data: rowData }) => <Text>{rowData.name}</Text>;
 
   return (
-    <div style={{ height: '200px' }}>
+    <div className="vh-50">
       <Grid schema={schema} data={data} nestedRows={true} nestedRowRenderer={nestedRowRenderer} loading={true} />
     </div>
   );
