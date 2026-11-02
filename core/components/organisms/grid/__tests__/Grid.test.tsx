@@ -1614,6 +1614,18 @@ describe('nested rows on sorting', () => {
     expect(nestedRowRenderer).toHaveBeenCalledTimes(1);
   });
 
+  it('collapses a row when its record is replaced by one with _expandNestedRow set to false', () => {
+    const props = { schema, nestedRows: true, nestedRowRenderer: renderNestedRow, sortingList: [] };
+    const { getByTestId, queryByText, rerender } = render(<Grid {...props} data={[{ name: 'Alice' }]} />);
+
+    fireEvent.click(getByTestId('DesignSystem-Grid-nestedRowTrigger'));
+    expect(queryByText('Details of Alice')).toBeInTheDocument();
+
+    rerender(<Grid {...props} data={[{ name: 'Bob', _expandNestedRow: false }]} />);
+
+    expect(queryByText('Details of Bob')).not.toBeInTheDocument();
+  });
+
   it('keeps nested rows expanded when an equal sorting list is passed again', () => {
     const data = [{ name: 'Alice' }, { name: 'Bob' }];
     const { getAllByTestId, queryByText, rerender } = render(

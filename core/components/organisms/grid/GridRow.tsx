@@ -53,7 +53,11 @@ export const GridRow = (props: GridRowProps) => {
   // sortingList is not a new sort, and reset while rendering so a record
   // never shows the state of the previous one. Without nested rows there is
   // nothing to reset, so skip the extra render pass.
-  const resetKey = JSON.stringify([getExpandedState(), sortingList?.map((sort) => [sort.name, sort.type])]);
+  const resetKey = JSON.stringify([
+    showNestedRowTrigger,
+    String(_expandNestedRow),
+    sortingList?.map((sort) => [sort.name, sort.type]),
+  ]);
   const [prevResetKey, setPrevResetKey] = React.useState(resetKey);
   if (nestedRows && resetKey !== prevResetKey) {
     setPrevResetKey(resetKey);
