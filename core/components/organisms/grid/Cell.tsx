@@ -376,11 +376,13 @@ const BodyCell = (props: BodyCellProps) => {
     if (showNestedRowTrigger) {
       return (
         <Icon
-          className={styles['Grid-nestedRowTrigger']}
+          className={classNames(styles['Grid-nestedRowTrigger'], {
+            [styles['Grid-nestedRowTrigger--disabled']]: loading,
+          })}
           data-test="DesignSystem-Grid-nestedRowTrigger"
           name={expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}
           size={20}
-          appearance={'default'}
+          appearance={loading ? 'disabled' : 'default'}
           aria-label={expanded ? 'Collapse row' : 'Expand row'}
           aria-disabled={loading || undefined}
           tabIndex={loading ? -1 : 0}

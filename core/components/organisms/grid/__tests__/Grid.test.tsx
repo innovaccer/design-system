@@ -3,6 +3,8 @@ import { render, fireEvent, cleanup } from '@testing-library/react';
 import { axe } from '@/utils/testAxe';
 import { Grid } from '@/index';
 import { GridProps as Props } from '@/index.type';
+import GridContext from '../GridContext';
+import { GridRow } from '../GridRow';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
 const totalRecords = 10;
@@ -1567,6 +1569,8 @@ describe('nested rows on sorting', () => {
     const trigger = getByTestId('DesignSystem-Grid-nestedRowTrigger');
     expect(trigger).toHaveAttribute('aria-disabled', 'true');
     expect(trigger).toHaveAttribute('tabindex', '-1');
+    expect(trigger).toHaveClass('Grid-nestedRowTrigger--disabled');
+    expect(trigger).toHaveClass('Icon--disabled');
     // Space is handled, so it does not scroll the page
     expect(fireEvent.keyDown(trigger, { key: ' ' })).toBe(false);
   });
@@ -1593,6 +1597,21 @@ describe('nested rows on sorting', () => {
     rerender(<Grid {...props} data={[...data].reverse()} sortingList={sortingList} />);
 
     expect(shown).not.toContain('Bob');
+  });
+
+  it('does not render a row twice on a sort when the grid has no nested rows', () => {
+    const nestedRowRenderer = jest.fn(() => null);
+    const renderRow = (sortingList: Props['sortingList']) => (
+      <GridContext.Provider value={{ nestedRows: false, nestedRowRenderer, sortingList } as any}>
+        <GridRow schema={[]} data={{ name: 'Alice' }} rowIndex={0} onSelect={jest.fn()} />
+      </GridContext.Provider>
+    );
+    const { rerender } = render(renderRow([]));
+    nestedRowRenderer.mockClear();
+
+    rerender(renderRow([{ name: 'name', type: 'desc' }]));
+
+    expect(nestedRowRenderer).toHaveBeenCalledTimes(1);
   });
 
   it('keeps nested rows expanded when an equal sorting list is passed again', () => {

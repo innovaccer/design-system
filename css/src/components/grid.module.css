@@ -138,6 +138,10 @@
   cursor: pointer;
 }
 
+.Grid-nestedRowTrigger--disabled {
+  cursor: not-allowed;
+}
+
 .Grid-nestedRow .Grid-rowWrapper {
   border-bottom: 0;
 }
