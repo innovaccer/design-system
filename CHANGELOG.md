@@ -1,3 +1,28 @@
+## 4.30.7 (2026-11-05)
+
+### Highlights
+
+- Screen reader announcement fixes for VerticalNav position and Calendar range start/end dates.
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Fixes
+
+- fix(VerticalNav): announce position per section and per parent (#2344795) (#3239) (3a805cb6f)
+- fix(calendar): announce range start and end on selected date cells (#3234) (146d242a1)
+
+---
+
 ## 4.30.6 (2026-10-28)
 
 ### Highlights
