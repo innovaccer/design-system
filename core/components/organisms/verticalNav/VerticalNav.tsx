@@ -221,12 +221,12 @@ export const VerticalNav = (props: VerticalNavProps) => {
     let groupIndex = 0;
 
     // Size of the consecutive run of same-group menus each menu belongs to (used for aria-setsize)
-    const runSizes: number[] = [];
     const runStarts: number[] = [];
+    const runLengths: Record<number, number> = {};
     menus.forEach((menu, index) => {
       const start = index > 0 && menus[index - 1].group === menu.group ? runStarts[index - 1] : index;
       runStarts[index] = start;
-      for (let i = start; i <= index; i++) runSizes[i] = index - start + 1;
+      runLengths[start] = (runLengths[start] || 0) + 1;
     });
     const isGrouped = (menu: Menu) => expanded && !!menu.group;
 
@@ -279,7 +279,7 @@ export const VerticalNav = (props: VerticalNavProps) => {
           customOptionRenderer={customOptionRenderer}
           tabIndex={effectiveFocused === menu.name ? 0 : -1}
           posInSet={isGrouped(menu) ? index - runStarts[index] + 1 : undefined}
-          setSize={isGrouped(menu) ? runSizes[index] : undefined}
+          setSize={isGrouped(menu) ? runLengths[runStarts[index]] : undefined}
         />
       );
 
