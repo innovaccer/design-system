@@ -214,7 +214,9 @@ exports[`Vertical Navigation component
         </div>
         <a
           aria-level="1"
+          aria-posinset="1"
           aria-selected="false"
+          aria-setsize="1"
           class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--expandedRounded MenuItem--rounded color-inverse"
           data-menu-name="patient_360"
           data-test="DesignSystem-VerticalNav--Item"
@@ -266,7 +268,9 @@ exports[`Vertical Navigation component
         <a
           aria-expanded="true"
           aria-level="1"
+          aria-posinset="1"
           aria-selected="false"
+          aria-setsize="3"
           class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--expandedRounded MenuItem--rounded color-inverse"
           data-menu-name="care_management"
           data-test="DesignSystem-VerticalNav--Item"
@@ -302,7 +306,9 @@ exports[`Vertical Navigation component
         </a>
         <a
           aria-level="2"
+          aria-posinset="1"
           aria-selected="true"
+          aria-setsize="2"
           class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--expandedRounded MenuItem--active MenuItem--activeExpanded MenuItem--activeExpandedRounded MenuItem--subMenu MenuItem--rounded pr-5 color-primary-dark"
           data-menu-name="care_management.timeline"
           role="treeitem"
@@ -329,7 +335,9 @@ exports[`Vertical Navigation component
         </a>
         <a
           aria-level="2"
+          aria-posinset="2"
           aria-selected="false"
+          aria-setsize="2"
           class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--expandedRounded MenuItem--subMenu MenuItem--rounded pr-5 color-inverse"
           data-menu-name="care_management.care_plans"
           role="treeitem"
@@ -356,7 +364,9 @@ exports[`Vertical Navigation component
         </a>
         <a
           aria-level="1"
+          aria-posinset="2"
           aria-selected="false"
+          aria-setsize="3"
           class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--expandedRounded MenuItem--disabled MenuItem--rounded color-inverse-lightest"
           data-disabled="true"
           data-menu-name="episodes"
@@ -392,7 +402,9 @@ exports[`Vertical Navigation component
         <a
           aria-expanded="false"
           aria-level="1"
+          aria-posinset="3"
           aria-selected="false"
+          aria-setsize="3"
           class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--expandedRounded MenuItem--rounded color-inverse"
           data-menu-name="risk"
           data-test="DesignSystem-VerticalNav--Item"

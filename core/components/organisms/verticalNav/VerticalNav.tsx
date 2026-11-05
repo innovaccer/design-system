@@ -220,6 +220,16 @@ export const VerticalNav = (props: VerticalNavProps) => {
     let groupItems: React.ReactNode[] = [];
     let groupIndex = 0;
 
+    // Size of the consecutive run of same-group menus each menu belongs to (used for aria-setsize)
+    const runSizes: number[] = [];
+    const runStarts: number[] = [];
+    menus.forEach((menu, index) => {
+      const start = index > 0 && menus[index - 1].group === menu.group ? runStarts[index - 1] : index;
+      runStarts[index] = start;
+      for (let i = start; i <= index; i++) runSizes[i] = index - start + 1;
+    });
+    const isGrouped = (menu: Menu) => expanded && !!menu.group;
+
     menus.forEach((menu, index) => {
       const isActive = !menuState[menu.name] && isMenuActive(menus, menu, active);
       const hasSubmenu = menu.subMenu && menu.subMenu.length > 0;
@@ -268,6 +278,8 @@ export const VerticalNav = (props: VerticalNavProps) => {
           customItemRenderer={customItemRenderer}
           customOptionRenderer={customOptionRenderer}
           tabIndex={effectiveFocused === menu.name ? 0 : -1}
+          posInSet={isGrouped(menu) ? index - runStarts[index] + 1 : undefined}
+          setSize={isGrouped(menu) ? runSizes[index] : undefined}
         />
       );
 
@@ -289,6 +301,8 @@ export const VerticalNav = (props: VerticalNavProps) => {
                 customItemRenderer={customItemRenderer}
                 customOptionRenderer={customOptionRenderer}
                 tabIndex={effectiveFocused === subMenu.name ? 0 : -1}
+                posInSet={isGrouped(menu) ? id + 1 : undefined}
+                setSize={isGrouped(menu) ? menu.subMenu!.length : undefined}
               />
             );
           })

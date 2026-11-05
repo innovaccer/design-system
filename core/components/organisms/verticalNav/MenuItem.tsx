@@ -19,6 +19,14 @@ export interface MenuItemProps extends BaseProps {
   customItemRenderer?: (props: MenuItemProps) => JSX.Element;
   customOptionRenderer?: (props: MenuItemProps) => JSX.Element;
   tabIndex?: number;
+  /**
+   * Position within its group (1-based); rendered as aria-posinset
+   */
+  posInSet?: number;
+  /**
+   * Number of sibling items in its group; rendered as aria-setsize
+   */
+  setSize?: number;
 }
 interface MenuPillsProps {
   isActive: boolean;
@@ -86,6 +94,8 @@ export const MenuItem = (props: MenuItemProps) => {
     customItemRenderer,
     customOptionRenderer,
     tabIndex,
+    posInSet,
+    setSize,
   } = props;
 
   const [isTextTruncated, setIsTextTruncated] = React.useState(false);
@@ -129,6 +139,8 @@ export const MenuItem = (props: MenuItemProps) => {
     role: 'treeitem',
     'aria-selected': isActive,
     'aria-level': isChildren ? 2 : 1,
+    'aria-posinset': posInSet,
+    'aria-setsize': setSize,
     'aria-expanded': hasSubmenu ? (isChildrenVisible ? 'true' : 'false') : undefined,
     'aria-label': !expanded && menu.icon ? menu.label : undefined,
     'data-menu-name': menu.name,
