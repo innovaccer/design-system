@@ -517,6 +517,44 @@ describe('Vertical Navigation component WAI-ARIA tree semantics', () => {
   });
 });
 
+describe('VerticalNav component position in set', () => {
+  const position = (container: HTMLElement, name: string) => {
+    const el = container.querySelector(`[data-menu-name="${name}"]`);
+    return [el?.getAttribute('aria-posinset'), el?.getAttribute('aria-setsize')];
+  };
+
+  it('counts top-level items within their own section', () => {
+    const { container } = render(<VerticalNav menus={menusWithExpandedSubMenu} active={active} expanded={true} />);
+    expect(position(container, 'patient_360')).toEqual(['1', '1']);
+    expect(position(container, 'care_management')).toEqual(['1', '2']);
+    expect(position(container, 'episodes')).toEqual(['2', '2']);
+  });
+
+  it('counts sub-items within their parent only', () => {
+    const { container } = render(<VerticalNav menus={menusWithExpandedSubMenu} active={active} expanded={true} />);
+    expect(position(container, 'care_management.timeline')).toEqual(['1', '1']);
+  });
+
+  it('renders a named group containing its own tree for each section', () => {
+    const { container } = render(<VerticalNav menus={menusWithExpandedSubMenu} active={active} expanded={true} />);
+    const groups = container.querySelectorAll('[role="group"][aria-label]');
+    expect(Array.from(groups).map((g) => g.getAttribute('aria-label'))).toEqual(['Section 1', 'Section 2']);
+    groups.forEach((g) => expect(g.querySelectorAll('[role="tree"]').length).toBe(1));
+  });
+
+  it('keeps a single labelled tree when menus have no groups', () => {
+    const ungrouped = [
+      { name: 'a', label: 'A', icon: 'forum' },
+      { name: 'b', label: 'B', icon: 'forum' },
+    ];
+    const { container } = render(<VerticalNav menus={ungrouped} expanded={true} aria-label="Main" />);
+    const trees = container.querySelectorAll('[role="tree"]');
+    expect(trees.length).toBe(1);
+    expect(trees[0].getAttribute('aria-label')).toBe('Main');
+    expect(position(container, 'b')).toEqual(['2', '2']);
+  });
+});
+
 describe('VerticalNav component a11y', () => {
   it('has no detectable a11y violations', async () => {
     const { container } = render(<VerticalNav menus={menus} expanded={true} />);
