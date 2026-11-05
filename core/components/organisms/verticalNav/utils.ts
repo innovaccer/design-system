@@ -3,6 +3,44 @@ import { Menu, ActiveMenu, getMenu } from '@/utils/navigationHelper';
 
 const VERTICAL_NAV_ITEM_SELECTOR = '[data-menu-name]';
 
+export interface SetPosition {
+  posInSet: number;
+  setSize: number;
+}
+
+/**
+ * MenuItem renders nothing for icon-less items when the nav is collapsed.
+ */
+export const isMenuRendered = (menu: Menu, expanded: boolean): boolean => expanded || !!menu.icon;
+
+/**
+ * Computes aria-posinset / aria-setsize for a list of sibling menus.
+ * Consecutive siblings sharing the same group form one set (when `groupBySection` is true);
+ * otherwise all siblings form a single set. Items that are not rendered are not counted.
+ * The returned array is index-aligned with `menus`.
+ */
+export const getSetPositions = (menus: Menu[], expanded: boolean, groupBySection = false): SetPosition[] => {
+  const positions: SetPosition[] = menus.map(() => ({ posInSet: 0, setSize: 0 }));
+  const sameSet = (a: Menu, b: Menu) => !groupBySection || !expanded || a.group === b.group;
+
+  let start = 0;
+  while (start < menus.length) {
+    let end = start + 1;
+    while (end < menus.length && sameSet(menus[end - 1], menus[end])) end++;
+
+    const rendered: number[] = [];
+    for (let i = start; i < end; i++) {
+      if (isMenuRendered(menus[i], expanded)) rendered.push(i);
+    }
+    rendered.forEach((menuIndex, position) => {
+      positions[menuIndex] = { posInSet: position + 1, setSize: rendered.length };
+    });
+    start = end;
+  }
+
+  return positions;
+};
+
 /**
  * Get all visible (focusable, non-disabled) menu items from the VerticalNav container.
  * Items are returned in DOM order.

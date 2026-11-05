@@ -1076,7 +1076,7 @@ describe('DateRangePicker component a11y', () => {
     fireEvent.keyDown(endInput, { key: 'ArrowDown' });
     await new Promise((resolve) => requestAnimationFrame(() => resolve(undefined)));
 
-    const endDateCells = getAllByRole('gridcell', { name: 'June 8, 2021, selected' });
+    const endDateCells = getAllByRole('gridcell', { name: 'End range: June 8, 2021, selected' });
     expect(endDateCells.some((cell) => cell === document.activeElement)).toBe(true);
   });
 
@@ -1089,7 +1089,7 @@ describe('DateRangePicker component a11y', () => {
 
     await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(() => resolve(undefined))));
 
-    const startDateCells = getAllByRole('gridcell', { name: 'March 3, 2020, selected' });
+    const startDateCells = getAllByRole('gridcell', { name: 'Start range: March 3, 2020, selected' });
     expect(startDateCells.some((cell) => cell === document.activeElement)).toBe(true);
   });
 });

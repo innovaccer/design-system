@@ -24,6 +24,12 @@
   flex-direction: column;
 }
 
+.VerticalNav-tree,
+.VerticalNav-subgroup {
+  display: flex;
+  flex-direction: column;
+}
+
 .VerticalNav-group:not(:first-child) .VerticalNav-group-heading {
   border-top: var(--border-width-2-5) solid var(--secondary-light);
 }

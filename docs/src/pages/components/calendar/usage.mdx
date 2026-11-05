@@ -95,3 +95,14 @@ Date picker is nothing but a calendar inside a popover and hence a trigger is al
 #### Date With an Event
 Specific date can be highlighted to show that there is an event on that particular day.
 <Preview name="components-calendar-date-with-events--date-with-events"/>
+<br/>
+
+#### Accessibility
+Each date cell has a screen reader label with the full date, for example "June 3, 2021". Selected dates add ", selected".
+
+In a range picker the start and end dates are also announced as part of the range:
+- "Start range: June 3, 2021, selected"
+- "End range: June 8, 2021, selected"
+- "Start and end range: June 3, 2021, selected" when both are the same day
+
+This also applies to a start or end date that is shown as a greyed-out cell from the previous or next month.

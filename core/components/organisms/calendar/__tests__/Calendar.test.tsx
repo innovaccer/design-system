@@ -172,6 +172,88 @@ describe('Calendar component', () => {
     expect(FunctionValue).toHaveBeenCalled();
   });
 
+  describe('range start/end labels', () => {
+    const cellText = (container: HTMLElement) =>
+      Array.from(container.querySelectorAll('[data-calendar-cell-label]')).map((el) => el.textContent);
+
+    it('prefixes the committed start and end dates when rangePicker is true', () => {
+      const { container } = render(
+        <Calendar
+          date={new Date(2021, 5, 1)}
+          rangePicker={true}
+          startDate={new Date(2021, 5, 3)}
+          endDate={new Date(2021, 5, 8)}
+          view="date"
+        />
+      );
+      const labels = cellText(container);
+      expect(labels).toContain('Start range: June 3, 2021, selected');
+      expect(labels).toContain('End range: June 8, 2021, selected');
+      expect(labels).toContain('June 5, 2021');
+    });
+
+    it('reads a single-day range as start and end', () => {
+      const day = new Date(2021, 5, 3);
+      const { container } = render(
+        <Calendar date={day} rangePicker={true} startDate={day} endDate={day} view="date" />
+      );
+      expect(cellText(container)).toContain('Start and end range: June 3, 2021, selected');
+    });
+
+    it('prefixes only the start when just startDate is selected', () => {
+      const { container } = render(
+        <Calendar date={new Date(2021, 5, 1)} rangePicker={true} startDate={new Date(2021, 5, 3)} view="date" />
+      );
+      const labels = cellText(container);
+      expect(labels).toContain('Start range: June 3, 2021, selected');
+      expect(labels.some((l) => l && l.startsWith('End range'))).toBe(false);
+    });
+
+    it('prefixes an end date shown as a next-month cell', () => {
+      const { container } = render(
+        <Calendar
+          yearNav={2023}
+          monthNav={0}
+          rangePicker={true}
+          startDate={new Date(2023, 0, 30)}
+          endDate={new Date(2023, 1, 8)}
+          view="date"
+        />
+      );
+      const labels = cellText(container);
+      expect(labels).toContain('Start range: January 30, 2023, selected');
+      expect(labels).toContain('End range: February 8, 2023, selected');
+    });
+
+    it('prefixes a start date shown as a previous-month cell', () => {
+      const { container } = render(
+        <Calendar
+          yearNav={2021}
+          monthNav={6}
+          rangePicker={true}
+          startDate={new Date(2021, 5, 30)}
+          endDate={new Date(2021, 6, 15)}
+          view="date"
+        />
+      );
+      const labels = cellText(container);
+      expect(labels).toContain('Start range: June 30, 2021, selected');
+      expect(labels).toContain('End range: July 15, 2021, selected');
+    });
+
+    it('adds no range text without rangePicker', () => {
+      const { container } = render(
+        <Calendar
+          date={new Date(2021, 5, 1)}
+          startDate={new Date(2021, 5, 3)}
+          endDate={new Date(2021, 5, 8)}
+          view="date"
+        />
+      );
+      expect(cellText(container).some((l) => l && /range:/.test(l))).toBe(false);
+    });
+  });
+
   it('calls onMouseOver handler when rangePicker is true', () => {
     const { getAllByTestId } = render(
       <Calendar date={new Date(2020, 2, 15)} rangePicker={true} onDateChange={FunctionValue} view="date" />

@@ -18,7 +18,9 @@ exports[`Vertical Navigation component
         <a
           aria-label="Patient 360"
           aria-level="1"
+          aria-posinset="1"
           aria-selected="false"
+          aria-setsize="4"
           class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
           data-menu-name="patient_360"
           data-test="DesignSystem-VerticalNav--Item"
@@ -48,7 +50,9 @@ exports[`Vertical Navigation component
           aria-expanded="true"
           aria-label="Care Management and Resources"
           aria-level="1"
+          aria-posinset="2"
           aria-selected="false"
+          aria-setsize="4"
           class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
           data-menu-name="care_management"
           data-test="DesignSystem-VerticalNav--Item"
@@ -69,59 +73,68 @@ exports[`Vertical Navigation component
           </div>
         </a>
       </div>
-      
       <div
-        class="PopperWrapper-trigger"
+        class="VerticalNav-subgroup"
+        role="group"
       >
-        <a
-          aria-label="Timeline"
-          aria-level="2"
-          aria-selected="true"
-          class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem--active color-primary-dark"
-          data-menu-name="care_management.timeline"
-          role="treeitem"
-          tabindex="0"
+        
+        <div
+          class="PopperWrapper-trigger"
         >
-          <div
-            class="d-flex align-items-center overflow-hidden"
+          <a
+            aria-label="Timeline"
+            aria-level="2"
+            aria-posinset="1"
+            aria-selected="true"
+            aria-setsize="2"
+            class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem--active color-primary-dark"
+            data-menu-name="care_management.timeline"
+            role="treeitem"
+            tabindex="0"
           >
-            <i
-              aria-hidden="true"
-              class="material-symbols material-symbols-rounded Icon"
-              data-test="DesignSystem-VerticalNav--Icon"
-              style="font-size: 16px; width: 16px;"
+            <div
+              class="d-flex align-items-center overflow-hidden"
             >
-              assignment_ind
-            </i>
-          </div>
-        </a>
-      </div>
-      
-      <div
-        class="PopperWrapper-trigger"
-      >
-        <a
-          aria-label="Care Plans"
-          aria-level="2"
-          aria-selected="false"
-          class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
-          data-menu-name="care_management.care_plans"
-          role="treeitem"
-          tabindex="-1"
+              <i
+                aria-hidden="true"
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-VerticalNav--Icon"
+                style="font-size: 16px; width: 16px;"
+              >
+                assignment_ind
+              </i>
+            </div>
+          </a>
+        </div>
+        
+        <div
+          class="PopperWrapper-trigger"
         >
-          <div
-            class="d-flex align-items-center overflow-hidden"
+          <a
+            aria-label="Care Plans"
+            aria-level="2"
+            aria-posinset="2"
+            aria-selected="false"
+            aria-setsize="2"
+            class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
+            data-menu-name="care_management.care_plans"
+            role="treeitem"
+            tabindex="-1"
           >
-            <i
-              aria-hidden="true"
-              class="material-symbols material-symbols-rounded Icon"
-              data-test="DesignSystem-VerticalNav--Icon"
-              style="font-size: 16px; width: 16px;"
+            <div
+              class="d-flex align-items-center overflow-hidden"
             >
-              events
-            </i>
-          </div>
-        </a>
+              <i
+                aria-hidden="true"
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-VerticalNav--Icon"
+                style="font-size: 16px; width: 16px;"
+              >
+                events
+              </i>
+            </div>
+          </a>
+        </div>
       </div>
       
       <div
@@ -130,7 +143,9 @@ exports[`Vertical Navigation component
         <a
           aria-label="Episodes"
           aria-level="1"
+          aria-posinset="3"
           aria-selected="false"
+          aria-setsize="4"
           class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem--disabled color-inverse-lightest"
           data-disabled="true"
           data-menu-name="episodes"
@@ -160,7 +175,9 @@ exports[`Vertical Navigation component
           aria-expanded="false"
           aria-label="Risk"
           aria-level="1"
+          aria-posinset="4"
           aria-selected="false"
+          aria-setsize="4"
           class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
           data-menu-name="risk"
           data-test="DesignSystem-VerticalNav--Item"
@@ -194,7 +211,6 @@ exports[`Vertical Navigation component
     <div
       class="VerticalNav VerticalNav--expanded"
       data-test="DesignSystem-VerticalNav"
-      role="tree"
       tabindex="-1"
     >
       <div
@@ -212,41 +228,48 @@ exports[`Vertical Navigation component
             Section 1
           </span>
         </div>
-        <a
-          aria-level="1"
-          aria-selected="false"
-          class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--expandedRounded MenuItem--rounded color-inverse"
-          data-menu-name="patient_360"
-          data-test="DesignSystem-VerticalNav--Item"
-          href="/patient360"
-          role="treeitem"
-          tabindex="-1"
+        <div
+          class="VerticalNav-tree"
+          role="tree"
         >
-          <div
-            class="d-flex align-items-center overflow-hidden"
+          <a
+            aria-level="1"
+            aria-posinset="1"
+            aria-selected="false"
+            aria-setsize="1"
+            class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--expandedRounded MenuItem--rounded color-inverse"
+            data-menu-name="patient_360"
+            data-test="DesignSystem-VerticalNav--Item"
+            href="/patient360"
+            role="treeitem"
+            tabindex="-1"
           >
-            <i
-              aria-hidden="true"
-              class="material-symbols material-symbols-rounded Icon mr-4"
-              data-test="DesignSystem-VerticalNav--Icon"
-              style="font-size: 16px; width: 16px;"
+            <div
+              class="d-flex align-items-center overflow-hidden"
             >
-              assignment_ind
-            </i>
+              <i
+                aria-hidden="true"
+                class="material-symbols material-symbols-rounded Icon mr-4"
+                data-test="DesignSystem-VerticalNav--Icon"
+                style="font-size: 16px; width: 16px;"
+              >
+                assignment_ind
+              </i>
+              <span
+                class="Text Text--regular color-inverse MenuItem-Text MenuItem--overflow mr-5 ellipsis--noWrap"
+                data-test="DesignSystem-VerticalNav--Text"
+              >
+                Patient 360
+              </span>
+            </div>
             <span
-              class="Text Text--regular color-inverse MenuItem-Text MenuItem--overflow mr-5 ellipsis--noWrap"
-              data-test="DesignSystem-VerticalNav--Text"
+              class="Pills Badge--secondary MenuItem-count"
+              data-test="DesignSystem-VerticalNav--Pills"
             >
-              Patient 360
+              10
             </span>
-          </div>
-          <span
-            class="Pills Badge--secondary MenuItem-count"
-            data-test="DesignSystem-VerticalNav--Pills"
-          >
-            10
-          </span>
-        </a>
+          </a>
+        </div>
       </div>
       <div
         aria-label="Section 2"
@@ -263,169 +286,189 @@ exports[`Vertical Navigation component
             Section 2
           </span>
         </div>
-        <a
-          aria-expanded="true"
-          aria-level="1"
-          aria-selected="false"
-          class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--expandedRounded MenuItem--rounded color-inverse"
-          data-menu-name="care_management"
-          data-test="DesignSystem-VerticalNav--Item"
-          role="treeitem"
-          tabindex="-1"
+        <div
+          class="VerticalNav-tree"
+          role="tree"
         >
-          <div
-            class="d-flex align-items-center overflow-hidden"
+          <a
+            aria-expanded="true"
+            aria-level="1"
+            aria-posinset="1"
+            aria-selected="false"
+            aria-setsize="3"
+            class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--expandedRounded MenuItem--rounded color-inverse"
+            data-menu-name="care_management"
+            data-test="DesignSystem-VerticalNav--Item"
+            role="treeitem"
+            tabindex="-1"
           >
+            <div
+              class="d-flex align-items-center overflow-hidden"
+            >
+              <i
+                aria-hidden="true"
+                class="material-symbols material-symbols-rounded Icon mr-4"
+                data-test="DesignSystem-VerticalNav--Icon"
+                style="font-size: 16px; width: 16px;"
+              >
+                forum
+              </i>
+              <span
+                class="Text Text--regular color-inverse MenuItem-Text MenuItem--overflow ellipsis--noWrap"
+                data-test="DesignSystem-VerticalNav--Text"
+              >
+                Care Management and Resources
+              </span>
+            </div>
             <i
               aria-hidden="true"
-              class="material-symbols material-symbols-rounded Icon mr-4"
-              data-test="DesignSystem-VerticalNav--Icon"
+              class="material-symbols material-symbols-rounded Icon mx-4"
+              data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
             >
-              forum
+              keyboard_arrow_up
             </i>
-            <span
-              class="Text Text--regular color-inverse MenuItem-Text MenuItem--overflow ellipsis--noWrap"
-              data-test="DesignSystem-VerticalNav--Text"
-            >
-              Care Management and Resources
-            </span>
-          </div>
-          <i
-            aria-hidden="true"
-            class="material-symbols material-symbols-rounded Icon mx-4"
-            data-test="DesignSystem-Icon"
-            style="font-size: 16px; width: 16px;"
-          >
-            keyboard_arrow_up
-          </i>
-        </a>
-        <a
-          aria-level="2"
-          aria-selected="true"
-          class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--expandedRounded MenuItem--active MenuItem--activeExpanded MenuItem--activeExpandedRounded MenuItem--subMenu MenuItem--rounded pr-5 color-primary-dark"
-          data-menu-name="care_management.timeline"
-          role="treeitem"
-          tabindex="0"
-        >
+          </a>
           <div
-            class="d-flex align-items-center overflow-hidden"
+            class="VerticalNav-subgroup"
+            role="group"
           >
+            <a
+              aria-level="2"
+              aria-posinset="1"
+              aria-selected="true"
+              aria-setsize="2"
+              class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--expandedRounded MenuItem--active MenuItem--activeExpanded MenuItem--activeExpandedRounded MenuItem--subMenu MenuItem--rounded pr-5 color-primary-dark"
+              data-menu-name="care_management.timeline"
+              role="treeitem"
+              tabindex="0"
+            >
+              <div
+                class="d-flex align-items-center overflow-hidden"
+              >
+                <i
+                  aria-hidden="true"
+                  class="material-symbols material-symbols-rounded Icon mr-4"
+                  data-test="DesignSystem-VerticalNav--Icon"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  assignment_ind
+                </i>
+                <span
+                  class="Text Text--regular color-primary-dark MenuItem-Text MenuItem--overflow ellipsis--noWrap"
+                  data-test="DesignSystem-VerticalNav--Text"
+                >
+                  Timeline
+                </span>
+              </div>
+            </a>
+            <a
+              aria-level="2"
+              aria-posinset="2"
+              aria-selected="false"
+              aria-setsize="2"
+              class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--expandedRounded MenuItem--subMenu MenuItem--rounded pr-5 color-inverse"
+              data-menu-name="care_management.care_plans"
+              role="treeitem"
+              tabindex="-1"
+            >
+              <div
+                class="d-flex align-items-center overflow-hidden"
+              >
+                <i
+                  aria-hidden="true"
+                  class="material-symbols material-symbols-rounded Icon mr-4"
+                  data-test="DesignSystem-VerticalNav--Icon"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  events
+                </i>
+                <span
+                  class="Text Text--regular color-inverse MenuItem-Text MenuItem--overflow ellipsis--noWrap"
+                  data-test="DesignSystem-VerticalNav--Text"
+                >
+                  Care Plans
+                </span>
+              </div>
+            </a>
+          </div>
+          <a
+            aria-level="1"
+            aria-posinset="2"
+            aria-selected="false"
+            aria-setsize="3"
+            class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--expandedRounded MenuItem--disabled MenuItem--rounded color-inverse-lightest"
+            data-disabled="true"
+            data-menu-name="episodes"
+            data-test="DesignSystem-VerticalNav--Item"
+            role="treeitem"
+            tabindex="-1"
+          >
+            <div
+              class="d-flex align-items-center overflow-hidden"
+            >
+              <i
+                aria-hidden="true"
+                class="material-symbols material-symbols-rounded Icon mr-4"
+                data-test="DesignSystem-VerticalNav--Icon"
+                style="font-size: 16px; width: 16px;"
+              >
+                airline_seat_flat_angled
+              </i>
+              <span
+                class="Text Text--regular color-inverse-lightest MenuItem-Text MenuItem--overflow mr-5 ellipsis--noWrap"
+                data-test="DesignSystem-VerticalNav--Text"
+              >
+                Episodes
+              </span>
+            </div>
+            <span
+              class="Pills Badge--subtle-secondary MenuItem-count MenuItem-count--disabled"
+              data-test="DesignSystem-VerticalNav--Pills"
+            >
+              99+
+            </span>
+          </a>
+          <a
+            aria-expanded="false"
+            aria-level="1"
+            aria-posinset="3"
+            aria-selected="false"
+            aria-setsize="3"
+            class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--expandedRounded MenuItem--rounded color-inverse"
+            data-menu-name="risk"
+            data-test="DesignSystem-VerticalNav--Item"
+            role="treeitem"
+            tabindex="-1"
+          >
+            <div
+              class="d-flex align-items-center overflow-hidden"
+            >
+              <i
+                aria-hidden="true"
+                class="material-symbols material-symbols-rounded Icon mr-4"
+                data-test="DesignSystem-VerticalNav--Icon"
+                style="font-size: 16px; width: 16px;"
+              >
+                favorite
+              </i>
+              <span
+                class="Text Text--regular color-inverse MenuItem-Text MenuItem--overflow ellipsis--noWrap"
+                data-test="DesignSystem-VerticalNav--Text"
+              >
+                Risk
+              </span>
+            </div>
             <i
               aria-hidden="true"
-              class="material-symbols material-symbols-rounded Icon mr-4"
-              data-test="DesignSystem-VerticalNav--Icon"
+              class="material-symbols material-symbols-rounded Icon mx-4"
+              data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
             >
-              assignment_ind
+              keyboard_arrow_down
             </i>
-            <span
-              class="Text Text--regular color-primary-dark MenuItem-Text MenuItem--overflow ellipsis--noWrap"
-              data-test="DesignSystem-VerticalNav--Text"
-            >
-              Timeline
-            </span>
-          </div>
-        </a>
-        <a
-          aria-level="2"
-          aria-selected="false"
-          class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--expandedRounded MenuItem--subMenu MenuItem--rounded pr-5 color-inverse"
-          data-menu-name="care_management.care_plans"
-          role="treeitem"
-          tabindex="-1"
-        >
-          <div
-            class="d-flex align-items-center overflow-hidden"
-          >
-            <i
-              aria-hidden="true"
-              class="material-symbols material-symbols-rounded Icon mr-4"
-              data-test="DesignSystem-VerticalNav--Icon"
-              style="font-size: 16px; width: 16px;"
-            >
-              events
-            </i>
-            <span
-              class="Text Text--regular color-inverse MenuItem-Text MenuItem--overflow ellipsis--noWrap"
-              data-test="DesignSystem-VerticalNav--Text"
-            >
-              Care Plans
-            </span>
-          </div>
-        </a>
-        <a
-          aria-level="1"
-          aria-selected="false"
-          class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--expandedRounded MenuItem--disabled MenuItem--rounded color-inverse-lightest"
-          data-disabled="true"
-          data-menu-name="episodes"
-          data-test="DesignSystem-VerticalNav--Item"
-          role="treeitem"
-          tabindex="-1"
-        >
-          <div
-            class="d-flex align-items-center overflow-hidden"
-          >
-            <i
-              aria-hidden="true"
-              class="material-symbols material-symbols-rounded Icon mr-4"
-              data-test="DesignSystem-VerticalNav--Icon"
-              style="font-size: 16px; width: 16px;"
-            >
-              airline_seat_flat_angled
-            </i>
-            <span
-              class="Text Text--regular color-inverse-lightest MenuItem-Text MenuItem--overflow mr-5 ellipsis--noWrap"
-              data-test="DesignSystem-VerticalNav--Text"
-            >
-              Episodes
-            </span>
-          </div>
-          <span
-            class="Pills Badge--subtle-secondary MenuItem-count MenuItem-count--disabled"
-            data-test="DesignSystem-VerticalNav--Pills"
-          >
-            99+
-          </span>
-        </a>
-        <a
-          aria-expanded="false"
-          aria-level="1"
-          aria-selected="false"
-          class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--expandedRounded MenuItem--rounded color-inverse"
-          data-menu-name="risk"
-          data-test="DesignSystem-VerticalNav--Item"
-          role="treeitem"
-          tabindex="-1"
-        >
-          <div
-            class="d-flex align-items-center overflow-hidden"
-          >
-            <i
-              aria-hidden="true"
-              class="material-symbols material-symbols-rounded Icon mr-4"
-              data-test="DesignSystem-VerticalNav--Icon"
-              style="font-size: 16px; width: 16px;"
-            >
-              favorite
-            </i>
-            <span
-              class="Text Text--regular color-inverse MenuItem-Text MenuItem--overflow ellipsis--noWrap"
-              data-test="DesignSystem-VerticalNav--Text"
-            >
-              Risk
-            </span>
-          </div>
-          <i
-            aria-hidden="true"
-            class="material-symbols material-symbols-rounded Icon mx-4"
-            data-test="DesignSystem-Icon"
-            style="font-size: 16px; width: 16px;"
-          >
-            keyboard_arrow_down
-          </i>
-        </a>
+          </a>
+        </div>
       </div>
     </div>
   </div>
