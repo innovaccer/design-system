@@ -3,6 +3,8 @@ import { render, fireEvent, cleanup } from '@testing-library/react';
 import { axe } from '@/utils/testAxe';
 import { Grid } from '@/index';
 import { GridProps as Props } from '@/index.type';
+import GridContext from '../GridContext';
+import { GridRow } from '../GridRow';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
 const totalRecords = 10;
@@ -1469,5 +1471,186 @@ describe('Grid component a11y', () => {
     const { container } = render(<Grid />);
     const results = await axe(container);
     expect(results).toHaveNoViolations();
+  });
+});
+
+describe('nested rows on sorting', () => {
+  const schema = [{ name: 'name', displayName: 'Name' }];
+  const renderNestedRow = ({ data }: { data: { name: string } }) => <div>Details of {data.name}</div>;
+
+  it('collapses expanded nested rows when the sorting changes', () => {
+    const data = [{ name: 'Alice' }, { name: 'Bob' }];
+    const { getAllByTestId, queryByText, rerender } = render(
+      <Grid schema={schema} data={data} nestedRows={true} nestedRowRenderer={renderNestedRow} sortingList={[]} />
+    );
+
+    fireEvent.click(getAllByTestId('DesignSystem-Grid-nestedRowTrigger')[0]);
+    expect(queryByText('Details of Alice')).toBeInTheDocument();
+
+    rerender(
+      <Grid
+        schema={schema}
+        data={[...data].reverse()}
+        nestedRows={true}
+        nestedRowRenderer={renderNestedRow}
+        sortingList={[{ name: 'name', type: 'desc' }]}
+      />
+    );
+
+    expect(queryByText('Details of Alice')).not.toBeInTheDocument();
+    expect(queryByText('Details of Bob')).not.toBeInTheDocument();
+  });
+
+  it('collapses nested rows when sorting changes to a list that joins to the same text', () => {
+    const data = [{ name: 'Alice' }, { name: 'Bob' }];
+    const props = { schema, nestedRows: true, nestedRowRenderer: renderNestedRow };
+    const { getAllByTestId, queryByText, rerender } = render(
+      <Grid
+        {...props}
+        data={data}
+        sortingList={[
+          { name: 'a', type: 'asc' },
+          { name: 'b', type: 'desc' },
+        ]}
+      />
+    );
+
+    fireEvent.click(getAllByTestId('DesignSystem-Grid-nestedRowTrigger')[0]);
+    expect(queryByText('Details of Alice')).toBeInTheDocument();
+
+    rerender(<Grid {...props} data={[...data].reverse()} sortingList={[{ name: 'a:asc,b', type: 'desc' }]} />);
+
+    expect(queryByText('Details of Alice')).not.toBeInTheDocument();
+    expect(queryByText('Details of Bob')).not.toBeInTheDocument();
+  });
+
+  it('does not show the nested row of the record that moves into an expanded row', () => {
+    const shown: string[] = [];
+    const Details = ({ name }: { name: string }) => {
+      React.useEffect(() => {
+        shown.push(name);
+      }, [name]);
+      return <div>Details of {name}</div>;
+    };
+    const data = [{ name: 'Alice' }, { name: 'Bob' }];
+    const props = {
+      schema,
+      nestedRows: true,
+      nestedRowRenderer: ({ data: rowData }: { data: { name: string } }) => <Details name={rowData.name} />,
+    };
+    const { getAllByTestId, rerender } = render(<Grid {...props} data={data} sortingList={[]} />);
+
+    fireEvent.click(getAllByTestId('DesignSystem-Grid-nestedRowTrigger')[0]);
+    expect(shown).toEqual(['Alice']);
+
+    rerender(<Grid {...props} data={[...data].reverse()} sortingList={[{ name: 'name', type: 'desc' }]} />);
+
+    expect(shown).toEqual(['Alice']);
+  });
+
+  it('does not expand a nested row while the grid is loading', () => {
+    const data = [{ name: 'Alice' }, { name: 'Bob' }];
+    const props = { schema, nestedRows: true, nestedRowRenderer: renderNestedRow, sortingList: [] };
+    const { getAllByTestId, queryByText, rerender } = render(<Grid {...props} data={data} loading={true} />);
+
+    fireEvent.click(getAllByTestId('DesignSystem-Grid-nestedRowTrigger')[0]);
+    rerender(<Grid {...props} data={[...data].reverse()} loading={false} />);
+
+    expect(queryByText('Details of Alice')).not.toBeInTheDocument();
+    expect(queryByText('Details of Bob')).not.toBeInTheDocument();
+  });
+
+  it('marks the nested row trigger as disabled while the grid is loading', () => {
+    const data = [{ name: 'Alice' }];
+    const { getByTestId } = render(
+      <Grid schema={schema} data={data} nestedRows={true} nestedRowRenderer={renderNestedRow} loading={true} />
+    );
+
+    const trigger = getByTestId('DesignSystem-Grid-nestedRowTrigger');
+    expect(trigger).toHaveAttribute('aria-disabled', 'true');
+    expect(trigger).toHaveAttribute('tabindex', '-1');
+    expect(trigger).toHaveClass('Grid-nestedRowTrigger--disabled');
+    expect(trigger).toHaveClass('Icon--disabled');
+    // Space is handled, so it does not scroll the page
+    expect(fireEvent.keyDown(trigger, { key: ' ' })).toBe(false);
+  });
+
+  it('collapses the row when sorted data arrives after the sorting list', () => {
+    const shown: string[] = [];
+    const Details = ({ name }: { name: string }) => {
+      React.useEffect(() => {
+        shown.push(name);
+      }, [name]);
+      return <div>Details of {name}</div>;
+    };
+    const props = {
+      schema,
+      nestedRows: true,
+      nestedRowRenderer: ({ data: rowData }: { data: { name: string } }) => <Details name={rowData.name} />,
+    };
+    const data = [{ name: 'Alice', _expandNestedRow: true }, { name: 'Bob' }];
+    const { rerender } = render(<Grid {...props} data={data} sortingList={[]} />);
+    expect(shown).toEqual(['Alice']);
+
+    const sortingList = [{ name: 'name', type: 'desc' as const }];
+    rerender(<Grid {...props} data={data} sortingList={sortingList} />);
+    rerender(<Grid {...props} data={[...data].reverse()} sortingList={sortingList} />);
+
+    expect(shown).not.toContain('Bob');
+  });
+
+  it('does not render a row twice on a sort when the grid has no nested rows', () => {
+    const nestedRowRenderer = jest.fn(() => null);
+    const renderRow = (sortingList: Props['sortingList']) => (
+      <GridContext.Provider value={{ nestedRows: false, nestedRowRenderer, sortingList } as any}>
+        <GridRow schema={[]} data={{ name: 'Alice' }} rowIndex={0} onSelect={jest.fn()} />
+      </GridContext.Provider>
+    );
+    const { rerender } = render(renderRow([]));
+    nestedRowRenderer.mockClear();
+
+    rerender(renderRow([{ name: 'name', type: 'desc' }]));
+
+    expect(nestedRowRenderer).toHaveBeenCalledTimes(1);
+  });
+
+  it('collapses a row when its record is replaced by one with _expandNestedRow set to false', () => {
+    const props = { schema, nestedRows: true, nestedRowRenderer: renderNestedRow, sortingList: [] };
+    const { getByTestId, queryByText, rerender } = render(<Grid {...props} data={[{ name: 'Alice' }]} />);
+
+    fireEvent.click(getByTestId('DesignSystem-Grid-nestedRowTrigger'));
+    expect(queryByText('Details of Alice')).toBeInTheDocument();
+
+    rerender(<Grid {...props} data={[{ name: 'Bob', _expandNestedRow: false }]} />);
+
+    expect(queryByText('Details of Bob')).not.toBeInTheDocument();
+  });
+
+  it('keeps nested rows expanded when an equal sorting list is passed again', () => {
+    const data = [{ name: 'Alice' }, { name: 'Bob' }];
+    const { getAllByTestId, queryByText, rerender } = render(
+      <Grid
+        schema={schema}
+        data={data}
+        nestedRows={true}
+        nestedRowRenderer={renderNestedRow}
+        sortingList={[{ name: 'name', type: 'asc' }]}
+      />
+    );
+
+    fireEvent.click(getAllByTestId('DesignSystem-Grid-nestedRowTrigger')[0]);
+    expect(queryByText('Details of Alice')).toBeInTheDocument();
+
+    rerender(
+      <Grid
+        schema={schema}
+        data={data}
+        nestedRows={true}
+        nestedRowRenderer={renderNestedRow}
+        sortingList={[{ name: 'name', type: 'asc' }]}
+      />
+    );
+
+    expect(queryByText('Details of Alice')).toBeInTheDocument();
   });
 });
