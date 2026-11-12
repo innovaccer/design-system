@@ -13,6 +13,7 @@ import {
   focusYearCell,
   formatDateAriaLabel,
   selectedAriaLabel,
+  rangeAriaLabel,
   handleDateViewKeyDown,
   handleMonthViewKeyDown,
   handleYearViewKeyDown,
@@ -1663,7 +1664,14 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                   onMouseEnter={onMouseEnterHandler.bind(this, date, today(), disabled)}
                 >
                   <span className={styles['Calendar-srOnly']} data-calendar-cell-label>
-                    {selectedAriaLabel(formatDateAriaLabel(fullDate), Boolean(active || activeDate))}
+                    {selectedAriaLabel(
+                      rangeAriaLabel(
+                        formatDateAriaLabel(fullDate),
+                        Boolean(rangePicker && isStartActive && !disabled),
+                        Boolean(rangePicker && isEndActive && !disabled)
+                      ),
+                      Boolean(active || activeDate)
+                    )}
                   </span>
                   <Text
                     aria-hidden="true"

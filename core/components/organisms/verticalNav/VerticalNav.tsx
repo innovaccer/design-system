@@ -4,7 +4,12 @@ import { Text } from '@/index';
 import { MenuItem, MenuItemProps } from './MenuItem';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { getMenu, isMenuActive, ActiveMenu, Menu, getExpandedMenus } from '@/utils/navigationHelper';
-import { handleVerticalNavKeyDown, getInitialFocusedItemName, getFirstVisibleMenuItemName } from './utils';
+import {
+  handleVerticalNavKeyDown,
+  getInitialFocusedItemName,
+  getFirstVisibleMenuItemName,
+  getSetPositions,
+} from './utils';
 import styles from '@css/components/verticalNav.module.css';
 
 export interface VerticalNavProps extends BaseProps {
@@ -84,6 +89,11 @@ export interface VerticalNavProps extends BaseProps {
    * ID of an element whose text labels the navigation tree (e.g. an external heading)
    */
   'aria-labelledby'?: string;
+}
+
+interface Section {
+  group?: string;
+  items: React.ReactNode[];
 }
 
 /**
@@ -216,66 +226,66 @@ export const VerticalNav = (props: VerticalNavProps) => {
     }
   };
 
-  const renderList = () => {
-    const list = menus.map((menu, index) => {
+  const renderSections = (): Section[] => {
+    const sections: Section[] = [];
+    const topLevelPositions = getSetPositions(menus, expanded, true);
+
+    menus.forEach((menu, index) => {
       const isActive = !menuState[menu.name] && isMenuActive(menus, menu, active);
       const hasSubmenu = menu.subMenu && menu.subMenu.length > 0;
       const isChildrenVisible = hasSubmenu && (menuState[menu.name] || subMenuExpandedState[menu.name]);
-      const hasGroup = index === 0 || menus[index - 1].group !== menu.group;
+      const isNewSection = sections.length === 0 || (expanded && menus[index - 1].group !== menu.group);
 
-      const sectionClass = classNames({
-        [styles['VerticalNav-section']]: true,
-        [styles['VerticalNav-section--border']]: index !== 0,
-      });
+      if (isNewSection) sections.push({ group: expanded ? menu.group : undefined, items: [] });
+      const items = sections[sections.length - 1].items;
 
-      return (
-        <React.Fragment key={index}>
-          {hasGroup && menu.group && expanded && (
-            <div className={sectionClass}>
-              <Text data-test="DesignSystem-VerticalNav--Section" size="small" weight="strong" appearance="subtle">
-                {menu.group}
-              </Text>
-            </div>
-          )}
-          {
-            <MenuItem
-              data-test="DesignSystem-VerticalNav--Item"
-              menu={menu}
-              expanded={expanded}
-              isActive={isActive}
-              hasSubmenu={hasSubmenu}
-              isChildren={false}
-              rounded={rounded}
-              isChildrenVisible={isChildrenVisible}
-              onClick={onClickHandler}
-              customItemRenderer={customItemRenderer}
-              customOptionRenderer={customOptionRenderer}
-              tabIndex={effectiveFocused === menu.name ? 0 : -1}
-            />
-          }
-          {isChildrenVisible &&
-            menu.subMenu!.map((subMenu, id) => {
-              return (
-                <MenuItem
-                  key={id}
-                  menu={subMenu}
-                  expanded={expanded}
-                  hasSubmenu={false}
-                  isChildren={true}
-                  rounded={rounded}
-                  onClick={onClickHandler}
-                  isActive={isMenuActive(menus, subMenu, active)}
-                  customItemRenderer={customItemRenderer}
-                  customOptionRenderer={customOptionRenderer}
-                  tabIndex={effectiveFocused === subMenu.name ? 0 : -1}
-                />
-              );
-            })}
-        </React.Fragment>
+      items.push(
+        <MenuItem
+          key={`item-${index}`}
+          data-test="DesignSystem-VerticalNav--Item"
+          menu={menu}
+          expanded={expanded}
+          isActive={isActive}
+          hasSubmenu={hasSubmenu}
+          isChildren={false}
+          rounded={rounded}
+          isChildrenVisible={isChildrenVisible}
+          onClick={onClickHandler}
+          customItemRenderer={customItemRenderer}
+          customOptionRenderer={customOptionRenderer}
+          tabIndex={effectiveFocused === menu.name ? 0 : -1}
+          posInSet={topLevelPositions[index].posInSet}
+          setSize={topLevelPositions[index].setSize}
+        />
       );
+
+      if (isChildrenVisible) {
+        const subMenuPositions = getSetPositions(menu.subMenu!, expanded);
+        items.push(
+          <div key={`children-${index}`} role="group" className={styles['VerticalNav-subgroup']}>
+            {menu.subMenu!.map((subMenu, id) => (
+              <MenuItem
+                key={`subitem-${index}-${id}`}
+                menu={subMenu}
+                expanded={expanded}
+                hasSubmenu={false}
+                isChildren={true}
+                rounded={rounded}
+                onClick={onClickHandler}
+                isActive={isMenuActive(menus, subMenu, active)}
+                customItemRenderer={customItemRenderer}
+                customOptionRenderer={customOptionRenderer}
+                tabIndex={effectiveFocused === subMenu.name ? 0 : -1}
+                posInSet={subMenuPositions[id].posInSet}
+                setSize={subMenuPositions[id].setSize}
+              />
+            ))}
+          </div>
+        );
+      }
     });
 
-    return list;
+    return sections;
   };
 
   const classes = classNames(
@@ -286,20 +296,60 @@ export const VerticalNav = (props: VerticalNavProps) => {
     className
   );
 
+  const sections = renderSections();
+  const hasNamedSection = sections.some((section) => section.group);
+
+  // Without named sections the nav is a single tree. With them, each section is a named group that
+  // contains its own tree, so screen readers count items within a section instead of across all of them.
+  const rootProps = {
+    ref: containerRef,
+    tabIndex: -1,
+    'data-test': 'DesignSystem-VerticalNav',
+    ...baseProps,
+    className: classes,
+    onKeyDown: handleKeyDown,
+    onFocus: handleFocus,
+    'aria-label': ariaLabel,
+    'aria-labelledby': ariaLabelledby,
+  };
+
+  if (!hasNamedSection) {
+    return (
+      <div role="tree" {...rootProps}>
+        {sections.map((section) => section.items)}
+      </div>
+    );
+  }
+
+  const hasRootLabel = !!(ariaLabel || ariaLabelledby);
+
   return (
-    <div
-      ref={containerRef}
-      role="tree"
-      tabIndex={-1}
-      data-test="DesignSystem-VerticalNav"
-      {...baseProps}
-      className={classes}
-      onKeyDown={handleKeyDown}
-      onFocus={handleFocus}
-      aria-label={ariaLabel}
-      aria-labelledby={ariaLabelledby}
-    >
-      {renderList()}
+    <div role={hasRootLabel ? 'group' : undefined} {...rootProps}>
+      {sections.map((section, sectionIndex) => {
+        const tree = (
+          <div role="tree" className={styles['VerticalNav-tree']}>
+            {section.items}
+          </div>
+        );
+
+        if (!section.group) return <React.Fragment key={`section-${sectionIndex}`}>{tree}</React.Fragment>;
+
+        return (
+          <div
+            key={`section-${sectionIndex}`}
+            role="group"
+            aria-label={section.group}
+            className={styles['VerticalNav-group']}
+          >
+            <div className={styles['VerticalNav-group-heading']}>
+              <Text data-test="DesignSystem-VerticalNav--Section" size="small" weight="strong" appearance="subtle">
+                {section.group}
+              </Text>
+            </div>
+            {tree}
+          </div>
+        );
+      })}
     </div>
   );
 };
