@@ -1131,3 +1131,22 @@ describe('Dropdown grouped options a11y (group label association)', () => {
     expect(results.violations.filter((v) => groupRules.includes(v.id))).toEqual([]);
   });
 });
+
+it('preserves the selected option when an open dropdown becomes disabled', async () => {
+  const onChange = jest.fn();
+  const options = [
+    { label: 'Apple', value: 'apple', selected: true },
+    { label: 'Orange', value: 'orange' },
+  ];
+  const props = { options, onChange };
+  const { rerender } = render(<Dropdown {...props} />);
+
+  fireEvent.click(screen.getByRole('combobox', { name: 'Apple' }));
+  const option = await screen.findByRole('option', { name: 'Orange' });
+
+  rerender(<Dropdown {...props} disabled />);
+  fireEvent.click(option);
+
+  expect(onChange).not.toHaveBeenCalled();
+  expect(screen.getByRole('combobox', { name: 'Apple' })).toBeInTheDocument();
+});

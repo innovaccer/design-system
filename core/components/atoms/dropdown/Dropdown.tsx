@@ -614,7 +614,9 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
   };
 
   onOptionSelect = (option: OptionSchema) => {
-    const { onUpdate, selected, menu } = this.props;
+    const { disabled, onUpdate, selected, menu } = this.props;
+    if (disabled) return;
+
     if (_isControlled(selected)) {
       if (onUpdate && (this.isValidOption(option) || menu)) {
         onUpdate('select-option', option);
